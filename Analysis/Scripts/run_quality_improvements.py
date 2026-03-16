@@ -36,6 +36,9 @@ SCRIPTS = {
     'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (100 terms, cited)'),
     'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 GOLD)'),
     'islet': ('build_islet_outcomes.py', 'Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)'),
+    'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)'),
+    'immunomod': ('build_immunomod_lada.py', 'Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)'),
+    'treg': ('build_treg_neuropathy.py', 'Building Treg in Diabetic Neuropathy (Gap #5 SILVER)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
