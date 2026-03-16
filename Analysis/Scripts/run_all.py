@@ -1,5 +1,5 @@
 """
-DIABETES RESEARCH HUB — Master Runner
+DIABETES RESEARCH HUB - Master Runner
 Runs all analysis scripts in sequence and generates a consolidated report.
 
 USAGE (PowerShell):

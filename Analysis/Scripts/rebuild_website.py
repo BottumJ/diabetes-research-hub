@@ -25,7 +25,7 @@ def get_trial_count():
     """Get actual trial count from data."""
     try:
         path = os.path.join(RESULTS_DIR, 'clinical_trials_latest.json')
-        with open(path) as f:
+        with open(path, encoding='utf-8') as f:
             data = json.load(f)
         return data['metadata']['total_trials']
     except Exception:
@@ -195,6 +195,18 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <h3>Acronym Database</h3>
     <p>147 curated diabetes research acronyms across 10 categories. Instant search, category filters, alphabet navigation.</p>
     <a href="Dashboards/Acronym_Database.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>LADA Natural History Model</h3>
+    <p>Computational model of C-peptide decline trajectories for LADA1 vs LADA2. Autoantibody risk stratification, intervention windows, and genetic markers. Gap #1 (GOLD).</p>
+    <a href="Dashboards/LADA_Natural_History.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Islet Transplant Outcomes</h3>
+    <p>Graft survival analysis by immunosuppression protocol. The tacrolimus paradox, calcineurin-sparing alternatives, IEQ/kg dose-response, and VX-880 next-generation data. Gap #3 (GOLD).</p>
+    <a href="Dashboards/Islet_Transplant_Analysis.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status upcoming">April 2026</div>

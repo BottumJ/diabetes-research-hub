@@ -34,6 +34,8 @@ SCRIPTS = {
     'deepdives': ('build_gap_deep_dives.py', 'Building Gap Deep Dives (all 15 gaps)'),
     'acronyms': ('build_acronym_db.py', 'Building Acronym & Abbreviation Database'),
     'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (100 terms, cited)'),
+    'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 GOLD)'),
+    'islet': ('build_islet_outcomes.py', 'Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
