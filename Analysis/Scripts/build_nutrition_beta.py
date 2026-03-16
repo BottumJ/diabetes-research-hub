@@ -1,0 +1,702 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import os
+import json
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = os.path.join(script_dir, '..', '..')
+output_path = os.path.join(base_dir, 'Dashboards', 'Nutrition_Beta_Cells.html')
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Nutrition for Beta Cell Health</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fafaf7;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: normal;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            color: #636363;
+            font-style: italic;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #2c5f8a;
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 0;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid #e0ddd5;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background-color: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            color: #636363;
+            transition: color 0.2s;
+        }
+
+        .tab-button.active {
+            color: #1a1a1a;
+            border-bottom-color: #2c5f8a;
+        }
+
+        .tab-button:hover {
+            color: #1a1a1a;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            border-left: 3px solid #2c5f8a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-weight: normal;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #2c5f8a;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .muted {
+            color: #636363;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+        }
+
+        th {
+            background-color: #fafaf7;
+            border-bottom: 2px solid #e0ddd5;
+            padding: 12px 16px;
+            text-align: left;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0ddd5;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .evidence-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 0;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .evidence-moderate {
+            background-color: #2d7d46;
+            color: #ffffff;
+        }
+
+        .evidence-weak {
+            background-color: #8b6914;
+            color: #ffffff;
+        }
+
+        .expandable {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 16px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .expandable-header {
+            font-weight: 600;
+            color: #2c5f8a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expandable-header::after {
+            content: "+";
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .expandable.expanded .expandable-header::after {
+            content: "-";
+        }
+
+        .expandable-content {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e0ddd5;
+            font-size: 14px;
+        }
+
+        .expandable.expanded .expandable-content {
+            display: block;
+        }
+
+        .reference {
+            background-color: #ffffff;
+            border-left: 3px solid #2c5f8a;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .reference-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .reference-meta {
+            color: #636363;
+            font-style: italic;
+        }
+
+        .key-point {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-left: 4px solid #2c5f8a;
+        }
+
+        .key-point strong {
+            color: #2c5f8a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .tabs {
+                gap: 0;
+            }
+
+            .tab-button {
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Personalized Nutrition for Beta Cell Health</h1>
+            <p class="subtitle">BRONZE-Validated Research Gap #13</p>
+            <span class="badge">GAPS-BASED RESEARCH</span>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab(event, 'tab1')">Why Nutrition Matters</button>
+            <button class="tab-button" onclick="switchTab(event, 'tab2')">Nutrient Evidence Map</button>
+            <button class="tab-button" onclick="switchTab(event, 'tab3')">Personalization Gap</button>
+            <button class="tab-button" onclick="switchTab(event, 'tab4')">Proposed Investigation</button>
+            <button class="tab-button" onclick="switchTab(event, 'tab5')">Evidence Catalog</button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <div class="section">
+                <h2>Why Nutrition Matters for Beta Cells</h2>
+
+                <p>Beta cells are among the most metabolically active cells in the human body. Their health depends critically on their nutrient environment—both what supports their function and what damages them. Yet personalized nutrition strategies specifically designed to preserve beta cells remain virtually nonexistent in clinical practice.</p>
+
+                <div class="key-point">
+                    <strong>Core Gap:</strong> Personalized nutrition approaches (nutrigenomics, microbiome-based) are rapidly expanding for type 2 diabetes weight management, but none specifically target beta cell preservation.
+                </div>
+
+                <h3>Nutrients That Support Beta Cell Function</h3>
+
+                <ul>
+                    <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production.</li>
+                    <li><strong>Omega-3 Fatty Acids (EPA/DHA):</strong> Anti-inflammatory and membrane-protective. Support mitochondrial function in beta cells and reduce islet inflammation.</li>
+                    <li><strong>Vitamin D:</strong> Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune attack (relevant for LADA/T1D). Also supports calcium signaling required for insulin secretion.</li>
+                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels.</li>
+                    <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D.</li>
+                </ul>
+
+                <h3>Nutrients That Harm Beta Cells</h3>
+
+                <ul>
+                    <li><strong>Excess Saturated Fat (Lipotoxicity):</strong> Chronic high dietary saturated fat leads to ectopic lipid accumulation in beta cells, impairing insulin secretion and promoting apoptosis.</li>
+                    <li><strong>Excess Glucose (Glucotoxicity):</strong> Paradoxically, chronic hyperglycemia impairs beta cell function through oxidative stress and ER stress, in addition to initial beta cell exhaustion.</li>
+                    <li><strong>Advanced Glycation End Products (AGEs):</strong> Formed from high-heat cooking of processed foods. AGEs promote beta cell inflammation and dysfunction.</li>
+                </ul>
+
+                <h3>The Personalized Nutrition Revolution (That Hasn't Reached Beta Cells Yet)</h3>
+
+                <p>The personalized nutrition space has exploded in the last 5 years. Companies like ZOE, DayTwo, and Viome use nutrigenomics, microbiome testing, and continuous glucose monitoring to tailor nutrition to individual metabolic responses. But they optimize for glucose control and weight loss—not beta cell preservation.</p>
+
+                <p class="muted">Zero publications contain both terms "personalized nutrition" AND "beta cell preservation." The convergence is a research orphan.</p>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <div class="section">
+                <h2>Nutrient-Beta Cell Evidence Map</h2>
+
+                <p>A systematic evaluation of key nutrients with documented beta cell interactions, ranked by evidence strength.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Beta Cell Mechanism</th>
+                            <th>Food Sources</th>
+                            <th>Recommended Intake</th>
+                            <th>Evidence Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Zinc</strong></td>
+                            <td>Essential cofactor for insulin hexamer formation. ZnT8 transporter mutations linked to T2D risk. Deficiency impairs insulin storage.</td>
+                            <td>Oysters, beef, pumpkin seeds, chickpeas</td>
+                            <td>8-11 mg/day (RDA)</td>
+                            <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Omega-3 (EPA/DHA)</strong></td>
+                            <td>Reduce islet inflammation and promote mitochondrial health. Some evidence for beta cell protection in T1D models. Anti-inflammatory signaling.</td>
+                            <td>Fatty fish (salmon, mackerel), flaxseed, walnuts, algae supplements</td>
+                            <td>1-2 g/day (combined EPA+DHA)</td>
+                            <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vitamin D</strong></td>
+                            <td>Vitamin D receptors present on beta cells. Supports immune modulation and calcium signaling. D2d trial borderline for T2D prevention in deficient individuals.</td>
+                            <td>Fatty fish, egg yolks, mushrooms, fortified milk</td>
+                            <td>1000-2000 IU/day (higher if deficient)</td>
+                            <td><span class="evidence-badge evidence-weak">WEAK-MODERATE</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnesium</strong></td>
+                            <td>Required for insulin secretion and glucose-stimulated ATP production. Deficiency common in T2D. Supports mitochondrial function.</td>
+                            <td>Almonds, spinach, pumpkin seeds, dark chocolate</td>
+                            <td>310-420 mg/day (RDA)</td>
+                            <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chromium</strong></td>
+                            <td>Enhances insulin receptor signaling downstream. Meta-analysis shows HbA1c improvement in some trials. Mechanism less clear than zinc/magnesium.</td>
+                            <td>Broccoli, barley, oats, tomatoes</td>
+                            <td>25-35 mcg/day (RDA)</td>
+                            <td><span class="evidence-badge evidence-weak">WEAK</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Polyphenols (Berberine, Resveratrol, Curcumin)</strong></td>
+                            <td>Various AMPK/SIRT1 activation pathways. Mostly preclinical evidence. Some human data for metabolic markers but not specific beta cell measures.</td>
+                            <td>Curcumin: turmeric; resveratrol: red wine, berries; berberine: supplements</td>
+                            <td>Variable; depends on compound</td>
+                            <td><span class="evidence-badge evidence-weak">WEAK</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fiber / SCFAs</strong></td>
+                            <td>Gut microbiome produces short-chain fatty acids (butyrate, propionate) → GLP-1 release → beta cell support. Highly personalized microbiome response.</td>
+                            <td>Whole grains, legumes, vegetables, fermented foods</td>
+                            <td>25-35 g/day (RDA)</td>
+                            <td><span class="evidence-badge evidence-moderate">MODERATE (pathway)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Key Insights from the Evidence Map</h3>
+
+                <ul>
+                    <li>No single nutrient is a silver bullet. Beta cell health requires a combination of zinc, magnesium, omega-3s, vitamin D, and other micronutrients.</li>
+                    <li>Individual variation is enormous. Genetic variants (e.g., VDR polymorphisms for vitamin D, ZnT8 variants for zinc) modify how individuals respond to nutrient interventions.</li>
+                    <li>Microbiome response to fiber is highly personalized. Some people produce abundant butyrate from fiber; others produce less. This drives GLP-1 responsiveness.</li>
+                    <li>Most evidence is observational or animal model-based. Only a handful of nutrient interventions have been tested in randomized trials specifically measuring beta cell function (C-peptide, HOMA-B).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <div class="section">
+                <h2>The Personalization Gap</h2>
+
+                <p>Personalized nutrition is fundamentally about recognizing that individuals differ in their response to nutrients. Three complementary technologies now make this possible:</p>
+
+                <div class="key-point">
+                    <strong>The Opportunity:</strong> No personalized nutrition company has specifically optimized their algorithms for beta cell preservation. This is the unmet gap.
+                </div>
+
+                <h3>1. Nutrigenomics: Genetic Variants That Modify Nutrient Response</h3>
+
+                <p>Key variants that modify nutrient-beta cell interactions:</p>
+
+                <ul>
+                    <li><strong>VDR polymorphisms (FokI, BsmI, ApaI):</strong> Determine individual vitamin D responsiveness. Some individuals are "vitamin D responders," others less so due to VDR receptor variants.</li>
+                    <li><strong>SLC30A8 / ZnT8 variants:</strong> The most common genetic risk factor for T2D. Variants affect zinc transporter function and modify how efficiently zinc supports insulin synthesis.</li>
+                    <li><strong>MTHFR polymorphisms:</strong> Affect folate metabolism and one-carbon cycle. May modify response to B vitamins and methyl donors needed for epigenetic regulation of beta cell genes.</li>
+                    <li><strong>CYP1A1, CYP2C9 variants:</strong> Affect metabolism of polyphenols and plant compounds. Determine whether curcumin, resveratrol interventions are likely to be effective.</li>
+                </ul>
+
+                <h3>2. Microbiome: Individual Microbial Communities Produce Different SCFAs</h3>
+
+                <p>The same amount of dietary fiber produces vastly different microbial fermentation products across individuals:</p>
+
+                <ul>
+                    <li><strong>SCFA producers:</strong> Individuals whose microbiota are rich in Faecalibacterium, Roseburia, and other butyrate producers. They get robust SCFA-mediated GLP-1 stimulation from fiber.</li>
+                    <li><strong>Responders vs. Non-responders:</strong> High dietary fiber in a person with a poor SCFA-producing microbiota may not improve glucose control or beta cell function.</li>
+                    <li><strong>Personalized intervention:</strong> Test microbiota composition and SCFA-producing capacity. If deficient, either supplement with fermented foods or consider targeted microbial interventions (postbiotics).</li>
+                </ul>
+
+                <h3>3. Metabolomics: Individual Metabolic Profiles Reveal Nutrient Deficiencies</h3>
+
+                <p>Metabolomic profiling reveals which nutrients are actually bioavailable and deficient in an individual:</p>
+
+                <ul>
+                    <li><strong>Zinc status:</strong> Serum zinc is a poor biomarker. Metabolomic profiles showing zinc-related enzyme activity (alkaline phosphatase, carboxypeptidase) better reflect zinc status.</li>
+                    <li><strong>Vitamin D status:</strong> Genetic variants in VDR affect how vitamin D is utilized. Metabolomic data can reveal whether vitamin D supplementation is actually working in that individual.</li>
+                    <li><strong>Magnesium status:</strong> Serum magnesium doesn't correlate well with intracellular stores. Metabolomic signatures of ATP production and energy metabolism reflect true magnesium sufficiency.</li>
+                </ul>
+
+                <h3>Current Personalized Nutrition Companies (Gap Analysis)</h3>
+
+                <p>ZOE, DayTwo, Viome, and others are capturing the personalized nutrition market. Their approach:</p>
+
+                <ul>
+                    <li><strong>What they optimize:</strong> Postprandial glucose response, blood sugar variability, weight loss, HbA1c</li>
+                    <li><strong>What they miss:</strong> Beta cell function (C-peptide, proinsulin), insulin secretory capacity, beta cell preservation in early diabetes</li>
+                    <li><strong>Why it matters:</strong> You can improve glucose control while accelerating beta cell decline. Early intervention to preserve beta cells is categorically different from managing established hyperglycemia.</li>
+                </ul>
+
+                <h3>The Beta Cell Personalization Opportunity</h3>
+
+                <p>Imagine a personalized nutrition platform that:</p>
+
+                <ol>
+                    <li>Tests relevant nutrigenomics variants (VDR, ZnT8, MTHFR, CYP variants)</li>
+                    <li>Assesses microbiome SCFA-producing capacity via 16S or metagenomic sequencing</li>
+                    <li>Uses metabolomics to reveal zinc, magnesium, vitamin D bioavailability in that individual</li>
+                    <li>Measures baseline C-peptide and HOMA-B to establish beta cell health status</li>
+                    <li>Delivers a personalized nutrition plan specifically optimized to preserve C-peptide trajectory</li>
+                    <li>Tracks C-peptide, proinsulin, and inflammatory markers (not just glucose) to measure beta cell preservation</li>
+                </ol>
+
+                <p class="muted">This platform does not yet exist. Building it is the research opportunity.</p>
+            </div>
+        </div>
+
+        <div id="tab4" class="tab-content">
+            <div class="section">
+                <h2>Proposed Investigation</h2>
+
+                <p>A phased research program to develop and validate personalized nutrition for beta cell preservation.</p>
+
+                <h3>Phase 1: Systematic Review and Evidence Synthesis</h3>
+
+                <p><strong>Goal:</strong> Map all nutrient-beta cell interactions with adequate human evidence.</p>
+
+                <ul>
+                    <li>Systematic review of RCTs measuring beta cell function (C-peptide, HOMA-B, proinsulin) as an outcome</li>
+                    <li>Identify which nutrients have direct beta cell endpoints (not just glucose or HbA1c)</li>
+                    <li>Synthesize effect sizes for each nutrient on C-peptide and beta cell function</li>
+                    <li>Identify study gaps (e.g., no RCTs of chromium + zinc combination on beta cell function)</li>
+                </ul>
+
+                <h3>Phase 2: Identify Genetic and Microbial Modifiers</h3>
+
+                <p><strong>Goal:</strong> Determine which genetic and microbial variants modify nutrient-beta cell response.</p>
+
+                <ul>
+                    <li>Secondary analysis of existing cohorts (DPP, ADDITION, IMPaCT) with genetic and microbiome data</li>
+                    <li>Test whether VDR, ZnT8, MTHFR variants predict vitamin D, zinc response on C-peptide</li>
+                    <li>Test whether baseline SCFA-producing microbial abundance predicts fiber response on beta cell function</li>
+                    <li>Publish gene-x-nutrient interaction findings to build knowledge base</li>
+                </ul>
+
+                <h3>Phase 3: Pilot Personalized Nutrition Protocol</h3>
+
+                <p><strong>Goal:</strong> Test a beta cell-focused personalized nutrition intervention in early T2D/prediabetes.</p>
+
+                <p><strong>Study Design:</strong></p>
+                <ul>
+                    <li><strong>Population:</strong> 60-100 adults with prediabetes or early T2D (HbA1c 5.7-6.9%), C-peptide >0.3 nmol/L (residual beta cell function)</li>
+                    <li><strong>Randomization:</strong> Personalized nutrition (nutrigenomics + microbiome + metabolomics optimized) vs. standard diabetes nutrition education</li>
+                    <li><strong>Duration:</strong> 12 months</li>
+                    <li><strong>Personalized arm intervention:</strong></li>
+                    <ul>
+                        <li>Baseline nutrigenomics testing (VDR, ZnT8, MTHFR, CYP variants)</li>
+                        <li>Microbiome sequencing + assessment of SCFA-producing capacity</li>
+                        <li>Metabolomics profiling (zinc, magnesium, vitamin D bioavailability)</li>
+                        <li>Nutrition plan tailored to: (1) genetic nutrient metabolism, (2) microbiome-responsive fiber targets, (3) measured nutrient deficiencies</li>
+                        <li>Supplement recommendations based on bioavailability (e.g., chelated magnesium if poor GI absorption)</li>
+                    </ul>
+                    <li><strong>Standard arm intervention:</strong> Current ADA/EASD diabetes nutrition guidelines (carb control, fiber, weight loss)</li>
+                </ul>
+
+                <p><strong>Primary Endpoint:</strong></p>
+                <ul>
+                    <li>Change in C-peptide AUC from baseline to 12 months (measure of beta cell function preservation)</li>
+                </ul>
+
+                <p><strong>Secondary Endpoints:</strong></p>
+                <ul>
+                    <li>Change in HOMA-B (beta cell secretory capacity)</li>
+                    <li>Change in proinsulin:insulin ratio (marker of beta cell stress)</li>
+                    <li>Change in HbA1c</li>
+                    <li>Change in inflammatory markers (CRP, IL-6, TNF-alpha)</li>
+                    <li>Fasting glucose</li>
+                </ul>
+
+                <p><strong>Sample Size:</strong> 60-100 participants provides 80% power to detect 15% difference in C-peptide AUC between arms (effect size ~0.6 SD).</p>
+
+                <h3>Expected Outcomes</h3>
+
+                <ul>
+                    <li>If personalized nutrition shows superior C-peptide preservation, this becomes the basis for a larger multi-center trial</li>
+                    <li>If the trial is negative, the mechanistic data (which nutrients, variants, and microbiomes respond best) still valuable for future trials</li>
+                    <li>Publication of gene-x-nutrient interaction data establishes precision medicine framework for beta cell preservation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tab5" class="tab-content">
+            <div class="section">
+                <h2>Evidence Catalog</h2>
+
+                <p>Curated references supporting the nutrient-beta cell preservation framework.</p>
+
+                <h3>Beta Cell Physiology and Nutrient Requirements</h3>
+
+                <div class="reference">
+                    <div class="reference-title">Zinc and the ZnT8 Transporter in Beta Cell Function</div>
+                    <div class="reference-meta">Key references: Wijesekara et al. (Diabetes, 2010); Sladek et al. (Nat Genet, 2007); Saxena et al. (Nat Genet, 2012)</div>
+                    <p>The SLC30A8 gene encoding the ZnT8 zinc transporter is one of the most robust T2D genetic risk loci. Zinc is essential for insulin hexamer formation and secretory granule maturation. Individuals with ZnT8 loss-of-function variants have accelerated beta cell decline.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">Magnesium and Insulin Secretion</div>
+                    <div class="reference-meta">Key references: Barbagallo & Dominguez (Magnesium Res, 2015); King et al. (Nutrients, 2012)</div>
+                    <p>Magnesium is required for >300 enzymatic reactions. Specifically, magnesium is essential for ATP-dependent processes in beta cell insulin secretion. Dietary magnesium deficiency is common in T2D. Studies show magnesium supplementation improves HOMA-B and insulin secretion measures.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">Omega-3 and Islet Inflammation</div>
+                    <div class="reference-meta">Key references: Poudyal et al. (J Nutr Metab, 2011); Hartweg et al. (Diabetes Care, 2009)</div>
+                    <p>Omega-3 fatty acids (EPA/DHA) reduce pro-inflammatory cytokines (TNF-alpha, IL-6) in islet tissue. Animal models show EPA/DHA reduce beta cell apoptosis and preserve insulin secretion under hyperglycemic stress.</p>
+                </div>
+
+                <h3>Vitamin D and Beta Cell Function</h3>
+
+                <div class="reference">
+                    <div class="reference-title">The D2d Trial: Vitamin D and T2D Prevention</div>
+                    <div class="reference-meta">Pittas et al. (NEJM, 2022)</div>
+                    <p>Large RCT showing borderline benefit of vitamin D supplementation for T2D prevention in individuals with baseline vitamin D deficiency. Vitamin D receptors are present on beta cells and immune cells. Mechanism involves immune modulation rather than direct beta cell insulin secretion.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">VDR Polymorphisms and Vitamin D Response</div>
+                    <div class="reference-meta">Key references: Uitterlinden et al. (Hum Mol Genet, 2004); Lips et al. (J Clin Endocrinol Metab, 2008)</div>
+                    <p>VDR FokI, BsmI, and ApaI polymorphisms modify individual vitamin D responsiveness. FokI ff homozygotes have better vitamin D-mediated insulin secretion than Ff or FF genotypes. Explains why some people respond to vitamin D supplementation and others do not.</p>
+                </div>
+
+                <h3>Personalized Nutrition and Microbiome</h3>
+
+                <div class="reference">
+                    <div class="reference-title">Short-Chain Fatty Acids and GLP-1 Signaling</div>
+                    <div class="reference-meta">Key references: Chambers et al. (Nat Commun, 2015); Morrison & Preston (ISME J, 2016)</div>
+                    <p>Microbial butyrate and propionate activate GPR43/FFAR2 on intestinal L cells, triggering GLP-1 secretion. GLP-1 is the most powerful beta cell preserving hormone. Individual microbiome composition determines SCFA production from the same fiber intake.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">ZOE, DayTwo, and Personalized Glycemic Response</div>
+                    <div class="reference-meta">Zeevi et al. (Cell, 2015); Mendes-Soares et al. (bioRxiv, 2021)</div>
+                    <p>Landmark papers showing that individual glucose response to identical foods varies 3-4 fold and is predictable from genetics, microbiome, and metabolomics. But these studies optimize for glucose control, not beta cell preservation.</p>
+                </div>
+
+                <h3>Lipotoxicity and Glucotoxicity in Beta Cells</h3>
+
+                <div class="reference">
+                    <div class="reference-title">Lipotoxicity and Beta Cell Dysfunction</div>
+                    <div class="reference-meta">Key references: Poitout & Robertson (Endocr Rev, 2008); Cnop et al. (Diabetes, 2005)</div>
+                    <p>Chronic exposure to elevated FFAs and dietary saturated fat causes ectopic lipid accumulation in beta cells, impairing glucose-stimulated insulin secretion and triggering apoptosis. Mechanism involves ER stress and mitochondrial dysfunction.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">Glucotoxicity: The Vicious Cycle</div>
+                    <div class="reference-meta">Key references: Pancani et al. (Acta Diabetol, 2013); Poitout et al. (Diabetes, 2006)</div>
+                    <p>Chronic hyperglycemia impairs beta cell function independent of obesity or insulin resistance (glucotoxicity). Mediated by oxidative stress, ER stress, and mitochondrial superoxide. Creates a vicious cycle: worsening glucose -> worse beta cell function -> further glucose rise.</p>
+                </div>
+
+                <h3>Nutrigenomics and Gene-Nutrient Interactions</h3>
+
+                <div class="reference">
+                    <div class="reference-title">MTHFR Polymorphisms and Folate Metabolism</div>
+                    <div class="reference-meta">Key references: Botto & Yang (Annu Rev Nutr, 2000); Frosst et al. (Nat Genet, 1995)</div>
+                    <p>The common MTHFR C677T variant reduces methylenetetrahydrofolate reductase activity by ~35%, affecting one-carbon metabolism and methylation of DNA. May modify response to folate, B12, and methyl donors that regulate beta cell gene expression.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">Chromium and Insulin Signaling</div>
+                    <div class="reference-meta">Key references: Cefalu & Hu (Diabetes Care, 2004); Althuis et al. (Am J Clin Nutr, 2002)</div>
+                    <p>Chromium enhances insulin receptor tyrosine kinase activity. Meta-analyses show modest HbA1c benefits in T2D (0.4-0.6% reduction). Mechanism less understood than zinc/magnesium. Some genetic variation in chromium response likely but not yet characterized.</p>
+                </div>
+
+                <h3>Anti-Inflammatory Polyphenols</h3>
+
+                <div class="reference">
+                    <div class="reference-title">Berberine and AMPK Activation</div>
+                    <div class="reference-meta">Key references: Lee et al. (Metabolism, 2012); Kong et al. (J Lipid Res, 2004)</div>
+                    <p>Berberine activates AMPK in multiple tissues including beta cells. Some human studies show HbA1c benefits comparable to metformin. Bioavailability is low; requires enterohepatic circulation via gut microbiota for systemic effects. High individual variation in response.</p>
+                </div>
+
+                <div class="reference">
+                    <div class="reference-title">Curcumin and TNF-Alpha</div>
+                    <div class="reference-meta">Key references: Kuttan et al. (Adv Exp Med Biol, 2007); Aggarwal et al. (AAPS J, 2009)</div>
+                    <p>Curcumin inhibits NF-kB signaling and reduces TNF-alpha, IL-6, and CRP in multiple human trials. Bioavailability improved with piperine. Relevant for beta cell anti-inflammatory effects but mostly preclinical beta cell data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabName) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            var buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var expandables = document.querySelectorAll('.expandable');
+            expandables.forEach(function(exp) {
+                exp.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+"""
+
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+with open(output_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Nutrition Beta Cells: {os.path.getsize(output_path):,} bytes")

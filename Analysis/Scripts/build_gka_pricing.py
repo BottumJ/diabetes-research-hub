@@ -1,0 +1,892 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+GKA Pricing Trajectory Model Dashboard
+Gap #15 (BRONZE): Interactive Tufte-style analysis of glucokinase activator pricing
+"""
+
+import os
+import json
+
+# Setup paths
+script_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = os.path.join(script_dir, '..', '..')
+output_path = os.path.join(base_dir, 'Dashboards', 'GKA_Pricing.html')
+
+# Tufte color palette
+COLORS = {
+    'bg': '#fafaf7',
+    'surface': '#ffffff',
+    'text': '#1a1a1a',
+    'muted': '#636363',
+    'border': '#e0ddd5',
+    'accent': '#2c5f8a',
+    'green': '#2d7d46',
+    'amber': '#8b6914',
+    'red': '#8b2500'
+}
+
+html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GKA Pricing Trajectory Model</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            background-color: {COLORS['bg']};
+            color: {COLORS['text']};
+            line-height: 1.6;
+            padding: 2rem;
+        }}
+
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: {COLORS['surface']};
+            border: 1px solid {COLORS['border']};
+            padding: 2rem;
+        }}
+
+        header {{
+            border-bottom: 2px solid {COLORS['border']};
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }}
+
+        h1 {{
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: {COLORS['text']};
+        }}
+
+        .subtitle {{
+            font-size: 0.95rem;
+            color: {COLORS['muted']};
+            font-style: italic;
+        }}
+
+        .tabs {{
+            display: flex;
+            border-bottom: 1px solid {COLORS['border']};
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }}
+
+        .tab-button {{
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: {COLORS['muted']};
+            transition: all 0.3s;
+            white-space: nowrap;
+        }}
+
+        .tab-button:hover {{
+            color: {COLORS['accent']};
+        }}
+
+        .tab-button.active {{
+            color: {COLORS['accent']};
+            border-bottom-color: {COLORS['accent']};
+        }}
+
+        .tab-content {{
+            display: none;
+        }}
+
+        .tab-content.active {{
+            display: block;
+        }}
+
+        h2 {{
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid {COLORS['border']};
+        }}
+
+        h3 {{
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: normal;
+            margin-top: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: {COLORS['text']};
+        }}
+
+        p {{
+            margin-bottom: 1rem;
+            color: {COLORS['text']};
+        }}
+
+        .metric {{
+            background-color: {COLORS['bg']};
+            border-left: 3px solid {COLORS['accent']};
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }}
+
+        .metric strong {{
+            color: {COLORS['accent']};
+        }}
+
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }}
+
+        th {{
+            background-color: {COLORS['bg']};
+            border: 1px solid {COLORS['border']};
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }}
+
+        td {{
+            border: 1px solid {COLORS['border']};
+            padding: 0.75rem;
+        }}
+
+        tr:hover {{
+            background-color: {COLORS['bg']};
+        }}
+
+        .scenario {{
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: {COLORS['bg']};
+            border-left: 4px solid {COLORS['accent']};
+        }}
+
+        .scenario.scenario-a {{
+            border-left-color: {COLORS['amber']};
+        }}
+
+        .scenario.scenario-b {{
+            border-left-color: {COLORS['green']};
+        }}
+
+        .scenario.scenario-c {{
+            border-left-color: {COLORS['red']};
+        }}
+
+        .scenario-title {{
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }}
+
+        .bar-chart {{
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            min-height: 200px;
+        }}
+
+        .bar {{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }}
+
+        .bar-fill {{
+            width: 100%;
+            background-color: {COLORS['accent']};
+            margin-bottom: 0.5rem;
+            transition: all 0.3s;
+        }}
+
+        .bar.bar-a .bar-fill {{
+            background-color: {COLORS['amber']};
+        }}
+
+        .bar.bar-b .bar-fill {{
+            background-color: {COLORS['green']};
+        }}
+
+        .bar.bar-c .bar-fill {{
+            background-color: {COLORS['red']};
+        }}
+
+        .bar:hover .bar-fill {{
+            opacity: 0.8;
+        }}
+
+        .bar-label {{
+            font-size: 0.85rem;
+            color: {COLORS['muted']};
+            text-align: center;
+            width: 100%;
+        }}
+
+        .bar-value {{
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: {COLORS['text']};
+            margin-top: 0.25rem;
+        }}
+
+        .expandable {{
+            margin: 1rem 0;
+        }}
+
+        .expand-header {{
+            padding: 0.75rem;
+            background-color: {COLORS['bg']};
+            border: 1px solid {COLORS['border']};
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }}
+
+        .expand-header:hover {{
+            background-color: {COLORS['border']};
+        }}
+
+        .expand-header.open {{
+            border-bottom: none;
+        }}
+
+        .expand-icon {{
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-right: 2px solid {COLORS['text']};
+            border-top: 2px solid {COLORS['text']};
+            transform: rotate(45deg);
+            transition: transform 0.3s;
+        }}
+
+        .expand-header.open .expand-icon {{
+            transform: rotate(135deg);
+        }}
+
+        .expand-content {{
+            display: none;
+            padding: 1rem;
+            background-color: {COLORS['bg']};
+            border: 1px solid {COLORS['border']};
+            border-top: none;
+        }}
+
+        .expand-content.open {{
+            display: block;
+        }}
+
+        .source {{
+            font-size: 0.85rem;
+            color: {COLORS['muted']};
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid {COLORS['border']};
+            font-style: italic;
+        }}
+
+        .highlight-positive {{
+            color: {COLORS['green']};
+            font-weight: 500;
+        }}
+
+        .highlight-negative {{
+            color: {COLORS['red']};
+            font-weight: 500;
+        }}
+
+        .highlight-neutral {{
+            color: {COLORS['amber']};
+            font-weight: 500;
+        }}
+
+        .price-range {{
+            background-color: {COLORS['bg']};
+            padding: 0.5rem 1rem;
+            border-left: 2px solid {COLORS['accent']};
+            margin: 0.5rem 0;
+        }}
+
+        footer {{
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid {COLORS['border']};
+            font-size: 0.85rem;
+            color: {COLORS['muted']};
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GKA Pricing Trajectory Model</h1>
+            <p class="subtitle">Gap #15 (BRONZE): Modeling cost trajectory and market dynamics of glucokinase activators</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="overview">Market Overview</button>
+            <button class="tab-button" data-tab="scenarios">Pricing Scenarios</button>
+            <button class="tab-button" data-tab="comparison">Cost Comparison</button>
+            <button class="tab-button" data-tab="patents">Patent Cliff Timeline</button>
+            <button class="tab-button" data-tab="evidence">Evidence Catalog</button>
+        </div>
+
+        <!-- TAB 1: Market Overview -->
+        <div id="overview" class="tab-content active">
+            <h2>GKA Market Overview</h2>
+
+            <h3>Approved Products</h3>
+            <div class="metric">
+                <strong>Dorzagliatin (Hua Medicine)</strong><br>
+                Approved: China, September 2022 for T2D monotherapy<br>
+                Estimated Price: $2,000-$3,000/year in China<br>
+                Global Status: China-only to date
+            </div>
+
+            <h3>Clinical Pipeline</h3>
+            <div class="metric">
+                <strong>TTP399 (vTv Therapeutics)</strong><br>
+                Indication: T1D adjunctive therapy (SimpliciT1 trial)<br>
+                Design: Liver-selective GKA<br>
+                Status: Phase 2 complete, licensed to Zealand Pharma (2023)<br>
+                Expected Timeline: FDA filing 2027-2028
+            </div>
+
+            <h3>Market Size Projections</h3>
+            <p>
+                <strong class="highlight-neutral">Conservative estimate:</strong> $500M global market by 2030 (Dorzagliatin China-only scenario)
+            </p>
+            <p>
+                <strong class="highlight-positive">Optimistic estimate:</strong> Up to $2B if T1D indication succeeds with TTP399 (1.4M US T1D patients)
+            </p>
+
+            <h3>Historical Context: The $5B Graveyard</h3>
+            <p>
+                Over $5 billion invested in GKA development over 20 years, with most programs discontinued due to:
+            </p>
+            <table>
+                <tr>
+                    <th>Program</th>
+                    <th>Sponsor</th>
+                    <th>Status</th>
+                    <th>Reason for Discontinuation</th>
+                </tr>
+                <tr>
+                    <td>MK-0941</td>
+                    <td>Merck</td>
+                    <td>Discontinued</td>
+                    <td>Hypoglycemia, safety concerns</td>
+                </tr>
+                <tr>
+                    <td>Piragliatin</td>
+                    <td>Roche</td>
+                    <td>Discontinued</td>
+                    <td>Hepatic steatosis, tolerability</td>
+                </tr>
+                <tr>
+                    <td>AZD1656</td>
+                    <td>AstraZeneca</td>
+                    <td>Discontinued</td>
+                    <td>Efficacy loss with continued dosing</td>
+                </tr>
+            </table>
+
+            <div class="source">
+                Sources: Hua Medicine press releases; NMPA approval record (2022); vTv Therapeutics/Zealand Pharma licensing agreement (2023)
+            </div>
+        </div>
+
+        <!-- TAB 2: Pricing Scenarios -->
+        <div id="scenarios" class="tab-content">
+            <h2>Pricing Model: Three Scenarios</h2>
+
+            <div class="scenario scenario-a">
+                <div class="scenario-title">Scenario A: Niche T2D (Conservative)</div>
+                <p>Dorzagliatin China-only, TTP399 fails or delayed, GKA class remains small.</p>
+                <p><strong>Market Size:</strong> <span class="highlight-neutral">&lt;$500M by 2030</span></p>
+                <p><strong>Pricing:</strong> <span class="highlight-neutral">$2,000-$3,000/year</span></p>
+                <p><strong>Impact:</strong> Limited access. Competitor to DPP-4 inhibitors (going generic). Marginal revenue in T2D add-on therapy.</p>
+            </div>
+
+            <div class="scenario scenario-b">
+                <div class="scenario-title">Scenario B: T1D Breakthrough (Optimistic)</div>
+                <p>TTP399 succeeds, FDA approval achieved, new unmet need in T1D management.</p>
+                <p><strong>Target Population:</strong> 1.4M US T1D patients (potential addressable market)</p>
+                <p><strong>Pricing:</strong> <span class="highlight-positive">$8,000-$15,000/year</span> (comparable to GLP-1 agonist launch pricing)</p>
+                <p><strong>Market Potential:</strong> <span class="highlight-positive">$5-10B</span> if adoption reaches 20-30% of eligible T1D patients</p>
+                <p><strong>Impact:</strong> Transformative for T1D management; justifies premium pricing for novel mechanism.</p>
+            </div>
+
+            <div class="scenario scenario-c">
+                <div class="scenario-title">Scenario C: Global Expansion (Moderate)</div>
+                <p>Dorzagliatin expands internationally + TTP399 T1D approval + next-generation GKAs enter market.</p>
+                <p><strong>Market Segmentation:</strong> T2D + T1D + early-stage MODY</p>
+                <p><strong>Pricing:</strong> <span class="highlight-neutral">$3,000-$8,000/year</span>, declining with competition</p>
+                <p><strong>Market Size:</strong> <span class="highlight-neutral">$3-8B by 2035</span></p>
+                <p><strong>Impact:</strong> Sustainable competitive landscape; pricing pressure from multiple players.</p>
+            </div>
+
+            <h3>Market Size by Scenario</h3>
+            <div class="bar-chart">
+                <div class="bar bar-a">
+                    <div class="bar-fill" style="height: 60px;"></div>
+                    <div class="bar-label">Scenario A<br>(Niche)</div>
+                    <div class="bar-value">&lt;$500M</div>
+                </div>
+                <div class="bar bar-c">
+                    <div class="bar-fill" style="height: 150px;"></div>
+                    <div class="bar-label">Scenario C<br>(Expansion)</div>
+                    <div class="bar-value">$3-8B</div>
+                </div>
+                <div class="bar bar-b">
+                    <div class="bar-fill" style="height: 200px;"></div>
+                    <div class="bar-label">Scenario B<br>(Breakthrough)</div>
+                    <div class="bar-value">$5-10B</div>
+                </div>
+            </div>
+
+            <div class="source">
+                Sources: Market sizing based on patient populations (IDF estimates), GLP-1 agonist pricing precedent (SGLT2i launch analysis), clinical trial timelines (SimpliciT1, NMPA records)
+            </div>
+        </div>
+
+        <!-- TAB 3: Cost Comparison -->
+        <div id="comparison" class="tab-content">
+            <h2>Annual Cost Comparison with Existing Diabetes Drugs</h2>
+
+            <table>
+                <tr>
+                    <th>Drug Class</th>
+                    <th>Example(s)</th>
+                    <th>Annual Cost (US)</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Metformin</td>
+                    <td>Generic metformin</td>
+                    <td>$50-$100</td>
+                    <td>Gold standard first-line T2D; excellent cost-benefit</td>
+                </tr>
+                <tr>
+                    <td>Sulfonylureas</td>
+                    <td>Glyburide, glipizide</td>
+                    <td>$50-$200</td>
+                    <td>Very cheap but significant hypoglycemia risk</td>
+                </tr>
+                <tr>
+                    <td>DPP-4 Inhibitors</td>
+                    <td>Sitagliptin, saxagliptin</td>
+                    <td>$3,000-$5,000</td>
+                    <td>Branded now; generics expected 2026-2028</td>
+                </tr>
+                <tr>
+                    <td>SGLT2 Inhibitors</td>
+                    <td>Empagliflozin, dapagliflozin</td>
+                    <td>$5,000-$8,000</td>
+                    <td>CV/renal benefits; patent cliff 2025-2028</td>
+                </tr>
+                <tr>
+                    <td>GLP-1 Agonists</td>
+                    <td>Semaglutide, liraglutide</td>
+                    <td>$10,000-$15,000</td>
+                    <td>Blockbuster class; weight loss benefit in diabetes</td>
+                </tr>
+                <tr>
+                    <td>Insulin (Analog)</td>
+                    <td>Humalog, Lantus, Levemir</td>
+                    <td>$3,000-$10,000 (US)</td>
+                    <td>Essential for T1D; US prices inflated vs. international</td>
+                </tr>
+                <tr>
+                    <td>Insulin (Biosimilar)</td>
+                    <td>Semglee, others</td>
+                    <td>$100-$300</td>
+                    <td>Available in international markets at 10% US cost</td>
+                </tr>
+                <tr>
+                    <td><strong>GKA (Projected)</strong></td>
+                    <td><strong>Dorzagliatin, TTP399</strong></td>
+                    <td><strong>$2,000-$15,000</strong></td>
+                    <td><strong>Range depends on indication and market</strong></td>
+                </tr>
+            </table>
+
+            <h3>GKA Competitive Positioning</h3>
+
+            <div class="metric">
+                <strong>T2D Add-On (Scenario A/C)</strong><br>
+                Price: $2,000-$8,000/year<br>
+                Competition: SGLT2i, DPP-4i, GLP-1 agonists<br>
+                Advantage: Insulin secretion mechanism distinct from GLP-1; potentially lower hypoglycemia than sulfonylureas
+            </div>
+
+            <div class="metric">
+                <strong>T1D Adjunctive (Scenario B)</strong><br>
+                Price: $8,000-$15,000/year (comparable to GLP-1 agonists)<br>
+                Competition: Minimal; unmet need in T1D glucose control<br>
+                Advantage: Premium justified by novel mechanism and high unmet need; insulin-sparing effect
+            </div>
+
+            <h3>Key Insights</h3>
+            <p>
+                <strong>If priced below GLP-1 agonists ($10-15K) but above generics ($100-$500),</strong> GKAs would occupy a middle tier competitive for T2D add-on therapy.
+            </p>
+            <p>
+                <strong>If T1D indication approved,</strong> premium pricing of $8-15K/year is justified by unmet need and comparison to existing T1D costs (insulin $3-10K/year + continuous glucose monitoring + additional therapies).
+            </p>
+            <p>
+                <strong>Global access is limited by pricing:</strong> LMICs cannot afford $2-8K/year; market will remain concentrated in high-income countries until patent cliff.
+            </p>
+
+            <div class="source">
+                Sources: US CMS drug pricing data; IQVIA market analysis; GLP-1 agonist launch pricing (2010-2020); SGLT2i pricing trajectories (2014-present)
+            </div>
+        </div>
+
+        <!-- TAB 4: Patent Cliff and Generic Timeline -->
+        <div id="patents" class="tab-content">
+            <h2>Patent Cliff and Generic Timeline</h2>
+
+            <h3>Patent Expiration Projections</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>Dorzagliatin (Hua Medicine)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Patent Expiration:</strong> ~2035-2038 (Chinese patents)</p>
+                    <p><strong>Expected Generic Entry:</strong> 2038-2040</p>
+                    <p><strong>Rationale:</strong> Chinese pharmaceutical patents have 20-year terms from filing. Dorzagliatin filed in China ~2014-2016; approval 2022.</p>
+                    <p><strong>Generic Price Estimate:</strong> $300-$600/year</p>
+                </div>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>TTP399 (Zealand Pharma)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Patent Protection:</strong> If approved 2027-2028, patent until ~2040-2042</p>
+                    <p><strong>Expected Generic Entry:</strong> 2042-2045</p>
+                    <p><strong>Rationale:</strong> US patent filing ~2020; 20-year patent term + potential 5-year exclusivity (orphan or rare pediatric designation in T1D)</p>
+                    <p><strong>Generic Price Estimate:</strong> $400-$800/year</p>
+                </div>
+            </div>
+
+            <h3>SGLT2i Class: A Precedent</h3>
+
+            <p>
+                <strong>Empagliflozin (Jardiance)</strong> provides a template for GKA patent cliff dynamics:
+            </p>
+
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Timing</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td>FDA Approval</td>
+                    <td>2014</td>
+                    <td>Branded pricing $5,000-$8,000/year</td>
+                </tr>
+                <tr>
+                    <td>Patent Challenge (ANDA)</td>
+                    <td>2020-2021</td>
+                    <td>Generic entry begins</td>
+                </tr>
+                <tr>
+                    <td>Generic Availability</td>
+                    <td>2021-2023</td>
+                    <td>80% price reduction within 2 years</td>
+                </tr>
+                <tr>
+                    <td>Current Generic Price</td>
+                    <td>2024-2026</td>
+                    <td>$200-$400/year</td>
+                </tr>
+            </table>
+
+            <h3>GKA Generic Trajectory (Projected)</h3>
+
+            <div class="metric">
+                <strong>Earliest Generic GKA: 2038-2042</strong><br>
+                Precedent: SGLT2i 7-year window from patent cliff to generic penetration (2015-2022)
+            </div>
+
+            <div class="metric">
+                <strong>Expected Price Reduction: 80-90%</strong><br>
+                Generic GKAs could cost $200-$500/year by 2042-2045 (from $2,000-$8,000 branded)
+            </div>
+
+            <h3>Global Access Implications</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>Pre-Patent Cliff (2026-2040)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Access:</strong> Limited to high-income countries (US, Europe, Japan, China)</p>
+                    <p><strong>Cost barrier:</strong> $2,000-$15,000/year unaffordable for 80% of global T2D population</p>
+                    <p><strong>LMIC strategy:</strong> May license manufacturing from Hua Medicine (Dorzagliatin) but at high royalty costs</p>
+                </div>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>Post-Patent Cliff (2042+)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Access:</strong> Generic GKAs become viable for middle-income countries</p>
+                    <p><strong>Cost:</strong> $200-$500/year; affordable for public health systems in India, SE Asia, Latin America</p>
+                    <p><strong>WHO EML Consideration:</strong> Generic GKAs eligible for WHO Essential Medicines List post-2042 if safety/efficacy confirmed</p>
+                </div>
+            </div>
+
+            <h3>WHO EML Status</h3>
+
+            <p>
+                <strong>Current:</strong> Too early for GKA consideration on WHO EML (2026)
+            </p>
+            <p>
+                <strong>Criteria not yet met:</strong>
+            </p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li>Insufficient long-term safety data (&gt;5 years in large populations)</li>
+                <li>Only one approved product globally (Dorzagliatin); no generic formulations</li>
+                <li>Pricing unaffordable for LMICs</li>
+                <li>Limited head-to-head efficacy data vs. DPP-4i, SGLT2i</li>
+            </ul>
+
+            <p>
+                <strong>Likely timeline for EML eligibility:</strong> 2045-2050, after patent cliff + generic availability + 20+ years long-term safety data.
+            </p>
+
+            <div class="source">
+                Sources: US Patent Office records (20-year patent terms); FDA Orange Book (patent exclusivities); SGLT2i pricing data (2014-2026); WHO EML guidelines
+            </div>
+        </div>
+
+        <!-- TAB 5: Evidence Catalog -->
+        <div id="evidence" class="tab-content">
+            <h2>Evidence Catalog</h2>
+
+            <h3>Approved Products</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>Dorzagliatin Regulatory Approval</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Sponsor:</strong> Hua Medicine (Shanghai)</p>
+                    <p><strong>Indication:</strong> Type 2 Diabetes Mellitus monotherapy</p>
+                    <p><strong>Approval Date:</strong> September 2022 (NMPA, China)</p>
+                    <p><strong>Approval Basis:</strong> Phase 3 pivotal trial in Chinese T2D population</p>
+                    <p><strong>Evidence source:</strong> Hua Medicine press releases; NMPA drug approval record</p>
+                </div>
+            </div>
+
+            <h3>Clinical Pipeline</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>TTP399 SimpliciT1 Trial (Phase 2)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Sponsor:</strong> vTv Therapeutics; now licensed to Zealand Pharma (2023)</p>
+                    <p><strong>Drug:</strong> TTP399 (liver-selective glucokinase activator)</p>
+                    <p><strong>Indication:</strong> Type 1 Diabetes Mellitus adjunctive therapy</p>
+                    <p><strong>Trial Design:</strong> Randomized, placebo-controlled Phase 2 in T1D patients</p>
+                    <p><strong>Primary Outcome:</strong> Reduction in insulin requirements + improved glycemic control</p>
+                    <p><strong>Status:</strong> Phase 2 complete; Phase 3 planned</p>
+                    <p><strong>Expected FDA filing:</strong> 2027-2028</p>
+                    <p><strong>PMID:</strong> 33622669</p>
+                    <p><strong>Mechanism:</strong> Liver-selective GKA minimizes systemic hypoglycemia risk vs. pancreatic GKAs</p>
+                </div>
+            </div>
+
+            <h3>Historical Context</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>GKA Class Review (Matschinsky 2009)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Title:</strong> "Glucokinase Activation as a Strategy for Diabetes Drug Development"</p>
+                    <p><strong>Author:</strong> Franz M. Matschinsky</p>
+                    <p><strong>Publication Year:</strong> 2009</p>
+                    <p><strong>Content:</strong> Comprehensive mechanistic review of GKA development rationale, preclinical models, early clinical programs</p>
+                    <p><strong>Key findings:</strong> GKAs promise insulin secretion without exogenous insulin; challenges include hypoglycemia (pancreatic GKAs) and hepatic steatosis (high-dose systemic GKAs)</p>
+                </div>
+            </div>
+
+            <h3>Pricing and Market Precedents</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>SGLT2i Pricing Trajectory (2014-2026)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Reference:</strong> Empagliflozin (Jardiance), Dapagliflozin (Farxiga)</p>
+                    <p><strong>Launch Pricing (2014):</strong> $5,000-$8,000/year</p>
+                    <p><strong>Patent Cliff:</strong> 2022-2025</p>
+                    <p><strong>Generic Pricing (2024+):</strong> $200-$400/year</p>
+                    <p><strong>Lessons for GKA:</strong> Rapid price decline post-patent cliff; branded tier maintains 50-100% premium for 2-3 years after generic entry</p>
+                    <p><strong>Data source:</strong> CMS drug pricing databases; IQVIA IMS Health reports</p>
+                </div>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>GLP-1 Agonist Launch Pricing (Semaglutide)</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Reference:</strong> Ozempic (T2D) and Victoza (diabetes + weight loss)</p>
+                    <p><strong>Launch Pricing (2009-2012):</strong> $10,000-$15,000/year (US)</p>
+                    <p><strong>Current Pricing (2024):</strong> $10,000-$20,000/year (weight loss boom)</p>
+                    <p><strong>Relevance to GKA T1D pricing:</strong> Premium pricing justified by unmet need, insulin-sparing benefit, novel mechanism</p>
+                    <p><strong>Data source:</strong> FDA NDA approvals; pharmacy benefit manager reports</p>
+                </div>
+            </div>
+
+            <h3>Global Epidemiology</h3>
+
+            <div class="expandable">
+                <div class="expand-header">
+                    <strong>IDF Cost-of-Diabetes Estimates</strong>
+                    <span class="expand-icon"></span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Source:</strong> International Diabetes Federation (IDF)</p>
+                    <p><strong>T2D population (global):</strong> ~537 million (2023 estimate)</p>
+                    <p><strong>T1D population (global):</strong> ~9.4 million</p>
+                    <p><strong>US T1D population:</strong> ~1.4 million</p>
+                    <p><strong>T1D care cost (US):</strong> $14,000-$20,000/year per patient</p>
+                    <p><strong>T1D indirect costs:</strong> Productivity loss, complications (neuropathy, nephropathy, retinopathy)</p>
+                    <p><strong>Relevance:</strong> GKA T1D pricing of $8-15K/year adds 40-75% to existing T1D care cost; offset by insulin-sparing and complication reduction</p>
+                </div>
+            </div>
+
+            <h3>Key Publications and References</h3>
+
+            <table>
+                <tr>
+                    <th>Topic</th>
+                    <th>Citation</th>
+                    <th>Key Data</th>
+                </tr>
+                <tr>
+                    <td>GKA Mechanistic Review</td>
+                    <td>Matschinsky FM. 2009</td>
+                    <td>GKA development rationale; hypoglycemia/hepatotoxicity challenges</td>
+                </tr>
+                <tr>
+                    <td>TTP399 T1D Efficacy</td>
+                    <td>PMID:33622669</td>
+                    <td>Phase 2 SimpliciT1 trial results; insulin sparing</td>
+                </tr>
+                <tr>
+                    <td>Dorzagliatin Approval</td>
+                    <td>NMPA/Hua Medicine</td>
+                    <td>China regulatory approval Sept 2022; pricing $2-3K/yr</td>
+                </tr>
+                <tr>
+                    <td>IDF Epidemiology</td>
+                    <td>IDF Diabetes Atlas 2023</td>
+                    <td>T1D (1.4M US), T2D (537M global); care costs</td>
+                </tr>
+                <tr>
+                    <td>SGLT2i Pricing</td>
+                    <td>CMS/IQVIA/PubMed</td>
+                    <td>$5-8K launch, $200-400 generic; 5-year window</td>
+                </tr>
+            </table>
+
+            <div class="source">
+                Data compiled from: NMPA drug approval records (2022); vTv Therapeutics/Zealand Pharma press releases (2023); PubMed (PMID 33622669); FDA NDA approvals; CMS drug pricing databases; IQVIA market reports; IDF Diabetes Atlas 2023; WHO EML guidelines
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                <strong>Dashboard Version:</strong> 1.0 | <strong>Generated:</strong> 2026-03-16<br>
+                <strong>Design:</strong> Tufte-style minimalist dashboard with interactive tabs and expandable sections<br>
+                <strong>Scope:</strong> BRONZE validation — Gap #15 (GKA Pricing Trajectory Model)
+            </p>
+            <p>
+                This dashboard synthesizes publicly available data on glucokinase activator development, pricing precedents from SGLT2i and GLP-1 agonist classes, and clinical trial timelines. Projections are based on comparable drug classes and regulatory timelines.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab-button').forEach(button => {{
+            button.addEventListener('click', function() {{
+                const tabName = this.getAttribute('data-tab');
+
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {{
+                    tab.classList.remove('active');
+                }});
+
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-button').forEach(btn => {{
+                    btn.classList.remove('active');
+                }});
+
+                // Show selected tab
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            }});
+        }});
+
+        // Expandable sections
+        document.querySelectorAll('.expand-header').forEach(header => {{
+            header.addEventListener('click', function() {{
+                const content = this.nextElementSibling;
+                this.classList.toggle('open');
+                content.classList.toggle('open');
+            }});
+        }});
+    </script>
+</body>
+</html>
+"""
+
+# Write the HTML file
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+with open(output_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"GKA Pricing: {os.path.getsize(output_path):,} bytes")
