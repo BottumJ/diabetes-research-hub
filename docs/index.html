@@ -4,169 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diabetes Research Hub</title>
-<meta name="description" content="Open-source computational analysis of the global diabetes research landscape. Triple-source validated, PRISMA-aligned, continuously updated.">
+<meta name="description" content="Open-source computational analysis of the global diabetes research landscape. Triple-source validated, PRISMA-aligned.">
 <style>
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #636363;
+  --light: #999999;
+  --border: #e0ddd5;
+  --accent: #2c5f8a;
+  --green: #2d7d46;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'SF Mono', Consolas, Monaco, monospace;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0e17; color: #e0e6ed; line-height: 1.7; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; }
 
-.hero { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #0d1b2a 100%); padding: 80px 32px 60px; text-align: center; border-bottom: 2px solid #1e90ff; }
-.hero h1 { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 12px; }
-.hero .tagline { font-size: 18px; color: #8899aa; max-width: 700px; margin: 0 auto 32px; }
-.hero .stats { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-.hero .stat { background: rgba(30,144,255,0.08); border: 1px solid rgba(30,144,255,0.25); border-radius: 10px; padding: 16px 28px; }
-.hero .stat .num { font-size: 32px; font-weight: 800; color: #1e90ff; }
-.hero .stat .label { font-size: 12px; color: #6688aa; text-transform: uppercase; letter-spacing: 1px; }
+.header { max-width: 900px; margin: 0 auto; padding: 48px 32px 32px; }
+.header h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; }
+.header .desc { font-size: 15px; color: var(--muted); margin-top: 10px; max-width: 680px; }
+.header .figures { display: flex; gap: 28px; margin-top: 20px; flex-wrap: wrap; }
+.header .fig { }
+.header .fig .num { font-family: var(--mono); font-size: 24px; font-weight: 700; }
+.header .fig .label { font-size: 11px; color: var(--muted); }
 
-.nav { background: #0d1b2a; padding: 12px 32px; display: flex; justify-content: center; gap: 24px; border-bottom: 1px solid #1a2a3a; flex-wrap: wrap; }
-.nav a { color: #8899aa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
-.nav a:hover { color: #1e90ff; background: rgba(30,144,255,0.1); }
+nav { max-width: 900px; margin: 0 auto; padding: 0 32px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; gap: 20px; }
+nav a { color: var(--muted); text-decoration: none; font-size: 13px; padding: 10px 0; }
+nav a:hover { color: var(--text); }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 32px; }
+.container { max-width: 900px; margin: 0 auto; padding: 32px; }
 
-h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid #1a2a3a; }
+h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
 
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 48px; }
-.card { background: #111a2b; border: 1px solid #1a2a3a; border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
-.card:hover { border-color: #1e90ff; }
-.card .icon { font-size: 28px; margin-bottom: 12px; }
-.card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
-.card p { font-size: 14px; color: #8899aa; margin-bottom: 16px; }
-.card .link { color: #1e90ff; text-decoration: none; font-size: 14px; font-weight: 600; }
-.card .link:hover { text-decoration: underline; }
-.card .badge { display: inline-block; background: rgba(34,197,94,0.15); color: #22c55e; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; }
-.card .badge.wip { background: rgba(245,158,11,0.15); color: #f59e0b; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+@media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); padding: 20px; }
+.card .status { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.card .status.live { color: var(--green); }
+.card .status.upcoming { color: var(--light); }
+.card h3 { font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 6px; }
+.card p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.card a { color: var(--accent); font-size: 13px; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
 
-.approach { background: #111a2b; border: 1px solid #1a2a3a; border-radius: 12px; padding: 32px; margin-bottom: 48px; }
-.approach h3 { color: #fff; font-size: 18px; margin-bottom: 16px; }
-.approach .pipeline { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-.approach .stage { background: rgba(30,144,255,0.1); border: 1px solid rgba(30,144,255,0.3); border-radius: 8px; padding: 10px 20px; text-align: center; }
-.approach .stage .name { font-weight: 700; color: #1e90ff; font-size: 14px; }
-.approach .stage .desc { font-size: 11px; color: #6688aa; }
-.approach .arrow { color: #1e90ff; font-size: 20px; }
-.approach .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-.approach .principle { padding: 12px; border-left: 3px solid #1e90ff; }
-.approach .principle strong { color: #fff; font-size: 14px; }
-.approach .principle p { font-size: 13px; color: #8899aa; margin-top: 4px; }
-@media (max-width: 700px) { .approach .principles { grid-template-columns: 1fr; } }
+.approach { background: var(--surface); border: 1px solid var(--border); padding: 24px; margin-bottom: 36px; }
+.approach h3 { font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 14px; }
+.pipeline-flow { display: flex; align-items: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; font-size: 13px; }
+.pipeline-flow .stage { border: 1px solid var(--border); padding: 8px 16px; text-align: center; }
+.pipeline-flow .stage strong { display: block; font-size: 12px; letter-spacing: 0.5px; }
+.pipeline-flow .stage span { font-size: 11px; color: var(--muted); }
+.pipeline-flow .arrow { color: var(--light); }
+.principles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 700px) { .principles { grid-template-columns: 1fr; } }
+.principle { padding-left: 12px; border-left: 2px solid var(--border); font-size: 13px; }
+.principle strong { display: block; margin-bottom: 2px; }
+.principle span { color: var(--muted); }
 
-.domains { margin-bottom: 48px; }
-.domain-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.domain-tag { background: rgba(30,144,255,0.08); border: 1px solid rgba(30,144,255,0.2); border-radius: 20px; padding: 6px 14px; font-size: 13px; color: #aabbcc; }
+.domains { margin-bottom: 36px; }
+.domain-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.domain-tag { border: 1px solid var(--border); padding: 4px 10px; font-size: 12px; color: var(--muted); }
 
-.cta { text-align: center; padding: 48px 32px; background: linear-gradient(135deg, #111a2b, #0d1b2a); border-radius: 12px; margin-bottom: 48px; border: 1px solid #1a2a3a; }
-.cta h2 { border: none; margin-bottom: 12px; }
-.cta p { color: #8899aa; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
-.cta .buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.cta .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.2s; }
-.cta .btn-primary { background: #1e90ff; color: #fff; }
-.cta .btn-primary:hover { background: #3ba0ff; }
-.cta .btn-secondary { background: transparent; color: #1e90ff; border: 1px solid #1e90ff; }
-.cta .btn-secondary:hover { background: rgba(30,144,255,0.1); }
+.cta { text-align: center; padding: 32px; margin-bottom: 36px; border: 1px solid var(--border); background: var(--surface); }
+.cta h2 { border: none; margin-bottom: 8px; }
+.cta p { font-size: 14px; color: var(--muted); margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta .btns { display: flex; gap: 12px; justify-content: center; }
+.cta .btn { padding: 10px 22px; text-decoration: none; font-size: 13px; font-weight: 600; }
+.cta .btn-primary { background: var(--accent); color: #fff; }
+.cta .btn-secondary { border: 1px solid var(--accent); color: var(--accent); }
 
-.footer { text-align: center; padding: 32px; color: #4a5568; font-size: 13px; border-top: 1px solid #1a2a3a; }
-.footer a { color: #1e90ff; text-decoration: none; }
+.footer { max-width: 900px; margin: 0 auto; padding: 20px 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--light); }
+.footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="header">
   <h1>Diabetes Research Hub</h1>
-  <div class="tagline">Open-source computational analysis of the global diabetes research landscape. Mapping gaps, tracking trials, and synthesizing findings to accelerate progress toward a cure.</div>
-  <div class="stats">
-    <div class="stat"><div class="num">746</div><div class="label">Clinical Trials Tracked</div></div>
-    <div class="stat"><div class="num">35</div><div class="label">Research Domains</div></div>
-    <div class="stat"><div class="num">15</div><div class="label">PubMed Alert Queries</div></div>
-    <div class="stat"><div class="num">435</div><div class="label">Domain Pairs Analyzed</div></div>
+  <div class="desc">Open-source computational analysis of the global diabetes research landscape. Mapping gaps, tracking clinical trials, and synthesizing findings across 35 research domains to accelerate progress toward prevention, treatment, and cure.</div>
+  <div class="figures">
+    <div class="fig"><div class="num">746</div><div class="label">Clinical trials tracked</div></div>
+    <div class="fig"><div class="num">35</div><div class="label">Research domains mapped</div></div>
+    <div class="fig"><div class="num">435</div><div class="label">Domain pairs analyzed</div></div>
+    <div class="fig"><div class="num">15</div><div class="label">PubMed alert queries</div></div>
   </div>
 </div>
 
-<div class="nav">
+<nav>
   <a href="#dashboards">Dashboards</a>
-  <a href="#approach">Our Approach</a>
-  <a href="#domains">Research Domains</a>
+  <a href="#approach">Approach</a>
+  <a href="#domains">Domains</a>
   <a href="#contribute">Contribute</a>
   <a href="https://github.com/BottumJ/diabetes-research-hub" target="_blank">GitHub</a>
-</div>
+  <a href="https://osf.io/hu9ga" target="_blank">OSF</a>
+</nav>
 
 <div class="container">
 
 <section id="dashboards">
-<h2>Live Dashboards & Analysis</h2>
-<div class="card-grid">
+<h2>Analysis &amp; Dashboards</h2>
+<div class="cards">
   <div class="card">
-    <div class="badge">LIVE</div>
-    <div class="icon">&#x1F3AF;</div>
+    <div class="status live">Available</div>
     <h3>Research Dashboard</h3>
-    <p>Interactive overview of the entire diabetes research landscape — therapy pipeline, research domains, datasets, timelines, and paper tracker across all 35 domains.</p>
-    <a class="link" href="Dashboards/Research_Dashboard.html">Open Dashboard &rarr;</a>
+    <p>Interactive overview of the diabetes research landscape: 55 pipeline entries, 35 research domains, 22 datasets, 25 tracked papers across 12 categories.</p>
+    <a href="Dashboards/Research_Dashboard.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
-    <div class="badge">LIVE</div>
-    <div class="icon">&#x1F489;</div>
+    <div class="status live">Available</div>
     <h3>Clinical Trial Intelligence</h3>
-    <p>746 active diabetes clinical trials analyzed — searchable database, pipeline analysis, sponsor landscape, phase distribution, and recently posted results.</p>
-    <a class="link" href="Dashboards/Clinical_Trial_Dashboard.html">Open Dashboard &rarr;</a>
+    <p>746 diabetes clinical trials from ClinicalTrials.gov. Searchable, filterable, with pipeline analysis and sponsor landscape. Data updated via automated scripts.</p>
+    <a href="Dashboards/Clinical_Trial_Dashboard.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
-    <div class="badge">LIVE</div>
-    <div class="icon">&#x1F50D;</div>
+    <div class="status live">Available</div>
     <h3>Literature Gap Analysis</h3>
-    <p>Pairwise analysis of 30 diabetes research domains revealing unexplored cross-domain opportunities — 435 domain pairs scored for research gap size.</p>
-    <a class="link" href="Analysis/Results/literature_gap_report.md">View Report &rarr;</a>
+    <p>Pairwise analysis of 30 PubMed domains (435 pairs) with interpreted classifications: meaningful opportunities vs. methodologically distinct pairs.</p>
+    <a href="Analysis/Results/literature_gap_report.md">View report &rarr;</a>
   </div>
   <div class="card">
-    <div class="badge">LIVE</div>
-    <div class="icon">&#x1F4F0;</div>
-    <h3>PubMed Publication Monitor</h3>
-    <p>Rolling 30-day snapshot of recent diabetes publications across 15 high-priority alert domains — cross-domain papers flagged for synthesis potential.</p>
-    <a class="link" href="Analysis/Results/pubmed_recent_summary.md">View Report &rarr;</a>
+    <div class="status live">Available</div>
+    <h3>Publication Monitor</h3>
+    <p>Rolling 30-day PubMed snapshot across 15 high-priority research domains. Cross-domain papers flagged for synthesis potential.</p>
+    <a href="Analysis/Results/pubmed_recent_summary.md">View report &rarr;</a>
   </div>
   <div class="card">
-    <div class="badge wip">UPCOMING</div>
-    <div class="icon">&#x1F9EC;</div>
+    <div class="status upcoming">April 2026</div>
     <h3>Multi-Omics Biomarker Integration</h3>
     <p>Pilot analysis integrating public genomics, proteomics, and metabolomics datasets to identify novel biomarker candidates for diabetes subtypes.</p>
-    <span style="color:#6688aa; font-size:14px;">Coming April 2026</span>
   </div>
   <div class="card">
-    <div class="badge wip">UPCOMING</div>
-    <div class="icon">&#x1F48A;</div>
+    <div class="status upcoming">May 2026</div>
     <h3>Drug Repurposing Screen</h3>
     <p>Network pharmacology analysis identifying existing approved drugs with computational evidence for diabetes therapeutic potential.</p>
-    <span style="color:#6688aa; font-size:14px;">Coming May 2026</span>
   </div>
 </div>
 </section>
 
 <section id="approach">
 <div class="approach">
-  <h3>Our Approach</h3>
-  <div class="pipeline">
-    <div class="stage"><div class="name">PRODUCE</div><div class="desc">Computational analysis<br>of public data</div></div>
+  <h3>Methodology</h3>
+  <div class="pipeline-flow">
+    <div class="stage"><strong>PRODUCE</strong><span>Computational analysis<br>of public data</span></div>
     <div class="arrow">&rarr;</div>
-    <div class="stage"><div class="name">VALIDATE</div><div class="desc">Triple-source verified<br>PRISMA/GRADE aligned</div></div>
+    <div class="stage"><strong>VALIDATE</strong><span>Triple-source verified<br>PRISMA/GRADE aligned</span></div>
     <div class="arrow">&rarr;</div>
-    <div class="stage"><div class="name">PUBLISH</div><div class="desc">GitHub, OSF, preprints<br>open access</div></div>
+    <div class="stage"><strong>PUBLISH</strong><span>GitHub, OSF, preprints<br>open access</span></div>
     <div class="arrow">&rarr;</div>
-    <div class="stage"><div class="name">CONNECT</div><div class="desc">Researchers, foundations<br>clinical teams</div></div>
+    <div class="stage"><strong>CONNECT</strong><span>Researchers, foundations<br>clinical teams</span></div>
   </div>
   <div class="principles">
-    <div class="principle">
-      <strong>Triple-Source Validation</strong>
-      <p>Every major claim requires 3 independent sources (Gold), 2 (Silver), or is clearly labeled as preliminary (Bronze/Unverified). Aligned with Oxford CEBM evidence levels.</p>
-    </div>
-    <div class="principle">
-      <strong>PRISMA 2020 Compliance</strong>
-      <p>Systematic reviews follow PRISMA 2020 guidelines with pre-registered protocols, documented search strategies, and explicit inclusion/exclusion criteria.</p>
-    </div>
-    <div class="principle">
-      <strong>Fully Open & Reproducible</strong>
-      <p>All code (MIT License), data sources, and methods are public. Every analysis can be independently reproduced from our GitHub repository.</p>
-    </div>
-    <div class="principle">
-      <strong>Cross-Domain Intelligence</strong>
-      <p>We analyze across 35 domains simultaneously — finding connections and gaps that single-domain labs often miss. Speed, breadth, and pattern recognition.</p>
-    </div>
+    <div class="principle"><strong>Triple-Source Validation</strong><span>Major claims require 3 independent sources (Gold), 2 (Silver), or are labeled as preliminary (Bronze). Aligned with Oxford CEBM evidence levels 1a&ndash;5.</span></div>
+    <div class="principle"><strong>PRISMA 2020 Compliance</strong><span>Systematic work follows PRISMA 2020 with pre-registered protocols, documented search strategies, and explicit inclusion/exclusion criteria.</span></div>
+    <div class="principle"><strong>Fully Open &amp; Reproducible</strong><span>All code (MIT), data sources, and methods are public. Analyses can be independently reproduced. Pre-registered on OSF.</span></div>
+    <div class="principle"><strong>Cross-Domain Synthesis</strong><span>Analysis spans 35 domains simultaneously, finding connections and gaps that single-domain research programs may miss.</span></div>
   </div>
 </div>
 </section>
@@ -175,16 +167,15 @@ h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; bor
 <h2>Research Domains</h2>
 <div class="domain-list">
   <span class="domain-tag">T1D Immunotherapy</span>
-  <span class="domain-tag">Stem Cell / Islet Transplant</span>
+  <span class="domain-tag">Stem Cell / Islet</span>
   <span class="domain-tag">Beta Cell Regeneration</span>
   <span class="domain-tag">Gene Therapy</span>
-  <span class="domain-tag">T2D GLP-1 Agonists</span>
+  <span class="domain-tag">GLP-1 Agonists</span>
   <span class="domain-tag">T2D Remission</span>
   <span class="domain-tag">SGLT2 Inhibitors</span>
   <span class="domain-tag">Insulin Resistance</span>
   <span class="domain-tag">Closed-Loop Systems</span>
   <span class="domain-tag">CGM Technology</span>
-  <span class="domain-tag">Artificial Pancreas</span>
   <span class="domain-tag">AI/ML Prediction</span>
   <span class="domain-tag">Multi-Omics</span>
   <span class="domain-tag">Biomarkers</span>
@@ -192,14 +183,14 @@ h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; bor
   <span class="domain-tag">GWAS / Genetics</span>
   <span class="domain-tag">Microbiome</span>
   <span class="domain-tag">Drug Repurposing</span>
-  <span class="domain-tag">Diabetic Nephropathy</span>
-  <span class="domain-tag">Diabetic Retinopathy</span>
+  <span class="domain-tag">Nephropathy</span>
+  <span class="domain-tag">Retinopathy</span>
   <span class="domain-tag">Neuropathy</span>
   <span class="domain-tag">Cardiovascular</span>
-  <span class="domain-tag">Gestational Diabetes</span>
+  <span class="domain-tag">Gestational DM</span>
   <span class="domain-tag">LADA</span>
   <span class="domain-tag">MODY</span>
-  <span class="domain-tag">Pediatric Diabetes</span>
+  <span class="domain-tag">Pediatric</span>
   <span class="domain-tag">Health Equity</span>
   <span class="domain-tag">Epidemiology</span>
   <span class="domain-tag">Prevention</span>
@@ -208,18 +199,19 @@ h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; bor
   <span class="domain-tag">Network Pharmacology</span>
   <span class="domain-tag">Clinical Decision Support</span>
   <span class="domain-tag">Patient-Reported Outcomes</span>
-  <span class="domain-tag">Diabetes Autoimmunity</span>
+  <span class="domain-tag">Autoimmunity</span>
+  <span class="domain-tag">Personalized Nutrition</span>
 </div>
 </section>
 
-<div style="height:32px"></div>
+<div style="height:24px"></div>
 
 <section id="contribute">
 <div class="cta">
-  <h2>Get Involved</h2>
-  <p>This is an open research project. All code, data, and findings are freely available. Whether you're a researcher, clinician, developer, or someone affected by diabetes — your input makes this work better.</p>
-  <div class="buttons">
-    <a class="btn btn-primary" href="https://github.com/BottumJ/diabetes-research-hub" target="_blank">View on GitHub</a>
+  <h2>Contribute</h2>
+  <p>Open research project. All code, data, and findings freely available under MIT and CC-BY 4.0 licenses. Feedback, critique, and collaboration welcome.</p>
+  <div class="btns">
+    <a class="btn btn-primary" href="https://github.com/BottumJ/diabetes-research-hub" target="_blank">GitHub Repository</a>
     <a class="btn btn-secondary" href="https://osf.io/hu9ga" target="_blank">OSF Registration</a>
   </div>
 </div>
@@ -228,8 +220,8 @@ h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; bor
 </div>
 
 <div class="footer">
-  Diabetes Research Hub &copy; 2026 Justin Bottum | <a href="https://github.com/BottumJ/diabetes-research-hub">GitHub</a> | MIT License<br>
-  This is an independent research project. Not medical advice. All findings require independent verification.
+  Diabetes Research Hub &copy; 2026 Justin Bottum &middot; <a href="https://github.com/BottumJ/diabetes-research-hub">GitHub</a> &middot; <a href="https://osf.io/hu9ga">OSF</a> &middot; MIT License (code), CC-BY 4.0 (content)<br>
+  Independent research project. Not medical advice. All findings require independent verification before clinical application. Last updated: 2026-03-15
 </div>
 
 </body>

@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Gap Synthesis - Diabetes Research Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background-color: #fafaf7;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            color: #636363;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e0ddd5;
+            border-bottom: 1px solid #e0ddd5;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #636363;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 1.5rem;
+            color: #2c5f8a;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 0;
+        }
+
+        .nav-tabs button {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #636363;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            font-family: Georgia, serif;
+        }
+
+        .nav-tabs button:hover {
+            color: #1a1a1a;
+        }
+
+        .nav-tabs button.active {
+            color: #2c5f8a;
+            border-bottom-color: #2c5f8a;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Overview Tab Styles */
+        .search-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0ddd5;
+            background: #ffffff;
+            font-size: 1rem;
+            color: #1a1a1a;
+        }
+
+        .search-box input::placeholder {
+            color: #636363;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        table thead {
+            border-bottom: 2px solid #e0ddd5;
+        }
+
+        table th {
+            text-align: left;
+            padding: 1rem;
+            font-weight: normal;
+            font-family: Georgia, serif;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0ddd5;
+            font-size: 0.95rem;
+        }
+
+        table tr:hover {
+            background-color: rgba(44, 95, 138, 0.02);
+        }
+
+        .rank {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            color: #2c5f8a;
+            font-weight: bold;
+        }
+
+        .gap-title {
+            font-weight: 500;
+            color: #2c5f8a;
+        }
+
+        .gap-score {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            text-align: right;
+        }
+
+        .status-phase {
+            color: #8b6914;
+            font-size: 0.9rem;
+        }
+
+        /* Deep Dive Tab Styles */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e0ddd5;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0ddd5;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .card-header:hover {
+            background-color: rgba(44, 95, 138, 0.03);
+        }
+
+        .card-title {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: normal;
+            color: #2c5f8a;
+        }
+
+        .card-rank {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            color: #636363;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+        }
+
+        .card-toggle {
+            color: #636363;
+            font-size: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .card.expanded .card-toggle {
+            transform: rotate(180deg);
+        }
+
+        .card-content {
+            display: none;
+            padding: 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .card.expanded .card-content {
+            display: block;
+            max-height: 2000px;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid #e0ddd5;
+        }
+
+        .section-content {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #1a1a1a;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .meta-label {
+            color: #636363;
+            font-weight: bold;
+        }
+
+        .meta-value {
+            color: #1a1a1a;
+        }
+
+        .validation-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #e0ddd5;
+            color: #1a1a1a;
+            font-size: 0.85rem;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            border-radius: 0;
+        }
+
+        .hypothesis-callout {
+            padding: 1rem;
+            background: rgba(91, 74, 138, 0.05);
+            border-left: 3px solid #5b4a8a;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #1a1a1a;
+        }
+
+        .footer {
+            border-top: 1px solid #e0ddd5;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #636363;
+            line-height: 1.8;
+        }
+
+        .footer h3 {
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .footer-section {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            table th, table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+
+            .nav-tabs button {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Research Gap Synthesis</h1>
+            <div class="subtitle">Scientific Method Framework</div>
+            <div class="subtitle" style="margin-top: 0.5rem;">Diabetes Research Hub — Systematic identification of cross-domain research opportunities</div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-label">Validation: GOLD</div>
+                <div class="stat-value">4</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Validation: SILVER</div>
+                <div class="stat-value">7</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Validation: BRONZE</div>
+                <div class="stat-value">3</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Under Review</div>
+                <div class="stat-value">1</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Domains Analyzed</div>
+                <div class="stat-value">30</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Pairs Screened</div>
+                <div class="stat-value">435</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="switchTab(event, 'overview')">Overview</button>
+            <button class="tab-button" onclick="switchTab(event, 'deepdive')">Deep Dive</button>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search gaps by domain or title..." onkeyup="filterTable()">
+            </div>
+            <table id="gapTable">
+                <thead>
+                    <tr>
+                        <th style="width: 4%;">Rank</th>
+                        <th style="width: 20%;">Domain 1</th>
+                        <th style="width: 20%;">Domain 2</th>
+                        <th style="width: 8%;">Gap Score</th>
+                        <th style="width: 7%;">Joint Pubs</th>
+                        <th style="width: 12%;">Validation</th>
+                        <th style="width: 29%;">Research Question</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank">2</td>
+                        <td>Beta Cell Regeneration</td>
+                        <td>Health Equity</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4edda; color: #2d7d46; font-weight: bold; text-align: center;">GOLD</td>
+                        <td class="gap-title">As stem cell-derived islet therapies (e.g., Vertex's VX-880/zimislecel...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">11</td>
+                        <td>Islet Transplant</td>
+                        <td>Health Equity</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4edda; color: #2d7d46; font-weight: bold; text-align: center;">GOLD</td>
+                        <td class="gap-title">Islet transplantation is available at fewer than 20 centers worldwide....</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">12</td>
+                        <td>Drug Repurposing</td>
+                        <td>Health Equity</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4edda; color: #2d7d46; font-weight: bold; text-align: center;">GOLD</td>
+                        <td class="gap-title">Drug repurposing could yield more affordable diabetes treatments by le...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">15</td>
+                        <td>Glucokinase</td>
+                        <td>Health Equity</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4edda; color: #2d7d46; font-weight: bold; text-align: center;">GOLD</td>
+                        <td class="gap-title">If glucokinase activators succeed as a new T2D drug class, what proact...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">3</td>
+                        <td>Insulin Resistance</td>
+                        <td>Islet Transplant</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">1</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">How does pre-existing insulin resistance in islet transplant recipient...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4</td>
+                        <td>Islet Transplant</td>
+                        <td>Drug Repurposing</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">Can computational drug repurposing screens identify existing approved ...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">6</td>
+                        <td>Treg / CAR-T Immunotherapy</td>
+                        <td>Health Equity</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">As CAR-Treg and engineered immune cell therapies for T1D advance towar...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">7</td>
+                        <td>Glucokinase</td>
+                        <td>Drug Repurposing</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">Can existing approved medications be identified through computational ...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">8</td>
+                        <td>Drug Repurposing</td>
+                        <td>LADA</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">LADA patients are routinely treated with T2D medications that may be s...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">10</td>
+                        <td>Health Equity</td>
+                        <td>LADA</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">LADA is massively underdiagnosed, especially in populations with limit...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">13</td>
+                        <td>Beta Cell Regeneration</td>
+                        <td>Personalized Nutrition</td>
+                        <td class="gap-score">99.9</td>
+                        <td class="gap-score">1</td>
+                        <td style="background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; text-align: center;">SILVER</td>
+                        <td class="gap-title">Can personalized nutritional interventions, informed by individual met...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">1</td>
+                        <td>Gene Therapy</td>
+                        <td>LADA</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #fef3cd; color: #8b6914; font-weight: bold; text-align: center;">BRONZE</td>
+                        <td class="gap-title">Could gene-based immunomodulatory approaches targeting autoimmune path...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5</td>
+                        <td>Treg / CAR-T Immunotherapy</td>
+                        <td>Diabetic Neuropathy</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #fef3cd; color: #8b6914; font-weight: bold; text-align: center;">BRONZE</td>
+                        <td class="gap-title">Does immune-mediated inflammation contribute to diabetic neuropathy pr...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">14</td>
+                        <td>Personalized Nutrition</td>
+                        <td>LADA</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #fef3cd; color: #8b6914; font-weight: bold; text-align: center;">BRONZE</td>
+                        <td class="gap-title">LADA patients receive generic T2D dietary advice despite having autoim...</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">9</td>
+                        <td>Glucokinase</td>
+                        <td>LADA</td>
+                        <td class="gap-score">100.0</td>
+                        <td class="gap-score">0</td>
+                        <td style="background-color: #f5d5cc; color: #8b2500; font-weight: bold; text-align: center;">UNDER REVIEW</td>
+                        <td class="gap-title">Could glucokinase activation support residual beta cell function in LA...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Deep Dive Tab -->
+        <div id="deepdive" class="tab-content">
+            <div class="card" id="card-2">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 2</span>
+                        <span class="card-title">Beta Cell Regen x Health Equity</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">GOLD</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">1,375 beta cell regen pubs, 1,830 health equity pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">As stem cell-derived islet therapies (e.g., Vertex's VX-880/zimislecel) approach clinical availability, what are the equity implications for global access, and how will cost, infrastructure requirements, and eligibility criteria create disparities?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Stem cell-derived islets are in Phase 3 trials (Vertex). These require immunosuppression, specialized centers, and cost potentially >$500K/patient. Health equity research in diabetes focuses on access to insulin, CGM, pumps — but not yet on emerging curative therapies. Disparities in diabetes outcomes by race, income, geography are well-documented.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> The infrastructure and cost requirements of stem cell-derived beta cell therapies will disproportionately limit access for populations already experiencing the greatest diabetes burden (low-income, rural, racial minorities), widening existing outcome disparities unless proactive equity frameworks are developed during the clinical trial phase.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Map current trial site distribution vs diabetes burden geography, (2) Model cost-access scenarios under different healthcare system frameworks, (3) Survey existing equity frameworks from other advanced therapies (CAR-T in oncology) for transferable lessons</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Produces an equity impact assessment that could inform trial design and policy</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4edda; color: #2d7d46; font-weight: bold; border-radius: 2px;">GOLD</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                This research question is independently recognized as important by 4 major institutions.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">ADA Standards of Medical Care in Diabetes 2025</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Trust "Improving Access to Care" program</li>
+                                    <li style="margin-bottom: 0.25rem;">Frontiers (2024) systematic review on beta cell therapies</li>
+                                    <li style="margin-bottom: 0.25rem;">JDRF research strategy</li>
+                                    <li style="margin-bottom: 0.25rem;">BMC Medicine Cochrane review</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2d7d46; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Without strategic shift, beta cell therapy risks becoming elite intervention.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-11">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 11</span>
+                        <span class="card-title">Islet Transplant x Health Equity</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">GOLD</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">238 islet transplant pubs, 1,830 health equity pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Islet transplantation is available at fewer than 20 centers worldwide. What is the demographic and geographic profile of recipients, and does this represent equitable access relative to disease burden?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Islet transplant requires HLA matching, specialized surgical teams, and lifelong immunosuppression monitoring. Available at select academic centers in US, Canada, Europe, Japan. No published analysis of recipient demographics vs diabetes population demographics.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Islet transplant recipients are disproportionately from populations with geographic proximity to transplant centers, higher socioeconomic status, and private insurance — demographics that do not correlate with the highest diabetes burden populations.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Compile recipient demographics from CITR (Collaborative Islet Transplant Registry), (2) Compare against diabetes prevalence demographics by geography, race, income, (3) Identify structural barriers to equitable access</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">First equity analysis of islet transplant access, informing future trial site selection</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4edda; color: #2d7d46; font-weight: bold; border-radius: 2px;">GOLD</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                This research question is independently recognized as important by 5 major institutions.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">National Academies "Confronting Inequities in Organ Transplantation"</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Trust named equity program</li>
+                                    <li style="margin-bottom: 0.25rem;">ADA Standards 2025</li>
+                                    <li style="margin-bottom: 0.25rem;">PMC (2024) "Mitigating Health Disparities in Transplantation"</li>
+                                    <li style="margin-bottom: 0.25rem;">Frontiers analysis</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2d7d46; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Only 0.088% of global T1D population could receive transplant.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-12">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 12</span>
+                        <span class="card-title">Drug Repurposing x Health Equity</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">GOLD</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">555 drug repurposing pubs, 1,830 health equity pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Drug repurposing could yield more affordable diabetes treatments by leveraging existing generic medications. Has anyone systematically evaluated repurposed drugs specifically for their potential to reduce treatment cost disparities?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Drug repurposing reuses approved drugs (often generic, low-cost). Health equity in diabetes focuses on insulin affordability, access to newer drugs. The intersection — repurposing as an equity strategy — is unstudied. Generic metformin costs ~$4/month; novel GLP-1 agonists cost ~$1,000/month. Repurposing could bridge this gap.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Systematic computational drug repurposing, when prioritized by existing generic availability and low cost, can identify effective diabetes treatments accessible to underserved populations at a fraction of novel drug costs.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Build a repurposing screen that weights candidates by generic availability and cost, (2) Focus on T2D mechanisms underserved by current generics (e.g., incretin effect, beta cell protection), (3) Model cost-savings potential of top candidates</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Framework for equity-oriented drug repurposing applicable beyond diabetes</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4edda; color: #2d7d46; font-weight: bold; border-radius: 2px;">GOLD</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                This research question is independently recognized as important by 5 major institutions.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">ADA Diabetes Care (2025) "Improving Affordability of Pharmaceutical Treatments"</li>
+                                    <li style="margin-bottom: 0.25rem;">NASHP state policy reports</li>
+                                    <li style="margin-bottom: 0.25rem;">PMC systematic reviews</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Trust global access program</li>
+                                    <li style="margin-bottom: 0.25rem;">CalRx biosimilar program</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2d7d46; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Generic repurposed drugs naturally cheaper than novel entities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-15">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 15</span>
+                        <span class="card-title">Glucokinase x Health Equity</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">GOLD</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">816 glucokinase pubs, 1,830 health equity pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">If glucokinase activators succeed as a new T2D drug class, what proactive steps are needed to ensure global access, and how do they compare in affordability to existing therapies?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Dorzagliatin (GKA) approved in China but not yet in US/EU. AZD1656 safety data from 23 trials available. GKAs represent a novel mechanism. New drug classes historically have high launch prices. No equity analysis exists for GKA access.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Without proactive generic pathway planning and tiered pricing frameworks, glucokinase activators will follow the pattern of GLP-1 agonists and SGLT2 inhibitors — effective drugs with significant access barriers in low- and middle-income countries where T2D burden is highest.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Analyze GLP-1 agonist and SGLT2 inhibitor pricing trajectories and global access patterns as comparators, (2) Estimate GKA manufacturing cost floor based on molecular complexity, (3) Model access scenarios under different intellectual property and pricing regimes</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Proactive access policy recommendations before GKAs reach global markets</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4edda; color: #2d7d46; font-weight: bold; border-radius: 2px;">GOLD</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                This research question is independently recognized as important by 4 major institutions.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">Nature commentary on global GKA access</li>
+                                    <li style="margin-bottom: 0.25rem;">Phase 3 trial published in Nature Medicine</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Charitable Trust equity priorities</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2d7d46; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Dorzagliatin on China national reimbursement list; 846K packs by mid-2024; 2.7B projected market by 2032.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-3">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 3</span>
+                        <span class="card-title">Insulin Resistance x Islet Transplant</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">1</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">18,518 insulin resistance pubs, 238 islet transplant pubs, 1 joint publication</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">How does pre-existing insulin resistance in islet transplant recipients affect graft function, longevity, and metabolic outcomes — and should IR be treated as a modifiable risk factor before transplantation?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Islet transplant research focuses on immune rejection and beta cell survival. Insulin resistance is the hallmark of T2D. The one joint publication touches on this. 9 papers exist for "insulin resistance + islet transplantation + graft survival" (PubMed verified). Some islet recipients have concurrent IR (especially T1D patients with metabolic syndrome features).</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Pre-transplant insulin resistance places excess metabolic demand on engrafted islets, accelerating graft exhaustion and reducing insulin independence duration. Systematic IR reduction (via GLP-1 agonists, SGLT2 inhibitors, or lifestyle intervention) before transplantation may improve graft longevity.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Retrospective analysis of IR markers (HOMA-IR) in existing islet transplant registries correlated with graft outcomes, (2) Literature synthesis of metabolic demand on transplanted islets, (3) Protocol modeling for pre-transplant IR intervention</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Could establish IR as a treatable comorbidity in transplant candidates</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Tacrolimus-induced insulin resistance is a recognized paradox in islet transplantation. Published data shows only 4.8% of islet recipients remain insulin-independent at 10-year follow-up.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">AHRQ Evidence Report</li>
+                                    <li style="margin-bottom: 0.25rem;">Published clinical trials</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Charitable Trust priorities</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Tacrolimus-induced IR is recognized paradox. 10-year follow-up shows only 4.8% remain insulin-independent.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-4">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 4</span>
+                        <span class="card-title">Islet Transplant x Drug Repurposing</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">238 islet transplant pubs, 555 drug repurposing pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Can computational drug repurposing screens identify existing approved medications that protect transplanted islets from immune rejection or metabolic stress, reducing reliance on conventional immunosuppressants?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Current islet transplant immunosuppression has significant side effects (nephrotoxicity, infection risk). Drug repurposing uses computational methods to find new indications for approved drugs. Alpha-1-antitrypsin has been explored for islet protection (PMID:27821710). No systematic computational repurposing screen has been applied to islet transplant specifically.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Approved anti-inflammatory and immunomodulatory drugs (outside standard transplant immunosuppression) can be systematically identified through computational target-based screening as candidates for islet-protective therapy with lower toxicity profiles than current regimens.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Build islet rejection pathway model from published transcriptomics, (2) Run computational drug-target interaction screen against FDA-approved drug database, (3) Rank candidates by predicted efficacy and safety profile</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Generates ranked list of repurposing candidates testable in vitro</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Nano-rapamycin formulations show promise with 50% dose reduction in immunosuppression.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">Nature Communications (2022) nanoparticle-rapamycin study</li>
+                                    <li style="margin-bottom: 0.25rem;">Frontiers (2024) immunosuppression review</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Trust islet innovation priorities</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Nano-rapamycin achieved 50% dose reduction.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-6">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 6</span>
+                        <span class="card-title">Treg / CAR-T x Health Equity</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">861 Treg/CAR-T pubs, 1,830 health equity pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">As CAR-Treg and engineered immune cell therapies for T1D advance toward clinical application, what equity frameworks are needed to prevent these therapies from being accessible only to privileged populations?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (PMID:41468096, 41567805). Oncology has begun addressing CAR-T access disparities (geographic, racial, insurance). Zero publications apply this thinking to diabetes immunotherapy.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Without proactive equity planning during the development phase, CAR-Treg therapies for T1D will replicate the access disparities seen in CAR-T oncology, where geographic proximity to academic centers and insurance coverage are primary determinants of access.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Analyze CAR-T oncology equity literature for transferable lessons, (2) Map projected CAR-Treg treatment center locations vs T1D prevalence, (3) Model access scenarios under different coverage frameworks</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Equity impact framework applicable before therapies reach market</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                CAR-T costs 375K-500K; 37% of eligible patients travel over 1 hour. Major access disparity literature exists.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">AJMC CAR-T access disparities review</li>
+                                    <li style="margin-bottom: 0.25rem;">Blood journal racial disparities data</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Trust equity programs</li>
+                                    <li style="margin-bottom: 0.25rem;">ADA Standards 2025</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> CAR-T costs 375K-500K; 37% of eligible patients travel >1hr.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-7">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 7</span>
+                        <span class="card-title">Glucokinase x Drug Repurposing</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">816 glucokinase pubs, 555 drug repurposing pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Can existing approved medications be identified through computational screening as having glucokinase activating properties, potentially offering affordable alternatives to novel GKA drug candidates?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Glucokinase activators (GKAs) are a promising T2D drug class. Dorzagliatin is approved in China. AZD1656 has completed 23 randomized trials (PubMed: safety profile meta-analysis). 69 publications exist on GKA clinical trials. No computational repurposing screen has searched for GK-activating properties in existing drug libraries.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Existing approved drugs with structural similarity to known glucokinase activators or with demonstrated glucose-lowering effects via unknown mechanisms may include compounds with off-target GK activation that could be repurposed for T2D at lower development cost.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Compile GKA structure-activity relationships from published crystal structures, (2) Screen FDA-approved drug library for structural/pharmacophore similarity, (3) Validate top candidates with in-silico binding affinity prediction</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Identifies candidate drugs for experimental GK activation testing</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Most GKAs failed due to hypoglycemia; dorzagliatin represents only clinical success.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">Nature Reviews Drug Discovery GKA assessment</li>
+                                    <li style="margin-bottom: 0.25rem;">PMC (2024) "New-Generation GKAs"</li>
+                                    <li style="margin-bottom: 0.25rem;">ADA Standards recognition</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Most GKAs failed (hypoglycemia); dorzagliatin only success.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-8">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 8</span>
+                        <span class="card-title">Drug Repurposing x LADA</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">555 drug repurposing pubs, 535 LADA pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">LADA patients are routinely treated with T2D medications that may be suboptimal for their autoimmune pathology. Can systematic drug repurposing identify agents with both glycemic and immunomodulatory benefits specifically suited to LADA?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">LADA is frequently misdiagnosed as T2D (prevalence ~10% of T2D diagnoses, PMID:40737658). Standard T2D drugs (metformin, sulfonylureas) do not address the autoimmune component. Some drugs have dual glycemic/immune effects (e.g., some GLP-1 agonists show anti-inflammatory properties). No systematic repurposing effort targets LADA specifically.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Among existing diabetes and autoimmune medications, agents with demonstrated dual glycemic-control and immunomodulatory properties (e.g., certain GLP-1 agonists, SGLT2 inhibitors with anti-inflammatory effects) would be more effective for LADA than standard T2D monotherapy, as they address both metabolic and autoimmune pathology.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Catalog all approved diabetes drugs with documented immunomodulatory secondary effects, (2) Map these effects against LADA-specific autoimmune pathways (GAD antibodies, beta cell destruction rate), (3) Rank candidates by dual-effect potential</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Prioritized list of existing drugs warranting LADA-specific clinical trials</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Expert consensus confirms no established therapeutic intervention for LADA exists.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">International Expert Panel consensus (Diabetes Care 2020)</li>
+                                    <li style="margin-bottom: 0.25rem;">PMC (2023) network meta-analysis</li>
+                                    <li style="margin-bottom: 0.25rem;">Frontiers (2022) immunotherapy review</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Expert consensus: "No established therapeutic intervention for LADA."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-10">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 10</span>
+                        <span class="card-title">Health Equity x LADA</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">1,830 health equity pubs, 535 LADA pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">LADA is massively underdiagnosed, especially in populations with limited access to antibody testing. What is the prevalence of LADA misdiagnosis across demographic groups, and how does this contribute to treatment failure and outcomes disparities?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">LADA prevalence is ~10% of T2D diagnoses in Sudan (PMID:40737658). GAD antibody testing required for diagnosis is not standard care globally. Misdiagnosed LADA patients receive suboptimal T2D treatment. Racial/ethnic variation in LADA prevalence and presentation is poorly characterized. No equity-focused analysis of LADA diagnostic access exists.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> LADA misdiagnosis rates are significantly higher in populations with limited access to specialized endocrinology and antibody testing (rural, low-income, racial minorities), resulting in prolonged suboptimal treatment, faster progression to insulin dependence, and worse outcomes — constituting a measurable health disparity.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Meta-analysis of LADA prevalence studies by country, healthcare setting, and demographic group, (2) Analysis of GAD antibody testing availability by healthcare tier, (3) Retrospective comparison of time-to-insulin in diagnosed LADA vs misdiagnosed-as-T2D cohorts</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Quantifies diagnostic disparity and builds case for routine antibody screening</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                LADA prevalence ~10% of T2D diagnoses; GAD antibody testing not standard globally.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">ADA Standards 2025 disparities mandate</li>
+                                    <li style="margin-bottom: 0.25rem;">Diagnostic disparities literature</li>
+                                    <li style="margin-bottom: 0.25rem;">Helmsley Charitable Trust equity priorities</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> LADA prevalence ~10% of T2D diagnoses; GAD antibody testing not standard globally.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-13">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 13</span>
+                        <span class="card-title">Beta Cell Regen x Personalized Nutrition</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">99.9</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">1</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">SILVER</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">1,375 beta cell regen pubs, 579 personalized nutrition pubs, 1 joint publication</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Can personalized nutritional interventions, informed by individual metabolic profiles, support or enhance beta cell regeneration in early-stage T1D or T2D?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Beta cell regeneration research focuses on growth factors, stem cells, small molecules. Personalized nutrition uses microbiome, genetics, and metabolomics to tailor diets. One joint publication exists. Animal studies show certain nutrients (amino acids, omega-3s) can support beta cell proliferation. Human evidence for nutrition-driven beta cell recovery is minimal.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Personalized nutritional interventions targeting specific metabolic pathways (amino acid profiles, fatty acid ratios, micronutrient status) can create a metabolic environment that supports endogenous beta cell regeneration or reduces beta cell stress, measurable by C-peptide improvement.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Review animal literature on nutrients affecting beta cell proliferation, (2) Identify metabolomic signatures associated with beta cell recovery in remission cohorts, (3) Design a pilot study framework pairing metabolic phenotyping with targeted nutrition</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Nutritional intervention framework testable in early T2D remission patients</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #d4e2ef; color: #2c5f8a; font-weight: bold; border-radius: 2px;">SILVER</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Digital twin technology integrating CGM, dietary, and microbiome data shows promise.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">Cell (2015) foundational glycemic response study</li>
+                                    <li style="margin-bottom: 0.25rem;">Frontiers (2024) digital twin technology</li>
+                                    <li style="margin-bottom: 0.25rem;">Diabetologia (2022) precision nutrition review</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #2c5f8a; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Digital twins integrating CGM + dietary + microbiome data.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-1">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 1</span>
+                        <span class="card-title">Gene Therapy x LADA</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">BRONZE</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">2,106 gene therapy pubs, 535 LADA pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Could gene-based immunomodulatory approaches targeting autoimmune pathways be effective for LADA, given its slower autoimmune progression compared to classical T1D?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Gene therapy for T1D focuses on immune tolerance (CAR-Treg approaches, PMID:41468096). LADA shares autoimmune etiology but with slower beta cell destruction, potentially offering a wider therapeutic window. LADA affects ~10% of adults diagnosed as T2D (PMID:40737658). No gene therapy trials exist for LADA specifically.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> LADA's slower autoimmune progression (years vs. months in T1D) may provide a longer therapeutic window for gene-based immune tolerance approaches, potentially making LADA a more favorable initial target for autoimmune diabetes gene therapy than classical T1D.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Systematic review of gene therapy immune tolerance mechanisms applicable to slow-progressing autoimmunity, (2) Analysis of LADA immunological profiles vs T1D to identify targetable differences, (3) Computational modeling of therapeutic window duration</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Either identifies LADA as a candidate for gene therapy trials or clarifies why the slower progression does not confer advantage</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #fef3cd; color: #8b6914; font-weight: bold; border-radius: 2px;">BRONZE</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                This gap requires expert validation before proceeding. No major institution has independently prioritized this intersection.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-5">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 5</span>
+                        <span class="card-title">Treg / CAR-T x Neuropathy</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">BRONZE</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">861 Treg/CAR-T pubs, 2,957 neuropathy pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Does immune-mediated inflammation contribute to diabetic neuropathy progression, and could regulatory T cell modulation or CAR-Treg therapy reduce neuropathic damage?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Diabetic neuropathy affects ~50% of diabetes patients. Emerging evidence shows neuroinflammation is a driver, not just hyperglycemic damage. CAR-Treg cells are being developed for T1D autoimmunity (PMID:41468096). One study found Treg dysfunction correlates with diabetic complications in T1D women (PubMed verified). No work bridges Treg therapy specifically to neuropathy.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Diabetic neuropathy involves a neuroinflammatory component driven partly by Treg dysfunction, and restoring local immune regulation through Treg-based immunotherapy could slow or reverse nerve damage independently of glycemic control.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Systematic review of neuroinflammation biomarkers in diabetic neuropathy, (2) Analysis of Treg phenotypes in patients with vs without neuropathy, (3) Mechanistic pathway mapping of immune-nerve interactions in diabetic peripheral nerves</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Establishes whether immune modulation is a viable therapeutic axis for neuropathy</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #fef3cd; color: #8b6914; font-weight: bold; border-radius: 2px;">BRONZE</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Emerging mechanism with preclinical data. CAR-Tregs reduce neuroinflammation in MS models. PROSPERO registered systematic review (CRD420251073207) for CAR-Treg therapy.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">CAR-Treg preclinical data in MS models</li>
+                                    <li style="margin-bottom: 0.25rem;">PROSPERO systematic review registration CRD420251073207</li>
+                                    <li style="margin-bottom: 0.25rem;">Quell/AstraZeneca 85M collaboration (targets T1D prevention, not neuropathy)</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #8b6914; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> This requires more validation. CAR-Treg work targets T1D prevention, not neuropathy specifically.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-14">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 14</span>
+                        <span class="card-title">Personalized Nutrition x LADA</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">BRONZE</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">579 personalized nutrition pubs, 535 LADA pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">LADA patients receive generic T2D dietary advice despite having autoimmune pathology. Would nutrition personalized to autoimmune status, C-peptide level, and metabolic phenotype improve outcomes?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">Standard dietary advice for T2D (carb counting, weight management) does not account for autoimmune beta cell destruction in LADA. Personalized nutrition shows glycemic response varies dramatically by individual (Weizmann Institute work). LADA patients have unique metabolic profiles (higher GAD, declining C-peptide) that should inform nutritional strategy. Zero publications combine these fields.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> LADA patients with residual beta cell function would achieve better glycemic control and slower disease progression with nutritional plans personalized to their autoimmune status (GAD titer, C-peptide trajectory) compared to standard T2D dietary guidelines.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Characterize metabolic phenotype differences between LADA and T2D patients, (2) Identify dietary patterns associated with slower C-peptide decline in LADA, (3) Design crossover study framework comparing personalized vs standard nutrition in LADA</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Evidence base for LADA-specific nutritional guidelines</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #fef3cd; color: #8b6914; font-weight: bold; border-radius: 2px;">BRONZE</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Logical opportunity but lacks evidence base. Expert consensus endorses "individualized" approach but no specifics.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">Expert consensus literature</li>
+                                    <li style="margin-bottom: 0.25rem;">Personalized nutrition reviews</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #8b6914; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> This gap requires expert validation before proceeding. No major institution has independently prioritized this intersection.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-9">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div style="flex: 1;">
+                        <span class="card-rank">Gap 9</span>
+                        <span class="card-title">Glucokinase x LADA</span>
+                    </div>
+                    <div class="card-toggle">+</div>
+                </div>
+                <div class="card-content">
+                    <div class="meta-row">
+                        <div class="meta">
+                            <span class="meta-label">Gap Score:</span>
+                            <span class="meta-value">100.0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Joint Publications:</span>
+                            <span class="meta-value">0</span>
+                        </div>
+                        <div class="meta">
+                            <span class="meta-label">Status:</span>
+                            <span class="status-phase">Background Research</span>
+                        </div>
+                        <div class="meta">
+                            <span class="validation-badge">UNDER REVIEW</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">OBSERVATION</div>
+                        <div class="section-content">816 glucokinase pubs, 535 LADA pubs, 0 joint publications</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">RESEARCH QUESTION</div>
+                        <div class="section-content">Could glucokinase activation support residual beta cell function in LADA patients, where beta cells are declining slowly rather than absent?</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">BACKGROUND RESEARCH</div>
+                        <div class="section-content">GKAs enhance glucose sensing in remaining beta cells. LADA is characterized by slow beta cell loss (years, not months). Patients often retain residual C-peptide for years post-diagnosis. GKA trials focus on T2D where beta cell mass is reduced but present. LADA's intermediate beta cell status is unstudied in the GKA context.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="hypothesis-callout">
+                            <strong>Pre-hypothesis (requires validation):</strong> Glucokinase activation in LADA patients with residual beta cell function (detectable C-peptide) could enhance glucose-stimulated insulin secretion from remaining beta cells, extending the period of endogenous insulin production and delaying progression to insulin dependence.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">PROPOSED INVESTIGATION</div>
+                        <div class="section-content">(1) Analyze C-peptide trajectories in LADA cohorts to define the therapeutic window, (2) Review GKA dose-response data for applicability to reduced beta cell mass, (3) Model expected glycemic improvement from GKA in partial beta cell function scenarios</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">EXPECTED OUTCOMES</div>
+                        <div class="section-content">Determines whether GKA therapy is mechanistically plausible for LADA</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">CURRENT STATUS</div>
+                        <div class="section-content">
+                            <div class="meta">
+                                <span class="meta-label">Phase:</span>
+                                <span class="meta-value">Background Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">VALIDATION EVIDENCE</div>
+                        <div class="section-content">
+                            <div style="margin-bottom: 1rem;">
+                                <span style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #f5d5cc; color: #8b2500; font-weight: bold; border-radius: 2px;">UNDER REVIEW</span>
+                            </div>
+                            <div style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                                Biological plausibility is uncertain. LADA is autoimmune, not a glucokinase dysfunction disorder. The one published case report (GCK-MODY + LADA) represents rare coincidence rather than therapeutic opportunity.
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
+                                <ul style="margin: 0; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.25rem;">One case report: GCK-MODY + LADA rare coincidence</li>
+                                    <li style="margin-bottom: 0.25rem;">Weak biological plausibility</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 0.75rem; background-color: rgba(200, 200, 200, 0.1); border-left: 2px solid #8b2500; margin-top: 1rem;">
+                                <strong>Key Insight:</strong> Recommend flagging as "Under Review — biological plausibility uncertain."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-section">
+                <h3>Validation Tiers</h3>
+                <p><strong>GOLD (3+ independent expert sources confirm):</strong> Cross-referenced against multiple major institutions (Cochrane, PROSPERO, ADA Standards 2025, JDRF, Helmsley Trust). Example: Gap 2 (Beta Cell Regen × Health Equity) confirmed by 5+ independent sources.</p>
+                <p><strong>SILVER (2 confirming sources):</strong> Published evidence and expert consensus from 2+ major sources. Example: Gap 3 (Insulin Resistance × Islet Transplant) confirmed by AHRQ and clinical trial literature.</p>
+                <p><strong>BRONZE (bibliometric analysis only):</strong> Identified through cross-domain gap analysis but requiring expert validation. No major institution has independently prioritized these intersections.</p>
+                <p><strong>UNDER REVIEW:</strong> Biological plausibility is uncertain or contradicted. Example: Gap 9 (Glucokinase × LADA) lacks mechanistic foundation since LADA is autoimmune, not a glucokinase dysfunction disorder.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Validation Methodology</h3>
+                <p>Validation tiers assigned by cross-referencing each gap against: (1) Cochrane Library and PROSPERO registered reviews, (2) ADA Standards of Medical Care in Diabetes 2025, (3) JDRF/Breakthrough T1D research strategy, (4) Helmsley Charitable Trust T1D funding priorities, (5) Published systematic reviews and meta-analyses.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Key Validation Sources</h3>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li>ADA Standards of Care 2025 (PMID:39651984)</li>
+                    <li>Helmsley Charitable Trust T1D Programs (helmsleytrust.org)</li>
+                    <li>JDRF/Breakthrough T1D Research Strategy (jdrf.org)</li>
+                    <li>National Academies: Confronting Inequities in Organ Transplantation</li>
+                    <li>Cochrane/BMC Medicine Beta Cell Preservation Review (2025)</li>
+                    <li>PROSPERO CAR-Treg Review (CRD420251073207)</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sources</h3>
+                <p>Gap data: PubMed (MEDLINE) bibliographic database. Clinical trial data: ClinicalTrials.gov. Reference citations: PMC/PMID identifiers link to PubMed Central and PubMed records. All hypotheses are preliminary and require expert validation before experimental design.</p>
+            </div>
+
+            <div class="footer-section">
+                <p style="margin-top: 1.5rem; border-top: 1px solid {COLORS['border']}; padding-top: 1.5rem;">
+                    Diabetes Research Hub Gap Synthesis | Generated 2026 | Tufte Information Design principles applied
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabName) {{
+            event.preventDefault();
+
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected tab content and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }}
+
+        function toggleCard(header) {{
+            const card = header.closest('.card');
+            card.classList.toggle('expanded');
+        }}
+
+        function filterTable() {{
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('gapTable');
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            for (let i = 0; i < rows.length; i++) {{
+                const text = rows[i].textContent.toLowerCase();
+                if (text.indexOf(filter) > -1) {{
+                    rows[i].style.display = '';
+                }} else {{
+                    rows[i].style.display = 'none';
+                }}
+            }}
+        }}
+    </script>
+</body>
+</html>

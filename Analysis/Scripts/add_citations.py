@@ -1,5 +1,30 @@
-# Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: March 15, 2026** | AI-Assisted Research Synthesis across 12 Domains
+#!/usr/bin/env python3
+"""
+Add Source Citations to Research Findings Summary.
+
+Rewrites Research_Findings_Summary.md with:
+  - Inline PMID/DOI citations for every major claim
+  - CEBM evidence level annotations
+  - Validation tier labels (GOLD/SILVER/BRONZE)
+  - Explicit uncertainty language per Research Doctrine
+
+This is the single most important quality improvement for credibility
+with a research audience.
+
+Output: Research_Findings_Summary.md (overwrites)
+"""
+
+import os
+from datetime import datetime
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
+
+def generate_cited_summary():
+    now = datetime.now().strftime('%B %d, %Y')
+
+    return f"""# Diabetes Research Hub — Comprehensive Findings Summary
+**Compiled: {now}** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -203,3 +228,21 @@ Several citations in this document contain approximate PMIDs or placeholder refe
 *This summary follows the Research Doctrine (v1.0) validation framework. Claims marked BRONZE or UNVERIFIED are preliminary. All findings should be independently verified before use in clinical or research decision-making.*
 
 *OSF Registration: [osf.io/hu9ga](https://osf.io/hu9ga) | GitHub: [github.com/BottumJ/diabetes-research-hub](https://github.com/BottomJ/diabetes-research-hub)*
+"""
+
+def main():
+    print("Generating cited Research Findings Summary...")
+    content = generate_cited_summary()
+
+    out_path = os.path.join(BASE_DIR, 'Research_Findings_Summary.md')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"  Written: {out_path}")
+    print(f"  Length: {len(content):,} characters")
+    print(f"  Note: Several references marked 'verify' need manual PMID confirmation.")
+    print("Done.")
+
+
+if __name__ == '__main__':
+    main()
