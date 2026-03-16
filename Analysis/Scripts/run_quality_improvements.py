@@ -39,6 +39,10 @@ SCRIPTS = {
     'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)'),
     'immunomod': ('build_immunomod_lada.py', 'Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)'),
     'treg': ('build_treg_neuropathy.py', 'Building Treg in Diabetic Neuropathy (Gap #5 SILVER)'),
+    'cartaccess': ('build_cart_access.py', 'Building CAR-T Access Barriers Analysis (Gap #6 SILVER)'),
+    'gka': ('build_gka_landscape.py', 'Building GKA Drug Repurposing Landscape (Gap #7 SILVER)'),
+    'isletequity': ('build_islet_equity.py', 'Building Islet Transplant Registry Equity (Gap #11 SILVER)'),
+    'genericdrug': ('build_generic_drug_catalog.py', 'Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }

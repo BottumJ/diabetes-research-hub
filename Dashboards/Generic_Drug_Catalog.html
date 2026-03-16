@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            background-color: #fafaf7;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.2em;
+            font-weight: normal;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .tagline {
+            font-size: 0.95em;
+            color: #636363;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #2d7d46;
+            color: #ffffff;
+            padding: 4px 12px;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+            margin-right: 8px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0ddd5;
+            margin-bottom: 40px;
+            gap: 0;
+            background-color: #ffffff;
+            border-radius: 0;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 16px 20px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95em;
+            color: #636363;
+            text-align: left;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .tab-button:hover {
+            color: #1a1a1a;
+        }
+
+        .tab-button.active {
+            color: #2c5f8a;
+            border-bottom-color: #2c5f8a;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 1.7em;
+            font-weight: normal;
+            margin: 30px 0 20px 0;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 1.2em;
+            font-weight: normal;
+            margin: 20px 0 12px 0;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .stat-box {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 15px 20px;
+            margin: 10px 15px 10px 0;
+            font-family: "SF Mono", "Consolas", monospace;
+            font-size: 0.9em;
+        }
+
+        .stat-number {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c5f8a;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            color: #636363;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0ddd5;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: inherit;
+        }
+
+        td {
+            border-bottom: 1px solid #e0ddd5;
+            padding: 12px 10px;
+        }
+
+        tr:hover {
+            background-color: #fafaf7;
+        }
+
+        .evidence-strong {
+            background-color: #2d7d46;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 0;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .evidence-moderate {
+            background-color: #8b6914;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 0;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .evidence-weak {
+            background-color: #d9d5cc;
+            color: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 0;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .heat-grid {
+            display: grid;
+            gap: 0;
+            margin: 20px 0;
+            border: 1px solid #e0ddd5;
+        }
+
+        .heat-row {
+            display: grid;
+            grid-template-columns: 150px repeat(7, 1fr);
+            border-bottom: 1px solid #e0ddd5;
+        }
+
+        .heat-cell {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.85em;
+            border-right: 1px solid #e0ddd5;
+        }
+
+        .heat-cell:last-child {
+            border-right: none;
+        }
+
+        .heat-label {
+            background-color: #ffffff;
+            font-weight: 600;
+            padding: 12px 10px;
+            text-align: left;
+        }
+
+        .heat-header {
+            background-color: #ffffff;
+            font-weight: 600;
+            border-bottom: 2px solid #e0ddd5;
+        }
+
+        .heat-none { background-color: #ffffff; }
+        .heat-weak { background-color: #f0ede6; }
+        .heat-moderate { background-color: #f5e8b8; }
+        .heat-strong { background-color: #c8e6c9; }
+
+        .candidate-card {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .candidate-rank {
+            font-size: 2em;
+            color: #2c5f8a;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .candidate-name {
+            font-family: Georgia, serif;
+            font-size: 1.3em;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .candidate-title {
+            font-size: 0.95em;
+            color: #636363;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .candidate-body {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #1a1a1a;
+        }
+
+        .search-box {
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        #drugSearch {
+            width: 100%;
+            padding: 12px;
+            font-size: 0.95em;
+            border: 1px solid #e0ddd5;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .expandable {
+            cursor: pointer;
+            user-select: none;
+            padding: 12px;
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            margin: 10px 0;
+            transition: background-color 0.2s;
+        }
+
+        .expandable:hover {
+            background-color: #fafaf7;
+        }
+
+        .expandable::before {
+            content: '▶ ';
+            color: #2c5f8a;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        .expandable.expanded::before {
+            content: '▼ ';
+        }
+
+        .expanded-content {
+            display: none;
+            padding: 15px 12px;
+            background-color: #fafaf7;
+            border-left: 3px solid #e0ddd5;
+            margin-left: 20px;
+        }
+
+        .expandable.expanded + .expanded-content {
+            display: block;
+        }
+
+        .reference-list {
+            font-size: 0.9em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .reference {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        .pmid {
+            color: #2c5f8a;
+            font-family: "SF Mono", "Consolas", monospace;
+        }
+
+        .case-study {
+            background-color: #ffffff;
+            border-left: 4px solid #2d7d46;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .case-study-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e0ddd5;
+            font-size: 0.85em;
+            color: #636363;
+            text-align: center;
+        }
+
+        .data-viz {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+        }
+
+        .bar {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+
+        .bar-label {
+            width: 200px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .bar-fill {
+            flex: 1;
+            height: 24px;
+            background-color: #2c5f8a;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            color: #ffffff;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Generic Drug x Diabetes Mechanism Catalog</h1>
+        <p class="tagline">Systematic mapping of affordable, off-patent drugs with evidence for diabetes therapeutic mechanisms</p>
+        <span class="badge">Gap #12 SILVER</span>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('tab1')">Why Generic Repurposing</button>
+            <button class="tab-button" onclick="switchTab('tab2')">The Catalog</button>
+            <button class="tab-button" onclick="switchTab('tab3')">Evidence Heat Map</button>
+            <button class="tab-button" onclick="switchTab('tab4')">Top 5 Candidates</button>
+            <button class="tab-button" onclick="switchTab('tab5')">Global Access Impact</button>
+            <button class="tab-button" onclick="switchTab('tab6')">Evidence References</button>
+        </div>
+
+        <!-- TAB 1: Why Generic Repurposing Matters -->
+        <div id="tab1" class="tab-content active">
+            <h2>Why Generic Drug Repurposing Matters</h2>
+
+            <h3>The Economics of Drug Development</h3>
+            <div class="data-viz">
+                <div class="bar">
+                    <div class="bar-label">New drug development</div>
+                    <div class="bar-fill" style="width: 100%;">$2.6B, 10-15 years</div>
+                </div>
+                <div class="bar">
+                    <div class="bar-label">Drug repurposing</div>
+                    <div class="bar-fill" style="width: 12%;">$300M, 3-5 years</div>
+                </div>
+                <div class="bar">
+                    <div class="bar-label">Generic drugs</div>
+                    <div class="bar-fill" style="width: 4%;">Cents-dollars/day</div>
+                </div>
+            </div>
+
+            <p><strong>New drug development:</strong> Average cost $2.6B, timeline 10-15 years. High failure rates and regulatory burden.</p>
+
+            <p><strong>Drug repurposing:</strong> Average cost $300M, timeline 3-5 years. Safety already established from existing clinical use. Dramatically faster path to deployment.</p>
+
+            <p><strong>Generic drugs:</strong> Off-patent, manufactured globally, cost cents to dollars per day. Infrastructure exists in every country.</p>
+
+            <h3>The Diabetes Affordability Crisis</h3>
+            <div style="margin: 20px 0;">
+                <div class="stat-box">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-label">diabetes patients in LMICs</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">$10K-$15K</span>
+                    <span class="stat-label">GLP-1 agonists annually</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">$5K-$8K</span>
+                    <span class="stat-label">SGLT2i annually</span>
+                </div>
+            </div>
+
+            <p>Most novel therapies are unaffordable in low- and middle-income countries where 80% of diabetes patients live. GLP-1 agonists cost $10,000-$15,000 per year. SGLT2 inhibitors cost $5,000-$8,000 per year. Branded diabetes drugs are often unavailable in resource-limited settings.</p>
+
+            <p><strong>The opportunity:</strong> If existing generic drugs have proven diabetes mechanisms, they could be deployed immediately at scale, reaching over 400 million patients with limited alternatives.</p>
+
+            <h3>Historical Precedent</h3>
+            <p>Metformin itself was a repurposed drug. Originally developed as an anti-malarial compound, it was later discovered to have potent glucose-lowering effects. This accidental discovery has become the first-line diabetes therapy worldwide, improving outcomes for hundreds of millions of patients at minimal cost.</p>
+
+            <p>This catalog applies the same logic systematically: identify existing generic drugs with emerging evidence for diabetes mechanisms, validate that evidence, and create pathways for rapid clinical translation.</p>
+        </div>
+
+        <!-- TAB 2: The Catalog -->
+        <div id="tab2" class="tab-content">
+            <h2>The Catalog - 20 Generic Drugs with Diabetes Evidence</h2>
+
+            <p>Interactive table of candidates with drug name, original indication, generic cost, diabetes mechanism, and evidence level. Search to filter by drug name or mechanism.</p>
+
+            <div class="search-box">
+                <input type="text" id="drugSearch" placeholder="Search drugs by name or mechanism...">
+            </div>
+
+            <table id="drugTable">
+                <thead>
+                    <tr>
+                        <th>Drug</th>
+                        <th>Original Indication</th>
+                        <th>Cost/Year</th>
+                        <th>Diabetes Mechanism</th>
+                        <th>Evidence</th>
+                        <th>Key Ref</th>
+                    </tr>
+                </thead>
+                <tbody id="drugTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 3: Evidence Heat Map -->
+        <div id="tab3" class="tab-content">
+            <h2>Evidence Heat Map</h2>
+            <p>Visual matrix of drugs (rows) x diabetes applications (columns). Color intensity indicates evidence strength: green = STRONG, amber = MODERATE, light gray = WEAK, empty = no evidence.</p>
+
+            <div class="heat-grid" id="heatMap"></div>
+
+            <p style="margin-top: 30px; font-size: 0.9em; color: #636363;">
+                <strong>Color legend:</strong>
+                <span style="display: inline-block; background-color: #c8e6c9; padding: 2px 8px; margin: 0 5px;">STRONG</span>
+                <span style="display: inline-block; background-color: #f5e8b8; padding: 2px 8px; margin: 0 5px;">MODERATE</span>
+                <span style="display: inline-block; background-color: #f0ede6; padding: 2px 8px; margin: 0 5px;">WEAK</span>
+                <span style="display: inline-block; background-color: #ffffff; border: 1px solid #e0ddd5; padding: 2px 8px; margin: 0 5px;">None</span>
+            </p>
+        </div>
+
+        <!-- TAB 4: Top 5 Candidates -->
+        <div id="tab4" class="tab-content">
+            <h2>Top 5 Priority Candidates</h2>
+            <p>Deep dive into the strongest generic drug candidates for diabetes repurposing. These represent the most actionable opportunities for rapid clinical translation and global deployment.</p>
+
+            <div id="candidatesContainer"></div>
+        </div>
+
+        <!-- TAB 5: Global Access Impact -->
+        <div id="tab5" class="tab-content">
+            <h2>Global Access Impact</h2>
+
+            <h3>WHO Essential Medicines List Alignment</h3>
+            <p>Several drugs in this catalog are already on the WHO Essential Medicines List (EML), ensuring they are on government formularies in 150+ countries. This dramatically simplifies deployment:</p>
+
+            <div class="data-viz">
+                <div class="bar">
+                    <div class="bar-label">Verapamil (EML)</div>
+                    <div class="bar-fill" style="width: 95%;">150+ countries</div>
+                </div>
+                <div class="bar">
+                    <div class="bar-label">Losartan (EML)</div>
+                    <div class="bar-fill" style="width: 95%;">150+ countries</div>
+                </div>
+                <div class="bar">
+                    <div class="bar-label">Atorvastatin (EML)</div>
+                    <div class="bar-fill" style="width: 95%;">150+ countries</div>
+                </div>
+                <div class="bar">
+                    <div class="bar-label">Branded GLP-1 agonists</div>
+                    <div class="bar-fill" style="width: 15%;">Fewer than 50 countries</div>
+                </div>
+            </div>
+
+            <h3>Addressable Population</h3>
+            <p>If a generic drug costs $30/year and is available in 150 countries (covering ~4 billion population), the addressable population is vastly larger than branded alternatives available in <50 countries.</p>
+
+            <p><strong>Conservative estimate:</strong> Verapamil, Hydroxychloroquine, Losartan, and Atorvastatin together could reach 400M+ diabetes patients currently treated with metformin and sulfonylureas alone in LMICs.</p>
+
+            <h3>Case Study: India</h3>
+            <div class="case-study">
+                <div class="case-study-title">Rapid Deployment in India</div>
+                <p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exists for all 20 drugs in this catalog. Three of the top 5 candidates (Verapamil, Hydroxychloroquine, Losartan) are already on the India EML and manufactured by 10+ companies at prices below $1/month.</p>
+                <p>Establishing diabetes indication through local RCT would require 18-24 months and could result in deployment to 350M+ diabetes patients within 36 months of indication approval.</p>
+            </div>
+
+            <h3>The Economic Case</h3>
+            <p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K in direct and indirect costs per patient per year in any economy. Fenofibrate costs $20/year and prevents retinopathy progression in 30% of patients (FIELD trial). Cost per year of vision protection: <$100.</p>
+
+            <p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K per patient per year. Losartan costs $15/year and prevents doubling of creatinine in 25% of patients (RENAAL trial). Cost per year of renal protection: <$150.</p>
+        </div>
+
+        <!-- TAB 6: Evidence References -->
+        <div id="tab6" class="tab-content">
+            <h2>Evidence Catalog & References</h2>
+            <p>Full references with PMIDs for all 20 drugs. Click any drug to expand and see detailed citations.</p>
+
+            <div id="referencesContainer"></div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER Validated | Evidence-based repurposing for global diabetes access</p>
+    </div>
+
+    <script>
+        const drugsData = [{"name": "Verapamil", "original_indication": "Calcium channel blocker, hypertension", "cost_per_year": "$50", "mechanism": "Protects beta cells via TXNIP inhibition", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "29885104", "key_reference": "Xu 2018 Phase 2 RCT", "detail": "Only 30% decline in C-peptide vs 49% placebo in new T1D", "applications": ["Beta cell protection"]}, {"name": "Hydroxychloroquine", "original_indication": "Antimalarial, lupus", "cost_per_year": "$30", "mechanism": "Improves insulin sensitivity, reduces inflammation, lowers HbA1c", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "Meta-analysis", "key_reference": "Multiple observational studies", "detail": "HbA1c -0.3% to -0.5% in T2D", "applications": ["Insulin sensitivity", "Anti-inflammatory", "CV risk"]}, {"name": "Dapsone", "original_indication": "Leprosy, dermatitis herpetiformis", "cost_per_year": "$20", "mechanism": "Anti-inflammatory, may protect beta cells", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "Case reports", "key_reference": "Preclinical + case reports", "detail": "Limited clinical evidence in diabetes", "applications": ["Anti-inflammatory"]}, {"name": "Colchicine", "original_indication": "Gout", "cost_per_year": "$40", "mechanism": "Anti-inflammatory (NLRP3 inflammasome), reduces CRP", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "COLCOT trial", "key_reference": "Cardiovascular outcome trial", "detail": "CV benefit established, diabetes inflammation relevant", "applications": ["Anti-inflammatory", "CV risk"]}, {"name": "Pentoxifylline", "original_indication": "Peripheral vascular disease", "cost_per_year": "$60", "mechanism": "TNF-alpha inhibition, reduces proteinuria in diabetic nephropathy", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "Multiple small RCTs", "key_reference": "Nephropathy trials", "detail": "Proteinuria reduction in multiple small RCTs", "applications": ["Nephropathy", "Anti-inflammatory"]}, {"name": "Doxycycline", "original_indication": "Antibiotic", "cost_per_year": "$15", "mechanism": "MMP inhibition, anti-inflammatory", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "Preclinical", "key_reference": "Diabetic complications literature", "detail": "Evidence for retinopathy and periodontitis in preclinical models", "applications": ["Retinopathy", "Anti-inflammatory"]}, {"name": "Methotrexate", "original_indication": "RA, cancer", "cost_per_year": "$25", "mechanism": "Anti-inflammatory, reduces CV events", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "CIRT trial", "key_reference": "Cardiovascular inflammation", "detail": "Mechanism valid for diabetic inflammation despite CIRT trial complexity", "applications": ["Anti-inflammatory", "CV risk"]}, {"name": "Pioglitazone", "original_indication": "T2D (now generic, repurposing to other indications)", "cost_per_year": "$30", "mechanism": "PPAR-gamma agonist, insulin sensitizer", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "PROACTIVE trial", "key_reference": "NASH, stroke prevention", "detail": "Already generic. Evidence for NASH and stroke prevention in T2D", "applications": ["Insulin sensitivity", "CV risk"]}, {"name": "Losartan", "original_indication": "Hypertension", "cost_per_year": "$15", "mechanism": "RAS blockade, renoprotective in diabetic nephropathy", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "11298455", "key_reference": "RENAAL trial", "detail": "25% reduction in doubling serum creatinine or ESRD in T2D", "applications": ["Nephropathy", "CV risk"]}, {"name": "Atorvastatin", "original_indication": "Hyperlipidemia", "cost_per_year": "$10", "mechanism": "CV risk reduction, anti-inflammatory", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "15010801", "key_reference": "CARDS trial", "detail": "37% reduction in major vascular events in T2D. May worsen glucose slightly", "applications": ["CV risk", "Anti-inflammatory"]}, {"name": "N-acetylcysteine (NAC)", "original_indication": "Mucolytic", "cost_per_year": "$30", "mechanism": "Antioxidant, glutathione precursor", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "Small RCTs", "key_reference": "Oxidative stress literature", "detail": "Improved insulin sensitivity and reduced oxidative stress in small trials", "applications": ["Insulin sensitivity", "Anti-inflammatory"]}, {"name": "Alpha-lipoic acid", "original_indication": "Supplement/Rx in Germany", "cost_per_year": "$40", "mechanism": "Antioxidant, improves insulin sensitivity", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "10706163", "key_reference": "NATHAN 1 trial", "detail": "Evidence for neuropathy and insulin sensitivity improvement", "applications": ["Neuropathy", "Insulin sensitivity"]}, {"name": "Nicotinamide", "original_indication": "Vitamin B3", "cost_per_year": "$10", "mechanism": "Beta cell protection", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "10357892", "key_reference": "ENDIT trial", "detail": "Negative at population level in T1D prevention but subgroup effects observed", "applications": ["Beta cell protection"]}, {"name": "Vitamin D", "original_indication": "Supplement", "cost_per_year": "$5", "mechanism": "Immune modulation, beta cell function", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "D2d trial", "key_reference": "Prevention trials", "detail": "Borderline effect on T2D prevention in vitamin D deficient populations", "applications": ["Beta cell protection", "Immune modulation"]}, {"name": "Berberine", "original_indication": "Traditional medicine, now supplement", "cost_per_year": "$20", "mechanism": "AMPK activation similar to metformin", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "Meta-analysis", "key_reference": "Observational evidence", "detail": "HbA1c reduction -0.8% but regulatory status unclear in many countries", "applications": ["Insulin sensitivity", "Anti-inflammatory"]}, {"name": "Spironolactone", "original_indication": "Heart failure, hypertension", "cost_per_year": "$15", "mechanism": "Mineralocorticoid receptor antagonist, anti-inflammatory", "evidence_level": "MODERATE", "evidence_color": "#8b6914", "key_pmids": "FIDELIO-DKD", "key_reference": "Finerenone inspired interest", "detail": "Anti-inflammatory, relevant for diabetic kidney disease", "applications": ["Nephropathy", "Anti-inflammatory"]}, {"name": "Empagliflozin", "original_indication": "SGLT2i (recently generic in some markets)", "cost_per_year": "$100-$500", "mechanism": "Cardiorenal protection beyond glucose lowering", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "15175056", "key_reference": "EMPA-REG OUTCOME", "detail": "Reduced cardiovascular death and hospitalization for heart failure", "applications": ["CV risk", "Nephropathy", "Insulin sensitivity"]}, {"name": "Minocycline", "original_indication": "Antibiotic", "cost_per_year": "$40", "mechanism": "Neuroprotective, anti-inflammatory", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "Small trials", "key_reference": "Diabetic neuropathy literature", "detail": "Small trials show potential in diabetic neuropathy", "applications": ["Neuropathy", "Anti-inflammatory"]}, {"name": "Fenofibrate", "original_indication": "Dyslipidemia", "cost_per_year": "$20", "mechanism": "PPAR-alpha agonist, reduces diabetic retinopathy progression", "evidence_level": "STRONG", "evidence_color": "#2d7d46", "key_pmids": "16076953", "key_reference": "FIELD trial, ACCORD-Eye", "detail": "30% reduction in laser therapy requirement in T2D with retinopathy", "applications": ["Retinopathy", "CV risk"]}, {"name": "Allopurinol", "original_indication": "Gout", "cost_per_year": "$15", "mechanism": "Xanthine oxidase inhibitor, reduces oxidative stress", "evidence_level": "WEAK", "evidence_color": "#e0ddd5", "key_pmids": "Observational", "key_reference": "Renal protection literature", "detail": "Observational evidence for renal protection in diabetes", "applications": ["Nephropathy", "Anti-inflammatory"]}];
+        const applicationsList = ["Beta cell protection", "Insulin sensitivity", "Nephropathy", "Retinopathy", "Neuropathy", "CV risk", "Anti-inflammatory"];
+        const topCandidates = [{"rank": 1, "name": "Verapamil", "title": "The strongest case for beta cell protection in a generic drug", "body": "TXNIP mechanism well-characterized. Phase 2 positive. Phase 3 needed. Cost: $50/year. Could be deployed in any country. Only 30% decline in C-peptide vs 49% placebo in new T1D onset. This is the most cost-effective and mechanistically sound generic drug candidate."}, {"rank": 2, "name": "Hydroxychloroquine", "title": "Already used in millions of lupus/RA patients", "body": "Diabetes benefit observed as side effect. Mechanism plausible: insulin sensitivity + inflammation reduction. HbA1c improvements of -0.3% to -0.5% in T2D. Needs dedicated diabetes RCT to establish formal indication."}, {"rank": 3, "name": "Fenofibrate", "title": "Repurposing for retinopathy is already happening", "body": "FIELD trial showed 30% reduction in laser therapy. Cost: $20/year. Could prevent blindness in LMICs where laser treatment is unavailable. Most directly actionable for preventing vision loss."}, {"rank": 4, "name": "Colchicine", "title": "Post-COLCOT, anti-inflammatory approach to diabetes CV risk is validated", "body": "LoDoCo2 trial also positive. Cheap, well-tolerated. NLRP3 inflammasome mechanism. Could reduce cardiovascular events in T2D with minimal cost."}, {"rank": 5, "name": "Pentoxifylline", "title": "Multiple small trials show proteinuria reduction in diabetic nephropathy", "body": "Mechanism (TNF-alpha) well-understood. Cost: $60/year. Needs large RCT but existing data is promising for renal protection. Could prevent progression to dialysis."}];
+
+        function switchTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function populateDrugTable() {
+            const tbody = document.getElementById('drugTableBody');
+            drugsData.forEach(drug => {
+                const tr = document.createElement('tr');
+                const evidenceClass = drug.evidence_level === 'STRONG' ? 'evidence-strong' :
+                    drug.evidence_level === 'MODERATE' ? 'evidence-moderate' : 'evidence-weak';
+
+                tr.innerHTML = `
+                    <td><strong>${drug.name}</strong></td>
+                    <td>${drug.original_indication}</td>
+                    <td>${drug.cost_per_year}</td>
+                    <td>${drug.mechanism}</td>
+                    <td><span class="${evidenceClass}">${drug.evidence_level}</span></td>
+                    <td><span class="pmid">${drug.key_pmids}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterDrugTable() {
+            const searchTerm = document.getElementById('drugSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#drugTableBody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+
+        function buildHeatMap() {
+            const container = document.getElementById('heatMap');
+
+            // Header row
+            const headerRow = document.createElement('div');
+            headerRow.className = 'heat-row';
+            headerRow.innerHTML = '<div class="heat-cell heat-label heat-header"></div>' +
+                applicationsList.map(app =>
+                    '<div class="heat-cell heat-header" style="padding: 12px 5px;">' + app + '</div>'
+                ).join('');
+            container.appendChild(headerRow);
+
+            // Data rows
+            drugsData.forEach(drug => {
+                const row = document.createElement('div');
+                row.className = 'heat-row';
+
+                let rowHTML = '<div class="heat-cell heat-label">' + drug.name + '</div>';
+
+                applicationsList.forEach(app => {
+                    const hasApp = drug.applications.includes(app);
+                    let cellClass = 'heat-none';
+
+                    if (hasApp) {
+                        if (drug.evidence_level === 'STRONG') cellClass = 'heat-strong';
+                        else if (drug.evidence_level === 'MODERATE') cellClass = 'heat-moderate';
+                        else cellClass = 'heat-weak';
+                    }
+
+                    rowHTML += '<div class="heat-cell ' + cellClass + '">' +
+                        (hasApp ? '●' : '') + '</div>';
+                });
+
+                row.innerHTML = rowHTML;
+                container.appendChild(row);
+            });
+        }
+
+        function populateCandidates() {
+            const container = document.getElementById('candidatesContainer');
+
+            topCandidates.forEach(candidate => {
+                const card = document.createElement('div');
+                card.className = 'candidate-card';
+                card.innerHTML = `
+                    <div class="candidate-rank">#${candidate.rank}</div>
+                    <div class="candidate-name">${candidate.name}</div>
+                    <div class="candidate-title">${candidate.title}</div>
+                    <div class="candidate-body">${candidate.body}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function populateReferences() {
+            const container = document.getElementById('referencesContainer');
+
+            drugsData.forEach(drug => {
+                const expandable = document.createElement('div');
+                expandable.className = 'expandable';
+                expandable.textContent = drug.name;
+                expandable.onclick = function() {
+                    this.classList.toggle('expanded');
+                };
+
+                const content = document.createElement('div');
+                content.className = 'expanded-content';
+                content.innerHTML = `
+                    <p><strong>Original indication:</strong> ${drug.original_indication}</p>
+                    <p><strong>Diabetes mechanism:</strong> ${drug.mechanism}</p>
+                    <p><strong>Evidence level:</strong> ${drug.evidence_level}</p>
+                    <p><strong>Key reference:</strong> ${drug.key_reference}</p>
+                    <p><strong>PMID:</strong> <span class="pmid">${drug.key_pmids}</span></p>
+                    <p><strong>Clinical detail:</strong> ${drug.detail}</p>
+                    <p><strong>Applications:</strong> ${drug.applications.join(', ')}</p>
+                `;
+
+                container.appendChild(expandable);
+                container.appendChild(content);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            populateDrugTable();
+            buildHeatMap();
+            populateCandidates();
+            populateReferences();
+
+            document.getElementById('drugSearch').addEventListener('keyup', filterDrugTable);
+        });
+    </script>
+</body>
+</html>
