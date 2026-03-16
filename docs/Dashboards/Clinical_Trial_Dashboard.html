@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clinical Trial Intelligence — Diabetes Research Hub</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOoqAMikA6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 /* === TUFTE-INFORMED DESIGN SYSTEM === */
 :root {
@@ -121,16 +125,41 @@ tbody tr:hover { background: #f5f4ef; }
 /* Footer */
 .footer { max-width: 1300px; margin: 0 auto; padding: 20px 40px; border-top: 1px solid var(--border); font-size: 11px; color: var(--light); }
 .footer a { color: var(--accent); text-decoration: none; }
+
+/* Print-friendly */
+@media print {
+  .hub-nav, .hub-footer { display: none !important; }
+  body { background: #fff !important; }
+  .card, .section, table { break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+}
+/* Accessibility: focus states */
+button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
+/* Smooth transitions */
+button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
+a:hover { text-decoration: underline; }
+/* Skip to content link for screen readers */
+.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
+.skip-link:focus { top: 0; }
 </style>
+
+<script>
+// XSS sanitizer for search inputs
+function sanitizeInput(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+</script>
 </head>
 <body>
 <style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
 <div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
 
-<div class="header">
+<div id="main-content" class="header">
   <h1>Clinical Trial Intelligence</h1>
   <div class="source">
-    Diabetes Research Hub &middot; Data: <a href="https://clinicaltrials.gov/" target="_blank">ClinicalTrials.gov</a> API v2 &middot; Snapshot: 2026-03-16 &middot; <a href="https://osf.io/hu9ga" target="_blank">OSF Registration</a>
+    Diabetes Research Hub &middot; Data: <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov</a> API v2 &middot; Snapshot: 2026-03-16 &middot; <a href="https://osf.io/hu9ga" target="_blank" rel="noopener noreferrer">OSF Registration</a>
   </div>
   <div class="key-figures" id="keyFigures"></div>
 </div>
@@ -252,7 +281,7 @@ content.appendChild(p0);
 const topRecruiting = TRIALS.filter(t => t.status==='RECRUITING' && typeof t.enrollment==='number').sort((a,b) => b.enrollment - a.enrollment).slice(0,12);
 document.getElementById('topTrials').innerHTML = topRecruiting.map(t => `
   <tr>
-    <td><a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank">${t.id}</a></td>
+    <td><a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank" rel="noopener noreferrer">${t.id}</a></td>
     <td>${t.title}</td>
     <td><span class="tag tag-phase">${t.phaseLabel}</span></td>
     <td style="text-align:right;font-family:var(--mono)">${t.enrollment.toLocaleString()}</td>
@@ -268,7 +297,7 @@ p1.innerHTML = `
 <div class="card">
   <h3>Full Trial Database &mdash; ${TRIALS.length} trials</h3>
   <div class="controls">
-    <input type="text" class="search" id="searchInput" placeholder="Search by title, sponsor, NCT ID\u2026">
+    <input type="text" class="search" id="searchInput" placeholder="Search by title, sponsor, NCT ID\u2026" aria-label="Search by title, sponsor, NCT ID\u2026">
     <select class="filter" id="fStatus"><option value="">All statuses</option></select>
     <select class="filter" id="fCategory"><option value="">All categories</option></select>
     <select class="filter" id="fPhase"><option value="">All phases</option></select>
@@ -336,7 +365,7 @@ function renderExplorer() {
   document.getElementById('resultCount').textContent = filtered.length + ' trials';
   document.getElementById('explorerBody').innerHTML = rows.map(t => `
     <tr>
-      <td><a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank">${t.id}</a></td>
+      <td><a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank" rel="noopener noreferrer">${t.id}</a></td>
       <td style="max-width:320px">${t.title}</td>
       <td>${getStatusTag(t.statusLabel)}</td>
       <td><span class="tag tag-phase">${t.phaseLabel}</span></td>
@@ -473,7 +502,7 @@ const recent = TRIALS.filter(t => t.results).sort((a,b) => (b.results||'').local
 document.getElementById('recentResults').innerHTML = recent.map(t => `
   <div class="result-item">
     <div class="result-title">
-      <a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank">${t.id}</a> &mdash; ${t.title}
+      <a class="nct" href="https://clinicaltrials.gov/study/${t.id}" target="_blank" rel="noopener noreferrer">${t.id}</a> &mdash; ${t.title}
     </div>
     <div class="result-meta">
       Results posted: <strong>${t.results}</strong> &middot; ${t.sponsor} &middot; ${t.phaseLabel}

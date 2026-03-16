@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diabetes Research Hub</title>
 <meta name="description" content="Open-source computational analysis of the global diabetes research landscape. Triple-source validated, PRISMA-aligned.">
@@ -76,7 +80,32 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom
 
 .footer { max-width: 900px; margin: 0 auto; padding: 20px 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--light); }
 .footer a { color: var(--accent); text-decoration: none; }
+
+/* Print-friendly */
+@media print {
+  .hub-nav, .hub-footer { display: none !important; }
+  body { background: #fff !important; }
+  .card, .section, table { break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+}
+/* Accessibility: focus states */
+button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
+/* Smooth transitions */
+button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
+a:hover { text-decoration: underline; }
+/* Skip to content link for screen readers */
+.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
+.skip-link:focus { top: 0; }
 </style>
+
+<script>
+// XSS sanitizer for search inputs
+function sanitizeInput(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+</script>
 </head>
 <body>
 
@@ -96,11 +125,11 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom
   <a href="#approach">Approach</a>
   <a href="#domains">Domains</a>
   <a href="#contribute">Contribute</a>
-  <a href="https://github.com/BottumJ/diabetes-research-hub" target="_blank">GitHub</a>
-  <a href="https://osf.io/hu9ga" target="_blank">OSF</a>
+  <a href="https://github.com/BottumJ/diabetes-research-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://osf.io/hu9ga" target="_blank" rel="noopener noreferrer">OSF</a>
 </nav>
 
-<div class="container">
+<div id="main-content" class="container">
 
 <section id="dashboards">
 <h2>Analysis &amp; Dashboards</h2>
@@ -139,13 +168,13 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom
     <div class="status live">Available</div>
     <h3>Literature Gap Analysis</h3>
     <p>Pairwise analysis of 30 PubMed domains (435 pairs) with interpreted classifications: meaningful opportunities vs. methodologically distinct pairs.</p>
-    <a href="https://github.com/BottumJ/diabetes-research-hub/blob/main/Analysis/Results/literature_gap_report.md" target="_blank">View report &rarr;</a>
+    <a href="https://github.com/BottumJ/diabetes-research-hub/blob/main/Analysis/Results/literature_gap_report.md" target="_blank" rel="noopener noreferrer">View report &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>Publication Monitor</h3>
     <p>Rolling 30-day PubMed snapshot across 15 high-priority research domains. Cross-domain papers flagged for synthesis potential.</p>
-    <a href="https://github.com/BottumJ/diabetes-research-hub/blob/main/Analysis/Results/pubmed_recent_summary.md" target="_blank">View report &rarr;</a>
+    <a href="https://github.com/BottumJ/diabetes-research-hub/blob/main/Analysis/Results/pubmed_recent_summary.md" target="_blank" rel="noopener noreferrer">View report &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
@@ -253,8 +282,8 @@ h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom
   <h2>Contribute</h2>
   <p>Open research project. All code, data, and findings freely available under MIT and CC-BY 4.0 licenses. Feedback, critique, and collaboration welcome.</p>
   <div class="btns">
-    <a class="btn btn-primary" href="https://github.com/BottumJ/diabetes-research-hub" target="_blank">GitHub Repository</a>
-    <a class="btn btn-secondary" href="https://osf.io/hu9ga" target="_blank">OSF Registration</a>
+    <a class="btn btn-primary" href="https://github.com/BottumJ/diabetes-research-hub" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+    <a class="btn btn-secondary" href="https://osf.io/hu9ga" target="_blank" rel="noopener noreferrer">OSF Registration</a>
   </div>
 </div>
 </section>

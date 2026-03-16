@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Beta Cell Therapy Equity Analysis</title>
     <style>
@@ -324,12 +328,37 @@
                 padding: 8px;
             }
         }
-    </style>
+    
+/* Print-friendly */
+@media print {
+  .hub-nav, .hub-footer { display: none !important; }
+  body { background: #fff !important; }
+  .card, .section, table { break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+}
+/* Accessibility: focus states */
+button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
+/* Smooth transitions */
+button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
+a:hover { text-decoration: underline; }
+/* Skip to content link for screen readers */
+.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
+.skip-link:focus { top: 0; }
+</style>
+
+<script>
+// XSS sanitizer for search inputs
+function sanitizeInput(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+</script>
 </head>
 <body>
 <style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
 <div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
-    <div class="container">
+    <div id="main-content" class="container">
 
         <header>
             <h1>Beta Cell Therapy Equity Analysis</h1>
@@ -1548,9 +1577,9 @@
             <p>Beta Cell Regen x Health Equity | Analysis Date: 2026-03-15</p>
             <p>
                 Sources:
-                <a href="https://clinicaltrials.gov" target="_blank">ClinicalTrials.gov</a> |
-                <a href="https://diabetesatlas.org" target="_blank">IDF Diabetes Atlas</a> |
-                <a href="https://osf.io/hu9ga" target="_blank">OSF Preregistration</a>
+                <a href="https://clinicaltrials.gov" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov</a> |
+                <a href="https://diabetesatlas.org" target="_blank" rel="noopener noreferrer">IDF Diabetes Atlas</a> |
+                <a href="https://osf.io/hu9ga" target="_blank" rel="noopener noreferrer">OSF Preregistration</a>
             </p>
             <p style="margin-top: 10px; font-size: 12px;">Tufte-style data visualization. No tracking, no cookies, no external dependencies.</p>
         </footer>

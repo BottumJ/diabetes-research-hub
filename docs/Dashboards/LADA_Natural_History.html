@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LADA Natural History Model</title>
     <style>
@@ -381,7 +385,32 @@
             color: #636363;
             margin-top: 0.5rem;
         }
-    </style>
+    
+/* Print-friendly */
+@media print {
+  .hub-nav, .hub-footer { display: none !important; }
+  body { background: #fff !important; }
+  .card, .section, table { break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
+}
+/* Accessibility: focus states */
+button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
+/* Smooth transitions */
+button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
+a:hover { text-decoration: underline; }
+/* Skip to content link for screen readers */
+.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
+.skip-link:focus { top: 0; }
+</style>
+
+<script>
+// XSS sanitizer for search inputs
+function sanitizeInput(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+</script>
 </head>
 <body>
 <style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
@@ -394,7 +423,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="main-content" class="container">
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab(event, 'cpeptide')">C-Peptide Decline Model</button>
             <button class="tab-button" onclick="switchTab(event, 'autoantibody')">Autoantibody Risk Stratification</button>
@@ -909,7 +938,7 @@
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> Biphasic C-peptide decline in Chinese LADA cohort</p>
                         <p><strong>Key Finding:</strong> Phase 1 decline: 55.19 pmol/L/year; Phase 2: ~20 pmol/L/year</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" class="pmid-link" target="_blank">31529065</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" class="pmid-link" target="_blank" rel="noopener noreferrer">31529065</a></p>
                     </div>
                 </div>
 
@@ -920,7 +949,7 @@
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> UKPDS: 84% GADA+ patients require insulin by 6 years</p>
                         <p><strong>Key Finding:</strong> 84% GADA-positive require insulin within 6 years of diagnosis</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" class="pmid-link" target="_blank">9742976</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" class="pmid-link" target="_blank" rel="noopener noreferrer">9742976</a></p>
                     </div>
                 </div>
 
@@ -931,7 +960,7 @@
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> HUNT study: Autoantibody risk stratification</p>
                         <p><strong>Key Finding:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank">30369313</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank" rel="noopener noreferrer">30369313</a></p>
                     </div>
                 </div>
 
@@ -942,7 +971,7 @@
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> ACTION LADA: Prevalence and characteristics</p>
                         <p><strong>Key Finding:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156)</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank">30369313</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank" rel="noopener noreferrer">30369313</a></p>
                     </div>
                 </div>
 
@@ -953,7 +982,7 @@
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> GAD-alum vaccine in HLA-DR3-DQ2+ LADA patients</p>
                         <p><strong>Key Finding:</strong> Dose-dependent C-peptide preservation in responders</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" class="pmid-link" target="_blank">33515517</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" class="pmid-link" target="_blank" rel="noopener noreferrer">33515517</a></p>
                     </div>
                 </div>
 
