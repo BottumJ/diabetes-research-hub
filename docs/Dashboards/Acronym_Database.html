@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acronym & Abbreviation Database - Diabetes Research Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf7;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: #636363;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: normal;
+        }
+
+        .stats {
+            color: #636363;
+            font-size: 0.95rem;
+            border-top: 1px solid #e0ddd5;
+            border-bottom: 1px solid #e0ddd5;
+            padding: 0.75rem 0;
+        }
+
+        .search-section {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .search-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #e0ddd5;
+            background-color: #fafaf7;
+            color: #1a1a1a;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        .filter-buttons {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e0ddd5;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: none;
+        }
+
+        .filter-btn:hover {
+            border-color: #1a1a1a;
+            background-color: #f5f5f2;
+        }
+
+        .filter-btn.active {
+            border-color: #1a1a1a;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .alphabet-nav {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .alpha-link {
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #e0ddd5;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .alpha-link:hover {
+            border-color: #1a1a1a;
+        }
+
+        .table-wrapper {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        thead {
+            background-color: #fafaf7;
+            border-bottom: 2px solid #e0ddd5;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            color: #1a1a1a;
+            border-right: 1px solid #e0ddd5;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0ddd5;
+            border-right: 1px solid #e0ddd5;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tbody tr:hover {
+            background-color: #fafaf7;
+        }
+
+        .acronym {
+            font-family: "SF Mono", Monaco, Consolas, monospace;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .full-name {
+            font-weight: 500;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #fafaf7;
+            border: 1px solid #e0ddd5;
+            font-size: 0.85rem;
+            color: #636363;
+        }
+
+        .description {
+            color: #636363;
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #636363;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0ddd5;
+            font-size: 0.85rem;
+            color: #636363;
+        }
+
+        .footer-title {
+            font-family: Georgia, serif;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-sources {
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .footer-note {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0ddd5;
+            font-style: normal;
+        }
+
+        .alpha-anchor {
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Acronym & Abbreviation Database</h1>
+            <p class="subtitle">Diabetes Research Hub - Quick reference for all terms used across dashboards and analyses</p>
+            <div class="stats">
+                <strong>147 acronyms</strong> |
+                <strong>10 categories</strong> |
+                Use the search below to find what you need instantly
+            </div>
+        </header>
+
+        <div class="search-section">
+            <label class="search-label">Search by acronym, full name, or description:</label>
+            <input type="text" id="searchInput" placeholder="Type to filter (e.g., HbA1c, insulin, kidney)">
+        </div>
+
+        <div>
+            <strong style="font-size: 0.9rem; color: #636363;">Filter by category:</strong>
+            <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn active" data-filter="">All Categories</button>
+                <button class="filter-btn" data-filter="Clinical & Medical">Clinical & Medical</button>
+                <button class="filter-btn" data-filter="Diabetes Types & Subtypes">Diabetes Types & Subtypes</button>
+                <button class="filter-btn" data-filter="Drug Classes & Therapies">Drug Classes & Therapies</button>
+                <button class="filter-btn" data-filter="Biomarkers & Lab Values">Biomarkers & Lab Values</button>
+                <button class="filter-btn" data-filter="Research Methods & Standards">Research Methods & Standards</button>
+                <button class="filter-btn" data-filter="Organizations & Registries">Organizations & Registries</button>
+                <button class="filter-btn" data-filter="Technology & Devices">Technology & Devices</button>
+                <button class="filter-btn" data-filter="Genomics & Omics">Genomics & Omics</button>
+                <button class="filter-btn" data-filter="Statistics & Data">Statistics & Data</button>
+                <button class="filter-btn" data-filter="Hub-Specific">Hub-Specific</button>
+            </div>
+        </div>
+
+        <div class="alphabet-nav" id="alphabetNav">
+            <a class="alpha-link" onclick="jumpToLetter('A')">A</a>
+            <a class="alpha-link" onclick="jumpToLetter('B')">B</a>
+            <a class="alpha-link" onclick="jumpToLetter('C')">C</a>
+            <a class="alpha-link" onclick="jumpToLetter('D')">D</a>
+            <a class="alpha-link" onclick="jumpToLetter('E')">E</a>
+            <a class="alpha-link" onclick="jumpToLetter('F')">F</a>
+            <a class="alpha-link" onclick="jumpToLetter('G')">G</a>
+            <a class="alpha-link" onclick="jumpToLetter('H')">H</a>
+            <a class="alpha-link" onclick="jumpToLetter('I')">I</a>
+            <a class="alpha-link" onclick="jumpToLetter('J')">J</a>
+            <a class="alpha-link" onclick="jumpToLetter('K')">K</a>
+            <a class="alpha-link" onclick="jumpToLetter('L')">L</a>
+            <a class="alpha-link" onclick="jumpToLetter('M')">M</a>
+            <a class="alpha-link" onclick="jumpToLetter('N')">N</a>
+            <a class="alpha-link" onclick="jumpToLetter('O')">O</a>
+            <a class="alpha-link" onclick="jumpToLetter('P')">P</a>
+            <a class="alpha-link" onclick="jumpToLetter('Q')">Q</a>
+            <a class="alpha-link" onclick="jumpToLetter('R')">R</a>
+            <a class="alpha-link" onclick="jumpToLetter('S')">S</a>
+            <a class="alpha-link" onclick="jumpToLetter('T')">T</a>
+            <a class="alpha-link" onclick="jumpToLetter('U')">U</a>
+            <a class="alpha-link" onclick="jumpToLetter('V')">V</a>
+            <a class="alpha-link" onclick="jumpToLetter('W')">W</a>
+            <a class="alpha-link" onclick="jumpToLetter('X')">X</a>
+            <a class="alpha-link" onclick="jumpToLetter('Y')">Y</a>
+            <a class="alpha-link" onclick="jumpToLetter('Z')">Z</a>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 12%;">Acronym</th>
+                        <th style="width: 22%;">Full Name</th>
+                        <th style="width: 16%;">Category</th>
+                        <th style="width: 50%;">Context & Description</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <span class="alpha-anchor" id="letter-A"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="a1c hemoglobin a1c informal abbreviation for hba1c">
+                        <td class="acronym">A1C</td>
+                        <td class="full-name">Hemoglobin A1c</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Informal abbreviation for HbA1c</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="aav adeno-associated virus gene therapy delivery vector">
+                        <td class="acronym">AAV</td>
+                        <td class="full-name">Adeno-Associated Virus</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Gene therapy delivery vector</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="ada american diabetes association major us diabetes organization; publishes standards of care">
+                        <td class="acronym">ADA</td>
+                        <td class="full-name">American Diabetes Association</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Major US diabetes organization; publishes Standards of Care</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="ahrq agency for healthcare research and quality us evidence review agency">
+                        <td class="acronym">AHRQ</td>
+                        <td class="full-name">Agency for Healthcare Research and Quality</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">US evidence review agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="aid automated insulin delivery umbrella term for closed-loop systems">
+                        <td class="acronym">AID</td>
+                        <td class="full-name">Automated Insulin Delivery</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Umbrella term for closed-loop systems</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="ampk amp-activated protein kinase cellular energy sensor; metformin target">
+                        <td class="acronym">AMPK</td>
+                        <td class="full-name">AMP-Activated Protein Kinase</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Cellular energy sensor; metformin target</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="ap artificial pancreas fully automated glucose regulation system">
+                        <td class="acronym">AP</td>
+                        <td class="full-name">Artificial Pancreas</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Fully automated glucose regulation system</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="atg anti-thymocyte globulin immunosuppressive therapy depleting t cells">
+                        <td class="acronym">ATG</td>
+                        <td class="full-name">Anti-Thymocyte Globulin</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Immunosuppressive therapy depleting T cells</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="atmp advanced therapy medicinal product ema classification for gene/cell therapies">
+                        <td class="acronym">ATMP</td>
+                        <td class="full-name">Advanced Therapy Medicinal Product</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">EMA classification for gene/cell therapies</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="attd advanced technologies & treatments for diabetes annual diabetes technology conference">
+                        <td class="acronym">ATTD</td>
+                        <td class="full-name">Advanced Technologies & Treatments for Diabetes</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Annual diabetes technology conference</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-B"></span>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="bcg bacillus calmette-guerin tuberculosis vaccine being repurposed for t1d">
+                        <td class="acronym">BCG</td>
+                        <td class="full-name">Bacillus Calmette-Guerin</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Tuberculosis vaccine being repurposed for T1D</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="bgm blood glucose monitor device for fingerstick glucose measurement">
+                        <td class="acronym">BGM</td>
+                        <td class="full-name">Blood Glucose Monitor</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Device for fingerstick glucose measurement</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="bla biologics license application fda regulatory submission for biological products">
+                        <td class="acronym">BLA</td>
+                        <td class="full-name">Biologics License Application</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">FDA regulatory submission for biological products</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="bmi body mass index weight (kg) / height (m)^2; obesity measure">
+                        <td class="acronym">BMI</td>
+                        <td class="full-name">Body Mass Index</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Weight (kg) / height (m)^2; obesity measure</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="bp blood pressure systolic/diastolic arterial pressure">
+                        <td class="acronym">BP</td>
+                        <td class="full-name">Blood Pressure</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Systolic/diastolic arterial pressure</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="bronze bronze validation tier our bibliometric analysis only">
+                        <td class="acronym">BRONZE</td>
+                        <td class="full-name">Bronze Validation Tier</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">Our bibliometric analysis only</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="bt1d breakthrough t1d rebranded jdrf">
+                        <td class="acronym">BT1D</td>
+                        <td class="full-name">Breakthrough T1D</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Rebranded JDRF</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-C"></span>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="car-t chimeric antigen receptor t cell engineered immune cells for targeted therapy">
+                        <td class="acronym">CAR-T</td>
+                        <td class="full-name">Chimeric Antigen Receptor T Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Engineered immune cells for targeted therapy</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="car-treg chimeric antigen receptor regulatory t cell engineered immune-suppressive cells for autoimmune tolerance">
+                        <td class="acronym">CAR-Treg</td>
+                        <td class="full-name">Chimeric Antigen Receptor Regulatory T Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Engineered immune-suppressive cells for autoimmune tolerance</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="cdc centers for disease control and prevention us public health agency">
+                        <td class="acronym">CDC</td>
+                        <td class="full-name">Centers for Disease Control and Prevention</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">US public health agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="cebm centre for evidence-based medicine oxford evidence hierarchy (levels 1-5)">
+                        <td class="acronym">CEBM</td>
+                        <td class="full-name">Centre for Evidence-Based Medicine</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Oxford evidence hierarchy (Levels 1-5)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="cfrd cystic fibrosis-related diabetes diabetes in cystic fibrosis patients">
+                        <td class="acronym">CFRD</td>
+                        <td class="full-name">Cystic Fibrosis-Related Diabetes</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Diabetes in cystic fibrosis patients</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="cgm continuous glucose monitor wearable sensor measuring glucose every 5 min">
+                        <td class="acronym">CGM</td>
+                        <td class="full-name">Continuous Glucose Monitor</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Wearable sensor measuring glucose every 5 min</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="cgmp current good manufacturing practice fda manufacturing quality standard">
+                        <td class="acronym">cGMP</td>
+                        <td class="full-name">Current Good Manufacturing Practice</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">FDA manufacturing quality standard</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="chf congestive heart failure heart's inability to pump sufficient blood">
+                        <td class="acronym">CHF</td>
+                        <td class="full-name">Congestive Heart Failure</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Heart's inability to pump sufficient blood</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="chw community health worker non-clinical community-based health support">
+                        <td class="acronym">CHW</td>
+                        <td class="full-name">Community Health Worker</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Non-clinical community-based health support</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="ci confidence interval range of plausible values for an estimate">
+                        <td class="acronym">CI</td>
+                        <td class="full-name">Confidence Interval</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Range of plausible values for an estimate</td>
+                    </tr>
+                    <tr class="data-row" data-category="Statistics & Data" data-search="ci confidence interval range of plausible values for an estimate">
+                        <td class="acronym">CI</td>
+                        <td class="full-name">Confidence Interval</td>
+                        <td><span class="category-tag">Statistics & Data</span></td>
+                        <td class="description">Range of plausible values for an estimate</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="citr collaborative islet transplant registry international islet transplant outcomes database">
+                        <td class="acronym">CITR</td>
+                        <td class="full-name">Collaborative Islet Transplant Registry</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">International islet transplant outcomes database</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="ckd chronic kidney disease progressive loss of kidney function">
+                        <td class="acronym">CKD</td>
+                        <td class="full-name">Chronic Kidney Disease</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Progressive loss of kidney function</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="crispr clustered regularly interspaced short palindromic repeats gene editing technology">
+                        <td class="acronym">CRISPR</td>
+                        <td class="full-name">Clustered Regularly Interspaced Short Palindromic Repeats</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Gene editing technology</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="crp c-reactive protein inflammatory biomarker">
+                        <td class="acronym">CRP</td>
+                        <td class="full-name">C-Reactive Protein</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Inflammatory biomarker</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="csii continuous subcutaneous insulin infusion insulin pump therapy">
+                        <td class="acronym">CSII</td>
+                        <td class="full-name">Continuous Subcutaneous Insulin Infusion</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Insulin pump therapy</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="cvd cardiovascular disease heart and blood vessel diseases">
+                        <td class="acronym">CVD</td>
+                        <td class="full-name">Cardiovascular Disease</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Heart and blood vessel diseases</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-D"></span>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="daly disability-adjusted life year measure of disease burden">
+                        <td class="acronym">DALY</td>
+                        <td class="full-name">Disability-Adjusted Life Year</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Measure of disease burden</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="dfmo difluoromethylornithine polyamine synthesis inhibitor being studied in t1d">
+                        <td class="acronym">DFMO</td>
+                        <td class="full-name">Difluoromethylornithine</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Polyamine synthesis inhibitor being studied in T1D</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dfu diabetic foot ulcer open wound on foot related to neuropathy/vascular disease">
+                        <td class="acronym">DFU</td>
+                        <td class="full-name">Diabetic Foot Ulcer</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Open wound on foot related to neuropathy/vascular disease</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dka diabetic ketoacidosis life-threatening complication of insulin deficiency">
+                        <td class="acronym">DKA</td>
+                        <td class="full-name">Diabetic Ketoacidosis</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Life-threatening complication of insulin deficiency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dkd diabetic kidney disease kidney damage from diabetes (also: dn)">
+                        <td class="acronym">DKD</td>
+                        <td class="full-name">Diabetic Kidney Disease</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Kidney damage from diabetes (also: DN)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dme diabetic macular edema swelling in the retina from diabetic retinopathy">
+                        <td class="acronym">DME</td>
+                        <td class="full-name">Diabetic Macular Edema</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Swelling in the retina from diabetic retinopathy</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dn diabetic nephropathy kidney disease caused by diabetes">
+                        <td class="acronym">DN</td>
+                        <td class="full-name">Diabetic Nephropathy</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Kidney disease caused by diabetes</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="dna deoxyribonucleic acid genetic blueprint">
+                        <td class="acronym">DNA</td>
+                        <td class="full-name">Deoxyribonucleic Acid</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Genetic blueprint</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="doi digital object identifier permanent article link">
+                        <td class="acronym">DOI</td>
+                        <td class="full-name">Digital Object Identifier</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Permanent article link</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dpn diabetic peripheral neuropathy nerve damage in extremities from diabetes">
+                        <td class="acronym">DPN</td>
+                        <td class="full-name">Diabetic Peripheral Neuropathy</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Nerve damage in extremities from diabetes</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="dpp diabetes prevention program landmark trial showing lifestyle prevents t2d">
+                        <td class="acronym">DPP</td>
+                        <td class="full-name">Diabetes Prevention Program</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Landmark trial showing lifestyle prevents T2D</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="dpp-4 dipeptidyl peptidase-4 enzyme that breaks down incretins; dpp-4 inhibitors extend incretin action">
+                        <td class="acronym">DPP-4</td>
+                        <td class="full-name">Dipeptidyl Peptidase-4</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Enzyme that breaks down incretins; DPP-4 inhibitors extend incretin action</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="dpp-4i dpp-4 inhibitor drug class (sitagliptin, saxagliptin) that preserves incretin hormones">
+                        <td class="acronym">DPP-4i</td>
+                        <td class="full-name">DPP-4 Inhibitor</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Drug class (sitagliptin, saxagliptin) that preserves incretin hormones</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="dr diabetic retinopathy eye damage from diabetes">
+                        <td class="acronym">DR</td>
+                        <td class="full-name">Diabetic Retinopathy</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Eye damage from diabetes</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="dsmes diabetes self-management education and support structured diabetes education programs">
+                        <td class="acronym">DSMES</td>
+                        <td class="full-name">Diabetes Self-Management Education and Support</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Structured diabetes education programs</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-E"></span>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="easd european association for the study of diabetes european diabetes research organization">
+                        <td class="acronym">EASD</td>
+                        <td class="full-name">European Association for the Study of Diabetes</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">European diabetes research organization</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="ehr electronic health record digital patient medical records">
+                        <td class="acronym">EHR</td>
+                        <td class="full-name">Electronic Health Record</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Digital patient medical records</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="ema european medicines agency eu drug regulatory agency">
+                        <td class="acronym">EMA</td>
+                        <td class="full-name">European Medicines Agency</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">EU drug regulatory agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="esrd end-stage renal disease complete kidney failure requiring dialysis or transplant">
+                        <td class="acronym">ESRD</td>
+                        <td class="full-name">End-Stage Renal Disease</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Complete kidney failure requiring dialysis or transplant</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-F"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="fbg fasting blood glucose blood sugar measured after 8+ hour fast">
+                        <td class="acronym">FBG</td>
+                        <td class="full-name">Fasting Blood Glucose</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Blood sugar measured after 8+ hour fast</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="fda food and drug administration us drug/device regulatory agency">
+                        <td class="acronym">FDA</td>
+                        <td class="full-name">Food and Drug Administration</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">US drug/device regulatory agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="fgm flash glucose monitoring scan-to-read glucose sensor (libre)">
+                        <td class="acronym">FGM</td>
+                        <td class="full-name">Flash Glucose Monitoring</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Scan-to-read glucose sensor (Libre)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="fmt fecal microbiota transplantation gut microbiome modulation therapy">
+                        <td class="acronym">FMT</td>
+                        <td class="full-name">Fecal Microbiota Transplantation</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Gut microbiome modulation therapy</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="fqhc federally qualified health center community health center serving underserved areas">
+                        <td class="acronym">FQHC</td>
+                        <td class="full-name">Federally Qualified Health Center</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Community health center serving underserved areas</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-G"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="gad glutamic acid decarboxylase autoantibody marker for autoimmune diabetes (gad65)">
+                        <td class="acronym">GAD</td>
+                        <td class="full-name">Glutamic Acid Decarboxylase</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Autoantibody marker for autoimmune diabetes (GAD65)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="gad-alum glutamic acid decarboxylase-alum immunotherapy vaccine for autoimmune diabetes (diamyd)">
+                        <td class="acronym">GAD-alum</td>
+                        <td class="full-name">Glutamic Acid Decarboxylase-Alum</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Immunotherapy vaccine for autoimmune diabetes (Diamyd)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="gap score literature gap score formula: max(0, 1-(joint_pubs/geometric_mean)) x 100">
+                        <td class="acronym">Gap Score</td>
+                        <td class="full-name">Literature Gap Score</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">Formula: max(0, 1-(joint_pubs/geometric_mean)) x 100</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="gck-mody glucokinase mody mody caused by glucokinase gene mutations">
+                        <td class="acronym">GCK-MODY</td>
+                        <td class="full-name">Glucokinase MODY</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">MODY caused by glucokinase gene mutations</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="gdm gestational diabetes mellitus diabetes developing during pregnancy">
+                        <td class="acronym">GDM</td>
+                        <td class="full-name">Gestational Diabetes Mellitus</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Diabetes developing during pregnancy</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="gip glucose-dependent insulinotropic polypeptide incretin hormone; dual gip/glp-1 agonists in development">
+                        <td class="acronym">GIP</td>
+                        <td class="full-name">Glucose-dependent Insulinotropic Polypeptide</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Incretin hormone; dual GIP/GLP-1 agonists in development</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="gka glucokinase activator drug class enhancing glucose sensing (dorzagliatin)">
+                        <td class="acronym">GKA</td>
+                        <td class="full-name">Glucokinase Activator</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Drug class enhancing glucose sensing (dorzagliatin)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="glp-1 glucagon-like peptide-1 incretin hormone that stimulates insulin secretion">
+                        <td class="acronym">GLP-1</td>
+                        <td class="full-name">Glucagon-Like Peptide-1</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Incretin hormone that stimulates insulin secretion</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="glp-1 ra glucagon-like peptide-1 receptor agonist incretin-based therapy (semaglutide, dulaglutide, liraglutide)">
+                        <td class="acronym">GLP-1 RA</td>
+                        <td class="full-name">Glucagon-Like Peptide-1 Receptor Agonist</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Incretin-based therapy (semaglutide, dulaglutide, liraglutide)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="gmp good manufacturing practice quality standard for cell/gene therapy production">
+                        <td class="acronym">GMP</td>
+                        <td class="full-name">Good Manufacturing Practice</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Quality standard for cell/gene therapy production</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="gold gold validation tier 3+ independent expert sources confirm gap relevance">
+                        <td class="acronym">GOLD</td>
+                        <td class="full-name">Gold Validation Tier</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">3+ independent expert sources confirm gap relevance</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="grade grading of recommendations assessment framework for rating evidence quality">
+                        <td class="acronym">GRADE</td>
+                        <td class="full-name">Grading of Recommendations Assessment</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Framework for rating evidence quality</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="gwas genome-wide association study scans entire genome for disease-associated variants">
+                        <td class="acronym">GWAS</td>
+                        <td class="full-name">Genome-Wide Association Study</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Scans entire genome for disease-associated variants</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-H"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="hba1c hemoglobin a1c (glycated hemoglobin) 3-month average blood glucose indicator">
+                        <td class="acronym">HbA1c</td>
+                        <td class="full-name">Hemoglobin A1c (Glycated Hemoglobin)</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">3-month average blood glucose indicator</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="hcl hybrid closed-loop automated insulin delivery with user boluses">
+                        <td class="acronym">HCL</td>
+                        <td class="full-name">Hybrid Closed-Loop</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Automated insulin delivery with user boluses</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="hic high-income country world bank economic classification">
+                        <td class="acronym">HIC</td>
+                        <td class="full-name">High-Income Country</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">World Bank economic classification</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="hla human leukocyte antigen immune system gene complex; t1d risk factor">
+                        <td class="acronym">HLA</td>
+                        <td class="full-name">Human Leukocyte Antigen</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Immune system gene complex; T1D risk factor</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="homa-ir homeostatic model assessment of insulin resistance mathematical model estimating ir from fasting glucose/insulin">
+                        <td class="acronym">HOMA-IR</td>
+                        <td class="full-name">Homeostatic Model Assessment of Insulin Resistance</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Mathematical model estimating IR from fasting glucose/insulin</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="hr hazard ratio measure of effect in survival analysis">
+                        <td class="acronym">HR</td>
+                        <td class="full-name">Hazard Ratio</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Measure of effect in survival analysis</td>
+                    </tr>
+                    <tr class="data-row" data-category="Statistics & Data" data-search="hr hazard ratio measure of effect in survival analysis">
+                        <td class="acronym">HR</td>
+                        <td class="full-name">Hazard Ratio</td>
+                        <td><span class="category-tag">Statistics & Data</span></td>
+                        <td class="description">Measure of effect in survival analysis</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-I"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="ia-2 insulinoma-associated antigen 2 autoantibody marker for t1d">
+                        <td class="acronym">IA-2</td>
+                        <td class="full-name">Insulinoma-Associated Antigen 2</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Autoantibody marker for T1D</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="idf international diabetes federation global diabetes organization; publishes diabetes atlas">
+                        <td class="acronym">IDF</td>
+                        <td class="full-name">International Diabetes Federation</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Global diabetes organization; publishes Diabetes Atlas</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="igt impaired glucose tolerance pre-diabetic state">
+                        <td class="acronym">IGT</td>
+                        <td class="full-name">Impaired Glucose Tolerance</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Pre-diabetic state</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="il-10 interleukin-10 anti-inflammatory cytokine">
+                        <td class="acronym">IL-10</td>
+                        <td class="full-name">Interleukin-10</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Anti-inflammatory cytokine</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="il-1b interleukin-1 beta pro-inflammatory cytokine">
+                        <td class="acronym">IL-1B</td>
+                        <td class="full-name">Interleukin-1 Beta</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Pro-inflammatory cytokine</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="il-6 interleukin-6 pro-inflammatory cytokine">
+                        <td class="acronym">IL-6</td>
+                        <td class="full-name">Interleukin-6</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Pro-inflammatory cytokine</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="ind investigational new drug fda application to begin human testing">
+                        <td class="acronym">IND</td>
+                        <td class="full-name">Investigational New Drug</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">FDA application to begin human testing</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="ipsc induced pluripotent stem cell adult cells reprogrammed to embryonic-like state">
+                        <td class="acronym">iPSC</td>
+                        <td class="full-name">Induced Pluripotent Stem Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Adult cells reprogrammed to embryonic-like state</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="ir insulin resistance reduced cellular response to insulin">
+                        <td class="acronym">IR</td>
+                        <td class="full-name">Insulin Resistance</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Reduced cellular response to insulin</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="itt intention to treat analysis including all randomized participants">
+                        <td class="acronym">ITT</td>
+                        <td class="full-name">Intention to Treat</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Analysis including all randomized participants</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-J"></span>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="jdrf juvenile diabetes research foundation now "breakthrough t1d"; major t1d research funder">
+                        <td class="acronym">JDRF</td>
+                        <td class="full-name">Juvenile Diabetes Research Foundation</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Now "Breakthrough T1D"; major T1D research funder</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-L"></span>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="lada latent autoimmune diabetes in adults slow-onset autoimmune diabetes, often misdiagnosed as t2d">
+                        <td class="acronym">LADA</td>
+                        <td class="full-name">Latent Autoimmune Diabetes in Adults</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Slow-onset autoimmune diabetes, often misdiagnosed as T2D</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="lmic low- and middle-income country world bank economic classification">
+                        <td class="acronym">LMIC</td>
+                        <td class="full-name">Low- and Middle-Income Country</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">World Bank economic classification</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-M"></span>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="mafa v-maf musculoaponeurotic fibrosarcoma oncogene a beta cell maturation transcription factor">
+                        <td class="acronym">MAFA</td>
+                        <td class="full-name">V-Maf Musculoaponeurotic Fibrosarcoma Oncogene A</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Beta cell maturation transcription factor</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="mash metabolic-associated steatohepatitis inflammatory form of fatty liver (formerly nash)">
+                        <td class="acronym">MASH</td>
+                        <td class="full-name">Metabolic-Associated Steatohepatitis</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Inflammatory form of fatty liver (formerly NASH)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="mdi multiple daily injections insulin delivery method">
+                        <td class="acronym">MDI</td>
+                        <td class="full-name">Multiple Daily Injections</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Insulin delivery method</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="mesh medical subject headings pubmed controlled vocabulary">
+                        <td class="acronym">MeSH</td>
+                        <td class="full-name">Medical Subject Headings</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">PubMed controlled vocabulary</td>
+                    </tr>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="mets metabolic syndrome cluster of conditions: high bp, high sugar, excess waist fat, abnormal lipids">
+                        <td class="acronym">MetS</td>
+                        <td class="full-name">Metabolic Syndrome</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Cluster of conditions: high BP, high sugar, excess waist fat, abnormal lipids</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="mody maturity-onset diabetes of the young genetic form of diabetes (monogenic)">
+                        <td class="acronym">MODY</td>
+                        <td class="full-name">Maturity-Onset Diabetes of the Young</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Genetic form of diabetes (monogenic)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="msc mesenchymal stem cell multipotent stromal cells used in cell therapy">
+                        <td class="acronym">MSC</td>
+                        <td class="full-name">Mesenchymal Stem Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Multipotent stromal cells used in cell therapy</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-N"></span>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="nafld non-alcoholic fatty liver disease liver fat accumulation unrelated to alcohol">
+                        <td class="acronym">NAFLD</td>
+                        <td class="full-name">Non-Alcoholic Fatty Liver Disease</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Liver fat accumulation unrelated to alcohol</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="nashp national academy for state health policy us health policy organization">
+                        <td class="acronym">NASHP</td>
+                        <td class="full-name">National Academy for State Health Policy</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">US health policy organization</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="nct national clinical trial clinicaltrials.gov trial identifier prefix">
+                        <td class="acronym">NCT</td>
+                        <td class="full-name">National Clinical Trial</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">ClinicalTrials.gov trial identifier prefix</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="nda new drug application fda submission for new pharmaceutical">
+                        <td class="acronym">NDA</td>
+                        <td class="full-name">New Drug Application</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">FDA submission for new pharmaceutical</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="nf-kb nuclear factor kappa b transcription factor central to inflammation">
+                        <td class="acronym">NF-kB</td>
+                        <td class="full-name">Nuclear Factor Kappa B</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Transcription factor central to inflammation</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="niddk national institute of diabetes and digestive and kidney diseases nih institute funding diabetes research">
+                        <td class="acronym">NIDDK</td>
+                        <td class="full-name">National Institute of Diabetes and Digestive and Kidney Diseases</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">NIH institute funding diabetes research</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="nih national institutes of health us biomedical research funding agency">
+                        <td class="acronym">NIH</td>
+                        <td class="full-name">National Institutes of Health</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">US biomedical research funding agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="nlrp3 nlr family pyrin domain containing 3 inflammasome complex; target of anti-inflammatory therapies">
+                        <td class="acronym">NLRP3</td>
+                        <td class="full-name">NLR Family Pyrin Domain Containing 3</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Inflammasome complex; target of anti-inflammatory therapies</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="nmpa national medical products administration china drug regulatory agency">
+                        <td class="acronym">NMPA</td>
+                        <td class="full-name">National Medical Products Administration</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">China drug regulatory agency</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="nnt number needed to treat patients treated for one to benefit">
+                        <td class="acronym">NNT</td>
+                        <td class="full-name">Number Needed to Treat</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Patients treated for one to benefit</td>
+                    </tr>
+                    <tr class="data-row" data-category="Statistics & Data" data-search="nnt number needed to treat patients treated for one to benefit">
+                        <td class="acronym">NNT</td>
+                        <td class="full-name">Number Needed to Treat</td>
+                        <td><span class="category-tag">Statistics & Data</span></td>
+                        <td class="description">Patients treated for one to benefit</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="nph neutral protamine hagedorn intermediate-acting insulin">
+                        <td class="acronym">NPH</td>
+                        <td class="full-name">Neutral Protamine Hagedorn</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Intermediate-acting insulin</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="nrdl national reimbursement drug list china's national drug coverage list">
+                        <td class="acronym">NRDL</td>
+                        <td class="full-name">National Reimbursement Drug List</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">China's national drug coverage list</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-O"></span>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="ogtt oral glucose tolerance test diagnostic test measuring glucose response">
+                        <td class="acronym">OGTT</td>
+                        <td class="full-name">Oral Glucose Tolerance Test</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Diagnostic test measuring glucose response</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="or odds ratio measure of association in case-control studies">
+                        <td class="acronym">OR</td>
+                        <td class="full-name">Odds Ratio</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Measure of association in case-control studies</td>
+                    </tr>
+                    <tr class="data-row" data-category="Statistics & Data" data-search="or odds ratio measure of association in case-control studies">
+                        <td class="acronym">OR</td>
+                        <td class="full-name">Odds Ratio</td>
+                        <td><span class="category-tag">Statistics & Data</span></td>
+                        <td class="description">Measure of association in case-control studies</td>
+                    </tr>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="osf open science framework pre-registration and open research platform">
+                        <td class="acronym">OSF</td>
+                        <td class="full-name">Open Science Framework</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">Pre-registration and open research platform</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-P"></span>
+                    <tr class="data-row" data-category="Clinical & Medical" data-search="pcos polycystic ovary syndrome hormonal disorder often co-occurring with ir">
+                        <td class="acronym">PCOS</td>
+                        <td class="full-name">Polycystic Ovary Syndrome</td>
+                        <td><span class="category-tag">Clinical & Medical</span></td>
+                        <td class="description">Hormonal disorder often co-occurring with IR</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="pdx1 pancreatic and duodenal homeobox 1 key transcription factor in beta cell development">
+                        <td class="acronym">PDX1</td>
+                        <td class="full-name">Pancreatic and Duodenal Homeobox 1</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Key transcription factor in beta cell development</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="plgs predictive low-glucose suspend pump feature stopping insulin before hypoglycemia">
+                        <td class="acronym">PLGS</td>
+                        <td class="full-name">Predictive Low-Glucose Suspend</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Pump feature stopping insulin before hypoglycemia</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="pmid pubmed identifier unique pubmed article number">
+                        <td class="acronym">PMID</td>
+                        <td class="full-name">PubMed Identifier</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Unique PubMed article number</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="ppar-gamma peroxisome proliferator-activated receptor gamma nuclear receptor; tzd drug target">
+                        <td class="acronym">PPAR-gamma</td>
+                        <td class="full-name">Peroxisome Proliferator-Activated Receptor Gamma</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Nuclear receptor; TZD drug target</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="prisma preferred reporting items for systematic reviews reporting guideline for systematic reviews">
+                        <td class="acronym">PRISMA</td>
+                        <td class="full-name">Preferred Reporting Items for Systematic Reviews</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Reporting guideline for systematic reviews</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="prospero international prospective register of systematic reviews registry for systematic review protocols">
+                        <td class="acronym">PROSPERO</td>
+                        <td class="full-name">International Prospective Register of Systematic Reviews</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Registry for systematic review protocols</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-Q"></span>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="qtl quantitative trait locus genomic region affecting a measurable trait">
+                        <td class="acronym">QTL</td>
+                        <td class="full-name">Quantitative Trait Locus</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Genomic region affecting a measurable trait</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-R"></span>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="rct randomized controlled trial gold standard experimental study design">
+                        <td class="acronym">RCT</td>
+                        <td class="full-name">Randomized Controlled Trial</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Gold standard experimental study design</td>
+                    </tr>
+                    <tr class="data-row" data-category="Statistics & Data" data-search="rct randomized controlled trial gold standard experimental study design">
+                        <td class="acronym">RCT</td>
+                        <td class="full-name">Randomized Controlled Trial</td>
+                        <td><span class="category-tag">Statistics & Data</span></td>
+                        <td class="description">Gold standard experimental study design</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="rna ribonucleic acid gene expression molecule">
+                        <td class="acronym">RNA</td>
+                        <td class="full-name">Ribonucleic Acid</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Gene expression molecule</td>
+                    </tr>
+                    <tr class="data-row" data-category="Research Methods & Standards" data-search="rob risk of bias assessment tool for study quality (cochrane rob 2)">
+                        <td class="acronym">RoB</td>
+                        <td class="full-name">Risk of Bias</td>
+                        <td><span class="category-tag">Research Methods & Standards</span></td>
+                        <td class="description">Assessment tool for study quality (Cochrane RoB 2)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="rt-cgm real-time cgm cgm with live glucose display">
+                        <td class="acronym">rt-CGM</td>
+                        <td class="full-name">Real-Time CGM</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">CGM with live glucose display</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-S"></span>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="scfa short-chain fatty acid microbiome metabolite affecting metabolism">
+                        <td class="acronym">SCFA</td>
+                        <td class="full-name">Short-Chain Fatty Acid</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Microbiome metabolite affecting metabolism</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="sglt2 sodium-glucose cotransporter 2 kidney glucose reabsorption target (empagliflozin, dapagliflozin)">
+                        <td class="acronym">SGLT2</td>
+                        <td class="full-name">Sodium-Glucose Cotransporter 2</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Kidney glucose reabsorption target (empagliflozin, dapagliflozin)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="sglt2i sglt2 inhibitor drug class blocking renal glucose reabsorption">
+                        <td class="acronym">SGLT2i</td>
+                        <td class="full-name">SGLT2 Inhibitor</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Drug class blocking renal glucose reabsorption</td>
+                    </tr>
+                    <tr class="data-row" data-category="Hub-Specific" data-search="silver silver validation tier 2 confirming expert sources">
+                        <td class="acronym">SILVER</td>
+                        <td class="full-name">Silver Validation Tier</td>
+                        <td><span class="category-tag">Hub-Specific</span></td>
+                        <td class="description">2 confirming expert sources</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="smbg self-monitoring of blood glucose fingerstick glucose testing">
+                        <td class="acronym">SMBG</td>
+                        <td class="full-name">Self-Monitoring of Blood Glucose</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Fingerstick glucose testing</td>
+                    </tr>
+                    <tr class="data-row" data-category="Genomics & Omics" data-search="snp single nucleotide polymorphism single dna base variation">
+                        <td class="acronym">SNP</td>
+                        <td class="full-name">Single Nucleotide Polymorphism</td>
+                        <td><span class="category-tag">Genomics & Omics</span></td>
+                        <td class="description">Single DNA base variation</td>
+                    </tr>
+                    <tr class="data-row" data-category="Technology & Devices" data-search="soc standard of care current best-practice treatment">
+                        <td class="acronym">SOC</td>
+                        <td class="full-name">Standard of Care</td>
+                        <td><span class="category-tag">Technology & Devices</span></td>
+                        <td class="description">Current best-practice treatment</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-T"></span>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="t1d type 1 diabetes autoimmune destruction of beta cells">
+                        <td class="acronym">T1D</td>
+                        <td class="full-name">Type 1 Diabetes</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Autoimmune destruction of beta cells</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="t1dm type 1 diabetes mellitus same as t1d (formal notation)">
+                        <td class="acronym">T1DM</td>
+                        <td class="full-name">Type 1 Diabetes Mellitus</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Same as T1D (formal notation)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="t2d type 2 diabetes insulin resistance with progressive beta cell failure">
+                        <td class="acronym">T2D</td>
+                        <td class="full-name">Type 2 Diabetes</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Insulin resistance with progressive beta cell failure</td>
+                    </tr>
+                    <tr class="data-row" data-category="Diabetes Types & Subtypes" data-search="t2dm type 2 diabetes mellitus same as t2d (formal notation)">
+                        <td class="acronym">T2DM</td>
+                        <td class="full-name">Type 2 Diabetes Mellitus</td>
+                        <td><span class="category-tag">Diabetes Types & Subtypes</span></td>
+                        <td class="description">Same as T2D (formal notation)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="tcr-treg t cell receptor regulatory t cell alternative engineered treg approach">
+                        <td class="acronym">TCR-Treg</td>
+                        <td class="full-name">T Cell Receptor Regulatory T Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Alternative engineered Treg approach</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="tgf-b transforming growth factor beta cytokine involved in immune regulation">
+                        <td class="acronym">TGF-B</td>
+                        <td class="full-name">Transforming Growth Factor Beta</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Cytokine involved in immune regulation</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="tir time in range % time glucose is 70-180 mg/dl (cgm metric)">
+                        <td class="acronym">TIR</td>
+                        <td class="full-name">Time In Range</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">% time glucose is 70-180 mg/dL (CGM metric)</td>
+                    </tr>
+                    <tr class="data-row" data-category="Biomarkers & Lab Values" data-search="tnf-alpha tumor necrosis factor alpha pro-inflammatory cytokine">
+                        <td class="acronym">TNF-alpha</td>
+                        <td class="full-name">Tumor Necrosis Factor Alpha</td>
+                        <td><span class="category-tag">Biomarkers & Lab Values</span></td>
+                        <td class="description">Pro-inflammatory cytokine</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="treg regulatory t cell immune cells that suppress excessive immune responses">
+                        <td class="acronym">Treg</td>
+                        <td class="full-name">Regulatory T Cell</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Immune cells that suppress excessive immune responses</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="tudca tauroursodeoxycholic acid bile acid derivative with beta cell protective effects">
+                        <td class="acronym">TUDCA</td>
+                        <td class="full-name">Tauroursodeoxycholic Acid</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Bile acid derivative with beta cell protective effects</td>
+                    </tr>
+                    <tr class="data-row" data-category="Drug Classes & Therapies" data-search="tzd thiazolidinedione insulin sensitizer class (pioglitazone, rosiglitazone)">
+                        <td class="acronym">TZD</td>
+                        <td class="full-name">Thiazolidinedione</td>
+                        <td><span class="category-tag">Drug Classes & Therapies</span></td>
+                        <td class="description">Insulin sensitizer class (pioglitazone, rosiglitazone)</td>
+                    </tr>
+                    <span class="alpha-anchor" id="letter-W"></span>
+                    <tr class="data-row" data-category="Organizations & Registries" data-search="who world health organization un health agency">
+                        <td class="acronym">WHO</td>
+                        <td class="full-name">World Health Organization</td>
+                        <td><span class="category-tag">Organizations & Registries</span></td>
+                        <td class="description">UN health agency</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            No acronyms match your search. Try different keywords.
+        </div>
+
+        <footer>
+            <div class="footer-title">Diabetes Research Hub - Acronym Database</div>
+            <div class="footer-sources">
+                <strong>Sources:</strong> ADA Standards of Care, IDF Diabetes Atlas, ClinicalTrials.gov, PubMed MeSH, FDA/EMA regulatory frameworks
+            </div>
+            <div class="footer-note">
+                This reference is maintained alongside the research dashboards. If you encounter an undefined term, please flag it for addition.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Real-time search and filtering
+        function filterTable() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            const rows = document.querySelectorAll('.data-row');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const searchText = row.getAttribute('data-search');
+                const category = row.getAttribute('data-category');
+
+                const matchesSearch = searchInput === '' || searchText.includes(searchInput);
+                const matchesCategory = activeFilter === '' || category === activeFilter;
+
+                if (matchesSearch && matchesCategory) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterTable);
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterTable();
+            });
+        });
+
+        // Alphabet jump
+        function jumpToLetter(letter) {
+            const anchor = document.getElementById('letter-' + letter);
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Focus search on load
+        document.getElementById('searchInput').focus();
+    </script>
+</body>
+</html>
