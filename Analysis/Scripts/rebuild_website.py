@@ -186,6 +186,12 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   </div>
   <div class="card">
     <div class="status live">Available</div>
+    <h3>Medical Data Dictionary</h3>
+    <p>100 medical terms with journal-cited definitions (86 PMIDs), body system maps, 6 biological pathway diagrams, and gap connections. Built for non-clinicians.</p>
+    <a href="Dashboards/Medical_Data_Dictionary.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
     <h3>Acronym Database</h3>
     <p>147 curated diabetes research acronyms across 10 categories. Instant search, category filters, alphabet navigation.</p>
     <a href="Dashboards/Acronym_Database.html">Open dashboard &rarr;</a>

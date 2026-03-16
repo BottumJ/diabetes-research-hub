@@ -33,6 +33,7 @@ SCRIPTS = {
     'equity': ('build_equity_map.py', 'Building Beta Cell Therapy Equity Analysis'),
     'deepdives': ('build_gap_deep_dives.py', 'Building Gap Deep Dives (all 15 gaps)'),
     'acronyms': ('build_acronym_db.py', 'Building Acronym & Abbreviation Database'),
+    'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (100 terms, cited)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }

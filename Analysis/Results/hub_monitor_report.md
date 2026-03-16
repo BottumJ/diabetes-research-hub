@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-03-15 00:37:15
-**Previous scan:** 2026-03-15 00:24:38
-**Hub root:** `C:\Users\justi\OneDrive\Diabetes_Research`
+**Scan time:** 2026-03-16 09:04:00
+**Previous scan:** 2026-03-15 00:37:15
+**Hub root:** `/sessions/adoring-sweet-dijkstra/mnt/Diabetes_Research`
 
 ---
 
@@ -9,58 +9,100 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 15 |
-| New files | 11 |
-| Modified files | 0 |
-| Removed files | 7 |
-| Unchanged files | 4 |
+| Total files tracked | 47 |
+| New files | 43 |
+| Modified files | 2 |
+| Removed files | 11 |
+| Unchanged files | 2 |
 
 ## New Files
 
-- **Analysis\Results\hub_monitor_report.md** (1.3 KB)
-- **Analysis\Results\hub_monitor_state.json** (2.5 KB)
-- **Analysis\Results\literature_gap_data.json** (123.9 KB)
-- **Analysis\Results\literature_gap_matrix.xlsx** (32.2 KB)
-- **Analysis\Results\literature_gap_report.md** (4.1 KB)
-- **Analysis\Scripts\baseline_clinical_trials.py** (9.8 KB)
-- **Analysis\Scripts\baseline_pubmed_alerts.py** (11.5 KB)
-- **Analysis\Scripts\hub_monitor.py** (8.3 KB)
-- **Analysis\Scripts\project1_literature_gap_analysis.py** (16.5 KB)
-- **Analysis\Scripts\run_all.py** (3.2 KB)
-- **Dashboards\Research_Dashboard.html** (55.6 KB)
+- **Analysis/Results/beta_cell_trial_locations.json** (48.2 KB)
+- **Analysis/Results/clinical_trials_latest.json** (501.2 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-03-15.json** (513.6 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-03-16.json** (501.2 KB)
+- **Analysis/Results/clinical_trials_summary.md** (1.6 KB)
+- **Analysis/Results/gap_cluster_trials.json** (30.8 KB)
+- **Analysis/Results/hub_monitor_report.md** (1.7 KB)
+- **Analysis/Results/hub_monitor_state.json** (3.5 KB)
+- **Analysis/Results/literature_gap_data.json** (128.7 KB)
+- **Analysis/Results/literature_gap_matrix.xlsx** (32.3 KB)
+- **Analysis/Results/literature_gap_report.md** (11.6 KB)
+- **Analysis/Results/monitor_report_2026-03-15.md** (14.1 KB)
+- **Analysis/Results/pubmed_recent_latest.json** (93.8 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-03-15.json** (94.1 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-03-16.json** (93.8 KB)
+- **Analysis/Results/pubmed_recent_summary.md** (24.8 KB)
+- **Analysis/Scripts/add_citations.py** (17.4 KB)
+- **Analysis/Scripts/baseline_clinical_trials.py** (9.8 KB)
+- **Analysis/Scripts/baseline_pubmed_alerts.py** (11.5 KB)
+- **Analysis/Scripts/build_acronym_db.py** (26.5 KB)
+- **Analysis/Scripts/build_data_dictionary.py** (121.2 KB)
+- **Analysis/Scripts/build_equity_map.py** (40.6 KB)
+- **Analysis/Scripts/build_gap_deep_dives.py** (131.4 KB)
+- **Analysis/Scripts/build_gap_synthesis.py** (57.7 KB)
+- **Analysis/Scripts/hub_monitor.py** (8.3 KB)
+- **Analysis/Scripts/improve_gap_analysis.py** (11.8 KB)
+- **Analysis/Scripts/project1_literature_gap_analysis.py** (16.5 KB)
+- **Analysis/Scripts/rebuild_clinical_trial_dashboard.py** (27.6 KB)
+- **Analysis/Scripts/rebuild_research_dashboard.py** (59.7 KB)
+- **Analysis/Scripts/rebuild_website.py** (15.3 KB)
+- **Analysis/Scripts/run_all.py** (3.2 KB)
+- **Analysis/Scripts/run_quality_improvements.py** (4.6 KB)
+- **Dashboards/Acronym_Database.html** (88.4 KB)
+- **Dashboards/Clinical_Trial_Dashboard.html** (407.6 KB)
+- **Dashboards/Equity_Map.html** (74.2 KB)
+- **Dashboards/Gap_Deep_Dives.html** (202.5 KB)
+- **Dashboards/Gap_Synthesis.html** (114.4 KB)
+- **Dashboards/Medical_Data_Dictionary.html** (299.9 KB)
+- **Dashboards/Research_Dashboard.html** (57.0 KB)
+- **OSF_PREREGISTRATION.md** (11.5 KB)
+- **README.md** (7.1 KB)
+- **docs/index.html** (13.4 KB)
+- **docs/social_media_launch_posts.md** (5.3 KB)
+
+## Modified Files
+
+- **Diabetes_Research_Tracker.xlsx** (28.9 KB, modified: 2026-03-15T22:46:38.366799)
+- **Research_Findings_Summary.md** (16.1 KB, modified: 2026-03-15T23:50:39.924616)
 
 ## Removed Files
 
-- ~~Analysis/Results/literature_gap_data.json~~
-- ~~Analysis/Results/literature_gap_matrix.xlsx~~
-- ~~Analysis/Results/literature_gap_report.md~~
-- ~~Analysis/Scripts/hub_monitor.py~~
-- ~~Analysis/Scripts/project1_literature_gap_analysis.py~~
-- ~~Analysis/Scripts/run_all.py~~
-- ~~Dashboards/Research_Dashboard.html~~
+- ~~Analysis\Results\hub_monitor_report.md~~
+- ~~Analysis\Results\hub_monitor_state.json~~
+- ~~Analysis\Results\literature_gap_data.json~~
+- ~~Analysis\Results\literature_gap_matrix.xlsx~~
+- ~~Analysis\Results\literature_gap_report.md~~
+- ~~Analysis\Scripts\baseline_clinical_trials.py~~
+- ~~Analysis\Scripts\baseline_pubmed_alerts.py~~
+- ~~Analysis\Scripts\hub_monitor.py~~
+- ~~Analysis\Scripts\project1_literature_gap_analysis.py~~
+- ~~Analysis\Scripts\run_all.py~~
+- ~~Dashboards\Research_Dashboard.html~~
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .md | 5 |
-| .py | 5 |
+| .py | 16 |
+| .md | 11 |
+| .json | 10 |
+| .html | 8 |
 | .xlsx | 2 |
-| .json | 2 |
-| .html | 1 |
 
 ## Folder Inventory
 
 | Folder | Files |
 |--------|-------|
-| (root) | 4 |
-| Analysis\Results | 5 |
-| Analysis\Scripts | 5 |
-| Dashboards | 1 |
+| (root) | 6 |
+| Analysis/Results | 16 |
+| Analysis/Scripts | 16 |
+| Dashboards | 7 |
+| docs | 2 |
 
 ## Review Flags
 
 - All clear. No issues flagged.
 
 ---
-*Generated by hub_monitor.py — 2026-03-15 00:37:15*
+*Generated by hub_monitor.py — 2026-03-16 09:04:00*
