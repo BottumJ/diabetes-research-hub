@@ -38,7 +38,7 @@ VALIDATION_COLORS = {
         'bg': '#fef3cd',
         'text': '#8b6914'
     },
-    'UNDER REVIEW': {
+    'EXPLORATORY': {
         'bg': '#f5d5cc',
         'text': '#8b2500'
     }
@@ -242,7 +242,7 @@ GAPS_DATA = [
         'investigation': '(1) Analyze C-peptide trajectories in LADA cohorts to define the therapeutic window, (2) Review GKA dose-response data for applicability to reduced beta cell mass, (3) Model expected glycemic improvement from GKA in partial beta cell function scenarios',
         'expected_outcomes': 'Determines whether GKA therapy is mechanistically plausible for LADA',
         'status': 'Background Research',
-        'validation': 'UNDER REVIEW',
+        'validation': 'EXPLORATORY',
         'validation_summary': 'Biological plausibility is uncertain. LADA is autoimmune, not a glucokinase dysfunction disorder. The one published case report (GCK-MODY + LADA) represents rare coincidence rather than therapeutic opportunity.',
         'sources': [
             'One case report: GCK-MODY + LADA rare coincidence',
@@ -415,14 +415,14 @@ def try_load_gap_data_from_json():
 
 
 def sort_gaps_by_validation(gaps):
-    """Sort gaps by validation tier priority: GOLD, SILVER, BRONZE, UNDER REVIEW"""
-    tier_order = {'GOLD': 0, 'SILVER': 1, 'BRONZE': 2, 'UNDER REVIEW': 3}
+    """Sort gaps by validation tier priority: GOLD, SILVER, BRONZE, EXPLORATORY"""
+    tier_order = {'GOLD': 0, 'SILVER': 1, 'BRONZE': 2, 'EXPLORATORY': 3}
     return sorted(gaps, key=lambda g: (tier_order.get(g.get('validation', 'BRONZE'), 999), g['rank']))
 
 
 def count_validation_tiers(gaps):
     """Count gaps by validation tier"""
-    counts = {'GOLD': 0, 'SILVER': 0, 'BRONZE': 0, 'UNDER REVIEW': 0}
+    counts = {'GOLD': 0, 'SILVER': 0, 'BRONZE': 0, 'EXPLORATORY': 0}
     for gap in gaps:
         tier = gap.get('validation', 'BRONZE')
         if tier in counts:
@@ -822,8 +822,8 @@ def generate_html(gaps):
                 <div class="stat-value">{tier_counts['BRONZE']}</div>
             </div>
             <div class="stat">
-                <div class="stat-label">Under Review</div>
-                <div class="stat-value">{tier_counts['UNDER REVIEW']}</div>
+                <div class="stat-label">Exploratory</div>
+                <div class="stat-value">{tier_counts['EXPLORATORY']}</div>
             </div>
             <div class="stat">
                 <div class="stat-label">Domains Analyzed</div>
@@ -998,7 +998,7 @@ def generate_html(gaps):
                 <p><strong>GOLD (3+ independent expert sources confirm):</strong> Cross-referenced against multiple major institutions (Cochrane, PROSPERO, ADA Standards 2025, JDRF, Helmsley Trust). Example: Gap 2 (Beta Cell Regen × Health Equity) confirmed by 5+ independent sources.</p>
                 <p><strong>SILVER (2 confirming sources):</strong> Published evidence and expert consensus from 2+ major sources. Example: Gap 3 (Insulin Resistance × Islet Transplant) confirmed by AHRQ and clinical trial literature.</p>
                 <p><strong>BRONZE (bibliometric analysis only):</strong> Identified through cross-domain gap analysis but requiring expert validation. No major institution has independently prioritized these intersections.</p>
-                <p><strong>UNDER REVIEW:</strong> Biological plausibility is uncertain or contradicted. Example: Gap 9 (Glucokinase × LADA) lacks mechanistic foundation since LADA is autoimmune, not a glucokinase dysfunction disorder.</p>
+                <p><strong>EXPLORATORY:</strong> Biological plausibility is uncertain or contradicted. Example: Gap 9 (Glucokinase × LADA) lacks mechanistic foundation since LADA is autoimmune, not a glucokinase dysfunction disorder.</p>
             </div>
 
             <div class="footer-section">

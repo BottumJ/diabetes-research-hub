@@ -551,7 +551,7 @@ GAPS_DATA = {
     },
     "9": {
         "title": "GKA in LADA",
-        "tier": "UNDER REVIEW",
+        "tier": "EXPLORATORY",
         "score": 0.45,
         "cluster": "B",
         "domain_pubs": {"glucokinase": 816, "lada": 535},
@@ -594,7 +594,7 @@ GAPS_DATA = {
             "data_needed": "None",
             "dependencies": "Formal decision to redirect resources to immune-targeting therapies"
         },
-        "validation_evidence": "UNDER REVIEW tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence",
+        "validation_evidence": "EXPLORATORY tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence",
         "expanded_clinical_context": "GCK-MODY + LADA coexistence: one published case report (patient age 52, GADA+ 45 units, GCK mutation c.626C>T p.Ala209Val, fasting glucose 118 mg/dL, C-peptide 2.1 ng/mL). Incidence: GCK-MODY affects 1-5% of neonatal diabetes, 1-2% of T2D <25yr. LADA affects 8.9% of apparent T2D. Expected coincidence: 0.01-0.2 cases/10M population. Clinical recommendation: GKA should NOT be pursued in LADA because (1) GAD, IA-2, ZnT8 antibodies are universal in LADA (not glucose sensing defect), (2) GKA will not address immune destruction, (3) autoimmune progression continues despite metabolic optimization. Resources better invested in immune-targeting therapies (CAR-Treg, DPP-4i, SGLT2i). Formal deprioritization recommended by gap analysis committee.",
         "mechanism_detail": "LADA pathophysiology fundamentally autoimmune, not metabolic. Diagnostic criteria: GAD antibodies (>10 units, 95% sensitivity) OR IA-2 OR ZnT8 present in 80-90% LADA patients. Beta cell destruction: CD4+ autoreactive T cells recognize GAD65 peptide epitopes (residues 321-340, 338-352), infiltrate pancreatic islets, produce IFN-gamma/TNF-alpha/IL-17 -> CASPASE-3 activation in beta cells -> apoptosis. Glucose metabolism intact throughout; insulin secretion deficit secondary to cell loss. GKA addresses glucose sensing defect (mutations in GCK, NEUROD1, HADH) irrelevant in LADA. No evidence GKA enhances beta cell survival or suppresses autoimmunity. GCK-MODY mechanism: GCK mutations cause >50% loss of function -> impaired glucose sensing -> fasting hyperglycemia + relative hypoinsulinemia, not autoimmune."
     },
@@ -1096,7 +1096,7 @@ def generate_html():
                     <option value="GOLD">GOLD</option>
                     <option value="SILVER">SILVER</option>
                     <option value="BRONZE">BRONZE</option>
-                    <option value="UNDER REVIEW">UNDER REVIEW</option>
+                    <option value="EXPLORATORY">EXPLORATORY</option>
                 </select>
                 <button onclick="resetSort()">Reset Sort</button>
             </div>
@@ -1979,7 +1979,7 @@ def generate_html():
                     aVal = a.getAttribute('data-title');
                     bVal = b.getAttribute('data-title');
                 } else if (column === 'tier') {
-                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'UNDER REVIEW': 4};
+                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'EXPLORATORY': 4};
                     aVal = tierOrder[a.getAttribute('data-tier')] || 99;
                     bVal = tierOrder[b.getAttribute('data-tier')] || 99;
                 } else if (column === 'score' || column === 'joint_pubs' || column === 'trial_count') {

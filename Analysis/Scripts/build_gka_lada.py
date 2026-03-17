@@ -359,7 +359,7 @@ html_content = '''<!DOCTYPE html>
     <div class="container">
         <header>
             <h1>Gap 9: Glucokinase Activators in LADA</h1>
-            <div class="status-badge">UNDER REVIEW</div>
+            <div class="status-badge">EXPLORATORY</div>
             <p class="subtitle">
                 Examining whether glucokinase activators could preserve beta cell function in LADA
                 by enhancing insulin secretion during slow autoimmune decline.
@@ -388,7 +388,7 @@ html_content = '''<!DOCTYPE html>
 
             <div class="expandable">
                 <div class="expandable-header" onclick="toggleExpand(this)">
-                    <span>Why UNDER REVIEW (not BRONZE tier)?</span>
+                    <span>Why EXPLORATORY (not BRONZE tier)?</span>
                     <span class="expand-icon">&#x25BC;</span>
                 </div>
                 <div class="expandable-content">
@@ -524,7 +524,7 @@ html_content = '''<!DOCTYPE html>
         <div id="evidence" class="tab-content">
             <h2>Evidence Assessment</h2>
 
-            <h3>Why This Gap Remains UNDER REVIEW</h3>
+            <h3>Why This Gap Remains EXPLORATORY</h3>
 
             <div class="evidence-grid">
                 <div class="evidence-item">
@@ -784,7 +784,7 @@ html_content = '''<!DOCTYPE html>
         <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
           <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
           <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
-            <li>This is classified UNDER REVIEW because biological plausibility is uncertain</li>
+            <li>This is classified EXPLORATORY because biological plausibility is uncertain</li>
             <li>The accelerated burnout concern has not been resolved</li>
             <li>No GKA has been tested in LADA patients</li>
             <li>Theoretical benefit relies on assumption of residual beta cell mass</li>
@@ -795,7 +795,7 @@ html_content = '''<!DOCTYPE html>
 
         <footer>
             <p>
-                <strong>Gap Status:</strong> UNDER REVIEW. This gap is marked for careful examination
+                <strong>Gap Status:</strong> EXPLORATORY. This gap is marked for careful examination
                 due to significant biological uncertainty and lack of clinical evidence. The research
                 pathway outlined is speculative and contingent on early-phase data supporting the hypothesis.
             </p>

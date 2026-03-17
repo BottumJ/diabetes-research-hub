@@ -73,7 +73,7 @@
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-03-16 22:24:48</p>
+            <p class="subtitle">Generated: 2026-03-16 22:48:02</p>
         </header>
 
         <div class="tabs">
@@ -94,7 +94,7 @@
                     <option value="GOLD">GOLD</option>
                     <option value="SILVER">SILVER</option>
                     <option value="BRONZE">BRONZE</option>
-                    <option value="UNDER REVIEW">UNDER REVIEW</option>
+                    <option value="EXPLORATORY">EXPLORATORY</option>
                 </select>
                 <button onclick="resetSort()">Reset Sort</button>
             </div>
@@ -233,9 +233,9 @@
                         <td>Urgent Gap</td>
                     </tr>
 
-                    <tr data-tier="UNDER REVIEW" data-score="0.45" data-title="GKA in LADA" data-joint-pubs="0" data-trial-count="0">
+                    <tr data-tier="EXPLORATORY" data-score="0.45" data-title="GKA in LADA" data-joint-pubs="0" data-trial-count="0">
                         <td><strong>GKA in LADA</strong></td>
-                        <td><span class="tier-badge tier-under-review">UNDER REVIEW</span></td>
+                        <td><span class="tier-badge tier-exploratory">EXPLORATORY</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 45.0%"></div>
@@ -388,7 +388,7 @@
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>GKA in LADA</strong> <span class="tier-badge tier-under-review">UNDER REVIEW</span> (Score: 0.45)</div>
+                        <div><strong>GKA in LADA</strong> <span class="tier-badge tier-exploratory">EXPLORATORY</span> (Score: 0.45)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">LADA is autoimmune; GKA addresses GK dysfunction. Biological plausibility VERY LOW - mechanism mismatch. RECOMMEND FORMA...</div>
                     </div>
 
@@ -1915,10 +1915,10 @@
                 </div>
             </div>
 
-            <div class="gap-card under" id="gap9">
+            <div class="gap-card exploratory" id="gap9">
                 <div class="gap-header">
                     <div class="gap-title">Gap 9: GKA in LADA</div>
-                    <span class="tier-badge tier-under-review">UNDER REVIEW</span>
+                    <span class="tier-badge tier-exploratory">EXPLORATORY</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.45</span>
@@ -2059,7 +2059,7 @@
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>UNDER REVIEW tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence</p>
+                        <p>EXPLORATORY tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence</p>
                     </div>
                 </div>
 
@@ -3761,7 +3761,7 @@
                     aVal = a.getAttribute('data-title');
                     bVal = b.getAttribute('data-title');
                 } else if (column === 'tier') {
-                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'UNDER REVIEW': 4};
+                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'EXPLORATORY': 4};
                     aVal = tierOrder[a.getAttribute('data-tier')] || 99;
                     bVal = tierOrder[b.getAttribute('data-tier')] || 99;
                 } else if (column === 'score' || column === 'joint_pubs' || column === 'trial_count') {

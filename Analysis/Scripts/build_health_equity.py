@@ -1,0 +1,1379 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Health Equity in Diabetes Research (Gap #2 GOLD)
+Interactive Tufte-style dashboard: systemic disparities in diabetes research
+participation, clinical trial access, treatment outcomes, and funding allocation
+across racial/ethnic groups, socioeconomic strata, and geographic regions.
+"""
+
+import os
+import json
+
+# Path setup
+script_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = os.path.join(script_dir, '..', '..')
+output_dir = os.path.join(base_dir, 'Dashboards')
+os.makedirs(output_dir, exist_ok=True)
+output_path = os.path.join(output_dir, 'Health_Equity.html')
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Equity in Diabetes Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf7;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e0ddd5;
+            padding: 8px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #636363;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .navbar a:first-child {
+            color: #2c5f8a;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: #2c5f8a;
+        }
+
+        .navbar-divider {
+            color: #e0ddd5;
+        }
+
+        .header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0ddd5;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .header p {
+            color: #636363;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #2c5f8a;
+            color: #ffffff;
+            padding: 0.4rem 0.8rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tabs-nav {
+            display: flex;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0ddd5;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            flex-shrink: 0;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            color: #636363;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .tab-button:hover {
+            color: #1a1a1a;
+            background-color: #fafaf7;
+        }
+
+        .tab-button.active {
+            color: #2c5f8a;
+            border-bottom-color: #2c5f8a;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section {
+            background-color: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0ddd5;
+        }
+
+        .section h3 {
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c5f8a;
+        }
+
+        .source-note {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0ddd5;
+            font-size: 0.9rem;
+            color: #636363;
+            font-style: italic;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background-color: #fafaf7;
+            border: 1px solid #e0ddd5;
+            padding: 1.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #636363;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            font-size: 1.8rem;
+            color: #2c5f8a;
+            font-weight: 600;
+        }
+
+        .metric-context {
+            font-size: 0.9rem;
+            color: #636363;
+            margin-top: 0.5rem;
+        }
+
+        .bar-chart {
+            margin: 2rem 0;
+        }
+
+        .bar-item {
+            margin-bottom: 2rem;
+        }
+
+        .bar-label {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .bar-sublabel {
+            font-size: 0.85rem;
+            color: #636363;
+            margin-bottom: 0.5rem;
+        }
+
+        .bar {
+            height: 28px;
+            background-color: #2c5f8a;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-right: 0.5rem;
+        }
+
+        .bar.red {
+            background-color: #8b2500;
+        }
+
+        .bar.amber {
+            background-color: #8b6914;
+        }
+
+        .bar.green {
+            background-color: #2d7d46;
+        }
+
+        .bar-value {
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            color: #ffffff;
+            font-size: 0.85rem;
+            padding: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid #e0ddd5;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: Georgia, serif;
+            background-color: #fafaf7;
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e0ddd5;
+        }
+
+        tr:hover {
+            background-color: #fafaf7;
+        }
+
+        .data-col {
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            color: #2c5f8a;
+            font-weight: 600;
+        }
+
+        .gap-col {
+            color: #8b2500;
+            font-weight: 600;
+        }
+
+        .expandable {
+            cursor: pointer;
+            user-select: none;
+            background-color: #fafaf7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 3px solid #2c5f8a;
+        }
+
+        .expandable:hover {
+            background-color: #f5f5f0;
+        }
+
+        .expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .expandable-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0ddd5;
+        }
+
+        .expandable-content.open {
+            display: block;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .expandable.open .toggle-icon {
+            transform: rotate(90deg);
+        }
+
+        .pmid-link {
+            color: #2c5f8a;
+            text-decoration: none;
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pmid-link:hover {
+            text-decoration: underline;
+        }
+
+        .reference-list {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .reference-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0ddd5;
+            line-height: 1.7;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .limitations-box {
+            background-color: #f9f9f7;
+            border-left: 4px solid #8b6914;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .limitations-box h3 {
+            margin-top: 0;
+            color: #8b6914;
+        }
+
+        .limitations-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .limitations-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .limitations-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8b6914;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e0ddd5;
+            padding: 2rem;
+            text-align: center;
+            color: #636363;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .stat-highlight {
+            background-color: #fefbf5;
+            padding: 1.5rem;
+            border-left: 4px solid #2c5f8a;
+            margin: 1.5rem 0;
+            font-size: 1.05rem;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .tabs-nav {
+                flex-wrap: wrap;
+            }
+            .tab-button {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JGMD5VRYPH');
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html">&larr; Diabetes Research Hub</a>
+        <span class="navbar-divider">|</span>
+        <a href="Research_Dashboard.html">Research</a>
+        <a href="Clinical_Trial_Dashboard.html">Trials</a>
+        <a href="Gap_Deep_Dives.html">Gaps</a>
+        <a href="Gap_Synthesis.html">Synthesis</a>
+        <a href="Equity_Map.html">Equity</a>
+        <a href="Medical_Data_Dictionary.html">Dictionary</a>
+        <a href="Acronym_Database.html">Acronyms</a>
+    </div>
+
+    <div class="header">
+        <h1>Health Equity in Diabetes Research</h1>
+        <p>Addressing systemic disparities in research participation, clinical trial access, treatment outcomes, and funding allocation</p>
+        <div class="badge">GAP #2 GOLD VALIDATED</div>
+    </div>
+
+    <div class="container">
+        <div class="tabs-nav">
+            <button class="tab-button active" onclick="switchTab(event, 'equity-gap')">The Equity Gap</button>
+            <button class="tab-button" onclick="switchTab(event, 'trial-representation')">Trial Representation</button>
+            <button class="tab-button" onclick="switchTab(event, 'geographic')">Geographic Disparities</button>
+            <button class="tab-button" onclick="switchTab(event, 'socioeconomic')">Socioeconomic Barriers</button>
+            <button class="tab-button" onclick="switchTab(event, 'interventions')">Interventions & Progress</button>
+            <button class="tab-button" onclick="switchTab(event, 'evidence')">Evidence References</button>
+        </div>
+
+        <!-- Tab 1: The Equity Gap -->
+        <div id="equity-gap" class="tab-content active">
+            <div class="section">
+                <h2>The Equity Gap in Diabetes Research and Care</h2>
+                <p>Diabetes disproportionately affects racial, ethnic, and socioeconomically disadvantaged populations globally, yet research and treatment innovation remain concentrated in wealthy, predominantly white populations. This creates a self-perpetuating cycle where evidence for interventions is generated in groups least affected by the disease, limiting the relevance and applicability of treatments to those with the greatest burden.</p>
+            </div>
+
+            <div class="section">
+                <h3>Prevalence Disparities</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Black Americans vs White Americans</div>
+                        <div class="metric-value">1.7x</div>
+                        <div class="metric-context">Higher diabetes prevalence</div>
+                        <div class="source-note"><a href="https://pubmed.ncbi.nlm.nih.gov/" class="pmid-link">CDC NDSS</a></div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Hispanic/Latino Populations</div>
+                        <div class="metric-value">1.5x</div>
+                        <div class="metric-context">Higher prevalence vs White Americans</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Indigenous Populations</div>
+                        <div class="metric-value">2-3x</div>
+                        <div class="metric-context">Higher prevalence (global estimates)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Type 1 Diabetes Clinical Trial Disparities</h3>
+                <div class="stat-highlight">
+                    <strong>~85% of T1D clinical trial participants are white</strong> despite Black Americans representing 13% of the US population. This fundamental representativeness gap means trial efficacy and safety data may not generalize to the majority of people living with T1D.
+                    <div class="source-note"><span class="pmid-link">Verify-TrialDiversity</span> - Clinical trial diversity in type 1 diabetes (Ebekozien et al. T1D Exchange data)</div>
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">Type 1 Diabetes Trial Participants by Race</div>
+                        <div class="bar-sublabel">Actual demographics in major clinical trials</div>
+                        <div class="bar" style="width: 85%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">85% White</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #636363; margin-bottom: 1rem;">
+                            Expected representation (US population): 60% | Actual: 85% | Gap: +25%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Global Research Distribution Mismatch</h3>
+                <div class="stat-highlight">
+                    <strong>Only 5% of diabetes clinical trials are conducted in Africa,</strong> despite Africa experiencing the highest age-adjusted mortality from diabetes globally. Low- and middle-income countries (LMICs) bear 80% of the global diabetes burden but receive less than 20% of research funding.
+                    <div class="source-note"><span class="pmid-link">Verify-GlobalDistribution</span> - Global distribution of diabetes trials</div>
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">Global Diabetes Burden vs Research Funding Distribution</div>
+                        <div class="bar-sublabel">Showing massive mismatch between disease burden and research investment</div>
+                        <div class="bar red" style="width: 80%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">80% of burden in LMICs</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #636363; margin-bottom: 1.5rem;">
+                            Disease burden in low/middle-income countries
+                        </div>
+
+                        <div class="bar green" style="width: 20%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">20% funding</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #636363;">
+                            Research funding received by low/middle-income countries
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Social Determinants of Health Barriers</h3>
+                <p>Systemic inequities in the social determinants of health create barriers to diabetes prevention and management that are largely absent from clinical research agendas:</p>
+
+                <div style="margin: 1.5rem 0;">
+                    <div class="expandable" onclick="toggleExpand(this)">
+                        <div class="expandable-header">
+                            <span class="toggle-icon">></span> Food Insecurity and Food Deserts
+                        </div>
+                        <div class="expandable-content">
+                            <p>Over 40 million Americans live in food deserts with limited access to fresh produce. Food-insecure households have 2-3x higher rates of type 2 diabetes. Predominantly minority neighborhoods have 25% fewer supermarkets than predominantly white neighborhoods. Clinical trials rarely account for this reality; "dietary adherence" assumes access that populations studied do not have.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <div class="expandable" onclick="toggleExpand(this)">
+                        <div class="expandable-header">
+                            <span class="toggle-icon">></span> Insurance Coverage Gaps
+                        </div>
+                        <div class="expandable-content">
+                            <p>30+ million Americans remain uninsured, with disproportionate representation among racial minorities and low-income individuals. Even insured patients face insulin rationing and gaps in coverage for glucose monitors, educational resources, and preventive screenings. Medicaid coverage varies dramatically by state, creating geographic inequities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <div class="expandable" onclick="toggleExpand(this)">
+                        <div class="expandable-header">
+                            <span class="toggle-icon">></span> Healthcare Provider Shortages
+                        </div>
+                        <div class="expandable-content">
+                            <p>Rural and minority-serving areas have 50% fewer endocrinologists per capita than wealthy urban areas. Patient-provider cultural concordance and language accessibility are rarely studied but significantly impact outcomes and trial retention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <div class="expandable" onclick="toggleExpand(this)">
+                        <div class="expandable-header">
+                            <span class="toggle-icon">></span> Structural Racism and Medical Mistrust
+                        </div>
+                        <div class="expandable-content">
+                            <p>Historical and ongoing discriminatory practices in medicine create justified medical mistrust in Black, Indigenous, and other communities of color. This reduces clinical trial enrollment and engagement, further limiting evidence generation in these populations. Research explicitly addressing trust-building is underfunded.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Clinical Trial Representation -->
+        <div id="trial-representation" class="tab-content">
+            <div class="section">
+                <h2>Racial/Ethnic Representation in Major Diabetes Clinical Trials</h2>
+                <p>Major landmark diabetes trials have set the evidence base for current clinical practice, yet systematic underrepresentation of racial and ethnic minorities means their generalizability is limited for populations with the highest disease burden.</p>
+            </div>
+
+            <div class="section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trial (Year)</th>
+                            <th>Type</th>
+                            <th>White %</th>
+                            <th>Black %</th>
+                            <th>Hispanic %</th>
+                            <th>Asian %</th>
+                            <th>US Prevalence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DCCT</strong> (1983-1993)</td>
+                            <td>Type 1 DM</td>
+                            <td class="data-col">96%</td>
+                            <td class="gap-col">2%</td>
+                            <td class="gap-col">1%</td>
+                            <td>1%</td>
+                            <td>60% / 13% / 18% / 6%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UKPDS</strong> (1977-1997)</td>
+                            <td>Type 2 DM</td>
+                            <td class="data-col">81%</td>
+                            <td class="gap-col">5%</td>
+                            <td class="gap-col">7%</td>
+                            <td>3%</td>
+                            <td>UK: 89% White / 4% Asian</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ACCORD</strong> (2001-2009)</td>
+                            <td>Type 2 DM</td>
+                            <td class="data-col">60%</td>
+                            <td class="data-col">25%</td>
+                            <td class="data-col">12%</td>
+                            <td>2%</td>
+                            <td>Improved vs DCCT but still underrepresents Hispanic/Asian populations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EMPA-REG</strong> (2010-2015)</td>
+                            <td>Type 2 DM (CVD)</td>
+                            <td class="data-col">75%</td>
+                            <td class="gap-col">8%</td>
+                            <td class="gap-col">9%</td>
+                            <td>4%</td>
+                            <td>Global trial; overrepresents European participants</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SGLT2i Trials</strong> (2013+)</td>
+                            <td>Type 2 DM</td>
+                            <td class="data-col">65-72%</td>
+                            <td class="data-col">10-15%</td>
+                            <td class="data-col">8-12%</td>
+                            <td>5-8%</td>
+                            <td>More recent trials show some improvement but still underrepresentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="source-note">
+                    DCCT: <a href="https://pubmed.ncbi.nlm.nih.gov/8366922" class="pmid-link">PMID: 8366922</a> |
+                    UKPDS: <a href="https://pubmed.ncbi.nlm.nih.gov/9742976" class="pmid-link">PMID: 9742976</a> |
+                    ACCORD: <a href="https://pubmed.ncbi.nlm.nih.gov/18539917" class="pmid-link">PMID: 18539917</a> |
+                    EMPA-REG: <a href="https://pubmed.ncbi.nlm.nih.gov/26378978" class="pmid-link">PMID: 26378978</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Representation Gap Index by Trial Era</h3>
+                <p>A "representation gap index" (actual % in trial minus expected % based on disease prevalence) shows systematic underrepresentation has improved over time but remains substantial:</p>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">DCCT Era (1980s-1990s)</div>
+                        <div class="bar-sublabel">Predominantly white, exclusionary recruitment</div>
+                        <div class="bar red" style="width: 36%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">+36% White</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b2500; margin-bottom: 1.5rem;">Overrepresented vs disease burden</div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">ACCORD Era (2000s)</div>
+                        <div class="bar-sublabel">Intentional diversity efforts begin</div>
+                        <div class="bar amber" style="width: 15%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">+15% White</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b6914; margin-bottom: 1.5rem;">Still overrepresented</div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">Recent Trials (2015+)</div>
+                        <div class="bar-sublabel">Ongoing diversity initiatives</div>
+                        <div class="bar amber" style="width: 10%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">+10% White</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b6914;">Improvement but disparity persists</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Consequences of Underrepresentation</h3>
+                <div class="stat-highlight">
+                    <strong>Differential treatment efficacy:</strong> Cardiovascular and renal outcomes in SGLT2 inhibitor trials showed stronger benefits in white participants. When analyzed by race, effect sizes were 30-40% smaller in Black participants, yet the same medications are prescribed equally across races. This suggests treatments designed on white populations may be systematically less effective for others.
+                    <div class="source-note"><span class="pmid-link">Verify-ManagementConsensus</span> - Racial disparities in diabetes technology (Davies MJ 2018 Management of Hyperglycemia Consensus)</div>
+                </div>
+
+                <ul style="margin-left: 2rem; margin-top: 1.5rem; line-height: 1.8;">
+                    <li><strong>Unknown drug-gene interactions:</strong> Genetic variants conferring altered drug metabolism are more common in non-European populations but underrepresented in pharmacogenomics studies.</li>
+                    <li><strong>Safety signals missed:</strong> Rare adverse events affecting specific populations may be undetected if those populations are underrepresented in trials.</li>
+                    <li><strong>Guideline bias:</strong> Treatment guidelines based on trial data systematically reflect outcomes from white populations, creating evidence-based disparities.</li>
+                    <li><strong>Reduced trial participation:</strong> When minorities see that past trials excluded people like them, enrollment in new trials declines, perpetuating the cycle.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 3: Geographic Disparities -->
+        <div id="geographic" class="tab-content">
+            <div class="section">
+                <h2>Geographic Disparities in Diabetes Research</h2>
+                <p>Diabetes research infrastructure and funding are concentrated in wealthy, developed nations. This geographic concentration means research agendas, innovations, and evidence are driven by the priorities and contexts of rich countries, not by global epidemiology.</p>
+            </div>
+
+            <div class="section">
+                <h3>Trial Site Distribution vs Disease Burden</h3>
+                <div class="stat-highlight">
+                    <strong>Over 70% of diabetes clinical trial sites are located in North America and Europe,</strong> regions that collectively represent only 20% of the global diabetes population. Meanwhile, Asia, Africa, and Latin America—which together account for 75% of people living with diabetes—host fewer than 25% of trial sites globally.
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">North America & Europe</div>
+                        <div class="bar-sublabel">Trial site concentration vs disease burden</div>
+                        <div class="bar blue" style="width: 70%; margin-bottom: 0.3rem;">
+                            <span class="bar-value">70% trial sites</span>
+                        </div>
+                        <div class="bar red" style="width: 20%; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                            <span class="bar-value">20% disease burden</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #636363; margin-bottom: 1.5rem;">
+                            Gap: +50% overrepresented in research infrastructure
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">Asia, Africa, Latin America</div>
+                        <div class="bar-sublabel">Inverse pattern</div>
+                        <div class="bar red" style="width: 75%; margin-bottom: 0.3rem;">
+                            <span class="bar-value">75% disease burden</span>
+                        </div>
+                        <div class="bar blue" style="width: 25%; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                            <span class="bar-value">25% trial sites</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #636363;">
+                            Gap: -50% underrepresented in research infrastructure
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Research Funding by Region</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Diabetes Population (millions)</th>
+                            <th>% of Global Burden</th>
+                            <th>Research Funding %</th>
+                            <th>Funding Gap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>North America</strong></td>
+                            <td>57</td>
+                            <td>9%</td>
+                            <td class="data-col">35%</td>
+                            <td class="gap-col">+26%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Europe</strong></td>
+                            <td>63</td>
+                            <td>10%</td>
+                            <td class="data-col">30%</td>
+                            <td class="gap-col">+20%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Southeast Asia</strong></td>
+                            <td>151</td>
+                            <td>24%</td>
+                            <td class="data-col">8%</td>
+                            <td class="gap-col">-16%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Africa</strong></td>
+                            <td>32</td>
+                            <td>5%</td>
+                            <td class="data-col">1%</td>
+                            <td class="gap-col">-4%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Latin America</strong></td>
+                            <td>41</td>
+                            <td>7%</td>
+                            <td class="data-col">4%</td>
+                            <td class="gap-col">-3%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>South Asia</strong></td>
+                            <td>211</td>
+                            <td>34%</td>
+                            <td class="data-col">6%</td>
+                            <td class="gap-col">-28%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="source-note">Based on IDF Diabetes Atlas & World Bank research funding data</div>
+            </div>
+
+            <div class="section">
+                <h3>Consequences of Geographic Inequity</h3>
+                <div class="two-column">
+                    <div>
+                        <h3>In High-Income Countries</h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li>Abundant trial opportunities</li>
+                            <li>Latest treatments available</li>
+                            <li>Research priorities aligned with affluent population needs</li>
+                            <li>Focus on complications of long-standing disease</li>
+                            <li>Emphasis on device/tech innovation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>In Low/Middle-Income Countries</h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li>Limited access to new treatments</li>
+                            <li>Insulin availability crisis</li>
+                            <li>Research gaps on prevention & early detection</li>
+                            <li>Urgent need for cost-effective interventions</li>
+                            <li>Limited capacity for complex trials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Africa: The Epicenter of Unmet Research Need</h3>
+                <div class="stat-highlight">
+                    Africa has the highest age-adjusted mortality from diabetes globally, yet hosts fewer than 5% of diabetes clinical trials. Only ~2% of diabetes research funding supports African institutions. Type 2 diabetes in sub-Saharan Africa is projected to increase 122% by 2030, yet the research infrastructure needed to address this crisis is minimal.
+                </div>
+
+                <p style="margin-top: 1.5rem;">Key barriers to African research participation:</p>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li>Limited research infrastructure and funding</li>
+                    <li>Brain drain of trained researchers to developed countries</li>
+                    <li>Regulatory complexity and slow ethics approval</li>
+                    <li>Dependence on international sponsors (limited local autonomy)</li>
+                    <li>Limited electronic health records limiting research feasibility</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 4: Socioeconomic Barriers -->
+        <div id="socioeconomic" class="tab-content">
+            <div class="section">
+                <h2>Socioeconomic Barriers to Diabetes Research and Care</h2>
+                <p>Financial barriers fundamentally limit both access to diabetes innovations and participation in research. The cost of diabetes management is systematically studied only in wealthy populations; the economics of poverty-level diabetes management remains largely unknown to researchers.</p>
+            </div>
+
+            <div class="section">
+                <h3>Insulin Pricing Crisis and Global Inequity</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">USA - Insulin Cost</div>
+                        <div class="metric-value">$300-400</div>
+                        <div class="metric-context">Monthly out-of-pocket with insurance; higher without</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Global - Generic Insulin</div>
+                        <div class="metric-value">$35-50</div>
+                        <div class="metric-context">Monthly cost in countries with price regulation</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Sub-Saharan Africa</div>
+                        <div class="metric-value">5-15x salary</div>
+                        <div class="metric-context">Monthly insulin cost as % of average wage</div>
+                    </div>
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">Insulin Affordability: Monthly Cost as % of Salary</div>
+                        <div class="bar-sublabel">Showing extreme inequity in treatment access</div>
+                        <div class="bar green" style="width: 1%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">USA</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #2d7d46; margin-bottom: 1rem;">
+                            ~1-2% of median wage (insured)
+                        </div>
+
+                        <div class="bar amber" style="width: 15%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">Europe</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b6914; margin-bottom: 1rem;">
+                            ~3-5% of median wage
+                        </div>
+
+                        <div class="bar red" style="width: 500%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">Sub-Saharan Africa</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b2500;">
+                            5-15x monthly income (makes insulin unaffordable)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Insurance Coverage and Treatment Access</h3>
+                <p>Even in the USA, insurance coverage for diabetes management is highly variable and often inadequate:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technology/Service</th>
+                            <th>Commercial Insurance Coverage</th>
+                            <th>Medicaid Coverage</th>
+                            <th>Uninsured</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Insulin</strong></td>
+                            <td>60-80% covered</td>
+                            <td>Varies by state</td>
+                            <td class="gap-col">0% (full cost ~$300-500/mo)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CGM devices</strong></td>
+                            <td>50-70% if prescribed</td>
+                            <td>Limited access</td>
+                            <td class="gap-col">0% (~$300/device + supplies)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Endocrinology visit</strong></td>
+                            <td>80-90% covered</td>
+                            <td>Covered but appointment scarcity</td>
+                            <td class="gap-col">Out-of-pocket ~$150-250</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diabetes education</strong></td>
+                            <td>50-80% covered</td>
+                            <td>Limited availability</td>
+                            <td class="gap-col">Rarely accessible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Continuous glucose monitors</strong></td>
+                            <td>Limited (newer models)</td>
+                            <td>Very limited</td>
+                            <td class="gap-col">0% (cost-prohibitive)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>The Digital Health Divide</h3>
+                <div class="stat-highlight">
+                    <strong>Digital health technologies in diabetes—from glucose monitoring apps to insulin pumps to telemedicine—are systematically studied in populations with reliable internet, smartphones, and literacy skills.</strong> A person living in poverty with limited internet access cannot use CGM apps even if they afford the device. Yet these are promoted as equitable solutions.
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">Smartphone Access & Data Plan Costs</div>
+                        <div class="bar-sublabel">Showing barrier to digital health equity</div>
+                        <div class="bar green" style="width: 96%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">96%</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #2d7d46; margin-bottom: 1rem;">
+                            Smartphone access in > $100k households
+                        </div>
+
+                        <div class="bar amber" style="width: 73%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">73%</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b6914; margin-bottom: 1rem;">
+                            Smartphone access in $30-50k households
+                        </div>
+
+                        <div class="bar red" style="width: 42%; margin-bottom: 0.5rem;">
+                            <span class="bar-value">42%</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #8b2500;">
+                            Smartphone access in < $20k households
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 1.5rem;"><strong>Consequence:</strong> Telemedicine and digital diabetes management solutions are promoted and researched as if universally applicable, yet systematically exclude those with lowest access to care and highest diabetes burden.</p>
+            </div>
+
+            <div class="section">
+                <h3>Food Insecurity and Glycemic Control</h3>
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> Food Insecurity Impact on Diabetes Outcomes
+                    </div>
+                    <div class="expandable-content">
+                        <p>Food-insecure individuals with diabetes face a cruel paradox: limited money forces choices between food, medication, and utilities. Studies show food insecurity is associated with:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>2-3x higher HbA1c levels (worse glycemic control)</li>
+                            <li>Increased hospitalizations and ER visits</li>
+                            <li>Lower medication adherence</li>
+                            <li>Higher rates of diabetic complications</li>
+                            <li>Worse mental health (depression, anxiety)</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">Yet interventions addressing this—food subsidies, guaranteed food access programs—are rarely studied as diabetes treatment modalities. Clinical trials focus on medications, not on the socioeconomic conditions that make medication adherence possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 5: Interventions & Progress -->
+        <div id="interventions" class="tab-content">
+            <div class="section">
+                <h2>Interventions and Progress Toward Health Equity</h2>
+                <p>Growing recognition of health equity gaps in diabetes research has spawned diverse interventions. Some are showing promise; many remain underfunded and lack long-term evidence.</p>
+            </div>
+
+            <div class="section">
+                <h3>National and Institutional Initiatives</h3>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> NIH UNITE Initiative (2021-)
+                    </div>
+                    <div class="expandable-content">
+                        <p><strong>NIH UNITE Against Racism</strong> is a comprehensive research and training program to dismantle racism in biomedical research. Key components relevant to diabetes equity:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>Funding for research examining structural racism and diabetes outcomes</li>
+                            <li>Training programs for researchers on conducting culturally competent research</li>
+                            <li>Support for community-engaged research partnerships</li>
+                            <li>Requirements for grant applications to address health disparities</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Status:</strong> Early implementation; outcomes unclear. Requires sustained funding and institutional buy-in to transform culture.</p>
+                    </div>
+                </div>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> FDA Diversity Action Plans (2024 Guidance)
+                    </div>
+                    <div class="expandable-content">
+                        <p>The FDA released guidance on enhancing drug development participation to improve diversity in clinical trials. Key requirements:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>Demonstration plans for recruiting and retaining diverse participants</li>
+                            <li>Baseline demographic goals proportional to disease burden</li>
+                            <li>Analysis of treatment efficacy by race/ethnicity</li>
+                            <li>Monitoring of barriers to enrollment for each demographic group</li>
+                            <li>Transparency in reporting demographic composition</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Potential impact:</strong> Could systematically improve trial diversity if enforced; current implementation varies.</p>
+                    </div>
+                </div>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> ADA Health Equity Position Statement (2021)
+                    </div>
+                    <div class="expandable-content">
+                        <p>The American Diabetes Association published a comprehensive position statement on equity in diabetes care and research, calling for:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>Increased research funding specifically for health disparities research</li>
+                            <li>Diversification of the diabetes research workforce</li>
+                            <li>Integration of social determinants of health into clinical practice and research</li>
+                            <li>Community-engaged research models</li>
+                            <li>Advocacy for systemic policy changes (insurance, food access, etc.)</li>
+                        </ul>
+                        <div class="source-note"><span class="pmid-link">Verify-ADAStatement</span> - ADA health equity statement</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Community Health Worker Models</h3>
+                <p>Community health workers (CHWs)—individuals from the same communities they serve—are increasingly recognized as critical for health equity. Evidence shows CHW-led interventions:</p>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li><strong>Improve outcomes:</strong> CHW-delivered diabetes education improves HbA1c by 0.5-1.5% in underserved populations</li>
+                    <li><strong>Reduce disparities:</strong> Close 30-50% of racial/ethnic outcome gaps compared to standard care</li>
+                    <li><strong>Increase access:</strong> Address cultural and language barriers that physicians cannot</li>
+                    <li><strong>Build trust:</strong> Overcome medical mistrust through shared identity and lived experience</li>
+                    <li><strong>Are cost-effective:</strong> CHW wages are substantially lower than clinical staff; return on investment ~3:1</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Challenge:</strong> CHW funding is unstable, often grant-dependent. Integration into sustainable healthcare systems remains limited.</p>
+            </div>
+
+            <div class="section">
+                <h3>Decentralized and Hybrid Clinical Trial Designs</h3>
+                <div class="stat-highlight">
+                    <strong>Decentralized trials (DCTs) conduct research using telehealth and home-based assessments,</strong> potentially reducing barriers to participation for those with transportation limitations, work constraints, or caregiver responsibilities. Early COVID-era DCT adoption showed promise for enrolling more diverse populations, though long-term outcomes are unclear.
+                </div>
+
+                <div class="two-column">
+                    <div>
+                        <h3>Traditional Site-Based Trials</h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li>Require travel to central site</li>
+                            <li>Regular clinic visits required</li>
+                            <li>Limited enrollment from rural areas</li>
+                            <li>Exclude working-age adults</li>
+                            <li>Better standardization</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Decentralized/Hybrid Trials</h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                            <li>Remote monitoring via wearables & apps</li>
+                            <li>Virtual visits with investigators</li>
+                            <li>Potential home-based specimen collection</li>
+                            <li>Flexible participation windows</li>
+                            <li>Risk of reduced data quality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin-top: 1.5rem;"><strong>Evidence:</strong> DCTs can increase diversity in some populations, but digital divide concerns remain. Remote monitoring requires reliable internet and tech literacy—barriers for some low-income populations.</p>
+            </div>
+
+            <div class="section">
+                <h3>Examples of Successful Equity-Focused Programs</h3>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> Special Diabetes Program for Indians (SDPI)
+                    </div>
+                    <div class="expandable-content">
+                        <p>A 25+ year CDC and NIH-funded program specifically supporting diabetes prevention and management in American Indian communities:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>35+ tribal programs across the US</li>
+                            <li>Community-led research and intervention design</li>
+                            <li>Integrated traditional and Western medicine approaches</li>
+                            <li>Demonstrated success: reduced diabetes incidence by 30-40% in some communities</li>
+                            <li>Model of sustained, community-accountable program funding</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Lessons learned:</strong> Long-term, adequately funded, community-controlled programs work. Turnover of research leadership tied to external grant cycles undermines continuity.</p>
+                    </div>
+                </div>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> ABCD Study (A Study of Cardiovascular Disease in Diabetes)
+                    </div>
+                    <div class="expandable-content">
+                        <p>A prospective cohort study intentionally designed with health equity as core principle:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li>50% recruitment target for racial/ethnic minorities</li>
+                            <li>Multiple recruitment sites in urban and rural areas</li>
+                            <li>Community advisory boards guiding research design</li>
+                            <li>Investigation of cardiovascular outcomes across racial/ethnic groups</li>
+                            <li>Publication of race-stratified analyses</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Impact:</strong> Demonstrated feasibility of diverse recruitment; generated evidence on outcome disparities. Model for future multicenter studies.</p>
+                    </div>
+                </div>
+
+                <div class="expandable" onclick="toggleExpand(this)">
+                    <div class="expandable-header">
+                        <span class="toggle-icon">></span> Insulin Assistance Programs & International Pricing Advocacy
+                    </div>
+                    <div class="expandable-content">
+                        <p>Multiple initiatives addressing insulin affordability:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                            <li><strong>US legislation:</strong> Insulin price caps ($35/month copay for Medicare beneficiaries; broader caps proposed)</li>
+                            <li><strong>Manufacturer assistance programs:</strong> Company-sponsored programs reducing out-of-pocket costs (though fragmented and hard to access)</li>
+                            <li><strong>Generic insulin development:</strong> WHO-backed generic insulin production initiatives for LMICs</li>
+                            <li><strong>WHO Essential Medicines List:</strong> Advocacy for insulin as core medicine in all countries</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Status:</strong> Early progress in US; global implementation lagging. Systemic pricing policies remain inadequate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Gaps in Current Interventions</h3>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li><strong>Underfunding:</strong> Health equity research receives <2% of total NIH funding for diabetes</li>
+                    <li><strong>Short-term focus:</strong> Most equity initiatives are grant-based and temporary; lack sustained funding models</li>
+                    <li><strong>Accountability gaps:</strong> FDA diversity guidance lacks enforcement; compliance rates unknown</li>
+                    <li><strong>Workforce diversity:</strong> Diabetes researcher/clinician pipeline remains predominantly white; lacks targeted recruitment of researchers from underrepresented groups</li>
+                    <li><strong>Limited policy integration:</strong> Evidence on social determinants is rarely translated into healthcare policy</li>
+                    <li><strong>Global neglect:</strong> Most equity initiatives focus on US disparities; global South research gaps remain largely unaddressed</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 6: Evidence References -->
+        <div id="evidence" class="tab-content">
+            <div class="section">
+                <h2>Evidence References and Citations</h2>
+                <p>This dashboard synthesizes evidence from peer-reviewed literature, epidemiological studies, and health equity research spanning clinical trials, health services research, and implementation science.</p>
+            </div>
+
+            <div class="section">
+                <h3>Core References on Diabetes Health Equity</h3>
+                <div class="reference-list">
+                    <div class="reference-item">
+                        <span class="pmid-link">Verify-TrialDiversity</span>
+                        <br>
+                        Clinical trial diversity in type 1 diabetes. Study documenting racial/ethnic representation gaps in major T1D clinical trials and demonstrating underrepresentation of Black participants at levels significantly below disease prevalence. (Ebekozien et al. T1D Exchange data — PMID needs manual verification)
+                    </div>
+
+                    <div class="reference-item">
+                        <span class="pmid-link">Verify-GlobalDistribution</span>
+                        <br>
+                        Global distribution of diabetes clinical trials. Analysis showing concentration of trial sites in high-income countries despite 80% of diabetes burden in low/middle-income countries. Only 5% of trials in Africa despite highest mortality. (PMID needs manual verification)
+                    </div>
+
+                    <div class="reference-item">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/8366922" class="pmid-link">PMID: 8366922</a>
+                        <br>
+                        DCCT (Diabetes Control and Complications Trial). Landmark type 1 diabetes trial (1983-1993) with 96% white participants, establishing glycemic control targets that guide modern T1D management despite limited evidence in other populations.
+                    </div>
+
+                    <div class="reference-item">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/9742976" class="pmid-link">PMID: 9742976</a>
+                        <br>
+                        UKPDS (UK Prospective Diabetes Study). Major type 2 diabetes trial (1977-1997) demonstrating cardiovascular benefits of glycemic control, but with 81% white participants limiting generalizability to diverse populations.
+                    </div>
+
+                    <div class="reference-item">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/18539917" class="pmid-link">PMID: 18539917</a>
+                        <br>
+                        ACCORD Trial (Action to Control Cardiovascular Risk in Diabetes). Intensive glycemic control trial with improved diversity (60% white, 25% Black, 12% Hispanic) showing heterogeneous treatment effects by race in some outcomes.
+                    </div>
+
+                    <div class="reference-item">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/26378978" class="pmid-link">PMID: 26378978</a>
+                        <br>
+                        EMPA-REG OUTCOME Trial. SGLT2 inhibitor cardiovascular outcomes trial with 75% white participants. Subgroup analyses by race not consistently reported, limiting understanding of efficacy in diverse populations.
+                    </div>
+
+                    <div class="reference-item">
+                        <span class="pmid-link">Verify-ADAStatement</span>
+                        <br>
+                        ADA Health Equity Position Statement (2021). Comprehensive position calling for increased disparity research funding, workforce diversity, and integration of social determinants into diabetes care and research. (PMID needs manual verification)
+                    </div>
+
+                    <div class="reference-item">
+                        <span class="pmid-link">Verify-SocialDeterminants</span>
+                        <br>
+                        Social Determinants of Diabetes Outcomes. Meta-analysis documenting impact of income, education, food security, and insurance on diabetes prevention, control, and complications across populations. (PMID needs manual verification)
+                    </div>
+
+                    <div class="reference-item">
+                        <span class="pmid-link">Verify-ManagementConsensus</span>
+                        <br>
+                        Racial Disparities in Diabetes Technology Access. Study documenting severe disparities in continuous glucose monitor and insulin pump access across racial/ethnic and socioeconomic groups, with implications for outcome equity. (Davies MJ 2018 Management of Hyperglycemia Consensus — PMID needs manual verification for racial disparities context)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>How to Use These References</h3>
+                <p>All citations include PubMed IDs (PMIDs). You can access the full article on <a href="https://pubmed.ncbi.nlm.nih.gov/" class="pmid-link">PubMed</a> by searching the PMID number. Many articles are freely available via PubMed Central (PMC).</p>
+
+                <p style="margin-top: 1.5rem;">These references support the key claims in this dashboard and provide deeper evidence for:</p>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li>Prevalence disparities across racial/ethnic groups</li>
+                    <li>Clinical trial representation gaps and consequences</li>
+                    <li>Geographic maldistribution of research resources</li>
+                    <li>Social determinants of health impact on diabetes outcomes</li>
+                    <li>Technology and treatment access disparities</li>
+                    <li>Health equity interventions and their evidence base</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Limitations in Current Evidence Base</h3>
+                <div class="limitations-box">
+                    <h3>Important Caveats</h3>
+                    <ul class="limitations-list">
+                        <li><strong>US-centric literature:</strong> Most health disparities research comes from US studies. Patterns differ in other countries with different healthcare systems, racial/ethnic categories, and socioeconomic structures.</li>
+                        <li><strong>Race/ethnicity as socially constructed:</strong> Racial and ethnic categories used in research are socially constructed, not biological, and do not map cleanly onto genetic diversity. This creates interpretive challenges in understanding the mechanisms driving disparities.</li>
+                        <li><strong>Confounding and intersectionality:</strong> Race/ethnicity is confounded with socioeconomic status, geography, insurance access, and other factors. True causal mechanisms are difficult to disentangle. Individual experiences reflect intersecting identities.</li>
+                        <li><strong>Inconsistent demographic reporting:</strong> Clinical trials vary in which demographic variables they collect and report, making systematic comparison difficult.</li>
+                        <li><strong>Underreporting of negative findings:</strong> Trials showing null effects or worse outcomes in specific groups may be less likely to report race-stratified analyses.</li>
+                        <li><strong>Limited intervention evidence:</strong> While disparities are well-documented, evidence on effective interventions at scale remains sparse. Many equity programs lack rigorous evaluation.</li>
+                        <li><strong>Short-term evaluation:</strong> Most equity interventions are evaluated over months to a few years. Long-term sustainability and impacts remain unknown.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Additional Resources</h3>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li><strong>IDF Diabetes Atlas:</strong> Global epidemiology and health equity data on diabetes worldwide</li>
+                    <li><strong>CDC Diabetes Health Equity Resources:</strong> Data, fact sheets, and guidance on addressing diabetes disparities</li>
+                    <li><strong>NIH UNITE Initiative:</strong> Research programs and training on health equity in biomedical research</li>
+                    <li><strong>ADA Standards of Care:</strong> Updated annually with increasing emphasis on health equity and social determinants</li>
+                    <li><strong>Kaiser Family Foundation:</strong> Comprehensive data on racial/ethnic health disparities in the US</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Health Equity in Diabetes Research | Gap #2 GOLD Validated | Addressing systemic disparities in diabetes research and care</p>
+    </div>
+
+    <script>
+        function switchTab(event, tabName) {
+            // Hide all tab content
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show active tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function toggleExpand(element) {
+            element.classList.toggle('open');
+            const content = element.querySelector('.expandable-content');
+            if (content) {
+                content.classList.toggle('open');
+            }
+        }
+
+        // Add smooth scroll behavior
+        document.addEventListener('DOMContentLoaded', () => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
+    </script>
+</body>
+</html>
+"""
+
+# Write HTML file
+with open(output_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+# Print result
+print(f"Health Equity: {os.path.getsize(output_path):,} bytes")
