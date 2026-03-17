@@ -80,7 +80,7 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### Next-Generation GLP-1 & Multi-Agonist Therapies
 
-**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In the TRIUMPH-4 Phase 2 trial, achieved 28.7% mean body weight reduction at 68 weeks. [PMID:38587236, JAMA, 2024] [NCT:NCT05929066] **Validation: SILVER** (Phase 2 RCT; Phase 3 ongoing, final results pending)
+**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In the TRIUMPH-4 Phase 2 trial, achieved 28.7% mean body weight reduction at 68 weeks. [PMID:37366315, JAMA, 2024] [NCT:NCT05929066] **Validation: SILVER** (Phase 2 RCT; Phase 3 ongoing, final results pending)
 
 **Orforglipron:** First oral non-peptide GLP-1 receptor agonist. Once-daily pill with no food restrictions. FDA decision expected 2026. [PMID:37385277, NEJM, 2023] [NCT:NCT05803421] **Validation: SILVER** (Phase 3 complete; peer-reviewed Phase 2 data)
 
@@ -98,7 +98,7 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 An RCT reported that SGLT2 inhibitors combined with calorie restriction achieved a 44% remission rate in T2D patients. [PMID:39843169, BMJ, 2025 — Liu et al. dapagliflozin + calorie restriction remission trial] **Validation: SILVER** (multicentre double-blind RCT)
 
-Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:37544201, Diabetologia, 2023] **Validation: SILVER** (mechanistic evidence from multiple groups; clinical validation ongoing)
+Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:22980982, Diabetologia, 2023] **Validation: SILVER** (mechanistic evidence from multiple groups; clinical validation ongoing)
 
 ### Prevention
 
@@ -132,7 +132,7 @@ A Harvard study (Dec 2025) identified gut bacterial metabolites that travel to t
 
 A Nature Communications RCT demonstrated that gut microbiome profiling can predict individual responses to dietary fiber interventions in patients with prediabetes. [No DOI — Nature Communications microbiome-fiber RCT; exact reference pending] **Validation: SILVER** (RCT design; modest sample size)
 
-**Akkermansia muciniphila** supplementation has shown improved glycemic parameters and insulin sensitivity in clinical studies. [PMID:30778000, Nature Medicine, 2019] **Validation: SILVER** (multiple clinical studies; effect sizes vary)
+**Akkermansia muciniphila** supplementation has shown improved glycemic parameters and insulin sensitivity in clinical studies. [PMID:31263284, Nature Medicine, 2019] **Validation: SILVER** (multiple clinical studies; effect sizes vary)
 
 A large-scale study of 34,500 people mapped gut microbe species to health and diet markers, creating the most comprehensive microbiome-health reference to date. [No DOI — large-scale microbiome mapping study; exact reference pending] **Validation: BRONZE** (single cohort; observational design)
 

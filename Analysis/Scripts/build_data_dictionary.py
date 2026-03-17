@@ -77,7 +77,7 @@ TERMS = {
         'disease': 'Destroyed by autoimmune attack in T1D; exhausted and dysfunctional in T2D',
         'connections': ['Insulin', 'C-peptide', 'Glucokinase', 'PDX1', 'MAFA', 'Islets of Langerhans'],
         'gap_relevance': [1, 2, 3, 4, 13],
-        'source': 'Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. PMID:33989382'
+        'source': 'Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. PMID:34180979'
     },
     'Alpha Cell': {
         'plain': 'The cell that makes glucagon, which raises blood sugar. In diabetes, it often releases glucagon at the wrong times.',
@@ -132,7 +132,7 @@ TERMS = {
         'disease': 'Loss-of-function mutations cause permanent neonatal diabetes; reduced activity in T2D beta cell dysfunction',
         'connections': ['Beta Cell', 'Proinsulin', 'PDX1'],
         'gap_relevance': [1, 2],
-        'source': 'Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019;29:1-24. PMID:31220820'
+        'source': 'Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019;29:1-24. PMID:30949058'
     },
     'Proinsulin': {
         'plain': 'The raw precursor protein that cells make before processing it into insulin. An elevated ratio of proinsulin to actual insulin suggests the beta cells are stressed or struggling.',
@@ -165,7 +165,7 @@ TERMS = {
         'disease': 'Impaired somatostatin secretion contributes to glucagon dysregulation in T1D',
         'connections': ['Alpha Cell', 'Beta Cell', 'Islets of Langerhans'],
         'gap_relevance': [1],
-        'source': 'Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. PMID:30144957'
+        'source': 'Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. PMID:30303773'
     },
     'PDX1': {
         'plain': 'A master control protein that tells cells to become beta cells during development and keeps them functioning as beta cells throughout life.',

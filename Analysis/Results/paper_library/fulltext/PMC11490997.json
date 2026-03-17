@@ -1,0 +1,583 @@
+{
+  "pmcid": "PMC11490997",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Multiple sclerosis (MS) is an autoimmune disease affecting the central nervous system (CNS) with the immune system attacking myelin sheaths leading to neuronal death. While several disease-modifying therapies are available to treat MS, these therapies are not universally effective and do not stop disease progression. More personalized long-term treatment options that target specific aspects of the disease, such as reducing relapse frequency, delaying disability accumulation, and addressing symptoms that impact daily functioning, as well as therapies that can promote neuroprotection and repair are needed. Chimeric Antigen Receptor (CAR) Tcell therapies have revolutionized cancer treatment by intravenously (IV) administering a defined dose of T cells with high specificity provided by the CAR. An autologous CAR T cell therapy using suppressive regulatory T cells (Tregs) inducing long-lasting tolerance would be the ideal treatment for patients. Hence, we expanded the application of CAR-T cells by introducing a CAR into Tregs to treat MS patients. We developed a myelin oligodendrocyte glycoprotein (MOG)-specific CAR Treg cell therapy for patients with MS. MOG is expressed on the outer membrane of the myelin sheath, the insulating layer the forms around nerves, making it an ideal target for CAR Treg therapy. Our lead candidate is a 2nd generation CAR, composed of an anti-MOG scFv screened from a large human library. In vitro, we demonstrated CAR-dependent functionality and showed efficacy in vivo using a passive EAE mouse model. Additionally, the MOG-CAR Tregs have very low tonic signaling with a desirable signal-to-noise ratio resulting in a highly potent CAR. In summary our data suggest that MOG-CAR Tregs are a promising MS treatment option with the potential to induce long-lasting tolerance in patients."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Introduction"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Multiple sclerosis (MS) is a chronic disease of the central nervous system (CNS) characterized by inflammation, demyelination, gliosis, axonal damage and lymphocyte infiltrating white matter. T cells and B cells recognizing myelin protein peptides are likely involved in the pathogenesis of the disease. Relapsing-remitting multiple sclerosis (RRMS) is the most common form of MS, characterized by periods of relapses or flare-ups, followed by partial or complete recovery (remission)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Despite the availability of several disease-modifying therapies for MS, these lack universal effectiveness in halting disease progression. Addressing the root cause of disease, such as restoring immunological balance and tolerance by silencing autoreactive T cells, remains unmet. Therefore, there is a pressing need for personalized, long-term treatment options that target the underlying cause of disease, reduce relapses, delay disability accumulation, and lessens symptoms impacting daily life. Moreover, there is a need for therapies that promote neuroprotection and repair, and strategies to better manage the cognitive and psychological aspects of MS. In this light, an autologous cell therapy that induces long-lasting immune tolerance towards the myelin sheath would be highly desirable. By translating the ground-shaking success concept of CAR-T cells possessing one engineered specificity towards a cancer target, a similar drug could be generated for MS using Tregs, the key regulators of the immune system, by introducing a CAR using a well-known signaling domain."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Regulatory T cells (Tregs) are an immune suppressive subset of CD4+ T cells characterized by the expression of transcription factor FOXP3, that play a key role in the regulation of immune responses, maintenance of peripheral tolerance and immune homeostasis. Once activated, Tregs exert powerful immunosuppressive properties regulating conventional proinflammatory T cells (Tconv) proliferation and modulating antigen presenting cells function by contact dependent and contact-independent mechanisms. In MS, there are conflicting reports on Tregs in blood of patients with data indicating that the number or frequency of Tregs may be reduced or functionally impaired, resulting in an immunological imbalance. These conflicting data might be due to multiple definitions of Treg subclasses or differences in cohort of patients analyzed. Several hypothesis were formulated to explain impaired function of Tregs in MS patients from anergy, decreased proliferative response and suppressive function after TCR-stimulation using polyclonal CD3 and CD28 stimulation or antigen-stimulation (MOG, MBP(myelin basic protein)), clonal exhaustion due to increased proliferation of Tregs in vivo in MS patients to attempt to down-modulate the autoreactive T cells activity, increased susceptibility to apoptosis or decreased level of FOXP3 expression. So far, impaired function of Tregs in MS patient has not been fully elucidated. Beside Treg dysfunction, immunoregulatory mechanisms fail to control autoreactive T cells due to a process called Treg resistance to immunosuppression. Despite these reports, it is believed that MS patient may still benefit from Treg cell-based therapy to restore insufficient immunosuppressive capacity."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Preclinical studies using animal models support Treg cell-based therapies for autoimmune disease, demonstrating reduced pathology in several disease mouse models after Treg transfer. Clinical trials using polyclonal Tregs showed promising safety but modest efficacy results. However, increasing Tregs antigen-specificity is believed to increase efficacy as seen in a transgenic NOD mice model. However, their application is restricted to autoimmune disease where the number of known autoantigens is limited. To overcome this difficulty, a novel approach to engineer antigen specific Tregs is to express a CAR composed of an extracellular domain for antigen recognition (scFv) and binding and an intracellular signaling domain for Treg activation upon antigen recognition without MHC restriction. This approach has been developed with T cells and successfully implemented in cancer treatments, with long-term remissions achieved in advanced-stage B-cell malignancies."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Extensive research to develop CAR-Treg therapy has explored the impact of scFv, signaling domains, and manufacturing conditions, providing valuable aspects for CAR-Treg drug design. Accordingly, we and other research groups are currently applying this concept to autoimmune diseases and transplantation, resulting in the initiation of two Phase 1 clinical trials in mismatched organ transplantation (NCT05234190). One notable trial is Sangamo’s Steadfast trial in kidney transplantation (NCT04817774), which utilizes HLA-A2 specific-CAR Tregs with CD8/CD28/CD3z signaling domain."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "We translated the CAR-T concept by engineering a MOG-CAR Tregs to investigate their potential for treating MS. Accordingly, MOG-CAR Tregs are engineered to specifically target and suppress immune cells attacking the myelin sheath in the CNS. Upon injection into patients, these MOG-CAR Tregs migrate to the site of inflammation, leveraging Tregs inherent ability to home to inflamed tissues. Once at the site, the MOG-CAR Tregs are activated by detecting MOG and suppressing auto-inflammatory responses. By selecting MOG as the CAR target, these Tregs are directed specifically to CNS sites of inflammation, where MOG is specifically expressed. This approach can potentially reduce the frequency and severity of relapses in MS while preserving neural function and minimizing broader immune suppression compared to traditional MS therapies."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Our approach focused on two key points for CAR-Treg engineering: creating a highly effective CAR and ensuring stable manufacturing of Treg cells. The CAR was designed to have a high signal-to-noise ratio, rendering Treg cells highly efficacious with minimal tonic signaling to avoid cell exhaustion and loss of efficacy. The CAR construct was integrated into polyclonal CD4+CD45RA+ CD127lo CD25high Tregs using a manufacturing process similar to that used in our kidney transplantation trial to ensure Treg stability."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Notably, CD4+CD45RA+CD127loCD25+ T cells have been identified as an optimal subset for Treg therapy due to their inherent stability and functional capacity, particularly when expanded in vitro. Furthermore, it has been demonstrated that expanded CD4+ CD45RA+ CD127lo CD25+Tregs exhibit epigenetic stability at the FOXP3 locus and are resistant to Th17 conversion."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "We generated a CAR specific for MOG comprising the same signaling domain as in our HLA-A2 CAR Tregs currently used in our kidney transplant clinical trial (NCT04817774). The introduction of a MOG-specific CAR provides MOG specificity to the entire Treg population, enabling effective function upon CAR engagement. Moreover, MOG is specifically expressed in the CNS, avoiding off-target activation of CAR Tregs in the periphery. This approach harnesses the regulatory potential of Tregs while ensuring precise targeting of MOG in autoimmune diseases."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Our study shows that MOG-CAR Tregs display very low tonic signaling and a strong signal-to-noise ratio. MOG-CAR Tregs maintain their regulatory phenotype after expansion in vitro and exhibit target-dependent immunosuppressive and immune-modulatory properties in vitro and in vivo. Moreover, we showed that Tregs derived from MS patient can be transduced and expanded in vitro and exert immunosuppressive function in vitro. Overall, our data suggests functional and stable MOG-CAR Tregs can be generated using our CAR Treg platform and represent a potential novel therapeutic approach for treating MS."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Design, generation and expression of MOG CAR construct in human and mouse Tregs"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To engineer an anti-MOG CAR, a library of fully human anti-MOG scFvs was screened and the optimal candidate that is cross-reactive to both human and mouse MOG was cloned into a lentiviral vector to generate a MOG-CAR. To ensure MOG-specificity of the scFv, it was subjected to a series of absorptions against irrelevant protein mixtures, such as IVIG and viral proteins, during the engineering process. The CAR contained a hinge domain, a transmembrane domain, and CD28-CD3ζ signaling domain. (Fig. 1a). Additionally, affinity of these human and mouse scFv was determined by measuring extracellular domain of CAR binding mouse or human MOG protein coated beads. In this assay, it was shown that the scFv has slightly less affinity for mouse MOG protein than to human MOG (Fig. 1a)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To generate human MOG-CAR Tregs, CD4+ CD45RA+ CD127lo CD25+naïve Tregs were sorted from peripheral blood of healthy donors and expanded prior to lentiviral transduction with a CAR construct. To generate mouse MOG-CAR Tregs, mouse CD4+CD25+ CD44−CD62L+ naïve Tregs were sorted from the spleen of C57BL/6 mice aiming to mimic the human process as much possible. After transduction, cell surface expression of MOG-CAR was confirmed with staining with protein-L for human construct and NGFR (nerve growth factor receptor) for mouse construct which bound to the scFv. CAR expression monitoring showed that transduction efficiencies ranged on average at 45.9 +/- 18.9% (mean+/-SD) for human construct and 62.5+/- 3.9% for mouse construct (Fig. 1b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Moreover, human MOG-CAR Tregs maintained regulatory T cell phenotype following expansion, with high expression of CD4, CD25, CD45RA, CTLA-4, FOXP3, HELIOS. (Fig. 1C). For mouse Tregs, expression of FOXP3 remained on average over 80% positive after in vitro expansion. (Fig. 1d)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Altogether, MOG-CAR expression did not alter the phenotype of human and murine Tregs following transduction and expansion, fulfilling the basic requirement of a cell therapy product."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Design, generation and expression of MOG-CAR construct in human and mouse Tregs. (A) Top: Cross reactivity of the scFv analyzing the binding of scFv-streptavidin to human or mouse MOG protein. Bottom: Schematic diagram of the mouse and human MOG-CAR constructs. (B) Representative plot of transduction. Naïve Tregs were left untransduced (NT Tregs) or transduced with a MOG-CAR. At the end of the expansion, cells were analyzed by flow cytometry for CAR expression. GFP and Protein L double positive cells were analyzed to determine the percentage of transduction of the human construct. NGFR positive cells expressed the percentage of transduction for mouse MOG-CAR construct. The percentage of transduction of the human MOG-CAR construct (GFP+ProtL+) and the mouse MOG-CAR construct (NGFR+) was between 50–60%. (C) Phenotype of not transduced and MOG-CAR human Tregs after 12 days of expansion (D) Percentage of FOXP3 expression in mouse MOG-CAR Tregs during 13 days of expansion"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Human and mouse MOG-CAR Tregs exhibit high signal-to-noise ratio and are specifically activated by MOG antigen in vitro"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Both human and mouse MOG-CAR Tregs were analyzed after restimulation. Human and mouse MOG-CAR Tregs displayed negligible tonic signaling with basal activation level (% CD69+) similar to untransduced polyclonal Tregs (mean+/- SD; 6.9+/-2.3% CD69 + for human MOG-CAR Tregs vs. 5.7+/-2.4% for human polyclonal Tregs and 8.8 +/- 13.5% CD69 + for mouse MOG-CAR Tregs vs. 5.6 +/- 6.4% untransduced mouse Tregs) indicating that transduced Tregs may not be prone to acquire an exhausted phenotype due to constitutive signaling through the CAR as previously reported. Recombinant human MOG protein-coated plates were used to assess CAR-specific activation of MOG-CAR Tregs. Following overnight exposure to rMOG-coated plates, MOG-CAR Tregs significantly upregulated CD69 to a level similar or higher to TCR stimulation using anti-CD3/CD28 beads (Fig. 2a and b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "MOG protein represents only 0.05% of myelin sheath proteins in the CNS. To assess if MOG-CAR Tregs could be activated with physiological levels of MOG, an ex-vivo co-culture system was set up. In this assay, MOG-CAR human and mouse Tregs were co-cultured overnight with spinal cord from C57Bl/6 mice. In this culture system, both human and mouse MOG-CAR Tregs upregulated CD69 at a similar level to TCR stimulation using CD3/CD28 beads indicating that the CAR can activate Tregs upon target engagement as effectively as through their TCR (Fig. 2a and b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Next, we analyzed whether the scFv we selected to engineer MOG-CAR was able to recognize the MOG protein expressed in human tissue using immunochemistry. We demonstrated that the scFv bound to human MOG expressed in the brain and spinal cord but not to heart tissue used as a negative control indicating that the scFv contained within our MOG CAR is highly specific to MOG (Fig. 2C). The control tissues, heart (Fig. 2C) and small intestine (data not shown), confirmed that the pre-absorbed scFv is specific to MOG protein, which is exclusively expressed in the CNS."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Human and mouse MOG-CAR Tregs are functionally active in vitro and recognize MOG in human tissue. Percentage of CD69 expression (activation marker) on human (A) or mouse (B) Not transduced Tregs (NT) or CAR-Tregs after 24 h treatment with culture media (media), anti-CD3/CD28 beads, 3 µg of recombinant MOG protein or spinal cord isolated from C57Bl/6 mice. Two-way ANOVA with Šídák’s multiple comparisons test was performed. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001. (C) Histology analysis staining MOG protein on human brain/spinal cord with anti-MOG CAR (scFv) (Brown staining: MOG). Human heart tissue was used as an irrelevant control tissue"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Human MOG-CAR Tregs mediate MOG-specific immunosuppression and immunomodulation"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To evaluate the function of human MOG-CAR Tregs, their ability to inhibit the proliferation of CD4 responder T cells (Tconv) were examined in a suppression assay. MOG-CAR Tregs were left unstimulated (NS) or were stimulated through their CAR or TCR prior to co-culture with CD4 Tconv. MOG-CAR Tregs significantly inhibited the proliferation of Tconv upon pre-stimulation with either MOG-coated plate or anti-CD3/CD28 beads, demonstrating an antigen-specific immunosuppression (Fig. 3a)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To demonstrate that human MOG-CAR Tregs possess the same primary functions as polyclonal Tregs in vitro, we performed additional assays to evaluate their immune-modulatory activity. Since CD8 T cells have been described to play an important role in the pathology of MS, the capacity of MOG-CAR Tregs to inhibit the proliferation of CD8 T conv cells was assessed in an in vitro suppression assay similar to the assay with CD4 T conv. As for CD4 T conv., MOG-CAR Tregs significantly inhibited the proliferation of CD8 Tconv upon pre-stimulation with either MOG-coated plate or anti-CD3/CD28 beads (Fig. 3b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Given that CAR-Tregs-mediated DC suppression in vitro appears to be a superior predictor of in vivo Treg function, the ability of Tregs to suppress APCs has been suggested as an important functional criterion for an effective CAR-Treg therapeutic product. Hence, we tested whether MOG-CAR Tregs inhibited DC maturation and function in vitro. Monocyte-derived immature DC (imDC) were stimulated with LPS (DC alone) to induce their maturation or co-cultured with unstimulated (NS) or MOG pre-stimulated MOG-CAR Tregs (MOG) in the presence of LPS. As previously described, the cell surface expression of costimulatory molecules CD80, CD86, CD40 and antigen presentation molecule HLA-DR was higher on mDCs compared to imDC. Moreover, it was demonstrated that Treg-treated DC displayed a less mature phenotype with decreased cell surface expression of these markers and increased expression of DC-SIGN. Consistent with these studies, we show that DCs treated with MOG-CAR Tregs stimulated through their CAR inhibited DC maturation and increased level of DC-SIGN molecule on DCs (Fig. 3c)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Overall, these results show that the expression of MOG-CAR on human Tregs can suppress both T cells and antigen presenting cells upon their activation through the CAR."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Human MOG-CAR Tregs mediate target-antigen-specific immunosuppression and immunomodulation. (A) Suppression of human CD4 polyclonally stimulated responder T cell (Tconv) proliferation by human MOG-CAR Tregs in co-culture. Human Tregs were pre-stimulated with culture media (None), anti-CD3/CD28 beads, or MOG-coated protein. The graph represents the mean of 5 donors. (B) Suppression of human CD8 polyclonally stimulated responder T cell proliferation by human MOG-CAR Tregs in co-culture. Human Tregs were pre-stimulated with culture media (None), anti-CD3/CD28 beads, or MOG-coated protein. The graph represents the mean of 4 donors. Two-way ANOVA with Tukey’s multiple comparisons test was performed. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001. (C) MOG-CAR Tregs inhibited the maturation of monocyte-derived dendritic cells (DC). Autologous immature DC were treated with LPS to induce maturation (DC alone) or co-cultured with pre-stimulated MOG-CAR Tregs in the presence of LPS (CAR-Treg DC). After 3-days co-culture, DC phenotype was analyzed for surface expression of CD80, CD86, CD40, DC-SIGN and HLA-DR. One-way ANOVA with Tukey’s multiple comparisons test was performed. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "MOG-CAR Tregs engineered from MS patient blood are functionally active in vitro"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We aim to develop an autologous MOG-CAR Treg cell therapy to treat MS patients. There are conflicting reports on Treg in blood of MS patients with data indicating that the number of Tregs may be reduced or functionally impaired. Therefore, we analyzed naive CD4+CD45RA+ CD127lo CD25hi Treg subset, regarding their phenotype and functionality in 5 patients with remitting-relapsing MS (RRMS) compared to healthy donors. We found that the proportion of naïve Tregs among CD4 + T cells in RRMS patients is similar to that found in healthy donors (mean+/- SD; 1.17+/-0.56% and 1.14+/-0.57% respectively) (Fig. 4a). The number of CD4+CD45RA+CD127loCD25hi Treg was also not significantly different in RRMS patients compared to healthy donors (mean +/- SD; 1.07 +/- 0.28 × 106 and 1.43 +/- 0.93 × 106 respectively; not shown). After stimulation in vitro, the fold of expansion of RRMS naïve Tregs is not statistically reduced compared to healthy donors with an average fold expansion of 60.6+/-42 for RRMS Tregs versus 223 +/-343 for healthy donors (mean+/-SD) (Fig. 4b). Transduction efficiency of the MOG-CAR construct was similar in RRMS Tregs compared to healthy donors (mean+/-SD; 35.5+/- 13.2% and 39.7+/-16.3% respectively) (Fig. 4c). Moreover, after transduction and expansion in vitro, Tregs from RRMS patients compared to Tregs from healthy donors express the same level of FOXP3 (mean +/- SD; 97.3+/-1.6% and 96.2 /- 2.5% FOXP3+  respectively) and HELIOS (mean +/- SD; 75.4 +/-7.9% and 69.9 +/-15% HELIOS+ respectively) and have high level of FOXP3 hypomethylation (mean+/-SD; 100% +/-0% FOXP3 TSDR hypomethylation for RRMS vs. 87.7% +/- 14.0% for healthy donors) indicating that they are phenotypically identical and stable (Fig. 4d)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Functionality of RRMS MOG-CAR Tregs compared to healthy donors MOG-CAR Tregs was assessed in vitro after stimulation using recombinant MOG protein-coated plates or CD3/CD28 beads. The tonic signaling of MOG-CAR Tregs was similar between RRMS patient Tregs compared to Tregs from healthy patients (mean+/-SD; 16.3 +/- 17.3% CD69+ and 12.4 +/- 13.3% CD69 + respectively). Following overnight exposure to rMOG-coated plates or CD3/CD28 beads, MOG-CAR Tregs from RRMS patients significantly upregulated CD69 to a level similar to MOG-CAR Tregs of healthy donors (mean+/- SD; 60.8+/-29.6% CD69+ for RRMS vs. 66.9 +/- 16.8% CD69 + for healthy using rMOG-coated plates) or higher to TCR stimulation using anti-CD3/CD28 beads (mean +/- SD; 55.7 +/- 18.6% CD69+ for RRMS vs. 49.9 +/- 15.7% CD69+ for healthy using CD3/CD28 beads) (Fig. 4e). This data suggests that MOG-CAR Tregs from RRMS patients can be activated in vitro through the CAR as efficiently as MOG-CAR Tregs from healthy patients."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The capacity of MOG-CAR Tregs of RRMS patients compared to healthy donor MOG-CAR Tregs to suppress CD4 Tconv proliferation was assessed in vitro. MOG-CAR Tregs were left unstimulated or pre-stimulated with rMOG coated plates or CD3/CD28 beads and co-cultured with CD4 T conv for 3 days. MOG-CAR Tregs from RRMS patients inhibited the proliferation of Tconv upon pre-stimulation with either MOG-coated plate or anti-CD3/CD28 beads as efficiently as MOG-CAR Tregs from healthy patients (mean+/- SD; 41.1 +/- 24.4% suppression for RRMS MOG-CAR Treg preactivated with rMOG vs. 51.7 +/- 17.4% suppression for healthy at ratio Tconv: Treg 2:1) (Fig. 4f), indicating that MOG-CAR Tregs from RRMS patient can still exert immuno-suppressive function in vitro."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Altogether, this data suggests that MOG-CAR Tregs isolated from RRMS patients are functionally active in vitro."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Taken together, we showed that naïve Tregs isolated from the blood of RRMS patients are suitable to manufacture an autologous MOG-CAR Treg cell therapy product to treat MS patients."
+    },
+    {
+      "section_type": "FIG",
+      "text": "MOG-CAR Tregs engineered from MS patient blood are functionally active in vitro. (A) Percentage of naïve Tregs (CD25hi CD127lo CD45RA+) among the CD4 cells of healthy donors and RRMS patients. (B) Fold expansion of healthy donors (grey) and RRMS patients (red) Tregs between day 0 to day 11 of the culture. (C) Percentage of transduction of the MOG-CAR with the lentivirus vector (at 1.107UI/ml) in Tregs from healthy donors and RRMS patients. (D) Percentage of FOXP3 expression, FOXP3 TSDR hypomethylation and Helios expression on Tregs from healthy donors and RRMS patients. (E) Activation of MOG-CAR Tregs from healthy and RRMS patients analyzed using activation marker CD69 expression at cell surface of Tregs. Tregs were incubated 24 h with media, anti-CD3/CD28 beads or coated MOG (3 µg/ml). (F) Suppression of human CD4 polyclonally stimulated responder T cell (Tconv) proliferation by human MOG-CAR Tregs from healthy donors or RRMS patients in co-culture. Human Tregs were pre-stimulated with culture media (no activation), anti-CD3/CD28 beads, or MOG coated protein (3 µg/ml). Two-way ANOVA with Tukey’s multiple comparisons test was performed. *p < 0.05, **p < 0.01"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "MOG-CAR Tregs localize in the CNS of EAE mice"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "As there is no model of EAE in humanized mice to assess the migration and efficacy of human MOG-CAR Tregs, we developed a surrogate mouse MOG-CAR to evaluate their mode of action in vivo."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The migration and the localization of MOG-CAR Tregs was monitored in a mouse EAE model using bioluminescence imaging. SJL mice were immunized with PLP in CFA and mouse luciferase-expressing MOG-CAR Tregs were injected intravenously 7 days post-immunization. As control, these cells were also injected in non-immunized mice. Two days post-injection, scarcely any MOG-CAR Tregs could be detected in the brain and spinal cord of the animals (CNS) (data not shown). However, MOG-CAR Tregs started to be detected in the CNS of immunized animals 4 days post-injection but not in non-immunized animals and accumulated in the CNS after 7 days as shown in imaging and the quantification of the bioluminescence signals (Fig. 5a). Ex-vivo analysis of organs showed that MOG-CAR Tregs remained in the spleen and lymph nodes of non-immunized animals and did not migrate to the CNS compared to immunized animals (Fig. 5b), indicating that MOG-CAR Tregs localize specifically in inflamed tissues."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Next, the migration of MOG-CAR Tregs to the CNS was assessed in a passive model of EAE. Mouse Tregs were isolated from C57BL/6 mice, transduced with clinical surrogate MOG-CAR construct or a non-signaling MOG-CAR (control MOG-CAR Tregs) and expanded in vitro for 5 days. One day after intra-peritoneal injection of pathogenic cells, MOG-CAR Tregs or control MOG-CAR Tregs were injected intravenously. Mice were sacrificed 10 days later, and brain and spinal cord were analyzed by flow cytometry for the presence of CAR Tregs. In this model, 4-fold more MOG-CAR Tregs were found in the CNS compared to MOG-CAR control Tregs of diseased animals (mean +/- SD; 159.6 +/- 178 MOG-CAR Tregs versus 33.0+/- 24.9 MOG-CAR control Tregs) (Fig. 5C). Altogether, this data suggests that MOG-CAR Tregs specifically migrate to the CNS of EAE mice upon inflammation."
+    },
+    {
+      "section_type": "FIG",
+      "text": "MOG-CAR Tregs localize in the CNS of EAE mice. (A) and (B) are experiments performed in PLP induced EAE in SJL mice. Bioluminescence (photon/sec) of mice (A) and organs (B) from immunized or not immunized SJL mice. Mice were injected with MOG-CAR Tregs or with saline solution (No CAR Tregs). The graph shows the quantification of photons in the brain from day 9 to day 18. In (B) the graph shows the bioluminescence in the different organs at day 14. (C) was performed in another EAE model (adoptive transfer EAE). Number of mouse transduced Tregs (CD4+FOXP3+NGFR+) in the CNS of EAE mice after treatment with MOG-CAR Tregs or CTRL CAR Tregs. Cell number under 20 were considered as a background. Mann Whitney test was performed. *p < 0.05"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "MOG-CAR Tregs delay the onset of EAE and reduce the activity of pathogenic cells in the CNS"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Next, we assessed the therapeutic efficacy of mouse MOG-CAR Tregs in reducing EAE disease score in a model of passive EAE as described above. In this model, the injection of MOG-CAR Tregs delays the onset of EAE by 2 days compared to mice injected with MOG-CAR control Tregs or saline. Moreover, MOG-CAR Tregs were shown to reduce the incidence of EAE more efficiently than MOG-CAR control Tregs with 100% and 93% of mice showing signs of EAE (EAE score > 1) at day 9 in the saline and MOG-CAR control Tregs group respectively versus only 50% for mice treated with MOG-CAR Tregs. At day 11, only 64.3% of mice showed signs of EAE in the MOG-CAR Treg treated group (Fig. 6a). Moreover, MOG-CAR Tregs were more efficacious than MOG-CAR control Tregs at reducing disease activity score (54.5% reduction of disease score with MOG-CAR Tregs versus saline at day 11 compared to 0.09% reduction with MOG-CAR control Tregs) up to 11 days post-injection. Interestingly, the number of mice with no EAE score was increased when treated with MOG-CAR Tregs compared to MOG-CAR control Tregs or saline (Fig. 6b). When analyzing the activity of pathogenic cells isolated from the CNS of the mice at day 11, it was observed that the percentage of CD4+ cells producing IFN-γ was significantly reduced in mice treated with MOG-CAR Tregs compared to saline or MOG-CAR control Tregs treated mice (mean+/-SD; 25.8 +/- 9.1% for MOG-CAR Tregs vs. 43.16 +/- 7.99% for saline and 35.34 +/- 8.5% for MOG-CAR control), indicating that MOG-CAR Tregs can efficiently modulate pathogenic cell activity in the CNS. (Fig. 6c). Moreover, histopathologic analysis of the spinal cord of the animals harvested at day 11 showed that in mice treated with MOG-CAR Tregs, the number of spinal cord sections with demyelinating leukomyelitis was reduced compared to untreated mice or treated with MOG-CAR control Tregs (11 spinal cord sections affected for untreated mice, 9 for MOG-CAR control Tregs and 7 for MOG-CAR Treg treated mice) with a mean score of 0.82 for MOG-CAR Tregs treated mice versus 2.0 for untreated and 1.4 for MOG-CAR control Tregs (Fig. 6d). Immunostaining of spinal cord for Iba-1, a marker of microglial activation, showed a significant reduction of the percentage of Iba-1 positive staining in mice treated with MOG-CAR Tregs compared to untreated or MOG-CAR control treated mice (mean+/-SD; 0.22+/-0.55 for MOG-CAR Tregs versus 0.67+/-0.79 for MOG-CAR control Tregs and 0.7 +/- 0.89 for untreated mice) (Fig. 6e)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Altogether, despite the limitation of the model, this data suggests that MOG-CAR Tregs are efficient at reducing inflammation in the CNS of EAE mice by modulating the activity of CD4+ pathogenic cells and reducing microglial activation."
+    },
+    {
+      "section_type": "FIG",
+      "text": "MOG-CAR Tregs delay the onset of EAE and reduce CNS inflammation. Monitoring of incidence (A) and clinical score (B) of passive EAE in C57Bl/6 mice. Mice were injected with pathogenic cells from donors’ mice and 24 h later MOG-CAR (pink), Ctrl-CAR Tregs (blue) or saline solution (grey) were injected i.v. Error bars represent mean ± SEM from 4 independent experiments including 33 mice/group. 2-way Anova Tukey’s multiple comparison was performed (Statistics MOG-CAR versus Saline: *<0.05, **<0.005, Statistics MOG-CAR versus CAR Ctrl: $<0.05, $$<0.005). (C) Percentage of IFN-γ positive CD4 cells after ex-vivo stimulation with MOG peptide. After mice sacrifice, cells recovered from the from CNS were incubated O/N with MOG peptide (10 µg/ml). 16 h later BFA was added to the media and intracellular staining was performed. Error bars represent mean ± SEM from 4 independent experiments including 33 mice/group. Stats: One-way ANOVA with Tukey’s multiple comparisons test. (D) The graph shows the mean score of demyelination for each spinal cord section. The mean score is (sum (number of spinal cord sections affected x severity)) / total number of spinal cord sections examined in each group. On the right: Representative transverse section of spinal cord from EAE mice stained with Luxol blue. Black arrows show demyelinated zone. (E) The graph represents the marked area after normalization in % of Iba-1 immunostainings obtained in spinal cord. Kruskal-Wallis test with multiple comparisons *<0.05, **<0.005. On the right: Representative transverse section of spinal cord from EAE mice stained with Iba-1 (brown staining)"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Discussion"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Our CAR Treg platform consists in introducing a CAR, comprising a highly specific scFv and a CD8/CD28/CD3ζ signaling domain that has been shown to efficiently and safely activate CAR Tregs, into naïve CD4+CD45RA+CD127loCD25hi Tregs that express high level of FOXP3. This signaling domain was evaluated by regulators and is used in our leading current clinical trial STEADFAST. The Tregs are then expanded through our validated manufacturing process identical to the one used for our HLA-A2 CAR Tregs. This strategy enables us to focus on the scFv and CAR development and tackle the issue of limited availability of autoimmune disease in vivo models. Ideally, a human autologous human CAR Treg product should be tested in humanized mouse model. However, these models have several well described limitations including the absence of cross-reactivity of mouse cytokines and chemokines produced by mouse cells under induced inflammatory responses for human cells. While syngeneic models are addressing this challenge, they necessitate a specific CAR design tailored for mice."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Despite these hurdles, the functionality of MOG-CAR Tregs could be shown in vitro and in vivo. First, we demonstrated that our scFv specifically binds to the MOG protein that is specifically expressed in the CNS. MOG-scFv specificity was ensured through a rigorous selection process. All generated scFvs were tested against irrelevant protein mixtures, including a virus lysate, polyclonal IVIG, and human Fc portions, to eliminate non-specific binding scFv species. Specificity to MOG was further confirmed by staining two irrelevant tissues, heart and small intestine, which showed no positive staining. Additionally, the biodistribution model in mice supports the specificity of our scFv, as MOG-specific CAR Tregs were localized to the target tissue, with no off-target distribution observed in the muscle, kidney, liver, or gut. Careful CAR design is crucial to ensure strong Treg activation upon CAR-target binding while minimizing background activation, termed ‘tonic signaling,’ which can compromise CAR Treg stability and efficacy. Proics et al. demonstrated that CAR design, including background activation, can be effectively addressed through in vitro studies, translating to efficacy both in vitro and in vivo. Accordingly, adapted in vitro assays confirmed efficient activation of human and mouse MOG-CAR Tregs by their target antigen with minimal tonic signaling, indicating potent CAR Treg cell generation. The manufacturing process, including transduction and expansion steps, significantly contributes to the effectiveness of CAR Tregs and CAR T cells (as indicated in the literature). Employing a manufacturing process similar to our HLA-A2 CAR Tregs for which we demonstrated that they were stable and persistent long-term in an transgenic humanized HLA-A2 mouse model, we generated human MOG- CAR Tregs addressing this important point. Additionally, in a parallel study, stress test assays under pro-inflammatory conditions confirmed Treg stability with the same signaling domain (submitted manuscript)."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Despite its rare occurrence (0.01 to 0.05% of myelin sheath protein) and 90% homogeneity between mouse and human MOG protein activated both human and mouse MOG-CAR Tregs in our co-culture assay with mouse spinal cord. Upon activation, human MOG-CAR Tregs suppressed Tconv proliferation and reduced the expression of co-stimulatory receptors on dendritic cells consistent with an immune-modulatory phenotype."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "To investigate human MOG-CAR Tregs function in vivo, we used well established syngeneic mouse models of EAE and surrogate mouse MOG-CAR Tregs. In the active EAE induced by immunization with PLP, mouse MOG-CAR Tregs trafficked to the inflamed CNS and could be observed in the tissue up to 7 days post-injection. Similar results were obtained in the passive EAE model. In this model, it was also shown that MOG-CAR Tregs could delay the onset of EAE and decrease the EAE score slightly compared to the untreated mice by 56.1% at day 10 and 54.5% at day 11. Moreover, MOG-CAR Tregs reduced the activity of pathogenic CD4+ cells and microglial activation, delaying the appearance of demyelinating lesion in the spinal cord of the animal. However, the effect was transient, and the number of MOG-CAR Tregs found in the CNS of the animals rapidly declined. In our experiments, very few to no MOG-CAR Tregs could be found 20 days post-injection (data not shown). It was described that the inflammatory cytokine milieu may determine if the inflammation could be controlled by Tregs and not only their number in the target tissue. We speculated that reducing the number of pathogenic cells that were injected in the mice, hence reducing the inflammation burden could increase the efficacy of MOG-CAR Tregs at reducing disease score in a less transient manner. We also increased Treg quality using FACS sorted CD4+CD25hi CD44− CD62L+ naïve Tregs to remove any Tconv contaminant cells that could remain in the Treg population purified using magnetic beads and that could be transduced with the CAR. Reduction of the number of pathogenic T cells increased the delay of EAE onset by 30% from 2 days to 3 days with 100% suppression of EAE score (data not shown). We hypothesize that the mouse signaling domain might require further optimization because it might induce too strong activation of mouse CAR Tregs inducing their potential exhaustion and death."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Moreover, MOG-CAR Tregs seemed to prevent or at least delay the appearance of demyelinating lesions in the brain of EAE animals. It has been described that Treg could promote remyelination by secreting soluble factors such as CCN3. In a collaborative work with D. Fitzgerald lab, we found that supernatants from mouse MOG-CAR Treg activated through their CAR by their target antigen MOG could in fact promote oligodendrocytes progenitors’ differentiation and induce the remyelination of brain slices in vitro (manuscript in preparation). This property of Tregs is of upmost importance for the treatment of MS as MOG-CAR Tregs not only could modulate immune homeostasis and reduce inflammation but also help the regeneration of brain lesions in patients."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Several reports have described that Treg numbers and function are disturbed in MS patients with lower number of Tregs being detected in human blood samples. However, other conflicting results showed that the reduction in Treg number or frequency in MS patient is not significant.The disparity between conflicting studies may stem from variations in the definition of Treg cells, such as differing gating strategies or the use of distinct markers for Treg identification (e.g., CD4+CD25hi vs. CD4+CD25+FOXP3+). For our feasibility study, we quantified the number of naïve CD4+CD45RA+ CD127lo CD25hi Tregs from the blood of five random RR-MS patients with active disease. This naïve Treg subset exhibits enhanced migration to non-lymphoid or inflamed tissues, supporting immunological tolerance and potential immune homeostasis modulation. Although our sample size is small, we showed that the number of naïve Tregs in the blood form RR-MS patients was not significantly different compared to healthy volunteers and that they could be transduced and expanded in vitro as efficiently as Tregs isolated from the blood of healthy patients. Importantly, the level of expression of FOXP3 was high with no decrease in the hypomethylation level of the FOXP3 locus indicating a high stability of CAR Tregs. Moreover, MOG-CAR Tregs from MS patients could be efficiently activated through the CAR and the TCR and were as suppressive as the Tregs from healthy volunteers in vitro."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In summary, our data suggests that it is feasible to manufacture potent and stable CAR Tregs cells from the blood of MS patients by introducing a highly specific CAR for an autologous cell therapy product to treat MS patients."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Materials and methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Ethics approval"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "All animal experiments were performed in accordance with relevant guidelines and regulations, either in an approved animal facility at Sangamo Therapeutics France (accredited by the French Ministry of Research, Arrêté n° 4566) according to the APAFIS (“Autorisation de Projet utilisant des Animaux à des Fins Scientifiques”)approved protocol APAFIS#23467-2019101811351116v8 and APAFIS#13779-201802156437559v3 and in compliance with the Guide for the Care and Use of Laboratory Animals."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Human cell preparation"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The blood of healthy donors was collected by the Etablissement Français du Sang (EFS). Peripheral blood mononuclear cells (PBMC) were isolated from buffy coat by density centrifugation using Ficoll-Paque (GE Healthcare)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Human Treg isolation, transduction, and expansion"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Human Tregs and CD4+CD25− responder T cells (Tconv) were isolated from PBMC using EasySep Human CD4+CD127loCD25+ Regulatory T Cell Isolation Kit (STEMCELL Technologies). Naïve CD4+CD127loCD25+CD45RA+ Tregs were further purified by cell sorting and cultured in X-VIVO 15 (Lonza) or OpTmizer media (ThermoFisher Scientific) supplemented with 1000 U/mL recombinant human IL-2 (Proleukin) and anti-CD3/CD28 Dynabeads (ThermoFisher Scientific). Media containing IL-2 were replenished every 2–3 days. Tregs were transduced with lentiviral vectors at day 2 and re-stimulated with anti-CD3/CD28 beads at day 7 and harvested at day 11–13. Briefly, transduction was carried out by loading between 2 and 5 × 106 Transducing Unit (TU) per ml to each well. After 6 hours at 37 °C, viral particles were removed by washout. The plates were then incubated at 37 °C with 5% CO2. The transduction efficiency was measured by flow cytometric analysis of the percentage of GFP positive cells."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Mouse Treg isolation, transduction, and expansion"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Mouse Tregs from splenocytes of C57Bl/6 or SJL mice were enriched using EasySep mouse CD4+CD25+ Regulatory T Cell Isolation Kit II (STEMCELL Technologies). In some experiment, naïve Tregs (CD44loCD62hi) were further sorted using a SH800 cell sorter (Sony) and cultured in RPMI 1640, GlutaMAX, HEPES (ThermoFisher Scientific) supplemented with 10% FBS (Sigma-Aldrich), 1 mM Sodium Pyruvate (ThermoFisher Scientific), 0.1 mM non-essential amino acids (ThermoFisher Scientific), 1% Penicillin-streptomycin (ThermoFisher Scientific), 5 µM 2-Mercaptoethanol (ThermoFisher Scientific), 1000 U/mL recombinant IL-2 (Proleukin), 50 nM Rapamycin (Sigma-Aldrich), and anti-CD3/CD28 Dynabeads (ThermoFisher Scientific). Media containing IL-2 was replenished every 2–3 days. Tregs were transduced with lentiviral vectors containing or not luciferase at day 2 and expanded for 5 to 7 days. For FACS sorted Tregs, cells were re-stimulated with anti-CD3/CD28 beads at day 7 until day 11 to 13. Briefly transduction was carried out by loading 2 × 107 Transducing Unit (TU) per ml of CAR vectors to each well plus 10 µg/ml vectofusin-1. Vectofusin-1 (Miltenyi, France) and vectors are mixed for 5 min at 37 °C before being added to the Tregs. A spinoculation was performed at 32 °C, 1000 g for 90 min. After 4 h at 37 °C, viral particles and vectofusin-1 were removed by washout and fresh media containing IL-2 (1000 U/ml) was added. The plates were then incubated at 37 °C with 5% CO2. 4 to 5 days after transduction, the transduction efficiency was measured by flow cytometric analysis of the percentage of NGFR positive cells."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Lentiviral vector production and titration"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "CAR-expressing lentiviral vectors (LVs) were produced using the classical 4-plasmid lentiviral system. Briefly, HEK293T cells (Lenti-X, Ozyme) were transfected with the CAR-expressing transfer vector, the plasmid expressing HIV-1 Gag/pol (pMDLg/pRRE), HIV-1 Rev (pRSV.Rev) and the VSV-G glycoprotein (pMD2.G) (Didier Trono, EPFL, Switzerland). 24-hours post-transfection, viral supernatants were harvested, concentrated by centrifugation, aliquoted and frozen at -80 °C for long term storage. The infectious titers expressed in transducing units per milliliter (TU/ml) were obtained after transduction of the Jurkat T cell line with a serial dilution of viral supernatants and transduction efficiency evaluated after 4 days by monitoring GFP expression."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Flow cytometry"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Cells from in vitro experiments were washed with phosphatebuffered saline (PBS)/4% bovine serum albumin and stained for cell surface markers. All antibodies were purchased from Miltenyi Biotec unless otherwise stated. The anti-human antibody clones used included: CD4-VioBlue (VIT4), CD45RA-FITC (REA1047), CD127-APC (MB15-18C9), CD25-PE (STEMCELL Technologies, 2A3), CD4-VioGreen (REA623), CD69-APC (REA824), GARP-PE (REA166), HELIOS-eF450 (eBioscience, 22F6), CD25-PE (REA570), CTLA-4-PE-Cy7 (BioLegend, BNI3), FOXP3-AlexaFluor647 (BD Biosciences, 259D/C7), CD127-APC-Vio770 (REA614), CD45-FITC (REA747), CD3-PerCP-Vio700 (REA613), CD127-AlexaFluor700 (BioLegend, A019D5), CD86-APC (REA968), HLA-DR-VioBlue (REA805), CD80-PE (REA661), CD40-APC-Vio770 (REA733), CD209-PE-Vio770 (REA617)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The anti-mouse antibodies were purchased from BD Biosciences otherwise stated. Antibody clones used included: CD45.1-BV721 (NDS58), CD45.2-APC-cy7 or BV510 (104), CD4 -BV510, V450 or APC-cy7 (RM4-5), NGFR-BV515 (REA844, Miltenyi), FOXP3-APC (REA788, Miltenyi), CD69-PE (H12F3), CTLA-4-PE-CF594 (UC10-4F10), IFNγ-FITC (XMG1.2), IL-17 A-APC (TC-11-18H10.1). FcR blocking reagent was used prior to surface marker staining. Dead cells were excluded using DAPI, PI, 7-AAD, or fixable viability dye."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Following in vivo experiments, spleen and brain samples were passed through a 70 μm cell strainer to obtain a single cell suspension. Brain cells were then incubated in RPMI/5% fetal calf serum (FCS) with 2.5 mg/ml collagenase D (#11088858001, SigmaAldrich, France) at 37 °C under agitation, washed in RPMI/5% FCS, and centrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldrich, France), centrifuged at 500 g over 37% (v/v) Percoll, and cells at the interface of the Percoll 70/37 gradient were recovered. Red blood cells were lysed with Red Blood Cell Lysing Buffer (#R7757, SigmaAldrich, France) or ammonium chloride. Cells were washed with PBS/2% FCS and incubated with mouse Fc block (#553142, BD Biosciences, France), then washed with PBS/4% bovine serum albumin and stained. Fixable viability dyes eFluor780 or eFluor506 (#65086514 and #65086614, ThermoFisher, France) were used. Cells were stained with cell surface markers including anti mouse CD45.2, CD45.1, CD4, NGFR, and then fixed and permeabilized with the forkhead box P3 (FOXP3) staining buffer set (#00-5523-00, ThermoFisher, France), and stained with anti-mouse FOXP3 (PE or Alexa Fluor 647, BD Biosciences, France)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For IFN-γ and IL-17A intracellular cytokine staining of pathogenic cells recovered from the CNS, cells were incubated with or without 10 µg/ml MOG 35-55 peptide in RPMI-10%FCS for 2 h prior addition of brefeldin A 0.5 mg/ml. Cells were incubated at 37 °C 5% CO2 for further 16 h prior intracellular cytokine staining using standard protocol."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Cells were analysed on an Attune™ NxT flow cytometer and Attune™ NxT software (ThermoFisher, France) and data analysis were performed with FlowJo V10."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Human and mouse Treg activation assay"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For human Tregs, activation assay was performed at day 9 of the culture. Briefly, 0.05 × 106 Treg were seeded in 96 U-bottom plate alone or in presence of anti-CD3/CD28 beads (in a 1 to 1 Treg to beads ratio, ThermoFisher), or with MOG coated beads (in a 1 to 1 Treg to beads ratio) in a 200 µl final volume."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For mouse Tregs, activation assay was performed at day 7 of the culture. Briefly, 0.05 × 106 Treg were seeded in 96 U-bottom plate alone or in presence of anti-CD3/CD28 beads (in a 1 to 1 Treg to beads ratio; ThermoFisher Scientific, France), or with MOG coated beads (in a 1 to 1 Treg to beads ratio) in a 200 µl final volume."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For activation assay using mouse spinal cord, the spinal cord of C57BL/6 mice was harvested by flushing and co-cultured with human or mouse Tregs in RPMI-10%FCS for 24 h."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "After 24 h at 37 °C, 5% CO, cells were stained for CD4 and CD69 and then analyzed by flow cytometry. The monitoring of the CD69 spontaneous expression in CAR Treg cells, compared to control Treg cells, allowed to determine the tonic signaling intensity."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Suppression assay of human Tconv proliferation"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The suppressive assays were performed at day 9 of the culture. Briefly, Treg were harvested, counted and activated either through the TCR using anti-CD3/CD28 beads (in a 1 to 1 Treg to beads ratio, ThermoFisher), or through the CAR using MOG coated beads (in a 1 to 1 Treg to beads ratio) or kept unstimulated to evaluate their spontaneous suppressive activity. In parallel, allogeneic Tconv were thawed, stained with Cell Trace Violet (CTV, ThermoFisher) and activated with anti-CD3/CD28 beads (in a 3 to 1 Tconv to beads ratio). The day after, beads were removed from Tconv before their coculture with un-activated or activated Treg (untransduced or transduced). At day 3, cells were harvested, and proliferation of Tconv was assessed by flow cytometry through the determination of CTV dilution. The percentage of inhibition of Tconv proliferation was calculated as follows:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Human monocyte-derived DC generation and DC suppression assay"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Monocytes were isolated from PBMCs using Classical Monocyte Isolation Kit (Miltenyi Biotec) according to the manufacturer’s instructions. Monocytes were differentiated for 6 days in X-VIVO 15 media (Lonza) supplemented with 100 ng/mL GM-CSF and 50 ng/mL IL-4 (Miltenyi Biotec) to generate immature monocyte-derived dendritic cells (imDC), followed by 24 h treatment with 100 ng/mL LPS (Sigma) to generate mature DC (mDC)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "MOG-CAR Tregs were treated with or without anti-CD3/CD28 beads or MOG coated-plates prior to co-culture with imDC. After 3-day co-culture, Tregs were labelled with anti-CD2 and CD3 microbeads and depleted using magnetic columns (Miltenyi Biotec). DC phenotype was analysed by their surface expression of DC-SIGN(CD209), costimulatory molecules CD80, CD86, CD40 and antigen presentation molecule HLA-DR using flow cytometry."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Mouse EAE models"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "C57BL/6 mice and BALB/c mice were purchased from Charles River (Lyon, France) and SJL mice were purchased from Janvier Labs (Le Genest-saint-Isle, France). Mice were housed in an opportunistic pathogen free facility, in individually, positively ventilated polysulfone cages with HEPA filtered air, controlled 12 h light/dark cycle, temperature of 20–26 °C, and relative humidity of 30–70%. Filtered tap water and standard rodent chow were provided ad libitum. For experiments, mice were age matched but distributed randomly to treatment groups."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For bioluminescence experiment, SJL mice were immunized with subcutaneous injection of proteolipid protein PLP 139−151 peptide in CFA (Hooke laboratories emulsion EK-0120, USA) under anesthesia with isofluorane in air 4% (induction) and 1–2% (maintenance). MOG-CAR Tregs were injected on day 7 post-immunization. For bioluminescence analysis, mice were injected I.P with luciferin 100 mg/kg and anesthetized with Isofluorane /air 4% (induction) and 1–2% (maintenance) for imaging at Day 9, Day11, Day14 and Day18 in an IVIS Lumina S5 bioimager (Perkin Elmer, USA)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen and inguinal lymph nodes and restimulated with MOG35 − 55 peptide 20 µg/ml (Hooke Labs, USA) for 3 days in vitro in RPMI1640-Glutamax (Thermo Life Tech, France) supplemented with 10% FCS (Sigma, France), 1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex, France). After 3 days, 25 to 10 million cells were injected intraperitoneally (I.P). EAE onset typically started between day 8 and 10. 1 million MOG-CAR or Ctrl-CAR Tregs were injected I.V. 24 h after the injection of pathogenic cells. Mice were sacrificed at day 11 or 12. Disease severity was scored daily on a 5-point scale: 0, no neurological signs; 1, tail atony; 2, hind limb weakness; 3, hind limb paralysis; 4, forelimb paralysis and 5, moribund."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Spinal cord histopathology and immunostaining"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Histopathology and immunostaining were performed by Atlantic Bones using proprietary SOPs. Spinal cord from untreated, MOG-CAR Treg treated or MOG-CAR control Treg treated mice with passive EAE were provided fixed in 4% paraformaldehyde and trimmed by Atlantic bones according to the RITA guidelines30 and embedded into paraffin blocks. The blocks were then sectionned with a microtome (Leica) at room temperature and placed in a water bath at 48 °C. The sections of 3–4 μm were placed onto Superfrost Plus microscope slides (ThermoFisher) then dried at 60 °C before deparaffinization using Xylene, Ethanol and distilled water baths. Sections were then stained with Luxol Fast blue using Atlantic Bones validated procedure. For immunostaining of Iba-1, after antigen retrieval procedure endogenous peroxidases were inhibited and sections were incubated for 1 h at room temperature with primary antibody against Iba-1 (Wakochemicals, USA) after blocking step. Then sections were stained with anti-Rabbit HRP for 30 min at room temperature and staining was revealed using DAB. Slides were counterstained with hematoxylin and mounted on slides. Microscopic slides were then scanned with a Nanozoomer S60 slide scanner (Hamamatsu, France) using the 20X magnification (transmitted light). Slides were analyzed by a pathologist. For Iba-1 staining, images were analyzed with Image J software."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Multiple sclerosis patient samples"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "PBMCs from RR-MS patients were collected by Sanguine bio and provided as frozen vials. Age range between 18 and 85 years old and patients with criteria for active disease, defined as fitting one of the following were selected: 1 or more relapse in the last year or 2 MS relapses in the last 2 years, presence of a new/enlarge T2-hyperintense, T1 gadolinium-enhancing (GdE) lesion on brain MRI in the previous year. Subject were undergoing Ocrevus or Kesimpta treatment."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Publisher’s note"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Maurus de la Rosa and Celine Dumont contributed equally to this work."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Author contributions"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "JF, MD, YC, TA designed experiments, acquired/analyzed/interpreted data. XM, DT, SR, El, EP, PF, AL, GL, AM acquired/analysed data. JF, MD, DF, JGD, MDR helped drafting and reviewed the manuscript. CD designed experiments, analysed/interpreted data and drafted the manuscript. All authors read and approved the final manuscript."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Funding"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "This study was funded, and materials were provided by Sangamo Therapeutics."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Data availability"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "No datasets were generated or analysed during the current study."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Declarations"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Ethics approval and consent to participate"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "All animal experiments were performed in accordance with relevant guidelines and regulations, either in an approved animal facility at Sangamo Therapeutics France (accredited by the French Ministry of Research, Arrêté n° 4566) according to the APAFIS (“Autorisation de Projet utilisant des Animaux à des Fins Scientifiques”)approved protocol APAFIS#23467-2019101811351116v8 and APAFIS#13779-201802156437559v3 and in compliance with the Guide for the Care and Use of Laboratory Animals. C57BL/6 mice and BALB/c mice were purchased from Charles River (Lyon, France) and SJL mice were purchased from Janvier Labs (Le Genest-saint-Isle, France). Experiments using human samples were performed in accordance with the Declaration of Helsinki and approved by appropriate ethics committees. Peripheral blood mononuclear cells (PBMCs) were obtained from healthy donors following written consent according to protocols approved by the Etablissement Français du sang. PBMCs from RR-MS patients were collected following written consent by Sanguine bio (Woburn, MA), an FDA-registered collection center, from human volunteers who consented under an Institutional Review Board-approved protocol compliant with Code of Federal Regulations Title 21 Part 11."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Consent for publication"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Competing interests"
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "The authors declare no competing interests."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Progress in determining the causes and treatment of multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Axonal dystrophy as a consequence of long-term demyelination"
+    },
+    {
+      "section_type": "REF",
+      "text": "Molecular Mimicry and Antigen-specific T cell responses in multiple sclerosis and chronic CNS Lyme Disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "The neuroimmunology of multiple sclerosis: possible roles of T and B lymphocytes in immunopathogenesis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Multiple sclerosis patients have reduced resting and increased activated CD4 + CD25 + FOXP3 + T regulatory cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T cell number in multiple sclerosis patients: a meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Loss of functional suppression by CD4 + CD25 + regulatory T cells in patients with multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reduced suppressive effect of CD4 + CD25high regulatory T cells on the T cell immune response against myelin oligodendrocyte glycoprotein in patients with multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Decreased FOXP3 levels in multiple sclerosis patients"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD4 + CD25 + FoxP3 + T lymphocytes fail to suppress myelin basic protein-induced proliferation in patients with multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Similar sensitivity of regulatory T cells towards CD95L-mediated apoptosis in patients with multiple sclerosis and healthy individuals"
+    },
+    {
+      "section_type": "REF",
+      "text": "Romano M, et al. Past, Present, and Future of Regulatory T Cell Therapy in Transplantation and Autoimmunity. Front Immunol. 2019;10. 10.3389/fimmu.2019.00043."
+    },
+    {
+      "section_type": "REF",
+      "text": "Improving the Efficacy of Regulatory T Cell Therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Administration of CD4 + CD25highCD127 – Regulatory T cells preserves β-Cell function in type 1 diabetes in children"
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 diabetes immunotherapy using polyclonal regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Next-generation regulatory T cell therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "J.et al. CD19-Targeted T cells rapidly induce molecular remissions in adults with chemotherapy-refractory Acute Lymphoblastic Leukemia"
+    },
+    {
+      "section_type": "REF",
+      "text": "B-cell depletion and remissions of malignancy along with cytokine-associated toxicity in a clinical trial of anti-CD19 chimeric-antigen-receptor–transduced T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Chimeric Antigen receptor–modified T cells in chronic lymphoid leukemia New England"
+    },
+    {
+      "section_type": "REF",
+      "text": "Preclinical assessment of antigen-specific chimeric antigen receptor regulatory T cells for use in solid organ transplantation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Study Design: human leukocyte Antigen Class I molecule a(∗)02-Chimeric Antigen Receptor Regulatory T Cells in renal transplantation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Feasibility of manufacture of chimeric antigen receptor-regulatory T cells from patients with end-stage renal disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Only the CD45RA + subpopulation of CD4 + CD25high T cells gives rise to homogeneous regulatory T-cell lines upon in vitro expansion"
+    },
+    {
+      "section_type": "REF",
+      "text": "Lamarche C, et al. Tonic-signaling chimeric antigen receptors drive human regulatory T cell exhaustion. Proc Natl Acad Sci. 2023;120(14). 10.1073/pnas.2219086120."
+    },
+    {
+      "section_type": "REF",
+      "text": "Functional effects of chimeric antigen receptor co-receptor signaling domains in human regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cross talk between human regulatory T cells and antigen-presenting cells: lessons for clinical applications"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tolerogenic dendritic cell-based approaches in autoimmunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Zhuang Q, et al. Tolerogenic dendritic cells: the Pearl of Immunotherapy in Organ Transplantation. Front Immunol. 2020;11. 10.3389/fimmu.2020.552988."
+    },
+    {
+      "section_type": "REF",
+      "text": "Human Regulatory T Cells Mediate Transcriptional Modulation of dendritic cell function"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: human CD4 + CD25 + T cells restrain the Maturation and Antigen-presenting function of dendritic cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Wurster U et al. Anti-MOG antibodies. Autoantibodies. 2007, Chap. 72: 591–598."
+    },
+    {
+      "section_type": "REF",
+      "text": "Myelin-specific regulatory T cells accumulate in the CNS but fail to control autoimmune inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T cells promote myelin regeneration in the central nervous system"
+    },
+    {
+      "section_type": "REF",
+      "text": "Verreycken J, et al. Regulatory T cell therapy for multiple sclerosis: breaching (blood-brain) barriers. Hum Vaccines Immunotherapeutics. 2022;18(7). 10.1080/21645515.2022.2153534."
+    },
+    {
+      "section_type": "REF",
+      "text": "Numerical status of CD4(+)CD25(+)FoxP3(+) and CD8(+)CD28(-) regulatory T cells in multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Circulating CD4 + CD25 + T Regulatory cells are not altered in multiple sclerosis and unaffected by Disease-modulating drugs"
+    },
+    {
+      "section_type": "REF",
+      "text": "Schlöder J, et al. Boosting regulatory T cell function for the treatment of autoimmune diseases – that’s only half the battle! Front Immunol. 2022;13. 10.3389/fimmu.2022.973813."
+    }
+  ],
+  "fetched_at": "2026-03-17T00:22:45.642831",
+  "pmid": 39428507
+}

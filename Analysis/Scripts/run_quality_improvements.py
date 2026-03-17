@@ -53,6 +53,8 @@ SCRIPTS = {
     'pmidverify': ('verify_pmids.py', 'Verifying PMIDs against PubMed API'),
     'pmidtracker': ('track_unfound_pmids.py', 'Tracking unfound PMIDs (Verify-* markers)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
+    'ingest': ('ingest_papers.py', 'Ingesting paper abstracts and full text from PubMed/PMC'),
+    'validate': ('validate_citations.py', 'Validating citations and building evidence network'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
 

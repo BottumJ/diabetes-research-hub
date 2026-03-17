@@ -39,7 +39,7 @@ LADA_VS_T1D = {
             "name": "C-peptide Decline Rate",
             "lada": "~55 pmol/L/year (first 5yr)",
             "t1d": "Rapid loss within months",
-            "source": "ACTION LADA (PMID:19729482)"
+            "source": "ACTION LADA (PMID:23248199)"
         },
         {
             "name": "HLA Associations",
@@ -98,7 +98,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Low-dose IL-2 (aldesleukin)",
         "mechanism": "Treg expansion; suppresses autoimmune attack",
-        "t1d_evidence": "DIABIL-2 trial in T1D; improved Treg frequency (PMID:27505628)",
+        "t1d_evidence": "DIABIL-2 trial in T1D; improved Treg frequency (PMID:27727279)",
         "lada_evidence": "No LADA trials; LADA may have insufficient Treg function",
         "rationale": "Treg expansion in LADA's slower autoimmune phase could tip balance toward tolerance and regeneration.",
         "window": "Early-to-middle phase (0-4 years)"
@@ -106,7 +106,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Sitagliptin + Lansoprazole",
         "mechanism": "DPP-4i + PPI; beta cell regeneration + immune modulation",
-        "t1d_evidence": "REPAIR-T1D trial; mixed results (PMID:28916733)",
+        "t1d_evidence": "REPAIR-T1D trial; mixed results (PMID:24997559)",
         "lada_evidence": "No LADA trials; LADA retains more beta cells, may respond better to regenerative signals",
         "rationale": "LADA's remaining beta cell mass is higher than T1D at diagnosis. Regenerative approach may be more effective.",
         "window": "Early phase (0-2 years)"
@@ -324,13 +324,13 @@ PRIORITY_SCORES = [
 
 EVIDENCE_CATALOG = [
     ("PMID:18073361", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"),
-    ("PMID:19729482", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
+    ("PMID:23248199", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
     ("PMID:32243867", "Buzzetti et al.", "GAD-alum Phase 2: C-peptide preservation in GADA+ LADA"),
     ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
     ("PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
     ("PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"),
-    ("PMID:27505628", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
-    ("PMID:28916733", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
+    ("PMID:27727279", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
+    ("PMID:24997559", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
     ("PMID:39613428", "Skyler et al.", "Verapamil beta cell preservation in T1D"),
     ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"),
 ]
@@ -820,7 +820,7 @@ html_content = """<!DOCTYPE html>
                         <td><strong>C-peptide Decline Rate</strong></td>
                         <td>~55 pmol/L/year (first 5yr)</td>
                         <td>Rapid loss within months</td>
-                        <td><span class="source">ACTION LADA (PMID:19729482)</span></td>
+                        <td><span class="source">ACTION LADA (PMID:23248199)</span></td>
                     </tr>
                     <tr>
                         <td><strong>HLA Associations</strong></td>

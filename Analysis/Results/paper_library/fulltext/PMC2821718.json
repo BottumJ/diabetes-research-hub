@@ -1,0 +1,831 @@
+{
+  "pmcid": "PMC2821718",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "Structure and signalling in the IL-17 receptor superfamily"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Preface"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Interleukin-17 (IL-17; also known as IL-17A), the hallmark cytokine of the newly-defined T helper 17 (TH17) cell subset has important roles in protecting the host against extracellular pathogens, but conversely promotes inflammatory pathology in autoimmune disease. IL-17A and its receptor (IL-17RA) are the founding members of a new subfamily of cytokines/receptors, with unique structural features that distinguish them from other cytokine subclasses. Research defining the signal transduction pathways mediated by IL-17-family cytokines has lagged behind other receptors, but studies in the past 2 years have begun to delineate unusual functional motifs and novel proximal signaling mediators used by the IL-17R family to mediate downstream events."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "In 1986, a seminal paper by Coffman and Mosman postulated the existence of subsets of T helper (TH) cells characterized by differential secretion of cytokines, designated TH1 and TH2 cells [G]. Although this viewpoint dominated for nearly 2 decades, discrepancies arose as details of TH cell development became more refined. In particular, deficiency of interleukin-12 (IL-12) (specifically, the IL-12p40 subunit of this heterodimeric cytokine), which drives the TH1 cell lineage, frequently failed to phenocopy deficiency of interferon-γ (IFNγ), the hallmark TH1 cell cytokine. The basis for this paradox became evident when it was recognized that IL-12p40 is also a constituent of IL-23 (together with IL-23p19), and so IL-12p40-deficient mice lack both IL-12 and IL-23. Further studies showed that IL-23 stimulates IL-17A production in a subset of CD4+ T cells, and IL-23p19-deficient mice but not IL-12p35-deficient mice are susceptible to certain autoimmune diseases. This revealed a new branch of the TH cell family tree, now known as TH17 cells [G] (TIMELINE)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Numerous reports rapidly followed, describing the factors involved in differentiation of this lineage, the additional cytokines produced by TH17 cells, and the production of TH17-type cytokines by other cell types. To summarize briefly, TH17 cells are driven to differentiate by transforming growth factor-β (TGFβ), IL-1, and IL-6, and IL-23 is required to expand and stabilize the population. The transcription factors signal transducer and activator of transcription 3 (STAT3), retinoic acid receptor-related orphan receptor-γt (RORγt) and AHR (aryl hydrocarbon receptor) control TH17 cell differentiation. In addition to IL-17, TH17 cells produce IL-17F (this cytokine is discussed in subsequent sections), IL-21, IL-22 and IL-26, as well as chemokines including CCL20/MIP3α. TH17 cells function prominently at mucosal surfaces, and trigger pro-inflammatory “danger” signals that promote neutrophil mobilization and the expression of anti-microbial factors. Conversely, TH17 cells drive inflammatory pathology in various autoimmune conditions. Finally, various “TH17-like“ cells exist, which produce a similar array of cytokines; these include γδ T cells [G], natural killer (NK) cells and NKT cells, and LTi (lymphoid tissue inducer) [G] cells. The reader is referred to several excellent reviews on this topic."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Less attention has been paid to the mechanisms by which IL-17 family cytokines mediate effects at a molecular level. IL-17A and its receptor are founding members of a new subfamily of cytokines (IL-17A-F) and receptors (IL-17RA-RE) (Table 1). The IL-17R family has unique structural features and mediates signalling events that are surprisingly distinct from other cytokines, particularly those usually involved in adaptive immunity. Whereas the signature cytokines involved in the TH1 and TH2 cell lineages trigger JAK–STAT signalling pathways, IL-17-family cytokines mediate signalling through a novel ACT1-dependent pathway, culminating in the activation of pro-inflammatory factors such as NF-κB that are usually associated with innate immune signalling (Box 1). So, by virtue of the unusual signalling properties of IL-17, TH17 cells act as a bridge between adaptive and innate immunity. Recent work has begun to define the architecture of the IL-17 family, and its sometimes surprising ligand–receptor relationships and signal transduction pathways. This article reviews recent discoveries in this field in the context of cytokine receptor biology as well as the potential implications of this knowledge with respect to emerging therapeutics."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17A cytokines constitute a unique subfamily"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17A was identified by a subtractive hybridization screen in a rodent T cell library (TIMELINE). Due to its unusual amino acid sequence, it was not immediately recognized as a cytokine. Subsequent characterization showed that IL-17A is produced by T cells and stimulates the production of factors such as granulocyte colony-stimulating factor (G-CSF), IL-6 and IL-8, indicating that it should be considered a bona fide cytokine. Intriguingly, the amino acid sequence of IL-17A is 58% identical to an open reading frame in Herpesvirus saimiri, a T cell-tropic γ-herpesvirus (known as vIL-17), although the significance of homology to a viral protein remains unknown. Genomic sequencing efforts led to the identification of several putative IL-17A homologues, IL-17B–IL-17E. The only member of the family to have been crystallized for structural studies is IL-17F, which adopts a 3-dimensional cystine-knot fold architecture. IL-17-family homologues have been found in a variety of species, including sea lamprey [Lethenteron japonicum), rainbow trout [Oncorhynchus mykiss], zebraflsh (Dario rerio) and worms (Caenorhabditis elegans], among others. Although the cellular sources and expression patterns of the various mammalian IL-17 family members are different (Table 1), all have pro-inflammatory activities (see below)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17A and IL-17F drive inflammation and autoimmunity"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17A and IL-17F, eponymous cytokines of the TH17 cell lineage, are by far the best characterized. Both are covalent homodimers, and recent findings show that they also form IL-17A–IL-17F heterodimers (Figure 1). IL-17A–IL-17F heterodimers are produced at higher levels than IL-17A homodimers by human peripheral blood mononuclear cells in vitro, but the form that predominates in vivo is not well defined. IL-17A, IL-17F and IL-17A–IL-17F all signal through the same receptor subunits, IL-17RA and IL-17RC, which together form a heteromeric complex. Nonetheless, IL-17A and IL-17F have distinct biological effects. Studies comparing Il17a-/- mice with Il17f-/- mice indicate that IL-17A seems to have a more central role in driving autoimmunity than IL-17F, probably due to its more potent strength of signalling,. The role of the IL-17A–IL-17F heterodimer in vivo will be more challenging to evaluate. The basis for functional differences between IL-17A and IL-17F could be the markedly decreased strength of signalling triggered by IL-17F compared with IL-17A, as IL-17F responses are 10–30-fold weaker in terms of downstream gene activation than those of IL-17A, with IL-17A–IL-17F heterodimers acting at an intermediate level. The precise nature of their respective receptor complexes has not been defined (see also “IL-17RC” section below). As IL-17RA and IL-17RC have very different affinities for IL-17A and IL-17F, it is plausible that different complexes exist with varying ratios of IL-17RA and IL-17RC, which manifest different ligand preferences (Figure 1)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17E is a TH2 cell-promoting cytokine"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17E, commonly known as IL-25, is produced by mucosal epithelial cells, as well as by multiple immune cell types (Table 1). Transgenic overexpression of IL-25 promotes eosinophilia and stimulates the production of TH2 cell-specific cytokines. Moreover, IL-25 limits TH17 cell development by inducing the expression of IL-13 by dendritic cells (DCs) or by inhibiting IL-23 production by macrophages (reviewed in Ref.). IL-25 binds a receptor complex composed of IL-17RB (also known as IL-25R), which partners with IL-17RA (Figure 1). Il17rb-/- and Il17ra-/- mice fail to respond to IL-25, and both knockout strains are refractory to pulmonary inflammation induced by intranasal application of IL-25. Consequently, there is intriguing crosstalk between members of the IL-17 cytokine family."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17B, -C and -D functions are poorly defined"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17B, IL-17C and IL-17D remain poorly characterized. IL-17B binds to IL-17RB with fairly high affinity, and IL-17C was recently reported to bind IL-17RE and to activate nuclear factor-κB (NF-κB) (S. Levin, personal communication). The receptor(s) for IL-17D remains unknown. Ectopic expression of IL-17B and IL-17C by CD4+ T cells exacerbates collagen-induced arthritis [G] (CIA), and intranasal administration of adenoviruses expressing IL-17C, IL-17A or IL-17F triggers comparable neutrophilic responses, suggesting that these cytokines mediate common biological effects, probably through shared signalling pathways. Antibodies specific for IL-17B also partially suppress CIA. IL-17B and IL-17C stimulate expression of an array of pro-inflammatory genes similar to those induced by IL-17A and IL-17F. IL-17D was reported to promote a pro-inflammatory gene expression profile in endothelial cells, and it had a mild inhibitory effect on myeloid progenitor cell proliferation in vitro. As more knockout mice are generated and the target receptors for IL-17B, IL-17C and IL-17D become more clearly defined, we will gain an improved understanding of these newer IL-17 family members."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The IL-17 receptor family"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The IL-17R family comprises five receptor subunits IL-17RA–IL-17RE (Figure 1). Despite considerable sequence divergence, many of the genes encoding the IL-17R family are linked, with clusters on human chromosome 3 (for IL-17RB, IL-17RC, IL-17RD and IL-17RE) and mouse chromosomes 6 (IL-17RA, IL-17RC and IL-17RE) and 14 (IL-17RB and IL-17RD). All are single transmembrane domain-containing receptors, ranging in size from 499–866 amino acids (with smaller alternatively spliced forms also found, discussed below). These receptor subunits contain certain conserved structural motifs, including an extracellular fibronectin III-like domain and a cytoplasmic “SEFIR” domain (see below). Although it is still not clear precisely how IL-17R subunits interact to form productive receptor complexes, it becoming evident that IL-17RA, by far the largest member of the family, is a common signalling subunit used by multiple ligands."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA: expression and complex formation"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA was initially identified as the receptor for mammalian IL-17A and vIL-17. IL-17RA also binds IL-17F, albeit weakly, and is necessary for IL-17A-, IL-17A–IL-17F- and IL-17F-mediated signal transduction. Early studies showed that the affinity of IL-17RA for IL-17A is lower than the concentration required to mediate responses, which indicates that an additional subunit is involved in binding ligand and/or eliciting signalling. Indeed, IL-17RA partners with IL-17RC to induce responses to IL-17A and IL-17F. Similarly, Il17ra-/- mice are refractory to the effects of IL-25, suggesting that IL-17RA is also a component of this receptor complex. Moreover, IL-17RA might associate with IL-17RD, as these subunits co-localize, and overexpression of a mutant IL-17RD lacking a cytoplasmic tail inhibits IL-17A-dependent signals. However, this finding has yet to be validated, and no ligand has been identified for an IL-17RA–IL-17RD pairing (Figure 1). Based on its usage by multiple cytokines, IL-17RA may thus be analogous to common cytokine receptor subunits such as gp130 in the IL-6 family."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA is expressed ubiquitously, with particularly high levels in haematopoietic tissue. This expression pattern is curious, as the main responses to IL-17A occur in epithelial, endothelial and fibroblast cells, although macrophages and DCs are also responsive (reviewed in Ref.). Only a limited number of IL-17A-induced genes in lymphocytes have been documented, which are quite distinct from genes induced by IL-17A in other cell types. Although its expression is widespread, IL-17RA can be dynamically regulated. For example, IL-15 and IL-21 upregulate expression of IL-17RA in CD8+ T cells, and phosphoinositide 3-kinase (PI3K) limits IL-17RA expression in T cells. This could be biologically significant, because IL-17A-induced signalling strength correlates with cell surface expression levels of IL-17RA; in contrast to most cytokine receptors, high levels of IL-17RA seem to be required for effective responses. Another function of IL-17RA might be to limit signalling by receptor-mediated internalization of ligand. Surface expression of IL-17RA rapidly decreases after IL-17 binding, theoretically internalizing IL-17A and clearing it from the inflammatory milieu."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The composition of IL-17RA-containing complexes is poorly defined. The textbook paradigm of cytokine receptor signalling is that individual subunits reside in the membrane as monomers. Ligand binding promotes subunit oligomerization, thereby juxtaposing receptor-associated signalling intermediates such as kinases or adaptors. Inconsistent with this view are studies showing that many receptors actually exist as pre-associated, multi-subunit complexes (such as TLRs, tumour necrosis factor receptors (TNFRs), and erythropoietin receptor (EPOR); reviewed in Refs.). Mechanistically, pre-assembly poises a receptor to respond rapidly and specifically to ligand. In the case of the IL-17R, studies using fluorescence resonance energy transfer [G] (FRET) to analyse interactions between IL-17RA subunits showed that IL-17RA forms ligand-independent complexes. Moreover, IL-17RA co-immunoprecipitated with IL-17RC in overexpression studies in a ligabd-dependent manner, although it is not known whether IL-17RC is pre-assembled with IL-17RA to any degree. The precise stoichiometry of the IL-17A-binding complex has not been determined, but native gel analyses of IL-17RC are consistent with a trimeric complex containing two IL-17RA subunits and one IL-17RC subunit."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "For pre-assembled receptors such as the EPOR, ligand binding induces large conformational changes in the relative positions of the receptor subunits. This re-orients receptor-bound cytoplasmic signalling molecules such as JAKs, facilitating interactions with appropriate substrates. This might be the case for IL-17RA, because FRET between IL-17RA molecules decreases after interaction with ligand. One possible scenario is that IL-17RA dimers dissociate and are replaced by IL-17RA–IL-17RC heterodimers. Alternatively, IL-17RC might be recruited to the IL-17RA dimer to create a trimer or larger multimer, together with cytoplasmic signalling molecules such as ACT1 (also known as TRAF3IP2 and CIKS). A better understanding of this process awaits the IL-17R crystal structure."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "In the TNFR system, pre-assembly is dictated by an extracellular cysteine-rich motif known as a pre-ligand assembly domain (PLAD). Soluble PLAD peptides have been shown to prevent TNFR assembly and thus block signalling in CIA. Although it is structurally distinct from TNF receptors, IL-17RA encodes a fibronectin III-like domain (FN) PLAD that dimerizes in a yeast two-hybrid system and is required for co-immunoprecipitation of IL-17RA dimers Unlike the TNF system, where the PLAD and ligand-binding site of the receptor are physically discrete, the IL-17RA FN2 motif is also an essential component of the IL-17A-binding domain. Strategies to block IL-17A or its receptor could therefore include soluble PLADs as well as antibodies or soluble receptors"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA signalling: the NF-κB pathway"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "As IL-17RA lacks homology to known receptors, it was not possible to investigate signal transduction simply by comparison with other cytokine receptor systems. However, studies defining IL-17A-induced genes showed that IL-17A activates a highly pro-inflammatory programme of gene expression, typical of that induced by innate immune receptors such as IL-1R and TLRs. Similar to these receptors, IL-17A activates nuclear factor-κB (NF-κB), a hallmark transcription factor associated with inflammation (Figure 3A). Correspondingly, DNA elements that bind NF-κB in the promoters of several IL-17A target genes are required for IL-17A-induced gene expression (reviewed in Ref.). Gel shift studies indicated that IL-17A activates p50 and p65, which are components of the classical NF-κB pathway [G]. So far, there is no evidence that the non-classical NF-κB pathway [G] is involved in IL-17RA signalling (S.L.G., unpublished observations). However, NF-κB-inducing kinase (NIK), which can mediate events in the non-classical pathway, was reported to be activated in response to IL-17A. IL-17A also induces the expression of IκBζ, which is a positive regulator of transcription by the TLR and IL-1R pathways. Although it has not been clearly defined for IL-17A, it is likely that IκBζ is involved in IL-17A-dependent gene expression."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "A wide diversity of inflammatory stimuli activate NF-κB, but they accomplish this through distinct proximal signalling pathways. For considerable time, the proximal activators of NF-κB in the IL-17R pathway remained obscure. Hints came from observations that IL-17A signalling had parallels to IL-1R and TLR signalling cascades. For example, TRAF6 is a key adaptor in the IL-1R/TLR signalling cascade, and fibroblast cells from Traf6-/- mice are defective in IL-17A-mediated induction of NF-κB. However, the lack of an obvious TRAF6-binding motif in IL-17RA suggested that a signalling intermediate might be required to bridge IL-17RA and TRAF6. However, molecules involved in proximal IL-1R signalling, such as MYD88 (myeloid differentiation primary response gene), TRIF (TIR domain containing adaptor-inducing interferon-β), IRAK4 (IL-1R-associated kinase 4) and IRAK1, are dispensable for IL-17A-dependent signalling (F. Shen, L. Li and S.L.G., unpublished data). Consequently, early IL-17R signalling events are distinct from classical activators of innate immune responses (Figure 3B)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "A key insight into IL-17R signaling emerged from a bioinformatics analysis that identified a conserved motif in the cytoplasmic domains of IL-17R-family members with homology to the Toll/IL-IR (TIR) domain [G]. TIR domains provide essential and specific docking sites for intracellular adaptors such as MYD88. This study named the conserved IL-17R region a SEFIR domain, for SEF (similar expression to FGF receptor) /IL-17R. SEFIR domains lack certain elements found in prototypical TIR domains, potentially explaining why they do not engage TIR-containing adaptors. Specifically, SEFIR domains lack the TIR Box 3 subdomain and the BB-loop [G], which are crucial specificity determinants directing TIR-based protein–protein interactions. Strikingly, a region C-terminal to the SEFIR domain in IL-17RA has marked sequence homology to BB-loops. Deletion of or point mutations in this region render IL-17RA non-functional, and so this motif is referred to as a “TIR-like loop” (TILL). It is probable that the TILL provides a unique interaction surface for an as-yet-unknown signalling molecule, potentially serving as the Box 3 equivalent. Surprisingly, although all IL-17R receptors have a SEFIR motif, the TILL domain appears to be unique to IL-17RA, perhaps explaining why IL-17RA functions as a shared subunit (Figure 1)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "A SEFIR domain is also present in ACT1, a signalling adaptor that was previously linked to NF-κB activation through BAFF (B cell activating factor) and CD40L. Indeed, an ACT1 deficiency in knockout mice or generated by RNA interference-mediated knockdown impairs IL-17A- and IL-17F-induced activation of NF-κB (Figure 3). Co-immunoprecipitation studies indicate that ACT1 is recruited to IL-17RA within 5 minutes of IL-17A stimulation. Supporting these observations, deletion of the SEFIR domain in IL-17RA impairs activation of NF-κB by IL-17A. Unlike IL-17RA, ACT1 contains a TRAF6-binding motif, and accordingly can bind TRAF6, TRAF3 and TAK1. However, Act1-/- cells are still capable of delayed activation of ERK1/2, indicating that ACT1-independent pathways are also mediated by IL-17RA. The crucial role of ACT1 in IL-17A signalling has recently been verified in a second knockout mouse model. Intriguingly, a respiratory pathogen, Chlamydia pneumoniae, encodes an Act1-binding protein that appears to inhibit IL-17A-mediated signalling, presumably providing a survival advantage to this organism. Collectively, these studies illustrate that the proximal events in IL-17R-mediated activation of NF-κB are different from TLR/IL-1R due to unique structural components of IL-17 receptors (Figure 3B)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA signalling: AP1, MAPK and mRNA stability"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Another typical event induced by pro-inflammatory mediators is activation of the mitogen-activated protein kinase (MAPK) pathway, which leads to the activation of AP1 transcription factors. IL-17A activates various MAPKs, but ERK is generally the most strongly and rapidly phosphorylated. Although AP1 binding sites are enriched in IL-17A target promoters, the AP1 site in the mouse Il6 promoter is dispensable for IL-17A-mediated activation. In general, the MAPK pathway has a more important role in regulating the expression of IL-17A-induced genes through control of mRNA transcript stability. MAPK stabilizes mRNA through the inhibition of destabilizing proteins such as tristetraprolin (TTP). TTP binds to AU-rich elements (AREs) in mRNA transcripts and delivers them to the exosome complex [G], whereupon they are degraded. Phosphorylation of TTP by MAPK blocks its ability to recruit the degradative machinery, thereby increasing mRNA transcript half-life (Reviewed in Ref). Many IL-17A target genes are chemokines or cytokines whose transcripts are stabilized by AREs located in the 3′ UTR. Numerous studies show that activation of MAPK by IL-17A increases the concentration of these transcripts signiflcantly. ACT1 is required for IL-17A-mediated stabilization of CXCL1 (also known as Groα or KC) mRNA, but TRAF6 is surprisingly dispensable. Unexpectedly, the ability of IL-17A to stabilize TNF-induced CXCL1 mRNA is not compromised in Ttp-deficient fibroblasts (T. Hamilton, personal communication). In addition to TTP, other proteins are involved in mediating cytokine mRNA stability such as the recently described Zc3hl2a gene. Thus, there is clearly much more to learn about the mechanisms by which IL-17A regulates transcript stability, but this is likely to be a very important means by which inflammation is controlled by IL-17."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RA signalling: C/EBP"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17A is consistently found to be a weak activator of NF-κB, suggesting the involvement of additional transcription factors in the response to IL-17. A microarray screen for IL-17A-induced genes identified the CCAAT/enhancer binding protein transcription factors C/EBPβ and C/EBPδ. The promoters of genes upregulated by IL-17A are enriched for C/EBP binding elements, and activation of the Il6 and lcn2 (lipocalin 2, also known as 24p3) promoters have an absolute requirement for C/EBPβ/γ following IL-17A stimulation. So, C/EBPβ and C/EBPδ are targets of IL-17A signalling and also important mediators of IL-17A-induced signalling pathways."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "In some respects, C/EBPβ and C/EBPδ seem to function redundantly, as reconstitution of C/EBPβδ-deficient cells with either transcription factor can restore IL-17A-dependent induction of IL-6 or lipocalin 2 expression. Nonetheless, there are essential differences in how C/EBPβ and C/EBPδ are regulated by IL-17RA. ACT1 and the SEFIR and TILL domains of IL-17RA are required for the induction of C/EBPδ expression, suggesting a role for NF-κB. This observation is consistent with a study showing that NF-κB can bind directly to the C/EBPδ promoter after LPS stimulation."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "C/EBPβ expression is regulated by IL-17A in a more complex manner. C/EBPβ exists in three isoforms that are generated by alternative translation. The largest is a full length isoform known as liver enriched activator protein (LAP*). A shorter form, LAP, is generated from an alternative start codon and is thought to be the most transcriptionally active form of C/EBPβ. LIP (liver-enriched inhibitory protein) is also generated by alternative translation, and acts as a dominant negative inhibitor. The mechanism underlying these alternative translation events is not understood. IL-17A treatment of fibroblast cell lines results in a mild induction of LAP, a large increase in LAP* and no induction of LIP. Induction of LAP* depends on the SEFIR/TILL domain of IL-17RA, suggesting that this process is downstream of ACT1. Generation of LAP* also requires a poorly-characterized C-terminal domain in IL-17RA known as a C/EBPβ-activation domain (C-BAD), which is not found in any other IL-17R family members."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "As with many signaling effectors, post-translational modifications of C/EBPβ such as phosphorylation are important for its activity. IL-17A triggers dual, sequential phosphorylation of a regulatory site within C/EBPβ. ERK phosphorylates one site (Thr-188) within 15 minutes of IL-17A stimulation. However, GSK (glycogen synthase kinase)-3β phosphorylates Thr-179 only after 1 hour, an event that requires prior phosphorylation at Thr-188. Interestingly, these phosphorylation events are mediated by distinct subdomains of IL-17RA (Figure 3A). Regulation of ERK and hence phosphorylation at Thr-188 is mediated by the SEFIR–TILL region.. By contrast, regulation of GSK3β is mediated by the C-BAD motif. In other systems PI3K signalling is upstream of GSK3β, but standard PI3K inhibitors have no effect on IL-17A signalling in this setting. Unexpectedly, the consequence of C/EBPβ phosphorylation is to downregulate its transcriptional capacity, and so this pathway is one of the few known inhibitory signalling events mediated by IL-17A. Because induction, alternative translation and phosphorylation of C/EBPβ all occur during a time frame in which C/EBPδ is also upregulated by IL-17A, there is a dynamic and complex interplay between members of the C/EBP family that could allow for detailed transcriptional control of C/EBP-dependent genes. Finally, C/EBPβ can be regulated by subcellular localization and association with numerous transcription factors, which provides future avenues of investigation in the context of IL-17R signalling."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "More broadly, these molecular events help to explain the synergism between IL-17 and other cytokines, particularly TNF. The mechanism underlying such synergy occurs partly through enhanced effects on mRNA stability, but C/EBP transcription factors help to mediate cooperative activation of target promoters. For example, TNF and IL-17A have an additive effect on the induction of the Il6 promoter, and overexpression of either C/EBPβ or C/EBPδ can replace the contribution of IL-17A to this cooperative signal."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Other pathways activated by IL-17RA"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Additional events have been implicated in IL-17RA signalling, although generally there is less evidence for these other pathways. Pharmacological inhibitors of Janus kinases (JAKs) have been reported to limit IL-17A signalling, but these results should be interpreted with caution due to the non-specific effects of such compounds. Weak activation of signal transducer and activator of transcription (STAT) factors has been reported, but secondary effects from IL-17A-induced secretion of cytokines such as IL-6 were not ruled out satisfactorily. PI3K pathways have similarly been implicated, and IL-17A signalling in lung epithelial cells is associated with increased lipid phosphorylation, weak AKT phosphorylation and inhibition by specific PI3K inhibitors. However there are few solid biochemical data indicating which PI3K isoforms are involved in this process. Additionally, IL-17RA, and hence downstream signalling, might be controlled by inducible degradation. An overexpression study showed that IL-17A triggers the ubiquitylation and degradation of IL-17RA, which might involve the E3 ubiquitin ligase TRAF6."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Other receptors of the IL-17R family"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RC"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RC (also known as IL-17RL) was identified by homology searches of mammalian expressed sequence tag (EST) databases. Complementation studies showed that IL-17RC is required for IL-17A- and IL-17F-mediated signalling, although it is insufficient to signal without IL-17RA. This study also revealed an unexpected species-dependent interaction between IL-17R subunits. Specifically, mouse and human IL-17A show no species dependence in signalling, whereas mouse but not human IL-17RA can reconstitute IL-17A-dependent signalling in murine Il17ra-/- fibroblasts. Furthermore, co-expression of human but not mouse IL-17RC with human IL-17RA can restore signalling. Consistently, fibroblasts from Il17rc-/- mice fail to induce IL-6 or GM-CSF production in response to either IL-17A or IL-17F. The reason for this species dependence is not clear, but could be important in evaluating anti-cytokine therapeutics in pre-clinical models."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The findings discussed above argue that the IL-17A-binding complex is an obligate multimeric receptor containing both IL-17RA and IL-17RC. However, these subunits have reciprocal expression patterns, suggestive of tissue-dependent activities. In contrast to IL-17RA, IL-17RC expression is low in haematopoietic tissues and high in non-immune cells of the prostate, liver, kidney, thyroid and joints. In terms of biological signalling, it is conceivable that differential expression of IL-17R subunits may provide an avenue for tissue-specific signalling by IL-17A and/or IL-17F. Whereas IL-17RA binds with an extremely low affinity to IL-17F, IL-17RC binds with higher affinity to IL-17F than to IL-17A. Accordingly, cells with high IL-17RC expression could be more responsive to IL-17F, whereas those with low IL-17RC expression might respond better to IL-17A. Consistent with this idea, studies in Il17a-/- and Il17f-/- mice indicated that IL-17A but not IL-17F mediates signals in murine T cells, correlating with undetectable levels of IL-17RC. This raises the intriguing question of whether IL-17RA signals as a homo-multimer in T cells, or whether there is another subunit that might pair with IL-17RA in certain cell types such as T cells. This information can also be valuable therapeutically; soluble IL-17RA can efficiently block IL-17A-dependent but not IL-17F-dependent responses, providing an avenue to selectively target individual cytokines (Figure 2). Defining the precise nature of IL-17-binding complexes in different tissues is thus important for understanding signalling but also in terms of how to optimally target this system for clinical benefit."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "With the exception of IL-17RA, other members of the IL-17R superfamily are highly spliced at sites in the extracellular domain, potentially giving rise to both agonistic and antagonistic (soluble) forms of the receptors. Indeed, more than 90 splice isoforms of IL-17RC were identified in human prostate cancer lines. In mice, only four splice variants of IL-17RC are found in EST databases. Interestingly, there is ligand preference of IL-17RC splice isoforms, as certain forms bind preferentially to IL-17A or IL-17F; moreover, some isoforms do not bind either cytokine, suggesting that there might be additional ligands for this receptor subunit. The mechanism by which splicing is controlled has not been determined, but may be important for directing the ability of a particular cell or tissue to respond to different IL-17 family cytokines."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "As expected, the IL-17RC cytoplasmic tail is required for signal transduction, but not for inducible co-immunoprecipitation with IL-17RA (W. Ouyang, personal communication). So far, little is known about exactly how IL-17RC participates in signalling. IL-17RC contains a SEFIR but not an obvious TILL domain, and it is not known whether IL-17RC binds directly to ACT1, TRAF6 or other downstream signalling molecules. It is tempting to speculate that IL-17RC might recruit unique molecules to the receptor complex, but it is possible that IL-17RC simply increases the number of ACT1 molecules within the complex to facilitate more efficient signal transduction."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RB"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RB (also known as IL-25R, Evi-27 or IL-17rh-l) binds both IL-17B and IL-17E/IL-25. This subunit is expressed by various endocrine tissues as well as kidney, liver and TH2 cells. IL-17RB is also highly spliced in the extracellular domain, although no evaluation of the role of each splice variant has been reported. Recent evidence indicates that IL-17RB pairs with IL-17RA to form a functional IL-25R complex, but the specific contribution of each subunit to downstream signalling is unclear. This finding raises issues regarding conclusions drawn from studies of Il17ra-/- mice, as effects attributed to IL-17A and IL-17F could involve additional contributions from IL-25. Unlike IL-17RA, IL-17RB encodes a TRAF6-binding motif in its cytoplasmic tail. Indeed, antibody-mediated crosslinking of the receptor activates NF-κB, which can be blocked by a dominant-negative form of TRAF6 but not TRAF2. IL-25 has been shown to activate NFATc1 and JUNB, leading to increased IL-4 expression by TH2 cells. Like the rest of the family, the IL-17RB cytoplasmic tail contains a SEFIR domain, and was recently shown to bind ACT1 in a SEFIR-dependent manner. Accordingly, Act1-/- mice show deficits in responding to IL-25 in vivo."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RD"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RD has no known ligand (Fig. 1). It was first identified in zebrafish (Danio rerio) based on a similar expression pattern to the fibroblast growth factor receptor (FGFR), and thus is commonly known as SEF (similar expression to the FGF receptor). IL-17RD seems to be the most evolutionarily ancient member of the IL-17R family, as it has homologues in sea lamprey, frogs and C. elegans. Its role in zebrafish suggests that the original function of the IL-17R family may have been to control development. Interestingly, this represents another parallel to the TLR family, as Drosophila Toll acts to control dorsoventral polarity during embryonic development. IL-17RD inhibits FGF-mediated RAS–MAPK and PI3K signalling in both zebrafish and Xenopus laevis development. IL-17RD blocks FGF in part by physically associating with FGFR1 and FGFR2. The cytoplasmic tail of IL-17RD is required for its ability to inhibit signalling and associate with FGFR, but the extracellular domain is dispensable. The human homologue of IL-17RD also co-immunoprecipitates with FGFR1 and can inhibit FGF-dependent ERK activation and FGF-dependent proliferation. Although the mechanism by which IL-17RD-mediated inhibition occurs is not defined, murine IL-17RD has been shown to interact with TAK1 to activate the MKK4–JNK pathway. In addition to associating with FGFR, human IL-17RD has been shown to form homodimers, although it is not clear whether these are functional. IL-17RD can also interact with IL-17RA, although the biological significance of this association remains unclear. IL-17RD-deficient mice are viable and have no obvious developmental abnormalities, but detailed phenotypic analysis has not yet been carried out (J. Tocker, personal communication)."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RE"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "IL-17RE is the least understood member of the IL-17R family, but recent studies suggest that its ligand is IL-17C (S. Levin, personal communication). IL-17RE is highly spliced, with six isoforms identified in EST databases. Ectopic expression of an EPOR–IL-17RE construct in the myeloid BaF3 cell line indicated that this receptor might promote proliferation, but this occurred in a ligand-independent manner, which raises concerns about the validity of the assay system."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Perspectives and implications"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "The past decade has seen great success in exploiting cytokines for therapeutic intervention. For example, antibodies or soluble receptors that neutralize TNF have revolutionized the treatment of autoimmune disease. Therapies that target IL-12, IL-23, IL-6 and IL-1 have also had success in the clinic or experimental trials, and all of these cytokines affect the TH17 cell pathway (as well as other “TH17-like” cells that produce IL-17A and related ligands). The roles of IL-17-family cytokines in autoimmunity make this system an obvious target for clinical intervention. Strategies include administering neutralizing antibodies specific for IL-17A, IL-17F and/or IL-17A-IL-17F, or for IL-17RA or IL-17RC. Soluble receptors or PLAD peptides could also be used to block ligand–receptor interactions (Figure 2). Understanding which receptor subunit(s) to target while avoiding deleterious effects on host immunity will be key for developing effective treatments. In this regard, the varying affinity of each IL-17R subunit for its ligand could be exploited to allow more selective inhibition; for example, soluble IL-17RA reagents selectively block IL-17A, whereas soluble IL-17RC blocks both IL-17A and IL-17F. In exciting new developments, IL-17A-specific antibodies have shown promise in early trials for the treatment of psoriasis (D. Patel, personal communication). Although current anti-cytokine strategies target ligands or extracellular features of cytokine receptors, defining the downstream signal transduction mechanisms might also allow for small molecule inhibitors that block specific intracellular pathways."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In summary, IL-17 came to prominence as the signature cytokine of the new TH17 subset of T cells, and its unusual structure, receptor and proximal signalling pathways have presented new paradigms in cytokine biology. However, there are still many open questions pertaining to ligand–receptor relationships, molecular signalling events, and functions in vivo (Box 2). The next few years will certainly see important new insights about this fascinating family of cytokines."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "IL-17R signalling is a bridge between adaptive and innate immunity"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Traditional TH1 and TH2 signature cytokines signal through JAK-STAT-mediated pathways, with IFNγ activating a JAK1/2-STAT1-dependent pathway and IL-4 activating a JAK1/3- STAT6-dependent pathway. Activation of these pathways is critical both for the effector functions of these cells but also for their development. In contrast, IL-17A and IL-17F derived from TH17 cells promote ACT1/TRAF6/NF-κB-dependent signalling, which is much more reminiscent of receptors associated with innate immunity, such as IL-1-family receptors and TLR ligands. Interestingly, another TH17 hallmark cytokine is IL-22, which activates a JAK-STAT3 signalling programme, but the downstream gene targets are strikingly similar to genes induced by IL-17. Thus, TH17 cells promote signals typical of early inflammatory events, and in this sense serve to bridge innate and adaptive immune processes."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Future avenues of investigation in the IL-17R signalling field"
+    },
+    {
+      "section_type": "CONCL",
+      "text": "There remain many unanswered questions with regards to IL-17R signalling. To start, not all of the ligand–receptor relationships are defined. For example, the receptor for IL-17D is unknown, as is the ligand(s) for IL-17RD (see also Figure 1). The stoichiometry of the various receptor complexes are not well delineated, nor is there substantial information on how expression of each receptor subunit is controlled; for example, why are IL-17RA and IL-17RC reciprocally expressed if they form a heteromeric complex? Is there tissue specificity in terms of IL-17R composition, and if so, does this translate into differential signalling? Does IL-17RC have another ligand? In the receptor complex for IL-17A, IL-17F and IL-17A-IL-17F, the molecular contribution of the IL-17RC cytoplasmic tail is unknown, and a similar question exists for the IL-25R/IL-17RB subunit when paired with IL-17RA. The details of the NF-κB pathway are not fully elucidated; for example, a possible role for Iκβζ is intriguing but undetermined. It is not known whether ACT1 binds to additional signalling molecules or kinases that might be parallel to IRAKs in the TLR system. The signalling pathway(s) leading to C/EBP activation are incompletely elucidated. How does IL-17 control mRNA transcript stability? The role of IL-17 signalling in T and B cells is also not well understood. What is the contribution of IL-17R signalling pathways in vivo? What is the significance of a virally encoded IL-17A homologue in Herpesvirus saimiri? Doubtless, future investigations will address these and other important questions."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "On-line summary"
+    },
+    {
+      "section_type": "CONCL",
+      "text": "The cytokine IL-17 came into the limelight with the discovery of T helper 17 (TH17) cells, a new CD4+ T cell subset that represents the first main revision of the TH1-TH2 cell paradigm in two decades. IL-17 and its receptor are founding members of a new family of cytokines (IL-17A-F) and receptors (IL-17RA-RE) with unique structures and signalling properties."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Although they are produced by different cell types, all IL-17-family cytokines seem to promote inflammation, both in host defence and in inflammatory pathology."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "IL-17RA, a receptor for IL-17A and IL-17F, is the founding member of the IL-17R extended family and seems to function as a co-receptor with at least 2 other members of the IL-17-ligand family. IL-17RA is expressed ubiquitously as a pre-associated multimeric receptor, but is also dynamically regulated in certain cell types."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "IL-17RA has the largest cytoplasmic tail of the family, which potentially provides docking sites for numerous signalling intermediates. Acting through a “SEFIR” subdomain that is conserved between but also unique to the IL-17R extended family, IL-17RA engages the ACT1 adaptor to induce the NF-κB, MAPK and C/EBP pathways."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "IL-17RC is a co-receptor with IL-17RA for IL-17A and IL-17F signalling, and IL-17RB/25R associates with IL-17RA to mediate IL-17E/25 signalling. Far less is known about how these other receptors activate downstream signalling pathways."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Efforts to target IL-17 family cytokines, particularly IL-17A and IL-17RA, are underway for the treatment of autoimmune diseases. Understanding the molecular features of this family may provide useful information."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Glossary"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "TH1 and TH2 cells"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "There are two main subsets of activated CD4+ T cells: TH1 cells and TH2 cells. TH1 cells produce interferon-γ and tumour-necrosis factor, thereby promoting cell-mediated immunity, primarily directed towards intracellular pathogens. TH2 cells produce interleukin-4 (IL-4), IL-5 and IL-13, thereby supporting humoral immunity and counteracting TH1-cell responses."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "TH17 cells"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A newly-described subset of activated CD4+ T cells, characterized by production of IL-17(A), IL-17F, IL-22, IL-21 and (in humans) IL-26. These cells promote neutrophil activation and immunity to extracellular pathogens. TH17 cells also promote inflammation in autoimmunity."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "γδ T cell"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A T cell that expresses a T-cell receptor consisting of a γ-chain and a δ-chain. These T cells are present mainly in the intestinal epithelium as intraepithelial lymphocytes (IELs). Although the exact function of γδT cells (or IELs) is still unknown, it has been suggested that mucosal γδT cells are involved in innate immune responses by the mucosal immune system."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Lymphoid tissue inducer (LTi) cell"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A cell that is present in developing lymph nodes, Peyer’s patches and nasopharynx-associated lymphoid tissue (NALT). Lymphoid-tissue inducer cells are required for the development of these lymphoid organs. The inductive capacity of these cells for the generation of Peyer’s patches and NALT has been shown by adoptive transfer, and it is generally assumed that they have a similar function in the formation of lymph nodes."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Collagen-induced arthritis (CIA)"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "An experimental model of rheumatoid arthritis. Arthritis is induced by immunization of susceptible animals with type II collagen."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Fluorescence resonance energy transfer (FRET)"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A technique that is used to measure protein-protein interactions either by microscopy or flow cytometry. Proteins fused to cyan, yellow or red fluorescent proteins are expressed and assessed for interaction by measuring the energy transfer between fluorophores. Such transfer can only occur if proteins physically interact."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Classical NF-κB pathway"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A typical pathway of NF-κB activation that involves phosphorylation and degradation of the prototypical NFκB inhibitor, IκBα."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Non-classical NF-κB pathway"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A pathway of NFκB activation that does not involve IκBβ.degradation but relies on the processing of an NFκB precursor protein, p1OO, leading to nuclear translocation of the p52–RELB NFκB heterodimer."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Toll/IL-1 receptor (TIR) domain"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "An intracellular-signalling domain that is found in IL-1 receptors, Toll-like receptors and several adaptor proteins, including MYD88 (myeloid differentiation primary-response protein 88)."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "BB-loop"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A structured loop linking the second α-helix and the second β-sheet within TIR domains. This loop is a specificity determinant for TIR domains, and certain mutations in the BB-loop cause impairment of TLR signalling."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Exosome complex"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "A multi-protein complex that degrades various forms of RNA. Certain mRNA transcripts (particularly those encoding cytokines and chemokines) are inherently unstable due to the presence of Au-rich elements (ARE’s) located within the 3′ untranslated region. Proteins that bind to AREs target these transcripts to exosomes for degradation."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Two types of murine helper T cell clone. I. Definition according to profiles of lymphokine activities and secreted proteins"
+    },
+    {
+      "section_type": "REF",
+      "text": "TH1-TH2: a procrustean paradigm"
+    },
+    {
+      "section_type": "REF",
+      "text": "A brief history of T(H)17, the first major revision in the T(H)1/T(H)2 hypothesis of T cell-mediated tissue damage"
+    },
+    {
+      "section_type": "REF",
+      "text": "Novel p19 protein engages IL-12p40 to form a cytokine, IL-23, with biological activities similar as well as distinct from IL-12"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin 23 promotes a distinct CD4 T cell activation state characterized by the production of interleukin 17"
+    },
+    {
+      "section_type": "REF",
+      "text": "Microbial lipopeptides induce the production of IL-17 in Th cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-23 rather than interleukin-12 is the critical cytokine for autoimmune inflammation of the brain"
+    },
+    {
+      "section_type": "REF",
+      "text": "Targeting the development and effector functions of Th17 cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Emergence of the Th17 pathway and its role in host defense"
+    },
+    {
+      "section_type": "REF",
+      "text": "Th17 cell differentiation: the long and winding road"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17: A novel inflammatory cytokine that bridges innate and adaptive immunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "CTLA-8, cloned from an activated T cell, bearing AU-rich messenger RNA instability sequences, and homologous to a Herpesvirus Saimiri gene"
+    },
+    {
+      "section_type": "REF",
+      "text": "Herpesvirus Saimiri encodes a new cytokine, IL-17, which binds to a novel cytokine receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "T cell interleukin-17 induces stromal cells to produce proinflammatory and hematopoietic cytokines"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17s adopt a cystine knot fold: structure and activity of a novel cytokine, IL-17F, and implications for receptor binding"
+    },
+    {
+      "section_type": "REF",
+      "text": "Lamprey (Lethenteron japonicum) IL-17 upregulated by LPS-stimulation in the skin cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of an Interleukin 17F/17A Heterodimer in Activated Human CD4+ T Cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "A novel heterodimeric cytokine consisting of IL-17 and IL-17F regulates inflammatory responses"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulation of inflammatory responses by IL-17F"
+    },
+    {
+      "section_type": "REF",
+      "text": "The human IL-17F/IL-17A heterodimeric cytokine signals through the IL-17RA/IL-17RC receptor complex"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of the IL-17 receptor related molecule, IL-17RC, as the receptor for IL-17F"
+    },
+    {
+      "section_type": "REF",
+      "text": "Differential roles of interleukin-17A and -17F in host defense against mucoepithelial bacterial infection and allergic responses"
+    },
+    {
+      "section_type": "REF",
+      "text": "Role of IL-17A, IL-17F, and the IL-17 receptor in regulating growth-related oncogene-alpha and granulocyte colony-stimulating factor in bronchial epithelium: implications for airway inflammation in cystic fibrosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulation and pro-inflammatory function of interleukin-17 family cytokines"
+    },
+    {
+      "section_type": "REF",
+      "text": "The adaptor protein CIKS/Act1 is essential for IL-25-mediated allergic airway inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of functional roles for both IL-17RB and IL-17RA in mediating IL-25-induced activities"
+    },
+    {
+      "section_type": "REF",
+      "text": "A novel cytokine receptor-ligand pair. Identification, molecular characterization, and in vivo immunomodulatory activity"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17B and IL-17C are associated with TNF-alpha production and contribute to the exacerbation of inflammatory arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "New IL-17 family members promote Th1 or Th2 responses in the lung: in vivo function of the novel cytokine IL-25"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cloning and characterization of IL-17B and IL-17C, two new members of the IL-17 family"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting edge: IL-17F, a novel cytokine selectively expressed in activated T cells and monocytes, regulates angiogenesis and endothelial cell cytokine production"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17: A prototype member of an emerging family"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: Human IL-17: A novel cytokine derived from T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: Interleukin-17 signals through a heteromeric receptor complex"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17RD (Sef or IL-17RLM) interacts with IL-17 receptor and mediates IL-17 signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cytokine and cytokine receptor pleiotropy and redundancy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Structure-function relationships in the IL-17 receptor: Implications for signal transduction and therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin 17-producing T helper cells and interleukin 17 orchestrate autoreactive germinal center development in autoimmune BXD2 mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Synergy of IL-21 and IL-15 in regulating CD8+ T cell expansion and function"
+    },
+    {
+      "section_type": "REF",
+      "text": "Differential Regulation of the IL-17 Receptor by gamma-c Cytokines: INHIBITORY SIGNALING BY THE PHOSPHATIDYLINOSITOL 3-KINASE PATHWAY"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of common transcriptional regulatory elements in interleukin-17 target genes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Distinct functional motifs within the IL-17 receptor regulate signal transduction and target gene expression"
+    },
+    {
+      "section_type": "REF",
+      "text": "Three is better than one: pre-ligand receptor assembly in the regulation of TNF receptor signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: Identification of the pre-ligand assembly domain (PLAD) and ligand binding site in the IL-17 receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: Evidence for ligand-independent multimerization of the IL-17 receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17: A new paradigm in inflammation, autoimmunity and therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17 receptor-like gene is a novel antiapoptotic gene highly expressed in androgen-independent prostate cancer"
+    },
+    {
+      "section_type": "REF",
+      "text": "Erythropietin receptor activation by a ligand-induced conformation change"
+    },
+    {
+      "section_type": "REF",
+      "text": "Amelioration of inflammatory arthritis by targeting the pre-ligand assembly domain of tumor necrosis factor receptors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cytokines link osteoblasts and inflammation: microarray analysis of interleukin-17- and TNF-alpha-induced genes in bone cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "A distinct lineage of CD4 T cells regulates tissue inflammation by producing interleukin 17"
+    },
+    {
+      "section_type": "REF",
+      "text": "Functional cooperation between interleukin-17 and tumor necrosis factor-α is mediated by CCAAT/enhancer binding protein family members"
+    },
+    {
+      "section_type": "REF",
+      "text": "NF-kappa B-inducing kinase is a common mediator of IL-17-, TNF-alpha-, and IL-1 beta-induced chemokine promoter activation in intestinal epithelial cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Stimulus-specific induction of a novel nuclear factor-kappaB regulator, IkappaB-zeta, via Toll/Interleukin-1 receptor is mediated by mRNA stabilization"
+    },
+    {
+      "section_type": "REF",
+      "text": "CARMA1-mediated NF-kappaB and JNK activation in lymphocytes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Requirement of tumor necrosis factor-associated factor (TRAF)6 in interleukin 17 signal transduction"
+    },
+    {
+      "section_type": "REF",
+      "text": "Act1 adaptor protein is an immediate and essential signaling component of interleukin-17 receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "The STIR-domain superfamily in signal transduction, development and immunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cell-penetrating TIR BB loop decoy peptides: A novel class of TLR signaling inhibitors and a tool to study topology of TIR-TIR interactions"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17 Receptor Signaling Inhibits C/EBP{beta} by Sequential Phosphorylation of the Regulatory 2 Domain"
+    },
+    {
+      "section_type": "REF",
+      "text": "A role for the cytoplasmic adaptor proteins Act1 in mediating IL-17 signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "The adaptor Act1 is required for interleukin 17-dependent signaling associated with autoimmune and inflammatory disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "A protein secreted by the respiratory pathogen Chlamydia pneumoniae impairs IL-17 signaling via interaction with human Act1"
+    },
+    {
+      "section_type": "REF",
+      "text": "Post-transcriptional control of cytokine production"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17 signaling for mRNA stabilization does not require TNF receptor-associated factor 6"
+    },
+    {
+      "section_type": "REF",
+      "text": "Zc3h12a is an RNase essential for controlling immune responses by regulating mRNA decay"
+    },
+    {
+      "section_type": "REF",
+      "text": "Function of C/EBPdelta in a regulatory circuit that discriminates between transient and persistent TLR4-induced signals"
+    },
+    {
+      "section_type": "REF",
+      "text": "CCAAT/enhancer-binding proteins: structure, function and regulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Sequential phosphorylation of CCAAT enhancer-binding protein beta by MAPK and glycogen synthase kinase 3beta is required for adipogenesis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17 in rheumatoid arthritis: if T cells were to contribute to inflammation and destruction through synergy"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17 enhances chemokine gene expression through mRNA stabilization"
+    },
+    {
+      "section_type": "REF",
+      "text": "Requirement for both JAK-mediated PI3K signaling and ACT1/TRAF6/TAK1-dependent NF-kappaB activation by IL-17A in enhancing cytokine expression in human airway epithelial cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Increased interleukin-17 production via a phosphoinositide 3-kinase/Akt and nuclear factor kappaB-dependent pathway in patients with rheumatoid arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17F signaling requires ubiquitination of interleukin-17 receptor via TRAF6"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-22 mediates early host defense against attaching and effacing bacterial pathogens"
+    },
+    {
+      "section_type": "REF",
+      "text": "Soluble and transmembrane isoforms of novel interleukin-17 receptor-like protein by RNA splicing and expression in prostate cancer"
+    },
+    {
+      "section_type": "REF",
+      "text": "Generation of interleukin-17 receptor-like protein (IL-17RL) in prostate by alternative splicing of RNA"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17E, a novel proinflammatory ligand for the IL-17 receptor homolog IL-17Rh1"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-17 family and IL-17 receptors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Involvement of TNF receptor-associated factor 6 in IL-25 receptor signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin 25 promotes the initiation of proallergic type 2 responses"
+    },
+    {
+      "section_type": "REF",
+      "text": "The critical role of epithelial-derived Act1 in IL-17- and IL-25-mediated pulmonary inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prototypic T cell receptor and CD4-like coreceptor are expressed by lymphocytes in the agnathan sea lamprey"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of Sef, a novel modulator of FGF signalling"
+    },
+    {
+      "section_type": "REF",
+      "text": "A novel interleukin-17 receptor-like protein identified in human umbilical vein endothelial cells antagonizes basic fibroblast growth factor-induced signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "hSef inhibits PC-12 cell differentiation by interfering with Ras-mitogen-activated protein kinase MAPK signaling"
+    },
+    {
+      "section_type": "REF",
+      "text": "Alternative splicing generates an isoform of the human Sef gene with altered subcellular localization and specificity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Sef interacts with TAK1 and mediates JNK activation and apoptosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification and functional characterization of a novel interleukin 17 receptor: a possible mitogenic activation through ras/mitogen-activated protein kinase signaling pathway"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cytokines in the pathogenesis of rheumatoid arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "The IL-23/Th(17) axis: therapeutic targets for autoimmune inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17/Th17 targeting: on the road to prevent chronic destructive arthritis?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Requirement of interleukin 17 receptor signaling for lung CXC chemokine and granulocyte colony-stimulating factor expression, neutrophil recruitment, and host defense"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-17 derived from juxta-articular bone and synovium contributes to joint degradation in rheumatoid arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-1-independent role of IL-17 in synovial inflammation and joint destruction during collagen-induced arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Divergent pro- and antiinflammatory roles for IL-23 and IL-12 in joint autoimmune inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin 17-producing CD4+ effector T cells develop via a lineage distinct from the T helper type 1 and 2 lineages"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-23 drives a pathogenic T cell population that induces autoimmune inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "A Genome-Wide Association Study Identifies IL23R as an Inflammatory Bowel Disease Gene"
+    },
+    {
+      "section_type": "REF",
+      "text": "TGFbeta in the context of an inflammatory cytokine milieu supports de novo differentiation of IL-17-producing T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Transforming growth factor-beta induces development of the T(H)17 lineage"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reciprocal developmental pathways for the generation of pathogenic effector T(H)17 and regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "The orphan nuclear receptor RORgammaT directs the differentiation program of proinflammatory IL-17+ T helper cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin (IL)-22 and IL-17 are coexpressed by Th17 cells and cooperatively enhance expression of antimicrobial peptides"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-21 initiates an alternative pathway to induce proinflammatory T(H)17 cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Essential autocrine regulation by IL-21 in the generation of inflammatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-6 programs T(H)-17 cell differentiation by promoting sequential engagement of the IL-21 and IL-23 pathways"
+    },
+    {
+      "section_type": "REF",
+      "text": "Impaired T(H)17 cell differentiation in subjects with autosomal dominant hyper-IgE syndrome"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Figures and Table"
+    },
+    {
+      "section_type": "FIG",
+      "text": "IL-17 receptor family ligand-receptor relationships and main structural features"
+    },
+    {
+      "section_type": "FIG",
+      "text": "So far, five members of the IL-17 receptor superfamily have been identified, as indicated in Table 1. The various receptor complexes that correspond to each ligand are indicated, although it should be emphasized that in no instance has the stoichiometry been demonstrated definitively. The receptor for IL-17D is unknown, as is the ligand(s) for IL-17RD/SEF or an IL-17RA/IL-17RD pairing if it exists (see Ref). FN, fibronectin III-like domain; SEFIR, SEF/IL-17R-related signalling domain; TILL, TIR-like loop; CBAD, C/EBPβ activation domain."
+    },
+    {
+      "section_type": "FIG",
+      "text": "IL-17R binding complex and strategies for blockade"
+    },
+    {
+      "section_type": "FIG",
+      "text": "The IL-17R complex contains an undetermined number of IL-17RA and IL-17RC subunits, although studies so far indicate that it might be at minumum trimeric, which is the form shown here. Both IL-17A and IL-17F signal through these subunits, although IL-17A has far higher affinity for IL-17RA than for IL-17RC, whereas IL-17F has a somewhat greater affinity for IL-17RC than for IL-17RA. There are multiple anti-cytokine strategies proposed designed to block signalling through the IL-17 receptor. Antibodies specific for individual ligands or the individual receptor subunits represent the most straightforward approach. Additionally, soluble IL-17R subunits such as fusions to IgG-Fc have been evaluated in pre-clinical models (reviewed in Ref.). Finally, preventing receptor assembly by means of soluble PLAD peptides is another possible avenue for drug development, analogous to approaches used with TNFR signalling."
+    },
+    {
+      "section_type": "FIG",
+      "text": "A. Schematic diagram of IL-17 signalling"
+    },
+    {
+      "section_type": "FIG",
+      "text": "The IL-17R complex is composed of IL-17RA and IL-17RC. Both subunits encode SEFIR domains, but a sequence similar to the TIR BB-loop is found only on IL-17RA, termed a TIR-like loop (TILL). IL-17RA engages the SEFIR-containing ACT1 adaptor to mediate a variety of downstream events. Specifically, ACT1 is required for recruitment of TRAF6 (and possibly TRAF3), which is an essential upstream activator of the classical NF-κB pathway. It is not clear whether TRAF6 is also required for MAPK activation. Act1-/- cells fail to upregulate C/EBPβ (LAP and LAP* splice variants) and C/EBPδ as well, another event that might be downstream of NF-κB. ACT1, but not TRAF6, is required for IL-17A-induced stabilization of several target mRNAs, particularly those encoding chemokines and cytokines. Interestingly, ERK might also be controlled, at least indirectly, by ACT1-independent pathways, as Act1-/- cells show strong upregulation of ERK phosphorylation 24 hours after IL-17A stimulation. ERK mediates rapid phosphorylation of C/EBPβ on Thr-188. A second functional domain on IL-17RA is located in the C-terminal region, and is not required for efficient activation of NF-κB or the MAPK pathways. However, deletion of this domain results in impaired alternative translation of C/EBPβ from the LAP isoform to the LAP* isoform, and hence was termed the ”C/EBPβ-activation domain” (CBAD). The CBAD is also required for IL-17A-mediated inducible phosphorylation of C/EBPβ on Thr-179, which is mediated by GSK3β. B. Comparison of IL-17R and TLR/IL-1R signalling. IL-17R and TLR/IL-1R signalling differ in functional receptor motifs (SEFIR/TILL versus TIR) and proximal adaptors (ACT1 versus MYD88 and TRIF), but converge on common pathways (NF-κB, C/EBP and MAPK). Hence these receptors activate similar, although not identical, panels of downstream genes."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Major events in the history of the IL-17/Th17 field"
+    },
+    {
+      "section_type": "FIG",
+      "text": "References in:"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Extended IL-17/IL-17R family, expression and known functions"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Othercommonnames\tReceptor(s)\tMain functions\tExpression\t \tIL-17\tIL-17A,CTLA-8\tIL-17RAIL-17RC\tAutoimmune pathology,Neutrophil recruitment,immunity toextracellular pathogens\tTh17, CD8 cells, γδ-TCR+ T cells, NK,NKT, LTi\t \tIL-17B\t\tIL-17RB\tPro-inflammatoryactivities?\tGI tract, pancreas,neurons\t \tIL-17C\t\tIL-17RE\tPro-inflammatoryactivities?\tProstate, fetal kidney\t \tIL-17D\t\t?\tPro-inflammatoryactivities?\tMuscle, brain heartlung, pancreas,adpose tissue\t \tIL-17E\tIL-25\tIL-17RBIL-17RA\tInduce Th2, suppressTh17\tIntraepitheliallymphocytes, lungepithelial cells,alveolarmacrophages,eosinophils,basophils, NKT cells,Th2 cells, mast cells,GI tract, uterus\t \tIL-17F\t\tIL-17RAIL-17RC\tNeutrophil recruitment,immunity toextracellular pathogens\tTh17, CD8 cells, γδ-TCR+ T cells, NK,NKT, LTi\t \tIL-17A/F\t\tIL-17RAIL-17RC\tAutoimmune pathology(presumed), Neutrophilrecruitment, immunity toextracellular pathogens\tTh17, CD8 cells, γδ-TCR+ T cells, NK,NKT, LTi\t \tvIL-17\tORF13\tIL-17RAIL-17RC?\tunknown\tHerpesvirus saimiri"
+    }
+  ],
+  "fetched_at": "2026-03-17T00:21:28.464876",
+  "pmid": 19575028
+}
