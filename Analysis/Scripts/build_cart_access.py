@@ -477,7 +477,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: PMID:35090552 (CAR-T cost analysis), ICER Reports
+                    Source: PMID:Verify-CAR-T-manufacturing (CAR-T cost analysis), ICER Reports
                 </div>
             </div>
 
@@ -510,7 +510,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, PMID:35090552
+                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, PMID:Verify-CAR-T-manufacturing
                 </div>
             </div>
 
@@ -531,7 +531,7 @@ html_content = """<!DOCTYPE html>
                 </ul>
 
                 <div class="source-note">
-                    Source: PMID:35090552, CAR-Treg literature review
+                    Source: PMID:Verify-CAR-T-manufacturing, CAR-Treg literature review
                 </div>
             </div>
         </div>
@@ -1314,7 +1314,7 @@ html_content = """<!DOCTYPE html>
                 <div class="reference-list">
                     <div class="reference-item">
                         <strong>CAR-T Cost & Health Economics:</strong><br>
-                        <span class="pmid">PMID:35090552</span> - Comprehensive cost analysis of CAR-T therapies in oncology; provides foundation for pricing structure<br>
+                        <span class="pmid">PMID:Verify-CAR-T-manufacturing</span> - Comprehensive cost analysis of CAR-T therapies in oncology; provides foundation for pricing structure<br>
                         Institute for Clinical and Economic Review (ICER) - Annual CAR-T pricing reports (2022-2024)<br>
                         FDA Approved Drug Products with Therapeutic Equivalence Evaluations - Official pricing data
                     </div>

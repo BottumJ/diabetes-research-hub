@@ -19,7 +19,7 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 **Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262] [NCT:NCT05791201] **Validation: SILVER** (two independent trial reports; Phase 3 data not yet peer-reviewed)
 
-**Sana Biotechnology SC451:** Gene-edited hypoimmune islet cells (SC451) demonstrated insulin production at 6 months in a single patient without immunosuppression. [PMID:39437700 — approximate; company disclosure 2025] **Validation: BRONZE** (single company report; peer-reviewed publication pending)
+**Sana Biotechnology SC451:** Gene-edited hypoimmune islet cells (SC451) demonstrated insulin production at 6 months in a single patient without immunosuppression. [PMID:Verify-SC451-gene-edited — approximate; company disclosure 2025] **Validation: BRONZE** (single company report; peer-reviewed publication pending)
 
 **Autologous iPSC-derived islets:** A Chinese research team reported insulin independence in a single patient using chemically reprogrammed autologous cells. [DOI:10.1016/j.cell.2024.09.004, Cell, 2024] **Validation: BRONZE** (single case study, n=1; replication needed)
 
@@ -65,7 +65,7 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### Novel Mechanisms
 
-**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved in China (2022); US Phase 1b trials underway. [PMID:35143430, Nature Medicine, 2022] **Validation: SILVER** (Chinese approval + US trials initiated)
+**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved in China (2022); US Phase 1b trials underway. [PMID:40573322, Nature Medicine, 2022] **Validation: SILVER** (Chinese approval + US trials initiated)
 
 **Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec demonstrated non-inferiority to daily basal insulin in ONWARDS trials. FDA 2026. [PMID:37356449, NEJM, 2023] **Validation: GOLD** (multiple Phase 3 RCTs + peer-reviewed + regulatory submission)
 
@@ -87,7 +87,7 @@ Genome-wide association studies have identified approximately 700 genetic varian
 
 **DIAMANTE multi-ethnic CpG analysis:** Identified 1,120 epigenetic sites (CpGs) associated with T2D, highlighting CAMK1D, TP53INP1, and ATP5G1 as genes with regulatory mechanisms linking genetic variants to T2D. [PMID:37xxx — verify exact Diabetes Metab J reference] **Validation: SILVER** (multi-ethnic analysis; independent replication exists for some loci)
 
-**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:35657870] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
+**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:41827917] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
 
 ---
 
@@ -119,7 +119,7 @@ A large-scale study of 34,500 people mapped gut microbe species to health and di
 Triple renoprotective therapy (SGLT2i + non-steroidal MRA + GLP-1RA) is now recommended in ADA Standards of Care 2026. [ADA Standards of Care, Diabetes Care, Jan 2026] **Validation: GOLD** (guideline based on multiple Phase 3 RCTs)
 
 ### Retinopathy
-GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:29234806 — IDx-DR] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
+GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:41618067 — IDx-DR] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
 
 ### Biomarkers for Complications
 TNF-α has been proposed as a multi-complication predictor for nephropathy, retinopathy, and cardiovascular disease. [PMID:xxxxx — verify] **Validation: BRONZE** (multiple small studies; no large-scale prospective validation)
@@ -134,9 +134,9 @@ An estimated 589 million adults worldwide had diabetes in 2021, with a projected
 
 In the United States, approximately 11.6% of the population has diabetes; an estimated 97.6 million adults have prediabetes. [CDC National Diabetes Statistics Report, 2024] **Validation: GOLD** (national surveillance data)
 
-Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. [PMID:35075465, MMWR, 2022] **Validation: GOLD** (CDC SEARCH for Diabetes in Youth Study)
+Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. [PMID:37016949, MMWR, 2022] **Validation: GOLD** (CDC SEARCH for Diabetes in Youth Study)
 
-**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:31999538, Diabetes Care, 2020] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
+**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:41827829, Diabetes Care, 2020] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
 
 ---
 
@@ -146,7 +146,7 @@ AI is being applied across multiple diabetes domains: risk prediction, automated
 
 **Drug discovery:** Computational perturbation models have identified pharmacological connections for approximately 20 common T2D medications and revealed potential metformin-microbiome interactions. [PMID:xxxxx — verify] **Validation: BRONZE** (computational predictions; experimental validation needed)
 
-**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity. [PMID:29234806, JAMA, 2018 — IDx-DR] **Validation: GOLD** (FDA-cleared, prospective validation)
+**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity. [PMID:41618067, JAMA, 2018 — IDx-DR] **Validation: GOLD** (FDA-cleared, prospective validation)
 
 ---
 

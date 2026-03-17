@@ -131,7 +131,7 @@ AUTOANTIBODY_RISK = [
         'characteristics': 'Borderline GADA, slower progression',
         'time_to_insulin': '8-12 years',
         'risk_level': 'Moderate',
-        'evidence': 'HUNT: HR 5.37 for high GADA (PMID:30369313)'
+        'evidence': 'HUNT: HR 5.37 for high GADA (PMID:Verify-HUNT-LADA-GADA)'
     },
     {
         'category': 'GADA + IA-2A',
@@ -774,7 +774,7 @@ def generate_html():
             <div class="section" style="margin-top: 2rem;">
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
-                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:30369313)</span></li>
+                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:Verify-HUNT-LADA-GADA)</span></li>
                     <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>
@@ -817,7 +817,7 @@ def generate_html():
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Vaccine & Immunotherapy Evidence</h3>
-                <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:33515517)</span></p>
+                <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:32754804)</span></p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
                     <li>Optimal responders: HLA-DR3-DQ2 positive, baseline C-peptide &gt;0.4 nmol/L</li>
                     <li>Response rate: ~30-40% of treated patients show preserved C-peptide at 4 years</li>

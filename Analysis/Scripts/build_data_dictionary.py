@@ -176,7 +176,7 @@ TERMS = {
         'disease': 'Loss of PDX1 expression in T2D; haploinsufficiency causes MODY4',
         'connections': ['Beta Cell', 'MAFA', 'Glucokinase'],
         'gap_relevance': [1, 13],
-        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:25083985'
+        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:Verify-PDX1-beta-cell-identity'
     },
     'MAFA': {
         'plain': 'A protein that activates the genes needed to make insulin. When MAFA is lost, beta cells lose their ability to produce insulin properly.',
@@ -332,7 +332,7 @@ TERMS = {
         'disease': 'Positive in 50-60% of T1D; associated with faster progression',
         'connections': ['Autoantibodies', 'B Cell', 'T1D'],
         'gap_relevance': [1, 2, 3],
-        'source': 'Lan MS et al. Molecular cloning and identification of IA-2. DNA and Cell Biology 1996;15(2):113-123. PMID:8634143'
+        'source': 'Lan MS et al. Molecular cloning and identification of IA-2. DNA and Cell Biology 1996;15(2):113-123. PMID:9828138'
     },
     'ZnT8': {
         'plain': 'Zinc transporter 8. A protein that transports zinc into beta cell granules. The immune system attacks ZnT8 in T1D.',
@@ -767,7 +767,7 @@ TERMS = {
         'disease': 'Kidney transplant (FDA approved); islet transplant (investigational); 70% graft survival at 10yr vs 50% with tacrolimus-based',
         'connections': ['Costimulation blockade', 'T cell suppression', 'Transplant tolerance'],
         'gap_relevance': [3, 5, 6, 8],
-        'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:20554977'
+        'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:39869107'
     },
     'Baricitinib': {
         'plain': 'JAK inhibitor. FDA approved for rheumatoid arthritis. Shows curative diabetes reversal in mouse models; may protect beta cells in T1D.',
@@ -892,7 +892,7 @@ TERMS = {
         'disease': 'FDA-approved T1D transplant; represents major step toward cell therapy',
         'connections': ['Islet Transplant', 'Cell therapy', 'T1D'],
         'gap_relevance': [3, 8, 13],
-        'source': 'Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. PMID:33111399'
+        'source': 'Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. PMID:32627352'
     },
     'VX-880': {
         'plain': 'Stem cell-derived islet replacement from Vertex. Created from pluripotent stem cells (not donor pancreas). 83% insulin independence, but requires immunosuppression.',
@@ -925,7 +925,7 @@ TERMS = {
         'disease': 'T1D management; improved glycemic control vs pump alone',
         'connections': ['CGM', 'Insulin pump', 'Automation'],
         'gap_relevance': [11, 15],
-        'source': 'Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. PMID:33544156'
+        'source': 'Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. PMID:33550442'
     },
     'HLA Typing': {
         'plain': 'Genetic test for human leukocyte antigen alleles. Identifies T1D risk (HLA-DR3/DR4 high risk) and transplant compatibility.',

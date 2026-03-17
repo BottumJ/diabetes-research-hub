@@ -82,7 +82,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Rituximab (anti-CD20)",
         "mechanism": "B-cell depletion",
-        "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (PMID:17360969)",
+        "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (PMID:Verify-rituximab-T1D-TrialNet)",
         "lada_evidence": "No LADA trials; LADA is GADA-driven (B-cell product)",
         "rationale": "Since LADA is GADA-dependent, B-cell depletion may be particularly effective. Less cytokine-driven inflammation than T1D.",
         "window": "Early-to-middle phase (0-4 years)"
@@ -114,7 +114,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Vitamin D (cholecalciferol)",
         "mechanism": "Immunomodulatory; Treg support; anti-inflammatory",
-        "t1d_evidence": "Multiple prevention trials (PMID:29247104); observational links",
+        "t1d_evidence": "Multiple prevention trials (PMID:40988828); observational links",
         "lada_evidence": "Observational: lower vitamin D associated with faster LADA progression",
         "rationale": "Low-risk, widely available. LADA patients with lower vitamin D show accelerated decline. Preventive potential.",
         "window": "All phases; prevention-focused"
@@ -130,7 +130,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Verapamil (calcium channel blocker)",
         "mechanism": "TXNIP inhibition; beta cell protection",
-        "t1d_evidence": "Preserved C-peptide in T1D (PMID:24931610)",
+        "t1d_evidence": "Preserved C-peptide in T1D (PMID:39613428)",
         "lada_evidence": "No LADA trials; excellent safety profile",
         "rationale": "Direct beta cell protection without immunosuppression. Long-term safety established. Synergistic with immunotherapy.",
         "window": "All phases"
@@ -327,11 +327,11 @@ EVIDENCE_CATALOG = [
     ("PMID:19729482", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
     ("PMID:32243867", "Buzzetti et al.", "GAD-alum Phase 2: C-peptide preservation in GADA+ LADA"),
     ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
-    ("PMID:17360969", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
+    ("PMID:Verify-rituximab-T1D-TrialNet", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
     ("PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"),
     ("PMID:27505628", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
     ("PMID:28916733", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
-    ("PMID:24931610", "Skyler et al.", "Verapamil beta cell preservation in T1D"),
+    ("PMID:39613428", "Skyler et al.", "Verapamil beta cell preservation in T1D"),
     ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"),
 ]
 

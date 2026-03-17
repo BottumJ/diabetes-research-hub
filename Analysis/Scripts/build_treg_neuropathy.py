@@ -635,7 +635,7 @@ def build_dashboard():
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>T2D shows a distinct Treg defect: <strong>visceral adipose tissue Treg depletion</strong> (PMID:19800712, Feuerer et al., Science). Adipose Tregs normally suppress macrophage infiltration and pro-inflammatory M1 activation. Treg loss allows TNF-alpha and IL-6 production by adipose tissue macrophages, driving systemic insulin resistance. Treg restoration improves insulin sensitivity.</p>
+                    <p>T2D shows a distinct Treg defect: <strong>visceral adipose tissue Treg depletion</strong> (PMID:19633656, Feuerer et al., Science). Adipose Tregs normally suppress macrophage infiltration and pro-inflammatory M1 activation. Treg loss allows TNF-alpha and IL-6 production by adipose tissue macrophages, driving systemic insulin resistance. Treg restoration improves insulin sensitivity.</p>
                 </div>
             </div>
 
@@ -682,7 +682,7 @@ def build_dashboard():
                 </ol>
             </div>
 
-            <p class="source-note">Source: Feuerer M, et al. Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells. PNAS, 2009 (PMID:19800712); Liesz A, et al. Regulatory T cells increase after spontaneous resolution of stroke in mice. Nat Med, 2015 (PMID:30578413)</p>
+            <p class="source-note">Source: Feuerer M, et al. Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells. PNAS, 2009 (PMID:19633656); Liesz A, et al. Regulatory T cells increase after spontaneous resolution of stroke in mice. Nat Med, 2015 (PMID:30578413)</p>
         </div>
 
         <!-- Tab 4: Therapeutics -->
@@ -1091,7 +1091,7 @@ def build_dashboard():
             <h3>Tregs in Type 2 Diabetes & Adipose Tissue Inflammation</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    Feuerer, M., et al. (2009). "Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells." <em>PNAS</em>, 106(27), 11018-11023. <span class="pmid">PMID:19800712</span>
+                    Feuerer, M., et al. (2009). "Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells." <em>PNAS</em>, 106(27), 11018-11023. <span class="pmid">PMID:19633656</span>
                 </div>
                 <div class="reference-item">
                     Cipolletta, D., et al. (2012). "PPAR-gamma is a major driver of the accumulation and phenotype of adipose tissue Treg cells." <em>Nature</em>, 486(7404), 549-553.

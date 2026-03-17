@@ -97,7 +97,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Rheumatoid Arthritis",
         "mechanism": "TNF-alpha blockade reduces IBMIR and early islet destruction",
         "evidence_level": "SILVER",
-        "reference": "PMID:15644441",
+        "reference": "PMID:Verify-TNF-IBMIR-islet",
         "preclinical": 5,
         "clinical": 4,
         "safety": 4,
@@ -110,7 +110,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Rheumatoid Arthritis",
         "mechanism": "TNF-alpha blockade reduces IBMIR and early islet destruction",
         "evidence_level": "GOLD",
-        "reference": "PMID:15644441",
+        "reference": "PMID:Verify-TNF-IBMIR-islet",
         "preclinical": 5,
         "clinical": 4,
         "safety": 4,
@@ -162,7 +162,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Hypertension, Arrhythmia",
         "mechanism": "Blocks TXNIP, protects beta cells from apoptosis and ER stress",
         "evidence_level": "SILVER",
-        "reference": "PMID:24931610",
+        "reference": "PMID:40650745",
         "preclinical": 5,
         "clinical": 3,
         "safety": 5,
@@ -860,14 +860,14 @@ def generate_html():
                 </div>
                 <div class="expandable-content">
                     <p><strong>Mechanism:</strong> Blocks TNF-alpha, which amplifies IBMIR via NF-kappa-B signaling.</p>
-                    <p><strong>Evidence:</strong> PMID:15644441; etanercept was used in Edmonton Protocol modifications.</p>
+                    <p><strong>Evidence:</strong> PMID:Verify-TNF-IBMIR-islet; etanercept was used in Edmonton Protocol modifications.</p>
                     <p><strong>Why it works:</strong> TNF-alpha is produced early by activated platelets and drives the pro-inflammatory cascade.</p>
                 </div>
             </div>
 
             <div class="methodology">
-                <strong>IBMIR Data Sources:</strong> Bennet et al. (PMID:16498215), Nilsson et al. (early 2000s characterization),
-                Shapiro Edmonton Protocol modifications (PMID:15644441). The 50-70% islet loss figure is consistently reported
+                <strong>IBMIR Data Sources:</strong> Bennet et al. (PMID:Verify-IBMIR-drug), Nilsson et al. (early 2000s characterization),
+                Shapiro Edmonton Protocol modifications (PMID:Verify-TNF-IBMIR-islet). The 50-70% islet loss figure is consistently reported
                 across centers and represents the fundamental limitation driving the need for multiple donor pancreases.
             </div>
         </div>

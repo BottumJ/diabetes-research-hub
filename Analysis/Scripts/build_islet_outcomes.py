@@ -566,7 +566,7 @@ def generate_html():
                 <div class="metric-value">60%</div>
                 <div class="metric-label">At 13.3 years</div>
             </div>
-            <p class="source">Source: Hering et al., PMID:36630636 (Lancet 2023); Long-term follow-up data from specialized centers</p>
+            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term follow-up data from specialized centers</p>
 
             <h3>LANTIDRA (Donislecel)</h3>
             <p>The first FDA-approved allogeneic pancreatic islet product (June 2023). Phase 3 trial results show strong initial outcomes, though long-term follow-up remains limited.</p>
@@ -742,7 +742,7 @@ def generate_html():
                 <div class="metric-label">Insulin independence at 10 years</div>
             </div>
             <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up.</p>
-            <p class="source">Source: Hering et al., PMID:36630636 (Lancet 2023); Long-term multicenter follow-up</p>
+            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term multicenter follow-up</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -1240,7 +1240,7 @@ def generate_html():
                         <td>Landmark trial (n=7)</td>
                     </tr>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 36630636'); return false;">Hering et al., Lancet</a></td>
+                        <td><a href="#" onclick="alert('PMID: 37359825'); return false;">Voglova et al., Transpl Int</a></td>
                         <td>2023</td>
                         <td>Belatacept: 70% at 10 years vs 20% Edmonton</td>
                         <td>Multicenter follow-up</td>
