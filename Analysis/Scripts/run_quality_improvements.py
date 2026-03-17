@@ -42,7 +42,7 @@ SCRIPTS = {
     'cartaccess': ('build_cart_access.py', 'Building CAR-T Access Barriers Analysis (Gap #6 GOLD)'),
     'gka': ('build_gka_landscape.py', 'Building GKA Drug Repurposing Landscape (Gap #7 SILVER)'),
     'isletequity': ('build_islet_equity.py', 'Building Islet Transplant Registry Equity (Gap #11 GOLD)'),
-    'genericdrug': ('build_generic_drug_catalog.py', 'Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 BRONZE)'),
+    'genericdrug': ('build_generic_drug_catalog.py', 'Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)'),
     'gkalada': ('build_gka_lada.py', 'Building GKA in LADA Analysis (Gap #9 EXPLORATORY)'),
     'ladaprev': ('build_lada_prevalence.py', 'Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)'),
     'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 BRONZE)'),

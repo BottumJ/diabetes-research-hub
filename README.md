@@ -8,7 +8,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 ## What This Project Does
 
-**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 4 GOLD (3+ sources), 4 SILVER (2 sources), 6 BRONZE (computational analysis), 1 EXPLORATORY.
+**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 4 GOLD (3+ sources), 5 SILVER (2 sources), 5 BRONZE (computational analysis), 1 EXPLORATORY.
 
 **Clinical Trial Intelligence** — Pulls live snapshots from ClinicalTrials.gov API v2 across five categories (T1D cure, T1D immunotherapy, T2D novel therapies, diabetes devices, recently completed trials). Diffs snapshots over time to detect new trials, status changes, and freshly posted results.
 
@@ -116,8 +116,8 @@ This project uses a 4-tier evidence classification system:
 | Tier | Requirement | Count |
 |------|------------|-------|
 | **GOLD** | 3+ independent sources from different research groups | 4 gaps |
-| **SILVER** | 2 independent sources | 4 gaps |
-| **BRONZE** | Computational analysis with single-source basis | 6 gaps |
+| **SILVER** | 2 independent sources | 5 gaps |
+| **BRONZE** | Computational analysis with single-source basis | 5 gaps |
 | **EXPLORATORY** | Biological plausibility uncertain | 1 gap |
 
 All claims in the Drug Repurposing Screen have been pressure-tested: WHO Essential Medicines flags verified against the 2023 EML, mechanism claims checked against cited PMIDs, negative trials explicitly labeled, preclinical-only evidence clearly distinguished from human RCT data.
@@ -141,7 +141,7 @@ See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 
 | 9 | GKA in LADA | EXPLORATORY |
 | 10 | LADA Prevalence | SILVER |
 | 11 | Islet Transplant Equity | GOLD |
-| 12 | Generic Drug x Diabetes Mechanism Catalog | BRONZE |
+| 12 | Generic Drug x Diabetes Mechanism Catalog | SILVER |
 | 13 | Personalized Nutrition for Beta Cells | BRONZE |
 | 14 | Personalized Nutrition for LADA | BRONZE |
 | 15 | GKA Pricing Trajectory | BRONZE |
@@ -181,8 +181,8 @@ Queried PubMed for 30 domains x 435 pairwise combinations. Top under-researched 
 ### Drug Repurposing Screen (Pressure-Tested)
 34 generic drugs scored across 5 dimensions (mechanism 25%, safety 20%, generic availability 20%, evidence 20%, equity 15%). Top candidates: Metformin (10.0), Verapamil (8.8), Losartan (8.75). 12 WHO Essential Medicines, 27 sub-$1/month, 14 biological pathways mapped. All mechanism claims verified against source PMIDs; negative trials explicitly labeled.
 
-### LADA Diagnostic Model
-Targeted screening is most cost-effective at $21,242/QALY, detecting 3,327 cases. Universal screening detects 9,506 cases at $36,554/QALY. Two-stage screening balances cost and detection at $28,309/QALY.
+### LADA Diagnostic Model (Pressure-Tested)
+Targeted screening is most cost-effective at $40,614/QALY, detecting 2,730 cases. Universal screening detects 7,953 cases at $56,063/QALY. Two-stage screening balances cost and detection at $47,745/QALY. Model uses corrected GAD antibody sensitivity (82%, DASP standardized) and Medicare complication costs ($5,876, PMID:37909353). All parameters pressure-tested against published literature.
 
 ### Trial Equity Mapper
 34 countries with zero clinical trial access represent 78% of global diabetes burden. 19 real trials mapped with NCT numbers against IDF Diabetes Atlas 2024 data.

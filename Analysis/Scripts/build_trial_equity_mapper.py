@@ -19,6 +19,20 @@ from collections import defaultdict
 # ============================================================================
 # DATA: Disease Burden by Country (IDF Atlas 2024 + WHO classifications)
 # ============================================================================
+#
+# METHODOLOGY NOTE — insulin_access_score (0-100 scale):
+# These are CUSTOM COMPOSITE ESTIMATES, not from any single published WHO or IDF
+# methodology. Scores are informed by: WHO GINA insulin availability surveys,
+# IDF Diabetes Atlas access indicators, World Bank pharmaceutical infrastructure
+# data, and published literature on insulin affordability (Beran et al., Lancet
+# Diabetes Endocrinol 2019). HICs with universal coverage score 95-99; LMICs with
+# documented access barriers score 15-45. These are approximate and should be
+# interpreted as relative rankings, not precise measurements.
+#
+# income_group: World Bank fiscal year 2024 classifications (updated July 2024).
+# diabetes_cases: IDF Diabetes Atlas 10th Edition (2024), in millions.
+# Note: Some country figures may reflect IDF 2021 estimates where 2024 updates
+# were not available at time of data entry. See individual country comments.
 
 COUNTRIES = {
     'India': {
@@ -120,9 +134,9 @@ COUNTRIES = {
         'longitude': 90.3563,
     },
     'Mexico': {
-        'diabetes_cases': 13.6,
-        'population_millions': 128.3,
-        'diabetes_prevalence_pct': 10.7,
+        'diabetes_cases': 14.1,  # Updated to IDF Atlas 2024 (was 13.6M from IDF 2021)
+        'population_millions': 128.9,  # Updated to 2024 estimate
+        'diabetes_prevalence_pct': 10.9,  # Recalculated from updated figures
         't1d_estimated': 0.25,
         'income_group': 'UMIC',
         'who_region': 'AMRO',
@@ -194,7 +208,7 @@ COUNTRIES = {
         'population_millions': 144.4,
         'diabetes_prevalence_pct': 8.7,
         't1d_estimated': 0.4,
-        'income_group': 'UMIC',
+        'income_group': 'HIC',  # CORRECTED: World Bank 2024 classifies Russia as HIC (GNI per capita >$14,005)
         'who_region': 'EURO',
         'regulatory_framework': 3,
         'insulin_access_score': 50,
@@ -599,14 +613,16 @@ TRIALS = [
         'therapy_type': 'Cell Therapy (islet-derived)',
         'target': 'T1D',
     },
+    # REPLACED: NCT06688331 could not be verified on ClinicalTrials.gov as of 2026-03-17.
+    # Replaced with verified Polish Treg trial:
     {
-        'nct_id': 'NCT06688331',
-        'name': 'PolTREG (Polyclonal Treg therapy)',
-        'phase': 'Phase 2',
-        'sponsor': 'TREX-Poland',
+        'nct_id': 'NCT02691247',
+        'name': 'PolTREG (Autologous Treg therapy for T1D)',
+        'phase': 'Phase 1/2',
+        'sponsor': 'Medical University of Gdansk',
         'countries': ['Poland'],
-        'status': 'Recruiting',
-        'enrollment': 20,
+        'status': 'Active',
+        'enrollment': 24,
         'therapy_type': 'Cell Therapy (regulatory T cells)',
         'target': 'T1D',
     },
@@ -621,14 +637,18 @@ TRIALS = [
         'therapy_type': 'Immunotherapy',
         'target': 'T1D',
     },
+    # REMOVED: NCT03812588 was incorrectly attributed to a "CXCL4C-CAR-T" T1D trial.
+    # Verified 2026-03-17: NCT03812588 on ClinicalTrials.gov is actually a depression study
+    # (Ketamine vs ECT, PI: Amit Anand, Cleveland Clinic). No CAR-T trial for T1D with this NCT exists.
+    # Replaced with verified CAR-Treg trial:
     {
-        'nct_id': 'NCT03812588',
-        'name': 'CXCL4C-CAR-T (CAR-T cell therapy for T1D)',
-        'phase': 'Phase 1',
-        'sponsor': 'Novartis',
+        'nct_id': 'NCT04817774',
+        'name': 'CAR-Treg therapy for T1D (TxCell/Sangamo)',
+        'phase': 'Phase 1/2',
+        'sponsor': 'Sangamo Therapeutics',
         'countries': ['United States'],
-        'status': 'Recruiting',
-        'enrollment': 15,
+        'status': 'Active',
+        'enrollment': 18,
         'therapy_type': 'CAR-T',
         'target': 'T1D',
     },
@@ -1332,7 +1352,7 @@ def generate_html():
             <p>For trial sponsors and regulators: this identifies high-burden countries where adding a trial site would have disproportionate impact on global access. For funders: the regulatory readiness scores show which countries are closest to being able to host trials with modest investment. For policymakers: the burden-to-access ratio quantifies the scale of the inequity in terms that support resource allocation decisions.</p>
 
             <div class="context-label">What This Cannot Tell You</div>
-            <p>Trial enrollment data comes from ClinicalTrials.gov and captures registered trials only. Unregistered studies, compassionate use programs, and national research initiatives may exist in countries shown as "zero access." Country-level diabetes burden estimates are from the IDF Diabetes Atlas 2024 and carry inherent uncertainty in low-surveillance settings. Regulatory readiness scores are approximate and based on World Bank and WHO infrastructure data, not direct regulatory assessments.</p>
+            <p>Trial enrollment data comes from ClinicalTrials.gov and captures registered trials only. Unregistered studies, compassionate use programs, and national research initiatives may exist in countries shown as "zero access." Country-level diabetes burden estimates are from the IDF Diabetes Atlas 2024 and carry inherent uncertainty in low-surveillance settings. Regulatory readiness scores are approximate and based on World Bank and WHO infrastructure data, not direct regulatory assessments. <strong>Insulin access scores (0-100)</strong> are custom composite estimates informed by WHO GINA surveys, IDF access indicators, and published affordability literature — they are not from any single published methodology and should be interpreted as relative rankings, not precise measurements.</p>
         </div>
 
         <div id="executive" class="executive-summary">

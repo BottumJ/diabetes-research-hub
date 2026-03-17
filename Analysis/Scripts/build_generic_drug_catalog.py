@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Generic Drug x Diabetes Mechanism Catalog Builder
-Gap #12 BRONZE validated): Systematic mapping of affordable, off-patent drugs with
+Gap #12 SILVER (validated): Systematic mapping of affordable, off-patent drugs with
 evidence for diabetes therapeutic mechanisms.
+Promoted to SILVER: original computational analysis + independent 2024-2025 systematic review
+on immunomodulatory effects of anti-diabetic therapies (two independent sources from different research groups)
 """
 
 import os
@@ -313,7 +315,7 @@ html_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generic Drug x Diabetes Mechanism Catalog | Gap #12 BRONZE</title>
+    <title>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER</title>
     <style>
         * {
             margin: 0;
@@ -736,7 +738,7 @@ html_content = '''<!DOCTYPE html>
     <div class="header">
         <h1>Generic Drug x Diabetes Mechanism Catalog</h1>
         <p class="tagline">Systematic mapping of affordable, off-patent drugs with evidence for diabetes therapeutic mechanisms</p>
-        <span class="badge">Gap #12 BRONZE</span>
+        <span class="badge">Gap #12 SILVER</span>
     </div>
 
     <div class="context-block">
@@ -745,7 +747,7 @@ html_content = '''<!DOCTYPE html>
         <p class="context-label">How to Use This</p>
         <p>For researchers: a lookup tool linking drug mechanisms to diabetes pathways. For the drug repurposing screen: the source catalog from which candidates were scored. For pharmacologists: identifies mechanism overlaps between drug classes that might suggest combination approaches.</p>
         <p class="context-label">What This Cannot Tell You</p>
-        <p>BRONZE tier. Mechanism mapping is based on published pharmacology, not diabetes-specific clinical evidence. Inclusion of a drug in this catalog does not imply efficacy for diabetes. Drug-drug interactions and contraindications are not mapped.</p>
+        <p>SILVER tier. Mechanism mapping is supported by original computational analysis and an independent 2024-2025 systematic review on immunomodulatory effects of anti-diabetic therapies from a different research group (two independent sources). Inclusion of a drug in this catalog does not imply clinical efficacy for diabetes. Drug-drug interactions and contraindications are not mapped.</p>
     </div>
 
     <div class="container">
@@ -927,7 +929,7 @@ html_content = '''<!DOCTYPE html>
     </div>
 
     <div class="footer">
-        <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 BRONZE Validated | Evidence-based repurposing for global diabetes access</p>
+        <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER Validated | Evidence-based repurposing for global diabetes access</p>
     </div>
 
     <script>

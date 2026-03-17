@@ -171,15 +171,16 @@ GAPS = {
     },
     12: {
         'name': 'Generic Drug x Diabetes Mechanism Catalog',
-        'tier': 'BRONZE',
+        'tier': 'SILVER',
         'keywords': [
             'generic drug diabetes', 'off-label diabetes', 'metformin mechanism',
             'repurpos', 'colchicine diabetes', 'hydroxychloroquine diabetes',
             'pentoxifylline diabetes', 'allopurinol diabetes',
             'dapsone diabetes', 'verapamil diabetes', 'doxycycline diabetes',
-            'nlrp3 inflammasome', 'ampk activat',
+            'nlrp3 inflammasome', 'ampk activat', 'immunomodulatory anti-diabetic',
         ],
         'mesh_sig': ['Drugs, Generic', 'Diabetes Mellitus'],
+        'validation_comment': 'Promoted to SILVER: original computational analysis + independent 2024-2025 systematic review on immunomodulatory effects of anti-diabetic therapies',
     },
     13: {
         'name': 'Personalized Nutrition for Beta Cells',

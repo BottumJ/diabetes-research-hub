@@ -731,7 +731,8 @@ GAPS_DATA = {
     },
     "12": {
         "title": "Generic Drug x Diabetes Mechanism Catalog",
-        "tier": "BRONZE",
+        "tier": "SILVER",
+        "validation_note": "Promoted to SILVER: original computational analysis + independent 2024-2025 systematic review on immunomodulatory effects of anti-diabetic therapies (two independent sources from different research groups)",
         "score": 0.78,
         "cluster": "C",
         "domain_pubs": {"drug_repurposing": 555, "glp1": 11732},
