@@ -1194,7 +1194,7 @@ TERMS = {
         'disease': 'Primary autoantibody in LADA diagnosis; GADA titer >180 IU/mL associated with faster progression to insulin; GAD65 affinity <4x10^9 L/mol predicts better C-peptide preservation',
         'connections': ['Autoantibodies', 'LADA', 'Beta Cell', 'T Cell', 'IA-2'],
         'gap_relevance': [1, 2, 8, 9, 10, 14],
-        'source': 'Hawa MI et al. GAD antibody features define clinical phenotype and therapeutic outcome in LADA. Diabetologia 2014;57(1):113-122. PMID:24105098'
+        'source': 'Hawa MI et al. Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12. Diabetologia 2018;61(7):1644-1649. PMID:29619531'
     },
     'Immunosuppressive Agents': {
         'plain': 'Drugs that weaken the immune system to prevent organ rejection after transplant or to treat autoimmune diseases. They are essential for islet transplant but have serious side effects.',
@@ -1282,7 +1282,7 @@ TERMS = {
         'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course; access limited to specialized centers',
         'connections': ['Monoclonal Antibody (Humanized)', 'T Cell', 'Regulatory T Cell', 'CD3'],
         'gap_relevance': [1, 2, 6, 8],
-        'source': 'Herold KC et al. Teplizumab once again as first-in-class for disease modification in T1D. Nature Reviews Endocrinology 2024;20(1):5-6. PMID:37932527'
+        'source': 'Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):379-380. PMID:37202589'
     },
     'GLP-1 Receptor Agonist': {
         'plain': 'A type of diabetes and obesity drug that mimics GLP-1, a hormone that increases insulin release, reduces appetite, and slows digestion. Examples include semaglutide (Ozempic/Wegovy) and liraglutide.',
@@ -1337,7 +1337,7 @@ TERMS = {
         'disease': 'Solves donor shortage; VX-880: 83% insulin independence at 1yr, zero SAEs; VX-264 (encapsulated) discontinued March 2025; manufacturing cost declining ~14%/year toward $10-20K by 2034',
         'connections': ['Islet Transplantation', 'Beta Cell', 'Immunosuppressive Agents', 'Health Equity'],
         'gap_relevance': [2, 3, 6, 11],
-        'source': 'Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells. Cell Reports Medicine 2023;4(7):101141. PMID:37467726'
+        'source': 'Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466. PMID:35028608'
     },
     'LADA (Latent Autoimmune Diabetes in Adults)': {
         'plain': 'A slow-progressing form of autoimmune diabetes in adults, often misdiagnosed as type 2 diabetes. Patients have autoantibodies like in type 1 but do not need insulin immediately.',
@@ -1348,7 +1348,7 @@ TERMS = {
         'disease': 'Estimated 17-50M misdiagnosed globally as T2D; standard T2D treatment suboptimal (sulfonylureas accelerate beta cell loss); GAD antibody testing not standard care; prevalence varies by ethnicity and healthcare setting',
         'connections': ['Glutamate Decarboxylase (GAD65)', 'Autoantibodies', 'Beta Cell', 'T Cell', 'Insulin'],
         'gap_relevance': [1, 8, 9, 10, 14],
-        'source': 'Buzzetti R et al. Management of latent autoimmune diabetes in adults: a consensus statement. Diabetes Care 2020;43(11):2672-2680. PMID:33082274'
+        'source': 'Buzzetti R et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel. Diabetes 2020;69(10):2037-2047. PMID:32847960'
     },
     'Precision Medicine': {
         'plain': 'An approach to healthcare that tailors treatment to individual characteristics like genetics, metabolism, and environment rather than using one-size-fits-all guidelines.',
