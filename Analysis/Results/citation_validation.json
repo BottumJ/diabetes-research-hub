@@ -1,12 +1,13 @@
 {
-  "timestamp": "2026-03-17T10:27:02.991170",
+  "timestamp": "2026-03-17T11:01:48.630585",
   "summary": {
-    "WEAK": 88,
+    "WEAK": 93,
     "CONFIRMED": 61,
-    "PLAUSIBLE": 45,
+    "PLAUSIBLE": 50,
+    "MISMATCH": 2,
     "NO_DATA": 1
   },
-  "total_papers": 195,
+  "total_papers": 207,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -137,6 +138,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "12122111": {
+      "pmid": "12122111",
+      "title": "Hepatocyte-specific inhibition of NF-kappaB leads to apoptosis after TNF treatment, but not after partial hepatectomy.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/13 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 600,
+          "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "12612578": {
       "pmid": "12612578",
       "title": "Foxp3 programs the development and function of CD4+CD25+ regulatory T cells.",
@@ -183,6 +201,23 @@
           "file": "build_gka_lada.py",
           "line": 747,
           "text": "UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052."
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "15016488": {
+      "pmid": "15016488",
+      "title": "Two prognostically significant subtypes of high-grade lung neuroendocrine tumours independent of small-cell and large-cell neuroendocrine carcinomas identified by gene expression profiles.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/11 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 240,
+          "text": "\"evidence\": \"ENDIT trial (European Nicotinamide Diabetes Intervention Trial) was NEGATIVE \\u2014 did not prevent T1D in"
         }
       ],
       "has_abstract": true,
@@ -307,6 +342,23 @@
           "file": "build_data_dictionary.py",
           "line": 568,
           "text": "'source': 'Macian F. NFAT proteins: key regulators of T-cell development and function. Nature Reviews Immunology 2005;5("
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "1611143": {
+      "pmid": "1611143",
+      "title": "Cyclosporine in recent onset type I diabetes mellitus. Effects on islet beta cell function. Miami Cyclosporine Diabetes Study Group.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.231,
+      "details": "3/13 claim terms found in paper; 8 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 582,
+          "text": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Bougneres et al, NEJM 1988; Feutren et al, Lancet 1986,"
         }
       ],
       "has_abstract": true,
@@ -555,10 +607,15 @@
       "pmid": "18397984",
       "title": "Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine.",
       "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/1 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.091,
+      "details": "1/11 claim terms found in paper; 10 diabetes domain terms; 1 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 258,
+          "text": "\"evidence\": \"PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin compariso"
+        },
         {
           "file": "build_generic_drug_catalog.py",
           "line": 198,
@@ -724,6 +781,23 @@
           "file": "build_treg_neuropathy.py",
           "line": 1104,
           "text": "Liesz, A., et al. (2015). \"Regulatory T cells increase after spontaneous resolution of stroke in mice.\" Nature Medic"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "19237585": {
+      "pmid": "19237585",
+      "title": "Nicotine normalizes intracellular subunit stoichiometry of nicotinic receptors carrying mutations linked to autosomal dominant nocturnal frontal lobe epilepsy.",
+      "score": "MISMATCH",
+      "confidence": 0.0,
+      "details": "0/13 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 564,
+          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
         }
       ],
       "has_abstract": true,
@@ -1226,13 +1300,30 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "23223116": {
+      "pmid": "23223116",
+      "title": "Status of anesthesiology resident research education in the United States: structured education programs increase resident research productivity.",
+      "score": "MISMATCH",
+      "confidence": 0.0,
+      "details": "0/13 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 600,
+          "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "23248199": {
       "pmid": "23248199",
       "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
       "score": "CONFIRMED",
-      "confidence": 0.662,
-      "details": "9/16 claim terms found in paper; 8 diabetes domain terms; 3 phrase matches",
-      "claim_count": 6,
+      "confidence": 0.571,
+      "details": "16/34 claim terms found in paper; 8 diabetes domain terms; 4 phrase matches",
+      "claim_count": 12,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1292,6 +1383,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "23738527": {
+      "pmid": "23738527",
+      "title": "A method for accounting for maintenance costs in flux balance analysis improves the prediction of plant cell metabolic phenotypes under stress conditions.",
+      "score": "WEAK",
+      "confidence": 0.077,
+      "details": "1/13 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 564,
+          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "23780460": {
       "pmid": "23780460",
       "title": "Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children.",
@@ -1313,14 +1421,19 @@
       "pmid": "23835325",
       "title": "Patterns of β-cell autoantibody appearance and genetic associations during the first years of life.",
       "score": "WEAK",
-      "confidence": 0.111,
-      "details": "1/9 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.091,
+      "details": "1/11 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "build_gka_lada.py",
           "line": 760,
           "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID: 23835325. (LADA review)"
+        },
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 13,
+          "text": "- PMID:23835325: LADA diagnostic criteria review"
         }
       ],
       "has_abstract": true,
@@ -1397,10 +1510,10 @@
     "24598244": {
       "pmid": "24598244",
       "title": "GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants of a GAD65 vaccination trial.",
-      "score": "CONFIRMED",
-      "confidence": 0.5,
-      "details": "4/10 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 4,
+      "score": "PLAUSIBLE",
+      "confidence": 0.269,
+      "details": "7/26 claim terms found in paper; 9 diabetes domain terms; 1 phrase matches",
+      "claim_count": 9,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1567,6 +1680,23 @@
           "file": "build_nutrition_beta.py",
           "line": 594,
           "text": "Rutter et al. SLC30A8 mutations in type 2 diabetes. <a href=\"https://pubmed.ncbi.nlm.nih.gov"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "25498346": {
+      "pmid": "25498346",
+      "title": "Meta-analysis of the effect and safety of berberine in the treatment of type 2 diabetes mellitus, hyperlipemia and hypertension.",
+      "score": "WEAK",
+      "confidence": 0.091,
+      "details": "1/11 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 258,
+          "text": "\"evidence\": \"PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin compariso"
         }
       ],
       "has_abstract": true,
@@ -2201,6 +2331,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "29619531": {
+      "pmid": "29619531",
+      "title": "Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12.",
+      "score": "CONFIRMED",
+      "confidence": 0.827,
+      "details": "8/11 claim terms found in paper; 7 diabetes domain terms; 10 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1197,
+          "text": "'source': 'Hawa MI et al. Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "29623672": {
       "pmid": "29623672",
       "title": "A Systematic Review on the Protective Effect of N-Acetyl Cysteine Against Diabetes-Associated Cardiovascular Complications.",
@@ -2260,11 +2407,16 @@
     "29988125": {
       "pmid": "29988125",
       "title": "Verapamil and beta cell function in adults with recent-onset type 1 diabetes.",
-      "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/1 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "4/12 claim terms found in paper; 9 diabetes domain terms; 3 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 42,
+          "text": "\"evidence\": \"PMID:29988125 (Ovalle et al, Nature Medicine 2018) demonstrates preserved C-peptide and beta cell function"
+        },
         {
           "file": "build_generic_drug_catalog.py",
           "line": 30,
@@ -2356,10 +2508,15 @@
       "pmid": "30899369",
       "title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
       "score": "PLAUSIBLE",
-      "confidence": 0.318,
-      "details": "7/22 claim terms found in paper; 3 diabetes domain terms; 1 phrase matches",
-      "claim_count": 11,
+      "confidence": 0.29,
+      "details": "9/31 claim terms found in paper; 3 diabetes domain terms; 2 phrase matches",
+      "claim_count": 12,
       "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 24,
+          "text": "\"evidence\": \"Seminal landmark therapy; PMID:30899369 demonstrates NLRP3 inflammasome suppression; UK Prospective Diabete"
+        },
         {
           "file": "build_gap_deep_dives.py",
           "line": 333,
@@ -2369,11 +2526,6 @@
           "file": "build_gap_deep_dives.py",
           "line": 493,
           "text": "\"key_refs\": [\"PMID:30899369\", \"PMID:39412512\"],"
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 502,
-          "text": "\"PMID:30899369 - Metformin AMPK/mTOR/NLRP3 mechanism\","
         }
       ],
       "has_abstract": true,
@@ -2427,10 +2579,15 @@
       "pmid": "31173679",
       "title": "Vitamin D Supplementation and Prevention of Type 2 Diabetes.",
       "score": "PLAUSIBLE",
-      "confidence": 0.333,
-      "details": "7/21 claim terms found in paper; 5 diabetes domain terms; 8 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.29,
+      "details": "9/31 claim terms found in paper; 5 diabetes domain terms; 8 phrase matches",
+      "claim_count": 5,
       "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 618,
+          "text": "\"evidence\": \"Multiple RCTs with mixed results. Pittas et al (D2d trial, NEJM 2019, PMID:31173679) showed no significant"
+        },
         {
           "file": "build_generic_drug_catalog.py",
           "line": 186,
@@ -2440,11 +2597,6 @@
           "file": "build_nutrition_beta.py",
           "line": 341,
           "text": "Vitamin D: Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune atta"
-        },
-        {
-          "file": "build_nutrition_beta.py",
-          "line": 394,
-          "text": "Vitamin D PMID:31173679 </td"
         }
       ],
       "has_abstract": true,
@@ -2748,15 +2900,25 @@
     "32847960": {
       "pmid": "32847960",
       "title": "Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.",
-      "score": "CONFIRMED",
-      "confidence": 0.562,
-      "details": "6/13 claim terms found in paper; 14 diabetes domain terms; 2 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "11/33 claim terms found in paper; 14 diabetes domain terms; 14 phrase matches",
+      "claim_count": 6,
       "claims": [
         {
           "file": "build_data_dictionary.py",
           "line": 838,
           "text": "'source': 'Buzzetti R et al. Management of LADA: a consensus statement. Diabetes 2020;69(10):2037-2044. PMID:32847960'"
+        },
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1351,
+          "text": "'source': 'Buzzetti R et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an Internati"
+        },
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 11,
+          "text": "- PMID:32847960 (Buzzetti 2020): LADA consensus diagnostic criteria"
         }
       ],
       "has_abstract": true,
@@ -2774,6 +2936,40 @@
           "file": "build_data_dictionary.py",
           "line": 715,
           "text": "'source': 'Deacon CF. Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes. Nature Reviews Endocrinolog"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "32943753": {
+      "pmid": "32943753",
+      "title": "Nuclear receptors in podocyte biology and glomerular disease.",
+      "score": "WEAK",
+      "confidence": 0.083,
+      "details": "1/12 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 348,
+          "text": "\"evidence\": \"PRECLINICAL: Hu et al (Nature 2020, PMID:32943753) demonstrated gasdermin D inhibition. Inflammasome suppre"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "32953989": {
+      "pmid": "32953989",
+      "title": "Human regulatory T cells (Treg) and their response to cancer.",
+      "score": "WEAK",
+      "confidence": 0.077,
+      "details": "1/13 claim terms found in paper; 2 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 618,
+          "text": "\"evidence\": \"Multiple RCTs with mixed results. Pittas et al (D2d trial, NEJM 2019, PMID:31173679) showed no significant"
         }
       ],
       "has_abstract": true,
@@ -2945,6 +3141,23 @@
           "file": "build_health_equity.py",
           "line": 1239,
           "text": "PMID:34421203"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "35028608": {
+      "pmid": "35028608",
+      "title": "Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.",
+      "score": "CONFIRMED",
+      "confidence": 0.792,
+      "details": "9/13 claim terms found in paper; 7 diabetes domain terms; 12 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1340,
+          "text": "'source': 'Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-deri"
         }
       ],
       "has_abstract": true,
@@ -3125,6 +3338,23 @@
           "file": "add_citations.py",
           "line": 63,
           "text": "**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37202589": {
+      "pmid": "37202589",
+      "title": "Approval of teplizumab: implications for patients.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.286,
+      "details": "4/14 claim terms found in paper; 4 diabetes domain terms; 5 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1285,
+          "text": "'source': 'Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):3"
         }
       ],
       "has_abstract": true,

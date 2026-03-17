@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Drug Repurposing for Islet Transplant Dashboard Builder
-Gap #4 (SILVER validated): Interactive Tufte-style HTML dashboard
+Gap #4 BRONZE validated): Interactive Tufte-style HTML dashboard
 """
 
 import os
@@ -337,7 +337,7 @@ def generate_html():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drug Repurposing for Islet Transplant | Gap #4 SILVER</title>
+    <title>Drug Repurposing for Islet Transplant | Gap #4 BRONZE</title>
     <style>
         * {
             margin: 0;
@@ -1073,7 +1073,7 @@ def generate_html():
     </div>
 
     <footer>
-        <p>Gap #4: Drug Repurposing for Islet Transplant | SILVER Validated | Interactive Tufte-style Dashboard</p>
+        <p>Gap #4 BRONZE Validated | Interactive Tufte-style Dashboard</p>
         <p>Generated """ + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + """ | Data embedded in script</p>
     </footer>
 

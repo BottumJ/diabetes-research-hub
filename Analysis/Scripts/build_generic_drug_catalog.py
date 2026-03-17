@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Generic Drug x Diabetes Mechanism Catalog Builder
-Gap #12 (SILVER validated): Systematic mapping of affordable, off-patent drugs with
+Gap #12 BRONZE validated): Systematic mapping of affordable, off-patent drugs with
 evidence for diabetes therapeutic mechanisms.
 """
 
@@ -313,7 +313,7 @@ html_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER</title>
+    <title>Generic Drug x Diabetes Mechanism Catalog | Gap #12 BRONZE</title>
     <style>
         * {
             margin: 0;
@@ -731,7 +731,7 @@ html_content = '''<!DOCTYPE html>
     <div class="header">
         <h1>Generic Drug x Diabetes Mechanism Catalog</h1>
         <p class="tagline">Systematic mapping of affordable, off-patent drugs with evidence for diabetes therapeutic mechanisms</p>
-        <span class="badge">Gap #12 SILVER</span>
+        <span class="badge">Gap #12 BRONZE</span>
     </div>
 
     <div class="container">
@@ -913,7 +913,7 @@ html_content = '''<!DOCTYPE html>
     </div>
 
     <div class="footer">
-        <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER Validated | Evidence-based repurposing for global diabetes access</p>
+        <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 BRONZE Validated | Evidence-based repurposing for global diabetes access</p>
     </div>
 
     <script>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Gap #5 (SILVER): Tregs in Diabetic Neuropathy
+Gap #5 BRONZE): Tregs in Diabetic Neuropathy
 Generates interactive Tufte-style HTML dashboard exploring Treg-based immunotherapy
 for neuroinflammatory component of diabetic neuropathy.
 """
@@ -1162,7 +1162,7 @@ def build_dashboard():
         </div>
 
         <footer>
-            <p><strong>Gap #5 (SILVER Validated):</strong> Regulatory T-cells (Tregs) in Diabetic Neuropathy</p>
+            <p><strong>Gap #5 BRONZE Validated):</strong> Regulatory T-cells (Tregs) in Diabetic Neuropathy</p>
             <p><strong>Research Status:</strong> Gap identified; mechanistic rationale established; investigation proposed.</p>
             <p><strong>Next Steps:</strong> Phase 1 systematic review, Phase 2 in silico modeling, Phase 3 clinical protocol design.</p>
             <p style="margin-top: 1rem; font-size: 0.8rem;">Generated: March 2026 | Interactive Tufte-style dashboard | All claims annotated with sources.</p>

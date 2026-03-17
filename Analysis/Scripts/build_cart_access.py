@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-CAR-T Access Barriers in Diabetes (Gap #6 SILVER)
+CAR-T Access Barriers in Diabetes (Gap #6 GOLD)
 Interactive Tufte-style dashboard: manufacturing, cost, and infrastructure barriers
 to CAR-T/CAR-Treg cell therapies for autoimmune diabetes.
 """
@@ -1421,7 +1421,7 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <div class="footer">
-        <p>CAR-T Access Barriers in Diabetes (Gap #6 SILVER Validated)</p>
+        <p>CAR-T Access Barriers in Diabetes (Gap #6 GOLD Validated)</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">Last updated: 2026. Evidence sources verified through 2025.</p>
     </div>
 

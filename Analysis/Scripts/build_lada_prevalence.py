@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 LADA Prevalence Dashboard Generator
-Gap #10 (BRONZE): LADA Prevalence by Healthcare Setting
+Gap #10 SILVER): LADA Prevalence by Healthcare Setting
 Maps the massive underdiagnosis of LADA across different healthcare contexts.
 """
 
@@ -944,7 +944,7 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <footer>
-        <p>LADA Prevalence Dashboard | Gap #10 (BRONZE)<br>
+        <p>LADA Prevalence Dashboard | Gap #10 SILVER)<br>
         Mapping the massive underdiagnosis of LADA across different healthcare contexts<br>
         <span style="font-size: 0.75rem; color: #8b8b8b;">Generated with Tufte design principles | Standards-compliant HTML</span></p>
     </footer>

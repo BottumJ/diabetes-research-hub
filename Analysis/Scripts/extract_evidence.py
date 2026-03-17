@@ -49,7 +49,7 @@ os.makedirs(output_dir, exist_ok=True)
 GAPS = {
     1: {
         'name': 'Gene Therapy for LADA',
-        'tier': 'GOLD',
+        'tier': 'SILVER',
         'keywords': [
             'lada', 'latent autoimmune diabetes', 'gene therapy', 'gada',
             'gad65', 'gad antibod', 'autoimmune diabetes adult',
@@ -86,7 +86,7 @@ GAPS = {
     },
     4: {
         'name': 'Drug Repurposing for Islet Transplant',
-        'tier': 'SILVER',
+        'tier': 'BRONZE',
         'keywords': [
             'drug repurpos', 'islet transplant', 'immunosuppress',
             'anti-inflammatory islet', 'etanercept', 'anakinra',
@@ -97,7 +97,7 @@ GAPS = {
     },
     5: {
         'name': 'Treg in Diabetic Neuropathy',
-        'tier': 'SILVER',
+        'tier': 'BRONZE',
         'keywords': [
             'regulatory t cell', 'treg', 'foxp3', 'diabetic neuropathy',
             'neuroinflammation diabetes', 'neuroprotect', 'nerve repair',
@@ -108,7 +108,7 @@ GAPS = {
     },
     6: {
         'name': 'CAR-T Access Barriers',
-        'tier': 'SILVER',
+        'tier': 'GOLD',
         'keywords': [
             'car-t', 'car t cell', 'chimeric antigen receptor',
             'car-treg', 'adoptive cell', 'cell therapy cost',
@@ -150,7 +150,7 @@ GAPS = {
     },
     10: {
         'name': 'LADA Prevalence by Healthcare Setting',
-        'tier': 'BRONZE',
+        'tier': 'SILVER',
         'keywords': [
             'lada prevalence', 'lada epidemiolog', 'lada misdiagnos',
             'latent autoimmune prevalence', 'lada primary care',
@@ -161,7 +161,7 @@ GAPS = {
     },
     11: {
         'name': 'Islet Transplant Registry Equity',
-        'tier': 'SILVER',
+        'tier': 'GOLD',
         'keywords': [
             'islet transplant registry', 'citr', 'transplant equity',
             'transplant access', 'organ allocation', 'transplant disparit',
@@ -171,7 +171,7 @@ GAPS = {
     },
     12: {
         'name': 'Generic Drug x Diabetes Mechanism Catalog',
-        'tier': 'SILVER',
+        'tier': 'BRONZE',
         'keywords': [
             'generic drug diabetes', 'off-label diabetes', 'metformin mechanism',
             'repurpos', 'colchicine diabetes', 'hydroxychloroquine diabetes',
