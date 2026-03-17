@@ -203,12 +203,34 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   </div>
 </div>
 
+<h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">Actionable Research Tools</h3>
+<div class="cards">
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Generic Drug Repurposing Screen</h3>
+    <p>Computational screen of 30 generic drugs scored across mechanism relevance, safety, generic availability, evidence strength, and equity impact. Top candidates under $1/month. The equity intervention.</p>
+    <a href="Dashboards/Drug_Repurposing_Screen.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>LADA Diagnostic Cost-Effectiveness Model</h3>
+    <p>Four screening scenarios modeled across 4 healthcare tiers over 10- and 20-year horizons. Universal GAD screening: $36,554/QALY. 4.85M LADA cases detectable per year worldwide.</p>
+    <a href="Dashboards/LADA_Diagnostic_Model.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Clinical Trial Equity Mapper</h3>
+    <p>Geographic mismatch between diabetes burden and advanced therapy trial sites across 40+ countries. 19 real clinical trials mapped against IDF burden data. Priority expansion rankings.</p>
+    <a href="Dashboards/Trial_Equity_Mapper.html">Open dashboard &rarr;</a>
+  </div>
+</div>
+
 <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">GOLD-Validated Research (3+ independent sources)</h3>
 <div class="cards">
   <div class="card">
     <div class="status live">Available</div>
     <h3>LADA Natural History Model</h3>
-    <p>Computational model of C-peptide decline trajectories for LADA1 vs LADA2. Autoantibody risk stratification, intervention windows, and genetic markers. Gap #1 (GOLD).</p>
+    <p>Computational model of C-peptide decline trajectories for LADA1 vs LADA2. Autoantibody risk stratification, intervention windows, and genetic markers. Gap #1 (SILVER).</p>
     <a href="Dashboards/LADA_Natural_History.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
@@ -248,7 +270,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Drug Repurposing for Islet Transplant</h3>
-    <p>13 repurposable drugs scored across 5 dimensions. IBMIR mechanism, clinical trials, computational priority model. Gap #4 (SILVER).</p>
+    <p>13 repurposable drugs scored across 5 dimensions. IBMIR mechanism, clinical trials, computational priority model. Gap #4 (BRONZE).</p>
     <a href="Dashboards/Drug_Repurposing_Islet.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

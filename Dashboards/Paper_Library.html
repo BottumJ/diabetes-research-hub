@@ -166,15 +166,15 @@
             <div class="stat-label">Abstracts</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">108</div>
+            <div class="stat-value">110</div>
             <div class="stat-label">PMC Available</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">86</div>
+            <div class="stat-value">89</div>
             <div class="stat-label">Full Text</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">100</div>
+            <div class="stat-value">105</div>
             <div class="stat-label">Cross-Citations</div>
         </div>
         <div class="stat-card">
@@ -187,16 +187,16 @@
     <h2>Citation Validation</h2>
     <div class="validation-bar">
         <div class="bar-confirmed" style="width:30.7%;" title="CONFIRMED: 61"></div>
-        <div class="bar-plausible" style="width:22.6%;" title="PLAUSIBLE: 45"></div>
+        <div class="bar-plausible" style="width:24.1%;" title="PLAUSIBLE: 48"></div>
         <div class="bar-weak" style="width:44.2%;" title="WEAK: 88"></div>
-        <div class="bar-mismatch" style="width:2.0%;" title="MISMATCH: 4"></div>
+        <div class="bar-mismatch" style="width:0.5%;" title="MISMATCH: 1"></div>
         <div class="bar-nodata" style="width:0.5%;" title="NO DATA: 1"></div>
     </div>
     <div class="legend">
         <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">61</span></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">45</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">48</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#8b7355;"></span> Weak <span class="count-badge">88</span></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#a33b2c;"></span> Mismatch <span class="count-badge">4</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#a33b2c;"></span> Mismatch <span class="count-badge">1</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#999999;"></span> No Data <span class="count-badge">1</span></div>
     </div>
     <p style="font-size:0.85rem;color:#636363;margin-bottom:1rem;">Scores reflect automated term-matching between dashboard claims and paper abstracts. "Weak" often means the claim context in our scripts is HTML-heavy rather than a true content mismatch.</p>
@@ -311,7 +311,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_gap_synthesis</td>
+            <td class="loc-col">build_gap_synthesis, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40650745">
@@ -341,7 +341,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_data_dictionary</td>
+            <td class="loc-col">build_data_dictionary, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40291594">
@@ -441,7 +441,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_gka_landscape</td>
+            <td class="loc-col">build_gka_landscape, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2024" data-pmid="38578067">
@@ -454,32 +454,12 @@
             <td class="loc-col">add_citations</td>
         </tr>
 
-        <tr class="paper-row" data-score="MISMATCH" data-year="2024" data-pmid="37932527">
-            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37932527/" target="_blank" rel="noopener">37932527</a></td>
-            <td class="title-col">Auto-inhibition and activation of a short Argonaute-associated TIR-APAZ defense system.</td>
-            <td class="journal-col">Nat Chem Biol</td>
-            <td class="year-col">2024</td>
-            <td class="score-col" style="color:#a33b2c;font-weight:600;">MISMATCH</td>
-            <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary</td>
-        </tr>
-
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="37845117">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37845117/" target="_blank" rel="noopener">37845117</a></td>
             <td class="title-col">Residual cardiovascular risk: When should we treat it?</td>
             <td class="journal-col">Eur J Intern Med</td>
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
-            <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary</td>
-        </tr>
-
-        <tr class="paper-row" data-score="MISMATCH" data-year="2023" data-pmid="37467726">
-            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37467726/" target="_blank" rel="noopener">37467726</a></td>
-            <td class="title-col">Fast and low-dose medical imaging generation empowered by hybrid deep-learning and iterative reconstruction.</td>
-            <td class="journal-col">Cell Rep Med</td>
-            <td class="year-col">2023</td>
-            <td class="score-col" style="color:#a33b2c;font-weight:600;">MISMATCH</td>
             <td class="coverage-col">Abstract</td>
             <td class="loc-col">build_data_dictionary</td>
         </tr>
@@ -542,6 +522,16 @@
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
             <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2023" data-pmid="37202589">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37202589/" target="_blank" rel="noopener">37202589</a></td>
+            <td class="title-col">Approval of teplizumab: implications for patients.</td>
+            <td class="journal-col">Nat Rev Endocrinol</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37133585">
@@ -644,6 +634,16 @@
             <td class="loc-col">build_data_dictionary</td>
         </tr>
 
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="35028608">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank" rel="noopener">35028608</a></td>
+            <td class="title-col">Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.</td>
+            <td class="journal-col">Cell Rep Med</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
         <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="34421203">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" rel="noopener">34421203</a></td>
             <td class="title-col">Inequities in Health Outcomes in Children and Adults With Type 1 Diabetes: Data From the T1D Exchange Quality Improvement Collaborative.</td>
@@ -681,7 +681,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_gka_landscape, build_gka_lada +1</td>
+            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gka_pricing +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2021" data-pmid="33550442">
@@ -704,16 +704,6 @@
             <td class="loc-col">build_islet_equity</td>
         </tr>
 
-        <tr class="paper-row" data-score="MISMATCH" data-year="2021" data-pmid="33082274">
-            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33082274/" target="_blank" rel="noopener">33082274</a></td>
-            <td class="title-col">HLA Polymorphisms Are Associated with Treatment-Free Remission Following Discontinuation of Tyrosine Kinase Inhibitors in Chronic Myeloid Leukemia.</td>
-            <td class="journal-col">Mol Cancer Ther</td>
-            <td class="year-col">2021</td>
-            <td class="score-col" style="color:#a33b2c;font-weight:600;">MISMATCH</td>
-            <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary</td>
-        </tr>
-
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2021" data-pmid="32627352">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" rel="noopener">32627352</a></td>
             <td class="title-col">Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</td>
@@ -721,7 +711,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary, build_islet_equity</td>
+            <td class="loc-col">build_islet_equity, build_data_dictionary</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="33264825">
@@ -754,14 +744,14 @@
             <td class="loc-col">build_data_dictionary</td>
         </tr>
 
-        <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32847960">
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2020" data-pmid="32847960">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener">32847960</a></td>
             <td class="title-col">Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.</td>
             <td class="journal-col">Diabetes</td>
             <td class="year-col">2020</td>
-            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary</td>
+            <td class="loc-col">build_data_dictionary, build_lada_diagnostic_model</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32754804">
@@ -781,7 +771,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_landscape, build_lada_prevalence, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_gka_landscape, build_lada_prevalence</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32017635">
@@ -911,7 +901,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_nutrition_beta, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_nutrition_beta</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31036962">
@@ -941,7 +931,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives</td>
+            <td class="loc-col">build_drug_repurposing_screen, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30657336">
@@ -984,6 +974,16 @@
             <td class="loc-col">build_health_equity</td>
         </tr>
 
+        <tr class="paper-row" data-score="MISMATCH" data-year="2018" data-pmid="30078372">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30078372/" target="_blank" rel="noopener">30078372</a></td>
+            <td class="title-col">Latent Profile Analysis of Alcohol Consumption and Sexual Attitudes Among College Women: Associations With Sexual Victimization Risk.</td>
+            <td class="journal-col">Violence Against Women</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#a33b2c;font-weight:600;">MISMATCH</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_screen</td>
+        </tr>
+
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29988125">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener">29988125</a></td>
             <td class="title-col">Verapamil and beta cell function in adults with recent-onset type 1 diabetes.</td>
@@ -1022,6 +1022,16 @@
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
             <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="29619531">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" rel="noopener">29619531</a></td>
+            <td class="title-col">Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="29617641">
@@ -1271,7 +1281,7 @@
             <td class="year-col">2015</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, build_data_dictionary, build_generic_drug_catalog</td>
+            <td class="loc-col">build_data_dictionary, build_generic_drug_catalog, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="26322160">
@@ -1404,14 +1414,14 @@
             <td class="loc-col">build_data_dictionary</td>
         </tr>
 
-        <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24598244">
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2014" data-pmid="24598244">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener">24598244</a></td>
             <td class="title-col">GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants of a GAD65 vaccination trial.</td>
             <td class="journal-col">Diabetes Care</td>
             <td class="year-col">2014</td>
-            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives</td>
+            <td class="loc-col">build_lada_diagnostic_model, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24508508">
@@ -1444,16 +1454,6 @@
             <td class="loc-col">build_data_dictionary</td>
         </tr>
 
-        <tr class="paper-row" data-score="MISMATCH" data-year="2013" data-pmid="24105098">
-            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24105098/" target="_blank" rel="noopener">24105098</a></td>
-            <td class="title-col">Bond and mode selectivity in the OH + NH2D reaction: a quasi-classical trajectory calculation.</td>
-            <td class="journal-col">Phys Chem Chem Phys</td>
-            <td class="year-col">2013</td>
-            <td class="score-col" style="color:#a33b2c;font-weight:600;">MISMATCH</td>
-            <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary</td>
-        </tr>
-
         <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="23835333">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank" rel="noopener">23835333</a></td>
             <td class="title-col">Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes in a randomized controlled trial: metabolic and immunologic features at baseline identify a subgroup of responders.</td>
@@ -1471,7 +1471,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada</td>
+            <td class="loc-col">build_gka_lada, build_lada_diagnostic_model</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23780460">
@@ -1511,7 +1511,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_lada_diagnostic_model, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="23061757">
@@ -1871,7 +1871,7 @@
             <td class="year-col">2008</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_generic_drug_catalog</td>
+            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="18094377">
@@ -1891,7 +1891,7 @@
             <td class="year-col">2007</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_prevalence, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_lada_prevalence</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="17965721">
@@ -2181,7 +2181,7 @@
             <td class="year-col">1998</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, build_lada_model</td>
+            <td class="loc-col">build_lada_model, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="1998" data-pmid="9521319">
@@ -2211,7 +2211,7 @@
             <td class="year-col">1993</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, build_treg_neuropathy</td>
+            <td class="loc-col">build_treg_neuropathy, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="1990" data-pmid="1697648">
@@ -2270,7 +2270,7 @@
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/21525462/" target="_blank">21525462</a></td><td>Glucokinase activators for diabetes therapy: May 2010 status report.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/17261637/" target="_blank">17261637</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank">23061757</a></td><td>Safety and tolerability of the T-cell depletion protocol coupled with </td><td><a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank">10911004</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank">17005949</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/24997559/" target="_blank">24997559</a></td><td>Combination therapy with sitagliptin and lansoprazole in patients with</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">23835333</a></td></tr>
-<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/29885104/" target="_blank">29885104</a></td><td>Glycated Albumin Is a More Useful Glycation Index than HbA1c for Refle</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/3899825/" target="_blank">3899825</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank">18539917</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank">29619531</a></td><td>Autoantibodies to N-terminally truncated GAD improve clinical phenotyp</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">23248199</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank">24598244</a></td></tr>
             </tbody>
         </table>
         </div>
@@ -2285,31 +2285,31 @@
             <thead><tr><th>MeSH Term</th><th>Papers</th></tr></thead>
             <tbody>
 <tr><td>Diabetes Mellitus, Type 2</td><td>53</td></tr>
-<tr><td>Diabetes Mellitus, Type 1</td><td>49</td></tr>
+<tr><td>Diabetes Mellitus, Type 1</td><td>52</td></tr>
 <tr><td>Blood Glucose</td><td>37</td></tr>
-<tr><td>Insulin</td><td>31</td></tr>
-<tr><td>Hypoglycemic Agents</td><td>31</td></tr>
+<tr><td>Insulin</td><td>33</td></tr>
+<tr><td>Hypoglycemic Agents</td><td>33</td></tr>
 <tr><td>Glycated Hemoglobin</td><td>25</td></tr>
 <tr><td>Double-Blind Method</td><td>20</td></tr>
 <tr><td>Mice</td><td>20</td></tr>
 <tr><td>Signal Transduction</td><td>18</td></tr>
 <tr><td>Cardiovascular Diseases</td><td>16</td></tr>
-<tr><td>C-Peptide</td><td>14</td></tr>
+<tr><td>C-Peptide</td><td>15</td></tr>
+<tr><td>Autoantibodies</td><td>13</td></tr>
 <tr><td>Disease Progression</td><td>12</td></tr>
-<tr><td>Autoantibodies</td><td>12</td></tr>
 <tr><td>Islets of Langerhans Transplantation</td><td>11</td></tr>
+<tr><td>Biomarkers</td><td>11</td></tr>
 <tr><td>Hyperglycemia</td><td>11</td></tr>
 <tr><td>Insulin-Secreting Cells</td><td>11</td></tr>
 <tr><td>Inflammation</td><td>10</td></tr>
 <tr><td>Diabetes Mellitus</td><td>10</td></tr>
-<tr><td>Biomarkers</td><td>10</td></tr>
-<tr><td>Diabetic Nephropathies</td><td>9</td></tr>
+<tr><td>Glutamate Decarboxylase</td><td>10</td></tr>
             </tbody>
         </table>
         </div>
     </div>
 
-    <p class="timestamp">Generated 2026-03-17 10:11 | Data from PubMed/PMC via NCBI E-utilities</p>
+    <p class="timestamp">Generated 2026-03-17 10:42 | Data from PubMed/PMC via NCBI E-utilities</p>
 </div>
 
 <script>

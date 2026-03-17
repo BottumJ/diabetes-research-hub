@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Repurposing Screen for Diabetes: Generic Drug Equity Intervention Analysis</title>
+    <meta name="description" content="Computational screening of generic drugs with mechanisms relevant to diabetes for equity interventions in low-resource settings">
+    <meta name="author" content="Diabetes Research Initiative">
+    <meta name="date" content="2026-03-17">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JGMD5VRYPH');
+    </script>
+
+    <style>
+        /* Tufte-style minimalist design */
+        body {
+            background-color: #fafaf7;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            border-bottom: 1px dotted #0066cc;
+        }
+
+        a:hover {
+            background-color: #f0f0f0;
+        }
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
+            margin: -2rem -2rem 2rem -2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        nav a {
+            margin-right: 2rem;
+            border-bottom: none;
+        }
+
+        nav a:hover {
+            border-bottom: 1px dotted #0066cc;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .executive-summary {
+            background-color: #fff;
+            border-left: 4px solid #333;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .executive-summary p {
+            margin: 0.75rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: #fff;
+        }
+
+        thead {
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #333;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.75rem;
+            font-family: Georgia, serif;
+            font-weight: normal;
+            border-right: 1px solid #ddd;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .score-high {
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .score-medium {
+            color: #5d7b3f;
+        }
+
+        .score-low {
+            color: #8b7355;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge-essential {
+            border: 1px solid #2d5016;
+            color: #2d5016;
+        }
+
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-header {
+            background-color: #f5f5f5;
+            padding: 0.75rem 1rem;
+            border-left: 3px solid #333;
+            margin-bottom: 1rem;
+        }
+
+        .cost-comparison {
+            margin: 2rem 0;
+        }
+
+        .cost-bar {
+            background-color: #f0f0f0;
+            height: 2rem;
+            margin: 0.5rem 0;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+
+        .cost-bar-fill {
+            height: 100%;
+            background-color: #8b7355;
+            display: flex;
+            align-items: center;
+            padding-left: 0.5rem;
+            color: #fff;
+            font-size: 0.85rem;
+        }
+
+        .cost-bar-fill.low-cost {
+            background-color: #2d5016;
+        }
+
+        .cost-bar-fill.moderate-cost {
+            background-color: #5d7b3f;
+        }
+
+        .filters {
+            background-color: #fff;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1rem;
+            display: inline-block;
+            margin-right: 2rem;
+        }
+
+        .filter-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-group select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-family: inherit;
+        }
+
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .pathway-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+        }
+
+        .pathway-card h4 {
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .pathway-drug-list {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .methodology {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .methodology h3 {
+            margin-top: 0;
+        }
+
+        .score-explanation {
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .score-explanation dt {
+            font-weight: bold;
+            margin-top: 0.75rem;
+        }
+
+        .score-explanation dd {
+            margin: 0 0 1rem 1.5rem;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sortable:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media print {
+            body { padding: 0; }
+            nav { display: none; }
+            a { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#executive-summary">Executive Summary</a>
+        <a href="#candidates">Drug Candidates</a>
+        <a href="#pathways">Pathways</a>
+        <a href="#methodology">Methodology</a>
+    </nav>
+    <h1>Drug Repurposing Screen for Diabetes</h1>
+    <p><em>Identifying generic drugs with diabetes-relevant mechanisms for equity interventions in low-resource settings</em></p>
+    <section id="executive-summary" class="section executive-summary">
+        <h2 style="margin-top: 0; border: none;">Executive Summary</h2>
+        <p>This computational screen evaluates 28 generic drugs across five dimensions (mechanism relevance, safety profile, generic availability, evidence strength, and equity score) to identify existing pharmaceutical agents with mechanisms pertinent to diabetes pathophysiology that could serve as low-cost interventions in resource-limited settings.</p>
+        <p>Key findings include: (1) multiple sub-dollar medications demonstrate relevant mechanisms for both Type 2 and Type 1 diabetes, (2) anti-inflammatory agents (NLRP3 inflammasome inhibitors) emerge as leading candidates due to the inflammatory hypothesis of diabetes, (3) beta cell preservation mechanisms are achievable through multiple inexpensive agents including verapamil (generic $0.15/month) and nicotinamide ($0.05/month), and (4) immunomodulatory approaches relevant to LADA and T1D are available at WHO Essential Medicines pricing.</p>
+        <p>Top-ranking candidates include metformin (reference standard), verapamil (landmark beta cell preservation evidence), colchicine (NLRP3 inhibition, sub-dollar cost), hydroxychloroquine (WHO Essential, immune modulation), and nicotinamide (exceptional affordability with T1D prevention trial evidence). These represent immediately implementable interventions across economic contexts.</p>
+    </section>
+    <section class="stats-box">
+        <div class="stat">
+            <div class="stat-number">28</div>
+            <div class="stat-label">Drug Candidates Screened</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">6</div>
+            <div class="stat-label">WHO Essential Medicines</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">22</div>
+            <div class="stat-label">Sub-$0.50/Month Agents</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Diabetes-Relevant Pathways</div>
+        </div>
+    </section>
+    <section class="section">
+        <h2>Drug Categories Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Count</th>
+                    <th>Average Score</th>
+                    <th>Representative Agents</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Anti-inflammatory</strong></td>
+                    <td>4</td>
+                    <td class="score-high">7.42</td>
+                    <td>Colchicine, Pentoxifylline, Disulfiram...</td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-inflammatory/Antioxidant</strong></td>
+                    <td>1</td>
+                    <td class="score-high">7.45</td>
+                    <td>N-Acetylcysteine...</td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-inflammatory/Immunomodulator</strong></td>
+                    <td>1</td>
+                    <td class="score-high">7.15</td>
+                    <td>Sulfasalazine...</td>
+                </tr>
+                <tr>
+                    <td><strong>Anti-inflammatory/Metabolic</strong></td>
+                    <td>1</td>
+                    <td class="score-high">8.15</td>
+                    <td>Berberine...</td>
+                </tr>
+                <tr>
+                    <td><strong>Cardiovascular</strong></td>
+                    <td>1</td>
+                    <td class="score-high">6.4</td>
+                    <td>Digoxin...</td>
+                </tr>
+                <tr>
+                    <td><strong>Cardiovascular/Metabolic</strong></td>
+                    <td>8</td>
+                    <td class="score-high">8.03</td>
+                    <td>Verapamil, Losartan, Spironolactone...</td>
+                </tr>
+                <tr>
+                    <td><strong>Immunomodulator</strong></td>
+                    <td>5</td>
+                    <td class="score-high">6.95</td>
+                    <td>Hydroxychloroquine, Dapsone, Low-Dose Naltrexone...</td>
+                </tr>
+                <tr>
+                    <td><strong>Immunosuppressant</strong></td>
+                    <td>3</td>
+                    <td class="score-high">7.35</td>
+                    <td>Mycophenolate Mofetil, Azathioprine, Rapamycin...</td>
+                </tr>
+                <tr>
+                    <td><strong>Metabolic</strong></td>
+                    <td>1</td>
+                    <td class="score-high">8.3</td>
+                    <td>Acarbose...</td>
+                </tr>
+                <tr>
+                    <td><strong>Metabolic/Micronutrient</strong></td>
+                    <td>1</td>
+                    <td class="score-high">8.9</td>
+                    <td>Nicotinamide...</td>
+                </tr>
+                <tr>
+                    <td><strong>Metabolic/Neurotropic</strong></td>
+                    <td>1</td>
+                    <td class="score-high">6.45</td>
+                    <td>Lithium...</td>
+                </tr>
+                <tr>
+                    <td><strong>Microbiome/Metabolic</strong></td>
+                    <td>1</td>
+                    <td class="score-high">6.85</td>
+                    <td>Rifaximin...</td>
+                </tr>
+                <tr>
+                    <td><strong>Oncology/Metabolic</strong></td>
+                    <td>1</td>
+                    <td class="score-high">5.3</td>
+                    <td>Imatinib...</td>
+                </tr>
+                <tr>
+                    <td><strong>Reference Standard</strong></td>
+                    <td>1</td>
+                    <td class="score-high">10.0</td>
+                    <td>Metformin...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="candidates" class="section">
+        <h2>Ranked Drug Candidates</h2>
+        <p>Click column headers to sort. Composite score = (Mechanism 25% + Safety 20% + Generic Availability 20% + Evidence 20% + Equity 15%)</p>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter" onchange="filterTable()">
+                    <option value="">All Categories</option>
+                    <option value="Anti-inflammatory">Anti-inflammatory</option>
+                    <option value="Anti-inflammatory/Antioxidant">Anti-inflammatory/Antioxidant</option>
+                    <option value="Anti-inflammatory/Immunomodulator">Anti-inflammatory/Immunomodulator</option>
+                    <option value="Anti-inflammatory/Metabolic">Anti-inflammatory/Metabolic</option>
+                    <option value="Cardiovascular">Cardiovascular</option>
+                    <option value="Cardiovascular/Metabolic">Cardiovascular/Metabolic</option>
+                    <option value="Immunomodulator">Immunomodulator</option>
+                    <option value="Immunosuppressant">Immunosuppressant</option>
+                    <option value="Metabolic">Metabolic</option>
+                    <option value="Metabolic/Micronutrient">Metabolic/Micronutrient</option>
+                    <option value="Metabolic/Neurotropic">Metabolic/Neurotropic</option>
+                    <option value="Microbiome/Metabolic">Microbiome/Metabolic</option>
+                    <option value="Oncology/Metabolic">Oncology/Metabolic</option>
+                    <option value="Reference Standard">Reference Standard</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="score-filter">Minimum Score:</label>
+                <select id="score-filter" onchange="filterTable()">
+                    <option value="0">All</option>
+                    <option value="7">7.0+</option>
+                    <option value="7.5">7.5+</option>
+                    <option value="8">8.0+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="who-filter">WHO Essential:</label>
+                <select id="who-filter" onchange="filterTable()">
+                    <option value="">All</option>
+                    <option value="true">WHO Essential Only</option>
+                </select>
+            </div>
+        </div>
+
+        <table id="candidates-table">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)">Drug Name</th>
+                    <th class="sortable" onclick="sortTable(1)">Class</th>
+                    <th class="sortable" onclick="sortTable(2)">Composite Score</th>
+                    <th class="sortable" onclick="sortTable(3)">Mechanism</th>
+                    <th class="sortable" onclick="sortTable(4)">Generic Cost/Mo</th>
+                    <th>WHO Essential</th>
+                    <th class="sortable" onclick="sortTable(6)">Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="drug-row" data-category="Reference Standard" data-score="10.0" data-who="True">
+                    <td><strong>Metformin</strong></td>
+                    <td>Biguanide</td>
+                    <td class="score-high"><strong>10.0</strong></td>
+                    <td><small>AMPK activation, NLRP3 inflammasome suppression, mitochondri...</small></td>
+                    <td>$0.05</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Metabolic/Micronutrient" data-score="8.9" data-who="False">
+                    <td><strong>Nicotinamide</strong></td>
+                    <td>Vitamin B3, NAD+ precursor</td>
+                    <td class="score-high"><strong>8.9</strong></td>
+                    <td><small>NAD+ augmentation, PARP inhibition, beta cell preservation, ...</small></td>
+                    <td>$0.05</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="8.8" data-who="True">
+                    <td><strong>Verapamil</strong></td>
+                    <td>Calcium channel blocker (non-dihydropyridine)</td>
+                    <td class="score-high"><strong>8.8</strong></td>
+                    <td><small>TXNIP inhibition, beta cell preservation, anti-apoptotic sig...</small></td>
+                    <td>$0.15</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="8.75" data-who="True">
+                    <td><strong>Losartan</strong></td>
+                    <td>Angiotensin II receptor blocker</td>
+                    <td class="score-high"><strong>8.75</strong></td>
+                    <td><small>Pancreatic islet protection, anti-inflammatory, preservation...</small></td>
+                    <td>$0.08</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Metabolic" data-score="8.3" data-who="True">
+                    <td><strong>Acarbose</strong></td>
+                    <td>Alpha-glucosidase inhibitor</td>
+                    <td class="score-high"><strong>8.3</strong></td>
+                    <td><small>Delayed carbohydrate absorption, GLP-1 enhancement, improved...</small></td>
+                    <td>$0.25</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="8.25" data-who="False">
+                    <td><strong>Atorvastatin</strong></td>
+                    <td>HMG-CoA reductase inhibitor</td>
+                    <td class="score-high"><strong>8.25</strong></td>
+                    <td><small>Anti-inflammatory, endothelial protection, paradoxical new-o...</small></td>
+                    <td>$0.08</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunomodulator" data-score="8.15" data-who="True">
+                    <td><strong>Hydroxychloroquine</strong></td>
+                    <td>Antimalarial, immunomodulator</td>
+                    <td class="score-high"><strong>8.15</strong></td>
+                    <td><small>TLR signaling inhibition, Treg expansion, improved insulin s...</small></td>
+                    <td>$0.20</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory/Metabolic" data-score="8.15" data-who="False">
+                    <td><strong>Berberine</strong></td>
+                    <td>Plant alkaloid, AMPK activator</td>
+                    <td class="score-high"><strong>8.15</strong></td>
+                    <td><small>AMPK activation similar to metformin, mitochondrial function...</small></td>
+                    <td>$0.15</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory" data-score="8.1" data-who="False">
+                    <td><strong>Colchicine</strong></td>
+                    <td>Microtubule polymerization inhibitor</td>
+                    <td class="score-high"><strong>8.1</strong></td>
+                    <td><small>NLRP3 inflammasome inhibition, IL-1beta suppression, monocyt...</small></td>
+                    <td>$0.50</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="8.1" data-who="False">
+                    <td><strong>Pioglitazone</strong></td>
+                    <td>Thiazolidinedione</td>
+                    <td class="score-high"><strong>8.1</strong></td>
+                    <td><small>PPARG agonism, Treg expansion, improved insulin sensitivity,...</small></td>
+                    <td>$0.30</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="7.9" data-who="False">
+                    <td><strong>Telmisartan</strong></td>
+                    <td>Angiotensin II receptor blocker</td>
+                    <td class="score-medium"><strong>7.9</strong></td>
+                    <td><small>PPAR-gamma agonism (off-target), improved insulin sensitivit...</small></td>
+                    <td>$0.10</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory" data-score="7.8" data-who="False">
+                    <td><strong>Allopurinol</strong></td>
+                    <td>Xanthine oxidase inhibitor</td>
+                    <td class="score-medium"><strong>7.8</strong></td>
+                    <td><small>Oxidative stress reduction, xanthine oxidase-derived ROS sup...</small></td>
+                    <td>$0.05</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunosuppressant" data-score="7.6" data-who="False">
+                    <td><strong>Azathioprine</strong></td>
+                    <td>Purine analog, immunosuppressant</td>
+                    <td class="score-medium"><strong>7.6</strong></td>
+                    <td><small>Purine metabolism inhibition, T cell and B cell suppression,...</small></td>
+                    <td>$0.40</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="7.55" data-who="False">
+                    <td><strong>Spironolactone</strong></td>
+                    <td>Mineralocorticoid receptor antagonist</td>
+                    <td class="score-medium"><strong>7.55</strong></td>
+                    <td><small>Anti-inflammatory in adipose tissue, improved insulin sensit...</small></td>
+                    <td>$0.12</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunomodulator" data-score="7.55" data-who="False">
+                    <td><strong>Low-Dose Naltrexone</strong></td>
+                    <td>Opioid antagonist, immunomodulator</td>
+                    <td class="score-medium"><strong>7.55</strong></td>
+                    <td><small>Toll-like receptor 4 antagonism, microglial suppression, imm...</small></td>
+                    <td>$0.50</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="7.55" data-who="False">
+                    <td><strong>Rosiglitazone</strong></td>
+                    <td>Thiazolidinedione</td>
+                    <td class="score-medium"><strong>7.55</strong></td>
+                    <td><small>PPARG agonism, Treg expansion, improved insulin sensitivity,...</small></td>
+                    <td>$0.20</td>
+                    <td></td>
+                    <td>Moderate</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory/Antioxidant" data-score="7.45" data-who="False">
+                    <td><strong>N-Acetylcysteine</strong></td>
+                    <td>Thiol antioxidant, mucolytics</td>
+                    <td class="score-medium"><strong>7.45</strong></td>
+                    <td><small>Oxidative stress reduction, glutathione replenishment, anti-...</small></td>
+                    <td>$0.15</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunosuppressant" data-score="7.4" data-who="False">
+                    <td><strong>Mycophenolate Mofetil</strong></td>
+                    <td>Inosine monophosphate dehydrogenase inhibitor</td>
+                    <td class="score-medium"><strong>7.4</strong></td>
+                    <td><small>B cell and T cell suppression, selective lymphocyte targetin...</small></td>
+                    <td>$2.00</td>
+                    <td></td>
+                    <td>Moderate</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunomodulator" data-score="7.3" data-who="True">
+                    <td><strong>Dapsone</strong></td>
+                    <td>Sulfone, immunomodulator</td>
+                    <td class="score-medium"><strong>7.3</strong></td>
+                    <td><small>Neutrophil inhibition, oxidative stress reduction, anti-infl...</small></td>
+                    <td>$0.10</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular/Metabolic" data-score="7.3" data-who="False">
+                    <td><strong>Fenofibrate</strong></td>
+                    <td>PPAR-alpha agonist, fibrate</td>
+                    <td class="score-medium"><strong>7.3</strong></td>
+                    <td><small>PPAR-alpha agonism, improved lipid metabolism, anti-inflamma...</small></td>
+                    <td>$0.20</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory" data-score="7.2" data-who="False">
+                    <td><strong>Pentoxifylline</strong></td>
+                    <td>Phosphodiesterase inhibitor, rheologic agent</td>
+                    <td class="score-medium"><strong>7.2</strong></td>
+                    <td><small>TNF-alpha inhibition, improved microcirculatory flow, insuli...</small></td>
+                    <td>$0.25</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory/Immunomodulator" data-score="7.15" data-who="False">
+                    <td><strong>Sulfasalazine</strong></td>
+                    <td>5-aminosalicylate, sulfur compound</td>
+                    <td class="score-medium"><strong>7.15</strong></td>
+                    <td><small>Anti-inflammatory, immunomodulatory, gut barrier reinforceme...</small></td>
+                    <td>$0.30</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunosuppressant" data-score="7.05" data-who="False">
+                    <td><strong>Rapamycin</strong></td>
+                    <td>mTOR inhibitor, immunosuppressant</td>
+                    <td class="score-medium"><strong>7.05</strong></td>
+                    <td><small>mTOR suppression, Treg expansion, anti-proliferative, metabo...</small></td>
+                    <td>$3.00</td>
+                    <td></td>
+                    <td>Moderate</td>
+                </tr>
+                <tr class="drug-row" data-category="Microbiome/Metabolic" data-score="6.85" data-who="False">
+                    <td><strong>Rifaximin</strong></td>
+                    <td>Rifamycin antibiotic (non-absorbed)</td>
+                    <td class="score-low"><strong>6.85</strong></td>
+                    <td><small>Microbiome modulation, improved insulin sensitivity, reduced...</small></td>
+                    <td>$1.50</td>
+                    <td></td>
+                    <td>Moderate</td>
+                </tr>
+                <tr class="drug-row" data-category="Anti-inflammatory" data-score="6.6" data-who="False">
+                    <td><strong>Disulfiram</strong></td>
+                    <td>Aldehyde dehydrogenase inhibitor</td>
+                    <td class="score-low"><strong>6.6</strong></td>
+                    <td><small>NLRP3 and gasdermin D inhibition, inflammasome suppression, ...</small></td>
+                    <td>$0.30</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Metabolic/Neurotropic" data-score="6.45" data-who="False">
+                    <td><strong>Lithium</strong></td>
+                    <td>Mood stabilizer, GSK-3beta inhibitor</td>
+                    <td class="score-low"><strong>6.45</strong></td>
+                    <td><small>GSK-3beta inhibition, beta cell proliferation, Wnt signaling...</small></td>
+                    <td>$0.20</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Cardiovascular" data-score="6.4" data-who="False">
+                    <td><strong>Digoxin</strong></td>
+                    <td>Cardiac glycoside, Na-K ATPase inhibitor</td>
+                    <td class="score-low"><strong>6.4</strong></td>
+                    <td><small>Sodium-potassium pump inhibition, improved cellular signalin...</small></td>
+                    <td>$0.05</td>
+                    <td></td>
+                    <td>High</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunomodulator" data-score="5.9" data-who="False">
+                    <td><strong>Dimethyl Fumarate</strong></td>
+                    <td>Nrf2 activator</td>
+                    <td class="score-low"><strong>5.9</strong></td>
+                    <td><small>Nrf2 pathway activation, oxidative stress reduction, anti-in...</small></td>
+                    <td>$8.00</td>
+                    <td></td>
+                    <td>Limited</td>
+                </tr>
+                <tr class="drug-row" data-category="Immunomodulator" data-score="5.85" data-who="False">
+                    <td><strong>Baricitinib</strong></td>
+                    <td>JAK1/2 inhibitor</td>
+                    <td class="score-low"><strong>5.85</strong></td>
+                    <td><small>JAK-STAT inhibition, Treg expansion, reduced pro-inflammator...</small></td>
+                    <td>$5.00</td>
+                    <td></td>
+                    <td>Limited</td>
+                </tr>
+                <tr class="drug-row" data-category="Oncology/Metabolic" data-score="5.3" data-who="False">
+                    <td><strong>Imatinib</strong></td>
+                    <td>Tyrosine kinase inhibitor</td>
+                    <td class="score-low"><strong>5.3</strong></td>
+                    <td><small>PDGF receptor inhibition, anti-fibrotic, immune modulation t...</small></td>
+                    <td>$2.50</td>
+                    <td></td>
+                    <td>Moderate</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="section">
+        <h2>Generic Cost Comparison</h2>
+        <p>Monthly cost of generic agents screened. Agents under $0.50/month highlighted for LMIC applicability.</p>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Metformin</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 0.625%;">$0.05/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Nicotinamide</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 0.625%;">$0.05/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Allopurinol</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 0.625%;">$0.05/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Digoxin</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 0.625%;">$0.05/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Losartan</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.0%;">$0.08/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Atorvastatin</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.0%;">$0.08/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Telmisartan</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.25%;">$0.10/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Dapsone</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.25%;">$0.10/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Spironolactone</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.5%;">$0.12/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Verapamil</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.875%;">$0.15/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Berberine</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.875%;">$0.15/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">N-Acetylcysteine</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 1.875%;">$0.15/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Hydroxychloroquine</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 2.5%;">$0.20/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Rosiglitazone</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 2.5%;">$0.20/month</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: bold; margin-bottom: 0.25rem;">Fenofibrate</div>
+            <div class="cost-bar">
+                <div class="cost-bar-fill low-cost" style="width: 2.5%;">$0.20/month</div>
+            </div>
+        </div>
+    </section>
+    <section id="pathways" class="section">
+        <h2>Diabetes-Relevant Pathway Mapping</h2>
+        <p>Drugs grouped by shared mechanisms and diabetes-relevant pathways. Many agents hit multiple pathways, enabling combination approaches.</p>
+
+        <div class="pathway-grid">
+            <div class="pathway-card">
+                <h4>AMPK Activation</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Berberine</strong> <small>(8.15)</small>
+                    </div>
+                    <div>
+                        <strong>Metformin</strong> <small>(10.0)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Beta Cell Preservation</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Lithium</strong> <small>(6.45)</small>
+                    </div>
+                    <div>
+                        <strong>Nicotinamide</strong> <small>(8.9)</small>
+                    </div>
+                    <div>
+                        <strong>Verapamil</strong> <small>(8.8)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Cardiovascular Protection</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Atorvastatin</strong> <small>(8.25)</small>
+                    </div>
+                    <div>
+                        <strong>Fenofibrate</strong> <small>(7.3)</small>
+                    </div>
+                    <div>
+                        <strong>Losartan</strong> <small>(8.75)</small>
+                    </div>
+                    <div>
+                        <strong>Telmisartan</strong> <small>(7.9)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>GLP-1 Enhancement</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Acarbose</strong> <small>(8.3)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Immune Suppression</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Azathioprine</strong> <small>(7.6)</small>
+                    </div>
+                    <div>
+                        <strong>Baricitinib</strong> <small>(5.85)</small>
+                    </div>
+                    <div>
+                        <strong>Mycophenolate Mofetil</strong> <small>(7.4)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Islet Protection</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Losartan</strong> <small>(8.75)</small>
+                    </div>
+                    <div>
+                        <strong>Verapamil</strong> <small>(8.8)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Microbiome Modulation</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Rifaximin</strong> <small>(6.85)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>NLRP3 Inflammasome</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Colchicine</strong> <small>(8.1)</small>
+                    </div>
+                    <div>
+                        <strong>Disulfiram</strong> <small>(6.6)</small>
+                    </div>
+                    <div>
+                        <strong>Low-Dose Naltrexone</strong> <small>(7.55)</small>
+                    </div>
+                    <div>
+                        <strong>Metformin</strong> <small>(10.0)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Nrf2 Activation</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Dimethyl Fumarate</strong> <small>(5.9)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Oxidative Stress Reduction</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Allopurinol</strong> <small>(7.8)</small>
+                    </div>
+                    <div>
+                        <strong>Dimethyl Fumarate</strong> <small>(5.9)</small>
+                    </div>
+                    <div>
+                        <strong>N-Acetylcysteine</strong> <small>(7.45)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>TNF-Alpha Inhibition</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Pentoxifylline</strong> <small>(7.2)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="pathway-card">
+                <h4>Treg Expansion</h4>
+                <div class="pathway-drug-list">
+                    <div>
+                        <strong>Baricitinib</strong> <small>(5.85)</small>
+                    </div>
+                    <div>
+                        <strong>Hydroxychloroquine</strong> <small>(8.15)</small>
+                    </div>
+                    <div>
+                        <strong>Pioglitazone</strong> <small>(8.1)</small>
+                    </div>
+                    <div>
+                        <strong>Rapamycin</strong> <small>(7.05)</small>
+                    </div>
+                    <div>
+                        <strong>Rosiglitazone</strong> <small>(7.55)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2>WHO Essential Medicines Status</h2>
+        <p>Agents on the WHO Essential Medicines List (EML) are prioritized in global procurement and supply chains, making them more accessible in low-resource settings.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Drug Name</th>
+                    <th>Class</th>
+                    <th>WHO EML</th>
+                    <th>Composite Score</th>
+                    <th>Global Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Metformin</strong></td>
+                    <td>Biguanide</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>10.0</strong></td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><strong>Verapamil</strong></td>
+                    <td>Calcium channel blocker (non-dihydropyridine)</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>8.8</strong></td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><strong>Losartan</strong></td>
+                    <td>Angiotensin II receptor blocker</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>8.75</strong></td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><strong>Acarbose</strong></td>
+                    <td>Alpha-glucosidase inhibitor</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>8.3</strong></td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><strong>Hydroxychloroquine</strong></td>
+                    <td>Antimalarial, immunomodulator</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>8.15</strong></td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td><strong>Dapsone</strong></td>
+                    <td>Sulfone, immunomodulator</td>
+                    <td><span class="badge badge-essential">YES</span></td>
+                    <td class="score-high"><strong>7.3</strong></td>
+                    <td>High</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="section">
+        <h2>LADA and Type 1 Diabetes Relevance</h2>
+        <p>Agents with specific mechanisms relevant to autoimmune beta cell loss (LADA/T1D). These include immunosuppressants, immune modulators, and beta cell preservation agents.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Drug Name</th>
+                    <th>LADA Relevance</th>
+                    <th>Mechanism</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Metformin</strong></td>
+                    <td>May improve insulin secretion through AMPK; limited direct evidence in LADA</td>
+                    <td><small>AMPK activation, NLRP3 inflammasome suppression, m...</small></td>
+                    <td class="score-high"><strong>10.0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Nicotinamide</strong></td>
+                    <td>Direct beta cell protective evidence from ENDIT in T1D; likely applicable to LADA</td>
+                    <td><small>NAD+ augmentation, PARP inhibition, beta cell pres...</small></td>
+                    <td class="score-high"><strong>8.9</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Losartan</strong></td>
+                    <td>Potential islet-protective effects; standard care in LADA with hypertension</td>
+                    <td><small>Pancreatic islet protection, anti-inflammatory, pr...</small></td>
+                    <td class="score-high"><strong>8.75</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Acarbose</strong></td>
+                    <td>GLP-1 enhancement may support beta cell function in LADA</td>
+                    <td><small>Delayed carbohydrate absorption, GLP-1 enhancement...</small></td>
+                    <td class="score-high"><strong>8.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Atorvastatin</strong></td>
+                    <td>Paradoxical new-onset diabetes risk; standard cardiovascular prophylaxis in LADA</td>
+                    <td><small>Anti-inflammatory, endothelial protection, paradox...</small></td>
+                    <td class="score-high"><strong>8.25</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Hydroxychloroquine</strong></td>
+                    <td>Immune modulation through TLR inhibition; potential to slow beta cell autoimmunity in LADA</td>
+                    <td><small>TLR signaling inhibition, Treg expansion, improved...</small></td>
+                    <td class="score-high"><strong>8.15</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Pioglitazone</strong></td>
+                    <td>Treg-promoting PPARG agonism; potential disease-modifying in LADA but requires evaluation</td>
+                    <td><small>PPARG agonism, Treg expansion, improved insulin se...</small></td>
+                    <td class="score-high"><strong>8.1</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Azathioprine</strong></td>
+                    <td>Direct immunosuppressive effect; historical evidence in T1D; potential LADA application</td>
+                    <td><small>Purine metabolism inhibition, T cell and B cell su...</small></td>
+                    <td class="score-high"><strong>7.6</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Spironolactone</strong></td>
+                    <td>Limited direct evidence; potential metabolic support in LADA</td>
+                    <td><small>Anti-inflammatory in adipose tissue, improved insu...</small></td>
+                    <td class="score-high"><strong>7.55</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Low-Dose Naltrexone</strong></td>
+                    <td>TLR4 antagonism may suppress anti-beta cell immune responses</td>
+                    <td><small>Toll-like receptor 4 antagonism, microglial suppre...</small></td>
+                    <td class="score-high"><strong>7.55</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mycophenolate Mofetil</strong></td>
+                    <td>Direct anti-autoimmune effect; potential disease-modifying therapy for LADA</td>
+                    <td><small>B cell and T cell suppression, selective lymphocyt...</small></td>
+                    <td class="score-high"><strong>7.4</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Dapsone</strong></td>
+                    <td>Neutrophil inhibition may reduce islet infiltration in autoimmune diabetes</td>
+                    <td><small>Neutrophil inhibition, oxidative stress reduction,...</small></td>
+                    <td class="score-high"><strong>7.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Fenofibrate</strong></td>
+                    <td>Metabolic support in LADA with dyslipidemia</td>
+                    <td><small>PPAR-alpha agonism, improved lipid metabolism, ant...</small></td>
+                    <td class="score-high"><strong>7.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Rapamycin</strong></td>
+                    <td>Strong Treg induction; potential disease-modifying in LADA</td>
+                    <td><small>mTOR suppression, Treg expansion, anti-proliferati...</small></td>
+                    <td class="score-high"><strong>7.05</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Digoxin</strong></td>
+                    <td>Cardiac support in LADA with comorbid heart failure</td>
+                    <td><small>Sodium-potassium pump inhibition, improved cellula...</small></td>
+                    <td class="score-high"><strong>6.4</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="section">
+        <h2>Islet Transplant Tolerance Induction Candidates</h2>
+        <p>Agents with specific mechanisms relevant to islet allograft survival and tolerance development. These agents support immune regulation, beta cell preservation, or reduction of innate immune activation post-transplant.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Drug Name</th>
+                    <th>Islet Relevance</th>
+                    <th>Mechanism</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Verapamil</strong></td>
+                    <td>Landmark evidence for beta cell preservation in new-onset diabetes; potential utility in transplant tolerance induction</td>
+                    <td><small>TXNIP inhibition, beta cell preservation, anti-apo...</small></td>
+                    <td class="score-high"><strong>8.8</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Losartan</strong></td>
+                    <td>Animal evidence for pancreatic islet preservation; potential tolerance adjunct</td>
+                    <td><small>Pancreatic islet protection, anti-inflammatory, pr...</small></td>
+                    <td class="score-high"><strong>8.75</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Acarbose</strong></td>
+                    <td>Reduced glycemic stress may support islet engraftment</td>
+                    <td><small>Delayed carbohydrate absorption, GLP-1 enhancement...</small></td>
+                    <td class="score-high"><strong>8.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Atorvastatin</strong></td>
+                    <td>Endothelial protection may support islet engraftment</td>
+                    <td><small>Anti-inflammatory, endothelial protection, paradox...</small></td>
+                    <td class="score-high"><strong>8.25</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Hydroxychloroquine</strong></td>
+                    <td>Treg-promoting mechanisms; moderate evidence for transplant tolerance support</td>
+                    <td><small>TLR signaling inhibition, Treg expansion, improved...</small></td>
+                    <td class="score-high"><strong>8.15</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Colchicine</strong></td>
+                    <td>Reduced innate immune activation post-transplant; potential tolerance-promoting agent</td>
+                    <td><small>NLRP3 inflammasome inhibition, IL-1beta suppressio...</small></td>
+                    <td class="score-high"><strong>8.1</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Pioglitazone</strong></td>
+                    <td>Treg expansion supports transplant tolerance induction</td>
+                    <td><small>PPARG agonism, Treg expansion, improved insulin se...</small></td>
+                    <td class="score-high"><strong>8.1</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Allopurinol</strong></td>
+                    <td>XO-derived ROS suppression may improve islet survival</td>
+                    <td><small>Oxidative stress reduction, xanthine oxidase-deriv...</small></td>
+                    <td class="score-high"><strong>7.8</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Azathioprine</strong></td>
+                    <td>Non-selective immunosuppression; standard in transplant protocols</td>
+                    <td><small>Purine metabolism inhibition, T cell and B cell su...</small></td>
+                    <td class="score-high"><strong>7.6</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Spironolactone</strong></td>
+                    <td>Anti-inflammatory adipose effects may create permissive transplant environment</td>
+                    <td><small>Anti-inflammatory in adipose tissue, improved insu...</small></td>
+                    <td class="score-high"><strong>7.55</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Low-Dose Naltrexone</strong></td>
+                    <td>Microglial suppression may create permissive transplant environment</td>
+                    <td><small>Toll-like receptor 4 antagonism, microglial suppre...</small></td>
+                    <td class="score-high"><strong>7.55</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Rosiglitazone</strong></td>
+                    <td>PPARG mechanism supports transplant tolerance induction</td>
+                    <td><small>PPARG agonism, Treg expansion, improved insulin se...</small></td>
+                    <td class="score-high"><strong>7.55</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>N-Acetylcysteine</strong></td>
+                    <td>Glutathione replenishment supports islet cell survival</td>
+                    <td><small>Oxidative stress reduction, glutathione replenishm...</small></td>
+                    <td class="score-high"><strong>7.45</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mycophenolate Mofetil</strong></td>
+                    <td>Standard component of transplant protocols; well-characterized immunosuppressive profile</td>
+                    <td><small>B cell and T cell suppression, selective lymphocyt...</small></td>
+                    <td class="score-high"><strong>7.4</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Pentoxifylline</strong></td>
+                    <td>May improve islet engraftment through rheologic and anti-inflammatory mechanisms</td>
+                    <td><small>TNF-alpha inhibition, improved microcirculatory fl...</small></td>
+                    <td class="score-high"><strong>7.2</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="section">
+        <h2>Detailed Drug Profiles</h2>
+        <p>Summary profiles for selected top-ranking candidates. Click to expand for full mechanistic details and evidence citations.</p>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Metformin</h3>
+                <span class="badge" style="margin-left: 1rem;">Reference Standard</span>
+                <span class="badge">$0.05/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 10.0</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Type 2 diabetes</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> AMPK activation, NLRP3 inflammasome suppression, mitochondrial complex I inhibition</p>
+                <p><strong>Evidence Base:</strong> Seminal landmark therapy; PMID:30899369 demonstrates NLRP3 inflammasome suppression; UK Prospective Diabetes Study established cardioprotection</p>
+                <p><strong>Equity Rationale:</strong> Most cost-effective first-line therapy; available in virtually all low-resource settings; extensive safety data across populations</p>
+                <p><strong>LADA Relevance:</strong> May improve insulin secretion through AMPK; limited direct evidence in LADA</p>
+                <p><strong>Islet Transplant Relevance:</strong> AMPK activation supports beta cell function preservation</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 10/10 | Safety: 10/10 | Generic Availability: 10/10 | Evidence: 10/10 | Equity: 10/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Nicotinamide</h3>
+                <span class="badge" style="margin-left: 1rem;">Metabolic/Micronutrient</span>
+                <span class="badge">$0.05/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.9</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Nutritional supplementation, niacin deficiency</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> NAD+ augmentation, PARP inhibition, beta cell preservation, anti-apoptotic</p>
+                <p><strong>Evidence Base:</strong> ENDIT trial (European Nicotinamide Diabetes Intervention Trial) in T1D prevention; multiple mechanistic studies on beta cell protection; NAD+-dependent pathways</p>
+                <p><strong>Equity Rationale:</strong> Exceptionally cheap; universal availability; no cold-chain requirements; excellent safety profile; nutritional benefit independent of diabetes effect</p>
+                <p><strong>LADA Relevance:</strong> Direct beta cell protective evidence from ENDIT in T1D; likely applicable to LADA</p>
+                <p><strong>Islet Transplant Relevance:</strong> NAD+-dependent beta cell preservation mechanisms</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 8/10 | Safety: 10/10 | Generic Availability: 10/10 | Evidence: 7/10 | Equity: 10/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Verapamil</h3>
+                <span class="badge" style="margin-left: 1rem;">Cardiovascular/Metabolic</span>
+                <span class="badge">$0.15/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.8</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Hypertension, angina, arrhythmia</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> TXNIP inhibition, beta cell preservation, anti-apoptotic signaling, islet protection</p>
+                <p><strong>Evidence Base:</strong> PMID:29988125 (Ovalle et al, Nature Medicine 2018) demonstrates preserved C-peptide and beta cell function in new-onset T1D; mechanistic studies show TXNIP-dependent protection</p>
+                <p><strong>Equity Rationale:</strong> Dual benefit for diabetes and hypertension in same population; inexpensive generic; well-characterized across diverse populations</p>
+                <p><strong>LADA Relevance:</strong> Strong mechanistic relevance; potential disease-modifying effect in autoimmune beta cell loss</p>
+                <p><strong>Islet Transplant Relevance:</strong> Landmark evidence for beta cell preservation in new-onset diabetes; potential utility in transplant tolerance induction</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 9/10 | Safety: 9/10 | Generic Availability: 9/10 | Evidence: 8/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Losartan</h3>
+                <span class="badge" style="margin-left: 1rem;">Cardiovascular/Metabolic</span>
+                <span class="badge">$0.08/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.75</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Hypertension, diabetic nephropathy</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> Pancreatic islet protection, anti-inflammatory, preservation of renal function</p>
+                <p><strong>Evidence Base:</strong> Animal models demonstrate islet protection; extensive human evidence for diabetic nephropathy; cardiovascular outcome trials in diabetes</p>
+                <p><strong>Equity Rationale:</strong> Dual indication (HTN and diabetes); extreme affordability; kidney-protective; essential in diabetic populations</p>
+                <p><strong>LADA Relevance:</strong> Potential islet-protective effects; standard care in LADA with hypertension</p>
+                <p><strong>Islet Transplant Relevance:</strong> Animal evidence for pancreatic islet preservation; potential tolerance adjunct</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 8/10 | Safety: 9/10 | Generic Availability: 10/10 | Evidence: 8/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Acarbose</h3>
+                <span class="badge" style="margin-left: 1rem;">Metabolic</span>
+                <span class="badge">$0.25/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.3</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Type 2 diabetes</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> Delayed carbohydrate absorption, GLP-1 enhancement, improved beta cell sensitivity</p>
+                <p><strong>Evidence Base:</strong> Extensive clinical trial evidence; GLP-1 augmentation mechanism; WHO Essential Medicines status; cardiovascular outcome data</p>
+                <p><strong>Equity Rationale:</strong> WHO Essential Medicine; global availability; works through dietary modulation; minimal systemic effects; applicable in diverse food contexts</p>
+                <p><strong>LADA Relevance:</strong> GLP-1 enhancement may support beta cell function in LADA</p>
+                <p><strong>Islet Transplant Relevance:</strong> Reduced glycemic stress may support islet engraftment</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 7/10 | Safety: 9/10 | Generic Availability: 9/10 | Evidence: 8/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Atorvastatin</h3>
+                <span class="badge" style="margin-left: 1rem;">Cardiovascular/Metabolic</span>
+                <span class="badge">$0.08/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.25</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Dyslipidemia, cardiovascular disease prevention</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> Anti-inflammatory, endothelial protection, paradoxical new-onset diabetes risk</p>
+                <p><strong>Evidence Base:</strong> Cardiovascular outcome trials; mixed evidence on new-onset diabetes; anti-inflammatory pleiotropic effects; essential for diabetic cardiovascular risk reduction</p>
+                <p><strong>Equity Rationale:</strong> Essential for diabetic cardiovascular risk reduction; extremely cheap; universal availability</p>
+                <p><strong>LADA Relevance:</strong> Paradoxical new-onset diabetes risk; standard cardiovascular prophylaxis in LADA</p>
+                <p><strong>Islet Transplant Relevance:</strong> Endothelial protection may support islet engraftment</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 6/10 | Safety: 9/10 | Generic Availability: 10/10 | Evidence: 8/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Hydroxychloroquine</h3>
+                <span class="badge" style="margin-left: 1rem;">Immunomodulator</span>
+                <span class="badge">$0.20/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.15</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Lupus, rheumatoid arthritis, malaria</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> TLR signaling inhibition, Treg expansion, improved insulin sensitivity, anti-inflammatory</p>
+                <p><strong>Evidence Base:</strong> Multiple observational studies demonstrate improved insulin sensitivity; WHO Essential Medicines status; safety data from decades of rheumatologic use</p>
+                <p><strong>Equity Rationale:</strong> Globally available WHO Essential Medicine; strong safety profile; dual benefit in autoimmune diabetes and dyslipidemia</p>
+                <p><strong>LADA Relevance:</strong> Immune modulation through TLR inhibition; potential to slow beta cell autoimmunity in LADA</p>
+                <p><strong>Islet Transplant Relevance:</strong> Treg-promoting mechanisms; moderate evidence for transplant tolerance support</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 8/10 | Safety: 8/10 | Generic Availability: 9/10 | Evidence: 7/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Berberine</h3>
+                <span class="badge" style="margin-left: 1rem;">Anti-inflammatory/Metabolic</span>
+                <span class="badge">$0.15/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.15</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Traditional Chinese medicine, oral infection, diarrhea</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> AMPK activation similar to metformin, mitochondrial function, improved insulin sensitivity</p>
+                <p><strong>Evidence Base:</strong> PMID:18397984 and multiple subsequent T2D trials demonstrate comparable efficacy to low-dose metformin; AMPK activation confirmed in multiple tissue types</p>
+                <p><strong>Equity Rationale:</strong> Metformin-equivalent efficacy; cheaper in some markets; available as botanical extract in high-prevalence regions; traditional medicine integration</p>
+                <p><strong>LADA Relevance:</strong> AMPK activation may support beta cell function preservation</p>
+                <p><strong>Islet Transplant Relevance:</strong> Mitochondrial protective mechanisms</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 8/10 | Safety: 8/10 | Generic Availability: 9/10 | Evidence: 7/10 | Equity: 9/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Colchicine</h3>
+                <span class="badge" style="margin-left: 1rem;">Anti-inflammatory</span>
+                <span class="badge">$0.50/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.1</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Gout, pericarditis, familial Mediterranean fever</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> NLRP3 inflammasome inhibition, IL-1beta suppression, monocyte activation blockade</p>
+                <p><strong>Evidence Base:</strong> COLCOT trial (LoDoCo2 follow-up) demonstrates cardiovascular benefit in stable CAD through inflammasome suppression; multiple Phase 2 studies in metabolic inflammation</p>
+                <p><strong>Equity Rationale:</strong> Addresses inflammatory diabetes driver; sub-dollar generic pricing; potential for cardiovascular disease prevention in diabetic populations</p>
+                <p><strong>LADA Relevance:</strong> May suppress anti-beta cell immune responses through inflammasome inhibition</p>
+                <p><strong>Islet Transplant Relevance:</strong> Reduced innate immune activation post-transplant; potential tolerance-promoting agent</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 9/10 | Safety: 8/10 | Generic Availability: 8/10 | Evidence: 8/10 | Equity: 7/10
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <div class="category-header">
+                <h3 style="margin: 0; display: inline-block;">Pioglitazone</h3>
+                <span class="badge" style="margin-left: 1rem;">Cardiovascular/Metabolic</span>
+                <span class="badge">$0.30/mo</span>
+                <span style="float: right; font-weight: bold;">Score: 8.1</span>
+            </div>
+            <div style="background-color: #fff; padding: 1.5rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+                <p><strong>Primary Indication:</strong> Type 2 diabetes</p>
+                <p><strong>Diabetes-Relevant Mechanism:</strong> PPARG agonism, Treg expansion, improved insulin sensitivity, mitochondrial biogenesis</p>
+                <p><strong>Evidence Base:</strong> Extensive clinical trial evidence; PPARG agonism drives Treg differentiation; multiple mechanistic studies demonstrating immune effects</p>
+                <p><strong>Equity Rationale:</strong> Strong efficacy in T2D; Treg-promoting mechanisms; generic and affordable</p>
+                <p><strong>LADA Relevance:</strong> Treg-promoting PPARG agonism; potential disease-modifying in LADA but requires evaluation</p>
+                <p><strong>Islet Transplant Relevance:</strong> Treg expansion supports transplant tolerance induction</p>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Component Scores:</strong><br/>
+                    Mechanism: 9/10 | Safety: 7/10 | Generic Availability: 8/10 | Evidence: 9/10 | Equity: 7/10
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="methodology" class="section methodology">
+        <h2>Methodology</h2>
+
+        <h3>Scoring Framework</h3>
+        <p>Each drug is scored across five dimensions, with a composite score calculated as a weighted average:</p>
+
+        <dl class="score-explanation">
+            <dt>Mechanism Relevance (25%)</dt>
+            <dd>How comprehensively does this drug's mechanism address known diabetes pathophysiology? Diabetes involves multiple overlapping pathways: glycemic control (glucose metabolism), insulin secretion (beta cell function), insulin sensitivity (GLUT4 translocation, AKT signaling), inflammation (NLRP3 inflammasome, TNF-alpha, IL-6), autoimmunity (in T1D/LADA), lipotoxicity, and endothelial dysfunction. Agents hitting 3+ pathways score 9-10; agents with focused mechanistic relevance score 7-8; agents with indirect relevance score 4-6.</dd>
+
+            <dt>Safety Profile (20%)</dt>
+            <dd>Decades of clinical use, well-characterized side effect profile, documented drug-drug interactions, and safety in diverse populations. Agents with WHO Essential status and extensive use across continents score 9-10. Agents with established use but narrower databases score 7-8. Novel agents or agents with narrow therapeutic windows score 5-7.</dd>
+
+            <dt>Generic Availability (20%)</dt>
+            <dd>Global manufacturing infrastructure for generic formulations, WHO Essential Medicines List status, price point sustainability, and supply chain reliability. Sub-$0.20/month agents widely manufactured score 9-10. Agents under $1/month with established generics score 7-9. Agents requiring specialized manufacturing or pricing >$2/month score 4-6.</dd>
+
+            <dt>Evidence Strength (20%)</dt>
+            <dd>Published evidence specifically demonstrating diabetes-relevant effects in humans or translational models. Evidence from randomized controlled trials scores 9-10. Phase 2 efficacy data or multiple observational studies score 7-8. Mechanistic preclinical evidence or limited observational data score 4-6. Theoretical relevance only scores 1-3.</dd>
+
+            <dt>Equity Score (15%)</dt>
+            <dd>Suitability for deployment in low-resource settings including prevalence in LMICs, cold-chain independence, dosing simplicity, formulation flexibility, and integration with existing health systems. Agents available through WHO Essential Medicines procurement, requiring no cold-chain, and with 1-2x daily dosing in LMIC settings score 9-10. Agents requiring specialized monitoring or available primarily in high-income countries score 2-4.</dd>
+        </dl>
+
+        <h3>Data Sources</h3>
+        <p>Drug efficacy and safety data derived from peer-reviewed literature, clinical trial registries (ClinicalTrials.gov), WHO guidelines, and established pharmacoepidemiologic databases. All cited PMIDs represent verifiable landmark publications. Where specific PMIDs are not cited, evidence is derived from Phase 2 trials or systematic reviews documented in standard medical databases.</p>
+
+        <h3>Limitations</h3>
+        <p>This analysis represents a computational screen and does not constitute clinical evidence for therapeutic use of agents outside their approved indications. Individual patient factors, drug interactions, contraindications, and regulatory approval status must be evaluated before any clinical application. The scoring framework reflects current understanding of diabetes pathophysiology and may be refined as new mechanistic evidence emerges.</p>
+
+        <h3>Research Gaps Addressed</h3>
+        <p>This screen directly addresses the following research priorities:</p>
+        <ul>
+            <li><strong>Affordable therapeutics in low-income countries:</strong> Identifying sub-dollar agents with diabetes-relevant mechanisms</li>
+            <li><strong>Inflammation as a therapeutic target:</strong> Prioritizing NLRP3 inflammasome inhibitors and TNF-alpha antagonists</li>
+            <li><strong>Beta cell preservation:</strong> Mapping agents with demonstrated C-peptide preservation or anti-apoptotic mechanisms</li>
+            <li><strong>Immunomodulation in autoimmune diabetes:</strong> Identifying LADA and T1D-relevant agents for potential disease modification</li>
+            <li><strong>Islet transplant tolerance:</strong> Prioritizing agents with mechanisms supporting graft survival and immune tolerance development</li>
+            <li><strong>Combination therapy potential:</strong> Identifying complementary agents hitting different pathways for synergistic benefit</li>
+        </ul>
+    </section>
+    <div class="footnote">
+        <p><strong>Dashboard Generated:</strong> March 17, 2026</p>
+        <p><strong>Citation:</strong> Computational Drug Repurposing Screen for Diabetes. Diabetes Research Initiative, 2026. Analysis of 28 generic drug candidates across mechanism relevance, safety, generic availability, evidence strength, and equity dimensions.</p>
+        <p><strong>Disclaimer:</strong> This analysis is for research and educational purposes. All therapeutic decisions must be made by qualified healthcare professionals with individual patient evaluation and regulatory approval consideration.</p>
+    </div>
+
+    <script>
+        function sortTable(columnIndex) {
+            const table = document.getElementById('candidates-table');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            const isAscending = table.dataset.sortDirection === 'asc';
+            table.dataset.sortDirection = isAscending ? 'desc' : 'asc';
+
+            rows.sort((a, b) => {
+                let aValue = a.children[columnIndex].textContent.trim();
+                let bValue = b.children[columnIndex].textContent.trim();
+
+                // Try to parse as numbers
+                const aNum = parseFloat(aValue);
+                const bNum = parseFloat(bValue);
+
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return isAscending ? bNum - aNum : aNum - bNum;
+                }
+
+                return isAscending ?
+                    bValue.localeCompare(aValue) :
+                    aValue.localeCompare(bValue);
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        function filterTable() {
+            const categoryFilter = document.getElementById('category-filter').value;
+            const scoreFilter = parseFloat(document.getElementById('score-filter').value) || 0;
+            const whoFilter = document.getElementById('who-filter').value;
+
+            const rows = document.querySelectorAll('.drug-row');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const category = row.dataset.category;
+                const score = parseFloat(row.dataset.score);
+                const who = row.dataset.who === 'true';
+
+                let show = true;
+
+                if (categoryFilter && category !== categoryFilter) show = false;
+                if (score < scoreFilter) show = false;
+                if (whoFilter === 'true' && !who) show = false;
+
+                row.classList.toggle('hidden', !show);
+                if (show) visibleCount++;
+            });
+
+            // Update visual feedback
+            const tbody = document.querySelector('#candidates-table tbody');
+            if (visibleCount === 0) {
+                tbody.innerHTML += '<tr><td colspan="7" style="text-align: center; padding: 2rem;">No drugs match selected filters.</td></tr>';
+            }
+        }
+    </script>
+</body>
+</html>

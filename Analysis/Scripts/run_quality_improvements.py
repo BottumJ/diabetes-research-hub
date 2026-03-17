@@ -57,6 +57,9 @@ SCRIPTS = {
     'validate': ('validate_citations.py', 'Validating citations and building evidence network'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
+    'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (equity intervention)'),
+    'ladadiagnostic': ('build_lada_diagnostic_model.py', 'Building LADA Diagnostic Cost-Effectiveness Model'),
+    'trialequity': ('build_trial_equity_mapper.py', 'Building Clinical Trial Site Equity Mapper'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
 

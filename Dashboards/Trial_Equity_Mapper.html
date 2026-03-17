@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial Equity Mapper: Diabetes Disease Burden vs Clinical Trial Access</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JGMD5VRYPH');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafaf7;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Palatino Linotype", serif;
+            font-weight: normal;
+            margin-top: 1.4em;
+            margin-bottom: 0.4em;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 2.0em;
+            margin-top: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        nav.topbar {
+            background: white;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+        }
+
+        nav.topbar a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 2em;
+        }
+
+        nav.topbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header-section {
+            margin-bottom: 3rem;
+        }
+
+        .executive-summary {
+            background: white;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            margin: 2rem 0;
+        }
+
+        .key-finding {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #555;
+            margin: 1rem 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .metric-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #000;
+            margin: 0.5rem 0;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .visualization {
+            background: white;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            margin: 2rem 0;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: white;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table th {
+            background: #f5f5f0;
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: normal;
+            font-size: 0.95em;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            font-size: 0.95em;
+        }
+
+        table tr:hover {
+            background: #fafaf7;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-swatch {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #999;
+        }
+
+        .footnote {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .section-break {
+            margin: 3rem 0;
+            border-top: 1px solid #ddd;
+            padding-top: 2rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .methodology {
+            background: #fafaf7;
+            border-left: 4px solid #ccc;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.95em;
+        }
+
+        .methodology h4 {
+            margin-top: 0;
+            font-family: Georgia, serif;
+        }
+
+        .source-citation {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .interactive-note {
+            font-size: 0.9em;
+            color: #666;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .recommendation {
+            background: white;
+            border-left: 4px solid #999;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .recommendation-rank {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="topbar">
+        <a href="index.html">← Dashboard Home</a>
+        <a href="#executive">Executive Summary</a>
+        <a href="#burden-vs-access">Burden vs Access</a>
+        <a href="#regional">Regional Analysis</a>
+        <a href="#regulatory">Regulatory Readiness</a>
+        <a href="#cost">Cost Projections</a>
+        <a href="#methodology">Methodology</a>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h1>Trial Equity Mapper</h1>
+            <p style="font-size: 1.1em; color: #555; margin: 0.5em 0;">Geographic Analysis of Diabetes Disease Burden vs Clinical Trial Access</p>
+            <p class="source-citation">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO regions. Last updated: March 17, 2026</p>
+        </div>
+
+        <div id="executive" class="executive-summary">
+            <h2>Executive Summary</h2>
+
+            <div class="key-finding">
+                <span class="emphasis">6</span> countries currently have access to advanced diabetes therapy trials, yet these countries represent only approximately <span class="emphasis">353.3%</span> of global diabetes burden. <span class="emphasis">34</span> countries with significant diabetes populations have zero trial access.
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Global Diabetes Burden</div>
+                    <div class="metric-value">509.5M</div>
+                    <div class="metric-label">estimated cases</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Advanced Therapy Trial Enrollment</div>
+                    <div class="metric-value">1925</div>
+                    <div class="metric-label">participants across 19 trials</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Burden-to-Access Ratio</div>
+                    <div class="metric-value">0:1</div>
+                    <div class="metric-label">burden per trial participant</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Countries with Zero Access</div>
+                    <div class="metric-value">34</div>
+                    <div class="metric-label">representing 453.1M cases</div>
+                </div>
+            </div>
+
+            <h3>Key Findings</h3>
+            <ul>
+                <li><span class="emphasis">Geographic concentration:</span> 181% of trial enrollment is in high-income countries, despite them representing only ~15% of global diabetes burden.</li>
+                <li><span class="emphasis">Regulatory barriers:</span> LMICs have average regulatory framework scores of 1.9/5.0, limiting capacity to conduct advanced therapy trials.</li>
+                <li><span class="emphasis">Insulin access crisis:</span> LMICs have average insulin access scores of 33/100, with populations struggling to access basic insulin therapy, let alone advanced therapies.</li>
+                <li><span class="emphasis">Transplant center scarcity:</span> Only 18 known islet transplant centers worldwide, primarily in high-income countries.</li>
+            </ul>
+        </div>
+
+        <div id="burden-vs-access" class="visualization">
+            <h2>Burden vs Trial Access: Scatter Plot</h2>
+            <p class="interactive-note">Size represents population; color represents income group. The quadrant above the diagonal line represents underserved populations.</p>
+            <svg viewBox="0 0 900 600" style="border: 1px solid #e0e0e0;">
+        <defs>
+            <style>
+                .axis-label { font-size: 14px; fill: #333; }
+                .axis-line { stroke: #999; stroke-width: 1; }
+                .grid-line { stroke: #eee; stroke-width: 1; }
+                .country-point { cursor: pointer; }
+            </style>
+        </defs>
+
+        <!-- Background -->
+        <rect width="900" height="600" fill="white"/>
+
+        <!-- Grid lines -->
+        <line x1="80.0" y1="80" x2="80.0" y2="520" class="grid-line"/>
+        <line x1="154.0" y1="80" x2="154.0" y2="520" class="grid-line"/>
+        <line x1="228.0" y1="80" x2="228.0" y2="520" class="grid-line"/>
+        <line x1="302.0" y1="80" x2="302.0" y2="520" class="grid-line"/>
+        <line x1="376.0" y1="80" x2="376.0" y2="520" class="grid-line"/>
+        <line x1="450.0" y1="80" x2="450.0" y2="520" class="grid-line"/>
+        <line x1="524.0" y1="80" x2="524.0" y2="520" class="grid-line"/>
+        <line x1="598.0" y1="80" x2="598.0" y2="520" class="grid-line"/>
+        <line x1="672.0" y1="80" x2="672.0" y2="520" class="grid-line"/>
+        <line x1="746.0" y1="80" x2="746.0" y2="520" class="grid-line"/>
+        <line x1="820.0" y1="80" x2="820.0" y2="520" class="grid-line"/>
+        <line x1="80" y1="80.0" x2="820" y2="80.0" class="grid-line"/>
+        <line x1="80" y1="124.0" x2="820" y2="124.0" class="grid-line"/>
+        <line x1="80" y1="168.0" x2="820" y2="168.0" class="grid-line"/>
+        <line x1="80" y1="212.0" x2="820" y2="212.0" class="grid-line"/>
+        <line x1="80" y1="256.0" x2="820" y2="256.0" class="grid-line"/>
+        <line x1="80" y1="300.0" x2="820" y2="300.0" class="grid-line"/>
+        <line x1="80" y1="344.0" x2="820" y2="344.0" class="grid-line"/>
+        <line x1="80" y1="388.0" x2="820" y2="388.0" class="grid-line"/>
+        <line x1="80" y1="432.0" x2="820" y2="432.0" class="grid-line"/>
+        <line x1="80" y1="476.0" x2="820" y2="476.0" class="grid-line"/>
+        <line x1="80" y1="520.0" x2="820" y2="520.0" class="grid-line"/>
+        <!-- Country points -->
+        <circle cx="528.3940620782727" cy="520.0" r="10.0" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="India: 89.8M cases, 0 trial sites"/>
+        <circle cx="820.0" cy="520.0" r="9.977984758679085" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="China: 148.2M cases, 0 trial sites"/>
+        <circle cx="266.2483130904184" cy="80.0" r="5.439034716342083" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="United States: 37.3M cases, 16 trial sites"/>
+        <circle cx="244.7773279352227" cy="520.0" r="5.018204911092295" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Pakistan: 33.0M cases, 0 trial sites"/>
+        <circle cx="177.3684210526316" cy="520.0" r="5.174851820491109" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Indonesia: 19.5M cases, 0 trial sites"/>
+        <circle cx="158.3940620782726" cy="520.0" r="4.91151566469094" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Brazil: 15.7M cases, 0 trial sites"/>
+        <circle cx="149.40620782726046" cy="520.0" r="4.7171888230313295" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Bangladesh: 13.9M cases, 0 trial sites"/>
+        <circle cx="147.90823211875843" cy="520.0" r="4.543183742591024" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Mexico: 13.6M cases, 0 trial sites"/>
+        <circle cx="134.42645074224023" cy="520.0" r="4.451312447078747" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Egypt: 10.9M cases, 0 trial sites"/>
+        <circle cx="128.93387314439946" cy="520.0" r="4.361134631668078" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Turkey: 9.8M cases, 0 trial sites"/>
+        <circle cx="115.95141700404858" cy="520.0" r="4.522015241320915" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Japan: 7.2M cases, 0 trial sites"/>
+        <circle cx="122.44264507422403" cy="465.0" r="4.3573243014394585" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Germany: 8.5M cases, 2 trial sites"/>
+        <circle cx="142.914979757085" cy="520.0" r="4.611346316680779" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Russia: 12.6M cases, 0 trial sites"/>
+        <circle cx="101.47098515519568" cy="465.0" r="4.285774767146486" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="United Kingdom: 4.3M cases, 2 trial sites"/>
+        <circle cx="94.4804318488529" cy="355.0" r="4.168077900084674" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Canada: 2.9M cases, 6 trial sites"/>
+        <circle cx="98.47503373819163" cy="520.0" r="4.27900084674005" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="France: 3.7M cases, 0 trial sites"/>
+        <circle cx="97.97570850202429" cy="520.0" r="4.238780694326842" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Italy: 3.6M cases, 0 trial sites"/>
+        <circle cx="93.98110661268556" cy="520.0" r="4.203640982218459" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Spain: 2.8M cases, 0 trial sites"/>
+        <circle cx="92.98245614035088" cy="492.5" r="4.15961049957663" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Poland: 2.6M cases, 1 trial sites"/>
+        <circle cx="96.9770580296896" cy="520.0" r="4.218458933107536" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="South Korea: 3.4M cases, 0 trial sites"/>
+        <circle cx="89.48717948717949" cy="520.0" r="4.1117696867061815" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Australia: 1.9M cases, 0 trial sites"/>
+        <circle cx="83.74493927125506" cy="492.5" r="4.044453852667231" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Sweden: 0.8M cases, 1 trial sites"/>
+        <circle cx="86.49122807017544" cy="520.0" r="4.074089754445385" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Netherlands: 1.3M cases, 0 trial sites"/>
+        <circle cx="103.96761133603239" cy="520.0" r="4.296359017781541" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Thailand: 4.8M cases, 0 trial sites"/>
+        <circle cx="116.45074224021593" cy="520.0" r="4.496613039796783" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Philippines: 7.3M cases, 0 trial sites"/>
+        <circle cx="120.944669365722" cy="520.0" r="4.415749364944962" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Vietnam: 8.2M cases, 0 trial sites"/>
+        <circle cx="115.45209176788124" cy="520.0" r="4.947502116850127" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Nigeria: 7.1M cases, 0 trial sites"/>
+        <circle cx="99.47368421052632" cy="520.0" r="4.254445385266723" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="South Africa: 3.9M cases, 0 trial sites"/>
+        <circle cx="90.48582995951418" cy="520.0" r="4.228619813717189" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Kenya: 2.1M cases, 0 trial sites"/>
+        <circle cx="95.97840755735493" cy="520.0" r="4.198983911939035" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Argentina: 3.2M cases, 0 trial sites"/>
+        <circle cx="87.48987854251013" cy="520.0" r="4.082980524978831" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Chile: 1.5M cases, 0 trial sites"/>
+        <circle cx="93.98110661268556" cy="520.0" r="4.22099915325995" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Colombia: 2.8M cases, 0 trial sites"/>
+        <circle cx="106.96356275303644" cy="520.0" r="4.154106689246401" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Saudi Arabia: 5.4M cases, 0 trial sites"/>
+        <circle cx="90.48582995951418" cy="520.0" r="4.041913632514818" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="UAE: 2.1M cases, 0 trial sites"/>
+        <circle cx="83.99460188933872" cy="520.0" r="4.044030482641829" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Greece: 0.8M cases, 0 trial sites"/>
+        <circle cx="82.99595141700405" cy="520.0" r="4.043607112616427" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Portugal: 0.6M cases, 0 trial sites"/>
+        <circle cx="82.99595141700405" cy="520.0" r="4.02497883149873" fill="#2E7D32" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Singapore: 0.6M cases, 0 trial sites"/>
+        <circle cx="93.98110661268556" cy="520.0" r="4.148602878916173" fill="#F57C00" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Malaysia: 2.8M cases, 0 trial sites"/>
+        <circle cx="111.4574898785425" cy="520.0" r="4.385690093141406" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Iran: 6.3M cases, 0 trial sites"/>
+        <circle cx="93.48178137651823" cy="520.0" r="4.157917019475021" fill="#D32F2F" opacity="0.6" stroke="#333" stroke-width="1" class="country-point" title="Morocco: 2.7M cases, 0 trial sites"/>
+        <line x1="80" y1="520" x2="820" y2="80" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+        <line x1="80" y1="520" x2="820" y2="520" class="axis-line"/>
+        <line x1="80" y1="80" x2="80" y2="520" class="axis-line"/>
+
+        <!-- Axis labels -->
+        <text x="450.0" y="580" text-anchor="middle" class="axis-label" style="font-weight: bold;">Diabetes Burden (millions)</text>
+        <text x="30" y="300.0" text-anchor="middle" transform="rotate(-90 30 300.0)" class="axis-label" style="font-weight: bold;">Trial Sites in Country</text>
+
+        <!-- Tick labels -->
+        <text x="80.0" y="540" text-anchor="middle" class="axis-label">0</text>
+        <text x="228.0" y="540" text-anchor="middle" class="axis-label">29</text>
+        <text x="376.0" y="540" text-anchor="middle" class="axis-label">59</text>
+        <text x="524.0" y="540" text-anchor="middle" class="axis-label">88</text>
+        <text x="672.0" y="540" text-anchor="middle" class="axis-label">118</text>
+        <text x="820.0" y="540" text-anchor="middle" class="axis-label">148</text>
+
+        <!-- Legend -->
+        <rect x="650" y="20" width="230" height="140" fill="white" stroke="#ddd" stroke-width="1"/>
+        <text x="660" y="40" style="font-weight: bold; font-size: 13px;">Income Group</text>
+        <circle cx="670" cy="60" r="5" fill="#2E7D32" opacity="0.6"/>
+        <text x="685" y="64" style="font-size: 12px;">HIC</text>
+        <circle cx="670" cy="80" r="5" fill="#F57C00" opacity="0.6"/>
+        <text x="685" y="84" style="font-size: 12px;">UMIC</text>
+        <circle cx="670" cy="100" r="5" fill="#D32F2F" opacity="0.6"/>
+        <text x="685" y="104" style="font-size: 12px;">LMIC</text>
+        <circle cx="670" cy="120" r="5" fill="#7B1FA2" opacity="0.6"/>
+        <text x="685" y="124" style="font-size: 12px;">LIC</text>
+    </svg>
+            <p class="footnote">X-axis: diabetes burden (millions); Y-axis: trial sites available in country; dot size: population (millions)</p>
+        </div>
+
+        <div id="regional" class="section-break visualization">
+            <h2>Regional Analysis</h2>
+
+            <h3>Burden and Access by WHO Region</h3>
+            <div class="table-container"><table><thead><tr>
+        <th>WHO Region</th>
+        <th>Countries</th>
+        <th>Total Burden (M)</th>
+        <th>Trial Sites</th>
+        <th>Trial Enrollment</th>
+        <th>Equity Ratio</th>
+        <th>Avg Regulatory</th>
+        <th>Avg Insulin Access</th>
+    </tr></thead><tbody><tr>
+        <td><strong>AFRO</strong></td>
+        <td>3</td>
+        <td>13.1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.00</td>
+        <td>2.0/5.0</td>
+        <td>32/100</td>
+    </tr><tr>
+        <td><strong>AMRO</strong></td>
+        <td>7</td>
+        <td>77.0</td>
+        <td>22</td>
+        <td>1472</td>
+        <td>19.12</td>
+        <td>4.0/5.0</td>
+        <td>80/100</td>
+    </tr><tr>
+        <td><strong>EMRO</strong></td>
+        <td>7</td>
+        <td>70.2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.00</td>
+        <td>2.6/5.0</td>
+        <td>54/100</td>
+    </tr><tr>
+        <td><strong>EURO</strong></td>
+        <td>11</td>
+        <td>41.5</td>
+        <td>6</td>
+        <td>328</td>
+        <td>7.88</td>
+        <td>4.7/5.0</td>
+        <td>94/100</td>
+    </tr><tr>
+        <td><strong>SEARO</strong></td>
+        <td>6</td>
+        <td>131.4</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.00</td>
+        <td>2.7/5.0</td>
+        <td>55/100</td>
+    </tr><tr>
+        <td><strong>WPRO</strong></td>
+        <td>6</td>
+        <td>176.2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.00</td>
+        <td>3.5/5.0</td>
+        <td>73/100</td>
+    </tr></tbody></table></div>
+
+            <h3>Burden and Access by Income Group</h3>
+            <div class="table-container"><table><thead><tr>
+        <th>Income Group</th>
+        <th>Countries</th>
+        <th>Population (M)</th>
+        <th>Total Burden (M)</th>
+        <th>Trial Sites</th>
+        <th>Trial Enrollment</th>
+        <th>Avg Regulatory</th>
+        <th>Avg Insulin Access</th>
+    </tr></thead><tbody><tr>
+        <td><strong>HIC</strong></td>
+        <td>19</td>
+        <td>1061.4</td>
+        <td>91.2</td>
+        <td>28</td>
+        <td>1800</td>
+        <td>4.7/5.0</td>
+        <td>96/100</td>
+    </tr><tr>
+        <td><strong>UMIC</strong></td>
+        <td>10</td>
+        <td>2249.7</td>
+        <td>217.4</td>
+        <td>0</td>
+        <td>0</td>
+        <td>3.1/5.0</td>
+        <td>63/100</td>
+    </tr><tr>
+        <td><strong>LMIC</strong></td>
+        <td>11</td>
+        <td>2832.9</td>
+        <td>200.8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1.9/5.0</td>
+        <td>33/100</td>
+    </tr></tbody></table></div>
+        </div>
+
+        <div id="regulatory" class="section-break visualization">
+            <h2>Regulatory Readiness Assessment</h2>
+
+            <p>Cell therapy manufacturing and clinical deployment faces substantial regulatory barriers in most countries. The following assessment estimates how quickly countries could launch advanced therapy trials if infrastructure investment occurred.</p>
+
+            <div class="table-container"><table><thead><tr>
+        <th>Country</th>
+        <th>Income</th>
+        <th>Regulatory Framework</th>
+        <th>Cell Therapy Status</th>
+        <th>Estimated Timeline to Trial Approval</th>
+        <th>Infrastructure Needs</th>
+    </tr></thead><tbody><tr>
+        <td><strong>United States</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Japan</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Germany</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>United Kingdom</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Canada</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>France</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Italy</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Spain</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Australia</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Sweden</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Netherlands</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Greece</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Portugal</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Singapore</strong></td>
+        <td>HIC</td>
+        <td>5/5</td>
+        <td>✓</td>
+        <td>6-12 months</td>
+        <td>None required</td>
+    </tr><tr>
+        <td><strong>Brazil</strong></td>
+        <td>UMIC</td>
+        <td>4/5</td>
+        <td>—</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>Poland</strong></td>
+        <td>HIC</td>
+        <td>4/5</td>
+        <td>—</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>South Korea</strong></td>
+        <td>HIC</td>
+        <td>4/5</td>
+        <td>✓</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>Argentina</strong></td>
+        <td>UMIC</td>
+        <td>4/5</td>
+        <td>—</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>Chile</strong></td>
+        <td>HIC</td>
+        <td>4/5</td>
+        <td>—</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>UAE</strong></td>
+        <td>HIC</td>
+        <td>4/5</td>
+        <td>—</td>
+        <td>12-24 months</td>
+        <td>Minor enhancements to existing framework</td>
+    </tr><tr>
+        <td><strong>China</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Mexico</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Turkey</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Russia</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>South Africa</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Colombia</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Saudi Arabia</strong></td>
+        <td>HIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>Malaysia</strong></td>
+        <td>UMIC</td>
+        <td>3/5</td>
+        <td>—</td>
+        <td>18-36 months</td>
+        <td>Development of cell therapy guidance; GMP facility partnerships</td>
+    </tr><tr>
+        <td><strong>India</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Pakistan</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Indonesia</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Bangladesh</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Egypt</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Thailand</strong></td>
+        <td>UMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Philippines</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Vietnam</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Kenya</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Iran</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Morocco</strong></td>
+        <td>LMIC</td>
+        <td>2/5</td>
+        <td>—</td>
+        <td>2-3 years</td>
+        <td>Establishment of advanced therapy regulatory unit; international partnerships</td>
+    </tr><tr>
+        <td><strong>Nigeria</strong></td>
+        <td>LMIC</td>
+        <td>1/5</td>
+        <td>—</td>
+        <td>3-5+ years</td>
+        <td>Complete infrastructure build-out; capacity training; long-term partnerships</td>
+    </tr></tbody></table></div>
+
+            <h3 style="margin-top: 2rem;">Priority Actions by Regulatory Framework Level</h3>
+
+            <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
+                <h4 style="font-family: Georgia, serif; margin: 0 0 1rem 0;">Level 5: Advanced Regulatory Frameworks (HIC)</h4>
+                <p>Countries: United States, Japan, Germany, United Kingdom, Canada, France, Italy, Spain, Australia, Sweden, Netherlands, Greece, Portugal, Singapore</p>
+                <p><span class="emphasis">Action:</span> Expand trial capacity and manufacturing infrastructure. These countries are ready for Phase 3 trials and commercial approval pathways.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
+                <h4 style="font-family: Georgia, serif; margin: 0 0 1rem 0;">Level 4: Developing Frameworks (HIC/UMIC)</h4>
+                <p>Countries: Brazil, Poland, South Korea, Argentina, Chile, UAE</p>
+                <p><span class="emphasis">Action:</span> Support regulatory pathway development and establish cell therapy guidelines. These countries can feasibly conduct Phase 2 trials within 18-24 months.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
+                <h4 style="font-family: Georgia, serif; margin: 0 0 1rem 0;">Level 3: Emerging Frameworks (UMIC)</h4>
+                <p>Countries: China, Mexico, Turkey, Russia, South Africa, Colombia, Saudi Arabia, Malaysia</p>
+                <p><span class="emphasis">Action:</span> Begin groundwork on cell therapy regulatory guidance. Partnership with advanced regulatory agencies can accelerate pathway development to 2-3 years.</p>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
+                <h4 style="font-family: Georgia, serif; margin: 0 0 1rem 0;">Level 1-2: Foundational (LMIC/LIC)</h4>
+                <p>Countries: India, Pakistan, Indonesia, Bangladesh, Egypt, Thailand, Philippines, Vietnam, Nigeria, Kenya, Iran, Morocco</p>
+                <p><span class="emphasis">Action:</span> Establish basic regulatory infrastructure. Requires 5+ years and substantial capacity building. Short-term strategy: participate in decentralized/remote monitoring trials.</p>
+            </div>
+        </div>
+
+        <div id="cost" class="section-break visualization">
+            <h2>Cost Projections: Cell Therapy vs Chronic Insulin</h2>
+
+            <p>As cell therapy manufacturing scales, costs will decline. This chart projects when cell therapy becomes cost-effective compared to lifetime insulin therapy in different income contexts.</p>
+
+            <svg viewBox="0 0 900 500" style="border: 1px solid #e0e0e0;">
+        <defs>
+            <style>
+                .axis-label { font-size: 13px; fill: #333; }
+                .axis-line { stroke: #999; stroke-width: 1; }
+                .grid-line { stroke: #eee; stroke-width: 1; }
+                .cost-line { fill: none; stroke-width: 2; }
+                .label { font-size: 12px; }
+            </style>
+        </defs>
+
+        <!-- Background -->
+        <rect width="900" height="500" fill="white"/>
+
+        <!-- Grid lines -->
+        <line x1="80" y1="80.0" x2="820" y2="80.0" class="grid-line"/>
+        <line x1="80" y1="114.0" x2="820" y2="114.0" class="grid-line"/>
+        <line x1="80" y1="148.0" x2="820" y2="148.0" class="grid-line"/>
+        <line x1="80" y1="182.0" x2="820" y2="182.0" class="grid-line"/>
+        <line x1="80" y1="216.0" x2="820" y2="216.0" class="grid-line"/>
+        <line x1="80" y1="250.0" x2="820" y2="250.0" class="grid-line"/>
+        <line x1="80" y1="284.0" x2="820" y2="284.0" class="grid-line"/>
+        <line x1="80" y1="318.0" x2="820" y2="318.0" class="grid-line"/>
+        <line x1="80" y1="352.0" x2="820" y2="352.0" class="grid-line"/>
+        <line x1="80" y1="386.0" x2="820" y2="386.0" class="grid-line"/>
+        <line x1="80" y1="420.0" x2="820" y2="420.0" class="grid-line"/>
+        <polyline points="80.0,148.0 154.0,180.64000000000001 228.0,209.3632 302.0,234.63961600000002 376.0,256.88286208 450.0,276.45691863039997 524.0,293.682088394752 598.0,308.84023778738174 672.0,322.17940925289594 746.0,333.9178801425484 820.0,344.24773452544264" class="cost-line" stroke="#D32F2F"/>
+        <polyline points="80.0,216.0 154.0,220.08 228.0,224.07840000000002 302.0,227.996832 376.0,231.83689536 450.0,235.60015745280003 524.0,239.288154303744 598.0,242.90239121766913 672.0,246.44434339331576 746.0,249.91545652544946 820.0,253.3171473949405" class="cost-line" stroke="#F57C00"/>
+        <polyline points="80.0,80.0 154.0,80.0 228.0,80.0 302.0,80.0 376.0,80.0 450.0,80.0 524.0,80.0 598.0,80.0 672.0,80.0 746.0,80.0 820.0,80.0" class="cost-line" stroke="#1976D2" stroke-dasharray="5,5"/>
+        <line x1="80" y1="420" x2="820" y2="420" class="axis-line"/>
+        <line x1="80" y1="80" x2="80" y2="420" class="axis-line"/>
+
+        <!-- Axis labels -->
+        <text x="450.0" y="480" text-anchor="middle" class="axis-label" style="font-weight: bold;">Year</text>
+        <text x="30" y="250.0" text-anchor="middle" transform="rotate(-90 30 250.0)" class="axis-label" style="font-weight: bold;">Cost (USD)</text>
+
+        <!-- Year tick labels -->
+        <text x="80.0" y="440" text-anchor="middle" class="axis-label">2025</text>
+        <text x="228.0" y="440" text-anchor="middle" class="axis-label">2027</text>
+        <text x="376.0" y="440" text-anchor="middle" class="axis-label">2029</text>
+        <text x="524.0" y="440" text-anchor="middle" class="axis-label">2031</text>
+        <text x="672.0" y="440" text-anchor="middle" class="axis-label">2033</text>
+        <text x="820.0" y="440" text-anchor="middle" class="axis-label">2035</text>
+
+        <!-- Legend -->
+        <rect x="620" y="20" width="260" height="120" fill="white" stroke="#ddd" stroke-width="1"/>
+        <line x1="630" y1="45" x2="650" y2="45" stroke="#D32F2F" stroke-width="2"/>
+        <text x="660" y="50" class="label">VX-880 (declining cost)</text>
+
+        <line x1="630" y1="65" x2="650" y2="65" stroke="#F57C00" stroke-width="2"/>
+        <text x="660" y="70" class="label">Islet Transplant</text>
+
+        <line x1="630" y1="85" x2="650" y2="85" stroke="#1976D2" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="660" y="90" class="label">Insulin (50-year lifetime)</text>
+
+        <line x1="630" y1="105" x2="650" y2="105" stroke="#2E7D32" stroke-width="2"/>
+        <text x="660" y="110" class="label">Break-even point</text>
+    </svg>
+
+            <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
+                <h3 style="margin-top: 0;">Cost Break-Even Timeline</h3>
+                <ul>
+                    <li><span class="emphasis">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost ~$10,000/year; VX-880 projected $250-300K in 2035.</li>
+                    <li><span class="emphasis">Upper-Middle-Income Countries (UMIC):</span> Break-even by 2035+. Current insulin cost ~$5,000/year; requires pricing negotiation and local manufacturing.</li>
+                    <li><span class="emphasis">Lower-Middle/Low-Income Countries (LMIC/LIC):</span> Break-even unlikely in current health systems. Current insulin access only ~33% adequate; requires universal insulin access first.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-break visualization">
+            <h2>Islet Transplant Center Distribution</h2>
+
+            <p>Only 18 known clinical islet transplant centers exist globally. Most are concentrated in high-income countries, creating substantial travel burden for patients.</p>
+
+            <svg viewBox="0 0 1000 500" style="border: 1px solid #e0e0e0;">
+        <defs>
+            <style>
+                .map-bg { fill: #f0f0f0; stroke: #ccc; stroke-width: 1; }
+                .map-region { fill: #fafaf7; stroke: #ddd; stroke-width: 0.5; }
+                .center-point { fill: #D32F2F; stroke: #333; stroke-width: 1.5; }
+                .center-label { font-size: 11px; fill: #333; }
+            </style>
+        </defs>
+
+        <!-- Background -->
+        <rect width="1000" height="500" fill="white"/>
+
+        <!-- Simplified continent blocks (cartogram style) -->
+        <rect x="50" y="100" width="150" height="100" class="map-region" title="North America"/>
+        <rect x="50" y="220" width="150" height="80" class="map-region" title="South America"/>
+        <rect x="250" y="120" width="100" height="150" class="map-region" title="Europe"/>
+        <rect x="420" y="100" width="120" height="160" class="map-region" title="Africa"/>
+        <rect x="600" y="80" width="150" height="140" class="map-region" title="Asia"/>
+        <rect x="800" y="150" width="120" height="100" class="map-region" title="Pacific"/>
+
+        <!-- Transplant centers (scaled positions) -->
+        <circle cx="100" cy="120" r="6" class="center-point" title="University of Alberta (Edmonton Protocol), Canada"/>
+        <circle cx="120" cy="150" r="6" class="center-point" title="Emory University, United States"/>
+        <circle cx="120" cy="150" r="6" class="center-point" title="University of Pennsylvania, United States"/>
+        <circle cx="120" cy="150" r="6" class="center-point" title="Northwestern University, United States"/>
+        <circle cx="120" cy="150" r="6" class="center-point" title="Mayo Clinic, United States"/>
+        <circle cx="270" cy="140" r="6" class="center-point" title="University of Cambridge, United Kingdom"/>
+        <circle cx="290" cy="120" r="6" class="center-point" title="Karolinska Institute, Sweden"/>
+        <circle cx="290" cy="160" r="6" class="center-point" title="University Hospital Zurich, Switzerland"/>
+        <circle cx="650" cy="120" r="6" class="center-point" title="Beijing Friendship Hospital, China"/>
+        <circle cx="700" cy="100" r="6" class="center-point" title="University of Tokyo Hospital, Japan"/>
+        <circle cx="300" cy="135" r="6" class="center-point" title="Rigshospitalet, Denmark"/>
+        <circle cx="250" cy="180" r="6" class="center-point" title="Madrid Hospital Clinic, Spain"/>
+        <circle cx="310" cy="170" r="6" class="center-point" title="University of Brescia, Italy"/>
+        <circle cx="280" cy="145" r="6" class="center-point" title="Groningen University, Netherlands"/>
+        <circle cx="290" cy="160" r="6" class="center-point" title="University of Geneva, Switzerland"/>
+        <circle cx="680" cy="110" r="6" class="center-point" title="Seoul National University, South Korea"/>
+        <circle cx="630" cy="200" r="6" class="center-point" title="National University of Singapore, Singapore"/>
+        <circle cx="820" cy="280" r="6" class="center-point" title="Prince of Wales Hospital, Australia"/>
+
+        <!-- Legend -->
+        <rect x="700" y="20" width="280" height="80" fill="white" stroke="#ddd" stroke-width="1"/>
+        <circle cx="720" cy="50" r="6" fill="#D32F2F" stroke="#333" stroke-width="1.5"/>
+        <text x="740" y="55" class="center-label" style="font-weight: bold;">Islet Transplant Center (18 total)</text>
+        <text x="740" y="75" class="center-label">Mostly in high-income countries</text>
+    </svg>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Center</th>
+                            <th>Country</th>
+                            <th>Population Served (estimate)</th>
+                            <th>Travel Burden</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>University of Alberta (Edmonton Protocol)</td>
+                            <td>Canada</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Emory University</td>
+                            <td>United States</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University of Pennsylvania</td>
+                            <td>United States</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Northwestern University</td>
+                            <td>United States</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Mayo Clinic</td>
+                            <td>United States</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University of Cambridge</td>
+                            <td>United Kingdom</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Karolinska Institute</td>
+                            <td>Sweden</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University Hospital Zurich</td>
+                            <td>Switzerland</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Beijing Friendship Hospital</td>
+                            <td>China</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University of Tokyo Hospital</td>
+                            <td>Japan</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Rigshospitalet</td>
+                            <td>Denmark</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Madrid Hospital Clinic</td>
+                            <td>Spain</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University of Brescia</td>
+                            <td>Italy</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Groningen University</td>
+                            <td>Netherlands</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>University of Geneva</td>
+                            <td>Switzerland</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Seoul National University</td>
+                            <td>South Korea</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>National University of Singapore</td>
+                            <td>Singapore</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Prince of Wales Hospital</td>
+                            <td>Australia</td>
+                            <td>0 T1D patients per transplant/year</td>
+                            <td>Moderate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-break visualization">
+            <h2>Priority Countries for Trial Expansion</h2>
+
+            <p>The following countries represent the highest equity impact for advanced therapy trial expansion, ranked by: (diabetes burden) × (regulatory readiness) × (current access gap).</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Country</th>
+                            <th>Diabetes Burden (millions)</th>
+                            <th>Current Trial Sites</th>
+                            <th>Regulatory Framework</th>
+                            <th>Impact Score</th>
+                            <th>Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold;">1</td>
+                            <td>China</td>
+                            <td>148.2</td>
+                            <td>0</td>
+                            <td>3/5</td>
+                            <td>114.8</td>
+                            <td><span class="recommendation-rank">P1</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">2</td>
+                            <td>India</td>
+                            <td>89.8</td>
+                            <td>0</td>
+                            <td>2/5</td>
+                            <td>42.3</td>
+                            <td><span class="recommendation-rank">P2</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">3</td>
+                            <td>Pakistan</td>
+                            <td>33.0</td>
+                            <td>0</td>
+                            <td>2/5</td>
+                            <td>14.1</td>
+                            <td><span class="recommendation-rank">P3</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">4</td>
+                            <td>Brazil</td>
+                            <td>15.7</td>
+                            <td>0</td>
+                            <td>4/5</td>
+                            <td>12.9</td>
+                            <td><span class="recommendation-rank">P4</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">5</td>
+                            <td>Mexico</td>
+                            <td>13.6</td>
+                            <td>0</td>
+                            <td>3/5</td>
+                            <td>8.4</td>
+                            <td><span class="recommendation-rank">P5</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">6</td>
+                            <td>Indonesia</td>
+                            <td>19.5</td>
+                            <td>0</td>
+                            <td>2/5</td>
+                            <td>8.1</td>
+                            <td><span class="recommendation-rank">P6</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">7</td>
+                            <td>Russia</td>
+                            <td>12.6</td>
+                            <td>0</td>
+                            <td>3/5</td>
+                            <td>7.7</td>
+                            <td><span class="recommendation-rank">P7</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">8</td>
+                            <td>Japan</td>
+                            <td>7.2</td>
+                            <td>0</td>
+                            <td>5/5</td>
+                            <td>7.3</td>
+                            <td><span class="recommendation-rank">P8</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">9</td>
+                            <td>Turkey</td>
+                            <td>9.8</td>
+                            <td>0</td>
+                            <td>3/5</td>
+                            <td>6.0</td>
+                            <td><span class="recommendation-rank">P9</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">10</td>
+                            <td>Bangladesh</td>
+                            <td>13.9</td>
+                            <td>0</td>
+                            <td>2/5</td>
+                            <td>5.7</td>
+                            <td><span class="recommendation-rank">P10</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Strategic Recommendations by Priority</h3>
+            <div class="recommendation">
+                <div class="recommendation-rank">Priority 1: China</div>
+                <p><span class="emphasis">Burden:</span> 148.2M cases (1412.0M population)</p>
+                <p><span class="emphasis">Current access:</span> 0 trial sites, 0 enrollment slots</p>
+                <p><span class="emphasis">Regulatory readiness:</span> Level 3/5 - Emerging framework</p>
+                <p><span class="emphasis">Insulin access:</span> 70/100</p>
+                <p><span class="emphasis">Recommended action:</span> Initiate Phase 2 trial expansion partnership; establish local manufacturing capability; support regulatory pathway development. Target: 50+ trial enrollment within 18-24 months.</p>
+            </div>
+            <div class="recommendation">
+                <div class="recommendation-rank">Priority 2: India</div>
+                <p><span class="emphasis">Burden:</span> 89.8M cases (1417.2M population)</p>
+                <p><span class="emphasis">Current access:</span> 0 trial sites, 0 enrollment slots</p>
+                <p><span class="emphasis">Regulatory readiness:</span> Level 2/5 - Limited framework</p>
+                <p><span class="emphasis">Insulin access:</span> 45/100</p>
+                <p><span class="emphasis">Recommended action:</span> Begin regulatory groundwork; establish partnerships with advanced regulatory agencies; conduct site readiness assessment. Target: pilot trial site by 2027.</p>
+            </div>
+            <div class="recommendation">
+                <div class="recommendation-rank">Priority 3: Pakistan</div>
+                <p><span class="emphasis">Burden:</span> 33.0M cases (240.5M population)</p>
+                <p><span class="emphasis">Current access:</span> 0 trial sites, 0 enrollment slots</p>
+                <p><span class="emphasis">Regulatory readiness:</span> Level 2/5 - Limited framework</p>
+                <p><span class="emphasis">Insulin access:</span> 35/100</p>
+                <p><span class="emphasis">Recommended action:</span> Begin regulatory groundwork; establish partnerships with advanced regulatory agencies; conduct site readiness assessment. Target: pilot trial site by 2027.</p>
+            </div>
+            <div class="recommendation">
+                <div class="recommendation-rank">Priority 4: Brazil</div>
+                <p><span class="emphasis">Burden:</span> 15.7M cases (215.3M population)</p>
+                <p><span class="emphasis">Current access:</span> 0 trial sites, 0 enrollment slots</p>
+                <p><span class="emphasis">Regulatory readiness:</span> Level 4/5 - Developing framework</p>
+                <p><span class="emphasis">Insulin access:</span> 80/100</p>
+                <p><span class="emphasis">Recommended action:</span> Initiate Phase 2 trial expansion partnership; establish local manufacturing capability; support regulatory pathway development. Target: 50+ trial enrollment within 18-24 months.</p>
+            </div>
+            <div class="recommendation">
+                <div class="recommendation-rank">Priority 5: Mexico</div>
+                <p><span class="emphasis">Burden:</span> 13.6M cases (128.3M population)</p>
+                <p><span class="emphasis">Current access:</span> 0 trial sites, 0 enrollment slots</p>
+                <p><span class="emphasis">Regulatory readiness:</span> Level 3/5 - Emerging framework</p>
+                <p><span class="emphasis">Insulin access:</span> 65/100</p>
+                <p><span class="emphasis">Recommended action:</span> Initiate Phase 2 trial expansion partnership; establish local manufacturing capability; support regulatory pathway development. Target: 50+ trial enrollment within 18-24 months.</p>
+            </div>
+
+        </div>
+
+        <div id="methodology" class="section-break methodology">
+            <h4>Methodology & Data Sources</h4>
+
+            <p><span class="emphasis">Diabetes burden data:</span> IDF Diabetes Atlas 2024 10th edition, providing age-adjusted prevalence and case estimates by country. Data represents diagnosed diabetes cases; actual burden likely 20-30% higher accounting for undiagnosed diabetes.</p>
+
+            <p><span class="emphasis">Clinical trial data:</span> ClinicalTrials.gov as of March 2026, filtered for advanced therapy trials in diabetes (cell therapy, gene therapy, regenerative medicine approaches). Includes Phase 1/2 through Phase 3 trials. Data spans T1D-specific and some T2D metabolic dysfunction trials.</p>
+
+            <p><span class="emphasis">Income classification:</span> World Bank country classifications (HIC, UMIC, LMIC, LIC) as of 2024-2025 fiscal year. Based on gross national income per capita.</p>
+
+            <p><span class="emphasis">WHO regional classification:</span> Uses WHO regional groupings - AFRO (Africa), AMRO (Americas), EMRO (Eastern Mediterranean), EURO (Europe), SEARO (Southeast Asia), WPRO (Western Pacific).</p>
+
+            <p><span class="emphasis">Regulatory framework scoring:</span> 1-5 scale based on documented cell therapy regulatory pathways and advanced therapy designation processes. Data from FDA, EMA, PMDA, and national regulatory authority publications. Scores reflect current published frameworks, not political stability.</p>
+
+            <p><span class="emphasis">Insulin access scoring:</span> 0-100 scale based on WHO/IDF insulin access reports (essential medicines lists, relative affordability, availability in national procurement systems).</p>
+
+            <p><span class="emphasis">Equity metrics calculation:</span> Burden share = (country diabetes cases) / (global total). Trial share = (country trial enrollment) / (global trial enrollment). Equity gap = burden share - trial share (positive values indicate underserved populations).</p>
+
+            <p><span class="emphasis">Limitations:</span> This analysis captures published trials only; unpublished/exploratory programs not included. Trial enrollment numbers are estimated based on published trial protocols and may differ from actual enrollment. Cost projections are illustrative and based on published manufacturing cost reduction trends in similar advanced therapies; actual manufacturing costs depend on technology platform and scale.</p>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9em; color: #999;">Generated by Trial Equity Mapper • Data snapshot: {datetime.now().strftime('%B %d, %Y')} • For research and policy analysis</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Trial Equity Mapper: An open-source analysis of geographic equity gaps in advanced diabetes therapy access</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85em;">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO | Generated {datetime.now().strftime('%B %d, %Y at %H:%M UTC')}</p>
+    </footer>
+
+    <script>
+        // Tooltip interactivity for country data
+        document.querySelectorAll('.country-point').forEach(function(point) {{
+            point.addEventListener('mouseover', function() {{
+                this.style.opacity = '0.8';
+                this.style.strokeWidth = '2';
+            }});
+            point.addEventListener('mouseout', function() {{
+                this.style.opacity = '0.6';
+                this.style.strokeWidth = '1';
+            }});
+        }});
+    </script>
+</body>
+</html>
