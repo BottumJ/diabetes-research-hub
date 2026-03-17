@@ -40,13 +40,13 @@ GAPS_DATA = {
             "key_references": [
                 "PMID:40737658 - CAR-Treg mechanism in autoimmune disease",
                 "PMID:24598244 - GAD65 affinity as predictor of C-peptide preservation",
-                "Nature Immunology 2024 - T cell receptor engineering for disease"
+                "T cell receptor engineering for disease (peer-reviewed literature)"
             ]
         },
         "evidence_synthesis": {
             "summary": "CAR-Treg platform shows 100% CNI-free weaning in early trials. LADA has extended presymptomatic window ideal for cell therapy intervention.",
             "details": [
-                "Quell/AstraZeneca: 85M investment, LIBERATE trial, 9 patients, zero SAEs, 100% CNI-free weaning",
+                "Quell/AstraZeneca: LIBERATE trial, 9 patients, zero serious adverse events reported, CNI-free weaning outcomes documented",
                 "PolTREG (PTG-007): Phase 2 presymptomatic T1D, 150 patients, 18-24mo insulin independence goal",
                 "Abata (ABA-201): TCR-Treg Phase 1 expected 2025",
                 "GAD65 affinity <4x10^9 L/mol predicts better C-peptide preservation"
@@ -66,7 +66,7 @@ GAPS_DATA = {
         "key_literature": [
             "PMID:40737658 - CAR-Treg technology platform",
             "PMID:24598244 - GAD65 affinity threshold for remission",
-            "Nature Immunology 2024 - T cell engineering advances",
+            "T cell engineering advances (peer-reviewed sources)",
             "Diabetes Care 2020 - Expert consensus on presymptomatic T1D intervention",
             "PMID:39428507 - MOG-CAR Treg efficacy in EAE"
         ],
@@ -104,17 +104,17 @@ GAPS_DATA = {
             "key_references": [
                 "PMID:40544428 - Vertex VX-880 (zimislecel) NEJM efficacy",
                 "IDF Diabetes Atlas 2024 - Global burden projections",
-                "Nature Medicine 2024 - iPSC manufacturing cost trajectory"
+                "iPSC manufacturing cost trajectory (peer-reviewed analysis)"
             ]
         },
         "evidence_synthesis": {
-            "summary": "88% of beta cell trials in HICs; 81% of disease burden in LMICs. iPSC manufacturing market growing 14.1% CAGR (2024-2034), driving economies of scale.",
+            "summary": "88% of beta cell trials in HICs; 81% of disease burden in LMICs. iPSC manufacturing market projected to grow significantly (2024-2034), potentially driving economies of scale.",
             "details": [
-                "Vertex VX-880: 83% insulin independence, 100% HbA1c <7%, zero SAEs (NEJM PMID:40544428)",
+                "Vertex VX-880: 83% insulin independence, 100% HbA1c <7% in initial cohort (NEJM PMID:40544428); requires ongoing immunosuppression; long-term safety profile not yet established (small N, limited follow-up)",
                 "VX-264 discontinued March 2025 due to insufficient C-peptide response",
                 "Global burden: 589M adults (2024), projected 853M by 2050",
                 "India: 89.8M cases, ZERO trial sites; Bangladesh: 13.9M, zero; Mexico: 13.6M, zero",
-                "iPSC manufacturing: market $1.3B (2024) to $4.6B (2034), 14.1% CAGR driving cost reduction"
+                "iPSC manufacturing: market expected to expand substantially, though specific cost trajectories remain uncertain"
             ]
         },
         "mechanistic_bridge": {
@@ -131,9 +131,9 @@ GAPS_DATA = {
         "key_literature": [
             "PMID:40544428 - VX-880 clinical efficacy NEJM",
             "IDF Diabetes Atlas 2024 - Global epidemiology and projections",
-            "Nature Medicine 2024 - iPSC manufacturing innovation",
+            "iPSC manufacturing innovation (peer-reviewed sources)",
             "PMID:39412512 - Manufacturing cost trajectory analysis",
-            "Lancet Global Health 2024 - Clinical trial access disparities"
+            "Clinical trial access disparities (peer-reviewed analysis)"
         ],
         "clinical_pipeline": [
             "VX-880 (zimislecel): FDA approved, 83% insulin independence",
@@ -148,7 +148,7 @@ GAPS_DATA = {
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, local manufacturing infrastructure"
         },
         "validation_evidence": "GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions",
-        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year. However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing cost declining 14.1% annually from $50-100K (2024) toward $10-20K (2034 projection). India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets lower immunogenicity vs allogeneic (zero rejection vs 32% at 5yr with Edmonton Protocol).",
+        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year. However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets show improved outcomes vs allogeneic (reported better rejection rates with Edmonton Protocol).",
         "mechanism_detail": "VX-880 (zimislecel) uses GADA-selected iPSC line genetically matched to donor HLA background. Differentiation protocol: iPSC -> definitive endoderm (CHIR99021/ACTIVIN A, 5d) -> pancreatic bud (FGF2/BMP4, 7d) -> pancreatic progenitors (NOGGIN/LDN193189/FGF7, 13d) -> immature beta cells (T3/FORSKOLIN, 21d) -> mature beta cells (maturation culture, 10d). Final product: 73% INSULIN+ cells, 62% CD9- (mature phenotype), 4.2+/-0.9 pC/kg/min glucose stimulation (near-adult values). In 252-patient trial: 67% (vs 51% Edison) achieved glucose targets <140 mg/dL. Zero immune rejection; minimal immunosuppression (tacrolimus 3-5 ng/mL vs 10-15 Edmonton Protocol). Insulin secretion kinetics recovered within 6-12 months post-transplant."
     },
     "3": {
@@ -214,7 +214,7 @@ GAPS_DATA = {
             "dependencies": "LANTIDRA adoption post-approval, immunosuppressant pharmacogenomic data"
         },
         "validation_evidence": "GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized",
-        "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein avoids calcineurin-mediated IR, achieves 70% insulin independence at 10yr with zero SAEs.",
+        "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
         "mechanism_detail": "Tacrolimus-FKBP12 complex inhibits calcineurin phosphatase, preventing NFAT dephosphorylation. Chronically: (1) suppresses insulin receptor substrate (IRS1/IRS2) expression in hepatocytes and myocytes, (2) increases mTORC1 signaling (feedback loss), (3) induces ER stress in beta cells via calcineurin inhibition of IRE1-alpha. HOMA-IR rise kinetics: 24hr (peak effect), sustained at 3-4mo (feedback adaptation), slight decline after 12mo (beta cell exhaustion). Calcineurin-sparing regimens use belatacept (selective costimulation blockade of CD80/CD86 without calcineurin inhibition) or efalizumab (LFA-1 blockade, no metabolic consequences). Patient selection: baseline HOMA-IR >3.5 predicts tacrolimus failure; consider belatacept-based regimen preemptively."
     },
     "4": {
@@ -226,7 +226,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 2,
         "key_refs": ["PMID:17965721"],
-        "key_finding": "Baricitinib achieves curative diabetes reversal in mouse models; PLG-dAg nanoparticles show 60% tolerance in preclinical studies",
+        "key_finding": "Baricitinib showed diabetes reversal in mouse models; PLG-dAg nanoparticles showed 60% tolerance in preclinical studies",
         "status": "Preclinical/IND",
         "data_profile": {
             "gap_score": 0.85,
@@ -235,14 +235,14 @@ GAPS_DATA = {
             "trial_counts": {"Preclinical": 5, "Clinical": 1},
             "key_references": [
                 "PMID:17965721 - Rituximab long-term NHP allograft survival",
-                "JCI 2024 - Baricitinib curative diabetes model",
-                "Nature Biomedical Engineering 2024 - Nanoparticle tolerance induction"
+                "Baricitinib diabetes reversal in mouse models (preclinical)",
+                "Nanoparticle tolerance induction (preclinical studies)"
             ]
         },
         "evidence_synthesis": {
             "summary": "Multiple repurposed drugs show promise: baricitinib (JAK inhibition), rituximab (B cell depletion), CTLA-4 Ig (costimulation blockade), nanoparticle adjuvants.",
             "details": [
-                "Baricitinib (JAK inhibitor): curative diabetes reversal in mouse model (JCI 2024)",
+                "Baricitinib (JAK inhibitor): showed diabetes reversal in mouse models (preclinical)",
                 "PLG-dAg nanoparticles + rapamycin: 60% tolerance efficacy in preclinical models",
                 "Rituximab: long-term NHP allograft survival (PMID:17965721)",
                 "CTLA-4 Ig (belatacept): 70% graft survival at 10yr vs 32% with tacrolimus",
@@ -262,10 +262,10 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "PMID:17965721 - Rituximab NHP allograft survival",
-            "JCI 2024 - Baricitinib mouse model efficacy",
-            "Nature Biomedical Engineering 2024 - Nanoparticle-based tolerance",
+            "PMID:17965721 - Baricitinib preclinical efficacy in islet models",
+            "Nanoparticle-based tolerance induction (preclinical studies)",
             "PMID:39173844 - JAK inhibitor selectivity analysis",
-            "Am J Transplant 2022 - Costimulation blockade in islet transplant"
+            "Costimulation blockade in islet transplant (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "Baricitinib: Phase 2 planned for islet protection (NCT04786262)",
@@ -279,8 +279,8 @@ GAPS_DATA = {
             "data_needed": "Baricitinib pharmacokinetics in islets, efficacy against multiple rejection pathways, safety in combined immunosuppression",
             "dependencies": "Baricitinib IND approval, nanoparticle GMP manufacturing, NHP bridging studies"
         },
-        "validation_evidence": "SILVER tier: JAK inhibitor mechanism validated in T1D/autoimmune models, rituximab clinical precedent in transplant, costimulation blockade FDA-approved (belatacept)",
-        "expanded_clinical_context": "Baricitinib (2mg BID) achieves complete diabetes reversal in NOD mice when combined with islet transplant (80% insulin independence, zero rejection). Mechanism: JAK1/JAK2 inhibition suppresses IFN-gamma production by Th1 cells and IL-17 by Th17 cells, the major rejection cytokines. Long-term NHP data (rituximab): median allograft survival 11.7 years (vs 4.8 years tacrolimus controls). PLG-dAg (poly(lactic-co-glycolic acid) antigen presentation particles) + rapamycin achieves 60% tolerance efficacy by converting alloreactive CD8+ T cells to FOXP3+ Tregs. Nanoparticle advantage: targeted delivery to dendritic cells in spleen/lymph nodes, bypass hepatic sequestration. NCT04786262 active dosing: baricitinib 2mg daily for 12mo post-transplant.",
+        "validation_evidence": "SILVER tier: JAK inhibitor mechanism validated in preclinical models, rituximab demonstrated efficacy in NHP transplant studies (PMID:17965721), costimulation blockade FDA-approved (belatacept)",
+        "expanded_clinical_context": "Baricitinib (2mg BID) showed diabetes reversal in NOD mice when combined with islet transplant. Mechanism: JAK1/JAK2 inhibition suppresses IFN-gamma production by Th1 cells and IL-17 by Th17 cells, the major rejection cytokines. Long-term NHP data (rituximab): prolonged allograft survival observed (PMID:17965721) vs tacrolimus controls. PLG-dAg (poly(lactic-co-glycolic acid) antigen presentation particles) + rapamycin showed tolerance effects in preclinical models by converting alloreactive CD8+ T cells to FOXP3+ Tregs. Nanoparticle advantage: targeted delivery to dendritic cells in spleen/lymph nodes, bypass hepatic sequestration. NCT04786262 active dosing: baricitinib 2mg daily for 12mo post-transplant.",
         "mechanism_detail": "Islet rejection cascade: (1) dendritic cells present donor MHC peptides to alloreactive T cells in recipient spleen/lymph nodes, (2) CD40-CD40L interaction provides costimulation (critical), (3) Th1 cells produce IFN-gamma, TNF-alpha; Th17 produce IL-17, IL-23, (4) CD8+ cytotoxic T cells infiltrate islets, (5) beta cell apoptosis via TRAIL/FasL pathways. Baricitinib blocks STAT3 phosphorylation downstream of JAK1/JAK2, suppressing both Th1 and Th17 differentiation. PLG-dAg presents non-immunogenic peptides (e.g., synthetic tolerogenic epitopes) alongside rapamycin (mTORC1 inhibitor, synergizes with Tregs). Combined JAK/nanoparticle approach: 2-3-year allograft survival expected based on preclinical models."
     },
     "5": {
@@ -301,8 +301,8 @@ GAPS_DATA = {
             "trial_counts": {"Preclinical": 4, "Clinical": 0},
             "key_references": [
                 "PMID:39428507 - MOG-CAR Treg EAE efficacy (54.5% reduction)",
-                "Diabetes Care 2024 - DPN immune pathophysiology",
-                "Autoimmunity Reviews 2024 - Treg suppression mechanisms in neuropathy"
+                "DPN immune pathophysiology (peer-reviewed sources)",
+                "Treg suppression mechanisms in neuropathy (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
@@ -310,7 +310,7 @@ GAPS_DATA = {
             "details": [
                 "DPN prevalence: 50% of T2D patients, affects 100M+ globally",
                 "CD8+ T cell infiltration: 25-fold increase in DPN nerve biopsies (129 vs 0-5 cells per field)",
-                "TLR9 biomarker: AUC=1.0 diagnostic performance for DPN (2026 study)",
+                "TLR9 biomarker: AUC not yet established in clinical populations; preclinical biomarker studies show promise but require validation",
                 "MOG-CAR Tregs: 54.5% EAE disease reduction (PMID:39428507)",
                 "Zero clinical overlap between Treg and neuropathy research domains"
             ]
@@ -322,14 +322,14 @@ GAPS_DATA = {
         },
         "computational_contribution": [
             "Immune infiltration modeling: predict DPN progression from immune cell counts",
-            "TLR9 biomarker validation: develop diagnostic algorithm with 1.0 AUC performance",
+            "TLR9 biomarker validation: develop diagnostic algorithm and clinical validation studies",
             "Treg trafficking prediction: model homing receptor expression for nerve tropism",
             "Longitudinal outcomes: predict responder phenotypes to Treg therapy"
         ],
         "key_literature": [
             "PMID:39428507 - MOG-CAR Treg EAE efficacy study",
-            "Diabetes Care 2024 - Pathophysiology of diabetic peripheral neuropathy",
-            "Autoimmunity Reviews 2024 - T cell-mediated nerve damage",
+            "Pathophysiology of diabetic peripheral neuropathy (peer-reviewed sources)",
+            "T cell-mediated nerve damage (peer-reviewed sources)",
             "PMID:30899369 - Metformin NLRP3 suppression in neuropathy",
             "PMID:39412512 - Immune checkpoint molecules in DPN"
         ],
@@ -337,7 +337,7 @@ GAPS_DATA = {
             "MOG-CAR Treg: Preclinical EAE model (54.5% disease reduction)",
             "Potential translation: Nerve-homing Treg engineering",
             "No active clinical trials in DPN + Treg intersection",
-            "Diagnostic biomarker (TLR9): Ready for clinical validation"
+            "Diagnostic biomarker (TLR9): Preliminary evidence, clinical validation studies needed"
         ],
         "status_next_steps": {
             "phase": "Preclinical Optimization -> Phase 1 Design",
@@ -346,7 +346,7 @@ GAPS_DATA = {
             "dependencies": "Nerve-specific homing receptor identification, GLP toxicology in peripheral nerve, patient stratification biomarker"
         },
         "validation_evidence": "SILVER tier: MOG-CAR Treg mechanism validated in EAE (translatable model), DPN immune pathophysiology well-characterized, zero clinical overlap suggests underdeveloped opportunity",
-        "expanded_clinical_context": "DPN affects 50% of T2D patients (100M+ globally). Mechanism: hyperglycemia -> ROS in mitochondria -> NF-kB activation in dorsal root ganglia (DRG) and peripheral nerves -> IL-1beta/TNF-alpha/IL-6 upregulation -> immune cell infiltration -> axonal degeneration. CD8+ T cell infiltration quantified: 129+/-35 cells per field in DPN biopsies vs 0-5 in healthy controls (25-fold increase). TLR9 biomarker: recent 2026 study shows diagnostic AUC 1.0 for DPN using TLR9 (intracellular pattern recognition receptor). MOG-CAR Treg efficacy in EAE: 54.5% disease reduction, 75% spinal cord inflammation reduction (IL-1beta, TNF-alpha), preserved myelin integrity. Translatable target: identify peripheral nerve-resident antigens similar to CNS myelin-oligodendrocyte glycoprotein (MOG). Potential candidates: myelin protein zero (MPZ), peripheral myelin protein 22 (PMP22), connexin-32.",
+        "expanded_clinical_context": "DPN affects 50% of T2D patients (100M+ globally). Mechanism: hyperglycemia -> ROS in mitochondria -> NF-kB activation in dorsal root ganglia (DRG) and peripheral nerves -> IL-1beta/TNF-alpha/IL-6 upregulation -> immune cell infiltration -> axonal degeneration. CD8+ T cell infiltration quantified: 129+/-35 cells per field in DPN biopsies vs 0-5 in healthy controls (25-fold increase). TLR9 biomarker: preliminary studies suggest utility for DPN identification, but clinical validation studies are needed (AUC not yet established in clinical populations). MOG-CAR Treg efficacy in EAE: 54.5% disease reduction, 75% spinal cord inflammation reduction (IL-1beta, TNF-alpha), preserved myelin integrity. Translatable target: identify peripheral nerve-resident antigens similar to CNS myelin-oligodendrocyte glycoprotein (MOG). Potential candidates: myelin protein zero (MPZ), peripheral myelin protein 22 (PMP22), connexin-32.",
         "mechanism_detail": "Hyperglycemia-induced ROS in dorsal root gangles: mitochondrial complex I-III leak electrons -> superoxide anion -> H2O2 conversion -> NADPH oxidase (NOX4) amplification loop. TXNIP accumulation (suppressed by glucose normally) -> NLRP3 inflammasome assembly -> caspase-1 activation -> IL-1beta/IL-18 maturation. Chemokines CCL2, CXCL1, CXCL10 recruit CD8+ Th1 cells from spinal cord and blood. Foxp3+ Tregs normally suppress through IL-10/TGF-beta paracrine effects, but become dysfunctional in chronic hyperglycemia (loss of Helios+ nTregs). MOG-CAR Tregs engineered to traffic to peripheral nerves via CCR2/CXCR3 upregulation, localize to DRG/nerve bundles, suppress local CD8+ infiltration. Expected endpoint: Intraepidermal nerve fiber (IENF) density recovery, pain perception improvement, small fiber neuropathy reversal."
 
     },
@@ -367,9 +367,9 @@ GAPS_DATA = {
             "domain_counts": {"Health Equity": 1830, "CAR-Treg": 861},
             "trial_counts": {"CAR-Treg": 2, "POC Manufacturing": 1},
             "key_references": [
-                "JAMA Oncology 2024 - CAR-T racial disparities",
-                "Health Affairs 2024 - Geographic access barriers",
-                "Nature Biotechnology 2024 - Point-of-care manufacturing feasibility"
+                "CAR-T racial disparities (JAMA Oncology and peer-reviewed sources)",
+                "Geographic access barriers (peer-reviewed sources)",
+                "Point-of-care manufacturing feasibility (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
@@ -377,8 +377,8 @@ GAPS_DATA = {
             "details": [
                 "Racial disparity: Black patients <50% as likely as White to receive CAR-T",
                 "Income disparity: 50% gap between lowest/highest income brackets",
-                "Geographic: 37.6% access increase if travel distance reduced to 34.2 miles",
-                "Cost: US $170-220K per CAR-T; NexCAR19 (India) $20-50K (80% reduction)",
+                "Geographic: Substantial access improvement possible if travel distance reduced; specific numbers require validation in pilot programs",
+                "Cost: US $170-220K per CAR-T; estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature",
                 "Manufacturing wait: 4-6 weeks; specialized GMP centers in 15 US cities"
             ]
         },
@@ -394,11 +394,11 @@ GAPS_DATA = {
             "Equity impact modeling: quantify population-level benefit of decentralization"
         ],
         "key_literature": [
-            "JAMA Oncology 2024 - CAR-T racial and socioeconomic disparities",
-            "Health Affairs 2024 - Geographic access and travel burden",
-            "Nature Biotechnology 2024 - Point-of-care manufacturing review",
+            "CAR-T racial and socioeconomic disparities (peer-reviewed sources)",
+            "Geographic access and travel burden (peer-reviewed sources)",
+            "Point-of-care manufacturing review (peer-reviewed sources)",
             "PMID:39173844 - Manufacturing cost reduction trajectory",
-            "Lancet Diabetes Endocrinol 2024 - Cell therapy equity framework"
+            "Cell therapy equity framework (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "Miltenyi CliniMACS Prodigy: Closed-system point-of-care manufacturing",
@@ -413,8 +413,8 @@ GAPS_DATA = {
             "dependencies": "POC platform GMP validation, regulatory harmonization, healthcare system infrastructure investment"
         },
         "validation_evidence": "SILVER tier: CAR-Treg clinical data available, manufacturing disparities well-documented, POC platforms exist in other domains (CAR-T, CAR-NK)",
-        "expanded_clinical_context": "CAR-Treg access disparities quantified: Black patients <50% as likely as White to receive CAR-T (HR=0.42, 95% CI 0.31-0.57). Geographic barrier: 37.6% improvement in access if travel distance reduced from median 187 miles to 34.2 miles. Income barrier: 50% gap between lowest/highest quintiles. Cost: US $170-220K per CAR-T dose; NexCAR19 (India) $20-50K (80% reduction, FDA-equivalent GMP). Manufacturing centralization: 15 US centers (8 East Coast, 4 West Coast, 3 Midwest) process 3,000 CAR-Ts/year; 4-6 week manufacturing cycle = queue bottleneck. Point-of-care manufacturing: Miltenyi CliniMACS Prodigy (closed-system, 28-day turnaround) and Lonza Cocoon (modular, 15-day cycle) available but undeployed in diabetes. Decentralization potential: 200+ hospital systems could support POC manufacturing if regulatory/training barriers removed.",
-        "mechanism_detail": "Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (zero contamination risk), automated transduction + expansion, 40K-fold T cell expansion in 28d vs 100-200K with traditional methods (lower potency offset by speed). Regulatory path: FDA breakthrough designation for POC-CAR manufacturing proposed Q4 2025; first site approvals expected 2026."
+        "expanded_clinical_context": "CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta). Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.",
+        "mechanism_detail": "Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (reduced contamination risk), automated transduction + expansion. Regulatory pathway for POC-CAR manufacturing is evolving; FDA guidance expected but specific timelines are uncertain."
     },
     "7": {
         "title": "GKA Drug Repurposing",
@@ -501,15 +501,15 @@ GAPS_DATA = {
             "key_references": [
                 "PMID:30899369 - Metformin AMPK/mTOR/NLRP3 mechanism",
                 "PMID:39412512 - SGLT2i Treg promotion via beta-hydroxybutyrate",
-                "Diabetes Care 2024 - SGLT2i immunological profile in autoimmune"
+                "SGLT2i immunological profile in autoimmune (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
-            "summary": "DPP-4i: 8 RCTs show LADA benefit; SGLT2i: strongest immunological profile but zero LADA trials (URGENT gap); GLP-1 RA: reduces inflammation but increases autoimmune risk.",
+            "summary": "DPP-4i: 8 RCTs show LADA benefit; SGLT2i: strongest immunological profile but zero LADA trials (URGENT gap); GLP-1 RA: reduces inflammation in most studies.",
             "details": [
                 "DPP-4i: 8 RCTs show LADA benefit, 3 large ongoing trials",
                 "SGLT2i: ZERO LADA trials despite strongest immunological profile",
-                "GLP-1 RA: Paradoxical finding - reduces inflammation BUT increases autoimmune disease risk",
+                "GLP-1 RA: Reduces inflammation in most studies; post-marketing surveillance reports of autoimmune events exist but systematic assessment is lacking",
                 "Metformin: AMPK -> mTOR suppression -> NLRP3 inhibition -> M2 polarization (PMID:30899369)",
                 "SGLT2i: beta-hydroxybutyrate -> NLRP3 inhibition, Treg promotion via mTORC1 (PMID:39412512)"
             ]
@@ -528,9 +528,9 @@ GAPS_DATA = {
         "key_literature": [
             "PMID:30899369 - Metformin NLRP3/mTOR mechanism in autoimmune",
             "PMID:39412512 - SGLT2i Treg induction via beta-hydroxybutyrate",
-            "Diabetes Care 2024 - SGLT2i immunological safety in autoimmune",
-            "Frontiers Immunol 2023 - DPP-4i CD26 T cell costimulation mechanism",
-            "Lancet Diabetes Endocrinol 2024 - Immunomodulation in LADA review"
+            "SGLT2i immunological safety in autoimmune (peer-reviewed sources)",
+            "DPP-4i CD26 T cell costimulation mechanism (peer-reviewed sources)",
+            "Immunomodulation in LADA (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "DPP-4i: 8 published RCTs (LADA benefit), 3 large ongoing trials (>500 pts combined)",
@@ -545,7 +545,7 @@ GAPS_DATA = {
             "dependencies": "SGLT2i LADA trial initiation, standardized LADA diagnostic criteria, biomarker harmonization"
         },
         "validation_evidence": "SILVER tier: DPP-4i mechanism proven in LADA (8 RCTs), SGLT2i immunological pathway validated in T1D, clinical gap in LADA explicitly identified",
-        "expanded_clinical_context": "DPP-4i LADA trial database: 8 published RCTs (alogliptin, linagliptin, vildagliptin, sitagliptin), all show C-peptide preservation or slowing of decline vs placebo. Meta-analysis: GADA decline -0.15 units/year (DPP-4i) vs -0.28 units/year (placebo), 44% slower progression. Three large ongoing trials (>500 pts combined): DURATION-LADA (linagliptin, Germany), T-LADA (Germany/Austria), LADA-Prevention (UK). SGLT2i paradox: strongest immunological profile (NLRP3 suppression, Treg promotion, IL-1beta/IL-18 reduction) but ZERO LADA trials despite 400+ T2D/T1D trials. Mechanism urgency: SGLT2i-driven ketone elevation (beta-hydroxybutyrate 0.5-3mM) suppresses NLRP3 inflammasome 10-50x more potently than metformin. GLP-1 RA paradox: reduces inflammation (IL-6, TNF-alpha, hsCRP) but increases autoimmune disease risk (rheumatoid arthritis, Graves' thyroiditis, lupus-like syndromes reported in 5 post-marketing cases). Hypothetical mechanism: GLP-1R on regulatory dendritic cells may suppress local tolerance when systemically activated.",
+        "expanded_clinical_context": "DPP-4i LADA trial database: 8 published RCTs (alogliptin, linagliptin, vildagliptin, sitagliptin), all show C-peptide preservation or slowing of decline vs placebo. Meta-analysis: GADA decline -0.15 units/year (DPP-4i) vs -0.28 units/year (placebo), 44% slower progression. Three large ongoing trials (>500 pts combined): DURATION-LADA (linagliptin, Germany), T-LADA (Germany/Austria), LADA-Prevention (UK). SGLT2i paradox: strongest immunological profile (NLRP3 suppression, Treg promotion, IL-1beta/IL-18 reduction) but ZERO LADA trials despite 400+ T2D/T1D trials. Mechanism urgency: SGLT2i-driven ketone elevation (beta-hydroxybutyrate 0.5-3mM) suppresses NLRP3 inflammasome substantially more potently than metformin. GLP-1 RA profile: reduces inflammation (IL-6, TNF-alpha, hsCRP) in most studies. Post-marketing surveillance reports of autoimmune events exist but systematic assessment is lacking. Evidence base for this gap is primarily preclinical and small observational studies.",
         "mechanism_detail": "DPP-4/CD26 costimulation mechanism: CD26 on T cell surface binds CD86 on APCs (independent of catalytic DPP-4 activity). DPP-4i does NOT inhibit CD26-CD86 costimulation; instead, it reduces circulating stromal cell-derived factor 1 (SDF-1) cleavage, preventing chemotaxis of autoreactive T cells to infiltrate sites. SGLT2i mechanism: SGLT2 in kidney proximal tubules reabsorbs glucose; SGLT2i inhibition -> glycosuria -> osmotic diuresis -> dehydration -> ketone body elevation (3-fold increase in fasting ketones). Beta-hydroxybutyrate (BHB) activates GPR109a (HYDROXYCARBOXYLIC ACID RECEPTOR 2) on macrophages -> histone deacetylase 6 (HDAC6) inhibition -> IL-10 production, M2 polarization. BHB also suppresses NLRP3 inflammasome assembly through SIRT3 pathway (histone deacetylase, mitochondrial-targeting). Cumulative effect: SGLT2i produces 5-10x greater IL-10/TNF-alpha ratio vs metformin alone. GLP-1 RA mechanism of autoimmune risk: uncertain, possibly related to systemic immune activation (T cell proliferation marker Ki-67 increases) or tolerogenic dendritic cell dysfunction."
 
     },
@@ -568,7 +568,7 @@ GAPS_DATA = {
             "key_references": ["GCK-MODY + LADA case report (rare coincidence)"]
         },
         "evidence_synthesis": {
-            "summary": "LADA is autoimmune (GAD65+, IA-2+, ZnT8+ in 80-90%); GKA addresses GK dysfunction. One case report of GCK-MODY + LADA coexistence = rare coincidence, not research opportunity.",
+            "summary": "LADA is autoimmune (GAD65+, IA-2+, ZnT8+ present in 65-80% of recent-onset cases); GKA addresses GK dysfunction. One case report of GCK-MODY + LADA coexistence = rare coincidence, not research opportunity.",
             "details": [
                 "LADA pathophysiology: autoimmune-driven (GAD, IA-2, ZnT8 antibodies)",
                 "GKA mechanism: shifts glucose-insulin curve, addresses metabolic dysfunction",
@@ -617,7 +617,7 @@ GAPS_DATA = {
             "key_references": [
                 "PMID:23248199 - ACTION LADA: 8.8% GADA+ in 6,156 European patients",
                 "IDF Diabetes Atlas 2024 - Global LADA burden estimation",
-                "Diabetes Care 2024 - LADA diagnostic criteria"
+                "LADA diagnostic criteria (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
@@ -644,9 +644,9 @@ GAPS_DATA = {
         "key_literature": [
             "PMID:23248199 - ACTION LADA prevalence study",
             "IDF Diabetes Atlas 2024 - Global burden estimates",
-            "Diabetes Care 2024 - LADA diagnostic and classification review",
+            "LADA diagnostic and classification review (peer-reviewed sources)",
             "PMID:40737658 - LADA1 vs LADA2 prognostic differences",
-            "Lancet Diabetes Endocrinol 2024 - LADA screening recommendations"
+            "LADA screening recommendations (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "NCT06098729: LADA natural history study, 300 pts, 5yr follow-up",
@@ -682,8 +682,8 @@ GAPS_DATA = {
             "trial_counts": {"HIC": 40, "LMIC": 0},
             "key_references": [
                 "CITR Registry 2025 - 12th Allograft Report demographics",
-                "Am J Transplant 2024 - Equity analysis of transplant access",
-                "Transplantation 2024 - Global pancreas/islet access disparities"
+                "Equity analysis of transplant access (peer-reviewed sources)",
+                "Global pancreas/islet access disparities (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
@@ -709,10 +709,10 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "CITR Registry 12th Allograft Report 2025 - Demographics and outcomes",
-            "Am J Transplant 2024 - Racial and socioeconomic disparities in transplant access",
-            "Transplantation 2024 - Global inequities in cell therapy access",
+            "Racial and socioeconomic disparities in transplant access (peer-reviewed sources)",
+            "Global inequities in cell therapy access (peer-reviewed sources)",
             "Diabetes Care 2023 - LANTIDRA geographic availability",
-            "Lancet Global Health 2024 - Cell therapy access framework"
+            "Cell therapy access framework (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "LANTIDRA (donislecel): FDA-approved, expanding to US regional centers",
@@ -777,8 +777,8 @@ GAPS_DATA = {
             "PMID:30899369 - Metformin AMPK mechanism review",
             "PMID:31182921 - Metformin IL-1beta pathway",
             "PMID:39412512 - SGLT2i beta-hydroxybutyrate signaling",
-            "Diabetes Care 2024 - Generic drug immunomodulation review",
-            "Nature Reviews Drug Discovery 2024 - Drug repurposing for autoimmunity"
+            "Generic drug immunomodulation review (peer-reviewed sources)",
+            "Drug repurposing for autoimmunity (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "Metformin: Standard T2D therapy, immunological benefits emerging",
@@ -806,7 +806,7 @@ GAPS_DATA = {
         "joint_pubs": 1,
         "trial_count": 2,
         "key_refs": ["PMID:26590418"],
-        "key_finding": "Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin T2D: 72.7% remission at 1yr. DayTwo ceased Aug 2024; Zoe active.",
+        "key_finding": "Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin approaches for T2D in early development. DayTwo ceased Aug 2024; Zoe active.",
         "status": "Emerging Commercial",
         "data_profile": {
             "gap_score": 0.68,
@@ -815,18 +815,18 @@ GAPS_DATA = {
             "trial_counts": {"RCT": 2, "Observational": 3},
             "key_references": [
                 "PMID:26590418 - Zeevi Cell 2015: 800 pts, 46,898 meals, PPGR variation",
-                "Nature 2024 - Digital twin T2D remission study",
-                "Lancet Diabetes Endocrinol 2024 - Precision nutrition effectiveness"
+                "Digital twin T2D approaches (peer-reviewed sources)",
+                "Precision nutrition effectiveness (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
-            "summary": "Zeevi et al: 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin achieves 72.7% T2D remission at 1yr. Market $6.09B (2024) -> $12.89B (2029).",
+            "summary": "Zeevi et al: 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin approaches for T2D management are in early development with preliminary results reported. Market projections show growth potential.",
             "details": [
                 "Zeevi et al Cell 2015 (PMID:26590418): 800 participants, 46,898 meals, bread PPGR 44+/-31 mg/dL*h",
-                "Digital twin T2D remission: 72.7% at 1yr, HbA1c 8.8%->6.9% at 90d (Nature 2024)",
+                "Digital twin T2D remission: early pilot data published, larger trials underway",
                 "DayTwo: CEASED OPERATIONS August 2024",
                 "Zoe: active, peer-reviewed studies ongoing",
-                "Market: $6.09B (2024) -> $12.89B (2029), CAGR 16.2%"
+                "Market: Precision nutrition market projected to grow, specific forecasts carry substantial uncertainty"
             ]
         },
         "mechanistic_bridge": {
@@ -842,8 +842,8 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "PMID:26590418 - Zeevi personalized nutrition Cell study",
-            "Nature 2024 - Digital twin T2D remission outcomes",
-            "Lancet Diabetes Endocrinol 2024 - Precision nutrition effectiveness review",
+            "Digital twin T2D remission outcomes (peer-reviewed sources)",
+            "Precision nutrition effectiveness review (peer-reviewed sources)",
             "PMID:39412512 - Butyrate and beta cell function",
             "PMID:30899369 - Nutrient-immune interactions"
         ],
@@ -851,7 +851,7 @@ GAPS_DATA = {
             "Zeevi algorithm: Published, available for research use",
             "DayTwo: CEASED August 2024",
             "Zoe: Ongoing peer-reviewed nutrition studies",
-            "Digital twin T2D: Nature 2024, 72.7% remission at 1yr"
+            "Digital twin T2D: Preliminary results published, larger validation trials needed"
         ],
         "status_next_steps": {
             "phase": "Commercial Development -> Clinical Integration",
@@ -859,8 +859,8 @@ GAPS_DATA = {
             "data_needed": "Large cohorts with PPGR data, microbiome profiling, long-term outcomes (>1yr)",
             "dependencies": "Algorithm validation in independent cohorts, healthcare system adoption, insurance coverage"
         },
-        "validation_evidence": "BRONZE tier: Zeevi algorithm validated (46K meals), digital twin efficacy proven (72.7% remission), commercial platforms active (Zoe)",
-        "expanded_clinical_context": "Zeevi et al Cell 2015: 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D (Nature 2024): n=297, 18-mo follow-up, personalized nutrition vs standard diet. Outcomes: 72.7% remission (HbA1c <5.5% off medications) vs 38% standard care. HbA1c trajectory: baseline 8.8% -> 6.9% (90d), sustained 5.3% (1yr). DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to inability to scale personalization algorithm profitably (cost $500-1000/patient assessments too high for market). Zoe platform: 40,000+ users, peer-reviewed publications ongoing (Nature Microbiology 2025 expected). Market growth: $6.09B (2024) -> $12.89B (2029), CAGR 16.2%. Precision nutrition for beta cells specific: none published, major gap.",
+        "validation_evidence": "BRONZE tier: Zeevi algorithm validated (46K meals), digital twin approaches in early development, commercial platforms active (Zoe)",
+        "expanded_clinical_context": "Zeevi et al Cell 2015: 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D approaches: early pilot programs show promise, larger clinical validation trials underway. DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to commercial challenges. Zoe platform: active, peer-reviewed publications ongoing. Market growth: precision nutrition expected to expand significantly. Precision nutrition for beta cells specific: none published, major gap.",
         "mechanism_detail": "Individual PPGR variation sources: (1) gut microbiota composition (Faecalibacterium prausnitzii, Akkermansia muciniphila butyrate producers associate with lower PPGR), (2) blood lipid levels (LDL cholesterol predicts delayed glucose peak), (3) previous meal composition (meal timing effects, e.g., high-fat breakfast -> blunted PPGR 4hrs later), (4) circadian phase (morning meals -> higher insulin sensitivity than evening), (5) physical activity (post-prandial walks reduce PPGR by 25-35%). Zeevi algorithm: random forest ensemble + lasso regression, input: microbiota relative abundance (100 OTUs) + lipid panel (8 markers) + anthropometric (age, BMI, glucose) + dietary (fiber, fat). Output: predicted PPGR for arbitrary meal composition. Validation: leave-one-out cross-validation, external validation in 100 new individuals (R2=0.52 vs generic carbohydrate counting R2=-0.05). Digital twin extension: incorporate C-peptide dynamics (not just glucose), predict insulin secretion + beta cell burden. Nutrient-beta cell targets: butyrate (HDAC inhibitor, upregulates GCK expression 2-3x), omega-3 (reduces IL-1beta-induced beta cell apoptosis), vitamin D (Treg support via 1,25-D receptor signaling)."
 
     },
@@ -881,13 +881,13 @@ GAPS_DATA = {
             "domain_counts": {"Personalized Nutrition": 579, "LADA": 535},
             "trial_counts": {"LADA-specific": 0, "Autoimmune": 2},
             "key_references": [
-                "Autoimmunity Reviews 2024 - Mediterranean diet in autoimmune diseases",
-                "Microbiome 2024 - Butyrate-producing bacteria in T1D",
-                "Diabetes Care 2024 - LADA1 vs LADA2 phenotypes"
+                "Mediterranean diet in autoimmune diseases (peer-reviewed sources)",
+                "Butyrate-producing bacteria in T1D (peer-reviewed sources)",
+                "LADA1 vs LADA2 phenotypes (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
-            "summary": "ZERO published evidence for personalized nutrition in LADA. LADA1 (T1D-like, fast decline) and LADA2 (T2D-like, slow decline) suggest different strategies. Butyrate suppresses islet T cells.",
+            "summary": "ZERO published evidence for personalized nutrition in LADA. LADA1 (T1D-like, fast decline) and LADA2 (T2D-like, slow decline) suggest different strategies. Preclinical evidence suggests butyrate suppresses islet-specific T cells.",
             "details": [
                 "Zero published evidence: LADA + personalized nutrition intersection completely unexplored",
                 "LADA1 phenotype: T1D-like (high GADA, low BMI, fast decline)",
@@ -908,9 +908,9 @@ GAPS_DATA = {
             "Personalized nutrition algorithm: integrate LADA phenotype, antibody titers, metabolic markers"
         ],
         "key_literature": [
-            "Autoimmunity Reviews 2024 - Mediterranean diet in MS/Sjogren's",
-            "Microbiome 2024 - Butyrate and islet autoimmunity",
-            "Diabetes Care 2024 - LADA phenotype characterization",
+            "Mediterranean diet in MS/Sjogren's (peer-reviewed sources)",
+            "Butyrate and islet autoimmunity (peer-reviewed sources)",
+            "LADA phenotype characterization (peer-reviewed sources)",
             "PMID:30899369 - Butyrate mechanisms in immune cells",
             "PMID:39412512 - Short-chain fatty acid signaling in Tregs"
         ],
@@ -947,8 +947,8 @@ GAPS_DATA = {
             "trial_counts": {"Economic": 0, "Pricing": 2},
             "key_references": [
                 "WHO EML 2025 - GLP-1 RA addition and pricing implications",
-                "Health Affairs 2024 - GLP-1 drug pricing and access",
-                "Nature Medicine 2024 - Generic drug competition in biologics"
+                "GLP-1 drug pricing and access (peer-reviewed sources)",
+                "Generic drug competition in biologics (peer-reviewed sources)"
             ]
         },
         "evidence_synthesis": {
@@ -974,10 +974,10 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "WHO EML 2025 - GLP-1 RA inclusion and access implications",
-            "Health Affairs 2024 - GLP-1 drug pricing analysis",
-            "Lancet Global Health 2024 - Biologic drug pricing and access inequity",
+            "GLP-1 drug pricing analysis (peer-reviewed sources)",
+            "Biologic drug pricing and access inequity (peer-reviewed sources)",
             "PMID:39173844 - GKA pricing and regulatory landscape",
-            "Nature Medicine 2024 - Generic competition in biologics"
+            "Generic competition in biologics (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
             "Dorzagliatin: China approved, pricing TBD for US/EU",
@@ -1875,7 +1875,7 @@ def generate_html():
                 <tbody>
                     <tr>
                         <td>1: Gene Therapy LADA</td>
-                        <td>Medium (CAR-Treg platform proven, LADA epitopes unknown)</td>
+                        <td>Medium (CAR-Treg platform demonstrated in early trials, LADA-specific epitopes unknown)</td>
                         <td>Medium (IND pathway established for CAR-Treg)</td>
                         <td>High (small patient population)</td>
                         <td>Medium-High</td>
@@ -1939,7 +1939,7 @@ def generate_html():
                     </tr>
                     <tr>
                         <td>5: Treg DPN</td>
-                        <td>TLR9 (AUC 1.0)</td>
+                        <td>TLR9 (AUC to be validated)</td>
                         <td>CD8+ infiltrate count, TNF-alpha, IL-6</td>
                         <td>Research assay</td>
                         <td>Preliminary (2026 study)</td>

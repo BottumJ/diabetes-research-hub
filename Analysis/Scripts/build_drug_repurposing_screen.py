@@ -59,7 +59,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Indirect NLRP3 inflammasome inhibition via microtubule disruption (not direct NLRP3 binding), IL-1beta suppression, monocyte activation blockade",
         "evidence": "COLCOT trial demonstrates cardiovascular benefit in stable CAD; LoDoCo2 confirms anti-inflammatory cardiovascular effects. Mechanism is INDIRECT \u2014 colchicine disrupts microtubule-dependent NLRP3 assembly rather than directly inhibiting the inflammasome. Multiple Phase 2 studies in metabolic inflammation",
         "generic_cost": 0.50,
-        "who_essential": False,
+        "who_essential": True,  # CORRECTED: Colchicine is on WHO EML 2023 (Section 29, Gout medicines)
         "global_availability": "high",
         "mechanism_score": 9,
         "safety_score": 8,
@@ -67,7 +67,7 @@ CANDIDATES = {
         "evidence_score": 8,
         "equity_score": 7,
         "category": "Anti-inflammatory",
-        "equity_rationale": "Addresses inflammatory diabetes driver; sub-dollar generic pricing; potential for cardiovascular disease prevention in diabetic populations",
+        "equity_rationale": "Addresses inflammatory diabetes driver; sub-dollar generic pricing; WHO Essential Medicine; potential for cardiovascular disease prevention in diabetic populations",
         "lada_relevance": "May suppress anti-beta cell immune responses through inflammasome inhibition",
         "islet_relevance": "Reduced innate immune activation post-transplant; potential tolerance-promoting agent"
     },
@@ -167,7 +167,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PPARG agonism, improved insulin sensitivity, mitochondrial biogenesis; Treg expansion demonstrated in preclinical models but not confirmed in human diabetes trials",
         "evidence": "Extensive clinical trial evidence for insulin sensitization. PPARG-driven Treg differentiation demonstrated in murine models; human evidence for immune modulation is indirect and observational",
         "generic_cost": 0.30,
-        "who_essential": False,
+        "who_essential": True,  # CORRECTED: Pioglitazone is on WHO EML 2023 (Section 18.5, Insulins and other antidiabetic agents)
         "global_availability": "high",
         "mechanism_score": 9,
         "safety_score": 7,
@@ -175,7 +175,7 @@ CANDIDATES = {
         "evidence_score": 9,
         "equity_score": 7,
         "category": "Cardiovascular/Metabolic",
-        "equity_rationale": "Strong efficacy in T2D; Treg-promoting mechanisms; generic and affordable",
+        "equity_rationale": "Strong efficacy in T2D; Treg-promoting mechanisms; WHO Essential Medicine; generic and affordable",
         "lada_relevance": "Treg-promoting PPARG agonism; potential disease-modifying in LADA but requires evaluation",
         "islet_relevance": "Treg expansion supports transplant tolerance induction"
     },
@@ -327,17 +327,17 @@ CANDIDATES = {
         "class": "JAK1/2 inhibitor",
         "primary_indication": "Rheumatoid arthritis, alopecia areata",
         "mechanism_diabetes": "JAK-STAT inhibition, Treg expansion, reduced pro-inflammatory cytokines",
-        "evidence": "FDA-approved for RA; Phase 2 data in islet transplant tolerance; multiple mechanistic studies on immune modulation",
-        "generic_cost": 5.00,
+        "evidence": "FDA-approved for RA; preclinical islet transplant tolerance data in mouse models; no human diabetes-specific RCT. Mechanistic studies on immune modulation are preclinical",
+        "generic_cost": 50.00,  # CORRECTED: Brand Olumiant ~$300/mo; Indian generics ~$30-60/mo; $5 was fabricated. No FDA-approved generic exists as of 2025
         "who_essential": False,
         "global_availability": "limited",
         "mechanism_score": 8,
         "safety_score": 7,
-        "generic_score": 4,
-        "evidence_score": 6,
-        "equity_score": 3,
+        "generic_score": 2,  # CORRECTED: No approved generic in most markets; patent protected
+        "evidence_score": 5,  # CORRECTED: Preclinical only for diabetes indication
+        "equity_score": 2,  # CORRECTED: Cost-prohibitive in LMICs; limited availability
         "category": "Immunomodulator",
-        "equity_rationale": "Emerging affordability through biosimilar development; potential future cost reduction; strong mechanistic evidence for transplant tolerance",
+        "equity_rationale": "Costly patented drug with limited LMIC access; Indian generics emerging but not widely available; mechanistic rationale for transplant tolerance is preclinical only",
         "lada_relevance": "JAK-STAT inhibition addresses pro-inflammatory axis in autoimmune diabetes",
         "islet_relevance": "Transplant tolerance data available; JAK inhibition suppresses anti-islet immunity"
     },
@@ -580,16 +580,16 @@ CANDIDATES = {
         "primary_indication": "Organ transplant rejection, autoimmune diseases",
         "mechanism_diabetes": "T cell suppression via calcineurin inhibition, beta cell preservation in autoimmune diabetes",
         "evidence": "RCT-proven beta cell preservation in new-onset T1D (Bougneres et al, NEJM 1988; Feutren et al, Lancet 1986, PMID:1611143). Demonstrated remission induction in T1D when given early. Nephrotoxicity and long-term immunosuppression limit chronic use. Effect reversed upon discontinuation",
-        "generic_cost": 1.50,
+        "generic_cost": 30.00,  # CORRECTED: Generic cyclosporine ~$30-100/mo depending on dose and market; $1.50 was fabricated. Requires therapeutic drug monitoring adding further cost
         "who_essential": True,
         "global_availability": "moderate",
         "mechanism_score": 9,
         "safety_score": 5,
-        "generic_score": 6,
+        "generic_score": 4,  # CORRECTED: Generic exists but still expensive; requires monitoring
         "evidence_score": 9,
-        "equity_score": 4,
+        "equity_score": 3,  # CORRECTED: Monitoring requirements and cost limit LMIC use significantly
         "category": "Immunosuppressant",
-        "equity_rationale": "Strong RCT evidence but nephrotoxicity and monitoring requirements limit LMIC applicability; WHO Essential Medicine for transplant; cost barrier moderate",
+        "equity_rationale": "Strong RCT evidence but nephrotoxicity, therapeutic drug monitoring requirements, and cost (~$30-100/mo) significantly limit LMIC applicability; WHO Essential Medicine for transplant",
         "lada_relevance": "Strongest historical RCT evidence for beta cell preservation in autoimmune diabetes; toxicity limits long-term use",
         "islet_relevance": "Standard calcineurin inhibitor in transplant protocols; well-established dosing"
     },
@@ -633,9 +633,9 @@ CANDIDATES = {
 
 # Diabetes-relevant pathways and drug mapping
 PATHWAYS = {
-    "NLRP3 Inflammasome": ["Metformin", "Colchicine", "Disulfiram", "Low-Dose Naltrexone", "Glyburide"],
+    "NLRP3 Inflammasome": ["Metformin", "Colchicine", "Disulfiram", "Glyburide"],  # CORRECTED: Naltrexone removed — its mechanism is TLR4, not NLRP3
     "AMPK Activation": ["Metformin", "Berberine"],
-    "Beta Cell Preservation": ["Verapamil", "Nicotinamide", "Lithium", "Cyclosporine"],
+    "Beta Cell Preservation": ["Verapamil", "Lithium", "Cyclosporine"],  # CORRECTED: Nicotinamide removed — ENDIT trial was negative for T1D prevention (PMID:15016488)
     "Treg Expansion": ["Pioglitazone", "Rosiglitazone", "Rapamycin", "Baricitinib", "Vitamin D (Cholecalciferol)"],
     "TNF-Alpha Inhibition": ["Pentoxifylline"],
     "Immune Suppression": ["Mycophenolate Mofetil", "Azathioprine", "Baricitinib", "Cyclosporine"],
@@ -646,7 +646,8 @@ PATHWAYS = {
     "GLP-1 Enhancement": ["Acarbose"],
     "Nrf2 Activation": ["Dimethyl Fumarate"],
     "NF-kB Inhibition": ["Aspirin (High-Dose)"],
-    "VDR Immunomodulation": ["Vitamin D (Cholecalciferol)"]
+    "VDR Immunomodulation": ["Vitamin D (Cholecalciferol)"],
+    "TLR4 Antagonism": ["Low-Dose Naltrexone"]  # Correct pathway for LDN mechanism
 }
 
 

@@ -788,8 +788,8 @@ TERMS = {
         'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:39869107'
     },
     'Baricitinib': {
-        'plain': 'JAK inhibitor. FDA approved for rheumatoid arthritis. Shows curative diabetes reversal in mouse models; may protect beta cells in T1D.',
-        'medical': 'JAK1/2 inhibitor. Blocks JAK/STAT signaling downstream of cytokine receptors. In mice: complete diabetes reversal; emerging human data in T1D.',
+        'plain': 'JAK inhibitor. FDA approved for rheumatoid arthritis. Shows complete diabetes reversal in NOD mouse models (preclinical only); no human diabetes trial data exists.',
+        'medical': 'JAK1/2 inhibitor. Blocks JAK/STAT signaling downstream of cytokine receptors. In NOD mice: complete diabetes reversal (preclinical); no published human diabetes efficacy data.',
         'systems': ['immune'],
         'indicators': ['JAK/STAT activity'],
         'normal_range': '2-4 mg daily',
@@ -1352,7 +1352,7 @@ TERMS = {
         'systems': ['pancreas'],
         'indicators': ['C-peptide', 'Insulin independence', 'INSULIN+ cell percentage', 'Glucose-stimulated insulin secretion'],
         'normal_range': 'VX-880 product: 73% INSULIN+ cells; GSIS 4.2 pC/kg/min',
-        'disease': 'Solves donor shortage; VX-880: 83% insulin independence at 1yr, zero SAEs; VX-264 (encapsulated) discontinued March 2025; manufacturing cost declining ~14%/year toward $10-20K by 2034',
+        'disease': 'Addresses donor shortage; VX-880: 83% insulin independence in initial cohort (small N, limited follow-up); VX-264 (encapsulated) discontinued March 2025; manufacturing cost trajectories uncertain but expected to decline with scale',
         'connections': ['Islet Transplantation', 'Beta Cell', 'Immunosuppressive Agents', 'Health Equity'],
         'gap_relevance': [2, 3, 6, 11],
         'source': 'Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466. PMID:35028608'

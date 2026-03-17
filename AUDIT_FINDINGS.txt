@@ -1,0 +1,265 @@
+AUDIT SUMMARY: build_gap_deep_dives.py
+
+HIGHEST RISK ISSUES REQUIRING IMMEDIATE CORRECTION:
+
+==================================================
+CRITICAL ISSUES (20+ instances)
+==================================================
+
+1. UNVERIFIABLE JOURNAL CITATIONS WITHOUT PMIDs (20+ instances across all gaps)
+   
+   These citations cannot be verified to exist:
+   - Nature Immunology 2024 (Lines 43, 69)
+   - Nature Medicine 2024 (Lines 107, 134, 951) 
+   - JCI 2024 (Lines 238, 265) [DUPLICATED]
+   - Nature Biomedical Engineering 2024 (Lines 239, 266)
+   - Nature Biotechnology 2024 (Lines 372, 399)
+   - Lancet Diabetes Endocrinol 2024 (Lines 401, 533, 649, 715, 819, 846)
+   - Lancet Global Health 2024 (Lines 136, 715)
+   - Nature Reviews Drug Discovery 2024 (Line 781)
+   - Nature 2024 [Digital twin study] (Lines 818, 826, 845, 854)
+   - Diabetes Care 2023 (Lines 162, 171, 198, 714)
+   - Frontiers Immunol 2023 (Line 533)
+   
+   SEVERITY: CRITICAL
+   ACTION: All claims sourced to these citations are unverifiable.
+
+2. OVERSTATED PRECLINICAL DATA - "Curative" claims for mouse models (Gap 4)
+   
+   Lines 229, 238, 245, 283:
+   - "Baricitinib achieves CURATIVE diabetes reversal in mouse models"
+   - "COMPLETE diabetes reversal in NOD mice"
+   
+   SEVERITY: CRITICAL
+   VIOLATION: Violates evidence hierarchy. Preclinical ≠ curative.
+   ACTION: Change to "shows efficacy in animal models" or "suggests potential for..."
+
+3. CONTRADICTED "ZERO REJECTION" CLAIM (Gap 2, Line 151)
+   
+   Claim: "iPSC-derived islets...zero rejection"
+   BUT same section (Line 152): "minimal immunosuppression (tacrolimus 3-5 ng/mL..."
+   
+   SEVERITY: CRITICAL
+   PROBLEM: If immunosuppression is needed, rejection risk is not zero.
+   ACTION: Remove "zero rejection" or rephrase as "no graft loss episodes" if data supports.
+
+4. IMPLAUSIBLY PERFECT BIOMARKER CLAIM (Gap 5, Line 349)
+   
+   "TLR9 biomarker: recent 2026 study shows diagnostic AUC 1.0 for DPN"
+   
+   SEVERITY: CRITICAL
+   PROBLEM: AUC 1.0 = perfect discrimination (100% sensitivity, specificity). Virtually impossible.
+   ACTION: Remove claim or provide PMID. Likely fabricated.
+
+5. UNSUBSTANTIATED SERIOUS PHARMACOVIGILANCE CLAIM (Gap 8, Line 549)
+   
+   "GLP-1 RA increases autoimmune risk...lupus-like syndromes reported in 5 post-marketing cases"
+   
+   SEVERITY: CRITICAL
+   PROBLEM: "5 cases" is specific number with ZERO source. Serious safety claim needs FDA documentation.
+   ACTION: Provide PMID/source or remove entire claim.
+
+6. FABRICATED/UNVERIFIED TRIAL DATA (Gap 13, Line 863)
+   
+   "Digital twin T2D (Nature 2024): n=297, 18-mo follow-up, personalized nutrition vs standard diet. 
+   Outcomes: 72.7% remission (HbA1c <5.5% off medications) vs 38% standard care."
+   
+   SEVERITY: CRITICAL
+   PROBLEM: Entire trial described with ZERO PMID. Appears fabricated or speculative.
+   ACTION: Remove or provide PMID. Current description is unverifiable.
+
+7. IRREPRODUCIBLE PUBMED SEARCH CLAIM (Gap 15, Line 928)
+   
+   "zero PubMed results for 'personalized nutrition AND LADA' as of March 2026"
+   
+   SEVERITY: CRITICAL
+   PROBLEM: PubMed searches cannot be reproduced; claim is not verifiable.
+   ACTION: Remove or provide specific search details with screenshot.
+
+==================================================
+HIGH SEVERITY ISSUES (Claims without sources)
+==================================================
+
+1. COST PROJECTIONS WITHOUT SOURCES (Gap 2)
+   
+   - "14.1% CAGR (2024-2034)" - repeated twice, no source cited (Lines 117, 151)
+   - "$1.3B (2024) to $4.6B (2034)" market projection - no PMID
+   - "Manufacturing cost declining...from $50-100K (2024) toward $10-20K (2034)"
+   
+   ACTION: Source these projections or remove as unverifiable.
+
+2. INVESTMENT FIGURES WITHOUT SOURCES (Gap 1, Line 49)
+   
+   "Quell/AstraZeneca: 85M investment"
+   
+   ACTION: Source or remove.
+
+3. COST CLAIMS WITHOUT SOURCES
+   
+   - "$20-50K (80% reduction)" for NexCAR19 India (Line 381)
+   - "$170-220K per CAR-T US cost" (Line 381)
+   - "$500-1000/patient assessments" for DayTwo (Line 863)
+   
+   ACTION: Source each claim or mark as estimates.
+
+4. "ZERO SAEs" CLAIMS (Gaps 3, 4)
+   
+   Line 217: "Belatacept...with zero SAEs" at 10 years
+   Line 49: "Quell...zero SAEs" at 9 patients
+   
+   ACTION: No therapy has zero adverse events over years. Rephase as "no serious adverse events" if supported by data.
+
+5. SPECIFIC PERCENTAGES WITHOUT CITATIONS
+   
+   - "37.6% access increase if travel distance reduced to 34.2 miles" (Line 380)
+   - "50% gap between lowest/highest income brackets" (Line 379)
+   - "<50% as likely as White" for Black patients (Line 378)
+   
+   ACTION: Provide source studies for each statistic.
+
+6. DISEASE-SPECIFIC CLAIMS WITHOUT CITATIONS (Gap 15, Line 928)
+   
+   "Mediterranean diet in autoimmune: effective for multiple sclerosis (reduces TNF-alpha 30-40%), 
+   Sjogren's syndrome (improves salivary Treg frequency), but NO benefit in RA/lupus/Crohn's"
+   
+   ACTION: Each claim needs PMID support. Currently unverifiable.
+
+==================================================
+INTERNAL CONTRADICTIONS
+==================================================
+
+1. GAD65 ANTIBODY PREVALENCE
+   
+   Line 85: "GAD65+ in 80-90% LADA patients"
+   Line 590: "GAD, IA-2, ZnT8 antibodies are UNIVERSAL in LADA"
+   
+   PROBLEM: "Universal" = 100%, but earlier said 80-90%.
+   ACTION: Clarify and align prevalence figures.
+
+2. EDMONTON PROTOCOL ENDPOINTS
+   
+   Line 151 (Gap 2): "32% at 5yr with Edmonton Protocol" [stated as rejection comparison]
+   Line 179 (Gap 3): "32% at 5yr" with Edmonton Protocol [stated as insulin independence]
+   
+   PROBLEM: Same number used for different endpoints. Are these same 255 patients?
+   ACTION: Clarify endpoints and ensure consistency.
+
+3. LADA PREVALENCE
+   
+   Line 618: "8.8% GADA+ in 6,156 European patients"
+   Line 626: "8.9% of apparent T2D is actually LADA"
+   
+   PROBLEM: Minor inconsistency (8.8% vs 8.9%)
+   ACTION: Use consistent figure throughout.
+
+==================================================
+VERIFICATION FAILURES FOR CLAIMED PMIDS
+==================================================
+
+1. Check PMID:40737658 - claims CAR-Treg mechanism (used 5+ times)
+2. Check PMID:40544428 - claims VX-880 NEJM efficacy (used 7+ times)
+3. Check PMID:23248199 - claims LADA prevalence 8.8-8.9% (used 3+ times)
+4. Check PMID:39428507 - claims MOG-CAR 54.5% EAE reduction (used 3+ times)
+5. Check PMID:26590418 - claims Zeevi 800 pts, 46,898 meals (used 2+ times)
+
+ACTION: Verify these PMIDs return published papers with claims matching file descriptions.
+
+==================================================
+MISSING SOURCES FOR SPECIFIC STATISTICS
+==================================================
+
+- CD8+ T cell infiltration: "129±35 cells per field DPN vs 0-5 healthy" (Line 349) - NO PMID
+- Tacrolimus-induced IR: "40% at 3mo" (Line 163) - NO PMID given
+- Dorzagliatin outcomes: "-1.07% HbA1c, TIR 83.7%, 65.2% remission" (Line 444) - should verify PMID:38783768
+- DPP-4i efficacy: "-0.15 units/year GADA decline vs -0.28 placebo" (Line 548) - NO meta-analysis PMID
+- CITR demographics: "66% female, 42.2yr median age, 1.62yr wait time" (Line 729) - NO PMID sources
+
+==================================================
+PATTERN ANALYSIS
+==================================================
+
+PATTERN 1: "Nature [Journal] 2024" citations
+- Appears 5+ times with no PMID
+- Suggests template code with placeholder citations not replaced
+- High fabrication risk
+
+PATTERN 2: "Zero" claims (zero rejection, zero SAEs, zero trials, zero results)
+- Appears 6+ times
+- "Zero" is strong absolute language that's rarely true in medicine
+- Likely overstated
+
+PATTERN 3: Very specific numbers without decimals
+- "37.6% access increase"
+- "14.1% CAGR"
+- "72.7% remission"
+- "54.5% EAE reduction"
+- Suggests data fabrication or misattribution
+
+PATTERN 4: Unverifiable journal + unverifiable journal
+- Nature 2024 + JCI 2024 + Lancet 2024 (multiple)
+- Same journals appear 2+ times with identical/similar claims
+- Suggests incomplete citation management
+
+==================================================
+RECOMMENDATIONS BY PRIORITY
+==================================================
+
+CRITICAL (Do Immediately):
+1. Remove or replace all 20+ unverifiable journal citations
+2. Change "curative" to "shows efficacy in models"
+3. Remove "zero rejection" or acknowledge immunosuppression requirement
+4. Remove AUC 1.0 TLR9 claim without PMID
+5. Remove "5 post-marketing cases" without source
+6. Remove entire Digital Twin n=297 trial description (Line 863) OR provide PMID
+7. Fix GAD65 prevalence contradiction (80-90% vs universal)
+
+HIGH (Within 1 week):
+1. Source 14.1% cost decline figure or remove
+2. Source investment figures ($85M)
+3. Source all cost projections ($1.3B-$4.6B)
+4. Provide PMID for DPP-4i meta-analysis (-0.15 units/year)
+5. Source geographic access statistics (37.6%, 34.2 miles)
+6. Provide PMID for Mediterranean diet efficacy claims
+
+MEDIUM (Refinement):
+1. Add [unpublished data] or [speculation] labels to hypothetical claims
+2. Verify PMID year matches claim year (e.g., 2014 PMID for 2026 analysis)
+3. Align all prevalence figures to single source
+4. Clarify Edmonton Protocol endpoints across gaps
+5. Add confidence intervals and sample sizes for all efficacy claims
+
+==================================================
+SPECIFIC LINE-BY-LINE CORRECTIONS NEEDED
+==================================================
+
+Line 49: "85M investment" → add source or change to "reported multi-million investment"
+Line 49: "100% CNI-free weaning" in 9 patients → "CNI-free in early trial cohort"
+Line 113: "100% HbA1c <7%" → verify this exact claim in PMID:40544428
+Line 151: "zero rejection" → change to "no clinical graft loss" or remove
+Line 349: "AUC 1.0 for DPN using TLR9" → DELETE (implausible)
+Line 381: "$20-50K" and "$500-1000" costs → add sources or mark as estimates
+Line 549: "5 post-marketing cases" → DELETE or provide FDA documentation
+Line 590: "universal" → change to "80-90%" to match earlier statement
+Line 863: "Digital twin T2D...72.7% remission" → DELETE or provide Nature 2024 PMID
+Line 928: "zero PubMed results" → DELETE as irreproducible
+
+==================================================
+RISK ASSESSMENT
+==================================================
+
+Overall file quality: LOW-MEDIUM
+- High fabrication risk in journal citations
+- Multiple unsubstantiated numeric claims
+- Contradictory statements on key prevalence figures
+- Language overstatements violate evidence hierarchy
+- Some sections appear speculative, not evidence-based
+
+Confidence in gap analysis: MEDIUM
+- Concept of identifying research gaps is sound
+- Gap selection methodology appears reasonable
+- Individual gap descriptions mixed reliability
+- Critical sections lack source verification
+
+Recommendation: EXTENSIVE REVISION REQUIRED before publication/distribution
+
+This file should NOT be shared as-is with researchers, clinicians, or funders.
