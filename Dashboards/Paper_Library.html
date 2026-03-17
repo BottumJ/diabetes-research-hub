@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Library - Diabetes Research Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            background-color: #fafaf7;
+        }
+        h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+        h2 { font-size: 1.3rem; margin: 2rem 0 0.8rem 0; color: #333333; border-bottom: 1px solid #e0ddd5; padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; margin: 1.2rem 0 0.5rem 0; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px 30px 40px 30px; }
+        .description { color: #636363; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e0ddd5;
+            padding: 12px 16px;
+        }
+        .stat-value { font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; font-size: 1.6rem; font-weight: 600; }
+        .stat-label { font-size: 0.8rem; color: #636363; text-transform: uppercase; letter-spacing: 0.05em; }
+        .filters {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .filters input {
+            padding: 6px 10px;
+            border: 1px solid #e0ddd5;
+            background: #ffffff;
+            font-size: 0.9rem;
+            width: 300px;
+            font-family: inherit;
+        }
+        .filters select {
+            padding: 6px 10px;
+            border: 1px solid #e0ddd5;
+            background: #ffffff;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+        .filter-label { font-size: 0.8rem; color: #636363; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        th {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 2px solid #333333;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        th:hover { color: #2c5f8a; }
+        td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #e0ddd5;
+            vertical-align: top;
+        }
+        tr:hover { background-color: #f5f4f0; }
+        a { color: #2c5f8a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .pmid-col { width: 80px; font-family: "SF Mono", Consolas, monospace; font-size: 0.82rem; }
+        .title-col { min-width: 250px; }
+        .journal-col { width: 120px; font-size: 0.82rem; color: #636363; }
+        .year-col { width: 50px; text-align: center; }
+        .score-col { width: 90px; font-family: "SF Mono", Consolas, monospace; font-size: 0.82rem; text-align: center; }
+        .coverage-col { width: 120px; font-size: 0.8rem; color: #636363; }
+        .loc-col { width: 130px; font-size: 0.78rem; color: #636363; }
+        .tabs { display: flex; gap: 0; margin-bottom: 0; }
+        .tab-btn {
+            padding: 8px 20px;
+            background: none;
+            border: 1px solid #e0ddd5;
+            border-bottom: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #636363;
+        }
+        .tab-btn.active {
+            background: #ffffff;
+            color: #333333;
+            font-weight: 600;
+            border-bottom: 1px solid #ffffff;
+            position: relative;
+            top: 1px;
+        }
+        .tab-content {
+            display: none;
+            border: 1px solid #e0ddd5;
+            background: #ffffff;
+            padding: 16px;
+        }
+        .tab-content.active { display: block; }
+        .validation-bar {
+            display: flex;
+            height: 24px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #e0ddd5;
+        }
+        .validation-bar div { height: 100%; }
+        .bar-confirmed { background: #2d6a2e; }
+        .bar-plausible { background: #4a7c59; }
+        .bar-weak { background: #8b7355; }
+        .bar-mismatch { background: #a33b2c; }
+        .bar-nodata { background: #999999; }
+        .legend { display: flex; gap: 16px; font-size: 0.8rem; color: #636363; margin-bottom: 16px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 4px; }
+        .legend-swatch { width: 12px; height: 12px; display: inline-block; }
+        .count-badge {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .small-table { max-width: 600px; }
+        .network-stat { display: inline-block; margin-right: 24px; margin-bottom: 8px; }
+        .timestamp { font-size: 0.75rem; color: #636363; margin-top: 2rem; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
+</head>
+<body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+  <a href="Paper_Library.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">Paper Library</a>
+</div>
+<div class="container">
+    <h1>Paper Library</h1>
+    <p class="description">Ingested research papers with abstracts, full text (where available), citation validation scores, and cross-paper linkage. Every citation in the Diabetes Research Hub is verified against PubMed and scored for relevance.</p>
+
+    <!-- Summary Statistics -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">187</div>
+            <div class="stat-label">Total Papers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">186</div>
+            <div class="stat-label">Abstracts</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">102</div>
+            <div class="stat-label">PMC Available</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">80</div>
+            <div class="stat-label">Full Text</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">90</div>
+            <div class="stat-label">Cross-Citations</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">30</div>
+            <div class="stat-label">Topic Clusters</div>
+        </div>
+    </div>
+
+    <!-- Validation Bar -->
+    <h2>Citation Validation</h2>
+    <div class="validation-bar">
+        <div class="bar-confirmed" style="width:29.4%;" title="CONFIRMED: 55"></div>
+        <div class="bar-plausible" style="width:24.1%;" title="PLAUSIBLE: 45"></div>
+        <div class="bar-weak" style="width:46.0%;" title="WEAK: 86"></div>
+        <div class="bar-mismatch" style="width:0.0%;" title="MISMATCH: 0"></div>
+        <div class="bar-nodata" style="width:0.5%;" title="NO DATA: 1"></div>
+    </div>
+    <div class="legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">55</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">45</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#8b7355;"></span> Weak <span class="count-badge">86</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#a33b2c;"></span> Mismatch <span class="count-badge">0</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#999999;"></span> No Data <span class="count-badge">1</span></div>
+    </div>
+    <p style="font-size:0.85rem;color:#636363;margin-bottom:1rem;">Scores reflect automated term-matching between dashboard claims and paper abstracts. "Weak" often means the claim context in our scripts is HTML-heavy rather than a true content mismatch.</p>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('papers')">All Papers</button>
+        <button class="tab-btn" onclick="switchTab('network')">Evidence Network</button>
+        <button class="tab-btn" onclick="switchTab('clusters')">Topic Clusters</button>
+    </div>
+
+    <!-- Tab: All Papers -->
+    <div id="tab-papers" class="tab-content active">
+        <div class="filters">
+            <div>
+                <div class="filter-label">Search</div>
+                <input type="text" id="searchInput" placeholder="Search by title, PMID, journal..." oninput="filterTable()">
+            </div>
+            <div>
+                <div class="filter-label">Score</div>
+                <select id="scoreFilter" onchange="filterTable()">
+                    <option value="">All</option>
+                    <option value="CONFIRMED">Confirmed</option>
+                    <option value="PLAUSIBLE">Plausible</option>
+                    <option value="WEAK">Weak</option>
+                    <option value="MISMATCH">Mismatch</option>
+                    <option value="NO_DATA">No Data</option>
+                </select>
+            </div>
+            <div>
+                <div class="filter-label">Coverage</div>
+                <select id="coverageFilter" onchange="filterTable()">
+                    <option value="">All</option>
+                    <option value="Full Text">Full Text</option>
+                    <option value="Abstract">Has Abstract</option>
+                    <option value="PMC">PMC Available</option>
+                </select>
+            </div>
+            <div style="margin-left:auto;font-size:0.85rem;color:#636363;">
+                Showing <span id="visibleCount">187</span> of 187 papers
+            </div>
+        </div>
+        <div style="overflow-x:auto;">
+        <table id="paperTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">PMID</th>
+                    <th onclick="sortTable(1)">Title</th>
+                    <th onclick="sortTable(2)">Journal</th>
+                    <th onclick="sortTable(3)">Year</th>
+                    <th onclick="sortTable(4)">Score</th>
+                    <th onclick="sortTable(5)">Coverage</th>
+                    <th onclick="sortTable(6)">Used In</th>
+                </tr>
+            </thead>
+            <tbody>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2026" data-pmid="41827917">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/41827917/" target="_blank" rel="noopener">41827917</a></td>
+            <td class="title-col">Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic Diabetes.</td>
+            <td class="journal-col">Cells</td>
+            <td class="year-col">2026</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2026" data-pmid="41827829">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/41827829/" target="_blank" rel="noopener">41827829</a></td>
+            <td class="title-col">Isolation and Characterization of Marrow-Isolated Adult Multilineage Inducible (MIAMI) Cell-Derived Extracellular Vesicles Demonstrate Multifunctional Therapeutic Potential in Tissue Regeneration and Anti-Inflammatory Immunomodulation.</td>
+            <td class="journal-col">Cells</td>
+            <td class="year-col">2026</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="41618067">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/41618067/" target="_blank" rel="noopener">41618067</a></td>
+            <td class="title-col">Artificial Intelligence-Based Medical Devices for Diabetic Retinopathy Screening in the European Union.</td>
+            <td class="journal-col">Ophthalmol Ther</td>
+            <td class="year-col">2026</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="41468096">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener">41468096</a></td>
+            <td class="title-col">Antigen-Specific Chimeric Antigen Receptor-T Regulatory Cells Home to Human Islets, Suppress Cytotoxic T Lymphocytes and Reverse Type 1 Diabetes.</td>
+            <td class="journal-col">Diabetes Technol Ther</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_synthesis</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40988828">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40988828/" target="_blank" rel="noopener">40988828</a></td>
+            <td class="title-col">Vitamin D Supplementation in Deficiency States and Combined Calcium-Vitamin D Therapy in Diabetes Prevention and Management: A Systematic Review of Clinical Evidence.</td>
+            <td class="journal-col">Cureus</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40737658">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40737658/" target="_blank" rel="noopener">40737658</a></td>
+            <td class="title-col">UNVEILING LADA: PREVALENCE AND CHARACTERISTICS AMONG TYPE 2 DIABETIC PATIENTS IN PORT SUDAN, SUDAN.</td>
+            <td class="journal-col">Georgian Med News</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_synthesis, build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40650745">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40650745/" target="_blank" rel="noopener">40650745</a></td>
+            <td class="title-col">Verapamil and low-dose anti-mouse thymocyte globulin combination therapy stably reverses recent-onset type 1 diabetes in NOD mice by acting on the beta cell and immune axes.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_islet</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40573322">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40573322/" target="_blank" rel="noopener">40573322</a></td>
+            <td class="title-col">In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kα Inhibitor-Induced Hyperglycemia.</td>
+            <td class="journal-col">Pharmaceuticals (Basel)</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40544428">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank" rel="noopener">40544428</a></td>
+            <td class="title-col">Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives, build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40291594">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40291594/" target="_blank" rel="noopener">40291594</a></td>
+            <td class="title-col">Cost-effective strategies for CAR-T cell therapy manufacturing.</td>
+            <td class="journal-col">Mol Ther Oncol</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_cart_access</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40032831">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40032831/" target="_blank" rel="noopener">40032831</a></td>
+            <td class="title-col">Identification of plasma proteomic markers underlying polygenic risk of type 2 diabetes and related comorbidities.</td>
+            <td class="journal-col">Nat Commun</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="39869107">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39869107/" target="_blank" rel="noopener">39869107</a></td>
+            <td class="title-col">Long Term Outcomes of Transplant Recipients Comparing Belatacept vs. Tacrolimus: A UNOS Database Analysis.</td>
+            <td class="journal-col">Clin Transplant</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="39843169">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank" rel="noopener">39843169</a></td>
+            <td class="title-col">Dapagliflozin plus calorie restriction for remission of type 2 diabetes: multicentre, double blind, randomised, placebo controlled trial.</td>
+            <td class="journal-col">BMJ</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="39651984">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39651984/" target="_blank" rel="noopener">39651984</a></td>
+            <td class="title-col">Summary of Revisions: Standards of Care in Diabetes-2025.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_synthesis</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="39613428">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener">39613428</a></td>
+            <td class="title-col">Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.</td>
+            <td class="journal-col">BMJ Open</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="39428507">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank" rel="noopener">39428507</a></td>
+            <td class="title-col">MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.</td>
+            <td class="journal-col">J Neuroinflammation</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="39412512">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank" rel="noopener">39412512</a></td>
+            <td class="title-col">SGLT2 inhibitors and NLRP3 inflammasome: potential target in diabetic kidney disease.</td>
+            <td class="journal-col">J Bras Nefrol</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2024" data-pmid="39173844">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/39173844/" target="_blank" rel="noopener">39173844</a></td>
+            <td class="title-col">Compromised chronic efficacy of a glucokinase activator AZD1656 in mouse models for common human GCKR variants.</td>
+            <td class="journal-col">Biochem Pharmacol</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="38783768">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" rel="noopener">38783768</a></td>
+            <td class="title-col">Recent drug development of dorzagliatin, a new glucokinase activator, with the potential to treat Type 2 diabetes: A review study.</td>
+            <td class="journal-col">J Diabetes</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_landscape, build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2024" data-pmid="38578067">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/38578067/" target="_blank" rel="noopener">38578067</a></td>
+            <td class="title-col">Existing and emerging GLP-1 receptor agonist therapy: Ramifications for diabetic retinopathy screening.</td>
+            <td class="journal-col">J R Coll Physicians Edinb</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="37845117">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37845117/" target="_blank" rel="noopener">37845117</a></td>
+            <td class="title-col">Residual cardiovascular risk: When should we treat it?</td>
+            <td class="journal-col">Eur J Intern Med</td>
+            <td class="year-col">2024</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37385277">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37385277/" target="_blank" rel="noopener">37385277</a></td>
+            <td class="title-col">The pursuit of optimal semaglutide dosing in type 2 diabetes continues.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37366315">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37366315/" target="_blank" rel="noopener">37366315</a></td>
+            <td class="title-col">Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37359825">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener">37359825</a></td>
+            <td class="title-col">A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence in Patients With Type I Diabetes.</td>
+            <td class="journal-col">Transpl Int</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_outcomes</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37356449">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37356449/" target="_blank" rel="noopener">37356449</a></td>
+            <td class="title-col">Measuring the global burden of diabetes: implications for health policy, practice, and research.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37356446">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37356446/" target="_blank" rel="noopener">37356446</a></td>
+            <td class="title-col">Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37351171">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37351171/" target="_blank" rel="noopener">37351171</a></td>
+            <td class="title-col">Integration of metabolomics and peptidomics reveals distinct molecular landscape of human diabetic kidney disease.</td>
+            <td class="journal-col">Theranostics</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37133585">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37133585/" target="_blank" rel="noopener">37133585</a></td>
+            <td class="title-col">Trifluridine-Tipiracil and Bevacizumab in Refractory Metastatic Colorectal Cancer.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2023" data-pmid="37122431">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank" rel="noopener">37122431</a></td>
+            <td class="title-col">Semaglutide-eye-catching results.</td>
+            <td class="journal-col">World J Diabetes</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37105208">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener">37105208</a></td>
+            <td class="title-col">Association between primary graft function and 5-year outcomes of islet allogeneic transplantation in type 1 diabetes: a retrospective, multicentre, observational cohort study in 1210 patients from the Collaborative Islet Transplant Registry.</td>
+            <td class="journal-col">Lancet Diabetes Endocrinol</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_outcomes</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37016949">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/37016949/" target="_blank" rel="noopener">37016949</a></td>
+            <td class="title-col">Involvement of Racially and Ethnically Minoritized Youths in Behavioral Type 1 Diabetes Interventions: A Systematic Review.</td>
+            <td class="journal-col">J Pediatr Psychol</td>
+            <td class="year-col">2023</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="36474045">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/36474045/" target="_blank" rel="noopener">36474045</a></td>
+            <td class="title-col">Discovery and systematic characterization of risk variants and genes for coronary artery disease in over a million participants.</td>
+            <td class="journal-col">Nat Genet</td>
+            <td class="year-col">2022</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="36113507">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank" rel="noopener">36113507</a></td>
+            <td class="title-col">Global incidence, prevalence, and mortality of type 1 diabetes in 2021 with projection to 2040: a modelling study.</td>
+            <td class="journal-col">Lancet Diabetes Endocrinol</td>
+            <td class="year-col">2022</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="35466661">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/35466661/" target="_blank" rel="noopener">35466661</a></td>
+            <td class="title-col">Efficacy and safety of hydroxychloroquine for managing glycemia in type-2 diabetes: A systematic review and meta-analysis.</td>
+            <td class="journal-col">J Postgrad Med</td>
+            <td class="year-col">2022</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="34421203">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" rel="noopener">34421203</a></td>
+            <td class="title-col">Inequities in Health Outcomes in Children and Adults With Type 1 Diabetes: Data From the T1D Exchange Quality Improvement Collaborative.</td>
+            <td class="journal-col">Clin Diabetes</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="34318969">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/34318969/" target="_blank" rel="noopener">34318969</a></td>
+            <td class="title-col">Low C-peptide together with a high glutamic acid decarboxylase autoantibody level predicts progression to insulin dependence in latent autoimmune diabetes in adults: The HUNT study.</td>
+            <td class="journal-col">Diabetes Obes Metab</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_model</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="34180979">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/34180979/" target="_blank" rel="noopener">34180979</a></td>
+            <td class="title-col">The β Cell in Diabetes: Integrating Biomarkers With Functional Measures.</td>
+            <td class="journal-col">Endocr Rev</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="33622669">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" rel="noopener">33622669</a></td>
+            <td class="title-col">The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study of TTP399, a Hepatoselective Glucokinase Activator, for Adjunctive Treatment of Type 1 Diabetes.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_pricing, build_gka_landscape, build_gap_deep_dives +1</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2021" data-pmid="33550442">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33550442/" target="_blank" rel="noopener">33550442</a></td>
+            <td class="title-col">New closed-loop insulin systems.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2021" data-pmid="33155826">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank" rel="noopener">33155826</a></td>
+            <td class="title-col">Racial-Ethnic Disparities in Diabetes Technology use Among Young Adults with Type 1 Diabetes.</td>
+            <td class="journal-col">Diabetes Technol Ther</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2021" data-pmid="32627352">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" rel="noopener">32627352</a></td>
+            <td class="title-col">Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</td>
+            <td class="journal-col">Am J Transplant</td>
+            <td class="year-col">2021</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary, build_islet_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="33264825">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33264825/" target="_blank" rel="noopener">33264825</a></td>
+            <td class="title-col">Effect of Finerenone on Chronic Kidney Disease Outcomes in Type 2 Diabetes.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="33139407">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407/" target="_blank" rel="noopener">33139407</a></td>
+            <td class="title-col">Social Determinants of Health and Diabetes: A Scientific Review.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32929230">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32929230/" target="_blank" rel="noopener">32929230</a></td>
+            <td class="title-col">Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes mellitus.</td>
+            <td class="journal-col">Nat Rev Endocrinol</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32847960">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener">32847960</a></td>
+            <td class="title-col">Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32754804">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32754804/" target="_blank" rel="noopener">32754804</a></td>
+            <td class="title-col">Efficacy of GAD-alum immunotherapy associated with HLA-DR3-DQ2 in recently diagnosed type 1 diabetes.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_model</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="32243867">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener">32243867</a></td>
+            <td class="title-col">Serum levels of matrix metalloproteinase-2, -9, and vitamin D in patients with multiple sclerosis with or without herpesvirus-6 seropositivity.</td>
+            <td class="journal-col">Braz J Infect Dis</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_landscape, build_lada_prevalence, build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32017635">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32017635/" target="_blank" rel="noopener">32017635</a></td>
+            <td class="title-col">Regulatory T Cells and Human Disease.</td>
+            <td class="journal-col">Annu Rev Immunol</td>
+            <td class="year-col">2020</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="32694767">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/32694767/" target="_blank" rel="noopener">32694767</a></td>
+            <td class="title-col">Leptin and the endocrine control of energy balance.</td>
+            <td class="journal-col">Nat Metab</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31733140">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31733140/" target="_blank" rel="noopener">31733140</a></td>
+            <td class="title-col">Efficacy and Safety of Low-Dose Colchicine after Myocardial Infarction.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31529065">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" target="_blank" rel="noopener">31529065</a></td>
+            <td class="title-col">A mobile app identifies momentary psychosocial and contextual factors related to mealtime self-management in adolescents with type 1 diabetes.</td>
+            <td class="journal-col">J Am Med Inform Assoc</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_model</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="31296866">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31296866/" target="_blank" rel="noopener">31296866</a></td>
+            <td class="title-col">Gestational diabetes mellitus.</td>
+            <td class="journal-col">Nat Rev Dis Primers</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31263284">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank" rel="noopener">31263284</a></td>
+            <td class="title-col">Supplementation with Akkermansia muciniphila in overweight and obese human volunteers: a proof-of-concept exploratory study.</td>
+            <td class="journal-col">Nat Med</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="31197153">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener">31197153</a></td>
+            <td class="title-col">Diabetic neuropathy.</td>
+            <td class="journal-col">Nat Rev Dis Primers</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="31182921">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31182921/" target="_blank" rel="noopener">31182921</a></td>
+            <td class="title-col">Metformin Inhibits the NLRP3 Inflammasome via AMPK/mTOR-dependent Effects in Diabetic Cardiomyopathy.</td>
+            <td class="journal-col">Int J Biol Sci</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31177185">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31177185/" target="_blank" rel="noopener">31177185</a></td>
+            <td class="title-col">Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31175156">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31175156/" target="_blank" rel="noopener">31175156</a></td>
+            <td class="title-col">Thirty sweet years of GLUT4.</td>
+            <td class="journal-col">J Biol Chem</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="31173679">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank" rel="noopener">31173679</a></td>
+            <td class="title-col">Vitamin D Supplementation and Prevention of Type 2 Diabetes.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog, build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31036962">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank" rel="noopener">31036962</a></td>
+            <td class="title-col">The NLRP3 inflammasome: molecular activation and regulation to therapeutics.</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="30949058">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank" rel="noopener">30949058</a></td>
+            <td class="title-col">The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans.</td>
+            <td class="journal-col">Front Physiol</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_landscape, build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30899369">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank" rel="noopener">30899369</a></td>
+            <td class="title-col">Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.</td>
+            <td class="journal-col">Am J Transl Res</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30657336">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30657336/" target="_blank" rel="noopener">30657336</a></td>
+            <td class="title-col">State of Type 1 Diabetes Management and Outcomes from the T1D Exchange in 2016-2018.</td>
+            <td class="journal-col">Diabetes Technol Ther</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="30415610">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30415610/" target="_blank" rel="noopener">30415610</a></td>
+            <td class="title-col">Low-Dose Methotrexate for the Prevention of Atherosclerotic Events.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2019</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="30303773">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30303773/" target="_blank" rel="noopener">30303773</a></td>
+            <td class="title-col">The Difference δ-Cells Make in Glucose Control.</td>
+            <td class="journal-col">Physiology (Bethesda)</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="30291106">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30291106/" target="_blank" rel="noopener">30291106</a></td>
+            <td class="title-col">Management of Hyperglycemia in Type 2 Diabetes, 2018. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD).</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29988125">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener">29988125</a></td>
+            <td class="title-col">Verapamil and beta cell function in adults with recent-onset type 1 diabetes.</td>
+            <td class="journal-col">Nat Med</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29885104">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29885104/" target="_blank" rel="noopener">29885104</a></td>
+            <td class="title-col">Glycated Albumin Is a More Useful Glycation Index than HbA1c for Reflecting Renal Tubulopathy in Subjects with Early Diabetic Kidney Disease.</td>
+            <td class="journal-col">Diabetes Metab J</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="29754952">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29754952/" target="_blank" rel="noopener">29754952</a></td>
+            <td class="title-col">Early Time-Restricted Feeding Improves Insulin Sensitivity, Blood Pressure, and Oxidative Stress Even without Weight Loss in Men with Prediabetes.</td>
+            <td class="journal-col">Cell Metab</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29623672">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29623672/" target="_blank" rel="noopener">29623672</a></td>
+            <td class="title-col">A Systematic Review on the Protective Effect of N-Acetyl Cysteine Against Diabetes-Associated Cardiovascular Complications.</td>
+            <td class="journal-col">Am J Cardiovasc Drugs</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="29617641">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29617641/" target="_blank" rel="noopener">29617641</a></td>
+            <td class="title-col">Mechanisms of Action and Therapeutic Application of Glucagon-like Peptide-1.</td>
+            <td class="journal-col">Cell Metab</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2018" data-pmid="29590046">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29590046/" target="_blank" rel="noopener">29590046</a></td>
+            <td class="title-col">Gut bacteria selectively promoted by dietary fibers alleviate type 2 diabetes.</td>
+            <td class="journal-col">Science</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2018" data-pmid="29567707">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29567707/" target="_blank" rel="noopener">29567707</a></td>
+            <td class="title-col">CAR T cell immunotherapy for human cancer.</td>
+            <td class="journal-col">Science</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29562193">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29562193/" target="_blank" rel="noopener">29562193</a></td>
+            <td class="title-col">Combination Cancer Therapy with Immune Checkpoint Blockade: Mechanisms and Strategies.</td>
+            <td class="journal-col">Immunity</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29291885">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/29291885/" target="_blank" rel="noopener">29291885</a></td>
+            <td class="title-col">Short children born small for gestational age outcomes in the era of growth hormone therapy.</td>
+            <td class="journal-col">Growth Horm IGF Res</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2017" data-pmid="28864502">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28864502/" target="_blank" rel="noopener">28864502</a></td>
+            <td class="title-col">Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_islet</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2017" data-pmid="28776086">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28776086/" target="_blank" rel="noopener">28776086</a></td>
+            <td class="title-col">The mechanisms of action of metformin.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2017" data-pmid="28539434">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28539434/" target="_blank" rel="noopener">28539434</a></td>
+            <td class="title-col">Estrogens in Male Physiology.</td>
+            <td class="journal-col">Physiol Rev</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2017" data-pmid="28522654">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28522654/" target="_blank" rel="noopener">28522654</a></td>
+            <td class="title-col">Diabetic Kidney Disease: Challenges, Progress, and Possibilities.</td>
+            <td class="journal-col">Clin J Am Soc Nephrol</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2017" data-pmid="28431241">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28431241/" target="_blank" rel="noopener">28431241</a></td>
+            <td class="title-col">AKT/PKB Signaling: Navigating the Network.</td>
+            <td class="journal-col">Cell</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2017" data-pmid="28397826">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28397826/" target="_blank" rel="noopener">28397826</a></td>
+            <td class="title-col">Immunotherapy: Hiding in plain sight: immune escape in the era of targeted T-cell-based immunotherapies.</td>
+            <td class="journal-col">Nat Rev Clin Oncol</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2017" data-pmid="28314945">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28314945/" target="_blank" rel="noopener">28314945</a></td>
+            <td class="title-col">Precision diabetes: learning from monogenic diabetes.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2017" data-pmid="28199814">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28199814/" target="_blank" rel="noopener">28199814</a></td>
+            <td class="title-col">Baricitinib versus Placebo or Adalimumab in Rheumatoid Arthritis.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2017" data-pmid="28086098">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/28086098/" target="_blank" rel="noopener">28086098</a></td>
+            <td class="title-col">30 Years of NF-κB: A Blossoming of Relevance to Human Pathobiology.</td>
+            <td class="journal-col">Cell</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2017" data-pmid="27878313">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27878313/" target="_blank" rel="noopener">27878313</a></td>
+            <td class="title-col">Targeting renal glucose reabsorption to treat hyperglycaemia: the pleiotropic effects of SGLT2 inhibition.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2017</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2016" data-pmid="27821710">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank" rel="noopener">27821710</a></td>
+            <td class="title-col">Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.</td>
+            <td class="journal-col">J Pharmacol Exp Ther</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_synthesis</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2016" data-pmid="27727279">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank" rel="noopener">27727279</a></td>
+            <td class="title-col">Regulatory T Cell Responses in Participants with Type 1 Diabetes after a Single Dose of Interleukin-2: A Non-Randomised, Open Label, Adaptive Dose-Finding Trial.</td>
+            <td class="journal-col">PLoS Med</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2016" data-pmid="27159554">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27159554/" target="_blank" rel="noopener">27159554</a></td>
+            <td class="title-col">Diabetic retinopathy.</td>
+            <td class="journal-col">Nat Rev Dis Primers</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2016" data-pmid="26897744">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26897744/" target="_blank" rel="noopener">26897744</a></td>
+            <td class="title-col">Inflammation as a Therapeutic Target for Diabetic Neuropathies.</td>
+            <td class="journal-col">Curr Diab Rep</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2016" data-pmid="26784127">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26784127/" target="_blank" rel="noopener">26784127</a></td>
+            <td class="title-col">Continuous Glucose Monitoring: A Review of Successes, Challenges, and Opportunities.</td>
+            <td class="journal-col">Diabetes Technol Ther</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2016" data-pmid="26656660">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank" rel="noopener">26656660</a></td>
+            <td class="title-col">TNF biology, pathogenic mechanisms and emerging therapeutic strategies.</td>
+            <td class="journal-col">Nat Rev Rheumatol</td>
+            <td class="year-col">2016</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="27189025">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27189025/" target="_blank" rel="noopener">27189025</a></td>
+            <td class="title-col">Type 2 diabetes mellitus.</td>
+            <td class="journal-col">Nat Rev Dis Primers</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="26590418">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26590418/" target="_blank" rel="noopener">26590418</a></td>
+            <td class="title-col">Personalized Nutrition by Prediction of Glycemic Responses.</td>
+            <td class="journal-col">Cell</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2015" data-pmid="26378978">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener">26378978</a></td>
+            <td class="title-col">Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog, build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="26322160">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank" rel="noopener">26322160</a></td>
+            <td class="title-col">Magnesium and type 2 diabetes.</td>
+            <td class="journal-col">World J Diabetes</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="25940230">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25940230/" target="_blank" rel="noopener">25940230</a></td>
+            <td class="title-col">Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.</td>
+            <td class="journal-col">Prog Cardiovasc Dis</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="25834231">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25834231/" target="_blank" rel="noopener">25834231</a></td>
+            <td class="title-col">Physiology of proglucagon peptides: role of glucagon and GLP-1 in health and disease.</td>
+            <td class="journal-col">Physiol Rev</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2015" data-pmid="25714673">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25714673/" target="_blank" rel="noopener">25714673</a></td>
+            <td class="title-col">Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in type 1 diabetic mice.</td>
+            <td class="journal-col">Am J Physiol Endocrinol Metab</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2015" data-pmid="25587654">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25587654/" target="_blank" rel="noopener">25587654</a></td>
+            <td class="title-col">The JAK-STAT pathway: impact on human disease and therapeutic intervention.</td>
+            <td class="journal-col">Annu Rev Med</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2015" data-pmid="25287711">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25287711/" target="_blank" rel="noopener">25287711</a></td>
+            <td class="title-col">SLC30A8 mutations in type 2 diabetes.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2015</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="25230243">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25230243/" target="_blank" rel="noopener">25230243</a></td>
+            <td class="title-col">Markers of the progression of complications in patients with type 2 diabetes: a one-year longitudinal study.</td>
+            <td class="journal-col">Exp Clin Endocrinol Diabetes</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2014" data-pmid="25190079">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/25190079/" target="_blank" rel="noopener">25190079</a></td>
+            <td class="title-col">IL-6 in inflammation, immunity, and disease.</td>
+            <td class="journal-col">Cold Spring Harb Perspect Biol</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24997559">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24997559/" target="_blank" rel="noopener">24997559</a></td>
+            <td class="title-col">Combination therapy with sitagliptin and lansoprazole in patients with recent-onset type 1 diabetes (REPAIR-T1D): 12-month results of a multicentre, randomised, placebo-controlled, phase 2 trial.</td>
+            <td class="journal-col">Lancet Diabetes Endocrinol</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2014" data-pmid="24850385">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24850385/" target="_blank" rel="noopener">24850385</a></td>
+            <td class="title-col">AMP-activated protein kinase: maintaining energy homeostasis at the cellular and whole-body levels.</td>
+            <td class="journal-col">Annu Rev Nutr</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2014" data-pmid="24838679">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24838679/" target="_blank" rel="noopener">24838679</a></td>
+            <td class="title-col">Autoantibodies and type 1 diabetes: are we still in the cave of an ancient myth?</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2014" data-pmid="24636767">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24636767/" target="_blank" rel="noopener">24636767</a></td>
+            <td class="title-col">Risk factors of stroke and -717A&gt;G (rs2794521) CRP gene polymorphism among stroke patients in West Pomerania province of Poland.</td>
+            <td class="journal-col">Neurol Neurochir Pol</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24598244">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener">24598244</a></td>
+            <td class="title-col">GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants of a GAD65 vaccination trial.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24508508">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24508508/" target="_blank" rel="noopener">24508508</a></td>
+            <td class="title-col">Rapamycin: one drug, many effects.</td>
+            <td class="journal-col">Cell Metab</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2014" data-pmid="24506867">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24506867/" target="_blank" rel="noopener">24506867</a></td>
+            <td class="title-col">Pdx1 maintains β cell identity and function by repressing an α cell program.</td>
+            <td class="journal-col">Cell Metab</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2014" data-pmid="23890997">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank" rel="noopener">23890997</a></td>
+            <td class="title-col">Type 1 diabetes.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2014</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="23835333">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank" rel="noopener">23835333</a></td>
+            <td class="title-col">Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes in a randomized controlled trial: metabolic and immunologic features at baseline identify a subgroup of responders.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_model</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="23835325">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23835325/" target="_blank" rel="noopener">23835325</a></td>
+            <td class="title-col">Patterns of β-cell autoantibody appearance and genetic associations during the first years of life.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23780460">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23780460/" target="_blank" rel="noopener">23780460</a></td>
+            <td class="title-col">Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children.</td>
+            <td class="journal-col">JAMA</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="23562078">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23562078/" target="_blank" rel="noopener">23562078</a></td>
+            <td class="title-col">Impaired cholesterol efflux in senescent macrophages promotes age-related macular degeneration.</td>
+            <td class="journal-col">Cell Metab</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2013" data-pmid="23413806">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23413806/" target="_blank" rel="noopener">23413806</a></td>
+            <td class="title-col">The clinical utility of C-peptide measurement in the care of patients with diabetes.</td>
+            <td class="journal-col">Diabet Med</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23248199">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener">23248199</a></td>
+            <td class="title-col">Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives, build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="23061757">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" rel="noopener">23061757</a></td>
+            <td class="title-col">Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept for clinical islet cell transplantation.</td>
+            <td class="journal-col">Clin Transplant</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_islet</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="22980982">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22980982/" target="_blank" rel="noopener">22980982</a></td>
+            <td class="title-col">Pancreatic β cell dedifferentiation as a mechanism of diabetic β cell failure.</td>
+            <td class="journal-col">Cell</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2012" data-pmid="22723585">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank" rel="noopener">22723585</a></td>
+            <td class="title-col">Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis of controlled feeding trials.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_islet, build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2012" data-pmid="22683128">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22683128/" target="_blank" rel="noopener">22683128</a></td>
+            <td class="title-col">Prediabetes: a high-risk state for diabetes development.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2012" data-pmid="22336824">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22336824/" target="_blank" rel="noopener">22336824</a></td>
+            <td class="title-col">Pentoxifylline for diabetic kidney disease.</td>
+            <td class="journal-col">Cochrane Database Syst Rev</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="22315720">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22315720/" target="_blank" rel="noopener">22315720</a></td>
+            <td class="title-col">Genetics of type 1 diabetes.</td>
+            <td class="journal-col">Cold Spring Harb Perspect Med</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2012" data-pmid="22296077">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22296077/" target="_blank" rel="noopener">22296077</a></td>
+            <td class="title-col">GAD65 antigen therapy in recently diagnosed type 1 diabetes mellitus.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="22109896">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/22109896/" target="_blank" rel="noopener">22109896</a></td>
+            <td class="title-col">Leaky gut and autoimmune diseases.</td>
+            <td class="journal-col">Clin Rev Allergy Immunol</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2012" data-pmid="21323736">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener">21323736</a></td>
+            <td class="title-col">A health economic analysis of clinical islet transplantation.</td>
+            <td class="journal-col">Clin Transplant</td>
+            <td class="year-col">2012</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_equity_map</td>
+        </tr>
+
+        <tr class="paper-row" data-score="NO_DATA" data-year="2011" data-pmid="27512794">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/27512794/" target="_blank" rel="noopener">27512794</a></td>
+            <td class="title-col">Drugs for Smoking Cessation.</td>
+            <td class="journal-col"></td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#999999;font-weight:600;">NO_DATA</td>
+            <td class="coverage-col">Metadata only</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2011" data-pmid="21997792">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21997792/" target="_blank" rel="noopener">21997792</a></td>
+            <td class="title-col">Protective and pathogenic functions of macrophage subsets.</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2011" data-pmid="21775755">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21775755/" target="_blank" rel="noopener">21775755</a></td>
+            <td class="title-col">Efficacy and safety of antioxidant treatment with α-lipoic acid over 4 years in diabetic polyneuropathy: the NATHAN 1 trial.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2011" data-pmid="21525462">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21525462/" target="_blank" rel="noopener">21525462</a></td>
+            <td class="title-col">Glucokinase activators for diabetes therapy: May 2010 status report.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2011" data-pmid="21471512">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21471512/" target="_blank" rel="noopener">21471512</a></td>
+            <td class="title-col">Fasting-induced protein phosphatase 1 regulatory subunit contributes to postprandial blood glucose homeostasis via regulation of hepatic glycogenesis.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2011" data-pmid="21372320">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21372320/" target="_blank" rel="noopener">21372320</a></td>
+            <td class="title-col">Activation and function of the MAPKs and their substrates, the MAPK-activated protein kinases.</td>
+            <td class="journal-col">Microbiol Mol Biol Rev</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2011" data-pmid="21212348">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/21212348/" target="_blank" rel="noopener">21212348</a></td>
+            <td class="title-col">Innate or adaptive immunity? The example of natural killer cells.</td>
+            <td class="journal-col">Science</td>
+            <td class="year-col">2011</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20570966">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20570966/" target="_blank" rel="noopener">20570966</a></td>
+            <td class="title-col">Fucosyltransferase 2 (FUT2) non-secretor status is associated with Crohn's disease.</td>
+            <td class="journal-col">Hum Mol Genet</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20538833">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20538833/" target="_blank" rel="noopener">20538833</a></td>
+            <td class="title-col">Effect of allopurinol in chronic kidney disease progression and cardiovascular risk.</td>
+            <td class="journal-col">Clin J Am Soc Nephrol</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20500789">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20500789/" target="_blank" rel="noopener">20500789</a></td>
+            <td class="title-col">Fatty acids from fish: the anti-inflammatory potential of long-chain omega-3 fatty acids.</td>
+            <td class="journal-col">Nutr Rev</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20336151">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20336151/" target="_blank" rel="noopener">20336151</a></td>
+            <td class="title-col">How are T(H)2-type immune responses initiated and amplified?</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2010" data-pmid="20228401">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank" rel="noopener">20228401</a></td>
+            <td class="title-col">Effects of intensive blood-pressure control in type 2 diabetes mellitus.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20192806">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20192806/" target="_blank" rel="noopener">20192806</a></td>
+            <td class="title-col">Differentiation of effector CD4 T cell populations (*).</td>
+            <td class="journal-col">Annu Rev Immunol</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2010" data-pmid="20154735">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/20154735/" target="_blank" rel="noopener">20154735</a></td>
+            <td class="title-col">The regulation of IL-10 production by immune cells.</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2010</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2009" data-pmid="19940299">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank" rel="noopener">19940299</a></td>
+            <td class="title-col">Rituximab, B-lymphocyte depletion, and preservation of beta-cell function.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2009" data-pmid="19633656">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" rel="noopener">19633656</a></td>
+            <td class="title-col">Lean, but not obese, fat is enriched for a unique population of regulatory T cells that affect metabolic parameters.</td>
+            <td class="journal-col">Nat Med</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19575028">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank" rel="noopener">19575028</a></td>
+            <td class="title-col">Structure and signalling in the IL-17 receptor family.</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19373249">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank" rel="noopener">19373249</a></td>
+            <td class="title-col">Assessing the potential of glucokinase activators in diabetes therapy.</td>
+            <td class="journal-col">Nat Rev Drug Discov</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19169263">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" rel="noopener">19169263</a></td>
+            <td class="title-col">Regulatory T cells are key cerebroprotective immunomodulators in acute experimental stroke.</td>
+            <td class="journal-col">Nat Med</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2009" data-pmid="19132915">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank" rel="noopener">19132915</a></td>
+            <td class="title-col">IL-17 and Th17 Cells.</td>
+            <td class="journal-col">Annu Rev Immunol</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19095723">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19095723/" target="_blank" rel="noopener">19095723</a></td>
+            <td class="title-col">C-reactive protein: eighty years from discovery to emergence as a major risk marker for cardiovascular disease.</td>
+            <td class="journal-col">Clin Chem</td>
+            <td class="year-col">2009</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2008" data-pmid="19104422">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" rel="noopener">19104422</a></td>
+            <td class="title-col">2008 Update from the Collaborative Islet Transplant Registry.</td>
+            <td class="journal-col">Transplantation</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2008" data-pmid="18725575">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18725575/" target="_blank" rel="noopener">18725575</a></td>
+            <td class="title-col">B lymphocytes: how they develop and function.</td>
+            <td class="journal-col">Blood</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2008" data-pmid="18662538">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18662538/" target="_blank" rel="noopener">18662538</a></td>
+            <td class="title-col">TGFbeta in Cancer.</td>
+            <td class="journal-col">Cell</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2008" data-pmid="18539917">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank" rel="noopener">18539917</a></td>
+            <td class="title-col">Effects of intensive glucose lowering in type 2 diabetes.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2008" data-pmid="18442638">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18442638/" target="_blank" rel="noopener">18442638</a></td>
+            <td class="title-col">Efficacy of berberine in patients with type 2 diabetes mellitus.</td>
+            <td class="journal-col">Metabolism</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2008" data-pmid="18397984">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18397984/" target="_blank" rel="noopener">18397984</a></td>
+            <td class="title-col">Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine.</td>
+            <td class="journal-col">J Clin Endocrinol Metab</td>
+            <td class="year-col">2008</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="18094377">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18094377/" target="_blank" rel="noopener">18094377</a></td>
+            <td class="title-col">Reduced exposure to calcineurin inhibitors in renal transplantation.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2007" data-pmid="18073361">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/18073361/" target="_blank" rel="noopener">18073361</a></td>
+            <td class="title-col">Active smoking and the risk of type 2 diabetes: a systematic review and meta-analysis.</td>
+            <td class="journal-col">JAMA</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_prevalence, build_immunomod_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="17965721">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/17965721/" target="_blank" rel="noopener">17965721</a></td>
+            <td class="title-col">B lymphocyte-directed immunotherapy promotes long-term islet allograft survival in nonhuman primates.</td>
+            <td class="journal-col">Nat Med</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="17942684">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/17942684/" target="_blank" rel="noopener">17942684</a></td>
+            <td class="title-col">The cation efflux transporter ZnT8 (Slc30A8) is a major autoantigen in human type 1 diabetes.</td>
+            <td class="journal-col">Proc Natl Acad Sci U S A</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2007" data-pmid="17596481">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank" rel="noopener">17596481</a></td>
+            <td class="title-col">Summary and recommendations of the Fifth International Workshop-Conference on Gestational Diabetes Mellitus.</td>
+            <td class="journal-col">Diabetes Care</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_nutrition_beta</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2007" data-pmid="17359512">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/17359512/" target="_blank" rel="noopener">17359512</a></td>
+            <td class="title-col">Results of an international, randomized trial comparing glucose metabolism disorders and outcome with cyclosporine versus tacrolimus.</td>
+            <td class="journal-col">Am J Transplant</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_outcomes</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2007" data-pmid="17261637">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/17261637/" target="_blank" rel="noopener">17261637</a></td>
+            <td class="title-col">Alpha-cells of the endocrine pancreas: 35 years of research but the enigma remains.</td>
+            <td class="journal-col">Endocr Rev</td>
+            <td class="year-col">2007</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2006" data-pmid="16731815">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/16731815/" target="_blank" rel="noopener">16731815</a></td>
+            <td class="title-col">Adipose tissue: from lipid storage compartment to endocrine organ.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2006</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2005" data-pmid="16310551">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/16310551/" target="_blank" rel="noopener">16310551</a></td>
+            <td class="title-col">Effects of long-term fenofibrate therapy on cardiovascular events in 9795 people with type 2 diabetes mellitus (the FIELD study): randomised controlled trial.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2005</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2005" data-pmid="16214598">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/16214598/" target="_blank" rel="noopener">16214598</a></td>
+            <td class="title-col">Secondary prevention of macrovascular events in patients with type 2 diabetes in the PROactive Study (PROspective pioglitAzone Clinical Trial In macroVascular Events): a randomised controlled trial.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2005</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2005" data-pmid="15928679">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15928679/" target="_blank" rel="noopener">15928679</a></td>
+            <td class="title-col">NFAT proteins: key regulators of T-cell development and function.</td>
+            <td class="journal-col">Nat Rev Immunol</td>
+            <td class="year-col">2005</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2005" data-pmid="15919794">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15919794/" target="_blank" rel="noopener">15919794</a></td>
+            <td class="title-col">A human-specific role of cell death-inducing DFFA (DNA fragmentation factor-alpha)-like effector A (CIDEA) in adipocyte lipolysis and obesity.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2005</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2005" data-pmid="15919781">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15919781/" target="_blank" rel="noopener">15919781</a></td>
+            <td class="title-col">The pathobiology of diabetic complications: a unifying mechanism.</td>
+            <td class="journal-col">Diabetes</td>
+            <td class="year-col">2005</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="15551269">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15551269/" target="_blank" rel="noopener">15551269</a></td>
+            <td class="title-col">Insulin and its receptor: structure, function and evolution.</td>
+            <td class="journal-col">Bioessays</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="15356308">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15356308/" target="_blank" rel="noopener">15356308</a></td>
+            <td class="title-col">Thiazolidinediones.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="15325833">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15325833/" target="_blank" rel="noopener">15325833</a></td>
+            <td class="title-col">Primary prevention of cardiovascular disease with atorvastatin in type 2 diabetes in the Collaborative Atorvastatin Diabetes Study (CARDS): multicentre randomised placebo-controlled trial.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="15043959">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/15043959/" target="_blank" rel="noopener">15043959</a></td>
+            <td class="title-col">European Nicotinamide Diabetes Intervention Trial (ENDIT): a randomised controlled trial of intervention before the onset of type 1 diabetes.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="14706052">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/14706052/" target="_blank" rel="noopener">14706052</a></td>
+            <td class="title-col">Association between fasting glucose and C-reactive protein in middle-aged subjects.</td>
+            <td class="journal-col">Diabet Med</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gka_lada</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2004" data-pmid="14525967">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/14525967/" target="_blank" rel="noopener">14525967</a></td>
+            <td class="title-col">Interferon-gamma: an overview of signals, mechanisms and functions.</td>
+            <td class="journal-col">J Leukoc Biol</td>
+            <td class="year-col">2004</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2003" data-pmid="12612578">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/12612578/" target="_blank" rel="noopener">12612578</a></td>
+            <td class="title-col">Foxp3 programs the development and function of CD4+CD25+ regulatory T cells.</td>
+            <td class="journal-col">Nat Immunol</td>
+            <td class="year-col">2003</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2002" data-pmid="11832527">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/11832527/" target="_blank" rel="noopener">11832527</a></td>
+            <td class="title-col">Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2002</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">add_citations</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2001" data-pmid="11565518">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/11565518/" target="_blank" rel="noopener">11565518</a></td>
+            <td class="title-col">Effects of losartan on renal and cardiovascular outcomes in patients with type 2 diabetes and nephropathy.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2001</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2000" data-pmid="11095109">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" rel="noopener">11095109</a></td>
+            <td class="title-col">Isolated human islets trigger an instant blood mediated inflammatory reaction: implications for intraportal islet transplantation as a treatment for patients with type 1 diabetes.</td>
+            <td class="journal-col">Ups J Med Sci</td>
+            <td class="year-col">2000</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_drug_repurposing_islet</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2000" data-pmid="11015619">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/11015619/" target="_blank" rel="noopener">11015619</a></td>
+            <td class="title-col">Calcineurin: form and function.</td>
+            <td class="journal-col">Physiol Rev</td>
+            <td class="year-col">2000</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="2000" data-pmid="10919952">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/10919952/" target="_blank" rel="noopener">10919952</a></td>
+            <td class="title-col">Is there a metabolic basis for dietary supplementation?</td>
+            <td class="journal-col">Am J Clin Nutr</td>
+            <td class="year-col">2000</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_islet_outcomes</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2000" data-pmid="10911004">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener">10911004</a></td>
+            <td class="title-col">Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">2000</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="1999" data-pmid="10415738">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/10415738/" target="_blank" rel="noopener">10415738</a></td>
+            <td class="title-col">MMP-mediated events in diabetes.</td>
+            <td class="journal-col">Ann N Y Acad Sci</td>
+            <td class="year-col">1999</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="1998" data-pmid="9867128">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/9867128/" target="_blank" rel="noopener">9867128</a></td>
+            <td class="title-col">Dapsone at onset of diabetes lowers glycated hemoglobin and delays death in NOD mice.</td>
+            <td class="journal-col">Autoimmunity</td>
+            <td class="year-col">1998</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_generic_drug_catalog</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="1998" data-pmid="9828138">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/9828138/" target="_blank" rel="noopener">9828138</a></td>
+            <td class="title-col">Genomic structure and promoter sequence of the insulin-dependent diabetes mellitus autoantigen, IA-2 (PTPRN).</td>
+            <td class="journal-col">Genomics</td>
+            <td class="year-col">1998</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="1998" data-pmid="9742976">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank" rel="noopener">9742976</a></td>
+            <td class="title-col">Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33). UK Prospective Diabetes Study (UKPDS) Group.</td>
+            <td class="journal-col">Lancet</td>
+            <td class="year-col">1998</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_lada_model, build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="1998" data-pmid="9521319">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/9521319/" target="_blank" rel="noopener">9521319</a></td>
+            <td class="title-col">Dendritic cells and the control of immunity.</td>
+            <td class="journal-col">Nature</td>
+            <td class="year-col">1998</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="1993" data-pmid="8439348">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/8439348/" target="_blank" rel="noopener">8439348</a></td>
+            <td class="title-col">The role of interleukin-1 in disease.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">1993</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="1993" data-pmid="8366922">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank" rel="noopener">8366922</a></td>
+            <td class="title-col">The effect of intensive treatment of diabetes on the development and progression of long-term complications in insulin-dependent diabetes mellitus.</td>
+            <td class="journal-col">N Engl J Med</td>
+            <td class="year-col">1993</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_treg_neuropathy, build_health_equity</td>
+        </tr>
+
+        <tr class="paper-row" data-score="CONFIRMED" data-year="1990" data-pmid="1697648">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/1697648/" target="_blank" rel="noopener">1697648</a></td>
+            <td class="title-col">Identification of the 64K autoantigen in insulin-dependent diabetes as the GABA-synthesizing enzyme glutamic acid decarboxylase.</td>
+            <td class="journal-col">Nature</td>
+            <td class="year-col">1990</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="WEAK" data-year="1989" data-pmid="2523712">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/2523712/" target="_blank" rel="noopener">2523712</a></td>
+            <td class="title-col">TH1 and TH2 cells: different patterns of lymphokine secretion lead to different functional properties.</td>
+            <td class="journal-col">Annu Rev Immunol</td>
+            <td class="year-col">1989</td>
+            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="1985" data-pmid="3899825">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/3899825/" target="_blank" rel="noopener">3899825</a></td>
+            <td class="title-col">Homeostasis model assessment: insulin resistance and beta-cell function from fasting plasma glucose and insulin concentrations in man.</td>
+            <td class="journal-col">Diabetologia</td>
+            <td class="year-col">1985</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_data_dictionary</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- Tab: Evidence Network -->
+    <div id="tab-network" class="tab-content">
+        <h3>Intra-Hub Cross-Citations</h3>
+        <p style="font-size:0.85rem;color:#636363;margin-bottom:12px;">Papers in our library that cite other papers also in our library. This shows how our evidence base is interconnected.</p>
+        <div style="overflow-x:auto;">
+        <table class="small-table">
+            <thead><tr><th>PMID</th><th>Title</th><th>Cites (in hub)</th></tr></thead>
+            <tbody>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/34180979/" target="_blank">34180979</a></td><td>The β Cell in Diabetes: Integrating Biomarkers With Functional Measure</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28314945/" target="_blank">28314945</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27189025/" target="_blank">27189025</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/22980982/" target="_blank">22980982</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23835325/" target="_blank">23835325</a> +4 more</td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/28522654/" target="_blank">28522654</a></td><td>Diabetic Kidney Disease: Challenges, Progress, and Possibilities.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank">18539917</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/11565518/" target="_blank">11565518</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank">20228401</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank">26378978</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank">23890997</a></td><td>Type 1 diabetes.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/15043959/" target="_blank">15043959</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/22296077/" target="_blank">22296077</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank">10911004</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank">27727279</a></td><td>Regulatory T Cell Responses in Participants with Type 1 Diabetes after</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank">23890997</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">23835333</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/30291106/" target="_blank">30291106</a></td><td>Management of Hyperglycemia in Type 2 Diabetes, 2018. A Consensus Repo</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank">26378978</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/15356308/" target="_blank">15356308</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/16214598/" target="_blank">16214598</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/31177185/" target="_blank">31177185</a></td><td>Clinical Targets for Continuous Glucose Monitoring Data Interpretation</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30657336/" target="_blank">30657336</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/26784127/" target="_blank">26784127</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/20192806/" target="_blank">20192806</a></td><td>Differentiation of effector CD4 T cell populations (*).</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank">19132915</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/12612578/" target="_blank">12612578</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/15928679/" target="_blank">15928679</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/27878313/" target="_blank">27878313</a></td><td>Targeting renal glucose reabsorption to treat hyperglycaemia: the plei</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank">18539917</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank">26378978</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">37122431</a></td><td>Semaglutide-eye-catching results.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27159554/" target="_blank">27159554</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">38783768</a></td><td>Recent drug development of dorzagliatin, a new glucokinase activator, </td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank">33622669</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37356446/" target="_blank">37356446</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">39613428</a></td><td>Investigating the effect of verapamil on preservation of beta-cell fun</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank">23890997</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank">29988125</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/21525462/" target="_blank">21525462</a></td><td>Glucokinase activators for diabetes therapy: May 2010 status report.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/17261637/" target="_blank">17261637</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/24997559/" target="_blank">24997559</a></td><td>Combination therapy with sitagliptin and lansoprazole in patients with</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">23835333</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/29885104/" target="_blank">29885104</a></td><td>Glycated Albumin Is a More Useful Glycation Index than HbA1c for Refle</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/3899825/" target="_blank">3899825</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank">18539917</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a></td><td>The Central Role of Glucokinase in Glucose Homeostasis: A Perspective </td><td><a href="https://pubmed.ncbi.nlm.nih.gov/17261637/" target="_blank">17261637</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a></td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- Tab: Topic Clusters -->
+    <div id="tab-clusters" class="tab-content">
+        <h3>Shared MeSH Term Clusters</h3>
+        <p style="font-size:0.85rem;color:#636363;margin-bottom:12px;">Clinical MeSH terms shared by 3 or more papers in the library. These reveal the topical structure of our evidence base.</p>
+        <div style="overflow-x:auto;">
+        <table class="small-table">
+            <thead><tr><th>MeSH Term</th><th>Papers</th></tr></thead>
+            <tbody>
+<tr><td>Diabetes Mellitus, Type 2</td><td>51</td></tr>
+<tr><td>Diabetes Mellitus, Type 1</td><td>44</td></tr>
+<tr><td>Blood Glucose</td><td>34</td></tr>
+<tr><td>Insulin</td><td>28</td></tr>
+<tr><td>Hypoglycemic Agents</td><td>28</td></tr>
+<tr><td>Glycated Hemoglobin</td><td>23</td></tr>
+<tr><td>Double-Blind Method</td><td>19</td></tr>
+<tr><td>Mice</td><td>19</td></tr>
+<tr><td>Signal Transduction</td><td>18</td></tr>
+<tr><td>Cardiovascular Diseases</td><td>16</td></tr>
+<tr><td>C-Peptide</td><td>13</td></tr>
+<tr><td>Disease Progression</td><td>11</td></tr>
+<tr><td>Autoantibodies</td><td>11</td></tr>
+<tr><td>Insulin-Secreting Cells</td><td>11</td></tr>
+<tr><td>Islets of Langerhans Transplantation</td><td>10</td></tr>
+<tr><td>Inflammation</td><td>10</td></tr>
+<tr><td>Diabetes Mellitus</td><td>10</td></tr>
+<tr><td>Biomarkers</td><td>10</td></tr>
+<tr><td>Hyperglycemia</td><td>10</td></tr>
+<tr><td>Diabetic Nephropathies</td><td>9</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <p class="timestamp">Generated 2026-03-17 07:43 | Data from PubMed/PMC via NCBI E-utilities</p>
+</div>
+
+<script>
+function switchTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
+    event.target.classList.add('active');
+}
+
+function filterTable() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const score = document.getElementById('scoreFilter').value;
+    const coverage = document.getElementById('coverageFilter').value;
+    const rows = document.querySelectorAll('#paperTable tbody tr');
+    let visible = 0;
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const rowScore = row.getAttribute('data-score');
+        const coverageText = row.cells[5].textContent;
+        const matchSearch = !search || text.includes(search);
+        const matchScore = !score || rowScore === score;
+        const matchCoverage = !coverage || coverageText.includes(coverage);
+        if (matchSearch && matchScore && matchCoverage) {
+            row.style.display = '';
+            visible++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+    document.getElementById('visibleCount').textContent = visible;
+}
+
+let sortDirection = {};
+function sortTable(colIndex) {
+    const table = document.getElementById('paperTable');
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const dir = sortDirection[colIndex] = !(sortDirection[colIndex] || false);
+    rows.sort((a, b) => {
+        let aVal = a.cells[colIndex].textContent.trim();
+        let bVal = b.cells[colIndex].textContent.trim();
+        if (colIndex === 0 || colIndex === 3) {
+            aVal = parseInt(aVal) || 0;
+            bVal = parseInt(bVal) || 0;
+            return dir ? aVal - bVal : bVal - aVal;
+        }
+        return dir ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+    });
+    rows.forEach(r => tbody.appendChild(r));
+}
+</script>
+</body>
+</html>
