@@ -51,8 +51,11 @@ def find_all_pmids():
             continue
 
         for i, line in enumerate(lines, 1):
-            # Match PMID patterns: 'key_pmids': '12345678', PMID:12345678, PMID 12345678
-            # Also match standalone 7-8 digit numbers near 'pmid' context
+            # Skip pure comment lines to avoid false positives from examples
+            stripped = line.strip()
+            if stripped.startswith('#'):
+                continue
+            # Match PMID patterns in code and HTML strings
             matches = re.findall(r'(?:PMID[:\s]*|key_pmids[\'\"]\s*:\s*[\'\"])(\d{7,8})', line, re.IGNORECASE)
             if not matches:
                 # Also catch pmid references in HTML strings

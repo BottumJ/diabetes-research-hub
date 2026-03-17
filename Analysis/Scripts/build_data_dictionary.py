@@ -857,7 +857,7 @@ TERMS = {
         'disease': 'GCK-MODY: permanent neonatal diabetes-like; transcription factor MODYs: progressive beta cell dysfunction',
         'connections': ['Genetic mutation', 'Beta Cell', 'Glucokinase'],
         'gap_relevance': [1, 13],
-        'source': 'Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. PMID:28258328'
+        'source': 'Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. PMID:28314945'
     },
     'Prediabetes': {
         'plain': 'A warning sign of developing diabetes. HbA1c 5.7-6.4% or fasting glucose 100-125. Reversible with lifestyle or metformin (58% risk reduction in DPP study).',

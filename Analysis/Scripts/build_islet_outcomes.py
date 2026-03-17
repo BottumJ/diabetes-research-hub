@@ -628,7 +628,7 @@ def generate_html():
                 <div class="metric-label">Relative risk with tacrolimus vs cyclosporine</div>
             </div>
             <p>Clinical trials demonstrate that tacrolimus recipients have significantly higher rates of new-onset diabetes, obesity, and metabolic syndrome compared to other immunosuppressive regimens.</p>
-            <p class="source">Source: Vincenti et al., PMID:17895895 (American Journal of Transplantation 2007)</p>
+            <p class="source">Source: Vincenti et al., PMID:17359512 (American Journal of Transplantation 2007)</p>
 
             <h3>HOMA-IR Progression: Pre- and Post-Transplant</h3>
             <p>Homeostasis Model Assessment for Insulin Resistance (FHOMA-IR = fasting insulin [mIU/L] x fasting glucose [mmol/L] / 22.5) reveals progressive worsening of systemic insulin sensitivity in islet recipients.</p>
@@ -1272,7 +1272,7 @@ def generate_html():
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 17895895'); return false;">Vincenti et al., Am J Transplant</a></td>
+                        <td><a href="#" onclick="alert('PMID: 17359512'); return false;">Vincenti et al., Am J Transplant</a></td>
                         <td>2007</td>
                         <td>Tacrolimus: 2.5x NODAT risk vs cyclosporine</td>
                     </tr>
