@@ -114,6 +114,9 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
 .footer {{ max-width: 900px; margin: 0 auto; padding: 20px 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--light); }}
 .footer a {{ color: var(--accent); text-decoration: none; }}
 </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
 

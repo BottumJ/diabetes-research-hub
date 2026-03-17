@@ -204,6 +204,9 @@ tbody tr:hover {{ background: #f5f4ef; }}
 .footer {{ max-width: 1300px; margin: 0 auto; padding: 20px 40px; border-top: 1px solid var(--border); font-size: 11px; color: var(--light); }}
 .footer a {{ color: var(--accent); text-decoration: none; }}
 </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
 
