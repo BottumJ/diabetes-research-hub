@@ -23,7 +23,7 @@ output_file = os.path.join(project_root, 'Dashboards', 'Gap_Deep_Dives.html')
 GAPS_DATA = {
     "1": {
         "title": "Gene Therapy for LADA",
-        "tier": "GOLD",
+        "tier": "SILVER",
         "score": 0.96,
         "cluster": "B",
         "domain_pubs": {"gene_therapy": 2106, "lada": 535},
@@ -81,7 +81,7 @@ GAPS_DATA = {
             "data_needed": "LADA patient cohort (GADA+, preserved C-peptide), TCR sequencing, HLA genotyping",
             "dependencies": "CAR-Treg manufacturing GMP certification, LADA biomarker standardization"
         },
-        "validation_evidence": "GOLD tier: Clinical CAR-Treg data exist (9-150 patients), LADA pathophysiology well-characterized, molecular targets known but untested",
+        "validation_evidence": "SILVER tier: Clinical CAR-Treg data exist (9-150 patients), LADA pathophysiology well-characterized, but no LADA-specific gene therapy trials yet",
         "expanded_clinical_context": "LADA represents 8.9% of apparent T2D (17-50M misdiagnosed globally). Presymptomatic window extends 3-7 years before insulin requirement, making it ideal for preventive cell therapy. GAD65 affinity threshold (4x10^9 L/mol) predicts C-peptide preservation better than antibody titer alone. Extended presymptomatic window in LADA1 (fast decline) and LADA2 (slow decline) subtypes enables personalized timing of CAR-Treg intervention.",
         "mechanism_detail": "LADA autoimmune destruction proceeds 10-100x slower than T1D due to: (1) lower initial GADA titers (median 47 units vs 200+ in T1D), (2) partial beta cell dysfunction independent of autoimmunity, (3) intact regulatory T cell function in early stages. CAR-Treg strategy targets CD4+ T cells recognizing GAD65 epitopes (e.g., residues 321-340, 338-352) that are HLA-DR restricted. Three epitope clusters: epitope cluster 1 (N-terminal, high GADA correlation), epitope cluster 2 (central, intermediate), epitope cluster 3 (C-terminal, variable penetrance). Engineering Tregs with HLA-matched TCRs to these epitopes prevents beta cell infiltration while preserving protective immunity to pathogens."
     },
@@ -219,7 +219,7 @@ GAPS_DATA = {
     },
     "4": {
         "title": "Drug Repurposing for Islet Transplant",
-        "tier": "SILVER",
+        "tier": "BRONZE",
         "score": 0.85,
         "cluster": "C",
         "domain_pubs": {"drug_repurposing": 555, "islet_transplant": 238},
@@ -285,7 +285,7 @@ GAPS_DATA = {
     },
     "5": {
         "title": "Treg in Diabetic Neuropathy",
-        "tier": "SILVER",
+        "tier": "BRONZE",
         "score": 0.84,
         "cluster": "D",
         "domain_pubs": {"treg": 861, "neuropathy": 2957},
@@ -352,7 +352,7 @@ GAPS_DATA = {
     },
     "6": {
         "title": "CAR-T Access Barriers in Diabetes",
-        "tier": "SILVER",
+        "tier": "GOLD",
         "score": 0.82,
         "cluster": "A",
         "domain_pubs": {"health_equity": 1830, "treg": 861},
@@ -600,7 +600,7 @@ GAPS_DATA = {
     },
     "10": {
         "title": "LADA Prevalence",
-        "tier": "BRONZE",
+        "tier": "SILVER",
         "score": 0.71,
         "cluster": "B",
         "domain_pubs": {"lada": 535, "prevention": 75007},
@@ -666,7 +666,7 @@ GAPS_DATA = {
     },
     "11": {
         "title": "Islet Transplant Equity",
-        "tier": "SILVER",
+        "tier": "GOLD",
         "score": 0.81,
         "cluster": "A",
         "domain_pubs": {"islet_transplant": 238, "health_equity": 1830},
@@ -731,7 +731,7 @@ GAPS_DATA = {
     },
     "12": {
         "title": "Generic Drug x Diabetes Mechanism Catalog",
-        "tier": "SILVER",
+        "tier": "BRONZE",
         "score": 0.78,
         "cluster": "C",
         "domain_pubs": {"drug_repurposing": 555, "glp1": 11732},

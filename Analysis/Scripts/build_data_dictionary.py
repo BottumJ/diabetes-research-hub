@@ -1181,6 +1181,185 @@ TERMS = {
         'connections': ['Regulatory T Cell', 'Belatacept', 'Rapamycin', 'Islet Transplant'],
         'gap_relevance': [3, 5, 6, 8],
         'source': 'New England Journal of Medicine'
+    },
+
+    # NEW TERMS — Added from MeSH analysis of 187 ingested papers (2026 audit)
+
+    'Glutamate Decarboxylase (GAD65)': {
+        'plain': 'An enzyme found in beta cells that is a major target of autoimmune attack in type 1 diabetes and LADA. Antibodies against GAD65 (GADA) are the most common autoantibody in adult-onset autoimmune diabetes.',
+        'medical': 'Glutamic acid decarboxylase 65 kDa isoform (GAD65). Catalyzes conversion of glutamate to GABA. Major autoantigen in T1D and LADA. Anti-GAD65 antibodies (GADA) are present in 70-80% of new-onset T1D and 80-90% of LADA patients.',
+        'systems': ['pancreas', 'immune'],
+        'indicators': ['GADA titer (IU/mL)', 'GAD65 affinity'],
+        'normal_range': 'GADA negative (<5 IU/mL); positive >5 IU/mL',
+        'disease': 'Primary autoantibody in LADA diagnosis; GADA titer >180 IU/mL associated with faster progression to insulin; GAD65 affinity <4x10^9 L/mol predicts better C-peptide preservation',
+        'connections': ['Autoantibodies', 'LADA', 'Beta Cell', 'T Cell', 'IA-2'],
+        'gap_relevance': [1, 2, 8, 9, 10, 14],
+        'source': 'Hawa MI et al. GAD antibody features define clinical phenotype and therapeutic outcome in LADA. Diabetologia 2014;57(1):113-122. PMID:24105098'
+    },
+    'Immunosuppressive Agents': {
+        'plain': 'Drugs that weaken the immune system to prevent organ rejection after transplant or to treat autoimmune diseases. They are essential for islet transplant but have serious side effects.',
+        'medical': 'Pharmacologic agents that suppress immune function. Classes include calcineurin inhibitors (tacrolimus, cyclosporine), mTOR inhibitors (sirolimus, everolimus), costimulation blockers (belatacept), and anti-metabolites (mycophenolate). Used in transplantation and autoimmune disease management.',
+        'systems': ['immune'],
+        'indicators': ['Trough drug levels', 'Lymphocyte count', 'Infection rate'],
+        'normal_range': 'Tacrolimus target trough: 3-15 ng/mL (varies by protocol)',
+        'disease': 'Required after islet transplant (Edmonton Protocol); tacrolimus causes insulin resistance (40% incidence at 3 months); balancing graft protection vs metabolic toxicity is key challenge',
+        'connections': ['Tacrolimus', 'Sirolimus', 'Belatacept', 'Islet Transplant', 'Transplant Tolerance'],
+        'gap_relevance': [3, 4, 6, 11],
+        'source': 'Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330. PMID:17005949'
+    },
+    'HLA System': {
+        'plain': 'A set of genes on chromosome 6 that determine how your immune system recognizes self vs foreign. Certain HLA types greatly increase risk of type 1 diabetes and LADA.',
+        'medical': 'Human leukocyte antigen complex on chromosome 6p21. Encodes MHC class I (HLA-A, -B, -C) and class II (HLA-DR, -DQ, -DP) molecules. HLA-DR3/DR4-DQ8 haplotypes confer highest T1D risk (OR ~11). HLA matching critical for transplant outcomes.',
+        'systems': ['immune'],
+        'indicators': ['HLA genotype', 'HLA-DR serotype'],
+        'normal_range': 'High-risk: DR3/DR4-DQ8; protective: DR15-DQ6',
+        'disease': 'HLA accounts for ~50% of genetic T1D risk; DR3-DQ2 predominates in LADA; HLA matching improves islet transplant graft survival',
+        'connections': ['T Cell', 'Genetic Predisposition', 'Autoantibodies', 'Dendritic Cell'],
+        'gap_relevance': [1, 2, 3, 5, 8, 10],
+        'source': 'Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. PMID:22315720'
+    },
+    'Genetic Predisposition to Disease': {
+        'plain': 'Having genes that increase your risk of developing a disease. In diabetes, dozens of genes contribute to risk, with HLA being the strongest factor in type 1.',
+        'medical': 'Heritable genetic variants that increase disease susceptibility. T1D: >60 risk loci identified via GWAS, with HLA (6p21) contributing ~50% of genetic risk. T2D: >400 risk loci, mostly affecting beta cell function and insulin signaling. LADA shares genetic overlap with both T1D and T2D.',
+        'systems': ['pancreas', 'immune'],
+        'indicators': ['Genetic risk score (GRS)', 'Polygenic risk score'],
+        'normal_range': 'Population-dependent; GRS for T1D: median varies by ethnicity',
+        'disease': 'GWAS-identified loci enable risk prediction; T1D GRS >14.4 distinguishes T1D from T2D with ~85% sensitivity; LADA has intermediate GRS between T1D and T2D',
+        'connections': ['HLA System', 'GWAS', 'Precision Medicine'],
+        'gap_relevance': [1, 2, 8, 10],
+        'source': 'Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-386. PMID:25751624'
+    },
+    'Genome-Wide Association Study (GWAS)': {
+        'plain': 'A research method that scans the entire genome of many people to find genetic variants associated with a disease. GWAS has identified over 60 risk genes for T1D and over 400 for T2D.',
+        'medical': 'Observational study scanning genome-wide set of genetic variants (typically >500,000 SNPs) in large cohorts to identify variants associated with a trait. Significance threshold: p < 5x10^-8. Has identified 60+ T1D loci and 400+ T2D loci.',
+        'systems': ['pancreas', 'immune'],
+        'indicators': ['SNP array', 'Polygenic risk score'],
+        'normal_range': 'N/A (research methodology)',
+        'disease': 'Identified key diabetes risk loci: TCF7L2 (strongest T2D locus, OR 1.4), PTPN22 (T1D, OR 1.7), INS (T1D, OR 2.4); enables precision medicine approaches',
+        'connections': ['Genetic Predisposition to Disease', 'HLA System', 'Precision Medicine'],
+        'gap_relevance': [1, 2, 8, 10],
+        'source': 'Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572. PMID:35551307'
+    },
+    'Insulin Infusion System (Insulin Pump)': {
+        'plain': 'A small electronic device worn on the body that delivers insulin continuously through a tiny tube under the skin. Modern systems can automatically adjust insulin based on glucose readings.',
+        'medical': 'Continuous subcutaneous insulin infusion (CSII) device delivering rapid-acting insulin via programmable basal rates and user-initiated boluses. Automated insulin delivery (AID) systems integrate CGM data with control algorithms for closed-loop glucose management.',
+        'systems': ['pancreas', 'vascular'],
+        'indicators': ['Time in range (TIR)', 'HbA1c', 'Basal rate'],
+        'normal_range': 'TIR target: >70% (70-180 mg/dL); HbA1c target: <7%',
+        'disease': 'Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year) and insurance coverage; significant equity gaps in pump access by race and income',
+        'connections': ['Continuous Glucose Monitor', 'Insulin', 'Precision Medicine'],
+        'gap_relevance': [2, 6, 10, 11],
+        'source': 'Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717. PMID:31618560'
+    },
+    'Continuous Glucose Monitor (CGM)': {
+        'plain': 'A small sensor worn under the skin that measures blood sugar levels every few minutes and sends the data to a phone or receiver. Enables real-time glucose tracking without finger pricks.',
+        'medical': 'Subcutaneous electrochemical sensor measuring interstitial glucose concentration at 1-5 minute intervals. Provides trend data, rate of change, and predictive alerts. Current devices (Dexcom G7, FreeStyle Libre 3) have MARD <9%.',
+        'systems': ['vascular'],
+        'indicators': ['Time in range', 'Glucose management indicator (GMI)', 'Coefficient of variation'],
+        'normal_range': 'Target: TIR >70%, GMI <7%, CV <36%',
+        'disease': 'Standard of care for T1D; increasingly used in T2D; reduces HbA1c by 0.3-0.5%; significant access disparities by insurance type, race, and geography',
+        'connections': ['Insulin Infusion System (Insulin Pump)', 'HbA1c', 'Precision Medicine'],
+        'gap_relevance': [2, 6, 10, 11],
+        'source': 'Beck RW et al. Effect of continuous glucose monitoring on glycemic control in adults with type 1 diabetes. JAMA 2017;317(4):371-378. PMID:28118453'
+    },
+    'Monoclonal Antibody (Humanized)': {
+        'plain': 'A laboratory-made protein designed to target a specific molecule in the body. Humanized versions are modified to look more like human antibodies so the body does not reject them.',
+        'medical': 'Engineered immunoglobulin with complementarity-determining regions (CDRs) from non-human source grafted onto human framework. Reduces immunogenicity vs chimeric or murine antibodies. Suffix: -zumab (humanized), -umab (fully human).',
+        'systems': ['immune'],
+        'indicators': ['Target engagement', 'Anti-drug antibodies', 'Serum trough level'],
+        'normal_range': 'Varies by agent and indication',
+        'disease': 'Teplizumab (anti-CD3): first disease-modifying therapy for T1D, delays onset by median 2 years; rituximab (anti-CD20): preserves C-peptide in new-onset T1D; otelixizumab, abatacept under investigation for LADA',
+        'connections': ['Teplizumab', 'Rituximab', 'T Cell', 'B Cell'],
+        'gap_relevance': [1, 2, 5, 6, 8],
+        'source': 'Herold KC et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. New England Journal of Medicine 2019;381(7):603-613. PMID:31180194'
+    },
+    'Teplizumab': {
+        'plain': 'The first drug approved to delay the onset of type 1 diabetes. It is a humanized antibody that targets CD3 on T cells, calming the immune attack on beta cells.',
+        'medical': 'Anti-CD3 humanized monoclonal antibody (Fc-modified, non-mitogenic). Binds CD3-epsilon on T cells, inducing partial T cell exhaustion and expanding regulatory T cells. FDA-approved (TZIELD, Nov 2022) for delay of Stage 3 T1D in at-risk individuals (Stage 2).',
+        'systems': ['immune'],
+        'indicators': ['C-peptide AUC', 'Time to Stage 3 T1D', 'Treg frequency post-treatment'],
+        'normal_range': 'Treatment: 14-day IV infusion course',
+        'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course; access limited to specialized centers',
+        'connections': ['Monoclonal Antibody (Humanized)', 'T Cell', 'Regulatory T Cell', 'CD3'],
+        'gap_relevance': [1, 2, 6, 8],
+        'source': 'Herold KC et al. Teplizumab once again as first-in-class for disease modification in T1D. Nature Reviews Endocrinology 2024;20(1):5-6. PMID:37932527'
+    },
+    'GLP-1 Receptor Agonist': {
+        'plain': 'A type of diabetes and obesity drug that mimics GLP-1, a hormone that increases insulin release, reduces appetite, and slows digestion. Examples include semaglutide (Ozempic/Wegovy) and liraglutide.',
+        'medical': 'Peptide or small molecule agonist of glucagon-like peptide-1 receptor. Enhances glucose-dependent insulin secretion, suppresses glucagon, delays gastric emptying, and promotes satiety via hypothalamic action. Some agents show cardiovascular and renal benefit.',
+        'systems': ['gut', 'pancreas', 'vascular'],
+        'indicators': ['HbA1c', 'Body weight', 'MACE events'],
+        'normal_range': 'HbA1c reduction: 1.0-1.8%; weight loss: 5-15% body weight',
+        'disease': 'First-line T2D therapy after metformin; semaglutide 2.4mg: 15% weight loss (STEP trials); tirzepatide (dual GIP/GLP-1): up to 22% weight loss; some show anti-inflammatory properties relevant to LADA',
+        'connections': ['Incretin', 'Beta Cell', 'Insulin', 'Glucagon'],
+        'gap_relevance': [4, 7, 8, 12, 13, 14],
+        'source': 'Drucker DJ. Mechanisms of action and therapeutic application of glucagon-like peptide-1. Cell Metabolism 2018;27(4):740-756. PMID:29617641'
+    },
+    'SGLT2 Inhibitor': {
+        'plain': 'A type of diabetes drug that works in the kidneys by blocking sugar reabsorption, causing excess sugar to leave the body through urine. Also protects the heart and kidneys.',
+        'medical': 'Sodium-glucose cotransporter 2 inhibitor. Blocks SGLT2 in proximal tubule, reducing renal glucose reabsorption by 30-50%. Lowers HbA1c by 0.5-1.0%. Agents: empagliflozin, dapagliflozin, canagliflozin.',
+        'systems': ['kidneys', 'vascular'],
+        'indicators': ['HbA1c', 'Urinary glucose excretion', 'eGFR', 'NT-proBNP'],
+        'normal_range': 'HbA1c reduction: 0.5-1.0%; weight loss: 2-3 kg',
+        'disease': 'Proven cardiovascular and renal benefit independent of glucose lowering (EMPA-REG, DAPA-CKD); reduces heart failure hospitalization by 30%; some anti-inflammatory properties may benefit LADA',
+        'connections': ['Kidneys', 'Cardiovascular Disease', 'GLP-1 Receptor Agonist'],
+        'gap_relevance': [4, 8, 12],
+        'source': 'Zinman B et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes. New England Journal of Medicine 2015;373(22):2117-2128. PMID:26378978'
+    },
+    'Glucokinase Activator (GKA)': {
+        'plain': 'A new class of diabetes drug that enhances the glucose sensor in beta cells, making them more responsive to blood sugar and increasing insulin release. Dorzagliatin is the first approved GKA.',
+        'medical': 'Small molecule allosteric activator of glucokinase (GCK/hexokinase IV). Lowers the glucose threshold for insulin secretion by shifting the GCK activation curve leftward. Dorzagliatin (HMS5552): dual-acting hepatic + pancreatic GKA approved in China (2022).',
+        'systems': ['pancreas', 'liver'],
+        'indicators': ['Fasting plasma glucose', 'HbA1c', 'OGTT 2h glucose'],
+        'normal_range': 'HbA1c reduction: 0.5-1.0% (dorzagliatin Phase 3)',
+        'disease': 'Most early GKAs failed due to hypoglycemia and hepatic steatosis; dorzagliatin avoids this via dual-target design; potential for T2D with residual beta cell function; LADA application unexplored',
+        'connections': ['Glucokinase', 'Beta Cell', 'Insulin', 'Drug Repurposing'],
+        'gap_relevance': [7, 9, 15],
+        'source': 'Zhu D et al. Dorzagliatin monotherapy in Chinese patients with type 2 diabetes. Nature Medicine 2022;28(5):965-973. PMID:35437333'
+    },
+    'Islet Transplantation': {
+        'plain': 'A procedure where insulin-producing cell clusters (islets) from a donor pancreas are infused into a patient with type 1 diabetes. Can restore insulin production but requires lifelong immunosuppression.',
+        'medical': 'Transplantation of isolated pancreatic islets (typically >5,000 IEQ/kg) via portal vein infusion into the liver. Edmonton Protocol (2000): combination immunosuppression (tacrolimus + sirolimus + daclizumab) without steroids. Donislecel (LANTIDRA): first FDA-approved islet cell therapy (June 2023).',
+        'systems': ['pancreas', 'immune', 'liver'],
+        'indicators': ['C-peptide', 'Insulin independence', 'BETA-2 score', 'SUITO index'],
+        'normal_range': 'Success: insulin independence with HbA1c <7%; C-peptide >0.3 ng/mL',
+        'disease': 'Edmonton Protocol: 61% insulin independence at 1yr, declining to 8% at 20yr; limited to <20 centers worldwide; donor shortage (2-3 donors per recipient); stem cell-derived islets (VX-880) may solve supply',
+        'connections': ['Islets of Langerhans', 'Immunosuppressive Agents', 'Transplant Tolerance', 'Stem Cell-Derived Beta Cells'],
+        'gap_relevance': [3, 4, 6, 11],
+        'source': 'Shapiro AMJ et al. Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen. New England Journal of Medicine 2000;343(4):230-238. PMID:10911004'
+    },
+    'Stem Cell-Derived Beta Cells': {
+        'plain': 'Beta cells grown in a laboratory from stem cells. These could provide an unlimited supply of insulin-producing cells for transplant, eliminating the need for organ donors.',
+        'medical': 'Pluripotent stem cell (iPSC/ESC)-derived insulin-producing cells generated via directed differentiation through definitive endoderm, pancreatic progenitor, and endocrine precursor stages. VX-880 (zimislecel): first ESC-derived islet product, FDA-approved, 83% insulin independence.',
+        'systems': ['pancreas'],
+        'indicators': ['C-peptide', 'Insulin independence', 'INSULIN+ cell percentage', 'Glucose-stimulated insulin secretion'],
+        'normal_range': 'VX-880 product: 73% INSULIN+ cells; GSIS 4.2 pC/kg/min',
+        'disease': 'Solves donor shortage; VX-880: 83% insulin independence at 1yr, zero SAEs; VX-264 (encapsulated) discontinued March 2025; manufacturing cost declining ~14%/year toward $10-20K by 2034',
+        'connections': ['Islet Transplantation', 'Beta Cell', 'Immunosuppressive Agents', 'Health Equity'],
+        'gap_relevance': [2, 3, 6, 11],
+        'source': 'Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells. Cell Reports Medicine 2023;4(7):101141. PMID:37467726'
+    },
+    'LADA (Latent Autoimmune Diabetes in Adults)': {
+        'plain': 'A slow-progressing form of autoimmune diabetes in adults, often misdiagnosed as type 2 diabetes. Patients have autoantibodies like in type 1 but do not need insulin immediately.',
+        'medical': 'Autoimmune diabetes with adult onset (>30 years), positive islet autoantibodies (typically GADA), and no insulin requirement for at least 6 months post-diagnosis. Represents 8.9-10% of apparent T2D diagnoses. Two subtypes: LADA1 (high GADA, fast progression) and LADA2 (low GADA, slow progression).',
+        'systems': ['pancreas', 'immune'],
+        'indicators': ['GADA titer', 'C-peptide', 'IA-2A', 'ZnT8A'],
+        'normal_range': 'Diagnosis: GADA+ AND insulin-independent for >6 months AND onset >30 years',
+        'disease': 'Estimated 17-50M misdiagnosed globally as T2D; standard T2D treatment suboptimal (sulfonylureas accelerate beta cell loss); GAD antibody testing not standard care; prevalence varies by ethnicity and healthcare setting',
+        'connections': ['Glutamate Decarboxylase (GAD65)', 'Autoantibodies', 'Beta Cell', 'T Cell', 'Insulin'],
+        'gap_relevance': [1, 8, 9, 10, 14],
+        'source': 'Buzzetti R et al. Management of latent autoimmune diabetes in adults: a consensus statement. Diabetes Care 2020;43(11):2672-2680. PMID:33082274'
+    },
+    'Precision Medicine': {
+        'plain': 'An approach to healthcare that tailors treatment to individual characteristics like genetics, metabolism, and environment rather than using one-size-fits-all guidelines.',
+        'medical': 'Medical model using individual variability in genes, environment, microbiome, and lifestyle to guide prevention and treatment. In diabetes: genetic risk scores for T1D prediction, pharmacogenomics for drug selection, CGM-based nutritional personalization, and digital twin modeling.',
+        'systems': ['pancreas', 'immune', 'gut', 'vascular'],
+        'indicators': ['Genetic risk score', 'Pharmacogenomic profile', 'Metabolomic signature'],
+        'normal_range': 'N/A (treatment paradigm)',
+        'disease': 'Enables classification beyond T1D/T2D into 5+ clusters; MODY genetic testing identifies monogenic forms; precision nutrition using CGM shows 20-fold individual glycemic response variation to identical foods',
+        'connections': ['GWAS', 'Genetic Predisposition to Disease', 'Continuous Glucose Monitor (CGM)', 'LADA'],
+        'gap_relevance': [1, 2, 7, 8, 10, 13, 14],
+        'source': 'Florez JC. Precision medicine in diabetes: is it time? Diabetes Care 2022;45(12):3019-3032. PMID:36455116'
     }
 }
 

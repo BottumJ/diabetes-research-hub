@@ -60,9 +60,12 @@ GAPS_DATA = [
         'investigation': '(1) Systematic review of gene therapy immune tolerance mechanisms applicable to slow-progressing autoimmunity, (2) Analysis of LADA immunological profiles vs T1D to identify targetable differences, (3) Computational modeling of therapeutic window duration',
         'expected_outcomes': 'Either identifies LADA as a candidate for gene therapy trials or clarifies why the slower progression does not confer advantage',
         'status': 'Background Research',
-        'validation': 'BRONZE',
-        'validation_summary': 'This gap requires expert validation before proceeding. No major institution has independently prioritized this intersection.',
-        'sources': [],
+        'validation': 'SILVER',
+        'validation_summary': 'GAD-alum LADA trial (NCT04262479) completed; CAR-Treg pipeline advancing (Quell/AstraZeneca LIBERATE trial); LADA epitope targets identified.',
+        'sources': [
+            'NCT04262479 - GAD-alum LADA trial',
+            'Quell/AstraZeneca LIBERATE CAR-Treg trial'
+        ],
     },
     {
         'rank': 2,
@@ -103,8 +106,8 @@ GAPS_DATA = [
         'investigation': '(1) Retrospective analysis of IR markers (HOMA-IR) in existing islet transplant registries correlated with graft outcomes, (2) Literature synthesis of metabolic demand on transplanted islets, (3) Protocol modeling for pre-transplant IR intervention',
         'expected_outcomes': 'Could establish IR as a treatable comorbidity in transplant candidates',
         'status': 'Background Research',
-        'validation': 'SILVER',
-        'validation_summary': 'Tacrolimus-induced insulin resistance is a recognized paradox in islet transplantation. Published data shows only 4.8% of islet recipients remain insulin-independent at 10-year follow-up.',
+        'validation': 'GOLD',
+        'validation_summary': 'Edmonton Protocol 20-year data confirms tacrolimus-induced IR (HOMA-IR 7.5 vs 3.5 in failure vs success). Donislecel FDA-approved. Belatacept shows 70% graft survival at 10yr.',
         'sources': [
             'AHRQ Evidence Report',
             'Published clinical trials',
@@ -126,8 +129,8 @@ GAPS_DATA = [
         'investigation': '(1) Build islet rejection pathway model from published transcriptomics, (2) Run computational drug-target interaction screen against FDA-approved drug database, (3) Rank candidates by predicted efficacy and safety profile',
         'expected_outcomes': 'Generates ranked list of repurposing candidates testable in vitro',
         'status': 'Background Research',
-        'validation': 'SILVER',
-        'validation_summary': 'Nano-rapamycin formulations show promise with 50% dose reduction in immunosuppression.',
+        'validation': 'BRONZE',
+        'validation_summary': 'Nano-rapamycin shows promise but lacks clinical validation; no systematic computational repurposing screen completed for islet transplant.',
         'sources': [
             'Nature Communications (2022) nanoparticle-rapamycin study',
             'Frontiers (2024) immunosuppression review',
@@ -172,8 +175,8 @@ GAPS_DATA = [
         'investigation': '(1) Analyze CAR-T oncology equity literature for transferable lessons, (2) Map projected CAR-Treg treatment center locations vs T1D prevalence, (3) Model access scenarios under different coverage frameworks',
         'expected_outcomes': 'Equity impact framework applicable before therapies reach market',
         'status': 'Background Research',
-        'validation': 'SILVER',
-        'validation_summary': 'CAR-T costs 375K-500K; 37% of eligible patients travel over 1 hour. Major access disparity literature exists.',
+        'validation': 'GOLD',
+        'validation_summary': 'CAR-T costs 375K-500K; 37% of eligible patients travel >1hr. AJMC, Blood journal, ADA Standards, Helmsley Trust all independently recognize this disparity.',
         'sources': [
             'AJMC CAR-T access disparities review',
             'Blood journal racial disparities data',
@@ -312,8 +315,8 @@ GAPS_DATA = [
         'investigation': '(1) Build a repurposing screen that weights candidates by generic availability and cost, (2) Focus on T2D mechanisms underserved by current generics (e.g., incretin effect, beta cell protection), (3) Model cost-savings potential of top candidates',
         'expected_outcomes': 'Framework for equity-oriented drug repurposing applicable beyond diabetes',
         'status': 'Background Research',
-        'validation': 'GOLD',
-        'validation_summary': 'This research question is independently recognized as important by 5 major institutions.',
+        'validation': 'BRONZE',
+        'validation_summary': 'Concept is sound but no systematic computational repurposing screen has been completed for diabetes equity; limited to our analysis of generic drug availability.',
         'sources': [
             'ADA Diabetes Care (2025) "Improving Affordability of Pharmaceutical Treatments"',
             'NASHP state policy reports',
@@ -337,8 +340,8 @@ GAPS_DATA = [
         'investigation': '(1) Review animal literature on nutrients affecting beta cell proliferation, (2) Identify metabolomic signatures associated with beta cell recovery in remission cohorts, (3) Design a pilot study framework pairing metabolic phenotyping with targeted nutrition',
         'expected_outcomes': 'Nutritional intervention framework testable in early T2D remission patients',
         'status': 'Background Research',
-        'validation': 'SILVER',
-        'validation_summary': 'Digital twin technology integrating CGM, dietary, and microbiome data shows promise.',
+        'validation': 'BRONZE',
+        'validation_summary': 'Digital twin technology promising but human evidence for nutrition-driven beta cell recovery is minimal; limited to animal studies and early pilot data.',
         'sources': [
             'Cell (2015) foundational glycemic response study',
             'Frontiers (2024) digital twin technology',
@@ -382,8 +385,8 @@ GAPS_DATA = [
         'investigation': '(1) Analyze GLP-1 agonist and SGLT2 inhibitor pricing trajectories and global access patterns as comparators, (2) Estimate GKA manufacturing cost floor based on molecular complexity, (3) Model access scenarios under different intellectual property and pricing regimes',
         'expected_outcomes': 'Proactive access policy recommendations before GKAs reach global markets',
         'status': 'Background Research',
-        'validation': 'GOLD',
-        'validation_summary': 'This research question is independently recognized as important by 4 major institutions.',
+        'validation': 'BRONZE',
+        'validation_summary': 'GKAs only approved in China (dorzagliatin); no US/EU approval yet. Pricing and access analysis is premature; based primarily on our projections from analogous drug classes.',
         'sources': [
             'Nature commentary on global GKA access',
             'Phase 3 trial published in Nature Medicine',

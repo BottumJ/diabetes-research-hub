@@ -631,9 +631,10 @@ html_content = '''<!DOCTYPE html>
                 </p>
                 <div class="tier-examples">
                     <strong>Examples:</strong>
-                    Gap #1 (Gene therapy for LADA) — Validated by 3+ publications on LADA genetics and vector development
-                    | Gap #2 (Beta cell regeneration x equity) — Multiple sources on stem cell therapy plus equity literature
-                    | Gap #3 (Islet transplant outcomes) — CITR registry data plus clinical trials from independent centers
+                    Gap #2 (Health equity in beta cell therapies) — ADA Standards, Helmsley Trust, JDRF, Frontiers review
+                    | Gap #3 (Insulin resistance in islet transplant) — Edmonton Protocol 20-year data, Donislecel FDA approval, CITR registry
+                    | Gap #6 (CAR-T access barriers) — AJMC, Blood journal, ADA Standards, Helmsley Trust independently recognize disparity
+                    | Gap #11 (Islet transplant registry equity) — National Academies, Helmsley, ADA, PMC review, Frontiers analysis
                 </div>
             </div>
 
@@ -654,8 +655,10 @@ html_content = '''<!DOCTYPE html>
                 </p>
                 <div class="tier-examples">
                     <strong>Examples:</strong>
-                    Gap #4 (Drug repurposing for islet transplant) — Two sources on candidate molecules and transplant outcomes
-                    | Gap #5 (Regulatory T cells in neuropathy) — Publications on Treg immunobiology plus DPN-specific work
+                    Gap #1 (Gene therapy for LADA) — GAD-alum LADA trial completed, CAR-Treg pipeline advancing
+                    | Gap #7 (Glucokinase drug repurposing) — Nature Reviews Drug Discovery, dorzagliatin clinical data
+                    | Gap #8 (Immunomodulatory drugs for LADA) — Expert consensus panel, network meta-analysis
+                    | Gap #10 (LADA prevalence by healthcare setting) — ADA Standards, diagnostic disparities literature
                 </div>
             </div>
 
@@ -676,10 +679,11 @@ html_content = '''<!DOCTYPE html>
                 </p>
                 <div class="tier-examples">
                     <strong>Examples:</strong>
-                    Gap #10 (LADA prevalence estimation) — Based on our analysis of diagnostic criteria variation and registry
-                    data, but not independently confirmed by other groups
-                    | Gap #13 &amp; #14 (Personalized nutrition) — Emerging area with limited literature, identified via computational
-                    analysis of existing publications
+                    Gap #4 (Drug repurposing for islet transplant) — Nano-rapamycin promising but lacks clinical validation
+                    | Gap #5 (Tregs in diabetic neuropathy) — Preclinical CAR-Treg data in MS models; not yet diabetes-specific
+                    | Gap #12 (Generic drug x diabetes mechanism catalog) — Primarily computational analysis
+                    | Gap #13 &amp; #14 (Personalized nutrition) — Emerging area with limited human evidence
+                    | Gap #15 (GKA pricing trajectory) — Based on analogous drug class projections
                 </div>
             </div>
 
@@ -866,79 +870,79 @@ html_content = '''<!DOCTYPE html>
 
             <div class="research-gap-list">
                 <div class="gap-card">
-                    <div class="gap-title">Gap #1: LADA Gene Therapy</div>
+                    <div class="gap-title">Gap #1: Gene Therapy for LADA</div>
+                    <span class="gap-validation silver">SILVER</span>
+                    <p class="gap-description">Gene-based immunomodulatory approaches for LADA; CAR-Treg targeting of LADA-specific autoantigens.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-title">Gap #2: Health Equity in Beta Cell Therapies</div>
                     <span class="gap-validation gold">GOLD</span>
-                    <p class="gap-description">Vectors and ex vivo strategies to deliver corrected LADA-risk genes to autoreactive immune cells.</p>
+                    <p class="gap-description">Global access to stem cell-derived beta cell therapies; production scaling, cost reduction, and equity frameworks.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #2: Beta Cell Regen × Equity</div>
+                    <div class="gap-title">Gap #3: Insulin Resistance in Islet Transplant</div>
                     <span class="gap-validation gold">GOLD</span>
-                    <p class="gap-description">Global access to stem cell-derived beta cell therapies; production scaling and cost reduction.</p>
+                    <p class="gap-description">Tacrolimus-induced insulin resistance as driver of graft failure; calcineurin-sparing alternatives.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #3: Islet Transplant Outcomes</div>
+                    <div class="gap-title">Gap #4: Drug Repurposing for Islet Transplant</div>
+                    <span class="gap-validation bronze">BRONZE</span>
+                    <p class="gap-description">Computational screening of approved drugs for islet-protective properties; nano-rapamycin formulations.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-title">Gap #5: Treg in Diabetic Neuropathy</div>
+                    <span class="gap-validation bronze">BRONZE</span>
+                    <p class="gap-description">Regulatory T cell modulation to address neuroinflammatory component of diabetic peripheral neuropathy.</p>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-title">Gap #6: CAR-T Access Barriers</div>
                     <span class="gap-validation gold">GOLD</span>
-                    <p class="gap-description">Long-term durability and immunosuppression minimization in clinical islet transplantation.</p>
+                    <p class="gap-description">Equity frameworks for CAR-Treg therapy access in T1D; cost, geographic, and insurance barriers.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #4: Drug Repurposing</div>
+                    <div class="gap-title">Gap #7: GKA Drug Repurposing</div>
                     <span class="gap-validation silver">SILVER</span>
-                    <p class="gap-description">Existing medications (e.g., antivirals, antiparasitics) repurposed to improve islet transplant survival.</p>
+                    <p class="gap-description">Computational screening for glucokinase-activating properties in existing approved medications.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #5: Tregs in Neuropathy</div>
+                    <div class="gap-title">Gap #8: Immunomodulatory Drugs for LADA</div>
                     <span class="gap-validation silver">SILVER</span>
-                    <p class="gap-description">Regulatory T cell expansion strategies to prevent diabetic peripheral neuropathy progression.</p>
-                </div>
-                <div class="gap-card">
-                    <div class="gap-title">Gap #6: T Cell Tolerance</div>
-                    <span class="gap-validation silver">SILVER</span>
-                    <p class="gap-description">Mechanisms of antigen-specific tolerance in T1D; CAR-Treg and TCR-Treg engineering approaches.</p>
-                </div>
-                <div class="gap-card">
-                    <div class="gap-title">Gap #7: Glycemic Variability</div>
-                    <span class="gap-validation silver">SILVER</span>
-                    <p class="gap-description">Blood glucose instability (not HbA1c) as independent risk factor; intervention strategies.</p>
-                </div>
-                <div class="gap-card">
-                    <div class="gap-title">Gap #8: Diabetic Foot Ulcer Prevention</div>
-                    <span class="gap-validation silver">SILVER</span>
-                    <p class="gap-description">Predictive biomarkers and early intervention to prevent lower-limb amputation in T2D.</p>
+                    <p class="gap-description">Systematic drug repurposing for agents with dual glycemic and immunomodulatory benefits for LADA.</p>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #9: GKA in LADA</div>
                     <span class="gap-validation review">EXPLORATORY</span>
-                    <p class="gap-description">Glucokinase activators for beta cell preservation; evidence limited in LADA populations.</p>
+                    <p class="gap-description">Glucokinase activation for residual beta cell support in LADA; biological plausibility uncertain.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #10: LADA Prevalence</div>
-                    <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">True prevalence of LADA; diagnostic criteria harmonization; predictive biomarkers.</p>
+                    <div class="gap-title">Gap #10: LADA Prevalence by Healthcare Setting</div>
+                    <span class="gap-validation silver">SILVER</span>
+                    <p class="gap-description">LADA misdiagnosis rates across demographic groups; GAD antibody testing access disparities.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #11: Diabetic Retinopathy Staging</div>
-                    <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">AI-based classification of retinopathy severity; treatment response prediction.</p>
+                    <div class="gap-title">Gap #11: Islet Transplant Registry Equity</div>
+                    <span class="gap-validation gold">GOLD</span>
+                    <p class="gap-description">Demographic and geographic profile of islet transplant recipients vs disease burden distribution.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #12: Kidney Disease Progression</div>
+                    <div class="gap-title">Gap #12: Generic Drug x Diabetes Mechanism Catalog</div>
                     <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">Biomarkers of DKD progression beyond albuminuria; early intervention windows.</p>
+                    <p class="gap-description">Equity-oriented drug repurposing prioritized by generic availability and low cost for underserved populations.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #13: Personalized Nutrition (T1D)</div>
+                    <div class="gap-title">Gap #13: Personalized Nutrition for Beta Cells</div>
                     <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">Carb counting optimization and meal composition impact on glycemic control in T1D.</p>
+                    <p class="gap-description">Nutritional interventions targeting metabolic pathways to support endogenous beta cell regeneration.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #14: Personalized Nutrition (T2D)</div>
+                    <div class="gap-title">Gap #14: Personalized Nutrition for LADA</div>
                     <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">Dietary interventions tailored to individual metabolic and microbiome profiles in T2D.</p>
+                    <p class="gap-description">Nutrition personalized to autoimmune status and C-peptide level for LADA patients.</p>
                 </div>
                 <div class="gap-card">
-                    <div class="gap-title">Gap #15: Psychosocial Burden &amp; Adherence</div>
+                    <div class="gap-title">Gap #15: GKA Pricing Trajectory</div>
                     <span class="gap-validation bronze">BRONZE</span>
-                    <p class="gap-description">Mental health integration and behavioral interventions for diabetes distress and treatment adherence.</p>
+                    <p class="gap-description">Proactive access and pricing frameworks for glucokinase activators as they approach global markets.</p>
                 </div>
             </div>
         </div>
