@@ -339,6 +339,17 @@ html_content = f"""<!DOCTYPE html>
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="container">
         <header>
             <h1>GKA Pricing Trajectory Model</h1>
@@ -836,6 +847,18 @@ html_content = f"""<!DOCTYPE html>
             <div class="source">
                 Data compiled from: NMPA drug approval records (2022); vTv Therapeutics/Zealand Pharma press releases (2023); PubMed (PMID 33622669); FDA NDA approvals; CMS drug pricing databases; IQVIA market reports; IDF Diabetes Atlas 2023; WHO EML guidelines
             </div>
+        </div>
+
+        <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+          <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+          <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+            <li>Pricing projections are modeled, not based on manufacturer pricing decisions</li>
+            <li>Patent cliff timelines may shift due to extensions or new formulations</li>
+            <li>Generic entry projections assume standard pharmaceutical market dynamics</li>
+            <li>China pricing may not predict pricing in other markets</li>
+            <li>Biosimilar/generic competition assumptions are speculative</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
         </div>
 
         <footer>

@@ -446,6 +446,17 @@ html_content = '''<!DOCTYPE html>
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <header>
         <h1>GKA Drug Repurposing Landscape</h1>
         <p class="subtitle">Glucokinase Activators: Clinical Failures, Mechanisms, and Therapeutic Opportunities</p>
@@ -1166,6 +1177,18 @@ html_content = '''<!DOCTYPE html>
         <div class="key-insight">
             <strong>Evidence Quality:</strong> This analysis integrates peer-reviewed publications (PMID-cited), clinical trial registries (ClinicalTrials.gov), regulatory announcements (China NMPA approval of dorzagliatin), and expert reviews. Claims are directly sourced where possible. Speculative opportunities (MODY-2, LADA, beta cell preservation) are clearly marked.
         </div>
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>Many GKA programs were discontinued; published data may be incomplete</li>
+        <li>Dorzagliatin approval is China-specific and may not predict global regulatory outcomes</li>
+        <li>Hepatic safety signals require longer follow-up than currently available</li>
+        <li>TTP399 T1D data is from Phase 2 only</li>
+        <li>GKA mechanism of action may have inherent limitations for long-term glycemic control</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <footer>

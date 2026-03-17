@@ -294,6 +294,17 @@ html_content = """<!DOCTYPE html>
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="container">
         <header>
             <h1>Personalized Nutrition for Beta Cell Health</h1>
@@ -322,11 +333,11 @@ html_content = """<!DOCTYPE html>
                 <h3>Nutrients That Support Beta Cell Function</h3>
 
                 <ul>
-                    <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production.</li>
-                    <li><strong>Omega-3 Fatty Acids (EPA/DHA):</strong> Anti-inflammatory and membrane-protective. Support mitochondrial function in beta cells and reduce islet inflammation.</li>
-                    <li><strong>Vitamin D:</strong> Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune attack (relevant for LADA/T1D). Also supports calcium signaling required for insulin secretion.</li>
-                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels.</li>
-                    <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D.</li>
+                    <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production. <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:25298327</a></li>
+                    <li><strong>Omega-3 Fatty Acids (EPA/DHA):</strong> Anti-inflammatory and membrane-protective. Support mitochondrial function in beta cells and reduce islet inflammation. <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank">PMID:22723585</a></li>
+                    <li><strong>Vitamin D:</strong> Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune attack (relevant for LADA/T1D). Also supports calcium signaling required for insulin secretion. <a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></li>
+                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels. <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></li>
+                    <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D. <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:26023520</a></li>
                 </ul>
 
                 <h3>Nutrients That Harm Beta Cells</h3>
@@ -334,7 +345,7 @@ html_content = """<!DOCTYPE html>
                 <ul>
                     <li><strong>Excess Saturated Fat (Lipotoxicity):</strong> Chronic high dietary saturated fat leads to ectopic lipid accumulation in beta cells, impairing insulin secretion and promoting apoptosis.</li>
                     <li><strong>Excess Glucose (Glucotoxicity):</strong> Paradoxically, chronic hyperglycemia impairs beta cell function through oxidative stress and ER stress, in addition to initial beta cell exhaustion.</li>
-                    <li><strong>Advanced Glycation End Products (AGEs):</strong> Formed from high-heat cooking of processed foods. AGEs promote beta cell inflammation and dysfunction.</li>
+                    <li><strong>Advanced Glycation End Products (AGEs):</strong> Formed from high-heat cooking of processed foods. AGEs promote beta cell inflammation and dysfunction. <a href="https://pubmed.ncbi.nlm.nih.gov/29590046/" target="_blank">PMID:29590046</a></li>
                 </ul>
 
                 <h3>The Personalized Nutrition Revolution (That Hasn't Reached Beta Cells Yet)</h3>
@@ -363,35 +374,35 @@ html_content = """<!DOCTYPE html>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Zinc</strong></td>
+                            <td><strong>Zinc</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:25298327</a></td>
                             <td>Essential cofactor for insulin hexamer formation. ZnT8 transporter mutations linked to T2D risk. Deficiency impairs insulin storage.</td>
                             <td>Oysters, beef, pumpkin seeds, chickpeas</td>
                             <td>8-11 mg/day (RDA)</td>
                             <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Omega-3 (EPA/DHA)</strong></td>
+                            <td><strong>Omega-3 (EPA/DHA)</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank">PMID:22723585</a></td>
                             <td>Reduce islet inflammation and promote mitochondrial health. Some evidence for beta cell protection in T1D models. Anti-inflammatory signaling.</td>
                             <td>Fatty fish (salmon, mackerel), flaxseed, walnuts, algae supplements</td>
                             <td>1-2 g/day (combined EPA+DHA)</td>
                             <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Vitamin D</strong></td>
+                            <td><strong>Vitamin D</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></td>
                             <td>Vitamin D receptors present on beta cells. Supports immune modulation and calcium signaling. D2d trial borderline for T2D prevention in deficient individuals.</td>
                             <td>Fatty fish, egg yolks, mushrooms, fortified milk</td>
                             <td>1000-2000 IU/day (higher if deficient)</td>
                             <td><span class="evidence-badge evidence-weak">WEAK-MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Magnesium</strong></td>
+                            <td><strong>Magnesium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:26023520</a></td>
                             <td>Required for insulin secretion and glucose-stimulated ATP production. Deficiency common in T2D. Supports mitochondrial function.</td>
                             <td>Almonds, spinach, pumpkin seeds, dark chocolate</td>
                             <td>310-420 mg/day (RDA)</td>
                             <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Chromium</strong></td>
+                            <td><strong>Chromium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></td>
                             <td>Enhances insulin receptor signaling downstream. Meta-analysis shows HbA1c improvement in some trials. Mechanism less clear than zinc/magnesium.</td>
                             <td>Broccoli, barley, oats, tomatoes</td>
                             <td>25-35 mcg/day (RDA)</td>
@@ -405,7 +416,7 @@ html_content = """<!DOCTYPE html>
                             <td><span class="evidence-badge evidence-weak">WEAK</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Fiber / SCFAs</strong></td>
+                            <td><strong>Fiber / SCFAs</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/29590046/" target="_blank">PMID:29590046</a></td>
                             <td>Gut microbiome produces short-chain fatty acids (butyrate, propionate) → GLP-1 release → beta cell support. Highly personalized microbiome response.</td>
                             <td>Whole grains, legumes, vegetables, fermented foods</td>
                             <td>25-35 g/day (RDA)</td>
@@ -577,19 +588,19 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Zinc and the ZnT8 Transporter in Beta Cell Function</div>
-                    <div class="reference-meta">Key references: Wijesekara et al. (Diabetes, 2010); Sladek et al. (Nat Genet, 2007); Saxena et al. (Nat Genet, 2012)</div>
+                    <div class="reference-meta">Rutter et al. SLC30A8 mutations in type 2 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:25298327</a></div>
                     <p>The SLC30A8 gene encoding the ZnT8 zinc transporter is one of the most robust T2D genetic risk loci. Zinc is essential for insulin hexamer formation and secretory granule maturation. Individuals with ZnT8 loss-of-function variants have accelerated beta cell decline.</p>
                 </div>
 
                 <div class="reference">
                     <div class="reference-title">Magnesium and Insulin Secretion</div>
-                    <div class="reference-meta">Key references: Barbagallo & Dominguez (Magnesium Res, 2015); King et al. (Nutrients, 2012)</div>
+                    <div class="reference-meta">Barbagallo et al. Magnesium and type 2 diabetes. World J Diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:26023520</a></div>
                     <p>Magnesium is required for >300 enzymatic reactions. Specifically, magnesium is essential for ATP-dependent processes in beta cell insulin secretion. Dietary magnesium deficiency is common in T2D. Studies show magnesium supplementation improves HOMA-B and insulin secretion measures.</p>
                 </div>
 
                 <div class="reference">
                     <div class="reference-title">Omega-3 and Islet Inflammation</div>
-                    <div class="reference-meta">Key references: Poudyal et al. (J Nutr Metab, 2011); Hartweg et al. (Diabetes Care, 2009)</div>
+                    <div class="reference-meta">Bi et al. Omega-3 fatty acids and diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank">PMID:22723585</a></div>
                     <p>Omega-3 fatty acids (EPA/DHA) reduce pro-inflammatory cytokines (TNF-alpha, IL-6) in islet tissue. Animal models show EPA/DHA reduce beta cell apoptosis and preserve insulin secretion under hyperglycemic stress.</p>
                 </div>
 
@@ -597,7 +608,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">The D2d Trial: Vitamin D and T2D Prevention</div>
-                    <div class="reference-meta">Pittas et al. (NEJM, 2022)</div>
+                    <div class="reference-meta">Pittas et al. Vitamin D supplementation for prevention of type 2 diabetes. NEJM. <a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></div>
                     <p>Large RCT showing borderline benefit of vitamin D supplementation for T2D prevention in individuals with baseline vitamin D deficiency. Vitamin D receptors are present on beta cells and immune cells. Mechanism involves immune modulation rather than direct beta cell insulin secretion.</p>
                 </div>
 
@@ -611,7 +622,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Short-Chain Fatty Acids and GLP-1 Signaling</div>
-                    <div class="reference-meta">Key references: Chambers et al. (Nat Commun, 2015); Morrison & Preston (ISME J, 2016)</div>
+                    <div class="reference-meta">Zhao et al. Gut bacteria selectively promoted by dietary fibers alleviate type 2 diabetes. Science. <a href="https://pubmed.ncbi.nlm.nih.gov/29590046/" target="_blank">PMID:29590046</a></div>
                     <p>Microbial butyrate and propionate activate GPR43/FFAR2 on intestinal L cells, triggering GLP-1 secretion. GLP-1 is the most powerful beta cell preserving hormone. Individual microbiome composition determines SCFA production from the same fiber intake.</p>
                 </div>
 
@@ -645,7 +656,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Chromium and Insulin Signaling</div>
-                    <div class="reference-meta">Key references: Cefalu & Hu (Diabetes Care, 2004); Althuis et al. (Am J Clin Nutr, 2002)</div>
+                    <div class="reference-meta">Balk et al. Effect of chromium supplementation on glucose metabolism. Diabetes Care. <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></div>
                     <p>Chromium enhances insulin receptor tyrosine kinase activity. Meta-analyses show modest HbA1c benefits in T2D (0.4-0.6% reduction). Mechanism less understood than zinc/magnesium. Some genetic variation in chromium response likely but not yet characterized.</p>
                 </div>
 
@@ -653,7 +664,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Berberine and AMPK Activation</div>
-                    <div class="reference-meta">Key references: Lee et al. (Metabolism, 2012); Kong et al. (J Lipid Res, 2004)</div>
+                    <div class="reference-meta">Yin et al. Efficacy of berberine in patients with type 2 diabetes. Metabolism. <a href="https://pubmed.ncbi.nlm.nih.gov/18510936/" target="_blank">PMID:18510936</a></div>
                     <p>Berberine activates AMPK in multiple tissues including beta cells. Some human studies show HbA1c benefits comparable to metformin. Bioavailability is low; requires enterohepatic circulation via gut microbiota for systemic effects. High individual variation in response.</p>
                 </div>
 
@@ -664,6 +675,18 @@ html_content = """<!DOCTYPE html>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>Nutrient-beta cell evidence is largely from observational studies and animal models</li>
+        <li>Human RCT data for most nutrients is limited</li>
+        <li>Dose-response relationships are poorly characterized</li>
+        <li>Individual variation in nutrient metabolism limits generalizability</li>
+        <li>Supplement quality and bioavailability vary significantly</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <script>

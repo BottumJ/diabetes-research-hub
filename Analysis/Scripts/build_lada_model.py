@@ -75,12 +75,12 @@ REFERENCES = [
         'key_finding': 'HR 6.40 for low C-peptide; HR 5.37 for high GADA titer'
     },
     {
-        'id': 'ACTION2019',
-        'authors': 'Hjort et al.',
-        'year': 2019,
-        'title': 'ACTION LADA: Prevalence and characteristics',
+        'id': 'ACTION2013',
+        'authors': 'Hawa et al.',
+        'year': 2013,
+        'title': 'ACTION LADA: Clinical and genetic characteristics of LADA',
         'journal': 'Diabetes Care',
-        'pmid': '30369313',
+        'pmid': '23835333',
         'key_finding': '8.8% LADA prevalence in adult-onset diabetes (n=6,156)'
     },
     {
@@ -567,6 +567,17 @@ def generate_html():
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="header">
         <div class="title">LADA Natural History Model</div>
         <div class="subtitle">Computational Analysis of Gene Therapy Opportunity and Intervention Windows</div>
@@ -761,7 +772,7 @@ def generate_html():
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
                     <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:30369313)</span></li>
-                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(PMID:30369313)</span></li>
+                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>
             </div>
@@ -1037,6 +1048,18 @@ def generate_html():
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>Computational model based on published cohort means, not individual patient-level data</li>
+        <li>C-peptide trajectories are approximations; actual decline rates vary by individual</li>
+        <li>LADA1/LADA2 dichotomy is a simplification of a continuous spectrum</li>
+        <li>Limited to GAD65 antibody-positive LADA; other autoantibody patterns may differ</li>
+        <li>Intervention window estimates are theoretical and untested in RCTs</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <div class="footer">

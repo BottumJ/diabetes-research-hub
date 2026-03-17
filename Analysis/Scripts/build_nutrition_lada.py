@@ -351,6 +351,17 @@ html_content = """<!DOCTYPE html>
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="container">
         <header>
             <h1>Personalized Nutrition Strategy for LADA</h1>
@@ -433,8 +444,8 @@ html_content = """<!DOCTYPE html>
                 <p><strong>Evidence:</strong> Strongest evidence for any dietary pattern on autoimmune and inflammatory diseases.</p>
 
                 <ul>
-                    <li><strong>PREDIMED Trial:</strong> Mediterranean diet reduced new-onset type 2 diabetes by 30% in high-risk individuals (Estruch et al., NEJM 2013). PREDIMED-Plus showed sustained prevention over 6+ years.</li>
-                    <li><strong>Autoimmune Effect:</strong> Mediterranean diet reduces TNF-alpha, IL-6, CRP, and other inflammatory markers. Mechanism: high polyphenol content, omega-3:omega-6 ratio, whole grain fiber, minimal processed foods.</li>
+                    <li><strong>PREDIMED Trial:</strong> Mediterranean diet reduced new-onset type 2 diabetes by 30% in high-risk individuals. <a href="https://pubmed.ncbi.nlm.nih.gov/24655532/" target="_blank">PMID:24655532</a> PREDIMED-Plus showed sustained prevention over 6+ years.</li>
+                    <li><strong>Autoimmune Effect:</strong> Mediterranean diet reduces TNF-alpha, IL-6, CRP, and other inflammatory markers. Mechanism: high polyphenol content, omega-3:omega-6 ratio, whole grain fiber, minimal processed foods. <a href="https://pubmed.ncbi.nlm.nih.gov/20500789/" target="_blank">PMID:20500789</a></li>
                     <li><strong>Components:</strong>
                         <ul>
                             <li>Olive oil (polyphenols, anti-inflammatory fats)</li>
@@ -506,7 +517,7 @@ html_content = """<!DOCTYPE html>
 
                 <h3>Gut Barrier Integrity: The Leaky Gut Hypothesis in LADA</h3>
 
-                <p><strong>Rationale:</strong> Increased intestinal permeability ("leaky gut") allows bacterial lipopolysaccharide (LPS) and food antigens to cross the intestinal epithelium and activate innate immunity. This LPS-driven Toll-like receptor 4 signaling may accelerate beta cell autoimmunity in genetically susceptible individuals.</p>
+                <p><strong>Rationale:</strong> Increased intestinal permeability ("leaky gut") allows bacterial lipopolysaccharide (LPS) and food antigens to cross the intestinal epithelium and activate innate immunity. This LPS-driven Toll-like receptor 4 signaling may accelerate beta cell autoimmunity in genetically susceptible individuals. <a href="https://pubmed.ncbi.nlm.nih.gov/22109896/" target="_blank">PMID:22109896</a></p>
 
                 <ul>
                     <li><strong>Evidence in autoimmune disease:</strong> Leaky gut is associated with celiac disease, rheumatoid arthritis, and type 1 diabetes. Some evidence in LADA but not yet systematically studied.</li>
@@ -524,7 +535,7 @@ html_content = """<!DOCTYPE html>
                 <p><strong>Context:</strong> Some LADA patients have concurrent celiac disease or non-celiac gluten sensitivity. Whether gluten activates autoimmunity in LADA specifically is unknown.</p>
 
                 <ul>
-                    <li><strong>Type 1 diabetes:</strong> Celiac disease co-occurs in 3-5% of T1D patients. Possible shared genetics (HLA-DQ2/DQ8). Some (weak) evidence that gluten elimination slows T1D progression.</li>
+                    <li><strong>Type 1 diabetes:</strong> Celiac disease co-occurs in 3-5% of T1D patients. Possible shared genetics (HLA-DQ2/DQ8). Antvorskov et al. show dietary gluten and development of type 1 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/24838679/" target="_blank">PMID:24838679</a></li>
                     <li><strong>LADA evidence:</strong> No specific studies. But HLA genes overlap between LADA and celiac disease. LADA patients with family history of celiac disease or gastrointestinal symptoms should be tested.</li>
                     <li><strong>Practical recommendation:</strong> Screen for celiac serology (TTG-IgA) in newly diagnosed LADA. If positive, strict gluten elimination. If negative and no GI symptoms, gluten restriction is not evidence-based but may be considered if anti-inflammatory diet shows insufficient benefit.</li>
                 </ul>
@@ -610,7 +621,7 @@ html_content = """<!DOCTYPE html>
                 <ul>
                     <li><strong>Meal frequency:</strong> 3 meals + 1-2 snacks, evenly distributed. Avoid grazing, which keeps beta cells in constant stimulation.</li>
                     <li><strong>Meal composition:</strong> Each meal should include protein + fat + fiber to slow glucose absorption and reduce glucose peak.</li>
-                    <li><strong>Time-restricted eating (optional):</strong> Some evidence (weak) that 8-10 hour eating window improves beta cell rest. Consider if overweight or early LADA with good glycemic control.</li>
+                    <li><strong>Time-restricted eating (optional):</strong> Some evidence (weak) that 8-10 hour eating window improves beta cell rest. <a href="https://pubmed.ncbi.nlm.nih.gov/29754952/" target="_blank">PMID:29754952</a> Consider if overweight or early LADA with good glycemic control.</li>
                     <li><strong>Avoid:</strong> Sulfonylureas-like dietary patterns. Just as sulfonylureas force high insulin output (accelerating beta cell exhaustion), frequent high-carb meals do the same. Moderate, even carbohydrate distribution is beta cell-sparing.</li>
                 </ul>
 
@@ -745,7 +756,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">LADA: Autoimmune Diabetes in Adults</div>
-                    <div class="reference-meta">Key references: Latova et al. (Diabetes Care, 2005); Turner et al. (Diabetes, 2013)</div>
+                    <div class="reference-meta">Buzzetti et al. Management of latent autoimmune diabetes in adults. Nat Rev Endocrinol. <a href="https://pubmed.ncbi.nlm.nih.gov/28397826/" target="_blank">PMID:28397826</a></div>
                     <p>LADA is defined by positive autoantibodies (GADA, IA-2A, or both) + onset age >30 years + initial nonketotic presentation. Represents 5-10% of apparent T2D in most populations. Characterized by slowly progressive beta cell destruction.</p>
                 </div>
 
@@ -759,13 +770,13 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">PREDIMED Trial: Mediterranean Diet and Type 2 Diabetes Prevention</div>
-                    <div class="reference-meta">Estruch et al. (NEJM, 2013); Salaverria et al. (Nutrients, 2022)</div>
+                    <div class="reference-meta">Salas-Salvado et al. PREDIMED. <a href="https://pubmed.ncbi.nlm.nih.gov/24655532/" target="_blank">PMID:24655532</a></div>
                     <p>Landmark trial showing 30% relative risk reduction in T2D with Mediterranean diet supplemented with extra-virgin olive oil or nuts. PREDIMED-Plus extended to 6+ years with sustained benefit. Mechanism involves reduced inflammation, improved insulin sensitivity, preserved beta cell function.</p>
                 </div>
 
                 <div class="reference">
                     <div class="reference-title">Mediterranean Diet and Inflammatory Markers</div>
-                    <div class="reference-meta">Esposito et al. (Eur J Clin Invest, 2013); Schwingshackl et al. (Nutrients, 2016)</div>
+                    <div class="reference-meta">Calder PC. Omega-3 fatty acids and inflammatory processes. <a href="https://pubmed.ncbi.nlm.nih.gov/20500789/" target="_blank">PMID:20500789</a></div>
                     <p>Systematic reviews and meta-analyses show Mediterranean diet consistently reduces CRP, IL-6, TNF-alpha, and other inflammatory markers across 30+ RCTs. Effect sizes are modest but clinically meaningful (15-20% reduction in inflammatory markers).</p>
                 </div>
 
@@ -829,7 +840,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Intermittent Fasting and Glucose Homeostasis</div>
-                    <div class="reference-meta">De Cabo & Mattson (NEJM, 2019); Carlson et al. (Obes Rev, 2015)</div>
+                    <div class="reference-meta">Sutton et al. Early time-restricted feeding improves insulin sensitivity. Cell Metab. <a href="https://pubmed.ncbi.nlm.nih.gov/29754952/" target="_blank">PMID:29754952</a></div>
                     <p>Time-restricted eating (8-10 hour eating window) reduces postprandial glucose excursions and may reduce beta cell secretory burden. Evidence is mixed and mostly in animal models. Potential mechanism: reduced insulin stimulation = reduced beta cell workload.</p>
                 </div>
 
@@ -842,6 +853,18 @@ html_content = """<!DOCTYPE html>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>No nutrition RCTs have been conducted specifically in LADA populations</li>
+        <li>Recommendations are extrapolated from T1D, T2D, and general autoimmune literature</li>
+        <li>Mediterranean diet evidence is from T2D and cardiovascular populations</li>
+        <li>Gut barrier integrity and LADA connection is mechanistic, not clinically validated</li>
+        <li>The LAMENS trial design is proposed but unfunded</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <script>

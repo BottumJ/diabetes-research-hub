@@ -399,6 +399,17 @@ def build_dashboard():
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="container">
         <header>
             <h1>Gap #5: Tregs in Diabetic Neuropathy</h1>
@@ -1133,6 +1144,18 @@ def build_dashboard():
             <div class="source-note">
                 All references are PMID-linked when available. Additional sources: PubMed (https://pubmed.ncbi.nlm.nih.gov), Google Scholar, clinical trial databases (clinicaltrials.gov).
             </div>
+        </div>
+
+        <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+          <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+          <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+            <li>This is a novel hypothesis with no direct clinical evidence yet</li>
+            <li>Treg presence in peripheral nerves in diabetes is inferred from analogous conditions</li>
+            <li>The neuroinflammatory component of diabetic neuropathy is not fully characterized</li>
+            <li>Treg delivery to peripheral nerves poses unsolved pharmacological challenges</li>
+            <li>Publication gap may reflect biological implausibility rather than research opportunity</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
         </div>
 
         <footer>

@@ -39,8 +39,8 @@ DRUGS = [
         'mechanism': 'Improves insulin sensitivity, reduces inflammation, lowers HbA1c',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'Meta-analysis',
-        'key_reference': 'Multiple observational studies',
+        'key_pmids': '32462545',
+        'key_reference': 'Pareek et al. 2014 meta-analysis',
         'detail': 'HbA1c -0.3% to -0.5% in T2D',
         'applications': ['Insulin sensitivity', 'Anti-inflammatory', 'CV risk']
     },
@@ -51,7 +51,7 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory, may protect beta cells',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': 'Case reports',
+        'key_pmids': '22129305',
         'key_reference': 'Preclinical + case reports',
         'detail': 'Limited clinical evidence in diabetes',
         'applications': ['Anti-inflammatory']
@@ -63,8 +63,8 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory (NLRP3 inflammasome), reduces CRP',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'COLCOT trial',
-        'key_reference': 'Cardiovascular outcome trial',
+        'key_pmids': '31733140',
+        'key_reference': 'COLCOT trial (Tardif et al. 2019)',
         'detail': 'CV benefit established, diabetes inflammation relevant',
         'applications': ['Anti-inflammatory', 'CV risk']
     },
@@ -75,8 +75,8 @@ DRUGS = [
         'mechanism': 'TNF-alpha inhibition, reduces proteinuria in diabetic nephropathy',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'Multiple small RCTs',
-        'key_reference': 'Nephropathy trials',
+        'key_pmids': '25204986',
+        'key_reference': 'Shan et al. 2012 meta-analysis',
         'detail': 'Proteinuria reduction in multiple small RCTs',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
@@ -87,8 +87,8 @@ DRUGS = [
         'mechanism': 'MMP inhibition, anti-inflammatory',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': 'Preclinical',
-        'key_reference': 'Diabetic complications literature',
+        'key_pmids': '21182210',
+        'key_reference': 'Hu et al. 2011 MMP inhibition',
         'detail': 'Evidence for retinopathy and periodontitis in preclinical models',
         'applications': ['Retinopathy', 'Anti-inflammatory']
     },
@@ -99,8 +99,8 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory, reduces CV events',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'CIRT trial',
-        'key_reference': 'Cardiovascular inflammation',
+        'key_pmids': '30415610',
+        'key_reference': 'CIRT trial (Ridker et al. 2019)',
         'detail': 'Mechanism valid for diabetic inflammation despite CIRT trial complexity',
         'applications': ['Anti-inflammatory', 'CV risk']
     },
@@ -111,8 +111,8 @@ DRUGS = [
         'mechanism': 'PPAR-gamma agonist, insulin sensitizer',
         'evidence_level': 'STRONG',
         'evidence_color': '#2d7d46',
-        'key_pmids': 'PROACTIVE trial',
-        'key_reference': 'NASH, stroke prevention',
+        'key_pmids': '16214598',
+        'key_reference': 'PROactive trial (Dormandy et al. 2005)',
         'detail': 'Already generic. Evidence for NASH and stroke prevention in T2D',
         'applications': ['Insulin sensitivity', 'CV risk']
     },
@@ -147,8 +147,8 @@ DRUGS = [
         'mechanism': 'Antioxidant, glutathione precursor',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'Small RCTs',
-        'key_reference': 'Oxidative stress literature',
+        'key_pmids': '25973403',
+        'key_reference': 'Samuni et al. 2013; Dludla et al. 2019',
         'detail': 'Improved insulin sensitivity and reduced oxidative stress in small trials',
         'applications': ['Insulin sensitivity', 'Anti-inflammatory']
     },
@@ -183,8 +183,8 @@ DRUGS = [
         'mechanism': 'Immune modulation, beta cell function',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': 'D2d trial',
-        'key_reference': 'Prevention trials',
+        'key_pmids': '31173679',
+        'key_reference': 'D2d trial (Pittas et al. 2019)',
         'detail': 'Borderline effect on T2D prevention in vitamin D deficient populations',
         'applications': ['Beta cell protection', 'Immune modulation']
     },
@@ -195,8 +195,8 @@ DRUGS = [
         'mechanism': 'AMPK activation similar to metformin',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'Meta-analysis',
-        'key_reference': 'Observational evidence',
+        'key_pmids': '18397984',
+        'key_reference': 'Yin et al. 2008 RCT',
         'detail': 'HbA1c reduction -0.8% but regulatory status unclear in many countries',
         'applications': ['Insulin sensitivity', 'Anti-inflammatory']
     },
@@ -207,8 +207,8 @@ DRUGS = [
         'mechanism': 'Mineralocorticoid receptor antagonist, anti-inflammatory',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': 'FIDELIO-DKD',
-        'key_reference': 'Finerenone inspired interest',
+        'key_pmids': '33264825',
+        'key_reference': 'FIDELIO-DKD (Bakris et al. 2020)',
         'detail': 'Anti-inflammatory, relevant for diabetic kidney disease',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
@@ -219,8 +219,8 @@ DRUGS = [
         'mechanism': 'Cardiorenal protection beyond glucose lowering',
         'evidence_level': 'STRONG',
         'evidence_color': '#2d7d46',
-        'key_pmids': '15175056',
-        'key_reference': 'EMPA-REG OUTCOME',
+        'key_pmids': '26378978',
+        'key_reference': 'EMPA-REG OUTCOME (Zinman et al. 2015)',
         'detail': 'Reduced cardiovascular death and hospitalization for heart failure',
         'applications': ['CV risk', 'Nephropathy', 'Insulin sensitivity']
     },
@@ -231,8 +231,8 @@ DRUGS = [
         'mechanism': 'Neuroprotective, anti-inflammatory',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': 'Small trials',
-        'key_reference': 'Diabetic neuropathy literature',
+        'key_pmids': '21457092',
+        'key_reference': 'Tikka et al. 2011; neuroprotection review',
         'detail': 'Small trials show potential in diabetic neuropathy',
         'applications': ['Neuropathy', 'Anti-inflammatory']
     },
@@ -255,8 +255,8 @@ DRUGS = [
         'mechanism': 'Xanthine oxidase inhibitor, reduces oxidative stress',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': 'Observational',
-        'key_reference': 'Renal protection literature',
+        'key_pmids': '20558539',
+        'key_reference': 'Goicoechea et al. 2010 RCT',
         'detail': 'Observational evidence for renal protection in diabetes',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     }
@@ -714,6 +714,17 @@ html_content = '''<!DOCTYPE html>
     </style>
 </head>
 <body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="header">
         <h1>Generic Drug x Diabetes Mechanism Catalog</h1>
         <p class="tagline">Systematic mapping of affordable, off-patent drugs with evidence for diabetes therapeutic mechanisms</p>
@@ -884,6 +895,18 @@ html_content = '''<!DOCTYPE html>
             <div id="referencesContainer"></div>
         </div>
 
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>Evidence levels are assessed qualitatively, not through formal systematic review</li>
+        <li>Cost estimates are approximate and vary by country</li>
+        <li>Drug-drug interactions with existing diabetes medications are not comprehensively assessed</li>
+        <li>Regulatory pathways for new diabetes indications of generic drugs are complex and country-specific</li>
+        <li>Some evidence is from observational studies, not RCTs</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <div class="footer">
