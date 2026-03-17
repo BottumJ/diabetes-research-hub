@@ -481,7 +481,7 @@ def main():
         v = verification_results[pmid]
         if v.get('exists') is True:
             status = "PASS"
-            detail = f"{v['authors']} ({v['year']}) - {v['title'][:60]}"
+            detail = f"{v['authors']} ({v['year']}) - {v['title'][:60]}".encode('ascii', 'replace').decode('ascii')
         elif v.get('exists') is False:
             status = "FAIL"
             detail = v.get('error', 'Not found')
