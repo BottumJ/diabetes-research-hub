@@ -55,6 +55,7 @@ SCRIPTS = {
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'ingest': ('ingest_papers.py', 'Ingesting paper abstracts and full text from PubMed/PMC'),
     'validate': ('validate_citations.py', 'Validating citations and building evidence network'),
+    'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
