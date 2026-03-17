@@ -548,6 +548,12 @@ def build_dashboard(gap_evidence):
         .gap-section {{ margin-bottom: 8px; }}
         .gap-content {{ padding: 12px 0; }}
         .timestamp {{ font-size: 0.75rem; color: {COLORS['muted']}; margin-top: 2rem; }}
+
+        /* === CONTEXT BLOCK === */
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
@@ -566,6 +572,15 @@ def build_dashboard(gap_evidence):
 <div class="container">
     <h1>Gap Evidence Browser</h1>
     <p class="description">Extracted findings from ingested papers, mapped to each of the 15 research gaps. Each finding is a specific sentence from the paper's abstract or full text that contains relevant evidence. Click any gap to expand.</p>
+
+    <div class="context-block">
+      <h3>What This Dashboard Answers</h3>
+      <p>Every research gap claim in this platform is backed by extracted evidence from the paper library. This dashboard shows the raw evidence mappings: which papers support which gap findings, what the key quotes are, and how strong each evidence link is. It is the citation layer beneath the Gap Deep Dives.</p>
+      <div class="context-label">How to Use This</div>
+      <p>For verification: trace any gap finding back to its source evidence and evaluate the strength of the connection. For researchers: identify which gaps have the strongest vs. weakest evidence bases. For the platform: provides the audit trail that supports tier assignments.</p>
+      <div class="context-label">What This Cannot Tell You</div>
+      <p>Evidence extraction is automated from paper abstracts and full text. Extracted quotes may lack full context. Evidence-to-gap mapping is based on keyword and semantic relevance, not expert curation. Some papers may be relevant to gaps they are not currently mapped to.</p>
+    </div>
 
     <div class="stats-grid">
         <div class="stat-card">

@@ -700,7 +700,7 @@ html_content = '''<!DOCTYPE html>
             font-weight: 500;
         }
 
-        .bar-fill {
+        .bar-fill {{
             flex: 1;
             height: 24px;
             background-color: #2c5f8a;
@@ -710,7 +710,12 @@ html_content = '''<!DOCTYPE html>
             padding-left: 8px;
             color: #ffffff;
             font-size: 0.85em;
-        }
+        }}
+
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -732,6 +737,15 @@ html_content = '''<!DOCTYPE html>
         <h1>Generic Drug x Diabetes Mechanism Catalog</h1>
         <p class="tagline">Systematic mapping of affordable, off-patent drugs with evidence for diabetes therapeutic mechanisms</p>
         <span class="badge">Gap #12 BRONZE</span>
+    </div>
+
+    <div class="context-block">
+        <h3>What This Dashboard Answers</h3>
+        <p>Hundreds of generic drugs are prescribed daily for non-diabetes conditions, yet many have documented mechanisms that intersect with diabetes pathophysiology (inflammation, insulin signaling, beta cell protection, immune modulation). This catalog systematically maps approved generics to diabetes-relevant mechanisms, creating a searchable reference for which existing drugs might warrant investigation in diabetes contexts.</p>
+        <p class="context-label">How to Use This</p>
+        <p>For researchers: a lookup tool linking drug mechanisms to diabetes pathways. For the drug repurposing screen: the source catalog from which candidates were scored. For pharmacologists: identifies mechanism overlaps between drug classes that might suggest combination approaches.</p>
+        <p class="context-label">What This Cannot Tell You</p>
+        <p>BRONZE tier. Mechanism mapping is based on published pharmacology, not diabetes-specific clinical evidence. Inclusion of a drug in this catalog does not imply efficacy for diabetes. Drug-drug interactions and contraindications are not mapped.</p>
     </div>
 
     <div class="container">

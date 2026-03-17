@@ -339,6 +339,11 @@ html_content = '''<!DOCTYPE html>
             border-left: 2px solid #636363;
             font-size: 12px;
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -365,6 +370,15 @@ html_content = '''<!DOCTYPE html>
                 by enhancing insulin secretion during slow autoimmune decline.
             </p>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Glucokinase activators (GKAs) target glucokinase enzyme dysfunction — a metabolic defect. LADA is an autoimmune disease where the immune system destroys beta cells. The biological plausibility of GKAs in LADA is very low because the mechanism does not address the root cause. This dashboard documents why this gap exists in the literature and recommends formal deprioritization.</p>
+            <p class="context-label">How to Use This</p>
+            <p>For researchers: provides the mechanistic reasoning for why GKA + LADA is unlikely to yield results, preventing wasted effort. For funders: documents the evidence basis for not investing in this intersection. For the platform: demonstrates that gap identification includes deprioritization of implausible directions.</p>
+            <p class="context-label">What This Cannot Tell You</p>
+            <p>EXPLORATORY tier — biological plausibility is assessed as very low. If future research reveals GKA effects on immune modulation (not currently known), this assessment would need revision. The deprioritization recommendation is based on current mechanistic understanding only.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" data-tab="hypothesis">The Hypothesis</button>

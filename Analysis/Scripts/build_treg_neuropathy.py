@@ -396,6 +396,11 @@ def build_dashboard():
             margin-top: 1rem;
             font-style: italic;
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -419,6 +424,15 @@ def build_dashboard():
             <p class="subtitle">Exploring Treg-based immunotherapy for the neuroinflammatory component of diabetic neuropathy</p>
             <span class="badge">SILVER VALIDATED</span>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Diabetic neuropathy — nerve damage from chronic diabetes — affects up to 50% of diabetic patients and has no disease-modifying treatment. Regulatory T cells (Tregs) suppress harmful immune responses and reduce inflammation. This dashboard explores whether Treg-based therapies could address the neuroinflammatory component of diabetic neuropathy, a connection almost entirely unexplored in published literature.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For neuroscience researchers: maps the mechanistic plausibility of Treg immunotherapy for peripheral neuroinflammation. For immunologists: identifies the gap between Treg biology and neuropathy applications. For funders: assesses whether this gap is worth a pilot investigation.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>BRONZE tier — this is a computational analysis of biological plausibility with very limited direct evidence. No clinical trials have tested Treg therapy for diabetic neuropathy. The mechanistic pathway is inferred from separate bodies of literature (Treg biology + neuroinflammation) that have not been directly connected.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" onclick="showTab(event, 'tab1')">The Problem</button>

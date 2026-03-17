@@ -8,15 +8,22 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 ## What This Project Does
 
-**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact.
+**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 4 GOLD (3+ sources), 4 SILVER (2 sources), 6 BRONZE (computational analysis), 1 EXPLORATORY.
 
 **Clinical Trial Intelligence** — Pulls live snapshots from ClinicalTrials.gov API v2 across five categories (T1D cure, T1D immunotherapy, T2D novel therapies, diabetes devices, recently completed trials). Diffs snapshots over time to detect new trials, status changes, and freshly posted results.
 
 **PubMed Surveillance** — Monitors 15 high-priority alert channels for recent publications. Flags cross-domain papers and tracks publication volume trends.
 
+**Paper Library & Citation Validation** — 199 ingested papers (198 abstracts, 86 full text) with PMID cross-referencing against PubMed API. Every citation is scored CONFIRMED/PLAUSIBLE/WEAK/MISMATCH.
+
 **Research Tracker** — A structured spreadsheet tracking 55 pipeline entries, 25 high-impact papers, 22 public datasets, and 35 mapped research domains with key open questions.
 
-**Interactive Dashboard** — A visual research command center with filterable pipeline, charts, timeline, and dataset catalog.
+**Actionable Research Tools** — Three equity-focused tools that go beyond documenting gaps to producing actionable intervention frameworks:
+- Generic Drug Repurposing Screen (34 drugs, pressure-tested against WHO EML and PubMed)
+- LADA Diagnostic Cost-Effectiveness Model (4 screening scenarios across 4 healthcare tiers)
+- Clinical Trial Site Equity Mapper (40+ countries, 19 real trials with NCT numbers)
+
+**29 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, medical data dictionary (116 terms), acronym database, methodology framework, and all three actionable tools.
 
 ---
 
@@ -27,25 +34,38 @@ Diabetes_Research/
 ├── README.md                          # This file
 ├── RESEARCH_DOCTRINE.md               # Governing standards for ingest, validation, and action
 ├── CONTRIBUTION_STRATEGY.md           # How findings get distributed and the feedback loop
+├── CONTRIBUTING.md                    # Contributor guidelines
+├── OSF_PREREGISTRATION.md             # Open Science Framework protocol
 ├── Research_Findings_Summary.md       # Comprehensive findings across all 12 domains
 ├── Diabetes_Research_Tracker.xlsx     # Master tracker (5 sheets, 55 pipeline entries)
 │
 ├── Analysis/
-│   ├── Scripts/
-│   │   ├── run_all.py                         # Master runner for all scripts
-│   │   ├── project1_literature_gap_analysis.py # PubMed gap analysis (Project 1)
-│   │   ├── baseline_clinical_trials.py        # ClinicalTrials.gov snapshot
-│   │   ├── baseline_pubmed_alerts.py          # PubMed recent papers tracker
-│   │   └── hub_monitor.py                     # File change detector
-│   ├── Results/                       # Script outputs (JSON snapshots, reports, matrices)
+│   ├── Scripts/                       # 35 Python build scripts + 8 utility scripts
+│   │   ├── run_quality_improvements.py        # Master runner (35 scripts)
+│   │   ├── run_all.py                         # Legacy runner for baseline scripts
+│   │   ├── build_drug_repurposing_screen.py   # 34-drug equity screen (pressure-tested)
+│   │   ├── build_lada_diagnostic_model.py     # LADA screening cost-effectiveness
+│   │   ├── build_trial_equity_mapper.py       # Global trial equity mapper
+│   │   ├── build_data_dictionary.py           # 116-term medical dictionary
+│   │   ├── build_gap_deep_dives.py            # All 15 gap deep dives
+│   │   ├── ingest_papers.py                   # PubMed/PMC paper ingestion
+│   │   ├── validate_citations.py              # Citation cross-referencing
+│   │   └── ... (35 total build scripts)
+│   ├── Results/                       # Script outputs, paper library, evidence cache
 │   └── Notebooks/                     # Future: Jupyter analysis notebooks
 │
-├── Dashboards/
-│   ├── Research_Dashboard.html        # Interactive visual dashboard (6 tabs)
-│   └── Clinical_Trial_Dashboard.html  # Clinical trial intelligence (746 trials)
+├── Dashboards/                        # 29 Tufte-style HTML dashboards
+│   ├── Drug_Repurposing_Screen.html   # 34-drug equity intervention screen
+│   ├── LADA_Diagnostic_Model.html     # Screening cost-effectiveness model
+│   ├── Trial_Equity_Mapper.html       # Global trial site equity analysis
+│   ├── Medical_Data_Dictionary.html   # 116 terms, 9 body systems
+│   ├── Paper_Library.html             # Searchable paper library
+│   ├── Gap_Deep_Dives.html            # All 15 research gaps
+│   └── ... (29 total dashboards)
 │
 ├── docs/
-│   └── index.html                    # GitHub Pages public website
+│   ├── index.html                    # GitHub Pages public website
+│   └── Dashboards/                   # Deployed dashboard copies
 │
 ├── Papers/
 │   ├── T1D/
@@ -70,13 +90,13 @@ Diabetes_Research/
 - `openpyxl` (`pip install openpyxl`)
 - Internet connection (for PubMed and ClinicalTrials.gov API queries)
 
-### Run All Scripts
+### Run the Full Build Suite (35 scripts)
 ```powershell
 cd Diabetes_Research/Analysis/Scripts
-python run_all.py
+python run_quality_improvements.py
 ```
 
-### Run Individual Scripts
+### Run Baseline Scripts Only
 ```powershell
 python run_all.py --project1   # Literature gap analysis
 python run_all.py --trials     # Clinical trial snapshot
@@ -85,21 +105,46 @@ python run_all.py --monitor    # Hub file monitor
 ```
 
 ### Outputs
-All results are saved to `Analysis/Results/` as JSON snapshots, Excel workbooks, and Markdown reports. Dated snapshots enable diffing over time to detect changes.
+All results are saved to `Analysis/Results/` as JSON snapshots, Excel workbooks, and Markdown reports. Dashboards are generated to `Dashboards/` as self-contained HTML files. Dated snapshots enable diffing over time to detect changes.
 
 ---
 
-## Research Doctrine
+## Validation Framework
 
-This project follows a formal Research Doctrine that governs how information is ingested, validated, and acted upon. Key principles:
+This project uses a 4-tier evidence classification system:
 
-- **Triple-Source Validation**: No claim is presented as fact without three independent sources from different research groups and institutions.
-- **CEBM Evidence Levels**: All sources are classified using the Oxford Centre for Evidence-Based Medicine hierarchy (Level 1a through 5).
-- **GRADE Certainty Assessment**: Evidence certainty is rated High, Moderate, Low, or Very Low with explicit rationale.
-- **PRISMA 2020 Alignment**: Systematic searches follow PRISMA reporting requirements including pre-registration, flow diagrams, and documented inclusion/exclusion criteria.
-- **Terminology Standards**: Precise language (e.g., "functional cure" not "cure", "demonstrated in [context]" not "proven").
+| Tier | Requirement | Count |
+|------|------------|-------|
+| **GOLD** | 3+ independent sources from different research groups | 4 gaps |
+| **SILVER** | 2 independent sources | 4 gaps |
+| **BRONZE** | Computational analysis with single-source basis | 6 gaps |
+| **EXPLORATORY** | Biological plausibility uncertain | 1 gap |
 
-See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework.
+All claims in the Drug Repurposing Screen have been pressure-tested: WHO Essential Medicines flags verified against the 2023 EML, mechanism claims checked against cited PMIDs, negative trials explicitly labeled, preclinical-only evidence clearly distinguished from human RCT data.
+
+See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 2020, GRADE, Oxford CEBM).
+
+---
+
+## The 15 Research Gaps
+
+| # | Gap | Tier |
+|---|-----|------|
+| 1 | Gene Therapy for LADA | SILVER |
+| 2 | Health Equity in Beta Cell Therapies | GOLD |
+| 3 | Insulin Resistance in Islet Transplant | GOLD |
+| 4 | Drug Repurposing for Islet Transplant | BRONZE |
+| 5 | Treg in Diabetic Neuropathy | BRONZE |
+| 6 | CAR-T Access Barriers in Diabetes | GOLD |
+| 7 | GKA Drug Repurposing | SILVER |
+| 8 | Immunomodulatory Drugs for LADA | SILVER |
+| 9 | GKA in LADA | EXPLORATORY |
+| 10 | LADA Prevalence | SILVER |
+| 11 | Islet Transplant Equity | GOLD |
+| 12 | Generic Drug x Diabetes Mechanism Catalog | BRONZE |
+| 13 | Personalized Nutrition for Beta Cells | BRONZE |
+| 14 | Personalized Nutrition for LADA | BRONZE |
+| 15 | GKA Pricing Trajectory | BRONZE |
 
 ---
 
@@ -110,7 +155,7 @@ Based on systematic niche evaluation, our highest-value contribution areas are:
 1. **Multi-Omics Biomarker Integration** — Cross-omics network analysis using public datasets
 2. **Literature Synthesis & Gap Analysis** — Systematic reviews and cross-domain pattern identification
 3. **Clinical Trial Intelligence** — Automated monitoring and cross-trial pattern analysis
-4. **Drug Repurposing Screening** — Computational screening of approved drugs against diabetes targets
+4. **Drug Repurposing Screening** — Computational screening of approved drugs against diabetes targets (SHIPPED: 34-drug screen)
 5. **AI/ML Prediction Models** — Risk and complication prediction using public data
 6. **Epidemiological Data Analysis** — Disparity quantification and prevention program modeling
 
@@ -130,14 +175,17 @@ This project is registered on the Open Science Framework with a pre-registered a
 
 ## Key Findings So Far
 
-### Literature Gap Analysis (Project 1)
-Queried PubMed for 30 domains × 435 pairwise combinations. Top under-researched intersections include:
-- Autoimmunity T1D × Gene Therapy (0 joint publications)
-- Beta Cell Regeneration × Health Equity (0 joint publications)
-- Islet Transplant × Drug Repurposing (0 joint publications)
-- GWAS/Polygenic × Closed Loop/Artificial Pancreas (0 joint publications)
+### Literature Gap Analysis
+Queried PubMed for 30 domains x 435 pairwise combinations. Top under-researched intersections include: Autoimmunity T1D x Gene Therapy (0 joint publications), Beta Cell Regeneration x Health Equity (0 joint publications), Islet Transplant x Drug Repurposing (0 joint publications), GWAS/Polygenic x Closed Loop/Artificial Pancreas (0 joint publications).
 
-Full results: `Analysis/Results/literature_gap_report.md`
+### Drug Repurposing Screen (Pressure-Tested)
+34 generic drugs scored across 5 dimensions (mechanism 25%, safety 20%, generic availability 20%, evidence 20%, equity 15%). Top candidates: Metformin (10.0), Verapamil (8.8), Losartan (8.75). 12 WHO Essential Medicines, 27 sub-$1/month, 14 biological pathways mapped. All mechanism claims verified against source PMIDs; negative trials explicitly labeled.
+
+### LADA Diagnostic Model
+Targeted screening is most cost-effective at $21,242/QALY, detecting 3,327 cases. Universal screening detects 9,506 cases at $36,554/QALY. Two-stage screening balances cost and detection at $28,309/QALY.
+
+### Trial Equity Mapper
+34 countries with zero clinical trial access represent 78% of global diabetes burden. 19 real trials mapped with NCT numbers against IDF Diabetes Atlas 2024 data.
 
 ---
 

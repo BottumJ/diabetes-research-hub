@@ -431,6 +431,11 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -453,6 +458,15 @@
         <p class="subtitle">Glucokinase Activators: Clinical Failures, Mechanisms, and Therapeutic Opportunities</p>
         <span class="badge">SILVER Validated</span>
     </header>
+
+    <div class="context-block">
+        <h3>What This Dashboard Answers</h3>
+        <p>Glucokinase activators (GKAs) are a class of diabetes drugs that work by making the glucose sensor in beta cells more sensitive. Several are in clinical development for T2D, but their potential for repurposing across other diabetes contexts (LADA, post-transplant, monogenic diabetes) is unexplored. This dashboard maps the GKA development landscape and identifies repurposing opportunities.</p>
+        <div class="context-label">How to Use This</div>
+        <p>For pharma/biotech: identifies which GKA candidates have mechanisms most amenable to repurposing beyond T2D. For researchers: maps the gap between GKA clinical programs and unaddressed diabetes subtypes. For regulators: provides context on GKA safety signals and development status.</p>
+        <div class="context-label">What This Cannot Tell You</div>
+        <p>GKA clinical development is active and fast-moving; pipeline status may be outdated within months. Repurposing potential is scored computationally from mechanism analysis, not clinical evidence. Hypoglycemia risk — the main GKA safety concern — is not modeled at the individual patient level.</p>
+    </div>
 
     <div class="tabs">
         <button class="tab-button active" data-tab="tab1">What is Glucokinase?</button>

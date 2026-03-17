@@ -415,6 +415,11 @@
         .drug-card:not(.expanded) .expansion-indicator::before {
             content: "+";
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -439,6 +444,15 @@
     </header>
 
     <div class="container">
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>LADA patients are losing their beta cells to autoimmune attack, but more slowly than classic Type 1. This creates a therapeutic opportunity: immunomodulatory drugs might slow or halt the autoimmune process if given during the right window. This dashboard evaluates which approved immunomodulators have the strongest evidence for LADA-specific intervention.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For endocrinologists: identifies which immunomodulators have clinical evidence (vs. preclinical only) in autoimmune diabetes. For researchers: maps mechanism-to-evidence gaps where new trials would have the highest yield. For patients: provides evidence context for off-label immunomodulatory approaches sometimes discussed in LADA management.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>SILVER tier — 2 independent sources validate the gap framing. Most evidence is extrapolated from Type 1 diabetes or rheumatologic autoimmune conditions; LADA-specific RCTs are extremely sparse. Drug scoring does not account for individual patient autoantibody profiles.</p>
+        </div>
+
         <nav class="tabs">
             <button class="tab-button active" onclick="switchTab(event, 'tab-1')">LADA vs T1D</button>
             <button class="tab-button" onclick="switchTab(event, 'tab-2')">Drug Candidates</button>

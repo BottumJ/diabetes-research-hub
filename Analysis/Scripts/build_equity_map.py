@@ -544,6 +544,11 @@ def generate_html(trial_data, snapshot_date):
                 padding: 8px;
             }}
         }}
+
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -560,6 +565,15 @@ def generate_html(trial_data, snapshot_date):
             <p class="subtitle">Supply Chain Geography vs. Global Diabetes Burden - Gap #2: GOLD Validated</p>
             <p class="source-line">Data: ClinicalTrials.gov API v2, IDF Diabetes Atlas 11th Ed. (2024), Company filings | Snapshot: {snapshot_date}</p>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Advanced beta cell therapies (stem cell-derived islets, encapsulated cells, immunomodulation protocols) are in clinical development, but their projected availability maps onto existing healthcare inequities. This dashboard overlays the global supply chain for these therapies against the geographic distribution of diabetes burden, highlighting where the gap between need and access is widest.</p>
+            <p class="context-label">How to Use This</p>
+            <p>For health systems researchers: quantifies supply-demand mismatch by country tier. For therapy developers: identifies markets and populations currently invisible to their distribution planning. For advocacy groups: provides data-backed evidence of projected access inequities before therapies reach market.</p>
+            <p class="context-label">What This Cannot Tell You</p>
+            <p>Supply projections are modeled estimates, not confirmed manufacturing plans. Therapy development timelines are uncertain. Country-level infrastructure assessments are based on proxy indicators (cold chain, regulatory readiness) rather than direct capability surveys.</p>
+        </div>
 """)
 
     # Stats bar

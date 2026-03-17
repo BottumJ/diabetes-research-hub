@@ -678,6 +678,11 @@ def generate_html():
             .tabs { display: none; }
             .tab-content { display: block !important; }
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -702,6 +707,15 @@ def generate_html():
             <p class="subtitle">Gap #4: Therapeutic Development</p>
             <span class="validation-badge">SILVER VALIDATED</span>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Islet transplant recipients currently need lifelong immunosuppression with drugs that are themselves toxic to islet cells. This dashboard evaluates existing approved drugs for repurposing as tolerance-inducing agents — drugs that could protect transplanted islets while reducing or eliminating the need for conventional immunosuppression.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For transplant researchers: ranks candidate drugs by mechanism fit, safety, and evidence level. For immunologists: maps which tolerance pathways each drug addresses. For trial designers: identifies the most promising drug combinations for pilot tolerance protocols.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>This is BRONZE tier — scored from computational analysis with a single-source evidence basis. Most repurposing candidates have preclinical evidence only. The scoring model does not account for drug-drug interactions within combination protocols.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab(event, 'tab1')">Drug Matrix</button>

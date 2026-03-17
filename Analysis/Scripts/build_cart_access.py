@@ -376,6 +376,11 @@ html_content = """<!DOCTYPE html>
             padding: 1rem;
             margin: 1.5rem 0;
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -400,6 +405,14 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <div class="container">
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR-T manufacturing costs $300K-500K per patient and requires specialized facilities that exist in fewer than 20 centers worldwide. This dashboard maps the specific barriers — manufacturing, cold chain, regulatory, cost — that prevent CAR-T from reaching 95% of the world's diabetic population.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For biotech companies: identifies which barriers are addressable by decentralized manufacturing. For funders: quantifies the cost gap between current and accessible pricing. For regulators: maps regulatory readiness by country tier.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Cost estimates are based on current oncology CAR-T pricing; diabetes-specific CAR-T is still in early clinical development. Manufacturing cost projections assume current technology and may not reflect emerging point-of-care platforms.</p>
+        </div>
         <div class="tabs-nav">
             <button class="tab-button active" data-tab="cost">The Cost Problem</button>
             <button class="tab-button" data-tab="manufacturing">Manufacturing Bottleneck</button>

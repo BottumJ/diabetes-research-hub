@@ -263,6 +263,43 @@ def generate_html():
             font-style: italic;
         }}
 
+        .context-block {{
+            background-color: {colors['surface']};
+            border-left: 4px solid {colors['accent']};
+            padding: 1.5rem 2rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.8;
+        }}
+
+        .context-block h3 {{
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: {colors['accent']};
+            margin: 0 0 0.75rem 0;
+            font-weight: normal;
+        }}
+
+        .context-block p {{
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: {colors['text']};
+        }}
+
+        .context-block .context-label {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: {colors['muted']};
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }}
+
+        .context-block .context-label:first-child {{
+            margin-top: 0;
+        }}
+
         .tabs {{
             display: flex;
             flex-wrap: wrap;
@@ -590,6 +627,20 @@ def generate_html():
     </div>
 
     <div class="container">
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>LADA (Latent Autoimmune Diabetes in Adults) is an autoimmune form of diabetes that is misdiagnosed as Type 2 in 80-90% of cases. Unlike classic Type 1, beta cell destruction in LADA is slower, creating a window where intervention could preserve remaining insulin production. This dashboard models how fast that window closes, what predicts faster progression, and which therapies map to which stage of decline.</p>
+
+            <div class="context-label">Key Finding</div>
+            <p>LADA follows a biphasic C-peptide decline: rapid early loss (~55 pmol/L/year for years 0-5), then slower chronic loss (~20 pmol/L/year). Patients with high GADA titers (>180 U/mL) progress to insulin dependence in ~5 years. Low-titer patients may retain function for >10 years. This distinction determines which interventions are viable and when.</p>
+
+            <div class="context-label">How to Use This</div>
+            <p>For researchers: the intervention window analysis (Tab 3) maps drug classes to disease stages. For clinicians: the autoantibody stratification (Tab 2) identifies which patients need the most urgent monitoring. For funders: the evidence gaps in each tab highlight where new trials would have the highest impact. This is a decision-support framework, not a treatment recommendation.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>C-peptide trajectories are population averages derived from cohort studies (ACTION LADA, HUNT, Botnia, Chinese cohorts). Individual patients vary substantially. Intervention window estimates are theoretical and untested in RCTs. This model does not account for genetic heterogeneity beyond HLA-DR3/DR4 classification.</p>
+        </div>
+
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab(event, 'cpeptide')">C-Peptide Decline Model</button>
             <button class="tab-button" onclick="switchTab(event, 'autoantibody')">Autoantibody Risk Stratification</button>

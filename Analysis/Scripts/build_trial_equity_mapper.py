@@ -1100,6 +1100,34 @@ def generate_html():
             margin-bottom: 3rem;
         }}
 
+        .context-block {{
+            background-color: #ffffff;
+            border-left: 4px solid #2c5f8a;
+            padding: 1.5rem 2rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.8;
+        }}
+        .context-block h3 {{
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: #2c5f8a;
+            margin: 0 0 0.75rem 0;
+            font-weight: normal;
+        }}
+        .context-block p {{
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }}
+        .context-block .context-label {{
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }}
+
         .executive-summary {{
             background: white;
             padding: 2rem;
@@ -1294,6 +1322,17 @@ def generate_html():
             <h1>Trial Equity Mapper</h1>
             <p style="font-size: 1.1em; color: #555; margin: 0.5em 0;">Geographic Analysis of Diabetes Disease Burden vs Clinical Trial Access</p>
             <p class="source-citation">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO regions. Last updated: {datetime.now().strftime('%B %d, %Y')}</p>
+        </div>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Advanced diabetes therapies (islet transplant, CAR-T immunotherapy, stem cell-derived beta cells) are tested almost exclusively in wealthy countries. This dashboard maps where clinical trials actually run against where diabetes patients actually live, exposing the gap between disease burden and research access. The consequences are concrete: populations excluded from trials are also excluded from the treatments those trials produce, because regulatory approval, clinical expertise, and supply chains follow trial sites.</p>
+
+            <div class="context-label">Who This Is For</div>
+            <p>For trial sponsors and regulators: this identifies high-burden countries where adding a trial site would have disproportionate impact on global access. For funders: the regulatory readiness scores show which countries are closest to being able to host trials with modest investment. For policymakers: the burden-to-access ratio quantifies the scale of the inequity in terms that support resource allocation decisions.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Trial enrollment data comes from ClinicalTrials.gov and captures registered trials only. Unregistered studies, compassionate use programs, and national research initiatives may exist in countries shown as "zero access." Country-level diabetes burden estimates are from the IDF Diabetes Atlas 2024 and carry inherent uncertainty in low-surveillance settings. Regulatory readiness scores are approximate and based on World Bank and WHO infrastructure data, not direct regulatory assessments.</p>
         </div>
 
         <div id="executive" class="executive-summary">

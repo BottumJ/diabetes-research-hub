@@ -249,6 +249,12 @@
             color: #888;
             text-align: center;
         }
+
+        /* === CONTEXT BLOCK === */
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -258,6 +264,15 @@
 <div class="container">
     <h1>Medical Data Dictionary</h1>
     <p class="description">Comprehensive reference for diabetes research terms, pathways, and connections to research gaps. All definitions in plain English first, then medical literature standard definitions.</p>
+
+    <div class="context-block">
+      <h3>What This Dashboard Answers</h3>
+      <p>Diabetes research uses specialized vocabulary spanning endocrinology, immunology, genetics, pharmacology, and health economics. This dictionary defines 116 medical terms in both plain English and technical language, organized by body system, with connections to the 15 research gaps and cited sources for each definition.</p>
+      <div class="context-label">How to Use This</div>
+      <p>For non-specialists: look up any term encountered in the dashboards and get a plain-language explanation. For researchers: verify precise medical definitions with cited sources. For the platform: provides a shared vocabulary that ensures consistency across all 29 dashboards.</p>
+      <div class="context-label">What This Cannot Tell You</div>
+      <p>Definitions reflect consensus usage as of March 2026 and may not capture emerging terminology. Some terms have different meanings in different clinical contexts — the definitions here are diabetes-focused. Normal ranges cited are general population values and may vary by age, sex, and ethnicity.</p>
+    </div>
 
     <div class="tabs">
         <button class="tab-button active" onclick="switchTab('systems')">Body Systems Map</button>

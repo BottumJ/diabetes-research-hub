@@ -433,6 +433,11 @@
                 font-size: 0.9rem;
             }
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -463,6 +468,15 @@
     </div>
 
     <div class="container">
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Diabetes research does not proportionally represent the populations most affected by diabetes. This dashboard quantifies the gap: which demographics are overrepresented in clinical trials, which are underrepresented, and what the downstream consequences are for treatment guidelines that may not generalize across populations.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For trial designers: identifies specific demographic gaps to address in enrollment. For funders: quantifies the equity cost of current research distribution. For advocacy groups: provides data-backed arguments for representative research investment.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Representation data is derived from published trial demographics and may not capture unpublished or industry-internal enrollment data. "Representation" is defined by race, geography, and income tier — other dimensions of equity (disability, age extremes, comorbidity burden) are not fully modeled.</p>
+        </div>
+
         <div class="tabs-nav">
             <button class="tab-button active" onclick="switchTab(event, 'equity-gap')">The Equity Gap</button>
             <button class="tab-button" onclick="switchTab(event, 'trial-representation')">Trial Representation</button>

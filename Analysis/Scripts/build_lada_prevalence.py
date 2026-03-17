@@ -365,6 +365,11 @@ html_content = """<!DOCTYPE html>
             padding-top: 1rem;
             border-top: 1px solid #e0ddd5;
         }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -386,6 +391,15 @@ html_content = """<!DOCTYPE html>
         <h1>LADA Prevalence</h1>
         <p class="tagline">The Hidden Epidemic: Mapping Underdiagnosis Across Healthcare Settings</p>
     </header>
+
+    <div class="context-block">
+        <h3>What This Dashboard Answers</h3>
+        <p>LADA prevalence estimates vary wildly — from 2% to 12% of adult-onset diabetes depending on the population studied, the antibody assay used, and the diagnostic criteria applied. This dashboard synthesizes prevalence data across healthcare settings and populations to establish the best current estimate of how many people have LADA and how many are being misdiagnosed.</p>
+        <p class="context-label">How to Use This</p>
+        <p>For epidemiologists: compares prevalence estimates by study methodology and population. For health systems planners: estimates the number of misdiagnosed patients in their setting. For researchers: identifies populations where LADA prevalence studies are most needed.</p>
+        <p class="context-label">What This Cannot Tell You</p>
+        <p>SILVER tier. Prevalence estimates depend heavily on GADA titer cutoffs, which are not standardized globally. Studies from different populations may not be directly comparable. Estimates from low-resource settings are sparse and may undercount due to limited autoantibody testing infrastructure.</p>
+    </div>
 
     <div class="tab-nav">
         <button class="tab-button active" onclick="switchTab(0)">The Hidden Epidemic</button>

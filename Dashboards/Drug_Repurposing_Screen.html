@@ -88,6 +88,34 @@
             margin-bottom: 3rem;
         }
 
+        .context-block {
+            background-color: #fff;
+            border-left: 4px solid #2c5f8a;
+            padding: 1.5rem 2rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.8;
+        }
+        .context-block h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: #2c5f8a;
+            margin: 0 0 0.75rem 0;
+            font-weight: normal;
+        }
+        .context-block p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        .context-block .context-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #636363;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
         .executive-summary {
             background-color: #fff;
             border-left: 4px solid #333;
@@ -347,16 +375,29 @@
         <a href="#methodology">Methodology</a>
     </nav>
     <h1>Drug Repurposing Screen for Diabetes</h1>
-    <p><em>Identifying generic drugs with diabetes-relevant mechanisms for equity interventions in low-resource settings</em></p>
+    <p><em>Pressure-tested screen of 34 generic drugs with diabetes-relevant mechanisms for equity interventions in low-resource settings</em></p>
+    <div class="context-block">
+        <h3>What This Dashboard Answers</h3>
+        <p>Most diabetes drug development targets novel molecules with decade-long timelines and high-income-country pricing. Meanwhile, dozens of cheap, globally available generic drugs have mechanisms relevant to diabetes pathophysiology — anti-inflammatory, beta cell protective, immunomodulatory — that have never been systematically evaluated for repurposing. This screen asks: which existing generics have the strongest mechanistic, safety, and equity case for diabetes intervention, and which could be deployed in low-resource settings where novel therapies will not arrive for years?</p>
+
+        <div class="context-label">How to Use This</div>
+        <p>For researchers: the ranked table identifies which drugs warrant pilot studies in specific diabetes contexts (LADA, islet transplant, T2D inflammation). For funders: the equity score highlights drugs with the best cost-to-impact ratio in LMICs. For policymakers: the WHO Essential Medicines flags show which drugs are already in global supply chains and could be repurposed without new procurement infrastructure. This is a prioritization tool for deciding where to invest limited research dollars, not a clinical recommendation.</p>
+
+        <div class="context-label">Validation Standards</div>
+        <p>Every drug in this screen has been pressure-tested. WHO Essential Medicines flags are verified against the 2023 WHO Model List. Mechanism claims are checked against cited PMIDs — negative trials (e.g., ENDIT for nicotinamide) are explicitly labeled as negative. Preclinical-only evidence (e.g., lithium, disulfiram) is clearly distinguished from human RCT data. Partially validated mechanisms (e.g., verapamil TXNIP in rodents only) carry qualifying language. Scores reflect verified evidence, not promotional claims.</p>
+
+        <div class="context-label">What This Cannot Tell You</div>
+        <p>Composite scores are weighted estimates, not clinical endpoints. A high-scoring drug may still fail in a specific population, disease stage, or healthcare context. Drug-drug interactions, local regulatory approval, and clinical infrastructure are not modeled. The equity score assumes that cost and global availability are the primary barriers — this may understate cultural, regulatory, or logistical barriers in specific countries.</p>
+    </div>
     <section id="executive-summary" class="section executive-summary">
         <h2 style="margin-top: 0; border: none;">Executive Summary</h2>
-        <p>This computational screen evaluates 28 generic drugs across five dimensions (mechanism relevance, safety profile, generic availability, evidence strength, and equity score) to identify existing pharmaceutical agents with mechanisms pertinent to diabetes pathophysiology that could serve as low-cost interventions in resource-limited settings.</p>
-        <p>Key findings include: (1) multiple sub-dollar medications demonstrate relevant mechanisms for both Type 2 and Type 1 diabetes, (2) anti-inflammatory agents (NLRP3 inflammasome inhibitors) emerge as leading candidates due to the inflammatory hypothesis of diabetes, (3) beta cell preservation mechanisms are achievable through multiple inexpensive agents including verapamil (generic $0.15/month) and nicotinamide ($0.05/month), and (4) immunomodulatory approaches relevant to LADA and T1D are available at WHO Essential Medicines pricing.</p>
-        <p>Top-ranking candidates include metformin (reference standard), verapamil (landmark beta cell preservation evidence), colchicine (NLRP3 inhibition, sub-dollar cost), hydroxychloroquine (WHO Essential, immune modulation), and nicotinamide (exceptional affordability with T1D prevention trial evidence). These represent immediately implementable interventions across economic contexts.</p>
+        <p>This computational screen evaluates 34 generic drugs across five dimensions (mechanism relevance 25%, safety profile 20%, generic availability 20%, evidence strength 20%, equity score 15%) to identify existing agents with mechanisms pertinent to diabetes pathophysiology that could serve as low-cost interventions in resource-limited settings.</p>
+        <p>Key findings: (1) 27 candidates cost under $1/month with relevant mechanisms for both T2D and autoimmune diabetes, (2) NLRP3 inflammasome inhibitors emerge as leading candidates across 5 drugs including glyburide (pennies/month, WHO Essential), (3) beta cell preservation is achievable through verapamil ($0.15/month, RCT-proven in T1D) and cyclosporine (RCT-proven but toxicity-limited), and (4) 12 drugs are already WHO Essential Medicines with existing global supply chains.</p>
+        <p>Important caveats: nicotinamide scored high on mechanism and cost but the landmark ENDIT trial was negative for T1D prevention. Hydroxychloroquine insulin sensitivity claims lack RCT support. Lithium beta cell proliferation is preclinical only. All evidence qualifiers are noted in individual drug entries below.</p>
     </section>
     <section class="stats-box">
         <div class="stat">
-            <div class="stat-number">28</div>
+            <div class="stat-number">34</div>
             <div class="stat-label">Drug Candidates Screened</div>
         </div>
         <div class="stat">
@@ -364,11 +405,11 @@
             <div class="stat-label">WHO Essential Medicines</div>
         </div>
         <div class="stat">
-            <div class="stat-number">25</div>
-            <div class="stat-label">Sub-$0.50/Month Agents</div>
+            <div class="stat-number">27</div>
+            <div class="stat-label">Sub-$1.00/Month Agents</div>
         </div>
         <div class="stat">
-            <div class="stat-number">12</div>
+            <div class="stat-number">14</div>
             <div class="stat-label">Diabetes-Relevant Pathways</div>
         </div>
     </section>

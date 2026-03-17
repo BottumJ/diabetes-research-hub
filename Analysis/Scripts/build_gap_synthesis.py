@@ -796,6 +796,11 @@ def generate_html(gaps):
                 font-size: 0.9rem;
             }}
         }}
+
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -808,6 +813,15 @@ def generate_html(gaps):
             <h1>Research Gap Synthesis</h1>
             <div class="subtitle">Scientific Method Framework</div>
             <div class="subtitle" style="margin-top: 0.5rem;">Diabetes Research Hub — Systematic identification of cross-domain research opportunities</div>
+        </div>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>The 15 research gaps tracked by this platform are not independent — they cluster around shared mechanisms, overlapping populations, and common barriers. This dashboard synthesizes across gaps to identify patterns: which gaps reinforce each other, which share bottlenecks, and where progress on one gap would unlock progress on others.</p>
+            <p class="context-label">How to Use This</p>
+            <p>For strategic planning: identifies the highest-leverage gaps where investment would produce cascading benefits across multiple research areas. For researchers: maps cross-gap dependencies that suggest collaborative opportunities. For the platform: validates gap prioritization by showing how gaps relate to each other.</p>
+            <p class="context-label">What This Cannot Tell You</p>
+            <p>Cross-gap relationships are inferred from mechanistic and literature overlap analysis. The synthesis does not model funding or resource constraints. Gap interactions may be more complex than pairwise analysis captures.</p>
         </div>
 
         <!-- Stats Bar -->

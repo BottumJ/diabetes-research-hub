@@ -39,6 +39,12 @@
   --mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
 }
 
+/* === CONTEXT BLOCK === */
+.context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+.context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+.context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+.context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.55; font-size: 14px; }
 
@@ -167,6 +173,15 @@ tr:hover { background: var(--accent-light); }
     <span class="tag"><span class="num">22</span> Datasets</span>
     <span class="tag"><span class="num">25</span> Papers</span>
   </div>
+</div>
+
+<div class="context-block">
+  <h3>What This Dashboard Answers</h3>
+  <p>The central research hub providing an overview of the entire diabetes research landscape tracked by this platform: 55 pipeline entries, 35 research domains, 22 public datasets, and 25 high-impact papers. This is the navigational starting point for the platform.</p>
+  <div class="context-label">How to Use This</div>
+  <p>For new visitors: provides orientation to the platform's scope and structure. For returning users: serves as a jump-off point to specific dashboards and analyses. For collaborators: summarizes what data and analyses are available.</p>
+  <div class="context-label">What This Cannot Tell You</div>
+  <p>This is an index and navigation tool, not an analysis. Statistics shown are counts from the tracker spreadsheet and may not reflect the most recent dashboard-level analyses.</p>
 </div>
 
 <div class="tabs">

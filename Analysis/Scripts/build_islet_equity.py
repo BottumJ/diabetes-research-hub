@@ -406,6 +406,11 @@ html_content = f"""<!DOCTYPE html>
             font-size: 0.85em;
             color: {colors['muted']};
         }}
+
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -430,6 +435,15 @@ html_content = f"""<!DOCTYPE html>
                 <div class="subtitle">Demographic and geographic disparities in access and outcomes</div>
             </div>
             <span class="badge">SILVER</span>
+        </div>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Islet transplantation is one of the most promising approaches to curing Type 1 diabetes, but access is profoundly unequal. Fewer than 20 centers worldwide perform the procedure, almost all in wealthy countries. This dashboard uses registry data to quantify who actually receives islet transplants by demographics, geography, and insurance status — and who is systematically excluded.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For transplant programs: benchmarks their patient demographics against registry-wide patterns. For policymakers: provides evidence for expanding transplant access criteria and funding. For equity researchers: quantifies the gap between transplant candidacy and actual access.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>GOLD tier (3+ independent sources), but registry data has inherent selection bias — it captures who was transplanted, not who was eligible but denied. Geographic coverage is limited to registries that publish demographic data. Insurance and socioeconomic access barriers are estimated, not directly measured.</p>
         </div>
 
         <div class="tabs">

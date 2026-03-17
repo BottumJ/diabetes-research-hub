@@ -315,6 +315,12 @@ def build_html(data):
         .small-table {{ max-width: 600px; }}
         .network-stat {{ display: inline-block; margin-right: 24px; margin-bottom: 8px; }}
         .timestamp {{ font-size: 0.75rem; color: {COLORS['muted']}; margin-top: 2rem; }}
+
+        /* === CONTEXT BLOCK === */
+        .context-block {{ background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }}
+        .context-block h3 {{ font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }}
+        .context-block p {{ margin: 0.5rem 0; font-size: 0.95rem; color: #333; }}
+        .context-block .context-label {{ font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }}
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -336,6 +342,15 @@ def build_html(data):
 <div class="container">
     <h1>Paper Library</h1>
     <p class="description">Ingested research papers with abstracts, full text (where available), citation validation scores, and cross-paper linkage. Every citation in the Diabetes Research Hub is verified against PubMed and scored for relevance.</p>
+
+    <div class="context-block">
+      <h3>What This Dashboard Answers</h3>
+      <p>This platform's analyses are built on a library of 199 ingested research papers, each with metadata (authors, journal, year, PMID), abstract text, and relevance mapping to the 15 research gaps. This dashboard makes that library searchable and transparent — every claim in every dashboard can be traced back to its source paper here.</p>
+      <div class="context-label">How to Use This</div>
+      <p>For fact-checkers: verify any cited paper by searching its PMID. For researchers: browse papers by gap relevance, publication year, or journal. For the platform: demonstrates that all analyses are grounded in peer-reviewed literature, not generated claims.</p>
+      <div class="context-label">What This Cannot Tell You</div>
+      <p>The library contains papers that were specifically ingested for this platform's research gaps. It is not a comprehensive literature review of all diabetes research. Papers are indexed by abstract; full-text analysis is available for 86 of 199 papers. Citation validation scores (CONFIRMED/PLAUSIBLE/WEAK/MISMATCH) are automated and may have edge cases.</p>
+    </div>
 
     <!-- Summary Statistics -->
     <div class="stats-grid">

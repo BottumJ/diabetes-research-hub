@@ -224,6 +224,34 @@
             background-color: rgba(200, 100, 0, 0.2);
         }
 
+        .context-block {
+            background-color: #ffffff;
+            border-left: 4px solid #2c5f8a;
+            padding: 1.5rem 2rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.8;
+        }
+        .context-block h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: #2c5f8a;
+            margin: 0 0 0.75rem 0;
+            font-weight: normal;
+        }
+        .context-block p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        .context-block .context-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #636363;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
         /* Print styles */
         @media print {
             body {
@@ -250,6 +278,20 @@
 </nav>
 
 <h1>LADA Diagnostic Model: Cost-Effectiveness Dashboard</h1>
+
+<div class="context-block">
+    <h3>What This Dashboard Answers</h3>
+    <p>Up to 10% of adults diagnosed with Type 2 diabetes actually have LADA — an autoimmune form where the immune system is slowly destroying insulin-producing beta cells. These patients are treated with T2D drugs (metformin, sulfonylureas) that do not address the underlying autoimmune process, leading to faster beta cell failure, earlier insulin dependence, and worse outcomes. The core question: is it worth testing every new adult-onset diabetes patient for LADA antibodies, and if so, which screening strategy delivers the best outcomes per dollar spent?</p>
+
+    <div class="context-label">How to Read the Cost-Effectiveness Numbers</div>
+    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY for "cost-effective" and $150,000/QALY for "acceptable" in high-income countries. These thresholds come from WHO-CHOICE guidelines and US/UK health technology assessment practice. In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
+
+    <div class="context-label">Key Assumptions That Could Change the Answer</div>
+    <p>The model assumes GAD antibody testing costs $25-45 per patient, LADA prevalence is 9.7% among adult-onset diabetes (from ACTION LADA 7, n=6,156), and correctly identified patients gain 0.35 QALYs over 10 years through appropriate treatment. The sensitivity analysis section shows how the ICER changes if these assumptions are wrong. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective.</p>
+
+    <div class="context-label">What This Cannot Tell You</div>
+    <p>This is a Markov-based decision model, not a clinical trial. No 20-year outcomes data exists for LADA screening programs — long-horizon projections are speculative. The model does not account for patient anxiety from screening, false positive management costs, or the clinical capacity needed to implement screening at scale. Implementation barriers (lab access, clinician training, reimbursement) are discussed but not costed.</p>
+</div>
 
 <section id="executive-summary">
     <h2>Executive Summary</h2>
@@ -1060,7 +1102,7 @@
 <footer style="margin-top: 3em; padding-top: 2em; border-top: 1px solid #dddddd; color: #666; font-size: 0.85em;">
     <p>
         <strong>Document Information:</strong><br/>
-        Generated: 2026-03-17 11:01 UTC<br/>
+        Generated: 2026-03-17 12:12 UTC<br/>
         Dashboard Version: 1.0.0<br/>
         Model Horizon: 10-year and 20-year<br/>
         Discount Rate: 3% annual<br/>

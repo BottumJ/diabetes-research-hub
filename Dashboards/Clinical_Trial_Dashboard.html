@@ -32,6 +32,12 @@
   --mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
 }
 
+/* === CONTEXT BLOCK === */
+.context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+.context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+.context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+.context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.55; font-size: 14px; }
 
@@ -134,6 +140,15 @@ tbody tr:hover { background: #f5f4ef; }
     Diabetes Research Hub &middot; Data: <a href="https://clinicaltrials.gov/" target="_blank">ClinicalTrials.gov</a> API v2 &middot; Snapshot: 2026-03-17 &middot; <a href="https://osf.io/hu9ga" target="_blank">OSF Registration</a>
   </div>
   <div class="key-figures" id="keyFigures"></div>
+</div>
+
+<div class="context-block">
+  <h3>What This Dashboard Answers</h3>
+  <p>This dashboard tracks 748+ diabetes clinical trials pulled from ClinicalTrials.gov, covering T1D cure research, immunotherapy, T2D novel therapies, diabetes devices, and recently completed trials. It answers: what is the current state of the diabetes clinical trial pipeline, what phases are trials in, which sponsors are most active, and where are the gaps in trial coverage?</p>
+  <div class="context-label">How to Use This</div>
+  <p>For researchers: identifies active trials to avoid duplication or find collaboration. For patients/advocates: provides a searchable inventory of ongoing trials by condition and phase. For funders: reveals which therapeutic areas are overcrowded and which are underserved.</p>
+  <div class="context-label">What This Cannot Tell You</div>
+  <p>Trial data comes from ClinicalTrials.gov snapshots and may lag behind real-time status changes by days to weeks. Trials registered on non-US registries (EU CTR, ISRCTN) are not captured. Trial quality and likelihood of success are not assessed.</p>
 </div>
 
 <div class="tabs" id="tabs"></div>

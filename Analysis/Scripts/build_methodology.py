@@ -504,6 +504,12 @@ html_content = '''<!DOCTYPE html>
         .nav-separator {
             color: #e0ddd5;
         }
+
+        /* === CONTEXT BLOCK === */
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -530,6 +536,15 @@ html_content = '''<!DOCTYPE html>
                 This dashboard explains our analytical approach, evidence standards, and how to interpret platform findings.
             </p>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>This page documents exactly how the platform works: how gaps were identified, how evidence tiers (GOLD/SILVER/BRONZE/EXPLORATORY) are assigned, how citations are validated, and what standards govern the research. It is the audit trail for every claim made across the 29 dashboards.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For skeptics: provides full transparency on methods so claims can be independently verified. For contributors: defines the standards any new analysis must meet. For the platform itself: serves as the governing document ensuring consistency and rigor.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>The methodology describes the platform's internal validation process, which is computational and literature-based. It does not replace formal peer review, institutional review board oversight, or domain expert consensus. The tier system is a heuristic, not a formal evidence grading framework like GRADE.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab('mission')">Mission & Purpose</button>

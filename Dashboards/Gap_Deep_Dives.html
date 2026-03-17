@@ -63,6 +63,10 @@
         .data-value { font-family: "Courier New", monospace; color: #1a1a1a; font-size: 1.1em; }
         .sortable { cursor: pointer; user-select: none; }
         .sortable:hover { background-color: #f0f0f0; }
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -73,8 +77,22 @@
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-03-17 11:01:11</p>
+            <p class="subtitle">Generated: 2026-03-17 12:11:31</p>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>This platform tracks 15 specific research gaps in diabetes where published literature is thin, clinical trials are sparse, or equity barriers prevent progress. These gaps were identified by querying PubMed for 435 pairwise domain combinations and flagging intersections with zero or near-zero joint publications. Each gap represents a concrete question that existing research has not adequately addressed.</p>
+
+            <div class="context-label">How Gaps Are Classified</div>
+            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (4 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (4 gaps): 2 independent sources. <strong>BRONZE</strong> (6 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (1 gap): biological plausibility is uncertain. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
+
+            <div class="context-label">How to Read the Priority Matrix</div>
+            <p>The Priority Matrix (Tab 1) ranks gaps by a composite score combining publication density, trial activity, clinical urgency, and feasibility. Higher scores indicate gaps where new research would have disproportionate impact. Cluster Analysis (Tab 2) groups related gaps to reveal cross-cutting themes. Individual Deep Dives (Tab 3) provide the evidence, mechanisms, and open questions for each gap. The Evidence Catalog (Tab 4) maps all supporting literature.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Gap identification is limited by PubMed indexing. Research published in non-English journals, preprints, or grey literature may address gaps not captured here. The priority scores are computational estimates, not expert consensus. Status labels ("Urgent Gap," "In Development") reflect the state of published evidence as of March 2026 and may not capture very recent developments.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('matrix')">Priority Matrix</button>

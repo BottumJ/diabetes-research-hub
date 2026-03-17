@@ -133,6 +133,12 @@
         .small-table { max-width: 600px; }
         .network-stat { display: inline-block; margin-right: 24px; margin-bottom: 8px; }
         .timestamp { font-size: 0.75rem; color: #636363; margin-top: 2rem; }
+
+        /* === CONTEXT BLOCK === */
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -154,6 +160,15 @@
 <div class="container">
     <h1>Paper Library</h1>
     <p class="description">Ingested research papers with abstracts, full text (where available), citation validation scores, and cross-paper linkage. Every citation in the Diabetes Research Hub is verified against PubMed and scored for relevance.</p>
+
+    <div class="context-block">
+      <h3>What This Dashboard Answers</h3>
+      <p>This platform's analyses are built on a library of 199 ingested research papers, each with metadata (authors, journal, year, PMID), abstract text, and relevance mapping to the 15 research gaps. This dashboard makes that library searchable and transparent — every claim in every dashboard can be traced back to its source paper here.</p>
+      <div class="context-label">How to Use This</div>
+      <p>For fact-checkers: verify any cited paper by searching its PMID. For researchers: browse papers by gap relevance, publication year, or journal. For the platform: demonstrates that all analyses are grounded in peer-reviewed literature, not generated claims.</p>
+      <div class="context-label">What This Cannot Tell You</div>
+      <p>The library contains papers that were specifically ingested for this platform's research gaps. It is not a comprehensive literature review of all diabetes research. Papers are indexed by abstract; full-text analysis is available for 86 of 199 papers. Citation validation scores (CONFIRMED/PLAUSIBLE/WEAK/MISMATCH) are automated and may have edge cases.</p>
+    </div>
 
     <!-- Summary Statistics -->
     <div class="stats-grid">
@@ -441,7 +456,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_gka_landscape</td>
+            <td class="loc-col">build_gka_landscape, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2024" data-pmid="38578067">
@@ -681,7 +696,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_pricing, build_gka_landscape, build_gap_deep_dives +1</td>
+            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gka_pricing +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2021" data-pmid="33550442">
@@ -721,7 +736,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary, build_islet_equity</td>
+            <td class="loc-col">build_islet_equity, build_data_dictionary</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="33264825">
@@ -761,7 +776,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_diagnostic_model, build_data_dictionary</td>
+            <td class="loc-col">build_data_dictionary, build_lada_diagnostic_model</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32754804">
@@ -781,7 +796,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_prevalence, build_immunomod_lada, build_gka_landscape</td>
+            <td class="loc-col">build_gka_landscape, build_lada_prevalence, build_immunomod_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32017635">
@@ -921,7 +936,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog, build_nutrition_beta</td>
+            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen, build_nutrition_beta</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31036962">
@@ -951,7 +966,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_gap_deep_dives</td>
+            <td class="loc-col">build_gap_deep_dives, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30657336">
@@ -1001,7 +1016,7 @@
             <td class="year-col">2018</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29885104">
@@ -1491,7 +1506,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_diagnostic_model, build_gka_lada</td>
+            <td class="loc-col">build_gka_lada, build_lada_diagnostic_model</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23780460">
@@ -1541,7 +1556,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_diagnostic_model, build_gap_deep_dives, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_gap_deep_dives, build_lada_diagnostic_model</td>
         </tr>
 
         <tr class="paper-row" data-score="MISMATCH" data-year="2013" data-pmid="23223116">
@@ -1921,7 +1936,7 @@
             <td class="year-col">2008</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="18094377">
@@ -1941,7 +1956,7 @@
             <td class="year-col">2007</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_prevalence, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_lada_prevalence</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="17965721">
@@ -2251,7 +2266,7 @@
             <td class="year-col">1998</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_lada_model, build_health_equity</td>
+            <td class="loc-col">build_health_equity, build_lada_model</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="1998" data-pmid="9521319">
@@ -2389,7 +2404,7 @@
         </div>
     </div>
 
-    <p class="timestamp">Generated 2026-03-17 11:01 | Data from PubMed/PMC via NCBI E-utilities</p>
+    <p class="timestamp">Generated 2026-03-17 12:12 | Data from PubMed/PMC via NCBI E-utilities</p>
 </div>
 
 <script>
