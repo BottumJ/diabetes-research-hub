@@ -176,7 +176,7 @@ TERMS = {
         'disease': 'Loss of PDX1 expression in T2D; haploinsufficiency causes MODY4',
         'connections': ['Beta Cell', 'MAFA', 'Glucokinase'],
         'gap_relevance': [1, 13],
-        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:Verify-PDX1-beta-cell-identity'
+        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:24506867'
     },
     'MAFA': {
         'plain': 'A protein that activates the genes needed to make insulin. When MAFA is lost, beta cells lose their ability to produce insulin properly.',

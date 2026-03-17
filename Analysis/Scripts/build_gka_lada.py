@@ -731,7 +731,7 @@ html_content = '''<!DOCTYPE html>
                         and why activation increases insulin secretion.
                     </div>
                     <div class="data-source">
-                        Diabetes. 2009 Jul;58(7):1416-28. PMID: Verify-GKA-glucose-sensor.
+                        Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249.
                     </div>
                 </div>
 

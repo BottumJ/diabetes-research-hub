@@ -131,7 +131,7 @@ AUTOANTIBODY_RISK = [
         'characteristics': 'Borderline GADA, slower progression',
         'time_to_insulin': '8-12 years',
         'risk_level': 'Moderate',
-        'evidence': 'HUNT: HR 5.37 for high GADA (PMID:Verify-HUNT-LADA-GADA)'
+        'evidence': 'HUNT: HR 5.37 for high GADA (PMID:34318969)'
     },
     {
         'category': 'GADA + IA-2A',
@@ -774,7 +774,7 @@ def generate_html():
             <div class="section" style="margin-top: 2rem;">
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
-                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:Verify-HUNT-LADA-GADA)</span></li>
+                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:34318969)</span></li>
                     <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>

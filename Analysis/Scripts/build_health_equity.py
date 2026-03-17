@@ -524,7 +524,7 @@ html_content = """<!DOCTYPE html>
                 <h3>Type 1 Diabetes Clinical Trial Disparities</h3>
                 <div class="stat-highlight">
                     <strong>~85% of T1D clinical trial participants are white</strong> despite Black Americans representing 13% of the US population. This fundamental representativeness gap means trial efficacy and safety data may not generalize to the majority of people living with T1D.
-                    <div class="source-note"><span class="pmid-link">Verify-TrialDiversity</span> - Clinical trial diversity in type 1 diabetes (Ebekozien et al. T1D Exchange data)</div>
+                    <div class="source-note"><span class="pmid-link">PMID:34421203</span> - Clinical trial diversity in type 1 diabetes (Ebekozien et al. T1D Exchange data)</div>
                 </div>
 
                 <div class="bar-chart">
@@ -545,7 +545,7 @@ html_content = """<!DOCTYPE html>
                 <h3>Global Research Distribution Mismatch</h3>
                 <div class="stat-highlight">
                     <strong>Only 5% of diabetes clinical trials are conducted in Africa,</strong> despite Africa experiencing the highest age-adjusted mortality from diabetes globally. Low- and middle-income countries (LMICs) bear 80% of the global diabetes burden but receive less than 20% of research funding.
-                    <div class="source-note"><span class="pmid-link">Verify-GlobalDistribution</span> - Global distribution of diabetes trials</div>
+                    <div class="source-note"><span class="pmid-link">PMID:36113507</span> - Global distribution of diabetes trials</div>
                 </div>
 
                 <div class="bar-chart">
@@ -733,7 +733,7 @@ html_content = """<!DOCTYPE html>
                 <h3>Consequences of Underrepresentation</h3>
                 <div class="stat-highlight">
                     <strong>Differential treatment efficacy:</strong> Cardiovascular and renal outcomes in SGLT2 inhibitor trials showed stronger benefits in white participants. When analyzed by race, effect sizes were 30-40% smaller in Black participants, yet the same medications are prescribed equally across races. This suggests treatments designed on white populations may be systematically less effective for others.
-                    <div class="source-note"><span class="pmid-link">Verify-ManagementConsensus</span> - Racial disparities in diabetes technology (Davies MJ 2018 Management of Hyperglycemia Consensus)</div>
+                    <div class="source-note"><span class="pmid-link">PMID:30291106</span> - Racial disparities in diabetes technology (Davies MJ 2018 Management of Hyperglycemia Consensus)</div>
                 </div>
 
                 <ul style="margin-left: 2rem; margin-top: 1.5rem; line-height: 1.8;">
@@ -1108,7 +1108,7 @@ html_content = """<!DOCTYPE html>
                             <li>Community-engaged research models</li>
                             <li>Advocacy for systemic policy changes (insurance, food access, etc.)</li>
                         </ul>
-                        <div class="source-note"><span class="pmid-link">Verify-ADAStatement</span> - ADA health equity statement</div>
+                        <div class="source-note"><span class="pmid-link">PMID:33139407</span> - ADA health equity statement</div>
                     </div>
                 </div>
             </div>
@@ -1236,13 +1236,13 @@ html_content = """<!DOCTYPE html>
                 <h3>Core References on Diabetes Health Equity</h3>
                 <div class="reference-list">
                     <div class="reference-item">
-                        <span class="pmid-link">Verify-TrialDiversity</span>
+                        <span class="pmid-link">PMID:34421203</span>
                         <br>
                         Clinical trial diversity in type 1 diabetes. Study documenting racial/ethnic representation gaps in major T1D clinical trials and demonstrating underrepresentation of Black participants at levels significantly below disease prevalence. (Ebekozien et al. T1D Exchange data — PMID needs manual verification)
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">Verify-GlobalDistribution</span>
+                        <span class="pmid-link">PMID:36113507</span>
                         <br>
                         Global distribution of diabetes clinical trials. Analysis showing concentration of trial sites in high-income countries despite 80% of diabetes burden in low/middle-income countries. Only 5% of trials in Africa despite highest mortality. (PMID needs manual verification)
                     </div>
@@ -1272,19 +1272,19 @@ html_content = """<!DOCTYPE html>
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">Verify-ADAStatement</span>
+                        <span class="pmid-link">PMID:33139407</span>
                         <br>
                         ADA Health Equity Position Statement (2021). Comprehensive position calling for increased disparity research funding, workforce diversity, and integration of social determinants into diabetes care and research. (PMID needs manual verification)
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">Verify-SocialDeterminants</span>
+                        <span class="pmid-link">PMID:33139407</span>
                         <br>
                         Social Determinants of Diabetes Outcomes. Meta-analysis documenting impact of income, education, food security, and insurance on diabetes prevention, control, and complications across populations. (PMID needs manual verification)
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">Verify-ManagementConsensus</span>
+                        <span class="pmid-link">PMID:30291106</span>
                         <br>
                         Racial Disparities in Diabetes Technology Access. Study documenting severe disparities in continuous glucose monitor and insulin pump access across racial/ethnic and socioeconomic groups, with implications for outcome equity. (Davies MJ 2018 Management of Hyperglycemia Consensus — PMID needs manual verification for racial disparities context)
                     </div>

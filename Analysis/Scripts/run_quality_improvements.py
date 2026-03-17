@@ -51,6 +51,7 @@ SCRIPTS = {
     'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 GOLD)'),
     'methodology': ('build_methodology.py', 'Building Methodology & Validation Framework'),
     'pmidverify': ('verify_pmids.py', 'Verifying PMIDs against PubMed API'),
+    'pmidtracker': ('track_unfound_pmids.py', 'Tracking unfound PMIDs (Verify-* markers)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }

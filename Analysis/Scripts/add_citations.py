@@ -44,7 +44,7 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 **Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262] [NCT:NCT05791201] **Validation: SILVER** (two independent trial reports; Phase 3 data not yet peer-reviewed)
 
-**Sana Biotechnology SC451:** Gene-edited hypoimmune islet cells (SC451) demonstrated insulin production at 6 months in a single patient without immunosuppression. [PMID:Verify-SC451-gene-edited — approximate; company disclosure 2025] **Validation: BRONZE** (single company report; peer-reviewed publication pending)
+**Sana Biotechnology SC451:** Gene-edited hypoimmune islet cells (SC451) demonstrated insulin production at 6 months in a single patient without immunosuppression. [No PMID — Sana Biotechnology company disclosure 2025; peer-reviewed publication pending] **Validation: BRONZE** (single company report; peer-reviewed publication pending)
 
 **Autologous iPSC-derived islets:** A Chinese research team reported insulin independence in a single patient using chemically reprogrammed autologous cells. [DOI:10.1016/j.cell.2024.09.004, Cell, 2024] **Validation: BRONZE** (single case study, n=1; replication needed)
 

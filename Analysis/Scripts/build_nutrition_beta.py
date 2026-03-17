@@ -336,11 +336,11 @@ html_content = """<!DOCTYPE html>
                 <h3>Nutrients That Support Beta Cell Function</h3>
 
                 <ul>
-                    <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production. <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:Verify-zinc-beta-cell</a></li>
+                    <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production. <a href="https://pubmed.ncbi.nlm.nih.gov/25287711/" target="_blank">PMID:25287711</a></li>
                     <li><strong>Omega-3 Fatty Acids (EPA/DHA):</strong> Anti-inflammatory and membrane-protective. Support mitochondrial function in beta cells and reduce islet inflammation. <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank">PMID:22723585</a></li>
                     <li><strong>Vitamin D:</strong> Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune attack (relevant for LADA/T1D). Also supports calcium signaling required for insulin secretion. <a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></li>
                     <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels. <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></li>
-                    <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D. <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:Verify-magnesium-diabetes</a></li>
+                    <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D. <a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank">PMID:26322160</a></li>
                 </ul>
 
                 <h3>Nutrients That Harm Beta Cells</h3>
@@ -377,7 +377,7 @@ html_content = """<!DOCTYPE html>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Zinc</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:Verify-zinc-beta-cell</a></td>
+                            <td><strong>Zinc</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/25287711/" target="_blank">PMID:25287711</a></td>
                             <td>Essential cofactor for insulin hexamer formation. ZnT8 transporter mutations linked to T2D risk. Deficiency impairs insulin storage.</td>
                             <td>Oysters, beef, pumpkin seeds, chickpeas</td>
                             <td>8-11 mg/day (RDA)</td>
@@ -398,7 +398,7 @@ html_content = """<!DOCTYPE html>
                             <td><span class="evidence-badge evidence-weak">WEAK-MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Magnesium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:Verify-magnesium-diabetes</a></td>
+                            <td><strong>Magnesium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank">PMID:26322160</a></td>
                             <td>Required for insulin secretion and glucose-stimulated ATP production. Deficiency common in T2D. Supports mitochondrial function.</td>
                             <td>Almonds, spinach, pumpkin seeds, dark chocolate</td>
                             <td>310-420 mg/day (RDA)</td>
@@ -591,13 +591,13 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Zinc and the ZnT8 Transporter in Beta Cell Function</div>
-                    <div class="reference-meta">Rutter et al. SLC30A8 mutations in type 2 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/25298327/" target="_blank">PMID:Verify-zinc-beta-cell</a></div>
+                    <div class="reference-meta">Rutter et al. SLC30A8 mutations in type 2 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/25287711/" target="_blank">PMID:25287711</a></div>
                     <p>The SLC30A8 gene encoding the ZnT8 zinc transporter is one of the most robust T2D genetic risk loci. Zinc is essential for insulin hexamer formation and secretory granule maturation. Individuals with ZnT8 loss-of-function variants have accelerated beta cell decline.</p>
                 </div>
 
                 <div class="reference">
                     <div class="reference-title">Magnesium and Insulin Secretion</div>
-                    <div class="reference-meta">Barbagallo et al. Magnesium and type 2 diabetes. World J Diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/26023520/" target="_blank">PMID:Verify-magnesium-diabetes</a></div>
+                    <div class="reference-meta">Barbagallo et al. Magnesium and type 2 diabetes. World J Diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank">PMID:26322160</a></div>
                     <p>Magnesium is required for >300 enzymatic reactions. Specifically, magnesium is essential for ATP-dependent processes in beta cell insulin secretion. Dietary magnesium deficiency is common in T2D. Studies show magnesium supplementation improves HOMA-B and insulin secretion measures.</p>
                 </div>
 
@@ -667,7 +667,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Berberine and AMPK Activation</div>
-                    <div class="reference-meta">Yin et al. Efficacy of berberine in patients with type 2 diabetes. Metabolism. <a href="https://pubmed.ncbi.nlm.nih.gov/18510936/" target="_blank">PMID:Verify-berberine-AMPK</a></div>
+                    <div class="reference-meta">Yin et al. Efficacy of berberine in patients with type 2 diabetes. Metabolism. <a href="https://pubmed.ncbi.nlm.nih.gov/18442638/" target="_blank">PMID:18442638</a></div>
                     <p>Berberine activates AMPK in multiple tissues including beta cells. Some human studies show HbA1c benefits comparable to metformin. Bioavailability is low; requires enterohepatic circulation via gut microbiota for systemic effects. High individual variation in response.</p>
                 </div>
 

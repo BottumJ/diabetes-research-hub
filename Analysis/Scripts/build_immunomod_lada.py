@@ -82,7 +82,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Rituximab (anti-CD20)",
         "mechanism": "B-cell depletion",
-        "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (PMID:Verify-rituximab-T1D-TrialNet)",
+        "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (PMID:19940299)",
         "lada_evidence": "No LADA trials; LADA is GADA-driven (B-cell product)",
         "rationale": "Since LADA is GADA-dependent, B-cell depletion may be particularly effective. Less cytokine-driven inflammation than T1D.",
         "window": "Early-to-middle phase (0-4 years)"
@@ -327,7 +327,7 @@ EVIDENCE_CATALOG = [
     ("PMID:19729482", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
     ("PMID:32243867", "Buzzetti et al.", "GAD-alum Phase 2: C-peptide preservation in GADA+ LADA"),
     ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
-    ("PMID:Verify-rituximab-T1D-TrialNet", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
+    ("PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
     ("PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"),
     ("PMID:27505628", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
     ("PMID:28916733", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),

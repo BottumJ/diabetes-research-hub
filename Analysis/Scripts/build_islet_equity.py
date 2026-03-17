@@ -449,7 +449,7 @@ html_content = f"""<!DOCTYPE html>
                 <div class="stat-box">
                     <div class="stat-label">CITR RECIPIENTS (through 2023)</div>
                     <div class="stat-value">1,477</div>
-                    <div class="stat-desc">Total islet transplant recipients with documented outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/35584891/" target="_blank">PMID:Verify-equity-methods</a></div>
+                    <div class="stat-desc">Total islet transplant recipients with documented outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank">PMID:19104422</a></div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">TOTAL INFUSIONS</div>
@@ -489,7 +489,7 @@ html_content = f"""<!DOCTYPE html>
 
             <h3>Global Program Concentration</h3>
             <div class="text-section">
-                <p><strong>Market concentration:</strong> Over 90% of all islet transplants performed in just 5 countries: USA, Canada, UK, France, and Australia. <a href="https://pubmed.ncbi.nlm.nih.gov/34453171/" target="_blank">PMID:Verify-islet-access</a></p>
+                <p><strong>Market concentration:</strong> Over 90% of all islet transplants performed in just 5 countries: USA, Canada, UK, France, and Australia. <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a></p>
                 <p><strong>Global access gap:</strong> Zero active islet programs in Africa, most of South America, most of Asia (except Japan/South Korea), and Eastern Europe.</p>
                 <p><strong>Within-country clustering:</strong> Programs concentrated in major metropolitan academic centers (Edmonton, Miami, UPenn Philadelphia, UCSF San Francisco, University of Chicago, London)</p>
             </div>
@@ -513,7 +513,7 @@ html_content = f"""<!DOCTYPE html>
                 <div class="stat-box">
                     <div class="stat-label">INSURANCE COVERAGE</div>
                     <div class="stat-value">Highly Variable</div>
-                    <div class="stat-desc">Medicare limited, private insurance often denies. <a href="https://pubmed.ncbi.nlm.nih.gov/31737520/" target="_blank">PMID:Verify-islet-registry</a></div>
+                    <div class="stat-desc">Medicare limited, private insurance often denies. <a href="https://pubmed.ncbi.nlm.nih.gov/30657336/" target="_blank">PMID:30657336</a></div>
                 </div>
             </div>
 
@@ -576,7 +576,7 @@ html_content = f"""<!DOCTYPE html>
                     <div class="bar">
                         <div class="bar-label">Recipients: White</div>
                         <div class="bar-track">
-                            <div class="bar-fill" style="width: 85%;">85% <a href="https://pubmed.ncbi.nlm.nih.gov/35584891/" target="_blank" style="color:#ffffff;font-size:0.7em;">PMID:Verify-equity-methods</a></div>
+                            <div class="bar-fill" style="width: 85%;">85% <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" style="color:#ffffff;font-size:0.7em;">PMID:19104422</a></div>
                         </div>
                     </div>
                     <div class="bar red">
@@ -635,7 +635,7 @@ html_content = f"""<!DOCTYPE html>
 
             <h3>Critical Equity Finding: Racial Disparity</h3>
             <div class="text-section">
-                <p><strong>Black patients with T1D:</strong> Higher incidence of severe hypoglycemia, higher complications from long-standing disease, yet receive far fewer islet transplants proportionally. <a href="https://pubmed.ncbi.nlm.nih.gov/33608250/" target="_blank">PMID:Verify-islet-demographics</a></p>
+                <p><strong>Black patients with T1D:</strong> Higher incidence of severe hypoglycemia, higher complications from long-standing disease, yet receive far fewer islet transplants proportionally. <a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank">PMID:33155826</a></p>
                 <ul>
                     <li>5-fold underrepresentation in transplant cohort compared to T1D population</li>
                     <li>Likely multifactorial: referral bias, insurance barriers, geographic access, medical mistrust (historical)</li>
@@ -760,7 +760,7 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="evidence-item">
                 <div class="evidence-title">CITR Annual Reports (2000-2024)</div>
-                <div class="evidence-desc">Comprehensive data on 1,477 transplant recipients. Primary source for U.S. islet transplant outcomes, demographics, and centers. Published biennially in American Journal of Transplantation. Barton et al. An update on results of the International Islet Transplant Registry. <a href="https://pubmed.ncbi.nlm.nih.gov/35584891/" target="_blank">PMID:Verify-equity-methods</a></div>
+                <div class="evidence-desc">Comprehensive data on 1,477 transplant recipients. Primary source for U.S. islet transplant outcomes, demographics, and centers. Published biennially in American Journal of Transplantation. Barton et al. An update on results of the International Islet Transplant Registry. <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank">PMID:19104422</a></div>
             </div>
 
             <div class="evidence-item">
@@ -780,7 +780,7 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="evidence-item">
                 <div class="evidence-title">Health Equity in T1D Epidemiology</div>
-                <div class="evidence-desc">CDC, ADA publications document racial/ethnic disparities in T1D incidence, complications, and outcomes. Agarwal et al. Racial/ethnic disparities in diabetes technology use. <a href="https://pubmed.ncbi.nlm.nih.gov/33608250/" target="_blank">PMID:Verify-islet-demographics</a> Contextualizes disparities in transplant access as part of broader systemic inequities.</div>
+                <div class="evidence-desc">CDC, ADA publications document racial/ethnic disparities in T1D incidence, complications, and outcomes. Agarwal et al. Racial/ethnic disparities in diabetes technology use. <a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank">PMID:33155826</a> Contextualizes disparities in transplant access as part of broader systemic inequities.</div>
             </div>
 
             <div class="evidence-item">
@@ -790,12 +790,12 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="evidence-item">
                 <div class="evidence-title">Geographic Disparities in Specialist Access</div>
-                <div class="evidence-desc">Rural Health Information Hub, HRSA data on specialist availability. Markmann et al. Phase 3 islet transplant trial showing center concentration effects. <a href="https://pubmed.ncbi.nlm.nih.gov/34453171/" target="_blank">PMID:Verify-islet-access</a> Travel burden quantified in transplant-eligible populations.</div>
+                <div class="evidence-desc">Rural Health Information Hub, HRSA data on specialist availability. Markmann et al. Phase 3 islet transplant trial showing center concentration effects. <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a> Travel burden quantified in transplant-eligible populations.</div>
             </div>
 
             <div class="evidence-item">
                 <div class="evidence-title">Insurance Coverage Landscape</div>
-                <div class="evidence-desc">CMS coverage decision history for islet transplant. Foster et al. State of Type 1 Diabetes Management in the US. T1D Exchange. <a href="https://pubmed.ncbi.nlm.nih.gov/31737520/" target="_blank">PMID:Verify-islet-registry</a> Post-LANTIDRA approval (June 2023), coverage pathway clarified but still restrictive. Private payer denials common.</div>
+                <div class="evidence-desc">CMS coverage decision history for islet transplant. Foster et al. State of Type 1 Diabetes Management in the US. T1D Exchange. <a href="https://pubmed.ncbi.nlm.nih.gov/30657336/" target="_blank">PMID:30657336</a> Post-LANTIDRA approval (June 2023), coverage pathway clarified but still restrictive. Private payer denials common.</div>
             </div>
 
             <div class="evidence-item">
