@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Drug Repurposing for Islet Transplant Dashboard Builder
-Gap #4 BRONZE validated): Interactive Tufte-style HTML dashboard
+Gap #4 SILVER validated): Interactive Tufte-style HTML dashboard
+Promoted to SILVER: 11 independent papers from multiple research groups (Shapiro, Alejandro, CITR Registry, Takita, Wisel-Posselt) across different institutions and time periods (2000-2023) confirm this gap exists.
 """
 
 import os
@@ -45,7 +46,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Type 2 Diabetes",
         "mechanism": "Reduce glucose toxicity on grafts, cardioprotection",
         "evidence_level": "BRONZE",
-        "reference": "Emerging data",
+        "reference": "Mechanistic rationale (no islet transplant clinical data)",
         "preclinical": 3,
         "clinical": 2,
         "safety": 5,
@@ -58,7 +59,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Type 2 Diabetes",
         "mechanism": "Reduce glucose toxicity on grafts, cardioprotection",
         "evidence_level": "BRONZE",
-        "reference": "Emerging data",
+        "reference": "Mechanistic rationale (no islet transplant clinical data)",
         "preclinical": 3,
         "clinical": 2,
         "safety": 5,
@@ -71,7 +72,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Type 2 Diabetes (first-line)",
         "mechanism": "Reduce peripheral IR, AMPK activation, reduce metabolic demand on graft",
         "evidence_level": "BRONZE",
-        "reference": "Clinical logic",
+        "reference": "Mechanistic extrapolation from RA/transplant literature",
         "preclinical": 2,
         "clinical": 2,
         "safety": 5,
@@ -103,7 +104,7 @@ DRUG_CANDIDATES = [
         "safety": 4,
         "feasibility": 4,
         "plausibility": 5,
-        "notes": "TNF-alpha drives instant blood-mediated inflammatory reaction (IBMIR) that destroys 50-70% of islets"
+        "notes": "TNF-alpha drives instant blood-mediated inflammatory reaction (IBMIR); estimates vary significantly by transplant protocol and center (typically 50-70% loss reported)"
     },
     {
         "drug": "Etanercept (anti-TNF alpha)",
@@ -281,10 +282,10 @@ EVIDENCE_REFERENCES = [
 
 MECHANISM_CHALLENGES = {
     "IBMIR Protection": {
-        "description": "Instant blood-mediated inflammatory reaction (first 72 hours) destroys 50-70% of transplanted islets",
+        "description": "Instant blood-mediated inflammatory reaction (first 72 hours); estimates vary significantly by transplant protocol and center (typically 50-70% loss)",
         "current_approach": "Heparin (partial), ATG, etanercept perioperatively",
         "drugs": ["Etanercept", "Adalimumab", "Anakinra", "Alpha-1 Antitrypsin"],
-        "impact": "Could preserve 30-40% more islet mass; enable single-donor success"
+        "impact": "Theoretical benefit includes improved islet engraftment, though magnitude of preservation has not been established in clinical trials"
     },
     "Immunosuppression Toxicity": {
         "description": "Tacrolimus (CNI) causes metabolic toxicity, nephrotoxicity; requires dose reduction or replacement",
@@ -337,7 +338,7 @@ def generate_html():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drug Repurposing for Islet Transplant | Gap #4 BRONZE</title>
+    <title>Drug Repurposing for Islet Transplant | Gap #4 SILVER</title>
     <style>
         * {
             margin: 0;
@@ -800,7 +801,7 @@ def generate_html():
                 <div style="font-family: Georgia, serif; font-size: 1.1rem; margin-bottom: 1rem;">
                     Instant Blood-Mediated Inflammatory Reaction
                 </div>
-                <div class="ibmir-stat">Loss of 50-70% of islet mass within 72 hours</div>
+                <div class="ibmir-stat">Loss of typically 50-70% of islet mass within 72 hours (estimates vary by protocol)</div>
                 <p style="margin-top: 1rem;">
                     This is the single largest addressable problem in islet transplantation. If IBMIR could be prevented,
                     single-donor pancreases might yield sufficient islets for insulin independence, rather than requiring
@@ -1087,7 +1088,8 @@ def generate_html():
     </div>
 
     <footer>
-        <p>Gap #4 BRONZE Validated | Interactive Tufte-style Dashboard</p>
+        <p>Gap #4 SILVER Validated | Interactive Tufte-style Dashboard</p>
+        <p>Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.</p>
         <p>Generated """ + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + """ | Data embedded in script</p>
     </footer>
 

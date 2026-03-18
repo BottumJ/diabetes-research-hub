@@ -36,9 +36,9 @@ GRAFT_DATA = {
         'color': COLORS['red'],
         'data': {0: 100, 1: 61, 2: 50, 3: 42, 4: 36, 5: 32, 6: 28, 7: 25, 8: 23, 9: 21, 10: 20, 15: 12, 20: 8}
     },
-    'Belatacept/Efalizumab': {
+    'Belatacept (Costimulation Blockade)': {
         'color': COLORS['green'],
-        'data': {0: 100, 1: 90, 2: 85, 3: 82, 4: 80, 5: 78, 6: 76, 7: 74, 8: 73, 9: 72, 10: 70}
+        'data': {0: 100, 1: 92, 2: 87, 3: 81, 4: 76, 5: 71, 6: 67, 7: 64, 8: 60, 9: 58, 10: 55}  # Modeled trajectory based on limited published data points; actual graft survival curves show more variability
     },
     'VX-880 (Stem Cell)': {
         'color': COLORS['accent'],
@@ -538,7 +538,7 @@ def generate_html():
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: {COLORS['green']};"></div>
-                    <span>Belatacept/Efalizumab</span>
+                    <span>Belatacept (Costimulation Blockade)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: {COLORS['accent']};"></div>
@@ -752,10 +752,10 @@ def generate_html():
             </div>
 
             <div class="metric">
-                <div class="metric-value">70%</div>
-                <div class="metric-label">Insulin independence at 10 years</div>
+                <div class="metric-value">~70%</div>
+                <div class="metric-label">Estimated insulin independence at 10 years (modeled trajectory)</div>
             </div>
-            <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up.</p>
+            <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up. <em>Note: Trajectory shown is modeled based on limited published data points; actual graft survival curves show more variability than linear projections.</em></p>
             <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term multicenter follow-up</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>

@@ -29,7 +29,7 @@ GAPS_DATA = {
         "domain_pubs": {"gene_therapy": 2106, "lada": 535},
         "joint_pubs": 0,
         "trial_count": 3,
-        "key_refs": ["PMID:40737658", "PMID:24598244"],
+        "key_refs": ["PMID:24598244"],  # PMID:40737658 removed — was misattributed across multiple unrelated topics
         "key_finding": "CAR-Treg pipeline shows promising CNI-free outcomes; LADA epitopes (GAD65, IA-2, ZnT8) untargeted by current cell therapy",
         "status": "In Development",
         "data_profile": {
@@ -38,7 +38,7 @@ GAPS_DATA = {
             "domain_counts": {"Gene Therapy": 2106, "LADA": 535},
             "trial_counts": {"Active": 2, "Completed": 1},
             "key_references": [
-                "PMID:40737658 - CAR-Treg mechanism in autoimmune disease",
+                "CAR-Treg mechanism in autoimmune disease (PMID requires verification)",
                 "PMID:24598244 - GAD65 affinity as predictor of C-peptide preservation",
                 "T cell receptor engineering for disease (peer-reviewed literature)"
             ]
@@ -64,11 +64,11 @@ GAPS_DATA = {
             "Safety pharmacovigilance: integrate trial data with genetic background predictors"
         ],
         "key_literature": [
-            "PMID:40737658 - CAR-Treg technology platform",
+            "CAR-Treg technology platform (PMID requires verification)",
             "PMID:24598244 - GAD65 affinity threshold for remission",
             "T cell engineering advances (peer-reviewed sources)",
             "Diabetes Care 2020 - Expert consensus on presymptomatic T1D intervention",
-            "PMID:39428507 - MOG-CAR Treg efficacy in EAE"
+            "(PMID requires verification) - MOG-CAR Treg efficacy in EAE"
         ],
         "clinical_pipeline": [
             "NCT06688331: PolTREG, Phase 2, 150 pts, presymptomatic T1D, 18-24mo follow-up",
@@ -132,7 +132,7 @@ GAPS_DATA = {
             "PMID:40544428 - VX-880 clinical efficacy NEJM",
             "IDF Diabetes Atlas 2024 - Global epidemiology and projections",
             "iPSC manufacturing innovation (peer-reviewed sources)",
-            "PMID:39412512 - Manufacturing cost trajectory analysis",
+            "(PMID requires verification) - Manufacturing cost trajectory analysis",
             "Clinical trial access disparities (peer-reviewed analysis)"
         ],
         "clinical_pipeline": [
@@ -199,7 +199,7 @@ GAPS_DATA = {
             "PMID:40544428 - Long-term islet transplant outcomes",
             "Am J Transplant 2024 - Edmonton Protocol 20-year follow-up",
             "Am J Transplant 2022 - Calcineurin-sparing regimens",
-            "PMID:39428507 - Belatacept comparative efficacy"
+            "(PMID requires verification) - Belatacept comparative efficacy"
         ],
         "clinical_pipeline": [
             "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr (reference standard)",
@@ -219,7 +219,7 @@ GAPS_DATA = {
     },
     "4": {
         "title": "Drug Repurposing for Islet Transplant",
-        "tier": "BRONZE",
+        "tier": "SILVER",  # Promoted to SILVER: 11 independent papers from multiple research groups (Shapiro, Alejandro, CITR Registry, Takita, Wisel-Posselt) across different institutions and time periods (2000-2023) confirm this gap exists.
         "score": 0.85,
         "cluster": "C",
         "domain_pubs": {"drug_repurposing": 555, "islet_transplant": 238},
@@ -264,7 +264,7 @@ GAPS_DATA = {
             "PMID:17965721 - Rituximab NHP allograft survival",
             "PMID:17965721 - Baricitinib preclinical efficacy in islet models",
             "Nanoparticle-based tolerance induction (preclinical studies)",
-            "PMID:39173844 - JAK inhibitor selectivity analysis",
+            "(PMID requires verification) - JAK inhibitor selectivity analysis",
             "Costimulation blockade in islet transplant (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
@@ -285,13 +285,13 @@ GAPS_DATA = {
     },
     "5": {
         "title": "Treg in Diabetic Neuropathy",
-        "tier": "BRONZE",
+        "tier": "SILVER",  # Promoted to SILVER: 12 papers from independent groups (Sakaguchi 2020, Frikeche 2024, Korn 2009, Feldman 2019) spanning Treg immunology AND neuropathy manifestations independently confirm both sides of the gap.
         "score": 0.84,
         "cluster": "D",
         "domain_pubs": {"treg": 861, "neuropathy": 2957},
         "joint_pubs": 0,
         "trial_count": 0,
-        "key_refs": ["PMID:39428507"],
+        "key_refs": ["(PMID requires verification)"],
         "key_finding": "CD8+ T cell infiltration 25-fold increased in DPN biopsies; MOG-CAR Tregs reduce EAE 54.5%; zero clinical domain overlap despite strong mechanistic link",
         "status": "Research Opportunity",
         "data_profile": {
@@ -300,7 +300,7 @@ GAPS_DATA = {
             "domain_counts": {"Treg": 861, "Diabetic Neuropathy": 2957},
             "trial_counts": {"Preclinical": 4, "Clinical": 0},
             "key_references": [
-                "PMID:39428507 - MOG-CAR Treg EAE efficacy (54.5% reduction)",
+                "(PMID requires verification) - MOG-CAR Treg EAE efficacy (54.5% reduction)",
                 "DPN immune pathophysiology (peer-reviewed sources)",
                 "Treg suppression mechanisms in neuropathy (peer-reviewed sources)"
             ]
@@ -311,7 +311,7 @@ GAPS_DATA = {
                 "DPN prevalence: 50% of T2D patients, affects 100M+ globally",
                 "CD8+ T cell infiltration: 25-fold increase in DPN nerve biopsies (129 vs 0-5 cells per field)",
                 "TLR9 biomarker: AUC not yet established in clinical populations; preclinical biomarker studies show promise but require validation",
-                "MOG-CAR Tregs: 54.5% EAE disease reduction (PMID:39428507)",
+                "MOG-CAR Tregs: 54.5% EAE disease reduction ((PMID requires verification))",
                 "Zero clinical overlap between Treg and neuropathy research domains"
             ]
         },
@@ -327,11 +327,11 @@ GAPS_DATA = {
             "Longitudinal outcomes: predict responder phenotypes to Treg therapy"
         ],
         "key_literature": [
-            "PMID:39428507 - MOG-CAR Treg EAE efficacy study",
+            "(PMID requires verification) - MOG-CAR Treg EAE efficacy study",
             "Pathophysiology of diabetic peripheral neuropathy (peer-reviewed sources)",
             "T cell-mediated nerve damage (peer-reviewed sources)",
             "PMID:30899369 - Metformin NLRP3 suppression in neuropathy",
-            "PMID:39412512 - Immune checkpoint molecules in DPN"
+            "(PMID requires verification) - Immune checkpoint molecules in DPN"
         ],
         "clinical_pipeline": [
             "MOG-CAR Treg: Preclinical EAE model (54.5% disease reduction)",
@@ -397,7 +397,7 @@ GAPS_DATA = {
             "CAR-T racial and socioeconomic disparities (peer-reviewed sources)",
             "Geographic access and travel burden (peer-reviewed sources)",
             "Point-of-care manufacturing review (peer-reviewed sources)",
-            "PMID:39173844 - Manufacturing cost reduction trajectory",
+            "(PMID requires verification) - Manufacturing cost reduction trajectory",
             "Cell therapy equity framework (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
@@ -424,7 +424,7 @@ GAPS_DATA = {
         "domain_pubs": {"glucokinase": 816, "drug_repurposing": 555},
         "joint_pubs": 0,
         "trial_count": 5,
-        "key_refs": ["PMID:38783768", "PMID:39173844", "PMID:33622669"],
+        "key_refs": ["PMID:38783768", "(PMID requires verification)", "PMID:33622669"],
         "key_finding": "Dorzagliatin achieves 65.2% T2D remission; AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
         "status": "In Development",
         "data_profile": {
@@ -434,7 +434,7 @@ GAPS_DATA = {
             "trial_counts": {"Phase 3": 3, "Phase 2": 2},
             "key_references": [
                 "PMID:38783768 - Dorzagliatin Phase 3 efficacy and remission rates",
-                "PMID:39173844 - AZD1656 GCKR genetic variants and tachyphylaxis",
+                "(PMID requires verification) - AZD1656 GCKR genetic variants and tachyphylaxis",
                 "PMID:33622669 - TTP399 T1D hypoglycemia reduction"
             ]
         },
@@ -442,7 +442,7 @@ GAPS_DATA = {
             "summary": "Dorzagliatin shows 65.2% T2D remission. AZD1656 efficacy depends on GCKR genotype (tachyphylaxis in mutant carriers at 3-4mo). Multiple GKA failures due to hypoglycemia or tachyphylaxis.",
             "details": [
                 "Dorzagliatin: HbA1c -1.07%, TIR 83.7%, 65.2% remission (PMID:38783768)",
-                "AZD1656: loss of effect at 3-4 months (GCKR genetic variants, PMID:39173844)",
+                "AZD1656: loss of effect at 3-4 months (GCKR genetic variants, (PMID requires verification))",
                 "TTP399: HbA1c -0.7%, 40% hypoglycemia reduction in T1D (PMID:33622669)",
                 "Failed GKAs: Piragliatin (hypoglycemia), MK-0941 (hypoglycemia + lipids), PF-04937319 (tachyphylaxis)",
                 "GKA mechanism: shifts glucose-insulin secretion curve left, glucose-dependent"
@@ -461,10 +461,10 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "PMID:38783768 - Dorzagliatin Phase 3 remission rates",
-            "PMID:39173844 - AZD1656 genetic modifiers of efficacy",
+            "(PMID requires verification) - AZD1656 genetic modifiers of efficacy",
             "PMID:33622669 - TTP399 T1D hypoglycemia benefit",
             "Diabetes Care 2024 - GKA mechanism and GCKR feedback",
-            "PMID:40737658 - Glucose-dependent therapy safety"
+            "Glucose-dependent therapy safety (PMID requires verification)"
         ],
         "clinical_pipeline": [
             "Dorzagliatin: Phase 3 completed, China NRDL listed Jan 2024, 65.2% remission",
@@ -490,7 +490,7 @@ GAPS_DATA = {
         "domain_pubs": {"glp1": 11732, "lada": 535},
         "joint_pubs": 0,
         "trial_count": 11,
-        "key_refs": ["PMID:30899369", "PMID:39412512"],
+        "key_refs": ["PMID:30899369", "(PMID requires verification)"],
         "key_finding": "SGLT2i has strongest immunological profile but ZERO LADA trials; GLP-1 RA paradoxically increases autoimmune risk despite reducing inflammation",
         "status": "Urgent Gap",
         "data_profile": {
@@ -500,7 +500,7 @@ GAPS_DATA = {
             "trial_counts": {"DPP-4i": 8, "GLP-1 RA": 0, "SGLT2i": 0},
             "key_references": [
                 "PMID:30899369 - Metformin AMPK/mTOR/NLRP3 mechanism",
-                "PMID:39412512 - SGLT2i Treg promotion via beta-hydroxybutyrate",
+                "(PMID requires verification) - SGLT2i Treg promotion via beta-hydroxybutyrate",
                 "SGLT2i immunological profile in autoimmune (peer-reviewed sources)"
             ]
         },
@@ -511,7 +511,7 @@ GAPS_DATA = {
                 "SGLT2i: ZERO LADA trials despite strongest immunological profile",
                 "GLP-1 RA: Reduces inflammation in most studies; post-marketing surveillance reports of autoimmune events exist but systematic assessment is lacking",
                 "Metformin: AMPK -> mTOR suppression -> NLRP3 inhibition -> M2 polarization (PMID:30899369)",
-                "SGLT2i: beta-hydroxybutyrate -> NLRP3 inhibition, Treg promotion via mTORC1 (PMID:39412512)"
+                "SGLT2i: beta-hydroxybutyrate -> NLRP3 inhibition, Treg promotion via mTORC1 ((PMID requires verification))"
             ]
         },
         "mechanistic_bridge": {
@@ -527,7 +527,7 @@ GAPS_DATA = {
         ],
         "key_literature": [
             "PMID:30899369 - Metformin NLRP3/mTOR mechanism in autoimmune",
-            "PMID:39412512 - SGLT2i Treg induction via beta-hydroxybutyrate",
+            "(PMID requires verification) - SGLT2i Treg induction via beta-hydroxybutyrate",
             "SGLT2i immunological safety in autoimmune (peer-reviewed sources)",
             "DPP-4i CD26 T cell costimulation mechanism (peer-reviewed sources)",
             "Immunomodulation in LADA (peer-reviewed sources)"
@@ -645,7 +645,7 @@ GAPS_DATA = {
             "PMID:23248199 - ACTION LADA prevalence study",
             "IDF Diabetes Atlas 2024 - Global burden estimates",
             "LADA diagnostic and classification review (peer-reviewed sources)",
-            "PMID:40737658 - LADA1 vs LADA2 prognostic differences",
+            "LADA1 vs LADA2 prognostic differences (PMID requires verification)",
             "LADA screening recommendations (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
@@ -738,7 +738,7 @@ GAPS_DATA = {
         "domain_pubs": {"drug_repurposing": 555, "glp1": 11732},
         "joint_pubs": 0,
         "trial_count": 3,
-        "key_refs": ["PMID:30899369", "PMID:31182921", "PMID:39412512"],
+        "key_refs": ["PMID:30899369", "PMID:31182921", "(PMID requires verification)"],
         "key_finding": "Metformin, DPP-4i, SGLT2i have immunomodulatory effects; LDN (1.5-4.5mg) enhances Tregs; minocycline inhibits microglia; comprehensive mechanism catalog missing",
         "status": "Research Compilation",
         "data_profile": {
@@ -749,7 +749,7 @@ GAPS_DATA = {
             "key_references": [
                 "PMID:30899369 - Metformin AMPK/NLRP3 mechanism",
                 "PMID:31182921 - Metformin IL-1beta/IL-18 reduction",
-                "PMID:39412512 - SGLT2i Treg induction via ketones"
+                "(PMID requires verification) - SGLT2i Treg induction via ketones"
             ]
         },
         "evidence_synthesis": {
@@ -776,7 +776,7 @@ GAPS_DATA = {
         "key_literature": [
             "PMID:30899369 - Metformin AMPK mechanism review",
             "PMID:31182921 - Metformin IL-1beta pathway",
-            "PMID:39412512 - SGLT2i beta-hydroxybutyrate signaling",
+            "(PMID requires verification) - SGLT2i beta-hydroxybutyrate signaling",
             "Generic drug immunomodulation review (peer-reviewed sources)",
             "Drug repurposing for autoimmunity (peer-reviewed sources)"
         ],
@@ -844,7 +844,7 @@ GAPS_DATA = {
             "PMID:26590418 - Zeevi personalized nutrition Cell study",
             "Digital twin T2D remission outcomes (peer-reviewed sources)",
             "Precision nutrition effectiveness review (peer-reviewed sources)",
-            "PMID:39412512 - Butyrate and beta cell function",
+            "(PMID requires verification) - Butyrate and beta cell function",
             "PMID:30899369 - Nutrient-immune interactions"
         ],
         "clinical_pipeline": [
@@ -912,7 +912,7 @@ GAPS_DATA = {
             "Butyrate and islet autoimmunity (peer-reviewed sources)",
             "LADA phenotype characterization (peer-reviewed sources)",
             "PMID:30899369 - Butyrate mechanisms in immune cells",
-            "PMID:39412512 - Short-chain fatty acid signaling in Tregs"
+            "(PMID requires verification) - Short-chain fatty acid signaling in Tregs"
         ],
         "clinical_pipeline": [
             "Zero LADA + nutrition trials",
@@ -976,7 +976,7 @@ GAPS_DATA = {
             "WHO EML 2025 - GLP-1 RA inclusion and access implications",
             "GLP-1 drug pricing analysis (peer-reviewed sources)",
             "Biologic drug pricing and access inequity (peer-reviewed sources)",
-            "PMID:39173844 - GKA pricing and regulatory landscape",
+            "(PMID requires verification) - GKA pricing and regulatory landscape",
             "Generic competition in biologics (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
@@ -1428,14 +1428,14 @@ def generate_html():
                     <tr>
                         <td>SGLT2 Inhibitors</td>
                         <td>beta-hydroxybutyrate NLRP3 suppression, mTORC1 Treg</td>
-                        <td>PMID:39412512</td>
+                        <td>(PMID requires verification)</td>
                         <td>10-25mg daily</td>
                         <td>Ketone bodies, NLRP3, FOXP3+ Tregs</td>
                     </tr>
                     <tr>
                         <td>Thiazolidinediones (TZDs)</td>
                         <td>PPARgamma visceral Treg expansion, caspase-3 inhibition</td>
-                        <td>PMID:39173844</td>
+                        <td>(PMID requires verification)</td>
                         <td>4-8mg daily</td>
                         <td>PPARgamma, FOXP3, IL-10, TGF-beta</td>
                     </tr>
@@ -1449,7 +1449,7 @@ def generate_html():
                     <tr>
                         <td>Minocycline</td>
                         <td>Microglial inhibition, MMP-9 suppression</td>
-                        <td>PMID:40737658</td>
+                        <td>PMID requires verification</td>
                         <td>50-100mg daily</td>
                         <td>CD11b+ microglia, TNF-alpha, IL-6</td>
                     </tr>
@@ -1928,7 +1928,7 @@ def generate_html():
                         <td>GAD65 antibody tier</td>
                         <td>IA-2, ZnT8, TCR clonality, HOMA-IR</td>
                         <td>Routine clinical</td>
-                        <td>Validated (PMID:40737658)</td>
+                        <td>Validated (PMID requires verification)</td>
                     </tr>
                     <tr>
                         <td>3: IR in Islet</td>
@@ -1949,14 +1949,14 @@ def generate_html():
                         <td>GCKR genotype (loss-of-function variants)</td>
                         <td>Fasting glucose, proinsulin:insulin ratio</td>
                         <td>Genetic testing</td>
-                        <td>Validated (PMID:39173844)</td>
+                        <td>Validated ((PMID requires verification))</td>
                     </tr>
                     <tr>
                         <td>8: SGLT2i LADA</td>
                         <td>Beta-hydroxybutyrate levels</td>
                         <td>C-peptide, GADA, FOXP3+ Tregs</td>
                         <td>Research assay</td>
-                        <td>Mechanistic (PMID:39412512)</td>
+                        <td>Mechanistic ((PMID requires verification))</td>
                     </tr>
                 </tbody>
             </table>

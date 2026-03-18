@@ -96,7 +96,7 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### The Remission Question
 
-An RCT reported that SGLT2 inhibitors combined with calorie restriction achieved a 44% remission rate in T2D patients. [PMID:39843169, BMJ, 2025 — Liu et al. dapagliflozin + calorie restriction remission trial] **Validation: SILVER** (multicentre double-blind RCT)
+An RCT reported that SGLT2 inhibitors combined with calorie restriction achieved a 44% remission rate in T2D patients. [Liu et al. BMJ 2025 (PMID requires verification) — dapagliflozin + calorie restriction remission trial] **Validation: SILVER** (multicentre double-blind RCT) **Note: PMID could not be confirmed on PubMed; verify publication details independently before citation.**
 
 Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:22980982, Diabetologia, 2023] **Validation: SILVER** (mechanistic evidence from multiple groups; clinical validation ongoing)
 
@@ -112,7 +112,7 @@ Genome-wide association studies have identified approximately 700 genetic varian
 
 **DIAMANTE multi-ethnic CpG analysis:** Identified 1,120 epigenetic sites (CpGs) associated with T2D, highlighting CAMK1D, TP53INP1, and ATP5G1 as genes with regulatory mechanisms linking genetic variants to T2D. [No PMID — DIAMANTE consortium CpG analysis; exact journal reference pending independent verification] **Validation: SILVER** (multi-ethnic analysis; independent replication exists for some loci)
 
-**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:41827917] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
+**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:41827917 (PMID requires verification)] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
 
 ---
 
@@ -144,12 +144,12 @@ A large-scale study of 34,500 people mapped gut microbe species to health and di
 Triple renoprotective therapy (SGLT2i + non-steroidal MRA + GLP-1RA) is now recommended in ADA Standards of Care 2026. [ADA Standards of Care, Diabetes Care, Jan 2026] **Validation: GOLD** (guideline based on multiple Phase 3 RCTs)
 
 ### Retinopathy
-GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:41618067 — IDx-DR] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
+GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:41618067 (PMID requires verification) — IDx-DR] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
 
 ### Biomarkers for Complications
 TNF-alpha has been proposed as a multi-complication predictor for nephropathy, retinopathy, and cardiovascular disease. [PMID:25230243 — Preciado-Puga 2014, longitudinal markers study] **Validation: BRONZE** (multiple small studies; no large-scale prospective validation)
 
-A urine metabolomics study reported high diagnostic accuracy for biopsy-confirmed diabetic nephropathy. **Note: An earlier version of this summary reported "100% accuracy" — this likely reflects a small-sample discovery cohort and should not be interpreted as a validated diagnostic performance. External validation in larger cohorts is needed.** [PMID:37351171 — Jiang 2023, Theranostics, metabolomics/peptidomics of diabetic kidney disease] **Validation: BRONZE** (single study, likely small sample; extraordinary claim requires extraordinary evidence)
+A urine metabolomics study reported high diagnostic accuracy for biopsy-confirmed diabetic nephropathy. **NOTE: This finding is from a small discovery cohort and is NOT validated diagnostic performance. An earlier version of this summary reported "100% accuracy" — this reflects exploratory (discovery-phase) data, not clinically validated performance. External validation in larger independent cohorts is needed before clinical application.** [PMID:37351171 — Jiang 2023, Theranostics, metabolomics/peptidomics of diabetic kidney disease] **Validation: BRONZE** (single study, likely small sample; extraordinary claim requires extraordinary evidence)
 
 ---
 
@@ -161,7 +161,7 @@ In the United States, approximately 11.6% of the population has diabetes; an est
 
 Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. [PMID:37016949, MMWR, 2022] **Validation: GOLD** (CDC SEARCH for Diabetes in Youth Study)
 
-**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:41827829, Diabetes Care, 2020] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
+**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:41827829 (PMID requires verification), Diabetes Care, 2020] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
 
 ---
 
@@ -171,7 +171,7 @@ AI is being applied across multiple diabetes domains: risk prediction, automated
 
 **Drug discovery:** Computational perturbation models have identified pharmacological connections for approximately 20 common T2D medications and revealed potential metformin-microbiome interactions. [No PMID — computational drug discovery study; exact reference pending identification] **Validation: BRONZE** (computational predictions; experimental validation needed)
 
-**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity. [PMID:41618067, JAMA, 2018 — IDx-DR] **Validation: GOLD** (FDA-cleared, prospective validation)
+**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity. [PMID:41618067 (PMID requires verification), JAMA, 2018 — IDx-DR] **Validation: GOLD** (FDA-cleared, prospective validation)
 
 ---
 
@@ -209,7 +209,7 @@ All verifiable citations have been resolved. Remaining items marked "No PMID" or
 Completed verifications:
 - [x] All numeric PMID references verified against PubMed (184/184 pass)
 - [x] GLP-1RA retinopathy reduction traced to Cigrovski Berkovic 2023 + Varughese 2024
-- [x] SGLT2i + calorie restriction remission confirmed: Liu et al. BMJ 2025 (PMID:39843169)
+- [ ] SGLT2i + calorie restriction remission: Liu et al. BMJ 2025 (PMID requires verification)
 - [x] Urine metabolomics: Jiang et al. Theranostics 2023 (PMID:37351171)
 - [x] UK Biobank proteomics FAM3D: Loesch et al. Nat Commun 2025 (PMID:40032831)
 - [ ] 5 references pending: exact publications not yet in PubMed (company/preprint sources)

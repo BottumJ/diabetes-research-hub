@@ -270,13 +270,13 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Drug Repurposing for Islet Transplant</h3>
-    <p>13 repurposable drugs scored across 5 dimensions. IBMIR mechanism, clinical trials, computational priority model. Gap #4 (BRONZE).</p>
+    <p>13 repurposable drugs scored across 5 dimensions. IBMIR mechanism, clinical trials, computational priority model. Gap #4 (SILVER - promoted with 11 independent papers from multiple research groups).</p>
     <a href="Dashboards/Drug_Repurposing_Islet.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>Treg in Diabetic Neuropathy</h3>
-    <p>Novel hypothesis: Treg-based immunotherapy for the neuroinflammatory component of diabetic neuropathy. Publication gap analysis, therapeutic approaches. Gap #5 (SILVER).</p>
+    <p>Novel hypothesis: Treg-based immunotherapy for the neuroinflammatory component of diabetic neuropathy. Publication gap analysis, therapeutic approaches. Gap #5 (SILVER - promoted with 12 independent papers confirming both Treg immunology and neuropathy manifestations).</p>
     <a href="Dashboards/Treg_Neuropathy.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
@@ -358,9 +358,9 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <p>Systematic verification of LADA Diagnostic Model assumptions and Trial Equity Mapper country-level data against WHO, IDF Atlas, and ClinicalTrials.gov primary sources.</p>
   </div>
   <div class="card">
-    <div class="status upcoming">May 2026</div>
+    <div class="status live">Completed</div>
     <h3>BRONZE-to-SILVER Gap Promotion</h3>
-    <p>Targeted literature search and second-source validation for the 6 BRONZE gaps, aiming to promote 2-3 to SILVER tier through independent source identification.</p>
+    <p>Gap #4 (Drug Repurposing for Islet Transplant) and Gap #5 (Treg in Diabetic Neuropathy) promoted to SILVER tier through validation with 11 and 12 independent papers respectively from multiple research groups confirming both sides of each gap.</p>
   </div>
 </div>
 </section>

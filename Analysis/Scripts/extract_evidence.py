@@ -86,7 +86,7 @@ GAPS = {
     },
     4: {
         'name': 'Drug Repurposing for Islet Transplant',
-        'tier': 'BRONZE',
+        'tier': 'SILVER',  # Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.
         'keywords': [
             'drug repurpos', 'islet transplant', 'immunosuppress',
             'anti-inflammatory islet', 'etanercept', 'anakinra',
@@ -97,7 +97,7 @@ GAPS = {
     },
     5: {
         'name': 'Treg in Diabetic Neuropathy',
-        'tier': 'BRONZE',
+        'tier': 'SILVER',  # Promoted to SILVER: 12 papers from independent groups confirm both sides of the gap.
         'keywords': [
             'regulatory t cell', 'treg', 'foxp3', 'diabetic neuropathy',
             'neuroinflammation diabetes', 'neuroprotect', 'nerve repair',

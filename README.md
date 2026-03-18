@@ -8,7 +8,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 ## What This Project Does
 
-**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 4 GOLD (3+ sources), 5 SILVER (2 sources), 5 BRONZE (computational analysis), 1 EXPLORATORY.
+**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 4 GOLD (3+ sources), 7 SILVER (2 sources), 3 BRONZE (computational analysis), 1 EXPLORATORY.
 
 **Clinical Trial Intelligence** — Pulls live snapshots from ClinicalTrials.gov API v2 across five categories (T1D cure, T1D immunotherapy, T2D novel therapies, diabetes devices, recently completed trials). Diffs snapshots over time to detect new trials, status changes, and freshly posted results.
 
@@ -21,7 +21,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 **Actionable Research Tools** — Three equity-focused tools that go beyond documenting gaps to producing actionable intervention frameworks:
 - Generic Drug Repurposing Screen (34 drugs, pressure-tested against WHO EML and PubMed)
 - LADA Diagnostic Cost-Effectiveness Model (4 screening scenarios across 4 healthcare tiers)
-- Clinical Trial Site Equity Mapper (40+ countries, 19 real trials with NCT numbers)
+- Clinical Trial Site Equity Mapper (40+ countries, 12 verified trials with NCT numbers)
 
 **29 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, medical data dictionary (116 terms), acronym database, methodology framework, and all three actionable tools.
 
@@ -116,8 +116,8 @@ This project uses a 4-tier evidence classification system:
 | Tier | Requirement | Count |
 |------|------------|-------|
 | **GOLD** | 3+ independent sources from different research groups | 4 gaps |
-| **SILVER** | 2 independent sources | 5 gaps |
-| **BRONZE** | Computational analysis with single-source basis | 5 gaps |
+| **SILVER** | 2 independent sources | 7 gaps |
+| **BRONZE** | Computational analysis with single-source basis | 3 gaps |
 | **EXPLORATORY** | Biological plausibility uncertain | 1 gap |
 
 All claims in the Drug Repurposing Screen have been pressure-tested: WHO Essential Medicines flags verified against the 2023 EML, mechanism claims checked against cited PMIDs, negative trials explicitly labeled, preclinical-only evidence clearly distinguished from human RCT data.
@@ -133,8 +133,8 @@ See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 
 | 1 | Gene Therapy for LADA | SILVER |
 | 2 | Health Equity in Beta Cell Therapies | GOLD |
 | 3 | Insulin Resistance in Islet Transplant | GOLD |
-| 4 | Drug Repurposing for Islet Transplant | BRONZE |
-| 5 | Treg in Diabetic Neuropathy | BRONZE |
+| 4 | Drug Repurposing for Islet Transplant | SILVER |
+| 5 | Treg in Diabetic Neuropathy | SILVER |
 | 6 | CAR-T Access Barriers in Diabetes | GOLD |
 | 7 | GKA Drug Repurposing | SILVER |
 | 8 | Immunomodulatory Drugs for LADA | SILVER |
@@ -184,8 +184,8 @@ Queried PubMed for 30 domains x 435 pairwise combinations. Top under-researched 
 ### LADA Diagnostic Model (Pressure-Tested)
 Targeted screening is most cost-effective at $40,614/QALY, detecting 2,730 cases. Universal screening detects 7,953 cases at $56,063/QALY. Two-stage screening balances cost and detection at $47,745/QALY. Model uses corrected GAD antibody sensitivity (82%, DASP standardized) and Medicare complication costs ($5,876, PMID:37909353). All parameters pressure-tested against published literature.
 
-### Trial Equity Mapper
-34 countries with zero clinical trial access represent 78% of global diabetes burden. 19 real trials mapped with NCT numbers against IDF Diabetes Atlas 2024 data.
+### Trial Equity Mapper (Pressure-Tested)
+12 verified clinical trials (all NCTs confirmed on ClinicalTrials.gov) mapped against IDF Diabetes Atlas 2024 burden data for 40 countries. Previous version contained fabricated sponsor names and wrong NCT attributions; all removed in March 2026 credibility audit. Insulin access scores documented as custom composite estimates.
 
 ---
 

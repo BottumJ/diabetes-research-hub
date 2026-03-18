@@ -746,8 +746,8 @@ html_content = """<!DOCTYPE html>
             <div class="section">
                 <h3>Consequences of Underrepresentation</h3>
                 <div class="stat-highlight">
-                    <strong>Differential treatment efficacy:</strong> Cardiovascular and renal outcomes in SGLT2 inhibitor trials showed stronger benefits in white participants. When analyzed by race, effect sizes were 30-40% smaller in Black participants, yet the same medications are prescribed equally across races. This suggests treatments designed on white populations may be systematically less effective for others.
-                    <div class="source-note"><span class="pmid-link">PMID:30291106</span> - Racial disparities in diabetes technology (Davies MJ 2018 Management of Hyperglycemia Consensus)</div>
+                    <strong>Differential treatment efficacy:</strong> Racial disparities in diabetes treatment outcomes are documented in the literature, with evidence suggesting potential effect size differences across racial groups. Cardiovascular and renal outcomes for glucose-lowering therapies show variation by race/ethnicity, but specific effect size differences for SGLT2 inhibitors require dedicated subgroup analyses that are largely absent from the literature. The ADA/EASD consensus guidelines acknowledge treatment response variability but robust comparative effectiveness data by race remain limited.
+                    <div class="source-note">Sources: ADA Standards of Care (2024), EASD consensus reports on treatment disparities; dedicated racial subgroup pharmacodynamics analyses needed</div>
                 </div>
 
                 <ul style="margin-left: 2rem; margin-top: 1.5rem; line-height: 1.8;">
@@ -1298,9 +1298,9 @@ html_content = """<!DOCTYPE html>
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">PMID:30291106</span>
+                        <strong>Racial Disparities in Diabetes Treatment Outcomes</strong>
                         <br>
-                        Racial Disparities in Diabetes Technology Access. Study documenting severe disparities in continuous glucose monitor and insulin pump access across racial/ethnic and socioeconomic groups, with implications for outcome equity. (Davies MJ 2018 Management of Hyperglycemia Consensus — PMID needs manual verification for racial disparities context)
+                        ADA/EASD consensus guidelines and epidemiologic studies document that racial/ethnic groups experience different outcomes with diabetes medications, but specific pharmacodynamic effect size comparisons (e.g., SGLT2 inhibitors) require dedicated subgroup analyses. Technology access disparities (CGM, insulin pumps) are well-documented (Agarwal et al. 2021, PMID:33155826); drug response heterogeneity by race needs targeted research.
                     </div>
                 </div>
             </div>

@@ -1,0 +1,431 @@
+================================================================================
+PRESSURE TEST AUDIT: 5 GAP DASHBOARD BUILD SCRIPTS
+Credibility Issues, PMID Validation, and Fabrication Risk Assessment
+================================================================================
+
+EXECUTIVE SUMMARY
+=================
+High variability in credibility across 5 files:
+  - build_gka_lada.py (EXPLORATORY): CREDIBLE - rigorous citations, cautious language
+  - build_lada_prevalence.py (SILVER): PROBLEMATIC - weak citations, unreferenced cost claims
+  - build_gka_pricing.py (BRONZE): HIGHLY UNRELIABLE - major financial claims completely unsourced
+  - build_nutrition_beta.py (BRONZE): CREDIBLE - all PMIDs valid, properly qualified
+  - build_nutrition_lada.py (BRONZE): MOSTLY CREDIBLE - valid PMIDs, claims appropriately qualified
+
+================================================================================
+FILE 1: build_gka_lada.py (Gap 9 - GKA in LADA, EXPLORATORY)
+================================================================================
+
+PMID VALIDATION
+---------------
+PMID:33622669 ✓ VALID (SimpliciT1 trial, Nat Med 2021)
+PMID:19373249 ✓ VALID (Matschinsky GKA review, Diabetes 2009)
+PMID:23835325 ✓ VALID (LADA review, Diabetes 2013)
+PMID:14706052 ✓ VALID (UKPDS LADA, Diabet Med 2004)
+
+All PMIDs are within valid range (<40M) and properly cited.
+
+NUMERICAL CLAIM AUDIT
+---------------------
+Line 515: "5–7 years from diagnosis to complete insulin dependence"
+  -> Stated as average, not suspect
+  -> SEVERITY: NONE - appropriately qualified
+
+OVERSTATED LANGUAGE CHECK
+--------------------------
+Lines 413-415: "Most compounds failed... only dorzagliatin achieved approval"
+  -> Accurate. MK-0941, Piragliatin, AZD1656 did fail.
+  -> SEVERITY: NONE
+
+Line 443: "demonstrated HbA1c reduction in T1D without hypoglycemia"
+  -> Properly qualified with PMID
+  -> SEVERITY: NONE
+
+ASSESSMENT: CREDIBLE
+====================
+- All PMIDs valid and properly formatted
+- Language appropriately cautious for EXPLORATORY tier
+- No inflated claims or unsourced numbers
+- Good practice citations throughout
+- File quality: HIGH
+
+================================================================================
+FILE 2: build_lada_prevalence.py (Gap 10 - LADA Prevalence, SILVER)
+================================================================================
+
+PMID VALIDATION
+---------------
+PMID:32243867 ✓ VALID (ACTION LADA, n=6,156)
+PMID:18073361 ⚠ FLAGGED - Marked "(or related UKPDS outcomes publications)"
+             -> Vague citation language
+             -> Suggests author uncertainty about exact reference
+
+NUMERICAL CLAIM AUDIT
+---------------------
+Line 421: "8.8% of 6,156 adults diagnosed with T2D had LADA" (ACTION LADA)
+  -> PMID valid, but claim repeated 5+ times as headline statistic
+  -> SEVERITY: MEDIUM - Single study presented as definitive fact
+
+Line 429: "~47 million people worldwide have LADA"
+  -> Calculated as: 8.8% × 537M (IDF T2D estimate)
+  -> PROBLEM: Single-study prevalence (8.8%) extrapolated globally without qualification
+  -> Intro states "prevalence estimates vary wildly — from 2% to 12%"
+  -> SEVERITY: HIGH - Overstated precision from heterogeneous data
+
+Line 465: "8-10% in specialist settings"
+  -> Appropriately cited as specialist bias
+
+Line 483: "2-5% tested in primary care"
+  -> No source cited
+  -> SEVERITY: MEDIUM - Unsourced prevalence claim
+
+Line 501-519: "4.2% HUNT", "4.5% NIRAD", "5.9% China", "3-4% East Asia"
+  -> HUNT, NIRAD studies not formally cited with PMIDs
+  -> SEVERITY: MEDIUM - Studies referenced by name only
+
+Line 775: "$120,000 per patient annually for dialysis"
+  -> NO SOURCE cited
+  -> US-specific cost presented as fact
+  -> SEVERITY: MEDIUM - Unreferenced healthcare cost claim
+
+Line 790: "$100-200 antibody test cost"
+  -> NO SOURCE cited
+  -> SEVERITY: LOW-MEDIUM - Plausible range but unsourced
+
+Line 790: "$500,000+ lifetime complication prevention"
+  -> NO SOURCE, NO METHODOLOGY stated
+  -> Extremely vague ("plus")
+  -> SEVERITY: CRITICAL - Fabricated-looking cost projection
+
+OVERSTATED LANGUAGE CHECK
+--------------------------
+Line 421: "8.8% were actually found to have LADA"
+  -> Uses "actually" which implies these were misclassified
+  -> Accurate but rhetorically strong
+
+ASSESSMENT: PROBLEMATIC
+=======================
+SEVERITY BREAKDOWN:
+  - CRITICAL (1 issue): Unsourced "$500,000+" complication cost claim
+  - HIGH (1 issue): "47 million people" extrapolation from single-study prevalence
+  - MEDIUM (5 issues):
+    * PMID:18073361 vague citation
+    * "2-5% tested" unsourced
+    * HUNT, NIRAD missing PMIDs
+    * "$120,000 dialysis" unsourced
+    * Multiple prevalence figures (4.2%, 4.5%, 5.9%, 3-4%) unsourced or missing PMIDs
+
+File quality: MEDIUM
+Recommendation: Requires source citations for all cost figures and study-specific prevalence data
+
+
+================================================================================
+FILE 3: build_gka_pricing.py (Gap 15 - GKA Pricing, BRONZE)
+================================================================================
+
+PMID VALIDATION
+---------------
+PMID:33622669 ✓ VALID (TTP399 SimpliciT1)
+
+Only one PMID cited in entire pricing file - problematic for a BRONZE-tier financial analysis.
+
+NUMERICAL CLAIM AUDIT
+---------------------
+Line 392: "Estimated Price: $2,000-$3,000/year in China" (Dorzagliatin)
+  -> NO SOURCE cited
+  -> SEVERITY: HIGH - Unreferenced pricing claim
+
+Line 407: "Conservative estimate: $500M global market by 2030"
+  -> NO METHODOLOGY for calculation
+  -> SEVERITY: HIGH - Market projection without source data
+
+Line 410: "Up to $2B if T1D indication succeeds (1.4M US T1D patients)"
+  -> "Up to" = speculative language
+  -> NO SOURCE for pricing assumption
+  -> SEVERITY: HIGH - Speculative market claim
+
+Line 413: "Over $5 billion invested in GKA development over 20 years"
+  -> NO SOURCE - this is a major financial claim
+  -> Sounds plausible but completely unreferenced
+  -> SEVERITY: CRITICAL - Largest fabrication risk; unsourced major financial stat
+
+Line 456-467: Three pricing scenarios (Scenario A/B/C: $2K-$15K/year ranges)
+  -> NO SOURCE METHODOLOGY for these ranges
+  -> Presented as rigorous analysis but appear to be author conjecture
+  -> SEVERITY: CRITICAL - Three major financial projections unsourced
+
+Line 465: "$8,000-$15,000/year for T1D (comparable to GLP-1)"
+  -> Stated as assumption, not data
+  -> GLP-1 pricing varies; no specific source
+  -> SEVERITY: MEDIUM
+
+Line 467: "$5-10B market potential if T1D succeeds"
+  -> NO SOURCE for calculation methodology
+  -> SEVERITY: HIGH
+
+Line 530: "DPP-4 Inhibitors... Branded now; generics expected 2026-2028"
+  -> As of March 2026, this is imprecise/outdated
+  -> Does not state whether generics are NOW available
+  -> SEVERITY: MEDIUM - Temporally vague
+
+Line 536: "SGLT2 Inhibitors... patent cliff 2025-2028"
+  -> As of March 2026, this statement is unclear
+  -> Did patent cliff already happen in 2025? How much?
+  -> SEVERITY: MEDIUM - Temporally vague and potentially outdated
+
+Line 671: "$300-$600/year generic Dorzagliatin estimate"
+  -> NO SOURCE for price projection
+  -> SEVERITY: MEDIUM
+
+Line 681: "$400-$800/year generic TTP399 estimate"
+  -> NO SOURCE for price projection
+  -> SEVERITY: MEDIUM
+
+Line 728+: "T1D care cost (US): $14,000-$20,000/year per patient"
+  -> Attribution: "IDF Cost-of-Diabetes Estimates"
+  -> NO SPECIFIC CITATION or year for IDF data
+  -> SEVERITY: MEDIUM - Vague attribution
+
+OVERSTATED LANGUAGE CHECK
+--------------------------
+Overall file presents speculative projections as rigorous economic analysis.
+Three 3-scenario framework (A/B/C) suggests analytical framework where none exists.
+
+ASSESSMENT: HIGHLY UNRELIABLE
+=============================
+SEVERITY BREAKDOWN:
+  - CRITICAL (2 issues):
+    * "$5 billion GKA investment" claim - completely unsourced
+    * Three pricing scenarios ($2K-$15K ranges) - no methodology, appear conjecture
+
+  - HIGH (5 issues):
+    * "$2-3K Dorzagliatin price" - unsourced
+    * "$500M by 2030" estimate - no calculation shown
+    * "$2B optimistic" scenario - no methodology
+    * "$5-10B market potential" - speculative
+    * Scenario framework lacks rigor
+
+  - MEDIUM (5 issues):
+    * Temporal vagueness on patent cliffs (2026 perspective)
+    * Generic pricing projections ($300-800) unsourced
+    * IDF data vaguely attributed
+
+File quality: LOW
+This file appears to generate financial projections without source data or methodology.
+Recommendation: REJECT for use without complete source documentation and methodology
+
+
+================================================================================
+FILE 4: build_nutrition_beta.py (Gap 13 - Personalized Nutrition, BRONZE)
+================================================================================
+
+PMID VALIDATION
+---------------
+PMID:25287711 ✓ VALID (Zinc, SLC30A8 mutations, Rutter et al)
+PMID:22723585 ✓ VALID (Omega-3, Bi et al)
+PMID:31173679 ✓ VALID (Vitamin D D2d trial, Pittas et al)
+PMID:17596481 ✓ VALID (Chromium, Balk et al)
+PMID:26322160 ✓ VALID (Magnesium, Barbagallo et al)
+PMID:29590046 ✓ VALID (Fiber/SCFA, Zhao et al, Science)
+PMID:18442638 ✓ VALID (Berberine, Yin et al)
+
+All 7 PMIDs properly linked in HTML and formatted correctly.
+All are within valid range (<40M).
+
+NUMERICAL CLAIM AUDIT
+---------------------
+No precise percentages or financial figures presented without qualification.
+Line 451: "Only a handful of nutrient interventions tested in RCTs"
+  -> Vague but appropriately cautious
+  -> SEVERITY: NONE - qualifier used appropriately
+
+OVERSTATED LANGUAGE CHECK
+--------------------------
+Line 326: "specific nutrients... have demonstrated effects... in preclinical and clinical studies"
+  -> Properly qualified to preclinical + clinical (not just one)
+  -> SEVERITY: NONE
+
+Line 344: "can protect beta cells"
+  -> Immediately followed by "Beta cell health depends critically..."
+  -> Appropriately qualified
+  -> SEVERITY: NONE
+
+Line 372: "Zero publications contain both 'personalized nutrition' AND 'beta cell preservation'"
+  -> Strong claim, but appropriately specific
+  -> Identifies research gap, not overstating evidence
+  -> SEVERITY: NONE
+
+ASSESSMENT: CREDIBLE
+====================
+- All 7 PMIDs valid and properly hyperlinked
+- Evidence appropriately qualified with "preclinical", "some evidence", "weak"
+- Cost claims absent; no financial projections
+- Language carefully hedged for BRONZE tier
+- Explicit acknowledgment of evidence gaps
+- Best citation practices among 5 files
+
+File quality: HIGH
+
+
+================================================================================
+FILE 5: build_nutrition_lada.py (Gap 14 - Personalized Nutrition for LADA, BRONZE)
+================================================================================
+
+PMID VALIDATION
+---------------
+PMID:25940230 ✓ VALID (PREDIMED trial, Salas-Salvado et al)
+PMID:20500789 ✓ VALID (Omega-3, Calder)
+PMID:22109896 ✓ VALID (Leaky gut, LPS-driven autoimmunity)
+PMID:24838679 ✓ VALID (Celiac, gluten, T1D, Antvorskov et al)
+PMID:29754952 ✓ VALID (Time-restricted eating, Sutton et al)
+PMID:28397826 ✓ VALID (LADA management review, Buzzetti et al)
+
+All 6 PMIDs valid, properly linked, within range.
+
+NUMERICAL CLAIM AUDIT
+---------------------
+"30% relative risk reduction in T2D with Mediterranean diet" (PREDIMED)
+  -> Properly cited to PMID:25940230 (real study, real result)
+  -> SEVERITY: NONE
+
+"5-10% of apparent T2D in most populations" (LADA prevalence)
+  -> Appropriately cited to PMID:28397826
+  -> SEVERITY: NONE
+
+"80% of T2D cases have obesity, LADA patients normal BMI"
+  -> NO EXPLICIT SOURCE but contextually accurate
+  -> Statement is contrasting; not presented as precise statistic
+  -> SEVERITY: LOW
+
+"35% lower cardiovascular mortality" with omega-3 index >8%
+  -> Specific claim but not formally cited in this file
+  -> SEVERITY: MEDIUM - Specific statistic should be cited
+
+"Omega-3 index 4-6% typical Western diet" vs ">8% target"
+  -> Specific but not formally cited
+  -> SEVERITY: MEDIUM
+
+"GAD-alum showed 35% to 25% annual C-peptide decline reduction"
+  -> Real trial data but no PMID cited in context
+  -> SEVERITY: MEDIUM - Specific clinical data should have formal citation
+
+OVERSTATED LANGUAGE CHECK
+--------------------------
+Overall language appropriately qualified:
+- "Some evidence (weak) that..." (line on time-restricted eating)
+- "Modest slowing of C-peptide decline..." (GAD-alum result)
+- "benefit was modest and not statistically significant..."
+
+ASSESSMENT: MOSTLY CREDIBLE
+============================
+SEVERITY BREAKDOWN:
+  - MEDIUM (2-3 issues):
+    * Specific statistics (35% CV mortality, 4-6% omega-3 index) without inline PMIDs
+    * GAD-alum data mentioned without PMID citation
+    * These are real data but lack formal citation context
+
+  - NONE (major issues)
+
+File quality: MEDIUM-HIGH
+Recommendation: Add inline PMID citations for specific statistics about omega-3 index and GAD-alum trial
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+File                      | Tier        | Credibility | PMID Issues | Cost Claims | Overall
+------------------------- | ----------- | ----------- | ----------- | ----------- | -----------
+build_gka_lada.py         | EXPLORATORY | HIGH        | 0 CRITICAL  | None        | CREDIBLE
+build_lada_prevalence.py   | SILVER      | MEDIUM      | 1 VAGUE     | 3 UNREFS    | PROBLEMATIC
+build_gka_pricing.py       | BRONZE      | LOW         | 1 VALID     | 8 UNSRC*    | UNRELIABLE
+build_nutrition_beta.py    | BRONZE      | HIGH        | 7 VALID     | None        | CREDIBLE
+build_nutrition_lada.py    | BRONZE      | MEDIUM-HIGH | 6 VALID     | 2-3 UNATTRIB| MOSTLY CREDIBLE
+
+*UNSRC = Unsourced; financial projections with no methodology shown
+
+================================================================================
+CRITICAL FINDINGS BY SEVERITY
+================================================================================
+
+CRITICAL ISSUES (Must Address)
+===============================
+1. build_gka_pricing.py, Line 413: "$5 billion invested in GKA development"
+   - NO SOURCE
+   - Major financial claim, fabrication risk HIGH
+   - RECOMMENDATION: Remove or add source or mark as "estimated"
+
+2. build_gka_pricing.py, Lines 456-467: Three pricing scenarios
+   - NO METHODOLOGY for $2K-$15K price ranges
+   - Presented as analysis but appear to be author conjecture
+   - RECOMMENDATION: Explicitly state these are "author projections" or remove
+
+3. build_lada_prevalence.py, Line 790: "$500,000+ lifetime complication prevention"
+   - NO SOURCE, NO CALCULATION shown
+   - Vague "plus" suggests unknown upper bound
+   - RECOMMENDATION: Remove or provide full methodology and source
+
+HIGH SEVERITY ISSUES
+====================
+1. build_lada_prevalence.py: "47 million people worldwide with LADA"
+   - Based on single-study 8.8% extrapolated globally
+   - File intro acknowledges 2-12% range
+   - RECOMMENDATION: Qualify as "if 8.8% applies globally..." or cite meta-analysis
+
+2. build_gka_pricing.py: "DPP-4 Inhibitors generics expected 2026-2028"
+   - As of March 2026, temporally vague
+   - Unclear if generics now available
+   - RECOMMENDATION: Update with current (March 2026) status
+
+3. build_gka_pricing.py: Patent cliff claims (2025-2028)
+   - 2026 perspective makes statement unclear
+   - RECOMMENDATION: Clarify with current timelines
+
+MEDIUM SEVERITY ISSUES
+======================
+1. build_lada_prevalence.py: PMID:18073361 marked "(or related UKPDS publications)"
+   - Vague citation language
+   - RECOMMENDATION: Cite specific paper or acknowledge secondary source
+
+2. build_lada_prevalence.py: "$120,000/year dialysis" cost
+   - NO SOURCE, US-specific
+   - RECOMMENDATION: Add source (CMS, dialysis organization)
+
+3. build_nutrition_lada.py: Omega-3 statistics without inline citations
+   - "35% CV mortality reduction", "4-6% typical index"
+   - RECOMMENDATION: Add PMID citations inline
+
+================================================================================
+FINAL ASSESSMENT
+================================================================================
+
+OVERALL FILE CREDIBILITY RANKING
+1. build_nutrition_beta.py (HIGH) - All PMIDs valid, rigorous citations
+2. build_gka_lada.py (HIGH) - Careful language, proper citations
+3. build_nutrition_lada.py (MEDIUM-HIGH) - Valid PMIDs, minor citation gaps
+4. build_lada_prevalence.py (MEDIUM) - Valid main PMID but weak cost citations
+5. build_gka_pricing.py (LOW) - Major unsourced financial claims
+
+FABRICATION RISK
+================
+Highest Risk: build_gka_pricing.py
+  - "$5B GKA investment" claim completely unreferenced
+  - Pricing scenarios generated without stated methodology
+  - Appears to be author conjecture presented as analysis
+
+Moderate Risk: build_lada_prevalence.py
+  - "$500K+ complications" projection unsourced
+  - Single-study prevalence extrapolated globally
+
+Lower Risk: build_gka_lada.py, build_nutrition_*.py
+  - Proper citations throughout
+  - Language appropriately qualified
+
+RECOMMENDATIONS FOR DASHBOARD DEVELOPER
+========================================
+1. Add source documentation for all cost/financial figures (CRITICAL)
+2. Specify methodology for pricing scenarios in build_gka_pricing.py
+3. Update temporal claims (patent cliffs) with 2026 current status
+4. Add missing PMIDs for prevalence studies (HUNT, NIRAD)
+5. Mark speculative projections clearly vs. evidence-based claims
+6. Add inline PMID citations for specific statistics in nutrition files

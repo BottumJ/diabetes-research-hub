@@ -29,6 +29,12 @@ colors = {
     'red': '#8b2500',
 }
 
+# CREDIBILITY NOTE: Barrier percentages (Geographic 85%, Insurance 72%, Travel 78%, Capacity 65%)
+# are illustrative estimates based on published qualitative studies of transplant access barriers.
+# These are NOT derived from a single quantitative study. Precise quantification of these barriers
+# requires dedicated surveys that do not yet exist in the published literature. Readers should
+# interpret these as relative magnitudes showing which barriers are substantive, not absolute prevalence rates.
+
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -540,7 +546,7 @@ html_content = f"""<!DOCTYPE html>
                     </div>
                 </div>
                 <div class="bar red">
-                    <div class="bar-label">Insurance denial rate</div>
+                    <div class="bar-label">Insurance denial barriers</div>
                     <div class="bar-track">
                         <div class="bar-fill" style="width: 72%;">72%</div>
                     </div>
@@ -557,7 +563,7 @@ html_content = f"""<!DOCTYPE html>
                         <div class="bar-fill" style="width: 65%;">65%</div>
                     </div>
                 </div>
-                <div class="source">Source: UNOS/OPTN geographic access data, patient travel survey data</div>
+                <div class="source">Source: Barrier magnitudes are illustrative estimates based on published qualitative studies of transplant access barriers; precise quantification requires dedicated surveys that do not yet exist</div>
             </div>
         </div>
 

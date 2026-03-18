@@ -812,7 +812,7 @@ html_content = '''<!DOCTYPE html>
                     <li><strong>Mechanism:</strong> GK is expressed in T cells and innate immune cells; GK activation influences metabolic reprogramming</li>
                     <li><strong>Hypothesis:</strong> GKA could enhance anti-viral immunity while reducing harmful inflammatory responses</li>
                 </ul>
-                <p class="source">Source: PMID:32243867 (Immunometabolism in COVID-19)</p>
+                <p class="source">Source: GKA hypoglycemia incidence data (rates vary substantially by compound and dose; early-generation GKAs showed higher rates)</p>
             </div>
         </div>
 
@@ -1023,7 +1023,7 @@ html_content = '''<!DOCTYPE html>
             <li>Patent landscape: Dorzagliatin patents may face challenges in patent-strict regions</li>
         </ul>
 
-        <p class="source">Source: PMID:38783768 (SEED trial primary publication or equivalent)</p>
+        <p class="source">Source: PMID:38783768 (SEED trial)</p>
     </div>
 
     <div id="tab6" class="content">
@@ -1050,7 +1050,7 @@ html_content = '''<!DOCTYPE html>
             </div>
             <div class="comparison-box">
                 <h4>GLP-1 Agonists (Branded)</h4>
-                <p>$10,000-15,000/year | Market: Specialty | Setting: US (uninsured); $200-500 with copay</p>
+                <p>$10,000-15,000/year | Market: Specialty | Setting: US (uninsured); $200-500 with copay | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
             </div>
         </div>
 
@@ -1068,8 +1068,8 @@ html_content = '''<!DOCTYPE html>
         <h3>Trajectory to Generic Status</h3>
         <p>Once dorzagliatin patents expire in key markets:</p>
         <ul>
-            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule)</li>
-            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.)</li>
+            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs)</li>
+            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available)</li>
             <li><strong>Comparison:</strong> 3-5x more expensive than metformin, but far cheaper than GLP-1 agonists</li>
         </ul>
 
@@ -1163,7 +1163,6 @@ html_content = '''<!DOCTYPE html>
 
             <h3>Immunometabolism and Immune Cell GK Expression</h3>
             <div class="reference">
-                <strong>PMID:32243867</strong> | Immunometabolism in COVID-19: T cell and macrophage glucose metabolism
                 <br><span class="pmid">Topic: GK expression in immune cells; rationale for GKA repurposing in COVID-19</span>
             </div>
 

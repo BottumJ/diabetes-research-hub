@@ -33,7 +33,7 @@ LADA_VS_T1D = {
             "name": "T-cell Autoreactivity",
             "lada": "Present but lower frequency",
             "t1d": "High frequency, diverse epitopes",
-            "source": "HUNT study"
+            "source": "Population-based cohort studies"
         },
         {
             "name": "C-peptide Decline Rate",
@@ -45,7 +45,7 @@ LADA_VS_T1D = {
             "name": "HLA Associations",
             "lada": "DR3/DR4 + DR3-DQ2 predominance",
             "t1d": "DR3/DR4 (classic)",
-            "source": "Multiple cohorts"
+            "source": "Population and genetic association studies"
         },
         {
             "name": "Clinical Subtypes",
@@ -67,7 +67,7 @@ DRUG_CANDIDATES = [
         "name": "GAD-alum (Diamyd)",
         "mechanism": "GAD65 antigen-specific immunotherapy",
         "t1d_evidence": "Phase 3 (DIAGNODE-2); ongoing trials",
-        "lada_evidence": "Buzzetti Phase 2 showed C-peptide preservation in GADA+ patients (PMID:32243867)",
+        "lada_evidence": "GAD-alum trials in LADA have shown variable results; C-peptide preservation has been reported in some studies but requires confirmation in larger trials",
         "rationale": "Antigen-specific, minimal systemic immunosuppression. LADA driven by GADA response; directly targets the lesion.",
         "window": "Early-to-middle phase (0-4 years)"
     },
@@ -114,7 +114,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Vitamin D (cholecalciferol)",
         "mechanism": "Immunomodulatory; Treg support; anti-inflammatory",
-        "t1d_evidence": "Multiple prevention trials (PMID:40988828); observational links",
+        "t1d_evidence": "Multiple prevention trial designs attempted; evidence for disease-modifying benefit remains mixed",
         "lada_evidence": "Observational: lower vitamin D associated with faster LADA progression",
         "rationale": "Low-risk, widely available. LADA patients with lower vitamin D show accelerated decline. Preventive potential.",
         "window": "All phases; prevention-focused"
@@ -130,7 +130,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Verapamil (calcium channel blocker)",
         "mechanism": "TXNIP inhibition; beta cell protection",
-        "t1d_evidence": "Preserved C-peptide in T1D (PMID:39613428)",
+        "t1d_evidence": "C-peptide preservation mechanisms documented in T1D literature, though clinical translation remains limited",
         "lada_evidence": "No LADA trials; excellent safety profile",
         "rationale": "Direct beta cell protection without immunosuppression. Long-term safety established. Synergistic with immunotherapy.",
         "window": "All phases"
@@ -325,13 +325,11 @@ PRIORITY_SCORES = [
 EVIDENCE_CATALOG = [
     ("PMID:18073361", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"),
     ("PMID:23248199", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
-    ("PMID:32243867", "Buzzetti et al.", "GAD-alum Phase 2: C-peptide preservation in GADA+ LADA"),
     ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
     ("PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
     ("PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"),
     ("PMID:27727279", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
     ("PMID:24997559", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
-    ("PMID:39613428", "Skyler et al.", "Verapamil beta cell preservation in T1D"),
     ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"),
 ]
 
@@ -828,7 +826,7 @@ html_content = """<!DOCTYPE html>
                         <td><strong>T-cell Autoreactivity</strong></td>
                         <td>Present but lower frequency</td>
                         <td>High frequency, diverse epitopes</td>
-                        <td><span class="source">HUNT study</span></td>
+                        <td><span class="source">Population-based cohort studies</span></td>
                     </tr>
                     <tr>
                         <td><strong>C-peptide Decline Rate</strong></td>
@@ -840,7 +838,7 @@ html_content = """<!DOCTYPE html>
                         <td><strong>HLA Associations</strong></td>
                         <td>DR3/DR4 + DR3-DQ2 predominance</td>
                         <td>DR3/DR4 (classic)</td>
-                        <td><span class="source">Multiple cohorts</span></td>
+                        <td><span class="source">Population and genetic association studies</span></td>
                     </tr>
                     <tr>
                         <td><strong>Clinical Subtypes</strong></td>

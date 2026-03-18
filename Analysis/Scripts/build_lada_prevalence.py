@@ -422,12 +422,12 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <h3>The Scale of Underdiagnosis</h3>
-            <p>The International Diabetes Federation (IDF) estimates the global Type 2 Diabetes population at approximately 537 million people (2021). If 8.8% of adults diagnosed with T2D actually have LADA, this implies:</p>
+            <p>This finding from ACTION LADA has global implications. The International Diabetes Federation (IDF) estimates the global Type 2 Diabetes population at approximately 537 million people (2021). This global estimate extrapolates from the ACTION LADA finding of 8.8% LADA prevalence among clinically diagnosed T2D; actual global prevalence is uncertain and likely varies by region and diagnostic criteria. If the 8.8% figure applies globally, this would imply:</p>
 
             <div class="highlight-box">
                 <p>
                     <span class="stat-number">~47 million people</span>
-                    <br>are living with undiagnosed LADA worldwide, receiving inappropriate treatment for T2D.
+                    <br>(estimated) living with undiagnosed LADA worldwide, receiving inappropriate treatment for T2D.
                 </p>
             </div>
 
@@ -787,7 +787,7 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <h3>The Prevention Paradox</h3>
-            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200. The benefit of correct classification leading to appropriate therapy can prevent $500,000+ in complication costs over a lifetime. Yet this test is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
+            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200. Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
 
             <div class="footnote">
                 <strong>The Crisis:</strong> 47 million people with undiagnosed LADA receiving suboptimal therapy, accelerating their disease course and complication rates, while the solution—systematic autoantibody testing in primary care—remains unavailable.
@@ -837,9 +837,9 @@ html_content = """<!DOCTYPE html>
             <h3>Clinical Outcomes and Treatment Response</h3>
 
             <div class="reference-item">
-                <strong>UKPDS Group: Sulfonylureas and Beta-Cell Failure in Autoimmune Diabetes</strong><br>
-                Long-term follow-up data from UKPDS demonstrating that sulfonylureas accelerate loss of beta-cell function. Although UKPDS enrolled primarily T2D patients, subsequent subgroup analyses of autoimmune T2D (LADA) showed faster failure on sulfonylureas.
-                <div class="pmid">PMID: 18073361 (or related UKPDS outcomes publications)</div>
+                <strong>UKPDS Consortium Publications: Beta-Cell Failure Trajectories</strong><br>
+                Long-term follow-up data from UKPDS demonstrating beta-cell function loss over time in T2D. Although UKPDS enrolled primarily T2D patients, subsequent subgroup analyses in different diabetes phenotypes provide important context for understanding beta-cell trajectory differences in LADA.
+                <div class="pmid">UKPDS Consortium publications (multiple sources)</div>
             </div>
 
             <div class="reference-item">

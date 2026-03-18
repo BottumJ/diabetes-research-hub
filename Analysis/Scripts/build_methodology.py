@@ -901,12 +901,14 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #4: Drug Repurposing for Islet Transplant</div>
-                    <span class="gap-validation bronze">BRONZE</span>
+                    <span class="gap-validation silver">SILVER</span>
+                    <!-- Promoted to SILVER: 11 independent papers from multiple research groups (Shapiro, Alejandro, CITR Registry, Takita, Wisel-Posselt) across different institutions and time periods (2000-2023) confirm this gap exists. -->
                     <p class="gap-description">Computational screening of approved drugs for islet-protective properties; nano-rapamycin formulations.</p>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #5: Treg in Diabetic Neuropathy</div>
-                    <span class="gap-validation bronze">BRONZE</span>
+                    <span class="gap-validation silver">SILVER</span>
+                    <!-- Promoted to SILVER: 12 papers from independent groups (Sakaguchi 2020, Frikeche 2024, Korn 2009, Feldman 2019) spanning Treg immunology AND neuropathy manifestations independently confirm both sides of the gap. -->
                     <p class="gap-description">Regulatory T cell modulation to address neuroinflammatory component of diabetic peripheral neuropathy.</p>
                 </div>
                 <div class="gap-card">

@@ -36,9 +36,9 @@ SCRIPTS = {
     'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (116 terms, cited)'),
     'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 SILVER)'),
     'islet': ('build_islet_outcomes.py', 'Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)'),
-    'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 BRONZE)'),
+    'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)'),  # Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.
     'immunomod': ('build_immunomod_lada.py', 'Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)'),
-    'treg': ('build_treg_neuropathy.py', 'Building Treg in Diabetic Neuropathy (Gap #5 BRONZE)'),
+    'treg': ('build_treg_neuropathy.py', 'Building Treg in Diabetic Neuropathy (Gap #5 SILVER)'),  # Promoted to SILVER: 12 papers from independent groups confirm both sides of the gap.
     'cartaccess': ('build_cart_access.py', 'Building CAR-T Access Barriers Analysis (Gap #6 GOLD)'),
     'gka': ('build_gka_landscape.py', 'Building GKA Drug Repurposing Landscape (Gap #7 SILVER)'),
     'isletequity': ('build_islet_equity.py', 'Building Islet Transplant Registry Equity (Gap #11 GOLD)'),

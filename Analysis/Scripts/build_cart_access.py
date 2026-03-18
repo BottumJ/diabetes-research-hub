@@ -490,7 +490,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: PMID:40291594 (CAR-T cost analysis), ICER Reports
+                    Source: Cost estimates vary by institution and insurance coverage; published analyses cite $300-500K per commercial CAR-T dose (Kymriah/Yescarta pricing)
                 </div>
             </div>
 
@@ -523,7 +523,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, PMID:40291594
+                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, published CAR-T cost analyses
                 </div>
             </div>
 
@@ -544,7 +544,7 @@ html_content = """<!DOCTYPE html>
                 </ul>
 
                 <div class="source-note">
-                    Source: PMID:40291594, CAR-Treg literature review
+                    Source: Published CAR-Treg manufacturing cost analyses, literature review
                 </div>
             </div>
         </div>
@@ -1327,7 +1327,7 @@ html_content = """<!DOCTYPE html>
                 <div class="reference-list">
                     <div class="reference-item">
                         <strong>CAR-T Cost & Health Economics:</strong><br>
-                        <span class="pmid">PMID:40291594</span> - Comprehensive cost analysis of CAR-T therapies in oncology; provides foundation for pricing structure<br>
+                        Published cost analyses of CAR-T therapies (Kymriah: $475K; Yescarta: $373K list price) provide foundation for pricing structure. Cost estimates vary significantly by institution, manufacturing modality, and insurance coverage.<br>
                         Institute for Clinical and Economic Review (ICER) - Annual CAR-T pricing reports (2022-2024)<br>
                         FDA Approved Drug Products with Therapeutic Equivalence Evaluations - Official pricing data
                     </div>

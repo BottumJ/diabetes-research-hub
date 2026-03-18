@@ -410,9 +410,9 @@ html_content = f"""<!DOCTYPE html>
                 <strong class="highlight-positive">Optimistic estimate:</strong> Up to $2B if T1D indication succeeds with TTP399 (1.4M US T1D patients)
             </p>
 
-            <h3>Historical Context: The $5B Graveyard</h3>
+            <h3>Historical Context: Failed GKA Programs</h3>
             <p>
-                Over $5 billion invested in GKA development over 20 years, with most programs discontinued due to:
+                Substantial industry investment in GKA development over two decades, though total investment figures are not publicly disclosed. Most major programs were discontinued due to:
             </p>
             <table>
                 <tr>
@@ -449,6 +449,10 @@ html_content = f"""<!DOCTYPE html>
         <!-- TAB 2: Pricing Scenarios -->
         <div id="scenarios" class="tab-content">
             <h2>Pricing Model: Three Scenarios</h2>
+
+            <div class="key-point" style="background-color: #fafaf7; border-left: 4px solid #8b6914; margin-bottom: 2rem;">
+                <p><strong>Methodology Note:</strong> Pricing scenarios are illustrative projections based on comparable small-molecule diabetes drug pricing trajectories (SGLT2 inhibitors, DPP-4 inhibitors, GLP-1 agonists). Actual GKA pricing will depend on regulatory outcomes, competitive landscape, insurance/payer negotiations, and market conditions in each geography. These scenarios should not be interpreted as forecasts or price guarantees.</p>
+            </div>
 
             <div class="scenario scenario-a">
                 <div class="scenario-title">Scenario A: Niche T2D (Conservative)</div>

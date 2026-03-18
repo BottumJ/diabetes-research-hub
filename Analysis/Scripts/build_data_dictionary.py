@@ -785,7 +785,7 @@ TERMS = {
         'disease': 'Kidney transplant (FDA approved); islet transplant (investigational); 70% graft survival at 10yr vs 50% with tacrolimus-based',
         'connections': ['Costimulation blockade', 'T cell suppression', 'Transplant tolerance'],
         'gap_relevance': [3, 5, 6, 8],
-        'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:39869107'
+        'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:20519905'
     },
     'Baricitinib': {
         'plain': 'JAK inhibitor. FDA approved for rheumatoid arthritis. Shows complete diabetes reversal in NOD mouse models (preclinical only); no human diabetes trial data exists.',
