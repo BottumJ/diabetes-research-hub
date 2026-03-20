@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-20T14:41:59.283345",
+  "timestamp": "2026-03-20T14:50:09.836332",
   "summary": {
-    "WEAK": 93,
-    "CONFIRMED": 57,
-    "PLAUSIBLE": 48,
+    "WEAK": 92,
+    "CONFIRMED": 56,
+    "PLAUSIBLE": 50,
     "MISMATCH": 3,
     "NO_DATA": 1
   },
@@ -872,11 +872,16 @@
     "19940299": {
       "pmid": "19940299",
       "title": "Rituximab, B-lymphocyte depletion, and preservation of beta-cell function.",
-      "score": "CONFIRMED",
-      "confidence": 0.562,
-      "details": "6/13 claim terms found in paper; 6 diabetes domain terms; 1 phrase matches",
-      "claim_count": 2,
+      "score": "PLAUSIBLE",
+      "confidence": 0.308,
+      "details": "8/26 claim terms found in paper; 6 diabetes domain terms; 1 phrase matches",
+      "claim_count": 3,
       "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 547,
+          "text": "\"validation_evidence\": \"SILVER tier: DPP-4i mechanism proven in LADA (8 RCTs), SGLT2i immunological pathway validated in"
+        },
         {
           "file": "build_immunomod_lada.py",
           "line": 85,
@@ -2840,9 +2845,9 @@
       "pmid": "32627352",
       "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
       "score": "PLAUSIBLE",
-      "confidence": 0.25,
-      "details": "8/32 claim terms found in paper; 13 diabetes domain terms; 6 phrase matches",
-      "claim_count": 3,
+      "confidence": 0.205,
+      "details": "9/44 claim terms found in paper; 13 diabetes domain terms; 6 phrase matches",
+      "claim_count": 4,
       "claims": [
         {
           "file": "build_data_dictionary.py",
@@ -2850,14 +2855,14 @@
           "text": "'source': 'Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplanta"
         },
         {
-          "file": "build_islet_equity.py",
-          "line": 512,
-          "text": "Market concentration: Over 90% of all islet transplants performed in just 5 countries: USA, Canada,"
+          "file": "build_gap_deep_dives.py",
+          "line": 216,
+          "text": "\"validation_evidence\": \"GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with effica"
         },
         {
           "file": "build_islet_equity.py",
-          "line": 813,
-          "text": "Rural Health Information Hub, HRSA data on specialist availability. Markmann et al. Phase 3 i"
+          "line": 512,
+          "text": "Market concentration: Over 90% of all islet transplants performed in just 5 countries: USA, Canada,"
         }
       ],
       "has_abstract": true,
@@ -3188,11 +3193,16 @@
     "35466661": {
       "pmid": "35466661",
       "title": "Efficacy and safety of hydroxychloroquine for managing glycemia in type-2 diabetes: A systematic review and meta-analysis.",
-      "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/1 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.2,
+      "details": "3/15 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 547,
+          "text": "\"validation_evidence\": \"SILVER tier: DPP-4i mechanism proven in LADA (8 RCTs), SGLT2i immunological pathway validated in"
+        },
         {
           "file": "build_generic_drug_catalog.py",
           "line": 44,
@@ -3425,10 +3435,15 @@
       "pmid": "37359825",
       "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence in Patients With Type I Diabetes.",
       "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/3 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.067,
+      "details": "1/15 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 216,
+          "text": "\"validation_evidence\": \"GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with effica"
+        },
         {
           "file": "build_islet_outcomes.py",
           "line": 1257,

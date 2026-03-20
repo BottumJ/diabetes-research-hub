@@ -1485,6 +1485,70 @@ def generate_html():
     </section>
 ''')
 
+    # Combination Candidates section
+    html_parts.append('''    <section class="section">
+        <h2>Combination Candidates: Multi-Pathway Targeting</h2>
+        <p><strong>Context:</strong> These combinations were identified through corpus co-occurrence analysis of 472 data points from 61 full-text papers, then cross-validated against published literature. Status indicates current evidence level. NOVEL combinations represent genuinely new research directions not yet reported in the literature.</p>
+
+        <table class="candidates-table" style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
+            <thead>
+                <tr style="border-bottom: 2px solid #333; background-color: #f5f5f5;">
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Combination</th>
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Status</th>
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Target</th>
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Evidence</th>
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Cost</th>
+                    <th style="text-align: left; padding: 0.75rem; font-weight: bold;">Corpus Support</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.75rem; vertical-align: top;"><strong>Dapagliflozin + Colchicine</strong></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #e8f5e9; padding: 0.25rem 0.5rem; border-radius: 3px;">STUDIED</span></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>CV-inflammation-nephropathy triangle</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Published 2024-2025 outcomes data showing reduced MACE and all-cause mortality vs colchicine alone in CAD + T2D patients</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$15/mo combined (generic markets)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>dapagliflozin→nephropathy (3 pts), NLRP3→nephropathy (3 pts); Safety: Both well-tolerated; colchicine requires renal monitoring</small></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.75rem; vertical-align: top;"><strong>Metformin + Colchicine</strong></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #fff3e0; padding: 0.25rem 0.5rem; border-radius: 3px;">PRECLINICAL</span></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Dual NLRP3 suppression via different mechanisms</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Preclinical mouse NASH model shows synergistic AMPK/NRF2/GDF15 effects</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>metformin→T2D (26 pts), NLRP3→inflammation (61 pts); Safety: Both WHO Essential Medicines; colchicine has narrow therapeutic window</small></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.75rem; vertical-align: top;"><strong>Metformin + N-Acetylcysteine</strong></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #fff3e0; padding: 0.25rem 0.5rem; border-radius: 3px;">PRECLINICAL</span></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Metabolic correction + oxidative stress reduction</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>In vitro cardiac protection demonstrated; NAC failed as standalone glucose-lowering agent in human T2D</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>oxidative_stress→inflammation (22 pts); Safety: Both well-tolerated; NAC is OTC supplement</small></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.75rem; vertical-align: top;"><strong>Verapamil + Vitamin D</strong></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #f3e5f5; padding: 0.25rem 0.5rem; border-radius: 3px;">NOVEL</span></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Beta cell preservation + immune tolerance in T1D</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Verapamil monotherapy shows 30% better C-peptide preservation (Ver-A-T1D); combination not yet studied</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>verapamil→T1D (7 pts), verapamil→beta_cell (6 pts); Safety: Moderate interaction — vitamin D may reduce verapamil calcium-channel blocking</small></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 0.75rem; vertical-align: top;"><strong>Pioglitazone + Low-Dose Rapamycin</strong></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #f3e5f5; padding: 0.25rem 0.5rem; border-radius: 3px;">NOVEL</span></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Dual Treg expansion for LADA/islet transplant</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>Strong biological rationale (complementary Treg pathways); no human or animal combination studies</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined (generic)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>rapamycin→inflammation (2 pts), Treg→T1D (1 pt); Safety: Unknown — requires preclinical assessment before clinical translation</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 1.5rem; padding: 1rem; background-color: #fff3cd; border-left: 4px solid #ffc107; font-size: 0.9rem;"><strong>Caveat:</strong> These are research hypotheses derived from computational analysis, not treatment recommendations. Any combination therapy requires preclinical safety assessment and clinical trial evaluation before human use.</p>
+    </section>
+''')
+
     # Footnote
     html_parts.append('''    <div class="footnote">
         <p><strong>Dashboard Generated:</strong> March 17, 2026</p>
