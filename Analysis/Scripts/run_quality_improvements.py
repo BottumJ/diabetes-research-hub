@@ -61,6 +61,8 @@ SCRIPTS = {
     'ladadiagnostic': ('build_lada_diagnostic_model.py', 'Building LADA Diagnostic Cost-Effectiveness Model'),
     'trialequity': ('build_trial_equity_mapper.py', 'Building Clinical Trial Site Equity Mapper'),
     'corpus': ('build_corpus_analysis.py', 'Building Corpus Analysis Dashboard (202 papers, co-occurrence network)'),
+    'extracted': ('build_extracted_evidence.py', 'Building Extracted Evidence Dashboard (472 data points from 61 papers)'),
+    'researchpaths': ('build_research_paths.py', 'Building Research Paths Dashboard (48 paths, 25 validated, oxidative stress hub)'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
 

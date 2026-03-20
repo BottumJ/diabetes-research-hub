@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracted Evidence Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #fafaf7;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        header { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+        h1 { font-family: Georgia, serif; font-size: 2.5em; margin-bottom: 10px; color: #1a1a1a; }
+        h2 { font-family: Georgia, serif; font-size: 1.8em; margin: 30px 0 15px 0; color: #1a1a1a; }
+        h3 { font-family: Georgia, serif; font-size: 1.3em; margin: 20px 0 10px 0; color: #1a1a1a; }
+        h4 { font-family: Georgia, serif; font-size: 1.1em; margin: 15px 0 8px 0; color: #1a1a1a; }
+        .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 2px solid #ddd; flex-wrap: wrap; }
+        .tab-button { background: none; border: none; padding: 12px 20px; font-size: 1em; cursor: pointer; color: #666; border-bottom: 3px solid transparent; transition: all 0.3s ease; font-family: Georgia, serif; }
+        .tab-button:hover { color: #1a1a1a; }
+        .tab-button.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: "Segoe UI", sans-serif; }
+        th { background-color: #f5f5f5; padding: 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #ddd; font-family: Georgia, serif; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background-color: #fafaf7; }
+        .tier-badge { display: inline-block; padding: 4px 8px; font-size: 0.85em; font-weight: 600; font-family: "Courier New", monospace; margin-right: 8px; }
+        .tier-gold { background-color: #fef3c7; color: #92400e; }
+        .tier-silver { background-color: #e5e7eb; color: #374151; }
+        .tier-bronze { background-color: #fed7aa; color: #92400e; }
+        .evidence-strong { background-color: #dcfce7; color: #15803d; }
+        .evidence-moderate { background-color: #fef3c7; color: #92400e; }
+        .evidence-weak { background-color: #fecaca; color: #991b1b; }
+        .evidence-none { background-color: #f3f4f6; color: #6b7280; }
+        .stats-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: white; padding: 20px; border: 1px solid #eee; border-left: 4px solid #9ca3af; }
+        .stat-label { font-size: 0.9em; color: #666; margin-bottom: 8px; }
+        .stat-value { font-family: "Courier New", monospace; font-size: 1.8em; font-weight: 600; color: #1a1a1a; }
+        .gap-section { background: white; border: 1px solid #eee; padding: 20px; margin: 20px 0; border-left: 4px solid #ccc; }
+        .gap-section.gold { border-left-color: #d4a574; }
+        .gap-section.silver { border-left-color: #9ca3af; }
+        .gap-section.bronze { border-left-color: #b8936d; }
+        .gap-title { font-family: Georgia, serif; font-size: 1.2em; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+        .data-point { background: white; border-left: 3px solid #ddd; padding: 12px; margin: 10px 0; font-size: 0.95em; }
+        .pmid-link { color: #2563eb; text-decoration: none; font-weight: 500; }
+        .pmid-link:hover { text-decoration: underline; }
+        .context-snippet { font-style: italic; color: #666; font-size: 0.9em; margin-top: 8px; padding: 8px; background-color: #f9f9f9; border-left: 2px solid #ddd; }
+        .meta-small { font-size: 0.85em; color: #999; margin-top: 5px; }
+        .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #999; font-size: 0.9em; }
+        .breakdown-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; }
+        .breakdown-table td { padding: 8px; border-bottom: 1px solid #eee; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JGMD5VRYPH');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Extracted Evidence Dashboard</h1>
+            <p class="subtitle">Quantitative data extraction from 61 full-text diabetes research papers</p>
+            <p class="subtitle">Generated: 2026-03-20 14:42:02</p>
+        </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>This dashboard visualizes quantitative data that we actually extracted from 61 full-text papers using regex patterns and NLP-assisted identification. It answers: What quantitative data can we actually extract from our corpus? Which research gaps have the strongest corpus-backed evidence?</p>
+
+            <div class="context-label">How to Use This</div>
+            <p>Each data point links back to its source PMID with surrounding context. Click any PMID to verify the claim in the original paper. Use this dashboard to validate claims made in other research dashboards and to identify which gaps have direct quantitative support in the published literature.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Regex extraction is approximate. Numbers may come from different contexts (e.g., a C-peptide value from a control group, not a treatment group). Context snippets are truncated to 300 characters. Always verify the full context in the original paper before citing data. Missing papers in PubMed or non-English literature will not appear here.</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('summary')">Executive Summary</button>
+            <button class="tab-button" onclick="showTab('by-gap')">Evidence by Gap</button>
+            <button class="tab-button" onclick="showTab('cpeptide')">C-Peptide Evidence</button>
+            <button class="tab-button" onclick="showTab('survival')">Survival & Remission</button>
+            <button class="tab-button" onclick="showTab('inflammatory')">Inflammatory Markers</button>
+            <button class="tab-button" onclick="showTab('drugs')">Drug Dose-Response</button>
+            <button class="tab-button" onclick="showTab('network')">Cross-Gap Network</button>
+        </div>
+
+        <div id="summary" class="tab-content active">
+            <h2>Executive Summary</h2>
+            <div class="stats-box">
+                <div class="stat-card">
+                    <div class="stat-label">Total Data Points Extracted</div>
+                    <div class="stat-value">472</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Papers Yielding Data</div>
+                    <div class="stat-value">61</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Extraction Categories</div>
+                    <div class="stat-value">9</div>
+                </div>
+            </div>
+
+            <h3>Extraction Categories</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dose Response</td>
+                        <td>284</td>
+                        <td>Drug dosage and administration data</td>
+                    </tr>
+                    <tr>
+                        <td>Inflammatory Markers</td>
+                        <td>94</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Remission</td>
+                        <td>41</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Hba1C Change</td>
+                        <td>20</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Survival Graft</td>
+                        <td>7</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td>7</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Odds Ratio</td>
+                        <td>7</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Autoantibody</td>
+                        <td>7</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                    <tr>
+                        <td>Hazard Ratio</td>
+                        <td>5</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="by-gap" class="tab-content">
+            <h2>Evidence by Gap</h2>
+            <p>Evidence strength ratings and top extractions for each of the 15 research gaps.</p>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 1: Gene Therapy for LADA
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 14 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>14</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Autoantibody</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in IU/kg/day, number of severe hypoglycemia episodes defined as hypoglycemia requiring third party inter<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">d. Pre-transplant recipient characteristics (age, sex, race, blood type, duration of diabetes, body weight in kg, height in cm, body mass index in kg/m2, HbA1c (glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline and after 12 months for 360 mg verapamil administered orally once daily versus placebo. Secondary obje<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">PMID:39613428</a> (Unknown, <em>Unknown</em>)<br>
+                    <div class="context-snippet">DM patients aged ≥18 and <45 years will be eligible for recruitment within 6 weeks of diagnosis (defined as day of starting insulin therapy). The primary objective will be to determine the changes in stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide levels than those in the conventional control group. Identifying individuals who are likely to respond to drug therapy would be valuable for the selection of patients for treatmen<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">PMID:23835333</a> (2013, <em>Diabetes</em>)<br>
+                    <div class="context-snippet">ytokines. Glucose toxicity itself has been thought to affect these responses. In the Diabetes Control and Complications Trial (DCCT), individuals in the intensive control group showed less decline in stimulated C-peptide levels than those in the conventional control group. Identifying individuals…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide and histology analysis of graft explants Pre-implant	Post-implant	Histology (Number of insulin-positive graft cells per section)	 		Maximum stimulated [C-peptide] (ng/mL)	 	Subjec<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">idered to be related to VC-02 as determined by investigators after further evaluation and are consistent with the preclinical safety data. Primary efficacy endpoint: C-peptide measurements Summary of stimulated C-peptide and histology analysis of graft explants Pre-implant Post-implant Histology…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide (>0.1 ng/mL<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">ed in the initial few months following implantation continued to reveal no detectable circulating C-peptide at fasting or upon stimulation. Subsequently, a total of 6/17 subjects (35.3%) demonstrated stimulated C-peptide (>0.1 ng/mL) at varying time points as early as 6 months post implant. Table 3…</div>
+                </div>
+            </div>
+            <div class="gap-section gold">
+                <div class="gap-title">
+                    Gap 2: Health Equity in Beta Cell Therapies
+                    <span class="tier-badge tier-gold">GOLD</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 19 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>19</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Survival Graft</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Odds Ratio</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hazard Ratio</td>
+                        <td style="text-align: right;">5 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-islet transplant, including four patients receiving a single islet infusion and three patients undergoing PAI transplant. 60%<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">n-uremic patients with Type 1 diabetes underwent islet transplant with immunosuppression based on belatacept (BELA; n = 5) or efalizumab (EFA; n = 5). Following islet failure, patients were considered for repeat islet infusion and/or PAI transplant. 70% of patients (four EFA, three BELA) maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence was 45.5 ± 32.0 months (range 13–82 months), with all four returning to insulin use following a second islet infusion. Two of these four patients (BELA-4 and EFA-5) underwent PAI <br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">3) elected to forego a second islet infusion after 54 months of insulin independence and returned to insulin use, and one patient (EFA-3) proceeded to PAI transplant after returning to insulin use 27 months post-islet infusion. For patients undergoing a second islet transplant, the mean duration of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-transplant, and six of ten patients remain insulin independent up to 14 years following a first islet infusion, with three of these patients pursuing PAI transpla<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">terioration and chronic renal impairment. Here, we describe a multi-modal approach using a patient-centered combination of islet and pancreas transplantation with CNI-sparing immunosuppression regimens based on BELA and EFA to achieve long-term insulin independence. Seven of ten patients maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years. This relation between early islet graft function and sustained graft survival has been also suggested in two other cohort studies using the Beta2-score, a validated s<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">ospective cohort study, optimal PGF, defined by a Beta-score of 7 or 8, was observed in 18 (64%) out of 28 patients who initially received two or three islet infusions, and was associated in these patients with a Kaplan-Meier estimate of 94% (95%CI 63–99) of graft function, and 43% (95%CI 20–64) of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> after 3 months of supplementation. Distribution of values within each group for each timing is illustrated by a box and whisker. In the box plots, the line in the middle of the box is plotted at the m<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank">PMID:31263284</a> (2019, <em>Nat Med</em>)<br>
+                    <div class="context-snippet">alue per group, with their standard errors. Mann-Whitney tests were performed to compare differential values of both treated groups versus the Placebo group (inter-group changes), according to the distribution. The respective P value are indicated in the table. Lines represent raw values before and…</div>
+                </div>
+            </div>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 3: LADA Phenotyping in Clinical Trials
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 14 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>14</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Survival Graft</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-islet transplant, including four patients receiving a single islet infusion and three patients undergoing PAI transplant. 60%<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">n-uremic patients with Type 1 diabetes underwent islet transplant with immunosuppression based on belatacept (BELA; n = 5) or efalizumab (EFA; n = 5). Following islet failure, patients were considered for repeat islet infusion and/or PAI transplant. 70% of patients (four EFA, three BELA) maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence was 45.5 ± 32.0 months (range 13–82 months), with all four returning to insulin use following a second islet infusion. Two of these four patients (BELA-4 and EFA-5) underwent PAI <br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">3) elected to forego a second islet infusion after 54 months of insulin independence and returned to insulin use, and one patient (EFA-3) proceeded to PAI transplant after returning to insulin use 27 months post-islet infusion. For patients undergoing a second islet transplant, the mean duration of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-transplant, and six of ten patients remain insulin independent up to 14 years following a first islet infusion, with three of these patients pursuing PAI transpla<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">terioration and chronic renal impairment. Here, we describe a multi-modal approach using a patient-centered combination of islet and pancreas transplantation with CNI-sparing immunosuppression regimens based on BELA and EFA to achieve long-term insulin independence. Seven of ten patients maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years. This relation between early islet graft function and sustained graft survival has been also suggested in two other cohort studies using the Beta2-score, a validated s<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">ospective cohort study, optimal PGF, defined by a Beta-score of 7 or 8, was observed in 18 (64%) out of 28 patients who initially received two or three islet infusions, and was associated in these patients with a Kaplan-Meier estimate of 94% (95%CI 63–99) of graft function, and 43% (95%CI 20–64) of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> after 3 months of supplementation. Distribution of values within each group for each timing is illustrated by a box and whisker. In the box plots, the line in the middle of the box is plotted at the m<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank">PMID:31263284</a> (2019, <em>Nat Med</em>)<br>
+                    <div class="context-snippet">alue per group, with their standard errors. Mann-Whitney tests were performed to compare differential values of both treated groups versus the Placebo group (inter-group changes), according to the distribution. The respective P value are indicated in the table. Lines represent raw values before and…</div>
+                </div>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 4: GLP-1/SGLT2i + Beta Cell Synergy
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-strong">STRONG: 385 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>385</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Dose Response</td>
+                        <td style="text-align: right;">284 items</td>
+                    </tr>
+                    <tr>
+                        <td>Inflammatory Markers</td>
+                        <td style="text-align: right;">94 items</td>
+                    </tr>
+                    <tr>
+                        <td>Survival Graft</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> 2.4 mg injection<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">when turning to GLP1-RAs utilization in obesity, retinopathy was not reported as a complication in long-duration trials assessing weekly semaglutide 2.4 mg injection vs placebo for weight loss in obese patients, and based on a recent revision of the literature, no definite conclusions can be drawn…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 1.0 mg compared<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">0 to 75 Early Treatment DR Study (ETDRS) score and no need for ophthalmologic therapy. Such a study will analyze once-weekly subcutaneous semaglutide 1.0 mg compared with placebo for up to 5 years, with the primary endpoint of at least three-digit ETDRS score progression. Until FOCUS results become…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> requirement below 55 units/day<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">ypoglycemic episodes. Eligible patients were required to have a body mass index less than 30 kg/m2 (or weight less than 80 kg), a daily total insulin requirement below 55 units/day, and preserved renal function. Patients meeting inclusion criteria were screened for malignancy before undergoing…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 720 mg twice<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">tients were then started on a three-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 5 mg per<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at 1-month post-transplant. A full summary…</div>
+                </div>
+            </div>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 5: Islet Transplant Immunosuppression Optimization
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-strong">STRONG: 101 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>101</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Inflammatory Markers</td>
+                        <td style="text-align: right;">94 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in IU/kg/day, number of severe hypoglycemia episodes defined as hypoglycemia requiring third party inter<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">d. Pre-transplant recipient characteristics (age, sex, race, blood type, duration of diabetes, body weight in kg, height in cm, body mass index in kg/m2, HbA1c (glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline and after 12 months for 360 mg verapamil administered orally once daily versus placebo. Secondary obje<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">PMID:39613428</a> (Unknown, <em>Unknown</em>)<br>
+                    <div class="context-snippet">DM patients aged ≥18 and <45 years will be eligible for recruitment within 6 weeks of diagnosis (defined as day of starting insulin therapy). The primary objective will be to determine the changes in stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide levels than those in the conventional control group. Identifying individuals who are likely to respond to drug therapy would be valuable for the selection of patients for treatmen<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">PMID:23835333</a> (2013, <em>Diabetes</em>)<br>
+                    <div class="context-snippet">ytokines. Glucose toxicity itself has been thought to affect these responses. In the Diabetes Control and Complications Trial (DCCT), individuals in the intensive control group showed less decline in stimulated C-peptide levels than those in the conventional control group. Identifying individuals…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide and histology analysis of graft explants Pre-implant	Post-implant	Histology (Number of insulin-positive graft cells per section)	 		Maximum stimulated [C-peptide] (ng/mL)	 	Subjec<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">idered to be related to VC-02 as determined by investigators after further evaluation and are consistent with the preclinical safety data. Primary efficacy endpoint: C-peptide measurements Summary of stimulated C-peptide and histology analysis of graft explants Pre-implant Post-implant Histology…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide (>0.1 ng/mL<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">ed in the initial few months following implantation continued to reveal no detectable circulating C-peptide at fasting or upon stimulation. Subsequently, a total of 6/17 subjects (35.3%) demonstrated stimulated C-peptide (>0.1 ng/mL) at varying time points as early as 6 months post implant. Table 3…</div>
+                </div>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 6: CAR-T Diabetes Safety Signals
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 12 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>12</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Odds Ratio</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hazard Ratio</td>
+                        <td style="text-align: right;">5 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> OR = 0.57<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30078372/" target="_blank">PMID:30078372</a> (Unknown, <em>Unknown</em>)<br>
+                    <div class="context-snippet">zation were significantly less likely to be in the low alcohol–low sociosexuality profile, odds ratio (OR) = 0.37, B (SE) = −1.00 (0.12), p < .001, and the high alcohol–medium sociosexuality profile, OR = 0.57, B (SE) = −0.57 (0.11), p < .001. Similarly, as compared with the high alcohol–medium…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> OR = 0.65<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30078372/" target="_blank">PMID:30078372</a> (Unknown, <em>Unknown</em>)<br>
+                    <div class="context-snippet">osexuality profile (Profile 2 as the reference profile), individuals with more severe baseline sexual victimization were significantly less likely to be in the low alcohol–low sociosexuality profile, OR = 0.65, B (SE) = −0.43 (0.10), p < .001. Finally, we examined whether experiences of follow-up…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> OR = 1.30<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/36474045/" target="_blank">PMID:36474045</a> (2022, <em>Nat Genet</em>)<br>
+                    <div class="context-snippet">0.05) with relatively weak effects on CAD (odds ratio (OR) per CAD risk allele: 1.03–1.07; Fig. 1). The others were low frequency (MAF = 0.009–0.036) of which, four had comparatively strong effects (OR = 1.30–1.44) and four had more modest effects (OR = 1.10–1.14; Extended Data Fig. 2). We then…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> OR = 1.10<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/36474045/" target="_blank">PMID:36474045</a> (2022, <em>Nat Genet</em>)<br>
+                    <div class="context-snippet">atio (OR) per CAD risk allele: 1.03–1.07; Fig. 1). The others were low frequency (MAF = 0.009–0.036) of which, four had comparatively strong effects (OR = 1.30–1.44) and four had more modest effects (OR = 1.10–1.14; Extended Data Fig. 2). We then conducted gene-based tests of missense and predicted…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> OR = 0.94<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/36474045/" target="_blank">PMID:36474045</a> (2022, <em>Nat Genet</em>)<br>
+                    <div class="context-snippet">gnificance (P ≤ 5.0 × 10−8) and had evidence (P ≤ 0.01) for between-sex heterogeneity (Supplementary Table 9). Lead variant rs7696877 was the only signal with a stronger effect in females (per-allele OR = 0.94) than in males (per-allele OR = 0.98, heterogeneity P = 0.007). Subthreshold associations…</div>
+                </div>
+            </div>
+            <div class="gap-section gold">
+                <div class="gap-title">
+                    Gap 7: Cardiovascular-Inflammation Intersection
+                    <span class="tier-badge tier-gold">GOLD</span>
+                    <span class="tier-badge evidence-strong">STRONG: 345 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>345</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Dose Response</td>
+                        <td style="text-align: right;">284 items</td>
+                    </tr>
+                    <tr>
+                        <td>Remission</td>
+                        <td style="text-align: right;">41 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hba1C Change</td>
+                        <td style="text-align: right;">20 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> 2.4 mg injection<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">when turning to GLP1-RAs utilization in obesity, retinopathy was not reported as a complication in long-duration trials assessing weekly semaglutide 2.4 mg injection vs placebo for weight loss in obese patients, and based on a recent revision of the literature, no definite conclusions can be drawn…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 1.0 mg compared<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">0 to 75 Early Treatment DR Study (ETDRS) score and no need for ophthalmologic therapy. Such a study will analyze once-weekly subcutaneous semaglutide 1.0 mg compared with placebo for up to 5 years, with the primary endpoint of at least three-digit ETDRS score progression. Until FOCUS results become…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> requirement below 55 units/day<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">ypoglycemic episodes. Eligible patients were required to have a body mass index less than 30 kg/m2 (or weight less than 80 kg), a daily total insulin requirement below 55 units/day, and preserved renal function. Patients meeting inclusion criteria were screened for malignancy before undergoing…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 720 mg twice<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">tients were then started on a three-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 5 mg per<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at 1-month post-transplant. A full summary…</div>
+                </div>
+            </div>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 8: Drug Repurposing for Beta Cell Protection
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-strong">STRONG: 453 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>453</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Dose Response</td>
+                        <td style="text-align: right;">284 items</td>
+                    </tr>
+                    <tr>
+                        <td>Inflammatory Markers</td>
+                        <td style="text-align: right;">94 items</td>
+                    </tr>
+                    <tr>
+                        <td>Remission</td>
+                        <td style="text-align: right;">41 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hba1C Change</td>
+                        <td style="text-align: right;">20 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Autoantibody</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> 2.4 mg injection<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">when turning to GLP1-RAs utilization in obesity, retinopathy was not reported as a complication in long-duration trials assessing weekly semaglutide 2.4 mg injection vs placebo for weight loss in obese patients, and based on a recent revision of the literature, no definite conclusions can be drawn…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 1.0 mg compared<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">0 to 75 Early Treatment DR Study (ETDRS) score and no need for ophthalmologic therapy. Such a study will analyze once-weekly subcutaneous semaglutide 1.0 mg compared with placebo for up to 5 years, with the primary endpoint of at least three-digit ETDRS score progression. Until FOCUS results become…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> requirement below 55 units/day<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">ypoglycemic episodes. Eligible patients were required to have a body mass index less than 30 kg/m2 (or weight less than 80 kg), a daily total insulin requirement below 55 units/day, and preserved renal function. Patients meeting inclusion criteria were screened for malignancy before undergoing…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 720 mg twice<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">tients were then started on a three-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 5 mg per<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at 1-month post-transplant. A full summary…</div>
+                </div>
+            </div>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 9: Autoimmune Beta Cell Epitopes in LADA
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-strong">STRONG: 61 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>61</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Remission</td>
+                        <td style="text-align: right;">41 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hba1C Change</td>
+                        <td style="text-align: right;">20 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in IU/kg/day, number of severe hypoglycemia episodes defined as h<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">20, and for whom PGF could be calculated. Pre-transplant recipient characteristics (age, sex, race, blood type, duration of diabetes, body weight in kg, height in cm, body mass index in kg/m2, HbA1c (glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> Glycated Hemoglobin	 	IDAA1c score	Insulin-Dose Adjusted A1c	 	ISPAD	International Society for Pediatric and Adolescent Diabetes 	 	MCA	Multiple Correspondence Analysis	 	MLPA	Multiplex Ligation-depen<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41827917/" target="_blank">PMID:41827917</a> (2026, <em>Cells</em>)<br>
+                    <div class="context-snippet">CV Coefficient of Variation DIAMODIA DIAgnose MOnogenic DIAbetes DNA Deoxyribonucleic Acid GENEPEDIAB GENEtic forms of PEDiatric DIABetes GTAA1c score Glycemic Target-Adjusted HbA1c HbA1c Glycated Hemoglobin IDAA1c score Insulin-Dose Adjusted A1c ISPAD International Society for Pediatric and…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> Glycated hemoglobin (%); IDAA1c: Insulin-dose adjusted A1c; GTAA1c: Glycemic target-adjusted HbA1c; Mean: Mean glycemia (mg/dL); Median: Median glycemia (mg/dL); Min: Minimum glycemia (mg/dL); Max: Ma<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41827917/" target="_blank">PMID:41827917</a> (2026, <em>Cells</em>)<br>
+                    <div class="context-snippet">ohort of T1D patients; Adia: Cohort of patients with atypical diabetes; MODY: Cohort of patients with maturity-onset diabetes of the young; BMI: Body mass index; SDS: Standard deviation score; HbA1c: Glycated hemoglobin (%); IDAA1c: Insulin-dose adjusted A1c; GTAA1c: Glycemic target-adjusted HbA1c;…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> glycated hemoglobin level of 7.5% or more and were 40 years of age or older with cardiovascular disease or 55 years of age or older with anatomical evidence of a substantial amount of atherosclerosis,<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank">PMID:20228401</a> (2010, <em>N Engl J Med</em>)<br>
+                    <div class="context-snippet">ix 2. ELIGIBILITY CRITERIA AND RECRUITMENT Inclusion criteria for the glycemia trial are described in detail elsewhere. In brief, participants were eligible if they had type 2 diabetes mellitus and a glycated hemoglobin level of 7.5% or more and were 40 years of age or older with cardiovascular…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> Glycated hemoglobin — %	8.3±1.1<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank">PMID:20228401</a> (2010, <em>N Engl J Med</em>)<br>
+                    <div class="context-snippet">olic 139.2±16.0 138.9±16.3 139.4±15.8 0.34 Diastolic 75.7±10.5 75.7±10.7 75.8±10.3 0.87 Duration of diabetes — yr 0.86 Median 10 9 10 Interquartile range 5–15 5–15 5–15 Glycated hemoglobin — % 8.3±1.1 8.4±1.1 8.3±1.1 0.08 Fasting plasma glucose — mg/dl 174.7±57.7 176.1±57.7 173.2±57.7 0.09…</div>
+                </div>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 10: Remission Sustainability Beyond 2 Years
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 21 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>21</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Odds Ratio</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Autoantibody</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in IU/kg/day, number of severe hypoglycemia episodes defined as hypoglycemia requiring third party inter<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">d. Pre-transplant recipient characteristics (age, sex, race, blood type, duration of diabetes, body weight in kg, height in cm, body mass index in kg/m2, HbA1c (glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline and after 12 months for 360 mg verapamil administered orally once daily versus placebo. Secondary obje<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">PMID:39613428</a> (Unknown, <em>Unknown</em>)<br>
+                    <div class="context-snippet">DM patients aged ≥18 and <45 years will be eligible for recruitment within 6 weeks of diagnosis (defined as day of starting insulin therapy). The primary objective will be to determine the changes in stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide levels than those in the conventional control group. Identifying individuals who are likely to respond to drug therapy would be valuable for the selection of patients for treatmen<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">PMID:23835333</a> (2013, <em>Diabetes</em>)<br>
+                    <div class="context-snippet">ytokines. Glucose toxicity itself has been thought to affect these responses. In the Diabetes Control and Complications Trial (DCCT), individuals in the intensive control group showed less decline in stimulated C-peptide levels than those in the conventional control group. Identifying individuals…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide and histology analysis of graft explants Pre-implant	Post-implant	Histology (Number of insulin-positive graft cells per section)	 		Maximum stimulated [C-peptide] (ng/mL)	 	Subjec<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">idered to be related to VC-02 as determined by investigators after further evaluation and are consistent with the preclinical safety data. Primary efficacy endpoint: C-peptide measurements Summary of stimulated C-peptide and histology analysis of graft explants Pre-implant Post-implant Histology…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide (>0.1 ng/mL<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021, <em>Cell Rep Med</em>)<br>
+                    <div class="context-snippet">ed in the initial few months following implantation continued to reveal no detectable circulating C-peptide at fasting or upon stimulation. Subsequently, a total of 6/17 subjects (35.3%) demonstrated stimulated C-peptide (>0.1 ng/mL) at varying time points as early as 6 months post implant. Table 3…</div>
+                </div>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 11: Immunomodulation in Type 2 Diabetes
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 19 points</span>
+                </div>
+
+                <h4>Evidence Strength: Moderate evidence present</h4>
+                <p>This gap has <strong>19</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Survival Graft</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Odds Ratio</td>
+                        <td style="text-align: right;">7 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hazard Ratio</td>
+                        <td style="text-align: right;">5 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-islet transplant, including four patients receiving a single islet infusion and three patients undergoing PAI transplant. 60%<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">n-uremic patients with Type 1 diabetes underwent islet transplant with immunosuppression based on belatacept (BELA; n = 5) or efalizumab (EFA; n = 5). Following islet failure, patients were considered for repeat islet infusion and/or PAI transplant. 70% of patients (four EFA, three BELA) maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence was 45.5 ± 32.0 months (range 13–82 months), with all four returning to insulin use following a second islet infusion. Two of these four patients (BELA-4 and EFA-5) underwent PAI <br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">3) elected to forego a second islet infusion after 54 months of insulin independence and returned to insulin use, and one patient (EFA-3) proceeded to PAI transplant after returning to insulin use 27 months post-islet infusion. For patients undergoing a second islet transplant, the mean duration of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years post-transplant, and six of ten patients remain insulin independent up to 14 years following a first islet infusion, with three of these patients pursuing PAI transpla<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">terioration and chronic renal impairment. Here, we describe a multi-modal approach using a patient-centered combination of islet and pancreas transplantation with CNI-sparing immunosuppression regimens based on BELA and EFA to achieve long-term insulin independence. Seven of ten patients maintained…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> insulin independence at 10 years. This relation between early islet graft function and sustained graft survival has been also suggested in two other cohort studies using the Beta2-score, a validated s<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, <em>Lancet Diabetes Endocrinol</em>)<br>
+                    <div class="context-snippet">ospective cohort study, optimal PGF, defined by a Beta-score of 7 or 8, was observed in 18 (64%) out of 28 patients who initially received two or three islet infusions, and was associated in these patients with a Kaplan-Meier estimate of 94% (95%CI 63–99) of graft function, and 43% (95%CI 20–64) of…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> after 3 months of supplementation. Distribution of values within each group for each timing is illustrated by a box and whisker. In the box plots, the line in the middle of the box is plotted at the m<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank">PMID:31263284</a> (2019, <em>Nat Med</em>)<br>
+                    <div class="context-snippet">alue per group, with their standard errors. Mann-Whitney tests were performed to compare differential values of both treated groups versus the Placebo group (inter-group changes), according to the distribution. The respective P value are indicated in the table. Lines represent raw values before and…</div>
+                </div>
+            </div>
+            <div class="gap-section gold">
+                <div class="gap-title">
+                    Gap 12: GLP-1 Effects on Beta Cell Function
+                    <span class="tier-badge tier-gold">GOLD</span>
+                    <span class="tier-badge evidence-strong">STRONG: 398 points</span>
+                </div>
+
+                <h4>Evidence Strength: Strong corpus-backed evidence</h4>
+                <p>This gap has <strong>398</strong> data points in the corpus.</p>
+                <h4>Breakdown by Data Type</h4>
+                <table class="breakdown-table">
+                    <tr>
+                        <td>Dose Response</td>
+                        <td style="text-align: right;">284 items</td>
+                    </tr>
+                    <tr>
+                        <td>Inflammatory Markers</td>
+                        <td style="text-align: right;">94 items</td>
+                    </tr>
+                    <tr>
+                        <td>Hba1C Change</td>
+                        <td style="text-align: right;">20 items</td>
+                    </tr>
+                </table>
+                <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> 2.4 mg injection<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">when turning to GLP1-RAs utilization in obesity, retinopathy was not reported as a complication in long-duration trials assessing weekly semaglutide 2.4 mg injection vs placebo for weight loss in obese patients, and based on a recent revision of the literature, no definite conclusions can be drawn…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 1.0 mg compared<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023, <em>World J Diabetes</em>)<br>
+                    <div class="context-snippet">0 to 75 Early Treatment DR Study (ETDRS) score and no need for ophthalmologic therapy. Such a study will analyze once-weekly subcutaneous semaglutide 1.0 mg compared with placebo for up to 5 years, with the primary endpoint of at least three-digit ETDRS score progression. Until FOCUS results become…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> requirement below 55 units/day<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">ypoglycemic episodes. Eligible patients were required to have a body mass index less than 30 kg/m2 (or weight less than 80 kg), a daily total insulin requirement below 55 units/day, and preserved renal function. Patients meeting inclusion criteria were screened for malignancy before undergoing…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 720 mg twice<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">tients were then started on a three-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> 5 mg per<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, <em>Transpl Int</em>)<br>
+                    <div class="context-snippet">-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone 5 mg per day, with addition of a mammalian target of rapamycin (mTOR) inhibitor (sirolimus or everolimus) at 1-month post-transplant. A full summary…</div>
+                </div>
+            </div>
+            <div class="gap-section silver">
+                <div class="gap-title">
+                    Gap 13: LADA Progression Markers
+                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge evidence-none">NONE: 0 points</span>
+                </div>
+
+                <h4>Evidence Strength: No evidence in corpus</h4>
+                <p>This gap has <strong>0</strong> data points in the corpus.</p>
+                <p><em>No data points found in corpus for this gap.</em></p>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 14: Islet Allotransplant Rejection Prediction
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-none">NONE: 0 points</span>
+                </div>
+
+                <h4>Evidence Strength: No evidence in corpus</h4>
+                <p>This gap has <strong>0</strong> data points in the corpus.</p>
+                <p><em>No data points found in corpus for this gap.</em></p>
+            </div>
+            <div class="gap-section bronze">
+                <div class="gap-title">
+                    Gap 15: Combination Therapy Synergies
+                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge evidence-none">NONE: 0 points</span>
+                </div>
+
+                <h4>Evidence Strength: No evidence in corpus</h4>
+                <p>This gap has <strong>0</strong> data points in the corpus.</p>
+                <p><em>No data points found in corpus for this gap.</em></p>
+            </div>
+        </div>
+
+        <div id="cpeptide" class="tab-content">
+            <h2>C-Peptide Evidence</h2>
+            <p>All 7 C-peptide extractions with full context. Critical for LADA/islet/immunomodulation gaps.</p>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in IU/kg/day, number of severe hypoglycemia episodes defined as hypoglycemia requiring third party inter<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023)<br>
+                <strong>Journal:</strong> Lancet Diabetes Endocrinol<br>
+                <strong>Title:</strong> Association between primary graft function and 5-year outcomes of islet allogeneic transplantation in type 1 diabetes: a retrospective, multicentre, observational cohort study in 1210 patients from the Collaborative Islet Transplant Registry.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">d. Pre-transplant recipient characteristics (age, sex, race, blood type, duration of diabetes, body weight in kg, height in cm, body mass index in kg/m2, HbA1c (glycated hemoglobin) in %, fasting and stimulated C-peptide in ng/mL, fasting blood glucose in mg/dL, daily needs of exogenous insulin in…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline and after 12 months for 360 mg verapamil administered orally once daily versus placebo. Secondary obje<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">PMID:39613428</a> (Unknown)<br>
+                <strong>Journal:</strong> Unknown<br>
+                <strong>Title:</strong> Unknown<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">DM patients aged ≥18 and <45 years will be eligible for recruitment within 6 weeks of diagnosis (defined as day of starting insulin therapy). The primary objective will be to determine the changes in stimulated C-peptide response during the first 2 hours of a mixed meal tolerance test at baseline…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide levels than those in the conventional control group. Identifying individuals who are likely to respond to drug therapy would be valuable for the selection of patients for treatmen<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">PMID:23835333</a> (2013)<br>
+                <strong>Journal:</strong> Diabetes<br>
+                <strong>Title:</strong> Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes in a randomized controlled trial: metabolic and immunologic features at baseline identify a subgroup of responders.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">ytokines. Glucose toxicity itself has been thought to affect these responses. In the Diabetes Control and Complications Trial (DCCT), individuals in the intensive control group showed less decline in stimulated C-peptide levels than those in the conventional control group. Identifying individuals…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide and histology analysis of graft explants Pre-implant	Post-implant	Histology (Number of insulin-positive graft cells per section)	 		Maximum stimulated [C-peptide] (ng/mL)	 	Subjec<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021)<br>
+                <strong>Journal:</strong> Cell Rep Med<br>
+                <strong>Title:</strong> Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">idered to be related to VC-02 as determined by investigators after further evaluation and are consistent with the preclinical safety data. Primary efficacy endpoint: C-peptide measurements Summary of stimulated C-peptide and histology analysis of graft explants Pre-implant Post-implant Histology…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide (>0.1 ng/mL<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021)<br>
+                <strong>Journal:</strong> Cell Rep Med<br>
+                <strong>Title:</strong> Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">ed in the initial few months following implantation continued to reveal no detectable circulating C-peptide at fasting or upon stimulation. Subsequently, a total of 6/17 subjects (35.3%) demonstrated stimulated C-peptide (>0.1 ng/mL) at varying time points as early as 6 months post implant. Table 3…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide and glucose levels of each subject, and at specific study visits post-implant in accordance with the primary endpoint. At multiple interim study visits post-implant, C-peptide lev<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a> (2021)<br>
+                <strong>Journal:</strong> Cell Rep Med<br>
+                <strong>Title:</strong> Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">e VC-02-300 units and the remainder, sentinels (Figure 2). Methods details Mixed meal tolerance test (MMTT) A 4 h MMTT was conducted during the screening period to establish the pre-implant basal and stimulated C-peptide and glucose levels of each subject, and at specific study visits post-implant…</div>
+            </div>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> C-peptide increased to 5.2 (3.6-7.7) at day 365, 4.4 (2.7-5.1) at day 730, and 4.4 (1.2-8.2) ng/mL at day 1095 (P ≤ .001 for all comparisons vs baseline). Similarly, the 90-minute C-peptide increased <br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a> (2021)<br>
+                <strong>Journal:</strong> Am J Transplant<br>
+                <strong>Title:</strong> Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">before transplant and was restored following transplant with fasting levels 1.8 (1.6-2.5) at day 365, 1.8 (1.5-2.1) at day 730, and 1.3 (0.8-1.6) ng/mL at day 1095. At 60 minutes postmeal ingestion, C-peptide increased to 5.2 (3.6-7.7) at day 365, 4.4 (2.7-5.1) at day 730, and 4.4 (1.2-8.2) ng/mL…</div>
+            </div>
+        </div>
+
+        <div id="survival" class="tab-content">
+            <h2>Survival & Remission Data</h2>
+            <p>All graft survival and remission rate extractions. Validates islet transplant outcomes.</p>
+            <h3>Graft Survival (7 entries)</h3>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence at 10 years post-islet transplant, including four patients receiving a single islet infusion and three patients undergoing PAI transplant. 60%<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, Transpl Int)<br>
+                <div class="context-snippet">n-uremic patients with Type 1 diabetes underwent islet transplant with immunosuppression based on belatacept (BELA; n = 5) or efalizumab (EFA; n = 5). Following islet failure, patients were considered for repeat islet infusion and/or PAI transplant. 70% of patients (four EFA, three BELA) maintained…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence was 45.5 ± 32.0 months (range 13–82 months), with all four returning to insulin use following a second islet infusion. Two of these four patients (BELA-4 and EFA-5) underwent PAI <br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, Transpl Int)<br>
+                <div class="context-snippet">3) elected to forego a second islet infusion after 54 months of insulin independence and returned to insulin use, and one patient (EFA-3) proceeded to PAI transplant after returning to insulin use 27 months post-islet infusion. For patients undergoing a second islet transplant, the mean duration of…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence at 10 years post-transplant, and six of ten patients remain insulin independent up to 14 years following a first islet infusion, with three of these patients pursuing PAI transpla<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023, Transpl Int)<br>
+                <div class="context-snippet">terioration and chronic renal impairment. Here, we describe a multi-modal approach using a patient-centered combination of islet and pancreas transplantation with CNI-sparing immunosuppression regimens based on BELA and EFA to achieve long-term insulin independence. Seven of ten patients maintained…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence at 10 years. This relation between early islet graft function and sustained graft survival has been also suggested in two other cohort studies using the Beta2-score, a validated s<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, Lancet Diabetes Endocrinol)<br>
+                <div class="context-snippet">ospective cohort study, optimal PGF, defined by a Beta-score of 7 or 8, was observed in 18 (64%) out of 28 patients who initially received two or three islet infusions, and was associated in these patients with a Kaplan-Meier estimate of 94% (95%CI 63–99) of graft function, and 43% (95%CI 20–64) of…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> after 3 months of supplementation. Distribution of values within each group for each timing is illustrated by a box and whisker. In the box plots, the line in the middle of the box is plotted at the m<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank">PMID:31263284</a> (2019, Nat Med)<br>
+                <div class="context-snippet">alue per group, with their standard errors. Mann-Whitney tests were performed to compare differential values of both treated groups versus the Placebo group (inter-group changes), according to the distribution. The respective P value are indicated in the table. Lines represent raw values before and…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence at day 365 (P = .036), day 730 (P = .189), and day 1095 (P = .736), respectively. All subjects exhibited IAH at baseline (Clarke score 6.0 [5.0-6.0]) that was abolished following <br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a> (2021, Am J Transplant)<br>
+                <div class="context-snippet">s kg−1 d−1) and decreased dramatically following transplant (0.0 [0.0-0.01] unit kg−1 d−1 at day 365, P < .001; 0.00 [0.0-0.22] unit kg−1 d−1 at day 730, P < .001; 0.00 [0.00-0.26] unit kg−1 d−1 at day 1095, P = .002; Figure 1D) with 9 (37.5%), 7 (29.2%), and 4 (16.7%) subjects meeting criteria for…</div>
+            </div>
+            <div class="data-point">
+                <strong>Survival Data:</strong> insulin independence was associated with a greater number of islet infusions and receiving a greater islet mass, with successful subjects averaging 2 infusions and 16 117 IEq/kg vs 1 infusion and 1046<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a> (2021, Am J Transplant)<br>
+                <div class="context-snippet">s the number of islet infusions and the administered islet mass. On average, those achieving the primary endpoint received 2 separate infusions comprising nearly 14 978 IEq/kg vs 1 infusion totaling about 8589 IEq/kg in those who did not achieve the primary endpoint (P = .009). Similarly, achieving…</div>
+            </div>
+            <h3>Remission Rates (41 entries)</h3>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> 70/37 gradient were recovered. Red blood cells were lysed with Red Blood Cell Lysing Buffer (#R7757, SigmaAldrich, France) or ammonium chloride. Cells were washed with PBS/2% FCS and incubated with mo<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank">PMID:39428507</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">entrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldrich, France), centrifuged at 500 g over 37% (v/v) Percoll, and cells at the interface of the Percoll 70/37 gradient were recovered. Red blood cells were lysed with Red Blood Cell Lysing Buffer…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission of type 2 diabetes: multicentre, double blind, randomised, placebo controlled trial Abstract Objective To assess the effect of dapagliflozin plus calorie restriction on remission of type 2 d<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">Dapagliflozin plus calorie restriction for remission of type 2 diabetes: multicentre, double blind, randomised, placebo controlled trial Abstract Objective To assess the effect of dapagliflozin plus calorie restriction on remission of type 2 diabetes. Design Multicentre, double blind, randomised,…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> Remission of diabetes was achieved in 44%<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeostasis parameters, and serum lipids over 12 months. Results Remission of diabetes was achieved in 44% (73/165) of patients in the dapagliflozin group and 28%…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> 73/165) of patients in the dapagliflozin group and 28% (46/163) of patients in the placebo group (risk ratio 1.56, 95% confidence interval (CI) 1.17 to 2.09; P=0.002) over 12 months, meeting the prede<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeostasis parameters, and serum lipids over 12 months. Results Remission of diabetes was achieved in 44% (73/165) of patients in the dapagliflozin group and 28% (46/163) of patients in the placebo group…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission of diabetes compared with calorie restriction alone in overweight or obese patients with type 2 diabetes. Trial registration ClinicalTrials.gov NCT04004793. Introduction Type 2 diabetes is a<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">o significant differences were seen between the two groups in the occurrence of adverse events. Conclusion The regimen of dapagliflozin plus regular calorie restriction achieved a much higher rate of remission of diabetes compared with calorie restriction alone in overweight or obese patients with…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> 70% remission<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">weight reduction of 10%. However, the strategy of a very low energy diet in routine care settings remains a challenge. Bariatric surgery is the most effective method of weight loss and can achieve 60-70% remission of diabetes in obese patients. However, this option is not widely accepted owing to a…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission of diabetes. HbA1c was measured at screening, at baseline, each month for the first four months, and every two months thereafter. Fasting plasma glucose was measured monthly at each visit. P<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">was achieved for two months. We considered participants who had HbA1c <6.5% and fasting plasma glucose <126 mg/dL in the absence of all antidiabetic drugs for at least two months as having achieving remission of diabetes. HbA1c was measured at screening, at baseline, each month for the first four…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission of diabetes was determined (that is, two months after either dapagliflozin or placebo was stopped) minus those measured at baseline. In participants who discontinued the trial in advance or <br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">ference, body fat, blood pressure, glucose homoeostasis parameters, and serum lipids during the 12 month intervention. We defined changes in these parameters in each group as the values measured when remission of diabetes was determined (that is, two months after either dapagliflozin or placebo was…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission rate between the dapagliflozin group and the placebo group at a significance level of 0.05 using a two tailed test, assuming an anticipated dropout rate of less than 20%<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">to evaluate quality of life. Statistical analysis The sample size calculation suggested that 328 participants (164 per group) would provide 80% power to detect a significant difference (12.3%) in the remission rate between the dapagliflozin group and the placebo group at a significance level of…</div>
+            </div>
+            <div class="data-point">
+                <strong>Remission Rate:</strong> remission of diabetes and asked a member of the public to read our manuscript after submission. Once this study is published, we will disseminate the results to the public through social media and wri<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">of our research. Nevertheless, we consulted with doctors, physician scientists, and statisticians for the study intervention and protocol. We spoke to the patients about the study and the concept of remission of diabetes and asked a member of the public to read our manuscript after submission. Once…</div>
+            </div>
+        </div>
+
+        <div id="inflammatory" class="tab-content">
+            <h2>Inflammatory Marker Evidence</h2>
+            <p>All 94 inflammatory marker extractions grouped by marker type.</p>
+            <h3>IL-1 (8 entries)</h3>
+            <div class="data-point">
+                <strong>IL-1:</strong> NLRP3 activation could be a trigger for DKD. Additionally, pharmacological inhibition of the IL-1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">d that circulating levels of IL-1β and IL-18 and kidney expression of NALP3 were elevated in DKD mice and that this increase preceded the process of albuminuria and mesangial expansion, implying that NLRP3 activation could be a trigger for DKD. Additionally, pharmacological inhibition of the IL-1…</div>
+            </div>
+            <div class="data-point">
+                <strong>IL-1:</strong> NF-kB activation in the nucleus prompts the transcription of pro-IL-1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">relationship with SGLT2i is shown in Figure 1. NLRP3 inflammasome activation and the possible mechanisms of action of SGLT2i. The NLRP3 inflammasome activation relies on two key mechanisms. Firstly, NF-kB activation in the nucleus prompts the transcription of pro-IL-1β, pro-IL-18, and NLRP3 enzyme.…</div>
+            </div>
+            <div class="data-point">
+                <strong>IL-1:</strong> IL-1β levels and mitochondrial reactive oxygen species (mROS). In 2014<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">like DAMPs or increased ROS concentration, leading to cytokine release and pyroptosis. SGLT2i potentially inhibits NF-kB, NLRP3, ASC, and Pro-caspase-1 activities, Gasdermin-D activation, and reduces IL-1β levels and mitochondrial reactive oxygen species (mROS). In 2014, Tahara et al. demonstrated…</div>
+            </div>
+            <div class="data-point">
+                <strong>IL-1:</strong> IL-10 levels increased in the presence of IL-1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank">PMID:27821710</a> (2016, J Pharmacol Exp Ther)<br>
+                <div class="context-snippet">32.3% decline in nitric oxide levels on average. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the…</div>
+            </div>
+            <div class="data-point">
+                <strong>IL-1:</strong> IL-10 levels in this study could have been a compensatory mechanism. In a cross-sectional sample of ~500<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26897744/" target="_blank">PMID:26897744</a> (2016, Curr Diab Rep)<br>
+                <div class="context-snippet">or axonal damage and with signs of motor nerve demyelination. Since IL-10 is considered an anti-inflammatory cytokine, that negatively regulates TNF-α, one could speculate that the observed increased IL-10 levels in this study could have been a compensatory mechanism. In a cross-sectional sample of…</div>
+            </div>
+            <h3>IL-6 (1 entries)</h3>
+            <div class="data-point">
+                <strong>IL-6:</strong> IL-6 levels (52.9<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank">PMID:27821710</a> (2016, J Pharmacol Exp Ther)<br>
+                <div class="context-snippet">, unless Glassia was added, which resulted in a significant 32.3% decline in nitric oxide levels on average. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence…</div>
+            </div>
+            <h3>NLRP3 (59 entries)</h3>
+            <div class="data-point">
+                <strong>NLRP3:</strong> NLRP3 activation in diabetic mice	DapagliflozinMixed in diet (1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">PP4 InhibitorYe et al. 2017 ExperimentalDiabetic cardiomyopathy in mice(Type 2 diabetic (BTBR ob/ob) and wild-type (WT) mice) To assess if Dapagliflozin could attenuate the myocardial dysfunction and NLRP3 activation in diabetic mice DapagliflozinMixed in diet (1 mg/kg) Dapagliflozin attenuated the…</div>
+            </div>
+            <div class="data-point">
+                <strong>NLRP3:</strong> NLRP3 activation and progression of DN in mice	DapagliflozinMixed in diet (1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">evelopment of Diabetic Nephropathy in Mice with Type 2 DiabetesBirnbaum et al. 2018 ExperimentalDiabetic Nephropathy in mice(Male BTBR ob/ob and WT mice) Assessed whether Dapagliflozin attenuates the NLRP3 activation and progression of DN in mice DapagliflozinMixed in diet (1 mg/kg) Dapagliflozin…</div>
+            </div>
+            <div class="data-point">
+                <strong>NLRP3:</strong> NLRP3 activation and progression of DN in mice	DapagliflozinMixed in drinking water (1.5<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">ice with Type-2 Diabetes MellitusBirnbaum et al. 2021 ExperimentalDiabetic Nephropathy in mice(Male BTBR ob/ob mice) Assessed whether Dapagliflozin (or its association with Ticagrelor) attenuates the NLRP3 activation and progression of DN in mice DapagliflozinMixed in drinking water (1.5 mg/kg)…</div>
+            </div>
+            <div class="data-point">
+                <strong>NLRP3:</strong> NLRP3 activation	 	The dynamic interplay between AMPK/NFκB signaling and NLRP3<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">sis through inhibition of the NLRP3 complex in an ischemia/reperfusion model DapagliflozinOral gavage (1 mg/kg) Dapagliflozin reversed energy metabolism and inflammation alterations and prevented the NLRP3 activation The dynamic interplay between AMPK/NFκB signaling and NLRP3 is a new therapeutic…</div>
+            </div>
+            <div class="data-point">
+                <strong>NLRP3:</strong> NLRP3 activation	 	Canagliflozin Ameliorates NLRP3<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a> (Unknown, Unknown)<br>
+                <div class="context-snippet">deling by inhibiting NLRP3 inflammasome activation DapagliflozinOral gavage (1 mg/kg) Dapagliflozin attenuated right ventricular systolic pressure, pulmonary vascular remodeling and the decreased the NLRP3 activation Canagliflozin Ameliorates NLRP3 Inflammasome-Mediated Inflammation Through…</div>
+            </div>
+            <h3>Other (18 entries)</h3>
+            <div class="data-point">
+                <strong>Other:</strong> NF-κB activation through BAFF (B cell activating factor) and CD40<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank">PMID:19575028</a> (2009, Nat Rev Immunol)<br>
+                <div class="context-snippet">in appears to be unique to IL-17RA, perhaps explaining why IL-17RA functions as a shared subunit (Figure 1). A SEFIR domain is also present in ACT1, a signalling adaptor that was previously linked to NF-κB activation through BAFF (B cell activating factor) and CD40L. Indeed, an ACT1 deficiency in…</div>
+            </div>
+            <div class="data-point">
+                <strong>Other:</strong> NF-κB activation that involves phosphorylation and degradation of the prototypical NFκB inhibitor, IκBα. Non-classical NF-κB pathway A pathway of NFκB activation that does not involve IκBβ.degradation<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank">PMID:19575028</a> (2009, Nat Rev Immunol)<br>
+                <div class="context-snippet">xpressed and assessed for interaction by measuring the energy transfer between fluorophores. Such transfer can only occur if proteins physically interact. Classical NF-κB pathway A typical pathway of NF-κB activation that involves phosphorylation and degradation of the prototypical NFκB inhibitor,…</div>
+            </div>
+            <div class="data-point">
+                <strong>Other:</strong> NF-κB activation. c-IAP1<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a> (2016, Nat Rev Rheumatol)<br>
+                <div class="context-snippet">near ubiquitin chain assembly complex stabilizes the TNF-R1 signaling complex and is required for TNF-mediated gene induction. Specific recognition of linear ubiquitin chains by NEMO is important for NF-κB activation. c-IAP1 and UbcH5 promote K11-linked polyubiquitination of RIP1 in TNF signalling.…</div>
+            </div>
+            <div class="data-point">
+                <strong>Other:</strong> NF-κB activation by competing with NEMO for ubiquitinated RIP. p47<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a> (2016, Nat Rev Rheumatol)<br>
+                <div class="context-snippet">rse role of RIP kinases in necroptosis and inflammation. Regulation of NF-κB by deubiquitinases. Mutations of optineurin in amyotrophic lateral sclerosis. Optineurin negatively regulates TNFα-induced NF-κB activation by competing with NEMO for ubiquitinated RIP. p47 negatively regulates IKK…</div>
+            </div>
+            <div class="data-point">
+                <strong>Other:</strong> NF-κB activation by binding linear polyubiquitin chains via its zinc finger 7.<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a> (2016, Nat Rev Rheumatol)<br>
+                <div class="context-snippet">ced NF-κB activation by competing with NEMO for ubiquitinated RIP. p47 negatively regulates IKK activation by inducing the lysosomal degradation of polyubiquitinated NEMO. A20 inhibits LUBAC-mediated NF-κB activation by binding linear polyubiquitin chains via its zinc finger 7. Specific recognition…</div>
+            </div>
+            <h3>TNF-alpha (8 entries)</h3>
+            <div class="data-point">
+                <strong>TNF-alpha:</strong> TNF= Tumor Necrosis Factor; m-TOR= mammalian target of rapamycin Predicted 2<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a> (2023, Lancet Diabetes Endocrinol)<br>
+                <div class="context-snippet">et-equivalent corresponds to the tissue volume of one spherical islet with a diameter of 150 μm); HbA1c= glycated hemoglobin; ITA= Islet Transplant Alone recipient; IAK= Islet-After-Kidney recipient; TNF= Tumor Necrosis Factor; m-TOR= mammalian target of rapamycin Predicted 2-year and 5-year…</div>
+            </div>
+            <div class="data-point">
+                <strong>TNF-alpha:</strong> TNF was shown to promote inflammation in the colon. Similarly, in patients with Crohn’s disease, researchers identified a population of CD14<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/21997792/" target="_blank">PMID:21997792</a> (2011, Nat Rev Immunol)<br>
+                <div class="context-snippet">id arthritis, multiple sclerosis and autoimmune hepatitis. For example, during experimental colitis, a subset of CX3CR1int LY6Chi GR1+ (glutathione reductase 1+) macrophages expressing TLR2, CCR2 and TNF was shown to promote inflammation in the colon. Similarly, in patients with Crohn’s disease,…</div>
+            </div>
+            <div class="data-point">
+                <strong>TNF-alpha:</strong> TNF was discovered as a serum factor that induces necrosis of tumour cells, in part by acting on tumour vasculature to compromise blood supply. The cytolytic potential of TNF has been explained by its<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a> (2016, Nat Rev Rheumatol)<br>
+                <div class="context-snippet">cell types such as spinal cord nociceptive neurons, microglial cells and astrocytes. At the molecular level, both peripheral and central sensitization are dependent on TNFR1-mediated signals. Cancer TNF was discovered as a serum factor that induces necrosis of tumour cells, in part by acting on…</div>
+            </div>
+            <div class="data-point">
+                <strong>TNF-alpha:</strong> TNF was shown to cooperate with IFN-γ to induce tumour-cell senescence, a cell-state characterized by permanent growth arrest. The widespread use of TNF as a drug for cancer has been prevented by the <br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a> (2016, Nat Rev Rheumatol)<br>
+                <div class="context-snippet">ntial of TNF has been explained by its capacity to induce programmed cell death. Subsequent studies revealed that TNF also displays cytostatic effects on specific tumour cell lines. In a 2013 report, TNF was shown to cooperate with IFN-γ to induce tumour-cell senescence, a cell-state characterized…</div>
+            </div>
+            <div class="data-point">
+                <strong>TNF-alpha:</strong> TNF was reconstituted by restoring IKKβ in patient cells, confirming that IKKβ has unique functions not compensated by IKKα. Although NF-κB was first discovered for κ light-chain expression, it has pr<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28086098/" target="_blank">PMID:28086098</a> (2017, Cell)<br>
+                <div class="context-snippet">h NEMO than IKKβ. Receptor selectivity has also been confirmed by IKKβ knockdowns in human fibroblasts. Hence, IKKα and IKKβ homodimers might serve different receptors. Moreover, the full response to TNF was reconstituted by restoring IKKβ in patient cells, confirming that IKKβ has unique functions…</div>
+            </div>
+        </div>
+
+        <div id="drugs" class="tab-content">
+            <h2>Drug Dose-Response Data</h2>
+            <p>Top 20 most relevant dose extractions. Especially for drugs in repurposing screen.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug/Dose</th>
+                        <th>PMID (Year)</th>
+                        <th>Journal</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2.4 mg injection</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023)</td>
+                    <td>World J Diabetes</td>
+                    <td>when turning to GLP1-RAs utilization in obesity, retinopathy was not reported as a complication in long-duration trials assessing weekly semaglutide…</td>
+                </tr>
+                <tr>
+                    <td>1.0 mg compared</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a> (2023)</td>
+                    <td>World J Diabetes</td>
+                    <td>0 to 75 Early Treatment DR Study (ETDRS) score and no need for ophthalmologic therapy. Such a study will analyze once-weekly subcutaneous semaglutide…</td>
+                </tr>
+                <tr>
+                    <td>requirement below 55 units/day</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023)</td>
+                    <td>Transpl Int</td>
+                    <td>ypoglycemic episodes. Eligible patients were required to have a body mass index less than 30 kg/m2 (or weight less than 80 kg), a daily total insulin…</td>
+                </tr>
+                <tr>
+                    <td>720 mg twice</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023)</td>
+                    <td>Transpl Int</td>
+                    <td>tients were then started on a three-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid…</td>
+                </tr>
+                <tr>
+                    <td>5 mg per</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023)</td>
+                    <td>Transpl Int</td>
+                    <td>-drug maintenance immunosuppression regimen including tacrolimus (trough target 5–7 ng/mL), mycophenolic acid (360–720 mg twice daily) and prednisone…</td>
+                </tr>
+                <tr>
+                    <td>reduction to 360 mg BID</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a> (2023)</td>
+                    <td>Transpl Int</td>
+                    <td>uppression to MPA monotherapy. The patient developed CMV viremia at 53 months post-transplant which was cleared following valganciclovir and MPA dose…</td>
+                </tr>
+                <tr>
+                    <td>dose of 20 mG</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37467726/" target="_blank">PMID:37467726</a> (Unknown)</td>
+                    <td>Unknown</td>
+                    <td>ing non-contrast and contrast scans in different phases. Among all cases, 98 cases of the training dataset (Institute B) were collected with a normal…</td>
+                </tr>
+                <tr>
+                    <td>800 mg twice</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37544201/" target="_blank">PMID:37544201</a> (Unknown)</td>
+                    <td>Unknown</td>
+                    <td>re are indications that molnupiravir poses a fetal risk when administered during pregnancy. Doses eight times the expected exposure to NHC treatment…</td>
+                </tr>
+                <tr>
+                    <td>20 mg glipizide</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>ia, hypertriglyceridemia, hypertension, loss of efficacy AZD1656 16 + 4 20–200 bid Metformin Phase II Being contrasted with placebo or titrating 5–20…</td>
+                </tr>
+                <tr>
+                    <td>75 mg once</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>eive an alpha‐glucosidase inhibitor, metformin, or placebo at random. These participants were divided into a placebo group and dorzagliatin groups of…</td>
+                </tr>
+                <tr>
+                    <td>100 mg once</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>osidase inhibitor, metformin, or placebo at random. These participants were divided into a placebo group and dorzagliatin groups of 75 mg once a day,…</td>
+                </tr>
+                <tr>
+                    <td>50 mg twice</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>75 mg twice a day. Table 2 shows the results of this randomized, double‐blind Phase II clinical test controlled by a placebo. The groups treated with…</td>
+                </tr>
+                <tr>
+                    <td>75 mg twice</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>ble 2 shows the results of this randomized, double‐blind Phase II clinical test controlled by a placebo. The groups treated with 50 mg twice a day or…</td>
+                </tr>
+                <tr>
+                    <td>Placebo	75 mg qd</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>and improved the functional parameters of β cells. Results of randomized, double‐blind Phase II clinical test controlled by placebo for dorzagliatin.…</td>
+                </tr>
+                <tr>
+                    <td>75 mg of dorzagliatin</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>notherapy in 463 patients with newly diagnosed, medication‐naive T2DM. The efficacy and safety of this medicine were studied in patients treated with…</td>
+                </tr>
+                <tr>
+                    <td>the doxagliptin 75 mg twice daily</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>adequate metformin treatment. A total of 767 patients with T2DM were randomly assigned to one of two treatment groups at a 1∶1 ratio: 382 patients in…</td>
+                </tr>
+                <tr>
+                    <td>dose of 1500 mg</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a> (2024)</td>
+                    <td>J Diabetes</td>
+                    <td>tiveness and safety of dorzagliatin as a tailpiece to metformin in patients who are not able to achieve the best control of glycemia with a metformin…</td>
+                </tr>
+                <tr>
+                    <td>3 µg of recombinant</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank">PMID:39428507</a> (Unknown)</td>
+                    <td>Unknown</td>
+                    <td>vation marker) on human (A) or mouse (B) Not transduced Tregs (NT) or CAR-Tregs after 24 h treatment with culture media (media), anti-CD3/CD28 beads,…</td>
+                </tr>
+                <tr>
+                    <td>216μg MOG35</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank">PMID:39428507</a> (Unknown)</td>
+                    <td>Unknown</td>
+                    <td>ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA…</td>
+                </tr>
+                <tr>
+                    <td>350μg mycobacterium</td>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank">PMID:39428507</a> (Unknown)</td>
+                    <td>Unknown</td>
+                    <td>EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and…</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="network" class="tab-content">
+            <h2>Cross-Gap Evidence Network</h2>
+            <p>Papers that provide evidence relevant to 2 or more research gaps. These bridges show where evidence overlaps.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>PMID</th>
+                        <th>Gap Count</th>
+                        <th>Gaps Bridged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID:37105208</a></td>
+                    <td>11</td>
+                    <td>1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a></td>
+                    <td>10</td>
+                    <td>1, 2, 3, 4, 5, 7, 8, 10, 11, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank">PMID:39613428</a></td>
+                    <td>8</td>
+                    <td>1, 3, 4, 5, 7, 8, 10, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank">PMID:35028608</a></td>
+                    <td>8</td>
+                    <td>1, 3, 4, 5, 7, 8, 10, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31263284/" target="_blank">PMID:31263284</a></td>
+                    <td>8</td>
+                    <td>2, 3, 4, 7, 8, 9, 11, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a></td>
+                    <td>7</td>
+                    <td>2, 3, 4, 7, 8, 11, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39428507/" target="_blank">PMID:39428507</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39412512/" target="_blank">PMID:39412512</a></td>
+                    <td>5</td>
+                    <td>4, 5, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39843169/" target="_blank">PMID:39843169</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23413806/" target="_blank">PMID:23413806</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank">PMID:20228401</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank">PMID:27821710</a></td>
+                    <td>5</td>
+                    <td>4, 5, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30291106/" target="_blank">PMID:30291106</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">PMID:19940299</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31180194/" target="_blank">PMID:31180194</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31618560/" target="_blank">PMID:31618560</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35466661/" target="_blank">PMID:35466661</a></td>
+                    <td>5</td>
+                    <td>4, 7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank">PMID:23835333</a></td>
+                    <td>5</td>
+                    <td>1, 3, 5, 8, 10</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank">PMID:37122431</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37467726/" target="_blank">PMID:37467726</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37544201/" target="_blank">PMID:37544201</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">PMID:38783768</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40573322/" target="_blank">PMID:40573322</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40650745/" target="_blank">PMID:40650745</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40988828/" target="_blank">PMID:40988828</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41827829/" target="_blank">PMID:41827829</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank">PMID:19633656</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/21775755/" target="_blank">PMID:21775755</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/22980982/" target="_blank">PMID:22980982</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/22683128/" target="_blank">PMID:22683128</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/24506867/" target="_blank">PMID:24506867</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank">PMID:23061757</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28086769/" target="_blank">PMID:28086769</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/25587654/" target="_blank">PMID:25587654</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank">PMID:29988125</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">PMID:30949058</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30415610/" target="_blank">PMID:30415610</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32754804/" target="_blank">PMID:32754804</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank">PMID:33622669</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/35437333/" target="_blank">PMID:35437333</a></td>
+                    <td>4</td>
+                    <td>4, 7, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41827917/" target="_blank">PMID:41827917</a></td>
+                    <td>4</td>
+                    <td>7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/29885104/" target="_blank">PMID:29885104</a></td>
+                    <td>4</td>
+                    <td>7, 8, 9, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank">PMID:19575028</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/21997792/" target="_blank">PMID:21997792</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank">PMID:26656660</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/26897744/" target="_blank">PMID:26897744</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28086098/" target="_blank">PMID:28086098</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank">PMID:31036962</a></td>
+                    <td>4</td>
+                    <td>4, 5, 8, 12</td>
+                </tr>
+                <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30078372/" target="_blank">PMID:30078372</a></td>
+                    <td>4</td>
+                    <td>2, 6, 10, 11</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-03-20</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
