@@ -23,7 +23,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 - LADA Diagnostic Cost-Effectiveness Model (4 screening scenarios across 4 healthcare tiers)
 - Clinical Trial Site Equity Mapper (40+ countries, 12 verified trials with NCT numbers)
 
-**29 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, medical data dictionary (116 terms), acronym database, methodology framework, and all three actionable tools.
+**30 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, corpus co-occurrence analysis, medical data dictionary (116 terms), acronym database, methodology framework, and all three actionable tools.
 
 ---
 

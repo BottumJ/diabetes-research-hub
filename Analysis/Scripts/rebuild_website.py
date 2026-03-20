@@ -223,6 +223,12 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <p>Geographic mismatch between diabetes burden and advanced therapy trial sites across 40+ countries. 19 real clinical trials mapped against IDF burden data. Priority expansion rankings.</p>
     <a href="Dashboards/Trial_Equity_Mapper.html">Open dashboard &rarr;</a>
   </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Corpus Analysis</h3>
+    <p>Term frequency, co-occurrence networks, and gap coverage analysis across 202 indexed papers. Identifies uncovered research intersections and surprising cross-domain connections.</p>
+    <a href="Dashboards/Corpus_Analysis.html">Open dashboard &rarr;</a>
+  </div>
 </div>
 
 <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">GOLD-Validated Research (3+ independent sources)</h3>
