@@ -63,6 +63,7 @@ SCRIPTS = {
     'corpus': ('build_corpus_analysis.py', 'Building Corpus Analysis Dashboard (202 papers, co-occurrence network)'),
     'extracted': ('build_extracted_evidence.py', 'Building Extracted Evidence Dashboard (472 data points from 61 papers)'),
     'researchpaths': ('build_research_paths.py', 'Building Research Paths Dashboard (48 paths, 25 validated, oxidative stress hub)'),
+    'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
 }
 

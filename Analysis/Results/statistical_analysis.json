@@ -1,0 +1,1433 @@
+{
+  "meta_analysis": {
+    "hba1c_pooled": {
+      "pooled_effect": -0.9345,
+      "se": 0.017,
+      "ci_lower": -0.9678,
+      "ci_upper": -0.9011,
+      "n_studies": 2,
+      "I_squared": 98.7,
+      "heterogeneity": "HIGH",
+      "studies": [
+        {
+          "pmid": "35466661",
+          "effect": -0.88,
+          "n_est": 763
+        },
+        {
+          "pmid": "35466661",
+          "effect": -1.35,
+          "n_est": 100
+        }
+      ],
+      "outcome": "HbA1c change (%)",
+      "interpretation": "Pooled HbA1c reduction: 0.93% (95% CI: 0.90 to 0.97)"
+    },
+    "inflammatory_markers": {
+      "total_extractions": 94,
+      "by_marker": {
+        "TNF-alpha": {
+          "extraction_count": 14,
+          "unique_papers": 7,
+          "pmids": [
+            "21997792",
+            "26656660",
+            "26897744",
+            "28086098",
+            "31036962",
+            "37105208",
+            "39412512"
+          ]
+        },
+        "IL-1": {
+          "extraction_count": 25,
+          "unique_papers": 5,
+          "pmids": [
+            "19575028",
+            "27821710",
+            "28086098",
+            "31036962",
+            "39412512"
+          ]
+        },
+        "NLRP3": {
+          "extraction_count": 44,
+          "unique_papers": 2,
+          "pmids": [
+            "31036962",
+            "39412512"
+          ]
+        }
+      }
+    },
+    "remission_pooled": {
+      "n_estimates": 68,
+      "mean_rate": 50.0,
+      "median_rate": 44.0,
+      "range": [
+        6.0,
+        95.0
+      ],
+      "sd": 29.9,
+      "studies": [
+        {
+          "rate": 70.0,
+          "pmid": "39428507",
+          "context": "entrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldri"
+        },
+        {
+          "rate": 37.0,
+          "pmid": "39428507",
+          "context": "entrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldri"
+        },
+        {
+          "rate": 44.0,
+          "pmid": "39843169",
+          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
+        },
+        {
+          "rate": 44.0,
+          "pmid": "39843169",
+          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
+        },
+        {
+          "rate": 28.0,
+          "pmid": "39843169",
+          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
+        },
+        {
+          "rate": 95.0,
+          "pmid": "39843169",
+          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
+        },
+        {
+          "rate": 28.0,
+          "pmid": "39843169",
+          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
+        },
+        {
+          "rate": 95.0,
+          "pmid": "39843169",
+          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
+        },
+        {
+          "rate": 44.0,
+          "pmid": "39843169",
+          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
+        },
+        {
+          "rate": 28.0,
+          "pmid": "39843169",
+          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
+        }
+      ],
+      "interpretation": "Remission rates across 68 extracted estimates range from 6% to 95% (median 44%)",
+      "caveat": "Rates are from heterogeneous populations, interventions, and remission definitions. Direct comparison requires careful subgroup analysis."
+    },
+    "cpeptide_pooled": {
+      "n_values": 2,
+      "mean": 0.1,
+      "median": 0.1,
+      "range": [
+        0.1,
+        0.1
+      ],
+      "studies": [
+        {
+          "value": 0.1,
+          "pmid": "35028608",
+          "context": "ed in the initial few months following implantation continued to reveal no detectable circulating C-"
+        },
+        {
+          "value": 0.1,
+          "pmid": "35028608",
+          "context": "ed in the initial few months following implantation continued to reveal no detectable circulating C-"
+        }
+      ],
+      "interpretation": "C-peptide values across 2 extractions: median 0.1 ng/mL (range 0.1-0.1)",
+      "caveat": "Values span fasting, stimulated, pre- and post-treatment contexts. Not directly comparable without matching timepoints and stimulation protocols."
+    }
+  },
+  "bayesian_synthesis": {
+    "method": "Bayesian evidence synthesis",
+    "description": "Prior probability from corpus density, updated by external validation status",
+    "total_paths": 48,
+    "strong_paths": 0,
+    "moderate_paths": 1,
+    "weak_paths": 8,
+    "insufficient_paths": 39,
+    "paths": {
+      "NLRP3_inflammasome -> inflammation": {
+        "prior": 0.65,
+        "likelihood": 0.4,
+        "posterior": 0.553,
+        "strength": "WEAK",
+        "data_points": 61,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 55.3% [WEAK] — prior 65% updated by not_validated evidence"
+      },
+      "hydroxychloroquine -> T2D": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 32,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "metformin -> T2D": {
+        "prior": 0.65,
+        "likelihood": 0.4,
+        "posterior": 0.553,
+        "strength": "WEAK",
+        "data_points": 26,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 55.3% [WEAK] — prior 65% updated by not_validated evidence"
+      },
+      "oxidative_stress -> inflammation": {
+        "prior": 0.8,
+        "likelihood": 0.4,
+        "posterior": 0.727,
+        "strength": "MODERATE",
+        "data_points": 22,
+        "corpus_pmids": 5,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 72.7% [MODERATE] — prior 80% updated by not_validated evidence"
+      },
+      "dapagliflozin -> T2D": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 7,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "dapagliflozin -> inflammation": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 7,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "verapamil -> T1D": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 7,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "verapamil -> beta_cell": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 6,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "NF_kB -> inflammation": {
+        "prior": 0.5,
+        "likelihood": 0.4,
+        "posterior": 0.4,
+        "strength": "WEAK",
+        "data_points": 5,
+        "corpus_pmids": 3,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 40.0% [WEAK] — prior 50% updated by not_validated evidence"
+      },
+      "empagliflozin -> inflammation": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 3,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "dapagliflozin -> nephropathy": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 3,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "pioglitazone -> T2D": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 3,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "oxidative_stress -> cardiovascular": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 3,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "NLRP3_inflammasome -> nephropathy": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 3,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "dorzagliatin -> T2D": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "dapagliflozin -> cardiovascular": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "rapamycin -> inflammation": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "hydroxychloroquine -> inflammation": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "insulin_glargine -> T2D": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "oxidative_stress -> T2D": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "oxidative_stress -> nephropathy": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "oxidative_stress -> autoimmune": {
+        "prior": 0.35,
+        "likelihood": 0.4,
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT",
+        "data_points": 2,
+        "corpus_pmids": 2,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 26.4% [INSUFFICIENT] — prior 35% updated by not_validated evidence"
+      },
+      "semaglutide -> retinopathy": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "empagliflozin -> T2D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "empagliflozin -> cardiovascular": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "metformin -> nephropathy": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "vitamin_d -> autoimmune": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "metformin -> cardiovascular": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "tacrolimus -> inflammation": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "calcineurin -> islet_transplant": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "metformin -> inflammation": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "pioglitazone -> inflammation": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "atorvastatin -> T2D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "belatacept -> T1D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "belatacept -> islet_transplant": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "oxidative_stress -> beta_cell": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "rapamycin -> islet_transplant": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "rapamycin -> nephropathy": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "empagliflozin -> nephropathy": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "canagliflozin -> inflammation": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "oxidative_stress -> T1D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "NLRP3_inflammasome -> T2D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "Treg_expansion -> T1D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "rituximab -> T1D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "rituximab -> nephropathy": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "rituximab -> beta_cell": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "teplizumab -> T1D": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      },
+      "teplizumab -> autoimmune": {
+        "prior": 0.2,
+        "likelihood": 0.4,
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT",
+        "data_points": 1,
+        "corpus_pmids": 1,
+        "external_pmids": 0,
+        "validation_status": "NOT_VALIDATED",
+        "interpretation": "P(actionable) = 14.3% [INSUFFICIENT] — prior 20% updated by not_validated evidence"
+      }
+    },
+    "ranked": [
+      {
+        "path": "oxidative_stress -> inflammation",
+        "posterior": 0.727,
+        "strength": "MODERATE"
+      },
+      {
+        "path": "NLRP3_inflammasome -> inflammation",
+        "posterior": 0.553,
+        "strength": "WEAK"
+      },
+      {
+        "path": "metformin -> T2D",
+        "posterior": 0.553,
+        "strength": "WEAK"
+      },
+      {
+        "path": "hydroxychloroquine -> T2D",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "dapagliflozin -> T2D",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "dapagliflozin -> inflammation",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "verapamil -> T1D",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "verapamil -> beta_cell",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "NF_kB -> inflammation",
+        "posterior": 0.4,
+        "strength": "WEAK"
+      },
+      {
+        "path": "empagliflozin -> inflammation",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "dapagliflozin -> nephropathy",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "pioglitazone -> T2D",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> cardiovascular",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "NLRP3_inflammasome -> nephropathy",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "dorzagliatin -> T2D",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "dapagliflozin -> cardiovascular",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rapamycin -> inflammation",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "hydroxychloroquine -> inflammation",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "insulin_glargine -> T2D",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> T2D",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> nephropathy",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> autoimmune",
+        "posterior": 0.264,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "semaglutide -> retinopathy",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "empagliflozin -> T2D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "empagliflozin -> cardiovascular",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "metformin -> nephropathy",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "vitamin_d -> autoimmune",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "metformin -> cardiovascular",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "tacrolimus -> inflammation",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "calcineurin -> islet_transplant",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "metformin -> inflammation",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "pioglitazone -> inflammation",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "atorvastatin -> T2D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "belatacept -> T1D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "belatacept -> islet_transplant",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> beta_cell",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rapamycin -> islet_transplant",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rapamycin -> nephropathy",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "empagliflozin -> nephropathy",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "canagliflozin -> inflammation",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "oxidative_stress -> T1D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "NLRP3_inflammasome -> T2D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "Treg_expansion -> T1D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rituximab -> T1D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rituximab -> nephropathy",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "rituximab -> beta_cell",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "teplizumab -> T1D",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      },
+      {
+        "path": "teplizumab -> autoimmune",
+        "posterior": 0.143,
+        "strength": "INSUFFICIENT"
+      }
+    ]
+  },
+  "monte_carlo_lada": {
+    "method": "Monte Carlo simulation",
+    "n_simulations": 10000,
+    "parameters_varied": [
+      "GAD sensitivity (82% ± 3%)",
+      "GAD specificity (98.9% ± 0.5%)",
+      "LADA prevalence (8.8% ± 2%)",
+      "GAD test cost ($25 ± $10)",
+      "Complication cost ($5,876 ± $1,500)",
+      "QALY gain (0.05 ± 0.015)",
+      "Time to correct insulin (8 ± 1.5 years)",
+      "Annual T2D diagnoses (28M ± 5M)"
+    ],
+    "scenarios": {
+      "targeted": {
+        "name": "Targeted Screening",
+        "n_valid": 10000,
+        "mean_icer": 5209,
+        "median_icer": 4539,
+        "p5": 2163,
+        "p25": 3364,
+        "p75": 6198,
+        "p95": 10263,
+        "pct_below_50k": 100.0,
+        "pct_below_100k": 100.0,
+        "pct_below_150k": 100.0
+      },
+      "universal": {
+        "name": "Universal Screening",
+        "n_valid": 10000,
+        "mean_icer": 6197,
+        "median_icer": 5391,
+        "p5": 2695,
+        "p25": 4033,
+        "p75": 7317,
+        "p95": 12103,
+        "pct_below_50k": 100.0,
+        "pct_below_100k": 100.0,
+        "pct_below_150k": 100.0
+      },
+      "two_stage": {
+        "name": "Two-Stage Screening",
+        "n_valid": 10000,
+        "mean_icer": 8127,
+        "median_icer": 7036,
+        "p5": 3583,
+        "p25": 5265,
+        "p75": 9539,
+        "p95": 16125,
+        "pct_below_50k": 99.9,
+        "pct_below_100k": 100.0,
+        "pct_below_150k": 100.0
+      }
+    },
+    "interpretation": "Targeted screening is cost-effective (<$50K/QALY) in 100.0% of simulations. Universal screening exceeds $50K/QALY in most simulations but remains below $150K/QALY (acceptable threshold) in 100.0% of cases. Key drivers: LADA prevalence and complication costs have the largest impact on ICER."
+  },
+  "monte_carlo_drugs": {
+    "method": "Monte Carlo drug score sensitivity",
+    "n_simulations": 5000,
+    "n_drugs": 34,
+    "weights_varied": "±3% per dimension, normalized",
+    "scores_varied": "±0.5 per dimension score",
+    "drugs": {
+      "Metformin": {
+        "base_score": 10.0,
+        "mean_score": 9.8,
+        "sd_score": 0.13,
+        "p5_score": 9.55,
+        "p95_score": 9.99,
+        "median_rank": 1,
+        "pct_top5": 100.0,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      "Verapamil": {
+        "base_score": 8.799999999999999,
+        "mean_score": 8.8,
+        "sd_score": 0.22,
+        "p5_score": 8.43,
+        "p95_score": 9.17,
+        "median_rank": 2,
+        "pct_top5": 98.8,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      "Colchicine": {
+        "base_score": 8.100000000000001,
+        "mean_score": 8.1,
+        "sd_score": 0.24,
+        "p5_score": 7.7,
+        "p95_score": 8.49,
+        "median_rank": 8,
+        "pct_top5": 23.4,
+        "pct_top10": 81.2,
+        "robustness": "HIGH"
+      },
+      "Hydroxychloroquine": {
+        "base_score": 7.5,
+        "mean_score": 7.5,
+        "sd_score": 0.25,
+        "p5_score": 7.09,
+        "p95_score": 7.91,
+        "median_rank": 17,
+        "pct_top5": 0.1,
+        "pct_top10": 4.7,
+        "robustness": "HIGH"
+      },
+      "Pentoxifylline": {
+        "base_score": 7.2,
+        "mean_score": 7.19,
+        "sd_score": 0.24,
+        "p5_score": 6.82,
+        "p95_score": 7.58,
+        "median_rank": 23,
+        "pct_top5": 0.0,
+        "pct_top10": 0.2,
+        "robustness": "HIGH"
+      },
+      "Dapsone": {
+        "base_score": 7.3,
+        "mean_score": 7.3,
+        "sd_score": 0.25,
+        "p5_score": 6.88,
+        "p95_score": 7.71,
+        "median_rank": 22,
+        "pct_top5": 0.0,
+        "pct_top10": 0.6,
+        "robustness": "HIGH"
+      },
+      "Losartan": {
+        "base_score": 8.75,
+        "mean_score": 8.71,
+        "sd_score": 0.21,
+        "p5_score": 8.36,
+        "p95_score": 9.06,
+        "median_rank": 3,
+        "pct_top5": 97.7,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      "Spironolactone": {
+        "base_score": 7.550000000000001,
+        "mean_score": 7.55,
+        "sd_score": 0.24,
+        "p5_score": 7.15,
+        "p95_score": 7.94,
+        "median_rank": 16,
+        "pct_top5": 0.1,
+        "pct_top10": 7.0,
+        "robustness": "HIGH"
+      },
+      "Pioglitazone": {
+        "base_score": 8.1,
+        "mean_score": 8.1,
+        "sd_score": 0.24,
+        "p5_score": 7.71,
+        "p95_score": 8.48,
+        "median_rank": 7,
+        "pct_top5": 24.2,
+        "pct_top10": 80.0,
+        "robustness": "HIGH"
+      },
+      "Mycophenolate Mofetil": {
+        "base_score": 7.4,
+        "mean_score": 7.4,
+        "sd_score": 0.24,
+        "p5_score": 7.01,
+        "p95_score": 7.8,
+        "median_rank": 20,
+        "pct_top5": 0.1,
+        "pct_top10": 3.6,
+        "robustness": "HIGH"
+      },
+      "Azathioprine": {
+        "base_score": 7.6000000000000005,
+        "mean_score": 7.59,
+        "sd_score": 0.24,
+        "p5_score": 7.2,
+        "p95_score": 7.98,
+        "median_rank": 15,
+        "pct_top5": 0.2,
+        "pct_top10": 10.0,
+        "robustness": "HIGH"
+      },
+      "Low-Dose Naltrexone": {
+        "base_score": 7.55,
+        "mean_score": 7.54,
+        "sd_score": 0.24,
+        "p5_score": 7.15,
+        "p95_score": 7.94,
+        "median_rank": 16,
+        "pct_top5": 0.1,
+        "pct_top10": 6.7,
+        "robustness": "HIGH"
+      },
+      "Nicotinamide": {
+        "base_score": 8.3,
+        "mean_score": 8.19,
+        "sd_score": 0.24,
+        "p5_score": 7.8,
+        "p95_score": 8.58,
+        "median_rank": 6,
+        "pct_top5": 36.8,
+        "pct_top10": 93.4,
+        "robustness": "HIGH"
+      },
+      "Berberine": {
+        "base_score": 7.5,
+        "mean_score": 7.49,
+        "sd_score": 0.24,
+        "p5_score": 7.08,
+        "p95_score": 7.89,
+        "median_rank": 17,
+        "pct_top5": 0.0,
+        "pct_top10": 4.3,
+        "robustness": "HIGH"
+      },
+      "Acarbose": {
+        "base_score": 8.299999999999999,
+        "mean_score": 8.29,
+        "sd_score": 0.24,
+        "p5_score": 7.9,
+        "p95_score": 8.68,
+        "median_rank": 5,
+        "pct_top5": 55.5,
+        "pct_top10": 96.3,
+        "robustness": "HIGH"
+      },
+      "Rifaximin": {
+        "base_score": 6.85,
+        "mean_score": 6.85,
+        "sd_score": 0.24,
+        "p5_score": 6.45,
+        "p95_score": 7.25,
+        "median_rank": 27,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Rapamycin": {
+        "base_score": 7.050000000000001,
+        "mean_score": 7.04,
+        "sd_score": 0.25,
+        "p5_score": 6.63,
+        "p95_score": 7.46,
+        "median_rank": 25,
+        "pct_top5": 0.0,
+        "pct_top10": 0.1,
+        "robustness": "HIGH"
+      },
+      "Baricitinib": {
+        "base_score": 5.1000000000000005,
+        "mean_score": 5.1,
+        "sd_score": 0.28,
+        "p5_score": 4.64,
+        "p95_score": 5.57,
+        "median_rank": 34,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Disulfiram": {
+        "base_score": 6.6,
+        "mean_score": 6.6,
+        "sd_score": 0.25,
+        "p5_score": 6.19,
+        "p95_score": 7.02,
+        "median_rank": 28,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Dimethyl Fumarate": {
+        "base_score": 5.9,
+        "mean_score": 5.9,
+        "sd_score": 0.29,
+        "p5_score": 5.44,
+        "p95_score": 6.38,
+        "median_rank": 31,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Lithium": {
+        "base_score": 5.2,
+        "mean_score": 5.2,
+        "sd_score": 0.27,
+        "p5_score": 4.76,
+        "p95_score": 5.64,
+        "median_rank": 33,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Atorvastatin": {
+        "base_score": 8.25,
+        "mean_score": 8.21,
+        "sd_score": 0.23,
+        "p5_score": 7.82,
+        "p95_score": 8.58,
+        "median_rank": 6,
+        "pct_top5": 39.8,
+        "pct_top10": 93.0,
+        "robustness": "HIGH"
+      },
+      "Allopurinol": {
+        "base_score": 7.8,
+        "mean_score": 7.73,
+        "sd_score": 0.24,
+        "p5_score": 7.33,
+        "p95_score": 8.12,
+        "median_rank": 13,
+        "pct_top5": 0.6,
+        "pct_top10": 22.8,
+        "robustness": "HIGH"
+      },
+      "Telmisartan": {
+        "base_score": 7.8999999999999995,
+        "mean_score": 7.9,
+        "sd_score": 0.24,
+        "p5_score": 7.49,
+        "p95_score": 8.29,
+        "median_rank": 10,
+        "pct_top5": 5.7,
+        "pct_top10": 52.6,
+        "robustness": "HIGH"
+      },
+      "Rosiglitazone": {
+        "base_score": 7.550000000000001,
+        "mean_score": 7.55,
+        "sd_score": 0.24,
+        "p5_score": 7.15,
+        "p95_score": 7.94,
+        "median_rank": 16,
+        "pct_top5": 0.2,
+        "pct_top10": 9.5,
+        "robustness": "HIGH"
+      },
+      "Imatinib": {
+        "base_score": 5.3,
+        "mean_score": 5.29,
+        "sd_score": 0.24,
+        "p5_score": 4.9,
+        "p95_score": 5.7,
+        "median_rank": 33,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Digoxin": {
+        "base_score": 6.4,
+        "mean_score": 6.35,
+        "sd_score": 0.26,
+        "p5_score": 5.92,
+        "p95_score": 6.79,
+        "median_rank": 29,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "N-Acetylcysteine": {
+        "base_score": 7.449999999999999,
+        "mean_score": 7.45,
+        "sd_score": 0.26,
+        "p5_score": 7.02,
+        "p95_score": 7.87,
+        "median_rank": 18,
+        "pct_top5": 0.0,
+        "pct_top10": 2.8,
+        "robustness": "HIGH"
+      },
+      "Sulfasalazine": {
+        "base_score": 7.15,
+        "mean_score": 7.15,
+        "sd_score": 0.25,
+        "p5_score": 6.74,
+        "p95_score": 7.56,
+        "median_rank": 24,
+        "pct_top5": 0.0,
+        "pct_top10": 0.2,
+        "robustness": "HIGH"
+      },
+      "Fenofibrate": {
+        "base_score": 7.300000000000001,
+        "mean_score": 7.3,
+        "sd_score": 0.24,
+        "p5_score": 6.9,
+        "p95_score": 7.69,
+        "median_rank": 21,
+        "pct_top5": 0.0,
+        "pct_top10": 0.6,
+        "robustness": "HIGH"
+      },
+      "Glyburide": {
+        "base_score": 8.100000000000001,
+        "mean_score": 8.03,
+        "sd_score": 0.23,
+        "p5_score": 7.65,
+        "p95_score": 8.4,
+        "median_rank": 8,
+        "pct_top5": 13.5,
+        "pct_top10": 75.1,
+        "robustness": "HIGH"
+      },
+      "Cyclosporine": {
+        "base_score": 6.3,
+        "mean_score": 6.31,
+        "sd_score": 0.29,
+        "p5_score": 5.86,
+        "p95_score": 6.79,
+        "median_rank": 30,
+        "pct_top5": 0.0,
+        "pct_top10": 0.0,
+        "robustness": "HIGH"
+      },
+      "Aspirin (High-Dose)": {
+        "base_score": 7.5,
+        "mean_score": 7.46,
+        "sd_score": 0.24,
+        "p5_score": 7.06,
+        "p95_score": 7.85,
+        "median_rank": 18,
+        "pct_top5": 0.1,
+        "pct_top10": 3.5,
+        "robustness": "HIGH"
+      },
+      "Vitamin D (Cholecalciferol)": {
+        "base_score": 8.0,
+        "mean_score": 7.89,
+        "sd_score": 0.24,
+        "p5_score": 7.49,
+        "p95_score": 8.27,
+        "median_rank": 10,
+        "pct_top5": 3.0,
+        "pct_top10": 51.8,
+        "robustness": "HIGH"
+      }
+    },
+    "robust_top10": [
+      {
+        "drug": "Metformin",
+        "pct_top5": 100.0,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Verapamil",
+        "pct_top5": 98.8,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Losartan",
+        "pct_top5": 97.7,
+        "pct_top10": 100.0,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Acarbose",
+        "pct_top5": 55.5,
+        "pct_top10": 96.3,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Atorvastatin",
+        "pct_top5": 39.8,
+        "pct_top10": 93.0,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Nicotinamide",
+        "pct_top5": 36.8,
+        "pct_top10": 93.4,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Pioglitazone",
+        "pct_top5": 24.2,
+        "pct_top10": 80.0,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Colchicine",
+        "pct_top5": 23.4,
+        "pct_top10": 81.2,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Glyburide",
+        "pct_top5": 13.5,
+        "pct_top10": 75.1,
+        "robustness": "HIGH"
+      },
+      {
+        "drug": "Telmisartan",
+        "pct_top5": 5.7,
+        "pct_top10": 52.6,
+        "robustness": "HIGH"
+      }
+    ]
+  }
+}
