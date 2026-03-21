@@ -821,7 +821,7 @@ filterPapersTable();
     return html
 
 if __name__ == '__main__':
-    output_path = '/sessions/funny-youthful-meitner/mnt/Diabetes_Research/Dashboards/Research_Dashboard.html'
+    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Dashboards', 'Research_Dashboard.html')
     html_content = generate_html()
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
