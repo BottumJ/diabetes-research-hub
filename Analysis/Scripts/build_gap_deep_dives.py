@@ -425,7 +425,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 5,
         "key_refs": ["PMID:38783768", "(PMID requires verification)", "PMID:33622669"],
-        "key_finding": "Dorzagliatin achieves 65.2% T2D remission; AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
+        "key_finding": "Dorzagliatin reported 65.2% T2D remission in SEED extension (China-only, not yet replicated internationally); AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
         "status": "In Development",
         "data_profile": {
             "gap_score": 0.80,
