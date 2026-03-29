@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LADA Natural History Model</title>
     <style>
@@ -82,6 +78,43 @@
             color: #636363;
             margin-top: 0.5rem;
             font-style: italic;
+        }
+
+        .context-block {
+            background-color: #ffffff;
+            border-left: 4px solid #2c5f8a;
+            padding: 1.5rem 2rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.8;
+        }
+
+        .context-block h3 {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            color: #2c5f8a;
+            margin: 0 0 0.75rem 0;
+            font-weight: normal;
+        }
+
+        .context-block p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+        }
+
+        .context-block .context-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #636363;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .context-block .context-label:first-child {
+            margin-top: 0;
         }
 
         .tabs {
@@ -385,45 +418,46 @@
             color: #636363;
             margin-top: 0.5rem;
         }
-    
-/* Print-friendly */
-@media print {
-  .hub-nav, .hub-footer { display: none !important; }
-  body { background: #fff !important; }
-  .card, .section, table { break-inside: avoid; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
-}
-/* Accessibility: focus states */
-button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
-/* Smooth transitions */
-button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
-a:hover { text-decoration: underline; }
-/* Skip to content link for screen readers */
-.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
-.skip-link:focus { top: 0; }
-</style>
-
-<script>
-// XSS sanitizer for search inputs
-function sanitizeInput(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-</script>
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
-<style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
-<div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
     <div class="header">
         <div class="title">LADA Natural History Model</div>
         <div class="subtitle">Computational Analysis of Gene Therapy Opportunity and Intervention Windows</div>
         <div style="margin-top: 1rem; color: #636363; font-size: 0.9rem;">
-            Gap #1: Gene Therapy x LADA (GOLD Validated) — C-Peptide Decline Trajectories & Intervention Windows
+            Gap #1 SILVER Validated) — C-Peptide Decline Trajectories & Intervention Windows
         </div>
     </div>
 
-    <div id="main-content" class="container">
+    <div class="container">
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>LADA (Latent Autoimmune Diabetes in Adults) is an autoimmune form of diabetes that is misdiagnosed as Type 2 in 80-90% of cases. Unlike classic Type 1, beta cell destruction in LADA is slower, creating a window where intervention could preserve remaining insulin production. This dashboard models how fast that window closes, what predicts faster progression, and which therapies map to which stage of decline.</p>
+
+            <div class="context-label">Key Finding</div>
+            <p>LADA follows a biphasic C-peptide decline: rapid early loss (~55 pmol/L/year for years 0-5), then slower chronic loss (~20 pmol/L/year). Patients with high GADA titers (>180 U/mL) progress to insulin dependence in ~5 years. Low-titer patients may retain function for >10 years. This distinction determines which interventions are viable and when.</p>
+
+            <div class="context-label">How to Use This</div>
+            <p>For researchers: the intervention window analysis (Tab 3) maps drug classes to disease stages. For clinicians: the autoantibody stratification (Tab 2) identifies which patients need the most urgent monitoring. For funders: the evidence gaps in each tab highlight where new trials would have the highest impact. This is a decision-support framework, not a treatment recommendation.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>C-peptide trajectories are population averages derived from cohort studies (ACTION LADA, HUNT, Botnia, Chinese cohorts). Individual patients vary substantially. Intervention window estimates are theoretical and untested in RCTs. This model does not account for genetic heterogeneity beyond HLA-DR3/DR4 classification.</p>
+        </div>
+
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab(event, 'cpeptide')">C-Peptide Decline Model</button>
             <button class="tab-button" onclick="switchTab(event, 'autoantibody')">Autoantibody Risk Stratification</button>
@@ -561,7 +595,7 @@ function sanitizeInput(str) {
                         <strong>Characteristics:</strong> Borderline GADA, slower progression<br>
                         <strong>Time to Insulin:</strong> 8-12 years<br>
                         <strong>Risk Level:</strong> Moderate<br>
-                        <strong>Evidence:</strong> <span class="cite">HUNT: HR 5.37 for high GADA (PMID:30369313)</span>
+                        <strong>Evidence:</strong> <span class="cite">HUNT: HR 5.37 for high GADA (PMID:34318969)</span>
                     </div>
                 </div>
 
@@ -631,8 +665,8 @@ function sanitizeInput(str) {
             <div class="section" style="margin-top: 2rem;">
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
-                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:30369313)</span></li>
-                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(PMID:30369313)</span></li>
+                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:34318969)</span></li>
+                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>
             </div>
@@ -704,7 +738,7 @@ function sanitizeInput(str) {
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Vaccine & Immunotherapy Evidence</h3>
-                <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:33515517)</span></p>
+                <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:32754804)</span></p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
                     <li>Optimal responders: HLA-DR3-DQ2 positive, baseline C-peptide &gt;0.4 nmol/L</li>
                     <li>Response rate: ~30-40% of treated patients show preserved C-peptide at 4 years</li>
@@ -938,7 +972,7 @@ function sanitizeInput(str) {
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> Biphasic C-peptide decline in Chinese LADA cohort</p>
                         <p><strong>Key Finding:</strong> Phase 1 decline: 55.19 pmol/L/year; Phase 2: ~20 pmol/L/year</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" class="pmid-link" target="_blank" rel="noopener noreferrer">31529065</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" class="pmid-link" target="_blank">31529065</a></p>
                     </div>
                 </div>
 
@@ -949,7 +983,7 @@ function sanitizeInput(str) {
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> UKPDS: 84% GADA+ patients require insulin by 6 years</p>
                         <p><strong>Key Finding:</strong> 84% GADA-positive require insulin within 6 years of diagnosis</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" class="pmid-link" target="_blank" rel="noopener noreferrer">9742976</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" class="pmid-link" target="_blank">9742976</a></p>
                     </div>
                 </div>
 
@@ -960,18 +994,18 @@ function sanitizeInput(str) {
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> HUNT study: Autoantibody risk stratification</p>
                         <p><strong>Key Finding:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank" rel="noopener noreferrer">30369313</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank">30369313</a></p>
                     </div>
                 </div>
 
                 <div class="expandable" onclick="toggleExpand(this)">
-                    <strong>Hjort et al. (2019)</strong> - Diabetes Care
+                    <strong>Hawa et al. (2013)</strong> - Diabetes Care
                 </div>
                 <div class="expandable-content">
                     <div style="margin-left: 1rem;">
-                        <p><strong>Title:</strong> ACTION LADA: Prevalence and characteristics</p>
+                        <p><strong>Title:</strong> ACTION LADA: Clinical and genetic characteristics of LADA</p>
                         <p><strong>Key Finding:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156)</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/30369313/" class="pmid-link" target="_blank" rel="noopener noreferrer">30369313</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" class="pmid-link" target="_blank">23835333</a></p>
                     </div>
                 </div>
 
@@ -982,7 +1016,7 @@ function sanitizeInput(str) {
                     <div style="margin-left: 1rem;">
                         <p><strong>Title:</strong> GAD-alum vaccine in HLA-DR3-DQ2+ LADA patients</p>
                         <p><strong>Key Finding:</strong> Dose-dependent C-peptide preservation in responders</p>
-                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" class="pmid-link" target="_blank" rel="noopener noreferrer">33515517</a></p>
+                        <p><strong>PMID:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" class="pmid-link" target="_blank">33515517</a></p>
                     </div>
                 </div>
 
@@ -999,6 +1033,18 @@ function sanitizeInput(str) {
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+      <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+      <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+        <li>Computational model based on published cohort means, not individual patient-level data</li>
+        <li>C-peptide trajectories are approximations; actual decline rates vary by individual</li>
+        <li>LADA1/LADA2 dichotomy is a simplification of a continuous spectrum</li>
+        <li>Limited to GAD65 antibody-positive LADA; other autoantibody patterns may differ</li>
+        <li>Intervention window estimates are theoretical and untested in RCTs</li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>
 
     <div class="footer">

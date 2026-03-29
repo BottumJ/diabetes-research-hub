@@ -618,7 +618,7 @@ html_content = f"""<!DOCTYPE html>
     <div class="header">
         <h1>Corpus Analysis: Paper Library</h1>
         <p>Identifying concept patterns, research intersections, and knowledge gaps</p>
-        <span class="badge">202 papers analyzed</span>
+        <span class="badge">226 papers analyzed</span>
     </div>
 
     <div class="container">
@@ -870,7 +870,7 @@ html_content += """            </div>
     </div>
 
     <div class="footer">
-        <p>Corpus Analysis Dashboard | Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | 202 papers, {len(concept_papers)} concepts tracked</p>
+        <p>Corpus Analysis Dashboard | Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | 226 papers, {len(concept_papers)} concepts tracked</p>
     </div>
 </body>
 </html>

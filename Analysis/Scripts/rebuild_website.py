@@ -192,7 +192,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Paper Library</h3>
-    <p>Ingested library of 187 research papers with abstracts, full text (80 papers), citation validation scores, cross-citation network (90 links), and 30 topic clusters. Searchable and sortable.</p>
+    <p>Ingested library of 226 research papers with abstracts, full text (91 papers), citation validation scores, cross-citation network (90 links), and 30 topic clusters. Searchable and sortable.</p>
     <a href="Dashboards/Paper_Library.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

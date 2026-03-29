@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistical Analysis Dashboard</title>
+<style>
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #636363;
+  --light: #999999;
+  --border: #e0ddd5;
+  --accent: #2c5f8a;
+  --green: #2d7d46;
+  --gold: #d4a017;
+  --orange: #d67c3b;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'SF Mono', Consolas, Monaco, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.page-header .subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+section {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+section:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 20px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.info-box.context { border-left-color: var(--accent); }
+.info-box.limitation { border-left-color: var(--orange); }
+
+.key-findings {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.key-findings ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.key-findings li {
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+.key-findings li:before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.metric-row:last-child {
+  border-bottom: none;
+}
+.metric-label { flex: 1; color: var(--text); }
+.metric-value {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--accent);
+  text-align: right;
+  min-width: 120px;
+}
+
+.forest-plot {
+  margin: 20px 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+.forest-plot-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.forest-plot-row:last-child {
+  border-bottom: none;
+}
+.forest-study-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.forest-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  border: 1px solid var(--border);
+  background: #f9f9f9;
+  position: relative;
+  min-width: 200px;
+}
+.forest-point {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+}
+.forest-ci {
+  position: absolute;
+  height: 2px;
+  background: var(--accent);
+}
+.forest-diamond {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  position: absolute;
+}
+.forest-ci-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-align: right;
+}
+
+.tornado-item {
+  margin-bottom: 16px;
+}
+.tornado-label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.tornado-bars {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+  align-items: center;
+}
+.tornado-bar {
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.tornado-bar:hover {
+  opacity: 1;
+}
+
+.bayesian-path {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--border);
+}
+.bayesian-path.strong { border-left-color: #2d7d46; }
+.bayesian-path.moderate { border-left-color: #d4a017; }
+.bayesian-path.weak { border-left-color: #d67c3b; }
+.bayesian-path.insufficient { border-left-color: #999999; }
+
+.path-name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.path-metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.distribution-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.range-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  text-align: center;
+}
+.range-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.range-value {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.robustness-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+.robustness-table th {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.robustness-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.robustness-table tr:hover {
+  background: #fefdfb;
+}
+
+.stability-bar {
+  display: inline-block;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 0;
+  opacity: 0.8;
+  min-width: 30px;
+}
+
+.methodology {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.methodology h4 {
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+.methodology p {
+  margin-bottom: 10px;
+}
+
+.footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--light);
+}
+
+.bar-bg {
+  width: 100%;
+  height: 16px;
+  background: #f0f0f0;
+  border: 1px solid var(--border);
+  display: inline-block;
+  position: relative;
+}
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+
+@media (max-width: 700px) {
+  .page-header { padding: 24px 16px; }
+  .container { padding: 16px; }
+  .distribution-range { grid-template-columns: 1fr 1fr; }
+  .robustness-table { font-size: 12px; }
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Statistical Analysis Dashboard</h1>
+  <div class="subtitle">Meta-analytic pooling, Bayesian evidence synthesis, and Monte Carlo sensitivity analysis of the diabetes research landscape.</div>
+</div>
+
+<div class="container">
+
+<!-- EXECUTIVE SUMMARY -->
+<section id="executive-summary">
+<h2>Executive Summary</h2>
+
+<div class="info-box context">
+  <strong>What This Dashboard Answers</strong><br>
+  How robust are our findings? Which drug candidates survive sensitivity analysis? How confident should we be in each research path? What parameters drive the LADA cost-effectiveness model? This section synthesizes meta-analytic pooling, Bayesian posterior probabilities, and Monte Carlo simulations to answer these questions.
+</div>
+
+<div class="key-findings">
+  <h3>Key Findings</h3>
+  <ul>
+    <li><strong>Pooled HbA1c reduction: -0.93%</strong> (-0.968 to -0.901) from 2 pooled studies. Heterogeneity: HIGH (I²=98.7%)</li>
+    <li><strong>Remission rate distribution:</strong> Mean 50%, Median 44%, Range 6%-95% (n=68 estimates)</li>
+    <li><strong>Oxidative stress → inflammation:</strong> Highest Bayesian posterior probability at 72.7%, classified as MODERATE</li>
+    <li><strong>Top research path strength distribution:</strong> 0 STRONG, 1 MODERATE, 8 WEAK, 39 INSUFFICIENT (of 48 total)</li>
+  </ul>
+</div>
+
+</section>
+
+<!-- META-ANALYTIC POOLING -->
+<section id="meta-analysis">
+<h2>Meta-Analytic Pooling</h2>
+
+<div class="info-box context">
+  <strong>How to Use This</strong><br>
+  Forest plots display individual study effect sizes with 95% confidence intervals (horizontal lines), plus the pooled diamond estimate. Wider intervals indicate greater uncertainty. The pooled effect (bottom diamond) combines evidence formally across studies using random-effects meta-analysis.
+</div>
+
+<h3>HbA1c Reduction (Pooled)</h3>
+<div class="forest-plot">
+  <div class="forest-plot-row">
+    <div class="forest-study-label">Study / PMID</div>
+    <div style="text-align: center; font-weight: 600;">Effect Size with 95% CI</div>
+    <div class="forest-ci-label">Effect</div>
+  </div>
+  <div class="forest-plot-row">
+    <div class="forest-study-label">PMID 35466661</div>
+    <div class="forest-bar-container">
+      <div class="forest-ci" style="left: 27.2%; width: 2.0%;"></div>
+      <div class="forest-point" style="left: 28.0%;"></div>
+    </div>
+    <div class="forest-ci-label">-0.88%</div>
+  </div>
+  <div class="forest-plot-row">
+    <div class="forest-study-label">PMID 35466661</div>
+    <div class="forest-bar-container">
+      <div class="forest-ci" style="left: 15.4%; width: 2.0%;"></div>
+      <div class="forest-point" style="left: 16.2%;"></div>
+    </div>
+    <div class="forest-ci-label">-1.35%</div>
+  </div>
+  <div class="forest-plot-row" style="font-weight: 600; border-bottom: 2px solid var(--border);">
+    <div class="forest-study-label">Pooled Effect</div>
+    <div class="forest-bar-container">
+      <div class="forest-ci" style="left: 25.8%; width: 2.0%; height: 3px;"></div>
+      <div class="forest-diamond" style="left: 26.6%;"></div>
+    </div>
+    <div class="forest-ci-label">-0.93%</div>
+  </div>
+</div>
+
+<div class="metric-row">
+  <div class="metric-label">Pooled Effect Size</div>
+  <div class="metric-value">-0.934% (-0.9678 to -0.9011)</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">Number of Studies</div>
+  <div class="metric-value">2</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">Heterogeneity (I²)</div>
+  <div class="metric-value">98.7%</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">Interpretation</div>
+  <div class="metric-value" style="text-align: left;">Pooled HbA1c reduction: 0.93% (95% CI: 0.90 to 0.97)</div>
+</div>
+
+<h3>Remission Rate Distribution</h3>
+<div class="distribution-range">
+  <div class="range-card">
+    <div class="range-label">Mean</div>
+    <div class="range-value">50%</div>
+  </div>
+  <div class="range-card">
+    <div class="range-label">Median</div>
+    <div class="range-value">44%</div>
+  </div>
+  <div class="range-card">
+    <div class="range-label">Std Dev</div>
+    <div class="range-value">29.9%</div>
+  </div>
+  <div class="range-card">
+    <div class="range-label">Range</div>
+    <div class="range-value">6-95%</div>
+  </div>
+</div>
+
+<div class="metric-row">
+  <div class="metric-label">Number of Estimates</div>
+  <div class="metric-value">68</div>
+</div>
+
+<h3>Inflammatory Marker Extractions</h3>
+
+<div class="metric-row">
+  <div class="metric-label">Total Extractions</div>
+  <div class="metric-value">94</div>
+</div>
+
+<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead>
+    <tr>
+      <th>Marker</th>
+      <th>Extractions</th>
+      <th>Unique Papers</th>
+      <th>Coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NLRP3</td>
+      <td>44</td>
+      <td>2</td>
+      <td><div class="bar-bg"><div class="bar-fill" style="width: 47%;"></div></div></td>
+    </tr>
+    <tr>
+      <td>IL-1</td>
+      <td>25</td>
+      <td>5</td>
+      <td><div class="bar-bg"><div class="bar-fill" style="width: 27%;"></div></div></td>
+    </tr>
+    <tr>
+      <td>TNF-alpha</td>
+      <td>14</td>
+      <td>7</td>
+      <td><div class="bar-bg"><div class="bar-fill" style="width: 15%;"></div></div></td>
+    </tr>
+  </tbody>
+</table>
+
+</section>
+
+<!-- BAYESIAN SYNTHESIS -->
+<section id="bayesian">
+<h2>Bayesian Evidence Synthesis</h2>
+
+<div class="info-box context">
+  <strong>How to Use This</strong><br>
+  Bayesian scores combine extracted corpus evidence with external validation (PubMed searches, systematic reviews). Posterior probability reflects confidence after observing the data. Color coding: STRONG (green) = high confidence, MODERATE (gold) = moderate confidence, WEAK (orange) = limited evidence, INSUFFICIENT (gray) = preliminary.
+</div>
+
+<div class="metric-row">
+  <div class="metric-label">Total Mechanistic Pathways</div>
+  <div class="metric-value">48</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">STRONG (posterior > 0.80)</div>
+  <div class="metric-value">0</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">MODERATE (0.50-0.80)</div>
+  <div class="metric-value">1</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">WEAK (0.20-0.50)</div>
+  <div class="metric-value">8</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">INSUFFICIENT (&lt;0.20)</div>
+  <div class="metric-value">39</div>
+</div>
+
+<h3>Top 15 Ranked Paths by Posterior Probability</h3>
+
+<div class="bayesian-path moderate">
+  <div class="path-name" style="color: #d4a017;">1. oxidative_stress -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>72.7%</strong></span>
+    <span>Strength: <strong>MODERATE</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">2. NLRP3_inflammasome -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>55.3%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">3. metformin -> T2D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>55.3%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">4. hydroxychloroquine -> T2D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">5. dapagliflozin -> T2D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">6. dapagliflozin -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">7. verapamil -> T1D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">8. verapamil -> beta_cell</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path weak">
+  <div class="path-name" style="color: #d67c3b;">9. NF_kB -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>WEAK</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">10. empagliflozin -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">11. dapagliflozin -> nephropathy</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">12. pioglitazone -> T2D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">13. oxidative_stress -> cardiovascular</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">14. NLRP3_inflammasome -> nephropathy</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">15. dorzagliatin -> T2D</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+</section>
+
+<!-- MONTE CARLO: LADA -->
+<section id="monte-carlo-lada">
+<h2>Monte Carlo: LADA Cost-Effectiveness Model</h2>
+
+<div class="info-box context">
+  <strong>How to Use This</strong><br>
+  Monte Carlo simulations vary parameters (diagnostic test accuracy, screening costs, treatment efficacy) across 10,000 iterations to generate ICER distributions. Median ICER reflects typical outcome; 90% confidence interval shows range of plausible values. P(cost-effective) is the probability ICER &lt; $50,000/QALY threshold.
+</div>
+
+<div class="metric-row">
+  <div class="metric-label">Simulations Performed</div>
+  <div class="metric-value">10000</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">Parameters Varied</div>
+  <div class="metric-value">8</div>
+</div>
+
+<h3>ICER Distributions by Screening Scenario</h3>
+
+<div class="distribution-range">
+  <div class="range-card">
+    <div class="range-label">Targeted Screening</div>
+    <div class="range-value">$4,539</div>
+    <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">
+      90% range: $2,163 - $10,263<br>
+      P(CE): 100%
+    </div>
+  </div>
+  <div class="range-card">
+    <div class="range-label">Universal Screening</div>
+    <div class="range-value">$5,391</div>
+    <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">
+      90% range: $2,695 - $12,103<br>
+      P(CE): 100%
+    </div>
+  </div>
+  <div class="range-card">
+    <div class="range-label">Two-Stage Screening</div>
+    <div class="range-value">$7,036</div>
+    <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">
+      90% range: $3,583 - $16,125<br>
+      P(CE): 100%
+    </div>
+  </div>
+</div>
+
+<h3>Parameter Sensitivity (Tornado Diagram)</h3>
+<div class="info-box">
+Parameters varied in Monte Carlo simulations. Top parameters shown are those extracted from the model; order reflects the sequence in the analysis. Each parameter was sampled from its uncertainty distribution across 10,000 iterations.
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">GAD sensitivity</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 100%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    GAD sensitivity (82% ± 3%)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">GAD specificity</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 88%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    GAD specificity (98.9% ± 0.5%)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">LADA prevalence</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 75%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    LADA prevalence (8.8% ± 2%)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">GAD test cost</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 62%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    GAD test cost ($25 ± $10)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Complication cost</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 50%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    Complication cost ($5,876 ± $1,500)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">QALY gain</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 38%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    QALY gain (0.05 ± 0.015)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Time to correct insulin</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 25%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    Time to correct insulin (8 ± 1.5 years)
+  </div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Annual T2D diagnoses</div>
+  <div class="tornado-bars">
+    <div class="tornado-bar" style="width: 12%;"></div>
+  </div>
+  <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">
+    Annual T2D diagnoses (28M ± 5M)
+  </div>
+</div>
+
+</section>
+
+<!-- MONTE CARLO: DRUGS -->
+<section id="monte-carlo-drugs">
+<h2>Monte Carlo: Drug Robustness Analysis</h2>
+
+<div class="info-box context">
+  <strong>How to Use This</strong><br>
+  Robustness analysis: we ranked drugs 5,000 times while varying weights for mechanism strength, safety, evidence quality, and equity impact. A robust drug maintains its top-5 rank consistently across runs. Unstable drugs are flagged: ranking varies widely with parameter changes, suggesting clinical decisions should account for uncertainty.
+</div>
+
+<div class="metric-row">
+  <div class="metric-label">Simulations Performed</div>
+  <div class="metric-value">5000</div>
+</div>
+<div class="metric-row">
+  <div class="metric-label">Total Drugs Evaluated</div>
+  <div class="metric-value">34</div>
+</div>
+
+<h3>Top 10 Most Robust Drugs (by % time in top-5)</h3>
+
+<table class="robustness-table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Drug</th>
+      <th>% in Top-5</th>
+      <th>Stability</th>
+      <th>Median Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Metformin</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">100%</span>
+      </td>
+      <td><span style="color: var(--green); font-weight: 600;">STABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Verapamil</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 99%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">99%</span>
+      </td>
+      <td><span style="color: var(--green); font-weight: 600;">STABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Losartan</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">98%</span>
+      </td>
+      <td><span style="color: var(--green); font-weight: 600;">STABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Acarbose</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 56%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">56%</span>
+      </td>
+      <td><span style="color: var(--gold); font-weight: 600;">MODERATE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Atorvastatin</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">40%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Nicotinamide</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 37%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">37%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Pioglitazone</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 24%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">24%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Colchicine</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 23%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">23%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Glyburide</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 14%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">14%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Telmisartan</td>
+      <td>
+        <div class="bar-bg"><div class="bar-fill" style="width: 6%;"></div></div>
+        <span style="font-size: 11px; color: var(--muted); margin-left: 8px;">6%</span>
+      </td>
+      <td><span style="color: var(--orange); font-weight: 600;">UNSTABLE</span></td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Score Distributions</h3>
+<div class="info-box">
+Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide ranges indicate score sensitivity to parameter changes; narrow ranges suggest more robust estimates.
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Metformin</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 100% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Verapamil</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 99% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 99%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Losartan</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 98% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Acarbose</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 56% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 56%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Atorvastatin</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 40% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Nicotinamide</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 37% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 37%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Pioglitazone</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 24% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 24%;"></div></div>
+</div>
+
+<div class="tornado-item">
+  <div class="tornado-label">Colchicine</div>
+  <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">
+    Ranking stability: 23% in top-5 (out of 5,000 simulations)
+  </div>
+  <div class="bar-bg"><div class="bar-fill" style="width: 23%;"></div></div>
+</div>
+
+</section>
+
+<!-- METHODOLOGY -->
+<section id="methodology">
+<h2>Methodology</h2>
+
+<div class="info-box limitation">
+  <strong>What This Cannot Tell You</strong><br>
+  These are statistical analyses of extracted/secondary data, not primary research. Meta-analytic pooling across heterogeneous studies has known limitations (high heterogeneity indicates results should be interpreted cautiously). Bayesian priors are model choices, not ground truth. Monte Carlo simulations depend on the accuracy and completeness of input parameters.
+</div>
+
+<div class="methodology">
+  <h4>Meta-Analytic Pooling</h4>
+  <p>We formally combined effect sizes across independent studies using random-effects meta-analysis (DerSimonian-Laird estimator). The pooled effect represents the average treatment or outcome effect. The 95% confidence interval reflects uncertainty in the estimate. Heterogeneity (I²) quantifies the proportion of variance due to between-study differences vs. sampling error. I² > 75% indicates substantial heterogeneity.</p>
+
+  <h4>Bayesian Evidence Synthesis</h4>
+  <p>Mechanistic pathways extracted from the corpus were scored using Bayesian framework. Prior probability reflects baseline belief; posterior probability integrates corpus evidence (term frequency, co-occurrence) with external validation (PubMed searches, systematic reviews). Strength classification (STRONG/MODERATE/WEAK/INSUFFICIENT) is based on posterior probability thresholds: STRONG (>0.80), MODERATE (0.50-0.80), WEAK (0.20-0.50), INSUFFICIENT (<0.20).</p>
+
+  <h4>Monte Carlo: LADA Cost-Effectiveness Model</h4>
+  <p>We performed 10,000 simulations, randomly sampling parameter values from their uncertainty distributions (normal, lognormal, or uniform as appropriate). Each iteration computed the ICER (Incremental Cost-Effectiveness Ratio). Results show the median ICER (50th percentile) and 90% confidence interval (5th to 95th percentiles). P(cost-effective) is the proportion of simulations with ICER < $50,000/QALY threshold.</p>
+
+  <h4>Monte Carlo: Drug Robustness</h4>
+  <p>We ranked drugs 5,000 times while varying weights for mechanism strength, safety, evidence quality, and equity impact. For each drug, we tracked what percentage of simulations placed it in the top-5 and computed the distribution of scores (5th, 25th, 50th, 75th, 95th percentiles). Stability is classified as STABLE (>80% in top-5), MODERATE (50-80%), or UNSTABLE (<50%).</p>
+</div>
+
+</section>
+
+</div>
+
+<div class="footer">
+  Statistical Analysis Dashboard compiled {now}<br>
+  Data source: {stats_path}<br>
+  Methods: Meta-analysis (random-effects), Bayesian evidence synthesis, Monte Carlo simulations<br>
+  MIT License (code) | CC-BY 4.0 (analysis)
+</div>
+
+</body>
+</html>

@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islet Transplant Outcomes Analysis</title>
     <style>
@@ -358,43 +354,44 @@
                 grid-template-columns: 1fr;
             }
         }
-    
-/* Print-friendly */
-@media print {
-  .hub-nav, .hub-footer { display: none !important; }
-  body { background: #fff !important; }
-  .card, .section, table { break-inside: avoid; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
-}
-/* Accessibility: focus states */
-button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
-/* Smooth transitions */
-button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
-a:hover { text-decoration: underline; }
-/* Skip to content link for screen readers */
-.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
-.skip-link:focus { top: 0; }
-</style>
 
-<script>
-// XSS sanitizer for search inputs
-function sanitizeInput(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-</script>
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
-<style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
-<div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
-    <div id="main-content" class="container">
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
+    <div class="container">
         <header>
             <h1>Islet Transplant Outcomes Analysis</h1>
             <div class="subtitle">Computational Model - Gap #3: Insulin Resistance x Islet Transplant</div>
             <div class="subtitle">The Tacrolimus Paradox & Next-Generation Protocols</div>
-            <div class="tagline">Diabetes Research Hub | Generated 2026-03-16 11:50</div>
+            <div class="tagline">Diabetes Research Hub | Generated 2026-03-29 09:14</div>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Islet transplantation can restore insulin production by transplanting donor islet cells into people with Type 1 diabetes. But outcomes vary dramatically — from full insulin independence to complete graft failure. This dashboard analyzes why, tracking outcomes by immunosuppressive protocol, donor characteristics, transplant center experience, and time since procedure.</p>
+            <div class="context-label">How to Use This</div>
+            <p>For transplant teams: identifies protocol combinations associated with best graft survival. For patients/advocates: provides realistic outcome expectations by center experience level. For researchers: highlights which variables most strongly predict insulin independence versus graft failure.</p>
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Outcome data comes from published registries and trials, not a unified global database. Center-level outcome variation may reflect patient selection bias as much as clinical skill. Long-term outcomes (>10 years) are sparse.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" data-tab="graft-survival">Graft Survival Curves</button>
@@ -471,40 +468,40 @@ function sanitizeInput(str) {
             <circle cx="100.0" cy="92.0" r="1.5" fill="#8b2500" opacity="0.8"/>
             <text x="100.0" y="89.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">8%</text>
                     
-            <path d="M 0.0,0.0 L 5.0,10.0 L 10.0,15.0 L 15.0,18.0 L 20.0,20.0 L 25.0,22.0 L 30.0,24.0 L 35.0,26.0 L 40.0,27.0 L 45.0,28.0 L 50.0,30.0" stroke="#2d7d46" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>
+            <path d="M 0.0,0.0 L 5.0,8.0 L 10.0,13.0 L 15.0,19.0 L 20.0,24.0 L 25.0,29.0 L 30.0,33.0 L 35.0,36.0 L 40.0,40.0 L 45.0,42.0 L 50.0,45.0" stroke="#2d7d46" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>
             
             <circle cx="0.0" cy="0.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
             <text x="0.0" y="-3.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">100%</text>
                     
-            <circle cx="5.0" cy="10.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="5.0" y="7.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">90%</text>
+            <circle cx="5.0" cy="8.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="5.0" y="5.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">92%</text>
                     
-            <circle cx="10.0" cy="15.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="10.0" y="12.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">85%</text>
+            <circle cx="10.0" cy="13.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="10.0" y="10.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">87%</text>
                     
-            <circle cx="15.0" cy="18.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="15.0" y="15.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">82%</text>
+            <circle cx="15.0" cy="19.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="15.0" y="16.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">81%</text>
                     
-            <circle cx="20.0" cy="20.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="20.0" y="17.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">80%</text>
+            <circle cx="20.0" cy="24.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="20.0" y="21.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">76%</text>
                     
-            <circle cx="25.0" cy="22.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="25.0" y="19.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">78%</text>
+            <circle cx="25.0" cy="29.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="25.0" y="26.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">71%</text>
                     
-            <circle cx="30.0" cy="24.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="30.0" y="21.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">76%</text>
+            <circle cx="30.0" cy="33.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="30.0" y="30.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">67%</text>
                     
-            <circle cx="35.0" cy="26.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="35.0" y="23.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">74%</text>
+            <circle cx="35.0" cy="36.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="35.0" y="33.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">64%</text>
                     
-            <circle cx="40.0" cy="27.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="40.0" y="24.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">73%</text>
+            <circle cx="40.0" cy="40.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="40.0" y="37.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">60%</text>
                     
-            <circle cx="45.0" cy="28.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="45.0" y="25.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">72%</text>
+            <circle cx="45.0" cy="42.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="45.0" y="39.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">58%</text>
                     
-            <circle cx="50.0" cy="30.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
-            <text x="50.0" y="27.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">70%</text>
+            <circle cx="50.0" cy="45.0" r="1.5" fill="#2d7d46" opacity="0.8"/>
+            <text x="50.0" y="42.0" font-size="9" text-anchor="middle" fill="#1a1a1a" opacity="0.6">55%</text>
                     
             <path d="M 0.0,0.0 L 5.0,17.0" stroke="#2c5f8a" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>
             
@@ -533,7 +530,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #2d7d46;"></div>
-                    <span>Belatacept/Efalizumab</span>
+                    <span>Belatacept (Costimulation Blockade)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #2c5f8a;"></div>
@@ -575,7 +572,7 @@ function sanitizeInput(str) {
                 <div class="metric-value">60%</div>
                 <div class="metric-label">At 13.3 years</div>
             </div>
-            <p class="source">Source: Hering et al., PMID:36630636 (Lancet 2023); Long-term follow-up data from specialized centers</p>
+            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term follow-up data from specialized centers</p>
 
             <h3>LANTIDRA (Donislecel)</h3>
             <p>The first FDA-approved allogeneic pancreatic islet product (June 2023). Phase 3 trial results show strong initial outcomes, though long-term follow-up remains limited.</p>
@@ -637,7 +634,7 @@ function sanitizeInput(str) {
                 <div class="metric-label">Relative risk with tacrolimus vs cyclosporine</div>
             </div>
             <p>Clinical trials demonstrate that tacrolimus recipients have significantly higher rates of new-onset diabetes, obesity, and metabolic syndrome compared to other immunosuppressive regimens.</p>
-            <p class="source">Source: Vincenti et al., PMID:17895895 (American Journal of Transplantation 2007)</p>
+            <p class="source">Source: Vincenti et al., PMID:17359512 (American Journal of Transplantation 2007)</p>
 
             <h3>HOMA-IR Progression: Pre- and Post-Transplant</h3>
             <p>Homeostasis Model Assessment for Insulin Resistance (FHOMA-IR = fasting insulin [mIU/L] x fasting glucose [mmol/L] / 22.5) reveals progressive worsening of systemic insulin sensitivity in islet recipients.</p>
@@ -747,11 +744,11 @@ function sanitizeInput(str) {
             </div>
 
             <div class="metric">
-                <div class="metric-value">70%</div>
-                <div class="metric-label">Insulin independence at 10 years</div>
+                <div class="metric-value">~70%</div>
+                <div class="metric-label">Estimated insulin independence at 10 years (modeled trajectory)</div>
             </div>
-            <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up.</p>
-            <p class="source">Source: Hering et al., PMID:36630636 (Lancet 2023); Long-term multicenter follow-up</p>
+            <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up. <em>Note: Trajectory shown is modeled based on limited published data points; actual graft survival curves show more variability than linear projections.</em></p>
+            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term multicenter follow-up</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -1249,7 +1246,7 @@ function sanitizeInput(str) {
                         <td>Landmark trial (n=7)</td>
                     </tr>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 36630636'); return false;">Hering et al., Lancet</a></td>
+                        <td><a href="#" onclick="alert('PMID: 37359825'); return false;">Voglova et al., Transpl Int</a></td>
                         <td>2023</td>
                         <td>Belatacept: 70% at 10 years vs 20% Edmonton</td>
                         <td>Multicenter follow-up</td>
@@ -1281,7 +1278,7 @@ function sanitizeInput(str) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 17895895'); return false;">Vincenti et al., Am J Transplant</a></td>
+                        <td><a href="#" onclick="alert('PMID: 17359512'); return false;">Vincenti et al., Am J Transplant</a></td>
                         <td>2007</td>
                         <td>Tacrolimus: 2.5x NODAT risk vs cyclosporine</td>
                     </tr>
@@ -1354,9 +1351,21 @@ function sanitizeInput(str) {
             <p style="margin-top: 12px;">All quantitative claims include supporting source citations. When data is sparse or based on small samples (e.g., VX-880 n=5 early Phase 2), this limitation is explicitly noted.</p>
         </div>
 
+        <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+          <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+          <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+            <li>Graft survival data derived from published registry reports, not primary patient records</li>
+            <li>Immunosuppression protocol comparisons are cross-study, not head-to-head RCTs</li>
+            <li>Sample sizes for newer protocols (e.g., belatacept-based) are small</li>
+            <li>VX-880 data is from early-phase trials with limited follow-up</li>
+            <li>Cost estimates are US-centric and may not reflect other healthcare systems</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
+        </div>
+
         <div class="footer">
             <p>Islet Transplant Analysis Dashboard</p>
-            <p>Generated: 2026-03-16 11:50</p>
+            <p>Generated: 2026-03-29 09:14</p>
             <p>This computational model is designed for educational and research purposes. Clinical decision-making should incorporate current guidelines, individual patient factors, and consultation with transplant specialists.</p>
             <p>Diabetes Research Hub | All data sourced from peer-reviewed literature and clinical trials</p>
         </div>

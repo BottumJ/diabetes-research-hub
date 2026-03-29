@@ -33,7 +33,7 @@ SCRIPTS = {
     'equity': ('build_equity_map.py', 'Building Beta Cell Therapy Equity Analysis'),
     'deepdives': ('build_gap_deep_dives.py', 'Building Gap Deep Dives (all 15 gaps)'),
     'acronyms': ('build_acronym_db.py', 'Building Acronym & Abbreviation Database'),
-    'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (116 terms, cited)'),
+    'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (117 terms, cited)'),
     'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 SILVER)'),
     'islet': ('build_islet_outcomes.py', 'Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)'),
     'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)'),  # Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.

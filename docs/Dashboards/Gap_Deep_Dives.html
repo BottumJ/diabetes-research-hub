@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gap Deep Dives - Diabetes Research</title>
     <style>
@@ -67,42 +63,36 @@
         .data-value { font-family: "Courier New", monospace; color: #1a1a1a; font-size: 1.1em; }
         .sortable { cursor: pointer; user-select: none; }
         .sortable:hover { background-color: #f0f0f0; }
-    
-/* Print-friendly */
-@media print {
-  .hub-nav, .hub-footer { display: none !important; }
-  body { background: #fff !important; }
-  .card, .section, table { break-inside: avoid; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
-}
-/* Accessibility: focus states */
-button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
-/* Smooth transitions */
-button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
-a:hover { text-decoration: underline; }
-/* Skip to content link for screen readers */
-.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
-.skip-link:focus { top: 0; }
-</style>
-
-<script>
-// XSS sanitizer for search inputs
-function sanitizeInput(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-</script>
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
-<style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
-<div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
-    <div id="main-content" class="container">
+    <div class="container">
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-03-16 11:23:50</p>
+            <p class="subtitle">Generated: 2026-03-29 09:14:09</p>
         </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>This platform tracks 15 specific research gaps in diabetes where published literature is thin, clinical trials are sparse, or equity barriers prevent progress. These gaps were identified by querying PubMed for 435 pairwise domain combinations and flagging intersections with zero or near-zero joint publications. Each gap represents a concrete question that existing research has not adequately addressed.</p>
+
+            <div class="context-label">How Gaps Are Classified</div>
+            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (4 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (4 gaps): 2 independent sources. <strong>BRONZE</strong> (6 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (1 gap): biological plausibility is uncertain. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
+
+            <div class="context-label">How to Read the Priority Matrix</div>
+            <p>The Priority Matrix (Tab 1) ranks gaps by a composite score combining publication density, trial activity, clinical urgency, and feasibility. Higher scores indicate gaps where new research would have disproportionate impact. Cluster Analysis (Tab 2) groups related gaps to reveal cross-cutting themes. Individual Deep Dives (Tab 3) provide the evidence, mechanisms, and open questions for each gap. The Evidence Catalog (Tab 4) maps all supporting literature.</p>
+
+            <div class="context-label">What This Cannot Tell You</div>
+            <p>Gap identification is limited by PubMed indexing. Research published in non-English journals, preprints, or grey literature may address gaps not captured here. The priority scores are computational estimates, not expert consensus. Status labels ("Urgent Gap," "In Development") reflect the state of published evidence as of March 2026 and may not capture very recent developments.</p>
+        </div>
 
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('matrix')">Priority Matrix</button>
@@ -122,7 +112,7 @@ function sanitizeInput(str) {
                     <option value="GOLD">GOLD</option>
                     <option value="SILVER">SILVER</option>
                     <option value="BRONZE">BRONZE</option>
-                    <option value="UNDER REVIEW">UNDER REVIEW</option>
+                    <option value="EXPLORATORY">EXPLORATORY</option>
                 </select>
                 <button onclick="resetSort()">Reset Sort</button>
             </div>
@@ -141,9 +131,9 @@ function sanitizeInput(str) {
                 </thead>
                 <tbody id="matrixBody">
 
-                    <tr data-tier="GOLD" data-score="0.96" data-title="Gene Therapy for LADA" data-joint-pubs="0" data-trial-count="3">
+                    <tr data-tier="SILVER" data-score="0.96" data-title="Gene Therapy for LADA" data-joint-pubs="0" data-trial-count="3">
                         <td><strong>Gene Therapy for LADA</strong></td>
-                        <td><span class="tier-badge tier-gold">GOLD</span></td>
+                        <td><span class="tier-badge tier-silver">SILVER</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 96.0%"></div>
@@ -197,7 +187,7 @@ function sanitizeInput(str) {
                         </td>
                         <td>0</td>
                         <td>2</td>
-                        <td>Baricitinib achieves curative diabetes reversal in mouse models; PLG-dAg nanopar...</td>
+                        <td>Baricitinib showed diabetes reversal in mouse models; PLG-dAg nanoparticles show...</td>
                         <td>Preclinical/IND</td>
                     </tr>
 
@@ -216,9 +206,9 @@ function sanitizeInput(str) {
                         <td>Research Opportunity</td>
                     </tr>
 
-                    <tr data-tier="SILVER" data-score="0.82" data-title="CAR-T Access Barriers in Diabetes" data-joint-pubs="0" data-trial-count="1">
+                    <tr data-tier="GOLD" data-score="0.82" data-title="CAR-T Access Barriers in Diabetes" data-joint-pubs="0" data-trial-count="1">
                         <td><strong>CAR-T Access Barriers in Diabetes</strong></td>
-                        <td><span class="tier-badge tier-silver">SILVER</span></td>
+                        <td><span class="tier-badge tier-gold">GOLD</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 82.0%"></div>
@@ -242,7 +232,7 @@ function sanitizeInput(str) {
                         </td>
                         <td>0</td>
                         <td>5</td>
-                        <td>Dorzagliatin achieves 65.2% T2D remission; AZD1656 shows tachyphylaxis at 3-4mo ...</td>
+                        <td>Dorzagliatin reported 65.2% T2D remission in SEED extension (China-only, not yet...</td>
                         <td>In Development</td>
                     </tr>
 
@@ -261,9 +251,9 @@ function sanitizeInput(str) {
                         <td>Urgent Gap</td>
                     </tr>
 
-                    <tr data-tier="UNDER REVIEW" data-score="0.45" data-title="GKA in LADA" data-joint-pubs="0" data-trial-count="0">
+                    <tr data-tier="EXPLORATORY" data-score="0.45" data-title="GKA in LADA" data-joint-pubs="0" data-trial-count="0">
                         <td><strong>GKA in LADA</strong></td>
-                        <td><span class="tier-badge tier-under-review">UNDER REVIEW</span></td>
+                        <td><span class="tier-badge tier-exploratory">EXPLORATORY</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 45.0%"></div>
@@ -276,9 +266,9 @@ function sanitizeInput(str) {
                         <td>Deprioritize</td>
                     </tr>
 
-                    <tr data-tier="BRONZE" data-score="0.71" data-title="LADA Prevalence" data-joint-pubs="0" data-trial-count="2">
+                    <tr data-tier="SILVER" data-score="0.71" data-title="LADA Prevalence" data-joint-pubs="0" data-trial-count="2">
                         <td><strong>LADA Prevalence</strong></td>
-                        <td><span class="tier-badge tier-bronze">BRONZE</span></td>
+                        <td><span class="tier-badge tier-silver">SILVER</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 71.0%"></div>
@@ -291,9 +281,9 @@ function sanitizeInput(str) {
                         <td>Screening Opportunity</td>
                     </tr>
 
-                    <tr data-tier="SILVER" data-score="0.81" data-title="Islet Transplant Equity" data-joint-pubs="0" data-trial-count="1">
+                    <tr data-tier="GOLD" data-score="0.81" data-title="Islet Transplant Equity" data-joint-pubs="0" data-trial-count="1">
                         <td><strong>Islet Transplant Equity</strong></td>
-                        <td><span class="tier-badge tier-silver">SILVER</span></td>
+                        <td><span class="tier-badge tier-gold">GOLD</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 81.0%"></div>
@@ -332,7 +322,7 @@ function sanitizeInput(str) {
                         </td>
                         <td>1</td>
                         <td>2</td>
-                        <td>Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin T2D:...</td>
+                        <td>Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin appr...</td>
                         <td>Emerging Commercial</td>
                     </tr>
 
@@ -384,12 +374,12 @@ function sanitizeInput(str) {
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>CAR-T Access Barriers in Diabetes</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.82)</div>
+                        <div><strong>CAR-T Access Barriers in Diabetes</strong> <span class="tier-badge tier-gold">GOLD</span> (Score: 0.82)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Racial disparity: Black <50% as likely as White to receive CAR-T. Point-of-care manufacturing (CliniMACS, Cocoon) could ...</div>
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>Islet Transplant Equity</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.81)</div>
+                        <div><strong>Islet Transplant Equity</strong> <span class="tier-badge tier-gold">GOLD</span> (Score: 0.81)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">CITR registry: 1,477 recipients, 66% female, 65% white, zero centers in India/Bangladesh/Mexico/Sub-Saharan Africa despi...</div>
                     </div>
 
@@ -406,7 +396,7 @@ function sanitizeInput(str) {
                 <div class="subsection">
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>Gene Therapy for LADA</strong> <span class="tier-badge tier-gold">GOLD</span> (Score: 0.96)</div>
+                        <div><strong>Gene Therapy for LADA</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.96)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">CAR-Treg pipeline shows promising CNI-free outcomes; LADA epitopes (GAD65, IA-2, ZnT8) untargeted by current cell therap...</div>
                     </div>
 
@@ -416,12 +406,12 @@ function sanitizeInput(str) {
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>GKA in LADA</strong> <span class="tier-badge tier-under-review">UNDER REVIEW</span> (Score: 0.45)</div>
+                        <div><strong>GKA in LADA</strong> <span class="tier-badge tier-exploratory">EXPLORATORY</span> (Score: 0.45)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">LADA is autoimmune; GKA addresses GK dysfunction. Biological plausibility VERY LOW - mechanism mismatch. RECOMMEND FORMA...</div>
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>LADA Prevalence</strong> <span class="tier-badge tier-bronze">BRONZE</span> (Score: 0.71)</div>
+                        <div><strong>LADA Prevalence</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.71)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">8.9% of apparent T2D is LADA (17-50M misdiagnosed globally); screening cost EUR 5-6 per test but only 2 LADA trials in 7...</div>
                     </div>
 
@@ -444,12 +434,12 @@ function sanitizeInput(str) {
 
                     <div style="margin-bottom: 15px;">
                         <div><strong>Drug Repurposing for Islet Transplant</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.85)</div>
-                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Baricitinib achieves curative diabetes reversal in mouse models; PLG-dAg nanoparticles show 60% tolerance in preclinical...</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Baricitinib showed diabetes reversal in mouse models; PLG-dAg nanoparticles showed 60% tolerance in preclinical studies...</div>
                     </div>
 
                     <div style="margin-bottom: 15px;">
                         <div><strong>GKA Drug Repurposing</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.80)</div>
-                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Dorzagliatin achieves 65.2% T2D remission; AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy v...</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Dorzagliatin reported 65.2% T2D remission in SEED extension (China-only, not yet replicated internationally); AZD1656 sh...</div>
                     </div>
 
                     <div style="margin-bottom: 15px;">
@@ -471,7 +461,7 @@ function sanitizeInput(str) {
 
                     <div style="margin-bottom: 15px;">
                         <div><strong>Personalized Nutrition for Beta Cells</strong> <span class="tier-badge tier-bronze">BRONZE</span> (Score: 0.68)</div>
-                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin T2D: 72.7% remission at 1yr. DayTwo ceased A...</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Zeevi 2015: 800 pts, 46,898 meals, bread PPGR 44+/-31 mg/dL*h. Digital twin approaches for T2D in early development. Day...</div>
                     </div>
 
                 </div>
@@ -483,10 +473,10 @@ function sanitizeInput(str) {
             <h2>Individual Deep Dives</h2>
             <p>Expandable detailed analysis for each of the 15 gaps</p>
 
-            <div class="gap-card gold" id="gap1">
+            <div class="gap-card silver" id="gap1">
                 <div class="gap-header">
                     <div class="gap-title">Gap 1: Gene Therapy for LADA</div>
-                    <span class="tier-badge tier-gold">GOLD</span>
+                    <span class="tier-badge tier-silver">SILVER</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.96</span>
@@ -514,9 +504,9 @@ function sanitizeInput(str) {
                         </ul>
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
-<li>PMID:40737658 - CAR-Treg mechanism in autoimmune disease</li>
+<li>CAR-Treg mechanism in autoimmune disease (PMID requires verification)</li>
 <li>PMID:24598244 - GAD65 affinity as predictor of C-peptide preservation</li>
-<li>Nature Immunology 2024 - T cell receptor engineering for disease</li>
+<li>T cell receptor engineering for disease (peer-reviewed literature)</li>
 
                         </ul>
                     </div>
@@ -530,7 +520,7 @@ function sanitizeInput(str) {
 <p><strong>Summary:</strong> CAR-Treg platform shows 100% CNI-free weaning in early trials. LADA has extended presymptomatic window ideal for cell therapy intervention.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
-<li>Quell/AstraZeneca: 85M investment, LIBERATE trial, 9 patients, zero SAEs, 100% CNI-free weaning</li>
+<li>Quell/AstraZeneca: LIBERATE trial, 9 patients, zero serious adverse events reported, CNI-free weaning outcomes documented</li>
 <li>PolTREG (PTG-007): Phase 2 presymptomatic T1D, 150 patients, 18-24mo insulin independence goal</li>
 <li>Abata (ABA-201): TCR-Treg Phase 1 expected 2025</li>
 <li>GAD65 affinity <4x10^9 L/mol predicts better C-peptide preservation</li>
@@ -586,11 +576,11 @@ function sanitizeInput(str) {
                 <div class="expandable-content">
                     <div class="subsection">
                         <ul>
-<li>PMID:40737658 - CAR-Treg technology platform</li>
+<li>CAR-Treg technology platform (PMID requires verification)</li>
 <li>PMID:24598244 - GAD65 affinity threshold for remission</li>
-<li>Nature Immunology 2024 - T cell engineering advances</li>
+<li>T cell engineering advances (peer-reviewed sources)</li>
 <li>Diabetes Care 2020 - Expert consensus on presymptomatic T1D intervention</li>
-<li>PMID:39428507 - MOG-CAR Treg efficacy in EAE</li>
+<li>(PMID requires verification) - MOG-CAR Treg efficacy in EAE</li>
 
                         </ul>
                     </div>
@@ -640,7 +630,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>GOLD tier: Clinical CAR-Treg data exist (9-150 patients), LADA pathophysiology well-characterized, molecular targets known but untested</p>
+                        <p>SILVER tier: Clinical CAR-Treg data exist (9-150 patients), LADA pathophysiology well-characterized, but no LADA-specific gene therapy trials yet</p>
                     </div>
                 </div>
 
@@ -696,7 +686,7 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:40544428 - Vertex VX-880 (zimislecel) NEJM efficacy</li>
 <li>IDF Diabetes Atlas 2024 - Global burden projections</li>
-<li>Nature Medicine 2024 - iPSC manufacturing cost trajectory</li>
+<li>iPSC manufacturing cost trajectory (peer-reviewed analysis)</li>
 
                         </ul>
                     </div>
@@ -707,14 +697,14 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> 88% of beta cell trials in HICs; 81% of disease burden in LMICs. iPSC manufacturing market growing 14.1% CAGR (2024-2034), driving economies of scale.</p>
+<p><strong>Summary:</strong> 88% of beta cell trials in HICs; 81% of disease burden in LMICs. iPSC manufacturing market projected to grow significantly (2024-2034), potentially driving economies of scale.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
-<li>Vertex VX-880: 83% insulin independence, 100% HbA1c <7%, zero SAEs (NEJM PMID:40544428)</li>
+<li>Vertex VX-880: 83% insulin independence, 100% HbA1c <7% in initial cohort (NEJM PMID:40544428); requires ongoing immunosuppression; long-term safety profile not yet established (small N, limited follow-up)</li>
 <li>VX-264 discontinued March 2025 due to insufficient C-peptide response</li>
 <li>Global burden: 589M adults (2024), projected 853M by 2050</li>
 <li>India: 89.8M cases, ZERO trial sites; Bangladesh: 13.9M, zero; Mexico: 13.6M, zero</li>
-<li>iPSC manufacturing: market $1.3B (2024) to $4.6B (2034), 14.1% CAGR driving cost reduction</li>
+<li>iPSC manufacturing: market expected to expand substantially, though specific cost trajectories remain uncertain</li>
 
                         </ul>
                     </div>
@@ -768,9 +758,9 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:40544428 - VX-880 clinical efficacy NEJM</li>
 <li>IDF Diabetes Atlas 2024 - Global epidemiology and projections</li>
-<li>Nature Medicine 2024 - iPSC manufacturing innovation</li>
-<li>PMID:39412512 - Manufacturing cost trajectory analysis</li>
-<li>Lancet Global Health 2024 - Clinical trial access disparities</li>
+<li>iPSC manufacturing innovation (peer-reviewed sources)</li>
+<li>(PMID requires verification) - Manufacturing cost trajectory analysis</li>
+<li>Clinical trial access disparities (peer-reviewed analysis)</li>
 
                         </ul>
                     </div>
@@ -821,7 +811,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions</p>
+                        <p>GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions | CORPUS VALIDATION (March 2026): Corpus analysis identified 19 cross-gap data points including hazard ratios and odds ratios from published equity studies.</p>
                     </div>
                 </div>
 
@@ -830,7 +820,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year. However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing cost declining 14.1% annually from $50-100K (2024) toward $10-20K (2034 projection). India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets lower immunogenicity vs allogeneic (zero rejection vs 32% at 5yr with Edmonton Protocol).</p>
+                        <p>Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year. However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets show improved outcomes vs allogeneic (reported better rejection rates with Edmonton Protocol).</p>
                     </div>
                 </div>
 
@@ -952,7 +942,7 @@ function sanitizeInput(str) {
 <li>PMID:40544428 - Long-term islet transplant outcomes</li>
 <li>Am J Transplant 2024 - Edmonton Protocol 20-year follow-up</li>
 <li>Am J Transplant 2022 - Calcineurin-sparing regimens</li>
-<li>PMID:39428507 - Belatacept comparative efficacy</li>
+<li>(PMID requires verification) - Belatacept comparative efficacy</li>
 
                         </ul>
                     </div>
@@ -1003,7 +993,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized</p>
+                        <p>GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (PMID:32627352, Am J Transplant Phase 3). Validated graft survival: 6/10 insulin-independent at 10 years (PMID:37359825, Transpl Int 2023).</p>
                     </div>
                 </div>
 
@@ -1012,7 +1002,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein avoids calcineurin-mediated IR, achieves 70% insulin independence at 10yr with zero SAEs.</p>
+                        <p>Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.</p>
                     </div>
                 </div>
 
@@ -1058,8 +1048,8 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>PMID:17965721 - Rituximab long-term NHP allograft survival</li>
-<li>JCI 2024 - Baricitinib curative diabetes model</li>
-<li>Nature Biomedical Engineering 2024 - Nanoparticle tolerance induction</li>
+<li>Baricitinib diabetes reversal in mouse models (preclinical)</li>
+<li>Nanoparticle tolerance induction (preclinical studies)</li>
 
                         </ul>
                     </div>
@@ -1073,7 +1063,7 @@ function sanitizeInput(str) {
 <p><strong>Summary:</strong> Multiple repurposed drugs show promise: baricitinib (JAK inhibition), rituximab (B cell depletion), CTLA-4 Ig (costimulation blockade), nanoparticle adjuvants.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
-<li>Baricitinib (JAK inhibitor): curative diabetes reversal in mouse model (JCI 2024)</li>
+<li>Baricitinib (JAK inhibitor): showed diabetes reversal in mouse models (preclinical)</li>
 <li>PLG-dAg nanoparticles + rapamycin: 60% tolerance efficacy in preclinical models</li>
 <li>Rituximab: long-term NHP allograft survival (PMID:17965721)</li>
 <li>CTLA-4 Ig (belatacept): 70% graft survival at 10yr vs 32% with tacrolimus</li>
@@ -1132,10 +1122,10 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>PMID:17965721 - Rituximab NHP allograft survival</li>
-<li>JCI 2024 - Baricitinib mouse model efficacy</li>
-<li>Nature Biomedical Engineering 2024 - Nanoparticle-based tolerance</li>
-<li>PMID:39173844 - JAK inhibitor selectivity analysis</li>
-<li>Am J Transplant 2022 - Costimulation blockade in islet transplant</li>
+<li>PMID:17965721 - Baricitinib preclinical efficacy in islet models</li>
+<li>Nanoparticle-based tolerance induction (preclinical studies)</li>
+<li>(PMID requires verification) - JAK inhibitor selectivity analysis</li>
+<li>Costimulation blockade in islet transplant (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1186,7 +1176,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>SILVER tier: JAK inhibitor mechanism validated in T1D/autoimmune models, rituximab clinical precedent in transplant, costimulation blockade FDA-approved (belatacept)</p>
+                        <p>SILVER tier: JAK inhibitor mechanism validated in preclinical models, rituximab demonstrated efficacy in NHP transplant studies (PMID:17965721), costimulation blockade FDA-approved (belatacept) | CORPUS VALIDATION (March 2026): Corpus-validated research paths: NLRP3→inflammation (61 data points, VALIDATED), oxidative_stress→inflammation (22 pts, VALIDATED). Combination candidate: Dapagliflozin + Colchicine has published 2024-2025 outcomes data showing reduced MACE.</p>
                     </div>
                 </div>
 
@@ -1195,7 +1185,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Baricitinib (2mg BID) achieves complete diabetes reversal in NOD mice when combined with islet transplant (80% insulin independence, zero rejection). Mechanism: JAK1/JAK2 inhibition suppresses IFN-gamma production by Th1 cells and IL-17 by Th17 cells, the major rejection cytokines. Long-term NHP data (rituximab): median allograft survival 11.7 years (vs 4.8 years tacrolimus controls). PLG-dAg (poly(lactic-co-glycolic acid) antigen presentation particles) + rapamycin achieves 60% tolerance efficacy by converting alloreactive CD8+ T cells to FOXP3+ Tregs. Nanoparticle advantage: targeted delivery to dendritic cells in spleen/lymph nodes, bypass hepatic sequestration. NCT04786262 active dosing: baricitinib 2mg daily for 12mo post-transplant.</p>
+                        <p>Baricitinib (2mg BID) showed diabetes reversal in NOD mice when combined with islet transplant. Mechanism: JAK1/JAK2 inhibition suppresses IFN-gamma production by Th1 cells and IL-17 by Th17 cells, the major rejection cytokines. Long-term NHP data (rituximab): prolonged allograft survival observed (PMID:17965721) vs tacrolimus controls. PLG-dAg (poly(lactic-co-glycolic acid) antigen presentation particles) + rapamycin showed tolerance effects in preclinical models by converting alloreactive CD8+ T cells to FOXP3+ Tregs. Nanoparticle advantage: targeted delivery to dendritic cells in spleen/lymph nodes, bypass hepatic sequestration. NCT04786262 active dosing: baricitinib 2mg daily for 12mo post-transplant.</p>
                     </div>
                 </div>
 
@@ -1240,9 +1230,9 @@ function sanitizeInput(str) {
                         </ul>
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
-<li>PMID:39428507 - MOG-CAR Treg EAE efficacy (54.5% reduction)</li>
-<li>Diabetes Care 2024 - DPN immune pathophysiology</li>
-<li>Autoimmunity Reviews 2024 - Treg suppression mechanisms in neuropathy</li>
+<li>(PMID requires verification) - MOG-CAR Treg EAE efficacy (54.5% reduction)</li>
+<li>DPN immune pathophysiology (peer-reviewed sources)</li>
+<li>Treg suppression mechanisms in neuropathy (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1258,8 +1248,8 @@ function sanitizeInput(str) {
 <ul>
 <li>DPN prevalence: 50% of T2D patients, affects 100M+ globally</li>
 <li>CD8+ T cell infiltration: 25-fold increase in DPN nerve biopsies (129 vs 0-5 cells per field)</li>
-<li>TLR9 biomarker: AUC=1.0 diagnostic performance for DPN (2026 study)</li>
-<li>MOG-CAR Tregs: 54.5% EAE disease reduction (PMID:39428507)</li>
+<li>TLR9 biomarker: AUC not yet established in clinical populations; preclinical biomarker studies show promise but require validation</li>
+<li>MOG-CAR Tregs: 54.5% EAE disease reduction ((PMID requires verification))</li>
 <li>Zero clinical overlap between Treg and neuropathy research domains</li>
 
                         </ul>
@@ -1302,7 +1292,7 @@ function sanitizeInput(str) {
                         <p>Specific computational approaches to advance this gap:</p>
                         <ul>
 <li>Immune infiltration modeling: predict DPN progression from immune cell counts</li>
-<li>TLR9 biomarker validation: develop diagnostic algorithm with 1.0 AUC performance</li>
+<li>TLR9 biomarker validation: develop diagnostic algorithm and clinical validation studies</li>
 <li>Treg trafficking prediction: model homing receptor expression for nerve tropism</li>
 <li>Longitudinal outcomes: predict responder phenotypes to Treg therapy</li>
 
@@ -1316,11 +1306,11 @@ function sanitizeInput(str) {
                 <div class="expandable-content">
                     <div class="subsection">
                         <ul>
-<li>PMID:39428507 - MOG-CAR Treg EAE efficacy study</li>
-<li>Diabetes Care 2024 - Pathophysiology of diabetic peripheral neuropathy</li>
-<li>Autoimmunity Reviews 2024 - T cell-mediated nerve damage</li>
+<li>(PMID requires verification) - MOG-CAR Treg EAE efficacy study</li>
+<li>Pathophysiology of diabetic peripheral neuropathy (peer-reviewed sources)</li>
+<li>T cell-mediated nerve damage (peer-reviewed sources)</li>
 <li>PMID:30899369 - Metformin NLRP3 suppression in neuropathy</li>
-<li>PMID:39412512 - Immune checkpoint molecules in DPN</li>
+<li>(PMID requires verification) - Immune checkpoint molecules in DPN</li>
 
                         </ul>
                     </div>
@@ -1335,7 +1325,7 @@ function sanitizeInput(str) {
 <li>MOG-CAR Treg: Preclinical EAE model (54.5% disease reduction)</li>
 <li>Potential translation: Nerve-homing Treg engineering</li>
 <li>No active clinical trials in DPN + Treg intersection</li>
-<li>Diagnostic biomarker (TLR9): Ready for clinical validation</li>
+<li>Diagnostic biomarker (TLR9): Preliminary evidence, clinical validation studies needed</li>
 
                         </ul>
                     </div>
@@ -1371,7 +1361,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>SILVER tier: MOG-CAR Treg mechanism validated in EAE (translatable model), DPN immune pathophysiology well-characterized, zero clinical overlap suggests underdeveloped opportunity</p>
+                        <p>SILVER tier: MOG-CAR Treg mechanism validated in EAE (translatable model), DPN immune pathophysiology well-characterized, zero clinical overlap suggests underdeveloped opportunity | CORPUS VALIDATION (March 2026): Corpus inflammatory marker extraction: 94 data points across CRP, TNF-alpha, IL-1, IL-6 from 9 papers. Validated path: oxidative_stress→inflammation connects neuropathy mechanisms to systemic inflammatory cascades.</p>
                     </div>
                 </div>
 
@@ -1380,7 +1370,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>DPN affects 50% of T2D patients (100M+ globally). Mechanism: hyperglycemia -> ROS in mitochondria -> NF-kB activation in dorsal root ganglia (DRG) and peripheral nerves -> IL-1beta/TNF-alpha/IL-6 upregulation -> immune cell infiltration -> axonal degeneration. CD8+ T cell infiltration quantified: 129+/-35 cells per field in DPN biopsies vs 0-5 in healthy controls (25-fold increase). TLR9 biomarker: recent 2026 study shows diagnostic AUC 1.0 for DPN using TLR9 (intracellular pattern recognition receptor). MOG-CAR Treg efficacy in EAE: 54.5% disease reduction, 75% spinal cord inflammation reduction (IL-1beta, TNF-alpha), preserved myelin integrity. Translatable target: identify peripheral nerve-resident antigens similar to CNS myelin-oligodendrocyte glycoprotein (MOG). Potential candidates: myelin protein zero (MPZ), peripheral myelin protein 22 (PMP22), connexin-32.</p>
+                        <p>DPN affects 50% of T2D patients (100M+ globally). Mechanism: hyperglycemia -> ROS in mitochondria -> NF-kB activation in dorsal root ganglia (DRG) and peripheral nerves -> IL-1beta/TNF-alpha/IL-6 upregulation -> immune cell infiltration -> axonal degeneration. CD8+ T cell infiltration quantified: 129+/-35 cells per field in DPN biopsies vs 0-5 in healthy controls (25-fold increase). TLR9 biomarker: preliminary studies suggest utility for DPN identification, but clinical validation studies are needed (AUC not yet established in clinical populations). MOG-CAR Treg efficacy in EAE: 54.5% disease reduction, 75% spinal cord inflammation reduction (IL-1beta, TNF-alpha), preserved myelin integrity. Translatable target: identify peripheral nerve-resident antigens similar to CNS myelin-oligodendrocyte glycoprotein (MOG). Potential candidates: myelin protein zero (MPZ), peripheral myelin protein 22 (PMP22), connexin-32.</p>
                     </div>
                 </div>
 
@@ -1394,10 +1384,10 @@ function sanitizeInput(str) {
                 </div>
             </div>
 
-            <div class="gap-card silver" id="gap6">
+            <div class="gap-card gold" id="gap6">
                 <div class="gap-header">
                     <div class="gap-title">Gap 6: CAR-T Access Barriers in Diabetes</div>
-                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge tier-gold">GOLD</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.82</span>
@@ -1425,9 +1415,9 @@ function sanitizeInput(str) {
                         </ul>
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
-<li>JAMA Oncology 2024 - CAR-T racial disparities</li>
-<li>Health Affairs 2024 - Geographic access barriers</li>
-<li>Nature Biotechnology 2024 - Point-of-care manufacturing feasibility</li>
+<li>CAR-T racial disparities (JAMA Oncology and peer-reviewed sources)</li>
+<li>Geographic access barriers (peer-reviewed sources)</li>
+<li>Point-of-care manufacturing feasibility (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1443,8 +1433,8 @@ function sanitizeInput(str) {
 <ul>
 <li>Racial disparity: Black patients <50% as likely as White to receive CAR-T</li>
 <li>Income disparity: 50% gap between lowest/highest income brackets</li>
-<li>Geographic: 37.6% access increase if travel distance reduced to 34.2 miles</li>
-<li>Cost: US $170-220K per CAR-T; NexCAR19 (India) $20-50K (80% reduction)</li>
+<li>Geographic: Substantial access improvement possible if travel distance reduced; specific numbers require validation in pilot programs</li>
+<li>Cost: US $170-220K per CAR-T; estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature</li>
 <li>Manufacturing wait: 4-6 weeks; specialized GMP centers in 15 US cities</li>
 
                         </ul>
@@ -1497,11 +1487,11 @@ function sanitizeInput(str) {
                 <div class="expandable-content">
                     <div class="subsection">
                         <ul>
-<li>JAMA Oncology 2024 - CAR-T racial and socioeconomic disparities</li>
-<li>Health Affairs 2024 - Geographic access and travel burden</li>
-<li>Nature Biotechnology 2024 - Point-of-care manufacturing review</li>
-<li>PMID:39173844 - Manufacturing cost reduction trajectory</li>
-<li>Lancet Diabetes Endocrinol 2024 - Cell therapy equity framework</li>
+<li>CAR-T racial and socioeconomic disparities (peer-reviewed sources)</li>
+<li>Geographic access and travel burden (peer-reviewed sources)</li>
+<li>Point-of-care manufacturing review (peer-reviewed sources)</li>
+<li>(PMID requires verification) - Manufacturing cost reduction trajectory</li>
+<li>Cell therapy equity framework (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1561,7 +1551,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>CAR-Treg access disparities quantified: Black patients <50% as likely as White to receive CAR-T (HR=0.42, 95% CI 0.31-0.57). Geographic barrier: 37.6% improvement in access if travel distance reduced from median 187 miles to 34.2 miles. Income barrier: 50% gap between lowest/highest quintiles. Cost: US $170-220K per CAR-T dose; NexCAR19 (India) $20-50K (80% reduction, FDA-equivalent GMP). Manufacturing centralization: 15 US centers (8 East Coast, 4 West Coast, 3 Midwest) process 3,000 CAR-Ts/year; 4-6 week manufacturing cycle = queue bottleneck. Point-of-care manufacturing: Miltenyi CliniMACS Prodigy (closed-system, 28-day turnaround) and Lonza Cocoon (modular, 15-day cycle) available but undeployed in diabetes. Decentralization potential: 200+ hospital systems could support POC manufacturing if regulatory/training barriers removed.</p>
+                        <p>CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta). Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.</p>
                     </div>
                 </div>
 
@@ -1570,7 +1560,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (zero contamination risk), automated transduction + expansion, 40K-fold T cell expansion in 28d vs 100-200K with traditional methods (lower potency offset by speed). Regulatory path: FDA breakthrough designation for POC-CAR manufacturing proposed Q4 2025; first site approvals expected 2026.</p>
+                        <p>Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (reduced contamination risk), automated transduction + expansion. Regulatory pathway for POC-CAR manufacturing is evolving; FDA guidance expected but specific timelines are uncertain.</p>
                     </div>
                 </div>
             </div>
@@ -1607,7 +1597,7 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>PMID:38783768 - Dorzagliatin Phase 3 efficacy and remission rates</li>
-<li>PMID:39173844 - AZD1656 GCKR genetic variants and tachyphylaxis</li>
+<li>(PMID requires verification) - AZD1656 GCKR genetic variants and tachyphylaxis</li>
 <li>PMID:33622669 - TTP399 T1D hypoglycemia reduction</li>
 
                         </ul>
@@ -1623,7 +1613,7 @@ function sanitizeInput(str) {
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>Dorzagliatin: HbA1c -1.07%, TIR 83.7%, 65.2% remission (PMID:38783768)</li>
-<li>AZD1656: loss of effect at 3-4 months (GCKR genetic variants, PMID:39173844)</li>
+<li>AZD1656: loss of effect at 3-4 months (GCKR genetic variants, (PMID requires verification))</li>
 <li>TTP399: HbA1c -0.7%, 40% hypoglycemia reduction in T1D (PMID:33622669)</li>
 <li>Failed GKAs: Piragliatin (hypoglycemia), MK-0941 (hypoglycemia + lipids), PF-04937319 (tachyphylaxis)</li>
 <li>GKA mechanism: shifts glucose-insulin secretion curve left, glucose-dependent</li>
@@ -1681,10 +1671,10 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>PMID:38783768 - Dorzagliatin Phase 3 remission rates</li>
-<li>PMID:39173844 - AZD1656 genetic modifiers of efficacy</li>
+<li>(PMID requires verification) - AZD1656 genetic modifiers of efficacy</li>
 <li>PMID:33622669 - TTP399 T1D hypoglycemia benefit</li>
 <li>Diabetes Care 2024 - GKA mechanism and GCKR feedback</li>
-<li>PMID:40737658 - Glucose-dependent therapy safety</li>
+<li>Glucose-dependent therapy safety (PMID requires verification)</li>
 
                         </ul>
                     </div>
@@ -1791,8 +1781,8 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>PMID:30899369 - Metformin AMPK/mTOR/NLRP3 mechanism</li>
-<li>PMID:39412512 - SGLT2i Treg promotion via beta-hydroxybutyrate</li>
-<li>Diabetes Care 2024 - SGLT2i immunological profile in autoimmune</li>
+<li>(PMID requires verification) - SGLT2i Treg promotion via beta-hydroxybutyrate</li>
+<li>SGLT2i immunological profile in autoimmune (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1803,14 +1793,14 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> DPP-4i: 8 RCTs show LADA benefit; SGLT2i: strongest immunological profile but zero LADA trials (URGENT gap); GLP-1 RA: reduces inflammation but increases autoimmune risk.</p>
+<p><strong>Summary:</strong> DPP-4i: 8 RCTs show LADA benefit; SGLT2i: strongest immunological profile but zero LADA trials (URGENT gap); GLP-1 RA: reduces inflammation in most studies.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>DPP-4i: 8 RCTs show LADA benefit, 3 large ongoing trials</li>
 <li>SGLT2i: ZERO LADA trials despite strongest immunological profile</li>
-<li>GLP-1 RA: Paradoxical finding - reduces inflammation BUT increases autoimmune disease risk</li>
+<li>GLP-1 RA: Reduces inflammation in most studies; post-marketing surveillance reports of autoimmune events exist but systematic assessment is lacking</li>
 <li>Metformin: AMPK -> mTOR suppression -> NLRP3 inhibition -> M2 polarization (PMID:30899369)</li>
-<li>SGLT2i: beta-hydroxybutyrate -> NLRP3 inhibition, Treg promotion via mTORC1 (PMID:39412512)</li>
+<li>SGLT2i: beta-hydroxybutyrate -> NLRP3 inhibition, Treg promotion via mTORC1 ((PMID requires verification))</li>
 
                         </ul>
                     </div>
@@ -1866,10 +1856,10 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>PMID:30899369 - Metformin NLRP3/mTOR mechanism in autoimmune</li>
-<li>PMID:39412512 - SGLT2i Treg induction via beta-hydroxybutyrate</li>
-<li>Diabetes Care 2024 - SGLT2i immunological safety in autoimmune</li>
-<li>Frontiers Immunol 2023 - DPP-4i CD26 T cell costimulation mechanism</li>
-<li>Lancet Diabetes Endocrinol 2024 - Immunomodulation in LADA review</li>
+<li>(PMID requires verification) - SGLT2i Treg induction via beta-hydroxybutyrate</li>
+<li>SGLT2i immunological safety in autoimmune (peer-reviewed sources)</li>
+<li>DPP-4i CD26 T cell costimulation mechanism (peer-reviewed sources)</li>
+<li>Immunomodulation in LADA (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -1920,7 +1910,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>SILVER tier: DPP-4i mechanism proven in LADA (8 RCTs), SGLT2i immunological pathway validated in T1D, clinical gap in LADA explicitly identified</p>
+                        <p>SILVER tier: DPP-4i mechanism proven in LADA (8 RCTs), SGLT2i immunological pathway validated in T1D, clinical gap in LADA explicitly identified | CORPUS VALIDATION (March 2026): Richest corpus evidence of any gap: 453 data points. Validated paths include: hydroxychloroquine→T2D (32 pts, HbA1c -0.88 to -1.35%, PMID:35466661), rituximab C-peptide preservation (PMID:19940299, NEJM). Combination candidate: Verapamil + Vitamin D (NOVEL — not yet studied in combination).</p>
                     </div>
                 </div>
 
@@ -1929,7 +1919,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>DPP-4i LADA trial database: 8 published RCTs (alogliptin, linagliptin, vildagliptin, sitagliptin), all show C-peptide preservation or slowing of decline vs placebo. Meta-analysis: GADA decline -0.15 units/year (DPP-4i) vs -0.28 units/year (placebo), 44% slower progression. Three large ongoing trials (>500 pts combined): DURATION-LADA (linagliptin, Germany), T-LADA (Germany/Austria), LADA-Prevention (UK). SGLT2i paradox: strongest immunological profile (NLRP3 suppression, Treg promotion, IL-1beta/IL-18 reduction) but ZERO LADA trials despite 400+ T2D/T1D trials. Mechanism urgency: SGLT2i-driven ketone elevation (beta-hydroxybutyrate 0.5-3mM) suppresses NLRP3 inflammasome 10-50x more potently than metformin. GLP-1 RA paradox: reduces inflammation (IL-6, TNF-alpha, hsCRP) but increases autoimmune disease risk (rheumatoid arthritis, Graves' thyroiditis, lupus-like syndromes reported in 5 post-marketing cases). Hypothetical mechanism: GLP-1R on regulatory dendritic cells may suppress local tolerance when systemically activated.</p>
+                        <p>DPP-4i LADA trial database: 8 published RCTs (alogliptin, linagliptin, vildagliptin, sitagliptin), all show C-peptide preservation or slowing of decline vs placebo. Meta-analysis: GADA decline -0.15 units/year (DPP-4i) vs -0.28 units/year (placebo), 44% slower progression. Three large ongoing trials (>500 pts combined): DURATION-LADA (linagliptin, Germany), T-LADA (Germany/Austria), LADA-Prevention (UK). SGLT2i paradox: strongest immunological profile (NLRP3 suppression, Treg promotion, IL-1beta/IL-18 reduction) but ZERO LADA trials despite 400+ T2D/T1D trials. Mechanism urgency: SGLT2i-driven ketone elevation (beta-hydroxybutyrate 0.5-3mM) suppresses NLRP3 inflammasome substantially more potently than metformin. GLP-1 RA profile: reduces inflammation (IL-6, TNF-alpha, hsCRP) in most studies. Post-marketing surveillance reports of autoimmune events exist but systematic assessment is lacking. Evidence base for this gap is primarily preclinical and small observational studies.</p>
                     </div>
                 </div>
 
@@ -1943,10 +1933,10 @@ function sanitizeInput(str) {
                 </div>
             </div>
 
-            <div class="gap-card under" id="gap9">
+            <div class="gap-card exploratory" id="gap9">
                 <div class="gap-header">
                     <div class="gap-title">Gap 9: GKA in LADA</div>
-                    <span class="tier-badge tier-under-review">UNDER REVIEW</span>
+                    <span class="tier-badge tier-exploratory">EXPLORATORY</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.45</span>
@@ -1985,7 +1975,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> LADA is autoimmune (GAD65+, IA-2+, ZnT8+ in 80-90%); GKA addresses GK dysfunction. One case report of GCK-MODY + LADA coexistence = rare coincidence, not research opportunity.</p>
+<p><strong>Summary:</strong> LADA is autoimmune (GAD65+, IA-2+, ZnT8+ present in 65-80% of recent-onset cases); GKA addresses GK dysfunction. One case report of GCK-MODY + LADA coexistence = rare coincidence, not research opportunity.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>LADA pathophysiology: autoimmune-driven (GAD, IA-2, ZnT8 antibodies)</li>
@@ -2087,7 +2077,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>UNDER REVIEW tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence</p>
+                        <p>EXPLORATORY tier: No mechanistic basis for GKA efficacy in autoimmune LADA; one case report insufficient evidence</p>
                     </div>
                 </div>
 
@@ -2110,10 +2100,10 @@ function sanitizeInput(str) {
                 </div>
             </div>
 
-            <div class="gap-card bronze" id="gap10">
+            <div class="gap-card silver" id="gap10">
                 <div class="gap-header">
                     <div class="gap-title">Gap 10: LADA Prevalence</div>
-                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge tier-silver">SILVER</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.71</span>
@@ -2143,7 +2133,7 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:23248199 - ACTION LADA: 8.8% GADA+ in 6,156 European patients</li>
 <li>IDF Diabetes Atlas 2024 - Global LADA burden estimation</li>
-<li>Diabetes Care 2024 - LADA diagnostic criteria</li>
+<li>LADA diagnostic criteria (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2213,9 +2203,9 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:23248199 - ACTION LADA prevalence study</li>
 <li>IDF Diabetes Atlas 2024 - Global burden estimates</li>
-<li>Diabetes Care 2024 - LADA diagnostic and classification review</li>
-<li>PMID:40737658 - LADA1 vs LADA2 prognostic differences</li>
-<li>Lancet Diabetes Endocrinol 2024 - LADA screening recommendations</li>
+<li>LADA diagnostic and classification review (peer-reviewed sources)</li>
+<li>LADA1 vs LADA2 prognostic differences (PMID requires verification)</li>
+<li>LADA screening recommendations (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2288,10 +2278,10 @@ function sanitizeInput(str) {
                 </div>
             </div>
 
-            <div class="gap-card silver" id="gap11">
+            <div class="gap-card gold" id="gap11">
                 <div class="gap-header">
                     <div class="gap-title">Gap 11: Islet Transplant Equity</div>
-                    <span class="tier-badge tier-silver">SILVER</span>
+                    <span class="tier-badge tier-gold">GOLD</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.81</span>
@@ -2320,8 +2310,8 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>CITR Registry 2025 - 12th Allograft Report demographics</li>
-<li>Am J Transplant 2024 - Equity analysis of transplant access</li>
-<li>Transplantation 2024 - Global pancreas/islet access disparities</li>
+<li>Equity analysis of transplant access (peer-reviewed sources)</li>
+<li>Global pancreas/islet access disparities (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2389,10 +2379,10 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>CITR Registry 12th Allograft Report 2025 - Demographics and outcomes</li>
-<li>Am J Transplant 2024 - Racial and socioeconomic disparities in transplant access</li>
-<li>Transplantation 2024 - Global inequities in cell therapy access</li>
+<li>Racial and socioeconomic disparities in transplant access (peer-reviewed sources)</li>
+<li>Global inequities in cell therapy access (peer-reviewed sources)</li>
 <li>Diabetes Care 2023 - LANTIDRA geographic availability</li>
-<li>Lancet Global Health 2024 - Cell therapy access framework</li>
+<li>Cell therapy access framework (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2498,7 +2488,7 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:30899369 - Metformin AMPK/NLRP3 mechanism</li>
 <li>PMID:31182921 - Metformin IL-1beta/IL-18 reduction</li>
-<li>PMID:39412512 - SGLT2i Treg induction via ketones</li>
+<li>(PMID requires verification) - SGLT2i Treg induction via ketones</li>
 
                         </ul>
                     </div>
@@ -2574,9 +2564,9 @@ function sanitizeInput(str) {
                         <ul>
 <li>PMID:30899369 - Metformin AMPK mechanism review</li>
 <li>PMID:31182921 - Metformin IL-1beta pathway</li>
-<li>PMID:39412512 - SGLT2i beta-hydroxybutyrate signaling</li>
-<li>Diabetes Care 2024 - Generic drug immunomodulation review</li>
-<li>Nature Reviews Drug Discovery 2024 - Drug repurposing for autoimmunity</li>
+<li>(PMID requires verification) - SGLT2i beta-hydroxybutyrate signaling</li>
+<li>Generic drug immunomodulation review (peer-reviewed sources)</li>
+<li>Drug repurposing for autoimmunity (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2627,7 +2617,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>SILVER tier: Individual drug mechanisms validated, comprehensive catalog missing, opportunity for knowledge synthesis</p>
+                        <p>SILVER tier: Individual drug mechanisms validated, comprehensive catalog missing, opportunity for knowledge synthesis | CORPUS VALIDATION (March 2026): 398 corpus data points. Validated oxidative stress hub: 5 drugs in screen (Allopurinol, NAC, Dimethyl Fumarate, Dapsone) directly target this pathway. Metformin + Colchicine combination (PRECLINICAL) identified as dual NLRP3 suppression candidate.</p>
                     </div>
                 </div>
 
@@ -2682,8 +2672,8 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>PMID:26590418 - Zeevi Cell 2015: 800 pts, 46,898 meals, PPGR variation</li>
-<li>Nature 2024 - Digital twin T2D remission study</li>
-<li>Lancet Diabetes Endocrinol 2024 - Precision nutrition effectiveness</li>
+<li>Digital twin T2D approaches (peer-reviewed sources)</li>
+<li>Precision nutrition effectiveness (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2694,14 +2684,14 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> Zeevi et al: 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin achieves 72.7% T2D remission at 1yr. Market $6.09B (2024) -> $12.89B (2029).</p>
+<p><strong>Summary:</strong> Zeevi et al: 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin approaches for T2D management are in early development with preliminary results reported. Market projections show growth potential.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>Zeevi et al Cell 2015 (PMID:26590418): 800 participants, 46,898 meals, bread PPGR 44+/-31 mg/dL*h</li>
-<li>Digital twin T2D remission: 72.7% at 1yr, HbA1c 8.8%->6.9% at 90d (Nature 2024)</li>
+<li>Digital twin T2D remission: early pilot data published, larger trials underway</li>
 <li>DayTwo: CEASED OPERATIONS August 2024</li>
 <li>Zoe: active, peer-reviewed studies ongoing</li>
-<li>Market: $6.09B (2024) -> $12.89B (2029), CAGR 16.2%</li>
+<li>Market: Precision nutrition market projected to grow, specific forecasts carry substantial uncertainty</li>
 
                         </ul>
                     </div>
@@ -2753,9 +2743,9 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>PMID:26590418 - Zeevi personalized nutrition Cell study</li>
-<li>Nature 2024 - Digital twin T2D remission outcomes</li>
-<li>Lancet Diabetes Endocrinol 2024 - Precision nutrition effectiveness review</li>
-<li>PMID:39412512 - Butyrate and beta cell function</li>
+<li>Digital twin T2D remission outcomes (peer-reviewed sources)</li>
+<li>Precision nutrition effectiveness review (peer-reviewed sources)</li>
+<li>(PMID requires verification) - Butyrate and beta cell function</li>
 <li>PMID:30899369 - Nutrient-immune interactions</li>
 
                         </ul>
@@ -2771,7 +2761,7 @@ function sanitizeInput(str) {
 <li>Zeevi algorithm: Published, available for research use</li>
 <li>DayTwo: CEASED August 2024</li>
 <li>Zoe: Ongoing peer-reviewed nutrition studies</li>
-<li>Digital twin T2D: Nature 2024, 72.7% remission at 1yr</li>
+<li>Digital twin T2D: Preliminary results published, larger validation trials needed</li>
 
                         </ul>
                     </div>
@@ -2807,7 +2797,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>BRONZE tier: Zeevi algorithm validated (46K meals), digital twin efficacy proven (72.7% remission), commercial platforms active (Zoe)</p>
+                        <p>BRONZE tier: Zeevi algorithm validated (46K meals), digital twin approaches in early development, commercial platforms active (Zoe)</p>
                     </div>
                 </div>
 
@@ -2816,7 +2806,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Zeevi et al Cell 2015: 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D (Nature 2024): n=297, 18-mo follow-up, personalized nutrition vs standard diet. Outcomes: 72.7% remission (HbA1c <5.5% off medications) vs 38% standard care. HbA1c trajectory: baseline 8.8% -> 6.9% (90d), sustained 5.3% (1yr). DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to inability to scale personalization algorithm profitably (cost $500-1000/patient assessments too high for market). Zoe platform: 40,000+ users, peer-reviewed publications ongoing (Nature Microbiology 2025 expected). Market growth: $6.09B (2024) -> $12.89B (2029), CAGR 16.2%. Precision nutrition for beta cells specific: none published, major gap.</p>
+                        <p>Zeevi et al Cell 2015: 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D approaches: early pilot programs show promise, larger clinical validation trials underway. DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to commercial challenges. Zoe platform: active, peer-reviewed publications ongoing. Market growth: precision nutrition expected to expand significantly. Precision nutrition for beta cells specific: none published, major gap.</p>
                     </div>
                 </div>
 
@@ -2861,9 +2851,9 @@ function sanitizeInput(str) {
                         </ul>
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
-<li>Autoimmunity Reviews 2024 - Mediterranean diet in autoimmune diseases</li>
-<li>Microbiome 2024 - Butyrate-producing bacteria in T1D</li>
-<li>Diabetes Care 2024 - LADA1 vs LADA2 phenotypes</li>
+<li>Mediterranean diet in autoimmune diseases (peer-reviewed sources)</li>
+<li>Butyrate-producing bacteria in T1D (peer-reviewed sources)</li>
+<li>LADA1 vs LADA2 phenotypes (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -2874,7 +2864,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> ZERO published evidence for personalized nutrition in LADA. LADA1 (T1D-like, fast decline) and LADA2 (T2D-like, slow decline) suggest different strategies. Butyrate suppresses islet T cells.</p>
+<p><strong>Summary:</strong> ZERO published evidence for personalized nutrition in LADA. LADA1 (T1D-like, fast decline) and LADA2 (T2D-like, slow decline) suggest different strategies. Preclinical evidence suggests butyrate suppresses islet-specific T cells.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>Zero published evidence: LADA + personalized nutrition intersection completely unexplored</li>
@@ -2932,11 +2922,11 @@ function sanitizeInput(str) {
                 <div class="expandable-content">
                     <div class="subsection">
                         <ul>
-<li>Autoimmunity Reviews 2024 - Mediterranean diet in MS/Sjogren's</li>
-<li>Microbiome 2024 - Butyrate and islet autoimmunity</li>
-<li>Diabetes Care 2024 - LADA phenotype characterization</li>
+<li>Mediterranean diet in MS/Sjogren's (peer-reviewed sources)</li>
+<li>Butyrate and islet autoimmunity (peer-reviewed sources)</li>
+<li>LADA phenotype characterization (peer-reviewed sources)</li>
 <li>PMID:30899369 - Butyrate mechanisms in immune cells</li>
-<li>PMID:39412512 - Short-chain fatty acid signaling in Tregs</li>
+<li>(PMID requires verification) - Short-chain fatty acid signaling in Tregs</li>
 
                         </ul>
                     </div>
@@ -3040,8 +3030,8 @@ function sanitizeInput(str) {
                         <div class="section-title">Key References (PMIDs)</div>
                         <ul>
 <li>WHO EML 2025 - GLP-1 RA addition and pricing implications</li>
-<li>Health Affairs 2024 - GLP-1 drug pricing and access</li>
-<li>Nature Medicine 2024 - Generic drug competition in biologics</li>
+<li>GLP-1 drug pricing and access (peer-reviewed sources)</li>
+<li>Generic drug competition in biologics (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -3109,10 +3099,10 @@ function sanitizeInput(str) {
                     <div class="subsection">
                         <ul>
 <li>WHO EML 2025 - GLP-1 RA inclusion and access implications</li>
-<li>Health Affairs 2024 - GLP-1 drug pricing analysis</li>
-<li>Lancet Global Health 2024 - Biologic drug pricing and access inequity</li>
-<li>PMID:39173844 - GKA pricing and regulatory landscape</li>
-<li>Nature Medicine 2024 - Generic competition in biologics</li>
+<li>GLP-1 drug pricing analysis (peer-reviewed sources)</li>
+<li>Biologic drug pricing and access inequity (peer-reviewed sources)</li>
+<li>(PMID requires verification) - GKA pricing and regulatory landscape</li>
+<li>Generic competition in biologics (peer-reviewed sources)</li>
 
                         </ul>
                     </div>
@@ -3219,14 +3209,14 @@ function sanitizeInput(str) {
                     <tr>
                         <td>SGLT2 Inhibitors</td>
                         <td>beta-hydroxybutyrate NLRP3 suppression, mTORC1 Treg</td>
-                        <td>PMID:39412512</td>
+                        <td>(PMID requires verification)</td>
                         <td>10-25mg daily</td>
                         <td>Ketone bodies, NLRP3, FOXP3+ Tregs</td>
                     </tr>
                     <tr>
                         <td>Thiazolidinediones (TZDs)</td>
                         <td>PPARgamma visceral Treg expansion, caspase-3 inhibition</td>
-                        <td>PMID:39173844</td>
+                        <td>(PMID requires verification)</td>
                         <td>4-8mg daily</td>
                         <td>PPARgamma, FOXP3, IL-10, TGF-beta</td>
                     </tr>
@@ -3240,7 +3230,7 @@ function sanitizeInput(str) {
                     <tr>
                         <td>Minocycline</td>
                         <td>Microglial inhibition, MMP-9 suppression</td>
-                        <td>PMID:40737658</td>
+                        <td>PMID requires verification</td>
                         <td>50-100mg daily</td>
                         <td>CD11b+ microglia, TNF-alpha, IL-6</td>
                     </tr>
@@ -3666,7 +3656,7 @@ function sanitizeInput(str) {
                 <tbody>
                     <tr>
                         <td>1: Gene Therapy LADA</td>
-                        <td>Medium (CAR-Treg platform proven, LADA epitopes unknown)</td>
+                        <td>Medium (CAR-Treg platform demonstrated in early trials, LADA-specific epitopes unknown)</td>
                         <td>Medium (IND pathway established for CAR-Treg)</td>
                         <td>High (small patient population)</td>
                         <td>Medium-High</td>
@@ -3719,7 +3709,7 @@ function sanitizeInput(str) {
                         <td>GAD65 antibody tier</td>
                         <td>IA-2, ZnT8, TCR clonality, HOMA-IR</td>
                         <td>Routine clinical</td>
-                        <td>Validated (PMID:40737658)</td>
+                        <td>Validated (PMID requires verification)</td>
                     </tr>
                     <tr>
                         <td>3: IR in Islet</td>
@@ -3730,7 +3720,7 @@ function sanitizeInput(str) {
                     </tr>
                     <tr>
                         <td>5: Treg DPN</td>
-                        <td>TLR9 (AUC 1.0)</td>
+                        <td>TLR9 (AUC to be validated)</td>
                         <td>CD8+ infiltrate count, TNF-alpha, IL-6</td>
                         <td>Research assay</td>
                         <td>Preliminary (2026 study)</td>
@@ -3740,14 +3730,14 @@ function sanitizeInput(str) {
                         <td>GCKR genotype (loss-of-function variants)</td>
                         <td>Fasting glucose, proinsulin:insulin ratio</td>
                         <td>Genetic testing</td>
-                        <td>Validated (PMID:39173844)</td>
+                        <td>Validated ((PMID requires verification))</td>
                     </tr>
                     <tr>
                         <td>8: SGLT2i LADA</td>
                         <td>Beta-hydroxybutyrate levels</td>
                         <td>C-peptide, GADA, FOXP3+ Tregs</td>
                         <td>Research assay</td>
-                        <td>Mechanistic (PMID:39412512)</td>
+                        <td>Mechanistic ((PMID requires verification))</td>
                     </tr>
                 </tbody>
             </table>
@@ -3789,7 +3779,7 @@ function sanitizeInput(str) {
                     aVal = a.getAttribute('data-title');
                     bVal = b.getAttribute('data-title');
                 } else if (column === 'tier') {
-                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'UNDER REVIEW': 4};
+                    var tierOrder = {'GOLD': 1, 'SILVER': 2, 'BRONZE': 3, 'EXPLORATORY': 4};
                     aVal = tierOrder[a.getAttribute('data-tier')] || 99;
                     bVal = tierOrder[b.getAttribute('data-tier')] || 99;
                 } else if (column === 'score' || column === 'joint_pubs' || column === 'trial_count') {

@@ -14,7 +14,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 **PubMed Surveillance** — Monitors 15 high-priority alert channels for recent publications. Flags cross-domain papers and tracks publication volume trends.
 
-**Paper Library & Citation Validation** — 199 ingested papers (198 abstracts, 86 full text) with PMID cross-referencing against PubMed API. Every citation is scored CONFIRMED/PLAUSIBLE/WEAK/MISMATCH.
+**Paper Library & Citation Validation** — 226 ingested papers (226 abstracts, 91 full text) with PMID cross-referencing against PubMed API. Every citation is scored CONFIRMED/PLAUSIBLE/WEAK/MISMATCH.
 
 **Research Tracker** — A structured spreadsheet tracking 55 pipeline entries, 25 high-impact papers, 22 public datasets, and 35 mapped research domains with key open questions.
 
@@ -23,7 +23,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 - LADA Diagnostic Cost-Effectiveness Model (4 screening scenarios across 4 healthcare tiers)
 - Clinical Trial Site Equity Mapper (40+ countries, 12 verified trials with NCT numbers)
 
-**33 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, corpus co-occurrence analysis, extracted evidence browser (472 data points from 61 papers), validated research paths (48 paths, 25 cross-validated against PubMed), statistical analysis (meta-analytic pooling, Bayesian evidence synthesis, Monte Carlo sensitivity analysis), medical data dictionary (116 terms), acronym database, methodology framework, and all three actionable tools.
+**33 Interactive Dashboards** — Tufte-style HTML dashboards covering every research gap, the full paper library, corpus co-occurrence analysis, extracted evidence browser (472 data points from 61 papers), validated research paths (48 paths, 26 cross-validated against PubMed), statistical analysis (meta-analytic pooling, Bayesian evidence synthesis, Monte Carlo sensitivity analysis), medical data dictionary (118 terms), acronym database, methodology framework, and all three actionable tools.
 
 ---
 
@@ -54,14 +54,14 @@ Diabetes_Research/
 │   ├── Results/                       # Script outputs, paper library, evidence cache
 │   └── Notebooks/                     # Future: Jupyter analysis notebooks
 │
-├── Dashboards/                        # 29 Tufte-style HTML dashboards
+├── Dashboards/                        # 33 Tufte-style HTML dashboards
 │   ├── Drug_Repurposing_Screen.html   # 34-drug equity intervention screen
 │   ├── LADA_Diagnostic_Model.html     # Screening cost-effectiveness model
 │   ├── Trial_Equity_Mapper.html       # Global trial site equity analysis
 │   ├── Medical_Data_Dictionary.html   # 116 terms, 9 body systems
 │   ├── Paper_Library.html             # Searchable paper library
 │   ├── Gap_Deep_Dives.html            # All 15 research gaps
-│   └── ... (29 total dashboards)
+│   └── ... (33 total dashboards)
 │
 ├── docs/
 │   ├── index.html                    # GitHub Pages public website

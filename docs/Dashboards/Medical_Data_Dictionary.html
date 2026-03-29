@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Data Dictionary - Diabetes Research Hub</title>
     <style>
@@ -253,39 +249,30 @@
             color: #888;
             text-align: center;
         }
-    
-/* Print-friendly */
-@media print {
-  .hub-nav, .hub-footer { display: none !important; }
-  body { background: #fff !important; }
-  .card, .section, table { break-inside: avoid; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
-}
-/* Accessibility: focus states */
-button:focus, a:focus, input:focus, select:focus { outline: 2px solid #2c5f8a; outline-offset: 2px; }
-/* Smooth transitions */
-button, a, .filter-btn, .tab, .card { transition: all 0.15s ease; }
-a:hover { text-decoration: underline; }
-/* Skip to content link for screen readers */
-.skip-link { position: absolute; top: -40px; left: 0; background: #2c5f8a; color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; }
-.skip-link:focus { top: 0; }
-</style>
 
-<script>
-// XSS sanitizer for search inputs
-function sanitizeInput(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-</script>
+        /* === CONTEXT BLOCK === */
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
-<style>.hub-nav{background:#fff;border-bottom:1px solid #e0ddd5;padding:8px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:9999}.hub-nav a{color:#2c5f8a;text-decoration:none}.hub-nav a:hover{text-decoration:underline}.hub-nav .sep{color:#ccc}</style>
-<div class="hub-nav"><a href="../index.html">&larr; Diabetes Research Hub</a><span class="sep">|</span><a href="Research_Dashboard.html">Research</a><span class="sep">|</span><a href="Clinical_Trial_Dashboard.html">Trials</a><span class="sep">|</span><a href="Gap_Deep_Dives.html">Gaps</a><span class="sep">|</span><a href="Gap_Synthesis.html">Synthesis</a><span class="sep">|</span><a href="Equity_Map.html">Equity</a><span class="sep">|</span><a href="Medical_Data_Dictionary.html">Dictionary</a><span class="sep">|</span><a href="Acronym_Database.html">Acronyms</a></div>
-<div id="main-content" class="container">
+<div class="container">
     <h1>Medical Data Dictionary</h1>
     <p class="description">Comprehensive reference for diabetes research terms, pathways, and connections to research gaps. All definitions in plain English first, then medical literature standard definitions.</p>
+
+    <div class="context-block">
+      <h3>What This Dashboard Answers</h3>
+      <p>Diabetes research uses specialized vocabulary spanning endocrinology, immunology, genetics, pharmacology, and health economics. This dictionary defines 117 medical terms in both plain English and technical language, organized by body system, with connections to the 15 research gaps and cited sources for each definition.</p>
+      <div class="context-label">How to Use This</div>
+      <p>For non-specialists: look up any term encountered in the dashboards and get a plain-language explanation. For researchers: verify precise medical definitions with cited sources. For the platform: provides a shared vocabulary that ensures consistency across all 29 dashboards.</p>
+      <div class="context-label">What This Cannot Tell You</div>
+      <p>Definitions reflect consensus usage as of March 2026 and may not capture emerging terminology. Some terms have different meanings in different clinical contexts — the definitions here are diabetes-focused. Normal ranges cited are general population values and may vary by age, sex, and ethnicity.</p>
+    </div>
 
     <div class="tabs">
         <button class="tab-button active" onclick="switchTab('systems')">Body Systems Map</button>
@@ -303,7 +290,7 @@ function sanitizeInput(str) {
         <div class="system-card" style="background-color: #e8d4b8; background-color: #e8d4b8cc;">
             <div class="system-name">Pancreas & Beta Cells</div>
             <div class="system-desc">Insulin production and glucose sensing</div>
-            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (39)</button>
+            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (48)</button>
             <div class="system-terms">
                 <ul>
                     <li>• Alpha Cell</li>
@@ -318,10 +305,10 @@ function sanitizeInput(str) {
                     <li>• GLP-1</li>
                     <li>• GLP-1 Receptor Agonist</li>
                     <li>• GLUT4</li>
+                    <li>• Genetic Predisposition to Disease</li>
+                    <li>• Genome-Wide Association Study (GWAS)</li>
                     <li>• Gestational Diabetes</li>
-                    <li>• Glucagon</li>
-                    <li>• Glucokinase</li>
-                    <li><em>... and 24 more</em></li>
+                    <li><em>... and 33 more</em></li>
                 </ul>
             </div>
         </div>
@@ -329,7 +316,7 @@ function sanitizeInput(str) {
         <div class="system-card" style="background-color: #d4e8c8; background-color: #d4e8c8cc;">
             <div class="system-name">Immune System</div>
             <div class="system-desc">T cells, B cells, autoimmunity, immune regulation</div>
-            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (53)</button>
+            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (62)</button>
             <div class="system-terms">
                 <ul>
                     <li>• Autoantibodies</li>
@@ -347,7 +334,7 @@ function sanitizeInput(str) {
                     <li>• Donislecel</li>
                     <li>• FOXP3</li>
                     <li>• GAD-alum</li>
-                    <li><em>... and 38 more</em></li>
+                    <li><em>... and 47 more</em></li>
                 </ul>
             </div>
         </div>
@@ -355,15 +342,17 @@ function sanitizeInput(str) {
         <div class="system-card" style="background-color: #c8d8e8; background-color: #c8d8e8cc;">
             <div class="system-name">Liver</div>
             <div class="system-desc">Glucose production, insulin sensitivity</div>
-            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (9)</button>
+            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (11)</button>
             <div class="system-terms">
                 <ul>
                     <li>• Adiponectin Receptor</li>
                     <li>• Glucagon</li>
+                    <li>• Glucokinase Activator (GKA)</li>
                     <li>• Gluconeogenesis</li>
                     <li>• Glycogenolysis</li>
                     <li>• Insulin Receptor</li>
                     <li>• Insulin Resistance</li>
+                    <li>• Islet Transplantation</li>
                     <li>• Metabolic Syndrome</li>
                     <li>• Metformin</li>
                     <li>• Type 2 Diabetes</li>
@@ -409,7 +398,7 @@ function sanitizeInput(str) {
         <div class="system-card" style="background-color: #d4c8e8; background-color: #d4c8e8cc;">
             <div class="system-name">Blood & Vascular</div>
             <div class="system-desc">Glucose, HbA1c, lipids, inflammation, CVD</div>
-            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (35)</button>
+            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (38)</button>
             <div class="system-terms">
                 <ul>
                     <li>• AMPK</li>
@@ -418,6 +407,7 @@ function sanitizeInput(str) {
                     <li>• CRP</li>
                     <li>• Calcineurin</li>
                     <li>• Closed-loop System</li>
+                    <li>• Continuous Glucose Monitor (CGM)</li>
                     <li>• Diabetic Nephropathy</li>
                     <li>• Fasting Glucose</li>
                     <li>• GLP-1 Receptor Agonist</li>
@@ -426,8 +416,7 @@ function sanitizeInput(str) {
                     <li>• Glycemic Variability</li>
                     <li>• HOMA-IR</li>
                     <li>• HbA1c</li>
-                    <li>• IL-1beta</li>
-                    <li><em>... and 20 more</em></li>
+                    <li><em>... and 23 more</em></li>
                 </ul>
             </div>
         </div>
@@ -435,7 +424,7 @@ function sanitizeInput(str) {
         <div class="system-card" style="background-color: #c8e8d4; background-color: #c8e8d4cc;">
             <div class="system-name">Gut & GI</div>
             <div class="system-desc">GLP-1, GIP, incretin pathway, microbiome</div>
-            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (6)</button>
+            <button onclick="toggleSystemTerms(this)" style="padding: 8px 12px; border: none; background: rgba(0,0,0,0.1); cursor: pointer; font-size: 0.85em;">Show Terms (7)</button>
             <div class="system-terms">
                 <ul>
                     <li>• DPP-4</li>
@@ -444,6 +433,7 @@ function sanitizeInput(str) {
                     <li>• GLP-1</li>
                     <li>• GLP-1 Receptor Agonist</li>
                     <li>• Incretin Pathway</li>
+                    <li>• Precision Medicine</li>
                 </ul>
             </div>
         </div>
@@ -488,7 +478,7 @@ function sanitizeInput(str) {
         <h2>Medical Term Dictionary</h2>
         <p class="description">Search and filter terms. Click any term to expand and see connections to body systems, gaps, and related concepts.</p>
         <div class="search-filter">
-            <input type="text" class="search-box" id="searchInput" placeholder="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." aria-label="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." onkeyup="filterDictionary()">
+            <input type="text" class="search-box" id="searchInput" placeholder="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." onkeyup="filterDictionary()">
             <select class="filter-select" id="systemFilter" onchange="filterDictionary()">
                 <option value="">All Systems</option>
                 <option value="pancreas">Pancreas & Beta Cells</option>
@@ -775,8 +765,8 @@ function sanitizeInput(str) {
         </div>
         <div class="term-card" data-term="baricitinib" data-systems="immune" data-gaps="2,3,5,6,8">
             <div class="term-title">Baricitinib</div>
-            <div class="term-plain">JAK inhibitor. FDA approved for rheumatoid arthritis. Shows curative diabetes reversal in mouse models; may protect beta cells in T1D.</div>
-            <div class="term-medical">JAK1/2 inhibitor. Blocks JAK/STAT signaling downstream of cytokine receptors. In mice: complete diabetes reversal; emerging human data in T1D.</div>
+            <div class="term-plain">JAK inhibitor. FDA approved for rheumatoid arthritis. Shows complete diabetes reversal in NOD mouse models (preclinical only); no human diabetes trial data exists.</div>
+            <div class="term-medical">JAK1/2 inhibitor. Blocks JAK/STAT signaling downstream of cytokine receptors. In NOD mice: complete diabetes reversal (preclinical); no published human diabetes efficacy data.</div>
             <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
             <div class="term-details">
                 <div class="detail-row">
@@ -841,7 +831,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:20554977</div>
+                    <div class="detail-value">Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:20519905</div>
                 </div>
             </div>
         </div>
@@ -877,7 +867,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. PMID:33989382</div>
+                    <div class="detail-value">Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. PMID:34180979</div>
                 </div>
             </div>
         </div>
@@ -1165,7 +1155,43 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. PMID:33544156</div>
+                    <div class="detail-value">Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. PMID:33550442</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="continuous glucose monitor (cgm)" data-systems="vascular" data-gaps="2,6,10,11">
+            <div class="term-title">Continuous Glucose Monitor (CGM)</div>
+            <div class="term-plain">A small sensor worn under the skin that measures blood sugar levels every few minutes and sends the data to a phone or receiver. Enables real-time glucose tracking without finger pricks.</div>
+            <div class="term-medical">Subcutaneous electrochemical sensor measuring interstitial glucose concentration at 1-5 minute intervals. Provides trend data, rate of change, and predictive alerts. Current devices (Dexcom G7, FreeStyle Libre 3) have MARD <9%.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Blood & Vascular</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Time in range, Glucose management indicator (GMI), Coefficient of variation</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Target: TIR >70%, GMI <7%, CV <36%</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Standard of care for T1D; increasingly used in T2D; reduces HbA1c by 0.3-0.5%; significant access disparities by insurance type, race, and geography</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Insulin Infusion System (Insulin Pump), HbA1c, Precision Medicine
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 2, Gap 6, Gap 10, Gap 11</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Beck RW et al. Effect of continuous glucose monitoring on glycemic control in adults with type 1 diabetes. JAMA 2017;317(4):371-378. PMID:28118453</div>
                 </div>
             </div>
         </div>
@@ -1345,7 +1371,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. PMID:33111399</div>
+                    <div class="detail-value">Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. PMID:32627352</div>
                 </div>
             </div>
         </div>
@@ -1565,10 +1591,10 @@ function sanitizeInput(str) {
                 </div>
             </div>
         </div>
-        <div class="term-card" data-term="glp-1 receptor agonist" data-systems="gut,pancreas,vascular" data-gaps="4,6,7,10,11,12,15">
+        <div class="term-card" data-term="glp-1 receptor agonist" data-systems="gut,pancreas,vascular" data-gaps="4,7,8,12,13,14">
             <div class="term-title">GLP-1 Receptor Agonist</div>
-            <div class="term-plain">Drugs (like semaglutide, liraglutide) that mimic GLP-1 hormone. Stimulate insulin, suppress glucagon, slow digestion. Anti-inflammatory and weight-loss promoting.</div>
-            <div class="term-medical">GLP-1R agonists. Mechanisms: (1) glucose-dependent insulin secretion; (2) glucagon suppression; (3) delayed gastric emptying; (4) satiety/CNS weight loss; (5) reduced CRP/TNF/IL-6; (6) cardio/renal protection.</div>
+            <div class="term-plain">A type of diabetes and obesity drug that mimics GLP-1, a hormone that increases insulin release, reduces appetite, and slows digestion. Examples include semaglutide (Ozempic/Wegovy) and liraglutide.</div>
+            <div class="term-medical">Peptide or small molecule agonist of glucagon-like peptide-1 receptor. Enhances glucose-dependent insulin secretion, suppresses glucagon, delays gastric emptying, and promotes satiety via hypothalamic action. Some agents show cardiovascular and renal benefit.</div>
             <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
             <div class="term-details">
                 <div class="detail-row">
@@ -1577,27 +1603,27 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Key Indicators:</div>
-                    <div class="detail-value">GLP-1 level, Weight loss, HbA1c reduction</div>
+                    <div class="detail-value">HbA1c, Body weight, MACE events</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Normal Range:</div>
-                    <div class="detail-value">Dose-dependent; semaglutide 0.5-2.4 mg weekly</div>
+                    <div class="detail-value">HbA1c reduction: 1.0-1.8%; weight loss: 5-15% body weight</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">In Diabetes:</div>
-                    <div class="detail-value">T2D and obesity; cardio/renal outcomes; emerging in LADA</div>
+                    <div class="detail-value">First-line T2D therapy after metformin; semaglutide 2.4mg: 15% weight loss (STEP trials); tirzepatide (dual GIP/GLP-1): up to 22% weight loss; some show anti-inflammatory properties relevant to LADA</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Connected To:</div>
-                    <div class="detail-value">GLP-1, Incretin pathway, DPP-4, Weight loss, Anti-inflammation
+                    <div class="detail-value">Incretin, Beta Cell, Insulin, Glucagon
 </div></div>
                 <div class="detail-row">
                     <div class="detail-label">Gap Relevance:</div>
-                    <div class="detail-value">Gap 4, Gap 6, Gap 7, Gap 10, Gap 11, Gap 12, Gap 15</div>
+                    <div class="detail-value">Gap 4, Gap 7, Gap 8, Gap 12, Gap 13, Gap 14</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of GLP-1 receptor agonists. Cell Metabolism 2018;27(4):740-756. PMID:29617641</div>
+                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of glucagon-like peptide-1. Cell Metabolism 2018;27(4):740-756. PMID:29617641</div>
                 </div>
             </div>
         </div>
@@ -1634,6 +1660,78 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Klip A et al. Thirty sweet years of GLUT4. Journal of Biological Chemistry 2019;294(30):11369-11381. PMID:31175156</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="genetic predisposition to disease" data-systems="pancreas,immune" data-gaps="1,2,8,10">
+            <div class="term-title">Genetic Predisposition to Disease</div>
+            <div class="term-plain">Having genes that increase your risk of developing a disease. In diabetes, dozens of genes contribute to risk, with HLA being the strongest factor in type 1.</div>
+            <div class="term-medical">Heritable genetic variants that increase disease susceptibility. T1D: >60 risk loci identified via GWAS, with HLA (6p21) contributing ~50% of genetic risk. T2D: >400 risk loci, mostly affecting beta cell function and insulin signaling. LADA shares genetic overlap with both T1D and T2D.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Genetic risk score (GRS), Polygenic risk score</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Population-dependent; GRS for T1D: median varies by ethnicity</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">GWAS-identified loci enable risk prediction; T1D GRS >14.4 distinguishes T1D from T2D with ~85% sensitivity; LADA has intermediate GRS between T1D and T2D</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">HLA System, GWAS, Precision Medicine
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 8, Gap 10</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-386. PMID:25751624</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="genome-wide association study (gwas)" data-systems="pancreas,immune" data-gaps="1,2,8,10">
+            <div class="term-title">Genome-Wide Association Study (GWAS)</div>
+            <div class="term-plain">A research method that scans the entire genome of many people to find genetic variants associated with a disease. GWAS has identified over 60 risk genes for T1D and over 400 for T2D.</div>
+            <div class="term-medical">Observational study scanning genome-wide set of genetic variants (typically >500,000 SNPs) in large cohorts to identify variants associated with a trait. Significance threshold: p < 5x10^-8. Has identified 60+ T1D loci and 400+ T2D loci.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">SNP array, Polygenic risk score</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">N/A (research methodology)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Identified key diabetes risk loci: TCF7L2 (strongest T2D locus, OR 1.4), PTPN22 (T1D, OR 1.7), INS (T1D, OR 2.4); enables precision medicine approaches</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Genetic Predisposition to Disease, HLA System, Precision Medicine
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 8, Gap 10</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572. PMID:35551307</div>
                 </div>
             </div>
         </div>
@@ -1741,7 +1839,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019;29:1-24. PMID:31220820</div>
+                    <div class="detail-value">Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019;29:1-24. PMID:30949058</div>
                 </div>
             </div>
         </div>
@@ -1781,6 +1879,42 @@ function sanitizeInput(str) {
                 </div>
             </div>
         </div>
+        <div class="term-card" data-term="glucokinase activator (gka)" data-systems="pancreas,liver" data-gaps="7,9,15">
+            <div class="term-title">Glucokinase Activator (GKA)</div>
+            <div class="term-plain">A new class of diabetes drug that enhances the glucose sensor in beta cells, making them more responsive to blood sugar and increasing insulin release. Dorzagliatin is the first approved GKA.</div>
+            <div class="term-medical">Small molecule allosteric activator of glucokinase (GCK/hexokinase IV). Lowers the glucose threshold for insulin secretion by shifting the GCK activation curve leftward. Dorzagliatin (HMS5552): dual-acting hepatic + pancreatic GKA approved in China (2022).</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Liver</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Fasting plasma glucose, HbA1c, OGTT 2h glucose</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">HbA1c reduction: 0.5-1.0% (dorzagliatin Phase 3)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Most early GKAs failed due to hypoglycemia and hepatic steatosis; dorzagliatin avoids this via dual-target design; potential for T2D with residual beta cell function; LADA application unexplored</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Glucokinase, Beta Cell, Insulin, Drug Repurposing
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 7, Gap 9, Gap 15</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Zhu D et al. Dorzagliatin monotherapy in Chinese patients with type 2 diabetes. Nature Medicine 2022;28(5):965-973. PMID:35437333</div>
+                </div>
+            </div>
+        </div>
         <div class="term-card" data-term="gluconeogenesis" data-systems="liver,pancreas" data-gaps="4,11,12">
             <div class="term-title">Gluconeogenesis</div>
             <div class="term-plain">The process by which the liver makes new glucose from non-carbohydrate sources (proteins, fats). Elevated in diabetes, contributing to high fasting blood sugar.</div>
@@ -1814,6 +1948,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Petersen MC et al. Regulation of hepatic glucose metabolism. Physiological Reviews 2017;97(3):1085-1128. PMID:28539434</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="glutamate decarboxylase (gad65)" data-systems="pancreas,immune" data-gaps="1,2,8,9,10,14">
+            <div class="term-title">Glutamate Decarboxylase (GAD65)</div>
+            <div class="term-plain">An enzyme found in beta cells that is a major target of autoimmune attack in type 1 diabetes and LADA. Antibodies against GAD65 (GADA) are the most common autoantibody in adult-onset autoimmune diabetes.</div>
+            <div class="term-medical">Glutamic acid decarboxylase 65 kDa isoform (GAD65). Catalyzes conversion of glutamate to GABA. Major autoantigen in T1D and LADA. Anti-GAD65 antibodies (GADA) are present in 70-80% of new-onset T1D and 80-90% of LADA patients.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">GADA titer (IU/mL), GAD65 affinity</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">GADA negative (<5 IU/mL); positive >5 IU/mL</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Primary autoantibody in LADA diagnosis; GADA titer >180 IU/mL associated with faster progression to insulin; GAD65 affinity <4x10^9 L/mol predicts better C-peptide preservation</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Autoantibodies, LADA, Beta Cell, T Cell, IA-2
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 8, Gap 9, Gap 10, Gap 14</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Hawa MI et al. Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12. Diabetologia 2018;61(7):1644-1649. PMID:29619531</div>
                 </div>
             </div>
         </div>
@@ -1918,6 +2088,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Gap Relevance:</div>
                     <div class="detail-value">Gap 1, Gap 2, Gap 3</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. PMID:22315720</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="hla system" data-systems="immune" data-gaps="1,2,3,5,8,10">
+            <div class="term-title">HLA System</div>
+            <div class="term-plain">A set of genes on chromosome 6 that determine how your immune system recognizes self vs foreign. Certain HLA types greatly increase risk of type 1 diabetes and LADA.</div>
+            <div class="term-medical">Human leukocyte antigen complex on chromosome 6p21. Encodes MHC class I (HLA-A, -B, -C) and class II (HLA-DR, -DQ, -DP) molecules. HLA-DR3/DR4-DQ8 haplotypes confer highest T1D risk (OR ~11). HLA matching critical for transplant outcomes.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">HLA genotype, HLA-DR serotype</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">High-risk: DR3/DR4-DQ8; protective: DR15-DQ6</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">HLA accounts for ~50% of genetic T1D risk; DR3-DQ2 predominates in LADA; HLA matching improves islet transplant graft survival</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">T Cell, Genetic Predisposition, Autoantibodies, Dendritic Cell
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 3, Gap 5, Gap 8, Gap 10</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
@@ -2065,7 +2271,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Lan MS et al. Molecular cloning and identification of IA-2. DNA and Cell Biology 1996;15(2):113-123. PMID:8634143</div>
+                    <div class="detail-value">Lan MS et al. Molecular cloning and identification of IA-2. DNA and Cell Biology 1996;15(2):113-123. PMID:9828138</div>
                 </div>
             </div>
         </div>
@@ -2249,6 +2455,42 @@ function sanitizeInput(str) {
                 </div>
             </div>
         </div>
+        <div class="term-card" data-term="immunosuppressive agents" data-systems="immune" data-gaps="3,4,6,11">
+            <div class="term-title">Immunosuppressive Agents</div>
+            <div class="term-plain">Drugs that weaken the immune system to prevent organ rejection after transplant or to treat autoimmune diseases. They are essential for islet transplant but have serious side effects.</div>
+            <div class="term-medical">Pharmacologic agents that suppress immune function. Classes include calcineurin inhibitors (tacrolimus, cyclosporine), mTOR inhibitors (sirolimus, everolimus), costimulation blockers (belatacept), and anti-metabolites (mycophenolate). Used in transplantation and autoimmune disease management.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Trough drug levels, Lymphocyte count, Infection rate</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Tacrolimus target trough: 3-15 ng/mL (varies by protocol)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Required after islet transplant (Edmonton Protocol); tacrolimus causes insulin resistance (40% incidence at 3 months); balancing graft protection vs metabolic toxicity is key challenge</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Tacrolimus, Sirolimus, Belatacept, Islet Transplant, Transplant Tolerance
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 3, Gap 4, Gap 6, Gap 11</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330. PMID:17005949</div>
+                </div>
+            </div>
+        </div>
         <div class="term-card" data-term="incretin pathway" data-systems="gut,pancreas" data-gaps="4,11,12">
             <div class="term-title">Incretin Pathway</div>
             <div class="term-plain">The system by which eating food triggers intestinal hormones (GLP-1, GIP) to stimulate insulin release.</div>
@@ -2318,6 +2560,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">De Meyts P. Insulin and its receptor: structure, function and evolution. BioEssays 2004;26(12):1351-1362. PMID:15551269</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="insulin infusion system (insulin pump)" data-systems="pancreas,vascular" data-gaps="2,6,10,11">
+            <div class="term-title">Insulin Infusion System (Insulin Pump)</div>
+            <div class="term-plain">A small electronic device worn on the body that delivers insulin continuously through a tiny tube under the skin. Modern systems can automatically adjust insulin based on glucose readings.</div>
+            <div class="term-medical">Continuous subcutaneous insulin infusion (CSII) device delivering rapid-acting insulin via programmable basal rates and user-initiated boluses. Automated insulin delivery (AID) systems integrate CGM data with control algorithms for closed-loop glucose management.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Blood & Vascular</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Time in range (TIR), HbA1c, Basal rate</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">TIR target: >70% (70-180 mg/dL); HbA1c target: <7%</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year) and insurance coverage; significant equity gaps in pump access by race and income</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Continuous Glucose Monitor, Insulin, Precision Medicine
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 2, Gap 6, Gap 10, Gap 11</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717. PMID:31618560</div>
                 </div>
             </div>
         </div>
@@ -2429,6 +2707,42 @@ function sanitizeInput(str) {
                 </div>
             </div>
         </div>
+        <div class="term-card" data-term="islet transplantation" data-systems="pancreas,immune,liver" data-gaps="3,4,6,11">
+            <div class="term-title">Islet Transplantation</div>
+            <div class="term-plain">A procedure where insulin-producing cell clusters (islets) from a donor pancreas are infused into a patient with type 1 diabetes. Can restore insulin production but requires lifelong immunosuppression.</div>
+            <div class="term-medical">Transplantation of isolated pancreatic islets (typically >5,000 IEQ/kg) via portal vein infusion into the liver. Edmonton Protocol (2000): combination immunosuppression (tacrolimus + sirolimus + daclizumab) without steroids. Donislecel (LANTIDRA): first FDA-approved islet cell therapy (June 2023).</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System, Liver</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">C-peptide, Insulin independence, BETA-2 score, SUITO index</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Success: insulin independence with HbA1c <7%; C-peptide >0.3 ng/mL</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Edmonton Protocol: 61% insulin independence at 1yr, declining to 8% at 20yr; limited to <20 centers worldwide; donor shortage (2-3 donors per recipient); stem cell-derived islets (VX-880) may solve supply</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Islets of Langerhans, Immunosuppressive Agents, Transplant Tolerance, Stem Cell-Derived Beta Cells
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 3, Gap 4, Gap 6, Gap 11</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Shapiro AMJ et al. Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen. New England Journal of Medicine 2000;343(4):230-238. PMID:10911004</div>
+                </div>
+            </div>
+        </div>
         <div class="term-card" data-term="islets of langerhans" data-systems="pancreas" data-gaps="3,4,13">
             <div class="term-title">Islets of Langerhans</div>
             <div class="term-plain">Clusters of cells scattered throughout the pancreas that regulate blood sugar. They contain beta, alpha, delta, and other specialized cells.</div>
@@ -2534,6 +2848,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Buzzetti R et al. Management of LADA: a consensus statement. Diabetes 2020;69(10):2037-2044. PMID:32847960</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="lada (latent autoimmune diabetes in adults)" data-systems="pancreas,immune" data-gaps="1,8,9,10,14">
+            <div class="term-title">LADA (Latent Autoimmune Diabetes in Adults)</div>
+            <div class="term-plain">A slow-progressing form of autoimmune diabetes in adults, often misdiagnosed as type 2 diabetes. Patients have autoantibodies like in type 1 but do not need insulin immediately.</div>
+            <div class="term-medical">Autoimmune diabetes with adult onset (>30 years), positive islet autoantibodies (typically GADA), and no insulin requirement for at least 6 months post-diagnosis. Represents 8.9-10% of apparent T2D diagnoses. Two subtypes: LADA1 (high GADA, fast progression) and LADA2 (low GADA, slow progression).</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">GADA titer, C-peptide, IA-2A, ZnT8A</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Diagnosis: GADA+ AND insulin-independent for >6 months AND onset >30 years</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Estimated 17-50M misdiagnosed globally as T2D; standard T2D treatment suboptimal (sulfonylureas accelerate beta cell loss); GAD antibody testing not standard care; prevalence varies by ethnicity and healthcare setting</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Glutamate Decarboxylase (GAD65), Autoantibodies, Beta Cell, T Cell, Insulin
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 8, Gap 9, Gap 10, Gap 14</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Buzzetti R et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel. Diabetes 2020;69(10):2037-2047. PMID:32847960</div>
                 </div>
             </div>
         </div>
@@ -2713,7 +3063,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. PMID:28258328</div>
+                    <div class="detail-value">Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. PMID:28314945</div>
                 </div>
             </div>
         </div>
@@ -2822,6 +3172,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Rena G et al. The mechanisms of action of metformin. Diabetologia 2017;60(9):1577-1585. PMID:28776086</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="monoclonal antibody (humanized)" data-systems="immune" data-gaps="1,2,5,6,8">
+            <div class="term-title">Monoclonal Antibody (Humanized)</div>
+            <div class="term-plain">A laboratory-made protein designed to target a specific molecule in the body. Humanized versions are modified to look more like human antibodies so the body does not reject them.</div>
+            <div class="term-medical">Engineered immunoglobulin with complementarity-determining regions (CDRs) from non-human source grafted onto human framework. Reduces immunogenicity vs chimeric or murine antibodies. Suffix: -zumab (humanized), -umab (fully human).</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Target engagement, Anti-drug antibodies, Serum trough level</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Varies by agent and indication</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Teplizumab (anti-CD3): first disease-modifying therapy for T1D, delays onset by median 2 years; rituximab (anti-CD20): preserves C-peptide in new-onset T1D; otelixizumab, abatacept under investigation for LADA</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Teplizumab, Rituximab, T Cell, B Cell
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 5, Gap 6, Gap 8</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Herold KC et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. New England Journal of Medicine 2019;381(7):603-613. PMID:31180194</div>
                 </div>
             </div>
         </div>
@@ -3037,7 +3423,7 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:25083985</div>
+                    <div class="detail-value">Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:24506867</div>
                 </div>
             </div>
         </div>
@@ -3146,6 +3532,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. PMID:31197153</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="precision medicine" data-systems="pancreas,immune,gut,vascular" data-gaps="1,2,7,8,10,13,14">
+            <div class="term-title">Precision Medicine</div>
+            <div class="term-plain">An approach to healthcare that tailors treatment to individual characteristics like genetics, metabolism, and environment rather than using one-size-fits-all guidelines.</div>
+            <div class="term-medical">Medical model using individual variability in genes, environment, microbiome, and lifestyle to guide prevention and treatment. In diabetes: genetic risk scores for T1D prediction, pharmacogenomics for drug selection, CGM-based nutritional personalization, and digital twin modeling.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells, Immune System, Gut & GI, Blood & Vascular</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">Genetic risk score, Pharmacogenomic profile, Metabolomic signature</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">N/A (treatment paradigm)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Enables classification beyond T1D/T2D into 5+ clusters; MODY genetic testing identifies monogenic forms; precision nutrition using CGM shows 20-fold individual glycemic response variation to identical foods</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">GWAS, Genetic Predisposition to Disease, Continuous Glucose Monitor (CGM), LADA
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 7, Gap 8, Gap 10, Gap 13, Gap 14</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Florez JC. Precision medicine in diabetes: is it time? Diabetes Care 2022;45(12):3019-3032. PMID:36455116</div>
                 </div>
             </div>
         </div>
@@ -3365,39 +3787,39 @@ function sanitizeInput(str) {
                 </div>
             </div>
         </div>
-        <div class="term-card" data-term="sglt2 inhibitor" data-systems="kidneys,immune,vascular" data-gaps="4,6,7,9,10,12">
+        <div class="term-card" data-term="sglt2 inhibitor" data-systems="kidneys,vascular" data-gaps="4,8,12">
             <div class="term-title">SGLT2 Inhibitor</div>
-            <div class="term-plain">Drugs (empagliflozin, dapagliflozin) that block kidney glucose reabsorption, causing sugar to spill in urine. Weight loss, kidney and heart protection.</div>
-            <div class="term-medical">SGLT2 blockers prevent glucose reabsorption in proximal tubule. Mechanisms: (1) glycosuria->weight loss; (2) beta-hydroxybutyrate->NLRP3 suppression; (3) Th17 suppression, Treg promotion; (4) cardiorenal benefits.</div>
+            <div class="term-plain">A type of diabetes drug that works in the kidneys by blocking sugar reabsorption, causing excess sugar to leave the body through urine. Also protects the heart and kidneys.</div>
+            <div class="term-medical">Sodium-glucose cotransporter 2 inhibitor. Blocks SGLT2 in proximal tubule, reducing renal glucose reabsorption by 30-50%. Lowers HbA1c by 0.5-1.0%. Agents: empagliflozin, dapagliflozin, canagliflozin.</div>
             <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
             <div class="term-details">
                 <div class="detail-row">
                     <div class="detail-label">Body System(s):</div>
-                    <div class="detail-value">Kidneys, Immune System, Blood & Vascular</div>
+                    <div class="detail-value">Kidneys, Blood & Vascular</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Key Indicators:</div>
-                    <div class="detail-value">Glycosuria, Weight loss, eGFR, UACR</div>
+                    <div class="detail-value">HbA1c, Urinary glucose excretion, eGFR, NT-proBNP</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Normal Range:</div>
-                    <div class="detail-value">Typical 10 mg daily (empagliflozin) or 10 mg (dapagliflozin)</div>
+                    <div class="detail-value">HbA1c reduction: 0.5-1.0%; weight loss: 2-3 kg</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">In Diabetes:</div>
-                    <div class="detail-value">T2D; CKD; HF; reduce MACE, hospitalization; immunomodulatory effects</div>
+                    <div class="detail-value">Proven cardiovascular and renal benefit independent of glucose lowering (EMPA-REG, DAPA-CKD); reduces heart failure hospitalization by 30%; some anti-inflammatory properties may benefit LADA</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Connected To:</div>
-                    <div class="detail-value">SGLT2, Glucose reabsorption, NLRP3, Th17 suppression, Treg promotion
+                    <div class="detail-value">Kidneys, Cardiovascular Disease, GLP-1 Receptor Agonist
 </div></div>
                 <div class="detail-row">
                     <div class="detail-label">Gap Relevance:</div>
-                    <div class="detail-value">Gap 4, Gap 6, Gap 7, Gap 9, Gap 10, Gap 12</div>
+                    <div class="detail-value">Gap 4, Gap 8, Gap 12</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Vallon V, Thomson SC. Targeting renal glucose reabsorption to treat hyperglycaemia. Diabetologia 2017;60(2):215-225. PMID:27878313</div>
+                    <div class="detail-value">Zinman B et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes. New England Journal of Medicine 2015;373(22):2117-2128. PMID:26378978</div>
                 </div>
             </div>
         </div>
@@ -3469,7 +3891,43 @@ function sanitizeInput(str) {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. PMID:30144957</div>
+                    <div class="detail-value">Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. PMID:30303773</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="stem cell-derived beta cells" data-systems="pancreas" data-gaps="2,3,6,11">
+            <div class="term-title">Stem Cell-Derived Beta Cells</div>
+            <div class="term-plain">Beta cells grown in a laboratory from stem cells. These could provide an unlimited supply of insulin-producing cells for transplant, eliminating the need for organ donors.</div>
+            <div class="term-medical">Pluripotent stem cell (iPSC/ESC)-derived insulin-producing cells generated via directed differentiation through definitive endoderm, pancreatic progenitor, and endocrine precursor stages. VX-880 (zimislecel): first ESC-derived islet product, FDA-approved, 83% insulin independence.</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Pancreas & Beta Cells</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">C-peptide, Insulin independence, INSULIN+ cell percentage, Glucose-stimulated insulin secretion</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">VX-880 product: 73% INSULIN+ cells; GSIS 4.2 pC/kg/min</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Addresses donor shortage; VX-880: 83% insulin independence in initial cohort (small N, limited follow-up); VX-264 (encapsulated) discontinued March 2025; manufacturing cost trajectories uncertain but expected to decline with scale</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Islet Transplantation, Beta Cell, Immunosuppressive Agents, Health Equity
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 2, Gap 3, Gap 6, Gap 11</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466. PMID:35028608</div>
                 </div>
             </div>
         </div>
@@ -3614,6 +4072,42 @@ function sanitizeInput(str) {
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
                     <div class="detail-value">Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575. PMID:18094377</div>
+                </div>
+            </div>
+        </div>
+        <div class="term-card" data-term="teplizumab" data-systems="immune" data-gaps="1,2,6,8">
+            <div class="term-title">Teplizumab</div>
+            <div class="term-plain">The first drug approved to delay the onset of type 1 diabetes. It is a humanized antibody that targets CD3 on T cells, calming the immune attack on beta cells.</div>
+            <div class="term-medical">Anti-CD3 humanized monoclonal antibody (Fc-modified, non-mitogenic). Binds CD3-epsilon on T cells, inducing partial T cell exhaustion and expanding regulatory T cells. FDA-approved (TZIELD, Nov 2022) for delay of Stage 3 T1D in at-risk individuals (Stage 2).</div>
+            <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
+            <div class="term-details">
+                <div class="detail-row">
+                    <div class="detail-label">Body System(s):</div>
+                    <div class="detail-value">Immune System</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Key Indicators:</div>
+                    <div class="detail-value">C-peptide AUC, Time to Stage 3 T1D, Treg frequency post-treatment</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Normal Range:</div>
+                    <div class="detail-value">Treatment: 14-day IV infusion course</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">In Diabetes:</div>
+                    <div class="detail-value">Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course; access limited to specialized centers</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Connected To:</div>
+                    <div class="detail-value">Monoclonal Antibody (Humanized), T Cell, Regulatory T Cell, CD3
+</div></div>
+                <div class="detail-row">
+                    <div class="detail-label">Gap Relevance:</div>
+                    <div class="detail-value">Gap 1, Gap 2, Gap 6, Gap 8</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Source:</div>
+                    <div class="detail-value">Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):379-380. PMID:37202589</div>
                 </div>
             </div>
         </div>
@@ -4602,7 +5096,7 @@ function sanitizeInput(str) {
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 1: Gene Therapy for LADA</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>26 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>34 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Alpha Cell</span>
                 <span class="badge">Autoantibodies</span>
@@ -4610,27 +5104,27 @@ function sanitizeInput(str) {
                 <span class="badge">Beta Cell</span>
                 <span class="badge">C-peptide</span>
                 <span class="badge">GAD65</span>
+                <span class="badge">Genetic Predisposition to Disease</span>
+                <span class="badge">Genome-Wide Association Study (GWAS)</span>
                 <span class="badge">Gestational Diabetes</span>
                 <span class="badge">Glucagon</span>
                 <span class="badge">Glucokinase</span>
                 <span class="badge">Glucokinase Activator</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
                 <span class="badge">Glycogenolysis</span>
                 <span class="badge">HLA</span>
+                <span class="badge">HLA System</span>
                 <span class="badge">HLA Typing</span>
                 <span class="badge">HOMA-IR</span>
                 <span class="badge">IA-2</span>
                 <span class="badge">Insulin</span>
-                <span class="badge">LADA</span>
-                <span class="badge">MAFA</span>
-                <span class="badge">MODY</span>
-                <span class="badge">PDX1</span>
-                <span class="badge">+6 more</span>
+                <span class="badge">+14 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 2: Health Equity in Beta Cell Therapies</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>41 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>51 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Alpha Cell</span>
                 <span class="badge">Autoantibodies</span>
@@ -4641,24 +5135,24 @@ function sanitizeInput(str) {
                 <span class="badge">C-peptide</span>
                 <span class="badge">CD4+ T Cell</span>
                 <span class="badge">CD8+ T Cell</span>
+                <span class="badge">Continuous Glucose Monitor (CGM)</span>
                 <span class="badge">Dendritic Cell</span>
                 <span class="badge">FOXP3</span>
                 <span class="badge">GAD-alum</span>
                 <span class="badge">GAD65</span>
+                <span class="badge">Genetic Predisposition to Disease</span>
+                <span class="badge">Genome-Wide Association Study (GWAS)</span>
                 <span class="badge">Glucagon</span>
                 <span class="badge">Glucokinase</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
                 <span class="badge">HLA</span>
-                <span class="badge">HLA Typing</span>
-                <span class="badge">IA-2</span>
-                <span class="badge">IFN-gamma</span>
-                <span class="badge">IL-10</span>
-                <span class="badge">+21 more</span>
+                <span class="badge">+31 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 3: Insulin Resistance in Islet Transplant</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>45 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>49 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Autoantibodies</span>
                 <span class="badge">Autoimmunity</span>
@@ -4677,16 +5171,16 @@ function sanitizeInput(str) {
                 <span class="badge">GAD-alum</span>
                 <span class="badge">GAD65</span>
                 <span class="badge">HLA</span>
+                <span class="badge">HLA System</span>
                 <span class="badge">HLA Typing</span>
                 <span class="badge">IA-2</span>
-                <span class="badge">IFN-gamma</span>
-                <span class="badge">+25 more</span>
+                <span class="badge">+29 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 4: Drug Repurposing for Islet Transplant</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>41 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>43 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">AMPK</span>
                 <span class="badge">Adiponectin</span>
@@ -4707,14 +5201,14 @@ function sanitizeInput(str) {
                 <span class="badge">HOMA-IR</span>
                 <span class="badge">IL-1beta</span>
                 <span class="badge">IL-6</span>
-                <span class="badge">Incretin Pathway</span>
-                <span class="badge">+21 more</span>
+                <span class="badge">Immunosuppressive Agents</span>
+                <span class="badge">+23 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 5: Treg in Diabetic Neuropathy</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>33 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>35 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Autoimmunity</span>
                 <span class="badge">B Cell</span>
@@ -4727,6 +5221,7 @@ function sanitizeInput(str) {
                 <span class="badge">FOXP3</span>
                 <span class="badge">GAD-alum</span>
                 <span class="badge">GAD65</span>
+                <span class="badge">HLA System</span>
                 <span class="badge">IFN-gamma</span>
                 <span class="badge">IL-10</span>
                 <span class="badge">IL-17</span>
@@ -4734,15 +5229,14 @@ function sanitizeInput(str) {
                 <span class="badge">JAK/STAT</span>
                 <span class="badge">LADA</span>
                 <span class="badge">Low-dose Naltrexone</span>
-                <span class="badge">NFAT</span>
-                <span class="badge">PPARgamma</span>
-                <span class="badge">+13 more</span>
+                <span class="badge">Monoclonal Antibody (Humanized)</span>
+                <span class="badge">+15 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 6: CAR-T Access Barriers in Diabetes</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>42 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>47 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">AMPK</span>
                 <span class="badge">Autoimmunity</span>
@@ -4751,26 +5245,26 @@ function sanitizeInput(str) {
                 <span class="badge">CAR-T Cell</span>
                 <span class="badge">CD4+ T Cell</span>
                 <span class="badge">CRP</span>
+                <span class="badge">Continuous Glucose Monitor (CGM)</span>
                 <span class="badge">Diabetic Nephropathy</span>
                 <span class="badge">FOXP3</span>
                 <span class="badge">GAD-alum</span>
-                <span class="badge">GLP-1 Receptor Agonist</span>
                 <span class="badge">Glycemic Variability</span>
                 <span class="badge">IFN-gamma</span>
                 <span class="badge">IL-10</span>
                 <span class="badge">IL-17</span>
                 <span class="badge">IL-1beta</span>
                 <span class="badge">IL-6</span>
-                <span class="badge">JAK/STAT</span>
-                <span class="badge">LADA</span>
-                <span class="badge">Low-dose Naltrexone</span>
-                <span class="badge">+22 more</span>
+                <span class="badge">Immunosuppressive Agents</span>
+                <span class="badge">Insulin Infusion System (Insulin Pump)</span>
+                <span class="badge">Islet Transplantation</span>
+                <span class="badge">+27 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 7: GKA Drug Repurposing Landscape</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>33 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>34 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">AMPK</span>
                 <span class="badge">Autoimmunity</span>
@@ -4780,6 +5274,7 @@ function sanitizeInput(str) {
                 <span class="badge">CD8+ T Cell</span>
                 <span class="badge">FOXP3</span>
                 <span class="badge">GLP-1 Receptor Agonist</span>
+                <span class="badge">Glucokinase Activator (GKA)</span>
                 <span class="badge">Glycemic Variability</span>
                 <span class="badge">IL-10</span>
                 <span class="badge">IL-17</span>
@@ -4791,14 +5286,13 @@ function sanitizeInput(str) {
                 <span class="badge">Macrophage</span>
                 <span class="badge">Metformin</span>
                 <span class="badge">Myelin</span>
-                <span class="badge">NF-kB</span>
-                <span class="badge">+13 more</span>
+                <span class="badge">+14 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 8: Immunomodulatory Drugs for LADA</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>20 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>30 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Autoimmunity</span>
                 <span class="badge">Baricitinib</span>
@@ -4808,28 +5302,32 @@ function sanitizeInput(str) {
                 <span class="badge">Calcineurin</span>
                 <span class="badge">Donislecel</span>
                 <span class="badge">FOXP3</span>
+                <span class="badge">GLP-1 Receptor Agonist</span>
+                <span class="badge">Genetic Predisposition to Disease</span>
+                <span class="badge">Genome-Wide Association Study (GWAS)</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
+                <span class="badge">HLA System</span>
                 <span class="badge">Islet Transplant</span>
                 <span class="badge">JAK/STAT</span>
                 <span class="badge">LADA</span>
+                <span class="badge">LADA (Latent Autoimmune Diabetes in Adults)</span>
+                <span class="badge">Monoclonal Antibody (Humanized)</span>
                 <span class="badge">NFAT</span>
-                <span class="badge">Rapamycin</span>
-                <span class="badge">Regulatory T Cell</span>
-                <span class="badge">T Cell</span>
-                <span class="badge">Tacrolimus</span>
-                <span class="badge">Transplant Tolerance</span>
-                <span class="badge">Type 1 Diabetes</span>
-                <span class="badge">VX-880</span>
-                <span class="badge">mTOR</span>
+                <span class="badge">Precision Medicine</span>
+                <span class="badge">+10 more</span>
             </div>
         </div>
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 9: Glucokinase Activators in LADA (Under Review)</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>15 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>17 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">CD8+ T Cell</span>
+                <span class="badge">Glucokinase Activator (GKA)</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
                 <span class="badge">IL-10</span>
                 <span class="badge">IL-17</span>
+                <span class="badge">LADA (Latent Autoimmune Diabetes in Adults)</span>
                 <span class="badge">MAPK</span>
                 <span class="badge">Myelin</span>
                 <span class="badge">NF-kB</span>
@@ -4837,7 +5335,6 @@ function sanitizeInput(str) {
                 <span class="badge">Peripheral Neuropathy</span>
                 <span class="badge">ROS</span>
                 <span class="badge">Regulatory T Cell</span>
-                <span class="badge">SGLT2 Inhibitor</span>
                 <span class="badge">Schwann Cell</span>
                 <span class="badge">T Cell</span>
                 <span class="badge">TGF-beta</span>
@@ -4847,11 +5344,17 @@ function sanitizeInput(str) {
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 10: LADA Prevalence by Healthcare Setting</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>5 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>11 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <span class="badge">Continuous Glucose Monitor (CGM)</span>
                 <span class="badge">Diabetic Nephropathy</span>
-                <span class="badge">GLP-1 Receptor Agonist</span>
-                <span class="badge">SGLT2 Inhibitor</span>
+                <span class="badge">Genetic Predisposition to Disease</span>
+                <span class="badge">Genome-Wide Association Study (GWAS)</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
+                <span class="badge">HLA System</span>
+                <span class="badge">Insulin Infusion System (Insulin Pump)</span>
+                <span class="badge">LADA (Latent Autoimmune Diabetes in Adults)</span>
+                <span class="badge">Precision Medicine</span>
                 <span class="badge">UACR</span>
                 <span class="badge">eGFR</span>
             </div>
@@ -4859,7 +5362,7 @@ function sanitizeInput(str) {
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 11: Islet Transplant Registry Equity Analysis</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>31 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>35 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">AMPK</span>
                 <span class="badge">Adiponectin</span>
@@ -4867,12 +5370,12 @@ function sanitizeInput(str) {
                 <span class="badge">CGM</span>
                 <span class="badge">Calcineurin</span>
                 <span class="badge">Closed-loop System</span>
+                <span class="badge">Continuous Glucose Monitor (CGM)</span>
                 <span class="badge">DPP-4</span>
                 <span class="badge">DPP-4 Inhibitor</span>
                 <span class="badge">Fasting Glucose</span>
                 <span class="badge">GIP</span>
                 <span class="badge">GLP-1</span>
-                <span class="badge">GLP-1 Receptor Agonist</span>
                 <span class="badge">GLUT4</span>
                 <span class="badge">Gestational Diabetes</span>
                 <span class="badge">Glucokinase Activator</span>
@@ -4881,7 +5384,7 @@ function sanitizeInput(str) {
                 <span class="badge">Glycogenolysis</span>
                 <span class="badge">HOMA-IR</span>
                 <span class="badge">HbA1c</span>
-                <span class="badge">+11 more</span>
+                <span class="badge">+15 more</span>
             </div>
         </div>
 
@@ -4915,11 +5418,12 @@ function sanitizeInput(str) {
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 13: Personalized Nutrition for Beta Cell Health</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>14 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>16 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <span class="badge">Beta Cell</span>
                 <span class="badge">C-peptide</span>
                 <span class="badge">Donislecel</span>
+                <span class="badge">GLP-1 Receptor Agonist</span>
                 <span class="badge">Gestational Diabetes</span>
                 <span class="badge">Insulin</span>
                 <span class="badge">Islet Transplant</span>
@@ -4928,6 +5432,7 @@ function sanitizeInput(str) {
                 <span class="badge">MAFA</span>
                 <span class="badge">MODY</span>
                 <span class="badge">PDX1</span>
+                <span class="badge">Precision Medicine</span>
                 <span class="badge">Type 1 Diabetes</span>
                 <span class="badge">Type 2 Diabetes</span>
                 <span class="badge">VX-880</span>
@@ -4936,11 +5441,15 @@ function sanitizeInput(str) {
 
         <div style="margin: 25px 0; padding: 15px; border-left: 4px solid #999; background: #fafaf7;">
             <h3 style="margin: 0 0 10px 0;">Gap 14: Personalized Nutrition Strategy for LADA</h3>
-            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>6 relevant terms/concepts</strong></p>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;"><strong>10 relevant terms/concepts</strong></p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <span class="badge">GLP-1 Receptor Agonist</span>
                 <span class="badge">Gestational Diabetes</span>
+                <span class="badge">Glutamate Decarboxylase (GAD65)</span>
                 <span class="badge">LADA</span>
+                <span class="badge">LADA (Latent Autoimmune Diabetes in Adults)</span>
                 <span class="badge">Metabolic Syndrome</span>
+                <span class="badge">Precision Medicine</span>
                 <span class="badge">Prediabetes</span>
                 <span class="badge">Type 1 Diabetes</span>
                 <span class="badge">Type 2 Diabetes</span>
@@ -4954,7 +5463,7 @@ function sanitizeInput(str) {
                 <span class="badge">CGM</span>
                 <span class="badge">CRP</span>
                 <span class="badge">Closed-loop System</span>
-                <span class="badge">GLP-1 Receptor Agonist</span>
+                <span class="badge">Glucokinase Activator (GKA)</span>
                 <span class="badge">Glycemic Variability</span>
                 <span class="badge">HbA1c</span>
                 <span class="badge">Metabolic Syndrome</span>
@@ -4964,6 +5473,7 @@ function sanitizeInput(str) {
             </div>
         </div>
     </div>
+        </div>
         <div class="footer">
             <p>Medical Data Dictionary for Diabetes Research Hub</p>
             <p>Last updated: 2026. Data compiled from ADA Standards of Care, Harrison's Principles of Internal Medicine, Robbins Pathology, and peer-reviewed literature.</p>

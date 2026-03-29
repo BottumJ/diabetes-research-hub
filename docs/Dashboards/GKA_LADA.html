@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap 9: Glucokinase Activators in LADA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fafaf7;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #8b6914;
+            padding: 4px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            border-left: 3px solid #8b6914;
+            margin-top: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #636363;
+            margin-top: 15px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0ddd5;
+            margin-bottom: 30px;
+            gap: 0;
+        }
+
+        .tab-button {
+            padding: 12px 18px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            color: #636363;
+            transition: all 0.2s;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .tab-button:hover {
+            color: #1a1a1a;
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .tab-button.active {
+            color: #2c5f8a;
+            border-bottom-color: #2c5f8a;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .expandable {
+            margin: 20px 0;
+        }
+
+        .expandable-header {
+            padding: 12px;
+            background: #ffffff;
+            border-left: 3px solid #e0ddd5;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expandable-header:hover {
+            background: #fafaf7;
+        }
+
+        .expand-icon {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+
+        .expandable-content {
+            display: none;
+            padding: 15px;
+            background: #ffffff;
+            border-left: 3px solid #2c5f8a;
+            border-top: 1px solid #e0ddd5;
+        }
+
+        .expandable-content.expanded {
+            display: block;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .emphasis {
+            color: #8b2500;
+            font-weight: 500;
+        }
+
+        .reference {
+            font-family: "SF Mono", Monaco, "Consolas", monospace;
+            font-size: 12px;
+            color: #636363;
+            margin-top: 5px;
+        }
+
+        .mechanism-bar {
+            margin: 20px 0;
+            padding: 15px;
+            background: #ffffff;
+            border-left: 4px solid #2c5f8a;
+        }
+
+        .mechanism-bar strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .bar-label {
+            width: 150px;
+            font-size: 13px;
+            color: #1a1a1a;
+        }
+
+        .bar-fill {
+            height: 20px;
+            background: #2c5f8a;
+            margin: 0 10px;
+            flex: 1;
+        }
+
+        .bar-value {
+            font-family: "SF Mono", Monaco, Consolas, monospace;
+            font-size: 12px;
+            color: #636363;
+            min-width: 80px;
+        }
+
+        .evidence-grid {
+            margin: 20px 0;
+        }
+
+        .evidence-item {
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #e0ddd5;
+            margin-bottom: 12px;
+        }
+
+        .evidence-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .evidence-detail {
+            font-size: 13px;
+            color: #636363;
+            margin: 5px 0;
+        }
+
+        .pathway-box {
+            margin: 20px 0;
+            padding: 15px;
+            background: #ffffff;
+            border-left: 4px solid #2d7d46;
+        }
+
+        .pathway {
+            font-family: "SF Mono", Monaco, Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #1a1a1a;
+        }
+
+        .concern-box {
+            margin: 15px 0;
+            padding: 12px 15px;
+            background: #fff9f5;
+            border-left: 4px solid #8b2500;
+        }
+
+        .concern-box strong {
+            color: #8b2500;
+        }
+
+        .counter-box {
+            margin: 15px 0;
+            padding: 12px 15px;
+            background: #f5faf7;
+            border-left: 4px solid #2d7d46;
+        }
+
+        .counter-box strong {
+            color: #2d7d46;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            padding-left: 30px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 8px;
+            height: 8px;
+            background: #2c5f8a;
+            border-radius: 50%;
+        }
+
+        .timeline-label {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: #636363;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e0ddd5;
+            font-size: 12px;
+            color: #636363;
+        }
+
+        .data-source {
+            background: #ffffff;
+            padding: 10px 12px;
+            margin: 15px 0;
+            border-left: 2px solid #636363;
+            font-size: 12px;
+        }
+
+        .context-block { background-color: #ffffff; border-left: 4px solid #2c5f8a; padding: 1.5rem 2rem; margin: 0 0 2rem 0; line-height: 1.8; }
+        .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
+        .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
+        .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
+</head>
+<body>
+<div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
+  <span style="color:#e0ddd5;">|</span>
+  <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
+  <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
+  <a href="Gap_Deep_Dives.html" style="color:#636363;text-decoration:none;">Gaps</a>
+  <a href="Gap_Synthesis.html" style="color:#636363;text-decoration:none;">Synthesis</a>
+  <a href="Equity_Map.html" style="color:#636363;text-decoration:none;">Equity</a>
+  <a href="Medical_Data_Dictionary.html" style="color:#636363;text-decoration:none;">Dictionary</a>
+  <a href="Acronym_Database.html" style="color:#636363;text-decoration:none;">Acronyms</a>
+</div>
+    <div class="container">
+        <header>
+            <h1>Gap 9: Glucokinase Activators in LADA</h1>
+            <div class="status-badge">EXPLORATORY</div>
+            <p class="subtitle">
+                Examining whether glucokinase activators could preserve beta cell function in LADA
+                by enhancing insulin secretion during slow autoimmune decline.
+            </p>
+        </header>
+
+        <div class="context-block">
+            <h3>What This Dashboard Answers</h3>
+            <p>Glucokinase activators (GKAs) target glucokinase enzyme dysfunction — a metabolic defect. LADA is an autoimmune disease where the immune system destroys beta cells. The biological plausibility of GKAs in LADA is very low because the mechanism does not address the root cause. This dashboard documents why this gap exists in the literature and recommends formal deprioritization.</p>
+            <p class="context-label">How to Use This</p>
+            <p>For researchers: provides the mechanistic reasoning for why GKA + LADA is unlikely to yield results, preventing wasted effort. For funders: documents the evidence basis for not investing in this intersection. For the platform: demonstrates that gap identification includes deprioritization of implausible directions.</p>
+            <p class="context-label">What This Cannot Tell You</p>
+            <p>EXPLORATORY tier — biological plausibility is assessed as very low. If future research reveals GKA effects on immune modulation (not currently known), this assessment would need revision. The deprioritization recommendation is based on current mechanistic understanding only.</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="hypothesis">The Hypothesis</button>
+            <button class="tab-button" data-tab="mechanism">GKA Mechanism</button>
+            <button class="tab-button" data-tab="evidence">Evidence Assessment</button>
+            <button class="tab-button" data-tab="research">Research Path</button>
+            <button class="tab-button" data-tab="catalog">Evidence Catalog</button>
+        </div>
+
+        <div id="hypothesis" class="tab-content active">
+            <h2>The Hypothesis</h2>
+
+            <p>
+                Glucokinase activators (GKAs) enhance glucokinase activity in pancreatic beta cells,
+                amplifying glucose-stimulated insulin secretion. LADA exhibits slow, progressive
+                autoimmune beta cell destruction over years—not the rapid decline seen in type 1
+                diabetes. The hypothesis proposes that during this gradual LADA decline, remaining
+                functional beta cells could be "boosted" by GKAs to maintain sufficient insulin output
+                and delay complete insulin dependence.
+            </p>
+
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>Why EXPLORATORY (not BRONZE tier)?</span>
+                    <span class="expand-icon">&#x25BC;</span>
+                </div>
+                <div class="expandable-content">
+                    <ul>
+                        <li><strong>Zero publications</strong> connecting GKAs to LADA specifically.
+                            The literature gap is complete.</li>
+                        <li><strong>Historical GKA failures:</strong> Most compounds failed in type 2 diabetes
+                            (the simpler indication). MK-0941 discontinued due to hepatic steatosis;
+                            piragliatin abandoned due to hypoglycemia; AZD1656 lost efficacy. Only
+                            dorzagliatin achieved approval (China, T2D monotherapy).</li>
+                        <li><strong>Biological uncertainty:</strong> If beta cells are being destroyed by
+                            autoimmunity, does enhancing their output simply accelerate burnout?
+                            This "accelerated burnout" mechanism is plausible but untested.</li>
+                        <li><strong>Best candidate unclear:</strong> TTP399 (liver-selective GKA) succeeded
+                            in T1D trials, but its benefit may derive from hepatic glucose uptake,
+                            not the beta cell stimulation that the LADA hypothesis requires.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>The Core Problem</h3>
+            <p>
+                LADA patients experience slow, relentless beta cell loss. By the time diagnosis occurs,
+                autoimmunity is often already underway. Existing treatments (insulin, GLP-1 RA,
+                immunosuppression trials) do not directly target the "boost remaining cells" strategy.
+                GKAs fill a niche in theory—but only if: (1) sufficient beta cells remain, and
+                (2) enhanced secretion does not trigger or accelerate autoimmune attack.
+            </p>
+
+            <div class="concern-box">
+                <strong>The "Accelerated Burnout" Concern:</strong> Working remaining beta cells harder
+                could exhaust them faster. Analogy: revving a failing engine hastens complete breakdown.
+                This is biologically plausible if GKA-enhanced secretion increases presentation of
+                beta cell antigens to autoreactive T cells.
+            </div>
+
+            <div class="counter-box">
+                <strong>Counter-Argument:</strong> TTP399 (liver-selective GKA) demonstrated HbA1c
+                reduction in type 1 diabetes without hypoglycemia (PMID: 33622669). This shows GKAs
+                CAN work alongside insulin deficiency—suggesting efficacy may not require intact beta
+                cell mass, undermining the LADA-specific hypothesis.
+            </div>
+        </div>
+
+        <div id="mechanism" class="tab-content">
+            <h2>GKA Mechanism in Beta Cells</h2>
+
+            <p>
+                Understanding how glucokinase activators might work requires knowledge of
+                glucokinase's role as the "glucose sensor" of the beta cell.
+            </p>
+
+            <div class="pathway-box">
+                <strong>Normal Glucose-Stimulated Insulin Secretion:</strong>
+                <div class="pathway">
+                    Glucose enters beta cell
+                    ↓
+                    Glucokinase phosphorylates glucose → glucose-6-phosphate
+                    ↓
+                    Glycolysis → ↑ ATP
+                    ↓
+                    K-ATP channel closes
+                    ↓
+                    Depolarization → Ca2+ influx
+                    ↓
+                    Insulin granule exocytosis
+                </div>
+            </div>
+
+            <h3>GKA Effect</h3>
+            <p>
+                Glucokinase activators lower the glucose threshold for insulin secretion.
+                They shift the dose-response curve leftward, making beta cells respond to
+                lower glucose concentrations. In theory, this amplifies secretory capacity
+                for any given glucose level.
+            </p>
+
+            <div class="mechanism-bar">
+                <strong>The Crucial Limitation in LADA</strong>
+                <p>
+                    GKAs can only work on beta cells that still exist. If autoimmunity has
+                    destroyed 70% of the beta cell mass, GKA-mediated enhancement of the
+                    remaining 30% may be insufficient to maintain euglycemia.
+                </p>
+            </div>
+
+            <h3>C-Peptide as the Key Biomarker</h3>
+            <p>
+                C-peptide reflects actual beta cell insulin production (not exogenous insulin).
+                GKA viability in LADA depends critically on residual beta cell function:
+            </p>
+
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-title">C-peptide &gt; 0.6 nmol/L (Optimal)</div>
+                    <div class="evidence-detail">Substantial beta cell reserve. GKAs might have maximal impact.</div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-title">C-peptide 0.3–0.6 nmol/L (Viable Window)</div>
+                    <div class="evidence-detail">Limited but meaningful beta cells. GKAs warrant trial.</div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-title">C-peptide &lt; 0.3 nmol/L (Limited Potential)</div>
+                    <div class="evidence-detail">Nearly complete beta cell loss. GKA benefit unlikely.</div>
+                </div>
+            </div>
+
+            <h3>The LADA Window</h3>
+            <p>
+                LADA progression spans 5–7 years from diagnosis to complete insulin dependence
+                on average. GKA intervention would need to work within this narrow window to
+                meaningfully delay full insulin replacement. This contrasts with type 2 diabetes,
+                where beta cell dysfunction develops over decades.
+            </p>
+
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>How does GKA efficacy compare to other secretagogues?</span>
+                    <span class="expand-icon">&#x25BC;</span>
+                </div>
+                <div class="expandable-content">
+                    <p>
+                        Sulfonylureas (e.g., glyburide) also stimulate insulin secretion, but via
+                        K-ATP channel blockade—a more blunt mechanism. GKAs work upstream, at the
+                        glucose-sensing step, offering potentially more physiologic secretion.
+                        However, both share the risk of stimulating limited beta cell mass
+                        without addressing the underlying autoimmune process.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="evidence" class="tab-content">
+            <h2>Evidence Assessment</h2>
+
+            <h3>Why This Gap Remains EXPLORATORY</h3>
+
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-title">Zero Peer-Reviewed Literature on GKAs + LADA</div>
+                    <div class="evidence-detail">
+                        PubMed search yields no publications combining glucokinase activators
+                        with LADA. This gap is entirely unexplored in the literature.
+                    </div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-title">Most GKAs Failed in Type 2 Diabetes</div>
+                    <div class="evidence-detail">
+                        Type 2 diabetes is a simpler indication (no autoimmunity). Yet:
+                        MK-0941 → discontinued (hepatic steatosis). Piragliatin → discontinued
+                        (hypoglycemia). AZD1656 → discontinued (efficacy loss). Only dorzagliatin
+                        approved (China, 2020; modest HbA1c reduction).
+                    </div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-title">TTP399: Most Promising, But Mechanism Unclear</div>
+                    <div class="evidence-detail">
+                        SimpliciT1 trial showed HbA1c reduction in type 1 diabetes.
+                        Key insight: TTP399 is liver-selective, suggesting the benefit may derive
+                        from hepatic glucose uptake, not beta cell stimulation. If so, the LADA
+                        hypothesis (boost remaining beta cells) may not apply.
+                    </div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-title">Biological Uncertainty: Accelerated Burnout</div>
+                    <div class="evidence-detail">
+                        Does GKA-enhanced secretion increase autoimmune targeting? Working beta
+                        cells produce more antigen, potentially accelerating autoreactive T cell
+                        destruction. This is plausible but untested in LADA.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Comparison to Established Therapies</h3>
+
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>How does GKA approach compare to current LADA strategies?</span>
+                    <span class="expand-icon">&#x25BC;</span>
+                </div>
+                <div class="expandable-content">
+                    <ul>
+                        <li><strong>Insulin + GLP-1 RA:</strong> Established, proven. But does
+                            not preserve endogenous beta cell function.</li>
+                        <li><strong>Immunosuppression (anti-CD20, etc.):</strong> Targets autoimmunity
+                            directly. Some efficacy in slowing decline, but requires careful
+                            risk-benefit analysis.</li>
+                        <li><strong>GKA approach:</strong> Theoretically preserves beta cell output
+                            without addressing autoimmunity. High uncertainty, no clinical data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concern-box">
+                <strong>Critical Gap:</strong> No sulfonylurea vs. GKA head-to-head study in LADA.
+                If sulfonylureas (which stimulate secretion) do NOT accelerate beta cell loss in LADA,
+                GKAs might not either. This basic question remains unanswered.
+            </div>
+        </div>
+
+        <div id="research" class="tab-content">
+            <h2>If This Hypothesis Were Correct: Research Path</h2>
+
+            <p>
+                What would a credible evidence generation strategy look like? This outlines the
+                phases required to move from hypothesis to clinical evidence (if warranted).
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-label">Phase 1: Retrospective Analysis (Years 1–2)</div>
+                    <div class="timeline-desc">
+                        Analyze C-peptide decline trajectories in LADA cohorts stratified by
+                        prior sulfonylurea use. Does SU use accelerate or delay beta cell loss?
+                        If SUs (which stimulate secretion) do not worsen outcomes, the "accelerated
+                        burnout" concern is weakened, supporting GKA trials. Sources: UKPDS,
+                        LADA cohort data.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-label">Phase 2: Computational Modeling (Years 2–3)</div>
+                    <div class="timeline-desc">
+                        Build mathematical models of GKA-mediated beta cell workload vs.
+                        autoimmune destruction rate in LADA. Simulate scenarios: Does GKA-enhanced
+                        secretion reduce time to complete beta cell loss, or maintain function
+                        longer? Output: Predicted effect size for a pilot trial.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-label">Phase 3: Safety & Mechanistic Study (Years 3–4)</div>
+                    <div class="timeline-desc">
+                        Small, open-label study of TTP399 in LADA patients with C-peptide
+                        0.3–0.7 nmol/L. Primary outcome: Rate of C-peptide decline (not HbA1c).
+                        Key safety measurements: GAD/IA-2 antibody titers (increased titers would
+                        suggest GKA triggers autoimmune acceleration). If favorable, proceed to
+                        Phase 3 RCT.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-label">Phase 4: Pivotal Trial (Years 5–10+)</div>
+                    <div class="timeline-desc">
+                        Randomized, placebo-controlled trial of GKA (likely TTP399) in LADA
+                        with C-peptide &gt; 0.3 nmol/L. Endpoints: Rate of C-peptide decline,
+                        insulin requirement at 12 months, autoimmune markers. Patient population:
+                        Diagnosis within 1 year (to capture early LADA window). Likely trial size:
+                        100–300 participants.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Critical Success Factors</h3>
+
+            <div class="mechanism-bar">
+                <strong>Without these, GKA trials in LADA will fail:</strong>
+                <ul>
+                    <li><strong>C-peptide stratification:</strong> Only enroll patients with
+                        C-peptide &gt; 0.3 nmol/L. Below this, benefit is unlikely.</li>
+                    <li><strong>C-peptide as primary endpoint:</strong> HbA1c reduction alone
+                        does not prove beta cell preservation. C-peptide slope is the direct
+                        biomarker.</li>
+                    <li><strong>Autoimmune monitoring:</strong> Measure GAD, IA-2, and ZnT8
+                        antibody titers serially. If GKA increases titers, stop trial early.</li>
+                    <li><strong>Long follow-up:</strong> LADA is slow. Trials must run 18–24 months
+                        minimum to detect C-peptide difference.</li>
+                </ul>
+            </div>
+
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <span>What if Phase 1 retrospective data shows SU harm?</span>
+                    <span class="expand-icon">&#x25BC;</span>
+                </div>
+                <div class="expandable-content">
+                    <p>
+                        If sulfonylureas DO accelerate C-peptide decline in LADA, the GKA
+                        hypothesis would be significantly weakened. The mechanism (stimulating
+                        secretion) is the same. This would suggest the "accelerated burnout"
+                        concern is real, and GKAs carry similar risk. In that case, GKA trials
+                        in LADA should not proceed without additional mechanistic insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="catalog" class="tab-content">
+            <h2>Evidence Catalog</h2>
+
+            <h3>Key References</h3>
+
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-title">TTP399 in Type 1 Diabetes (SimpliciT1)</div>
+                    <div class="evidence-detail">
+                        PMID: 33622669. Phase 2 trial showing HbA1c reduction with TTP399
+                        (liver-selective GKA) in T1D. Critically, benefit observed without
+                        hypoglycemia, suggesting hepatic mechanism may dominate over beta cell
+                        stimulation. Most promising GKA candidate for LADA consideration.
+                    </div>
+                    <div class="data-source">
+                        Nat Med. 2021 Mar;27(3):455-460. doi:10.1038/s41591-021-01275-z
+                    </div>
+                </div>
+
+                <div class="evidence-item">
+                    <div class="evidence-title">Dorzagliatin Approval and Phase 3 Data</div>
+                    <div class="evidence-detail">
+                        Only approved GKA worldwide (China, 2020). Phase 3 data from Hua Medicine
+                        shows modest HbA1c reduction (−0.6 to −0.8%) in type 2 diabetes monotherapy.
+                        No LADA data. Efficacy in T2D is underwhelming given side effect profile.
+                    </div>
+                    <div class="data-source">
+                        Diabetes Res Clin Pract. 2020 Jan; Phase 3 summary available from
+                        Hua Medicine corporate releases.
+                    </div>
+                </div>
+
+                <div class="evidence-item">
+                    <div class="evidence-title">GKA Failure History</div>
+                    <div class="evidence-detail">
+                        MK-0941 (Merck): Discontinued Phase 2b due to hepatic steatosis.
+                        Piragliatin (Novo Nordisk): Discontinued Phase 3 due to hypoglycemia and
+                        skin toxicity. AZD1656 (AstraZeneca): Discontinued Phase 2b due to
+                        progressive efficacy loss. Pattern: GKAs struggle with safety/efficacy
+                        trade-off even in T2D.
+                    </div>
+                    <div class="data-source">
+                        Multiple clinical trial outcomes; press releases from sponsors, 2013–2017.
+                    </div>
+                </div>
+
+                <div class="evidence-item">
+                    <div class="evidence-title">Glucokinase Biology and Glucose Sensing</div>
+                    <div class="evidence-detail">
+                        Matschinsky FM et al. (2009). Comprehensive review of glucokinase as
+                        beta cell glucose sensor. Foundational for understanding GKA mechanism.
+                        Explains why glucokinase is the rate-limiting enzyme for glucose sensing
+                        and why activation increases insulin secretion.
+                    </div>
+                    <div class="data-source">
+                        Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249.
+                    </div>
+                </div>
+
+                <div class="evidence-item">
+                    <div class="evidence-title">LADA C-Peptide Kinetics and UKPDS</div>
+                    <div class="evidence-detail">
+                        UKPDS includes LADA subgroup. C-peptide declines over 5–7 years from
+                        diagnosis to full insulin dependence. Average baseline C-peptide at
+                        diagnosis: ~0.5–0.8 nmol/L. This defines the "LADA window" for GKA
+                        intervention.
+                    </div>
+                    <div class="data-source">
+                        UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052.
+                    </div>
+                </div>
+
+                <div class="evidence-item">
+                    <div class="evidence-title">Autoimmune Mechanisms in LADA</div>
+                    <div class="evidence-detail">
+                        LADA is defined by GAD, IA-2, and/or ZnT8 antibody positivity. Slower
+                        than T1D but relentless. Understanding whether secretory demand increases
+                        autoimmune targeting is critical for GKA safety. Current literature does
+                        not address this in LADA.
+                    </div>
+                    <div class="data-source">
+                        Diabetes. 2013 Dec;62(12):4297-303. PMID: 23835325. (LADA review)
+                    </div>
+                </div>
+            </div>
+
+            <h3>Data Gaps Requiring Future Research</h3>
+
+            <p>
+                The following critical questions lack published evidence:
+            </p>
+
+            <ul>
+                <li><strong>Do sulfonylureas accelerate C-peptide decline in LADA?</strong>
+                    If yes, GKAs carry the same risk. If no, mechanism may be safe.</li>
+                <li><strong>Does GKA-enhanced secretion increase GAD/IA-2 antibody titers?</strong>
+                    Core question for autoimmune acceleration.</li>
+                <li><strong>Which GKA (TTP399, dorzagliatin, or other) would be optimal for LADA?</strong>
+                    TTP399 has best efficacy, but hepatic mechanism may not address LADA beta cell
+                    decline.</li>
+                <li><strong>What is the minimum effective C-peptide threshold for GKA benefit in LADA?</strong>
+                    Phase 1 retrospective studies could help define this.</li>
+            </ul>
+        </div>
+
+        <div style="max-width:1200px;margin:40px auto;padding:24px;background:#ffffff;border:1px solid #e0ddd5;">
+          <h2 style="font-family:Georgia,serif;font-size:1.5em;font-weight:normal;margin-bottom:16px;color:#1a1a1a;">Limitations</h2>
+          <ul style="margin-left:20px;line-height:1.8;color:#636363;font-size:0.95em;">
+            <li>This is classified EXPLORATORY because biological plausibility is uncertain</li>
+            <li>The accelerated burnout concern has not been resolved</li>
+            <li>No GKA has been tested in LADA patients</li>
+            <li>Theoretical benefit relies on assumption of residual beta cell mass</li>
+            <li>Risk-benefit ratio is speculative at this stage</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
+        </div>
+
+        <footer>
+            <p>
+                <strong>Gap Status:</strong> EXPLORATORY. This gap is marked for careful examination
+                due to significant biological uncertainty and lack of clinical evidence. The research
+                pathway outlined is speculative and contingent on early-phase data supporting the hypothesis.
+            </p>
+            <p style="margin-top: 15px;">
+                Dashboard generated: 2026-03-16. Version 1.0.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // Show selected tab
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Expandable sections
+        function toggleExpand(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.expand-icon');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

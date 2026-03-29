@@ -4,7 +4,7 @@
 Paper Library Dashboard
 ========================
 Generates an interactive HTML dashboard that visualizes the ingested paper library:
-  - Searchable/sortable table of all 187 papers with abstracts
+  - Searchable/sortable table of all 226 papers with abstracts
   - Validation scores (CONFIRMED/PLAUSIBLE/WEAK)
   - Evidence network: cross-citations and shared MeSH clusters
   - Coverage statistics (abstracts, full text, PMC availability)
@@ -345,11 +345,11 @@ def build_html(data):
 
     <div class="context-block">
       <h3>What This Dashboard Answers</h3>
-      <p>This platform's analyses are built on a library of 199 ingested research papers, each with metadata (authors, journal, year, PMID), abstract text, and relevance mapping to the 15 research gaps. This dashboard makes that library searchable and transparent — every claim in every dashboard can be traced back to its source paper here.</p>
+      <p>This platform's analyses are built on a library of 226 ingested research papers, each with metadata (authors, journal, year, PMID), abstract text, and relevance mapping to the 15 research gaps. This dashboard makes that library searchable and transparent — every claim in every dashboard can be traced back to its source paper here.</p>
       <div class="context-label">How to Use This</div>
       <p>For fact-checkers: verify any cited paper by searching its PMID. For researchers: browse papers by gap relevance, publication year, or journal. For the platform: demonstrates that all analyses are grounded in peer-reviewed literature, not generated claims.</p>
       <div class="context-label">What This Cannot Tell You</div>
-      <p>The library contains papers that were specifically ingested for this platform's research gaps. It is not a comprehensive literature review of all diabetes research. Papers are indexed by abstract; full-text analysis is available for 86 of 199 papers. Citation validation scores (CONFIRMED/PLAUSIBLE/WEAK/MISMATCH) are automated and may have edge cases.</p>
+      <p>The library contains papers that were specifically ingested for this platform's research gaps. It is not a comprehensive literature review of all diabetes research. Papers are indexed by abstract; full-text analysis is available for 91 of 226 papers. Citation validation scores (CONFIRMED/PLAUSIBLE/WEAK/MISMATCH) are automated and may have edge cases.</p>
     </div>
 
     <!-- Summary Statistics -->
