@@ -596,7 +596,7 @@ TERMS = {
         'disease': 'Target <7% for most diabetics; correlates with complication risk',
         'connections': ['Glucose', 'Diabetes diagnosis', 'Glycemic control'],
         'gap_relevance': [11, 12, 15],
-        'source': 'ADA Standards of Medical Care in Diabetes. Diabetes Care 2024;47(Suppl 1):S20-S42. DOI:10.2337/dc24-S002'
+        'source': 'ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (PMID:38078589). DOI:10.2337/dc24-S002'
     },
     'Fasting Glucose': {
         'plain': 'Blood sugar measured after at least 8 hours without eating. One of the main tests for diabetes.',
@@ -607,7 +607,7 @@ TERMS = {
         'disease': 'Elevated in prediabetes and diabetes; reflects fasting hyperglycemia',
         'connections': ['HbA1c', 'Glucose', 'Diabetes diagnosis'],
         'gap_relevance': [11, 12],
-        'source': 'ADA Standards of Medical Care in Diabetes. Diabetes Care 2024;47(Suppl 1):S20-S42. DOI:10.2337/dc24-S002'
+        'source': 'ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (PMID:38078589). DOI:10.2337/dc24-S002'
     },
     'HOMA-IR': {
         'plain': 'Homeostasis model assessment for insulin resistance. A calculated score using fasting glucose and insulin. Estimates how insulin resistant a person is.',

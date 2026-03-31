@@ -645,7 +645,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">ZOE, DayTwo, and Personalized Glycemic Response</div>
-                    <div class="reference-meta">Zeevi et al. (Cell, 2015); Mendes-Soares et al. (bioRxiv, 2021)</div>
+                    <div class="reference-meta">Zeevi et al. Cell 2015 (PMID:26590418); Mendes-Soares et al. (bioRxiv, 2021)</div>
                     <p>Landmark papers showing that individual glucose response to identical foods varies 3-4 fold and is predictable from genetics, microbiome, and metabolomics. But these studies optimize for glucose control, not beta cell preservation.</p>
                 </div>
 

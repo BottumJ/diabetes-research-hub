@@ -1,0 +1,1067 @@
+{
+  "pmcid": "PMC8869296",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "CAR-T Regulatory (CAR-Treg) Cells: Engineering and Applications"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Regulatory T cells are critical for maintaining immune tolerance. Recent studies have confirmed their therapeutic suppressive potential to modulate immune responses in organ transplant and autoimmune diseases. However, the unknown and nonspecific antigen recognition of polyclonal Tregs has impaired their therapeutic potency in initial clinical findings. To address this limitation, antigen specificity can be conferred to Tregs by engineering the expression of transgenic T-cell receptor (TCR) or chimeric antigen receptor (CAR). In contrast to TCR Tregs, CAR Tregs are major histocompatibility complex (MHC) independent and less dependent on interleukin-2 (IL-2). Furthermore, CAR Tregs maintain Treg phenotype and function, home to the target tissue and show enhanced suppressive efficacy compared to polyclonal Tregs. Additional development of engineered CAR Tregs is needed to increase Tregs’ suppressive function and stability, prevent CAR Treg exhaustion, and assess their safety profile. Further understanding of Tregs therapeutic potential will be necessary before moving to broader clinical applications. Here, we summarize recent studies utilizing CAR Tregs in modulating immune responses in autoimmune diseases, transplantation, and gene therapy and future clinical applications."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "1. Introduction"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Regulatory T cells (Tregs) are a T-cell subset known for their immunomodulatory function. Expression of CD4, CD25, and the master transcription factor, forkhead box P3 (FOXP3), are the main characteristic markers of conventional Tregs. However, other regulatory immune cells with different properties such as CD8+ Tregs, or type 1 regulatory T cells (Tr1) have been described. Tregs are divided into “natural” Tregs that develop in the thymus or “induced” Tregs that are generated in the periphery. Regulatory T cells suppress immune responses through multiple mechanisms including direct interaction with other immune cells or by producing immunosuppressive cytokines such as interleukin-10 (IL-10) and Transforming growth factor beta (TGF-β). Tregs are powerful suppressive cells due to the intrinsic properties of broadly suppressing T cells with differing antigen specificity through bystander suppression and induction of other suppressive cells by infectious tolerance. In bystander suppression, antigen-activated Tregs can suppress colocalized conventional T cells regardless of their antigen specificity. Moreover, through infectious tolerance, Tregs can convert conventional T cells into induced Tregs by secretion of immune suppressive cytokines TGF-β, IL-10 or IL-35 or by interacting with dendritic cells. Hence, Tregs have been used to modulate immune responses in transplantation, autoimmune diseases, and gene therapy. Adoptive transfer of polyclonal Tregs that contain multiple T-cell receptor (TCR) specificities and regulate T cells through antigen-independent bystander suppression has been performed in early clinical trials. However, utilizing the polyclonal Tregs may result in nonspecific tolerance which is known to limit robust immune responses when necessary, such as in response to dangerous pathogens, and may also increase the patient’s risk of cancer. Additionally, a major hurdle for nonengineered Tregs is their conversion into proinflammatory T helper 17 cells (Th17) cells in response to certain immunological environments. Therefore, directing Tregs towards a desired antigen may boost the overall response and lower the risk of broad and systemic immunosuppression or generation of an inflammatory response."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Alternatively, preclinical studies have shown antigen-specific Tregs may be more efficient due to their homing ability towards the cognate antigen. Antigen specificity can be conferred to regulatory T cells by transducing them with recombinant TCR. TCR-engineered T cells recognize peptides from both intracellular and surface derived proteins. Moreover, TCR-T cells have high affinity to cognate major histocompatibility complex (MHC)-peptide and induce a potent immune synapse formation. However, TCR-engineered Tregs are MHC dependent, and mismatch hybridization of the exogenous and endogenous chains limit their application. Conversely, chimeric antigen receptor (CAR) technology offers a non-MHC-dependent approach with clinical efficacy achieved in B-cell malignancies. Moreover, CAR Tregs are less dependent on IL-2 than TCR-Tregs. CAR T cells utilize an extracellular antigen recognition domain from a single-chain variable fragment (scFv) of an antibody combined with an intracellular signaling domain. This combination allows for the construct to activate a T-cell response without interacting with the antigen in the context of MHC."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "1.1. Engineering Antigen-Specific Tregs"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Engineering cells to express CAR constructs is commonly accomplished through viral vector systems such as lentivirus, Gamma-retroviral, and adeno-associated viral (AAV) vectors. Additionally, viral-free systems such as the Sleeping Beauty (SB), or piggyBac transposon have been used to integrate CAR encoding DNA with favorable integration into the target genome. Furthermore, Clustered regularly interspaced short palindromic repeats (CRISPR)- CRISPR associated protein 9 (Cas9) gene-editing technology, which allows for the insertion of DNA at specific locations directed by RNA, has also been used to engineer CAR T cells. CRISPR-engineered CAR T cells, which express CAR from an endogenous TCR locus remain active for longer periods than their virus-transduced counterparts."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The origin of transduced cells for the creation of CAR Tregs may be isolated polyclonal T cells, CD4+ T cells or Tregs (Figure 1). In CAR Tregs derived from polyclonal Tregs, Tregs are isolated and transduced with a CAR construct. However, this strategy is limited not only by low levels of Tregs in peripheral blood, but also the potential for downregulation of the Treg phenotype. Additionally, Tregs have been engineered by cotransducing CD4+ or CD3+ T cells with CAR constructs and FoxP3 cDNA. Studies have shown that transfection of T cells with FoxP3 induces regulatory activity. This strategy aims to resolve the low population of primary Tregs in peripheral blood and loss of FoxP3 expression in endogenous Tregs."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "1.2. CAR-T Generations"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "CAR constructs are stratified into multiple generations by the combination of signaling domains, as shown in Table 1. The first-generation signaling domain only contains CD3ζ, whereas second and third generations include one or multiple additional costimulatory domains such as CD28 and/or 4-1BB, respectively. Dawson et al. compared second-generation CAR constructs with multiple costimulatory domains. Their result suggested Tregs expressing CAR encoding wild-type CD28 are significantly more effective than other costimulatory domains in suppression of an immune response in a Graft versus hosed disease (GvHD) disease model. Furthermore, Lamarthee et al. showed 4-1BB CAR Tregs exhibit decreased lineage stability and reduced in vivo suppressive capacities. Yet, transient exposure to mTOR inhibitors and vitamin C improves 4-1BB CAR Treg in vivo function. In a separate study, Shrestha et al. showed CAR Tregs generated with the 4-1BB domain are able to prevent GvHD in murine model. In addition, CAR T-cell studies also suggest 4-1BB costimulation will increase CAR T-cell persistence and ameliorate T-cell exhaustion. Therefore, recent approaches created the third generation of CAR Tregs by including both 4-1BB and CD28 costimulatory domains. Additional comparative studies are required to select the best combination for optimal and stable Treg functionality. Since the costimulatory domains and cell type used to generate CAR Tregs greatly determine their function, these attributes for each study described can be found in Table 2."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2. Application for CAR Treg Therapy"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Herein, we review the Treg application in modulating immune responses in multiple disease conditions focusing on the recent advancements of CAR Tregs."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.1. GvHD"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Graft-versus-host disease (GvHD) is caused by immune cells in the grafted tissues attacking recipient cells following allogeneic transplantation of organs rich in lymphoid cells, such as liver or nonirradiated blood transfusion. Immune responses to solid tissue transplantation can be classified to direct and indirect pathways of allosensitization. In direct allorecognition, donor APCs migrate into the recipient lymphoid tissue where they present donor antigens to naïve T cells. In indirect allorecognition, damage associated molecular patterns (DAMPs), which are released due to transplantation or cell death activate recipient APCs that migrate to draining lymph nodes (dLNs) where they engage recipient naive T cells, leading to T-cell activation."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "In contrast to transplant rejection, which is mediated by the host immune response, graft-versus-host disease (GvHD) is caused by donor immunocompetent T cells primed by either donor or host APCs inducing an immune response against the host. The pathophysiology of GvHD can be acute or chronic depending on timing and range of symptoms."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Modulation of Tregs for therapeutic use has become an important area of investigation in GvHD, with the majority of studies focusing on in vitro-expanded polyclonal Tregs. The first clinical trial of Tregs in GvHD showed modest impacts on acute GvHD symptoms but significant alleviation of the symptoms in chronic GvHD and reduction in the use of immunosuppressive agents. Following trials demonstrated that adoptive transfer of ex vivo-expanded CD4+CD25+CD127− Tregs prevented both acute and chronic GvHD. Additionally, a pilot study of 10 liver transplant patients treated with ex vivo-generated Tregs showed normal graft function with few adverse events after withdrawal of immunosuppressive agents."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Subsequent studies began using CAR Tregs which were alloantigen-specific human Tregs engineered to express an HLA–A2–specific CAR (A2-CAR). These A2-CAR Tregs maintained high expression of FoxP3, CD25, Helios, and CTLA-4 in vitro and in vivo. Further, they prevented xenogeneic GvHD in immune-deficient NOD.SCID.γc −/− (NSG) mice, which was not observed in animals treated with polyclonal Tregs. Additional studies examined A2-CAR Tregs in skin allograft models that completely prevented rejection of allogeneic target cells and tissues in immune-reconstituted humanized mice in the absence of any immunosuppression. Concurrently, Boardman et al. developed a second generation of CAR Tregs targeting the same antigen, HLA–A2. This A2-CAR showed antigen-specific suppression without eliciting cytotoxicity in vitro. Moreover, these A2-CAR Tregs migrated to HLA–A2-expressing cells and alleviated the alloimmune-mediated skin injury in mice. Following the success of A2-targeting CAR Tregs, recent studies have focused on generating CAR Tregs with distinct targeting domains such as CD83, which prevents GvHD in murine models, or CD19, which suppresses B-cell antibody production and pathology leading to GvHD. In addition to the development of CD4+ CAR Tregs, CD8+ Tregs are emerging as potential candidates for suppression of GvHD."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "These promising results have led to first CAR Treg clinical trial authorization by UK MHRA and US (NCT04817774) for kidney transplant patients, sponsored by Sangamo Therapeutics. This trial (STeadfast) utilizes CD4+/CD45RA+/CD25+/CD127low/− Tregs that have been ex vivo engineered with a CAR construct to recognize HLA–A2. The STeadfast trial may support advantages of CAR Tregs over polyclonal expanded Tregs in a clinical trial setting, further expanding the possibility of using CAR Tregs in other disease conditions. Other biopharmaceutical companies are following close behind in hopes of starting clinical trials, such as Quell Therapeutics, focused on CAR Tregs for liver transplant recipients."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.2. Diabetes"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Type 1 diabetes (T1D) is an autoimmune disorder characterized by insulin deficiency due to the destruction of pancreatic β cells. Several studies have focused on T1D due to its high prevalence rate (more than 1.6 million in the United States). Current therapies include insulin administration, diet and exercise. Morbidity associated with T1D includes constant monitoring of blood glucose levels and lifelong insulin usage."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Studies have shown reduced immune suppressive functionality of Tregs in patients with T1D. This observation and the success of Treg transplantation in maintaining immunologic tolerance has led to the application of Treg infusion in T1D patients to rescue remaining β cells. Infusion of expanded antigen-specific Tregs showed promising results in animal models in blocking and reversing diabetes. Yet, isolating sufficient antigen-specific Tregs is challenging due to their rarity in circulation. Hence, studies have focused on transduction of the more abundant polyclonal CD4+ T cells with FoxP3 gene to convert them to Tregs. Although the ectopic expression of FoxP3 conferred a suppressor phenotype in naïve CD4+ T cells, this was not effective in diabetic mice. In contrast, FoxP3-transduced islet-specific T cells stabilized and reversed diabetes in vivo. This suggested a marked benefit to antigen specificity, which alternatively could be conferred to polyclonal T cells by engineered TCR or CAR technology. In this context, Brusko’s group showed the ability of glutamic acid decarboxylase (GAD)-specific TCR-transduced Tregs to suppress the proliferation of both antigen-specific T cells and T cells with different antigen specificities in vitro. Concurrently, Hull et al. transferred islet-specific TCRs to regulatory T cells and confirmed their ability to suppress the proliferation of CD4 and CD8 T cells in vitro. Companies such as GentiBio and Abata are developing TCR-engineered Tregs for treatment of T1D. Since the application of TCR-transduced Tregs is limited by MHC restriction, other studies have focused on the development of CAR Tregs specific to other diabetes antigens. Tenspolde et al. created insulin-specific CAR Tregs by transducing CD4 T cells with second-generation CAR and FoxP3 gene. Insulin-specific CAR Tregs showed a similar phenotype to natural Tregs, and their function was confirmed in vitro by suppressing proliferation of effector T cells. Although insulin CAR Tregs did not prevent diabetes in NOD/Ltj mice, the cells were found in the spleen 17 weeks after infusion. In another study, human pancreatic endocrine marker, HPi2-specific CAR Tregs, were generated by transducing Tregs with a second generation of CAR construct, but failed to maintain expansion due to tonic signaling. In another study, CAR Tregs were designed against two immunodominant GAD65 beta-cell epitopes. Both CAR Tregs homed to pancreatic islets of humanized T1D mouse model 24 h after infusion. Moreover, the Treg population was significantly increased in the pancreas and spleen of the CAR Treg-treated groups compared to the control groups. CAR Treg-treated groups also showed lower blood glucose compared to the control groups."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Additionally, allogeneic islet transplantation is a promising cell-based therapy for T1D. However, host-mediated immune rejection is a limiting factor in broad application of islet transplantation. In a recent study, poly lactic-co-glycolic acid (PLGA) microparticles (MPs) were engineered for the localized and controlled release of immunomodulatory TGF-β1. In vitro, the incubation of the particles with CD4+ T cells resulted in the induction of polyclonal and antigen specific Tregs. However, the presence of particles did not lead to significant graft protection in vivo. Pierini et al. utilized the transduction of Tregs with a second-generation CAR construct to generate FITC-specific CAR Tregs (mAb CAR Treg). In this system, the CAR construct expresses an FITC binding domain allowing the use of any FITC-conjugated antibody to target the desired antigen. Utilizing mAb CAR in combination with FITC-conjugated antibodies targeting MHC class I proteins, they were able to prolong islet allograft survival in vivo. These findings further indicate the ability of CAR Tregs to regulate the immune responses leading to T1D."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.3. Rheumatoid Arthritis"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Rheumatoid arthritis (RA) is the most common inflammatory arthritis characterized by synovial inflammation, hyperplasia, autoantibody production, cartilage and bone destruction, and systemic features, including cardiovascular, pulmonary, psychological, and skeletal disorders. Multiple immune cell subsets are involved in the development of RA. Among them, the interactions between T cells and macrophages play an essential role. The current therapy for RA includes disease-modifying antirheumatic drugs (DMARDs, methotrexate), anti-TNF-α, anti-CTLA-4 or small-molecule targeted DMARDs. However, these therapies are lifelong and accompanied with side effects and incomplete clinical response. Therefore, inducing self-tolerance prior to serious tissue damage would be advantageous. Studies have investigated the benefit of increasing Treg numbers or improving Treg functionality. Wright et al. utilized Tregs specific for ovalbumin (OVA) to suppress OVA-induced arthritis by generating either TCR-transduced primary Tregs or TCR-FoxP3-transduced CD4+ T cells, to induce the Treg phenotype. In vitro, TCR-FoxP3 CD4+ T cells, but not TCR-Tregs, proliferated in response to antigen. Furthermore, both engineered Tregs showed OVA-dependent suppression of proliferation of T cells specific for a different antigen through bystander suppression. In vivo, both TCR-Tregs and TCR-FoxP3-induced Tregs localized into the damaged tissue, with neither converting to proinflammatory Th17 cells. Moreover, engineered Tregs reduced the number of inflammatory Th17 cells and significantly decreased arthritic bone destruction. Utilizing T cells differentiated into Tregs targeting type II collagen, Sun et al. showed that Tregs differentiated from CD4+ T cells isolated from RA mice after onset of disease reversed collagen-induced arthritis (CIA) progression in mice. Moreover, these antigen-specific Tregs suppressed inflammatory cytokines and were stable in vivo. In contrast, Raffin et al. applied the CAR technology to generate antigen-specific Tregs directed against citrullinated vimentin (CV), which is present abundantly in the extracellular matrix of inflamed joints in RA patients. Sonoma Biotherapeutics is currently developing at CAR Treg therapy for RA."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.4. Multiple Sclerosis"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Multiple Sclerosis (MS) is an autoimmune demyelinating and neurodegenerative disease caused by autoreactive T cells recognizing myelin epitope, resulting in irreversible disability in more than 1 million people in the United States. The treatment of MS includes nonspecific immune-suppressive drugs or B-cell-depleting monoclonal antibodies. However, the current treatments may result in severe side effects and cause global immune suppression, hence more specific and local treatments are needed. Tregs in patients with MS have been found to secrete more IFN-γ and less IL-10 compared with healthy controls. Considering the impaired function of Tregs in MS patients, utilizing Treg cell therapy has been suggested."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Preclinical studies using an experimental autoimmune encephalomyelitis (EAE) model, a flawed but adequate murine model of MS, confirmed the effectiveness of Tregs in suppressing antigen-specific autoreactive immune responses through a mechanism that involves IL-10. Expectedly, adoptive transfer of antigen-specific Tregs derived from TCR transgenic mice was successful in controlling a murine model of MS. To achieve a greater number of cells for adoptive transfer, Fransson et al. modified CD4+ T cells with CAR targeting myelin oligodendrocyte glycoprotein (MOG) and murine FoxP3 gene to create antigen-specific Tregs. The MOG-CAR Tregs suppressed effector T cells’ proliferation in vitro. Moreover, the engineered Tregs localized into various regions in the brain after intranasal cell delivery. The MOG-CAR Tregs reduced disease symptoms and decreased proinflammatory cytokine mRNAs in brain tissue in EAE mice. Later, Kim et al. engineered Tregs with myelin-basic protein-specific TCR that was derived from MS patients. These engineered Tregs upregulated Treg markers and were activated in response to the antigen. In vitro, they suppressed the effector T cells for that were specific for the same antigen and T cells with different antigen specificity through bystander suppression. In vivo, the TCR-Tregs localized in the brain and spinal cord and significantly reduced disease score in the EAE MS mouse model. The application of immunomodulatory engineered Tregs in preclinical studies highlights their potential role in reducing morbidity and mortality associated with MS, with several biopharmaceutical companies are pursuing this such as Abata Therapeutics and TeraImmune."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.5. Inflammatory Bowel Disease"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Inflammatory Bowel Disease (IBD) describes conditions characterized by chronic inflammation of the gastrointestinal tract. Ulcerative colitis (UC) and Crohn’s disease (CD) are the most common forms of IBDs. In CD, all layers of entire gastrointestinal tract can be affected by inflammation, whereas in UC inflammation occurs in colonic mucosa. Common symptoms in CD include fatigue and abdominal pain, while in UC, bloody stool and diarrhea are most common. Depending on the severity of the disease, treatments include nonsteroid anti-inflammatory (anti-TNF) drugs, steroids, and antibiotics."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Studies suggest the imbalance between gut microbiota and the immune response play an important role in the IBD. Moreover, evidence suggests that Tregs have a crucial role in maintaining tolerance and preventing autoimmune disease. However, intestinal inflammation is not associated with a reduction in Treg population. Yet, mice with deficient Treg activity are more susceptible to developing severe colitis. Therefore, multiple studies have attempted to harness the Treg suppressive activity to maintain tolerance in UC. In one study, isolated CAR Tregs against a known antigen of colitis (2,4,6-trinitrophenol (TNP)) from transgenic mice suppressed effector T-cell proliferation in vitro. In vivo, after induction of colitis, increased survival rate was observed in the CAR Treg transgenic mice compared with wild-type animals. Moreover, transfer of TNP-CAR Tregs into a colitis mice model reduced the symptoms and increased survival rates. The TNP-CAR Tregs were also able to localize in the inflamed colonic mucosa. In addition, TNP-CAR Tregs bystander suppressed the oxazolone-induced colitis. In a subsequent study, they transduced murine Tregs with TNP-CAR which maintained FoxP3 expression and proliferated in response to the antigen ex vivo. In vivo, transfer of TNP-CAR Treg resulted in antigen-specific and dose-dependent amelioration of colitis. Following these studies, CAR Tregs were generated against a different antigen, carcinoembryonic antigen (CEA), which is overexpressed in both human colitis and colorectal cancer. CEA-CAR Tregs were found in the colons of the diseased mice and suppressed the severity of the colitis compared to control animals."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Studies suggest an important role of IL-23 receptor (IL-23R) in the pathogenesis of autoimmune diseases including CD. In addition, increased expression of IL-23R was shown in patients with CD compared to healthy controls. Therefore, in a recent study, Tregs were transduced with a second generation of CAR containing CD28 costimulatory domain targeting IL-23R. CAR Tregs suppressed conventional T-cell proliferation in vitro, homed to the target organs and reduced peak of disease and intestinal inflammation in mice. Cell-based therapies may be a promising and effective modality for treatment or attenuation of UC and CD."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.6. Asthma"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Asthma is a chronic respiratory disease affecting 300 million people worldwide. The symptoms associated with asthma include wheezing, shortness of breath, chest tightness, cough and fixed airflow obstruction in severe chronic patients. The standard of care for asthma includes anti-inflammatory and bronchospasmolytic drugs. However, 10–20% of patients are resistant to these symptomatic treatments. Asthmatic patients are shown to have impaired and reduced number of Tregs. Therefore, new approaches have focused on preventing airway inflammation by transferring regulatory T cells in a preclinical model of asthma. Adoptive transfer of Tregs resulted in increased expression level of IL-10. Further, one study utilized T regulatory cell epitope (Tregitopes) to induce highly suppressive allergen-specific Tregs. Tregitopes are linear sequences of amino acids contained within the framework of monoclonal antibodies and immunoglobulin G that activate natural regulatory T cells."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Treatment with Tregitopes inhibited allergen-induced airway hyperresponsiveness and lung inflammation. To direct Tregs towards asthma associated antigens, Skuljec et al. applied CAR technology. They engineered second-generation Tregs against CEA, a glycoprotein present on the surface of adenoepithelia in the lung and gastrointestinal tract, were isolated from transgenic mice; the same antigen used in the UC study described above. They showed the activation and homing of the CEA-CAR Tregs in the inflamed lung of asthmatic mice. Moreover, the CEA-CAR Tregs ameliorated the inflammation to a greater degree compared to the nonmodified Tregs."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.7. Vitiligo"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Vitiligo is a skin disease characterized by progressive skin depigmentation with 0.5–1% frequency around the world. Studies have shown that depigmentation is associated with the infiltration of T cells and macrophages to the dermis. Further studies indicated that isolated T cells from patients’ skin are cytotoxic against melanocytes. In addition, impaired Treg activity and decreased population of Treg were reported in Vitiligo patients. Treatments include phototherapy, topical corticosteroids, calcineurin inhibitors, and depigmentation with p-(benzyloxy)phenol, or systemic treatment with corticosteroids, ciclosporin and other immunosuppressive agents. Adoptive transfer of Tregs and use of rapamycin resulted in remission of the disease in mice. These findings led researchers to generate CAR Tregs against ganglioside D3 (GD3), a surface marker overexpressed in melanocytes. The CD4+ FoxP3+ Tregs were transduced with the GD3-targeting CAR construct. In vivo, animals treated with CAR Tregs showed greater levels of IL-10, regulated cytotoxicity against melanocytes and delayed depigmentation compared to the group that received untransduced Tregs."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.8. Hemophilia"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Deficiency in Factor VIII (FVIII) or Factor IX (FIX), known as hemophilia A or B, respectively, are x-linked inherited bleeding disorders caused by mutations in clotting factor genes. The current clinical treatment for hemophilia includes protein replacement therapy, which requires frequent administration of the coagulation factors and fails to completely prevent bleeds and joint damage. Moreover, introducing coagulation factors, especially in patients with severe hemophilia, may provoke an antidrug immune response. To promote tolerance to coagulation factors, immune tolerance induction (ITI) through daily exposure to high-dose FVIII, has been used. However, ITI is costly and not successful in all patients. Several clinical trials have focused on gene therapy as a long-term and single-dose treatment to avoid frequent administration. Other researchers have developed additional strategies utilizing Tregs to induce tolerance. Initially, Miao et al. confirmed the ability of FVIII-specific CD4+ FoxP3+ T cells to suppress FVIII antibody production in vivo. Another study showed transferring ex vivo expanded polyclonal Tregs suppressed antibody formation against FVIII protein therapy even after the transferred cells became undetectable. However, the need for a large number of Tregs and the risk of general immune suppression led researchers to the development of antigen-specific Tregs. Smith et al. enhanced specific Tregs by primming them with FVIII, which resulted in greater suppressive function compared to expanded naïve Tregs. However, the number of the FVIII-specific Tregs is a very small percentage of the total Treg population even with expansion, hence other approaches are needed. While some groups are focused on engineering Tregs with an antigen-specific TCR, as well as companies such as TeraImmune, others utilized CAR technology. Yoon et al. generated second-generation, FVIII-specific CAR Tregs from isolated Tregs that suppressed both B-cell and T-cell responses to FVIII. Their data also suggest bystander suppression by modulating proliferation of FVIII-specific T-effector cells with specificity for different FVIII domains. In addition, Herzog et al. isolated FVIII-specific CD4+ T cells and transduced them with FoxP3, creating Tregs which showed suppression of FVIII antibody production. Further, Fu et al. converted CD4+ T cells to FVIII-CAR Tregs by transducing them with a third-generation CAR construct and FoxP3 gene. Using this approach, they benefited from a greater number of cells and overcame the plasticity and transient nature of the adoptively transferred Tregs. Their data confirmed that the ectopic expression of FoxP3 creates effective and functional Tregs with the ability to inhibit antibody production against FVIII in vivo. In a recent study, Rana et al. compared the functionality of FVIII-specific CAR and TruC (TCR fusion construct) Tregs. To generate TruC Tregs, they fused FVIII scFv to murine CD3ε and observed in vivo suppression with limited persistence. A second-generation CAR was compared to the TruC Tregs, and they observed loss of suppressive activity in CAR Tregs. Single amino acid mutations in CD3 or CD28 increased the Tregs’ persistence and changed cytokine profile, respectively, but did not restore tolerance."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Antigen-specific CAR Tregs are proving to be successful treatments to modulate the inhibitor formation associated with coagulation factors."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "2.9. CAR Tregs in Gene Therapy"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Recombinant adeno-associated virus (rAAV) is one of the most successful gene delivery tools with currently 2 FDA- and 1 EMA-approved treatments for a broad range of diseases. However, the immune responses observed in clinical trials have limited the therapeutic application. The T-cell responses against AAV capsid were first observed in a clinical trial using intravenous delivery of AAV for hemophilia, and led to the loss of transgene expression, a result never predicted by preclinical studies. To maintain transgene expression, immunosuppression is now widely used in AAV clinical trials. Steroids are commonly used to modulate immune responses, but they do not specifically target the capsid-specific T cells and may also result in Treg depletion. Interestingly, clinical studies suggest that the induction of local Tregs in gene therapy studies, specifically noted in intramuscular delivered AAV, enhance long-term transgene expression. Induction of capsid-specific Tregs could enhance transgene expression and clinical outcomes of AAV gene therapy. In a novel study, administration of encapsulated rapamycin (ImmTOR) was codelivered with AAV gene therapy and resulted in reduced humoral and T-cell responses to capsid, immune infiltration, and stable transgene expression. Moreover, inductions of Tregs were shown to be a vital component of the ImmTOR response, as Treg depletion greatly inhibited immunomodulatory effect."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Arjomandnejad et al. therefore designed a third-generation CAR Treg that was specific for AAV capsid. AAV-CAR Tregs in vitro display phenotypical Treg surface marker expression, and functional suppression of effector T-cell proliferation and cytotoxicity. In mouse models, AAV-CAR Tregs mediated continued transgene expression from an immunogenic capsid, despite antibody responses, produced immunosuppressive cytokines, and decreased tissue inflammation."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "In addition to the capsid-specific immune responses, immune response against the delivered transgene is another limiting factor for broad applications of gene therapy. Hence, various studies have investigated different strategies to inhibit these responses, including broad immunosuppression, administration of monoclonal antibodies and utilizing tissue-specific promoters. One study utilized polyclonal Tregs to induce tolerance against coagulation factors 8 and 9 in hemophilia protein replacement therapy. However, due to the low cellular input and the possibility of nonspecific immune suppression, transgene-specific CAR Tregs were generated. AAV-CAR Tregs directed against the AAV capsid were also shown to bystander suppress immune responses to the immunogenic OVA transgene, similarly mediating continued transgene expression, producing immunosuppressive cytokines, and reducing tissue infiltration. These data suggest the AAV-CAR Treg can suppress both AAV capsid immune responses and vector-expressed transgene immune responses."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Gene editing has the potential to revolutionize the gene therapy field, and with the discovery of the clustered regularly interspaced short palindromic repeats (CRISPR)–Cas9 system, the interest in the ability to precisely edit specific genes of interest has been enhanced. However, studies have detected Cas9-associated humoral and cellular immune responses and the prevalence of anti-Cas9 antibodies and T cells within the human population. Although much success of CRISPR editing has been described for ex vivo therapies, numerous in vivo editing strategies have suggested immune responses to Cas9 may inhibit therapeutic effects. Ferdosi et al. modified Cas9 protein to eliminate immunodominant epitopes by utilizing targeted mutations while still preserving its function and specificity. In addition, Moreno et al. showed immune-orthogonal orthologues of Cas9 circumvent the immune response and allow for multiple dosing."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Regulatory T cells, due to their immunomodulatory role, are superior candidates to inhibit the immune responses against Cas9. A study by Wagner et al. found Cas9-specific Tregs in addition to effector T cells in human samples. They further reported Cas9 Tregs suppress Cas9-effector T cells’ proliferation and function in vitro. To avoid systemic suppression, engineering Tregs with a Cas9-specific TCR or CAR is one of the possible strategies to overcome Cas9-mediated immune responses."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "3. CAR Treg Limitations"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Antigen-specific T-regulatory cells are powerful tools for immunosuppression, with a wide variety of uses, from treatment of autoimmune diseases, to modulation of immune responses, to gene therapy, and the first clinical trial is currently approved for kidney transplants (NCT04817774). Additional investments are being made in the platform across several companies focusing on creating engineered Treg products for the treatment of autoimmune and inflammatory diseases. However, further optimization is required to increase Tregs’ suppressive function and stability, prevent CAR Treg exhaustion, and assess their safety profile."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "An additional hurdle to the widespread use of cell-based products is the cost. Even without engineering, cell-based products are expensive and require specialized equipment. For example, in the year 2020, a single-dose administration of CAR T cells in hematological malignancy is estimated to cost around USD 454,611. Therefore, the optimization of CAR Treg production and efficacy is necessary for widespread therapeutical use, and further optimization such as moving towards universal CAR Tregs is needed. One approach which may reduce the production cost is generation of allogeneic CAR Tregs by removing TCR to avoid GvHD. This off-the-shelf product could potentially treat many patients from a single batch of engineered CAR-T cells. They could also be used in patients where autologous therapy is not possible. Moreover, repeated dosing is feasible in the event of relapse."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Promise of CAR Treg and Perspective"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Despite the discussed limitations, there are significant advantages to utilizing engineered antigen-specific T cells, especially CAR Tregs. Compared to polyclonal Tregs, CAR Tregs are MHC independent, home to the target tissue due to antigen expression, and show enhanced suppressive efficacy. Furthermore, intrinsic properties of Tregs have provided a benefit to CAR Tregs over CAR T cells, including their ability to suppress T cells with different antigen specificity through bystander suppression and to induce endogenous tolerogenic cells through infectious tolerance. In particular, in the case of AAV-CAR Tregs, a single product can not only suppress immune responses against various AAV capsid variants, but also vector-delivered transgenes, without having to create a new CAR construct for every capsid or vector-delivered transgene, creating a versatile therapy."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Expanded Tregs have shown promise as therapies for several autoimmune and inflammatory diseases, and may be effective in similar types of diseases. Companies are currently investigating lupus, systemic sclerosis, and inclusion body myositis among others. One candidate is Myasthenia Gravis (MG), which is a chronic autoimmune disease leading to muscle weakness and fatigability. Current MG therapies include immunosuppression, which results in severe adverse effects. One study showed Treg impairment in MG patients. Later, Aricha et al. administered ex vivo-generated Tregs in an MG rat model, which led to inhibition of disease progression. These findings suggest that MG may be a candidate for CAR Treg therapy. The neurodegenerative disease amyotrophic lateral sclerosis (ALS) is a promising potential candidate. Neuroinflammation plays a role in ALS but is usually attributed to microglia. However, Beers et al. reported that regulatory T cells from ALS patients show less suppressive activity ex vivo and their dysfunctionality is related to disease progression and severity. Moreover, ex vivo expansion of Tregs and reinfusion in an ALS mouse model resulted in significant reduction in disease progression. Further, the reinfusion of expanded Tregs from ALS patients with IL-2 resulted in increased Treg suppressive functions and reduced disease progression in human subjects. These findings make ALS an ideal candidate to evaluate the efficacy of antigen-specific CAR Tregs. AZTherapies is currently testing a CAR-Treg approach for treatment of several neurodegenerative diseases. Additionally, SCM LifeScience and TeraImmune are developing CAR Tregs for atopic dermatitis using a virus-free gene delivery system. In addition, several studies have reported the role of Tregs in multiple fibrotic diseases including cystic fibrosis, systemic sclerosis, cardiac and liver fibrosis. Therefore, utilizing CAR Treg may prove beneficial to ameliorate fibrotic diseases as the leading cause of mortality. Engineered Tregs have additionally been suggested to control immune responses to gene therapies. This dual-cell and gene therapy approach could vastly broaden the breadth of disease types engineered Tregs could treat. In AAV, gene therapy studies suggest that AAV-CAR Tregs can modulate the immune response to the vector and delivered transgenes, which may eliminate the use of immunosuppressive drugs. Moreover, vector readministration may be required and CAR Tregs are a potential candidate to suppress preexisting immunity. Similarly, adoptive transfer of CAR Tregs directed towards Cas may modulate the preexisting immunity towards CRISPR gene-editing tools, allowing for exciting new therapeutic tools for genetic diseases. However, the combined costs of these two expensive therapies currently limits their therapeutic application."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "4. Conclusions"
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Although the field of engineered Tregs is early in development, many important studies described here have generated great excitement in the field. To date, studies have largely focused on the preclinical characterization, mechanism of action, and efficacy of CAR Tregs, but clinical development is on the horizon and significant investment is being made by pharmaceutical companies. Further optimizations are required for the widespread use of engineered Tregs, yet they remain a powerful and promising modality. These engineered T cells are starting to enter clinical trials and may provide significant therapeutic benefit to numerous diseases reaching beyond transplantation and autoimmune diseases."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Publisher’s Note: MDPI stays neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Author Contributions"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Conceptualization, M.A. and A.M.K.; writing—original draft preparation: M.A. and A.M.K.; writing—review and editing, M.A., A.L.K. and A.M.K.; visualization, M.A., A.L.K. and A.M.K. All authors have read and agreed to the published version of the manuscript."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Funding"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Funding was provided by National Heart, Lung and Blood Institute NHLBI-1P01HL158506-01 (A.M.K.)."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Institutional Review Board Statement"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Informed Consent Statement"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Data Availability Statement"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Conflicts of Interest"
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "A.M.K. is a paid consultant for Kriya Therapeutics and Aruvant Sciences Inc. (New York, NY, USA), which is unrelated to this work. M.A. and A.M.K. are inventors on a patent US2020029527."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD8+ Tregs revisited: A heterogeneous population with different phenotypes and properties"
+    },
+    {
+      "section_type": "REF",
+      "text": "The Biology of T Regulatory Type 1 Cells and Their Therapeutic Application in Immune-Mediated Diseases"
+    },
+    {
+      "section_type": "REF",
+      "text": "Induced CD4+Foxp3+ regulatory T cells in immune tolerance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mechanisms of regulatory T-cell suppression—A diverse arsenal for a moving target"
+    },
+    {
+      "section_type": "REF",
+      "text": "How regulatory T cells work"
+    },
+    {
+      "section_type": "REF",
+      "text": "Suppressor effector function of CD4+CD25+ immunoregulatory T cells is antigen nonspecific"
+    },
+    {
+      "section_type": "REF",
+      "text": "Infectious tolerance and the long-term acceptance of transplanted tissue"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD25+CD4+ regulatory T cells generated by exposure to a model protein antigen prevent allograft rejection: Antigen-specific reactivation in vivo is critical for bystander regulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "The battle against immunopathology: Infectious tolerance mediated by regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "First-in-man clinical results of the treatment of patients with graft versus host disease with human ex vivo expanded CD4+CD25+CD127− T regulatory cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Infusion of ex vivo expanded T regulatory cells in adults transplanted with umbilical cord blood: Safety profile and detection kinetics"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reengineering chimeric antigen receptor T cells for targeted therapy of autoimmune disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ex Vivo Expanded Autologous Polyclonal Regulatory T Cells Suppress Inhibitor Formation in Hemophilia"
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 diabetes immunotherapy using polyclonal regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Administration of CD4+ CD25highCD127− Regulatory T Cells Preserves β-Cell Function in Type 1 Diabetes in Children"
+    },
+    {
+      "section_type": "REF",
+      "text": "Infection in Solid-Organ Transplant Recipients"
+    },
+    {
+      "section_type": "REF",
+      "text": "Skin Cancers in Organ Transplant Recipients"
+    },
+    {
+      "section_type": "REF",
+      "text": "FOXP3+ regulatory T cells and their functional regulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD25+ CD4+ T cells, expanded with dendritic cells presenting a single autoantigenic peptide, suppress autoimmune diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "In vitro-expanded antigen-specific regulatory T cells suppress autoimmune diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adoptive therapy with redirected primary regulatory T cells results in antigen-specific suppression of arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Avidity and Bystander Suppressive Capacity of Human Regulatory T Cells Expressing De Novo Autoreactive T-Cell Receptors in Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Generation of human islet-specific regulatory T cells by TCR gene transfer"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adoptive T Cell Therapies: A Comparison of T Cell Receptors and Chimeric Antigen Receptors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineered TCR-T Cell Immunotherapy in Anticancer Precision Medicine: Pros and Cons"
+    },
+    {
+      "section_type": "REF",
+      "text": "Signaling from T cell receptors (TCRs) and chimeric antigen receptors (CARs) on T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineered T Cell Therapy for Cancer in the Clinic"
+    },
+    {
+      "section_type": "REF",
+      "text": "Chimeric antigen receptor-modified T cells in chronic lymphoid leukemia"
+    },
+    {
+      "section_type": "REF",
+      "text": "Eradication of B-lineage cells and regression of lymphoma in a patient treated with autologous T cells genetically engineered to recognize CD19"
+    },
+    {
+      "section_type": "REF",
+      "text": "Alloantigen-specific regulatory T cells generated with a chimeric antigen receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "Recent advances and discoveries in the mechanisms and functions of CAR T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Amelioration of Colitis by Genetically Engineered Murine Regulatory T Cells Redirected by Antigen-Specific Chimeric Receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "One-step generation of modular CAR-T cells with AAV–Cpf1"
+    },
+    {
+      "section_type": "REF",
+      "text": "Enhanced CAR T-cell engineering using non-viral Sleeping Beauty transposition from minicircle vectors"
+    },
+    {
+      "section_type": "REF",
+      "text": "A new approach to CAR T-cell gene engineering and cultivation using piggyBac transposon in the presence of IL-4, IL-7 and IL-21"
+    },
+    {
+      "section_type": "REF",
+      "text": "Targeting a CAR to the TRAC locus with CRISPR/Cas9 enhances tumour rejection"
+    },
+    {
+      "section_type": "REF",
+      "text": "CAR/FoxP3-engineered T regulatory cells target the CNS and suppress EAE upon intranasal delivery"
+    },
+    {
+      "section_type": "REF",
+      "text": "Control of regulatory T cell development by the transcription factor Foxp3"
+    },
+    {
+      "section_type": "REF",
+      "text": "Thymus and autoimmunity: Production of CD25+CD4+ naturally anergic and suppressive T cells as a key function of the thymus in maintaining immunologic self-tolerance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T cells engineered with a novel insulin-specific chimeric antigen receptor as a candidate immunotherapy for type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineering and Design of Chimeric Antigen Receptors"
+    },
+    {
+      "section_type": "REF",
+      "text": "CAR-T design: Elements and their synergistic function"
+    },
+    {
+      "section_type": "REF",
+      "text": "Functional effects of chimeric antigen receptor co-receptor signaling domains in human regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Parallel Comparison of 4-1BB or CD28 Co-stimulated CD19-Targeted CAR-T Cells for B Cell Non-Hodgkin’s Lymphoma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Transient mTOR inhibition rescues 4-1BB CAR-Tregs from tonic signal-induced dysfunction"
+    },
+    {
+      "section_type": "REF",
+      "text": "Human CD83-targeted chimeric antigen receptor T cells prevent and treat graft-versus-host disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "4-1BB costimulation ameliorates T cell exhaustion induced by tonic signaling of chimeric antigen receptors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Choice of costimulatory domains and of cytokines determines CAR T-cell activity in neuroblastoma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Modulating immune responses to AAV by expandedpolyclonal T-regs and capsid specificchimeric antigen receptor T-regulatory cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD4+ T cells engineered with FVIII-CAR and murine Foxp3 suppress anti-factor VIII immune responses in hemophilia a mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prevention of Allograft Rejection by Use of Regulatory T Cells With an MHC-Specific Chimeric Antigen Receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "Expression of a Chimeric Antigen Receptor Specific for Donor HLA Class I Enhances the Potency of Human Regulatory T Cells in Preventing Human Skin Transplant Rejection"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD19-targeted CAR regulatory T cells suppress B cell pathology without GvHD"
+    },
+    {
+      "section_type": "REF",
+      "text": "Human CD8+ Tregs expressing a MHC-specific CAR display enhanced suppression of human skin rejection and GVHD in NSG mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "T cells expressing chimeric antigen receptor promote immune tolerance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Towards antigen-specific Tregs for type 1 diabetes: Construction and functional assessment of pancreatic endocrine marker, HPi2-based chimeric antigen receptor"
+    },
+    {
+      "section_type": "REF",
+      "text": "MON-LB033 Unleashing the Anti-Inflammatory Potential of Treg Cells Against Type I Diabetes Using Advanced Chimeric Antigen Receptor Technology"
+    },
+    {
+      "section_type": "REF",
+      "text": "Development of citrullinated-vimentin-specific CAR for targeting Tregs to treat autoimmune rheumatoid arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Antigen Specificity Enhances Disease Control by Tregs in Vitiligo"
+    },
+    {
+      "section_type": "REF",
+      "text": "Redirection of Regulatory T Cells With Predetermined Specificity for the Treatment of Experimental Colitis in Mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Suppression of Murine Colitis and its Associated Cancer by Carcinoembryonic Antigen-Specific Regulatory T Cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 diabetes mellitus: Much progress, many opportunities"
+    },
+    {
+      "section_type": "REF",
+      "text": "Chimeric Antigen Receptor-Redirected Regulatory T Cells Suppress Experimental Allergic Airway Inflammation, a Model of Asthma"
+    },
+    {
+      "section_type": "REF",
+      "text": "FVIII-specific human chimeric antigen receptor T-regulatory cells suppress T- and B-cell responses to FVIII"
+    },
+    {
+      "section_type": "REF",
+      "text": "CAR- and TRuC-redirected regulatory T cells differ in capacity to control adaptive immunity to FVIII"
+    },
+    {
+      "section_type": "REF",
+      "text": "GVHD Prophylaxis 2020"
+    },
+    {
+      "section_type": "REF",
+      "text": "Migration of dendritic leukocytes from cardiac allografts into host spleens. A novel pathway for initiation of rejection"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD4 T cell-mediated cardiac allograft rejection requires donor but not host MHC class II"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dendritic cells and innate immunity in kidney transplantation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Graft-infiltrating host dendritic cells play a key role in organ transplant rejection"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunogenicity of retransplanted rat kidney allografts. Effect of inducing chimerism in the first recipient and quantitative studies on immunosuppression of the second recipient"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunologic ‘ignorance’ of vascularized organ transplants in the absence of secondary lymphoid tissue"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dendritic cells of myeloid lineage: The masterminds behind acute allograft rejection"
+    },
+    {
+      "section_type": "REF",
+      "text": "Graft-versus-host disease prophylaxis: Pathophysiology-based review on current approaches and future directions"
+    },
+    {
+      "section_type": "REF",
+      "text": "Chimeric Antigen Receptor (CAR) Treg: A Promising Approach to Inducing Immunological Tolerance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Therapeutic use of regulatory T cells for graft-versus-host disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "The role of regulatory T cells in graft-versus-host disease management"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T Cells in GVHD Therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adoptive transfer of allogeneic regulatory T cells into patients with chronic graft-versus-host disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tregs prevent GVHD and promote immune reconstitution in HLA-haploidentical transplantation"
+    },
+    {
+      "section_type": "REF",
+      "text": "A pilot study of operational tolerance with a regulatory T-cell-based cell therapy in living donor liver transplantation"
+    },
+    {
+      "section_type": "REF",
+      "text": "The Future of Regulatory T Cell Therapy: Promises and Challenges of Implementing CAR Technology"
+    },
+    {
+      "section_type": "REF",
+      "text": "State of Type 1 Diabetes Management and Outcomes from the T1D Exchange in 2016–2018"
+    },
+    {
+      "section_type": "REF",
+      "text": "Advances in technology for management of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Defective Suppressor Function in CD4+CD25+ T-Cells From Patients With Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dynamic changes in CD4+ CD25+(high) T cell apoptosis after the diagnosis of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Clinical application of expanded CD4+25+ cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Expansion of functional endogenous antigen-specific CD4+CD25+ regulatory T cells from nonobese diabetic mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dendritic cell-expanded, islet-specific CD4+ CD25+ CD62L+ regulatory T cells restore normoglycemia in diabetic NOD mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Antigen-specific FoxP3-transduced T-cells can control established type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "A novel antiapoptotic role for alpha1-antitrypsin in the prevention of pulmonary emphysema"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunosuppressive PLGA TGF-β1 Microparticles Induce Polyclonal and Antigen-Specific Regulatory T Cells for Local Immunomodulation of Allogeneic Islet Transplants"
+    },
+    {
+      "section_type": "REF",
+      "text": "Early Diagnosis and Treatment of Rheumatoid Arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "The Pathogenesis of Rheumatoid Arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "A Tale of Two Immune Cells in Rheumatoid Arthritis: The Crosstalk Between Macrophages and T Cells in the Synovium"
+    },
+    {
+      "section_type": "REF",
+      "text": "Rheumatoid Arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cytokine Pathways and Joint Inflammation in Rheumatoid Arthritis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Specific activation of pro-Infliximab enhances selectivity and safety of rheumatoid arthritis therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "CTLA4-Ig modifies dendritic cells from mice with collagen-induced arthritis to increase the CD4+CD25+Foxp3+ regulatory T cell population"
+    },
+    {
+      "section_type": "REF",
+      "text": "Therapeutic potential of TGF-β-induced CD4(+) Foxp3(+) regulatory T cells in autoimmune diseases"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adoptive Induced Antigen-Specific Treg Cells Reverse Inflammation in Collagen-Induced Arthritis Mouse Model"
+    },
+    {
+      "section_type": "REF",
+      "text": "The prevalence of MS in the United States: A population-based estimate using health claims data"
+    },
+    {
+      "section_type": "REF",
+      "text": "Rituximab in multiple sclerosis: A retrospective observational study on safety and efficacy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Positioning of autoimmune TCR-Ob.2F3 and TCR-Ob.3D1 on the MBP85–99/HLA-DR2 complex"
+    },
+    {
+      "section_type": "REF",
+      "text": "Identification of T helper type 1-like, Foxp3+ regulatory T cells in human autoimmune disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Activated β-catenin in Foxp3(+) regulatory T cells links inflammatory environments to autoimmunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "T regulatory cells lacking CD25 are increased in MS during relapse"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reduced suppressive effect of CD4+CD25high regulatory T cells on the T cell immune response against myelin oligodendrocyte glycoprotein in patients with multiple sclerosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cutting Edge: CD4+ CD25+ Regulatory T Cells Suppress Antigen-Specific Autoreactive Immune Responses and Central Nervous System Inflammation During Active Experimental Autoimmune Encephalomyelitis"
+    },
+    {
+      "section_type": "REF",
+      "text": "IL-10 is involved in the suppression of experimental autoimmune encephalomyelitis by CD25+CD4+ regulatory T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Curing CNS autoimmune disease with myelin-reactive Foxp3+ Treg"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineered MBP-specific human Tregs ameliorate MOG-induced EAE through IL-2-triggered inhibition of effector T cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ulcerative colitis"
+    },
+    {
+      "section_type": "REF",
+      "text": "A review of the diagnosis, prevention, and treatment methods of inflammatory bowel disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Inflammatory bowel disease: Clinical aspects and established and evolving therapies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Presenting symptoms in inflammatory bowel disease: Descriptive analysis of a community-based inception cohort"
+    },
+    {
+      "section_type": "REF",
+      "text": "Third European Evidence-based Consensus on Diagnosis and Management of Ulcerative Colitis. Part 2: Current Management"
+    },
+    {
+      "section_type": "REF",
+      "text": "Role of the gut microbiota in immunity and inflammatory disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T Cell-Derived Interleukin-10 Limits Inflammation at Environmental Interfaces"
+    },
+    {
+      "section_type": "REF",
+      "text": "The inhibitory cytokine IL-35 contributes to regulatory T-cell function"
+    },
+    {
+      "section_type": "REF",
+      "text": "A genome-wide association study identifies IL23R as an inflammatory bowel disease gene"
+    },
+    {
+      "section_type": "REF",
+      "text": "A large-scale genetic association study confirms IL12B and leads to the identification of IL23R as psoriasis-risk genes"
+    },
+    {
+      "section_type": "REF",
+      "text": "“Difficult Asthma”: Not as Easy as You Think"
+    },
+    {
+      "section_type": "REF",
+      "text": "A 15-year follow-up study of ventilatory function in adults with asthma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Lung function impairment increases with age of diagnosis in adult onset asthma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Severe asthma: From characteristics to phenotypes to endotypes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Quantitative and functional impairment of pulmonary CD4+CD25hi regulatory T cells in pediatric asthma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Selective deregulation in chemokine signaling pathways of CD4+CD25(hi)CD127(lo)/(-) regulatory T cells in human allergic asthma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adoptive transfer of induced-Treg cells effectively attenuates murine airway allergic inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Resolution of airway inflammation and hyperreactivity after in vivo transfer of CD4+CD25+ regulatory T cells is interleukin 10 dependent"
+    },
+    {
+      "section_type": "REF",
+      "text": "Activation of natural regulatory T cells by IgG Fc-derived peptide “Tregitopes”"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tregitopes Improve Asthma by Promoting Highly Suppressive and Antigen-Specific Tregs"
+    },
+    {
+      "section_type": "REF",
+      "text": "The definition and assessment of vitiligo: A consensus report of the Vitiligo European Task Force"
+    },
+    {
+      "section_type": "REF",
+      "text": "Local immune response in skin of generalized vitiligo patients. Destruction of melanocytes is associated with the prominent presence of CLA+ T cells at the perilesional site"
+    },
+    {
+      "section_type": "REF",
+      "text": "Presence of T cells and macrophages in inflammatory vitiligo skin parallels melanocyte disappearance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunopolarization of CD4+ and CD8+ T cells to Type-1-like is associated with melanocyte loss in human vitiligo"
+    },
+    {
+      "section_type": "REF",
+      "text": "Altered expression of nuclear factor of activated T cells, forkhead box P3, and immune-suppressive genes in regulatory T cells of generalized vitiligo patients"
+    },
+    {
+      "section_type": "REF",
+      "text": "Decreased Circulating T Regulatory Cells in Egyptian Patients with Nonsegmental Vitiligo: Correlation with Disease Activity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Guideline for the diagnosis and management of vitiligo"
+    },
+    {
+      "section_type": "REF",
+      "text": "A quantitative increase in regulatory T cells controls development of vitiligo"
+    },
+    {
+      "section_type": "REF",
+      "text": "Heritable skewed X-chromosome inactivation leads to haemophilia A expression in heterozygous females"
+    },
+    {
+      "section_type": "REF",
+      "text": "A Molecular Revolution in the Treatment of Hemophilia"
+    },
+    {
+      "section_type": "REF",
+      "text": "How to discuss gene therapy for haemophilia? A patient and physician perspective"
+    },
+    {
+      "section_type": "REF",
+      "text": "Innovative Approaches for Immune Tolerance to Factor VIII in the Treatment of Hemophilia A"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune tolerance induction in haemophilia A patients with inhibitors by treatment with recombinant factor VIII: A retrospective non-interventional study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Late immune tolerance induction in haemophilia A patients"
+    },
+    {
+      "section_type": "REF",
+      "text": "Advances and challenges for hemophilia gene therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD4+FOXP3+ regulatory T cells confer long-term regulation of factor VIII-specific immune responses in plasmid-mediated gene therapy-treated hemophilia mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Antigen-specific in vitro expansion of factor VIII-specific regulatory T cells induces tolerance in hemophilia A mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineered antigen-specific human regulatory T cells: Immunosuppression of FVIII-specific T- and B-cell responses"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reprogrammed CD4(+) T Cells That Express FoxP3(+) Control Inhibitory Antibody Formation in Hemophilia A Mice"
+    },
+    {
+      "section_type": "REF",
+      "text": "Correction of hemophilia B in canine and murine models using recombinant adeno-associated viral vectors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Sustained phenotypic correction of hemophilia B dogs with a factor IX null mutation by liver-directed gene therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Emerging Issues in AAV-Mediated In Vivo Gene Therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Successful transduction of liver in hemophilia by AAV-Factor IX and limitations imposed by the host immune response"
+    },
+    {
+      "section_type": "REF",
+      "text": "CD8(+) T-cell responses to adeno-associated virus capsid in humans"
+    },
+    {
+      "section_type": "REF",
+      "text": "Effects of immunosuppression on circulating adeno-associated virus capsid-specific T cells in humans"
+    },
+    {
+      "section_type": "REF",
+      "text": "Modulation of tolerance to the transgene product in a nonhuman primate model of AAV-mediated gene transfer to liver"
+    },
+    {
+      "section_type": "REF",
+      "text": "Sustained transgene expression despite T lymphocyte responses in a clinical trial of rAAV1-AAT gene therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Phase 2 clinical trial of a recombinant adeno-associated viral vector expressing α1-antitrypsin: Interim results"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune responses to intramuscular administration of alipogene tiparvovec (AAV1-LPL(S447X)) in a phase II clinical trial of lipoprotein lipase deficiency gene therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Enhancement of liver-directed transgene expression at initial and repeat doses of AAV vectors admixed with ImmTOR nanoparticles"
+    },
+    {
+      "section_type": "REF",
+      "text": "Improving the efficacy and safety of biologic drugs with tolerogenic nanoparticles"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tolerogenic nanoparticles to induce immunologic tolerance: Prevention and reversal of FVIII inhibitor formation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Muscle-directed gene transfer and transient immune suppression result in sustained partial correction of canine hemophilia B caused by a null mutation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tocilizumab As a Novel Immunomodulatory Regimen for Hemophilia Gene Therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Correction of glycogen storage disease type II by an adeno-associated virus vector containing a muscle-specific promoter"
+    },
+    {
+      "section_type": "REF",
+      "text": "A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "A multifunctional AAV-CRISPR-Cas9 and its host response"
+    },
+    {
+      "section_type": "REF",
+      "text": "Adenovirus-Mediated Somatic Genome Editing of Pten by CRISPR/Cas9 in Mouse Liver in Spite of Cas9-Specific Immune Responses"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cas9-specific immune responses compromise local and systemic AAV CRISPR therapy in multiple dystrophic canine models"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prevalence of Pre-existing Antibodies to CRISPR-Associated Nuclease Cas9 in the USA Population"
+    },
+    {
+      "section_type": "REF",
+      "text": "High prevalence of Streptococcus pyogenes Cas9-reactive T cells within the adult human population"
+    },
+    {
+      "section_type": "REF",
+      "text": "CRISPR/Cas-Dependent and Nuclease-Free In Vivo Therapeutic Gene Editing"
+    },
+    {
+      "section_type": "REF",
+      "text": "Multifunctional CRISPR-Cas9 with engineered immunosilenced human T cell epitopes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune-orthogonal orthologues of AAV capsids and of Cas9 circumvent the immune response to the administration of gene therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cas9-directed immune tolerance in humans—a model to evaluate regulatory T cells in gene therapy?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune Responses to Adeno-Associated Virus-Mediated CRISPR Therapy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Treg engineers take aim at autoimmunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Economic Evaluation of Chimeric Antigen Receptor T-Cell Therapy by Site of Care Among Patients With Relapsed or Refractory Large B-Cell Lymphoma"
+    },
+    {
+      "section_type": "REF",
+      "text": "‘Off-the-shelf’ allogeneic CAR T cells: Development and challenges"
+    },
+    {
+      "section_type": "REF",
+      "text": "Myasthenia Gravis: Paradox versus paradigm in autoimmunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Emerging therapies for autoimmune myasthenia gravis: Towards treatment without corticosteroids"
+    },
+    {
+      "section_type": "REF",
+      "text": "Functional defect of regulatory CD4(+)CD25+ T cells in the thymus of patients with autoimmune myasthenia gravis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ex Vivo Generated Regulatory T Cells Modulate Experimental Autoimmune Myasthenia Gravis"
+    },
+    {
+      "section_type": "REF",
+      "text": "ALS patients’ regulatory T lymphocytes are dysfunctional, and correlate with disease progression rate and severity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Association of Regulatory T-Cell Expansion With Progression of Amyotrophic Lateral Sclerosis: A Study of Humans and a Transgenic Mouse Model"
+    },
+    {
+      "section_type": "REF",
+      "text": "Expanded autologous regulatory T-lymphocyte infusions in ALS"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dysfunctional and Proinflammatory Regulatory T-Lymphocytes Are Essential for Adverse Cardiac Remodeling in Ischemic Cardiomyopathy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Regulatory T-Cell Impairment in Cystic Fibrosis Patients with Chronic Pseudomonas Infection"
+    },
+    {
+      "section_type": "REF",
+      "text": "Abundant numbers of regulatory T cells localize to the liver of chronic hepatitis C infected patients and limit the extent of fibrosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Engineered antigen-specific regulatory T cells for autoimmune skin conditions"
+    },
+    {
+      "section_type": "REF",
+      "text": "Gene Therapy with Regulatory T Cells: A Beneficial Alliance"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Generation of chimeric antigen receptor regulatory T cells (CAR Tregs). CAR Tregs are generated by transduction of polyclonal Tregs with CAR construct (left) or cotransduction of T cells with CAR construct and forkhead box P3 (FoxP3) gene (right)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Chimeric antigen receptor (CAR)-T Generations."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "CAR Generation\tStimulatory Domain\tCostimulatory Domain(s)\tGraphicalRepresentation\tFunctional Observations\t \t1st\tCD3ζ\tnone\t\t1st generation CARs are not used in CAR Treg studies as they are unable to activate resting T cells nor promote a continuous active response.\t \t2nd\tCD3ζ\tCD28\t\tA CD28 costimulatory domain containing CAR showed the greatest function in GvHD mouse models when compared to 10 other signaling domains. These CARs can also show antitumor effects.\t \t4-1BB\t\t4-1BB-containing CARs are more resistant to T-cell exhaustion. Function is improved by exposure to mTOR inhibitors and vitamin C.\t \t3rd\tCD3ζ\tCD28 + 4-1BB\t\tDesigned to combine benefits of both CD28 and 4-1BB and increase functional capabilities of the CAR cells."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Summary of applications of CAR Tregs in multiple disease conditions. *** indicates unknown."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Disease Condition\tCell Type\tCAR Generation\tTarget\tResults\tReferences\t \tGvHD\tHuman nTreg cells\tSecond generation (CD28)\tHLA–A2 MHC complexes\tExpression of regulatory cell markers and transcription factors in vitro and in vivo. Prevented GvHD in murine models. \tNoyan et al., 2017 \t \tHuman CD4+CD25+ Treg cells\tSecond generation (CD28)\tHLA–A2 MHC complexes\tAntigen-specific suppression reducing alloimmune-mediated skin injury.\tBoardman et al., 2017 \t \tHuman T cells\tSecond generation (41BB)\tCD83+ dendritic cells\tPrevented GvHD in murine models.\tShrestha et al., 2020 \t \tHuman Treg cells\tSecond generation (CD28)\tCD19+ B cells\tSuppressed GvHD associated antibody production.\tImura et al., 2020 \t \tHuman CD8+CD45RClow/− Treg cells\tSecond generation (CD28)\tHLA–A2*02 MHC complexes\tSuppressed immune responses caused by HLA mismatch. Human skin graft preserved in mouse models 100 days post engraftment. \tBézie et al., 2019 \t \tType 1 Diabetes\tMurine CD4+ FoxP3+ T cells\tSecond generation (CD28)\tFITC mAB conjugate\tProlonged islet allograft survival. \tPierini et al., 2017 \t \tMurine CD4+ T cells\tSecond generation (CD28)\tInsulin\tCAR Tregs remained in spleen 17 weeks post infusion.\tTenspolde et al., 2019 \t \tHuman CD4+ and CD8+ T cells\tSecond generation (CD28)\tHiP2\tIncreased levels of IL-2 but limited expansion due to tonic signaling.\tRadichev et al., 2020 \t \tMurine Treg cells\t***\tGAD65 Beta cell epitopes\tLocalization to pancreatic islets 24 h post infusion. Large Treg population in the pancreas and spleen and lower blood glucose levels in CAR Treg treated groups.\tImam et al., 2019 \t \tRheumatoid Arthitis\tHuman Treg cells\t***\tCitrullinated vimentin (CV)\tStudies in progress.\tRaffin et al. \t \tMultiple Sclerosis\tMurine CD4+ T cells\tSecond generation (CD28)\tMyelin oligodendrocyte glycoprotein (MOG)\tSuppressed effector T-cell proliferation in vitro. In vivo, CAR Tregs localized to the brain and reduced levels proinflammatory cytokine mRNA and disease symptoms.\tFransson et al., 2012 \t \tVitiligo\tMurine CD4+ FoxP3+ Treg cells\tSecond Generation (CD28)\tGanglioside D3 (GD3) \tElevated IL-10, regulated melanocyte cytotoxicity, and delayed depigmentation.\tMukhatayev et al., 2020 \t \tInflammatory Bowel Disease\tMurine CD4+CD25+ Treg cells\tSecond Generation (CD28)\t2,4,6-trinitrophenol (TNP)\tSuppression of effector T-cell proliferation in vitro. Increased survival rate in vivo and reduced UC symptoms. \tElinav et al., 2008 Elinav et al., 2009 \t \tMurine CD4+CD25+ Treg cells\tSecond Generation (CD28)\tCarcinoembryonic antigen (CEA)\tReduced severity of UC in murine models.\tBlat et al., 2014 \t \tMurine Treg cells\tSecond Generation (CD28)\tIL-23R\tSuppression of conventional T-cell proliferation in vitro. Reduced intestinal inflammation and reduced peak of disease. \t121 ASGTC \t \tAsthma\tMurine embryonic stem cells\tSecond Generation (CD28)\tCarcinoembryonic antigen (CEA)\tCAR Treg localization to the lungs and reduced inflammation.\tSkuljec et al., 2017 \t \tHemophilia\tHuman Treg Cells\tSecond Generation (CD28)\tFVIII\tSuppression of B-cell and T-cell responses and regulated FVIII-specific T effector cell proliferation.\tYoon et al., 2017 \t \tMurine CD4+ T cells\tThird Generation (CD28 + 41BB)\tFVIII\tInhibited FVIII antibody production and maintained FVIII clotting ability.\tFu et al., 2020\t \tMurine CD4+CD25+ Treg cells\tSecond Generation (CD28)\tFVIII\tFVIII-specific CAR Tregs lost suppressive activity where TruC Tregs did not.\tRana et al., \t \tImmune Response to Gene Therapies\tCD3+ T cells\tThird generation (CD28 + 41BB)\tAAV Capsid\tSuppression of effector T-cell proliferation and cytotoxicity. Inhibition of capsid induced immune responses through increased immunosuppressive cytokines and reduced cellular infiltration. Transgene expression remained stable long-term in vivo. Isolated immune cell showed AAV capsid antigen specificity.\tArjomandnejad et al., 2021"
+    }
+  ],
+  "fetched_at": "2026-03-31T03:07:29.556827",
+  "pmid": 35203496
+}

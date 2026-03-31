@@ -779,7 +779,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">LADA Progression: C-Peptide Decline Over Time</div>
-                    <div class="reference-meta">Latova et al. (Diabetologia, 2000); Barker et al. (Diabetes Care, 2004)</div>
+                    <div class="reference-meta">Lohmann et al. Diabetologia, 2001. <a href="https://pubmed.ncbi.nlm.nih.gov/11484077/" target="_blank">PMID:11484077</a>; Bell &amp; Ovalle, Am J Ther, 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15266224/" target="_blank">PMID:15266224</a></div>
                     <p>Early LADA patients with C-peptide >0.3 nmol/L have a window of opportunity (2-3 years) before rapid C-peptide decline. Rate of decline is highly variable but averages 10-15% per year. Early intervention (preservation strategies) is time-sensitive.</p>
                 </div>
 
@@ -807,7 +807,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">EPA/DHA and Islet Inflammation</div>
-                    <div class="reference-meta">Poudyal et al. (J Nutr Metab, 2011); Hartweg et al. (Diabetes Care, 2009)</div>
+                    <div class="reference-meta">Poudyal et al. (J Nutr Metab, 2011); Hartweg et al. Curr Opin Lipidol, 2009. <a href="https://pubmed.ncbi.nlm.nih.gov/19133409/" target="_blank">PMID:19133409</a></div>
                     <p>Animal and human studies show omega-3 supplementation reduces pro-inflammatory cytokines in beta cells and islet tissue. May slow beta cell apoptosis. Limited human RCT data specifically in early diabetes, but mechanism is plausible.</p>
                 </div>
 
@@ -841,7 +841,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Fermented Foods and Immune Tolerance</div>
-                    <div class="reference-meta">Marco et al. (Proc Nutr Soc, 2017); Wastyk et al. (Cell, 2021)</div>
+                    <div class="reference-meta">Marco et al. (Proc Nutr Soc, 2017); Wastyk et al. Cell, 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/34256014/" target="_blank">PMID:34256014</a></div>
                     <p>Fermented foods provide live lactic acid bacteria (LAB) and short-chain fatty acids. LAB promote IL-10-producing regulatory T cells (Tregs). Wastyk et al. showed fermented food consumption increases gut microbial diversity and IL-10 in humans.</p>
                 </div>
 
@@ -849,7 +849,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">HLA Genetics and Celiac-Diabetes Overlap</div>
-                    <div class="reference-meta">Tonioli et al. (Diabetes Care, 2005); Collin et al. (Diabetes Care, 2002)</div>
+                    <div class="reference-meta">Doolan et al. Diabetes Care, 2005. <a href="https://pubmed.ncbi.nlm.nih.gov/15793177/" target="_blank">PMID:15793177</a>; Collin et al. Endocr Rev, 2002. <a href="https://pubmed.ncbi.nlm.nih.gov/12202461/" target="_blank">PMID:12202461</a></div>
                     <p>Shared HLA risk genes (HLA-DQ2, DQ8) predispose to both celiac disease and autoimmune diabetes. Co-occurrence is higher than chance. Screening LADA patients for celiac serology may identify subset who benefit from gluten elimination.</p>
                 </div>
 
@@ -865,8 +865,8 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">GAD-Alum Immunotherapy in LADA</div>
-                    <div class="reference-meta">Larsson et al. (NEJM, 2015); LADA-1 Trial</div>
-                    <p>GAD-alum (recombinant GAD65 with aluminium hydroxide adjuvant) showed modest slowing of C-peptide decline in LADA (from 35% to 25% annual decline over 2 years). Benefit was modest and not statistically significant in primary analysis. Combined approaches (nutrition + immunotherapy) may be more effective.</p>
+                    <div class="reference-meta">Ludvigsson et al. Diabetes, 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" target="_blank">PMID:33515517</a></div>
+                    <p>GAD-alum (recombinant GAD65 with aluminium hydroxide adjuvant) showed dose-dependent C-peptide preservation in HLA-DR3-DQ2+ patients. Benefit was modest and not statistically significant in primary analysis. Earlier trial data: Ludvigsson et al. NEJM, 2008 (<a href="https://pubmed.ncbi.nlm.nih.gov/18794064/" target="_blank">PMID:18794064</a>). Combined approaches (nutrition + immunotherapy) may be more effective.</p>
                 </div>
             </div>
         </div>

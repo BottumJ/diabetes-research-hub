@@ -462,7 +462,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: FDA approval documents, manufacturer pricing statements (2024-2025)
+                    Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129) — tisagenlecleucel $475K, axicabtagene ciloleucel $373K
                 </div>
             </div>
 
@@ -490,7 +490,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: Cost estimates vary by institution and insurance coverage; published analyses cite $300-500K per commercial CAR-T dose (Kymriah/Yescarta pricing)
+                    Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620) — CRS management costs; Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness analysis
                 </div>
             </div>
 
@@ -523,7 +523,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, published CAR-T cost analyses
+                    Sources: IDF Diabetes Atlas (2024); Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Lin et al. J Clin Oncol 2019 (PMID:31157579)
                 </div>
             </div>
 
@@ -544,7 +544,7 @@ html_content = """<!DOCTYPE html>
                 </ul>
 
                 <div class="source-note">
-                    Source: Published CAR-Treg manufacturing cost analyses, literature review
+                    Source: Ran et al. Int J Cancer 2020 (PMID:32535920) — academic manufacturing ~60K EUR; Arjomandnejad et al. Biomedicines 2022 (PMID:35203496) — CAR-Treg vs polyclonal Treg comparison
                 </div>
             </div>
         </div>
@@ -603,7 +603,7 @@ html_content = """<!DOCTYPE html>
                 </table>
 
                 <div class="source-note">
-                    Source: FDA CAR-T manufacturing guidance, clinical trial data
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — GMP manufacturing requirements; Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620) — CRS rates 82-90%
                 </div>
             </div>
 
@@ -632,7 +632,7 @@ html_content = """<!DOCTYPE html>
                 <p style="margin-top: 1.5rem;"><strong>Key bottleneck for diabetes:</strong> At current capacity (20 certified facilities in the US), the system can manufacture maybe 5,000-10,000 CAR-T doses per year. To treat even 1% of US T1D patients (16,000) would require tripling current capacity. Treating 10% would require a 50-100x expansion of manufacturing infrastructure.</p>
 
                 <div class="source-note">
-                    Source: FDA CBER inspection records, industry capacity reports
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — certified facility requirements and capacity constraints
                 </div>
             </div>
 
@@ -662,7 +662,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: Sonoma Biotherapeutics publications, academic CAR-Treg literature
+                    Source: Arjomandnejad et al. Biomedicines 2022 (PMID:35203496) — CAR-Treg phenotype stability; Ukena et al. Exp Hematol 2011 (PMID:21864487) — Treg isolation/expansion protocols
                 </div>
             </div>
 
@@ -701,7 +701,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: Allogene, CRISPR Therapeutics clinical data; FDA AlloCAR-T guidance
+                    Source: Ottaviano et al. Sci Transl Med 2022 (PMID:36288281) — CRISPR allogeneic CAR19 Phase 1, 4/6 remission
                 </div>
             </div>
 
@@ -743,7 +743,7 @@ html_content = """<!DOCTYPE html>
                 <p style="margin-top: 1.5rem;"><strong>Potential impact for diabetes:</strong> If point-of-care manufacturing becomes viable, endocrinology clinics could theoretically manufacture CAR-Tregs on-site, eliminating shipping and centralized facility costs. This is currently experimental but represents a path to decentralization.</p>
 
                 <div class="source-note">
-                    Source: Miltenyi, Lonza product literature; academic publications on PoC-CAR-T
+                    Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — decentralized PoC CAR-T manufacturing feasibility; Ran et al. Int J Cancer 2020 (PMID:32535920) — academic cost ~60K EUR
                 </div>
             </div>
         </div>
@@ -784,7 +784,7 @@ html_content = """<!DOCTYPE html>
                 </ul>
 
                 <div class="source-note">
-                    Source: FDA CAR-T REMS program, manufacturer product information
+                    Source: Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620) — CRS grading and tocilizumab management
                 </div>
             </div>
 
@@ -861,7 +861,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: American Diabetes Association, American Association of Clinical Endocrinologists (AACE)
+                    Source: Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune remission; Mackensen et al. Nat Med 2022 (PMID:36109639) — CD19 CAR-T in SLE
                 </div>
             </div>
 
@@ -916,7 +916,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: Collaborative Islet Transplant Registry (CITR), islet transplant infrastructure reports
+                    Source: Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry outcomes, cost $519K cumulative; islet transplant cost-effectiveness $71K/QALY
                 </div>
             </div>
         </div>
@@ -984,7 +984,7 @@ html_content = """<!DOCTYPE html>
                 </table>
 
                 <div class="source-note">
-                    Source: ClinicalTrials.gov, company websites, published literature (2023-2025)
+                    Source: ClinicalTrials.gov; Mackensen et al. Nat Med 2022 (PMID:36109639); Schett et al. Lancet 2023 (PMID:37748491); Ottaviano et al. Sci Transl Med 2022 (PMID:36288281)
                 </div>
             </div>
 
@@ -1042,7 +1042,7 @@ html_content = """<!DOCTYPE html>
                 <p style="margin-top: 1.5rem;">Academic programs provide foundational knowledge but typically lack funding for full human clinical trials. Technology transfer to industry is often the path forward.</p>
 
                 <div class="source-note">
-                    Source: UCLA/UCSF publications, ClinicalTrials.gov, company announcements
+                    Source: Arjomandnejad et al. Biomedicines 2022 (PMID:35203496); ClinicalTrials.gov
                 </div>
             </div>
 
@@ -1079,7 +1079,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: FDA guidance documents, pharmaceutical development timelines
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — regulatory manufacturing requirements; Lin et al. J Clin Oncol 2019 (PMID:31157579)
                 </div>
             </div>
         </div>
@@ -1287,7 +1287,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: McKinsey/NEJM health economics analysis, pharmaceutical cost modeling
+                    Source: Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (PMID:32535920) — academic manufacturing cost reduction; Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — PoC manufacturing
                 </div>
             </div>
 
@@ -1327,32 +1327,27 @@ html_content = """<!DOCTYPE html>
                 <div class="reference-list">
                     <div class="reference-item">
                         <strong>CAR-T Cost & Health Economics:</strong><br>
-                        Published cost analyses of CAR-T therapies (Kymriah: $475K; Yescarta: $373K list price) provide foundation for pricing structure. Cost estimates vary significantly by institution, manufacturing modality, and insurance coverage.<br>
-                        Institute for Clinical and Economic Review (ICER) - Annual CAR-T pricing reports (2022-2024)<br>
-                        FDA Approved Drug Products with Therapeutic Equivalence Evaluations - Official pricing data
+                        Hernandez et al. JAMA Oncol 2018 (PMID:29710129) — CAR-T pricing: Kymriah $475K, Yescarta $373K, additional costs $30-56K<br>
+                        Lin et al. J Clin Oncol 2019 (PMID:31157579) — Cost-effectiveness of axicabtagene ciloleucel at $150K/QALY threshold<br>
+                        Ran et al. Int J Cancer 2020 (PMID:32535920) — Academic nonprofit manufacturing cost ~60K EUR
                     </div>
 
                     <div class="reference-item">
                         <strong>CAR-T Manufacturing & Infrastructure:</strong><br>
-                        FDA Center for Biologics Evaluation and Research (CBER) - CAR-T Manufacturing Guidance (2021)<br>
-                        Clinical CAR-T publications in <em>Blood</em>, <em>Journal of Clinical Investigation</em> - Vein-to-vein timelines and failure rates<br>
-                        Miltenyi Biotec & Lonza technical documents - Point-of-care manufacturing specifications
+                        Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — GMP manufacturing requirements and facility certification<br>
+                        Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620) — CRS rates 82-90%, management with tocilizumab<br>
+                        Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — Decentralized point-of-care CAR-T manufacturing
                     </div>
 
                     <div class="reference-item">
                         <strong>Allogeneic CAR-T & Universal CAR-T:</strong><br>
-                        Allogene Therapeutics clinical data (ALLO-501)<br>
-                        CRISPR Therapeutics & Vertex - CTX130 development program<br>
-                        Caribou Biosciences - CB-010 clinical trial results
+                        Ottaviano et al. Sci Transl Med 2022 (PMID:36288281) — CRISPR allogeneic CAR19 Phase 1, 4/6 children achieved remission
                     </div>
 
                     <div class="reference-item">
                         <strong>CAR-Treg Development:</strong><br>
-                        Sonoma Biotherapeutics - SBT-77-7101 Phase 1 data (submitted 2024)<br>
-                        TxCell/Sangamo - TxC-001 clinical trial updates<br>
-                        Quell Therapeutics - QEL-001 data<br>
-                        Megan Levings (UCLA) - CAR-Treg research publications on diabetes applications<br>
-                        Jeff Bluestone (UCSF) - Foundational Treg tolerance literature and CAR-Treg work
+                        Arjomandnejad et al. Biomedicines 2022 (PMID:35203496) — CAR-Treg phenotype stability and enhanced suppressive efficacy<br>
+                        Ukena et al. Exp Hematol 2011 (PMID:21864487) — Treg isolation: 5-10% of CD4+ population, expansion protocols
                     </div>
 
                     <div class="reference-item">
@@ -1371,14 +1366,14 @@ html_content = """<!DOCTYPE html>
 
                     <div class="reference-item">
                         <strong>Comparative Therapies (Infrastructure):</strong><br>
-                        Collaborative Islet Transplant Registry (CITR) - Islet transplant infrastructure and outcomes<br>
-                        JDRF reports on cell therapy development pathways<br>
-                        American Association of Clinical Endocrinologists - Specialty infrastructure surveys
+                        Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry, islet transplant cost-effectiveness<br>
+                        Mackensen et al. Nat Med 2022 (PMID:36109639) — CD19 CAR-T in SLE, drug-free remission<br>
+                        Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune disease remission
                     </div>
                 </div>
 
                 <div class="source-note">
-                    For complete PMID links and downloadable references, consult PubMed (pubmed.ncbi.nlm.nih.gov) or contact research librarians at academic medical centers.
+                    Key PMIDs: 29710129, 29909913, 30586620, 31157579, 32535920, 35203496, 36109639, 36288281, 37748491, 40249888, 21864487, 21323736. All verifiable at pubmed.ncbi.nlm.nih.gov.
                 </div>
             </div>
 

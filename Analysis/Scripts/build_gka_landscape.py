@@ -1157,7 +1157,7 @@ html_content = '''<!DOCTYPE html>
 
             <h3>GK Genetics and Monogenic Diabetes</h3>
             <div class="reference">
-                <strong>Diabetes Care 2018</strong> | GCK-MODY genetics and phenotype
+                <strong>Chakera et al. Diabetes Care 2015 (PMID:26106223)</strong> | GCK-MODY genetics and phenotype
                 <br><span class="pmid">Topic: Glucokinase mutations causing MODY-2; inactivating mutations reduce GK function by ~50%</span>
             </div>
 

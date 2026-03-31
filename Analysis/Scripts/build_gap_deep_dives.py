@@ -67,7 +67,7 @@ GAPS_DATA = {
             "CAR-Treg technology platform (PMID requires verification)",
             "PMID:24598244 - GAD65 affinity threshold for remission",
             "T cell engineering advances (peer-reviewed sources)",
-            "Diabetes Care 2020 - Expert consensus on presymptomatic T1D intervention",
+            "Insel et al. Diabetes Care 2015 (PMID:26404926) - Staging presymptomatic T1D intervention",
             "(PMID requires verification) - MOG-CAR Treg efficacy in EAE"
         ],
         "clinical_pipeline": [
@@ -168,7 +168,7 @@ GAPS_DATA = {
             "domain_counts": {"Insulin Resistance": 18518, "Islet Transplant": 238},
             "trial_counts": {"Edmonton": 255, "Donislecel": 120},
             "key_references": [
-                "Diabetes Care 2023 - Donislecel (LANTIDRA) FDA approval 2023",
+                "Giri &amp; Goldman, Clinical Diabetes 2024 - Donislecel (LANTIDRA) FDA approval June 2023",
                 "PMID:40544428 - Islet transplant long-term outcomes",
                 "Am J Transplant 2024 - Edmonton Protocol 20-year analysis"
             ]
@@ -195,7 +195,7 @@ GAPS_DATA = {
             "Drug interaction networks: model alternative immunosuppression combinations"
         ],
         "key_literature": [
-            "Diabetes Care 2023 - LANTIDRA FDA approval and Phase 3 efficacy",
+            "Giri &amp; Goldman, Clinical Diabetes 2024 - LANTIDRA Phase 3 efficacy (30 patients, UIH-001/002 trials)",
             "PMID:40544428 - Long-term islet transplant outcomes",
             "Am J Transplant 2024 - Edmonton Protocol 20-year follow-up",
             "Am J Transplant 2022 - Calcineurin-sparing regimens",
@@ -463,7 +463,7 @@ GAPS_DATA = {
             "PMID:38783768 - Dorzagliatin Phase 3 remission rates",
             "(PMID requires verification) - AZD1656 genetic modifiers of efficacy",
             "PMID:33622669 - TTP399 T1D hypoglycemia benefit",
-            "Diabetes Care 2024 - GKA mechanism and GCKR feedback",
+            "Diabetes 2025 (PMID:40272935) - GKA mechanism and GCKR feedback (dorzagliatin closed-form binding)",
             "Glucose-dependent therapy safety (PMID requires verification)"
         ],
         "clinical_pipeline": [
@@ -711,7 +711,7 @@ GAPS_DATA = {
             "CITR Registry 12th Allograft Report 2025 - Demographics and outcomes",
             "Racial and socioeconomic disparities in transplant access (peer-reviewed sources)",
             "Global inequities in cell therapy access (peer-reviewed sources)",
-            "Diabetes Care 2023 - LANTIDRA geographic availability",
+            "Giri &amp; Goldman, Clinical Diabetes 2024 - LANTIDRA availability (US FDA-approved June 2023)",
             "Cell therapy access framework (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
@@ -820,7 +820,7 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "Zeevi et al: 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin approaches for T2D management are in early development with preliminary results reported. Market projections show growth potential.",
+            "summary": "Zeevi et al (PMID:26590418): 46,898 meals show individual PPGR variation (44+/-31 for bread). Digital twin approaches for T2D management are in early development with preliminary results reported.",
             "details": [
                 "Zeevi et al Cell 2015 (PMID:26590418): 800 participants, 46,898 meals, bread PPGR 44+/-31 mg/dL*h",
                 "Digital twin T2D remission: early pilot data published, larger trials underway",
@@ -860,7 +860,7 @@ GAPS_DATA = {
             "dependencies": "Algorithm validation in independent cohorts, healthcare system adoption, insurance coverage"
         },
         "validation_evidence": "BRONZE tier: Zeevi algorithm validated (46K meals), digital twin approaches in early development, commercial platforms active (Zoe)",
-        "expanded_clinical_context": "Zeevi et al Cell 2015: 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D approaches: early pilot programs show promise, larger clinical validation trials underway. DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to commercial challenges. Zoe platform: active, peer-reviewed publications ongoing. Market growth: precision nutrition expected to expand significantly. Precision nutrition for beta cells specific: none published, major gap.",
+        "expanded_clinical_context": "Zeevi et al Cell 2015 (PMID:26590418): 800 participants, 46,898 meals tracked via continuous glucose monitors (CGM) + standardized test meals. Personalization discovery: bread postprandial glucose response (PPGR) varied 44+/-31 mg/dL across individuals (range 5-175 mg/dL for identical bread portion 50g). AI prediction model: microbiome composition + blood lipid + HbA1c + anthropometric -> individual PPGR prediction (R2=0.61, beats generic carbohydrate counting). Digital twin T2D approaches: early pilot programs show promise, larger clinical validation trials underway. DayTwo platform: incorporated microbiota SCFAs (butyrate, acetate, propionate) as biomarkers. CEASED August 2024 due to commercial challenges. Zoe platform: active, peer-reviewed publications ongoing. Precision nutrition for beta cells specific: none published, major gap.",
         "mechanism_detail": "Individual PPGR variation sources: (1) gut microbiota composition (Faecalibacterium prausnitzii, Akkermansia muciniphila butyrate producers associate with lower PPGR), (2) blood lipid levels (LDL cholesterol predicts delayed glucose peak), (3) previous meal composition (meal timing effects, e.g., high-fat breakfast -> blunted PPGR 4hrs later), (4) circadian phase (morning meals -> higher insulin sensitivity than evening), (5) physical activity (post-prandial walks reduce PPGR by 25-35%). Zeevi algorithm: random forest ensemble + lasso regression, input: microbiota relative abundance (100 OTUs) + lipid panel (8 markers) + anthropometric (age, BMI, glucose) + dietary (fiber, fat). Output: predicted PPGR for arbitrary meal composition. Validation: leave-one-out cross-validation, external validation in 100 new individuals (R2=0.52 vs generic carbohydrate counting R2=-0.05). Digital twin extension: incorporate C-peptide dynamics (not just glucose), predict insulin secretion + beta cell burden. Nutrient-beta cell targets: butyrate (HDAC inhibitor, upregulates GCK expression 2-3x), omega-3 (reduces IL-1beta-induced beta cell apoptosis), vitamin D (Treg support via 1,25-D receptor signaling)."
 
     },

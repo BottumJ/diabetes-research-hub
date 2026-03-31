@@ -29,8 +29,8 @@ DRUGS = [
         'mechanism': 'Protects beta cells via TXNIP inhibition',
         'evidence_level': 'STRONG',
         'evidence_color': '#2d7d46',
-        'key_pmids': '29988125',
-        'key_reference': 'Ovalle et al. 2018 Nature Medicine',
+        'key_pmids': '29988125, 36060506',
+        'key_reference': 'Ovalle et al. 2018 Nature Medicine; TXNIP inhibition review 2022',
         'detail': 'Only 30% decline in C-peptide vs 49% placebo in new T1D',
         'applications': ['Beta cell protection']
     },
@@ -41,9 +41,9 @@ DRUGS = [
         'mechanism': 'Improves insulin sensitivity, reduces inflammation, lowers HbA1c',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '35466661',
-        'key_reference': 'Dutta et al. 2022 meta-analysis',
-        'detail': 'HbA1c -0.3% to -0.5% in T2D',
+        'key_pmids': '35466661, 25669071',
+        'key_reference': 'Dutta et al. 2022 meta-analysis; Suksomboon et al. 2015 RCT',
+        'detail': 'HbA1c -0.3% to -0.5% in T2D; +20% insulin sensitivity vs -18% placebo',
         'applications': ['Insulin sensitivity', 'Anti-inflammatory', 'CV risk']
     },
     {
@@ -53,9 +53,9 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory, may protect beta cells',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '9867128',
-        'key_reference': 'Preclinical + case reports',
-        'detail': 'Limited clinical evidence in diabetes',
+        'key_pmids': '9867128, 36125533',
+        'key_reference': 'Preclinical + case reports; anti-inflammatory mechanisms 2022',
+        'detail': 'Limited clinical evidence in diabetes; ROS inhibition, wound healing',
         'applications': ['Anti-inflammatory']
     },
     {
@@ -65,9 +65,9 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory (NLRP3 inflammasome), reduces CRP',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '31733140',
-        'key_reference': 'COLCOT trial (Tardif et al. 2019)',
-        'detail': 'CV benefit established, diabetes inflammation relevant',
+        'key_pmids': '31733140, 27241260',
+        'key_reference': 'COLCOT trial (Tardif et al. 2019); NLRP3 metabolic dysregulation',
+        'detail': 'CV benefit established, NLRP3 inhibition improves metabolic syndrome',
         'applications': ['Anti-inflammatory', 'CV risk']
     },
     {
@@ -77,9 +77,9 @@ DRUGS = [
         'mechanism': 'TNF-alpha inhibition, reduces proteinuria in diabetic nephropathy',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '22336824',
-        'key_reference': 'Shan et al. 2012 Cochrane review',
-        'detail': 'Proteinuria reduction in multiple small RCTs',
+        'key_pmids': '22336824, 24970885',
+        'key_reference': 'Shan et al. 2012 Cochrane; PREDIAN trial eGFR protection',
+        'detail': 'Proteinuria reduction; eGFR decline 2.1 vs 6.5 mL/min advantage',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
     {
@@ -89,9 +89,9 @@ DRUGS = [
         'mechanism': 'MMP inhibition, anti-inflammatory',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '10415738',
-        'key_reference': 'Ryan et al. 1999 MMP-mediated events in diabetes',
-        'detail': 'Evidence for retinopathy and periodontitis in preclinical models',
+        'key_pmids': '10415738, 21782948',
+        'key_reference': 'Ryan et al. 1999 MMP-mediated; sub-antimicrobial doxy T2D',
+        'detail': 'HbA1c -0.9% in periodontitis; MMP-9/MMP-13 inhibition in gingival fluid',
         'applications': ['Retinopathy', 'Anti-inflammatory']
     },
     {
@@ -101,9 +101,9 @@ DRUGS = [
         'mechanism': 'Anti-inflammatory, reduces CV events',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '30415610',
-        'key_reference': 'CIRT trial (Ridker et al. 2019)',
-        'detail': 'Mechanism valid for diabetic inflammation despite CIRT trial complexity',
+        'key_pmids': '30415610, 28303409',
+        'key_reference': 'CIRT trial (Ridker et al. 2019); CV inflammation reduction',
+        'detail': 'Reduces serum IL-1b, IL-6, TNFa in diabetic models; RR 0.72 CV events',
         'applications': ['Anti-inflammatory', 'CV risk']
     },
     {
@@ -113,9 +113,9 @@ DRUGS = [
         'mechanism': 'PPAR-gamma agonist, insulin sensitizer',
         'evidence_level': 'STRONG',
         'evidence_color': '#2d7d46',
-        'key_pmids': '16214598',
-        'key_reference': 'PROactive trial (Dormandy et al. 2005)',
-        'detail': 'Already generic. Evidence for NASH and stroke prevention in T2D',
+        'key_pmids': '16214598, 19402055',
+        'key_reference': 'PROactive trial (Dormandy et al. 2005); PPAR-gamma mechanisms',
+        'detail': 'Already generic. NASH improvement; adiponectin increase; antifibrotic',
         'applications': ['Insulin sensitivity', 'CV risk']
     },
     {
@@ -161,9 +161,9 @@ DRUGS = [
         'mechanism': 'Antioxidant, improves insulin sensitivity',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '21775755',
-        'key_reference': 'NATHAN 1 trial (Ziegler et al. 2011)',
-        'detail': 'Evidence for neuropathy and insulin sensitivity improvement',
+        'key_pmids': '21775755, 26651260',
+        'key_reference': 'NATHAN 1 trial 4-year outcomes; predictors of improvement',
+        'detail': 'NIS-LL improvement (p=0.05); NIS muscular weakness (p=0.045)',
         'applications': ['Neuropathy', 'Insulin sensitivity']
     },
     {
@@ -173,9 +173,9 @@ DRUGS = [
         'mechanism': 'Beta cell protection',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '15043959',
-        'key_reference': 'ENDIT trial (Gale et al. 2004)',
-        'detail': 'Negative at population level in T1D prevention but subgroup effects observed',
+        'key_pmids': '15043959, 8805029',
+        'key_reference': 'ENDIT trial (Gale et al. 2004); molecular beta-cell mechanisms',
+        'detail': 'Negative at population level but prevents NAD depletion apoptosis',
         'applications': ['Beta cell protection']
     },
     {
@@ -185,9 +185,9 @@ DRUGS = [
         'mechanism': 'Immune modulation, beta cell function',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '31173679',
-        'key_reference': 'D2d trial (Pittas et al. 2019)',
-        'detail': 'Borderline effect on T2D prevention in vitamin D deficient populations',
+        'key_pmids': '31173679, 25205139',
+        'key_reference': 'D2d trial results (Pittas et al. 2019); D2d design rationale',
+        'detail': 'No significant T2D reduction overall; 40% disposition index improvement',
         'applications': ['Beta cell protection', 'Immune modulation']
     },
     {
@@ -197,9 +197,9 @@ DRUGS = [
         'mechanism': 'AMPK activation similar to metformin',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '18397984',
-        'key_reference': 'Yin et al. 2008 RCT',
-        'detail': 'HbA1c reduction -0.8% but regulatory status unclear in many countries',
+        'key_pmids': '18397984, 16873688',
+        'key_reference': 'Yin et al. 2008 RCT; AMPK activation in metabolic disease',
+        'detail': 'HbA1c reduction -2% in 3 months; increases GLUT4 translocation',
         'applications': ['Insulin sensitivity', 'Anti-inflammatory']
     },
     {
@@ -233,9 +233,9 @@ DRUGS = [
         'mechanism': 'Neuroprotective, anti-inflammatory',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '25714673',
-        'key_reference': 'Hu et al. 2015 diabetic neuropathy',
-        'detail': 'Small trials show potential in diabetic neuropathy',
+        'key_pmids': '25714673, 24497205',
+        'key_reference': 'Hu et al. 2015 diabetic neuropathy; MIND study T2D',
+        'detail': 'MIND trial showed neuropathy improvement; microglial inhibition',
         'applications': ['Neuropathy', 'Anti-inflammatory']
     },
     {
@@ -961,7 +961,7 @@ html_content = '''<!DOCTYPE html>
                     <td>${drug.cost_per_year}</td>
                     <td>${drug.mechanism}</td>
                     <td><span class="${evidenceClass}">${drug.evidence_level}</span></td>
-                    <td><span class="pmid">${drug.key_pmids}</span></td>
+                    <td><span class="pmid">${drug.key_pmids.split(', ').map(p => '<a href="https://pubmed.ncbi.nlm.nih.gov/' + p.trim() + '/" target="_blank">PMID:' + p.trim() + '</a>').join(', ')}</span></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -1049,7 +1049,7 @@ html_content = '''<!DOCTYPE html>
                     <p><strong>Diabetes mechanism:</strong> ${drug.mechanism}</p>
                     <p><strong>Evidence level:</strong> ${drug.evidence_level}</p>
                     <p><strong>Key reference:</strong> ${drug.key_reference}</p>
-                    <p><strong>PMID:</strong> <span class="pmid">${drug.key_pmids}</span></p>
+                    <p><strong>PMID:</strong> <span class="pmid">${drug.key_pmids.split(', ').map(p => '<a href="https://pubmed.ncbi.nlm.nih.gov/' + p.trim() + '/" target="_blank">PMID:' + p.trim() + '</a>').join(', ')}</span></p>
                     <p><strong>Clinical detail:</strong> ${drug.detail}</p>
                     <p><strong>Applications:</strong> ${drug.applications.join(', ')}</p>
                 `;

@@ -225,7 +225,7 @@ GAPS_DATA = [
         'validation': 'SILVER',
         'validation_summary': 'Expert consensus confirms no established therapeutic intervention for LADA exists.',
         'sources': [
-            'International Expert Panel consensus (Diabetes Care 2020)',
+            'Buzzetti et al. Diabetes 2020 (PMID:32847960) — International Expert Panel LADA consensus',
             'PMC (2023) network meta-analysis',
             'Frontiers (2022) immunotherapy review'
         ],
