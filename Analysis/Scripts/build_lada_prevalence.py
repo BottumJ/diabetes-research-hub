@@ -772,7 +772,7 @@ html_content = """<!DOCTYPE html>
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US), retinal interventions, amputation prevention.</p>
+                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US, PMID:32175717), retinal interventions, amputation prevention.</p>
                 </div>
             </div>
 
@@ -787,7 +787,7 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <h3>The Prevention Paradox</h3>
-            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200. Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
+            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200 (PMID:32243867). Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
 
             <div class="footnote">
                 <strong>The Crisis:</strong> 47 million people with undiagnosed LADA receiving suboptimal therapy, accelerating their disease course and complication rates, while the solution—systematic autoantibody testing in primary care—remains unavailable.

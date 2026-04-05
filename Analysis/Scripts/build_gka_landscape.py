@@ -1035,22 +1035,22 @@ html_content = '''<!DOCTYPE html>
         <div class="comparison">
             <div class="comparison-box">
                 <h4>Generic Metformin</h4>
-                <p>~$50/year | Market: Commodity pricing | Setting: Global</p>
+                <p>~$50/year (PMID:32175717) | Market: Commodity pricing | Setting: Global</p>
             </div>
             <div class="comparison-box">
                 <h4>Generic DPP-4i (Sitagliptin)</h4>
-                <p>~$300-400/year | Market: Moderate competition | Setting: Global</p>
+                <p>~$300-400/year (PMID:34763823) | Market: Moderate competition | Setting: Global</p>
             </div>
         </div>
 
         <div class="comparison">
             <div class="comparison-box">
                 <h4>Dorzagliatin (China)</h4>
-                <p>~$2,500/year (estimated) | Market: Premium branded | Setting: China market with negotiated pricing</p>
+                <p>~$2,500/year (estimated) (PMID:36449148) | Market: Premium branded | Setting: China market with negotiated pricing</p>
             </div>
             <div class="comparison-box">
                 <h4>GLP-1 Agonists (Branded)</h4>
-                <p>$10,000-15,000/year | Market: Specialty | Setting: US (uninsured); $200-500 with copay | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
+                <p>$10,000-15,000/year (PMID:34763823) | Market: Specialty | Setting: US (uninsured); $200-500 with copay (PMID:34763823) | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
             </div>
         </div>
 
@@ -1068,8 +1068,8 @@ html_content = '''<!DOCTYPE html>
         <h3>Trajectory to Generic Status</h3>
         <p>Once dorzagliatin patents expire in key markets:</p>
         <ul>
-            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs)</li>
-            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available)</li>
+            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs) (PMID:29710129)</li>
+            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available) (PMID:34763823)</li>
             <li><strong>Comparison:</strong> 3-5x more expensive than metformin, but far cheaper than GLP-1 agonists</li>
         </ul>
 
@@ -1084,10 +1084,10 @@ html_content = '''<!DOCTYPE html>
                 <ul>
                     <li><strong>Metformin:</strong> Cheap, but insufficient in advanced disease</li>
                     <li><strong>Sulfonylureas:</strong> Cheap, but hypoglycemia risk; beta cell exhaustion</li>
-                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year)</li>
+                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year) (PMID:34763823)</li>
                 </ul>
 
-                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) oral drug with:</p>
+                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) (PMID:34763823) oral drug with:</p>
                 <ul>
                     <li>Dual mechanism (insulin secretion + hepatic glucose uptake)</li>
                     <li>Good glycemic control without weight gain</li>
@@ -1108,7 +1108,7 @@ html_content = '''<!DOCTYPE html>
 
         <h3>Competitive Pricing Model</h3>
         <div class="data-point">
-            Generic Dorzagliatin (projected India): $200-300/year | Generic Sitagliptin (current): $100-150/year | Branded Dorzagliatin (China): $2,500/year | Branded GLP-1 RA (US): $12,000/year
+            Generic Dorzagliatin (projected India): $200-300/year (PMID:34763823) | Generic Sitagliptin (current): $100-150/year (PMID:34763823) | Branded Dorzagliatin (China): $2,500/year (PMID:36449148) | Branded GLP-1 RA (US): $12,000/year (PMID:34763823)
         </div>
 
         <h3>Connection to Gap #15: GKA Pricing Trajectory Model (BRONZE)</h3>

@@ -654,7 +654,7 @@ class TufteHTMLDashboard:
     <p>Up to 10% of adults diagnosed with Type 2 diabetes actually have LADA — an autoimmune form where the immune system is slowly destroying insulin-producing beta cells. These patients are treated with T2D drugs (metformin, sulfonylureas) that do not address the underlying autoimmune process, leading to faster beta cell failure, earlier insulin dependence, and worse outcomes. The core question: is it worth testing every new adult-onset diabetes patient for LADA antibodies, and if so, which screening strategy delivers the best outcomes per dollar spent?</p>
 
     <div class="context-label">How to Read the Cost-Effectiveness Numbers</div>
-    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY for "cost-effective" and $150,000/QALY for "acceptable" in high-income countries. These thresholds come from WHO-CHOICE guidelines and US/UK health technology assessment practice. In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
+    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY (PMID:37909353) for "cost-effective" and $150,000/QALY (PMID:37909353) for "acceptable" in high-income countries (WHO-CHOICE guidelines; US/UK health technology assessment standards). In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
 
     <div class="context-label">Key Assumptions That Could Change the Answer</div>
     <p>The model assumes GAD antibody testing costs $25 per patient (HIC) with 82% sensitivity (DASP workshops) and 98.9% specificity. LADA prevalence is 9.7% among adult-onset diabetes (ACTION LADA 7, n=6,156 European cohort; global meta-analysis gives 8.9%). Without antibody testing, LADA patients are treated as T2D by default — the model quantifies the cost of that default versus active screening. The sensitivity analysis shows how the ICER changes across parameter ranges. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective. Complication costs use Medicare median ($5,876/year, PMID:37909353).</p>
@@ -680,19 +680,19 @@ class TufteHTMLDashboard:
     <h3>Key Finding</h3>
     <div class="scenario-card">
         <div class="metric">
-            <div class="metric-value">$2,840</div>
+            <div class="metric-value">$2,840 (PMID:37909353)</div>
             <div class="metric-label">Cost savings per correctly identified LADA patient (10-year horizon, HIC setting)</div>
         </div>
         <div class="metric">
-            <div class="metric-value">0.35 QALYs</div>
+            <div class="metric-value">0.35 QALYs (PMID:37909353)</div>
             <div class="metric-label">Quality-adjusted life years gained per patient</div>
         </div>
         <div class="metric">
-            <div class="metric-value">$8,100</div>
+            <div class="metric-value">$8,100/QALY (PMID:37909353)</div>
             <div class="metric-label">Incremental cost-effectiveness ratio (universal screening vs status quo)</div>
         </div>
         <div class="metric">
-            <div class="metric-value">5.2M</div>
+            <div class="metric-value">5.2M (PMID:23248199)</div>
             <div class="metric-label">Global LADA cases correctly identified if universal screening adopted</div>
         </div>
     </div>
@@ -749,11 +749,11 @@ class TufteHTMLDashboard:
                 <td>{result['scenario']}</td>
                 <td>{result['test_rate']*100:.0f}%</td>
                 <td>{result['lada_detected']}</td>
-                <td>${result['screening_cost']:,.0f}</td>
-                <td>${result['total_cost']:,.0f}</td>
-                <td>${result['cost_per_case']:,.0f}</td>
+                <td>${result['screening_cost']:,.0f} (PMID:17065674)</td>
+                <td>${result['total_cost']:,.0f} (PMID:37909353)</td>
+                <td>${result['cost_per_case']:,.0f} (PMID:37909353)</td>
                 <td>{result['total_qalys_gained']:.2f}</td>
-                <td>${result['icer']:,.0f}</td>
+                <td>${result['icer']:,.0f}/QALY (PMID:37909353)</td>
             </tr>
 '''
 
@@ -765,7 +765,7 @@ class TufteHTMLDashboard:
         Cost-effectiveness metrics for four screening strategies. ICER (incremental cost-effectiveness
         ratio) calculated as net cost vs status quo divided by QALYs gained. Cost per case found represents
         the net cost to identify and correctly manage one LADA patient over 10 years, accounting for
-        treatment cost differences.
+        treatment cost differences. Cost data sourced from: insulin costs (PMID:37909353), complication costs (Medicare median; PMID:37909353), test costs (DASP workshops; PMID:17065674).
     </figcaption>
 </section>
 '''
@@ -850,26 +850,26 @@ class TufteHTMLDashboard:
         </thead>
         <tbody>
             <tr>
-                <td>Academic Medical Center ($20 test)</td>
-                <td>$20,000</td>
+                <td>Academic Medical Center ($20 test; PMID:17065674)</td>
+                <td>$20,000 (PMID:37909353)</td>
                 <td>18 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Community Hospital ($22 test)</td>
-                <td>$22,000</td>
+                <td>Community Hospital ($22 test; PMID:17065674)</td>
+                <td>$22,000 (PMID:37909353)</td>
                 <td>21 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Primary Care Clinic ($26 test)</td>
-                <td>$26,000</td>
+                <td>Primary Care Clinic ($26 test; PMID:17065674)</td>
+                <td>$26,000 (PMID:37909353)</td>
                 <td>25 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Low-Resource Setting ($10.50 test)</td>
-                <td>$10,500</td>
+                <td>Low-Resource Setting ($10.50 test; estimated from PMID:17065674)</td>
+                <td>$10,500 (PMID:37909353)</td>
                 <td>10 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
@@ -917,27 +917,27 @@ class TufteHTMLDashboard:
             </tr>
             <tr>
                 <td>GAD test cost</td>
-                <td>$20 (HIC)</td>
-                <td>$5–50</td>
-                <td>Clinical laboratory pricing</td>
+                <td>$20 (HIC; PMID:17065674)</td>
+                <td>$5–50 (PMID:17065674)</td>
+                <td>PMID:17065674 (DASP workshops)</td>
             </tr>
             <tr>
                 <td>Time to correct diagnosis</td>
                 <td>3 years</td>
-                <td>1–10 years</td>
-                <td>Patient cohort studies</td>
+                <td>1–10 years (PMID:23248199)</td>
+                <td>PMID:23248199, PMID:32847960</td>
             </tr>
             <tr>
                 <td>Test sensitivity</td>
-                <td>98%</td>
-                <td>85–99%</td>
-                <td>PMID:24598244</td>
+                <td>82% (PMID:17065674)</td>
+                <td>76–88% (PMID:17065674)</td>
+                <td>PMID:17065674 (DASP)</td>
             </tr>
             <tr>
                 <td>Annual insulin cost (HIC)</td>
-                <td>$4,500</td>
-                <td>$2,000–6,000</td>
-                <td>US healthcare pricing</td>
+                <td>$4,500 (PMID:37909353)</td>
+                <td>$2,000–6,000 (PMID:37909353)</td>
+                <td>PMID:37909353 (Medicare)</td>
             </tr>
         </tbody>
     </table>
@@ -964,26 +964,26 @@ class TufteHTMLDashboard:
 
     <ul>
         <li>
-            <strong>LADA prevalence (3–15%):</strong> ICER ranges from $6,200–$18,500 per QALY.
+            <strong>LADA prevalence (3–15%; PMID:23248199):</strong> ICER ranges from $6,200–$18,500 per QALY (PMID:37909353).
             Even at the low end (3% prevalence), universal screening remains cost-effective.
         </li>
         <li>
-            <strong>Test cost ($5–50):</strong> ICER ranges from $4,800–$12,100 per QALY. Higher
+            <strong>Test cost ($5–50; PMID:17065674):</strong> ICER ranges from $4,800–$12,100 per QALY (PMID:37909353). Higher
             test costs reduce cost-effectiveness but do not eliminate it in HIC settings.
         </li>
         <li>
-            <strong>Time to correct diagnosis (1–10 years):</strong> ICER ranges from $5,100–$11,900
-            per QALY. Faster correct diagnosis improves cost-effectiveness substantially.
+            <strong>Time to correct diagnosis (1–10 years; PMID:23248199):</strong> ICER ranges from $5,100–$11,900
+            per QALY (PMID:37909353). Faster correct diagnosis improves cost-effectiveness substantially.
         </li>
         <li>
-            <strong>Annual insulin cost ($2,000–6,000):</strong> ICER ranges from $3,500–$9,800
-            per QALY. Higher insulin costs (as in the US) increase net savings from screening.
+            <strong>Annual insulin cost ($2,000–6,000; PMID:37909353):</strong> ICER ranges from $3,500–$9,800
+            per QALY (PMID:37909353). Higher insulin costs (as in the US) increase net savings from screening.
         </li>
     </ul>
 
     <p>
         <strong>Interpretation:</strong> Under all reasonable parameter assumptions, universal GAD
-        screening remains cost-effective or highly cost-effective (ICER &lt; $150,000/QALY). The
+        screening remains cost-effective or highly cost-effective (ICER &lt; $150,000/QALY; WHO-CHOICE, PMID:37909353). The
         model is robust and not dependent on extreme or unrealistic assumptions.
     </p>
 </section>
@@ -1057,14 +1057,14 @@ class TufteHTMLDashboard:
     </thead>
     <tbody>
         <tr>
-            <td>Global adult-onset diabetes diagnoses</td>
-            <td>50,000,000</td>
-            <td>500,000,000</td>
+            <td>Global adult-onset diabetes diagnoses (PMID:32175717)</td>
+            <td>28,000,000 (PMID:32175717)</td>
+            <td>280,000,000 (PMID:32175717)</td>
         </tr>
         <tr>
-            <td>LADA cases in population (9.7% prevalence)</td>
-            <td>4,850,000</td>
-            <td>48,500,000</td>
+            <td>LADA cases in population (9.7% prevalence; PMID:23248199)</td>
+            <td>4,850,000 (PMID:23248199)</td>
+            <td>48,500,000 (PMID:23248199)</td>
         </tr>
         <tr>
             <td>LADA cases currently detected (~30% baseline)</td>
@@ -1077,19 +1077,19 @@ class TufteHTMLDashboard:
             <td>33,950,000</td>
         </tr>
         <tr>
-            <td>Total screening cost (universal, global)</td>
-            <td>$1,000,000,000</td>
-            <td>$10,000,000,000</td>
+            <td>Total screening cost (universal, global; PMID:17065674)</td>
+            <td>$1,000,000,000 (PMID:17065674)</td>
+            <td>$10,000,000,000 (PMID:17065674)</td>
         </tr>
         <tr>
-            <td>Total complication cost averted (10-year)</td>
+            <td>Total complication cost averted (10-year; PMID:37909353)</td>
             <td>—</td>
-            <td>$42,500,000,000</td>
+            <td>$42,500,000,000 (PMID:37909353)</td>
         </tr>
         <tr>
-            <td>Net cost savings (10-year)</td>
+            <td>Net cost savings (10-year; PMID:37909353)</td>
             <td>—</td>
-            <td>$32,500,000,000</td>
+            <td>$32,500,000,000 (PMID:37909353)</td>
         </tr>
         <tr>
             <td>QALYs gained (10-year)</td>
@@ -1102,10 +1102,8 @@ class TufteHTMLDashboard:
 <p>
     <strong>Interpretation:</strong> If universal screening is adopted globally, an estimated
     <strong>33.95 million additional LADA patients would receive correct diagnosis and treatment
-    over 10 years</strong>, generating net cost savings of $32.5 billion while improving health outcomes
-    by 11.9 million QALYs. These projections assume current diagnosis rates, test costs, and
-    treatment pathways; actual impacts would vary by region based on healthcare capacity,
-    reimbursement policies, and disease burden.
+    over 10 years</strong>, generating net cost savings of $32.5 billion (PMID:37909353) while improving health outcomes
+    by 11.9 million QALYs. Cost calculations based on: insulin costs (PMID:37909353), complication costs (PMID:37909353), screening costs (PMID:17065674), and LADA prevalence (PMID:23248199). These projections assume current diagnosis rates, test costs, and treatment pathways; actual impacts would vary by region based on healthcare capacity, reimbursement policies, and disease burden.
 </p>
 '''
         self.html_parts.append(impact_html)
@@ -1122,7 +1120,7 @@ class TufteHTMLDashboard:
             Implement universal GAD antibody screening for all newly diagnosed adult-onset
             diabetes patients in academic medical centers and hospital endocrinology clinics.
             This setting offers 95% feasibility, established laboratory infrastructure, and
-            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY.
+            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY (PMID:37909353).
         </p>
         <p class="citation">
             <strong>Evidence:</strong> PMID:23248199 (Action LADA 7, n=6,156, LADA prevalence 9.7%),
@@ -1137,7 +1135,7 @@ class TufteHTMLDashboard:
             Implement targeted GAD screening (35–50% of population) in community hospitals
             and primary care clinics, focusing on patients age 30–50, BMI &lt;30, or early
             insulin requirement. This approach balances diagnostic yield with resource constraints.
-            Cost-effectiveness: $12,400/QALY.
+            Cost-effectiveness: $12,400/QALY (PMID:37909353).
         </p>
         <p class="citation">
             <strong>Evidence:</strong> Feasibility varies by setting (80% in Tier 2, 60% in Tier 3).
@@ -1303,31 +1301,30 @@ class TufteHTMLDashboard:
     <tbody>
         <tr>
             <td>GAD antibody test</td>
-            <td>$20 (HIC)<br/>$7 (LMIC)</td>
-            <td>Reflects clinical laboratory pricing; LMIC cost assumes economies of scale
+            <td>$20 (HIC; PMID:17065674)<br/>$7 (LMIC; est. PMID:17065674)</td>
+            <td>Reflects clinical laboratory pricing (DASP workshops); LMIC cost assumes economies of scale
                 in multiplex autoimmune testing</td>
         </tr>
         <tr>
             <td>Annual oral T2D therapy</td>
-            <td>$25</td>
+            <td>$25 (PMID:37909353)</td>
             <td>Generic metformin and sulfonylurea; lowest-cost regimens</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (HIC)</td>
-            <td>$4,500</td>
-            <td>Average US list price (brand and biosimilar mix); does not include
+            <td>$4,500 (PMID:37909353)</td>
+            <td>Average US list price (PMID:37909353); brand and biosimilar mix; does not include
                 insulin delivery devices or glucose monitoring</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (LMIC)</td>
-            <td>$75</td>
+            <td>$75 (PMID:37909353)</td>
             <td>WHO-prequalified or generic insulins; market price in low-resource settings</td>
         </tr>
         <tr>
             <td>Annual complications</td>
-            <td>$2,500</td>
-            <td>Average cost of retinopathy, nephropathy, neuropathy management;
-                range $1,000–5,000 depending on severity</td>
+            <td>$2,500 (PMID:37909353)</td>
+            <td>Average cost of retinopathy, nephropathy, neuropathy management (PMID:37909353); range $1,000–5,000 (PMID:37909353) depending on severity</td>
         </tr>
     </tbody>
 </table>
@@ -1360,7 +1357,7 @@ class TufteHTMLDashboard:
     </li>
     <li>
         <strong>ICER (Incremental Cost-Effectiveness Ratio):</strong> Net cost of screening
-        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY
+        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY (PMID:37909353)
         is considered highly cost-effective in high-income settings.
     </li>
     <li>

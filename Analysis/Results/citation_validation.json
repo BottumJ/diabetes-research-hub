@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-31T03:07:34.942644",
+  "timestamp": "2026-04-02T03:07:45.302443",
   "summary": {
-    "WEAK": 118,
-    "CONFIRMED": 59,
-    "PLAUSIBLE": 52,
+    "WEAK": 132,
+    "CONFIRMED": 61,
+    "PLAUSIBLE": 56,
     "MISMATCH": 5,
     "NO_DATA": 1
   },
-  "total_papers": 235,
+  "total_papers": 255,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -165,7 +165,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 600,
+          "line": 632,
           "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
         }
       ],
@@ -227,13 +227,18 @@
       "pmid": "14706052",
       "title": "Association between fasting glucose and C-reactive protein in middle-aged subjects.",
       "score": "WEAK",
-      "confidence": 0.1,
-      "details": "1/10 claim terms found in paper; 5 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.059,
+      "details": "1/17 claim terms found in paper; 5 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "build_gka_lada.py",
-          "line": 761,
+          "line": 621,
+          "text": "burnout\" concern is weakened, supporting GKA trials. Sources: UKPDS (PMID:14706052);"
+        },
+        {
+          "file": "build_gka_lada.py",
+          "line": 760,
           "text": "UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052."
         }
       ],
@@ -250,12 +255,12 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 240,
+          "line": 252,
           "text": "\"evidence\": \"ENDIT trial (European Nicotinamide Diabetes Intervention Trial) was NEGATIVE \\u2014 did not prevent T1D in"
         },
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 638,
+          "line": 672,
           "text": "\"Beta Cell Preservation\": [\"Verapamil\", \"Lithium\", \"Cyclosporine\"], # CORRECTED: Nicotinamide removed — ENDIT trial was"
         }
       ],
@@ -430,7 +435,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 582,
+          "line": 613,
           "text": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Bougneres et al, NEJM 1988; Feutren et al, Lancet 1986,"
         }
       ],
@@ -517,6 +522,33 @@
           "file": "build_data_dictionary.py",
           "line": 1226,
           "text": "'source': 'Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journa"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "17065674": {
+      "pmid": "17065674",
+      "title": "Trends in hyperinsulinemia among nondiabetic adults in the U.S.",
+      "score": "WEAK",
+      "confidence": 0.095,
+      "details": "6/63 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 19,
+      "claims": [
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 752,
+          "text": "${result['screening_cost']:,.0f} (PMID:17065674)"
+        },
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 768,
+          "text": "treatment cost differences. Cost data sourced from: insulin costs (PMID:37909353), complication costs (Medicare median;"
+        },
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 853,
+          "text": "Academic Medical Center ($20 test; PMID:17065674)"
         }
       ],
       "has_abstract": true,
@@ -686,7 +718,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 258,
+          "line": 271,
           "text": "\"evidence\": \"PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin compariso"
         },
         {
@@ -730,7 +762,7 @@
         },
         {
           "file": "build_health_equity.py",
-          "line": 1277,
+          "line": 1278,
           "text": "PMID: 18539917"
         }
       ],
@@ -903,7 +935,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 564,
+          "line": 594,
           "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
         }
       ],
@@ -920,7 +952,7 @@
       "claims": [
         {
           "file": "build_gka_lada.py",
-          "line": 748,
+          "line": 747,
           "text": "Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249."
         }
       ],
@@ -1164,25 +1196,25 @@
     "21323736": {
       "pmid": "21323736",
       "title": "A health economic analysis of clinical islet transplantation.",
-      "score": "CONFIRMED",
-      "confidence": 0.485,
-      "details": "10/26 claim terms found in paper; 7 diabetes domain terms; 3 phrase matches",
-      "claim_count": 3,
+      "score": "PLAUSIBLE",
+      "confidence": 0.215,
+      "details": "20/93 claim terms found in paper; 7 diabetes domain terms; 6 phrase matches",
+      "claim_count": 14,
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 919,
+          "line": 920,
           "text": "Source: Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry outcomes, cost $519K cumulative; islet tran"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1369,
+          "line": 1371,
           "text": "Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry, islet transplant cost-effectiveness"
         },
         {
           "file": "build_equity_map.py",
-          "line": 879,
-          "text": "Manufacturing cost estimates ($50-100M) based on literature review of cGMP cell therapy manufacturing. Initial therap"
+          "line": 699,
+          "text": "Manufacturing: cGMP stem cell differentiation facilities ($50-100M to build, PMID:21323736)"
         }
       ],
       "has_abstract": true,
@@ -1266,12 +1298,12 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 665,
+          "line": 666,
           "text": "Source: Arjomandnejad et al. Biomedicines 2022 (PMID:35203496) — CAR-Treg phenotype stability; Ukena et al. Exp Hematol"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1350,
+          "line": 1352,
           "text": "Ukena et al. Exp Hematol 2011 (PMID:21864487) — Treg isolation: 5-10% of CD4+ population, expansion protocols"
         }
       ],
@@ -1395,6 +1427,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "22349456": {
+      "pmid": "22349456",
+      "title": "Recruitment of a rural, southern, predominantly African-American population into a diabetes self-management trial.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.3,
+      "details": "3/10 claim terms found in paper; 3 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1536,
+          "text": "Andreae et al. Contemp Clin Trials 2012 (PMID:22349456) — rural recruitment of underserved populations."
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "22683128": {
       "pmid": "22683128",
       "title": "Prediabetes: a high-risk state for diabetes development.",
@@ -1493,7 +1542,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 600,
+          "line": 632,
           "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
         }
       ],
@@ -1503,10 +1552,10 @@
     "23248199": {
       "pmid": "23248199",
       "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
-      "score": "CONFIRMED",
-      "confidence": 0.562,
-      "details": "18/39 claim terms found in paper; 8 diabetes domain terms; 4 phrase matches",
-      "claim_count": 13,
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "24/72 claim terms found in paper; 8 diabetes domain terms; 4 phrase matches",
+      "claim_count": 22,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1576,7 +1625,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 564,
+          "line": 594,
           "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
         }
       ],
@@ -1604,14 +1653,14 @@
       "pmid": "23835325",
       "title": "Patterns of β-cell autoantibody appearance and genetic associations during the first years of life.",
       "score": "WEAK",
-      "confidence": 0.091,
-      "details": "1/11 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "confidence": 0.067,
+      "details": "1/15 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
       "claim_count": 2,
       "claims": [
         {
           "file": "build_gka_lada.py",
-          "line": 774,
-          "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID: 23835325. (LADA review)"
+          "line": 773,
+          "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
         },
         {
           "file": "build_lada_diagnostic_model.py",
@@ -1651,6 +1700,23 @@
           "file": "build_data_dictionary.py",
           "line": 834,
           "text": "'source': 'Atkinson MA et al. Type 1 diabetes. Lancet 2014;383(9911):69-82. PMID:23890997'"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "24056026": {
+      "pmid": "24056026",
+      "title": "Treatment with glucokinase activator, YH-GKA, increases cell proliferation and decreases glucotoxic apoptosis in INS-1 cells.",
+      "score": "WEAK",
+      "confidence": 0.133,
+      "details": "2/15 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 734,
+          "text": "Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 20"
         }
       ],
       "has_abstract": true,
@@ -1696,7 +1762,7 @@
       "score": "PLAUSIBLE",
       "confidence": 0.219,
       "details": "7/32 claim terms found in paper; 9 diabetes domain terms; 1 phrase matches",
-      "claim_count": 9,
+      "claim_count": 8,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1785,6 +1851,23 @@
           "file": "build_immunomod_lada.py",
           "line": 332,
           "text": "(\"PMID:24997559\", \"Sanda et al.\", \"REPAIR-T1D: DPP-4i and PPI combination therapy\"),"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "25131812": {
+      "pmid": "25131812",
+      "title": "Strategies addressing barriers to clinical trial enrollment of underrepresented populations: a systematic review.",
+      "score": "CONFIRMED",
+      "confidence": 0.544,
+      "details": "4/9 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1534,
+          "text": "Heller et al. Contemp Clin Trials 2014 (PMID:25131812) — strategies for enrollment barriers;"
         }
       ],
       "has_abstract": true,
@@ -1895,7 +1978,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 258,
+          "line": 271,
           "text": "\"evidence\": \"PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin compariso"
         }
       ],
@@ -1948,6 +2031,23 @@
           "file": "build_data_dictionary.py",
           "line": 1248,
           "text": "'source': 'Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "25772230": {
+      "pmid": "25772230",
+      "title": "Racial/ethnic disparities in prevalence and care of patients with type 2 diabetes mellitus.",
+      "score": "CONFIRMED",
+      "confidence": 0.517,
+      "details": "5/12 claim terms found in paper; 10 diabetes domain terms; 2 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1535,
+          "text": "Ferdinand et al. Curr Med Res Opin 2015 (PMID:25772230) — racial/ethnic disparities in T2D care;"
         }
       ],
       "has_abstract": true,
@@ -2270,6 +2370,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "28010783": {
+      "pmid": "28010783",
+      "title": "Minority underrepresentation in cardiovascular outcome trials for type 2 diabetes.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "3/9 claim terms found in paper; 4 diabetes domain terms; 2 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1531,
+          "text": "Hoppe et al. Lancet Diabetes Endocrinol 2017 (PMID:28010783) — minority underrepresentation in diabetes CVOTs;"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "28086098": {
       "pmid": "28086098",
       "title": "30 Years of NF-κB: A Blossoming of Relevance to Human Pathobiology.",
@@ -2419,11 +2536,16 @@
     "28776086": {
       "pmid": "28776086",
       "title": "The mechanisms of action of metformin.",
-      "score": "PLAUSIBLE",
-      "confidence": 0.25,
-      "details": "3/12 claim terms found in paper; 6 diabetes domain terms; 5 phrase matches",
-      "claim_count": 1,
+      "score": "CONFIRMED",
+      "confidence": 0.47,
+      "details": "10/27 claim terms found in paper; 6 diabetes domain terms; 6 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 692,
+          "text": "'plain': 'First-line diabetes drug. Activates AMPK (energy sensor), reduces liver glucose production, improves insulin s"
+        },
         {
           "file": "build_data_dictionary.py",
           "line": 700,
@@ -2472,6 +2594,23 @@
           "file": "build_immunomod_lada.py",
           "line": 333,
           "text": "(\"PMID:29291885\", \"Herold et al.\", \"Teplizumab Phase 3 (TN-10); delayed T1D onset\"),"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "29414425": {
+      "pmid": "29414425",
+      "title": "Neighborhood characteristics, food deserts, rurality, and type 2 diabetes in youth: Findings from a case-control study.",
+      "score": "WEAK",
+      "confidence": 0.077,
+      "details": "1/13 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 841,
+          "text": "The bottom 20 countries by trial access represent 55% of global diabetes burden. The gap is acute i"
         }
       ],
       "has_abstract": true,
@@ -2603,24 +2742,24 @@
       "pmid": "29710129",
       "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
       "score": "WEAK",
-      "confidence": 0.03,
-      "details": "1/33 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.007,
+      "details": "1/147 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 63,
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 465,
-          "text": "Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129) — tisagenlecleucel $475K, axicabtagene ciloleucel $373K"
+          "line": 410,
+          "text": "CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR"
         },
         {
           "file": "build_cart_access.py",
-          "line": 493,
-          "text": "Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620)"
+          "line": 436,
+          "text": "$475K [PM"
         },
         {
           "file": "build_cart_access.py",
-          "line": 526,
-          "text": "Sources: IDF Diabetes Atlas (2024); Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Lin et al. J Clin Oncol 2019 (PMID"
+          "line": 460,
+          "text": "$373K [PM"
         }
       ],
       "has_abstract": true,
@@ -2675,17 +2814,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 606,
+          "line": 607,
           "text": "Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — GMP manufacturing requirements; Frey et al. Biol Blood"
         },
         {
           "file": "build_cart_access.py",
-          "line": 635,
+          "line": 636,
           "text": "Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — certified facility requirements and capacity constraint"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1082,
+          "line": 1083,
           "text": "Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — regulatory manufacturing requirements; Lin et al. J Cli"
         }
       ],
@@ -2702,13 +2841,30 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 42,
+          "line": 43,
           "text": "\"evidence\": \"PMID:29988125 (Ovalle et al, Nature Medicine 2018) demonstrates preserved C-peptide and beta cell function"
         },
         {
           "file": "build_generic_drug_catalog.py",
           "line": 32,
           "text": "'key_pmids': '29988125, 36060506',"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "30041834": {
+      "pmid": "30041834",
+      "title": "A Global Perspective of Latent Autoimmune Diabetes in Adults.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.231,
+      "details": "3/13 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 773,
+          "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
         }
       ],
       "has_abstract": true,
@@ -2758,17 +2914,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 493,
+          "line": 494,
           "text": "Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620)"
         },
         {
           "file": "build_cart_access.py",
-          "line": 606,
+          "line": 607,
           "text": "Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — GMP manufacturing requirements; Frey et al. Biol Blood"
         },
         {
           "file": "build_cart_access.py",
-          "line": 787,
+          "line": 788,
           "text": "Source: Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620) — CRS grading and tocilizumab management"
         }
       ],
@@ -2872,24 +3028,24 @@
       "pmid": "31157579",
       "title": "Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Adult Large B-Cell Lymphoma.",
       "score": "WEAK",
-      "confidence": 0.159,
-      "details": "7/44 claim terms found in paper; 3 diabetes domain terms; 1 phrase matches",
-      "claim_count": 5,
+      "confidence": 0.13,
+      "details": "12/92 claim terms found in paper; 3 diabetes domain terms; 2 phrase matches",
+      "claim_count": 17,
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 493,
-          "text": "Source: Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Frey et al. Biol Blood Marrow Transplant 2019 (PMID:30586620)"
+          "line": 442,
+          "text": "$465K [PM"
         },
         {
           "file": "build_cart_access.py",
-          "line": 526,
-          "text": "Sources: IDF Diabetes Atlas (2024); Hernandez et al. JAMA Oncol 2018 (PMID:29710129); Lin et al. J Clin Oncol 2019 (PMID"
+          "line": 448,
+          "text": "$419K [PM"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1082,
-          "text": "Source: Gee, Best Pract Res Clin Haematol 2018 (PMID:29909913) — regulatory manufacturing requirements; Lin et al. J Cli"
+          "line": 454,
+          "text": "$410K [PM"
         }
       ],
       "has_abstract": true,
@@ -2905,7 +3061,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 618,
+          "line": 651,
           "text": "\"evidence\": \"Multiple RCTs with mixed results. Pittas et al (D2d trial, NEJM 2019, PMID:31173679) showed no significant"
         },
         {
@@ -3082,10 +3238,15 @@
       "pmid": "31618560",
       "title": "Six-Month Randomized, Multicenter Trial of Closed-Loop Control in Type 1 Diabetes.",
       "score": "CONFIRMED",
-      "confidence": 0.743,
-      "details": "9/14 claim terms found in paper; 8 diabetes domain terms; 10 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.487,
+      "details": "12/31 claim terms found in paper; 8 diabetes domain terms; 10 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1267,
+          "text": "'disease': 'Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8"
+        },
         {
           "file": "build_data_dictionary.py",
           "line": 1270,
@@ -3133,24 +3294,24 @@
       "pmid": "32175717",
       "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
       "score": "WEAK",
-      "confidence": 0.182,
-      "details": "8/44 claim terms found in paper; 2 diabetes domain terms; 1 phrase matches",
-      "claim_count": 6,
+      "confidence": 0.121,
+      "details": "17/140 claim terms found in paper; 2 diabetes domain terms; 2 phrase matches",
+      "claim_count": 30,
       "claims": [
         {
-          "file": "build_gka_pricing.py",
-          "line": 460,
-          "text": "Projected Revenue: &lt;$500M by 2030 (modeled estimate — Khan"
+          "file": "build_cart_access.py",
+          "line": 518,
+          "text": "$300-500K <a href=\"https://pubmed.ncbi.nlm.nih.gov/32175717/\" target=\"_blan"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 470,
-          "text": "Revenue Ceiling: $5-10B if adoption reaches 20-30% of eligib"
+          "file": "build_generic_drug_catalog.py",
+          "line": 296,
+          "text": "'body': 'FIELD trial showed 30% reduction in laser therapy. Cost: $20/year [PMID:32175717]. Could prevent blindness in L"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 479,
-          "text": "Projected Revenue: $3-8B by 2035 (modeled estimate — PMID:321"
+          "file": "build_generic_drug_catalog.py",
+          "line": 308,
+          "text": "'body': 'Mechanism (TNF-alpha) well-understood. Cost: $60/year [PMID:32175717]. Needs large RCT but existing data is pro"
         }
       ],
       "has_abstract": true,
@@ -3160,9 +3321,9 @@
       "pmid": "32243867",
       "title": "Serum levels of matrix metalloproteinase-2, -9, and vitamin D in patients with multiple sclerosis with or without herpesvirus-6 seropositivity.",
       "score": "MISMATCH",
-      "confidence": 0.087,
-      "details": "2/23 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 5,
+      "confidence": 0.057,
+      "details": "2/35 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
+      "claim_count": 6,
       "claims": [
         {
           "file": "build_lada_prevalence.py",
@@ -3183,6 +3344,45 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "32307525": {
+      "pmid": "32307525",
+      "title": "Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.",
+      "score": "WEAK",
+      "confidence": 0.158,
+      "details": "3/19 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
+      "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 622,
+          "text": "Li et al. J Clin Endocrinol Metab 2020 (PMID:32307525); Buzzetti et al. Diabetes 2020 (PMID:32847960)."
+        },
+        {
+          "file": "build_gka_lada.py",
+          "line": 773,
+          "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "32312859": {
+      "pmid": "32312859",
+      "title": "Sex Disparities in Cardiovascular Outcome Trials of Populations With Diabetes: A Systematic Review and Meta-analysis.",
+      "score": "CONFIRMED",
+      "confidence": 0.725,
+      "details": "5/8 claim terms found in paper; 7 diabetes domain terms; 3 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1533,
+          "text": "Clemens et al. Diabetes Care 2020 (PMID:32312859) — sex disparities in diabetes CVOTs;"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "32535920": {
       "pmid": "32535920",
       "title": "Cost of decentralized CAR T-cell production in an academic nonprofit setting.",
@@ -3193,17 +3393,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 547,
+          "line": 548,
           "text": "Source: Ran et al. Int J Cancer 2020 (PMID:32535920) — academic manufacturing ~60K EUR; Arjomandnejad et al. Biomedicine"
         },
         {
           "file": "build_cart_access.py",
-          "line": 746,
+          "line": 747,
           "text": "Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — decentralized PoC CAR-T manufacturing feasibility; R"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1290,
+          "line": 1292,
           "text": "Source: Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (PMID:3"
         }
       ],
@@ -3274,10 +3474,10 @@
     "32847960": {
       "pmid": "32847960",
       "title": "Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.",
-      "score": "CONFIRMED",
-      "confidence": 0.489,
-      "details": "14/36 claim terms found in paper; 14 diabetes domain terms; 16 phrase matches",
-      "claim_count": 7,
+      "score": "PLAUSIBLE",
+      "confidence": 0.275,
+      "details": "14/51 claim terms found in paper; 14 diabetes domain terms; 16 phrase matches",
+      "claim_count": 10,
       "claims": [
         {
           "file": "build_data_dictionary.py",
@@ -3325,7 +3525,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 348,
+          "line": 366,
           "text": "\"evidence\": \"PRECLINICAL: Hu et al (Nature 2020, PMID:32943753) demonstrated gasdermin D inhibition. Inflammasome suppre"
         }
       ],
@@ -3342,7 +3542,7 @@
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
-          "line": 618,
+          "line": 651,
           "text": "\"evidence\": \"Multiple RCTs with mixed results. Pittas et al (D2d trial, NEJM 2019, PMID:31173679) showed no significant"
         }
       ],
@@ -3359,17 +3559,17 @@
       "claims": [
         {
           "file": "build_health_equity.py",
-          "line": 1125,
+          "line": 1126,
           "text": "PMID:33139407 - ADA health equity statement"
         },
         {
           "file": "build_health_equity.py",
-          "line": 1289,
+          "line": 1290,
           "text": "PMID:33139407"
         },
         {
           "file": "build_health_equity.py",
-          "line": 1295,
+          "line": 1296,
           "text": "PMID:33139407"
         }
       ],
@@ -3386,7 +3586,7 @@
       "claims": [
         {
           "file": "build_health_equity.py",
-          "line": 1303,
+          "line": 1304,
           "text": "ADA/EASD consensus guidelines and epidemiologic studies document that racial/ethnic groups experience different outcomes"
         },
         {
@@ -3552,7 +3752,7 @@
         },
         {
           "file": "build_health_equity.py",
-          "line": 1253,
+          "line": 1254,
           "text": "PMID:34421203"
         }
       ],
@@ -3563,24 +3763,24 @@
       "pmid": "34763823",
       "title": "100 years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?",
       "score": "WEAK",
-      "confidence": 0.067,
-      "details": "2/30 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
-      "claim_count": 3,
+      "confidence": 0.047,
+      "details": "13/276 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
+      "claim_count": 66,
       "claims": [
         {
-          "file": "build_gka_pricing.py",
-          "line": 596,
-          "text": "Sources: Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823) — insulin pricing crisis; Schousboe et al. Ann Inte"
+          "file": "build_gap_deep_dives.py",
+          "line": 482,
+          "text": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 797,
-          "text": "Data source: Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823); CMS drug pricing databases"
+          "file": "build_gap_deep_dives.py",
+          "line": 941,
+          "text": "\"key_finding\": \"Dorzagliatin China NRDL Jan 2024 (PMID:36449148); GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglut"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 869,
-          "text": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022"
+          "file": "build_gap_deep_dives.py",
+          "line": 955,
+          "text": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
         }
       ],
       "has_abstract": true,
@@ -3613,17 +3813,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 547,
+          "line": 548,
           "text": "Source: Ran et al. Int J Cancer 2020 (PMID:32535920) — academic manufacturing ~60K EUR; Arjomandnejad et al. Biomedicine"
         },
         {
           "file": "build_cart_access.py",
-          "line": 665,
+          "line": 666,
           "text": "Source: Arjomandnejad et al. Biomedicines 2022 (PMID:35203496) — CAR-Treg phenotype stability; Ukena et al. Exp Hematol"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1045,
+          "line": 1046,
           "text": "Source: Arjomandnejad et al. Biomedicines 2022 (PMID:35203496); ClinicalTrials.gov"
         }
       ],
@@ -3673,10 +3873,15 @@
       "pmid": "35551292",
       "title": "Dorzagliatin add-on therapy to metformin in patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
       "score": "WEAK",
-      "confidence": 0.105,
-      "details": "2/19 claim terms found in paper; 12 diabetes domain terms; 0 phrase matches",
-      "claim_count": 3,
+      "confidence": 0.13,
+      "details": "3/23 claim terms found in paper; 12 diabetes domain terms; 0 phrase matches",
+      "claim_count": 4,
       "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 720,
+          "text": "Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs"
+        },
         {
           "file": "build_gka_pricing.py",
           "line": 445,
@@ -3686,11 +3891,23 @@
           "file": "build_gka_pricing.py",
           "line": 744,
           "text": "Evidence source: Syed, Drugs 2022 (PMID:36449148) — first approval profile; Zhu et al. Nat Med 2022"
-        },
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "35551293": {
+      "pmid": "35551293",
+      "title": "A new class of drug in the diabetes toolbox.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/12 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
         {
-          "file": "build_gka_pricing.py",
-          "line": 869,
-          "text": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022"
+          "file": "build_gka_lada.py",
+          "line": 720,
+          "text": "Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs"
         }
       ],
       "has_abstract": true,
@@ -3750,18 +3967,35 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 864,
+          "line": 865,
           "text": "Source: Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune remission; Mackensen et al. Nat Med 2022 (PMID:3610"
         },
         {
           "file": "build_cart_access.py",
-          "line": 987,
+          "line": 988,
           "text": "Source: ClinicalTrials.gov; Mackensen et al. Nat Med 2022 (PMID:36109639); Schett et al. Lancet 2023 (PMID:37748491); Ot"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1370,
+          "line": 1372,
           "text": "Mackensen et al. Nat Med 2022 (PMID:36109639) — CD19 CAR-T in SLE, drug-free remission"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "36109742": {
+      "pmid": "36109742",
+      "title": "Twenty-year trends in racial and ethnic enrollment in large diabetes randomized controlled trials.",
+      "score": "CONFIRMED",
+      "confidence": 0.5,
+      "details": "4/10 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_trial_equity_mapper.py",
+          "line": 1532,
+          "text": "Zhang et al. BMC Med 2022 (PMID:36109742) — 20-year trends in racial/ethnic enrollment;"
         }
       ],
       "has_abstract": true,
@@ -3782,7 +4016,7 @@
         },
         {
           "file": "build_health_equity.py",
-          "line": 1259,
+          "line": 1260,
           "text": "PMID:36113507"
         }
       ],
@@ -3799,17 +4033,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 704,
+          "line": 705,
           "text": "Source: Ottaviano et al. Sci Transl Med 2022 (PMID:36288281) — CRISPR allogeneic CAR19 Phase 1, 4/6 remission"
         },
         {
           "file": "build_cart_access.py",
-          "line": 987,
+          "line": 988,
           "text": "Source: ClinicalTrials.gov; Mackensen et al. Nat Med 2022 (PMID:36109639); Schett et al. Lancet 2023 (PMID:37748491); Ot"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1344,
+          "line": 1346,
           "text": "Ottaviano et al. Sci Transl Med 2022 (PMID:36288281) — CRISPR allogeneic CAR19 Phase 1, 4/6 children achieved remission"
         }
       ],
@@ -3820,24 +4054,24 @@
       "pmid": "36449148",
       "title": "Dorzagliatin: First Approval.",
       "score": "WEAK",
-      "confidence": 0.171,
-      "details": "6/35 claim terms found in paper; 12 diabetes domain terms; 1 phrase matches",
-      "claim_count": 5,
+      "confidence": 0.093,
+      "details": "11/118 claim terms found in paper; 12 diabetes domain terms; 2 phrase matches",
+      "claim_count": 22,
       "claims": [
         {
-          "file": "build_gka_pricing.py",
-          "line": 445,
-          "text": "Sources: Syed, Drugs 2022 (PMID:36449148) — dorzagliatin first approval; Zhu et al. Nat Med 2022 (PMID:35551294) — SEED"
+          "file": "build_gap_deep_dives.py",
+          "line": 482,
+          "text": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 503,
-          "text": "Sources: Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717) — T2D global burden; Syed, Drugs 2022 (PMID:36449148)"
+          "file": "build_gap_deep_dives.py",
+          "line": 941,
+          "text": "\"key_finding\": \"Dorzagliatin China NRDL Jan 2024 (PMID:36449148); GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglut"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 724,
-          "text": "Sources: Jiang et al. J Diabetes 2024 (PMID:38783768) — dorzagliatin development review; Syed, Drugs 2022 (PMID:36449148"
+          "file": "build_gap_deep_dives.py",
+          "line": 955,
+          "text": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
         }
       ],
       "has_abstract": true,
@@ -3953,11 +4187,16 @@
     "37202589": {
       "pmid": "37202589",
       "title": "Approval of teplizumab: implications for patients.",
-      "score": "PLAUSIBLE",
-      "confidence": 0.286,
-      "details": "4/14 claim terms found in paper; 4 diabetes domain terms; 5 phrase matches",
-      "claim_count": 1,
+      "score": "WEAK",
+      "confidence": 0.138,
+      "details": "4/29 claim terms found in paper; 4 diabetes domain terms; 5 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1300,
+          "text": "'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs"
+        },
         {
           "file": "build_data_dictionary.py",
           "line": 1303,
@@ -3967,14 +4206,41 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "37217319": {
+      "pmid": "37217319",
+      "title": "Disparities in Diabetes Care: Differences Between Rural and Urban Patients Within a Large Health System.",
+      "score": "WEAK",
+      "confidence": 0.083,
+      "details": "2/24 claim terms found in paper; 6 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 841,
+          "text": "The bottom 20 countries by trial access represent 55% of global diabetes burden. The gap is acute i"
+        },
+        {
+          "file": "build_treg_neuropathy.py",
+          "line": 1037,
+          "text": "Intervention: Low-dose IL-2 (Proleukin or Peregrine) at doses used in T1D trials (PMID:37217319, ~1"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "37223016": {
       "pmid": "37223016",
       "title": "Evaluation of efficacy and safety of glucokinase activators-a systematic review and meta-analysis.",
-      "score": "WEAK",
-      "confidence": 0.095,
-      "details": "2/21 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
-      "claim_count": 2,
+      "score": "PLAUSIBLE",
+      "confidence": 0.229,
+      "details": "8/35 claim terms found in paper; 10 diabetes domain terms; 1 phrase matches",
+      "claim_count": 3,
       "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 734,
+          "text": "Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 20"
+        },
         {
           "file": "build_gka_pricing.py",
           "line": 780,
@@ -4006,6 +4272,33 @@
           "file": "add_citations.py",
           "line": 213,
           "text": "- [x] Urine metabolomics: Jiang et al. Theranostics 2023 (PMID:37351171)"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37356445": {
+      "pmid": "37356445",
+      "title": "Disparities in diabetes prevalence and management by race and ethnicity in the USA: defining a path forward.",
+      "score": "WEAK",
+      "confidence": 0.045,
+      "details": "1/22 claim terms found in paper; 4 diabetes domain terms; 0 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 837,
+          "text": "81% of global diabetes burden is in low- and middle-income countries, but 88% of beta cell therapy trial sit"
+        },
+        {
+          "file": "build_health_equity.py",
+          "line": 927,
+          "text": "$35-50"
+        },
+        {
+          "file": "build_health_equity.py",
+          "line": 1220,
+          "text": "US legislation: Insulin price caps ($35/month <a href=\"https://pubmed.ncbi.nlm.n"
         }
       ],
       "has_abstract": true,
@@ -4133,17 +4426,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 864,
+          "line": 865,
           "text": "Source: Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune remission; Mackensen et al. Nat Med 2022 (PMID:3610"
         },
         {
           "file": "build_cart_access.py",
-          "line": 987,
+          "line": 988,
           "text": "Source: ClinicalTrials.gov; Mackensen et al. Nat Med 2022 (PMID:36109639); Schett et al. Lancet 2023 (PMID:37748491); Ot"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1371,
+          "line": 1373,
           "text": "Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune disease remission"
         }
       ],
@@ -4170,10 +4463,10 @@
     "37909353": {
       "pmid": "37909353",
       "title": "Economic Costs of Diabetes in the U.S. in 2022.",
-      "score": "PLAUSIBLE",
-      "confidence": 0.24,
-      "details": "6/25 claim terms found in paper; 2 diabetes domain terms; 0 phrase matches",
-      "claim_count": 2,
+      "score": "WEAK",
+      "confidence": 0.198,
+      "details": "26/131 claim terms found in paper; 2 diabetes domain terms; 6 phrase matches",
+      "claim_count": 42,
       "claims": [
         {
           "file": "build_lada_diagnostic_model.py",
@@ -4182,8 +4475,13 @@
         },
         {
           "file": "build_lada_diagnostic_model.py",
-          "line": 660,
-          "text": "The model assumes GAD antibody testing costs $25 per patient (HIC) with 82% sensitivity (DASP workshops) and 98.9% sp"
+          "line": 657,
+          "text": "The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY"
+        },
+        {
+          "file": "build_lada_diagnostic_model.py",
+          "line": 657,
+          "text": "The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY"
         }
       ],
       "has_abstract": true,
@@ -4211,6 +4509,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "38349844": {
+      "pmid": "38349844",
+      "title": "Evidence for C-Peptide as a Validated Surrogate to Predict Clinical Benefits in Trials of Disease-Modifying Therapies for Type 1 Diabetes.",
+      "score": "WEAK",
+      "confidence": 0.077,
+      "details": "1/13 claim terms found in paper; 12 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_gka_lada.py",
+          "line": 773,
+          "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "38578067": {
       "pmid": "38578067",
       "title": "Existing and emerging GLP-1 receptor agonist therapy: Ramifications for diabetic retinopathy screening.",
@@ -4232,24 +4547,24 @@
       "pmid": "38639547",
       "title": "Cost-Effectiveness of Newer Pharmacologic Treatments in Adults With Type 2 Diabetes: A Systematic Review of Cost-Effectiveness Studies for the American College of Physicians.",
       "score": "WEAK",
-      "confidence": 0.038,
-      "details": "2/52 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 5,
+      "confidence": 0.076,
+      "details": "9/118 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 15,
       "claims": [
         {
-          "file": "build_gka_pricing.py",
-          "line": 479,
-          "text": "Projected Revenue: $3-8B by 2035 (modeled estimate — PMID:321"
+          "file": "build_gap_deep_dives.py",
+          "line": 482,
+          "text": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 503,
-          "text": "Sources: Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717) — T2D global burden; Syed, Drugs 2022 (PMID:36449148)"
+          "file": "build_gap_deep_dives.py",
+          "line": 955,
+          "text": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
         },
         {
-          "file": "build_gka_pricing.py",
-          "line": 596,
-          "text": "Sources: Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823) — insulin pricing crisis; Schousboe et al. Ann Inte"
+          "file": "build_gap_deep_dives.py",
+          "line": 960,
+          "text": "\"SGLT2i: $4.5K-$5.6K/yr (PMID:38639547); needs 68-78% reduction for cost-effectiveness ($1,431/yr target) (PMID:38639547"
         }
       ],
       "has_abstract": true,
@@ -4299,6 +4614,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "39525461": {
+      "pmid": "39525461",
+      "title": "The diabetes cardiovascular outcomes trials and racial and ethnic minority enrollment: impact, barriers, and potential solutions.",
+      "score": "WEAK",
+      "confidence": 0.143,
+      "details": "2/14 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 840,
+          "text": "The top 5 countries by trial sites (US, Canada, France, Brazil, Italy) represent only 18% of global diabetes"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "39629068": {
       "pmid": "39629068",
       "title": "Evaluating the Overall Safety of Glucokinase Activators in Patients with Type 2 Diabetes Mellitus.",
@@ -4338,6 +4670,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "39697180": {
+      "pmid": "39697180",
+      "title": "Health and Racial Disparities in Diabetes Mellitus Prevalence, Management, Policies, and Outcomes in the United States.",
+      "score": "WEAK",
+      "confidence": 0.071,
+      "details": "1/14 claim terms found in paper; 8 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 838,
+          "text": "India has 89.8M people with diabetes (2nd globally) and ZERO beta cell therapy trial sites. This re"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "40032831": {
       "pmid": "40032831",
       "title": "Identification of plasma proteomic markers underlying polygenic risk of type 2 diabetes and related comorbidities.",
@@ -4370,17 +4719,17 @@
       "claims": [
         {
           "file": "build_cart_access.py",
-          "line": 746,
+          "line": 747,
           "text": "Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — decentralized PoC CAR-T manufacturing feasibility; R"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1290,
+          "line": 1292,
           "text": "Source: Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (PMID:3"
         },
         {
           "file": "build_cart_access.py",
-          "line": 1339,
+          "line": 1341,
           "text": "Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — Decentralized point-of-care CAR-T manufacturing"
         }
       ],
@@ -4399,6 +4748,40 @@
           "file": "build_gap_deep_dives.py",
           "line": 466,
           "text": "\"Diabetes 2025 (PMID:40272935) - GKA mechanism and GCKR feedback (dorzagliatin closed-form binding)\","
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "40366501": {
+      "pmid": "40366501",
+      "title": "Disparities in Diabetes in Pregnancy and the Role of Social Determinants of Health.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/10 claim terms found in paper; 6 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 843,
+          "text": "At current trajectory, initial pricing (~$500K based on CAR-T analogy) would be unaffordable for 80%+ of the"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "40464081": {
+      "pmid": "40464081",
+      "title": "The health economics of insulin therapy: How do we address the rising demands, costs, inequalities and barriers to achieving optimal outcomes.",
+      "score": "WEAK",
+      "confidence": 0.083,
+      "details": "1/12 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 842,
+          "text": "Manufacturing requires $50-100M cGMP facilities - currently concentrated in Boston, Portsmouth NH, Bothell W"
         }
       ],
       "has_abstract": true,
@@ -4487,6 +4870,23 @@
           "file": "build_gap_synthesis.py",
           "line": 220,
           "text": "'background': 'LADA is frequently misdiagnosed as T2D (prevalence ~10% of T2D diagnoses, PMID:40737658). Standard T2D dr"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "40814306": {
+      "pmid": "40814306",
+      "title": "Race and ethnic disparities in insulin pump and continuous glucose monitor use between 2017 and 2024: a systematic review with a focus on health equity.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/10 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_equity_map.py",
+          "line": 843,
+          "text": "At current trajectory, initial pricing (~$500K based on CAR-T analogy) would be unaffordable for 80%+ of the"
         }
       ],
       "has_abstract": true,
@@ -4607,7 +5007,7 @@
         },
         {
           "file": "build_health_equity.py",
-          "line": 1265,
+          "line": 1266,
           "text": "PMID: 8366922"
         },
         {
@@ -4668,7 +5068,7 @@
         },
         {
           "file": "build_health_equity.py",
-          "line": 1271,
+          "line": 1272,
           "text": "PMID: 9742976"
         },
         {

@@ -407,7 +407,7 @@ html_content = """<!DOCTYPE html>
     <div class="container">
         <div class="context-block">
             <h3>What This Dashboard Answers</h3>
-            <p>CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR-T manufacturing costs $300K-500K per patient and requires specialized facilities that exist in fewer than 20 centers worldwide. This dashboard maps the specific barriers — manufacturing, cold chain, regulatory, cost — that prevent CAR-T from reaching 95% of the world's diabetic population.</p>
+            <p>CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR-T manufacturing costs $300K-500K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID:29710129</a></span> per patient and requires specialized facilities that exist in fewer than 20 centers worldwide. This dashboard maps the specific barriers — manufacturing, cold chain, regulatory, cost — that prevent CAR-T from reaching 95% of the world's diabetic population.</p>
             <div class="context-label">How to Use This</div>
             <p>For biotech companies: identifies which barriers are addressable by decentralized manufacturing. For funders: quantifies the cost gap between current and accessible pricing. For regulators: maps regulatory readiness by country tier.</p>
             <div class="context-label">What This Cannot Tell You</div>
@@ -428,35 +428,36 @@ html_content = """<!DOCTYPE html>
                 <h2>Current CAR-T Pricing (Oncology)</h2>
                 <p>CAR-T cell therapies are among the most expensive approved treatments. Current commercial pricing reflects the complexity and personalized nature of autologous manufacturing:</p>
 
+                <!-- Source: PMID:29710129 PMID:31157579 -->
                 <div class="bar-chart">
                     <div class="bar-item">
                         <div class="bar-label">Kymriah (tisagenlecleucel)</div>
                         <div class="bar" style="width: 92%;">
-                            <span class="bar-value">$475K</span>
+                            <span class="bar-value">$475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Carvykti (ciltacabtagene autoleucel)</div>
                         <div class="bar" style="width: 90%;">
-                            <span class="bar-value">$465K</span>
+                            <span class="bar-value">$465K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Abecma (idecabtagene vicleucel)</div>
                         <div class="bar" style="width: 81%;">
-                            <span class="bar-value">$419K</span>
+                            <span class="bar-value">$419K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Breyanzi (lisocabtagene maraleucel)</div>
                         <div class="bar" style="width: 80%;">
-                            <span class="bar-value">$410K</span>
+                            <span class="bar-value">$410K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Yescarta / Tecartus (axicabtagene ciloleucel)</div>
                         <div class="bar" style="width: 72%;">
-                            <span class="bar-value">$373K</span>
+                            <span class="bar-value">$373K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></span>
                         </div>
                     </div>
                 </div>
@@ -473,19 +474,19 @@ html_content = """<!DOCTYPE html>
                 <div class="metric-grid">
                     <div class="metric-card">
                         <div class="metric-label">CAR-T Drug Cost</div>
-                        <div class="metric-value">$373-475K</div>
+                        <div class="metric-value">$373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Hospitalization & ICU</div>
-                        <div class="metric-value">$100-200K</div>
+                        <div class="metric-value">$100-200K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">CRS Management (Tocilizumab)</div>
-                        <div class="metric-value">$10-50K</div>
+                        <div class="metric-value">$10-50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Total Estimated Care</div>
-                        <div class="metric-value">$500K-1M</div>
+                        <div class="metric-value">$500K-1M <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                 </div>
 
@@ -510,16 +511,16 @@ html_content = """<!DOCTYPE html>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Cost to Treat 10% at Oncology Price</div>
-                        <div class="metric-value">$80B+</div>
+                        <div class="metric-value">$80B+ <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Lifetime Insulin Cost (T1D)</div>
-                        <div class="metric-value">$300-500K</div>
+                        <div class="metric-value">$300-500K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">[PMID:32175717]</a></span></div>
                     </div>
                 </div>
 
                 <div class="comparison-box">
-                    <strong>The Math:</strong> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K per treatment</strong>. At current oncology pricing ($373-475K), cell therapy is economically impossible at diabetes scale.
+                    <strong>The Math:</strong> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</strong>. At current oncology pricing ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span>), cell therapy is economically impossible at diabetes scale.
                 </div>
 
                 <div class="source-note">
@@ -621,7 +622,7 @@ html_content = """<!DOCTYPE html>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Average Manufacturing Cost</div>
-                        <div class="metric-value">$250-350K</div>
+                        <div class="metric-value">$250-350K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Labor Component</div>
@@ -1088,7 +1089,7 @@ html_content = """<!DOCTYPE html>
         <div id="pathways" class="tab-content">
             <div class="section">
                 <h2>Strategies to Make CAR-Treg Affordable</h2>
-                <p>Multiple technological and manufacturing approaches could reduce costs from the current oncology level ($373-475K) toward a diabetes-viable price (&lt;$50K):</p>
+                <p>Multiple technological and manufacturing approaches could reduce costs from the current oncology level ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID:29710129</a></span>) toward a diabetes-viable price (&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">PMID:31157579</a></span>):</p>
 
                 <div class="pathway-grid">
                     <div class="pathway-card">
@@ -1258,10 +1259,11 @@ html_content = """<!DOCTYPE html>
                 <h2>The Target: <$50K per Treatment</h2>
                 <p>To be economically viable for diabetes at scale, CAR-Treg must achieve:</p>
 
+                <!-- Source: PMID:31157579 PMID:32535920 -->
                 <div class="metric-grid">
                     <div class="metric-card">
                         <div class="metric-label">Target Price (per dose)</div>
-                        <div class="metric-value">< $50K</div>
+                        <div class="metric-value">< $50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">vs. Lifetime Insulin</div>
@@ -1278,7 +1280,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="comparison-box">
-                    <strong>Cost reduction path:</strong> Combining allogeneic manufacturing (60-80% cost reduction), point-of-care systems (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K per treatment. Feasibility depends on:
+                    <strong>Cost reduction path:</strong> Combining allogeneic manufacturing (60-80% cost reduction), point-of-care systems (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment. Feasibility depends on:
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                         <li>Allogeneic safety profile (Tregs may be lower risk than CAR-T)</li>
                         <li>Manufacturing technology maturation (5-10 years)</li>
@@ -1310,7 +1312,7 @@ html_content = """<!DOCTYPE html>
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                         <li>60-80% cost reduction from allogeneic model</li>
                         <li>Additional 20-30% from point-of-care automation</li>
-                        <li>Could realistically reach $50-75K per treatment</li>
+                        <li>Could realistically reach $50-75K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</li>
                         <li>Doesn't require government intervention or generic competition</li>
                         <li>Compatible with decentralized delivery model</li>
                     </ul>
@@ -1402,11 +1404,11 @@ html_content = """<!DOCTYPE html>
                     <span class="expandable-title">Limitations of This Analysis</span>
                 </div>
                 <div class="expandable-content">
-                    <p><strong>Cost projections are estimates:</strong> Manufacturing costs will vary by technology, company, and scale. $50K target is based on precedent (allogeneic cell therapy cost models) but actual costs depend on clinical efficacy and regulatory pathway.</p>
+                    <p><strong>Cost projections are estimates:</strong> Manufacturing costs will vary by technology, company, and scale. $50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> target is based on precedent (allogeneic cell therapy cost models) but actual costs depend on clinical efficacy and regulatory pathway.</p>
 
                     <p style="margin-top: 1rem;"><strong>CAR-Treg safety profile remains uncertain:</strong> No Phase 2+ diabetes data exists yet. Side effect burden may be higher than expected, requiring more intensive monitoring infrastructure.</p>
 
-                    <p style="margin-top: 1rem;"><strong>Manufacturing technology timelines are speculative:</strong> Point-of-care and iPSC-based approaches are promising but face regulatory validation hurdles. 5-10 year maturation timeline is reasonable but not guaranteed.</p>
+                    <p style="margin-top: 1rem;"><strong>Manufacturing technology timelines are speculative:</strong> Point-of-care and iPSC-based approaches are promising but face regulatory validation hurdles. 5-10 year maturation timeline is reasonable but not certain.</p>
 
                     <p style="margin-top: 1rem;"><strong>Geographic infrastructure barriers may be persistent:</strong> Even if safety improves, decentralization of cell therapy requires significant specialty training and workforce development. This may take 10-15 years even after approval.</p>
 
@@ -1423,7 +1425,7 @@ html_content = """<!DOCTYPE html>
         <li>Cost estimates based on current oncology CAR-T pricing, which may not directly translate to autoimmune applications</li>
         <li>Manufacturing bottleneck projections assume current technology; rapid advances may change timelines</li>
         <li>Regulatory pathways for autoimmune CAR-T are untested</li>
-        <li>Cost-reduction estimates are projections, not guaranteed outcomes</li>
+        <li>Cost-reduction estimates are projections, not assured outcomes</li>
       </ul>
       <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>

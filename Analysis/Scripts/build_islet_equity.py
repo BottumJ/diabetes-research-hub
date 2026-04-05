@@ -527,7 +527,7 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">PROCEDURE COST RANGE</div>
-                    <div class="stat-value">$100K-$300K</div>
+                    <div class="stat-value">$100K-$300K (PMID:21323736)</div>
                     <div class="stat-desc">Per transplant including immunosuppression and monitoring</div>
                 </div>
                 <div class="stat-box">

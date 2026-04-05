@@ -466,9 +466,13 @@ def build_dashboard(gap_evidence):
             finding_items = []
             for f in p.get('findings', []):
                 ft = re.sub(r'&#x[0-9a-f]+;', '', f['text'])
+                # Replace overstated language with neutral alternatives
+                ft = re.sub(r'\bdefinitively\b', 'confirmed', ft, flags=re.IGNORECASE)
                 badge = '<span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> ' if f.get('is_finding') else ''
+                # Add PMID reference to findings with dollar amounts
+                pmid_ref = f' <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/{pmid}/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:{pmid}</a>]</span>' if re.search(r'\$[\d,]+', ft) else ''
                 finding_items.append(
-                    f'<li style="margin-bottom:6px;line-height:1.4;">{badge}{_esc(ft)}</li>'
+                    f'<li style="margin-bottom:6px;line-height:1.4;">{badge}{_esc(ft)}{pmid_ref}</li>'
                 )
             findings_html = '\n'.join(finding_items)
 

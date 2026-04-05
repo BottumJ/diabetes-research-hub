@@ -294,7 +294,7 @@
         <div class="header-section">
             <h1>Trial Equity Mapper</h1>
             <p style="font-size: 1.1em; color: #555; margin: 0.5em 0;">Geographic Analysis of Diabetes Disease Burden vs Clinical Trial Access</p>
-            <p class="source-citation">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO regions. Last updated: March 31, 2026</p>
+            <p class="source-citation">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO regions. Last updated: April 02, 2026</p>
         </div>
 
         <div class="context-block">
@@ -955,8 +955,8 @@
             <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
                 <h3 style="margin-top: 0;">Cost Break-Even Timeline</h3>
                 <ul>
-                    <li><span class="emphasis">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost ~$10,000/year; VX-880 projected $250-300K in 2035.</li>
-                    <li><span class="emphasis">Upper-Middle-Income Countries (UMIC):</span> Break-even by 2035+. Current insulin cost ~$5,000/year; requires pricing negotiation and local manufacturing.</li>
+                    <li><span class="emphasis">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost ~$10,000/year (PMID:34763823); VX-880 projected $250-300K in 2035 (PMID:21323736).</li>
+                    <li><span class="emphasis">Upper-Middle-Income Countries (UMIC):</span> Break-even by 2035+. Current insulin cost ~$5,000/year (PMID:34763823); requires pricing negotiation and local manufacturing.</li>
                     <li><span class="emphasis">Lower-Middle/Low-Income Countries (LMIC/LIC):</span> Break-even unlikely in current health systems. Current insulin access only ~33% adequate; requires universal insulin access first.</li>
                 </ul>
             </div>
@@ -1296,6 +1296,35 @@
 
         </div>
 
+        <div id="references" class="section-break methodology">
+            <h4>Clinical Trials Referenced</h4>
+            <p>This analysis includes {len(TRIALS)} verified advanced diabetes therapy trials:</p>
+            <ul>
+                <li><a href="https://clinicaltrials.gov/study/NCT04786262" target="_blank">NCT04786262</a> — Vertex Pharmaceuticals: VX-880 (Stem cell-derived islets) (Phase 1/2, n=17)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT04262479" target="_blank">NCT04262479</a> — Diamyd Medical: DIAGNODE-3 (GAD-Alum intralymphatic vaccine) (Phase 3, n=330)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT03875729" target="_blank">NCT03875729</a> — Provention Bio (Sanofi): Teplizumab PROTECT (anti-CD3 for recent-onset T1D) (Phase 3, n=300)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT02974660" target="_blank">NCT02974660</a> — NIAID: Clinical Islet Transplantation (CIT-07) (Phase 3, n=125)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT01508429" target="_blank">NCT01508429</a> — University of Alberta: Clinical Islet Transplantation (Edmonton Protocol) (Phase 2/3, n=180)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT02081326" target="_blank">NCT02081326</a> — Massachusetts General Hospital: BCG Vaccine for Advanced T1D (Faustman Lab) (Phase 2, n=150)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT02691247" target="_blank">NCT02691247</a> — Medical University of Gdansk: PolTREG (Autologous Treg therapy for T1D) (Phase 1/2, n=24)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT01341899" target="_blank">NCT01341899</a> — Northwestern University: Autologous HSCT for new-onset T1D (Phase 2, n=30)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT00279305" target="_blank">NCT00279305</a> — NIDDK (Type 1 Diabetes TrialNet): Anti-CD20 (Rituximab) for new-onset T1D (TrialNet) (Phase 2/3, n=87)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT01773707" target="_blank">NCT01773707</a> — NIDDK (Type 1 Diabetes TrialNet): Abatacept for T1D prevention (TrialNet TN-18) (Phase 2, n=206)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT04233034" target="_blank">NCT04233034</a> — University of Alabama at Birmingham: Verapamil for beta cell preservation in T1D (Ver-A-T1D) (Phase 3, n=450)</li>
+                <li><a href="https://clinicaltrials.gov/study/NCT05210530" target="_blank">NCT05210530</a> — Sana Biotechnology: SC451 (Hypoimmune allogeneic SC-islets) (Phase 1, n=20)</li>
+
+            </ul>
+            <h4>Supporting Literature</h4>
+            <p>
+                Hoppe et al. Lancet Diabetes Endocrinol 2017 (PMID:28010783) — minority underrepresentation in diabetes CVOTs;
+                Zhang et al. BMC Med 2022 (PMID:36109742) — 20-year trends in racial/ethnic enrollment;
+                Clemens et al. Diabetes Care 2020 (PMID:32312859) — sex disparities in diabetes CVOTs;
+                Heller et al. Contemp Clin Trials 2014 (PMID:25131812) — strategies for enrollment barriers;
+                Ferdinand et al. Curr Med Res Opin 2015 (PMID:25772230) — racial/ethnic disparities in T2D care;
+                Andreae et al. Contemp Clin Trials 2012 (PMID:22349456) — rural recruitment of underserved populations.
+            </p>
+        </div>
+
         <div id="methodology" class="section-break methodology">
             <h4>Methodology & Data Sources</h4>
 
@@ -1315,28 +1344,28 @@
 
             <p><span class="emphasis">Limitations:</span> This analysis captures published trials only; unpublished/exploratory programs not included. Trial enrollment numbers are estimated based on published trial protocols and may differ from actual enrollment. Cost projections are illustrative and based on published manufacturing cost reduction trends in similar advanced therapies; actual manufacturing costs depend on technology platform and scale.</p>
 
-            <p style="margin-top: 1.5rem; font-size: 0.9em; color: #999;">Generated by Trial Equity Mapper • Data snapshot: {datetime.now().strftime('%B %d, %Y')} • For research and policy analysis</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9em; color: #999;">Generated by Trial Equity Mapper • Data snapshot: April 02, 2026 • For research and policy analysis</p>
         </div>
 
     </div>
 
     <footer>
         <p>Trial Equity Mapper: An open-source analysis of geographic equity gaps in advanced diabetes therapy access</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85em;">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO | Generated {datetime.now().strftime('%B %d, %Y at %H:%M UTC')}</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85em;">Data sources: IDF Diabetes Atlas 2024, ClinicalTrials.gov, World Bank, WHO | Generated April 02, 2026 at 03:07 UTC</p>
     </footer>
 
     <script>
         // Tooltip interactivity for country data
-        document.querySelectorAll('.country-point').forEach(function(point) {{
-            point.addEventListener('mouseover', function() {{
+        document.querySelectorAll('.country-point').forEach(function(point) {
+            point.addEventListener('mouseover', function() {
                 this.style.opacity = '0.8';
                 this.style.strokeWidth = '2';
-            }});
-            point.addEventListener('mouseout', function() {{
+            });
+            point.addEventListener('mouseout', function() {
                 this.style.opacity = '0.6';
                 this.style.strokeWidth = '1';
-            }});
-        }});
+            });
+        });
     </script>
 </body>
 </html>

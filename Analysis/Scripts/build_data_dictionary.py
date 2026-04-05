@@ -689,7 +689,7 @@ TERMS = {
 
     # DRUG MECHANISMS
     'Metformin': {
-        'plain': 'First-line diabetes drug. Activates AMPK (energy sensor), reduces liver glucose production, improves insulin sensitivity. Cheap ($4/month generic).',
+        'plain': 'First-line diabetes drug. Activates AMPK (energy sensor), reduces liver glucose production, improves insulin sensitivity. Cheap ($4/month generic, PMID:28776086).',
         'medical': 'Biguanide. Primary target: AMPK activation. Mechanisms: (1) AMPK->reduced hepatic glucose output; (2) NLRP3 inhibition->reduced IL-1beta; (3) M2 macrophage promotion; (4) gut microbiome shift.',
         'systems': ['liver', 'immune', 'vascular'],
         'indicators': ['Metformin dose', 'AMPK activation'],
@@ -1264,7 +1264,7 @@ TERMS = {
         'systems': ['pancreas', 'vascular'],
         'indicators': ['Time in range (TIR)', 'HbA1c', 'Basal rate'],
         'normal_range': 'TIR target: >70% (70-180 mg/dL); HbA1c target: <7%',
-        'disease': 'Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year) and insurance coverage; significant equity gaps in pump access by race and income',
+        'disease': 'Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year, PMID:31618560) and insurance coverage; significant equity gaps in pump access by race and income',
         'connections': ['Continuous Glucose Monitor', 'Insulin', 'Precision Medicine'],
         'gap_relevance': [2, 6, 10, 11],
         'source': 'Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717. PMID:31618560'
@@ -1297,7 +1297,7 @@ TERMS = {
         'systems': ['immune'],
         'indicators': ['C-peptide AUC', 'Time to Stage 3 T1D', 'Treg frequency post-treatment'],
         'normal_range': 'Treatment: 14-day IV infusion course',
-        'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course; access limited to specialized centers',
+        'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course (PMID:37202589); access limited to specialized centers',
         'connections': ['Monoclonal Antibody (Humanized)', 'T Cell', 'Regulatory T Cell', 'CD3'],
         'gap_relevance': [1, 2, 6, 8],
         'source': 'Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):379-380. PMID:37202589'

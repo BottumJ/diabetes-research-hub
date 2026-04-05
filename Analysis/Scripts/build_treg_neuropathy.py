@@ -1034,7 +1034,7 @@ def build_dashboard():
                     <p><strong>Design elements:</strong></p>
                     <ul style="margin-left: 1.5rem;">
                         <li><strong>Patient population:</strong> 30-40 subjects with T2D and established distal symmetric polyneuropathy (monofilament loss, reduced NCS velocity)</li>
-                        <li><strong>Intervention:</strong> Low-dose IL-2 (Proleukin or Peregrine) at doses proven safe in T1D trials (~1-3 million IU, SC, weekly x 12 weeks)</li>
+                        <li><strong>Intervention:</strong> Low-dose IL-2 (Proleukin or Peregrine) at doses used in T1D trials (PMID:37217319, ~1-3 million IU, SC, weekly x 12 weeks)</li>
                         <li><strong>Primary endpoint:</strong> Change in intraepidermal small-fiber nerve density (skin biopsy) and/or corneal confocal microscopy at 12 weeks</li>
                         <li><strong>Secondary endpoints:</strong> NCS velocity, inflammatory cytokine levels (plasma TNF, IL-6), pain scores (NPSI), Treg frequency/function (flow cytometry)</li>
                         <li><strong>Safety:</strong> Standard IL-2 monitoring (CBC, metabolic panel, CRP). Inclusion of glucose control metrics to isolate Treg effect from glycemic change</li>

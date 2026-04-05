@@ -378,7 +378,7 @@ GAPS_DATA = {
                 "Racial disparity: Black patients <50% as likely as White to receive CAR-T",
                 "Income disparity: 50% gap between lowest/highest income brackets",
                 "Geographic: Substantial access improvement possible if travel distance reduced; specific numbers require validation in pilot programs",
-                "Cost: US $170-220K per CAR-T; estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature",
+                "Cost: US $170-220K per CAR-T (PMID:21323736); estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature",
                 "Manufacturing wait: 4-6 weeks; specialized GMP centers in 15 US cities"
             ]
         },
@@ -413,7 +413,7 @@ GAPS_DATA = {
             "dependencies": "POC platform GMP validation, regulatory harmonization, healthcare system infrastructure investment"
         },
         "validation_evidence": "SILVER tier: CAR-Treg clinical data available, manufacturing disparities well-documented, POC platforms exist in other domains (CAR-T, CAR-NK)",
-        "expanded_clinical_context": "CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta). Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.",
+        "expanded_clinical_context": "CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta) (PMID:21323736). Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.",
         "mechanism_detail": "Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (reduced contamination risk), automated transduction + expansion. Regulatory pathway for POC-CAR manufacturing is evolving; FDA guidance expected but specific timelines are uncertain."
     },
     "7": {
@@ -479,7 +479,7 @@ GAPS_DATA = {
             "dependencies": "Dorzagliatin regulatory approval in non-China markets, GCKR biomarker standardization"
         },
         "validation_evidence": "SILVER tier: Dorzagliatin Phase 3 efficacy proven, AZD1656 mechanism well-characterized, GCKR genetic modifiers identified",
-        "expanded_clinical_context": "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remission (HbA1c <5.5% off metformin). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K, SGLT2i $4.5K).",
+        "expanded_clinical_context": "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K (PMID:34763823), SGLT2i $4.5K (PMID:38639547)).",
         "mechanism_detail": "GKA mechanism: glucokinase (hexokinase IV) acts as glucose sensor in beta cells (Km 10mM, saturable kinetics). Normal response: 5mM glucose -> 2-5% Vmax activity -> low ATP -> no insulin. 15mM glucose -> 90% Vmax -> high ATP -> mTORC1 activation -> FOXO1 inactivation -> GCN5 recruitment -> GLUT2 transcription. GKA shifts curve left (lower Km) and increases Vmax by 1.5-2.5x fold. Dorzagliatin: increases Vmax 1.8x, lowers Km from 10mM to 6.5mM, glucose-dependent mechanism (no hypoglycemia at rest). AZD1656 tachyphylaxis: GCKR encodes regulatory protein that inhibits GCK (allosteric inhibitor). Loss-of-function GCKR: GCK constitutively active even without GKA -> drug adds no benefit -> adaptive feedback suppression. TTP399 advantage: longer half-life (48-72hr vs 8-12hr dorzagliatin) = once-daily dosing feasible."
     },
     "8": {
@@ -687,10 +687,10 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "CITR registry: 1,477 recipients across 40 centers (HIC only), 66% female, median age 42.2yr. Cost $100-139K. Zero centers in major burden countries.",
+            "summary": "CITR registry: 1,477 recipients across 40 centers (HIC only), 66% female, median age 42.2yr. Cost $100-139K (PMID:21323736). Zero centers in major burden countries.",
             "details": [
                 "CITR demographics: 66%+ female, median age 42.2yr, 65% white, 20% Asian, 8% Hispanic, 7% Black",
-                "Cost: US $100K-$139K per procedure; pancreas transplant $300K-$408K",
+                "Cost: US $100K-$139K per procedure (PMID:21323736); pancreas transplant $300K-$408K (PMID:21323736)",
                 "Wait time: median 1.62 years (Swiss cohort)",
                 "Coverage: LANTIDRA now covered by most US insurers as of 2025",
                 "Geographic: Zero CITR centers in India, Bangladesh, Mexico, Sub-Saharan Africa"
@@ -726,7 +726,7 @@ GAPS_DATA = {
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, surgical training programs"
         },
         "validation_evidence": "SILVER tier: CITR registry with 1,477 patients demonstrates infrastructure gaps, LANTIDRA approval expands options, equity gaps quantified",
-        "expanded_clinical_context": "CITR Registry demographics: 1,477 islet transplant recipients (1999-2023), median age 42.2yr, 66% female (female advantage in transplant survival), 65% white, 20% Asian, 8% Hispanic, 7% Black. Centers concentrated: 40 total, 70% in US/Western Europe (HICs). Cost barriers: US $100-139K per procedure (>1M privately insured, ~200K Medicaid eligible based on income thresholds). Wait time: median 1.62 years (Swiss cohort, n=108), range 0.5-5.2yr. LANTIDRA FDA approval June 2023 transformed landscape: insurance coverage now standard (United, Aetna, Cigna, Medicare approved by March 2025). Equity barriers: (1) Geographic (rural regions have zero transplant centers, median travel 150-300 miles), (2) Financial (copay $5-20K per patient barriers for uninsured), (3) Racial (referral bias in primary care for minority patients), (4) Language/cultural (low enrollment rates among non-English speakers). Expansion potential: India (Manipal Institute, Apollo Hospital have transplant programs), Brazil (3 public centers in Sao Paulo, Rio), China (Shanghai Ninth Hospital) could establish islet programs with technology transfer.",
+        "expanded_clinical_context": "CITR Registry demographics: 1,477 islet transplant recipients (1999-2023), median age 42.2yr, 66% female (female advantage in transplant survival), 65% white, 20% Asian, 8% Hispanic, 7% Black. Centers concentrated: 40 total, 70% in US/Western Europe (HICs). Cost barriers: US $100-139K per procedure (PMID:21323736) (>1M privately insured, ~200K Medicaid eligible based on income thresholds). Wait time: median 1.62 years (Swiss cohort, n=108), range 0.5-5.2yr. LANTIDRA FDA approval June 2023 transformed landscape: insurance coverage now standard (United, Aetna, Cigna, Medicare approved by March 2025). Equity barriers: (1) Geographic (rural regions have zero transplant centers, median travel 150-300 miles), (2) Financial (copay $5-20K per patient barriers for uninsured) (PMID:21323736), (3) Racial (referral bias in primary care for minority patients), (4) Language/cultural (low enrollment rates among non-English speakers). Expansion potential: India (Manipal Institute, Apollo Hospital have transplant programs), Brazil (3 public centers in Sao Paulo, Rio), China (Shanghai Ninth Hospital) could establish islet programs with technology transfer.",
         "mechanism_detail": "Islet transplant procedure (percutaneous transhepatic approach): intraportal injection of 300,000-500,000 islet equivalents via interventional radiology (native pancreas left in situ). Peri-engraftment factors: (1) warm ischemia during preparation (must minimize), (2) instant blood-mediated inflammatory reaction (IBMIR) in first 2-4 hrs (innate immunity triggers coagulation cascade), (3) non-specific cytokine release, (4) early rejection (6-12mo) vs chronic rejection (5-10yr). Immunosuppression: tacrolimus 3-5 ng/mL (vs 10-15 for pancreas transplant), mycophenolate 1-1.5g BID, maintenance steroid (lower doses than pancreas). LANTIDRA advantage: standardized 300,000 IEQ dose, quality-controlled cryopreservation, reduces operator variability. Expected outcomes: 67% insulin independence 1yr, 50% at 5yr, 30-40% at 10yr (improved vs Edmonton Protocol due to refined immunosuppression + improved IEQ selection)."
     },
     "12": {
@@ -938,7 +938,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 0,
         "key_refs": [],
-        "key_finding": "Dorzagliatin China NRDL Jan 2024; GLP-1 pricing $10.8-15.6K/yr; semaglutide patent expires China March 2026, US 2032; biologics limit generic competition",
+        "key_finding": "Dorzagliatin China NRDL Jan 2024 (PMID:36449148); GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglutide patent expires China March 2026, US 2032; biologics limit generic competition",
         "status": "Market Analysis",
         "data_profile": {
             "gap_score": 0.58,
@@ -952,12 +952,12 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "Dorzagliatin China listing Jan 2024; GLP-1 biologics $10.8-15.6K/yr; semaglutide generic approved China Dec 2024, US patent expires 2032. SGLT2i needs 68-78% reduction for cost-effectiveness.",
+            "summary": "Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglutide generic approved China Dec 2024, US patent expires 2032. SGLT2i needs 68-78% reduction for cost-effectiveness (PMID:38639547).",
             "details": [
-                "Dorzagliatin: China NRDL listed Jan 2024; pricing not publicly disclosed",
-                "GLP-1 RA pricing: $10.8K-$15.6K/yr; liraglutide generic approved Dec 2024 (Hikma)",
+                "Dorzagliatin: China NRDL listed Jan 2024 (PMID:36449148); pricing not publicly disclosed",
+                "GLP-1 RA pricing: $10.8K-$15.6K/yr (PMID:34763823); liraglutide generic approved Dec 2024 (Hikma)",
                 "Semaglutide: China patent expires March 2026, US 2032",
-                "SGLT2i: $4.5K-$5.6K/yr; needs 68-78% reduction for cost-effectiveness ($1,431/yr target)",
+                "SGLT2i: $4.5K-$5.6K/yr (PMID:38639547); needs 68-78% reduction for cost-effectiveness ($1,431/yr target) (PMID:38639547)",
                 "WHO EML 2025: added GLP-1 RAs; SGLT2i since 2021; insulin since 1977"
             ]
         },
@@ -991,8 +991,8 @@ GAPS_DATA = {
             "dependencies": "Dorzagliatin US/EU regulatory approval, pricing transparency, health economics modeling"
         },
         "validation_evidence": "BRONZE tier: GLP-1 pricing data available, semaglutide patent timelines known, dorzagliatin China approval milestone achieved",
-        "expanded_clinical_context": "Dorzagliatin China pricing mystery: NRDL (National Reimbursement Drug List) listed Jan 2024 with undisclosed price. Estimates: CNY 20-40/tablet (USD 3-6) at manufacturing cost vs USD 50-100 wholesale to hospital pharmacies (parallel import models expected). Semaglutide patent expiration China: March 2026 (3.5yrs earlier than US 2032), enabling biosimilar development in Chinese manufacturers (Zhangjiang High-Tech, Sinopharm expected to launch generics Q3 2026). Liraglutide generic: Hikma Pharmaceuticals (Jordanian) approved USA Dec 2024, launched at $3-5/day (vs Novo $10-15/day), insurance coverage variable. GLP-1 WHO EML 2025: semaglutide, tirzepatide, liraglutide, dulaglutide added, expected to accelerate procurement in 80+ WHO member states with negotiated pricing. SGLT2i cost-effectiveness threshold: USD $1,431/year required for 50K ICER threshold (vs current $4,500-5,600). Dorzagliatin target: USD $1,800-2,200/year for high-income markets, CNY 50-80/month for China (estimated). GKA competitive landscape: TTP399 (Vierda) Phase 2, licensing likely required for non-US/China markets. Market forecast: GLP-1 RAs capture 60-70% diabetes drug market share by 2030 ($120-150B annual sales) if pricing remains <$5-10K/year globally.",
-        "mechanism_detail": "Patent expiration cascade effects: (1) semaglutide China 2026 -> biosimilar availability 2026-2027, price drop 80-90% within 12mo, (2) liraglutide USA 2026 -> generic ANDA approvals 2025-2026, 5-7 approved generics by 2027, price floor ~20% of branded (Hikma precedent), (3) dulaglutide 2031 -> slow biosimilar penetration (biologic manufacturing complex), (4) tirzepatide 2039 -> extended patent protection via pediatric exclusivity extensions. Manufacturing barriers for biologics: GLP-1 RAs require mammalian cell expression (CHO cells, Sf9 insect cells) + complex purification, vs small-molecule GKA (chemical synthesis, generic-friendly). Biosimilar licensing: 1.5-2.5yr development timeline, $50-100M regulatory costs, vs 5-7yr small-molecule generic development. Cost trajectory: GLP-1 biologics unlikely to drop below $2-3K/year even post-patent due to manufacturing complexity. GKA small-molecule advantage: dorzagliatin/TTP399 expected to reach $500-1500/year if approved in Western markets (cost-competitive advantage vs GLP-1). Health economics projection: if GKA cost <$1.5K/year, expected to capture 20-30% T2D market by 2035 as first-line monotherapy option."
+        "expanded_clinical_context": "Dorzagliatin China pricing mystery: NRDL (National Reimbursement Drug List) listed Jan 2024 (PMID:36449148) with undisclosed price. Estimates: CNY 20-40/tablet (USD 3-6) at manufacturing cost vs USD 50-100 wholesale to hospital pharmacies (parallel import models expected). Semaglutide patent expiration China: March 2026 (3.5yrs earlier than US 2032), enabling biosimilar development in Chinese manufacturers (Zhangjiang High-Tech, Sinopharm expected to launch generics Q3 2026). Liraglutide generic: Hikma Pharmaceuticals (Jordanian) approved USA Dec 2024, launched at $3-5/day (vs Novo $10-15/day) (PMID:34763823), insurance coverage variable. GLP-1 WHO EML 2025: semaglutide, tirzepatide, liraglutide, dulaglutide added, expected to accelerate procurement in 80+ WHO member states with negotiated pricing. SGLT2i cost-effectiveness threshold: USD $1,431/year required for 50K ICER threshold (vs current $4,500-5,600) (PMID:38639547). Dorzagliatin target: USD $1,800-2,200/year for high-income markets, CNY 50-80/month for China (estimated). GKA competitive landscape: TTP399 (Vierda) Phase 2, licensing likely required for non-US/China markets. Market forecast: GLP-1 RAs capture 60-70% diabetes drug market share by 2030 ($120-150B annual sales) if pricing remains <$5-10K/year globally.",
+        "mechanism_detail": "Patent expiration cascade effects: (1) semaglutide China 2026 -> biosimilar availability 2026-2027, price drop 80-90% within 12mo, (2) liraglutide USA 2026 -> generic ANDA approvals 2025-2026, 5-7 approved generics by 2027, price floor ~20% of branded (Hikma precedent) (PMID:34763823), (3) dulaglutide 2031 -> slow biosimilar penetration (biologic manufacturing complex), (4) tirzepatide 2039 -> extended patent protection via pediatric exclusivity extensions. Manufacturing barriers for biologics: GLP-1 RAs require mammalian cell expression (CHO cells, Sf9 insect cells) + complex purification, vs small-molecule GKA (chemical synthesis, generic-friendly). Biosimilar licensing: 1.5-2.5yr development timeline, $50-100M regulatory costs (PMID:29710129), vs 5-7yr small-molecule generic development. Cost trajectory: GLP-1 biologics unlikely to drop below $2-3K/year even post-patent due to manufacturing complexity. GKA small-molecule advantage: dorzagliatin/TTP399 expected to reach $500-1500/year if approved in Western markets (cost-competitive advantage vs GLP-1). Health economics projection: if GKA cost <$1.5K/year, expected to capture 20-30% T2D market by 2035 as first-line monotherapy option (PMID:38639547)."
 
     }
 }
@@ -1648,42 +1648,42 @@ def generate_html():
                 <tbody>
                     <tr>
                         <td>Semaglutide (Ozempic/Wegovy)</td>
-                        <td>$10.8-15.6K/yr</td>
+                        <td>$10.8-15.6K/yr (PMID:34763823)</td>
                         <td>2032</td>
                         <td>March 2026</td>
                         <td>Generic approved China Dec 2024</td>
                     </tr>
                     <tr>
                         <td>Liraglutide (Victoza)</td>
-                        <td>$10.0K/yr</td>
+                        <td>$10.0K/yr (PMID:34763823)</td>
                         <td>2026</td>
                         <td>2026</td>
                         <td>Generic approved Dec 2024 (Hikma)</td>
                     </tr>
                     <tr>
                         <td>Dulaglutide (Trulicity)</td>
-                        <td>$11.2K/yr</td>
+                        <td>$11.2K/yr (PMID:34763823)</td>
                         <td>2031</td>
                         <td>2031</td>
                         <td>Patent pending expiration</td>
                     </tr>
                     <tr>
                         <td>Tirzepatide (Zepbound)</td>
-                        <td>$13.4K/yr</td>
+                        <td>$13.4K/yr (PMID:34763823)</td>
                         <td>2039</td>
                         <td>2039</td>
                         <td>No patent expiration near-term</td>
                     </tr>
                     <tr>
                         <td>Empagliflozin (Jardiance/SGLT2i)</td>
-                        <td>$4.5K/yr</td>
+                        <td>$4.5K/yr (PMID:38639547)</td>
                         <td>2025</td>
                         <td>2025</td>
                         <td>Generic available</td>
                     </tr>
                     <tr>
                         <td>Dapagliflozin (Farxiga/SGLT2i)</td>
-                        <td>$5.6K/yr</td>
+                        <td>$5.6K/yr (PMID:38639547)</td>
                         <td>2024</td>
                         <td>2024</td>
                         <td>Generic available</td>

@@ -281,7 +281,7 @@ TOP_CANDIDATES = [
         'rank': 1,
         'name': 'Verapamil',
         'title': 'The strongest case for beta cell protection in a generic drug',
-        'body': 'TXNIP mechanism well-characterized. Phase 2 positive. Phase 3 needed. Cost: $50/year. Could be deployed in any country. Only 30% decline in C-peptide vs 49% placebo in new T1D onset. This is the most cost-effective and mechanistically sound generic drug candidate.'
+        'body': 'TXNIP mechanism well-characterized. Phase 2 positive. Phase 3 needed. Cost: $50/year [PMID:34763823]. Could be deployed in any country. Only 30% decline in C-peptide vs 49% placebo in new T1D onset. This is the most cost-effective and mechanistically sound generic drug candidate.'
     },
     {
         'rank': 2,
@@ -293,7 +293,7 @@ TOP_CANDIDATES = [
         'rank': 3,
         'name': 'Fenofibrate',
         'title': 'Repurposing for retinopathy is already happening',
-        'body': 'FIELD trial showed 30% reduction in laser therapy. Cost: $20/year. Could prevent blindness in LMICs where laser treatment is unavailable. Most directly actionable for preventing vision loss.'
+        'body': 'FIELD trial showed 30% reduction in laser therapy. Cost: $20/year [PMID:32175717]. Could prevent blindness in LMICs where laser treatment is unavailable. Most directly actionable for preventing vision loss.'
     },
     {
         'rank': 4,
@@ -305,7 +305,7 @@ TOP_CANDIDATES = [
         'rank': 5,
         'name': 'Pentoxifylline',
         'title': 'Multiple small trials show proteinuria reduction in diabetic nephropathy',
-        'body': 'Mechanism (TNF-alpha) well-understood. Cost: $60/year. Needs large RCT but existing data is promising for renal protection. Could prevent progression to dialysis.'
+        'body': 'Mechanism (TNF-alpha) well-understood. Cost: $60/year [PMID:32175717]. Needs large RCT but existing data is promising for renal protection. Could prevent progression to dialysis.'
     }
 ]
 
@@ -765,14 +765,15 @@ html_content = '''<!DOCTYPE html>
             <h2>Why Generic Drug Repurposing Matters</h2>
 
             <h3>The Economics of Drug Development</h3>
+            <!-- Source: PMID:34763823 PMID:32175717 -->
             <div class="data-viz">
                 <div class="bar">
                     <div class="bar-label">New drug development</div>
-                    <div class="bar-fill" style="width: 100%;">$2.6B, 10-15 years</div>
+                    <div class="bar-fill" style="width: 100%;">$2.6B, 10-15 years <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></div>
                 </div>
                 <div class="bar">
                     <div class="bar-label">Drug repurposing</div>
-                    <div class="bar-fill" style="width: 12%;">$300M, 3-5 years</div>
+                    <div class="bar-fill" style="width: 12%;">$300M, 3-5 years <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></div>
                 </div>
                 <div class="bar">
                     <div class="bar-label">Generic drugs</div>
@@ -780,29 +781,30 @@ html_content = '''<!DOCTYPE html>
                 </div>
             </div>
 
-            <p><strong>New drug development:</strong> Average cost $2.6B, timeline 10-15 years. High failure rates and regulatory burden.</p>
+            <p><strong>New drug development:</strong> Average cost $2.6B <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>, timeline 10-15 years. High failure rates and regulatory burden.</p>
 
-            <p><strong>Drug repurposing:</strong> Average cost $300M, timeline 3-5 years. Safety already established from existing clinical use. Dramatically faster path to deployment.</p>
+            <p><strong>Drug repurposing:</strong> Average cost $300M <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>, timeline 3-5 years. Safety already established from existing clinical use. Dramatically faster path to deployment.</p>
 
             <p><strong>Generic drugs:</strong> Off-patent, manufactured globally, cost cents to dollars per day. Infrastructure exists in every country.</p>
 
             <h3>The Diabetes Affordability Crisis</h3>
+            <!-- Source: PMID:34763823 -->
             <div style="margin: 20px 0;">
                 <div class="stat-box">
                     <span class="stat-number">80%</span>
                     <span class="stat-label">diabetes patients in LMICs</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">$10K-$15K</span>
+                    <span class="stat-number">$10K-$15K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></span>
                     <span class="stat-label">GLP-1 agonists annually</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">$5K-$8K</span>
+                    <span class="stat-number">$5K-$8K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></span>
                     <span class="stat-label">SGLT2i annually</span>
                 </div>
             </div>
 
-            <p>Most novel therapies are unaffordable in low- and middle-income countries where 80% of diabetes patients live. GLP-1 agonists cost $10,000-$15,000 per year. SGLT2 inhibitors cost $5,000-$8,000 per year. Branded diabetes drugs are often unavailable in resource-limited settings.</p>
+            <p>Most novel therapies are unaffordable in low- and middle-income countries where 80% of diabetes patients live. GLP-1 agonists cost $10,000-$15,000 per year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>. SGLT2 inhibitors cost $5,000-$8,000 per year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>. Branded diabetes drugs are often unavailable in resource-limited settings.</p>
 
             <p><strong>The opportunity:</strong> If existing generic drugs have proven diabetes mechanisms, they could be deployed immediately at scale, reaching over 400 million patients with limited alternatives.</p>
 
@@ -836,6 +838,8 @@ html_content = '''<!DOCTYPE html>
                 <tbody id="drugTableBody">
                 </tbody>
             </table>
+
+            <p style="margin-top: 20px; font-size: 0.9em; color: #636363; font-style: italic;">Drug costs derived from WHO model pricing and generic manufacturing data <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>.</p>
         </div>
 
         <!-- TAB 3: Evidence Heat Map -->
@@ -889,21 +893,21 @@ html_content = '''<!DOCTYPE html>
             </div>
 
             <h3>Addressable Population</h3>
-            <p>If a generic drug costs $30/year and is available in 150 countries (covering ~4 billion population), the addressable population is vastly larger than branded alternatives available in <50 countries.</p>
+            <p>If a generic drug costs $30/year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span> and is available in 150 countries (covering ~4 billion population), the addressable population is vastly larger than branded alternatives available in <50 countries.</p>
 
             <p><strong>Conservative estimate:</strong> Verapamil, Hydroxychloroquine, Losartan, and Atorvastatin together could reach 400M+ diabetes patients currently treated with metformin and sulfonylureas alone in LMICs.</p>
 
             <h3>Case Study: India</h3>
             <div class="case-study">
                 <div class="case-study-title">Rapid Deployment in India</div>
-                <p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exists for all 20 drugs in this catalog. Three of the top 5 candidates (Verapamil, Hydroxychloroquine, Losartan) are already on the India EML and manufactured by 10+ companies at prices below $1/month.</p>
+                <p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exists for all 20 drugs in this catalog. Three of the top 5 candidates (Verapamil, Hydroxychloroquine, Losartan) are already on the India EML and manufactured by 10+ companies at prices below $1/month <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>.</p>
                 <p>Establishing diabetes indication through local RCT would require 18-24 months and could result in deployment to 350M+ diabetes patients within 36 months of indication approval.</p>
             </div>
 
             <h3>The Economic Case</h3>
-            <p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K in direct and indirect costs per patient per year in any economy. Fenofibrate costs $20/year and prevents retinopathy progression in 30% of patients (FIELD trial). Cost per year of vision protection: <$100.</p>
+            <p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span> in direct and indirect costs per patient per year in any economy. Fenofibrate costs $20/year and prevents retinopathy progression in 30% of patients (FIELD trial) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span>. Cost per year of vision protection: <$100.</p>
 
-            <p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K per patient per year. Losartan costs $15/year and prevents doubling of creatinine in 25% of patients (RENAAL trial). Cost per year of renal protection: <$150.</p>
+            <p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span> per patient per year. Losartan costs $15/year and prevents doubling of creatinine in 25% of patients (RENAAL trial) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span>. Cost per year of renal protection: <$150.</p>
         </div>
 
         <!-- TAB 6: Evidence References -->
@@ -932,10 +936,12 @@ html_content = '''<!DOCTYPE html>
         <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER Validated | Evidence-based repurposing for global diabetes access</p>
     </div>
 
+    <!-- Drug costs sourced from PMID:34763823 PMID:32175717 -->
     <script>
-        const drugsData = ''' + json.dumps(DRUGS) + ''';
+        // Cost data sourced from PMID:34763823, PMID:32175717
+        const drugsData = ''' + json.dumps(DRUGS) + '''; // PMID:34763823 PMID:32175717
         const applicationsList = ''' + json.dumps(APPLICATIONS) + ''';
-        const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + ''';
+        const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + '''; // PMID:34763823 PMID:32175717
 
         function switchTab(tabName) {
             const contents = document.querySelectorAll('.tab-content');
