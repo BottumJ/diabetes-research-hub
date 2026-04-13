@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-04-07 02:05:54
-**Previous scan:** 2026-04-06 02:04:53
-**Hub root:** `/sessions/dreamy-laughing-fermat/mnt/Diabetes_Research`
+**Scan time:** 2026-04-13 07:05:37
+**Previous scan:** 2026-04-12 07:05:23
+**Hub root:** `/sessions/sweet-great-knuth/mnt/Diabetes_Research`
 
 ---
 
@@ -9,56 +9,58 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 681 |
+| Total files tracked | 699 |
 | New files | 3 |
-| Modified files | 27 |
+| Modified files | 29 |
 | Removed files | 0 |
-| Unchanged files | 651 |
+| Unchanged files | 667 |
 
 ## New Files
 
-- **Analysis/Results/clinical_trials_snapshot_2026-04-07.json** (507.3 KB)
-- **Analysis/Results/monitor_report_2026-04-06.md** (9.6 KB)
-- **Analysis/Results/pubmed_recent_snapshot_2026-04-07.json** (97.8 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-04-13.json** (509.4 KB)
+- **Analysis/Results/monitor_report_2026-04-12.md** (2.5 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-04-13.json** (98.6 KB)
 
 ## Modified Files
 
-- **Analysis/Results/agent_state.json** (228.1 KB, modified: 2026-04-06T03:09:00.232356)
-- **Analysis/Results/citation_validation.json** (187.7 KB, modified: 2026-04-06T03:07:43.634284)
-- **Analysis/Results/clinical_trials_latest.json** (507.3 KB, modified: 2026-04-07T02:05:15)
-- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-04-07T02:05:15)
-- **Analysis/Results/evidence_network.json** (99.1 KB, modified: 2026-04-06T03:07:43.652265)
-- **Analysis/Results/gap_evidence.json** (213.6 KB, modified: 2026-04-06T03:07:44.160177)
-- **Analysis/Results/hub_monitor_report.md** (4.0 KB, modified: 2026-04-06T02:04:55.491386)
-- **Analysis/Results/hub_monitor_state.json** (161.5 KB, modified: 2026-04-06T02:04:55.443012)
-- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-04-06T03:07:07.148963)
-- **Analysis/Results/paper_library/index.json** (455.6 KB, modified: 2026-04-06T03:07:43.288303)
-- **Analysis/Results/pmid_verification.json** (246.6 KB, modified: 2026-04-06T03:07:20.512436)
-- **Analysis/Results/pubmed_recent_latest.json** (97.8 KB, modified: 2026-04-07T02:05:47)
-- **Analysis/Results/pubmed_recent_summary.md** (24.2 KB, modified: 2026-04-07T02:05:47)
-- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-04-06T03:07:20.635032)
-- **Dashboards/Clinical_Trial_Dashboard.html** (412.8 KB, modified: 2026-04-06T03:07:07.077935)
-- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-04-06T03:07:07.557737)
-- **Dashboards/Extracted_Evidence.html** (130.2 KB, modified: 2026-04-06T03:07:45.423288)
-- **Dashboards/Gap_Deep_Dives.html** (204.6 KB, modified: 2026-04-06T03:07:07.302136)
-- **Dashboards/Gap_Evidence.html** (167.4 KB, modified: 2026-04-06T03:07:44.185856)
-- **Dashboards/Islet_Transplant_Analysis.html** (68.6 KB, modified: 2026-04-06T03:07:07.519306)
-- **Dashboards/LADA_Diagnostic_Model.html** (42.1 KB, modified: 2026-04-06T03:07:44.385650)
-- **Dashboards/PMID_Verification.html** (164.3 KB, modified: 2026-04-06T03:07:20.457420)
-- **Dashboards/Paper_Library.html** (193.7 KB, modified: 2026-04-06T03:07:44.283383)
-- **Dashboards/Research_Paths.html** (116.8 KB, modified: 2026-04-06T03:07:45.504467)
-- **Dashboards/Trial_Equity_Mapper.html** (67.8 KB, modified: 2026-04-06T03:07:44.436060)
-- **Research_Findings_Summary.md** (17.0 KB, modified: 2026-04-06T03:07:20.659061)
-- **docs/index.html** (24.7 KB, modified: 2026-04-06T03:07:45.650125)
+- **Analysis/Results/agent_state.json** (251.8 KB, modified: 2026-04-12T08:09:10)
+- **Analysis/Results/citation_validation.json** (187.7 KB, modified: 2026-04-12T14:07:28)
+- **Analysis/Results/clinical_trials_latest.json** (509.4 KB, modified: 2026-04-13T07:05:01)
+- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-04-13T07:05:01)
+- **Analysis/Results/evidence_network.json** (99.1 KB, modified: 2026-04-12T14:07:28)
+- **Analysis/Results/gap_evidence.json** (213.6 KB, modified: 2026-04-12T14:07:28)
+- **Analysis/Results/hub_monitor_report.md** (4.1 KB, modified: 2026-04-12T07:05:24)
+- **Analysis/Results/hub_monitor_state.json** (165.9 KB, modified: 2026-04-12T07:05:24)
+- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-04-12T14:06:50)
+- **Analysis/Results/paper_library/index.json** (455.6 KB, modified: 2026-04-12T14:07:27)
+- **Analysis/Results/pmid_verification.json** (246.6 KB, modified: 2026-04-12T14:07:04)
+- **Analysis/Results/pubmed_recent_latest.json** (98.6 KB, modified: 2026-04-13T07:05:32)
+- **Analysis/Results/pubmed_recent_summary.md** (24.5 KB, modified: 2026-04-13T07:05:32)
+- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-04-12T14:07:04)
+- **Dashboards/Clinical_Trial_Dashboard.html** (415.0 KB, modified: 2026-04-12T14:06:50)
+- **Dashboards/Corpus_Analysis.html** (76.3 KB, modified: 2026-04-12T14:07:30)
+- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-04-12T14:06:50)
+- **Dashboards/Extracted_Evidence.html** (130.2 KB, modified: 2026-04-12T14:07:30)
+- **Dashboards/Gap_Deep_Dives.html** (204.6 KB, modified: 2026-04-12T14:06:50)
+- **Dashboards/Gap_Evidence.html** (167.4 KB, modified: 2026-04-12T14:07:28)
+- **Dashboards/Islet_Transplant_Analysis.html** (68.6 KB, modified: 2026-04-12T14:06:50)
+- **Dashboards/LADA_Diagnostic_Model.html** (42.1 KB, modified: 2026-04-12T14:07:28)
+- **Dashboards/PMID_Verification.html** (164.3 KB, modified: 2026-04-12T14:07:04)
+- **Dashboards/Paper_Library.html** (193.7 KB, modified: 2026-04-12T14:07:28)
+- **Dashboards/Research_Paths.html** (116.8 KB, modified: 2026-04-12T14:07:30)
+- **Dashboards/Trial_Equity_Mapper.html** (67.8 KB, modified: 2026-04-12T14:07:29)
+- **Platform_Audit_Report.docx** (18.1 KB, modified: 2026-04-12T14:10:20)
+- **Research_Findings_Summary.md** (17.0 KB, modified: 2026-04-12T14:07:04)
+- **docs/index.html** (24.7 KB, modified: 2026-04-12T14:07:30)
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 492 |
+| .json | 504 |
 | .html | 72 |
 | .py | 58 |
-| .md | 49 |
+| .md | 55 |
 | .txt | 4 |
 | .csv | 3 |
 | .xlsx | 2 |
@@ -69,7 +71,7 @@
 | Folder | Files |
 |--------|-------|
 | (root) | 16 |
-| Analysis/Results | 112 |
+| Analysis/Results | 130 |
 | Analysis/Results/paper_library | 1 |
 | Analysis/Results/paper_library/abstracts | 281 |
 | Analysis/Results/paper_library/fulltext | 106 |
@@ -82,21 +84,18 @@
 
 ## Review Flags
 
-- 349 result file(s) older than 14 days — may need refresh.
+- 367 result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-04-07 02:05:54*
+*Generated by hub_monitor.py — 2026-04-13 07:05:37*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-04-06.json → clinical_trials_snapshot_2026-04-07.json)
-- New trials: 2
-- Removed trials: 1
-- Status changes: 1
+### Clinical Trials (clinical_trials_snapshot_2026-04-12.json → clinical_trials_snapshot_2026-04-13.json)
+- New trials: 0
+- Removed trials: 0
+- Status changes: 0
 - New results posted: 0
 
-**Status Changes:**
-- NCT06964087: ACTIVE_NOT_RECRUITING → RECRUITING | Pharmacokinetic and Early Efficacy of OPT101 in Patients With Type 1 Diabetes Me
-
-### PubMed (pubmed_recent_snapshot_2026-04-06.json → pubmed_recent_snapshot_2026-04-07.json)
-- New papers: 15
-- Dropped papers: 15
+### PubMed (pubmed_recent_snapshot_2026-04-12.json → pubmed_recent_snapshot_2026-04-13.json)
+- New papers: 19
+- Dropped papers: 18

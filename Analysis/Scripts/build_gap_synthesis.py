@@ -156,7 +156,7 @@ GAPS_DATA = [
         'validation_summary': 'Validated mechanism with robust preclinical data. 12 papers from independent groups (Sakaguchi 2020, Frikeche 2024, Korn 2009, Feldman 2019) confirm both Treg biology and neuropathy pathophysiology. CAR-Tregs reduce neuroinflammation in multiple models.',
         'sources': [
             'CAR-Treg preclinical data in MS models',
-            'PROSPERO systematic review registration CRD420251073207',
+            'PROSPERO systematic review registration CRD420251073207 (UNVERIFIED — could not confirm via web search 2026-04-11)',
             'Quell/AstraZeneca 85M collaboration (targets T1D prevention, not neuropathy)'
         ],
         'key_insight': 'This requires more validation. CAR-Treg work targets T1D prevention, not neuropathy specifically.',
@@ -1031,7 +1031,7 @@ def generate_html(gaps):
                     <li>JDRF/Breakthrough T1D Research Strategy (jdrf.org)</li>
                     <li>National Academies: Confronting Inequities in Organ Transplantation</li>
                     <li>Cochrane/BMC Medicine Beta Cell Preservation Review (2025)</li>
-                    <li>PROSPERO CAR-Treg Review (CRD420251073207)</li>
+                    <li>PROSPERO CAR-Treg Review (CRD420251073207) <em>[unverified]</em></li>
                 </ul>
             </div>
 
