@@ -1,0 +1,528 @@
+{
+  "metadata": {
+    "project": "Multi-Omic Microbiome ML Diagnostic Pipeline",
+    "phase": "Phase 1 \u2014 Data Acquisition",
+    "date": "2026-04-03T14:04:48.362810",
+    "reference_paper": "PMID 41921761"
+  },
+  "geo_datasets": {
+    "Gut microbiome 16S studies in diabetes": {
+      "query": "diabetes microbiome 16S",
+      "total_results": 4,
+      "ids_retrieved": 4
+    },
+    "Shotgun metagenomics in diabetes": {
+      "query": "diabetes metagenome",
+      "total_results": 20,
+      "ids_retrieved": 20
+    },
+    "T1D gut microbiome studies": {
+      "query": "type 1 diabetes gut microbiome",
+      "total_results": 3,
+      "ids_retrieved": 3
+    },
+    "T2D gut microbiome studies": {
+      "query": "type 2 diabetes gut microbiome",
+      "total_results": 3,
+      "ids_retrieved": 3
+    },
+    "GDM microbiome studies": {
+      "query": "gestational diabetes microbiome",
+      "total_results": 1,
+      "ids_retrieved": 1
+    },
+    "Oral microbiome in diabetes": {
+      "query": "diabetes oral microbiome",
+      "total_results": 2,
+      "ids_retrieved": 2
+    },
+    "SCFA metabolomics in diabetes": {
+      "query": "diabetes metabolomics SCFA",
+      "total_results": 0,
+      "ids_retrieved": 0
+    },
+    "LADA microbiome studies": {
+      "query": "LADA autoimmune diabetes microbiome",
+      "total_results": 0,
+      "ids_retrieved": 0
+    }
+  },
+  "metabolomics_workbench": {
+    "total_studies": 0,
+    "studies": []
+  },
+  "pubmed_dataset_papers": {
+    "ML prediction models": {
+      "query": "gut microbiome diabetes prediction model",
+      "total_results": 8,
+      "pmids": [
+        "39541968",
+        "27454254",
+        "40847308",
+        "37404032",
+        "41368212",
+        "26479726",
+        "33046051",
+        "41371549"
+      ]
+    },
+    "Oral microbiome T2D": {
+      "query": "oral microbiome type 2 diabetes",
+      "total_results": 5,
+      "pmids": [
+        "32434436",
+        "38074855",
+        "41345617",
+        "38075911",
+        "41834217"
+      ]
+    },
+    "Multi-omics integration": {
+      "query": "multi-omics diabetes microbiome",
+      "total_results": 9,
+      "pmids": [
+        "37700317",
+        "34554215",
+        "37166960",
+        "40274183",
+        "41316171",
+        "41368212",
+        "34959832",
+        "41763607",
+        "41834217"
+      ]
+    },
+    "Microbiome biomarkers": {
+      "query": "microbiome biomarker diabetes diagnosis",
+      "total_results": 10,
+      "pmids": [
+        "40060270",
+        "27454254",
+        "37166960",
+        "41382250",
+        "35497193",
+        "35613795",
+        "30864326",
+        "38075911",
+        "38189541",
+        "39070131"
+      ]
+    }
+  },
+  "gmrepo": {
+    "available": false,
+    "error": "Status 500"
+  },
+  "public_resources": [
+    {
+      "name": "curatedMetagenomicData",
+      "url": "https://bioconductor.org/packages/curatedMetagenomicData/",
+      "description": "Curated metagenomic profiles from 50+ published studies, >20,000 samples",
+      "access": "Free via Bioconductor (R) or Python wrapper",
+      "relevance": "PRIMARY SOURCE \u2014 pre-harmonized taxonomic profiles with phenotype metadata",
+      "diabetes_studies": "Multiple T1D and T2D studies included",
+      "status": "Available \u2014 install via: BiocManager::install('curatedMetagenomicData')"
+    },
+    {
+      "name": "Human Microbiome Project (HMP)",
+      "url": "https://hmpdacc.org/",
+      "description": "Reference human microbiome data from 4,788+ samples across body sites",
+      "access": "Free via HMPDACC portal",
+      "relevance": "Reference microbiomes for healthy controls; oral + gut paired data",
+      "status": "Available"
+    },
+    {
+      "name": "DIAGRAM Consortium",
+      "url": "https://diagram-consortium.org/",
+      "description": "T2D GWAS summary statistics from largest meta-analyses",
+      "access": "Free download (summary statistics only)",
+      "relevance": "Genomic layer for multi-omic integration; T2D risk variants",
+      "status": "Available \u2014 download summary stats from consortium website"
+    },
+    {
+      "name": "T1D Knowledge Portal",
+      "url": "https://t1d.hugeamp.org/",
+      "description": "T1D-specific GWAS, gene-level, and variant-level associations",
+      "access": "Free web portal + bulk download",
+      "relevance": "T1D genetic risk variants for multi-omic integration",
+      "status": "Available"
+    },
+    {
+      "name": "Metabolomics Workbench",
+      "url": "https://www.metabolomicsworkbench.org/",
+      "description": "National metabolomics data repository with SCFA, bile acid profiles",
+      "access": "Free \u2014 REST API available",
+      "relevance": "Metabolomic layer \u2014 SCFA profiles linked to microbiome composition",
+      "status": "Available \u2014 queried in this scan"
+    },
+    {
+      "name": "Human Metabolome Database (HMDB)",
+      "url": "https://hmdb.ca/",
+      "description": "Comprehensive metabolite reference database",
+      "access": "Free download",
+      "relevance": "Metabolite annotation and pathway mapping",
+      "status": "Available"
+    },
+    {
+      "name": "UK Biobank Proteomics",
+      "url": "https://www.ukbiobank.ac.uk/",
+      "description": "Olink proteomics on 50,000+ participants",
+      "access": "Requires application (6-8 week approval)",
+      "relevance": "Proteomic layer \u2014 inflammatory markers, gut barrier proteins",
+      "status": "Application required"
+    },
+    {
+      "name": "Gene Expression Omnibus (GEO)",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/",
+      "description": "Transcriptomic datasets \u2014 gut epithelial gene expression",
+      "access": "Free \u2014 queried in this scan",
+      "relevance": "Transcriptomic layer for multi-omic integration",
+      "status": "Available \u2014 queried in this scan"
+    },
+    {
+      "name": "GMrepo",
+      "url": "https://gmrepo.humangut.info/",
+      "description": "Curated gut microbiome database with 58,000+ samples and phenotype data",
+      "access": "Free \u2014 REST API available",
+      "relevance": "Cross-population microbiome data with disease phenotypes",
+      "status": "Available: False"
+    }
+  ],
+  "geo_summaries": [
+    {
+      "id": "308658309",
+      "accession": "GSM8658309",
+      "title": "wound skin,wound model in diabetic mice,  rep3",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658302",
+      "accession": "GSM8658302",
+      "title": "wound skin,wound model in healthy mice,  rep1",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200200111",
+      "accession": "GSE200111",
+      "title": "Airway microbiota in patients with synchronous multiple primary lung cancer: the bacterial topography of the respiratory tract",
+      "summary": "we analyzed the characteristics of the respiratory microbiome, which was collected from different sites and using different sampling methods.",
+      "platform": "32122",
+      "samples": 39,
+      "organism": "human lung metagenome",
+      "type": "GSE",
+      "pubmed_ids": [
+        "35494066"
+      ]
+    },
+    {
+      "id": "308658306",
+      "accession": "GSM8658306",
+      "title": "wound skin,wound model in healthy mice,  rep5",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200081648",
+      "accession": "GSE81648",
+      "title": "The effect of antibiotic mediated gut microbiome perturbation on ileal gene expression in NOD mice.",
+      "summary": "The early life microbiome plays important roles in host immunological and metabolic development. Because type 1 diabetes (T1D) incidence has been increasing substantially in recent decades, we hypothesized that early-life antibiotic use alters gut microbiota that predisposes to disease.  Using NOD m",
+      "platform": "1261",
+      "samples": 22,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": [
+        "27782139"
+      ]
+    },
+    {
+      "id": "200233631",
+      "accession": "GSE233631",
+      "title": "Microbiota dysbiosis associated with type 2 diabetes-like effects caused by chronic exposure to a mixture of chlorinated persistent organic pollutants in zebrafish [I]",
+      "summary": "Mixtures of chlorinated persistent organic pollutants (C-POPs-Mix) are chemically related risk factors for type 2 diabetes mellitus (T2DM); however, the effects of chronic exposure to C-POPs-Mix on microbial dysbiosis remain poorly understood. Herein, male and female zebrafish were exposed to C-POPs",
+      "platform": "18413",
+      "samples": 4,
+      "organism": "Danio rerio",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200222883",
+      "accession": "GSE222883",
+      "title": "Periodontitis-induced inflammation: impacts of hyperglycemic microenvironment",
+      "summary": "Dysbiosis of subgingival microbiome promotes the growth of periodontopathogens and the development of periodontitis, an irreversible chronic inflammatory disease. Untreated periodontitis leads to the destruction of connective tissues, alveolar bone resorption and ultimately to tooth loss. Periodonti",
+      "platform": "23159",
+      "samples": 18,
+      "organism": "Homo sapiens",
+      "type": "GSE",
+      "pubmed_ids": [
+        "37240180"
+      ]
+    },
+    {
+      "id": "308658308",
+      "accession": "GSM8658308",
+      "title": "wound skin,wound model in diabetic mice,  rep2",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658297",
+      "accession": "GSM8658297",
+      "title": "normal skin,uninjured healthy mice,  rep1",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200100230",
+      "accession": "GSE100230",
+      "title": "Long-term intermittent fasting restores function of the gut\u2013liver axis and prevents development of diabetic retinopathy in db/db mice",
+      "summary": "Constant availability of food can contribute to the pathogenesis of metabolic syndrome and type 2 diabetes. Short term intermittent fasting (IF) can reset the central, light-entrained (suprachiastmatic nucleus) clock and also the peripheral, food-entrained (liver) clock to restore metabolic homeosta",
+      "platform": "16570",
+      "samples": 18,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658299",
+      "accession": "GSM8658299",
+      "title": "normal skin,uninjured healthy mice,  rep3",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200199810",
+      "accession": "GSE199810",
+      "title": "Gut microbiota analysis in poorly controlled diabetes patients with latent TB infection (LTBI) and nonLTBI [16S rRNA]",
+      "summary": "In previous study, patients with Diabetes Mellitus (DM) have high risk of active TB and LTBI. Here we report and compare 16S rRNA data of DM-LTBI and DM-nonLTBI in gut microbiota to identify differential candidates between the two groups. The results showed the differential genera have potential to ",
+      "platform": "29470",
+      "samples": 130,
+      "organism": "human feces metagenome",
+      "type": "GSE",
+      "pubmed_ids": [
+        "36631857"
+      ]
+    },
+    {
+      "id": "200300937",
+      "accession": "GSE300937",
+      "title": "The microbial metabolite imidazole propionate modulates hypothalamic activity and stress-induced behaviors",
+      "summary": "Neural circuits driving mammalian behaviors are highly plastic and modulated by internal and external factors, including the gut microbiome. We identify imidazole propionate (ImP), a microbial metabolite linked to metabolic disorders, as a key modulator of brain activity and behavior. Bacterially de",
+      "platform": "34328",
+      "samples": 4,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658301",
+      "accession": "GSM8658301",
+      "title": "normal skin,uninjured healthy mice,  rep5",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200226706",
+      "accession": "GSE226706",
+      "title": "Interaction between the microbiome and the severity of diversion colitis after low anterior resection of rectal cancer",
+      "summary": "Background:Diversion colitis (DC) is a non-specific inflammation in the intestinal mucosa with colonic dysfunction after low anterior resection of rectal cancer. It is newly proposed in recent years. With the gradual prolongation time of the ileostomy status, the condition of DC may become increasin",
+      "platform": "29420",
+      "samples": 40,
+      "organism": "gut metagenome",
+      "type": "GSE",
+      "pubmed_ids": [
+        "36998438"
+      ]
+    },
+    {
+      "id": "308658311",
+      "accession": "GSM8658311",
+      "title": "wound skin,wound model in diabetic mice,  rep5",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200101721",
+      "accession": "GSE101721",
+      "title": "Antibiotic-induced acceleration of type 1 diabetes alters maturation of innate intestinal immunity",
+      "summary": "The early-life intestinal microbiota plays a key role in shaping host immune system development. We found that a single early-life antibiotic course (1PAT) accelerated Type 1 diabetes (T1D) development in male NOD mice. The single course had strong and persistent effects on the intestinal microbiome",
+      "platform": "19964",
+      "samples": 60,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": [
+        "30039798"
+      ]
+    },
+    {
+      "id": "200309308",
+      "accession": "GSE309308",
+      "title": "Maternal Probiotic Supplementation Effects on the Placenta-Brain Axis",
+      "summary": "The rate of probiotic usage by pregnant women in the US and Canada ranges from 1.3 to 3.6 %. Probiotic supplements are available without a prescription and have gained currency in treating a variety of ailment ranging from reducing risk of constipation, diarrhea, other gastrointestinal conditions, e",
+      "platform": "34328",
+      "samples": 31,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658310",
+      "accession": "GSM8658310",
+      "title": "wound skin,wound model in diabetic mice,  rep4",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200283228",
+      "accession": "GSE283228",
+      "title": "Engineered Enucleated Mesenchymal Stem Cells Regulating Immune Microenvironment and Promoting Wound Healing",
+      "summary": "We conducted a transcriptomic analysis to evaluate DEK expression levels in the uninjured skin of healthy mice, wound tissue of healthy mice, and diabetic mice. Our findings revealed a significant upregulation of DEK in diabetic mouse wounds, with Gene Ontology (GO) analysis indicating enrichment in",
+      "platform": "23575",
+      "samples": 15,
+      "organism": "Mus",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658303",
+      "accession": "GSM8658303",
+      "title": "wound skin,wound model in healthy mice,  rep2",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200262065",
+      "accession": "GSE262065",
+      "title": "A small intestinal bile acid modulates the gut microbiome to improve host metabolic phenotypes following bariatric surgery",
+      "summary": "Bariatric surgical procedures such as sleeve gastrectomy (SG) provide effective type 2 diabetes remission in human patients. Previous work demonstrated that gastrointestinal levels of the bacterial metabolite lithocholic acid (LCA) are decreased after SG in mice and humans. Here, we show that LCA wo",
+      "platform": "24247",
+      "samples": 10,
+      "organism": "Mus musculus",
+      "type": "GSE",
+      "pubmed_ids": [
+        "39043190"
+      ]
+    },
+    {
+      "id": "308658298",
+      "accession": "GSM8658298",
+      "title": "normal skin,uninjured healthy mice,  rep2",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658305",
+      "accession": "GSM8658305",
+      "title": "wound skin,wound model in healthy mice,  rep4",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658307",
+      "accession": "GSM8658307",
+      "title": "wound skin,wound model in diabetic mice,  rep1",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200131320",
+      "accession": "GSE131320",
+      "title": "Human Islet Response to Selected Type 1 Diabetes Associated Bacteria",
+      "summary": "Type 1 diabetes (T1D) is a chronic autoimmune disease that results from destruction of pancreatic \u03b2-cells. T1D subjects were recently shown to harbor distinct intestinal microbiome profiles. Based on these findings, the role of gut bacteria in T1D is being intensively investigated. The mechanism con",
+      "platform": "16791",
+      "samples": 40,
+      "organism": "Homo sapiens",
+      "type": "GSE",
+      "pubmed_ids": [
+        "31781116"
+      ]
+    },
+    {
+      "id": "308658300",
+      "accession": "GSM8658300",
+      "title": "normal skin,uninjured healthy mice,  rep4",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    },
+    {
+      "id": "200233632",
+      "accession": "GSE233632",
+      "title": "Microbiota dysbiosis associated with type 2 diabetes-like effects caused by chronic exposure to a mixture of chlorinated persistent organic pollutants in zebrafish [II]",
+      "summary": "Mixtures of chlorinated persistent organic pollutants (C-POPs-Mix) are chemically related risk factors for type 2 diabetes mellitus (T2DM); however, the effects of chronic exposure to C-POPs-Mix on microbial dysbiosis remain poorly understood. Herein, male and female zebrafish were exposed to C-POPs",
+      "platform": "21930",
+      "samples": 29,
+      "organism": "Danio rerio",
+      "type": "GSE",
+      "pubmed_ids": []
+    },
+    {
+      "id": "308658304",
+      "accession": "GSM8658304",
+      "title": "wound skin,wound model in healthy mice,  rep3",
+      "summary": "skin metagenome",
+      "platform": "23575",
+      "samples": "",
+      "organism": "Mus",
+      "type": "GSM",
+      "pubmed_ids": []
+    }
+  ]
+}

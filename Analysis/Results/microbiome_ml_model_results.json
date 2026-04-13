@@ -1,0 +1,678 @@
+{
+  "metadata": {
+    "project": "Multi-Omic Microbiome ML Pipeline",
+    "phase": "Phase 3 \u2014 Model Development",
+    "date": "2026-04-03T23:48:38.561539",
+    "samples": 1200,
+    "baseline_target": "AUC > 0.83 (PMID 41921761)",
+    "multiomic_target": "AUC \u2265 0.88",
+    "delta_target": "\u2265 5 points above baseline"
+  },
+  "binary_models": {
+    "rf_microbiome_only": {
+      "model_name": "RF Microbiome-Only",
+      "features_used": 22,
+      "auc_roc": 0.7388,
+      "auc_pr": 0.8228,
+      "accuracy": 0.7142,
+      "f1_score": 0.8061,
+      "fold_aucs": [
+        0.7617,
+        0.7367,
+        0.7189,
+        0.7382,
+        0.7487
+      ],
+      "auc_std": 0.0141,
+      "calibration": {
+        "prob_true": [
+          0.0,
+          0.09090909090909091,
+          0.27692307692307694,
+          0.39166666666666666,
+          0.5376884422110553,
+          0.6621160409556314,
+          0.7948717948717948,
+          0.8920454545454546,
+          0.7777777777777778
+        ],
+        "prob_pred": [
+          0.18060792903991438,
+          0.2583378210832674,
+          0.360429809536836,
+          0.4535841259311731,
+          0.5557198490692106,
+          0.6566165784650806,
+          0.7489157446775971,
+          0.8374488593141145,
+          0.9145717723729851
+        ]
+      },
+      "feature_importance": {
+        "micro_Faecalibacterium_prausnitzii": 0.03469744782334962,
+        "micro_Roseburia_intestinalis": 0.04814899478023613,
+        "micro_Akkermansia_muciniphila": 0.04599919378701771,
+        "micro_Eubacterium_rectale": 0.03551477158893525,
+        "micro_Bifidobacterium_adolescentis": 0.04142022541551016,
+        "micro_Coprococcus_eutactus": 0.04601111693709369,
+        "micro_Prevotella_copri": 0.040078191694404866,
+        "micro_Bacteroides_vulgatus": 0.028713585266329493,
+        "micro_Ruminococcus_gnavus": 0.03773748540685651,
+        "micro_Escherichia_coli": 0.04769997767336581,
+        "micro_Clostridium_bolteae": 0.0666817270860475,
+        "micro_Desulfovibrio_piger": 0.03751794653804745,
+        "micro_Lactobacillus_reuteri": 0.05075756386940365,
+        "micro_Streptococcus_mutans": 0.05146571188610453,
+        "micro_Porphyromonas_gingivalis": 0.051996002491442525,
+        "micro_Fusobacterium_nucleatum": 0.04078749031815953,
+        "micro_Veillonella_dispar": 0.03763267175767134,
+        "micro_Haemophilus_parainfluenzae": 0.03801498344545741,
+        "micro_Blautia_obeum": 0.03756035067811647,
+        "micro_Alistipes_putredinis": 0.035736700235993284,
+        "alpha_shannon": 0.04006766286819399,
+        "oral_gut_translocation_index": 0.10576019845226318
+      },
+      "confusion_matrix": [
+        [
+          144,
+          276
+        ],
+        [
+          67,
+          713
+        ]
+      ]
+    },
+    "rf_multi_omic": {
+      "model_name": "RF Multi-Omic",
+      "features_used": 71,
+      "auc_roc": 0.9918,
+      "auc_pr": 0.9959,
+      "accuracy": 0.955,
+      "f1_score": 0.9653,
+      "fold_aucs": [
+        0.9922,
+        0.9916,
+        0.9952,
+        0.9862,
+        0.9919
+      ],
+      "auc_std": 0.0029,
+      "calibration": {
+        "prob_true": [
+          0.0,
+          0.0,
+          0.013605442176870748,
+          0.07563025210084033,
+          0.32727272727272727,
+          0.375,
+          0.7666666666666667,
+          0.98,
+          0.9972067039106145,
+          1.0
+        ],
+        "prob_pred": [
+          0.07771175674361948,
+          0.15910560685223163,
+          0.249569666562072,
+          0.34617325109275904,
+          0.44660872558995984,
+          0.5544640209588149,
+          0.6630351253484121,
+          0.7624563531253323,
+          0.8557423694251148,
+          0.9305225700087933
+        ]
+      },
+      "feature_importance": {
+        "age": 0.030550933327428312,
+        "bmi": 0.03502632019574027,
+        "hba1c": 0.4909022361059752,
+        "micro_Faecalibacterium_prausnitzii": 0.004233661751935059,
+        "micro_Roseburia_intestinalis": 0.006215032835958629,
+        "micro_Akkermansia_muciniphila": 0.0054012920215761925,
+        "micro_Eubacterium_rectale": 0.004528052447355771,
+        "micro_Bifidobacterium_adolescentis": 0.0044599600090435175,
+        "micro_Coprococcus_eutactus": 0.006414809592486332,
+        "micro_Prevotella_copri": 0.005269195410377372,
+        "micro_Bacteroides_vulgatus": 0.003628134003687776,
+        "micro_Ruminococcus_gnavus": 0.00578780700846115,
+        "micro_Escherichia_coli": 0.005615724575321846,
+        "micro_Clostridium_bolteae": 0.011724930862235021,
+        "micro_Desulfovibrio_piger": 0.005402573966685516,
+        "micro_Lactobacillus_reuteri": 0.007101825598340132,
+        "micro_Streptococcus_mutans": 0.006732422913694946,
+        "micro_Porphyromonas_gingivalis": 0.0062546895611557815,
+        "micro_Fusobacterium_nucleatum": 0.005697981019940403,
+        "micro_Veillonella_dispar": 0.005050757918036157,
+        "micro_Haemophilus_parainfluenzae": 0.0035138716249757626,
+        "micro_Blautia_obeum": 0.005506261110303544,
+        "micro_Alistipes_putredinis": 0.005725204515573115,
+        "alpha_shannon": 0.00620780651797664,
+        "oral_gut_translocation_index": 0.024015824657615908,
+        "metab_butyrate": 0.013057314458207004,
+        "metab_propionate": 0.005827235767405149,
+        "metab_acetate": 0.004684143471570021,
+        "metab_total_SCFA": 0.006932012916392895,
+        "metab_butyrate_propionate_ratio": 0.004718013785141956,
+        "metab_secondary_bile_acids": 0.007339864491510563,
+        "metab_primary_bile_acids": 0.007792092203818415,
+        "metab_bile_acid_ratio": 0.00998545077574285,
+        "metab_tryptophan": 0.007362560850128522,
+        "metab_indole_3_propionic_acid": 0.00717884704809325,
+        "metab_kynurenine": 0.006171041333804475,
+        "metab_kynurenine_tryptophan_ratio": 0.009888305783081303,
+        "metab_TMAO": 0.011848761267384378,
+        "metab_LPS_binding_protein": 0.005440962428494443,
+        "metab_zonulin": 0.0052677689191088645,
+        "geno_FUT2_rs601338": 0.0007424238495549846,
+        "geno_NOD2_rs2066844": 0.00011491714784355551,
+        "geno_IL23R_rs11209026": 0.00038515928700662934,
+        "geno_ATG16L1_rs2241880": 0.0016672265263615856,
+        "geno_CARD9_rs10870077": 0.0009347881283272218,
+        "geno_TCF7L2_rs7903146": 0.0006413084281165751,
+        "geno_HLA_DQ_rs9272346": 0.0007872772116759851,
+        "geno_INS_rs689": 0.0008306359144948244,
+        "geno_PTPN22_rs2476601": 9.907748187560008e-05,
+        "geno_SH2B3_rs3184504": 0.0005485808644761242,
+        "geno_IL2RA_rs12722495": 0.0004687854258346813,
+        "geno_CTLA4_rs3087243": 0.0005935665586850676,
+        "genomic_prs_t2d": 0.003995691246929086,
+        "genomic_prs_t1d": 0.003531831644729229,
+        "genomic_microbiome_gene_burden": 0.00108499349929912,
+        "cross_butyrate_producer_sum": 0.005625952815831998,
+        "cross_butyrate_production_efficiency": 0.0037033739543756417,
+        "cross_oral_gut_x_lps": 0.011987961715167412,
+        "cross_oral_gut_x_zonulin": 0.013082723084751354,
+        "cross_ecoli_x_tmao": 0.008145843394996157,
+        "cross_akkermansia_x_bile": 0.007104041237543085,
+        "cross_fut2_x_bifido": 0.0029578607553139087,
+        "cross_nod2_x_ecoli": 0.00014990194988223073,
+        "cross_prs_t2d_x_diversity": 0.00422757384868972,
+        "cross_prs_t1d_x_diversity": 0.003845665641577815,
+        "cross_micgene_x_oral_gut": 0.011431561699047488,
+        "cross_tcf7l2_x_scfa": 0.002808668758369266,
+        "cross_il23r_x_kynurenine": 0.00032844049367402873,
+        "composite_gut_health_index": 0.026606250557969887,
+        "composite_inflammation": 0.026336854752361125,
+        "composite_multiomic_risk": 0.040769377073474174
+      },
+      "confusion_matrix": [
+        [
+          395,
+          25
+        ],
+        [
+          29,
+          751
+        ]
+      ]
+    },
+    "xgb_multi_omic": {
+      "model_name": "XGBoost Multi-Omic",
+      "features_used": 71,
+      "auc_roc": 0.9902,
+      "auc_pr": 0.9953,
+      "accuracy": 0.9525,
+      "f1_score": 0.9631,
+      "fold_aucs": [
+        0.9905,
+        0.9911,
+        0.9916,
+        0.9864,
+        0.9892
+      ],
+      "auc_std": 0.0019,
+      "calibration": {
+        "prob_true": [
+          0.043037974683544304,
+          0.5454545454545454,
+          0.38461538461538464,
+          0.5555555555555556,
+          0.42857142857142855,
+          0.3333333333333333,
+          0.5,
+          0.3333333333333333,
+          0.42857142857142855,
+          0.993234100135318
+        ],
+        "prob_pred": [
+          0.009906019458673965,
+          0.1387174285270951,
+          0.24766275859796083,
+          0.34968354635768467,
+          0.45763422335897175,
+          0.5518444776535034,
+          0.6565375924110413,
+          0.7423491279284159,
+          0.8604488883699689,
+          0.9972774643697984
+        ]
+      },
+      "feature_importance": {
+        "age": "0.019026965",
+        "bmi": "0.019025655",
+        "hba1c": "0.30972883",
+        "micro_Faecalibacterium_prausnitzii": "0.008795454",
+        "micro_Roseburia_intestinalis": "0.0073760115",
+        "micro_Akkermansia_muciniphila": "0.00946652",
+        "micro_Eubacterium_rectale": "0.0062394133",
+        "micro_Bifidobacterium_adolescentis": "0.0060889474",
+        "micro_Coprococcus_eutactus": "0.008631732",
+        "micro_Prevotella_copri": "0.0074980413",
+        "micro_Bacteroides_vulgatus": "0.012230157",
+        "micro_Ruminococcus_gnavus": "0.003274104",
+        "micro_Escherichia_coli": "0.009409876",
+        "micro_Clostridium_bolteae": "0.0115191145",
+        "micro_Desulfovibrio_piger": "0.006361523",
+        "micro_Lactobacillus_reuteri": "0.010564582",
+        "micro_Streptococcus_mutans": "0.009535393",
+        "micro_Porphyromonas_gingivalis": "0.0061996724",
+        "micro_Fusobacterium_nucleatum": "0.017943919",
+        "micro_Veillonella_dispar": "0.012435314",
+        "micro_Haemophilus_parainfluenzae": "0.015509958",
+        "micro_Blautia_obeum": "0.0071025062",
+        "micro_Alistipes_putredinis": "0.0071808193",
+        "alpha_shannon": "0.009406757",
+        "oral_gut_translocation_index": "0.015677135",
+        "metab_butyrate": "0.011616494",
+        "metab_propionate": "0.010342721",
+        "metab_acetate": "0.005982518",
+        "metab_total_SCFA": "0.0092881005",
+        "metab_butyrate_propionate_ratio": "0.004339179",
+        "metab_secondary_bile_acids": "0.010996125",
+        "metab_primary_bile_acids": "0.010864104",
+        "metab_bile_acid_ratio": "0.014947512",
+        "metab_tryptophan": "0.004198364",
+        "metab_indole_3_propionic_acid": "0.009556009",
+        "metab_kynurenine": "0.011464007",
+        "metab_kynurenine_tryptophan_ratio": "0.013735164",
+        "metab_TMAO": "0.01864939",
+        "metab_LPS_binding_protein": "0.011717831",
+        "metab_zonulin": "0.016387818",
+        "geno_FUT2_rs601338": "0.002217445",
+        "geno_NOD2_rs2066844": "0.0",
+        "geno_IL23R_rs11209026": "0.0039602113",
+        "geno_ATG16L1_rs2241880": "0.018012103",
+        "geno_CARD9_rs10870077": "0.0029134026",
+        "geno_TCF7L2_rs7903146": "0.00852191",
+        "geno_HLA_DQ_rs9272346": "0.0",
+        "geno_INS_rs689": "0.0",
+        "geno_PTPN22_rs2476601": "0.02027982",
+        "geno_SH2B3_rs3184504": "0.0",
+        "geno_IL2RA_rs12722495": "0.03102372",
+        "geno_CTLA4_rs3087243": "0.010109416",
+        "genomic_prs_t2d": "0.009479464",
+        "genomic_prs_t1d": "0.0016636977",
+        "genomic_microbiome_gene_burden": "0.0056391833",
+        "cross_butyrate_producer_sum": "0.0036885215",
+        "cross_butyrate_production_efficiency": "0.005395229",
+        "cross_oral_gut_x_lps": "0.010477932",
+        "cross_oral_gut_x_zonulin": "0.014135131",
+        "cross_ecoli_x_tmao": "0.009638441",
+        "cross_akkermansia_x_bile": "0.006899812",
+        "cross_fut2_x_bifido": "0.01366197",
+        "cross_nod2_x_ecoli": "0.0",
+        "cross_prs_t2d_x_diversity": "0.0053493613",
+        "cross_prs_t1d_x_diversity": "0.006951961",
+        "cross_micgene_x_oral_gut": "0.012973472",
+        "cross_tcf7l2_x_scfa": "0.0038429527",
+        "cross_il23r_x_kynurenine": "0.0038184854",
+        "composite_gut_health_index": "0.015769033",
+        "composite_inflammation": "0.029248696",
+        "composite_multiomic_risk": "0.024014879"
+      },
+      "confusion_matrix": [
+        [
+          399,
+          21
+        ],
+        [
+          36,
+          744
+        ]
+      ]
+    },
+    "xgb_top50": {
+      "model_name": "XGBoost Top-50",
+      "features_used": 50,
+      "auc_roc": 0.9901,
+      "auc_pr": 0.9953,
+      "accuracy": 0.9542,
+      "f1_score": 0.9644,
+      "fold_aucs": [
+        0.99,
+        0.9918,
+        0.9909,
+        0.9892,
+        0.9874
+      ],
+      "auc_std": 0.0015,
+      "calibration": {
+        "prob_true": [
+          0.04381443298969072,
+          0.21052631578947367,
+          0.7,
+          0.45454545454545453,
+          0.3333333333333333,
+          0.375,
+          0.42857142857142855,
+          0.5,
+          0.6666666666666666,
+          0.9945504087193461
+        ],
+        "prob_pred": [
+          0.009196500839255715,
+          0.1352343186736107,
+          0.24345810413360597,
+          0.3429163992404938,
+          0.44692689842647976,
+          0.5595787912607193,
+          0.6610651782580784,
+          0.7736475840210915,
+          0.8557990789413452,
+          0.9981582331235143
+        ]
+      },
+      "feature_importance": {
+        "hba1c": "0.30107245",
+        "bmi": "0.02137246",
+        "age": "0.024498912",
+        "cross_micgene_x_oral_gut": "0.008590106",
+        "oral_gut_translocation_index": "0.037627637",
+        "cross_oral_gut_x_lps": "0.006520849",
+        "composite_inflammation": "0.048943594",
+        "micro_Streptococcus_mutans": "0.013165452",
+        "composite_gut_health_index": "0.018928694",
+        "composite_multiomic_risk": "0.03185308",
+        "cross_oral_gut_x_zonulin": "0.012064591",
+        "metab_butyrate": "0.011923352",
+        "metab_kynurenine": "0.011800469",
+        "micro_Veillonella_dispar": "0.013445055",
+        "micro_Desulfovibrio_piger": "0.006828568",
+        "micro_Escherichia_coli": "0.009941016",
+        "metab_kynurenine_tryptophan_ratio": "0.016631383",
+        "cross_ecoli_x_tmao": "0.024489729",
+        "micro_Fusobacterium_nucleatum": "0.02752453",
+        "genomic_prs_t2d": "0.008603304",
+        "micro_Faecalibacterium_prausnitzii": "0.00687663",
+        "metab_total_SCFA": "0.018845333",
+        "geno_INS_rs689": "0.02283685",
+        "genomic_microbiome_gene_burden": "0.0037851413",
+        "geno_SH2B3_rs3184504": "0.010689379",
+        "metab_TMAO": "0.020675806",
+        "micro_Eubacterium_rectale": "0.007027076",
+        "geno_CTLA4_rs3087243": "0.004347687",
+        "metab_tryptophan": "0.007131871",
+        "cross_akkermansia_x_bile": "0.0073250653",
+        "micro_Alistipes_putredinis": "0.006218603",
+        "micro_Ruminococcus_gnavus": "0.010191553",
+        "metab_propionate": "0.018668313",
+        "micro_Porphyromonas_gingivalis": "0.012373402",
+        "metab_zonulin": "0.012261767",
+        "cross_fut2_x_bifido": "0.012876023",
+        "genomic_prs_t1d": "0.0037103135",
+        "micro_Bacteroides_vulgatus": "0.00936672",
+        "metab_indole_3_propionic_acid": "0.013110687",
+        "geno_ATG16L1_rs2241880": "0.014216452",
+        "micro_Prevotella_copri": "0.019808814",
+        "alpha_shannon": "0.009734238",
+        "micro_Lactobacillus_reuteri": "0.008162162",
+        "cross_prs_t1d_x_diversity": "0.014194948",
+        "geno_IL23R_rs11209026": "0.008537904",
+        "micro_Akkermansia_muciniphila": "0.012704109",
+        "micro_Roseburia_intestinalis": "0.008871022",
+        "micro_Clostridium_bolteae": "0.00893732",
+        "micro_Bifidobacterium_adolescentis": "0.015035523",
+        "micro_Coprococcus_eutactus": "0.01565412"
+      },
+      "confusion_matrix": [
+        [
+          401,
+          19
+        ],
+        [
+          36,
+          744
+        ]
+      ]
+    },
+    "logistic_regression": {
+      "model_name": "Logistic Regression Top-50",
+      "features_used": 50,
+      "auc_roc": 0.9893,
+      "auc_pr": 0.9948,
+      "accuracy": 0.9492,
+      "f1_score": 0.9605,
+      "fold_aucs": [
+        0.9924,
+        0.9855,
+        0.9929,
+        0.9873,
+        0.9909
+      ],
+      "auc_std": 0.0029,
+      "calibration": {
+        "prob_true": [
+          0.019417475728155338,
+          0.12,
+          0.25,
+          0.43333333333333335,
+          0.3333333333333333,
+          0.65,
+          0.5833333333333334,
+          0.7894736842105263,
+          0.8611111111111112,
+          0.9970501474926253
+        ],
+        "prob_pred": [
+          0.025495608810358675,
+          0.1427541604106776,
+          0.24436402800189252,
+          0.3464566404927545,
+          0.45676164752142995,
+          0.549008655660101,
+          0.6491279606057047,
+          0.754165594026048,
+          0.8516254504713047,
+          0.9940996859192451
+        ]
+      },
+      "feature_importance": null,
+      "confusion_matrix": [
+        [
+          397,
+          23
+        ],
+        [
+          38,
+          742
+        ]
+      ]
+    }
+  },
+  "subtype_classifier": {
+    "model_name": "XGBoost Multi-Class Subtype",
+    "classes": [
+      "LADA",
+      "T1D",
+      "T2D",
+      "control",
+      "prediabetes"
+    ],
+    "class_aucs": {
+      "LADA": 0.7144,
+      "T1D": 0.7808,
+      "T2D": 0.8592,
+      "control": 0.9901,
+      "prediabetes": 0.9372
+    },
+    "macro_auc": 0.8563,
+    "accuracy": 0.7025,
+    "classification_report": {
+      "LADA": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 60.0
+      },
+      "T1D": {
+        "precision": 0.3225806451612903,
+        "recall": 0.16666666666666666,
+        "f1-score": 0.21978021978021978,
+        "support": 180.0
+      },
+      "T2D": {
+        "precision": 0.628968253968254,
+        "recall": 0.7547619047619047,
+        "f1-score": 0.6861471861471862,
+        "support": 420.0
+      },
+      "control": {
+        "precision": 0.9028697571743929,
+        "recall": 0.9738095238095238,
+        "f1-score": 0.9369988545246277,
+        "support": 420.0
+      },
+      "prediabetes": {
+        "precision": 0.6,
+        "recall": 0.725,
+        "f1-score": 0.6566037735849056,
+        "support": 120.0
+      },
+      "accuracy": 0.7025,
+      "macro avg": {
+        "precision": 0.4908837312607874,
+        "recall": 0.5240476190476191,
+        "f1-score": 0.49990600680738784,
+        "support": 1200.0
+      },
+      "weighted avg": {
+        "precision": 0.64453040067412,
+        "recall": 0.7025,
+        "f1-score": 0.6667285245606585,
+        "support": 1200.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        12,
+        39,
+        6,
+        3
+      ],
+      [
+        2,
+        30,
+        131,
+        6,
+        11
+      ],
+      [
+        2,
+        50,
+        317,
+        17,
+        34
+      ],
+      [
+        0,
+        0,
+        1,
+        409,
+        10
+      ],
+      [
+        1,
+        1,
+        16,
+        15,
+        87
+      ]
+    ]
+  },
+  "cross_population_validation": {
+    "East_Asian": {
+      "test_n": 237,
+      "train_n": 963,
+      "auc_roc": 0.9918,
+      "accuracy": 0.9494,
+      "f1_score": 0.9592,
+      "diabetes_rate": 0.624
+    },
+    "South_Asian": {
+      "test_n": 121,
+      "train_n": 1079,
+      "auc_roc": 0.992,
+      "accuracy": 0.9587,
+      "f1_score": 0.9697,
+      "diabetes_rate": 0.694
+    },
+    "European": {
+      "test_n": 490,
+      "train_n": 710,
+      "auc_roc": 0.9861,
+      "accuracy": 0.9449,
+      "f1_score": 0.9577,
+      "diabetes_rate": 0.653
+    },
+    "African": {
+      "test_n": 178,
+      "train_n": 1022,
+      "auc_roc": 0.9927,
+      "accuracy": 0.9719,
+      "f1_score": 0.9778,
+      "diabetes_rate": 0.64
+    },
+    "Hispanic": {
+      "test_n": 174,
+      "train_n": 1026,
+      "auc_roc": 0.9898,
+      "accuracy": 0.9483,
+      "f1_score": 0.9596,
+      "diabetes_rate": 0.655
+    },
+    "_summary": {
+      "mean_auc": 0.9905,
+      "min_auc": 0.9861,
+      "max_auc": 0.9927,
+      "std_auc": 0.0024
+    }
+  },
+  "ablation_study": {
+    "Full model": {
+      "auc_roc": 0.9879,
+      "features_used": 71,
+      "delta_from_full": null
+    },
+    "Remove microbiome": {
+      "auc_roc": 0.9896,
+      "features_used": 49,
+      "delta_from_full": 0.0017
+    },
+    "Remove metabolomics": {
+      "auc_roc": 0.9876,
+      "features_used": 56,
+      "delta_from_full": -0.0003
+    },
+    "Remove genomics": {
+      "auc_roc": 0.9882,
+      "features_used": 56,
+      "delta_from_full": 0.0003
+    },
+    "Remove cross-omic": {
+      "auc_roc": 0.9863,
+      "features_used": 55,
+      "delta_from_full": -0.0016
+    }
+  },
+  "feature_sets_used": {
+    "microbiome_only": 22,
+    "metabolomic_only": 15,
+    "genomic_only": 18,
+    "micro_metab": 37,
+    "multi_omic_full": 71,
+    "top_50": 50
+  }
+}

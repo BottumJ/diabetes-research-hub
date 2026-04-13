@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-02T03:07:45.302443",
+  "timestamp": "2026-04-07T03:07:58.907773",
   "summary": {
-    "WEAK": 132,
-    "CONFIRMED": 61,
+    "WEAK": 133,
+    "CONFIRMED": 62,
     "PLAUSIBLE": 56,
     "MISMATCH": 5,
     "NO_DATA": 1
   },
-  "total_papers": 255,
+  "total_papers": 257,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -488,6 +488,23 @@
           "file": "build_data_dictionary.py",
           "line": 676,
           "text": "'source': 'Scherer PE. Adipose tissue: from lipid storage to endocrine organ. Diabetes 2006;55(6):1537-1545. PMID:167318"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "16898223": {
+      "pmid": "16898223",
+      "title": "Chemokines and their receptors in islet allograft rejection and as targets for tolerance induction.",
+      "score": "CONFIRMED",
+      "confidence": 0.6,
+      "details": "3/6 claim terms found in paper; 5 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "project_islet_drug_repurposing_phase1.py",
+          "line": 250,
+          "text": "\"CXCR3\": \"Chemokine receptor — key rejection target (PMID 16898223)\","
         }
       ],
       "has_abstract": true,
@@ -4987,6 +5004,33 @@
           "file": "add_citations.py",
           "line": 115,
           "text": "**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "41921761": {
+      "pmid": "41921761",
+      "title": "The oral-gut microbiome axis in diabetes mellitus: a systematic review and emerging clinical perspectives.",
+      "score": "WEAK",
+      "confidence": 0.167,
+      "details": "10/60 claim terms found in paper; 6 diabetes domain terms; 1 phrase matches",
+      "claim_count": 15,
+      "claims": [
+        {
+          "file": "project_microbiome_ml_phase1_data.py",
+          "line": 4,
+          "text": "Inspired by PMID 41921761 (oral-gut microbiome axis, AUC >0.83)"
+        },
+        {
+          "file": "project_microbiome_ml_phase1_data.py",
+          "line": 138,
+          "text": "print(\"Inspired by: PMID 41921761 (oral-gut microbiome axis, AUC >0.83)\")"
+        },
+        {
+          "file": "project_microbiome_ml_phase1_data.py",
+          "line": 146,
+          "text": "\"reference_paper\": \"PMID 41921761\","
         }
       ],
       "has_abstract": true,

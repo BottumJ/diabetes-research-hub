@@ -1,8 +1,8 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-04-02 03:07
+**Generated:** 2026-04-07 03:07
 **Source:** PubMed E-utilities API (esearch.fcgi)
-**Date range:** 2020/01/01 to 2026/03/15
+**Date range:** 2020/01/01 to 2026/04/03
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
@@ -64,7 +64,6 @@ These domain pairs have low co-publication because they use fundamentally differ
 | Personalized Nutr | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 | Drug Repurposing | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 | Drug Repurposing | CGM Technology | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
-| Gene Therapy | CGM Technology | 99.9 | 5 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 
 ---
 
@@ -76,6 +75,7 @@ These domain pairs show high gap scores but have not been classified as either m
 |----------|----------|-----------|------------|
 | Treg / CAR-T | Glucokinase | 100.0 | 0 |
 | Treg / CAR-T | Personalized Nutr | 100.0 | 0 |
+| SGLT2 Inhibitors | Personalized Nutr | 100.0 | 1 |
 | Beta Cell Regen | Retinopathy | 99.9 | 5 |
 | Beta Cell Regen | Neuropathy | 99.9 | 2 |
 | Beta Cell Regen | LADA | 99.9 | 1 |
@@ -92,14 +92,14 @@ These domain pairs show high gap scores but have not been classified as either m
 | Epigenetics | Health Equity | 99.9 | 5 |
 | Epigenetics | LADA | 99.9 | 1 |
 | Gene Therapy | Personalized Nutr | 99.9 | 1 |
-| Gene Therapy | Gestational DM | 99.9 | 8 |
 | Treg / CAR-T | SGLT2 Inhibitors | 99.9 | 3 |
 | Treg / CAR-T | Drug Repurposing | 99.9 | 1 |
-| SGLT2 Inhibitors | Personalized Nutr | 99.9 | 1 |
 | SGLT2 Inhibitors | Gestational DM | 99.9 | 12 |
 | Glucokinase | Microbiome Gut | 99.9 | 2 |
 | Glucokinase | Personalized Nutr | 99.9 | 1 |
-| Glucokinase | Retinopathy | 99.9 | 4 |
+| Glucokinase | Retinopathy | 99.9 | 5 |
+| Glucokinase | Neuropathy | 99.9 | 1 |
+| Personalized Nutr | Retinopathy | 99.9 | 4 |
 
 ---
 
@@ -107,36 +107,36 @@ These domain pairs show high gap scores but have not been classified as either m
 
 | Domain | Publications | Relative Activity |
 |--------|-------------|-------------------|
-| Prevention / DPP | 75,007 | ████████████████████ |
-| CV Complications | 24,087 | ██████░░░░░░░░░░░░░░ |
-| Insulin Resistance | 18,518 | ████░░░░░░░░░░░░░░░░ |
-| Retinopathy | 15,733 | ████░░░░░░░░░░░░░░░░ |
-| Gestational DM | 14,196 | ███░░░░░░░░░░░░░░░░░ |
-| Nephropathy DKD | 13,130 | ███░░░░░░░░░░░░░░░░░ |
-| GLP-1 Agonists | 11,732 | ███░░░░░░░░░░░░░░░░░ |
-| Metabolomics | 11,604 | ███░░░░░░░░░░░░░░░░░ |
-| AI / ML Predict | 10,079 | ██░░░░░░░░░░░░░░░░░░ |
-| Microbiome Gut | 9,545 | ██░░░░░░░░░░░░░░░░░░ |
-| Youth Diabetes | 7,507 | ██░░░░░░░░░░░░░░░░░░ |
-| Epigenetics | 7,027 | █░░░░░░░░░░░░░░░░░░░ |
-| SGLT2 Inhibitors | 6,839 | █░░░░░░░░░░░░░░░░░░░ |
-| CGM Technology | 6,083 | █░░░░░░░░░░░░░░░░░░░ |
-| GWAS / Polygenic | 4,941 | █░░░░░░░░░░░░░░░░░░░ |
-| Proteomics | 4,376 | █░░░░░░░░░░░░░░░░░░░ |
-| Autoimmunity T1D | 4,290 | █░░░░░░░░░░░░░░░░░░░ |
-| Remission T2D | 3,980 | █░░░░░░░░░░░░░░░░░░░ |
-| Neuropathy | 2,957 | ░░░░░░░░░░░░░░░░░░░░ |
-| Gene Therapy | 2,106 | ░░░░░░░░░░░░░░░░░░░░ |
-| Health Equity | 1,830 | ░░░░░░░░░░░░░░░░░░░░ |
-| Closed Loop / AP | 1,771 | ░░░░░░░░░░░░░░░░░░░░ |
-| Multi-Omics | 1,385 | ░░░░░░░░░░░░░░░░░░░░ |
-| Beta Cell Regen | 1,375 | ░░░░░░░░░░░░░░░░░░░░ |
-| Treg / CAR-T | 861 | ░░░░░░░░░░░░░░░░░░░░ |
-| Glucokinase | 816 | ░░░░░░░░░░░░░░░░░░░░ |
-| Personalized Nutr | 579 | ░░░░░░░░░░░░░░░░░░░░ |
-| Drug Repurposing | 555 | ░░░░░░░░░░░░░░░░░░░░ |
-| LADA | 535 | ░░░░░░░░░░░░░░░░░░░░ |
-| Islet Transplant | 238 | ░░░░░░░░░░░░░░░░░░░░ |
+| Prevention / DPP | 75,856 | ████████████████████ |
+| CV Complications | 24,376 | ██████░░░░░░░░░░░░░░ |
+| Insulin Resistance | 18,738 | ████░░░░░░░░░░░░░░░░ |
+| Retinopathy | 15,909 | ████░░░░░░░░░░░░░░░░ |
+| Gestational DM | 14,369 | ███░░░░░░░░░░░░░░░░░ |
+| Nephropathy DKD | 13,293 | ███░░░░░░░░░░░░░░░░░ |
+| GLP-1 Agonists | 11,958 | ███░░░░░░░░░░░░░░░░░ |
+| Metabolomics | 11,735 | ███░░░░░░░░░░░░░░░░░ |
+| AI / ML Predict | 10,300 | ██░░░░░░░░░░░░░░░░░░ |
+| Microbiome Gut | 9,691 | ██░░░░░░░░░░░░░░░░░░ |
+| Youth Diabetes | 7,590 | ██░░░░░░░░░░░░░░░░░░ |
+| Epigenetics | 7,109 | █░░░░░░░░░░░░░░░░░░░ |
+| SGLT2 Inhibitors | 6,934 | █░░░░░░░░░░░░░░░░░░░ |
+| CGM Technology | 6,181 | █░░░░░░░░░░░░░░░░░░░ |
+| GWAS / Polygenic | 4,994 | █░░░░░░░░░░░░░░░░░░░ |
+| Proteomics | 4,456 | █░░░░░░░░░░░░░░░░░░░ |
+| Autoimmunity T1D | 4,340 | █░░░░░░░░░░░░░░░░░░░ |
+| Remission T2D | 4,022 | █░░░░░░░░░░░░░░░░░░░ |
+| Neuropathy | 2,986 | ░░░░░░░░░░░░░░░░░░░░ |
+| Gene Therapy | 2,136 | ░░░░░░░░░░░░░░░░░░░░ |
+| Health Equity | 1,852 | ░░░░░░░░░░░░░░░░░░░░ |
+| Closed Loop / AP | 1,784 | ░░░░░░░░░░░░░░░░░░░░ |
+| Multi-Omics | 1,428 | ░░░░░░░░░░░░░░░░░░░░ |
+| Beta Cell Regen | 1,387 | ░░░░░░░░░░░░░░░░░░░░ |
+| Treg / CAR-T | 873 | ░░░░░░░░░░░░░░░░░░░░ |
+| Glucokinase | 822 | ░░░░░░░░░░░░░░░░░░░░ |
+| Personalized Nutr | 589 | ░░░░░░░░░░░░░░░░░░░░ |
+| Drug Repurposing | 570 | ░░░░░░░░░░░░░░░░░░░░ |
+| LADA | 541 | ░░░░░░░░░░░░░░░░░░░░ |
+| Islet Transplant | 239 | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---
 

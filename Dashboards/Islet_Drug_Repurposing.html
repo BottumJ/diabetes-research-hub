@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islet Transplant × Drug Repurposing Dashboard v2</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0e17; color: #e0e6f0; line-height: 1.6; }
+.header { background: linear-gradient(135deg, #1a1f35 0%, #0d1117 100%); padding: 30px 40px; border-bottom: 2px solid #2d3555; }
+.header h1 { font-size: 28px; color: #58a6ff; margin-bottom: 6px; }
+.header .subtitle { color: #8b949e; font-size: 14px; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-right: 8px; }
+.badge-silver { background: #c0c0c0; color: #000; }
+.badge-gap { background: #f85149; color: #fff; }
+.badge-phase { background: #58a6ff; color: #fff; }
+.badge-combo { background: #a371f7; color: #fff; }
+.container { max-width: 1500px; margin: 0 auto; padding: 20px 40px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 24px 0; }
+.stat-card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 18px; text-align: center; }
+.stat-card .number { font-size: 32px; font-weight: 700; color: #58a6ff; }
+.stat-card .label { font-size: 12px; color: #8b949e; margin-top: 4px; }
+.section { margin: 30px 0; }
+.section h2 { font-size: 20px; color: #c9d1d9; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #161b22; color: #58a6ff; padding: 10px 12px; text-align: left; position: sticky; top: 0; border-bottom: 2px solid #30363d; cursor: pointer; }
+th:hover { color: #79c0ff; }
+td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+tr:hover { background: #161b22; }
+.drug-name { color: #58a6ff; font-weight: 600; }
+.target-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; margin: 1px; background: #1f2937; color: #7ee787; border: 1px solid #2d3555; }
+.tier-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; color: #fff; }
+.score-bar { height: 6px; border-radius: 3px; background: #21262d; position: relative; width: 100px; display: inline-block; }
+.score-fill { height: 100%; border-radius: 3px; }
+.tab-container { display: flex; gap: 0; margin-bottom: 0; flex-wrap: wrap; }
+.tab { padding: 10px 18px; cursor: pointer; background: #0d1117; border: 1px solid #30363d; border-bottom: none; color: #8b949e; font-size: 13px; border-radius: 8px 8px 0 0; }
+.tab.active { background: #161b22; color: #58a6ff; font-weight: 600; }
+.tab-content { display: none; background: #161b22; border: 1px solid #30363d; border-radius: 0 8px 8px 8px; padding: 20px; overflow-x: auto; }
+.tab-content.active { display: block; }
+.pathway-bar { display: flex; align-items: center; margin: 4px 0; }
+.pathway-name { width: 300px; font-size: 12px; text-align: right; padding-right: 12px; color: #c9d1d9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pathway-fill { height: 18px; border-radius: 3px; min-width: 2px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 10px; color: #fff; }
+.combo-card { background: #0d1117; border: 1px solid #30363d; border-radius: 10px; padding: 18px; margin: 12px 0; }
+.combo-card h3 { font-size: 15px; color: #a371f7; margin-bottom: 8px; }
+.combo-detail { font-size: 12px; color: #8b949e; }
+.combo-score { font-size: 24px; font-weight: 700; color: #a371f7; float: right; }
+.interaction-edge { font-size: 12px; color: #8b949e; padding: 4px 0; }
+.interaction-edge strong { color: #58a6ff; }
+.filter-bar { margin: 12px 0; display: flex; gap: 10px; align-items: center; }
+.filter-bar label { font-size: 12px; color: #8b949e; }
+.filter-bar select, .filter-bar input { background: #0d1117; color: #e0e6f0; border: 1px solid #30363d; padding: 6px 10px; border-radius: 6px; font-size: 12px; }
+.footer { text-align: center; padding: 30px; color: #484f58; font-size: 12px; border-top: 1px solid #21262d; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Islet Transplant &times; Drug Repurposing</h1>
+  <div class="subtitle">
+    Network pharmacology analysis for novel islet graft protection candidates
+    <br>
+    <span class="badge badge-gap">Gap Score: 100.0</span>
+    <span class="badge badge-silver">Evidence: SILVER</span>
+    <span class="badge badge-phase">Phase 3 Complete</span>
+    <span class="badge badge-combo">30 Combinations Predicted</span>
+    &nbsp; Generated: 2026-04-03 14:13
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="number">1372</div>
+      <div class="label">Protein Targets</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">436</div>
+      <div class="label">Total Drug Candidates</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">20</div>
+      <div class="label">Hub Targets</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">16</div>
+      <div class="label">PPI Interactions</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">8</div>
+      <div class="label">Validated Candidates</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">3</div>
+      <div class="label">Contraindicated</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">30</div>
+      <div class="label">Combination Predictions</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">0</div>
+      <div class="label">Joint Publications</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Analysis Pipeline</h2>
+    <div class="tab-container">
+      <div class="tab active" onclick="switchTab(event, 'candidates')">Drug Candidates</div>
+      <div class="tab" onclick="switchTab(event, 'network')">Network Pharmacology</div>
+      <div class="tab" onclick="switchTab(event, 'hubs')">Hub Targets</div>
+      <div class="tab" onclick="switchTab(event, 'combos')">Combinations</div>
+      <div class="tab" onclick="switchTab(event, 'ppi')">Protein Interactions</div>
+      <div class="tab" onclick="switchTab(event, 'enrichment')">Pathway Enrichment</div>
+    </div>
+
+    <!-- ═══ CANDIDATES TAB ═══ -->
+    <div id="candidates" class="tab-content active">
+      <div class="filter-bar">
+        <label>Filter by tier:</label>
+        <select id="tierFilter" onchange="filterCandidates()">
+          <option value="all">All</option>
+          <option value="1">Tier 1 (Clinical Translation)</option>
+          <option value="2">Tier 2 (Validated with Caveats)</option>
+          <option value="3">Tier 3 (Preclinical)</option>
+          <option value="0">Unranked</option>
+        </select>
+        <label>Search:</label>
+        <input type="text" id="drugSearch" oninput="filterCandidates()" placeholder="Drug name...">
+      </div>
+      <table id="candidateTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('candidateTable', 0)">#</th>
+            <th onclick="sortTable('candidateTable', 1)">Drug</th>
+            <th>Tier</th>
+            <th onclick="sortTable('candidateTable', 3)">Phase 2 Score</th>
+            <th onclick="sortTable('candidateTable', 4)">NP Score</th>
+            <th>Pathways</th>
+            <th>Targets</th>
+            <th>Validation Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-tier="3" data-name="dasatinib anhydrous">
+            <td>1</td>
+            <td class="drug-name">DASATINIB ANHYDROUS</td>
+            <td><span class="tier-badge" style="background:#8b949e">Tier 3</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:92.04545454545455%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 20.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:90.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 27.0</td>
+            <td>5 (3✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">ABL1</span> <span class="target-tag">LYN</span> <span class="target-tag">KIT</span> <span class="target-tag">SRC</span> <span class="target-tag">FYN</span> <span class="target-tag">+2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Senolytic potential, unstudied in diabetes</td>
+          </tr>
+          <tr data-tier="-1" data-name="regorafenib">
+            <td>2</td>
+            <td class="drug-name">REGORAFENIB</td>
+            <td><span class="tier-badge" style="background:#f85149">CONTRA</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:92.04545454545455%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 20.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:73.33333333333333%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 22.0</td>
+            <td>5 (2✓ 1✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">ABL1</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">BRAF</span> <span class="target-tag">+2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Diabetogenic — causes T1D + DKA</td>
+          </tr>
+          <tr data-tier="-1" data-name="pazopanib">
+            <td>3</td>
+            <td class="drug-name">PAZOPANIB</td>
+            <td><span class="tier-badge" style="background:#f85149">CONTRA</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:73.86363636363636%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 16.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:66.66666666666666%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 20.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">LCK</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Hyperglycemic effects</td>
+          </tr>
+          <tr data-tier="-1" data-name="pazopanib hydrochloride">
+            <td>4</td>
+            <td class="drug-name">PAZOPANIB HYDROCHLORIDE</td>
+            <td><span class="tier-badge" style="background:#f85149">CONTRA</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:73.86363636363636%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 16.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:66.66666666666666%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 20.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">LCK</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Hyperglycemic effects</td>
+          </tr>
+          <tr data-tier="0" data-name="vandetanib">
+            <td>5</td>
+            <td class="drug-name">VANDETANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:73.86363636363636%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 16.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:56.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 17.0</td>
+            <td>4 (2✓ 1✗)</td>
+            <td><span class="target-tag">ERBB4</span> <span class="target-tag">ERBB2</span> <span class="target-tag">EGFR</span> <span class="target-tag">KDR</span> <span class="target-tag">ERBB3</span> <span class="target-tag">SRC</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="1" data-name="sorafenib">
+            <td>6</td>
+            <td class="drug-name">SORAFENIB</td>
+            <td><span class="tier-badge" style="background:#238636">Tier 1</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>5 (2✓ 1✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">BRAF</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Phase 2 T1D active, NOD mice</td>
+          </tr>
+          <tr data-tier="1" data-name="sorafenib tosylate">
+            <td>7</td>
+            <td class="drug-name">SORAFENIB TOSYLATE</td>
+            <td><span class="tier-badge" style="background:#238636">Tier 1</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>5 (2✓ 1✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">BRAF</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Phase 2 T1D active, NOD mice</td>
+          </tr>
+          <tr data-tier="2" data-name="sunitinib">
+            <td>8</td>
+            <td class="drug-name">SUNITINIB</td>
+            <td><span class="tier-badge" style="background:#d29922">Tier 2</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:60.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 18.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Case reports + NOD mice remission</td>
+          </tr>
+          <tr data-tier="0" data-name="midostaurin">
+            <td>9</td>
+            <td class="drug-name">MIDOSTAURIN</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:60.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 18.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="2" data-name="sunitinib malate">
+            <td>10</td>
+            <td class="drug-name">SUNITINIB MALATE</td>
+            <td><span class="tier-badge" style="background:#d29922">Tier 2</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:60.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 18.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Case reports + NOD mice remission</td>
+          </tr>
+          <tr data-tier="0" data-name="nintedanib esylate">
+            <td>11</td>
+            <td class="drug-name">NINTEDANIB ESYLATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:50.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 15.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span> <span class="target-tag">PDGFRA</span> <span class="target-tag">FGFR2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="nintedanib">
+            <td>12</td>
+            <td class="drug-name">NINTEDANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:64.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 14.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:50.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 15.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span> <span class="target-tag">PDGFRA</span> <span class="target-tag">FGFR2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="dovitinib">
+            <td>13</td>
+            <td class="drug-name">DOVITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:57.95454545454546%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:60.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 18.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="famitinib">
+            <td>14</td>
+            <td class="drug-name">FAMITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:57.95454545454546%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:60.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 18.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">FLT3</span> <span class="target-tag">KDR</span> <span class="target-tag">KIT</span> <span class="target-tag">PDGFRA</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="orantinib">
+            <td>15</td>
+            <td class="drug-name">ORANTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:57.95454545454546%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:50.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 15.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">FGFR1</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span> <span class="target-tag">PDGFRA</span> <span class="target-tag">FGFR2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="2" data-name="imatinib mesylate">
+            <td>16</td>
+            <td class="drug-name">IMATINIB MESYLATE</td>
+            <td><span class="tier-badge" style="background:#d29922">Tier 2</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:55.68181818181818%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">BCR</span> <span class="target-tag">KIT</span> <span class="target-tag">ABL1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Phase 2 RCT complete, transplant paradox</td>
+          </tr>
+          <tr data-tier="2" data-name="imatinib">
+            <td>17</td>
+            <td class="drug-name">IMATINIB</td>
+            <td><span class="tier-badge" style="background:#d29922">Tier 2</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:55.68181818181818%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">BCR</span> <span class="target-tag">KIT</span> <span class="target-tag">ABL1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">Phase 2 RCT complete, transplant paradox</td>
+          </tr>
+          <tr data-tier="0" data-name="quizartinib">
+            <td>18</td>
+            <td class="drug-name">QUIZARTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:55.68181818181818%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">FLT3</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="cediranib">
+            <td>19</td>
+            <td class="drug-name">CEDIRANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:55.68181818181818%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="bosutinib">
+            <td>20</td>
+            <td class="drug-name">BOSUTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:55.68181818181818%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 12.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:56.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 17.0</td>
+            <td>3 (3✓ 0✗)</td>
+            <td><span class="target-tag">BCR</span> <span class="target-tag">SRC</span> <span class="target-tag">ABL1</span> <span class="target-tag">LYN</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="at-9283">
+            <td>21</td>
+            <td class="drug-name">AT-9283</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:48.86363636363637%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:56.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 17.0</td>
+            <td>3 (3✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">FLT3</span> <span class="target-tag">JAK3</span> <span class="target-tag">ABL1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="cm-082">
+            <td>22</td>
+            <td class="drug-name">CM-082</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:48.86363636363637%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">FLT3</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="motesanib">
+            <td>23</td>
+            <td class="drug-name">MOTESANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:48.86363636363637%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="poziotinib">
+            <td>24</td>
+            <td class="drug-name">POZIOTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:48.86363636363637%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:20.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 6.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">ERBB3</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="linifanib">
+            <td>25</td>
+            <td class="drug-name">LINIFANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:48.86363636363637%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 16.0</td>
+            <td>4 (2✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">FLT3</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="3" data-name="upadacitinib hemihydrate">
+            <td>26</td>
+            <td class="drug-name">UPADACITINIB HEMIHYDRATE</td>
+            <td><span class="tier-badge" style="background:#8b949e">Tier 3</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">JAK1-selective, preclinical only</td>
+          </tr>
+          <tr data-tier="1" data-name="tofacitinib citrate">
+            <td>27</td>
+            <td class="drug-name">TOFACITINIB CITRATE</td>
+            <td><span class="tier-badge" style="background:#238636">Tier 1</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">NHP islet transplant, 330-day graft survival</td>
+          </tr>
+          <tr data-tier="0" data-name="lestaurtinib">
+            <td>28</td>
+            <td class="drug-name">LESTAURTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:33.33333333333333%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 10.0</td>
+            <td>3 (2✓ 1✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">FLT3</span> <span class="target-tag">NTRK2</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="pacritinib">
+            <td>29</td>
+            <td class="drug-name">PACRITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">FLT3</span> <span class="target-tag">ACVR1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="filgotinib maleate">
+            <td>30</td>
+            <td class="drug-name">FILGOTINIB MALEATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="deuruxolitinib phosphate">
+            <td>31</td>
+            <td class="drug-name">DEURUXOLITINIB PHOSPHATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="pacritinib citrate">
+            <td>32</td>
+            <td class="drug-name">PACRITINIB CITRATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">FLT3</span> <span class="target-tag">ACVR1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="delgocitinib">
+            <td>33</td>
+            <td class="drug-name">DELGOCITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="momelotinib dihydrochloride monohydrate">
+            <td>34</td>
+            <td class="drug-name">MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK1</span> <span class="target-tag">ACVR1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="upadacitinib">
+            <td>35</td>
+            <td class="drug-name">UPADACITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="ruxolitinib">
+            <td>36</td>
+            <td class="drug-name">RUXOLITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="momelotinib">
+            <td>37</td>
+            <td class="drug-name">MOMELOTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 13.0</td>
+            <td>3 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK1</span> <span class="target-tag">ACVR1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="1" data-name="tofacitinib">
+            <td>38</td>
+            <td class="drug-name">TOFACITINIB</td>
+            <td><span class="tier-badge" style="background:#238636">Tier 1</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">NHP islet transplant, 330-day graft survival</td>
+          </tr>
+          <tr data-tier="0" data-name="filgotinib">
+            <td>39</td>
+            <td class="drug-name">FILGOTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="tivozanib">
+            <td>40</td>
+            <td class="drug-name">TIVOZANIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:36.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 11.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="masitinib">
+            <td>41</td>
+            <td class="drug-name">MASITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:36.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 11.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="tivozanib hydrochloride">
+            <td>42</td>
+            <td class="drug-name">TIVOZANIB HYDROCHLORIDE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:36.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 11.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="catequentinib">
+            <td>43</td>
+            <td class="drug-name">CATEQUENTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:36.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 11.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span> <span class="target-tag">KDR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="afatinib">
+            <td>44</td>
+            <td class="drug-name">AFATINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:13.333333333333334%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 4.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="afatinib dimaleate">
+            <td>45</td>
+            <td class="drug-name">AFATINIB DIMALEATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:13.333333333333334%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 4.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="neratinib">
+            <td>46</td>
+            <td class="drug-name">NERATINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:13.333333333333334%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 4.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="neratinib maleate">
+            <td>47</td>
+            <td class="drug-name">NERATINIB MALEATE</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:13.333333333333334%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 4.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="dacomitinib">
+            <td>48</td>
+            <td class="drug-name">DACOMITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:46.590909090909086%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 10.25</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:13.333333333333334%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 4.0</td>
+            <td>1 (0✓ 1✗)</td>
+            <td><span class="target-tag">ERBB2</span> <span class="target-tag">ERBB4</span> <span class="target-tag">EGFR</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="peficitinib">
+            <td>49</td>
+            <td class="drug-name">PEFICITINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:39.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 8.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 12.0</td>
+            <td>2 (2✓ 0✗)</td>
+            <td><span class="target-tag">JAK2</span> <span class="target-tag">JAK3</span> <span class="target-tag">JAK1</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+          <tr data-tier="0" data-name="seralutinib">
+            <td>50</td>
+            <td class="drug-name">SERALUTINIB</td>
+            <td><span class="tier-badge" style="background:#30363d">—</span></td>
+            <td><div class="score-bar"><div class="score-fill" style="width:39.77272727272727%;background:linear-gradient(90deg,#388bfd,#58a6ff)"></div></div> 8.75</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:36.666666666666664%;background:linear-gradient(90deg,#a371f7,#d2a8ff)"></div></div> 11.0</td>
+            <td>3 (1✓ 0✗)</td>
+            <td><span class="target-tag">PDGFRA</span> <span class="target-tag">PDGFRB</span> <span class="target-tag">KIT</span></td>
+            <td style="font-size:11px;color:#8b949e;max-width:250px">UNRANKED</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══ NETWORK PHARMACOLOGY TAB ═══ -->
+    <div id="network" class="tab-content">
+      <h3 style="color:#a371f7;margin-bottom:12px">Drug × Pathway Coverage Matrix</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:16px">Each drug mapped to 6 islet-relevant biological processes. ✓ = beneficial pathway, ⚠ = risky pathway.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Drug</th>
+            <th>Tier</th>
+            <th>Immune Rejection</th>
+            <th>Beta Cell Survival</th>
+            <th>Inflammation</th>
+            <th>Angiogenesis</th>
+            <th>Fibrosis</th>
+            <th>Oncogenic</th>
+            <th>NP Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="drug-name">DASATINIB ANHYDROUS</td><td><span class="tier-badge" style="background:#8b949e">Tier 3</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">27.0</td></tr>
+          <tr><td class="drug-name">REGORAFENIB</td><td><span class="tier-badge" style="background:#f85149">CONTRA</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#f85149;font-weight:700">⚠</td><td style="font-weight:600;color:#a371f7">22.0</td></tr>
+          <tr><td class="drug-name">PAZOPANIB</td><td><span class="tier-badge" style="background:#f85149">CONTRA</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">20.0</td></tr>
+          <tr><td class="drug-name">PAZOPANIB HYDROCHLORIDE</td><td><span class="tier-badge" style="background:#f85149">CONTRA</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">20.0</td></tr>
+          <tr><td class="drug-name">SUNITINIB</td><td><span class="tier-badge" style="background:#d29922">Tier 2</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">18.0</td></tr>
+          <tr><td class="drug-name">MIDOSTAURIN</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">18.0</td></tr>
+          <tr><td class="drug-name">SUNITINIB MALATE</td><td><span class="tier-badge" style="background:#d29922">Tier 2</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">18.0</td></tr>
+          <tr><td class="drug-name">DOVITINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">18.0</td></tr>
+          <tr><td class="drug-name">FAMITINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">18.0</td></tr>
+          <tr><td class="drug-name">VANDETANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#f85149;font-weight:700">⚠</td><td style="font-weight:600;color:#a371f7">17.0</td></tr>
+          <tr><td class="drug-name">BOSUTINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">17.0</td></tr>
+          <tr><td class="drug-name">AT-9283</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">17.0</td></tr>
+          <tr><td class="drug-name">SORAFENIB</td><td><span class="tier-badge" style="background:#238636">Tier 1</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#f85149;font-weight:700">⚠</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">SORAFENIB TOSYLATE</td><td><span class="tier-badge" style="background:#238636">Tier 1</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#f85149;font-weight:700">⚠</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">IMATINIB MESYLATE</td><td><span class="tier-badge" style="background:#d29922">Tier 2</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">IMATINIB</td><td><span class="tier-badge" style="background:#d29922">Tier 2</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">QUIZARTINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">CM-082</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">LINIFANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">16.0</td></tr>
+          <tr><td class="drug-name">NINTEDANIB ESYLATE</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">15.0</td></tr>
+          <tr><td class="drug-name">NINTEDANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">15.0</td></tr>
+          <tr><td class="drug-name">ORANTINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">15.0</td></tr>
+          <tr><td class="drug-name">CRENOLANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">14.0</td></tr>
+          <tr><td class="drug-name">CEDIRANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">MOTESANIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">PACRITINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">PACRITINIB CITRATE</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">MOMELOTINIB</td><td><span class="tier-badge" style="background:#30363d">—</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#d29922;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">13.0</td></tr>
+          <tr><td class="drug-name">UPADACITINIB HEMIHYDRATE</td><td><span class="tier-badge" style="background:#8b949e">Tier 3</span></td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#238636;font-weight:700">✓</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="text-align:center;color:#30363d">—</td><td style="font-weight:600;color:#a371f7">12.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══ HUB TARGETS TAB ═══ -->
+    <div id="hubs" class="tab-content">
+      <h3 style="color:#7ee787;margin-bottom:12px">Network Hub Targets</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:16px">Proteins targeted by the most drug candidates. Higher hub score = more robust therapeutic axis.</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Target</th><th>Drug Degree</th><th>Pathways</th><th>Hub Score</th><th>Key Drugs</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="drug-name">PDGFRB</td>
+            <td>28</td>
+            <td>3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:93.33333333333333%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 70.0</td>
+            <td style="font-size:11px;color:#8b949e">DASATINIB ANHYDROUS, REGORAFENIB, PAZOPANIB, PAZOPANIB HYDROCHLORIDE, SORAFENIB</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="drug-name">PDGFRA</td>
+            <td>21</td>
+            <td>3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:70.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 52.5</td>
+            <td style="font-size:11px;color:#8b949e">REGORAFENIB, PAZOPANIB, PAZOPANIB HYDROCHLORIDE, SUNITINIB, MIDOSTAURIN</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="drug-name">KDR</td>
+            <td>28</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:56.00000000000001%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 42.0</td>
+            <td style="font-size:11px;color:#8b949e">REGORAFENIB, PAZOPANIB, PAZOPANIB HYDROCHLORIDE, VANDETANIB, SORAFENIB</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td class="drug-name">KIT</td>
+            <td>27</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:54.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 40.5</td>
+            <td style="font-size:11px;color:#8b949e">DASATINIB ANHYDROUS, REGORAFENIB, PAZOPANIB, PAZOPANIB HYDROCHLORIDE, SORAFENIB</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="drug-name">FGFR1</td>
+            <td>16</td>
+            <td>3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 40.0</td>
+            <td style="font-size:11px;color:#8b949e">REGORAFENIB, PAZOPANIB, PAZOPANIB HYDROCHLORIDE, NINTEDANIB ESYLATE, NINTEDANIB</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td class="drug-name">JAK2</td>
+            <td>20</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:53.333333333333336%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 40.0</td>
+            <td style="font-size:11px;color:#8b949e">AT-9283, UPADACITINIB HEMIHYDRATE, TOFACITINIB CITRATE, LESTAURTINIB, PACRITINIB</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td class="drug-name">FGFR2</td>
+            <td>13</td>
+            <td>3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:43.333333333333336%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 32.5</td>
+            <td style="font-size:11px;color:#8b949e">REGORAFENIB, NINTEDANIB ESYLATE, NINTEDANIB, ORANTINIB, LUCITANIB</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td class="drug-name">ABL1</td>
+            <td>15</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 30.0</td>
+            <td style="font-size:11px;color:#8b949e">DASATINIB ANHYDROUS, REGORAFENIB, IMATINIB MESYLATE, IMATINIB, BOSUTINIB</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="drug-name">FLT3</td>
+            <td>20</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:40.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 30.0</td>
+            <td style="font-size:11px;color:#8b949e">SORAFENIB, SORAFENIB TOSYLATE, SUNITINIB, MIDOSTAURIN, SUNITINIB MALATE</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td class="drug-name">JAK1</td>
+            <td>14</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:37.333333333333336%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 28.0</td>
+            <td style="font-size:11px;color:#8b949e">UPADACITINIB HEMIHYDRATE, TOFACITINIB CITRATE, FILGOTINIB MALEATE, DEURUXOLITINIB PHOSPHATE, DELGOCITINIB</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td class="drug-name">JAK3</td>
+            <td>13</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:34.66666666666667%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 26.0</td>
+            <td style="font-size:11px;color:#8b949e">AT-9283, UPADACITINIB HEMIHYDRATE, TOFACITINIB CITRATE, FILGOTINIB MALEATE, DEURUXOLITINIB PHOSPHATE</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td class="drug-name">EGFR</td>
+            <td>17</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:34.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 25.5</td>
+            <td style="font-size:11px;color:#8b949e">VANDETANIB, POZIOTINIB, AFATINIB, AFATINIB DIMALEATE, NERATINIB</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td class="drug-name">ERBB2</td>
+            <td>13</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:26.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 19.5</td>
+            <td style="font-size:11px;color:#8b949e">VANDETANIB, POZIOTINIB, AFATINIB, AFATINIB DIMALEATE, NERATINIB</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td class="drug-name">BCR</td>
+            <td>12</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:24.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 18.0</td>
+            <td style="font-size:11px;color:#8b949e">DASATINIB ANHYDROUS, IMATINIB MESYLATE, IMATINIB, BOSUTINIB, PONATINIB</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td class="drug-name">ERBB4</td>
+            <td>8</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:16.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 12.0</td>
+            <td style="font-size:11px;color:#8b949e">VANDETANIB, POZIOTINIB, AFATINIB, AFATINIB DIMALEATE, NERATINIB</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td class="drug-name">MET</td>
+            <td>4</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:10.666666666666668%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 8.0</td>
+            <td style="font-size:11px;color:#8b949e">AMIVANTAMAB, CABOZANTINIB S-MALATE, CABOZANTINIB, CRIZOTINIB</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td class="drug-name">SRC</td>
+            <td>3</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:8.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 6.0</td>
+            <td style="font-size:11px;color:#8b949e">DASATINIB ANHYDROUS, VANDETANIB, BOSUTINIB</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td class="drug-name">ACVR1</td>
+            <td>4</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:8.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 6.0</td>
+            <td style="font-size:11px;color:#8b949e">PACRITINIB, PACRITINIB CITRATE, MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE, MOMELOTINIB</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td class="drug-name">BTK</td>
+            <td>4</td>
+            <td>1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:8.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 6.0</td>
+            <td style="font-size:11px;color:#8b949e">RITLECITINIB, RITLECITINIB TOSYLATE, ABIVERTINIB, ABIVERTINIB MALEATE</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td class="drug-name">ALK</td>
+            <td>3</td>
+            <td>2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:8.0%;background:linear-gradient(90deg,#238636,#7ee787)"></div></div> 6.0</td>
+            <td style="font-size:11px;color:#8b949e">BRIGATINIB, CRIZOTINIB, ENTRECTINIB</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══ COMBINATIONS TAB ═══ -->
+    <div id="combos" class="tab-content">
+      <h3 style="color:#a371f7;margin-bottom:12px">Predicted Synergistic Combinations</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:16px">Drug pairs ranked by complementary target coverage across beneficial pathways. Higher score = more synergistic.</p>
+      <div class="combo-card">
+        <div class="combo-score">#1 &mdash; 55.0</div>
+        <h3>
+          <span class="drug-name">DASATINIB ANHYDROUS</span>
+          <span class="tier-badge" style="background:#8b949e">Tier 3</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 13 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 12 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#2 &mdash; 53.5</div>
+        <h3>
+          <span class="drug-name">MIDOSTAURIN</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#3 &mdash; 53.5</div>
+        <h3>
+          <span class="drug-name">DOVITINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#4 &mdash; 53.5</div>
+        <h3>
+          <span class="drug-name">FAMITINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#5 &mdash; 53.0</div>
+        <h3>
+          <span class="drug-name">IMATINIB MESYLATE</span>
+          <span class="tier-badge" style="background:#d29922">Tier 2</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 10 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#6 &mdash; 53.0</div>
+        <h3>
+          <span class="drug-name">IMATINIB</span>
+          <span class="tier-badge" style="background:#d29922">Tier 2</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 10 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#7 &mdash; 52.5</div>
+        <h3>
+          <span class="drug-name">SORAFENIB</span>
+          <span class="tier-badge" style="background:#238636">Tier 1</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">BOSUTINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 9 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#8 &mdash; 52.5</div>
+        <h3>
+          <span class="drug-name">SORAFENIB TOSYLATE</span>
+          <span class="tier-badge" style="background:#238636">Tier 1</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">BOSUTINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 9 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#9 &mdash; 52.0</div>
+        <h3>
+          <span class="drug-name">SORAFENIB</span>
+          <span class="tier-badge" style="background:#238636">Tier 1</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#10 &mdash; 52.0</div>
+        <h3>
+          <span class="drug-name">SORAFENIB TOSYLATE</span>
+          <span class="tier-badge" style="background:#238636">Tier 1</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#11 &mdash; 51.0</div>
+        <h3>
+          <span class="drug-name">MIDOSTAURIN</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">BOSUTINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 5/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 9 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#12 &mdash; 51.0</div>
+        <h3>
+          <span class="drug-name">DOVITINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">BOSUTINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 5/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 9 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#13 &mdash; 51.0</div>
+        <h3>
+          <span class="drug-name">FAMITINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">BOSUTINIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 5/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 9 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 0
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#14 &mdash; 50.5</div>
+        <h3>
+          <span class="drug-name">SUNITINIB</span>
+          <span class="tier-badge" style="background:#d29922">Tier 2</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-score">#15 &mdash; 50.5</div>
+        <h3>
+          <span class="drug-name">SUNITINIB MALATE</span>
+          <span class="tier-badge" style="background:#d29922">Tier 2</span>
+          &nbsp;+&nbsp;
+          <span class="drug-name">VANDETANIB</span>
+          <span class="tier-badge" style="background:#30363d">—</span>
+        </h3>
+        <div class="combo-detail">
+          <strong>Pathways:</strong> 6/6 &nbsp;|&nbsp;
+          <strong>Beneficial:</strong> 3 &nbsp;|&nbsp;
+          <strong>Targets (union):</strong> 10 &nbsp;|&nbsp;
+          <strong>Complementary:</strong> 9 &nbsp;|&nbsp;
+          <strong>Overlap:</strong> 1
+          <br><strong>Rationale:</strong> dual-action: immune suppression + beta cell protection; anti-inflammatory cytokine modulation; promotes graft revascularization; anti-fibrotic; VEGF/PDGF dual inhibition for controlled angiogenesis
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PPI TAB ═══ -->
+    <div id="ppi" class="tab-content">
+      <h3 style="color:#58a6ff;margin-bottom:12px">Protein-Protein Interactions (STRING, score ≥ 700)</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:16px">High-confidence functional interactions among validated drug targets.</p>
+      <table>
+        <thead><tr><th>Protein A</th><th>Protein B</th><th>Score</th><th>Implication</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="drug-name">PDGFRA</td>
+            <td class="drug-name">JAK3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:73.7%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.737</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRA</td>
+            <td class="drug-name">JAK1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:91.9%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.919</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRA</td>
+            <td class="drug-name">JAK2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:92.9%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.929</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRA</td>
+            <td class="drug-name">PDGFRB</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:98.9%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.989</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRB</td>
+            <td class="drug-name">JAK3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:72.89999999999999%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.729</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRB</td>
+            <td class="drug-name">JAK1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:92.10000000000001%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.921</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRB</td>
+            <td class="drug-name">JAK2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:95.39999999999999%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.954</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">PDGFRB</td>
+            <td class="drug-name">KDR</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:98.6%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.986</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">KDR</td>
+            <td class="drug-name">JAK2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:92.60000000000001%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.926</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">KDR</td>
+            <td class="drug-name">JAK1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:94.69999999999999%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.947</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">KIT</td>
+            <td class="drug-name">JAK2</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:70.7%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.707</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">KIT</td>
+            <td class="drug-name">BCR</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:80.7%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.807</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">BCR</td>
+            <td class="drug-name">ABL1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:99.6%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.996</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">JAK2</td>
+            <td class="drug-name">JAK3</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:97.5%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.975</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">JAK2</td>
+            <td class="drug-name">JAK1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:99.9%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.999</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+          <tr>
+            <td class="drug-name">JAK3</td>
+            <td class="drug-name">JAK1</td>
+            <td><div class="score-bar"><div class="score-fill" style="width:99.9%;background:linear-gradient(90deg,#d29922,#f0c040)"></div></div> 0.999</td>
+            <td style="font-size:11px;color:#8b949e">Co-functional; shared drug targeting may amplify therapeutic effect</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ═══ ENRICHMENT TAB ═══ -->
+    <div id="enrichment" class="tab-content">
+      <h3 style="color:#7ee787;margin-bottom:12px">Functional Enrichment (STRING)</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:16px">Enriched biological processes among validated drug targets (FDR &lt; 0.05).</p>
+      <h4 style='color:#58a6ff;margin:12px 0 8px'>KEGG Pathways</h4>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Pathways in cancer">Pathways in cancer</div>
+        <div class="pathway-fill" style="width:300.0px;background:linear-gradient(90deg,#238636,#2ea043)">10 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=6.0e-13</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="EGFR tyrosine kinase inhibitor resistance">EGFR tyrosine kinase inhibitor resistance</div>
+        <div class="pathway-fill" style="width:180.0px;background:linear-gradient(90deg,#238636,#2ea043)">6 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.8e-10</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="PI3K-Akt signaling pathway">PI3K-Akt signaling pathway</div>
+        <div class="pathway-fill" style="width:240.0px;background:linear-gradient(90deg,#238636,#2ea043)">8 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.8e-10</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Ras signaling pathway">Ras signaling pathway</div>
+        <div class="pathway-fill" style="width:180.0px;background:linear-gradient(90deg,#238636,#2ea043)">6 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=9.0e-08</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="MAPK signaling pathway">MAPK signaling pathway</div>
+        <div class="pathway-fill" style="width:180.0px;background:linear-gradient(90deg,#238636,#2ea043)">6 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.9e-07</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="JAK-STAT signaling pathway">JAK-STAT signaling pathway</div>
+        <div class="pathway-fill" style="width:150.0px;background:linear-gradient(90deg,#238636,#2ea043)">5 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=9.0e-07</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Rap1 signaling pathway">Rap1 signaling pathway</div>
+        <div class="pathway-fill" style="width:150.0px;background:linear-gradient(90deg,#238636,#2ea043)">5 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.5e-06</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Central carbon metabolism in cancer">Central carbon metabolism in cancer</div>
+        <div class="pathway-fill" style="width:120.0px;background:linear-gradient(90deg,#238636,#2ea043)">4 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.5e-06</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Hepatitis B">Hepatitis B</div>
+        <div class="pathway-fill" style="width:120.0px;background:linear-gradient(90deg,#238636,#2ea043)">4 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=5.2e-05</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Focal adhesion">Focal adhesion</div>
+        <div class="pathway-fill" style="width:120.0px;background:linear-gradient(90deg,#238636,#2ea043)">4 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=1.1e-04</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Acute myeloid leukemia">Acute myeloid leukemia</div>
+        <div class="pathway-fill" style="width:90.0px;background:linear-gradient(90deg,#238636,#2ea043)">3 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.1e-04</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Glioma">Glioma</div>
+        <div class="pathway-fill" style="width:90.0px;background:linear-gradient(90deg,#238636,#2ea043)">3 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.3e-04</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Melanoma">Melanoma</div>
+        <div class="pathway-fill" style="width:90.0px;background:linear-gradient(90deg,#238636,#2ea043)">3 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.3e-04</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Chronic myeloid leukemia">Chronic myeloid leukemia</div>
+        <div class="pathway-fill" style="width:90.0px;background:linear-gradient(90deg,#238636,#2ea043)">3 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.3e-04</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Th1 and Th2 cell differentiation">Th1 and Th2 cell differentiation</div>
+        <div class="pathway-fill" style="width:90.0px;background:linear-gradient(90deg,#238636,#2ea043)">3 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=3.1e-04</span>
+      </div>
+      <h4 style='color:#58a6ff;margin:20px 0 8px'>GO Biological Process</h4>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Transmembrane receptor protein tyrosine kinase signaling pathway">Transmembrane receptor protein tyrosine kinase signalin</div>
+        <div class="pathway-fill" style="width:272.7272727272727px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">10 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=1.1e-12</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Positive regulation of phosphatidylinositol 3-kinase signaling">Positive regulation of phosphatidylinositol 3-kinase si</div>
+        <div class="pathway-fill" style="width:163.63636363636363px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">6 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=4.8e-09</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Hemopoiesis">Hemopoiesis</div>
+        <div class="pathway-fill" style="width:245.45454545454547px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">9 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=4.8e-09</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Protein autophosphorylation">Protein autophosphorylation</div>
+        <div class="pathway-fill" style="width:190.9090909090909px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">7 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=4.8e-09</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Positive regulation of MAPK cascade">Positive regulation of MAPK cascade</div>
+        <div class="pathway-fill" style="width:218.1818181818182px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">8 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.1e-08</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Intracellular signal transduction">Intracellular signal transduction</div>
+        <div class="pathway-fill" style="width:272.7272727272727px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">10 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=7.2e-08</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Cellular response to chemical stimulus">Cellular response to chemical stimulus</div>
+        <div class="pathway-fill" style="width:300.0px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">11 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.0e-07</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Cell activation">Cell activation</div>
+        <div class="pathway-fill" style="width:218.1818181818182px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">8 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=2.8e-07</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Vascular endothelial growth factor signaling pathway">Vascular endothelial growth factor signaling pathway</div>
+        <div class="pathway-fill" style="width:109.0909090909091px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">4 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=4.7e-07</span>
+      </div>
+      <div class="pathway-bar">
+        <div class="pathway-name" title="Cellular response to organic substance">Cellular response to organic substance</div>
+        <div class="pathway-fill" style="width:272.7272727272727px;background:linear-gradient(90deg,#a371f7,#d2a8ff)">10 genes</div>
+        <span style="font-size:10px;color:#8b949e;margin-left:8px">FDR=8.5e-07</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ METHODOLOGY ═══ -->
+  <div class="section">
+    <h2>Methodology</h2>
+    <div style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:20px;font-size:13px;color:#8b949e">
+      <p><strong style="color:#58a6ff">Phase 1 — Target Identification:</strong> Queried OpenTargets for targets associated with graft rejection, T1D autoimmunity, beta cell apoptosis, immune tolerance, and GvHD. Added 40 curated seed targets from islet transplant literature. Expanded via STRING protein-protein interactions (score &ge;700). <strong>1,372 targets identified.</strong></p>
+      <br>
+      <p><strong style="color:#58a6ff">Phase 2 — Drug Mapping:</strong> Mapped all Phase 3+ and FDA-approved drugs to the target list via OpenTargets drugAndClinicalCandidates API and ChEMBL mechanisms. Scored by multi-target coverage with novelty bonus. <strong>436 drugs found, 429 novel candidates.</strong></p>
+      <br>
+      <p><strong style="color:#a371f7">Phase 3 — Network Pharmacology:</strong> Built drug-target-pathway bipartite network. Computed hub target centrality, drug pathway coverage across 6 islet-relevant biological processes, and synergy scores for pairwise combinations. STRING functional enrichment and PPI analysis for validated targets.</p>
+      <br>
+      <p><strong style="color:#238636">Phase 4 — Literature Validation:</strong> Top 10 candidates validated against clinical/preclinical literature. 3 drugs confirmed with real evidence (tofacitinib, sorafenib, imatinib), 2 contraindicated (regorafenib, pazopanib).</p>
+      <br>
+      <p><strong>Validation Level:</strong> <span class="badge badge-silver">SILVER</span> per Research Doctrine v1.1. Computational predictions + literature validation + network analysis (2.5 of 3 required sources). Third source needed: domain expert review.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Diabetes Research Hub &mdash; Islet Transplant &times; Drug Repurposing Pipeline<br>
+    Research Doctrine v1.1 | Generated 2026-04-03 | Phases 1-4 Complete
+  </div>
+
+</div>
+
+<script>
+function switchTab(e, tabId) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+function filterCandidates() {
+  const tier = document.getElementById('tierFilter').value;
+  const search = document.getElementById('drugSearch').value.toLowerCase();
+  const rows = document.querySelectorAll('#candidateTable tbody tr');
+  rows.forEach(row => {
+    const rowTier = row.getAttribute('data-tier');
+    const rowName = row.getAttribute('data-name') || '';
+    const tierMatch = tier === 'all' || rowTier === tier;
+    const searchMatch = !search || rowName.includes(search);
+    row.style.display = (tierMatch && searchMatch) ? '' : 'none';
+  });
+}
+
+function sortTable(tableId, colIdx) {
+  const table = document.getElementById(tableId);
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const asc = table.getAttribute('data-sort-asc') !== 'true';
+  table.setAttribute('data-sort-asc', asc);
+
+  rows.sort((a, b) => {
+    let aVal = a.cells[colIdx].textContent.trim();
+    let bVal = b.cells[colIdx].textContent.trim();
+    const aNum = parseFloat(aVal);
+    const bNum = parseFloat(bVal);
+    if (!isNaN(aNum) && !isNaN(bNum)) {
+      return asc ? aNum - bNum : bNum - aNum;
+    }
+    return asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+  });
+
+  rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+
+</body>
+</html>

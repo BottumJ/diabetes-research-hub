@@ -1,0 +1,633 @@
+{
+  "metadata": {
+    "project": "Multi-Omic Microbiome ML Pipeline",
+    "phase": "Phase 2 \u2014 Feature Engineering",
+    "date": "2026-04-03T23:47:47.620523",
+    "total_samples": 1200,
+    "total_features": 71,
+    "top_features_selected": 50,
+    "feature_selection_method": "mutual_information_classif",
+    "cohort_composition": {
+      "control": 420,
+      "T2D": 420,
+      "T1D": 180,
+      "prediabetes": 120,
+      "LADA": 60
+    },
+    "population_distribution": {
+      "European": 490,
+      "East_Asian": 237,
+      "African": 178,
+      "Hispanic": 174,
+      "South_Asian": 121
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "hba1c",
+      "mutual_info": 0.5165216270334521,
+      "abs_correlation": 0.7147132649733825
+    },
+    {
+      "feature": "bmi",
+      "mutual_info": 0.06293094511198194,
+      "abs_correlation": 0.3000343315928134
+    },
+    {
+      "feature": "age",
+      "mutual_info": 0.047796001788242615,
+      "abs_correlation": 0.279542510165832
+    },
+    {
+      "feature": "cross_micgene_x_oral_gut",
+      "mutual_info": 0.04447290251842051,
+      "abs_correlation": 0.18259269993347024
+    },
+    {
+      "feature": "oral_gut_translocation_index",
+      "mutual_info": 0.042884009672850665,
+      "abs_correlation": 0.26621934365203703
+    },
+    {
+      "feature": "cross_oral_gut_x_lps",
+      "mutual_info": 0.041763498236283114,
+      "abs_correlation": 0.2071888400228757
+    },
+    {
+      "feature": "composite_inflammation",
+      "mutual_info": 0.037608907918307954,
+      "abs_correlation": 0.3069540677137382
+    },
+    {
+      "feature": "micro_Streptococcus_mutans",
+      "mutual_info": 0.03751715367479003,
+      "abs_correlation": 0.188819654764427
+    },
+    {
+      "feature": "composite_gut_health_index",
+      "mutual_info": 0.03740208880973683,
+      "abs_correlation": 0.09974295800384508
+    },
+    {
+      "feature": "composite_multiomic_risk",
+      "mutual_info": 0.03601652198573646,
+      "abs_correlation": 0.32684618583360614
+    },
+    {
+      "feature": "cross_oral_gut_x_zonulin",
+      "mutual_info": 0.033197888696067324,
+      "abs_correlation": 0.22756063594682935
+    },
+    {
+      "feature": "metab_butyrate",
+      "mutual_info": 0.03190735474244377,
+      "abs_correlation": 0.1741023894871083
+    },
+    {
+      "feature": "metab_kynurenine",
+      "mutual_info": 0.026785015439402926,
+      "abs_correlation": 0.11884647142316544
+    },
+    {
+      "feature": "micro_Veillonella_dispar",
+      "mutual_info": 0.02545660974893149,
+      "abs_correlation": 0.106991037839765
+    },
+    {
+      "feature": "micro_Desulfovibrio_piger",
+      "mutual_info": 0.024871638492456327,
+      "abs_correlation": 0.1216062833846062
+    },
+    {
+      "feature": "micro_Escherichia_coli",
+      "mutual_info": 0.022985260573903377,
+      "abs_correlation": 0.14610224386068826
+    },
+    {
+      "feature": "metab_kynurenine_tryptophan_ratio",
+      "mutual_info": 0.022807634321773573,
+      "abs_correlation": 0.17148066814175594
+    },
+    {
+      "feature": "cross_ecoli_x_tmao",
+      "mutual_info": 0.021712269165698794,
+      "abs_correlation": 0.1708718846538085
+    },
+    {
+      "feature": "micro_Fusobacterium_nucleatum",
+      "mutual_info": 0.02111447142083267,
+      "abs_correlation": 0.15477380902648247
+    },
+    {
+      "feature": "genomic_prs_t2d",
+      "mutual_info": 0.021011613621258363,
+      "abs_correlation": 0.04606472529545708
+    },
+    {
+      "feature": "micro_Faecalibacterium_prausnitzii",
+      "mutual_info": 0.019484157512873912,
+      "abs_correlation": 0.06951492483710328
+    },
+    {
+      "feature": "metab_total_SCFA",
+      "mutual_info": 0.017852992026120118,
+      "abs_correlation": 0.08754355563076054
+    },
+    {
+      "feature": "geno_INS_rs689",
+      "mutual_info": 0.01577331294998041,
+      "abs_correlation": 0.006661452050562756
+    },
+    {
+      "feature": "genomic_microbiome_gene_burden",
+      "mutual_info": 0.015051132896658714,
+      "abs_correlation": 0.003778620207434049
+    },
+    {
+      "feature": "geno_SH2B3_rs3184504",
+      "mutual_info": 0.014402099357512022,
+      "abs_correlation": 0.0020003423378763016
+    },
+    {
+      "feature": "metab_TMAO",
+      "mutual_info": 0.013938066580019504,
+      "abs_correlation": 0.1795649396369708
+    },
+    {
+      "feature": "micro_Eubacterium_rectale",
+      "mutual_info": 0.013581755323520017,
+      "abs_correlation": 0.06989847344905026
+    },
+    {
+      "feature": "geno_CTLA4_rs3087243",
+      "mutual_info": 0.011867775262700109,
+      "abs_correlation": 0.044688274379418566
+    },
+    {
+      "feature": "metab_tryptophan",
+      "mutual_info": 0.008627701261480603,
+      "abs_correlation": 0.1098343691108174
+    },
+    {
+      "feature": "cross_akkermansia_x_bile",
+      "mutual_info": 0.008617199515460028,
+      "abs_correlation": 0.1405287370800681
+    },
+    {
+      "feature": "micro_Alistipes_putredinis",
+      "mutual_info": 0.008505471009219168,
+      "abs_correlation": 0.09482526709671095
+    },
+    {
+      "feature": "micro_Ruminococcus_gnavus",
+      "mutual_info": 0.008409216561783728,
+      "abs_correlation": 0.10643801546716185
+    },
+    {
+      "feature": "metab_propionate",
+      "mutual_info": 0.008066013458112975,
+      "abs_correlation": 0.09515064180980286
+    },
+    {
+      "feature": "micro_Porphyromonas_gingivalis",
+      "mutual_info": 0.007169384435299131,
+      "abs_correlation": 0.1704429457380963
+    },
+    {
+      "feature": "metab_zonulin",
+      "mutual_info": 0.004514886638532722,
+      "abs_correlation": 0.10557993733099451
+    },
+    {
+      "feature": "cross_fut2_x_bifido",
+      "mutual_info": 0.004429279002813313,
+      "abs_correlation": 0.014255831500040221
+    },
+    {
+      "feature": "genomic_prs_t1d",
+      "mutual_info": 0.004025813916572751,
+      "abs_correlation": 0.04137594964473836
+    },
+    {
+      "feature": "micro_Bacteroides_vulgatus",
+      "mutual_info": 0.003932781664362395,
+      "abs_correlation": 0.05592052386201117
+    },
+    {
+      "feature": "metab_indole_3_propionic_acid",
+      "mutual_info": 0.0033824581468551163,
+      "abs_correlation": 0.13992774980731332
+    },
+    {
+      "feature": "geno_ATG16L1_rs2241880",
+      "mutual_info": 0.003215458914144431,
+      "abs_correlation": 0.10432238663058677
+    },
+    {
+      "feature": "micro_Prevotella_copri",
+      "mutual_info": 0.0017669022592410322,
+      "abs_correlation": 0.10027860650669418
+    },
+    {
+      "feature": "alpha_shannon",
+      "mutual_info": 0.0016739871037347864,
+      "abs_correlation": 0.10141647323567199
+    },
+    {
+      "feature": "micro_Lactobacillus_reuteri",
+      "mutual_info": 0.0013325053414203758,
+      "abs_correlation": 0.1351985232674525
+    },
+    {
+      "feature": "cross_prs_t1d_x_diversity",
+      "mutual_info": 0.0010425496915311694,
+      "abs_correlation": 0.019501148970065697
+    },
+    {
+      "feature": "geno_IL23R_rs11209026",
+      "mutual_info": 0.0003100415068044704,
+      "abs_correlation": 0.033915097658650466
+    },
+    {
+      "feature": "micro_Akkermansia_muciniphila",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.11162481169233086
+    },
+    {
+      "feature": "micro_Roseburia_intestinalis",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.12487037782801683
+    },
+    {
+      "feature": "micro_Clostridium_bolteae",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.16708886638853468
+    },
+    {
+      "feature": "micro_Bifidobacterium_adolescentis",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.08909338399193345
+    },
+    {
+      "feature": "micro_Coprococcus_eutactus",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.09787104879028087
+    },
+    {
+      "feature": "metab_secondary_bile_acids",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.1298520542767894
+    },
+    {
+      "feature": "metab_butyrate_propionate_ratio",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.08101148993251528
+    },
+    {
+      "feature": "metab_acetate",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.0646070196799364
+    },
+    {
+      "feature": "micro_Haemophilus_parainfluenzae",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.14240337142695123
+    },
+    {
+      "feature": "micro_Blautia_obeum",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.10684070267674002
+    },
+    {
+      "feature": "metab_LPS_binding_protein",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.12702537663193053
+    },
+    {
+      "feature": "metab_primary_bile_acids",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.13817675348916836
+    },
+    {
+      "feature": "metab_bile_acid_ratio",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.15845782045333515
+    },
+    {
+      "feature": "geno_TCF7L2_rs7903146",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.02258534351690398
+    },
+    {
+      "feature": "geno_NOD2_rs2066844",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.03749539705298072
+    },
+    {
+      "feature": "geno_CARD9_rs10870077",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.04196800759951214
+    },
+    {
+      "feature": "geno_HLA_DQ_rs9272346",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.012033432298763618
+    },
+    {
+      "feature": "geno_FUT2_rs601338",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.05765439549342624
+    },
+    {
+      "feature": "geno_PTPN22_rs2476601",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.06508912442067749
+    },
+    {
+      "feature": "geno_IL2RA_rs12722495",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.05265987514569825
+    },
+    {
+      "feature": "cross_butyrate_production_efficiency",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.035055292133188296
+    },
+    {
+      "feature": "cross_butyrate_producer_sum",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.14596074017230756
+    },
+    {
+      "feature": "cross_nod2_x_ecoli",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.007591354281797136
+    },
+    {
+      "feature": "cross_prs_t2d_x_diversity",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.007926358774840166
+    },
+    {
+      "feature": "cross_tcf7l2_x_scfa",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.00840747163891604
+    },
+    {
+      "feature": "cross_il23r_x_kynurenine",
+      "mutual_info": 0.0,
+      "abs_correlation": 0.02144469617350732
+    }
+  ],
+  "top_features": [
+    "hba1c",
+    "bmi",
+    "age",
+    "cross_micgene_x_oral_gut",
+    "oral_gut_translocation_index",
+    "cross_oral_gut_x_lps",
+    "composite_inflammation",
+    "micro_Streptococcus_mutans",
+    "composite_gut_health_index",
+    "composite_multiomic_risk",
+    "cross_oral_gut_x_zonulin",
+    "metab_butyrate",
+    "metab_kynurenine",
+    "micro_Veillonella_dispar",
+    "micro_Desulfovibrio_piger",
+    "micro_Escherichia_coli",
+    "metab_kynurenine_tryptophan_ratio",
+    "cross_ecoli_x_tmao",
+    "micro_Fusobacterium_nucleatum",
+    "genomic_prs_t2d",
+    "micro_Faecalibacterium_prausnitzii",
+    "metab_total_SCFA",
+    "geno_INS_rs689",
+    "genomic_microbiome_gene_burden",
+    "geno_SH2B3_rs3184504",
+    "metab_TMAO",
+    "micro_Eubacterium_rectale",
+    "geno_CTLA4_rs3087243",
+    "metab_tryptophan",
+    "cross_akkermansia_x_bile",
+    "micro_Alistipes_putredinis",
+    "micro_Ruminococcus_gnavus",
+    "metab_propionate",
+    "micro_Porphyromonas_gingivalis",
+    "metab_zonulin",
+    "cross_fut2_x_bifido",
+    "genomic_prs_t1d",
+    "micro_Bacteroides_vulgatus",
+    "metab_indole_3_propionic_acid",
+    "geno_ATG16L1_rs2241880",
+    "micro_Prevotella_copri",
+    "alpha_shannon",
+    "micro_Lactobacillus_reuteri",
+    "cross_prs_t1d_x_diversity",
+    "geno_IL23R_rs11209026",
+    "micro_Akkermansia_muciniphila",
+    "micro_Roseburia_intestinalis",
+    "micro_Clostridium_bolteae",
+    "micro_Bifidobacterium_adolescentis",
+    "micro_Coprococcus_eutactus"
+  ],
+  "feature_categories": {
+    "microbiome": [
+      "micro_Faecalibacterium_prausnitzii",
+      "micro_Roseburia_intestinalis",
+      "micro_Akkermansia_muciniphila",
+      "micro_Eubacterium_rectale",
+      "micro_Bifidobacterium_adolescentis",
+      "micro_Coprococcus_eutactus",
+      "micro_Prevotella_copri",
+      "micro_Bacteroides_vulgatus",
+      "micro_Ruminococcus_gnavus",
+      "micro_Escherichia_coli",
+      "micro_Clostridium_bolteae",
+      "micro_Desulfovibrio_piger",
+      "micro_Lactobacillus_reuteri",
+      "micro_Streptococcus_mutans",
+      "micro_Porphyromonas_gingivalis",
+      "micro_Fusobacterium_nucleatum",
+      "micro_Veillonella_dispar",
+      "micro_Haemophilus_parainfluenzae",
+      "micro_Blautia_obeum",
+      "micro_Alistipes_putredinis"
+    ],
+    "metabolomic": [
+      "metab_butyrate",
+      "metab_propionate",
+      "metab_acetate",
+      "metab_total_SCFA",
+      "metab_butyrate_propionate_ratio",
+      "metab_secondary_bile_acids",
+      "metab_primary_bile_acids",
+      "metab_bile_acid_ratio",
+      "metab_tryptophan",
+      "metab_indole_3_propionic_acid",
+      "metab_kynurenine",
+      "metab_kynurenine_tryptophan_ratio",
+      "metab_TMAO",
+      "metab_LPS_binding_protein",
+      "metab_zonulin"
+    ],
+    "genomic": [
+      "geno_FUT2_rs601338",
+      "geno_NOD2_rs2066844",
+      "geno_IL23R_rs11209026",
+      "geno_ATG16L1_rs2241880",
+      "geno_CARD9_rs10870077",
+      "geno_TCF7L2_rs7903146",
+      "geno_HLA_DQ_rs9272346",
+      "geno_INS_rs689",
+      "geno_PTPN22_rs2476601",
+      "geno_SH2B3_rs3184504",
+      "geno_IL2RA_rs12722495",
+      "geno_CTLA4_rs3087243"
+    ],
+    "cross_omic": [
+      "cross_butyrate_producer_sum",
+      "cross_butyrate_production_efficiency",
+      "cross_oral_gut_x_lps",
+      "cross_oral_gut_x_zonulin",
+      "cross_ecoli_x_tmao",
+      "cross_akkermansia_x_bile",
+      "cross_fut2_x_bifido",
+      "cross_nod2_x_ecoli",
+      "cross_prs_t2d_x_diversity",
+      "cross_prs_t1d_x_diversity",
+      "cross_micgene_x_oral_gut",
+      "cross_tcf7l2_x_scfa",
+      "cross_il23r_x_kynurenine"
+    ],
+    "composite": [
+      "composite_gut_health_index",
+      "composite_inflammation",
+      "composite_multiomic_risk"
+    ],
+    "other": [
+      "alpha_shannon",
+      "oral_gut_translocation_index",
+      "genomic_prs_t2d",
+      "genomic_prs_t1d",
+      "genomic_microbiome_gene_burden",
+      "age",
+      "bmi",
+      "hba1c"
+    ]
+  },
+  "cross_population_splits": {
+    "East_Asian": {
+      "train_n": "963",
+      "test_n": "237",
+      "train_diabetes_rate": 0.656282450674974,
+      "test_diabetes_rate": 0.6244725738396625
+    },
+    "South_Asian": {
+      "train_n": "1079",
+      "test_n": "121",
+      "train_diabetes_rate": 0.6450417052826691,
+      "test_diabetes_rate": 0.6942148760330579
+    },
+    "European": {
+      "train_n": "710",
+      "test_n": "490",
+      "train_diabetes_rate": 0.647887323943662,
+      "test_diabetes_rate": 0.6530612244897959
+    },
+    "African": {
+      "train_n": "1022",
+      "test_n": "178",
+      "train_diabetes_rate": 0.6516634050880626,
+      "test_diabetes_rate": 0.6404494382022472
+    },
+    "Hispanic": {
+      "train_n": "1026",
+      "test_n": "174",
+      "train_diabetes_rate": 0.6491228070175439,
+      "test_diabetes_rate": 0.6551724137931034
+    }
+  },
+  "taxa_signatures": {
+    "Faecalibacterium_prausnitzii": {
+      "direction": "depleted",
+      "effect_size": 1.3437499999999998
+    },
+    "Roseburia_intestinalis": {
+      "direction": "depleted",
+      "effect_size": 1.2666666666666666
+    },
+    "Akkermansia_muciniphila": {
+      "direction": "depleted",
+      "effect_size": 0.7222222222222222
+    },
+    "Eubacterium_rectale": {
+      "direction": "depleted",
+      "effect_size": 1.0000000000000002
+    },
+    "Bifidobacterium_adolescentis": {
+      "direction": "depleted",
+      "effect_size": 1.0
+    },
+    "Coprococcus_eutactus": {
+      "direction": "depleted",
+      "effect_size": 1.1666666666666667
+    },
+    "Prevotella_copri": {
+      "direction": "depleted",
+      "effect_size": 0.625
+    },
+    "Bacteroides_vulgatus": {
+      "direction": "enriched",
+      "effect_size": 1.1304347826086956
+    },
+    "Ruminococcus_gnavus": {
+      "direction": "enriched",
+      "effect_size": 1.4166666666666667
+    },
+    "Escherichia_coli": {
+      "direction": "enriched",
+      "effect_size": 1.5
+    },
+    "Clostridium_bolteae": {
+      "direction": "enriched",
+      "effect_size": 1.4
+    },
+    "Desulfovibrio_piger": {
+      "direction": "enriched",
+      "effect_size": 1.1249999999999998
+    },
+    "Lactobacillus_reuteri": {
+      "direction": "depleted",
+      "effect_size": 1.1666666666666667
+    },
+    "Streptococcus_mutans": {
+      "direction": "enriched",
+      "effect_size": 1.3333333333333335
+    },
+    "Porphyromonas_gingivalis": {
+      "direction": "enriched",
+      "effect_size": 1.3
+    },
+    "Fusobacterium_nucleatum": {
+      "direction": "enriched",
+      "effect_size": 1.0000000000000002
+    },
+    "Veillonella_dispar": {
+      "direction": "enriched",
+      "effect_size": 1.25
+    },
+    "Haemophilus_parainfluenzae": {
+      "direction": "enriched",
+      "effect_size": 1.2499999999999998
+    },
+    "Blautia_obeum": {
+      "direction": "depleted",
+      "effect_size": 1.0
+    },
+    "Alistipes_putredinis": {
+      "direction": "enriched",
+      "effect_size": 0.9999999999999998
+    }
+  }
+}
