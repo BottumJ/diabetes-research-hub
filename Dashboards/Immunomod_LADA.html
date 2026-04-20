@@ -420,14 +420,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html" class="drh-current">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -454,12 +530,12 @@
         </div>
 
         <nav class="tabs">
-            <button class="tab-button active" onclick="switchTab(event, 'tab-1')">LADA vs T1D</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab-2')">Drug Candidates</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab-3')">Therapeutic Window</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab-4')">Why Underserved</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab-5')">Priority Scoring</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab-6')">References</button>
+            <button role="tab" class="tab-button active" onclick="switchTab(event, 'tab-1')">LADA vs T1D</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab-2')">Drug Candidates</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab-3')">Therapeutic Window</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab-4')">Why Underserved</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab-5')">Priority Scoring</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab-6')">References</button>
         </nav>
 
         <!-- TAB 1: LADA vs T1D -->
@@ -467,7 +543,7 @@
             <h2>LADA vs T1D: Immunological Profile</h2>
             <p>LADA (Latent Autoimmune Diabetes in Adults) exhibits a distinctly slower autoimmune progression than classic Type 1 Diabetes, creating a wider therapeutic window for immunomodulation. Understanding these differences is critical for designing LADA-specific interventions.</p>
 
-            <table class="comparison-table">
+            <table role="table" class="comparison-table">
                 <thead>
                     <tr>
                         <th>Dimension</th>
@@ -481,7 +557,7 @@
                         <td><strong>Autoantibody Profile</strong></td>
                         <td>GADA+ only (65-90%)</td>
                         <td>Multi-antibody (GADA+IA2A+ZnT8A+IAA)</td>
-                        <td><span class="source">UKPDS (PMID:18073361)</span></td>
+                        <td><span class="source">UKPDS (<a href="https://pubmed.ncbi.nlm.nih.gov/18073361/" target="_blank" rel="noopener" title="View on PubMed">PMID:18073361</a>)</span></td>
                     </tr>
                     <tr>
                         <td><strong>T-cell Autoreactivity</strong></td>
@@ -493,7 +569,7 @@
                         <td><strong>C-peptide Decline Rate</strong></td>
                         <td>~55 pmol/L/year (first 5yr)</td>
                         <td>Rapid loss within months</td>
-                        <td><span class="source">ACTION LADA (PMID:23248199)</span></td>
+                        <td><span class="source">ACTION LADA (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</span></td>
                     </tr>
                     <tr>
                         <td><strong>HLA Associations</strong></td>
@@ -620,7 +696,7 @@
         <li>Most immunomodulatory drugs are studied in classical T1D, not LADA specifically</li>
         <li>LADA therapeutic window timing is not well-established</li>
         <li>Drug rankings are based on mechanism fit, not LADA-specific trial data</li>
-        <li>GAD-alum evidence is mixed across trials</li>
+        <li>GAD-alum monotherapy is contradicted for recent-onset T1D: DIAGNODE-3 Phase 3 (n=174, HLA DR3-DQ2 enriched) met pre-specified futility criteria at the March 2026 interim, and Diamyd announced discontinuation in April 2026. Combination strategies (GAD-alum + vitamin D + etanercept) remain under study but are unproven.</li>
         <li>Sample sizes in LADA subgroup analyses are typically small</li>
       </ul>
       <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
@@ -633,12 +709,12 @@
 
     <script>
         // Data from Python script
-        const LADA_VS_T1D = {"dimensions": [{"name": "Autoantibody Profile", "lada": "GADA+ only (65-90%)", "t1d": "Multi-antibody (GADA+IA2A+ZnT8A+IAA)", "source": "UKPDS (PMID:18073361)"}, {"name": "T-cell Autoreactivity", "lada": "Present but lower frequency", "t1d": "High frequency, diverse epitopes", "source": "Population-based cohort studies"}, {"name": "C-peptide Decline Rate", "lada": "~55 pmol/L/year (first 5yr)", "t1d": "Rapid loss within months", "source": "ACTION LADA (PMID:23248199)"}, {"name": "HLA Associations", "lada": "DR3/DR4 + DR3-DQ2 predominance", "t1d": "DR3/DR4 (classic)", "source": "Population and genetic association studies"}, {"name": "Clinical Subtypes", "lada": "LADA1 (high GADA, rapid) vs LADA2 (low GADA, slow)", "t1d": "Single phenotype", "source": "Latent autoimmune literature"}, {"name": "Therapeutic Window", "lada": "2-6 years to insulin dependence", "t1d": "<6 months from symptoms", "source": "UKPDS, ACTION LADA"}]};
-        const DRUG_CANDIDATES = [{"name": "GAD-alum (Diamyd)", "mechanism": "GAD65 antigen-specific immunotherapy", "t1d_evidence": "Phase 3 (DIAGNODE-2); ongoing trials", "lada_evidence": "GAD-alum trials in LADA have shown variable results; C-peptide preservation has been reported in some studies but requires confirmation in larger trials", "rationale": "Antigen-specific, minimal systemic immunosuppression. LADA driven by GADA response; directly targets the lesion.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Teplizumab (anti-CD3)", "mechanism": "T-cell response modification; Tzield FDA-approved for T1D delay", "t1d_evidence": "Phase 3 TN-10 trial (PMID:29291885); FDA approved 2023", "lada_evidence": "No LADA-specific trials; excluded from T1D trials", "rationale": "Proven T1D delay extends 1-2 years. LADA's already-long window could be further extended with earlier intervention.", "window": "Early phase (0-2 years)"}, {"name": "Rituximab (anti-CD20)", "mechanism": "B-cell depletion", "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (PMID:19940299)", "lada_evidence": "No LADA trials; LADA is GADA-driven (B-cell product)", "rationale": "Since LADA is GADA-dependent, B-cell depletion may be particularly effective. Less cytokine-driven inflammation than T1D.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Abatacept (CTLA4-Ig)", "mechanism": "T-cell costimulation blockade", "t1d_evidence": "TrialNet: slowed C-peptide decline (PMID:20570966)", "lada_evidence": "No LADA trials", "rationale": "If T-cell autoreactivity drives gradual LADA progression, costimulation blockade during the slow phase could halt decline.", "window": "Middle phase (2-4 years)"}, {"name": "Low-dose IL-2 (aldesleukin)", "mechanism": "Treg expansion; suppresses autoimmune attack", "t1d_evidence": "DIABIL-2 trial in T1D; improved Treg frequency (PMID:27727279)", "lada_evidence": "No LADA trials; LADA may have insufficient Treg function", "rationale": "Treg expansion in LADA's slower autoimmune phase could tip balance toward tolerance and regeneration.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Sitagliptin + Lansoprazole", "mechanism": "DPP-4i + PPI; beta cell regeneration + immune modulation", "t1d_evidence": "REPAIR-T1D trial; mixed results (PMID:24997559)", "lada_evidence": "No LADA trials; LADA retains more beta cells, may respond better to regenerative signals", "rationale": "LADA's remaining beta cell mass is higher than T1D at diagnosis. Regenerative approach may be more effective.", "window": "Early phase (0-2 years)"}, {"name": "Vitamin D (cholecalciferol)", "mechanism": "Immunomodulatory; Treg support; anti-inflammatory", "t1d_evidence": "Multiple prevention trial designs attempted; evidence for disease-modifying benefit remains mixed", "lada_evidence": "Observational: lower vitamin D associated with faster LADA progression", "rationale": "Low-risk, widely available. LADA patients with lower vitamin D show accelerated decline. Preventive potential.", "window": "All phases; prevention-focused"}, {"name": "Baricitinib (JAK inhibitor)", "mechanism": "JAK1/2 inhibition; blocks cytokine signaling", "t1d_evidence": "BANDIT trial in T1D; Phase 2 data emerging", "lada_evidence": "No LADA data", "rationale": "Blocks IL-6, TNF-alpha signaling. LADA's slower autoimmune infiltration may be sensitive to JAK inhibition.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Verapamil (calcium channel blocker)", "mechanism": "TXNIP inhibition; beta cell protection", "t1d_evidence": "C-peptide preservation mechanisms documented in T1D literature, though clinical translation remains limited", "lada_evidence": "No LADA trials; excellent safety profile", "rationale": "Direct beta cell protection without immunosuppression. Long-term safety established. Synergistic with immunotherapy.", "window": "All phases"}];
+        const LADA_VS_T1D = {"dimensions": [{"name": "Autoantibody Profile", "lada": "GADA+ only (65-90%)", "t1d": "Multi-antibody (GADA+IA2A+ZnT8A+IAA)", "source": "UKPDS (<a href="https://pubmed.ncbi.nlm.nih.gov/18073361/" target="_blank" rel="noopener" title="View on PubMed">PMID:18073361</a>)"}, {"name": "T-cell Autoreactivity", "lada": "Present but lower frequency", "t1d": "High frequency, diverse epitopes", "source": "Population-based cohort studies"}, {"name": "C-peptide Decline Rate", "lada": "~55 pmol/L/year (first 5yr)", "t1d": "Rapid loss within months", "source": "ACTION LADA (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)"}, {"name": "HLA Associations", "lada": "DR3/DR4 + DR3-DQ2 predominance", "t1d": "DR3/DR4 (classic)", "source": "Population and genetic association studies"}, {"name": "Clinical Subtypes", "lada": "LADA1 (high GADA, rapid) vs LADA2 (low GADA, slow)", "t1d": "Single phenotype", "source": "Latent autoimmune literature"}, {"name": "Therapeutic Window", "lada": "2-6 years to insulin dependence", "t1d": "<6 months from symptoms", "source": "UKPDS, ACTION LADA"}]};
+        const DRUG_CANDIDATES = [{"name": "GAD-alum (Diamyd / retogatein)", "mechanism": "GAD65 antigen-specific immunotherapy", "t1d_evidence": "DIAGNODE-3 Phase 3 (n=174 evaluable, HLA DR3-DQ2 enriched) met pre-specified FUTILITY criteria at Mar 2026 interim - no clinically meaningful C-peptide effect in overall population or pre-specified subgroups. Diamyd announced discontinuation April 2026. Earlier DIAGNODE-2 (<a href="https://pubmed.ncbi.nlm.nih.gov/34299352/" target="_blank" rel="noopener" title="View on PubMed">PMID 34299352</a>) and 2022 IPD meta-analysis (<a href="https://pubmed.ncbi.nlm.nih.gov/35491968/" target="_blank" rel="noopener" title="View on PubMed">PMID 35491968</a>) showed modest HLA DR3-DQ2 subgroup signal that did NOT replicate in confirmatory Phase 3.", "lada_evidence": "GAD-alum trials in LADA have shown variable results; small pilot data (NCT04262479, n=14) does not yet address efficacy. Monotherapy path now contradicted for T1D.", "rationale": "Antigen-specific, minimal systemic immunosuppression. Following DIAGNODE-3 futility, monotherapy path is contradicted for recent-onset T1D; combination strategies (GAD + vitamin D + etanercept) remain under study. LADA-specific pivotal data absent.", "window": "Early-to-middle phase (0-4 years)", "status_2026": "CONTRADICTED_AS_MONOTHERAPY"}, {"name": "Teplizumab (anti-CD3)", "mechanism": "T-cell response modification; Tzield FDA-approved for T1D delay", "t1d_evidence": "Phase 3 TN-10 trial (<a href="https://pubmed.ncbi.nlm.nih.gov/29291885/" target="_blank" rel="noopener" title="View on PubMed">PMID:29291885</a>); FDA approved 2023", "lada_evidence": "No LADA-specific trials; excluded from T1D trials", "rationale": "Proven T1D delay extends 1-2 years. LADA's already-long window could be further extended with earlier intervention.", "window": "Early phase (0-2 years)"}, {"name": "Rituximab (anti-CD20)", "mechanism": "B-cell depletion", "t1d_evidence": "TrialNet Phase 2 showed slowed C-peptide loss in new-onset T1D (<a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank" rel="noopener" title="View on PubMed">PMID:19940299</a>)", "lada_evidence": "No LADA trials; LADA is GADA-driven (B-cell product)", "rationale": "Since LADA is GADA-dependent, B-cell depletion may be particularly effective. Less cytokine-driven inflammation than T1D.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Abatacept (CTLA4-Ig)", "mechanism": "T-cell costimulation blockade", "t1d_evidence": "TrialNet: slowed C-peptide decline (<a href="https://pubmed.ncbi.nlm.nih.gov/20570966/" target="_blank" rel="noopener" title="View on PubMed">PMID:20570966</a>)", "lada_evidence": "No LADA trials", "rationale": "If T-cell autoreactivity drives gradual LADA progression, costimulation blockade during the slow phase could halt decline.", "window": "Middle phase (2-4 years)"}, {"name": "Low-dose IL-2 (aldesleukin)", "mechanism": "Treg expansion; suppresses autoimmune attack", "t1d_evidence": "DIABIL-2 trial in T1D; improved Treg frequency (<a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank" rel="noopener" title="View on PubMed">PMID:27727279</a>)", "lada_evidence": "No LADA trials; LADA may have insufficient Treg function", "rationale": "Treg expansion in LADA's slower autoimmune phase could tip balance toward tolerance and regeneration.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Sitagliptin + Lansoprazole", "mechanism": "DPP-4i + PPI; beta cell regeneration + immune modulation", "t1d_evidence": "REPAIR-T1D trial; mixed results (<a href="https://pubmed.ncbi.nlm.nih.gov/24997559/" target="_blank" rel="noopener" title="View on PubMed">PMID:24997559</a>)", "lada_evidence": "No LADA trials; LADA retains more beta cells, may respond better to regenerative signals", "rationale": "LADA's remaining beta cell mass is higher than T1D at diagnosis. Regenerative approach may be more effective.", "window": "Early phase (0-2 years)"}, {"name": "Vitamin D (cholecalciferol)", "mechanism": "Immunomodulatory; Treg support; anti-inflammatory", "t1d_evidence": "Multiple prevention trial designs attempted; evidence for disease-modifying benefit remains mixed", "lada_evidence": "Observational: lower vitamin D associated with faster LADA progression", "rationale": "Low-risk, widely available. LADA patients with lower vitamin D show accelerated decline. Preventive potential.", "window": "All phases; prevention-focused"}, {"name": "Baricitinib (JAK inhibitor)", "mechanism": "JAK1/2 inhibition; blocks cytokine signaling", "t1d_evidence": "BANDIT trial in T1D; Phase 2 data emerging", "lada_evidence": "No LADA data", "rationale": "Blocks IL-6, TNF-alpha signaling. LADA's slower autoimmune infiltration may be sensitive to JAK inhibition.", "window": "Early-to-middle phase (0-4 years)"}, {"name": "Verapamil (calcium channel blocker)", "mechanism": "TXNIP inhibition; beta cell protection", "t1d_evidence": "C-peptide preservation mechanisms documented in T1D literature, though clinical translation remains limited", "lada_evidence": "No LADA trials; excellent safety profile", "rationale": "Direct beta cell protection without immunosuppression. Long-term safety established. Synergistic with immunotherapy.", "window": "All phases"}];
         const THERAPEUTIC_WINDOW = {"phases": [{"phase": "Diagnosis", "duration": "0 years", "desc": "GADA+ detected, C-peptide >0.7 nmol/L", "key": "Screening, baseline assessment"}, {"phase": "Early Phase", "duration": "0-2 years", "desc": "C-peptide declining slowly (slope ~55 pmol/L/yr)", "key": "Window for antigen-specific therapies (GAD-alum, teplizumab)"}, {"phase": "Middle Phase", "duration": "2-4 years", "desc": "Accelerating decline in LADA1; plateau in LADA2", "key": "Window for combination therapies, Treg expansion (IL-2, abatacept)"}, {"phase": "Late Phase", "duration": "4-6+ years", "desc": "Approaching insulin dependence; C-peptide <0.3 nmol/L", "key": "Beta cell regeneration focus (sitagliptin, verapamil)"}], "cpeptide_trajectory": [{"year": 0, "value": 1.0}, {"year": 1, "value": 0.75}, {"year": 2, "value": 0.6}, {"year": 3, "value": 0.4}, {"year": 4, "value": 0.25}, {"year": 5, "value": 0.15}, {"year": 6, "value": 0.08}]};
         const WHY_UNDERSERVED = [{"factor": "Diagnostic Ambiguity", "desc": "LADA often misdiagnosed as T2D; ~10% of 'T2D' patients are actually LADA", "impact": "High", "source": "Clinical practice surveys"}, {"factor": "Regulatory Pathways", "desc": "FDA/EMA classify by T1D or T2D; LADA doesn't fit regulatory categories", "impact": "High", "source": "Regulatory guidance"}, {"factor": "Trial Recruitment Barrier", "desc": "Identifying LADA requires autoantibody testing; not standard of care in primary care", "impact": "High", "source": "TrialNet, JDRF studies"}, {"factor": "Age Demographic", "desc": "LADA patients typically 30-70 years old; trials prefer younger cohorts for logistical reasons", "impact": "Medium", "source": "ACTION LADA demographics"}, {"factor": "Market Economics", "desc": "8.8% diabetes prevalence (ACTION LADA) = ~50M people globally, but smaller market than T1D or T2D", "impact": "Medium", "source": "ACTION LADA epidemiology"}, {"factor": "Publication Gap", "desc": "Zero joint publications for 'immunomodulatory drugs' AND 'LADA' in major databases", "impact": "Medium", "source": "PubMed bibliometric analysis 2020-2024"}, {"factor": "Incomplete Natural History", "desc": "LADA heterogeneity (LADA1 vs LADA2) not well-characterized; makes trial design difficult", "impact": "Medium", "source": "UKPDS subgroup analyses"}];
-        const PRIORITY_SCORES = [{"drug": "GAD-alum (Diamyd)", "mechanistic_fit": 5, "clinical_evidence": 4, "safety_profile": 5, "feasibility": 4, "lada_advantage": 5, "composite": 4.6, "rank": 1, "notes": "Antigen-specific, LADA data exists, minimal systemic immunosuppression, established safety"}, {"drug": "Teplizumab (anti-CD3)", "mechanistic_fit": 4, "clinical_evidence": 5, "safety_profile": 4, "feasibility": 3, "lada_advantage": 4, "composite": 4.0, "rank": 2, "notes": "FDA-approved, proven delay; extends already-long window; IV infusion burden"}, {"drug": "Rituximab (anti-CD20)", "mechanistic_fit": 5, "clinical_evidence": 4, "safety_profile": 3, "feasibility": 3, "lada_advantage": 5, "composite": 4.0, "rank": 3, "notes": "GADA-driven disease; direct B-cell targeting; long-term safety profile concerns"}, {"drug": "Low-dose IL-2 (aldesleukin)", "mechanistic_fit": 4, "clinical_evidence": 3, "safety_profile": 4, "feasibility": 3, "lada_advantage": 4, "composite": 3.6, "rank": 4, "notes": "Treg expansion in slow-phase autoimmunity; limited LADA data"}, {"drug": "Sitagliptin + Lansoprazole", "mechanistic_fit": 3, "clinical_evidence": 3, "safety_profile": 5, "feasibility": 5, "lada_advantage": 4, "composite": 4.0, "rank": 5, "notes": "LADA retains more beta cells; high feasibility; regenerative focus"}, {"drug": "Abatacept (CTLA4-Ig)", "mechanistic_fit": 3, "clinical_evidence": 4, "safety_profile": 3, "feasibility": 2, "lada_advantage": 3, "composite": 3.0, "rank": 6, "notes": "Costimulation blockade; limited LADA-specific rationale; IV administration"}, {"drug": "Baricitinib (JAK inhibitor)", "mechanistic_fit": 3, "clinical_evidence": 3, "safety_profile": 3, "feasibility": 4, "lada_advantage": 3, "composite": 3.2, "rank": 7, "notes": "Cytokine signaling block; emerging data; safety profile still maturing"}, {"drug": "Vitamin D (cholecalciferol)", "mechanistic_fit": 2, "clinical_evidence": 3, "safety_profile": 5, "feasibility": 5, "lada_advantage": 3, "composite": 3.6, "rank": 8, "notes": "Low-risk, preventive; observational LADA link; weak mechanistic evidence"}, {"drug": "Verapamil (calcium channel blocker)", "mechanistic_fit": 2, "clinical_evidence": 2, "safety_profile": 5, "feasibility": 5, "lada_advantage": 2, "composite": 3.2, "rank": 9, "notes": "Beta cell protection; excellent safety; limited LADA evidence"}];
-        const EVIDENCE_CATALOG = [["PMID:18073361", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"], ["PMID:23248199", "ACTION LADA Study", "Epidemiology and progression rates in LADA"], ["PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"], ["PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"], ["PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"], ["PMID:27727279", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"], ["PMID:24997559", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"], ["PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"]];
+        const PRIORITY_SCORES = [{"drug": "GAD-alum (Diamyd)", "mechanistic_fit": 5, "clinical_evidence": 2, "safety_profile": 5, "feasibility": 4, "lada_advantage": 4, "composite": 3.4, "rank": 3, "notes": "DOWNGRADED April 2026: DIAGNODE-3 Phase 3 (HLA DR3-DQ2 enriched) met futility criteria - no clinically meaningful C-peptide effect. Monotherapy path contradicted in T1D. Combination and LADA-specific strategies still open but unproven. Antigen-specific mechanism preserved, but clinical evidence downgraded from 4 to 2."}, {"drug": "Teplizumab (anti-CD3)", "mechanistic_fit": 4, "clinical_evidence": 5, "safety_profile": 4, "feasibility": 3, "lada_advantage": 4, "composite": 4.0, "rank": 2, "notes": "FDA-approved, proven delay; extends already-long window; IV infusion burden"}, {"drug": "Rituximab (anti-CD20)", "mechanistic_fit": 5, "clinical_evidence": 4, "safety_profile": 3, "feasibility": 3, "lada_advantage": 5, "composite": 4.0, "rank": 3, "notes": "GADA-driven disease; direct B-cell targeting; long-term safety profile concerns"}, {"drug": "Low-dose IL-2 (aldesleukin)", "mechanistic_fit": 4, "clinical_evidence": 3, "safety_profile": 4, "feasibility": 3, "lada_advantage": 4, "composite": 3.6, "rank": 4, "notes": "Treg expansion in slow-phase autoimmunity; limited LADA data"}, {"drug": "Sitagliptin + Lansoprazole", "mechanistic_fit": 3, "clinical_evidence": 3, "safety_profile": 5, "feasibility": 5, "lada_advantage": 4, "composite": 4.0, "rank": 5, "notes": "LADA retains more beta cells; high feasibility; regenerative focus"}, {"drug": "Abatacept (CTLA4-Ig)", "mechanistic_fit": 3, "clinical_evidence": 4, "safety_profile": 3, "feasibility": 2, "lada_advantage": 3, "composite": 3.0, "rank": 6, "notes": "Costimulation blockade; limited LADA-specific rationale; IV administration"}, {"drug": "Baricitinib (JAK inhibitor)", "mechanistic_fit": 3, "clinical_evidence": 3, "safety_profile": 3, "feasibility": 4, "lada_advantage": 3, "composite": 3.2, "rank": 7, "notes": "Cytokine signaling block; emerging data; safety profile still maturing"}, {"drug": "Vitamin D (cholecalciferol)", "mechanistic_fit": 2, "clinical_evidence": 3, "safety_profile": 5, "feasibility": 5, "lada_advantage": 3, "composite": 3.6, "rank": 8, "notes": "Low-risk, preventive; observational LADA link; weak mechanistic evidence"}, {"drug": "Verapamil (calcium channel blocker)", "mechanistic_fit": 2, "clinical_evidence": 2, "safety_profile": 5, "feasibility": 5, "lada_advantage": 2, "composite": 3.2, "rank": 9, "notes": "Beta cell protection; excellent safety; limited LADA evidence"}];
+        const EVIDENCE_CATALOG = [["<a href="https://pubmed.ncbi.nlm.nih.gov/18073361/" target="_blank" rel="noopener" title="View on PubMed">PMID:18073361</a>", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>", "ACTION LADA Study", "Epidemiology and progression rates in LADA"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/29885104/" target="_blank" rel="noopener" title="View on PubMed">PMID:29885104</a>", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank" rel="noopener" title="View on PubMed">PMID:19940299</a>", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/20570966/" target="_blank" rel="noopener" title="View on PubMed">PMID:20570966</a>", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank" rel="noopener" title="View on PubMed">PMID:27727279</a>", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/24997559/" target="_blank" rel="noopener" title="View on PubMed">PMID:24997559</a>", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"], ["<a href="https://pubmed.ncbi.nlm.nih.gov/29291885/" target="_blank" rel="noopener" title="View on PubMed">PMID:29291885</a>", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"]];
 
         function switchTab(event, tabName) {
             const tabs = document.querySelectorAll('.tab-content');

@@ -287,6 +287,12 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <p>15 research gaps framed through the scientific method with GOLD/SILVER/BRONZE validation tiers. Observation, question, hypothesis, proposed investigation for each.</p>
     <a href="Dashboards/Gap_Synthesis.html">Open dashboard &rarr;</a>
   </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Gap Evidence Matrix</h3>
+    <p>Citation evidence mapped across all 15 research gaps with validation status, source quality ratings, and cross-gap citation networks. 94 PMIDs organized by evidence tier.</p>
+    <a href="Dashboards/Gap_Evidence.html">Open dashboard &rarr;</a>
+  </div>
 </div>
 
 <h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">SILVER-Validated Research (2 independent sources)</h3>
@@ -296,6 +302,12 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <h3>Drug Repurposing for Islet Transplant</h3>
     <p>13 repurposable drugs scored across 5 dimensions. IBMIR mechanism, clinical trials, computational priority model. Gap #4 (SILVER - promoted with 11 independent papers from multiple research groups).</p>
     <a href="Dashboards/Drug_Repurposing_Islet.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Islet Drug Repurposing Pipeline</h3>
+    <p>Expanded drug repurposing pipeline for islet transplant immunoprotection. Mechanism-level scoring, clinical trial cross-references, and combination therapy candidates.</p>
+    <a href="Dashboards/Islet_Drug_Repurposing.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
@@ -369,15 +381,15 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   </div>
 </div>
 
-<h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">Upcoming</h3>
+<h3 style="font-family:var(--serif);font-size:16px;font-weight:400;margin:24px 0 12px;color:var(--muted);">In Progress &amp; Upcoming</h3>
 <div class="cards">
   <div class="card">
-    <div class="status upcoming">April 2026</div>
+    <div class="status live">In Progress</div>
     <h3>Multi-Omics Biomarker Integration</h3>
     <p>Pilot analysis integrating public genomics, proteomics, and metabolomics datasets (UK Biobank, DIAGRAM, T1D Knowledge Portal) to identify novel biomarker candidates for diabetes subtypes.</p>
   </div>
   <div class="card">
-    <div class="status upcoming">April 2026</div>
+    <div class="status live">In Progress</div>
     <h3>Pressure Test: LADA Model + Trial Mapper</h3>
     <p>Systematic verification of LADA Diagnostic Model assumptions and Trial Equity Mapper country-level data against WHO, IDF Atlas, and ClinicalTrials.gov primary sources.</p>
   </div>

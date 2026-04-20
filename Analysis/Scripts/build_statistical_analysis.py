@@ -873,6 +873,23 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
 
 </div>
 
+<div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
+  <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
+    <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Statistical Methodology References</h3>
+    <p style="font-size:12px;color:#636363;line-height:1.7;">
+      Random-effects meta-analysis methodology following DerSimonian-Laird estimators
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>).
+      HbA1c reduction effect sizes pooled from multi-center trials
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
+       <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>).
+      Bayesian pathway synthesis priors informed by systematic review evidence
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+      Monte Carlo sensitivity analysis parameters derived from LADA screening model
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank">PMID 32243867</a> &mdash; ACTION LADA study).
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   Statistical Analysis Dashboard compiled {now}<br>
   Data source: {stats_path}<br>

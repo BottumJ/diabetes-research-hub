@@ -418,14 +418,90 @@
             color: #636363;
             margin-top: 0.5rem;
         }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html" class="drh-current">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -458,12 +534,12 @@
             <p>C-peptide trajectories are population averages derived from cohort studies (ACTION LADA, HUNT, Botnia, Chinese cohorts). Individual patients vary substantially. Intervention window estimates are theoretical and untested in RCTs. This model does not account for genetic heterogeneity beyond HLA-DR3/DR4 classification.</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="switchTab(event, 'cpeptide')">C-Peptide Decline Model</button>
-            <button class="tab-button" onclick="switchTab(event, 'autoantibody')">Autoantibody Risk Stratification</button>
-            <button class="tab-button" onclick="switchTab(event, 'intervention')">Intervention Windows</button>
-            <button class="tab-button" onclick="switchTab(event, 'genetic')">Genetic & Demographic Markers</button>
-            <button class="tab-button" onclick="switchTab(event, 'evidence')">Evidence Catalog</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" onclick="switchTab(event, 'cpeptide')">C-Peptide Decline Model</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'autoantibody')">Autoantibody Risk Stratification</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'intervention')">Intervention Windows</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'genetic')">Genetic & Demographic Markers</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'evidence')">Evidence Catalog</button>
         </div>
 
         <!-- TAB 1: C-Peptide Decline -->
@@ -475,7 +551,7 @@
                 <h3>Clinical Context</h3>
                 <p>LADA demonstrates characteristic biphasic C-peptide decline:</p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
-                    <li><strong>Phase 1 (0-5 years):</strong> 55.19 pmol/L/year decline in Chinese cohort <span class="cite">(JCEM 2020, PMID:31529065)</span></li>
+                    <li><strong>Phase 1 (0-5 years):</strong> 55.19 pmol/L/year decline in Chinese cohort <span class="cite">(JCEM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/31529065/" target="_blank" rel="noopener" title="View on PubMed">PMID:31529065</a>)</span></li>
                     <li><strong>Phase 2 (5-15 years):</strong> ~20 pmol/L/year decline, plateau phase</li>
                     <li><strong>Clinical thresholds:</strong> &lt;0.3 nmol/L = insulin required; 0.3-0.7 = gray zone; &gt;0.7 = T2D-like management</li>
                 </ul>
@@ -521,7 +597,7 @@
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Phenotypic Comparison</h3>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Parameter</th>
@@ -557,7 +633,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="cite">Source: UKPDS cohort characterization (PMID:9742976)</div>
+                <div class="cite">Source: UKPDS cohort characterization (<a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank" rel="noopener" title="View on PubMed">PMID:9742976</a>)</div>
             </div>
         </div>
 
@@ -572,7 +648,7 @@
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
                     <li><strong>GADA >= 180 U/mL (LADA1):</strong> Strong autoimmunity, rapid progression</li>
                     <li><strong>GADA &lt; 180 U/mL (LADA2):</strong> Borderline autoimmunity, slower decline</li>
-                    <li><strong>84% GADA+ require insulin by 6 years</strong> <span class="cite">(UKPDS, PMID:9742976)</span></li>
+                    <li><strong>84% GADA+ require insulin by 6 years</strong> <span class="cite">(UKPDS, <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank" rel="noopener" title="View on PubMed">PMID:9742976</a>)</span></li>
                 </ul>
             </div>
 
@@ -585,7 +661,7 @@
                         <strong>Characteristics:</strong> Single or multiple antibodies, rapid progression<br>
                         <strong>Time to Insulin:</strong> 4-6 years<br>
                         <strong>Risk Level:</strong> High<br>
-                        <strong>Evidence:</strong> <span class="cite">UKPDS: 84% require insulin by 6yr (PMID:9742976)</span>
+                        <strong>Evidence:</strong> <span class="cite">UKPDS: 84% require insulin by 6yr (<a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank" rel="noopener" title="View on PubMed">PMID:9742976</a>)</span>
                     </div>
                 </div>
 
@@ -595,7 +671,7 @@
                         <strong>Characteristics:</strong> Borderline GADA, slower progression<br>
                         <strong>Time to Insulin:</strong> 8-12 years<br>
                         <strong>Risk Level:</strong> Moderate<br>
-                        <strong>Evidence:</strong> <span class="cite">HUNT: HR 5.37 for high GADA (PMID:34318969)</span>
+                        <strong>Evidence:</strong> <span class="cite">HUNT: HR 5.37 for high GADA (<a href="https://pubmed.ncbi.nlm.nih.gov/34318969/" target="_blank" rel="noopener" title="View on PubMed">PMID:34318969</a>)</span>
                     </div>
                 </div>
 
@@ -624,7 +700,7 @@
             <div class="section" style="margin-top: 2rem;">
                 <h3>Multi-Antibody Effects</h3>
                 <p>Presence of multiple autoantibodies accelerates beta-cell loss:</p>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Antibody Profile</th>
@@ -665,8 +741,8 @@
             <div class="section" style="margin-top: 2rem;">
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
-                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:34318969)</span></li>
-                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
+                    <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(<a href="https://pubmed.ncbi.nlm.nih.gov/34318969/" target="_blank" rel="noopener" title="View on PubMed">PMID:34318969</a>)</span></li>
+                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank" rel="noopener" title="View on PubMed">PMID:23835333</a>)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>
             </div>
@@ -738,11 +814,10 @@
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Vaccine & Immunotherapy Evidence</h3>
-                <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:32754804)</span></p>
+                <p><strong>GAD-alum Vaccine (monotherapy — contradicted in T1D):</strong> Earlier DIAGNODE-2 and 2022 IPD meta-analysis suggested a HLA-DR3-DQ2+ subgroup signal of dose-dependent C-peptide preservation <span class="cite">(<a href="https://pubmed.ncbi.nlm.nih.gov/32754804/" target="_blank" rel="noopener" title="View on PubMed">PMID:32754804</a>)</span>, but the confirmatory DIAGNODE-3 Phase 3 (n=174 HLA DR3-DQ2-enriched, recent-onset T1D) met pre-specified futility criteria at the March 2026 interim analysis and Diamyd announced discontinuation of monotherapy development in April 2026. LADA-specific pivotal data remain absent. Combination strategies (GAD-alum + vitamin D + etanercept) are still under investigation but unproven.</p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
-                    <li>Optimal responders: HLA-DR3-DQ2 positive, baseline C-peptide &gt;0.4 nmol/L</li>
-                    <li>Response rate: ~30-40% of treated patients show preserved C-peptide at 4 years</li>
-                    <li>Best outcomes: Treatment initiation within 2 years of diagnosis</li>
+                    <li>Historical signal (pre-DIAGNODE-3): HLA-DR3-DQ2 positive, baseline C-peptide &gt;0.4 nmol/L, initiated within 2 years of diagnosis</li>
+                    <li>Status April 2026: monotherapy contradicted in recent-onset T1D; effect in LADA not established in a confirmatory RCT</li>
                 </ul>
                 <p style="margin-top: 1rem;"><strong>DPP4i + Early Insulin:</strong> Sitagliptin combined with insulin therapy preserves C-peptide better than insulin monotherapy in early LADA.</p>
                 <p style="margin-top: 1rem;"><strong>SGLT2i Combinations:</strong> SGLT2 inhibitor + DPP4 inhibitor combinations under investigation for beta-cell preservation.</p>
@@ -750,7 +825,7 @@
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Window-Specific Decision Tree</h3>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Clinical Presentation</th>
@@ -787,7 +862,7 @@
             <div class="section">
                 <h3>HLA Associations</h3>
                 <p>LADA shares HLA risk alleles with Type 1 Diabetes, reflecting shared autoimmune pathophysiology:</p>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>HLA Type</th>
@@ -821,7 +896,7 @@
 
             <div class="section" style="margin-top: 2rem;">
                 <h3>Non-HLA Genetic Markers</h3>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Gene/Locus</th>
@@ -918,7 +993,7 @@
 
             <div class="section">
                 <h3>Key Cohort Studies</h3>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Cohort</th>
@@ -1025,7 +1100,7 @@
             <div class="section" style="margin-top: 2rem;">
                 <h3>Therapeutic Trial Evidence</h3>
                 <ul style="margin-left: 2rem;">
-                    <li><strong>GAD-alum vaccine:</strong> Multiple RCTs showing C-peptide preservation in responders; HLA-DR3-DQ2 association with response</li>
+                    <li><strong>GAD-alum vaccine:</strong> DIAGNODE-3 Phase 3 (n=174, HLA DR3-DQ2-enriched recent-onset T1D) met pre-specified futility criteria at the March 2026 interim and was discontinued; earlier DIAGNODE-2 (PMID 34299352) and 2022 IPD meta-analysis (PMID 35491968) had suggested an HLA DR3-DQ2 subgroup signal that did not replicate in the confirmatory trial. LADA-specific pivotal data absent. Monotherapy path contradicted; combination (GAD + vitamin D + etanercept) still exploratory.</li>
                     <li><strong>Sitagliptin + Insulin:</strong> Early combination preserves C-peptide vs insulin monotherapy</li>
                     <li><strong>Immune checkpoint approaches:</strong> Ongoing trials with anti-PD-1, anti-CTLA-4 in early LADA</li>
                     <li><strong>IL-21 pathway modulation:</strong> Early-stage investigation for beta-cell protection</li>

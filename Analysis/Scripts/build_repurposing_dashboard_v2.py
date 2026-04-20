@@ -501,6 +501,23 @@ function sortTable(tableId, colIdx) {{
 }}
 </script>
 
+<div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
+  <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
+    <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Key References</h3>
+    <p style="font-size:12px;color:#636363;line-height:1.7;">
+      Drug repurposing methodology based on mechanism-target mapping and network pharmacology approaches
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank">PMID 30899369</a>).
+      Islet transplant immunosuppression protocols and IBMIR mechanisms reviewed in
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
+       <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+      Protein-protein interaction network data from STRING database
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank">PMID 36449148</a>).
+      Combination therapy rationale informed by calcineurin-sparing approaches
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID 37359825</a>).
+    </p>
+  </div>
+</div>
+
 </body>
 </html>"""
 

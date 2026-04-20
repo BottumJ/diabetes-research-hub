@@ -237,6 +237,21 @@ tbody tr:hover {{ background: #f5f4ef; }}
 
 <div class="content" id="content"></div>
 
+<div style="max-width:1300px;margin:2rem auto;padding:0 40px;">
+  <div style="border-top:1px solid #e0ddd5;padding-top:1rem;margin-bottom:1rem;">
+    <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Key References &amp; Methodology</h3>
+    <p style="font-size:12px;color:#636363;line-height:1.7;">
+      Clinical trial data sourced from ClinicalTrials.gov, the primary registry for clinical studies worldwide
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a> &mdash; Zarin et al., <i>N Engl J Med</i> 2011, on ClinicalTrials.gov as a data resource).
+      Diabetes trial landscape analysis informed by systematic reviews of the global trial pipeline
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>;
+       <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>).
+      Trial categorization methodology aligned with WHO ICTRP standards and IDF Diabetes Atlas epidemiological framework
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a> &mdash; IDF Atlas 10th ed.).
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   Source: ClinicalTrials.gov REST API v2. Trial counts reflect snapshot date and search criteria; totals may differ from site queries due to filter parameters.
   Phase "Not Applicable" includes observational studies, device trials without drug phases, and behavioral interventions.

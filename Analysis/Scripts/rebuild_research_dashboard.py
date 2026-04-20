@@ -182,7 +182,7 @@ PAPERS_DATA = [
 
 TIMELINE_2025 = [
     {"date":"2025","title":"Vertex Zimislecel Phase 3 enrolls 50 participants","desc":"First scalable stem cell therapy for T1D reaches pivotal trial. 10/12 full-dose patients insulin-independent at 1 year.","type":"milestone"},
-    {"date":"Nov 2025","title":"Stanford cures T1D in mice without immunosuppression","desc":"Hybrid immune system: 19/19 mice protected, 9/9 with established T1D cured via co-transplant approach.","type":"milestone"},
+    {"date":"Nov 2025","title":"Stanford preclinical: reversal of T1D in mice without immunosuppression","desc":"Preclinical (murine): hybrid immune system co-transplant reported reversal of hyperglycemia in 19/19 protected and 9/9 established-T1D mice. No human data yet; do not extrapolate.","type":"milestone"},
     {"date":"2025","title":"Sana engineered islets survive 6 months in humans","desc":"Gene-edited islet cells function without immunosuppression - the holy grail of islet therapy.","type":"milestone"},
     {"date":"2025","title":"Retatrutide: 28.7% weight loss in TRIUMPH-4","desc":"Eli Lilly's triple agonist (GLP-1/GIP/Glucagon) sets new efficacy benchmark for T2D.","type":"milestone"},
     {"date":"2025","title":"Chinese team achieves insulin independence with iPSC","desc":"Patient's own reprogrammed cells produce insulin - first autologous islet success.","type":"milestone"},
@@ -814,6 +814,22 @@ renderTimeline();
 renderDatasets();
 filterPapersTable();
 </script>
+
+<div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
+  <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
+    <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Platform References</h3>
+    <p style="font-size:12px;color:#636363;line-height:1.7;">
+      Research landscape mapped using PubMed, ClinicalTrials.gov, and IDF Diabetes Atlas data
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a> &mdash; IDF Atlas 10th ed.).
+      Domain taxonomy informed by WHO classification of diabetes research areas and systematic mapping reviews
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
+       <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
+       <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>).
+      Validation methodology follows triple-source framework aligned with Oxford CEBM evidence levels
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+    </p>
+  </div>
+</div>
 
 </body>
 </html>

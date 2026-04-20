@@ -64,12 +64,13 @@ LADA_VS_T1D = {
 
 DRUG_CANDIDATES = [
     {
-        "name": "GAD-alum (Diamyd)",
+        "name": "GAD-alum (Diamyd / retogatein)",
         "mechanism": "GAD65 antigen-specific immunotherapy",
-        "t1d_evidence": "Phase 3 (DIAGNODE-2); ongoing trials",
-        "lada_evidence": "GAD-alum trials in LADA have shown variable results; C-peptide preservation has been reported in some studies but requires confirmation in larger trials",
-        "rationale": "Antigen-specific, minimal systemic immunosuppression. LADA driven by GADA response; directly targets the lesion.",
-        "window": "Early-to-middle phase (0-4 years)"
+        "t1d_evidence": "DIAGNODE-3 Phase 3 (n=174 evaluable, HLA DR3-DQ2 enriched) met pre-specified FUTILITY criteria at Mar 2026 interim - no clinically meaningful C-peptide effect in overall population or pre-specified subgroups. Diamyd announced discontinuation April 2026. Earlier DIAGNODE-2 (PMID 34299352) and 2022 IPD meta-analysis (PMID 35491968) showed modest HLA DR3-DQ2 subgroup signal that did NOT replicate in confirmatory Phase 3.",
+        "lada_evidence": "GAD-alum trials in LADA have shown variable results; small pilot data (NCT04262479, n=14) does not yet address efficacy. Monotherapy path now contradicted for T1D.",
+        "rationale": "Antigen-specific, minimal systemic immunosuppression. Following DIAGNODE-3 futility, monotherapy path is contradicted for recent-onset T1D; combination strategies (GAD + vitamin D + etanercept) remain under study. LADA-specific pivotal data absent.",
+        "window": "Early-to-middle phase (0-4 years)",
+        "status_2026": "CONTRADICTED_AS_MONOTHERAPY"
     },
     {
         "name": "Teplizumab (anti-CD3)",
@@ -224,13 +225,13 @@ PRIORITY_SCORES = [
     {
         "drug": "GAD-alum (Diamyd)",
         "mechanistic_fit": 5,
-        "clinical_evidence": 4,
+        "clinical_evidence": 2,
         "safety_profile": 5,
         "feasibility": 4,
-        "lada_advantage": 5,
-        "composite": 4.6,
-        "rank": 1,
-        "notes": "Antigen-specific, LADA data exists, minimal systemic immunosuppression, established safety"
+        "lada_advantage": 4,
+        "composite": 3.4,
+        "rank": 3,
+        "notes": "DOWNGRADED April 2026: DIAGNODE-3 Phase 3 (HLA DR3-DQ2 enriched) met futility criteria - no clinically meaningful C-peptide effect. Monotherapy path contradicted in T1D. Combination and LADA-specific strategies still open but unproven. Antigen-specific mechanism preserved, but clinical evidence downgraded from 4 to 2."
     },
     {
         "drug": "Teplizumab (anti-CD3)",
@@ -959,7 +960,7 @@ html_content = """<!DOCTYPE html>
         <li>Most immunomodulatory drugs are studied in classical T1D, not LADA specifically</li>
         <li>LADA therapeutic window timing is not well-established</li>
         <li>Drug rankings are based on mechanism fit, not LADA-specific trial data</li>
-        <li>GAD-alum evidence is mixed across trials</li>
+        <li>GAD-alum monotherapy is contradicted for recent-onset T1D: DIAGNODE-3 Phase 3 (n=174, HLA DR3-DQ2 enriched) met pre-specified futility criteria at the March 2026 interim, and Diamyd announced discontinuation in April 2026. Combination strategies (GAD-alum + vitamin D + etanercept) remain under study but are unproven.</li>
         <li>Sample sizes in LADA subgroup analyses are typically small</li>
       </ul>
       <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>

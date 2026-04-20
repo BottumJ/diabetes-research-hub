@@ -359,14 +359,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html" class="drh-current">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -381,7 +457,7 @@
             <h1>Islet Transplant Outcomes Analysis</h1>
             <div class="subtitle">Computational Model - Gap #3: Insulin Resistance x Islet Transplant</div>
             <div class="subtitle">The Tacrolimus Paradox & Next-Generation Protocols</div>
-            <div class="tagline">Diabetes Research Hub | Generated 2026-04-16 08:10</div>
+            <div class="tagline">Diabetes Research Hub | Generated 2026-04-19 14:09</div>
         </header>
 
         <div class="context-block">
@@ -393,13 +469,13 @@
             <p>Outcome data comes from published registries and trials, not a unified global database. Center-level outcome variation may reflect patient selection bias as much as clinical skill. Long-term outcomes (>10 years) are sparse.</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" data-tab="graft-survival">Graft Survival Curves</button>
-            <button class="tab-button" data-tab="tacrolimus-paradox">The Tacrolimus Paradox</button>
-            <button class="tab-button" data-tab="calcineurin-sparing">Calcineurin-Sparing Alternatives</button>
-            <button class="tab-button" data-tab="biomarkers">Dose-Response & Biomarkers</button>
-            <button class="tab-button" data-tab="next-generation">Next Generation Therapies</button>
-            <button class="tab-button" data-tab="evidence">Evidence Catalog</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" data-tab="graft-survival">Graft Survival Curves</button>
+            <button role="tab" class="tab-button" data-tab="tacrolimus-paradox">The Tacrolimus Paradox</button>
+            <button role="tab" class="tab-button" data-tab="calcineurin-sparing">Calcineurin-Sparing Alternatives</button>
+            <button role="tab" class="tab-button" data-tab="biomarkers">Dose-Response & Biomarkers</button>
+            <button role="tab" class="tab-button" data-tab="next-generation">Next Generation Therapies</button>
+            <button role="tab" class="tab-button" data-tab="evidence">Evidence Catalog</button>
         </div>
 
         <!-- TAB 1: GRAFT SURVIVAL CURVES -->
@@ -560,7 +636,7 @@
                 <div class="metric-value">8%</div>
                 <div class="metric-label">At 20 years</div>
             </div>
-            <p class="source">Source: Shapiro et al., PMID:10919952 (New England Journal of Medicine 2000); CITR Annual Reports (1,477 recipients, 2,947 infusions, median graft survival 5.9 years)</p>
+            <p class="source">Source: Shapiro et al., <a href="https://pubmed.ncbi.nlm.nih.gov/10919952/" target="_blank" rel="noopener" title="View on PubMed">PMID:10919952</a> (New England Journal of Medicine 2000); CITR Annual Reports (1,477 recipients, 2,947 infusions, median graft survival 5.9 years)</p>
 
             <h3>Belatacept/Efalizumab (Costimulation Blockade)</h3>
             <p>Selective blockade of CD28-B7 costimulation avoids the direct beta-cell toxicity of calcineurin inhibitors. Results from the Hering et al. 2023 study and multicenter experiences demonstrate sustained superior outcomes.</p>
@@ -572,7 +648,7 @@
                 <div class="metric-value">60%</div>
                 <div class="metric-label">At 13.3 years</div>
             </div>
-            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term follow-up data from specialized centers</p>
+            <p class="source">Source: Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023); Long-term follow-up data from specialized centers</p>
 
             <h3>LANTIDRA (Donislecel)</h3>
             <p>The first FDA-approved allogeneic pancreatic islet product (June 2023). Phase 3 trial results show strong initial outcomes, though long-term follow-up remains limited.</p>
@@ -634,7 +710,7 @@
                 <div class="metric-label">Relative risk with tacrolimus vs cyclosporine</div>
             </div>
             <p>Clinical trials demonstrate that tacrolimus recipients have significantly higher rates of new-onset diabetes, obesity, and metabolic syndrome compared to other immunosuppressive regimens.</p>
-            <p class="source">Source: Vincenti et al., PMID:17359512 (American Journal of Transplantation 2007)</p>
+            <p class="source">Source: Vincenti et al., <a href="https://pubmed.ncbi.nlm.nih.gov/17359512/" target="_blank" rel="noopener" title="View on PubMed">PMID:17359512</a> (American Journal of Transplantation 2007)</p>
 
             <h3>HOMA-IR Progression: Pre- and Post-Transplant</h3>
             <p>Homeostasis Model Assessment for Insulin Resistance (FHOMA-IR = fasting insulin [mIU/L] x fasting glucose [mmol/L] / 22.5) reveals progressive worsening of systemic insulin sensitivity in islet recipients.</p>
@@ -670,7 +746,7 @@
                 <div class="expandable-content">
                     <p>Tacrolimus pharmacokinetics create an inescapable dilemma:</p>
 
-                    <table>
+                    <table role="table">
                         <thead>
                             <tr>
                                 <th>Trough Level</th>
@@ -748,7 +824,7 @@
                 <div class="metric-label">Estimated insulin independence at 10 years (modeled trajectory)</div>
             </div>
             <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up. <em>Note: Trajectory shown is modeled based on limited published data points; actual graft survival curves show more variability than linear projections.</em></p>
-            <p class="source">Source: Hering et al., PMID:37105208 (Lancet 2023); Long-term multicenter follow-up</p>
+            <p class="source">Source: Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023); Long-term multicenter follow-up</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -768,7 +844,7 @@
                 <div class="expandable-content">
                     <p>A landmark case published in the medical literature documents a single islet transplant recipient who achieved operational tolerance—the ability to accept a foreign graft without immunosuppression.</p>
 
-                    <table style="font-size: 13px;">
+                    <table role="table" style="font-size: 13px;">
                         <thead>
                             <tr>
                                 <th>Timepoint</th>
@@ -818,7 +894,7 @@
 
             <p>Sirolimus (and its derivative everolimus) inhibit mammalian target of rapamycin (mTOR), blocking T-cell and B-cell proliferation. Unlike calcineurin inhibitors, mTOR inhibitors have less direct beta-cell toxicity.</p>
 
-            <table style="margin-top: 12px;">
+            <table role="table" style="margin-top: 12px;">
                 <thead>
                     <tr>
                         <th>Parameter</th>
@@ -911,7 +987,7 @@
                 Fasting C-peptide &gt; 0.5 nmol/L at 1 year post-transplant predicts sustained graft function beyond 5 years. Values &lt;0.3 nmol/L indicate impending graft failure within 1-2 years.
             </div>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>C-Peptide Range</th>
@@ -956,7 +1032,7 @@
                     <p style="font-family: 'SF Mono', monospace; background: #fafaf7; padding: 12px;">
                         HOMA-IR = [Fasting insulin (mIU/L) × Fasting glucose (mmol/L)] / 22.5
                     </p>
-                    <table>
+                    <table role="table">
                         <thead>
                             <tr>
                                 <th>HOMA-IR Range</th>
@@ -1034,7 +1110,7 @@
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Immunosuppression Required:</strong> Yes (tacrolimus + MMF)</p>
             </div>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Metric</th>
@@ -1121,7 +1197,7 @@
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Immunosuppression Required:</strong> Yes (tacrolimus + other agents)</p>
             </div>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Outcome</th>
@@ -1157,7 +1233,7 @@
 
             <h3>Comparative Timeline & Therapies</h3>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Therapy</th>
@@ -1229,7 +1305,7 @@
 
             <h3>Foundational Work & Graft Survival</h3>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Citation</th>
@@ -1268,7 +1344,7 @@
 
             <h3>Tacrolimus & Metabolic Toxicity</h3>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Citation</th>
@@ -1292,7 +1368,7 @@
 
             <h3>Clinical Trials (NCT Numbers)</h3>
 
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Trial ID</th>
@@ -1365,7 +1441,7 @@
 
         <div class="footer">
             <p>Islet Transplant Analysis Dashboard</p>
-            <p>Generated: 2026-04-16 08:10</p>
+            <p>Generated: 2026-04-19 14:09</p>
             <p>This computational model is designed for educational and research purposes. Clinical decision-making should incorporate current guidelines, individual patient factors, and consultation with transplant specialists.</p>
             <p>Diabetes Research Hub | All data sourced from peer-reviewed literature and clinical trials</p>
         </div>

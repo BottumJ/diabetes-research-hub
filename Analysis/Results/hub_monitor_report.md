@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-04-16 07:05:36
-**Previous scan:** 2026-04-15 07:05:00
-**Hub root:** `/sessions/nice-intelligent-archimedes/mnt/Diabetes_Research`
+**Scan time:** 2026-04-20 10:23:13
+**Previous scan:** 2026-04-19 07:05:06
+**Hub root:** `C:\Users\justi\OneDrive\Diabetes_Research`
 
 ---
 
@@ -9,57 +9,1462 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 708 |
-| New files | 3 |
-| Modified files | 28 |
-| Removed files | 0 |
-| Unchanged files | 677 |
+| Total files tracked | 736 |
+| New files | 720 |
+| Modified files | 2 |
+| Removed files | 711 |
+| Unchanged files | 14 |
 
 ## New Files
 
-- **Analysis/Results/clinical_trials_snapshot_2026-04-16.json** (514.3 KB)
-- **Analysis/Results/monitor_report_2026-04-15.md** (7.1 KB)
-- **Analysis/Results/pubmed_recent_snapshot_2026-04-16.json** (97.4 KB)
+- **.github\ISSUE_TEMPLATE\bug_report.md** (423 B)
+- **.github\ISSUE_TEMPLATE\data_error.md** (551 B)
+- **.github\ISSUE_TEMPLATE\feature_request.md** (471 B)
+- **.github\ISSUE_TEMPLATE\new_gap.md** (610 B)
+- **Analysis\Results\README_VALIDATION.md** (7.6 KB)
+- **Analysis\Results\VALIDATION_SUMMARY.txt** (8.0 KB)
+- **Analysis\Results\agent_state.json** (138.8 KB)
+- **Analysis\Results\beta_cell_trial_locations.json** (48.2 KB)
+- **Analysis\Results\citation_validation.json** (189.7 KB)
+- **Analysis\Results\clinical_trials_latest.json** (528.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-15.json** (513.6 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-16.json** (501.2 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-17.json** (502.5 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-18.json** (503.2 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-19.json** (502.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-20.json** (502.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-21.json** (504.0 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-22.json** (504.0 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-23.json** (504.0 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-24.json** (506.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-25.json** (506.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-26.json** (506.5 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-27.json** (506.5 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-28.json** (507.8 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-29.json** (507.8 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-30.json** (507.8 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-03-31.json** (508.3 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-01.json** (503.5 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-02.json** (503.5 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-03.json** (504.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-04.json** (506.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-05.json** (506.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-06.json** (506.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-07.json** (507.3 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-08.json** (507.3 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-09.json** (508.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-10.json** (509.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-11.json** (509.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-12.json** (509.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-13.json** (509.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-14.json** (524.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-15.json** (512.1 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-16.json** (514.3 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-17.json** (516.4 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-18.json** (515.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-19.json** (515.7 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-04-20.json** (528.4 KB)
+- **Analysis\Results\clinical_trials_summary.md** (1.7 KB)
+- **Analysis\Results\combination_validation.json** (9.7 KB)
+- **Analysis\Results\cross_domain_paper_review_2026-04-03.md** (9.6 KB)
+- **Analysis\Results\cross_reference_diabetologia_islet_repurposing.md** (7.7 KB)
+- **Analysis\Results\evidence_network.json** (99.9 KB)
+- **Analysis\Results\extracted_corpus_data.json** (1.4 MB)
+- **Analysis\Results\gap_cluster_trials.json** (30.8 KB)
+- **Analysis\Results\gap_evidence.json** (213.6 KB)
+- **Analysis\Results\glp1_pharmacogenomics_equity_synthesis.md** (8.7 KB)
+- **Analysis\Results\hub_monitor_report.md** (4.0 KB)
+- **Analysis\Results\hub_monitor_state.json** (173.1 KB)
+- **Analysis\Results\islet_repurposing_drug_candidates.json** (123.7 KB)
+- **Analysis\Results\islet_repurposing_network_analysis.json** (320.9 KB)
+- **Analysis\Results\islet_repurposing_network_report.md** (25.9 KB)
+- **Analysis\Results\islet_repurposing_report.md** (6.8 KB)
+- **Analysis\Results\islet_repurposing_targets.json** (745.4 KB)
+- **Analysis\Results\islet_repurposing_validation.md** (9.1 KB)
+- **Analysis\Results\iterate_run_report_2026-04-20.md** (7.0 KB)
+- **Analysis\Results\literature_gap_data.json** (128.7 KB)
+- **Analysis\Results\literature_gap_matrix.xlsx** (32.2 KB)
+- **Analysis\Results\literature_gap_report.md** (11.4 KB)
+- **Analysis\Results\literature_gap_report_enriched.md** (13.1 KB)
+- **Analysis\Results\microbiome_ml_data_catalog.json** (19.2 KB)
+- **Analysis\Results\microbiome_ml_feature_importance.json** (16.9 KB)
+- **Analysis\Results\microbiome_ml_feature_matrix.csv** (1.1 MB)
+- **Analysis\Results\microbiome_ml_model_results.json** (20.6 KB)
+- **Analysis\Results\microbiome_ml_phase2_report.md** (7.1 KB)
+- **Analysis\Results\microbiome_ml_phase3_report.md** (6.6 KB)
+- **Analysis\Results\microbiome_ml_top_features.csv** (896.3 KB)
+- **Analysis\Results\monitor_report_2026-03-15.md** (14.1 KB)
+- **Analysis\Results\monitor_report_2026-03-16.md** (13.1 KB)
+- **Analysis\Results\monitor_report_2026-03-17.md** (10.1 KB)
+- **Analysis\Results\monitor_report_2026-03-18.md** (9.0 KB)
+- **Analysis\Results\monitor_report_2026-03-19.md** (9.8 KB)
+- **Analysis\Results\monitor_report_2026-03-20.md** (8.8 KB)
+- **Analysis\Results\monitor_report_2026-03-21.md** (10.4 KB)
+- **Analysis\Results\monitor_report_2026-03-23.md** (10.0 KB)
+- **Analysis\Results\monitor_report_2026-03-24.md** (11.3 KB)
+- **Analysis\Results\monitor_report_2026-03-25.md** (12.1 KB)
+- **Analysis\Results\monitor_report_2026-03-26.md** (11.6 KB)
+- **Analysis\Results\monitor_report_2026-03-27.md** (12.2 KB)
+- **Analysis\Results\monitor_report_2026-03-28.md** (11.3 KB)
+- **Analysis\Results\monitor_report_2026-03-29.md** (10.7 KB)
+- **Analysis\Results\monitor_report_2026-03-30.md** (11.9 KB)
+- **Analysis\Results\monitor_report_2026-03-31.md** (13.0 KB)
+- **Analysis\Results\monitor_report_2026-04-01.md** (15.2 KB)
+- **Analysis\Results\monitor_report_2026-04-02.md** (13.6 KB)
+- **Analysis\Results\monitor_report_2026-04-03.md** (14.0 KB)
+- **Analysis\Results\monitor_report_2026-04-04.md** (9.4 KB)
+- **Analysis\Results\monitor_report_2026-04-05.md** (9.3 KB)
+- **Analysis\Results\monitor_report_2026-04-06.md** (9.6 KB)
+- **Analysis\Results\monitor_report_2026-04-07.md** (10.4 KB)
+- **Analysis\Results\monitor_report_2026-04-08.md** (9.9 KB)
+- **Analysis\Results\monitor_report_2026-04-09.md** (10.1 KB)
+- **Analysis\Results\monitor_report_2026-04-10.md** (10.2 KB)
+- **Analysis\Results\monitor_report_2026-04-11.md** (4.7 KB)
+- **Analysis\Results\monitor_report_2026-04-12.md** (2.5 KB)
+- **Analysis\Results\monitor_report_2026-04-13.md** (12.9 KB)
+- **Analysis\Results\monitor_report_2026-04-14.md** (7.7 KB)
+- **Analysis\Results\monitor_report_2026-04-15.md** (7.1 KB)
+- **Analysis\Results\monitor_report_2026-04-16.md** (12.0 KB)
+- **Analysis\Results\monitor_report_2026-04-17.md** (13.7 KB)
+- **Analysis\Results\monitor_report_2026-04-18.md** (11.3 KB)
+- **Analysis\Results\monitor_report_2026-04-19.md** (11.6 KB)
+- **Analysis\Results\monitor_report_2026-04-20.md** (14.0 KB)
+- **Analysis\Results\new_pmids_gaps_1_5.json** (14.0 KB)
+- **Analysis\Results\paper_library\abstracts\10415738.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\10911004.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\10919952.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\11015619.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\11095109.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\11484077.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\11565518.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\11832527.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\12122111.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\12202461.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\12345678.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\12612578.json** (1.5 KB)
+- **Analysis\Results\paper_library\abstracts\14525967.json** (1.7 KB)
+- **Analysis\Results\paper_library\abstracts\14706052.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\15016488.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\15043959.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\15266224.json** (1.7 KB)
+- **Analysis\Results\paper_library\abstracts\15325833.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\15356308.json** (776 B)
+- **Analysis\Results\paper_library\abstracts\15551269.json** (1.6 KB)
+- **Analysis\Results\paper_library\abstracts\15793177.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\15919781.json** (612 B)
+- **Analysis\Results\paper_library\abstracts\15919794.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\15928679.json** (1.6 KB)
+- **Analysis\Results\paper_library\abstracts\1611143.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\16214598.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\16310551.json** (4.1 KB)
+- **Analysis\Results\paper_library\abstracts\16731815.json** (1.7 KB)
+- **Analysis\Results\paper_library\abstracts\16898223.json** (2.1 KB)
+- **Analysis\Results\paper_library\abstracts\1697648.json** (1.8 KB)
+- **Analysis\Results\paper_library\abstracts\17005949.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\17065674.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\17261637.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\17359512.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\17596481.json** (908 B)
+- **Analysis\Results\paper_library\abstracts\17942684.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\17965721.json** (1.7 KB)
+- **Analysis\Results\paper_library\abstracts\18073361.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\18094377.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\18397984.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\18442638.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\18539917.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\18662538.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\18725575.json** (3.7 KB)
+- **Analysis\Results\paper_library\abstracts\18794064.json** (1.3 KB)
+- **Analysis\Results\paper_library\abstracts\19095723.json** (692 B)
+- **Analysis\Results\paper_library\abstracts\19104422.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\19132915.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\19133409.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\19169263.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\19237585.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\19373249.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\19575028.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\19633656.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\19729482.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\19940299.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\20154735.json** (3.7 KB)
+- **Analysis\Results\paper_library\abstracts\20192806.json** (6.2 KB)
+- **Analysis\Results\paper_library\abstracts\20228401.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\20336151.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\20500789.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\20519905.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\20538833.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\20570966.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\21212348.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\21323736.json** (2.1 KB)
+- **Analysis\Results\paper_library\abstracts\21372320.json** (9.0 KB)
+- **Analysis\Results\paper_library\abstracts\21471512.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\21525462.json** (1.2 KB)
+- **Analysis\Results\paper_library\abstracts\21775755.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\21864487.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\2189759.json** (1.5 KB)
+- **Analysis\Results\paper_library\abstracts\21997792.json** (4.1 KB)
+- **Analysis\Results\paper_library\abstracts\22109896.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\22296077.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\22315720.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\22336824.json** (6.3 KB)
+- **Analysis\Results\paper_library\abstracts\22349456.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\22683128.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\22723585.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\22980982.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\23061757.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\23223116.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\23248199.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\23413806.json** (4.3 KB)
+- **Analysis\Results\paper_library\abstracts\23562078.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\23738527.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\23780460.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\23835325.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\23835333.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\23890997.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\24056026.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\24105098.json** (3 B)
+- **Analysis\Results\paper_library\abstracts\24506867.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\24508508.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\24598244.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\24636767.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\24838679.json** (710 B)
+- **Analysis\Results\paper_library\abstracts\24850385.json** (4.7 KB)
+- **Analysis\Results\paper_library\abstracts\24997559.json** (4.2 KB)
+- **Analysis\Results\paper_library\abstracts\25131812.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\25190079.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\25230243.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\2523712.json** (612 B)
+- **Analysis\Results\paper_library\abstracts\25287711.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\25324018.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\25498346.json** (4.4 KB)
+- **Analysis\Results\paper_library\abstracts\25587654.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\25714673.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\25751624.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\25772230.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\25834231.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\25940230.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\26106223.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\26322160.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\26378978.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\26404926.json** (4.1 KB)
+- **Analysis\Results\paper_library\abstracts\26590418.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\26656660.json** (4.1 KB)
+- **Analysis\Results\paper_library\abstracts\26784127.json** (3.7 KB)
+- **Analysis\Results\paper_library\abstracts\26897744.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\27159554.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\27189025.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\27505628.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\27727279.json** (6.1 KB)
+- **Analysis\Results\paper_library\abstracts\27821710.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\27878313.json** (4.8 KB)
+- **Analysis\Results\paper_library\abstracts\28010783.json** (659 B)
+- **Analysis\Results\paper_library\abstracts\28086098.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\28086769.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\28118453.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\28199814.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\28314945.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\28397826.json** (1.3 KB)
+- **Analysis\Results\paper_library\abstracts\28431241.json** (6.4 KB)
+- **Analysis\Results\paper_library\abstracts\28522654.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\28539434.json** (14.2 KB)
+- **Analysis\Results\paper_library\abstracts\28776086.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\28864502.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\28916733.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\29291885.json** (1.8 KB)
+- **Analysis\Results\paper_library\abstracts\29414425.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\29562193.json** (4.3 KB)
+- **Analysis\Results\paper_library\abstracts\29567707.json** (1.3 KB)
+- **Analysis\Results\paper_library\abstracts\29590046.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\29617641.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\29619531.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\29623672.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\29710129.json** (680 B)
+- **Analysis\Results\paper_library\abstracts\29754952.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\29885104.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\29909913.json** (1.0 KB)
+- **Analysis\Results\paper_library\abstracts\29988125.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\30041834.json** (1.5 KB)
+- **Analysis\Results\paper_library\abstracts\30078372.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\30144957.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\30291106.json** (5.7 KB)
+- **Analysis\Results\paper_library\abstracts\30303773.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\30415610.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\30578413.json** (496 B)
+- **Analysis\Results\paper_library\abstracts\30586620.json** (1.6 KB)
+- **Analysis\Results\paper_library\abstracts\30657336.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\30778000.json** (723 B)
+- **Analysis\Results\paper_library\abstracts\30899369.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\30949058.json** (4.4 KB)
+- **Analysis\Results\paper_library\abstracts\31036962.json** (4.3 KB)
+- **Analysis\Results\paper_library\abstracts\31157579.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\31173679.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\31175156.json** (4.5 KB)
+- **Analysis\Results\paper_library\abstracts\31177185.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\31180194.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\31182921.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\31197153.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\31220820.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\31263284.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\31296866.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\31529065.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\31618560.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\31733140.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\32017635.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\32175717.json** (2.5 KB)
+- **Analysis\Results\paper_library\abstracts\32243867.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\32307525.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\32312859.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\32535920.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\32627352.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\32694767.json** (1.8 KB)
+- **Analysis\Results\paper_library\abstracts\32754804.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\32847960.json** (4.4 KB)
+- **Analysis\Results\paper_library\abstracts\32929230.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\32943753.json** (6.4 KB)
+- **Analysis\Results\paper_library\abstracts\32953989.json** (4.3 KB)
+- **Analysis\Results\paper_library\abstracts\33082274.json** (3 B)
+- **Analysis\Results\paper_library\abstracts\33139407.json** (4.6 KB)
+- **Analysis\Results\paper_library\abstracts\33155826.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\33264825.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\33515517.json** (613 B)
+- **Analysis\Results\paper_library\abstracts\33550442.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\33622669.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\33989382.json** (4.9 KB)
+- **Analysis\Results\paper_library\abstracts\34180979.json** (10.8 KB)
+- **Analysis\Results\paper_library\abstracts\34256014.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\34299352.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\34318969.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\34421203.json** (2.0 KB)
+- **Analysis\Results\paper_library\abstracts\34763823.json** (2.1 KB)
+- **Analysis\Results\paper_library\abstracts\35028608.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\35203496.json** (4.8 KB)
+- **Analysis\Results\paper_library\abstracts\35437333.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\35466661.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\35491968.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\35551292.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\35551293.json** (451 B)
+- **Analysis\Results\paper_library\abstracts\35551294.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\35551307.json** (8.5 KB)
+- **Analysis\Results\paper_library\abstracts\36109639.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\36109742.json** (3.6 KB)
+- **Analysis\Results\paper_library\abstracts\36113507.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\36288281.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\36449148.json** (1.2 KB)
+- **Analysis\Results\paper_library\abstracts\36455116.json** (610 B)
+- **Analysis\Results\paper_library\abstracts\36474045.json** (4.6 KB)
+- **Analysis\Results\paper_library\abstracts\37016949.json** (2.1 KB)
+- **Analysis\Results\paper_library\abstracts\37105208.json** (4.9 KB)
+- **Analysis\Results\paper_library\abstracts\37122431.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\37133585.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\37202589.json** (725 B)
+- **Analysis\Results\paper_library\abstracts\37217319.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\37223016.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\37351171.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\37356445.json** (5.0 KB)
+- **Analysis\Results\paper_library\abstracts\37356446.json** (6.6 KB)
+- **Analysis\Results\paper_library\abstracts\37356449.json** (549 B)
+- **Analysis\Results\paper_library\abstracts\37359825.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\37366315.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\37385277.json** (552 B)
+- **Analysis\Results\paper_library\abstracts\37428296.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\37467726.json** (3 B)
+- **Analysis\Results\paper_library\abstracts\37544201.json** (3.4 KB)
+- **Analysis\Results\paper_library\abstracts\37748491.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\37845117.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\37909353.json** (3.0 KB)
+- **Analysis\Results\paper_library\abstracts\37932527.json** (3 B)
+- **Analysis\Results\paper_library\abstracts\38078589.json** (4.8 KB)
+- **Analysis\Results\paper_library\abstracts\38349844.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\38578067.json** (1.9 KB)
+- **Analysis\Results\paper_library\abstracts\38587236.json** (2.2 KB)
+- **Analysis\Results\paper_library\abstracts\38639547.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\38783768.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\3899825.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\39173844.json** (2.7 KB)
+- **Analysis\Results\paper_library\abstracts\39412512.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\39428507.json** (3.3 KB)
+- **Analysis\Results\paper_library\abstracts\39525461.json** (4.1 KB)
+- **Analysis\Results\paper_library\abstracts\39613428.json** (3.7 KB)
+- **Analysis\Results\paper_library\abstracts\39629068.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\39651984.json** (372 B)
+- **Analysis\Results\paper_library\abstracts\39697180.json** (4.6 KB)
+- **Analysis\Results\paper_library\abstracts\39843169.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\39869107.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\40032831.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\40249888.json** (2.6 KB)
+- **Analysis\Results\paper_library\abstracts\40272935.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\40291594.json** (3.5 KB)
+- **Analysis\Results\paper_library\abstracts\40366501.json** (2.9 KB)
+- **Analysis\Results\paper_library\abstracts\40464081.json** (6.2 KB)
+- **Analysis\Results\paper_library\abstracts\40544428.json** (3.8 KB)
+- **Analysis\Results\paper_library\abstracts\40573322.json** (3.2 KB)
+- **Analysis\Results\paper_library\abstracts\40650745.json** (3.9 KB)
+- **Analysis\Results\paper_library\abstracts\40737658.json** (2.8 KB)
+- **Analysis\Results\paper_library\abstracts\40814306.json** (3.7 KB)
+- **Analysis\Results\paper_library\abstracts\40988828.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\41468096.json** (2.4 KB)
+- **Analysis\Results\paper_library\abstracts\41567805.json** (6.0 KB)
+- **Analysis\Results\paper_library\abstracts\41618067.json** (4.0 KB)
+- **Analysis\Results\paper_library\abstracts\41827829.json** (4.3 KB)
+- **Analysis\Results\paper_library\abstracts\41827917.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\41921761.json** (2.3 KB)
+- **Analysis\Results\paper_library\abstracts\41986815.json** (1.7 KB)
+- **Analysis\Results\paper_library\abstracts\8366922.json** (3.1 KB)
+- **Analysis\Results\paper_library\abstracts\8439348.json** (719 B)
+- **Analysis\Results\paper_library\abstracts\9521319.json** (1.3 KB)
+- **Analysis\Results\paper_library\abstracts\9742976.json** (4.5 KB)
+- **Analysis\Results\paper_library\abstracts\9828138.json** (2.1 KB)
+- **Analysis\Results\paper_library\abstracts\9867128.json** (2.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10130900.json** (44.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10200948.json** (41.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10283058.json** (59.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10285771.json** (43.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10364581.json** (115.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10388704.json** (61.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10394257.json** (74.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10427982.json** (41.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC10806965.json** (52.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11116947.json** (53.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11490997.json** (67.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11539899.json** (109.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11545964.json** (64.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11605811.json** (113.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11612564.json** (50.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11752448.json** (39.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC11876343.json** (96.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12022644.json** (71.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12078402.json** (37.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12169077.json** (63.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12196043.json** (62.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12278794.json** (46.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12423256.json** (54.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12451038.json** (40.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12815805.json** (140.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12901800.json** (68.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12984146.json** (77.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC12984998.json** (145.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC2821718.json** (71.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3089969.json** (32.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3115752.json** (58.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3161301.json** (36.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3292316.json** (51.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3379616.json** (33.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3422549.json** (97.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3445031.json** (54.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3496776.json** (75.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3502616.json** (165.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3512574.json** (91.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3609504.json** (29.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3632186.json** (33.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3640261.json** (57.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3748788.json** (74.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3781470.json** (21.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3806618.json** (40.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3891203.json** (70.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3950964.json** (56.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC3972801.json** (36.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4082563.json** (49.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4123215.json** (40.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4380133.json** (74.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4380767.json** (63.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4809675.json** (84.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC4878912.json** (38.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5058548.json** (98.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5118642.json** (51.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5127166.json** (50.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5237131.json** (48.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5268070.json** (110.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5321245.json** (61.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5536112.json** (9.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5546324.json** (134.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5552828.json** (42.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5634336.json** (58.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5693323.json** (88.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5884445.json** (58.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5907633.json** (41.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC5990470.json** (65.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6015965.json** (35.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6092963.json** (32.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6245208.json** (147.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6396556.json** (13.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6410357.json** (38.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6435959.json** (80.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6445455.json** (25.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6535781.json** (35.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6587584.json** (40.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6699990.json** (67.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6776880.json** (38.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6936726.json** (63.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6948191.json** (94.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6973648.json** (53.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC6993875.json** (41.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7076915.json** (43.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7310804.json** (20.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7476912.json** (17.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7500484.json** (70.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7737672.json** (46.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7783927.json** (132.7 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7807242.json** (87.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7809717.json** (58.5 KB)
+- **Analysis\Results\paper_library\fulltext\PMC7985421.json** (46.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8012332.json** (39.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8304046.json** (58.4 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8329009.json** (24.9 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8597930.json** (45.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8714853.json** (58.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC8869296.json** (79.1 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9020749.json** (105.8 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9046088.json** (115.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9074710.json** (66.6 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9117147.json** (64.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9179018.json** (168.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9196294.json** (50.0 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9392051.json** (27.3 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9479279.json** (44.2 KB)
+- **Analysis\Results\paper_library\fulltext\PMC9729111.json** (104.1 KB)
+- **Analysis\Results\paper_library\index.json** (464.5 KB)
+- **Analysis\Results\pmid_verification.json** (253.6 KB)
+- **Analysis\Results\pubmed_recent_latest.json** (112.2 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-15.json** (94.1 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-16.json** (93.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-17.json** (94.9 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-18.json** (89.7 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-19.json** (91.0 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-20.json** (93.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-21.json** (94.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-22.json** (95.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-23.json** (94.4 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-24.json** (92.2 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-25.json** (94.9 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-28.json** (93.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-29.json** (96.2 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-30.json** (79.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-03-31.json** (99.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-01.json** (98.1 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-02.json** (98.3 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-03.json** (98.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-04.json** (97.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-05.json** (98.0 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-06.json** (99.0 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-07.json** (97.8 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-08.json** (98.9 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-09.json** (98.4 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-10.json** (97.3 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-11.json** (101.0 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-12.json** (98.9 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-13.json** (98.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-14.json** (98.2 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-15.json** (97.2 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-16.json** (97.4 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-17.json** (101.3 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-18.json** (109.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-19.json** (109.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-04-20.json** (112.2 KB)
+- **Analysis\Results\pubmed_recent_summary.md** (29.9 KB)
+- **Analysis\Results\research_paths.json** (75.1 KB)
+- **Analysis\Results\research_plan_islet_drug_repurposing.md** (10.3 KB)
+- **Analysis\Results\research_plan_microbiome_ml_pipeline.md** (11.9 KB)
+- **Analysis\Results\scheduled_run_report_2026-04-20.md** (2.6 KB)
+- **Analysis\Results\statistical_analysis.json** (41.9 KB)
+- **Analysis\Results\teplizumab_sNDA_decision_prep.md** (5.8 KB)
+- **Analysis\Results\unfound_pmids.json** (136 B)
+- **Analysis\Results\validated_research_paths.json** (20.3 KB)
+- **Analysis\Results\validation_report.md** (15.4 KB)
+- **Analysis\Results\verification_reports\verification_summary.json** (7.2 KB)
+- **Analysis\Results\verification_reports\verify_Acronym_Database.json** (404 B)
+- **Analysis\Results\verification_reports\verify_CART_Access_Barriers.json** (413 B)
+- **Analysis\Results\verification_reports\verify_Clinical_Trial_Dashboard.json** (421 B)
+- **Analysis\Results\verification_reports\verify_Corpus_Analysis.json** (402 B)
+- **Analysis\Results\verification_reports\verify_Drug_Repurposing_Islet.json** (417 B)
+- **Analysis\Results\verification_reports\verify_Drug_Repurposing_Screen.json** (419 B)
+- **Analysis\Results\verification_reports\verify_Equity_Map.json** (393 B)
+- **Analysis\Results\verification_reports\verify_Extracted_Evidence.json** (410 B)
+- **Analysis\Results\verification_reports\verify_GKA_LADA.json** (389 B)
+- **Analysis\Results\verification_reports\verify_GKA_Landscape.json** (399 B)
+- **Analysis\Results\verification_reports\verify_GKA_Pricing.json** (395 B)
+- **Analysis\Results\verification_reports\verify_Gap_Deep_Dives.json** (403 B)
+- **Analysis\Results\verification_reports\verify_Gap_Evidence.json** (398 B)
+- **Analysis\Results\verification_reports\verify_Gap_Synthesis.json** (399 B)
+- **Analysis\Results\verification_reports\verify_Generic_Drug_Catalog.json** (413 B)
+- **Analysis\Results\verification_reports\verify_Health_Equity.json** (399 B)
+- **Analysis\Results\verification_reports\verify_Immunomod_LADA.json** (401 B)
+- **Analysis\Results\verification_reports\verify_Islet_Drug_Repurposing.json** (725 B)
+- **Analysis\Results\verification_reports\verify_Islet_Transplant_Analysis.json** (422 B)
+- **Analysis\Results\verification_reports\verify_Islet_Transplant_Equity.json** (419 B)
+- **Analysis\Results\verification_reports\verify_LADA_Diagnostic_Model.json** (416 B)
+- **Analysis\Results\verification_reports\verify_LADA_Natural_History.json** (413 B)
+- **Analysis\Results\verification_reports\verify_LADA_Prevalence.json** (402 B)
+- **Analysis\Results\verification_reports\verify_Medical_Data_Dictionary.json** (420 B)
+- **Analysis\Results\verification_reports\verify_Methodology.json** (394 B)
+- **Analysis\Results\verification_reports\verify_Nutrition_Beta_Cells.json** (413 B)
+- **Analysis\Results\verification_reports\verify_Nutrition_LADA.json** (401 B)
+- **Analysis\Results\verification_reports\verify_PMID_Verification.json** (407 B)
+- **Analysis\Results\verification_reports\verify_Paper_Library.json** (400 B)
+- **Analysis\Results\verification_reports\verify_Research_Dashboard.json** (408 B)
+- **Analysis\Results\verification_reports\verify_Research_Paths.json** (400 B)
+- **Analysis\Results\verification_reports\verify_Statistical_Analysis.json** (412 B)
+- **Analysis\Results\verification_reports\verify_Treg_Neuropathy.json** (403 B)
+- **Analysis\Results\verification_reports\verify_Trial_Equity_Mapper.json** (411 B)
+- **Analysis\Scripts\add_citations.py** (18.4 KB)
+- **Analysis\Scripts\agent_state.py** (9.1 KB)
+- **Analysis\Scripts\baseline_clinical_trials.py** (9.8 KB)
+- **Analysis\Scripts\baseline_pubmed_alerts.py** (14.8 KB)
+- **Analysis\Scripts\build_acronym_db.py** (28.3 KB)
+- **Analysis\Scripts\build_cart_access.py** (76.2 KB)
+- **Analysis\Scripts\build_corpus_analysis.py** (32.5 KB)
+- **Analysis\Scripts\build_data_dictionary.py** (144.6 KB)
+- **Analysis\Scripts\build_drug_repurposing_islet.py** (46.2 KB)
+- **Analysis\Scripts\build_drug_repurposing_screen.py** (89.0 KB)
+- **Analysis\Scripts\build_equity_map.py** (43.3 KB)
+- **Analysis\Scripts\build_extracted_evidence.py** (24.9 KB)
+- **Analysis\Scripts\build_gap_deep_dives.py** (138.1 KB)
+- **Analysis\Scripts\build_gap_synthesis.py** (59.7 KB)
+- **Analysis\Scripts\build_generic_drug_catalog.py** (46.4 KB)
+- **Analysis\Scripts\build_gka_lada.py** (37.8 KB)
+- **Analysis\Scripts\build_gka_landscape.py** (54.9 KB)
+- **Analysis\Scripts\build_gka_pricing.py** (42.2 KB)
+- **Analysis\Scripts\build_health_equity.py** (71.0 KB)
+- **Analysis\Scripts\build_immunomod_lada.py** (48.0 KB)
+- **Analysis\Scripts\build_islet_equity.py** (41.8 KB)
+- **Analysis\Scripts\build_islet_outcomes.py** (67.8 KB)
+- **Analysis\Scripts\build_lada_diagnostic_model.py** (61.8 KB)
+- **Analysis\Scripts\build_lada_model.py** (56.3 KB)
+- **Analysis\Scripts\build_lada_prevalence.py** (50.8 KB)
+- **Analysis\Scripts\build_methodology.py** (61.4 KB)
+- **Analysis\Scripts\build_nutrition_beta.py** (41.4 KB)
+- **Analysis\Scripts\build_nutrition_lada.py** (51.4 KB)
+- **Analysis\Scripts\build_paper_library.py** (25.0 KB)
+- **Analysis\Scripts\build_repurposing_dashboard.py** (11.8 KB)
+- **Analysis\Scripts\build_repurposing_dashboard_v2.py** (25.0 KB)
+- **Analysis\Scripts\build_research_paths.py** (32.1 KB)
+- **Analysis\Scripts\build_statistical_analysis.py** (30.6 KB)
+- **Analysis\Scripts\build_treg_neuropathy.py** (64.4 KB)
+- **Analysis\Scripts\build_trial_equity_mapper.py** (78.4 KB)
+- **Analysis\Scripts\extract_corpus_data.py** (12.1 KB)
+- **Analysis\Scripts\extract_evidence.py** (29.6 KB)
+- **Analysis\Scripts\fix_pmids.py** (3.8 KB)
+- **Analysis\Scripts\hub_monitor.py** (13.5 KB)
+- **Analysis\Scripts\improve_gap_analysis.py** (11.8 KB)
+- **Analysis\Scripts\ingest_papers.py** (20.4 KB)
+- **Analysis\Scripts\postprocess_dashboards.py** (12.5 KB)
+- **Analysis\Scripts\project1_literature_gap_analysis.py** (16.5 KB)
+- **Analysis\Scripts\project_islet_drug_repurposing_phase1.py** (17.8 KB)
+- **Analysis\Scripts\project_islet_drug_repurposing_phase2.py** (17.8 KB)
+- **Analysis\Scripts\project_islet_drug_repurposing_phase3.py** (31.9 KB)
+- **Analysis\Scripts\project_microbiome_ml_phase1_data.py** (14.6 KB)
+- **Analysis\Scripts\project_microbiome_ml_phase2_features.py** (33.4 KB)
+- **Analysis\Scripts\project_microbiome_ml_phase3_models.py** (26.8 KB)
+- **Analysis\Scripts\rebuild_clinical_trial_dashboard.py** (30.7 KB)
+- **Analysis\Scripts\rebuild_research_dashboard.py** (62.9 KB)
+- **Analysis\Scripts\rebuild_website.py** (27.5 KB)
+- **Analysis\Scripts\run_all.py** (3.2 KB)
+- **Analysis\Scripts\run_quality_improvements.py** (8.0 KB)
+- **Analysis\Scripts\statistical_analysis.py** (24.6 KB)
+- **Analysis\Scripts\track_unfound_pmids.py** (3.6 KB)
+- **Analysis\Scripts\validate_citations.py** (14.7 KB)
+- **Analysis\Scripts\verify_before_deploy.py** (20.2 KB)
+- **Analysis\Scripts\verify_pmids.py** (17.9 KB)
+- **Dashboards\Acronym_Database.html** (93.7 KB)
+- **Dashboards\CART_Access_Barriers.html** (85.0 KB)
+- **Dashboards\Clinical_Trial_Dashboard.html** (425.8 KB)
+- **Dashboards\Corpus_Analysis.html** (82.5 KB)
+- **Dashboards\Drug_Repurposing_Islet.html** (59.9 KB)
+- **Dashboards\Drug_Repurposing_Screen.html** (118.7 KB)
+- **Dashboards\Equity_Map.html** (81.1 KB)
+- **Dashboards\Extracted_Evidence.html** (135.1 KB)
+- **Dashboards\GKA_LADA.html** (42.8 KB)
+- **Dashboards\GKA_Landscape.html** (60.0 KB)
+- **Dashboards\GKA_Pricing.html** (52.9 KB)
+- **Dashboards\Gap_Deep_Dives.html** (217.7 KB)
+- **Dashboards\Gap_Evidence.html** (181.5 KB)
+- **Dashboards\Gap_Synthesis.html** (121.8 KB)
+- **Dashboards\Generic_Drug_Catalog.html** (48.3 KB)
+- **Dashboards\Health_Equity.html** (76.1 KB)
+- **Dashboards\Immunomod_LADA.html** (50.9 KB)
+- **Dashboards\Islet_Drug_Repurposing.html** (115.6 KB)
+- **Dashboards\Islet_Transplant_Analysis.html** (73.8 KB)
+- **Dashboards\Islet_Transplant_Equity.html** (43.5 KB)
+- **Dashboards\LADA_Diagnostic_Model.html** (57.3 KB)
+- **Dashboards\LADA_Natural_History.html** (61.1 KB)
+- **Dashboards\LADA_Prevalence.html** (54.9 KB)
+- **Dashboards\Medical_Data_Dictionary.html** (358.4 KB)
+- **Dashboards\Methodology.html** (65.4 KB)
+- **Dashboards\Nutrition_Beta_Cells.html** (44.9 KB)
+- **Dashboards\Nutrition_LADA.html** (55.2 KB)
+- **Dashboards\PMID_Verification.html** (171.5 KB)
+- **Dashboards\Paper_Library.html** (200.6 KB)
+- **Dashboards\Research_Dashboard.html** (65.1 KB)
+- **Dashboards\Research_Paths.html** (122.4 KB)
+- **Dashboards\Statistical_Analysis.html** (37.3 KB)
+- **Dashboards\Treg_Neuropathy.html** (68.4 KB)
+- **Dashboards\Trial_Equity_Mapper.html** (73.5 KB)
+- **Dashboards\_quarantine\CART_Access_Barriers.html** (72.1 KB)
+- **Dashboards\_quarantine\GKA_Pricing.html** (37.8 KB)
+- **Dashboards\_quarantine\Generic_Drug_Catalog.html** (39.1 KB)
+- **Dashboards\_quarantine\Research_Paths.html** (116.6 KB)
+- **docs\Dashboards\Acronym_Database.html** (88.9 KB)
+- **docs\Dashboards\CART_Access_Barriers.html** (72.1 KB)
+- **docs\Dashboards\Clinical_Trial_Dashboard.html** (413.9 KB)
+- **docs\Dashboards\Corpus_Analysis.html** (74.3 KB)
+- **docs\Dashboards\Drug_Repurposing_Islet.html** (54.7 KB)
+- **docs\Dashboards\Drug_Repurposing_Screen.html** (101.8 KB)
+- **docs\Dashboards\Equity_Map.html** (74.6 KB)
+- **docs\Dashboards\Extracted_Evidence.html** (130.2 KB)
+- **docs\Dashboards\GKA_LADA.html** (35.8 KB)
+- **docs\Dashboards\GKA_Landscape.html** (53.0 KB)
+- **docs\Dashboards\GKA_Pricing.html** (37.8 KB)
+- **docs\Dashboards\Gap_Deep_Dives.html** (204.0 KB)
+- **docs\Dashboards\Gap_Evidence.html** (132.6 KB)
+- **docs\Dashboards\Gap_Synthesis.html** (115.6 KB)
+- **docs\Dashboards\Generic_Drug_Catalog.html** (39.1 KB)
+- **docs\Dashboards\Health_Equity.html** (69.4 KB)
+- **docs\Dashboards\Immunomod_LADA.html** (43.5 KB)
+- **docs\Dashboards\Islet_Transplant_Analysis.html** (68.6 KB)
+- **docs\Dashboards\Islet_Transplant_Equity.html** (38.8 KB)
+- **docs\Dashboards\LADA_Diagnostic_Model.html** (40.7 KB)
+- **docs\Dashboards\LADA_Natural_History.html** (55.5 KB)
+- **docs\Dashboards\LADA_Prevalence.html** (49.4 KB)
+- **docs\Dashboards\Medical_Data_Dictionary.html** (342.3 KB)
+- **docs\Dashboards\Methodology.html** (60.6 KB)
+- **docs\Dashboards\Nutrition_Beta_Cells.html** (40.2 KB)
+- **docs\Dashboards\Nutrition_LADA.html** (49.7 KB)
+- **docs\Dashboards\PMID_Verification.html** (130.0 KB)
+- **docs\Dashboards\Paper_Library.html** (156.1 KB)
+- **docs\Dashboards\Research_Dashboard.html** (59.0 KB)
+- **docs\Dashboards\Research_Paths.html** (116.6 KB)
+- **docs\Dashboards\Statistical_Analysis.html** (31.2 KB)
+- **docs\Dashboards\Treg_Neuropathy.html** (62.2 KB)
+- **docs\Dashboards\Trial_Equity_Mapper.html** (64.4 KB)
+- **docs\index.html** (25.4 KB)
+- **docs\social_media_launch_posts.md** (5.3 KB)
 
 ## Modified Files
 
-- **Analysis/Results/agent_state.json** (102.2 KB, modified: 2026-04-15T13:49:38.382100)
-- **Analysis/Results/citation_validation.json** (187.7 KB, modified: 2026-04-15T13:50:40.935559)
-- **Analysis/Results/clinical_trials_latest.json** (514.3 KB, modified: 2026-04-16T07:04:57)
-- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-04-16T07:04:57)
-- **Analysis/Results/evidence_network.json** (99.1 KB, modified: 2026-04-15T13:50:40.951966)
-- **Analysis/Results/gap_evidence.json** (213.6 KB, modified: 2026-04-15T13:50:41.408973)
-- **Analysis/Results/hub_monitor_report.md** (4.8 KB, modified: 2026-04-15T07:05:03.526156)
-- **Analysis/Results/hub_monitor_state.json** (168.4 KB, modified: 2026-04-15T07:05:03.489538)
-- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-04-15T13:50:01.076408)
-- **Analysis/Results/paper_library/index.json** (455.6 KB, modified: 2026-04-15T13:50:40.588942)
-- **Analysis/Results/pmid_verification.json** (246.6 KB, modified: 2026-04-15T13:50:16.225317)
-- **Analysis/Results/pubmed_recent_latest.json** (97.4 KB, modified: 2026-04-16T07:05:29)
-- **Analysis/Results/pubmed_recent_summary.md** (25.3 KB, modified: 2026-04-16T07:05:29)
-- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-04-15T13:50:16.325747)
-- **Dashboards/Clinical_Trial_Dashboard.html** (417.0 KB, modified: 2026-04-15T13:50:00.935593)
-- **Dashboards/Corpus_Analysis.html** (76.3 KB, modified: 2026-04-15T13:50:42.661962)
-- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-04-15T13:50:01.833438)
-- **Dashboards/Extracted_Evidence.html** (130.2 KB, modified: 2026-04-15T13:50:42.790997)
-- **Dashboards/Gap_Deep_Dives.html** (204.6 KB, modified: 2026-04-15T13:50:01.383682)
-- **Dashboards/Gap_Evidence.html** (167.4 KB, modified: 2026-04-15T13:50:41.433777)
-- **Dashboards/Islet_Transplant_Analysis.html** (68.6 KB, modified: 2026-04-15T13:50:01.785870)
-- **Dashboards/LADA_Diagnostic_Model.html** (42.1 KB, modified: 2026-04-15T13:50:41.573412)
-- **Dashboards/PMID_Verification.html** (164.3 KB, modified: 2026-04-15T13:50:16.175508)
-- **Dashboards/Paper_Library.html** (193.7 KB, modified: 2026-04-15T13:50:41.502024)
-- **Dashboards/Research_Paths.html** (116.8 KB, modified: 2026-04-15T13:50:42.870834)
-- **Dashboards/Trial_Equity_Mapper.html** (67.8 KB, modified: 2026-04-15T13:50:41.611977)
-- **Research_Findings_Summary.md** (17.0 KB, modified: 2026-04-15T13:50:16.347929)
-- **docs/index.html** (24.7 KB, modified: 2026-04-15T13:50:43.023306)
+- **Platform_Audit_Report.docx** (20.4 KB, modified: 2026-04-19T09:15:02.893231)
+- **Research_Findings_Summary.md** (17.0 KB, modified: 2026-04-19T09:09:41.249488)
+
+## Removed Files
+
+- ~~.github/ISSUE_TEMPLATE/bug_report.md~~
+- ~~.github/ISSUE_TEMPLATE/data_error.md~~
+- ~~.github/ISSUE_TEMPLATE/feature_request.md~~
+- ~~.github/ISSUE_TEMPLATE/new_gap.md~~
+- ~~Analysis/Results/README_VALIDATION.md~~
+- ~~Analysis/Results/VALIDATION_SUMMARY.txt~~
+- ~~Analysis/Results/agent_state.json~~
+- ~~Analysis/Results/beta_cell_trial_locations.json~~
+- ~~Analysis/Results/citation_validation.json~~
+- ~~Analysis/Results/clinical_trials_latest.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-15.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-16.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-17.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-18.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-19.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-20.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-21.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-22.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-23.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-24.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-25.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-26.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-27.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-28.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-29.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-30.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-03-31.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-01.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-02.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-03.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-04.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-05.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-06.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-07.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-08.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-09.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-10.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-11.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-12.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-13.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-14.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-15.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-16.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-17.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-18.json~~
+- ~~Analysis/Results/clinical_trials_snapshot_2026-04-19.json~~
+- ~~Analysis/Results/clinical_trials_summary.md~~
+- ~~Analysis/Results/combination_validation.json~~
+- ~~Analysis/Results/cross_domain_paper_review_2026-04-03.md~~
+- ~~Analysis/Results/cross_reference_diabetologia_islet_repurposing.md~~
+- ~~Analysis/Results/evidence_network.json~~
+- ~~Analysis/Results/extracted_corpus_data.json~~
+- ~~Analysis/Results/gap_cluster_trials.json~~
+- ~~Analysis/Results/gap_evidence.json~~
+- ~~Analysis/Results/glp1_pharmacogenomics_equity_synthesis.md~~
+- ~~Analysis/Results/hub_monitor_report.md~~
+- ~~Analysis/Results/hub_monitor_state.json~~
+- ~~Analysis/Results/islet_repurposing_drug_candidates.json~~
+- ~~Analysis/Results/islet_repurposing_network_analysis.json~~
+- ~~Analysis/Results/islet_repurposing_network_report.md~~
+- ~~Analysis/Results/islet_repurposing_report.md~~
+- ~~Analysis/Results/islet_repurposing_targets.json~~
+- ~~Analysis/Results/islet_repurposing_validation.md~~
+- ~~Analysis/Results/literature_gap_data.json~~
+- ~~Analysis/Results/literature_gap_matrix.xlsx~~
+- ~~Analysis/Results/literature_gap_report.md~~
+- ~~Analysis/Results/literature_gap_report_enriched.md~~
+- ~~Analysis/Results/microbiome_ml_data_catalog.json~~
+- ~~Analysis/Results/microbiome_ml_feature_importance.json~~
+- ~~Analysis/Results/microbiome_ml_feature_matrix.csv~~
+- ~~Analysis/Results/microbiome_ml_model_results.json~~
+- ~~Analysis/Results/microbiome_ml_phase2_report.md~~
+- ~~Analysis/Results/microbiome_ml_phase3_report.md~~
+- ~~Analysis/Results/microbiome_ml_top_features.csv~~
+- ~~Analysis/Results/monitor_report_2026-03-15.md~~
+- ~~Analysis/Results/monitor_report_2026-03-16.md~~
+- ~~Analysis/Results/monitor_report_2026-03-17.md~~
+- ~~Analysis/Results/monitor_report_2026-03-18.md~~
+- ~~Analysis/Results/monitor_report_2026-03-19.md~~
+- ~~Analysis/Results/monitor_report_2026-03-20.md~~
+- ~~Analysis/Results/monitor_report_2026-03-21.md~~
+- ~~Analysis/Results/monitor_report_2026-03-23.md~~
+- ~~Analysis/Results/monitor_report_2026-03-24.md~~
+- ~~Analysis/Results/monitor_report_2026-03-25.md~~
+- ~~Analysis/Results/monitor_report_2026-03-26.md~~
+- ~~Analysis/Results/monitor_report_2026-03-27.md~~
+- ~~Analysis/Results/monitor_report_2026-03-28.md~~
+- ~~Analysis/Results/monitor_report_2026-03-29.md~~
+- ~~Analysis/Results/monitor_report_2026-03-30.md~~
+- ~~Analysis/Results/monitor_report_2026-03-31.md~~
+- ~~Analysis/Results/monitor_report_2026-04-01.md~~
+- ~~Analysis/Results/monitor_report_2026-04-02.md~~
+- ~~Analysis/Results/monitor_report_2026-04-03.md~~
+- ~~Analysis/Results/monitor_report_2026-04-04.md~~
+- ~~Analysis/Results/monitor_report_2026-04-05.md~~
+- ~~Analysis/Results/monitor_report_2026-04-06.md~~
+- ~~Analysis/Results/monitor_report_2026-04-07.md~~
+- ~~Analysis/Results/monitor_report_2026-04-08.md~~
+- ~~Analysis/Results/monitor_report_2026-04-09.md~~
+- ~~Analysis/Results/monitor_report_2026-04-10.md~~
+- ~~Analysis/Results/monitor_report_2026-04-11.md~~
+- ~~Analysis/Results/monitor_report_2026-04-12.md~~
+- ~~Analysis/Results/monitor_report_2026-04-13.md~~
+- ~~Analysis/Results/monitor_report_2026-04-14.md~~
+- ~~Analysis/Results/monitor_report_2026-04-15.md~~
+- ~~Analysis/Results/monitor_report_2026-04-16.md~~
+- ~~Analysis/Results/monitor_report_2026-04-17.md~~
+- ~~Analysis/Results/monitor_report_2026-04-18.md~~
+- ~~Analysis/Results/new_pmids_gaps_1_5.json~~
+- ~~Analysis/Results/paper_library/abstracts/10415738.json~~
+- ~~Analysis/Results/paper_library/abstracts/10911004.json~~
+- ~~Analysis/Results/paper_library/abstracts/10919952.json~~
+- ~~Analysis/Results/paper_library/abstracts/11015619.json~~
+- ~~Analysis/Results/paper_library/abstracts/11095109.json~~
+- ~~Analysis/Results/paper_library/abstracts/11484077.json~~
+- ~~Analysis/Results/paper_library/abstracts/11565518.json~~
+- ~~Analysis/Results/paper_library/abstracts/11832527.json~~
+- ~~Analysis/Results/paper_library/abstracts/12122111.json~~
+- ~~Analysis/Results/paper_library/abstracts/12202461.json~~
+- ~~Analysis/Results/paper_library/abstracts/12345678.json~~
+- ~~Analysis/Results/paper_library/abstracts/12612578.json~~
+- ~~Analysis/Results/paper_library/abstracts/14525967.json~~
+- ~~Analysis/Results/paper_library/abstracts/14706052.json~~
+- ~~Analysis/Results/paper_library/abstracts/15016488.json~~
+- ~~Analysis/Results/paper_library/abstracts/15043959.json~~
+- ~~Analysis/Results/paper_library/abstracts/15266224.json~~
+- ~~Analysis/Results/paper_library/abstracts/15325833.json~~
+- ~~Analysis/Results/paper_library/abstracts/15356308.json~~
+- ~~Analysis/Results/paper_library/abstracts/15551269.json~~
+- ~~Analysis/Results/paper_library/abstracts/15793177.json~~
+- ~~Analysis/Results/paper_library/abstracts/15919781.json~~
+- ~~Analysis/Results/paper_library/abstracts/15919794.json~~
+- ~~Analysis/Results/paper_library/abstracts/15928679.json~~
+- ~~Analysis/Results/paper_library/abstracts/1611143.json~~
+- ~~Analysis/Results/paper_library/abstracts/16214598.json~~
+- ~~Analysis/Results/paper_library/abstracts/16310551.json~~
+- ~~Analysis/Results/paper_library/abstracts/16731815.json~~
+- ~~Analysis/Results/paper_library/abstracts/16898223.json~~
+- ~~Analysis/Results/paper_library/abstracts/1697648.json~~
+- ~~Analysis/Results/paper_library/abstracts/17005949.json~~
+- ~~Analysis/Results/paper_library/abstracts/17065674.json~~
+- ~~Analysis/Results/paper_library/abstracts/17261637.json~~
+- ~~Analysis/Results/paper_library/abstracts/17359512.json~~
+- ~~Analysis/Results/paper_library/abstracts/17596481.json~~
+- ~~Analysis/Results/paper_library/abstracts/17942684.json~~
+- ~~Analysis/Results/paper_library/abstracts/17965721.json~~
+- ~~Analysis/Results/paper_library/abstracts/18073361.json~~
+- ~~Analysis/Results/paper_library/abstracts/18094377.json~~
+- ~~Analysis/Results/paper_library/abstracts/18397984.json~~
+- ~~Analysis/Results/paper_library/abstracts/18442638.json~~
+- ~~Analysis/Results/paper_library/abstracts/18539917.json~~
+- ~~Analysis/Results/paper_library/abstracts/18662538.json~~
+- ~~Analysis/Results/paper_library/abstracts/18725575.json~~
+- ~~Analysis/Results/paper_library/abstracts/18794064.json~~
+- ~~Analysis/Results/paper_library/abstracts/19095723.json~~
+- ~~Analysis/Results/paper_library/abstracts/19104422.json~~
+- ~~Analysis/Results/paper_library/abstracts/19132915.json~~
+- ~~Analysis/Results/paper_library/abstracts/19133409.json~~
+- ~~Analysis/Results/paper_library/abstracts/19169263.json~~
+- ~~Analysis/Results/paper_library/abstracts/19237585.json~~
+- ~~Analysis/Results/paper_library/abstracts/19373249.json~~
+- ~~Analysis/Results/paper_library/abstracts/19575028.json~~
+- ~~Analysis/Results/paper_library/abstracts/19633656.json~~
+- ~~Analysis/Results/paper_library/abstracts/19729482.json~~
+- ~~Analysis/Results/paper_library/abstracts/19940299.json~~
+- ~~Analysis/Results/paper_library/abstracts/20154735.json~~
+- ~~Analysis/Results/paper_library/abstracts/20192806.json~~
+- ~~Analysis/Results/paper_library/abstracts/20228401.json~~
+- ~~Analysis/Results/paper_library/abstracts/20336151.json~~
+- ~~Analysis/Results/paper_library/abstracts/20500789.json~~
+- ~~Analysis/Results/paper_library/abstracts/20519905.json~~
+- ~~Analysis/Results/paper_library/abstracts/20538833.json~~
+- ~~Analysis/Results/paper_library/abstracts/20570966.json~~
+- ~~Analysis/Results/paper_library/abstracts/21212348.json~~
+- ~~Analysis/Results/paper_library/abstracts/21323736.json~~
+- ~~Analysis/Results/paper_library/abstracts/21372320.json~~
+- ~~Analysis/Results/paper_library/abstracts/21471512.json~~
+- ~~Analysis/Results/paper_library/abstracts/21525462.json~~
+- ~~Analysis/Results/paper_library/abstracts/21775755.json~~
+- ~~Analysis/Results/paper_library/abstracts/21864487.json~~
+- ~~Analysis/Results/paper_library/abstracts/2189759.json~~
+- ~~Analysis/Results/paper_library/abstracts/21997792.json~~
+- ~~Analysis/Results/paper_library/abstracts/22109896.json~~
+- ~~Analysis/Results/paper_library/abstracts/22296077.json~~
+- ~~Analysis/Results/paper_library/abstracts/22315720.json~~
+- ~~Analysis/Results/paper_library/abstracts/22336824.json~~
+- ~~Analysis/Results/paper_library/abstracts/22349456.json~~
+- ~~Analysis/Results/paper_library/abstracts/22683128.json~~
+- ~~Analysis/Results/paper_library/abstracts/22723585.json~~
+- ~~Analysis/Results/paper_library/abstracts/22980982.json~~
+- ~~Analysis/Results/paper_library/abstracts/23061757.json~~
+- ~~Analysis/Results/paper_library/abstracts/23223116.json~~
+- ~~Analysis/Results/paper_library/abstracts/23248199.json~~
+- ~~Analysis/Results/paper_library/abstracts/23413806.json~~
+- ~~Analysis/Results/paper_library/abstracts/23562078.json~~
+- ~~Analysis/Results/paper_library/abstracts/23738527.json~~
+- ~~Analysis/Results/paper_library/abstracts/23780460.json~~
+- ~~Analysis/Results/paper_library/abstracts/23835325.json~~
+- ~~Analysis/Results/paper_library/abstracts/23835333.json~~
+- ~~Analysis/Results/paper_library/abstracts/23890997.json~~
+- ~~Analysis/Results/paper_library/abstracts/24056026.json~~
+- ~~Analysis/Results/paper_library/abstracts/24105098.json~~
+- ~~Analysis/Results/paper_library/abstracts/24506867.json~~
+- ~~Analysis/Results/paper_library/abstracts/24508508.json~~
+- ~~Analysis/Results/paper_library/abstracts/24598244.json~~
+- ~~Analysis/Results/paper_library/abstracts/24636767.json~~
+- ~~Analysis/Results/paper_library/abstracts/24838679.json~~
+- ~~Analysis/Results/paper_library/abstracts/24850385.json~~
+- ~~Analysis/Results/paper_library/abstracts/24997559.json~~
+- ~~Analysis/Results/paper_library/abstracts/25131812.json~~
+- ~~Analysis/Results/paper_library/abstracts/25190079.json~~
+- ~~Analysis/Results/paper_library/abstracts/25230243.json~~
+- ~~Analysis/Results/paper_library/abstracts/2523712.json~~
+- ~~Analysis/Results/paper_library/abstracts/25287711.json~~
+- ~~Analysis/Results/paper_library/abstracts/25324018.json~~
+- ~~Analysis/Results/paper_library/abstracts/25498346.json~~
+- ~~Analysis/Results/paper_library/abstracts/25587654.json~~
+- ~~Analysis/Results/paper_library/abstracts/25714673.json~~
+- ~~Analysis/Results/paper_library/abstracts/25751624.json~~
+- ~~Analysis/Results/paper_library/abstracts/25772230.json~~
+- ~~Analysis/Results/paper_library/abstracts/25834231.json~~
+- ~~Analysis/Results/paper_library/abstracts/25940230.json~~
+- ~~Analysis/Results/paper_library/abstracts/26106223.json~~
+- ~~Analysis/Results/paper_library/abstracts/26322160.json~~
+- ~~Analysis/Results/paper_library/abstracts/26378978.json~~
+- ~~Analysis/Results/paper_library/abstracts/26404926.json~~
+- ~~Analysis/Results/paper_library/abstracts/26590418.json~~
+- ~~Analysis/Results/paper_library/abstracts/26656660.json~~
+- ~~Analysis/Results/paper_library/abstracts/26784127.json~~
+- ~~Analysis/Results/paper_library/abstracts/26897744.json~~
+- ~~Analysis/Results/paper_library/abstracts/27159554.json~~
+- ~~Analysis/Results/paper_library/abstracts/27189025.json~~
+- ~~Analysis/Results/paper_library/abstracts/27505628.json~~
+- ~~Analysis/Results/paper_library/abstracts/27727279.json~~
+- ~~Analysis/Results/paper_library/abstracts/27821710.json~~
+- ~~Analysis/Results/paper_library/abstracts/27878313.json~~
+- ~~Analysis/Results/paper_library/abstracts/28010783.json~~
+- ~~Analysis/Results/paper_library/abstracts/28086098.json~~
+- ~~Analysis/Results/paper_library/abstracts/28086769.json~~
+- ~~Analysis/Results/paper_library/abstracts/28118453.json~~
+- ~~Analysis/Results/paper_library/abstracts/28199814.json~~
+- ~~Analysis/Results/paper_library/abstracts/28314945.json~~
+- ~~Analysis/Results/paper_library/abstracts/28397826.json~~
+- ~~Analysis/Results/paper_library/abstracts/28431241.json~~
+- ~~Analysis/Results/paper_library/abstracts/28522654.json~~
+- ~~Analysis/Results/paper_library/abstracts/28539434.json~~
+- ~~Analysis/Results/paper_library/abstracts/28776086.json~~
+- ~~Analysis/Results/paper_library/abstracts/28864502.json~~
+- ~~Analysis/Results/paper_library/abstracts/28916733.json~~
+- ~~Analysis/Results/paper_library/abstracts/29291885.json~~
+- ~~Analysis/Results/paper_library/abstracts/29414425.json~~
+- ~~Analysis/Results/paper_library/abstracts/29562193.json~~
+- ~~Analysis/Results/paper_library/abstracts/29567707.json~~
+- ~~Analysis/Results/paper_library/abstracts/29590046.json~~
+- ~~Analysis/Results/paper_library/abstracts/29617641.json~~
+- ~~Analysis/Results/paper_library/abstracts/29619531.json~~
+- ~~Analysis/Results/paper_library/abstracts/29623672.json~~
+- ~~Analysis/Results/paper_library/abstracts/29710129.json~~
+- ~~Analysis/Results/paper_library/abstracts/29754952.json~~
+- ~~Analysis/Results/paper_library/abstracts/29885104.json~~
+- ~~Analysis/Results/paper_library/abstracts/29909913.json~~
+- ~~Analysis/Results/paper_library/abstracts/29988125.json~~
+- ~~Analysis/Results/paper_library/abstracts/30041834.json~~
+- ~~Analysis/Results/paper_library/abstracts/30078372.json~~
+- ~~Analysis/Results/paper_library/abstracts/30144957.json~~
+- ~~Analysis/Results/paper_library/abstracts/30291106.json~~
+- ~~Analysis/Results/paper_library/abstracts/30303773.json~~
+- ~~Analysis/Results/paper_library/abstracts/30415610.json~~
+- ~~Analysis/Results/paper_library/abstracts/30578413.json~~
+- ~~Analysis/Results/paper_library/abstracts/30586620.json~~
+- ~~Analysis/Results/paper_library/abstracts/30657336.json~~
+- ~~Analysis/Results/paper_library/abstracts/30778000.json~~
+- ~~Analysis/Results/paper_library/abstracts/30899369.json~~
+- ~~Analysis/Results/paper_library/abstracts/30949058.json~~
+- ~~Analysis/Results/paper_library/abstracts/31036962.json~~
+- ~~Analysis/Results/paper_library/abstracts/31157579.json~~
+- ~~Analysis/Results/paper_library/abstracts/31173679.json~~
+- ~~Analysis/Results/paper_library/abstracts/31175156.json~~
+- ~~Analysis/Results/paper_library/abstracts/31177185.json~~
+- ~~Analysis/Results/paper_library/abstracts/31180194.json~~
+- ~~Analysis/Results/paper_library/abstracts/31182921.json~~
+- ~~Analysis/Results/paper_library/abstracts/31197153.json~~
+- ~~Analysis/Results/paper_library/abstracts/31220820.json~~
+- ~~Analysis/Results/paper_library/abstracts/31263284.json~~
+- ~~Analysis/Results/paper_library/abstracts/31296866.json~~
+- ~~Analysis/Results/paper_library/abstracts/31529065.json~~
+- ~~Analysis/Results/paper_library/abstracts/31618560.json~~
+- ~~Analysis/Results/paper_library/abstracts/31733140.json~~
+- ~~Analysis/Results/paper_library/abstracts/32017635.json~~
+- ~~Analysis/Results/paper_library/abstracts/32175717.json~~
+- ~~Analysis/Results/paper_library/abstracts/32243867.json~~
+- ~~Analysis/Results/paper_library/abstracts/32307525.json~~
+- ~~Analysis/Results/paper_library/abstracts/32312859.json~~
+- ~~Analysis/Results/paper_library/abstracts/32535920.json~~
+- ~~Analysis/Results/paper_library/abstracts/32627352.json~~
+- ~~Analysis/Results/paper_library/abstracts/32694767.json~~
+- ~~Analysis/Results/paper_library/abstracts/32754804.json~~
+- ~~Analysis/Results/paper_library/abstracts/32847960.json~~
+- ~~Analysis/Results/paper_library/abstracts/32929230.json~~
+- ~~Analysis/Results/paper_library/abstracts/32943753.json~~
+- ~~Analysis/Results/paper_library/abstracts/32953989.json~~
+- ~~Analysis/Results/paper_library/abstracts/33082274.json~~
+- ~~Analysis/Results/paper_library/abstracts/33139407.json~~
+- ~~Analysis/Results/paper_library/abstracts/33155826.json~~
+- ~~Analysis/Results/paper_library/abstracts/33264825.json~~
+- ~~Analysis/Results/paper_library/abstracts/33515517.json~~
+- ~~Analysis/Results/paper_library/abstracts/33550442.json~~
+- ~~Analysis/Results/paper_library/abstracts/33622669.json~~
+- ~~Analysis/Results/paper_library/abstracts/33989382.json~~
+- ~~Analysis/Results/paper_library/abstracts/34180979.json~~
+- ~~Analysis/Results/paper_library/abstracts/34256014.json~~
+- ~~Analysis/Results/paper_library/abstracts/34318969.json~~
+- ~~Analysis/Results/paper_library/abstracts/34421203.json~~
+- ~~Analysis/Results/paper_library/abstracts/34763823.json~~
+- ~~Analysis/Results/paper_library/abstracts/35028608.json~~
+- ~~Analysis/Results/paper_library/abstracts/35203496.json~~
+- ~~Analysis/Results/paper_library/abstracts/35437333.json~~
+- ~~Analysis/Results/paper_library/abstracts/35466661.json~~
+- ~~Analysis/Results/paper_library/abstracts/35551292.json~~
+- ~~Analysis/Results/paper_library/abstracts/35551293.json~~
+- ~~Analysis/Results/paper_library/abstracts/35551294.json~~
+- ~~Analysis/Results/paper_library/abstracts/35551307.json~~
+- ~~Analysis/Results/paper_library/abstracts/36109639.json~~
+- ~~Analysis/Results/paper_library/abstracts/36109742.json~~
+- ~~Analysis/Results/paper_library/abstracts/36113507.json~~
+- ~~Analysis/Results/paper_library/abstracts/36288281.json~~
+- ~~Analysis/Results/paper_library/abstracts/36449148.json~~
+- ~~Analysis/Results/paper_library/abstracts/36455116.json~~
+- ~~Analysis/Results/paper_library/abstracts/36474045.json~~
+- ~~Analysis/Results/paper_library/abstracts/37016949.json~~
+- ~~Analysis/Results/paper_library/abstracts/37105208.json~~
+- ~~Analysis/Results/paper_library/abstracts/37122431.json~~
+- ~~Analysis/Results/paper_library/abstracts/37133585.json~~
+- ~~Analysis/Results/paper_library/abstracts/37202589.json~~
+- ~~Analysis/Results/paper_library/abstracts/37217319.json~~
+- ~~Analysis/Results/paper_library/abstracts/37223016.json~~
+- ~~Analysis/Results/paper_library/abstracts/37351171.json~~
+- ~~Analysis/Results/paper_library/abstracts/37356445.json~~
+- ~~Analysis/Results/paper_library/abstracts/37356446.json~~
+- ~~Analysis/Results/paper_library/abstracts/37356449.json~~
+- ~~Analysis/Results/paper_library/abstracts/37359825.json~~
+- ~~Analysis/Results/paper_library/abstracts/37366315.json~~
+- ~~Analysis/Results/paper_library/abstracts/37385277.json~~
+- ~~Analysis/Results/paper_library/abstracts/37428296.json~~
+- ~~Analysis/Results/paper_library/abstracts/37467726.json~~
+- ~~Analysis/Results/paper_library/abstracts/37544201.json~~
+- ~~Analysis/Results/paper_library/abstracts/37748491.json~~
+- ~~Analysis/Results/paper_library/abstracts/37845117.json~~
+- ~~Analysis/Results/paper_library/abstracts/37909353.json~~
+- ~~Analysis/Results/paper_library/abstracts/37932527.json~~
+- ~~Analysis/Results/paper_library/abstracts/38078589.json~~
+- ~~Analysis/Results/paper_library/abstracts/38349844.json~~
+- ~~Analysis/Results/paper_library/abstracts/38578067.json~~
+- ~~Analysis/Results/paper_library/abstracts/38587236.json~~
+- ~~Analysis/Results/paper_library/abstracts/38639547.json~~
+- ~~Analysis/Results/paper_library/abstracts/38783768.json~~
+- ~~Analysis/Results/paper_library/abstracts/3899825.json~~
+- ~~Analysis/Results/paper_library/abstracts/39173844.json~~
+- ~~Analysis/Results/paper_library/abstracts/39412512.json~~
+- ~~Analysis/Results/paper_library/abstracts/39428507.json~~
+- ~~Analysis/Results/paper_library/abstracts/39525461.json~~
+- ~~Analysis/Results/paper_library/abstracts/39613428.json~~
+- ~~Analysis/Results/paper_library/abstracts/39629068.json~~
+- ~~Analysis/Results/paper_library/abstracts/39651984.json~~
+- ~~Analysis/Results/paper_library/abstracts/39697180.json~~
+- ~~Analysis/Results/paper_library/abstracts/39843169.json~~
+- ~~Analysis/Results/paper_library/abstracts/39869107.json~~
+- ~~Analysis/Results/paper_library/abstracts/40032831.json~~
+- ~~Analysis/Results/paper_library/abstracts/40249888.json~~
+- ~~Analysis/Results/paper_library/abstracts/40272935.json~~
+- ~~Analysis/Results/paper_library/abstracts/40291594.json~~
+- ~~Analysis/Results/paper_library/abstracts/40366501.json~~
+- ~~Analysis/Results/paper_library/abstracts/40464081.json~~
+- ~~Analysis/Results/paper_library/abstracts/40544428.json~~
+- ~~Analysis/Results/paper_library/abstracts/40573322.json~~
+- ~~Analysis/Results/paper_library/abstracts/40650745.json~~
+- ~~Analysis/Results/paper_library/abstracts/40737658.json~~
+- ~~Analysis/Results/paper_library/abstracts/40814306.json~~
+- ~~Analysis/Results/paper_library/abstracts/40988828.json~~
+- ~~Analysis/Results/paper_library/abstracts/41468096.json~~
+- ~~Analysis/Results/paper_library/abstracts/41567805.json~~
+- ~~Analysis/Results/paper_library/abstracts/41618067.json~~
+- ~~Analysis/Results/paper_library/abstracts/41827829.json~~
+- ~~Analysis/Results/paper_library/abstracts/41827917.json~~
+- ~~Analysis/Results/paper_library/abstracts/41921761.json~~
+- ~~Analysis/Results/paper_library/abstracts/41986815.json~~
+- ~~Analysis/Results/paper_library/abstracts/8366922.json~~
+- ~~Analysis/Results/paper_library/abstracts/8439348.json~~
+- ~~Analysis/Results/paper_library/abstracts/9521319.json~~
+- ~~Analysis/Results/paper_library/abstracts/9742976.json~~
+- ~~Analysis/Results/paper_library/abstracts/9828138.json~~
+- ~~Analysis/Results/paper_library/abstracts/9867128.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10130900.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10200948.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10283058.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10285771.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10364581.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10388704.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10394257.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10427982.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC10806965.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11116947.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11490997.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11539899.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11545964.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11605811.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11612564.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11752448.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC11876343.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12022644.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12078402.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12169077.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12196043.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12278794.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12423256.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12451038.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12815805.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12901800.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12984146.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC12984998.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC2821718.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3089969.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3115752.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3161301.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3292316.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3379616.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3422549.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3445031.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3496776.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3502616.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3512574.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3609504.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3632186.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3640261.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3748788.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3781470.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3806618.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3891203.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3950964.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC3972801.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4082563.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4123215.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4380133.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4380767.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4809675.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC4878912.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5058548.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5118642.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5127166.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5237131.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5268070.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5321245.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5536112.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5546324.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5552828.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5634336.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5693323.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5884445.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5907633.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC5990470.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6015965.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6092963.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6245208.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6396556.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6410357.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6435959.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6445455.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6535781.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6587584.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6699990.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6776880.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6936726.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6948191.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6973648.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC6993875.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7076915.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7310804.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7476912.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7500484.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7737672.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7783927.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7807242.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7809717.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC7985421.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC8012332.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC8329009.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC8597930.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC8714853.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC8869296.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9020749.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9046088.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9074710.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9117147.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9179018.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9196294.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9392051.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9479279.json~~
+- ~~Analysis/Results/paper_library/fulltext/PMC9729111.json~~
+- ~~Analysis/Results/paper_library/index.json~~
+- ~~Analysis/Results/pmid_verification.json~~
+- ~~Analysis/Results/pubmed_recent_latest.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-15.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-16.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-17.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-18.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-19.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-20.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-21.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-22.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-23.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-24.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-25.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-28.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-29.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-30.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-03-31.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-01.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-02.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-03.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-04.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-05.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-06.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-07.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-08.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-09.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-10.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-11.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-12.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-13.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-14.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-15.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-16.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-17.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-18.json~~
+- ~~Analysis/Results/pubmed_recent_snapshot_2026-04-19.json~~
+- ~~Analysis/Results/pubmed_recent_summary.md~~
+- ~~Analysis/Results/research_paths.json~~
+- ~~Analysis/Results/research_plan_islet_drug_repurposing.md~~
+- ~~Analysis/Results/research_plan_microbiome_ml_pipeline.md~~
+- ~~Analysis/Results/statistical_analysis.json~~
+- ~~Analysis/Results/teplizumab_sNDA_decision_prep.md~~
+- ~~Analysis/Results/unfound_pmids.json~~
+- ~~Analysis/Results/validated_research_paths.json~~
+- ~~Analysis/Results/validation_report.md~~
+- ~~Analysis/Results/verification_reports/verification_summary.json~~
+- ~~Analysis/Results/verification_reports/verify_Acronym_Database.json~~
+- ~~Analysis/Results/verification_reports/verify_CART_Access_Barriers.json~~
+- ~~Analysis/Results/verification_reports/verify_Clinical_Trial_Dashboard.json~~
+- ~~Analysis/Results/verification_reports/verify_Corpus_Analysis.json~~
+- ~~Analysis/Results/verification_reports/verify_Drug_Repurposing_Islet.json~~
+- ~~Analysis/Results/verification_reports/verify_Drug_Repurposing_Screen.json~~
+- ~~Analysis/Results/verification_reports/verify_Equity_Map.json~~
+- ~~Analysis/Results/verification_reports/verify_Extracted_Evidence.json~~
+- ~~Analysis/Results/verification_reports/verify_GKA_LADA.json~~
+- ~~Analysis/Results/verification_reports/verify_GKA_Landscape.json~~
+- ~~Analysis/Results/verification_reports/verify_GKA_Pricing.json~~
+- ~~Analysis/Results/verification_reports/verify_Gap_Deep_Dives.json~~
+- ~~Analysis/Results/verification_reports/verify_Gap_Evidence.json~~
+- ~~Analysis/Results/verification_reports/verify_Gap_Synthesis.json~~
+- ~~Analysis/Results/verification_reports/verify_Generic_Drug_Catalog.json~~
+- ~~Analysis/Results/verification_reports/verify_Health_Equity.json~~
+- ~~Analysis/Results/verification_reports/verify_Immunomod_LADA.json~~
+- ~~Analysis/Results/verification_reports/verify_Islet_Drug_Repurposing.json~~
+- ~~Analysis/Results/verification_reports/verify_Islet_Transplant_Analysis.json~~
+- ~~Analysis/Results/verification_reports/verify_Islet_Transplant_Equity.json~~
+- ~~Analysis/Results/verification_reports/verify_LADA_Diagnostic_Model.json~~
+- ~~Analysis/Results/verification_reports/verify_LADA_Natural_History.json~~
+- ~~Analysis/Results/verification_reports/verify_LADA_Prevalence.json~~
+- ~~Analysis/Results/verification_reports/verify_Medical_Data_Dictionary.json~~
+- ~~Analysis/Results/verification_reports/verify_Methodology.json~~
+- ~~Analysis/Results/verification_reports/verify_Nutrition_Beta_Cells.json~~
+- ~~Analysis/Results/verification_reports/verify_Nutrition_LADA.json~~
+- ~~Analysis/Results/verification_reports/verify_PMID_Verification.json~~
+- ~~Analysis/Results/verification_reports/verify_Paper_Library.json~~
+- ~~Analysis/Results/verification_reports/verify_Research_Dashboard.json~~
+- ~~Analysis/Results/verification_reports/verify_Research_Paths.json~~
+- ~~Analysis/Results/verification_reports/verify_Statistical_Analysis.json~~
+- ~~Analysis/Results/verification_reports/verify_Treg_Neuropathy.json~~
+- ~~Analysis/Results/verification_reports/verify_Trial_Equity_Mapper.json~~
+- ~~Analysis/Scripts/add_citations.py~~
+- ~~Analysis/Scripts/agent_state.py~~
+- ~~Analysis/Scripts/baseline_clinical_trials.py~~
+- ~~Analysis/Scripts/baseline_pubmed_alerts.py~~
+- ~~Analysis/Scripts/build_acronym_db.py~~
+- ~~Analysis/Scripts/build_cart_access.py~~
+- ~~Analysis/Scripts/build_corpus_analysis.py~~
+- ~~Analysis/Scripts/build_data_dictionary.py~~
+- ~~Analysis/Scripts/build_drug_repurposing_islet.py~~
+- ~~Analysis/Scripts/build_drug_repurposing_screen.py~~
+- ~~Analysis/Scripts/build_equity_map.py~~
+- ~~Analysis/Scripts/build_extracted_evidence.py~~
+- ~~Analysis/Scripts/build_gap_deep_dives.py~~
+- ~~Analysis/Scripts/build_gap_synthesis.py~~
+- ~~Analysis/Scripts/build_generic_drug_catalog.py~~
+- ~~Analysis/Scripts/build_gka_lada.py~~
+- ~~Analysis/Scripts/build_gka_landscape.py~~
+- ~~Analysis/Scripts/build_gka_pricing.py~~
+- ~~Analysis/Scripts/build_health_equity.py~~
+- ~~Analysis/Scripts/build_immunomod_lada.py~~
+- ~~Analysis/Scripts/build_islet_equity.py~~
+- ~~Analysis/Scripts/build_islet_outcomes.py~~
+- ~~Analysis/Scripts/build_lada_diagnostic_model.py~~
+- ~~Analysis/Scripts/build_lada_model.py~~
+- ~~Analysis/Scripts/build_lada_prevalence.py~~
+- ~~Analysis/Scripts/build_methodology.py~~
+- ~~Analysis/Scripts/build_nutrition_beta.py~~
+- ~~Analysis/Scripts/build_nutrition_lada.py~~
+- ~~Analysis/Scripts/build_paper_library.py~~
+- ~~Analysis/Scripts/build_repurposing_dashboard.py~~
+- ~~Analysis/Scripts/build_repurposing_dashboard_v2.py~~
+- ~~Analysis/Scripts/build_research_paths.py~~
+- ~~Analysis/Scripts/build_statistical_analysis.py~~
+- ~~Analysis/Scripts/build_treg_neuropathy.py~~
+- ~~Analysis/Scripts/build_trial_equity_mapper.py~~
+- ~~Analysis/Scripts/extract_corpus_data.py~~
+- ~~Analysis/Scripts/extract_evidence.py~~
+- ~~Analysis/Scripts/fix_pmids.py~~
+- ~~Analysis/Scripts/hub_monitor.py~~
+- ~~Analysis/Scripts/improve_gap_analysis.py~~
+- ~~Analysis/Scripts/ingest_papers.py~~
+- ~~Analysis/Scripts/postprocess_dashboards.py~~
+- ~~Analysis/Scripts/project1_literature_gap_analysis.py~~
+- ~~Analysis/Scripts/project_islet_drug_repurposing_phase1.py~~
+- ~~Analysis/Scripts/project_islet_drug_repurposing_phase2.py~~
+- ~~Analysis/Scripts/project_islet_drug_repurposing_phase3.py~~
+- ~~Analysis/Scripts/project_microbiome_ml_phase1_data.py~~
+- ~~Analysis/Scripts/project_microbiome_ml_phase2_features.py~~
+- ~~Analysis/Scripts/project_microbiome_ml_phase3_models.py~~
+- ~~Analysis/Scripts/rebuild_clinical_trial_dashboard.py~~
+- ~~Analysis/Scripts/rebuild_research_dashboard.py~~
+- ~~Analysis/Scripts/rebuild_website.py~~
+- ~~Analysis/Scripts/run_all.py~~
+- ~~Analysis/Scripts/run_quality_improvements.py~~
+- ~~Analysis/Scripts/statistical_analysis.py~~
+- ~~Analysis/Scripts/track_unfound_pmids.py~~
+- ~~Analysis/Scripts/validate_citations.py~~
+- ~~Analysis/Scripts/verify_before_deploy.py~~
+- ~~Analysis/Scripts/verify_pmids.py~~
+- ~~Dashboards/Acronym_Database.html~~
+- ~~Dashboards/CART_Access_Barriers.html~~
+- ~~Dashboards/Clinical_Trial_Dashboard.html~~
+- ~~Dashboards/Corpus_Analysis.html~~
+- ~~Dashboards/Drug_Repurposing_Islet.html~~
+- ~~Dashboards/Drug_Repurposing_Screen.html~~
+- ~~Dashboards/Equity_Map.html~~
+- ~~Dashboards/Extracted_Evidence.html~~
+- ~~Dashboards/GKA_LADA.html~~
+- ~~Dashboards/GKA_Landscape.html~~
+- ~~Dashboards/GKA_Pricing.html~~
+- ~~Dashboards/Gap_Deep_Dives.html~~
+- ~~Dashboards/Gap_Evidence.html~~
+- ~~Dashboards/Gap_Synthesis.html~~
+- ~~Dashboards/Generic_Drug_Catalog.html~~
+- ~~Dashboards/Health_Equity.html~~
+- ~~Dashboards/Immunomod_LADA.html~~
+- ~~Dashboards/Islet_Drug_Repurposing.html~~
+- ~~Dashboards/Islet_Transplant_Analysis.html~~
+- ~~Dashboards/Islet_Transplant_Equity.html~~
+- ~~Dashboards/LADA_Diagnostic_Model.html~~
+- ~~Dashboards/LADA_Natural_History.html~~
+- ~~Dashboards/LADA_Prevalence.html~~
+- ~~Dashboards/Medical_Data_Dictionary.html~~
+- ~~Dashboards/Methodology.html~~
+- ~~Dashboards/Nutrition_Beta_Cells.html~~
+- ~~Dashboards/Nutrition_LADA.html~~
+- ~~Dashboards/PMID_Verification.html~~
+- ~~Dashboards/Paper_Library.html~~
+- ~~Dashboards/Research_Dashboard.html~~
+- ~~Dashboards/Research_Paths.html~~
+- ~~Dashboards/Statistical_Analysis.html~~
+- ~~Dashboards/Treg_Neuropathy.html~~
+- ~~Dashboards/Trial_Equity_Mapper.html~~
+- ~~Dashboards/_quarantine/CART_Access_Barriers.html~~
+- ~~Dashboards/_quarantine/GKA_Pricing.html~~
+- ~~Dashboards/_quarantine/Generic_Drug_Catalog.html~~
+- ~~Dashboards/_quarantine/Research_Paths.html~~
+- ~~docs/Dashboards/Acronym_Database.html~~
+- ~~docs/Dashboards/CART_Access_Barriers.html~~
+- ~~docs/Dashboards/Clinical_Trial_Dashboard.html~~
+- ~~docs/Dashboards/Corpus_Analysis.html~~
+- ~~docs/Dashboards/Drug_Repurposing_Islet.html~~
+- ~~docs/Dashboards/Drug_Repurposing_Screen.html~~
+- ~~docs/Dashboards/Equity_Map.html~~
+- ~~docs/Dashboards/Extracted_Evidence.html~~
+- ~~docs/Dashboards/GKA_LADA.html~~
+- ~~docs/Dashboards/GKA_Landscape.html~~
+- ~~docs/Dashboards/GKA_Pricing.html~~
+- ~~docs/Dashboards/Gap_Deep_Dives.html~~
+- ~~docs/Dashboards/Gap_Evidence.html~~
+- ~~docs/Dashboards/Gap_Synthesis.html~~
+- ~~docs/Dashboards/Generic_Drug_Catalog.html~~
+- ~~docs/Dashboards/Health_Equity.html~~
+- ~~docs/Dashboards/Immunomod_LADA.html~~
+- ~~docs/Dashboards/Islet_Transplant_Analysis.html~~
+- ~~docs/Dashboards/Islet_Transplant_Equity.html~~
+- ~~docs/Dashboards/LADA_Diagnostic_Model.html~~
+- ~~docs/Dashboards/LADA_Natural_History.html~~
+- ~~docs/Dashboards/LADA_Prevalence.html~~
+- ~~docs/Dashboards/Medical_Data_Dictionary.html~~
+- ~~docs/Dashboards/Methodology.html~~
+- ~~docs/Dashboards/Nutrition_Beta_Cells.html~~
+- ~~docs/Dashboards/Nutrition_LADA.html~~
+- ~~docs/Dashboards/PMID_Verification.html~~
+- ~~docs/Dashboards/Paper_Library.html~~
+- ~~docs/Dashboards/Research_Dashboard.html~~
+- ~~docs/Dashboards/Research_Paths.html~~
+- ~~docs/Dashboards/Statistical_Analysis.html~~
+- ~~docs/Dashboards/Treg_Neuropathy.html~~
+- ~~docs/Dashboards/Trial_Equity_Mapper.html~~
+- ~~docs/index.html~~
+- ~~docs/social_media_launch_posts.md~~
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 510 |
+| .json | 524 |
 | .html | 72 |
-| .md | 58 |
-| .py | 58 |
+| .md | 71 |
+| .py | 59 |
 | .txt | 4 |
 | .csv | 3 |
 | .xlsx | 2 |
@@ -70,38 +1475,35 @@
 | Folder | Files |
 |--------|-------|
 | (root) | 16 |
-| Analysis/Results | 139 |
-| Analysis/Results/paper_library | 1 |
-| Analysis/Results/paper_library/abstracts | 281 |
-| Analysis/Results/paper_library/fulltext | 106 |
-| Analysis/Results/verification_reports | 34 |
-| Analysis/Scripts | 58 |
+| .github\ISSUE_TEMPLATE | 4 |
+| Analysis\Results | 156 |
+| Analysis\Results\paper_library | 1 |
+| Analysis\Results\paper_library\abstracts | 285 |
+| Analysis\Results\paper_library\fulltext | 107 |
+| Analysis\Results\verification_reports | 35 |
+| Analysis\Scripts | 59 |
 | Dashboards | 34 |
-| Dashboards/_quarantine | 4 |
+| Dashboards\_quarantine | 4 |
 | docs | 2 |
-| docs/Dashboards | 33 |
+| docs\Dashboards | 33 |
 
 ## Review Flags
 
-- 452 result file(s) older than 14 days — may need refresh.
+- 479 result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-04-16 07:05:36*
+*Generated by hub_monitor.py — 2026-04-20 10:23:13*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-04-15.json → clinical_trials_snapshot_2026-04-16.json)
-- New trials: 3
+### Clinical Trials (clinical_trials_snapshot_2026-04-19.json → clinical_trials_snapshot_2026-04-20.json)
+- New trials: 0
 - Removed trials: 0
 - Status changes: 0
 - New results posted: 0
 
-### PubMed (pubmed_recent_snapshot_2026-04-15.json → pubmed_recent_snapshot_2026-04-16.json)
-- New papers: 28
-- Dropped papers: 28
+### PubMed (pubmed_recent_snapshot_2026-04-19.json → pubmed_recent_snapshot_2026-04-20.json)
+- New papers: 15
+- Dropped papers: 15
 
-**Cross-Domain New Papers (5):**
-- [41982276] Association Between the Lactate-to-Albumin Ratio and ICU/In-Hospital Mortality in Critically Ill Pat — Domains: Diabetes AI/ML, Diabetes Biomarker
-- [41982769] Dietary fiber supplementation mitigates gestational diabetes risk and preterm birth via gut microbio — Domains: Diabetes Biomarker, Diabetes Microbiome
-- [41983640] Diagnosis of Mucormycosis: Current Situation, Challenges and Future Prospects. — Domains: Diabetes AI/ML, Diabetes Biomarker
-- [41985330] Multi-strain probiotic enhances metformin tolerance by modulating gut microbiome and bile acid pathw — Domains: Diabetes Microbiome, Diabetes Multi-Omics
-- [41986815] Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candid — Domains: Diabetes Drug Repurpose, Diabetes Multi-Omics
+**Cross-Domain New Papers (1):**
+- [41999447] Reconsidering Obesity in India Through a Gut-Metabolic Lens: Mechanistic Insights and the Emerging R — Domains: Diabetes Microbiome, Diabetes Multi-Omics

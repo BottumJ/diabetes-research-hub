@@ -349,14 +349,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html" class="drh-current">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -383,13 +459,13 @@
             <p>This is BRONZE tier — scored from computational analysis with a single-source evidence basis. Most repurposing candidates have preclinical evidence only. The scoring model does not account for drug-drug interactions within combination protocols.</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="switchTab(event, 'tab1')">Drug Matrix</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab2')">Mechanism Map</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab3')">IBMIR First 72h</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab4')">Clinical Trials</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab5')">Scoring Model</button>
-            <button class="tab-button" onclick="switchTab(event, 'tab6')">Evidence</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" onclick="switchTab(event, 'tab1')">Drug Matrix</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab2')">Mechanism Map</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab3')">IBMIR First 72h</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab4')">Clinical Trials</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab5')">Scoring Model</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'tab6')">Evidence</button>
         </div>
 
         <!-- TAB 1: DRUG CANDIDATE MATRIX -->
@@ -398,7 +474,7 @@
             <p style="margin-bottom: 1rem; color: #636363;">
                 Repurposable approved drugs with evidence for improving islet transplant outcomes.
             </p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Drug</th>
@@ -655,7 +731,7 @@
             </ol>
 
             <h3>Current Mitigation Strategies (Incomplete)</h3>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Strategy</th>
@@ -700,7 +776,7 @@
                 </div>
                 <div class="expandable-content">
                     <p><strong>Mechanism:</strong> Blocks IL-1beta, a central hub cytokine in the IBMIR cascade.</p>
-                    <p><strong>Evidence:</strong> PMID:22723585 shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to transplant destruction.</p>
+                    <p><strong>Evidence:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank" rel="noopener" title="View on PubMed">PMID:22723585</a> shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to transplant destruction.</p>
                     <p><strong>Why it works:</strong> IL-1beta is rapidly produced by platelets and neutrophils during IBMIR and drives the amplification cascade.</p>
                 </div>
             </div>
@@ -711,14 +787,14 @@
                 </div>
                 <div class="expandable-content">
                     <p><strong>Mechanism:</strong> Blocks TNF-alpha, which amplifies IBMIR via NF-kappa-B signaling.</p>
-                    <p><strong>Evidence:</strong> PMID:23061757; etanercept was used in Edmonton Protocol modifications.</p>
+                    <p><strong>Evidence:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" rel="noopener" title="View on PubMed">PMID:23061757</a>; etanercept was used in Edmonton Protocol modifications.</p>
                     <p><strong>Why it works:</strong> TNF-alpha is produced early by activated platelets and drives the pro-inflammatory cascade.</p>
                 </div>
             </div>
 
             <div class="methodology">
-                <strong>IBMIR Data Sources:</strong> Bennet et al. (PMID:11095109), Nilsson et al. (early 2000s characterization),
-                Shapiro Edmonton Protocol modifications (PMID:23061757). The 50-70% islet loss figure is consistently reported
+                <strong>IBMIR Data Sources:</strong> Bennet et al. (<a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" rel="noopener" title="View on PubMed">PMID:11095109</a>), Nilsson et al. (early 2000s characterization),
+                Shapiro Edmonton Protocol modifications (<a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" rel="noopener" title="View on PubMed">PMID:23061757</a>). The 50-70% islet loss figure is consistently reported
                 across centers and represents the fundamental limitation driving the need for multiple donor pancreases.
             </div>
         </div>
@@ -729,7 +805,7 @@
             <p style="margin-bottom: 1rem; color: #636363;">
                 Actual clinical trials combining repurposed drugs with islet transplantation.
             </p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>NCT / Trial ID</th>
@@ -892,7 +968,7 @@
             </div>
 
             <h3>Score Breakdown: Top Candidates</h3>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Drug</th>
@@ -989,7 +1065,7 @@
             <p style="margin-bottom: 1rem; color: #636363;">
                 Complete reference list with validation tiers.
             </p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>PMID</th>
@@ -1081,7 +1157,7 @@
                     (etanercept) improves early islet transplant function, establishing proof-of-concept for repurposed drug benefit.
                 </p>
                 <p style="margin-top: 0.5rem;">
-                    <strong>Source 2:</strong> IL-1 blockade trials in T1D/T2D (Larsen et al., PMID:22723585) show beta cell
+                    <strong>Source 2:</strong> IL-1 blockade trials in T1D/T2D (Larsen et al., <a href="https://pubmed.ncbi.nlm.nih.gov/22723585/" target="_blank" rel="noopener" title="View on PubMed">PMID:22723585</a>) show beta cell
                     preservation through IL-1 antagonism, with direct applicability to transplant islet destruction mechanisms.
                 </p>
                 <p style="margin-top: 1rem;">
@@ -1108,7 +1184,7 @@
     <footer>
         <p>Gap #4 SILVER Validated | Interactive Tufte-style Dashboard</p>
         <p>Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.</p>
-        <p>Generated 2026-04-16 08:10:37 | Data embedded in script</p>
+        <p>Generated 2026-04-19 14:09:27 | Data embedded in script</p>
     </footer>
 
     <script>

@@ -438,7 +438,20 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>
@@ -449,6 +462,70 @@
     </script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html" class="drh-current">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
     <div class="navbar">
         <a href="../index.html">&larr; Diabetes Research Hub</a>
         <span class="navbar-divider">|</span>
@@ -477,13 +554,13 @@
             <p>Representation data is derived from published trial demographics and may not capture unpublished or industry-internal enrollment data. "Representation" is defined by race, geography, and income tier — other dimensions of equity (disability, age extremes, comorbidity burden) are not fully modeled.</p>
         </div>
 
-        <div class="tabs-nav">
-            <button class="tab-button active" onclick="switchTab(event, 'equity-gap')">The Equity Gap</button>
-            <button class="tab-button" onclick="switchTab(event, 'trial-representation')">Trial Representation</button>
-            <button class="tab-button" onclick="switchTab(event, 'geographic')">Geographic Disparities</button>
-            <button class="tab-button" onclick="switchTab(event, 'socioeconomic')">Socioeconomic Barriers</button>
-            <button class="tab-button" onclick="switchTab(event, 'interventions')">Interventions & Progress</button>
-            <button class="tab-button" onclick="switchTab(event, 'evidence')">Evidence References</button>
+        <div class="tabs-nav" role="tablist">
+            <button role="tab" class="tab-button active" onclick="switchTab(event, 'equity-gap')">The Equity Gap</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'trial-representation')">Trial Representation</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'geographic')">Geographic Disparities</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'socioeconomic')">Socioeconomic Barriers</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'interventions')">Interventions & Progress</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'evidence')">Evidence References</button>
         </div>
 
         <!-- Tab 1: The Equity Gap -->
@@ -519,7 +596,7 @@
                 <h3>Type 1 Diabetes Clinical Trial Disparities</h3>
                 <div class="stat-highlight">
                     <strong>~85% of T1D clinical trial participants are white</strong> despite Black Americans representing 13% of the US population. This fundamental representativeness gap means trial efficacy and safety data may not generalize to the majority of people living with T1D.
-                    <div class="source-note"><span class="pmid-link">PMID:34421203</span> - Clinical trial diversity in type 1 diabetes (Ebekozien et al. T1D Exchange data)</div>
+                    <div class="source-note"><span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" rel="noopener" title="View on PubMed">PMID:34421203</a></span> - Clinical trial diversity in type 1 diabetes (Ebekozien et al. T1D Exchange data)</div>
                 </div>
 
                 <div class="bar-chart">
@@ -540,7 +617,7 @@
                 <h3>Global Research Distribution Mismatch</h3>
                 <div class="stat-highlight">
                     <strong>Only 5% of diabetes clinical trials are conducted in Africa,</strong> despite Africa experiencing the highest age-adjusted mortality from diabetes globally. Low- and middle-income countries (LMICs) bear 80% of the global diabetes burden but receive less than 20% of research funding.
-                    <div class="source-note"><span class="pmid-link">PMID:36113507</span> - Global distribution of diabetes trials</div>
+                    <div class="source-note"><span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank" rel="noopener" title="View on PubMed">PMID:36113507</a></span> - Global distribution of diabetes trials</div>
                 </div>
 
                 <div class="bar-chart">
@@ -622,7 +699,7 @@
             </div>
 
             <div class="section">
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Trial (Year)</th>
@@ -786,7 +863,7 @@
 
             <div class="section">
                 <h3>Research Funding by Region</h3>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Region</th>
@@ -896,7 +973,7 @@
 
             <div class="section">
                 <h3>Insulin Pricing Crisis and Global Inequity</h3>
-                <!-- Source: PMID:34763823 PMID:37356445 -->
+                <!-- Source: <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a> <a href="https://pubmed.ncbi.nlm.nih.gov/37356445/" target="_blank" rel="noopener" title="View on PubMed">PMID:37356445</a> -->
                 <div class="metric-grid">
                     <div class="metric-card">
                         <div class="metric-label">USA - Insulin Cost</div>
@@ -947,7 +1024,7 @@
                 <h3>Insurance Coverage and Treatment Access</h3>
                 <p>Even in the USA, insurance coverage for diabetes management is highly variable and often inadequate:</p>
 
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Technology/Service</th>
@@ -1104,7 +1181,7 @@
                             <li>Community-engaged research models</li>
                             <li>Advocacy for systemic policy changes (insurance, food access, etc.)</li>
                         </ul>
-                        <div class="source-note"><span class="pmid-link">PMID:33139407</span> - ADA health equity statement</div>
+                        <div class="source-note"><span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407/" target="_blank" rel="noopener" title="View on PubMed">PMID:33139407</a></span> - ADA health equity statement</div>
                     </div>
                 </div>
             </div>
@@ -1232,13 +1309,13 @@
                 <h3>Core References on Diabetes Health Equity</h3>
                 <div class="reference-list">
                     <div class="reference-item">
-                        <span class="pmid-link">PMID:34421203</span>
+                        <span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" rel="noopener" title="View on PubMed">PMID:34421203</a></span>
                         <br>
                         Clinical trial diversity in type 1 diabetes. Study documenting racial/ethnic representation gaps in major T1D clinical trials and demonstrating underrepresentation of Black participants at levels significantly below disease prevalence. (Ebekozien et al. T1D Exchange data — PMID needs manual verification)
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">PMID:36113507</span>
+                        <span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank" rel="noopener" title="View on PubMed">PMID:36113507</a></span>
                         <br>
                         Global distribution of diabetes clinical trials. Analysis showing concentration of trial sites in high-income countries despite 80% of diabetes burden in low/middle-income countries. Only 5% of trials in Africa despite highest mortality. (PMID needs manual verification)
                     </div>
@@ -1268,13 +1345,13 @@
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">PMID:33139407</span>
+                        <span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407/" target="_blank" rel="noopener" title="View on PubMed">PMID:33139407</a></span>
                         <br>
                         ADA Health Equity Position Statement (2021). Comprehensive position calling for increased disparity research funding, workforce diversity, and integration of social determinants into diabetes care and research. (PMID needs manual verification)
                     </div>
 
                     <div class="reference-item">
-                        <span class="pmid-link">PMID:33139407</span>
+                        <span class="pmid-link"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407/" target="_blank" rel="noopener" title="View on PubMed">PMID:33139407</a></span>
                         <br>
                         Social Determinants of Diabetes Outcomes. Meta-analysis documenting impact of income, education, food security, and insurance on diabetes prevention, control, and complications across populations. (PMID needs manual verification)
                     </div>
@@ -1282,7 +1359,7 @@
                     <div class="reference-item">
                         <strong>Racial Disparities in Diabetes Treatment Outcomes</strong>
                         <br>
-                        ADA/EASD consensus guidelines and epidemiologic studies document that racial/ethnic groups experience different outcomes with diabetes medications, but specific pharmacodynamic effect size comparisons (e.g., SGLT2 inhibitors) require dedicated subgroup analyses. Technology access disparities (CGM, insulin pumps) are well-documented (Agarwal et al. 2021, PMID:33155826); drug response heterogeneity by race needs targeted research.
+                        ADA/EASD consensus guidelines and epidemiologic studies document that racial/ethnic groups experience different outcomes with diabetes medications, but specific pharmacodynamic effect size comparisons (e.g., SGLT2 inhibitors) require dedicated subgroup analyses. Technology access disparities (CGM, insulin pumps) are well-documented (Agarwal et al. 2021, <a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank" rel="noopener" title="View on PubMed">PMID:33155826</a>); drug response heterogeneity by race needs targeted research.
                     </div>
                 </div>
             </div>

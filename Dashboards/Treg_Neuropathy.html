@@ -385,14 +385,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html" class="drh-current">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -418,14 +494,14 @@
             <p>SILVER tier — validated through 12 independent papers from multiple research groups (Sakaguchi 2020, Frikeche 2024, Korn 2009, Feldman 2019) establishing both Treg biology mechanisms and neuropathy manifestations. No clinical trials have tested Treg therapy for diabetic neuropathy, but mechanistic pathway is now independently confirmed from separate bodies of literature (Treg biology + neuroinflammation).</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="showTab(event, 'tab1')">The Problem</button>
-            <button class="tab-button" onclick="showTab(event, 'tab2')">Neuroinflammation</button>
-            <button class="tab-button" onclick="showTab(event, 'tab3')">Tregs</button>
-            <button class="tab-button" onclick="showTab(event, 'tab4')">Therapeutics</button>
-            <button class="tab-button" onclick="showTab(event, 'tab5')">The Gap</button>
-            <button class="tab-button" onclick="showTab(event, 'tab6')">Proposal</button>
-            <button class="tab-button" onclick="showTab(event, 'tab7')">Evidence</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" onclick="showTab(event, 'tab1')">The Problem</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab2')">Neuroinflammation</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab3')">Tregs</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab4')">Therapeutics</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab5')">The Gap</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab6')">Proposal</button>
+            <button role="tab" class="tab-button" onclick="showTab(event, 'tab7')">Evidence</button>
         </div>
 
         <!-- Tab 1: The Problem -->
@@ -466,7 +542,7 @@
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p><strong>T1D (DCCT, 1993, PMID:8366922):</strong> Intensive glycemic control reduced neuropathy incidence by ~60%. This was a landmark trial that validated the glucose hypothesis in T1D.</p>
+                    <p><strong>T1D (DCCT, 1993, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank" rel="noopener" title="View on PubMed">PMID:8366922</a>):</strong> Intensive glycemic control reduced neuropathy incidence by ~60%. This was a landmark trial that validated the glucose hypothesis in T1D.</p>
                     <p><strong>T2D (ACCORD, 2010):</strong> Intensive glucose control showed minimal neuropathy benefit and increased mortality risk. Despite tight glucose control, neuropathy progressed at similar rates to standard treatment.</p>
                     <p><strong>Interpretation:</strong> T2D neuropathy has drivers beyond hyperglycemia. Even normoglycemic patients can develop neuropathy. This points to parallel pathological mechanisms — particularly neuroinflammation — that glucose control cannot address.</p>
                 </div>
@@ -503,7 +579,7 @@
             </div>
 
             <h3>Evidence for Neuroinflammation in Diabetic Neuropathy</h3>
-            <table>
+            <table role="table">
                 <tr>
                     <th>Finding</th>
                     <th>Location/Cell Type</th>
@@ -588,7 +664,7 @@
                 <li>Neuroinflammatory markers (TNF, IL-6) are independent risk factors for neuropathy progression</li>
             </ul>
 
-            <p class="source-note">Source: Pop-Busui R, et al. Neuroinflammation and neuropathy in diabetes. Current Diabetes Reports, 2016 (PMID:26897744)</p>
+            <p class="source-note">Source: Pop-Busui R, et al. Neuroinflammation and neuropathy in diabetes. Current Diabetes Reports, 2016 (<a href="https://pubmed.ncbi.nlm.nih.gov/26897744/" target="_blank" rel="noopener" title="View on PubMed">PMID:26897744</a>)</p>
         </div>
 
         <!-- Tab 3: Tregs -->
@@ -623,7 +699,7 @@
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>T1D Tregs are <strong>numerically reduced</strong> and functionally impaired. Tregs fail to suppress autoreactive beta-cell-specific T cells (PMID:23562078). This loss of tolerance allows CD8+ T cell infiltration of the pancreatic islets. Restoring Treg function is a major therapeutic target in T1D.</p>
+                    <p>T1D Tregs are <strong>numerically reduced</strong> and functionally impaired. Tregs fail to suppress autoreactive beta-cell-specific T cells (<a href="https://pubmed.ncbi.nlm.nih.gov/23562078/" target="_blank" rel="noopener" title="View on PubMed">PMID:23562078</a>). This loss of tolerance allows CD8+ T cell infiltration of the pancreatic islets. Restoring Treg function is a major therapeutic target in T1D.</p>
                 </div>
             </div>
 
@@ -633,14 +709,14 @@
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>T2D shows a distinct Treg defect: <strong>visceral adipose tissue Treg depletion</strong> (PMID:19633656, Feuerer et al., Science). Adipose Tregs normally suppress macrophage infiltration and pro-inflammatory M1 activation. Treg loss allows TNF-alpha and IL-6 production by adipose tissue macrophages, driving systemic insulin resistance. Treg restoration improves insulin sensitivity.</p>
+                    <p>T2D shows a distinct Treg defect: <strong>visceral adipose tissue Treg depletion</strong> (<a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" rel="noopener" title="View on PubMed">PMID:19633656</a>, Feuerer et al., Science). Adipose Tregs normally suppress macrophage infiltration and pro-inflammatory M1 activation. Treg loss allows TNF-alpha and IL-6 production by adipose tissue macrophages, driving systemic insulin resistance. Treg restoration improves insulin sensitivity.</p>
                 </div>
             </div>
 
             <h3>Tregs in Neuroregeneration: Emerging Evidence</h3>
             <p>Beyond their anti-inflammatory role, Tregs actively promote tissue repair and neuroregeneration:</p>
 
-            <table>
+            <table role="table">
                 <tr>
                     <th>Mechanism</th>
                     <th>Evidence</th>
@@ -663,7 +739,7 @@
                 </tr>
                 <tr>
                     <td><strong>CNS repair</strong></td>
-                    <td>Treg expansion post-stroke improves neurological outcomes (PMID:19169263, Liesz et al., 2009)</td>
+                    <td>Treg expansion post-stroke improves neurological outcomes (<a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" rel="noopener" title="View on PubMed">PMID:19169263</a>, Liesz et al., 2009)</td>
                     <td>Tregs cross blood-brain barrier and suppress neuroinflammation</td>
                 </tr>
             </table>
@@ -680,7 +756,7 @@
                 </ol>
             </div>
 
-            <p class="source-note">Source: Feuerer M, et al. Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells. PNAS, 2009 (PMID:19633656); Liesz A, et al. Regulatory T cells increase after spontaneous resolution of stroke in mice. Nat Med, 2009 (PMID:19169263)</p>
+            <p class="source-note">Source: Feuerer M, et al. Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells. PNAS, 2009 (<a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" rel="noopener" title="View on PubMed">PMID:19633656</a>); Liesz A, et al. Regulatory T cells increase after spontaneous resolution of stroke in mice. Nat Med, 2009 (<a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" rel="noopener" title="View on PubMed">PMID:19169263</a>)</p>
         </div>
 
         <!-- Tab 4: Therapeutics -->
@@ -1017,7 +1093,7 @@
                     <p><strong>Design elements:</strong></p>
                     <ul style="margin-left: 1.5rem;">
                         <li><strong>Patient population:</strong> 30-40 subjects with T2D and established distal symmetric polyneuropathy (monofilament loss, reduced NCS velocity)</li>
-                        <li><strong>Intervention:</strong> Low-dose IL-2 (Proleukin or Peregrine) at doses used in T1D trials (PMID:37217319, ~1-3 million IU, SC, weekly x 12 weeks)</li>
+                        <li><strong>Intervention:</strong> Low-dose IL-2 (Proleukin or Peregrine) at doses used in T1D trials (<a href="https://pubmed.ncbi.nlm.nih.gov/37217319/" target="_blank" rel="noopener" title="View on PubMed">PMID:37217319</a>, ~1-3 million IU, SC, weekly x 12 weeks)</li>
                         <li><strong>Primary endpoint:</strong> Change in intraepidermal small-fiber nerve density (skin biopsy) and/or corneal confocal microscopy at 12 weeks</li>
                         <li><strong>Secondary endpoints:</strong> NCS velocity, inflammatory cytokine levels (plasma TNF, IL-6), pain scores (NPSI), Treg frequency/function (flow cytometry)</li>
                         <li><strong>Safety:</strong> Standard IL-2 monitoring (CBC, metabolic panel, CRP). Inclusion of glucose control metrics to isolate Treg effect from glycemic change</li>
@@ -1043,20 +1119,20 @@
             <h3>Diabetic Neuropathy: Epidemiology & Burden</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    DCCT Research Group. (1993). "The effect of intensive diabetes therapy on the development and progression of neuropathy." <em>New England Journal of Medicine</em>, 329(14), 977-986. <span class="pmid">PMID:8366922</span>
+                    DCCT Research Group. (1993). "The effect of intensive diabetes therapy on the development and progression of neuropathy." <em>New England Journal of Medicine</em>, 329(14), 977-986. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank" rel="noopener" title="View on PubMed">PMID:8366922</a></span>
                 </div>
                 <div class="reference-item">
                     Pop-Busui, R., et al. (2016). "Diabetic neuropathy: A position statement by the American Diabetes Association." <em>Diabetes Care</em>, 39(9), 1653-1662.
                 </div>
                 <div class="reference-item">
-                    ACCORD Study Group. (2010). "Effects of intensive glucose lowering in Type 2 Diabetes." <em>New England Journal of Medicine</em>, 362(16), 1575-1585. <span class="pmid">PMID:20228401</span>
+                    ACCORD Study Group. (2010). "Effects of intensive glucose lowering in Type 2 Diabetes." <em>New England Journal of Medicine</em>, 362(16), 1575-1585. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank" rel="noopener" title="View on PubMed">PMID:20228401</a></span>
                 </div>
             </div>
 
             <h3>Neuroinflammation in Diabetic Neuropathy</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    Pop-Busui, R. (2016). "Neuroinflammation and neuropathy in diabetes." <em>Current Diabetes Reports</em>, 16(2), 15. <span class="pmid">PMID:26897744</span>
+                    Pop-Busui, R. (2016). "Neuroinflammation and neuropathy in diabetes." <em>Current Diabetes Reports</em>, 16(2), 15. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/26897744/" target="_blank" rel="noopener" title="View on PubMed">PMID:26897744</a></span>
                 </div>
                 <div class="reference-item">
                     Zochodne, D. W. (2015). "Mechanisms of diabetic neurotoxicity: The inflammatory dimension." <em>Journal of the Peripheral Nervous System</em>, 20(2), 141-149.
@@ -1079,7 +1155,7 @@
             <h3>Tregs in Type 1 Diabetes</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    Long, S. A., et al. (2012). "Defects in IL-2R signaling contribute to diminished maintenance of FOXP3 expression in CD4(+)CD25(+) regulatory T cells of type 1 diabetic subjects." <em>Diabetes</em>, 59(3), 694-702. <span class="pmid">PMID:23562078</span>
+                    Long, S. A., et al. (2012). "Defects in IL-2R signaling contribute to diminished maintenance of FOXP3 expression in CD4(+)CD25(+) regulatory T cells of type 1 diabetic subjects." <em>Diabetes</em>, 59(3), 694-702. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/23562078/" target="_blank" rel="noopener" title="View on PubMed">PMID:23562078</a></span>
                 </div>
                 <div class="reference-item">
                     Hartemann, A., et al. (2013). "Low-dose interleukin 2 in patients with type 1 diabetes: benefits and risks." <em>Clinical & Experimental Immunology</em>, 172(3), 384-393.
@@ -1089,7 +1165,7 @@
             <h3>Tregs in Type 2 Diabetes & Adipose Tissue Inflammation</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    Feuerer, M., et al. (2009). "Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells." <em>PNAS</em>, 106(27), 11018-11023. <span class="pmid">PMID:19633656</span>
+                    Feuerer, M., et al. (2009). "Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occurring regulatory T cells." <em>PNAS</em>, 106(27), 11018-11023. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" rel="noopener" title="View on PubMed">PMID:19633656</a></span>
                 </div>
                 <div class="reference-item">
                     Cipolletta, D., et al. (2012). "PPAR-gamma is a major driver of the accumulation and phenotype of adipose tissue Treg cells." <em>Nature</em>, 486(7404), 549-553.
@@ -1099,7 +1175,7 @@
             <h3>Tregs in Neuroinflammation & Neuroregeneration</h3>
             <div class="reference-list">
                 <div class="reference-item">
-                    Liesz, A., et al. (2009). "Regulatory T cells increase after spontaneous resolution of stroke in mice." <em>Nature Medicine</em>, 15(3), 259-265. <span class="pmid">PMID:19169263</span>
+                    Liesz, A., et al. (2009). "Regulatory T cells increase after spontaneous resolution of stroke in mice." <em>Nature Medicine</em>, 15(3), 259-265. <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" rel="noopener" title="View on PubMed">PMID:19169263</a></span>
                 </div>
                 <div class="reference-item">
                     Ito, M., et al. (2019). "Brain regulatory T cells suppress astrogliosis and potentiate neurological recovery." <em>Nature</em>, 565(7738), 246-250.

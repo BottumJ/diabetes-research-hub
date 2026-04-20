@@ -869,6 +869,23 @@ html_content += """            </div>
         </div>
     </div>
 
+    <div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
+      <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
+        <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Corpus Methodology &amp; References</h3>
+        <p style="font-size:12px;color:#636363;line-height:1.7;">
+          Corpus assembled from PubMed and PubMed Central using domain-specific search queries across 35 diabetes research areas.
+          Co-occurrence analysis methodology adapted from biomedical text mining approaches
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>).
+          Gap identification informed by systematic review principles
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
+           <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>;
+           <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+          Term frequency and network analysis used to identify underexplored research intersections
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a>).
+        </p>
+      </div>
+    </div>
+
     <div class="footer">
         <p>Corpus Analysis Dashboard | Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | 226 papers, {len(concept_papers)} concepts tracked</p>
     </div>

@@ -45,7 +45,23 @@ ALERT_QUERIES = {
     "Diabetes Health Equity": 'diabetes AND ("health equity" OR disparity) AND (technology OR access OR CGM)',
     "LADA New Research": '("latent autoimmune diabetes" OR LADA) AND (diagnosis OR treatment)',
     "Diabetes Multi-Omics": 'diabetes AND ("multi-omics" OR "multiomics") AND (integration OR analysis)',
+    # Added 2026-04-17: GLP-1 pharmacogenomics domain (Stanford PAM variant discovery)
+    "GLP-1 Pharmacogenomics": 'diabetes AND ("GLP-1" OR "glucagon-like peptide") AND (pharmacogenomics OR "genetic variant" OR "drug response" OR PAM OR "peptidyl-glycine") AND (resistance OR response OR polymorphism)',
 }
+
+# Key therapies to track across ALL domains via abstract matching.
+# These are searched separately because title-only matching misses them.
+# Added 2026-04-17 per monitor report recommendation.
+KEY_THERAPY_TERMS = [
+    "zimislecel",
+    "orforglipron",
+    "retatrutide",
+    "CagriSema",
+    "baricitinib",
+    "teplizumab",
+    "icodec",        # Awiqli / insulin icodec
+    "dapagliflozin",  # generic now approved
+]
 
 def search_pubmed(query, max_results=10, days_back=LOOKBACK_DAYS):
     """Search PubMed for recent papers matching query."""
@@ -208,7 +224,33 @@ def main():
         if papers:
             print(f"    Latest: {papers[0]['title'][:70]}...")
 
-    # ── Save JSON snapshot ──
+    # Key Therapy Abstract Search (added 2026-04-17)
+    therapy_hits = {}
+    if KEY_THERAPY_TERMS:
+        print(f"\n  [Key Therapy Abstract Search]")
+        for therapy in KEY_THERAPY_TERMS:
+            query = f'diabetes AND {therapy}'
+            pmids, count = search_pubmed(query, max_results=5, days_back=LOOKBACK_DAYS)
+            time.sleep(0.4)
+            if pmids:
+                papers = fetch_paper_details(pmids)
+                time.sleep(0.4)
+                therapy_hits[therapy] = {
+                    "total_count": count,
+                    "papers": papers,
+                }
+                for p in papers:
+                    tag = f"Key Therapy: {therapy}"
+                    if p["pmid"] not in all_papers:
+                        all_papers[p["pmid"]] = {**p, "domains": [tag]}
+                    elif tag not in all_papers[p["pmid"]]["domains"]:
+                        all_papers[p["pmid"]]["domains"].append(tag)
+                print(f"    {therapy}: {count} papers (fetched {len(papers)})")
+            else:
+                therapy_hits[therapy] = {"total_count": count, "papers": []}
+                print(f"    {therapy}: {count} papers")
+
+    # Save JSON snapshot
     snapshot = {
         "metadata": {
             "generated": datetime.now().isoformat(),
@@ -216,9 +258,12 @@ def main():
             "lookback_days": LOOKBACK_DAYS,
             "total_unique_papers": len(all_papers),
             "domains_queried": len(ALERT_QUERIES),
+            "key_therapies_tracked": len(KEY_THERAPY_TERMS),
         },
         "domain_results": {k: {"total_count": v["total_count"], "paper_count": len(v["papers"])}
                            for k, v in domain_results.items()},
+        "therapy_hits": {k: {"total_count": v["total_count"], "paper_count": len(v["papers"])}
+                         for k, v in therapy_hits.items()} if therapy_hits else {},
         "papers": all_papers,
     }
 
@@ -231,7 +276,7 @@ def main():
     with open(latest_path, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2, default=str)
 
-    # ── Generate summary report ──
+    # Generate summary report
     lines = [
         "# PubMed Recent Publications Report",
         f"**Generated:** {TODAY}",
@@ -269,6 +314,33 @@ def main():
             lines.append(f"  [PubMed]({p['url']})" + (f" | [DOI](https://doi.org/{p['doi']})" if p['doi'] else ""))
             lines.append("")
 
+    # Key therapy mentions section
+    if therapy_hits:
+        lines += [
+            "---",
+            "",
+            "## Key Therapy Mentions (Abstract Search)",
+            "",
+            "These therapies are tracked by name across all PubMed abstracts (not just titles).",
+            "",
+            "| Therapy | Papers (30d) | Status |",
+            "|---------|-------------|--------|",
+        ]
+        for therapy, res in sorted(therapy_hits.items(), key=lambda x: -x[1]["total_count"]):
+            count = res["total_count"]
+            status = "ACTIVE" if count > 5 else "LOW" if count > 0 else "NONE"
+            lines.append(f"| {therapy} | {count} | {status} |")
+        lines.append("")
+        for therapy, res in therapy_hits.items():
+            if res["papers"]:
+                lines.append(f"### {therapy}")
+                lines.append("")
+                for p in res["papers"][:3]:
+                    lines.append(f"- **{p['title']}**")
+                    lines.append(f"  {p['journal']} ({p['date']}) | {p['authors']}")
+                    lines.append(f"  [PubMed]({p['url']})" + (f" | [DOI](https://doi.org/{p['doi']})" if p['doi'] else ""))
+                    lines.append("")
+
     # Cross-domain papers (appear in multiple alerts)
     cross_domain = {k: v for k, v in all_papers.items() if len(v.get("domains", [])) > 1}
     if cross_domain:
@@ -277,7 +349,7 @@ def main():
             "",
             "## Cross-Domain Papers (Appear in Multiple Alerts)",
             "",
-            "These papers span multiple research domains — potentially high-value for synthesis.",
+            "These papers span multiple research domains -- potentially high-value for synthesis.",
             "",
         ]
         for pmid, p in sorted(cross_domain.items(), key=lambda x: -len(x[1]["domains"])):
@@ -289,7 +361,7 @@ def main():
 
     lines += [
         "---",
-        f"*Generated by baseline_pubmed_alerts.py — {TODAY}*",
+        f"*Generated by baseline_pubmed_alerts.py -- {TODAY}*",
     ]
 
     md_path = os.path.join(RESULTS_DIR, "pubmed_recent_summary.md")

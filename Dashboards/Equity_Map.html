@@ -329,12 +329,89 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html" class="drh-current">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
     <div class="container">
 
         <header>
@@ -379,17 +456,17 @@
             </div>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="switchTab('supply')">SUPPLY: Therapy Pipeline</button>
-            <button class="tab-button" onclick="switchTab('demand')">DEMAND: Diabetes Burden</button>
-            <button class="tab-button" onclick="switchTab('gap')">THE GAP: Mismatch Analysis</button>
-            <button class="tab-button" onclick="switchTab('methods')">METHODOLOGY & SOURCES</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" onclick="switchTab('supply')">SUPPLY: Therapy Pipeline</button>
+            <button role="tab" class="tab-button" onclick="switchTab('demand')">DEMAND: Diabetes Burden</button>
+            <button role="tab" class="tab-button" onclick="switchTab('gap')">THE GAP: Mismatch Analysis</button>
+            <button role="tab" class="tab-button" onclick="switchTab('methods')">METHODOLOGY & SOURCES</button>
         </div>
 
         <div id="supply" class="tab-content active">
             <div class="section">
                 <h2 class="section-title">A. Manufacturers & Their Locations</h2>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th onclick="sortTable(this, 0)">Company</th>
@@ -486,7 +563,7 @@
 
             <div class="section">
                 <h2 class="section-title">B. Clinical Trial Site Distribution by Country</h2>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th onclick="sortTable(this, 0)">Country</th>
@@ -764,7 +841,7 @@
                 <h2 class="section-title">C. Supply Chain Requirements</h2>
                 <div class="findings">
                     <ul>
-                        <li><strong>Manufacturing:</strong> cGMP stem cell differentiation facilities ($50-100M to build, PMID:21323736)</li>
+                        <li><strong>Manufacturing:</strong> cGMP stem cell differentiation facilities ($50-100M to build, <a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a>)</li>
                         <li><strong>Delivery:</strong> Hepatic portal vein infusion requires interventional radiology</li>
                         <li><strong>Post-transplant:</strong> Lifelong immunosuppression monitoring (except encapsulated approaches)</li>
                         <li><strong>Regulatory:</strong> FDA BLA pathway (US), EMA ATMP (EU), each country needs regulatory approval</li>
@@ -778,7 +855,7 @@
         <div id="demand" class="tab-content">
             <div class="section">
                 <h2 class="section-title">A. Top 30 Countries by Diabetes Burden</h2>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th onclick="sortTable(this, 0)">Country</th>
@@ -1156,7 +1233,7 @@
 
             <div class="section">
                 <h2 class="section-title">B. Regional Summary</h2>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th onclick="sortTable(this, 0)">Region</th>
@@ -1244,7 +1321,7 @@
         <div id="gap" class="tab-content">
             <div class="section">
                 <h2 class="section-title">A. Mismatch Index - Top 20 Underserved Countries</h2>
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th onclick="sortTable(this, 0)">Country</th>
@@ -1486,13 +1563,13 @@
                 <h2 class="section-title">B. Key Findings</h2>
                 <div class="findings">
                     <ol>
-                        <li><strong>81% of global diabetes burden is in low- and middle-income countries, but 88% of beta cell therapy trial sites are in high-income countries.</strong> Source: IDF Diabetes Atlas 11th Ed.; Hassan et al. Lancet Diabetes Endocrinol 2023 (PMID:37356445)</li>
-                        <li><strong>India has 89.8M people with diabetes (2nd globally) and ZERO beta cell therapy trial sites.</strong> This represents the largest single equity gap. Source: Yedjou et al. 2024 (PMID:39697180)</li>
+                        <li><strong>81% of global diabetes burden is in low- and middle-income countries, but 88% of beta cell therapy trial sites are in high-income countries.</strong> Source: IDF Diabetes Atlas 11th Ed.; Hassan et al. Lancet Diabetes Endocrinol 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37356445/" target="_blank" rel="noopener" title="View on PubMed">PMID:37356445</a>)</li>
+                        <li><strong>India has 89.8M people with diabetes (2nd globally) and ZERO beta cell therapy trial sites.</strong> This represents the largest single equity gap. Source: Yedjou et al. 2024 (<a href="https://pubmed.ncbi.nlm.nih.gov/39697180/" target="_blank" rel="noopener" title="View on PubMed">PMID:39697180</a>)</li>
                         <li><strong>7 of 8 major therapy developers are headquartered in the United States.</strong> This concentrates intellectual property and pricing power in a single health system.</li>
-                        <li><strong>The top 5 countries by trial sites (US, Canada, France, Brazil, Italy) represent only 18% of global diabetes burden.</strong> Trial access is not aligned with clinical need. Source: Sinclair et al. Front Public Health 2024 (PMID:39525461)</li>
-                        <li><strong>The bottom 20 countries by trial access represent 55% of global diabetes burden.</strong> The gap is acute in South/Southeast Asia, Sub-Saharan Africa, and MENA regions. Source: Foss et al. Ann Fam Med 2023 (PMID:37217319); Liese et al. Health Place 2018 (PMID:29414425)</li>
-                        <li><strong>Manufacturing requires $50-100M cGMP facilities - currently concentrated in Boston, Portsmouth NH, Bothell WA, Germantown MD, Bordeaux.</strong> Decentralized manufacturing is not yet planned. Source: McEwan et al. Diabetes Obes Metab 2025 (PMID:40464081)</li>
-                        <li><strong>At current trajectory, initial pricing (~$500K based on CAR-T analogy) would be unaffordable for 80%+ of the global diabetes population.</strong> Without explicit equity pricing strategies, benefits will accrue to wealthy populations only. Source: Underwood et al. J Health Equity 2025 (PMID:40814306); Dickens et al. Curr Diabetes Rep 2025 (PMID:40366501)</li>
+                        <li><strong>The top 5 countries by trial sites (US, Canada, France, Brazil, Italy) represent only 18% of global diabetes burden.</strong> Trial access is not aligned with clinical need. Source: Sinclair et al. Front Public Health 2024 (<a href="https://pubmed.ncbi.nlm.nih.gov/39525461/" target="_blank" rel="noopener" title="View on PubMed">PMID:39525461</a>)</li>
+                        <li><strong>The bottom 20 countries by trial access represent 55% of global diabetes burden.</strong> The gap is acute in South/Southeast Asia, Sub-Saharan Africa, and MENA regions. Source: Foss et al. Ann Fam Med 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37217319/" target="_blank" rel="noopener" title="View on PubMed">PMID:37217319</a>); Liese et al. Health Place 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29414425/" target="_blank" rel="noopener" title="View on PubMed">PMID:29414425</a>)</li>
+                        <li><strong>Manufacturing requires $50-100M cGMP facilities - currently concentrated in Boston, Portsmouth NH, Bothell WA, Germantown MD, Bordeaux.</strong> Decentralized manufacturing is not yet planned. Source: McEwan et al. Diabetes Obes Metab 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40464081/" target="_blank" rel="noopener" title="View on PubMed">PMID:40464081</a>)</li>
+                        <li><strong>At current trajectory, initial pricing (~$500K based on CAR-T analogy) would be unaffordable for 80%+ of the global diabetes population.</strong> Without explicit equity pricing strategies, benefits will accrue to wealthy populations only. Source: Underwood et al. J Health Equity 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40814306/" target="_blank" rel="noopener" title="View on PubMed">PMID:40814306</a>); Dickens et al. Curr Diabetes Rep 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40366501/" target="_blank" rel="noopener" title="View on PubMed">PMID:40366501</a>)</li>
                     </ol>
                 </div>
             </div>
@@ -1525,7 +1602,7 @@
                     <p>Compiled from company filings (SEC 10-K/10-Q for US companies), press releases, and clinical trial registrations. Therapy stages and mechanisms as of March 2026. HQ and manufacturing locations verified via company websites and recent announcements.</p>
 
                     <h3>Cost Estimates</h3>
-                    <p>Manufacturing cost estimates ($50-100M) based on literature review of cGMP cell therapy manufacturing. Initial therapy pricing (~$500K) estimated by analogy to CAR-T therapies (Yescarta/Kymriah market prices 2025). Source: PMID:21323736, Frontiers Cell Dev Biol 2025.</p>
+                    <p>Manufacturing cost estimates ($50-100M) based on literature review of cGMP cell therapy manufacturing. Initial therapy pricing (~$500K) estimated by analogy to CAR-T therapies (Yescarta/Kymriah market prices 2025). Source: <a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a>, Frontiers Cell Dev Biol 2025.</p>
 
                     <h3>Mismatch Index Calculation</h3>
                     <p>Simple ratio: Diabetes Burden (millions) / (Trial Sites + 0.1). This is NOT a validated epidemiological metric. The +0.1 term prevents division by zero for countries with zero trial sites. Used here as exploratory visualization of supply-demand alignment.</p>

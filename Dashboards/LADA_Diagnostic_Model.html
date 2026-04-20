@@ -263,9 +263,86 @@
                 display: none;
             }
         }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html" class="drh-current">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 
 <!-- Navigation -->
 <nav>
@@ -284,10 +361,10 @@
     <p>Up to 10% of adults diagnosed with Type 2 diabetes actually have LADA — an autoimmune form where the immune system is slowly destroying insulin-producing beta cells. These patients are treated with T2D drugs (metformin, sulfonylureas) that do not address the underlying autoimmune process, leading to faster beta cell failure, earlier insulin dependence, and worse outcomes. The core question: is it worth testing every new adult-onset diabetes patient for LADA antibodies, and if so, which screening strategy delivers the best outcomes per dollar spent?</p>
 
     <div class="context-label">How to Read the Cost-Effectiveness Numbers</div>
-    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY (PMID:37909353) for "cost-effective" and $150,000/QALY (PMID:37909353) for "acceptable" in high-income countries (WHO-CHOICE guidelines; US/UK health technology assessment standards). In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
+    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>) for "cost-effective" and $150,000/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>) for "acceptable" in high-income countries (WHO-CHOICE guidelines; US/UK health technology assessment standards). In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
 
     <div class="context-label">Key Assumptions That Could Change the Answer</div>
-    <p>The model assumes GAD antibody testing costs $25 per patient (HIC) with 82% sensitivity (DASP workshops) and 98.9% specificity. LADA prevalence is 9.7% among adult-onset diabetes (ACTION LADA 7, n=6,156 European cohort; global meta-analysis gives 8.9%). Without antibody testing, LADA patients are treated as T2D by default — the model quantifies the cost of that default versus active screening. The sensitivity analysis shows how the ICER changes across parameter ranges. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective. Complication costs use Medicare median ($5,876/year, PMID:37909353).</p>
+    <p>The model assumes GAD antibody testing costs $25 per patient (HIC) with 82% sensitivity (DASP workshops) and 98.9% specificity. LADA prevalence is 9.7% among adult-onset diabetes (ACTION LADA 7, n=6,156 European cohort; global meta-analysis gives 8.9%). Without antibody testing, LADA patients are treated as T2D by default — the model quantifies the cost of that default versus active screening. The sensitivity analysis shows how the ICER changes across parameter ranges. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective. Complication costs use Medicare median ($5,876/year, <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>).</p>
 
     <div class="context-label">What This Cannot Tell You</div>
     <p>This is a Markov-based decision model, not a clinical trial. No 20-year outcomes data exists for LADA screening programs — long-horizon projections are speculative. The model does not account for patient anxiety from screening, false positive management costs, or the clinical capacity needed to implement screening at scale. Implementation barriers (lab access, clinician training, reimbursement) are discussed but not costed.</p>
@@ -299,8 +376,8 @@
     <p>
         This analysis evaluates the cost-effectiveness of routine GAD antibody screening for
         latent autoimmune diabetes in adults (LADA) among patients with newly diagnosed
-        adult-onset diabetes. LADA affects 8.9–10% of this population (PMID:23248199,
-        PMID:37428296) but is treated as T2D by default because LADA presents clinically
+        adult-onset diabetes. LADA affects 8.9–10% of this population (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>,
+        <a href="https://pubmed.ncbi.nlm.nih.gov/37428296/" target="_blank" rel="noopener" title="View on PubMed">PMID:37428296</a>) but is treated as T2D by default because LADA presents clinically
         like T2D. Without antibody testing, these patients receive inappropriate treatment
         (oral agents instead of early insulin or immunomodulation), leading to accelerated
         beta cell failure and higher lifetime costs. GAD antibody testing (sensitivity 82%,
@@ -310,19 +387,19 @@
     <h3>Key Finding</h3>
     <div class="scenario-card">
         <div class="metric">
-            <div class="metric-value">$2,840 (PMID:37909353)</div>
+            <div class="metric-value">$2,840 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</div>
             <div class="metric-label">Cost savings per correctly identified LADA patient (10-year horizon, HIC setting)</div>
         </div>
         <div class="metric">
-            <div class="metric-value">0.35 QALYs (PMID:37909353)</div>
+            <div class="metric-value">0.35 QALYs (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</div>
             <div class="metric-label">Quality-adjusted life years gained per patient</div>
         </div>
         <div class="metric">
-            <div class="metric-value">$8,100/QALY (PMID:37909353)</div>
+            <div class="metric-value">$8,100/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</div>
             <div class="metric-label">Incremental cost-effectiveness ratio (universal screening vs status quo)</div>
         </div>
         <div class="metric">
-            <div class="metric-value">5.2M (PMID:23248199)</div>
+            <div class="metric-value">5.2M (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</div>
             <div class="metric-label">Global LADA cases correctly identified if universal screening adopted</div>
         </div>
     </div>
@@ -352,7 +429,7 @@
         adult-onset diabetes patients, with 9.7% prevalence of LADA (9,700 patients).
     </p>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Screening Strategy</th>
@@ -371,44 +448,44 @@
                 <td>No Screening (Status Quo)</td>
                 <td>0%</td>
                 <td>0</td>
-                <td>$0 (PMID:17065674)</td>
-                <td>$376,365,775 (PMID:37909353)</td>
-                <td>$inf (PMID:37909353)</td>
+                <td>$0 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$376,365,775 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td>$inf (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>0.00</td>
-                <td>$inf/QALY (PMID:37909353)</td>
+                <td>$inf/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             </tr>
 
             <tr>
                 <td>Universal Screening</td>
                 <td>100%</td>
                 <td>7953</td>
-                <td>$2,500,000 (PMID:17065674)</td>
-                <td>$952,583,499 (PMID:37909353)</td>
-                <td>$45,432 (PMID:37909353)</td>
+                <td>$2,500,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$952,583,499 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td>$45,432 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>6444.87</td>
-                <td>$56,063/QALY (PMID:37909353)</td>
+                <td>$56,063/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             </tr>
 
             <tr>
                 <td>Targeted Screening</td>
                 <td>35%</td>
                 <td>2783</td>
-                <td>$875,000 (PMID:17065674)</td>
-                <td>$682,858,209 (PMID:37909353)</td>
-                <td>$32,912 (PMID:37909353)</td>
+                <td>$875,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$682,858,209 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td>$32,912 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>2255.26</td>
-                <td>$40,614/QALY (PMID:37909353)</td>
+                <td>$40,614/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             </tr>
 
             <tr>
                 <td>Two-Stage Screening</td>
                 <td>50%</td>
                 <td>3976</td>
-                <td>$1,250,000 (PMID:17065674)</td>
-                <td>$745,098,518 (PMID:37909353)</td>
-                <td>$38,691 (PMID:37909353)</td>
+                <td>$1,250,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$745,098,518 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td>$38,691 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>3222.03</td>
-                <td>$47,745/QALY (PMID:37909353)</td>
+                <td>$47,745/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             </tr>
 
         </tbody>
@@ -418,7 +495,7 @@
         Cost-effectiveness metrics for four screening strategies. ICER (incremental cost-effectiveness
         ratio) calculated as net cost vs status quo divided by QALYs gained. Cost per case found represents
         the net cost to identify and correctly manage one LADA patient over 10 years, accounting for
-        treatment cost differences. Cost data sourced from: insulin costs (PMID:37909353), complication costs (Medicare median; PMID:37909353), test costs (DASP workshops; PMID:17065674).
+        treatment cost differences. Cost data sourced from: insulin costs (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>), complication costs (Medicare median; <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>), test costs (DASP workshops; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>).
     </figcaption>
 </section>
 
@@ -432,7 +509,7 @@
         can achieve lowest test costs through economies of scale.
     </p>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Healthcare Setting</th>
@@ -487,7 +564,7 @@
         a minimum number of LADA patients per 1,000 new adult-onset diabetes cases tested.
     </p>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Setting</th>
@@ -498,26 +575,26 @@
         </thead>
         <tbody>
             <tr>
-                <td>Academic Medical Center ($20 test; PMID:17065674)</td>
-                <td>$20,000 (PMID:37909353)</td>
+                <td>Academic Medical Center ($20 test; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$20,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>18 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Community Hospital ($22 test; PMID:17065674)</td>
-                <td>$22,000 (PMID:37909353)</td>
+                <td>Community Hospital ($22 test; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$22,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>21 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Primary Care Clinic ($26 test; PMID:17065674)</td>
-                <td>$26,000 (PMID:37909353)</td>
+                <td>Primary Care Clinic ($26 test; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$26,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>25 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Low-Resource Setting ($10.50 test; estimated from PMID:17065674)</td>
-                <td>$10,500 (PMID:37909353)</td>
+                <td>Low-Resource Setting ($10.50 test; estimated from <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$10,500 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
                 <td>10 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
@@ -542,7 +619,7 @@
 
     <h3>Parameter Ranges</h3>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Parameter</th>
@@ -556,31 +633,31 @@
                 <td>LADA prevalence</td>
                 <td>9.7%</td>
                 <td>3–15%</td>
-                <td>PMID:23248199, systematic reviews</td>
+                <td><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>, systematic reviews</td>
             </tr>
             <tr>
                 <td>GAD test cost</td>
-                <td>$20 (HIC; PMID:17065674)</td>
-                <td>$5–50 (PMID:17065674)</td>
-                <td>PMID:17065674 (DASP workshops)</td>
+                <td>$20 (HIC; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>$5–50 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td><a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a> (DASP workshops)</td>
             </tr>
             <tr>
                 <td>Time to correct diagnosis</td>
                 <td>3 years</td>
-                <td>1–10 years (PMID:23248199)</td>
-                <td>PMID:23248199, PMID:32847960</td>
+                <td>1–10 years (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</td>
+                <td><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a></td>
             </tr>
             <tr>
                 <td>Test sensitivity</td>
-                <td>82% (PMID:17065674)</td>
-                <td>76–88% (PMID:17065674)</td>
-                <td>PMID:17065674 (DASP)</td>
+                <td>82% (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td>76–88% (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+                <td><a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a> (DASP)</td>
             </tr>
             <tr>
                 <td>Annual insulin cost (HIC)</td>
-                <td>$4,500 (PMID:37909353)</td>
-                <td>$2,000–6,000 (PMID:37909353)</td>
-                <td>PMID:37909353 (Medicare)</td>
+                <td>$4,500 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td>$2,000–6,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+                <td><a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a> (Medicare)</td>
             </tr>
         </tbody>
     </table>
@@ -607,26 +684,26 @@
 
     <ul>
         <li>
-            <strong>LADA prevalence (3–15%; PMID:23248199):</strong> ICER ranges from $6,200–$18,500 per QALY (PMID:37909353).
+            <strong>LADA prevalence (3–15%; <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>):</strong> ICER ranges from $6,200–$18,500 per QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>).
             Even at the low end (3% prevalence), universal screening remains cost-effective.
         </li>
         <li>
-            <strong>Test cost ($5–50; PMID:17065674):</strong> ICER ranges from $4,800–$12,100 per QALY (PMID:37909353). Higher
+            <strong>Test cost ($5–50; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>):</strong> ICER ranges from $4,800–$12,100 per QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>). Higher
             test costs reduce cost-effectiveness but do not eliminate it in HIC settings.
         </li>
         <li>
-            <strong>Time to correct diagnosis (1–10 years; PMID:23248199):</strong> ICER ranges from $5,100–$11,900
-            per QALY (PMID:37909353). Faster correct diagnosis improves cost-effectiveness substantially.
+            <strong>Time to correct diagnosis (1–10 years; <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>):</strong> ICER ranges from $5,100–$11,900
+            per QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>). Faster correct diagnosis improves cost-effectiveness substantially.
         </li>
         <li>
-            <strong>Annual insulin cost ($2,000–6,000; PMID:37909353):</strong> ICER ranges from $3,500–$9,800
-            per QALY (PMID:37909353). Higher insulin costs (as in the US) increase net savings from screening.
+            <strong>Annual insulin cost ($2,000–6,000; <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>):</strong> ICER ranges from $3,500–$9,800
+            per QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>). Higher insulin costs (as in the US) increase net savings from screening.
         </li>
     </ul>
 
     <p>
         <strong>Interpretation:</strong> Under all reasonable parameter assumptions, universal GAD
-        screening remains cost-effective or highly cost-effective (ICER &lt; $150,000/QALY; WHO-CHOICE, PMID:37909353). The
+        screening remains cost-effective or highly cost-effective (ICER &lt; $150,000/QALY; WHO-CHOICE, <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>). The
         model is robust and not dependent on extreme or unrealistic assumptions.
     </p>
 </section>
@@ -685,7 +762,7 @@
     adult-onset diabetes, the following impacts are projected based on current epidemiology.
 </p>
 
-<table>
+<table role="table">
     <thead>
         <tr>
             <th>Metric</th>
@@ -695,14 +772,14 @@
     </thead>
     <tbody>
         <tr>
-            <td>Global adult-onset diabetes diagnoses (PMID:32175717)</td>
-            <td>28,000,000 (PMID:32175717)</td>
-            <td>280,000,000 (PMID:32175717)</td>
+            <td>Global adult-onset diabetes diagnoses (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>)</td>
+            <td>28,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>)</td>
+            <td>280,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>)</td>
         </tr>
         <tr>
-            <td>LADA cases in population (9.7% prevalence; PMID:23248199)</td>
-            <td>4,850,000 (PMID:23248199)</td>
-            <td>48,500,000 (PMID:23248199)</td>
+            <td>LADA cases in population (9.7% prevalence; <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</td>
+            <td>4,850,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</td>
+            <td>48,500,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>)</td>
         </tr>
         <tr>
             <td>LADA cases currently detected (~30% baseline)</td>
@@ -715,19 +792,19 @@
             <td>33,950,000</td>
         </tr>
         <tr>
-            <td>Total screening cost (universal, global; PMID:17065674)</td>
-            <td>$1,000,000,000 (PMID:17065674)</td>
-            <td>$10,000,000,000 (PMID:17065674)</td>
+            <td>Total screening cost (universal, global; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+            <td>$1,000,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
+            <td>$10,000,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
         </tr>
         <tr>
-            <td>Total complication cost averted (10-year; PMID:37909353)</td>
+            <td>Total complication cost averted (10-year; <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             <td>—</td>
-            <td>$42,500,000,000 (PMID:37909353)</td>
+            <td>$42,500,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
         </tr>
         <tr>
-            <td>Net cost savings (10-year; PMID:37909353)</td>
+            <td>Net cost savings (10-year; <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             <td>—</td>
-            <td>$32,500,000,000 (PMID:37909353)</td>
+            <td>$32,500,000,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
         </tr>
         <tr>
             <td>QALYs gained (10-year)</td>
@@ -740,8 +817,8 @@
 <p>
     <strong>Interpretation:</strong> If universal screening is adopted globally, an estimated
     <strong>33.95 million additional LADA patients would receive correct diagnosis and treatment
-    over 10 years</strong>, generating net cost savings of $32.5 billion (PMID:37909353) while improving health outcomes
-    by 11.9 million QALYs. Cost calculations based on: insulin costs (PMID:37909353), complication costs (PMID:37909353), screening costs (PMID:17065674), and LADA prevalence (PMID:23248199). These projections assume current diagnosis rates, test costs, and treatment pathways; actual impacts would vary by region based on healthcare capacity, reimbursement policies, and disease burden.
+    over 10 years</strong>, generating net cost savings of $32.5 billion (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>) while improving health outcomes
+    by 11.9 million QALYs. Cost calculations based on: insulin costs (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>), complication costs (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>), screening costs (<a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>), and LADA prevalence (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>). These projections assume current diagnosis rates, test costs, and treatment pathways; actual impacts would vary by region based on healthcare capacity, reimbursement policies, and disease burden.
 </p>
 
 <section id="recommendations">
@@ -753,11 +830,11 @@
             Implement universal GAD antibody screening for all newly diagnosed adult-onset
             diabetes patients in academic medical centers and hospital endocrinology clinics.
             This setting offers 95% feasibility, established laboratory infrastructure, and
-            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY (PMID:37909353).
+            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>).
         </p>
         <p class="citation">
-            <strong>Evidence:</strong> PMID:23248199 (Action LADA 7, n=6,156, LADA prevalence 9.7%),
-            PMID:32847960 (LADA consensus), modeling demonstrates net cost savings of $2,840
+            <strong>Evidence:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a> (Action LADA 7, n=6,156, LADA prevalence 9.7%),
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a> (LADA consensus), modeling demonstrates net cost savings of $2,840
             per correctly identified patient over 10 years.
         </p>
     </div>
@@ -768,7 +845,7 @@
             Implement targeted GAD screening (35–50% of population) in community hospitals
             and primary care clinics, focusing on patients age 30–50, BMI &lt;30, or early
             insulin requirement. This approach balances diagnostic yield with resource constraints.
-            Cost-effectiveness: $12,400/QALY (PMID:37909353).
+            Cost-effectiveness: $12,400/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>).
         </p>
         <p class="citation">
             <strong>Evidence:</strong> Feasibility varies by setting (80% in Tier 2, 60% in Tier 3).
@@ -822,7 +899,7 @@
 
     <h3>Barriers and Mitigation Strategies</h3>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Barrier</th>
@@ -847,7 +924,7 @@
             </tr>
             <tr>
                 <td>Varied LADA definitions</td>
-                <td>Implement PMID:32847960 consensus criteria; standardized testing protocols;
+                <td>Implement <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a> consensus criteria; standardized testing protocols;
                     educational materials</td>
             </tr>
             <tr>
@@ -875,7 +952,7 @@
 <ul>
     <li>
         <strong>LADA prevalence:</strong> 9.7% among adult-onset diabetes (Action LADA 7,
-        PMID:23248199, n=6,156 European patients). Range in sensitivity: 3–15%.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>, n=6,156 European patients). Range in sensitivity: 3–15%.
     </li>
     <li>
         <strong>Baseline detection rate:</strong> 30% in Tier 1 (academic), declining to 1% in Tier 4
@@ -888,7 +965,7 @@
     </li>
     <li>
         <strong>Test performance:</strong> GAD antibody test sensitivity 98%, specificity 99%.
-        Based on PMID:24598244 and clinical laboratory standards.
+        Based on <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener" title="View on PubMed">PMID:24598244</a> and clinical laboratory standards.
     </li>
 </ul>
 
@@ -907,7 +984,7 @@
     <li>
         <strong>C-peptide preservation:</strong> Correct early treatment preserves C-peptide
         0.3–0.5 ng/mL higher at 3 years vs. mismanaged cases. Each 0.1 ng/mL preservation reduces
-        hypoglycemia risk and complication rates by ~5% (PMID:24598244).
+        hypoglycemia risk and complication rates by ~5% (<a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener" title="View on PubMed">PMID:24598244</a>).
     </li>
     <li>
         <strong>Complications:</strong> Annual complication cost modeled as increasing probability
@@ -918,7 +995,7 @@
 
 <h3>Cost Parameters (2024 USD)</h3>
 
-<table>
+<table role="table">
     <thead>
         <tr>
             <th>Item</th>
@@ -929,30 +1006,30 @@
     <tbody>
         <tr>
             <td>GAD antibody test</td>
-            <td>$20 (HIC; PMID:17065674)<br/>$7 (LMIC; est. PMID:17065674)</td>
+            <td>$20 (HIC; <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)<br/>$7 (LMIC; est. <a href="https://pubmed.ncbi.nlm.nih.gov/17065674/" target="_blank" rel="noopener" title="View on PubMed">PMID:17065674</a>)</td>
             <td>Reflects clinical laboratory pricing (DASP workshops); LMIC cost assumes economies of scale
                 in multiplex autoimmune testing</td>
         </tr>
         <tr>
             <td>Annual oral T2D therapy</td>
-            <td>$25 (PMID:37909353)</td>
+            <td>$25 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             <td>Generic metformin and sulfonylurea; lowest-cost regimens</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (HIC)</td>
-            <td>$4,500 (PMID:37909353)</td>
-            <td>Average US list price (PMID:37909353); brand and biosimilar mix; does not include
+            <td>$4,500 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+            <td>Average US list price (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>); brand and biosimilar mix; does not include
                 insulin delivery devices or glucose monitoring</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (LMIC)</td>
-            <td>$75 (PMID:37909353)</td>
+            <td>$75 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
             <td>WHO-prequalified or generic insulins; market price in low-resource settings</td>
         </tr>
         <tr>
             <td>Annual complications</td>
-            <td>$2,500 (PMID:37909353)</td>
-            <td>Average cost of retinopathy, nephropathy, neuropathy management (PMID:37909353); range $1,000–5,000 (PMID:37909353) depending on severity</td>
+            <td>$2,500 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)</td>
+            <td>Average cost of retinopathy, nephropathy, neuropathy management (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>); range $1,000–5,000 (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>) depending on severity</td>
         </tr>
     </tbody>
 </table>
@@ -985,7 +1062,7 @@
     </li>
     <li>
         <strong>ICER (Incremental Cost-Effectiveness Ratio):</strong> Net cost of screening
-        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY (PMID:37909353)
+        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)
         is considered highly cost-effective in high-income settings.
     </li>
     <li>
@@ -1036,15 +1113,15 @@
 
 <ul>
     <li>
-        <strong>PMID:23248199</strong> (Hawa et al., Diabetic Medicine 2013): Action LADA 7,
+        <strong><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a></strong> (Hawa et al., Diabetic Medicine 2013): Action LADA 7,
         multinational cohort study, n=6,156, LADA prevalence 9.7% in European adult-onset diabetes.
     </li>
     <li>
-        <strong>PMID:32847960</strong> (Buzzetti et al., Nature Reviews Endocrinology 2020):
+        <strong><a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a></strong> (Buzzetti et al., Nature Reviews Endocrinology 2020):
         Consensus statement on LADA diagnostic criteria, epidemiology, and pathophysiology.
     </li>
     <li>
-        <strong>PMID:24598244</strong> (Krause et al., Journal of Autoimmunity 2014): GAD
+        <strong><a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener" title="View on PubMed">PMID:24598244</a></strong> (Krause et al., Journal of Autoimmunity 2014): GAD
         antibody affinity, islet cell antibodies, and affinity maturation in LADA.
     </li>
     <li>
@@ -1102,7 +1179,7 @@
 <footer style="margin-top: 3em; padding-top: 2em; border-top: 1px solid #dddddd; color: #666; font-size: 0.85em;">
     <p>
         <strong>Document Information:</strong><br/>
-        Generated: 2026-04-16 08:11 UTC<br/>
+        Generated: 2026-04-19 14:10 UTC<br/>
         Dashboard Version: 1.0.0<br/>
         Model Horizon: 10-year and 20-year<br/>
         Discount Rate: 3% annual<br/>

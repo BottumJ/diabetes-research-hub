@@ -59,7 +59,20 @@
         .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #999; font-size: 0.9em; }
         .breakdown-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95em; }
         .breakdown-table td { padding: 8px; border-bottom: 1px solid #eee; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>
@@ -70,11 +83,75 @@
     </script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html" class="drh-current">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
     <div class="container">
         <header>
             <h1>Extracted Evidence Dashboard</h1>
             <p class="subtitle">Quantitative data extraction from 61 full-text diabetes research papers</p>
-            <p class="subtitle">Generated: 2026-04-16 08:11:14</p>
+            <p class="subtitle">Generated: 2026-04-19 14:10:05</p>
         </header>
 
         <div class="context-block">
@@ -88,14 +165,14 @@
             <p>Regex extraction is approximate. Numbers may come from different contexts (e.g., a C-peptide value from a control group, not a treatment group). Context snippets are truncated to 300 characters. Always verify the full context in the original paper before citing data. Missing papers in PubMed or non-English literature will not appear here.</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="showTab('summary')">Executive Summary</button>
-            <button class="tab-button" onclick="showTab('by-gap')">Evidence by Gap</button>
-            <button class="tab-button" onclick="showTab('cpeptide')">C-Peptide Evidence</button>
-            <button class="tab-button" onclick="showTab('survival')">Survival & Remission</button>
-            <button class="tab-button" onclick="showTab('inflammatory')">Inflammatory Markers</button>
-            <button class="tab-button" onclick="showTab('drugs')">Drug Dose-Response</button>
-            <button class="tab-button" onclick="showTab('network')">Cross-Gap Network</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" onclick="showTab('summary')">Executive Summary</button>
+            <button role="tab" class="tab-button" onclick="showTab('by-gap')">Evidence by Gap</button>
+            <button role="tab" class="tab-button" onclick="showTab('cpeptide')">C-Peptide Evidence</button>
+            <button role="tab" class="tab-button" onclick="showTab('survival')">Survival & Remission</button>
+            <button role="tab" class="tab-button" onclick="showTab('inflammatory')">Inflammatory Markers</button>
+            <button role="tab" class="tab-button" onclick="showTab('drugs')">Drug Dose-Response</button>
+            <button role="tab" class="tab-button" onclick="showTab('network')">Cross-Gap Network</button>
         </div>
 
         <div id="summary" class="tab-content active">
@@ -116,7 +193,7 @@
             </div>
 
             <h3>Extraction Categories</h3>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Category</th>
@@ -187,7 +264,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>14</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>C Peptide</td>
                         <td style="text-align: right;">7 items</td>
@@ -234,7 +311,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>19</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Survival Graft</td>
                         <td style="text-align: right;">7 items</td>
@@ -285,7 +362,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>14</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Survival Graft</td>
                         <td style="text-align: right;">7 items</td>
@@ -332,7 +409,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>385</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
                         <td style="text-align: right;">284 items</td>
@@ -383,7 +460,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>101</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Inflammatory Markers</td>
                         <td style="text-align: right;">94 items</td>
@@ -430,7 +507,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>12</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Odds Ratio</td>
                         <td style="text-align: right;">7 items</td>
@@ -477,7 +554,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>345</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
                         <td style="text-align: right;">284 items</td>
@@ -528,7 +605,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>453</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
                         <td style="text-align: right;">284 items</td>
@@ -591,7 +668,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>61</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Remission</td>
                         <td style="text-align: right;">41 items</td>
@@ -638,7 +715,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>21</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>C Peptide</td>
                         <td style="text-align: right;">7 items</td>
@@ -689,7 +766,7 @@
                 <h4>Evidence Strength: Moderate evidence present</h4>
                 <p>This gap has <strong>19</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Survival Graft</td>
                         <td style="text-align: right;">7 items</td>
@@ -740,7 +817,7 @@
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
                 <p>This gap has <strong>398</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
-                <table class="breakdown-table">
+                <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
                         <td style="text-align: right;">284 items</td>
@@ -1087,7 +1164,7 @@
         <div id="drugs" class="tab-content">
             <h2>Drug Dose-Response Data</h2>
             <p>Top 20 most relevant dose extractions. Especially for drugs in repurposing screen.</p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Drug/Dose</th>
@@ -1224,7 +1301,7 @@
         <div id="network" class="tab-content">
             <h2>Cross-Gap Evidence Network</h2>
             <p>Papers that provide evidence relevant to 2 or more research gaps. These bridges show where evidence overlaps.</p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>PMID</th>
@@ -1488,7 +1565,7 @@
         </div>
 
         <div class="footer">
-            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-04-16</p>
+            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-04-19</p>
         </div>
     </div>
 

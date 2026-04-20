@@ -313,7 +313,20 @@
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
         }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -323,6 +336,70 @@
     </script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html" class="drh-current">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
     <div class="navbar">
         <a href="/">Diabetes Research Dashboard</a>
         <span class="navbar-divider">|</span>
@@ -352,7 +429,7 @@
                 <p>Use the concept frequency chart to identify major research themes. The co-occurrence heatmap shows which topics cluster together in the same papers. The gap coverage analysis reveals which high-signal intersections our framework doesn't yet address, pointing to future research directions.</p>
 
                 <h4>What This Cannot Tell You</h4>
-                <p>This analysis is based on 257 papers—a focused selection, not a comprehensive literature census. Absence of a term in our corpus doesn't mean absence of research; it may reflect our collection strategy. MeSH term coverage depends on PubMed indexing and varies by journal and year.</p>
+                <p>This analysis is based on 260 papers—a focused selection, not a comprehensive literature census. Absence of a term in our corpus doesn't mean absence of research; it may reflect our collection strategy. MeSH term coverage depends on PubMed indexing and varies by journal and year.</p>
             </div>
         </div>
 
@@ -361,15 +438,15 @@
             <h2>Corpus Overview</h2>
             <div class="stats-box">
                 <div class="stat">
-                    <div class="stat-value">257</div>
+                    <div class="stat-value">260</div>
                     <div class="stat-label">Total Papers</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">256</div>
+                    <div class="stat-value">259</div>
                     <div class="stat-label">Abstracts</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">106</div>
+                    <div class="stat-value">107</div>
                     <div class="stat-label">Full Texts</div>
                 </div>
                 <div class="stat">
@@ -491,14 +568,14 @@
                     <div class="bar-value">7</div>
                 </div>
                 <div class="bar-item">
-                    <div class="bar-label">microbiome</div>
+                    <div class="bar-label">epigenetics</div>
                     <div class="bar" style="width: 7.792207792207792%"></div>
                     <div class="bar-value">6</div>
                 </div>
                 <div class="bar-item">
-                    <div class="bar-label">epigenetics</div>
-                    <div class="bar" style="width: 6.493506493506493%"></div>
-                    <div class="bar-value">5</div>
+                    <div class="bar-label">microbiome</div>
+                    <div class="bar" style="width: 7.792207792207792%"></div>
+                    <div class="bar-value">6</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">SGLT2</div>
@@ -542,7 +619,7 @@
         <div class="section" id="cooccurrence">
             <h2>Co-occurrence Heatmap</h2>
             <p>Which concept pairs appear together in the same papers. Color intensity reflects co-occurrence frequency (white = 0, dark blue = highest). Only showing pairs with count >= 2.</p>
-            <table class="heatmap-table">
+            <table role="table" class="heatmap-table">
                 <thead>
                     <tr>
                         <th></th>
@@ -842,7 +919,7 @@
         <div class="section" id="surprising">
             <h2>Surprising Connections</h2>
             <p>Concept pairs with high Jaccard similarity that aren't "obvious." These represent non-intuitive intersections where research is happening.</p>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Concept Pair</th>
@@ -961,7 +1038,7 @@
             <p>Research gaps in our framework are mapped to concept intersections. This section identifies high-signal concept pairs (count >= 3) that <strong>are not covered</strong> by any existing gap—these are the most important discovery opportunities.</p>
 
             <h3>Uncovered High-Signal Intersections</h3>
-            <table>
+            <table role="table">
                 <thead>
                     <tr>
                         <th>Concept Pair</th>
@@ -1058,7 +1135,7 @@
                     <tr>
                         <td><span class="tag">epigenetics</span> × <span class="tag">inflammation</span></td>
                         <td>4</td>
-                        <td>0.089</td>
+                        <td>0.087</td>
                         <td>Epigenetic regulation of immune response</td>
                     </tr>
                     <tr>
@@ -1166,6 +1243,11 @@
                     <div class="bar-label">1993</div>
                     <div class="bar" style="width: 10.0%"></div>
                     <div class="bar-value">2</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">1994</div>
+                    <div class="bar" style="width: 5.0%"></div>
+                    <div class="bar-value">1</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">1998</div>
@@ -1284,13 +1366,13 @@
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">2021</div>
-                    <div class="bar" style="width: 60.0%"></div>
-                    <div class="bar-value">12</div>
+                    <div class="bar" style="width: 65.0%"></div>
+                    <div class="bar-value">13</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">2022</div>
-                    <div class="bar" style="width: 70.0%"></div>
-                    <div class="bar-value">14</div>
+                    <div class="bar" style="width: 75.0%"></div>
+                    <div class="bar-value">15</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">2023</div>
@@ -1503,6 +1585,23 @@
                 Only {concept_freq.get('health_equity', 0)} papers explicitly address health equity and {concept_freq.get('global_health', 0)} address global health contexts, despite the urgent clinical need. Our Gap #2 framework should prioritize expanding literature in these domains.
             </div>
         </div>
+    </div>
+
+    <div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
+      <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
+        <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Corpus Methodology &amp; References</h3>
+        <p style="font-size:12px;color:#636363;line-height:1.7;">
+          Corpus assembled from PubMed and PubMed Central using domain-specific search queries across 35 diabetes research areas.
+          Co-occurrence analysis methodology adapted from biomedical text mining approaches
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>).
+          Gap identification informed by systematic review principles
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
+           <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>;
+           <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+          Term frequency and network analysis used to identify underexplored research intersections
+          (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a>).
+        </p>
+      </div>
     </div>
 
     <div class="footer">

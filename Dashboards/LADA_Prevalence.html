@@ -355,14 +355,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html" class="drh-current">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -387,11 +463,11 @@
     </div>
 
     <div class="tab-nav">
-        <button class="tab-button active" onclick="switchTab(0)">The Hidden Epidemic</button>
-        <button class="tab-button" onclick="switchTab(1)">Prevalence by Setting</button>
-        <button class="tab-button" onclick="switchTab(2)">Diagnostic Criteria</button>
-        <button class="tab-button" onclick="switchTab(3)">What's At Stake</button>
-        <button class="tab-button" onclick="switchTab(4)">Evidence Catalog</button>
+        <button role="tab" class="tab-button active" onclick="switchTab(0)">The Hidden Epidemic</button>
+        <button role="tab" class="tab-button" onclick="switchTab(1)">Prevalence by Setting</button>
+        <button role="tab" class="tab-button" onclick="switchTab(2)">Diagnostic Criteria</button>
+        <button role="tab" class="tab-button" onclick="switchTab(3)">What's At Stake</button>
+        <button role="tab" class="tab-button" onclick="switchTab(4)">Evidence Catalog</button>
     </div>
 
     <!-- TAB 0: THE HIDDEN EPIDEMIC -->
@@ -402,7 +478,7 @@
             <p>Latent Autoimmune Diabetes in Adults (LADA) is the most common form of autoimmune diabetes in adults, yet remains dramatically underdiagnosed and widely misunderstood. It occurs more frequently than classical Type 1 Diabetes (T1D), yet is routinely missed in clinical practice.</p>
 
             <div class="highlight-box">
-                <p><strong>ACTION LADA Study (PMID:32243867)</strong></p>
+                <p><strong>ACTION LADA Study (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID:32243867</a>)</strong></p>
                 <p>Among 6,156 adults diagnosed with Type 2 Diabetes, <span class="stat-number">8.8%</span> were actually found to have LADA when tested for autoantibodies (GAD, IA-2, ZnT8).</p>
             </div>
 
@@ -437,7 +513,7 @@
             <p>The consequence: misdiagnosed LADA patients on inappropriate therapy progress more rapidly to complete insulin dependence, experience worse long-term glycemic control, and face higher rates of complications.</p>
 
             <div class="footnote">
-                <strong>Data source:</strong> ACTION LADA Study (PMID:32243867); IDF Diabetes Atlas 2021; UKPDS Group outcomes data
+                <strong>Data source:</strong> ACTION LADA Study (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID:32243867</a>); IDF Diabetes Atlas 2021; UKPDS Group outcomes data
             </div>
         </div>
     </div>
@@ -583,7 +659,7 @@
             </div>
 
             <div class="footnote">
-                <strong>Data sources:</strong> ACTION LADA (PMID:32243867); HUNT study (Norway); NIRAD study (Italy); IDF Diabetes Atlas 2021
+                <strong>Data sources:</strong> ACTION LADA (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID:32243867</a>); HUNT study (Norway); NIRAD study (Italy); IDF Diabetes Atlas 2021
             </div>
         </div>
     </div>
@@ -598,7 +674,7 @@
             <h3>The Immunological Diseases Society Criteria</h3>
             <p>The most widely referenced diagnostic criteria for LADA are from the Immunological Diseases Society:</p>
 
-            <table class="criteria-table">
+            <table role="table" class="criteria-table">
                 <tr>
                     <th style="width: 30%;">Criterion</th>
                     <th style="width: 70%;">Definition</th>
@@ -653,7 +729,7 @@
             <h3>LADA1 vs. LADA2: Hidden Heterogeneity</h3>
             <p>Emerging evidence reveals that LADA is not a single disease, but two distinct autoimmune diabetes phenotypes with different clinical trajectories and treatment responses:</p>
 
-            <table class="criteria-table">
+            <table role="table" class="criteria-table">
                 <tr>
                     <th>Feature</th>
                     <th>LADA1 (T1D-like)</th>
@@ -757,7 +833,7 @@
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US, PMID:32175717), retinal interventions, amputation prevention.</p>
+                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US, <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>), retinal interventions, amputation prevention.</p>
                 </div>
             </div>
 
@@ -772,7 +848,7 @@
             </div>
 
             <h3>The Prevention Paradox</h3>
-            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200 (PMID:32243867). Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
+            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200 (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID:32243867</a>). Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
 
             <div class="footnote">
                 <strong>The Crisis:</strong> 47 million people with undiagnosed LADA receiving suboptimal therapy, accelerating their disease course and complication rates, while the solution—systematic autoantibody testing in primary care—remains unavailable.
@@ -792,7 +868,7 @@
             <div class="reference-item">
                 <strong>ACTION LADA Study: Adult-onset autoimmune diabetes</strong><br>
                 Primary reference establishing 8.8% LADA prevalence among T2D patients in Europe. Large, prospective, multisite study with systematic autoantibody testing.
-                <div class="pmid">PMID: 32243867</div>
+                <div class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID: 32243867</a></div>
             </div>
 
             <div class="reference-item">
@@ -856,8 +932,8 @@
             </div>
 
             <div class="reference-item">
-                <strong>Teplizumab and GAD-Alum: Immunotherapy Efficacy</strong><br>
-                Recent clinical trials (2023-2025) demonstrate that anti-CD3 monoclonal antibodies (teplizumab) and GAD-conjugate vaccines (GAD-alum) can slow C-peptide decline in early autoimmune diabetes, but only when residual beta-cell function (C-peptide) is present at treatment initiation. Delayed diagnosis misses this therapeutic window.
+                <strong>Teplizumab efficacy; GAD-alum monotherapy contradicted</strong><br>
+                Anti-CD3 monoclonal antibody teplizumab delays progression from Stage 2 to Stage 3 T1D (NEJM 2019, 2023 pivotal data and 2025-2026 real-world cohorts) — but only when residual beta-cell function (C-peptide) is present at treatment initiation, so delayed diagnosis misses this therapeutic window. In contrast, GAD-alum monotherapy was contradicted in April 2026: the confirmatory DIAGNODE-3 Phase 3 trial (n=174, HLA DR3-DQ2-enriched recent-onset T1D) met pre-specified futility criteria at the March 2026 interim and Diamyd announced discontinuation. Earlier subgroup signals (DIAGNODE-2, 2022 IPD meta-analysis) did not replicate. LADA-specific pivotal data absent.
                 <div class="pmid">Reference: Recent immunotherapy trials in T1D and LADA</div>
             </div>
 
@@ -886,7 +962,7 @@
                 </div>
                 <div class="expand-content">
                     <ul style="line-height: 2;">
-                        <li>ACTION LADA (PMID:32243867) — 8.8% prevalence, n=6,156</li>
+                        <li>ACTION LADA (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank" rel="noopener" title="View on PubMed">PMID:32243867</a>) — 8.8% prevalence, n=6,156</li>
                         <li>HUNT Study — 4.2% prevalence, Norway population</li>
                         <li>NIRAD Study — 4.5% prevalence, Italy</li>
                         <li>LADA China Study — 5.9% prevalence, first large Asian data</li>
