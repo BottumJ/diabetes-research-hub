@@ -1333,7 +1333,7 @@ TERMS = {
         'disease': 'Most early GKAs failed due to hypoglycemia and hepatic steatosis; dorzagliatin avoids this via dual-target design; potential for T2D with residual beta cell function; LADA application unexplored',
         'connections': ['Glucokinase', 'Beta Cell', 'Insulin', 'Drug Repurposing'],
         'gap_relevance': [7, 9, 15],
-        'source': 'Zhu D et al. Dorzagliatin monotherapy in Chinese patients with type 2 diabetes. Nature Medicine 2022;28(5):965-973. PMID:35437333'
+        'source': 'Zhu D et al. Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial. Nature Medicine 2022;28(5):965-973. PMID:35551294'
     },
     'Islet Transplantation': {
         'plain': 'A procedure where insulin-producing cell clusters (islets) from a donor pancreas are infused into a patient with type 1 diabetes. Can restore insulin production but requires lifelong immunosuppression.',
