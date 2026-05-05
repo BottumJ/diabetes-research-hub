@@ -183,9 +183,9 @@ PAPERS_DATA = [
 TIMELINE_2025 = [
     {"date":"2025","title":"Vertex Zimislecel Phase 3 enrolls 50 participants","desc":"First scalable stem cell therapy for T1D reaches pivotal trial. 10/12 full-dose patients insulin-independent at 1 year.","type":"milestone"},
     {"date":"Nov 2025","title":"Stanford preclinical: reversal of T1D in mice without immunosuppression","desc":"Preclinical (murine): hybrid immune system co-transplant reported reversal of hyperglycemia in 19/19 protected and 9/9 established-T1D mice. No human data yet; do not extrapolate.","type":"milestone"},
-    {"date":"2025","title":"Sana engineered islets survive 6 months in humans","desc":"Gene-edited islet cells function without immunosuppression - the holy grail of islet therapy.","type":"milestone"},
+    {"date":"2025","title":"Sana engineered islets reported viable at 6 months in early-phase trial","desc":"Gene-edited (HIP) islet cells reported functioning without immunosuppression in early-phase data; durability and rejection profile beyond 6 months not yet established.","type":"milestone"},
     {"date":"2025","title":"Retatrutide: 28.7% weight loss in TRIUMPH-4","desc":"Eli Lilly's triple agonist (GLP-1/GIP/Glucagon) sets new efficacy benchmark for T2D.","type":"milestone"},
-    {"date":"2025","title":"Chinese team achieves insulin independence with iPSC","desc":"Patient's own reprogrammed cells produce insulin - first autologous islet success.","type":"milestone"},
+    {"date":"2025","title":"Chinese single-patient case: iPSC islet cells reduce exogenous insulin needs","desc":"n=1 case report of autologous reprogrammed islets in a patient with T1D; Cell 2024. Preliminary; not yet replicated or peer-confirmed at scale.","type":"milestone"},
     {"date":"2025","title":"UK Biobank proteomics: 617 T2D-linked proteins identified","desc":"Largest proteomic study maps protein-disease network; FAM3D emerges as novel target.","type":"milestone"},
     {"date":"2025","title":"DIAMANTE epigenome: 1,120 CpGs associated with T2D","desc":"Multi-ethnic epigenetic analysis reveals CAMK1D, TP53INP1, ATP5G1 regulatory mechanisms.","type":"milestone"},
     {"date":"2025","title":"Abata ABA-201 TCR-Treg therapy enters trials","desc":"First T1D-specific TCR-engineered regulatory T cell therapy begins clinical testing.","type":"milestone"},

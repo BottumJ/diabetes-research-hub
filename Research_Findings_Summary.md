@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: April 30, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: May 04, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -35,7 +35,7 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 ### Prevention & Delay
 
-**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE trial extending to children under 8. [PMID:37133585] [NCT:NCT06176573 — PETITE] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
+**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE trial extending to children under 8. [PMID:31180194 — Herold KC et al., NEJM 2019, TN-10 trial] [NCT:NCT06176573 — PETITE] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
 
 **Baricitinib (BARICADE):** JAK inhibitor entering Phase 3 trials for T1D beta cell preservation. Enrollment anticipated 2026. [NCT:NCT06640413] **Validation: BRONZE** (Phase 2 data promising; Phase 3 not yet enrolled)
 
@@ -206,4 +206,4 @@ Completed verifications:
 
 *This summary follows the Research Doctrine (v1.0) validation framework. Claims marked BRONZE or UNVERIFIED are preliminary. All findings should be independently verified before use in clinical or research decision-making.*
 
-*OSF Registration: [osf.io/hu9ga](https://osf.io/hu9ga) | GitHub: [github.com/BottumJ/diabetes-research-hub](https://github.com/BottomJ/diabetes-research-hub)*
+*OSF Registration: [osf.io/hu9ga](https://osf.io/hu9ga) | GitHub: [github.com/BottumJ/diabetes-research-hub](https:

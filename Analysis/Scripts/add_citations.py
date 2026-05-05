@@ -60,7 +60,7 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 ### Prevention & Delay
 
-**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE trial extending to children under 8. [PMID:37133585] [NCT:NCT06176573 — PETITE] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
+**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE trial extending to children under 8. [PMID:31180194 — Herold KC et al., NEJM 2019, TN-10 trial] [NCT:NCT06176573 — PETITE] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
 
 **Baricitinib (BARICADE):** JAK inhibitor entering Phase 3 trials for T1D beta cell preservation. Enrollment anticipated 2026. [NCT:NCT06640413] **Validation: BRONZE** (Phase 2 data promising; Phase 3 not yet enrolled)
 
@@ -245,8 +245,4 @@ def main():
     print(f"  Written: {out_path}")
     print(f"  Length: {len(content):,} characters")
     print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
-    print("Done.")
-
-
-if __name__ == '__main__':
-    main()
+    print("Done.")
