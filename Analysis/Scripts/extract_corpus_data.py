@@ -28,6 +28,33 @@ with open(os.path.join(library_dir, 'index.json'), encoding='utf-8') as f:
     index = json.load(f)
 papers_meta = index['papers']
 
+# Load agent state to identify FLAGGED off-topic papers that must be excluded
+# from the published evidence pipeline (e.g., CRC, smoking-cessation, melanoma
+# papers that survived the original PubMed pull but are not diabetes-relevant).
+FLAGGED_PMIDS = set()
+_state_path = os.path.join(results_dir, 'agent_state.json')
+if os.path.exists(_state_path):
+    try:
+        with open(_state_path, encoding='utf-8') as _f:
+            _state = json.load(_f)
+        FLAGGED_PMIDS = {
+            str(pmid) for pmid, p in _state.get('papers', {}).items()
+            if p.get('status') == 'FLAGGED'
+        }
+    except Exception as _e:
+        print(f"  WARNING: could not load agent_state.json FLAGGED list: {_e}")
+
+# Section types in PubMed Open-Access XML that should NOT be scanned for
+# quantitative claims about the corpus drugs/conditions:
+#   REF       - bibliography/references (cites unrelated papers)
+#   AUTH_CONT - author contribution statements
+#   COMP_INT  - competing interest declarations
+#   ACK_FUND  - acknowledgements / funding
+#   FIG       - figure captions (numeric values usually not extractable claims)
+#   TABLE     - table captions (same)
+#   SUPPL     - supplementary material headers
+SKIP_SECTION_TYPES = {'REF', 'AUTH_CONT', 'COMP_INT', 'ACK_FUND', 'SUPPL'}
+
 # ============================================================================
 # EXTRACTION PATTERNS
 # ============================================================================
@@ -134,15 +161,30 @@ EXTRACTORS = {
 
 
 def get_full_text(paper_data):
-    """Extract full text from sections."""
+    """Extract full text from sections.
+
+    Skips sections that are bibliography/admin (REF, AUTH_CONT, COMP_INT,
+    ACK_FUND, SUPPL) so that drug/condition co-occurrences in cited paper
+    titles do not generate spurious extractions (root cause of PMID 19940299
+    rituximab->nephropathy false positive and other reference-section
+    contamination bugs).
+    """
     sections = paper_data.get('sections', [])
     parts = []
+    # Heuristic fallback: if the paper has unstructured strings, also stop
+    # scanning once we hit a 'References' / 'Bibliography' header.
+    stop_headers = re.compile(r'^\s*(references|bibliography|works cited)\s*$', re.IGNORECASE)
     for sec in sections:
         if isinstance(sec, dict):
+            sec_type = (sec.get('section_type') or '').upper()
+            if sec_type in SKIP_SECTION_TYPES:
+                continue
             text = sec.get('text', sec.get('content', ''))
             if text:
                 parts.append(text)
         elif isinstance(sec, str):
+            if stop_headers.match(sec or ''):
+                break
             parts.append(sec)
     return ' '.join(parts)
 
@@ -166,13 +208,24 @@ def run_extraction():
     ft_files = sorted(Path(ft_dir).glob('*.json'))
 
     print(f"Processing {len(ft_files)} full-text papers...")
+    print(f"  Excluding {len(FLAGGED_PMIDS)} FLAGGED off-topic PMIDs from extraction.")
 
+    skipped_flagged = 0
     for fp in ft_files:
         with open(fp, encoding='utf-8') as f:
             paper_data = json.load(f)
 
         pmcid = paper_data.get('pmcid', fp.stem)
         pmid = str(paper_data.get('pmid', ''))
+
+        # Hard-exclude FLAGGED off-topic papers (e.g., CRC, smoking-cessation,
+        # melanoma) — they generate spurious drug/condition co-occurrences in
+        # the published evidence pipeline. Vetting decisions live in
+        # agent_state.json so this stays a single source of truth.
+        if pmid and pmid in FLAGGED_PMIDS:
+            skipped_flagged += 1
+            continue
+
         full_text = get_full_text(paper_data)
 
         if not full_text or len(full_text) < 100:
@@ -234,6 +287,8 @@ def run_extraction():
                 'total_extractions': sum(len(v) for v in paper_extractions.values()),
             }
 
+    if skipped_flagged:
+        print(f"  Skipped {skipped_flagged} FLAGGED off-topic full-text papers.")
     return dict(all_extractions), paper_stats
 
 
@@ -246,6 +301,76 @@ def build_cross_gap_evidence(all_extractions):
         for ext in extractions:
             for gap_num in gap_relevance:
                 gap_evidence[gap_num][data_type].append({
+                    'pmid': ext['pmid'],
+                    'title': ext['title'],
+                    'year': ext['year'],
+                    'value': ext['matched_text'][:100],
+                    'context': ext['context'][:300],
+                })
+
+    return {k: dict(v) for k, v in gap_evidence.items()}
+
+
+if __name__ == '__main__':
+    print("=" * 60)
+    print("  CORPUS DATA EXTRACTION PIPELINE")
+    print("=" * 60)
+
+    all_extractions, paper_stats = run_extraction()
+
+    # Build cross-gap evidence map
+    gap_evidence = build_cross_gap_evidence(all_extractions)
+
+    # Summary
+    print(f"\n{'=' * 60}")
+    print(f"  EXTRACTION SUMMARY")
+    print(f"{'=' * 60}")
+    print(f"  Papers yielding data: {len(paper_stats)}")
+    print()
+
+    total_extractions = 0
+    for data_type, extractions in sorted(all_extractions.items(), key=lambda x: -len(x[1])):
+        count = len(extractions)
+        total_extractions += count
+        papers_count = len(set(e['pmid'] for e in extractions))
+        print(f"  {data_type:<25} {count:4d} extractions from {papers_count:2d} papers")
+
+    print(f"\n  TOTAL: {total_extractions} data points extracted")
+
+    # Gap evidence summary
+    print(f"\n  EVIDENCE BY GAP:")
+    gap_names = {
+        1: "Gene Therapy LADA", 2: "Health Equity Beta Cell", 3: "Islet Transplant IR",
+        4: "Drug Repurposing Islet", 5: "Treg Neuropathy", 6: "CAR-T Access",
+        7: "GKA Repurposing", 8: "Immunomod LADA", 9: "GKA LADA",
+        10: "LADA Prevalence", 11: "Islet Equity", 12: "Generic Drug Catalog",
+        13: "Nutrition Beta", 14: "Nutrition LADA", 15: "GKA Pricing",
+    }
+    for gap_num in sorted(gap_evidence.keys()):
+        types = gap_evidence[gap_num]
+        total = sum(len(v) for v in types.values())
+        type_list = ', '.join(f"{k}({len(v)})" for k, v in types.items())
+        name = gap_names.get(gap_num, f"Gap {gap_num}")
+        print(f"    Gap {gap_num:2d} ({name}): {total} data points [{type_list}]")
+
+    # Save output
+    output = {
+        'metadata': {
+            'papers_processed': len(paper_stats),
+            'total_extractions': total_extractions,
+            'extraction_types': {k: len(v) for k, v in all_extractions.items()},
+        },
+        'extractions': all_extractions,
+        'paper_stats': paper_stats,
+        'gap_evidence_map': gap_evidence,
+    }
+
+    output_path = os.path.join(results_dir, 'extracted_corpus_data.json')
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"\n  Output: {output_path}")
+    print(f"  File size: {os.path.getsize(output_path) / 1024:.1f} KB")
+    print(f"\n  Done.")
                     'pmid': ext['pmid'],
                     'title': ext['title'],
                     'year': ext['year'],

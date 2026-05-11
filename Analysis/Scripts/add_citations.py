@@ -245,4 +245,8 @@ def main():
     print(f"  Written: {out_path}")
     print(f"  Length: {len(content):,} characters")
     print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
-    print("Done.")
+    print("Done.")
+
+
+if __name__ == '__main__':
+    main()

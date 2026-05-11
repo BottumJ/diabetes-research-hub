@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: May 04, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: May 11, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -206,4 +206,4 @@ Completed verifications:
 
 *This summary follows the Research Doctrine (v1.0) validation framework. Claims marked BRONZE or UNVERIFIED are preliminary. All findings should be independently verified before use in clinical or research decision-making.*
 
-*OSF Registration: [osf.io/hu9ga](https://osf.io/hu9ga) | GitHub: [github.com/BottumJ/diabetes-research-hub](https:
+*OSF Registration: [osf.io/hu9ga](https://osf.io/hu9ga) | GitHub: [github.com/BottumJ/diabetes-research-hub](https://github.com/BottomJ/diabetes-research-hub)*

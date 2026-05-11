@@ -221,10 +221,38 @@ def score_relevance(claims, paper_content):
         return 'MISMATCH', match_ratio, '; '.join(details_parts)
 
 
+def _load_flagged_pmids():
+    """Load FLAGGED off-topic PMIDs from agent_state.json so they are dropped
+    from the published evidence network. Single source of truth for vetting
+    decisions lives in agent_state.json."""
+    state_path = os.path.join(results_dir, 'agent_state.json')
+    if not os.path.exists(state_path):
+        return set()
+    try:
+        with open(state_path, encoding='utf-8') as f:
+            state = json.load(f)
+        return {
+            str(pmid) for pmid, p in state.get('papers', {}).items()
+            if p.get('status') == 'FLAGGED'
+        }
+    except Exception as e:
+        print(f'  WARNING: could not load FLAGGED PMID list: {e}')
+        return set()
+
+
 def build_evidence_network(index_data):
-    """Build a network of papers connected by citations and shared topics."""
+    """Build a network of papers connected by citations and shared topics.
+
+    FLAGGED PMIDs (off-topic papers per agent_state.json) are excluded from
+    nodes, edges, and topic clusters. This prevents off-topic CRC/oncology/
+    smoking-cessation papers from appearing as evidence-network nodes in the
+    published Paper Library dashboard.
+    """
     papers = index_data.get('papers', {})
     cross_refs = index_data.get('cross_references', {})
+    flagged = _load_flagged_pmids()
+    if flagged:
+        print(f'  Excluding {len(flagged)} FLAGGED PMIDs from evidence network.')
 
     network = {
         'nodes': [],
@@ -232,8 +260,10 @@ def build_evidence_network(index_data):
         'clusters': []
     }
 
-    # Nodes = papers
+    # Nodes = papers (skip FLAGGED off-topic)
     for pmid, paper in papers.items():
+        if str(pmid) in flagged:
+            continue
         network['nodes'].append({
             'pmid': pmid,
             'title': paper.get('title', '')[:100],
@@ -243,10 +273,14 @@ def build_evidence_network(index_data):
             'has_fulltext': paper.get('has_fulltext', False),
         })
 
-    # Edges from intra-hub citations
+    # Edges from intra-hub citations (drop edges that touch FLAGGED PMIDs)
     citing = cross_refs.get('papers_citing_each_other', {})
     for pmid, cited_list in citing.items():
+        if str(pmid) in flagged:
+            continue
         for cited in cited_list:
+            if str(cited) in flagged:
+                continue
             network['edges'].append({
                 'source': pmid,
                 'target': cited,
@@ -267,10 +301,14 @@ def build_evidence_network(index_data):
     }
 
     for term, pmids in sorted(clinical_mesh.items(), key=lambda x: -len(x[1]))[:30]:
+        # Drop FLAGGED PMIDs from each cluster's pmid list before publishing.
+        cluster_pmids = [p for p in pmids if str(p) not in flagged]
+        if not cluster_pmids:
+            continue
         network['clusters'].append({
             'topic': term,
-            'paper_count': len(pmids),
-            'pmids': pmids
+            'paper_count': len(cluster_pmids),
+            'pmids': cluster_pmids
         })
 
     return network
