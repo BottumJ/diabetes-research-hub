@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: May 11, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: May 14, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
