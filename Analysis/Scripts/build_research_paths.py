@@ -62,10 +62,90 @@ def truncate(text, length=300):
         return text
     return text[:length].rsplit(' ', 1)[0] + "…"
 
+import re
+
+# ---------------------------------------------------------------------------
+# dpc=1 dose-fragment artifact filter
+# ---------------------------------------------------------------------------
+# Background: some research paths get created from a single key_claim whose
+# matched_text is just a short, non-mechanistic dose fragment such as
+# "400 mg OD", "on metformin 1000 mg/day", "400 Mg in". These typically
+# come from drug-comparator trials where the matched drug only appears as
+# a comparator dose label, not as the subject of a mechanistic claim. The
+# canonical example (added 2026-05-14 to the work queue) is PMID 35466661
+# (HCQ HYQ-Real-World Study) producing spurious dpc=1 paths for
+# atorvastatin->T2D, metformin->inflammation, and pioglitazone->inflammation.
+#
+# This filter drops paths where:
+#   - data_point_count == 1
+#   - the single key_claim's matched_text matches a dose-fragment pattern
+#   - AND the matched_text contains no mechanism / outcome keywords
+#
+# It is conservative: it only fires when ALL three conditions hold, so
+# legitimate dpc=1 paths with mechanistic snippets (e.g., the
+# rapamycin->islet_transplant path whose matched_text discusses "mTOR" and
+# "Tumor Necrosis Factor") are retained.
+DOSE_FRAGMENT_PATTERNS = [
+    re.compile(r'^\s*\d+\s*[Mm]?[Gg](?:/[A-Za-z]+)?\s*(?:OD|BID|TID|QD|daily|in|on)?\s*$', re.IGNORECASE),
+    re.compile(r'^\s*on\s+\w+\s+\d+\s*[Mm]?[Gg](?:/[A-Za-z]+)?\s*(?:daily|OD|BID|TID|QD)?\s*$', re.IGNORECASE),
+    re.compile(r'^\s*\d+\s*[Mm]?[Gg]\s+in\s*$', re.IGNORECASE),
+]
+MECHANISM_KEYWORDS = (
+    'inhibit', 'activat', 'block', 'increase', 'decrease', 'reduce', 'induce',
+    'mediat', 'pathway', 'signal', 'receptor', 'nf-kb', 'nlrp3', 'tnf', 'il-',
+    'caspase', 'apoptos', 'ampk', 'mtor', 'ppar', 'foxp3', 'treg', 'autoimmun',
+    'oxidat', 'ros', 'inflammasome', 'cytokine', 'preserv', 'protect', 'mortality',
+    'incidence', 'risk', 'hr ', 'or ', 'hazard ratio', 'odds ratio',
+)
+
+def is_dose_fragment_artifact(path_data):
+    """Return True if this dpc=1 path is a dose-fragment-only extraction artifact."""
+    if path_data.get('data_point_count', 0) != 1:
+        return False
+    claims = path_data.get('key_claims', [])
+    if len(claims) != 1:
+        return False
+    mt = (claims[0].get('matched_text') or '').strip()
+    if not mt:
+        return False
+    if not any(p.match(mt) for p in DOSE_FRAGMENT_PATTERNS):
+        return False
+    mt_l = mt.lower()
+    if any(kw in mt_l for kw in MECHANISM_KEYWORDS):
+        return False
+    return True
+
+
 def load_research_paths():
-    """Load all research paths from JSON."""
+    """Load all research paths from JSON.
+
+    Applies the dpc=1 dose-fragment artifact filter to drop paths whose only
+    key_claim is a non-mechanistic dose snippet. The filtered-out paths are
+    recorded under data['filtered_artifacts'] for transparency / auditing.
+    """
     with open(research_paths_file, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        data = json.load(f)
+    paths = data.get('paths', {})
+    kept = {}
+    filtered = {}
+    for name, pdata in paths.items():
+        if is_dose_fragment_artifact(pdata):
+            filtered[name] = {
+                'reason': 'dpc=1 + only key_claim is a dose-fragment with no mechanism keywords',
+                'pmids': pdata.get('pmids', []),
+                'matched_text': (pdata.get('key_claims', [{}])[0].get('matched_text') or '')[:120],
+            }
+        else:
+            kept[name] = pdata
+    if filtered:
+        print(f"[build_research_paths] Filtered {len(filtered)} dpc=1 dose-fragment artifact path(s): "
+              f"{list(filtered.keys())}")
+    data['paths'] = kept
+    data['filtered_artifacts'] = filtered
+    # Update total_paths if present so downstream displays match
+    if 'total_paths' in data:
+        data['total_paths'] = len(kept)
+    return data
 
 def load_validated_paths():
     """Load validated research paths from JSON."""
