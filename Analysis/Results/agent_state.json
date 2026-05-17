@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-05-17T08:11:58.657398+00:00",
+  "last_updated": "2026-05-17T08:12:24.173079+00:00",
   "last_run": "2026-05-17",
   "papers": {
     "10415738": {
@@ -4376,6 +4376,14 @@
   },
   "work_queue": [
     {
+      "priority": 2,
+      "type": "manual_cleanup_required",
+      "target": "git push 9 unpushed commits (latest 2dd5912 from 2026-05-17)",
+      "notes": "Local agent commits 9 daily iterations (oldest bcca463 2026-04-24 -> newest 2dd5912 2026-05-17). Push requires GitHub creds; run `git push` from local PowerShell.",
+      "queued_date": "2026-05-17",
+      "unpushed_commits_count": 9
+    },
+    {
       "priority": 4,
       "type": "audit_gap",
       "target": "Gap #10 promotion review — re-audit 2026-06-07; if 2026 meta-analysis appears, propose SILVER->GOLD.",
@@ -5012,12 +5020,13 @@
       "extraction_artifacts_identified": 0,
       "credibility_sweep": "mostly_clean — flagged 2 hype-language hits and softened: build_islet_outcomes.py:598 (\"revolutionary\"/\"unprecedented\" -> \"investigational\"/\"elevated, sample is small\") and build_cart_access.py:671 (\"Game Changer\" section heading -> \"Potential Cost & Scale Benefits\"). Other paradigm-shift/revolutionary hits reviewed and judged conditional/framing language (OK).",
       "pipeline_status": "All 41 quality-improvement steps [OK].",
-      "notes": "12 papers passed deep claims-check via fulltext red-flag scan (zero_SAE, zero_rejection, curative_claim, unsupported_precision, fabricated_pmid_high, hype, no_uncertainty_strong patterns). Two precision-pattern hits were manually inspected and confirmed benign. | Git locks (.git/HEAD.lock, .git/objects/maintenance.lock) cleared via rename workaround; locks were 0-byte and dated 2026-05-16 (likely from OneDrive sync). | Two Python scripts initially truncated by Edit-tool CRLF bug; restored from HEAD and re-edited in-place via Python binary write (preserves inode). All scripts pass ast.parse and rebuild OK.",
+      "notes": "12 papers passed deep claims-check via fulltext red-flag scan (zero_SAE, zero_rejection, curative_claim, unsupported_precision, fabricated_pmid_high, hype, no_uncertainty_strong patterns). Two precision-pattern hits were manually inspected and confirmed benign. | Git locks (.git/HEAD.lock, .git/objects/maintenance.lock) cleared via rename workaround; locks were 0-byte and dated 2026-05-16 (likely from OneDrive sync). | Two Python scripts initially truncated by Edit-tool CRLF bug; restored from HEAD and re-edited in-place via Python binary write (preserves inode). All scripts pass ast.parse and rebuild OK. | Git push failed inside sandbox (no GitHub auth); 9 commits sit unpushed locally. User should `git push` from PowerShell. Commit 2dd5912 recorded with 32 files changed.",
       "scripts_updated": [
         "Analysis/Scripts/build_islet_outcomes.py",
         "Analysis/Scripts/build_cart_access.py"
       ],
-      "queue_items_resolved": 1
+      "queue_items_resolved": 1,
+      "unpushed_commits_count": 9
     }
   ],
   "topic_checks": {
