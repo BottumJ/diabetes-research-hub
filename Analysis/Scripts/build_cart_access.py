@@ -668,8 +668,8 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <div class="section">
-                <h2>Allogeneic ("Off-the-Shelf") CAR-T: The Game Changer</h2>
-                <p>Using healthy donor T cells instead of patient cells could revolutionize the economics and scale:</p>
+                <h2>Allogeneic ("Off-the-Shelf") CAR-T: Potential Cost &amp; Scale Benefits</h2>
+                <p>Using healthy donor T cells instead of patient cells could substantially improve the economics and scale of CAR-T, if remaining GvHD and persistence challenges are solved:</p>
 
                 <div class="comparison-box">
                     <strong>Cost reduction:</strong> 60-80% lower per-patient cost (one donor can supply multiple patients)<br>

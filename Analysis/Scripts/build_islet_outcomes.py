@@ -595,7 +595,7 @@ def generate_html():
             <p class="source">Source: LANTIDRA Phase 3 Trial Data; FDA approval briefing document June 2023</p>
 
             <h3>VX-880 (Stem Cell-Derived Islets)</h3>
-            <p>A revolutionary allogeneic product derived from human pluripotent stem cells. Early Phase 2 data from 5 evaluable patients demonstrates unprecedented C-peptide levels and durable insulin independence.</p>
+            <p>An investigational allogeneic product derived from human pluripotent stem cells (Vertex / zimislecel). Early Phase 2 data from 5 evaluable patients show elevated C-peptide and insulin independence in most participants out to day 365; the sample is small and follow-up is short, so durability beyond 1-2 years and the confirmed efficacy/safety profile remain to be established in the ongoing Phase 3 program (NCT05794503).</p>
             <div class="metric">
                 <div class="metric-value">83%</div>
                 <div class="metric-label">Insulin independence at day 365</div>
