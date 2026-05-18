@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-05-18T08:12:31.037392",
+  "last_updated": "2026-05-18T08:13:47.863833",
   "last_run": "2026-05-18T08:12:31.037392",
   "papers": {
     "10415738": {
@@ -4460,10 +4460,11 @@
     {
       "priority": 2,
       "type": "manual_cleanup_required",
-      "target": "git push 9 unpushed commits (latest 2dd5912 from 2026-05-17)",
-      "notes": "Local agent commits 9 daily iterations (oldest bcca463 2026-04-24 -> newest 2dd5912 2026-05-17). Push requires GitHub creds; run `git push` from local PowerShell.",
+      "target": "git push 11 unpushed commits (latest 96ebbfd from 2026-05-18)",
+      "notes": "Sandbox lacks GitHub auth (no Username/password). User should `git push` from PowerShell on local machine. Latest 11 commits include 96ebbfd 2026-05-18 (Monday iteration), dbd9416 2026-05-17, 2dd5912 2026-05-17, 33d89b2 2026-05-16, etc.",
       "queued_date": "2026-05-17",
-      "unpushed_commits_count": 9
+      "unpushed_commits_count": 9,
+      "updated": "2026-05-18T08:13:47.863808"
     },
     {
       "priority": 3,
@@ -5154,7 +5155,9 @@
       ],
       "queue_items_resolved": 1,
       "queue_items_added": 2,
-      "unpushed_commits_count": 10
+      "unpushed_commits_count": 11,
+      "commit_sha": "96ebbfd",
+      "push_status": "FAILED — sandbox lacks GitHub auth (no Username for https://github.com). Commit landed locally; 11 commits ahead of origin/main; user push required."
     }
   ],
   "topic_checks": {
