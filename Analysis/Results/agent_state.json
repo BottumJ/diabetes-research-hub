@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-05-24T08:09:09.460049+00:00",
+  "last_updated": "2026-05-24T08:09:32.257632+00:00",
   "last_run": "2026-05-24",
   "papers": {
     "10415738": {
@@ -4763,12 +4763,13 @@
     {
       "priority": 1,
       "type": "manual_cleanup_required",
-      "target": "git push 16 unpushed commits + 1 uncommitted staged changeset (2026-05-23). Stale .git/HEAD.lock + .git/index.lock still block sandbox commit (Operation not permitted on OneDrive-synced files).",
+      "target": "git push 17 unpushed commits (as of 2026-05-24 after daily iteration commit 084b685). Sandbox successfully cleared .git/HEAD.lock + .git/index.lock and committed the day's work, but `git push` fails with 'could not read Username for github.com' — needs user to run `git push` from a terminal with GitHub credentials configured.",
       "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push.",
       "queued_date": "2026-05-17",
       "unpushed_commits_count": 16,
       "updated": "2026-05-22T08:08:34.422237+00:00",
-      "last_attempt": "2026-05-23T08:15:09.690732+00:00"
+      "last_attempt": "2026-05-23T08:15:09.690732+00:00",
+      "last_updated": "2026-05-24"
     },
     {
       "priority": 4,
