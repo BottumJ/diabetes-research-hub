@@ -112,7 +112,7 @@ Genome-wide association studies have identified approximately 700 genetic varian
 
 **DIAMANTE multi-ethnic CpG analysis:** Identified 1,120 epigenetic sites (CpGs) associated with T2D, highlighting CAMK1D, TP53INP1, and ATP5G1 as genes with regulatory mechanisms linking genetic variants to T2D. [No PMID — DIAMANTE consortium CpG analysis; exact journal reference pending independent verification] **Validation: SILVER** (multi-ethnic analysis; independent replication exists for some loci)
 
-**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:41827917 (PMID requires verification)] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
+**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment for an estimated 1-5% of diabetes patients currently misclassified. [PMID:41827917 — GENEPEDIAB Study, Cells, 2026: "Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic"] **Validation: SILVER** (multiple clinical series; exact prevalence varies by population)
 
 ---
 
@@ -144,7 +144,7 @@ A large-scale study of 34,500 people mapped gut microbe species to health and di
 Triple renoprotective therapy (SGLT2i + non-steroidal MRA + GLP-1RA) is now recommended in ADA Standards of Care 2026. [ADA Standards of Care, Diabetes Care, Jan 2026] **Validation: GOLD** (guideline based on multiple Phase 3 RCTs)
 
 ### Retinopathy
-GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:41618067 (PMID requires verification) — IDx-DR] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
+GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal screening models have received FDA clearance (e.g., IDx-DR). [PMID:31304320 — Abramoff et al, NPJ Digital Medicine, 2018: IDx-DR pivotal trial] **Validation: SILVER for AI screening (FDA-cleared); BRONZE for GLP-1RA retinal effects (limited studies)**
 
 ### Biomarkers for Complications
 TNF-alpha has been proposed as a multi-complication predictor for nephropathy, retinopathy, and cardiovascular disease. [PMID:25230243 — Preciado-Puga 2014, longitudinal markers study] **Validation: BRONZE** (multiple small studies; no large-scale prospective validation)
@@ -161,7 +161,7 @@ In the United States, approximately 11.6% of the population has diabetes; an est
 
 Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. [PMID:37016949, MMWR, 2022] **Validation: GOLD** (CDC SEARCH for Diabetes in Youth Study)
 
-**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:41827829 (PMID requires verification), Diabetes Care, 2020] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
+**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:16306343 — Stenstrom et al, Diabetes, 2005: "Latent autoimmune diabetes in adults: definition, prevalence, beta-cell function, and treatment"] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
 
 ---
 
@@ -171,7 +171,7 @@ AI is being applied across multiple diabetes domains: risk prediction, automated
 
 **Drug discovery:** Computational perturbation models have identified pharmacological connections for approximately 20 common T2D medications and revealed potential metformin-microbiome interactions. [No PMID — computational drug discovery study; exact reference pending identification] **Validation: BRONZE** (computational predictions; experimental validation needed)
 
-**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity. [PMID:41618067 (PMID requires verification), JAMA, 2018 — IDx-DR] **Validation: GOLD** (FDA-cleared, prospective validation)
+**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% sensitivity and >90% specificity in the IDx-DR pivotal trial. [PMID:31304320 — Abramoff et al, NPJ Digital Medicine, 2018: "Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices"] **Validation: GOLD** (FDA-cleared, prospective pivotal trial)
 
 ---
 
@@ -249,4 +249,33 @@ def main():
 
 
 if __name__ == '__main__':
+    main()()
+
+    out_path = os.path.join(BASE_DIR, 'Research_Findings_Summary.md')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"  Written: {out_path}")
+    print(f"  Length: {len(content):,} characters")
+    print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
+    print("Done.")
+
+
+if __name__ == '__main__':
     main()
+()
+
+    out_path = os.path.join(BASE_DIR, 'Research_Findings_Summary.md')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"  Written: {out_path}")
+    print(f"  Length: {len(content):,} characters")
+    print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
+    print("Done.")
+
+
+if __name__ == '__main__':
+    main()
+    main()
+
