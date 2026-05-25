@@ -249,33 +249,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()()
-
-    out_path = os.path.join(BASE_DIR, 'Research_Findings_Summary.md')
-    with open(out_path, 'w', encoding='utf-8') as f:
-        f.write(content)
-
-    print(f"  Written: {out_path}")
-    print(f"  Length: {len(content):,} characters")
-    print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
-    print("Done.")
-
-
-if __name__ == '__main__':
-    main()
-()
-
-    out_path = os.path.join(BASE_DIR, 'Research_Findings_Summary.md')
-    with open(out_path, 'w', encoding='utf-8') as f:
-        f.write(content)
-
-    print(f"  Written: {out_path}")
-    print(f"  Length: {len(content):,} characters")
-    print(f"  Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.")
-    print("Done.")
-
-
-if __name__ == '__main__':
-    main()
     main()
 
