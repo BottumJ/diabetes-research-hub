@@ -1,7 +1,7 @@
 # PubMed Recent Publications Report
-**Generated:** 2026-05-26
+**Generated:** 2026-05-27
 **Lookback period:** 30 days
-**Unique papers found:** 158
+**Unique papers found:** 160
 
 ---
 
@@ -9,19 +9,19 @@
 
 | Domain | Total Papers | Trend Signal |
 |--------|-------------|--------------|
-| Diabetes AI/ML | 233 | HIGH ACTIVITY |
-| Diabetes Biomarker | 170 | HIGH ACTIVITY |
-| T2D GLP-1 New | 136 | HIGH ACTIVITY |
-| Diabetes Microbiome | 127 | HIGH ACTIVITY |
-| T2D Remission | 71 | HIGH ACTIVITY |
-| Diabetes Health Equity | 62 | HIGH ACTIVITY |
-| Diabetes Multi-Omics | 58 | HIGH ACTIVITY |
-| Diabetes Gene Therapy | 43 | ACTIVE |
+| Diabetes AI/ML | 240 | HIGH ACTIVITY |
+| Diabetes Biomarker | 169 | HIGH ACTIVITY |
+| Diabetes Microbiome | 139 | HIGH ACTIVITY |
+| T2D GLP-1 New | 138 | HIGH ACTIVITY |
+| T2D Remission | 72 | HIGH ACTIVITY |
+| Diabetes Health Equity | 63 | HIGH ACTIVITY |
+| Diabetes Multi-Omics | 61 | HIGH ACTIVITY |
+| Diabetes Gene Therapy | 45 | ACTIVE |
 | Diabetes Complications New | 41 | ACTIVE |
 | T1D Stem Cell Cure | 23 | ACTIVE |
 | Closed Loop AP | 23 | ACTIVE |
 | T1D Immunotherapy | 19 | ACTIVE |
-| Diabetes Epigenetics | 9 | LOW |
+| Diabetes Epigenetics | 10 | LOW |
 | LADA New Research | 7 | LOW |
 | Diabetes Drug Repurpose | 6 | LOW |
 | GLP-1 Pharmacogenomics | 1 | LOW |
@@ -76,6 +76,14 @@
 
 ### T2D GLP-1 New
 
+- **Withholding or continuing glucose-lowering drugs for elective surgery in patients with type 2 diabetes mellitus: a secondary analysis of the MOPED international, prospective, observational study.**
+  British journal of anaesthesia (2026-May-26) | Buggy DJ; Columb MO; Hermanides J
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42191528/) | [DOI](https://doi.org/10.1016/j.bja.2026.03.068)
+
+- **Impact of Time of Injection on the Efficacy and Safety of iGlarLixi Versus IDegAsp in Chinese People With Type 2 Diabetes: Exploratory Analysis of the Soli-D Study.**
+  Diabetes, obesity & metabolism (2026-May-25) | Li X; Wang J; Liu T
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42186210/) | [DOI](https://doi.org/10.1111/dom.70902)
+
 - **Impact of incretin analogues on lipid and lipoprotein metabolism in obesity and diabetes.**
   British journal of pharmacology (2026-May-25) | Baragetti A; Norata GD
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42185046/) | [DOI](https://doi.org/10.1111/bph.70483)
@@ -88,15 +96,11 @@
   Annals of internal medicine (2026-May-26) | Del Prato S; Heine RJ; Pérez Manghi FC
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184419/) | [DOI](https://doi.org/10.7326/ANNALS-25-05602)
 
-- **Angiogenic T cells and cognitive function in older adults with type 2 diabetes treated with GLP-1 receptor agonists.**
-  Aging clinical and experimental research (2026-May-24) | Longo M; Caruso P; Auriemma MC
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42177747/) | [DOI](https://doi.org/10.1007/s40520-026-03417-0)
-
-- **Effects of a 6-week subcutaneous infusion of native GIP alone or as add-on to semaglutide in people with type 2 diabetes: a single-centre, double-blind, parallel-group, randomised, placebo-controlled trial.**
-  The lancet. Diabetes & endocrinology (2026-May-22) | Helsted MM; Fonnesbech-Wulff C; Schaltz NL
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42173109/) | [DOI](https://doi.org/10.1016/S2213-8587(26)00075-6)
-
 ### T2D Remission
+
+- **Anti-inflammatory effects of oral NLRP3 inhibition with ruvonoflast among individuals at elevated cardiovascular risk.**
+  Journal of the American College of Cardiology (2026-May-26) | Ray KK; Clarke N; Thornton P
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42187339/) | [DOI](https://doi.org/10.1016/j.jacc.2026.05.014)
 
 - **Lifestyle intervention outcomes in T2DM and the added value of CGM: 6-month results from the Polish cohort of the C4D study.**
   Scientific reports (2026-May-25) | Ostrowska J; Kobos E; Pietrzak M
@@ -114,33 +118,41 @@
   Studies in health technology and informatics (2026-May-21) | Carpani G; Lenatti M; Simeone D
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42174929/) | [DOI](https://doi.org/10.3233/SHTI260254)
 
-- **Efficacy and Safety of Inhalational Insulin Compared With Rapid-Acting Insulin Analogs: A Systematic Review and Meta-Analysis.**
-  Clinical therapeutics (2026-May-22) | Sinha R; Uz Zaman S; Mohamed RC
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42173715/) | [DOI](https://doi.org/10.1016/j.clinthera.2026.04.020)
-
 ### Diabetes AI/ML
 
-- **Early identification of major depression risk among reproductive-age women using hormonal contraceptives in southern Ethiopia: A Machine Learning Approach.**
-  Scientific reports (2026-May-25) | Dinagde DD; Desta AA; Tadele E
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42185454/) | [DOI](https://doi.org/10.1038/s41598-026-54084-0)
+- **Non-destructive classification of type 2 diabetic teeth using LIBS-derived elemental biomarkers and machine learning.**
+  Analytica chimica acta (2026-Aug-08) | Dastageer MM; Siraj K; Senesi GS
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42191259/) | [DOI](https://doi.org/10.1016/j.aca.2026.345615)
 
-- **Targeting dysregulated glycolysis in type 2 diabetic osteoporosis: Identification of a diagnostic gene signature and therapeutic validation of calcifediol.**
-  Life sciences (2026-May-24) | Li M; Li W; Mai G
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184924/) | [DOI](https://doi.org/10.1016/j.lfs.2026.124473)
+- **Retinal graph neural network for segmentation of retinal vasculature and foveal avascular zone from OCTA images.**
+  Biomedizinische Technik. Biomedical engineering (2026-May-27) | Raja NP; Thomas A; Francis B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190053/) | [DOI](https://doi.org/10.1515/bmt-2025-0312)
 
-- **Assessing the generalisability of foundation models to ultra-wide field retinal imaging for diabetic retinopathy screening in Denmark and Greenland.**
-  International journal of medical informatics (2026-May-21) | Li LY; Thambawita V; Byberg S
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184619/) | [DOI](https://doi.org/10.1016/j.ijmedinf.2026.106503)
+- **A Robust Intelligent CNN Model Enhanced with Gabor-Based Feature Extraction, SMOTE Balancing, and Adam Optimization for Multi-Grade Diabetic Retinopathy Classification.**
+  Journal of imaging (2026-Apr-27) | Mulyani A; Muljono; Purwanto
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42188225/) | [DOI](https://doi.org/10.3390/jimaging12050188)
 
-- **Enhancing Early Prediction of Gestational Diabetes Mellitus Through Data Augmentation and Feature Guidance: Model Development and Validation Study.**
-  JMIR medical informatics (2026-May-25) | Chen X; Jiang Z; Su D
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184375/) | [DOI](https://doi.org/10.2196/85335)
+- **DAGs and GRaSP Causal Inference Algorithms Combined and Applied to the Calculation of Insulin Bolus in Patients with Type 1 Diabetes.**
+  Entropy (Basel, Switzerland) (2026-May-01) | Contreras-Jiménez R; Olivares-Rojas JC; Téllez-Anguiano ADC
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42187921/) | [DOI](https://doi.org/10.3390/e28050506)
 
-- **The Trajectory of Retinal Microcirculation Imaging: From Angiography to Artificial Intelligence.**
-  Journal of visualized experiments : JoVE (2026-May-05) | Xu X; Liu W; Li H
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184268/) | [DOI](https://doi.org/10.3791/70115)
+- **Noninvasive Detection of Acute Hyperglycemia Using Signal from Wearable ECG Sensors Considering Individual HRV Response Delays to Glucose.**
+  Biosensors (2026-Apr-29) | Ha J; Hwang HB; Kim H
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42187447/) | [DOI](https://doi.org/10.3390/bios16050251)
 
 ### Diabetes Biomarker
+
+- **Multi-omics insights into uric acid metabolism: from genetics to epigenetics, transcriptomics, and metabolomics in cardiometabolic disease.**
+  Biomedical journal (2026-May-25) | Ali N
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190810/) | [DOI](https://doi.org/10.1016/j.bj.2026.100997)
+
+- **Beyond aldosterone and renin: emerging biomarkers for diagnosing and subtyping primary aldosteronism.**
+  Endocrine reviews (2026-May-26) | Libianto R; Uniacke CL; Fuller PJ
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42186715/) | [DOI](https://doi.org/10.1210/endrev/bnag016)
+
+- **Lipid Dysregulation in Chronic Diseases: Systems Biology and Omics Perspectives.**
+  Xenobiotica; the fate of foreign compounds in biological systems (2026-May-25) | Majumder D; Bhattacharya D; Singh Gill H
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42186308/) | [DOI](https://doi.org/10.1080/00498254.2026.2680076)
 
 - **Integrated multicompartment urinary long non-coding RNAs profiling (cellular, cell-free, and extracellular vesicle) for better differential diagnosis of biopsy-proven diabetic and non-diabetic kidney disease beyond conventional markers.**
   BMJ open diabetes research & care (2026-May-25) | Basu M; Neogi S; Pal R
@@ -150,41 +162,33 @@
   Mikrochimica acta (2026-May-25) | Qin H; Cang R; Han X
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184024/) | [DOI](https://doi.org/10.1007/s00604-026-08137-w)
 
-- **Serum and cerebrospinal fluid neuroinflammatory biomarkers and trimethylamine N-oxide: associations with white matter lesion severity.**
-  Frontiers in immunology (2026) | Cheng X; Luo C; Zhang X
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42183298/) | [DOI](https://doi.org/10.3389/fimmu.2026.1799968)
-
-- **Empowered pro-inflammatory features in Ly6C monocytes and altered antigen-presenting capacity in Ly6C**
-  Frontiers in immunology (2026) | Yang P; Fang P; Sun L
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42183265/) | [DOI](https://doi.org/10.3389/fimmu.2026.1794704)
-
-- **The Triglyceride-Glucose-Chinese Visceral Adiposity Index (TyG-CVAI) outperforms other insulin resistance indices in its association with cardiovascular-kidney-metabolic syndrome severity in type 2 diabetes: a comparative study.**
-  Frontiers in nutrition (2026) | Yang J; Deng Z; Xie B
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42180562/) | [DOI](https://doi.org/10.3389/fnut.2026.1817071)
-
 ### Diabetes Microbiome
 
-- **The silent pharmacist: Harnessing the gut microbiome to improve therapy in hematologic malignancies.**
-  Translational oncology (2026-May-25) | El-Sehrawy AAMA; Soleimani Samarkhazan H
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184718/) | [DOI](https://doi.org/10.1016/j.tranon.2026.102833)
+- **Global Trends and Research Topics in Gastric Bypass Clinical Trials: A Bibliometric Analysis and Latent Dirichlet Allocation (LDA) Study.**
+  Obesity surgery (2026-May-26) | Monteiro RF; Pires VC; Onzi TR
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42191979/) | [DOI](https://doi.org/10.1007/s11695-026-08750-x)
 
-- **Gut microbiota-modulating interventions in paediatric type 1 diabetes: a systematic review and meta-analysis.**
-  European journal of pediatrics (2026-May-25) | Llopis-Alonso I; Correa-Bares M; Mercader-Ros MT
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184054/) | [DOI](https://doi.org/10.1007/s00431-026-07106-y)
+- **EASL position paper on preclinical models of steatotic liver disease.**
+  Journal of hepatology (2026-May-27) | Gallage S; Castro RE; Estall J
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42191458/) | [DOI](https://doi.org/10.1016/j.jhep.2026.04.029)
 
-- **Fecal Microbiota Transplantation From Healthy Donors Reduces Glycemic Variability in Streptozotocin-Induced Diabetic Rats via Enhanced Hepatic Glycogen Synthesis.**
-  International journal of endocrinology (2026) | Dou M; Xu J; Ye X
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42183070/) | [DOI](https://doi.org/10.1155/ije/8852077)
+- **Association Between Metabolic Clusters and Microbial Age in High-Risk Populations for Diabetes and Their Potential Impact on Cardiovascular Disease Risk: Cross-Sectional Observational Study.**
+  JMIR medical informatics (2026-May-26) | Xinlin L; Gu H; Li R
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190264/) | [DOI](https://doi.org/10.2196/73119)
 
-- **Restoring circadian disrupted gut microbial metabolite rhythms with phytochemicals: a new avenue against metabolic disease.**
-  Frontiers in microbiology (2026) | Wu L; Li S; Han F
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42182019/) | [DOI](https://doi.org/10.3389/fmicb.2026.1801367)
+- **The impact of exercise and probiotic supplementation on the gut microbiota and management of gestational diabetes mellitus: a critical review.**
+  Critical reviews in food science and nutrition (2026-May-26) | Grant MC
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42189586/) | [DOI](https://doi.org/10.1080/10408398.2026.2677745)
 
-- **Multifaceted therapeutic potential of saponins in type 2 diabetes mellitus: mechanisms targeting insulin resistance and diabetic complications.**
-  Frontiers in pharmacology (2026) | Yuan Y; Shou KY; Wu SQ
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42181864/) | [DOI](https://doi.org/10.3389/fphar.2026.1793697)
+- **Effects of processed low-protein brown rice on patients with chronic kidney disease.**
+  Clinical and experimental nephrology (2026-May-26) | Adachi K; Yasuda M; Ida M
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42189410/) | [DOI](https://doi.org/10.1007/s10157-026-02877-y)
 
 ### Diabetes Gene Therapy
+
+- **Anti-CRISPR-mediated continuous directed evolution of CRISPR-Cas9 in human cells.**
+  Proceedings of the National Academy of Sciences of the United States of America (2026-Jun-02) | Sabol AL; Mengiste AA; Singh P
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42189993/) | [DOI](https://doi.org/10.1073/pnas.2536003123)
 
 - **Multiplexed perturbation enables scalable pooled screens.**
   Nature methods (2026-May-25) | Oberlin S; Tay NQ; Xue A
@@ -201,10 +205,6 @@
 - **Optimizing Care for Growth and Puberty in Duchenne Muscular Dystrophy: A Survey of Clinical Practice in the OPTIMIZE DMD Consortium.**
   Muscle & nerve (2026-May-24) | Wood CL; Babalola F; Benjamin RW
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42178495/) | [DOI](https://doi.org/10.1002/mus.70288)
-
-- **Dual-Gene CRISPR Editing via Peptide Dendrimers Regulates Redox Balance for Diabetic Wound Repair.**
-  Biomacromolecules (2026-May-22) | Jiang Y; Wen H; Xu J
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42172545/) | [DOI](https://doi.org/10.1021/acs.biomac.6c00110)
 
 ### Closed Loop AP
 
@@ -252,6 +252,10 @@
 
 ### Diabetes Epigenetics
 
+- **Multi-omics insights into uric acid metabolism: from genetics to epigenetics, transcriptomics, and metabolomics in cardiometabolic disease.**
+  Biomedical journal (2026-May-25) | Ali N
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190810/) | [DOI](https://doi.org/10.1016/j.bj.2026.100997)
+
 - **Potential circadian rhythm-related pathogenic genes in diabetic nephropathy: a multi-omics Mendelian randomization study.**
   Renal failure (2026-Dec) | Mao Y; Zhang M; Li X
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42178167/) | [DOI](https://doi.org/10.1080/0886022X.2026.2663248)
@@ -267,10 +271,6 @@
 - **Genotype epigenome phenotype integration reveals peripheral immune contributions to type I bipolar disorder.**
   Nature communications (2026-May-15) | Hou L; Li Y; Xiong X
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42140902/) | [DOI](https://doi.org/10.1038/s41467-026-72543-0)
-
-- **KDM1A regulates nephron progenitor programs and is associated with human kidney disease risk.**
-  Nephrology, dialysis, transplantation : official publication of the European Dialysis and Transplant Association - European Renal Association (2026-May-01) | Kolligundla LP; Mukhi D; Levinsohn J
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42065705/) | [DOI](https://doi.org/10.1093/ndt/gfag073)
 
 ### Diabetes Complications New
 
@@ -296,6 +296,14 @@
 
 ### Diabetes Health Equity
 
+- **Mitigating Glycemic Disparities: Understanding Contributions of Sociodemographic Variables in the 4T Study.**
+  The Journal of pediatrics (2026-May-25) | Addala A; Ritter V; Shaw B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190899/) | [DOI](https://doi.org/10.1016/j.jpeds.2026.115156)
+
+- **Socioeconomic disparities in the prevalence of non-communicable chronic disease multimorbidity and their impact on activities of daily living among older adults in rural southwest China: a cross-sectional study.**
+  BMC geriatrics (2026-May-25) | Li GH; Bao QR; Shi RM
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42185956/) | [DOI](https://doi.org/10.1186/s12877-026-07697-z)
+
 - **Medicaid work requirements and cost-sharing under H.R.1: Implications for structurally vulnerable and medically complex populations in New Orleans.**
   Journal of the National Medical Association (2026-May-08) | Sabir A; Rugile TP; Pope HE
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42185161/) | [DOI](https://doi.org/10.1016/j.jnma.2026.05.006)
@@ -307,14 +315,6 @@
 - **Impact of health insurance coverage on dentition status prior to hematopoietic cell transplant: A 10-year single-institution observational study.**
   Supportive care in cancer : official journal of the Multinational Association of Supportive Care in Cancer (2026-May-25) | Chung K; Singh A; White C
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42178408/) | [DOI](https://doi.org/10.1007/s00520-026-10792-x)
-
-- **Updated trends in the global prevalence and burden of mental disorders, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.**
-  Lancet (London, England) (2026-May-23) | 
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42167272/) | [DOI](https://doi.org/10.1016/S0140-6736(26)00519-2)
-
-- **Defining the role of pharmacists in food pharmacy.**
-  Journal of the American Pharmacists Association : JAPhA (2026-May-18) | Mai K; Vuong H; Franey E
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42155679/) | [DOI](https://doi.org/10.1016/j.japh.2026.103142)
 
 ### LADA New Research
 
@@ -340,6 +340,18 @@
 
 ### Diabetes Multi-Omics
 
+- **Multi-omics insights into uric acid metabolism: from genetics to epigenetics, transcriptomics, and metabolomics in cardiometabolic disease.**
+  Biomedical journal (2026-May-25) | Ali N
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190810/) | [DOI](https://doi.org/10.1016/j.bj.2026.100997)
+
+- **MIAAIM: Multi-omics image integration with dimensional reduction for tissue state mapping.**
+  PLoS computational biology (2026-May-26) | Hess JM; Dzeng RK; Ilieş I
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42189900/) | [DOI](https://doi.org/10.1371/journal.pcbi.1014274)
+
+- **Lipid Dysregulation in Chronic Diseases: Systems Biology and Omics Perspectives.**
+  Xenobiotica; the fate of foreign compounds in biological systems (2026-May-25) | Majumder D; Bhattacharya D; Singh Gill H
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42186308/) | [DOI](https://doi.org/10.1080/00498254.2026.2680076)
+
 - **Multi-omics identification of amino acid and redox dysregulation in cystic fibrosis-related diabetes.**
   Journal of cystic fibrosis : official journal of the European Cystic Fibrosis Society (2026-May-25) | Oh SY; Kim SO; Lyles JT
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42185170/) | [DOI](https://doi.org/10.1016/j.jcf.2026.04.012)
@@ -347,18 +359,6 @@
 - **Targeting dysregulated glycolysis in type 2 diabetic osteoporosis: Identification of a diagnostic gene signature and therapeutic validation of calcifediol.**
   Life sciences (2026-May-24) | Li M; Li W; Mai G
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184924/) | [DOI](https://doi.org/10.1016/j.lfs.2026.124473)
-
-- **Molecular basis of precision nutrition: Food components, microbiome-derived metabolites, and multi-omics modeling.**
-  Food chemistry. Molecular sciences (2026-Jun) | Rahimah S; Tallei TE; Savitri M
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42181960/) | [DOI](https://doi.org/10.1016/j.fochms.2026.100411)
-
-- **Safety evaluation of Sodium-glucose cotransporter 2 inhibitors for cancer risk in specific populations: systematic review and meta-analysis.**
-  Frontiers in clinical diabetes and healthcare (2026) | Teng J; Li T; Tan Y
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42180672/) | [DOI](https://doi.org/10.3389/fcdhc.2026.1775359)
-
-- **Potential circadian rhythm-related pathogenic genes in diabetic nephropathy: a multi-omics Mendelian randomization study.**
-  Renal failure (2026-Dec) | Mao Y; Zhang M; Li X
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42178167/) | [DOI](https://doi.org/10.1080/0886022X.2026.2663248)
 
 ### GLP-1 Pharmacogenomics
 
@@ -374,7 +374,7 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 | Therapy | Papers (30d) | Status |
 |---------|-------------|--------|
-| dapagliflozin | 37 | ACTIVE |
+| dapagliflozin | 38 | ACTIVE |
 | teplizumab | 6 | ACTIVE |
 | retatrutide | 5 | LOW |
 | icodec | 5 | LOW |
@@ -469,6 +469,10 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 ### dapagliflozin
 
+- **SGLT2 inhibitors are associated with reductions in epicardial adipose tissue volume and thickness: a meta-analysis.**
+  International journal of obesity (2005) (2026-May-27) | Khanna S; Kalman E; Thungathurthi K
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42191874/) | [DOI](https://doi.org/10.1038/s41366-026-02110-6)
+
 - **Evaluation of the therapeutic effect of new hypoglycemic drugs on patients with heart failure with reduced ejection fraction and type 2 diabetes: a systematic review and network meta-analysis.**
   Frontiers in cardiovascular medicine (2026) | Chen XR; Mao XP; Luo D
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42181653/) | [DOI](https://doi.org/10.3389/fcvm.2026.1799254)
@@ -476,10 +480,6 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 - **Dapagliflozin corrects hypomagnesemia in kidney-transplant patients.**
   Journal of nephrology (2026-May-23) | Guillot D; Dejoie T; Kerleau C
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42175994/) | [DOI](https://doi.org/10.1093/joneph/aajag046)
-
-- **Exogenous klotho as an adjunct to dapagliflozin ameliorates diabetic kidney disease by restoring mitophagy and mitigating apoptosis and fibrosis.**
-  Biochemical and biophysical research communications (2026-May-17) | Rakshe PS; Gaikwad AB
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42172900/) | [DOI](https://doi.org/10.1016/j.bbrc.2026.153965)
 
 ---
 
@@ -491,13 +491,13 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: T1D Stem Cell Cure, T1D Immunotherapy, Key Therapy: teplizumab
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42163482/)
 
+- **Multi-omics insights into uric acid metabolism: from genetics to epigenetics, transcriptomics, and metabolomics in cardiometabolic disease.**
+  Domains: Diabetes Biomarker, Diabetes Epigenetics, Diabetes Multi-Omics
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42190810/)
+
 - **Adapting CAR-T and CAR-Treg cancer therapies for autoimmunity: innovations and challenges.**
   Domains: T1D Stem Cell Cure, T1D Immunotherapy
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42148104/)
-
-- **The evolution of CAR therapies across oncology and autoimmunity: mechanistic insights and therapeutic innovations.**
-  Domains: T1D Immunotherapy, Diabetes Gene Therapy
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42143506/)
 
 - **US Patterns in Clinical Islet Autoantibody Ordering and Results Show Key Differences After Teplizumab Regulatory Approval.**
   Domains: T1D Immunotherapy, Key Therapy: teplizumab
@@ -523,17 +523,9 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: Diabetes AI/ML, Diabetes Multi-Omics
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184924/)
 
-- **Advances in quantum dot-based fluorescent biosensors for enzyme detection: mechanistic insights and applications in disease.**
-  Domains: Diabetes AI/ML, Diabetes Biomarker
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42184024/)
-
-- **Molecular basis of precision nutrition: Food components, microbiome-derived metabolites, and multi-omics modeling.**
-  Domains: Diabetes AI/ML, Diabetes Multi-Omics
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42181960/)
-
-- **Therapeutic targets for diabetic nephropathy identified by druggable genome mendelian randomization: the role of the gut microbiota-metabolite axis.**
-  Domains: Diabetes AI/ML, Diabetes Microbiome
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42181212/)
+- **Lipid Dysregulation in Chronic Diseases: Systems Biology and Omics Perspectives.**
+  Domains: Diabetes Biomarker, Diabetes Multi-Omics
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42186308/)
 
 - **Potential circadian rhythm-related pathogenic genes in diabetic nephropathy: a multi-omics Mendelian randomization study.**
   Domains: Diabetes Epigenetics, Diabetes Multi-Omics
@@ -544,4 +536,4 @@ These papers span multiple research domains -- potentially high-value for synthe
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42142983/)
 
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-05-26*
+*Generated by baseline_pubmed_alerts.py -- 2026-05-27*
