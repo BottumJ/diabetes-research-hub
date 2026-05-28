@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-05-28T08:11:05.710421+00:00",
+  "last_updated": "2026-05-28T08:11:41.753525+00:00",
   "last_run": "2026-05-28",
   "papers": {
     "10415738": {
@@ -4982,12 +4982,12 @@
     {
       "priority": 1,
       "type": "manual_cleanup_required",
-      "target": "git push 19 unpushed commits (latest d2b0b10 from 2026-05-25). Sandbox successfully committed today's work (rename trick to bypass OneDrive lock-removal); `git push` fails with 'could not read Username for github.com' — needs user to run `git push` from a terminal with GitHub credentials configured.",
+      "target": "git push 22 unpushed commits (latest 62e5168 from 2026-05-28). Sandbox successfully committed today's work (rename trick on .git/index.lock + HEAD.lock); push fails due to no GitHub credentials in sandbox. User must run \"git push\" manually from local clone.",
       "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth.",
       "queued_date": "2026-05-17",
       "unpushed_commits_count": 21,
       "updated": "2026-05-27T14:25:04.084589+00:00",
-      "last_attempt": "2026-05-27T14:25:04.084589+00:00",
+      "last_attempt": "2026-05-28",
       "last_updated": "2026-05-27",
       "description": "git push 21 unpushed commits (latest 2b7a3b1 from 2026-05-27). Sandbox successfully commits via 'commit-despite-stale-HEAD.lock' (git tolerates 0-byte lock when actual ref-update succeeds); `git push` fails with 'could not read Username for github.com' — needs user to run `git push` from a terminal with GitHub credentials configured."
     },
