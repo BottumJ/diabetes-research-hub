@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-05-29 07:05:28
-**Previous scan:** 2026-05-28 07:05:42
-**Hub root:** `/sessions/adoring-jolly-hypatia/mnt/Diabetes_Research`
+**Scan time:** 2026-05-30 07:05:35
+**Previous scan:** 2026-05-29 07:05:28
+**Hub root:** `/sessions/modest-eager-faraday/mnt/Diabetes_Research`
 
 ---
 
@@ -9,55 +9,56 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 876 |
-| New files | 3 |
+| Total files tracked | 880 |
+| New files | 4 |
 | Modified files | 28 |
 | Removed files | 0 |
-| Unchanged files | 845 |
+| Unchanged files | 848 |
 
 ## New Files
 
-- **Analysis/Results/clinical_trials_snapshot_2026-05-29.json** (539.3 KB)
-- **Analysis/Results/monitor_report_2026-05-28.md** (13.0 KB)
-- **Analysis/Results/pubmed_recent_snapshot_2026-05-29.json** (124.9 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-05-30.json** (541.3 KB)
+- **Analysis/Results/iterate_run_report_2026-05-29.md** (1.6 KB)
+- **Analysis/Results/monitor_report_2026-05-29.md** (8.3 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-05-30.json** (127.7 KB)
 
 ## Modified Files
 
-- **Analysis/Results/agent_state.json** (377.6 KB, modified: 2026-05-28T08:11:41.778969)
-- **Analysis/Results/citation_validation.json** (189.5 KB, modified: 2026-05-28T08:10:44.416088)
-- **Analysis/Results/clinical_trials_latest.json** (539.3 KB, modified: 2026-05-29T07:04:43)
-- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-05-29T07:04:43)
-- **Analysis/Results/evidence_network.json** (97.3 KB, modified: 2026-05-28T08:10:44.432170)
-- **Analysis/Results/gap_evidence.json** (216.7 KB, modified: 2026-05-28T08:10:44.749602)
-- **Analysis/Results/hub_monitor_report.md** (3.8 KB, modified: 2026-05-28T07:05:44.302583)
-- **Analysis/Results/hub_monitor_state.json** (208.5 KB, modified: 2026-05-28T07:05:44.338081)
-- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-05-28T08:10:08.665427)
-- **Analysis/Results/paper_library/index.json** (464.8 KB, modified: 2026-05-28T08:10:44.136618)
-- **Analysis/Results/pmid_verification.json** (253.9 KB, modified: 2026-05-28T08:10:21.489432)
-- **Analysis/Results/pubmed_recent_latest.json** (124.9 KB, modified: 2026-05-29T07:05:24)
-- **Analysis/Results/pubmed_recent_summary.md** (35.1 KB, modified: 2026-05-29T07:05:24)
-- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-05-28T08:10:21.575709)
-- **Dashboards/Clinical_Trial_Dashboard.html** (443.3 KB, modified: 2026-05-28T08:10:45.719422)
-- **Dashboards/Drug_Repurposing_Islet.html** (59.9 KB, modified: 2026-05-28T08:10:45.744501)
-- **Dashboards/Extracted_Evidence.html** (133.7 KB, modified: 2026-05-28T08:10:45.809001)
-- **Dashboards/Gap_Deep_Dives.html** (218.3 KB, modified: 2026-05-28T08:10:45.887469)
-- **Dashboards/Gap_Evidence.html** (182.1 KB, modified: 2026-05-28T08:10:45.916814)
-- **Dashboards/Islet_Drug_Repurposing.html** (115.6 KB, modified: 2026-05-28T08:10:45.966583)
-- **Dashboards/Islet_Transplant_Analysis.html** (74.0 KB, modified: 2026-05-28T08:10:45.990238)
-- **Dashboards/LADA_Diagnostic_Model.html** (57.3 KB, modified: 2026-05-28T08:10:46.010111)
-- **Dashboards/PMID_Verification.html** (171.0 KB, modified: 2026-05-28T08:10:46.173331)
-- **Dashboards/Paper_Library.html** (199.9 KB, modified: 2026-05-28T08:10:46.214375)
-- **Dashboards/Research_Paths.html** (129.4 KB, modified: 2026-05-28T08:10:46.237089)
-- **Dashboards/Trial_Equity_Mapper.html** (73.5 KB, modified: 2026-05-28T08:10:46.268579)
-- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-05-28T08:10:21.600345)
-- **docs/index.html** (25.4 KB, modified: 2026-05-28T08:10:45.619306)
+- **Analysis/Results/agent_state.json** (383.4 KB, modified: 2026-05-29T08:10:14)
+- **Analysis/Results/citation_validation.json** (189.5 KB, modified: 2026-05-29T08:09:09)
+- **Analysis/Results/clinical_trials_latest.json** (541.3 KB, modified: 2026-05-30T07:04:52)
+- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-05-30T07:04:52)
+- **Analysis/Results/evidence_network.json** (97.3 KB, modified: 2026-05-29T08:09:09)
+- **Analysis/Results/gap_evidence.json** (216.7 KB, modified: 2026-05-29T08:09:10)
+- **Analysis/Results/hub_monitor_report.md** (4.6 KB, modified: 2026-05-29T07:05:30)
+- **Analysis/Results/hub_monitor_state.json** (209.5 KB, modified: 2026-05-29T07:05:30)
+- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-05-29T08:08:33)
+- **Analysis/Results/paper_library/index.json** (464.8 KB, modified: 2026-05-29T08:09:09)
+- **Analysis/Results/pmid_verification.json** (253.9 KB, modified: 2026-05-29T08:08:46)
+- **Analysis/Results/pubmed_recent_latest.json** (127.7 KB, modified: 2026-05-30T07:05:31)
+- **Analysis/Results/pubmed_recent_summary.md** (34.8 KB, modified: 2026-05-30T07:05:31)
+- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-05-29T08:08:46)
+- **Dashboards/Clinical_Trial_Dashboard.html** (443.9 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Drug_Repurposing_Islet.html** (59.9 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Extracted_Evidence.html** (133.7 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Gap_Deep_Dives.html** (218.3 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Gap_Evidence.html** (182.1 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Islet_Drug_Repurposing.html** (115.6 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Islet_Transplant_Analysis.html** (74.0 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/LADA_Diagnostic_Model.html** (57.3 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/PMID_Verification.html** (171.0 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Paper_Library.html** (200.0 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Research_Paths.html** (129.4 KB, modified: 2026-05-29T08:09:11)
+- **Dashboards/Trial_Equity_Mapper.html** (73.5 KB, modified: 2026-05-29T08:09:11)
+- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-05-29T08:08:46)
+- **docs/index.html** (25.4 KB, modified: 2026-05-29T08:09:11)
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 605 |
-| .md | 129 |
+| .json | 607 |
+| .md | 131 |
 | .html | 72 |
 | .py | 60 |
 | .txt | 4 |
@@ -71,7 +72,7 @@
 |--------|-------|
 | (root) | 16 |
 | .github/ISSUE_TEMPLATE | 4 |
-| Analysis/Results | 289 |
+| Analysis/Results | 293 |
 | Analysis/Results/paper_library | 1 |
 | Analysis/Results/paper_library/abstracts | 290 |
 | Analysis/Results/paper_library/fulltext | 108 |
@@ -84,25 +85,30 @@
 
 ## Review Flags
 
-- 655 result file(s) older than 14 days — may need refresh.
+- 657 result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-05-29 07:05:28*
+*Generated by hub_monitor.py — 2026-05-30 07:05:35*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-05-28.json → clinical_trials_snapshot_2026-05-29.json)
-- New trials: 1
+### Clinical Trials (clinical_trials_snapshot_2026-05-29.json → clinical_trials_snapshot_2026-05-30.json)
+- New trials: 3
 - Removed trials: 0
-- Status changes: 2
+- Status changes: 3
 - New results posted: 0
 
 **Status Changes:**
-- NCT06728059: RECRUITING → COMPLETED | Safety and Feasibility of a Machine-Learning Bolus Priming Added to Existing Con
-- NCT06888687: RECRUITING → ACTIVE_NOT_RECRUITING | Comparison of Dietetics Support With and Without Continuous Glucose Monitoring i
+- NCT05754281: RECRUITING → ACTIVE_NOT_RECRUITING | The PRECISION II Study: Evaluating the Accuracy of the LabPatch Glucose Sensing 
+- NCT07599982: NOT_YET_RECRUITING → RECRUITING | Safety Evaluation of MODI, an Insulin Titration Algorithm, in Adults With Diabet
+- NCT07564414: NOT_YET_RECRUITING → RECRUITING | A Research Study to Look at How Two Different Doses of CagriSema and One Dose of
 
-### PubMed (pubmed_recent_snapshot_2026-05-28.json → pubmed_recent_snapshot_2026-05-29.json)
-- New papers: 10
-- Dropped papers: 11
+### PubMed (pubmed_recent_snapshot_2026-05-29.json → pubmed_recent_snapshot_2026-05-30.json)
+- New papers: 46
+- Dropped papers: 43
 
-**Cross-Domain New Papers (1):**
-- [42206849] Early-life proteomic and microbiome features signal obesity risk across 26 years of follow-up. — Domains: Diabetes AI/ML, Diabetes Microbiome
+**Cross-Domain New Papers (5):**
+- [42208537] Capturing multi-disease states on a spectrum with machine learning and routine clinical data. — Domains: Diabetes AI/ML, Diabetes Gene Therapy
+- [42208844] Comprehensive proteomic meta-analysis identifies novel proteomics alterations in proliferative diabe — Domains: Diabetes Biomarker, Diabetes Complications New
+- [42208956] Beyond weight loss: multisystem benefits of obesity medications. — Domains: T2D GLP-1 New, Key Therapy: retatrutide
+- [42209585] Thrombin is increased in diabetic retinal pathology in the STZ mice model, and its attenuation by a  — Domains: Diabetes Biomarker, Diabetes Complications New
+- [42211453] Mapping the gut microbiota-diabetic peripheral neuropathy research landscape: a bibliometric analysi — Domains: Diabetes Microbiome, Diabetes Multi-Omics
