@@ -1,7 +1,7 @@
 # PubMed Recent Publications Report
-**Generated:** 2026-05-30
+**Generated:** 2026-05-31
 **Lookback period:** 30 days
-**Unique papers found:** 164
+**Unique papers found:** 165
 
 ---
 
@@ -9,18 +9,18 @@
 
 | Domain | Total Papers | Trend Signal |
 |--------|-------------|--------------|
-| Diabetes AI/ML | 244 | HIGH ACTIVITY |
-| Diabetes Biomarker | 179 | HIGH ACTIVITY |
-| Diabetes Microbiome | 157 | HIGH ACTIVITY |
-| T2D GLP-1 New | 140 | HIGH ACTIVITY |
-| T2D Remission | 79 | HIGH ACTIVITY |
-| Diabetes Health Equity | 73 | HIGH ACTIVITY |
-| Diabetes Multi-Omics | 66 | HIGH ACTIVITY |
-| Diabetes Gene Therapy | 45 | ACTIVE |
-| Diabetes Complications New | 45 | ACTIVE |
-| Closed Loop AP | 25 | ACTIVE |
-| T1D Stem Cell Cure | 23 | ACTIVE |
-| T1D Immunotherapy | 18 | ACTIVE |
+| Diabetes AI/ML | 237 | HIGH ACTIVITY |
+| Diabetes Biomarker | 175 | HIGH ACTIVITY |
+| Diabetes Microbiome | 153 | HIGH ACTIVITY |
+| T2D GLP-1 New | 138 | HIGH ACTIVITY |
+| T2D Remission | 76 | HIGH ACTIVITY |
+| Diabetes Health Equity | 70 | HIGH ACTIVITY |
+| Diabetes Multi-Omics | 63 | HIGH ACTIVITY |
+| Diabetes Gene Therapy | 44 | ACTIVE |
+| Diabetes Complications New | 44 | ACTIVE |
+| Closed Loop AP | 24 | ACTIVE |
+| T1D Stem Cell Cure | 22 | ACTIVE |
+| T1D Immunotherapy | 17 | ACTIVE |
 | Diabetes Epigenetics | 12 | ACTIVE |
 | LADA New Research | 8 | LOW |
 | Diabetes Drug Repurpose | 7 | LOW |
@@ -66,13 +66,13 @@
   Diabetes (2026-May-18) | Koprivica I; Jonić N; Dimitrijević M
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42149544/) | [DOI](https://doi.org/10.2337/db25-0742)
 
-- **Adapting CAR-T and CAR-Treg cancer therapies for autoimmunity: innovations and challenges.**
-  Frontiers in immunology (2026) | Lovelace MD; Barrett K; Broome ST
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42148104/) | [DOI](https://doi.org/10.3389/fimmu.2026.1737202)
-
 - **Unlocking beta cell health: The clinical potential of extracellular vesicles in type 1 diabetes.**
   Clinical and translational medicine (2026-May) | Jayabalan N; Carrion F; Joshi K
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42145066/) | [DOI](https://doi.org/10.1002/ctm2.70700)
+
+- **The evolution of CAR therapies across oncology and autoimmunity: mechanistic insights and therapeutic innovations.**
+  International immunopharmacology (2026-Aug-01) | Abd El-Fattah EE; Hamdy R; Soliman SSM
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42143506/) | [DOI](https://doi.org/10.1016/j.intimp.2026.116867)
 
 ### T2D GLP-1 New
 
@@ -120,6 +120,14 @@
 
 ### Diabetes AI/ML
 
+- **Application of construction and validation of logistic regression model in risk prediction of non-proliferative diabetic retinopathy in type 2 diabetes mellitus.**
+  Diabetic medicine : a journal of the British Diabetic Association (2026-May-29) | Zhang J; Cao X; Yu X
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42216430/) | [DOI](https://doi.org/10.1111/dme.70374)
+
+- **Association between the development of sepsis and the BAR index in patients with acute pancreatitis: A retrospective investigation based on MIMIC-IV database.**
+  Medicine (2026-May-29) | Wang J; Zheng F; Zhu L
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42216361/) | [DOI](https://doi.org/10.1097/MD.0000000000049043)
+
 - **A nomogram for estimating prevalent gallstone risk in patients with type 2 diabetes: development and validation in a multicenter cohort.**
   BMC endocrine disorders (2026-May-29) | Hong HS; Zhu DQ; Huang Y
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42215954/) | [DOI](https://doi.org/10.1186/s12902-026-02335-6)
@@ -132,15 +140,11 @@
   Med (New York, N.Y.) (2026-May-28) | Forrest IS; Petrazzini BO; Chen R
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42208537/) | [DOI](https://doi.org/10.1016/j.medj.2026.101150)
 
-- **Early-life proteomic and microbiome features signal obesity risk across 26 years of follow-up.**
-  mSystems (2026-May-28) | Ahrens AP; Dias R; Hyötyläinen T
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42206849/) | [DOI](https://doi.org/10.1128/msystems.01424-25)
-
-- **AI driven Hybrid CNN transformer model for early detection and severity assessment of diabetic retinopathy.**
-  Scientific reports (2026-May-28) | Sekar P; S KSR
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42204233/) | [DOI](https://doi.org/10.1038/s41598-026-50608-w)
-
 ### Diabetes Biomarker
+
+- **Association of plasma glial fibrillary acidic protein and neurofilament light chain with retinal cell layer thickness: A cross-sectional study of ophthalmic surgical patients.**
+  Journal of Alzheimer's disease : JAD (2026-May-30) | Prasad M; Pulukuri S; Sampani K
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42216665/) | [DOI](https://doi.org/10.1177/13872877261452676)
 
 - **Predictive epigenetic biomarkers of successful weight-loss intervention in pre-pubertal children with obesity.**
   Clinical epigenetics (2026-May-29) | Palmieri F; Castellano-Escuder P; Parra-Vargas M
@@ -157,10 +161,6 @@
 - **Detection of mitochondrial bioenergetics using a novel bimodal 3D microelectrode array (MEA)-based biosensor.**
   Microsystems & nanoengineering (2026-May-28) | James RK; Hostios TC; Chang J
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42209464/) | [DOI](https://doi.org/10.1038/s41378-026-01275-4)
-
-- **Comprehensive proteomic meta-analysis identifies novel proteomics alterations in proliferative diabetic retinopathy.**
-  Experimental eye research (2026-May-27) | Lin P; Zhang N; Zhang W
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42208844/) | [DOI](https://doi.org/10.1016/j.exer.2026.111075)
 
 ### Diabetes Microbiome
 
@@ -378,7 +378,7 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 | Therapy | Papers (30d) | Status |
 |---------|-------------|--------|
-| dapagliflozin | 45 | ACTIVE |
+| dapagliflozin | 43 | ACTIVE |
 | retatrutide | 9 | ACTIVE |
 | CagriSema | 5 | LOW |
 | teplizumab | 5 | LOW |
@@ -499,10 +499,6 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: Key Therapy: orforglipron, Key Therapy: retatrutide, Key Therapy: CagriSema
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42198313/)
 
-- **Adapting CAR-T and CAR-Treg cancer therapies for autoimmunity: innovations and challenges.**
-  Domains: T1D Stem Cell Cure, T1D Immunotherapy
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42148104/)
-
 - **US Patterns in Clinical Islet Autoantibody Ordering and Results Show Key Differences After Teplizumab Regulatory Approval.**
   Domains: T1D Immunotherapy, Key Therapy: teplizumab
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42138126/)
@@ -548,4 +544,4 @@ These papers span multiple research domains -- potentially high-value for synthe
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42142983/)
 
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-05-30*
+*Generated by baseline_pubmed_alerts.py -- 2026-05-31*
