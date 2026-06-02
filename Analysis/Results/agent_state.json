@@ -5135,14 +5135,14 @@
     {
       "priority": 1,
       "type": "manual_cleanup_required",
-      "target": "git push 25 unpushed commits (latest 4cb7d84 from 2026-05-30). Sandbox commits succeed via rename trick on .git/index.lock + HEAD.lock (Windows mount blocks unlink), but `git push` fails with `could not read Username for 'https://github.com': No such device or address` because the sandbox has no GitHub credentials. Manual PowerShell push required: `cd C:\\Users\\justi\\OneDrive\\Diabetes_Research; git push`.",
+      "target": "git push 30 unpushed commits (latest f63c88b from 2026-06-02)",
       "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 \u2014 daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth.",
       "queued_date": "2026-05-17",
       "unpushed_commits_count": 28,
       "updated": "2026-05-31",
       "last_attempt": "2026-05-29",
       "last_updated": "2026-05-29",
-      "description": "git push 28 unpushed commits (latest feff013 from 2026-05-31). Sandbox commits succeed via rename trick on .git/index.lock + HEAD.lock; push fails with \"could not read Username for https://github.com\" (no GitHub credentials in sandbox). Manual PowerShell push required: cd C:\\Users\\justi\\OneDrive\\Diabetes_Research; git push."
+      "description": "git push 30 unpushed commits (latest f63c88b from 2026-06-02). Sandbox commits succeed via rename trick on .git/index.lock and HEAD.lock; push fails \u2014 no GitHub auth in sandbox. User must run: git push from local terminal."
     },
     {
       "priority": 4,
