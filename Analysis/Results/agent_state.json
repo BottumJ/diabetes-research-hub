@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-06-06",
-  "last_run": "2026-06-06",
+  "last_updated": "2026-06-07",
+  "last_run": "2026-06-07",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -4730,9 +4730,21 @@
           "date": "2026-05-29",
           "new_evidence_found": false,
           "notes": "Monthly re-audit (early; original due 2026-06-02). Web search \"LADA gene therapy CRISPR 2026 clinical trial\" returned only T1D/general-diabetes CRISPR programs (RNLS β-cell protection in vivo screen; VCTX21X programs), LADA-specific gene-therapy literature still limited to β-cell-protection conceptual reviews (Front Endocrinol 2022 PMC9389314) and GAD-alum/DiaPep277 immunotherapy trials. Zero LADA-specific gene-therapy trials registered. Decision: retain SILVER tier; no promotion or demotion warranted. Next audit due 2026-06-29."
+        },
+        {
+          "date": "2026-06-07",
+          "new_evidence_found": false,
+          "notes": "Queue-triggered interim check (8 days after 2026-05-29 monthly audit; next monthly still due 2026-06-29). Search 'LADA gene therapy CRISPR clinical trial 2026' surfaced IGI 2026 CRISPR clinical-trials landscape (no LADA program), the Front Endocrinol 2022 LADA beta-cell-protection review, and the ongoing GAD-Alum + oral vitamin D intra-lymphatic LADA pilot (PMC9339700) - an immunotherapy, not gene therapy. CRISPR diabetes work remains T1D-framed (RNLS in-vivo screen; donor-stem-cell immune-gene edits). Noted: INS, CTLA4, SH2B3 implicated in LADA pathogenesis = potential future gene-therapy target rationale, but no trial. Decision: retain SILVER; not a promotion candidate. No demotion. Next monthly audit unchanged: 2026-06-29.",
+          "external_sources": [
+            "innovativegenomics.org/news/crispr-clinical-trials-2026 - 2026 CRISPR clinical-trial landscape (no LADA program)",
+            "Front Endocrinol 2022 (10.3389/fendo.2022.959011) - LADA beta-cell protection & therapy review",
+            "PMC9339700 - LADA pilot: intra-lymphatic GAD-Alum + oral vitamin D (immunotherapy)"
+          ],
+          "tier_after_audit": "SILVER",
+          "promotion_candidate": false
         }
       ],
-      "last_audit_date": "2026-05-29",
+      "last_audit_date": "2026-06-07",
       "last_audit_finding": "no_new_evidence_retain_tier"
     },
     "2": {
@@ -5264,6 +5276,11 @@
       "target": "Abata ABA-201 CAR-Treg T1D first-in-human (rescheduled, next 2026-07-02)"
     },
     {
+      "type": "validate_path",
+      "priority": 4,
+      "target": "Continue path validation - 5 validated 2026-06-07 (dapa->inflammation, empa->inflammation, NF_kB->inflammation, oxidative_stress->cardiovascular, dorzagliatin->T2D). Next unvalidated candidates from research_paths.json: oxidative_stress->inflammation, NLRP3->cardiovascular, metformin->inflammation, GLP1->cardiovascular, SGLT2i->nephropathy. Pick 5 next run."
+    },
+    {
       "priority": 5,
       "type": "audit_gap",
       "target": "Gap #10 next monthly audit — due 2026-07-07; promotion_candidate; watch for setting-segmented SR/MA.",
@@ -5274,15 +5291,6 @@
       "type": "audit_gap",
       "target": "Gap #8 next monthly audit — due 2026-07-07; watch for LADA-specific GAD-Alum+VitD or other RCT readout.",
       "queued_date": "2026-05-30"
-    },
-    {
-      "priority": 5,
-      "type": "audit_gap",
-      "target": "Gap 1",
-      "added": "2026-05-02",
-      "next_due": "2026-06-29",
-      "last_audited": "2026-05-29",
-      "notes": "Audited 2026-05-29 (early). No new LADA-specific gene therapy. Retained SILVER. Next due 2026-06-29."
     },
     {
       "type": "check_combination",
@@ -5358,14 +5366,6 @@
       "next_due": "2026-07-02"
     },
     {
-      "priority": 4,
-      "type": "validate_path",
-      "target": "Continue path validation — 6 validated 2026-06-06 (HCQ/metformin/dapa/pio->T2D, NLRP3->nephropathy, verapamil->T1D). Next unvalidated batch: dapagliflozin->inflammation (dpc7), NF_kB->inflammation (dpc5), empagliflozin->inflammation (dpc3), oxidative_stress->cardiovascular (dpc3), dorzagliatin->T2D (dpc2).",
-      "added": "2026-06-03",
-      "notes": "2026-06-05: validated 4 more (NLRP3->inflammation, dapagliflozin->nephropathy, verapamil->beta_cell, oxidative_stress->inflammation). ~37 paths still unvalidated. Next batch: hydroxychloroquine->T2D, metformin->T2D, NF_kB->inflammation, dorzagliatin->T2D.",
-      "last_progress": "2026-06-05"
-    },
-    {
       "priority": 5,
       "type": "audit_gap",
       "target": "Gap #15 (BRONZE, audited 2026-06-03) — next monthly audit due 2026-07-03",
@@ -5378,6 +5378,11 @@
       "target": "Gap #9 (EXPLORATORY, audited 2026-06-03) — next monthly audit due 2026-07-03; watch for any registered dorzagliatin-LADA trial",
       "added": "2026-06-03",
       "next_due": "2026-07-03"
+    },
+    {
+      "type": "audit_gap",
+      "priority": 6,
+      "target": "Gap 1 (Gene Therapy for LADA, SILVER) - next monthly audit due 2026-06-29 (interim-checked 2026-06-07, no change)."
     }
   ],
   "run_history": [
@@ -6363,6 +6368,10 @@
     {
       "date": "2026-06-06",
       "summary": "2026-06-06 (Saturday): (a) Cleared recurring fuse-mount git lock (HEAD.lock + index.lock could not be unlinked via rm; moved aside with mv) and committed working-tree snapshot locally (commit bca4a0e). Push STILL blocked — sandbox HTTPS remote has no credential helper (git push --dry-run: 'could not read Username for https://github.com'). 35 commits remain unpushed; manual user push required. (b) Validated 6 previously-unvalidated research paths via external web evidence: hydroxychloroquine->T2D VALIDATED (SR/MA 11 RCTs n=2723, HbA1c -0.19% p=0.03, PMC9196294; quality caveat ~54% poor-Jadad); metformin->T2D VALIDATED (UKPDS 34 PMID 9742977, any-endpoint -32%); dapagliflozin->T2D VALIDATED (monotherapy MA 6 RCTs n=2033, HbA1c -0.60%, PMID 31348290); pioglitazone->T2D VALIDATED (add-on-insulin MA n=3092 HbA1c -0.58%, PMC2701605); NLRP3_inflammasome->nephropathy VALIDATED-MECHANISTIC (mtROS-TXNIP/NLRP3 podocyte+tubular injury; PMC9218738/PMC12395217; NOTE no NLRP3i RCT in DN yet); verapamil->T1D PARTIALLY_VALIDATED (CLVer pediatric C-peptide +30% positive, but Ver-A-T1D adult missed significance marginally at EASD 2025, pub pending). Concretely-rated paths 14->20. (c) Credibility sweep CLEAN: no PMIDs >=42M in scripts; no 'zero SAE/rejection'; 'achieves' hits legit (TTP399 tissue selectivity, LADA cost-eff model, ML macro-AUC); 'curative' only in verify_before_deploy.py linter pattern. (d) Pipeline rebuild 41/41 [OK]. (e) All 285 papers remain vetted (272 VETTED/13 FLAGGED) — no vetting backlog. Not Monday -> weekly new-paper PubMed scan skipped."
+    },
+    {
+      "date": "2026-06-07",
+      "summary": "2026-06-07 (Sunday): (a) Credibility sweep CLEAN - no fabricated PMIDs (>42M), no 'zero SAEs/rejection', cure/achieves hits all legitimate (category labels, search-query strings, verify-script patterns, caveated BRONZE preclinical). (b) Validated 5 research paths via external evidence, all VALIDATED: dapagliflozin->inflammation (Cardiovasc Diabetol 2024 PMC11161924; Nat Commun 2020 PMID 32358544; Birnbaum 2017), empagliflozin->inflammation (PMID 32358544, 38172306, 41680826), NF_kB->inflammation (Front Pharmacol 2017 PMC5681994; Cell Metab 2011), oxidative_stress->cardiovascular (Circ Res 2010; Antioxidants 2025 PMC11759781), dorzagliatin->T2D (Nat Med 2022 DAWN; SEED; review PMID 38783768). validated_paths now 36. (c) Gap 1 (Gene Therapy for LADA, SILVER) interim audit - no new evidence, still zero LADA-specific gene-therapy trials; retain SILVER; next monthly 2026-06-29. (d) run_quality_improvements.py: all 41 [OK]. Not Monday so weekly PubMed sweep skipped. git push still BLOCKED (no sandbox GitHub auth - user action)."
     }
   ],
   "topic_checks": {
@@ -7081,6 +7090,81 @@
         "Front Immunol 2025 PMC12675237",
         "Front Pharmacol 2022 998574"
       ]
+    },
+    "dapagliflozin_to_inflammation": {
+      "path_name": "dapagliflozin -> inflammation",
+      "rating": "VALIDATED",
+      "validated_date": "2026-06-07",
+      "preclinical_confidence": "HIGH",
+      "clinical_confidence": "MEDIUM",
+      "mechanism": "Dapagliflozin lowers NLRP3/ASC/caspase-1, IL-1beta, IL-18, IL-6 and TNF-alpha across diabetic cardiomyopathy, nephropathy and podocyte models; clinically reduces systemic inflammatory markers in T2D. Mechanistic link via raised ketones (BHB) inhibiting NLRP3 plus reduced glucotoxicity.",
+      "external_pmids": {
+        "32358544": "Kim et al. Nat Commun 2020 - SGLT2 inhibition modulates NLRP3 inflammasome via ketones and insulin (T2D + CV disease, 30-day macrophage study).",
+        "38172306": "empagliflozin/SGLT2i NLRP3 (vascular calcification, supportive class evidence)."
+      },
+      "external_refs": {
+        "PMC11161924": "Sardu/Marfella et al. Cardiovasc Diabetol 2024 - Dapagliflozin reduces systemic inflammation in T2D without known HF (clinical).",
+        "DOI:10.1007/s10557-017-6725-2": "Birnbaum et al. Cardiovasc Drugs Ther 2017 - dapagliflozin (+saxagliptin) reduces NLRP3/ASC, attenuates diabetic cardiomyopathy in mice.",
+        "PMC10539996": "Dapagliflozin alleviates renal podocyte pyroptosis via HO-1/NLRP3 axis."
+      },
+      "notes": "Direction consistent across preclinical + one clinical inflammation-marker study. Caveat: most NLRP3-specific data are preclinical; human data are systemic-marker level, not tissue NLRP3."
+    },
+    "empagliflozin_to_inflammation": {
+      "path_name": "empagliflozin -> inflammation",
+      "rating": "VALIDATED",
+      "validated_date": "2026-06-07",
+      "preclinical_confidence": "HIGH",
+      "clinical_confidence": "MEDIUM",
+      "mechanism": "Empagliflozin reduces NLRP3 inflammasome activation and IL-1beta secretion in macrophages from T2D patients (greater IL-1beta reduction than sulfonylurea at matched glucose lowering), associated with raised serum BHB and lowered insulin; preclinically inhibits Bhlhe40-dependent NLRP3 in vascular calcification.",
+      "external_pmids": {
+        "32358544": "Kim et al. Nat Commun 2020 - empagliflozin 30-day, T2D high CV risk; macrophage NLRP3/IL-1beta down vs sulfonylurea; ketone/insulin mechanism.",
+        "38172306": "Acta Pharmacol Sin 2024 - empagliflozin ameliorates vascular calcification via inhibiting Bhlhe40-dependent NLRP3 (diabetic mice).",
+        "41680826": "Cardiovasc Diabetol 2025 - timing-dependent anti-inflammatory effects of empagliflozin in monocyte-derived macrophages, post-MI T2D (n=66 RCT)."
+      },
+      "notes": "Strong translational + clinical macrophage evidence; EMPA-REG CV benefit consistent with anti-inflammatory contribution but not proof of mechanism."
+    },
+    "NF_kB_to_inflammation": {
+      "path_name": "NF_kB -> inflammation",
+      "rating": "VALIDATED",
+      "validated_date": "2026-06-07",
+      "preclinical_confidence": "HIGH",
+      "clinical_confidence": "HIGH",
+      "mechanism": "Canonical: NF-kB is the master transcriptional driver of pro-inflammatory genes (TNF-alpha, IL-1beta, IL-6, MCP-1, ICAM-1) and primes NLRP3/pro-IL-1beta transcription. In diabetes it links cytokine/TLR signaling to insulin resistance and vascular complications.",
+      "external_refs": {
+        "PMC5681994": "Suryavanshi & Kulkarni, Front Pharmacol 2017 - NF-kB: a potential target in vascular complications of diabetes (review).",
+        "DOI:10.1016/j.cmet.2010.12.008": "Baker, Hayden & Ghosh, Cell Metab 2011 - NF-kB, Inflammation, and Metabolic Disease (review)."
+      },
+      "notes": "Foundational, textbook-level relationship; rated VALIDATED with high confidence. This path underpins the NLRP3-priming step in the SGLT2i paths."
+    },
+    "oxidative_stress_to_cardiovascular": {
+      "path_name": "oxidative_stress -> cardiovascular",
+      "rating": "VALIDATED",
+      "validated_date": "2026-06-07",
+      "preclinical_confidence": "HIGH",
+      "clinical_confidence": "HIGH",
+      "mechanism": "Hyperglycemia drives ROS via AGE formation, PKC activation, polyol pathway and mitochondrial dysfunction; ROS cause endothelial dysfunction, vascular inflammation and myocardial injury - a central mechanism linking diabetes to CV complications (MI, stroke, HF).",
+      "external_refs": {
+        "DOI:10.1161/CIRCRESAHA.110.223545": "Giacco & Brownlee, Circ Res 2010 - Oxidative Stress and Diabetic Complications (foundational review).",
+        "PMC11759781": "Antioxidants (MDPI) 2025 - Oxidative Stress and CV Complications in T2D: pathophysiology to lifestyle.",
+        "PMC8076504": "Front Cardiovasc Med 2021 - systematic mechanisms of oxidative-stress-related conditions incl. diabetes & CVD."
+      },
+      "notes": "Well-established pathophysiology. Caveat: antioxidant-supplementation RCTs have largely failed to show CV outcome benefit, so the mechanism is validated but does not imply broad antioxidant therapy efficacy."
+    },
+    "dorzagliatin_to_T2D": {
+      "path_name": "dorzagliatin -> T2D",
+      "rating": "VALIDATED",
+      "validated_date": "2026-06-07",
+      "preclinical_confidence": "HIGH",
+      "clinical_confidence": "HIGH",
+      "mechanism": "Dorzagliatin, a dual-acting glucokinase activator, increases glucose-stimulated insulin secretion and hepatic glucose sensing, lowering HbA1c in T2D. Phase 3 SEED (monotherapy, HbA1c -1.07% vs -0.50% placebo) and DAWN (add-on to metformin, HbA1c ~ -1.02%) confirm efficacy with favorable tolerability.",
+      "external_pmids": {
+        "38783768": "Jiang et al. J Diabetes 2024 - review of dorzagliatin development for T2D."
+      },
+      "external_refs": {
+        "DOI:10.1038/s41591-022-01803-5": "Yang et al. Nat Med 2022 - DAWN: dorzagliatin add-on to metformin, randomized double-blind placebo-controlled phase 3.",
+        "DOI:10.2337/db22-0708": "Diabetes (ADA) 2023 - dorzagliatin dual-acting GKA increases insulin secretion in GCK-MODY and recent-onset T2D."
+      },
+      "notes": "Approved in China (2022). Clinical efficacy on HbA1c well-supported by two phase-3 RCTs. Durability/CV-outcome data still limited."
     }
   },
   "audit_notes": [
@@ -7201,14 +7285,13 @@
     "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path."
   },
   "last_path_validation_batch": {
-    "date": "2026-06-06",
+    "date": "2026-06-07",
     "paths": [
-      "hydroxychloroquine -> T2D",
-      "metformin -> T2D",
-      "dapagliflozin -> T2D",
-      "verapamil -> T1D",
-      "NLRP3_inflammasome -> nephropathy",
-      "pioglitazone -> T2D"
+      "dapagliflozin -> inflammation",
+      "empagliflozin -> inflammation",
+      "NF_kB -> inflammation",
+      "oxidative_stress -> cardiovascular",
+      "dorzagliatin -> T2D"
     ]
   }
 }
