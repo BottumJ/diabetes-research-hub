@@ -357,12 +357,89 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html" class="drh-current">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -410,16 +487,16 @@
 
         <!-- Navigation -->
         <div class="nav-tabs">
-            <button class="tab-button active" onclick="switchTab(event, 'overview')">Overview</button>
-            <button class="tab-button" onclick="switchTab(event, 'deepdive')">Deep Dive</button>
+            <button role="tab" class="tab-button active" onclick="switchTab(event, 'overview')">Overview</button>
+            <button role="tab" class="tab-button" onclick="switchTab(event, 'deepdive')">Deep Dive</button>
         </div>
 
         <!-- Overview Tab -->
         <div id="overview" class="tab-content active">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search gaps by domain or title..." onkeyup="filterTable()">
+                <input type="text" id="searchInput" placeholder="Search gaps by domain or title..." aria-label="Search gaps by domain or title..." onkeyup="filterTable()">
             </div>
-            <table id="gapTable">
+            <table role="table" id="gapTable">
                 <thead>
                     <tr>
                         <th style="width: 4%;">Rank</th>
@@ -612,7 +689,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Stem cell-derived islets are in Phase 3 trials (Vertex). These require immunosuppression, specialized centers, and cost potentially >$500K/patient (PMID:21323736). Health equity research in diabetes focuses on access to insulin, CGM, pumps — but not yet on emerging investigational cell-derived therapies (which still require immunosuppression). Disparities in diabetes outcomes by race, income, geography are well-documented.</div>
+                        <div class="section-content">Stem cell-derived islets are in Phase 3 trials (Vertex). These require immunosuppression, specialized centers, and cost potentially >$500K/patient (<a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a>). Health equity research in diabetes focuses on access to insulin, CGM, pumps — but not yet on emerging investigational cell-derived therapies (which still require immunosuppression). Disparities in diabetes outcomes by race, income, geography are well-documented.</div>
                     </div>
 
                     <div class="section">
@@ -798,7 +875,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (PMID:41468096 (PMID requires verification), PMID:41567805 (PMID requires verification)). Oncology has begun addressing CAR-T access disparities (geographic, racial, insurance). Zero publications apply this thinking to diabetes immunotherapy.</div>
+                        <div class="section-content">CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (<a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> (PMID requires verification), <a href="https://pubmed.ncbi.nlm.nih.gov/41567805/" target="_blank" rel="noopener" title="View on PubMed">PMID:41567805</a> (PMID requires verification)). Oncology has begun addressing CAR-T access disparities (geographic, racial, insurance). Zero publications apply this thinking to diabetes immunotherapy.</div>
                     </div>
 
                     <div class="section">
@@ -985,7 +1062,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Gene therapy for T1D focuses on immune tolerance (CAR-Treg approaches, PMID:41468096 (PMID requires verification)). LADA shares autoimmune etiology but with slower beta cell destruction, potentially offering a wider therapeutic window. LADA affects ~10% of adults diagnosed as T2D (PMID:40737658). No gene therapy trials exist for LADA specifically.</div>
+                        <div class="section-content">Gene therapy for T1D focuses on immune tolerance (CAR-Treg approaches, <a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> (PMID requires verification)). LADA shares autoimmune etiology but with slower beta cell destruction, potentially offering a wider therapeutic window. LADA affects ~10% of adults diagnosed as T2D (<a href="https://pubmed.ncbi.nlm.nih.gov/40737658/" target="_blank" rel="noopener" title="View on PubMed">PMID:40737658</a>). No gene therapy trials exist for LADA specifically.</div>
                     </div>
 
                     <div class="section">
@@ -1073,7 +1150,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Current islet transplant immunosuppression has significant side effects (nephrotoxicity, infection risk). Drug repurposing uses computational methods to find new indications for approved drugs. Alpha-1-antitrypsin has been explored for islet protection (PMID:27821710). No systematic computational repurposing screen has been applied to islet transplant specifically.</div>
+                        <div class="section-content">Current islet transplant immunosuppression has significant side effects (nephrotoxicity, infection risk). Drug repurposing uses computational methods to find new indications for approved drugs. Alpha-1-antitrypsin has been explored for islet protection (<a href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank" rel="noopener" title="View on PubMed">PMID:27821710</a>). No systematic computational repurposing screen has been applied to islet transplant specifically.</div>
                     </div>
 
                     <div class="section">
@@ -1165,7 +1242,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Diabetic neuropathy affects ~50% of diabetes patients. Emerging evidence shows neuroinflammation is a driver, not just hyperglycemic damage. CAR-Treg cells are being developed for T1D autoimmunity (PMID:41468096 (PMID requires verification)). One study found Treg dysfunction correlates with diabetic complications in T1D women (PubMed verified). No work bridges Treg therapy specifically to neuropathy.</div>
+                        <div class="section-content">Diabetic neuropathy affects ~50% of diabetes patients. Emerging evidence shows neuroinflammation is a driver, not just hyperglycemic damage. CAR-Treg cells are being developed for T1D autoimmunity (<a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> (PMID requires verification)). One study found Treg dysfunction correlates with diabetic complications in T1D women (PubMed verified). No work bridges Treg therapy specifically to neuropathy.</div>
                     </div>
 
                     <div class="section">
@@ -1349,7 +1426,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">LADA is frequently misdiagnosed as T2D (prevalence ~10% of T2D diagnoses, PMID:40737658). Standard T2D drugs (metformin, sulfonylureas) do not address the autoimmune component. Some drugs have dual glycemic/immune effects (e.g., some GLP-1 agonists show anti-inflammatory properties). No systematic repurposing effort targets LADA specifically.</div>
+                        <div class="section-content">LADA is frequently misdiagnosed as T2D (prevalence ~10% of T2D diagnoses, <a href="https://pubmed.ncbi.nlm.nih.gov/40737658/" target="_blank" rel="noopener" title="View on PubMed">PMID:40737658</a>). Standard T2D drugs (metformin, sulfonylureas) do not address the autoimmune component. Some drugs have dual glycemic/immune effects (e.g., some GLP-1 agonists show anti-inflammatory properties). No systematic repurposing effort targets LADA specifically.</div>
                     </div>
 
                     <div class="section">
@@ -1390,7 +1467,7 @@
                             <div style="margin-bottom: 1rem;">
                                 <strong style="display: block; margin-bottom: 0.5rem;">Confirming Sources:</strong>
                                 <ul style="margin: 0; padding-left: 1.5rem;">
-                                    <li style="margin-bottom: 0.25rem;">Buzzetti et al. Diabetes 2020 (PMID:32847960) — International Expert Panel LADA consensus</li>
+                                    <li style="margin-bottom: 0.25rem;">Buzzetti et al. Diabetes 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a>) — International Expert Panel LADA consensus</li>
                                     <li style="margin-bottom: 0.25rem;">PMC (2023) network meta-analysis</li>
                                     <li style="margin-bottom: 0.25rem;">Frontiers (2022) immunotherapy review</li>
                                 </ul>
@@ -1441,7 +1518,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">LADA prevalence is ~10% of T2D diagnoses in Sudan (PMID:40737658). GAD antibody testing required for diagnosis is not standard care globally. Misdiagnosed LADA patients receive suboptimal T2D treatment. Racial/ethnic variation in LADA prevalence and presentation is poorly characterized. No equity-focused analysis of LADA diagnostic access exists.</div>
+                        <div class="section-content">LADA prevalence is ~10% of T2D diagnoses in Sudan (<a href="https://pubmed.ncbi.nlm.nih.gov/40737658/" target="_blank" rel="noopener" title="View on PubMed">PMID:40737658</a>). GAD antibody testing required for diagnosis is not standard care globally. Misdiagnosed LADA patients receive suboptimal T2D treatment. Racial/ethnic variation in LADA prevalence and presentation is poorly characterized. No equity-focused analysis of LADA diagnostic access exists.</div>
                     </div>
 
                     <div class="section">
@@ -1533,7 +1610,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Drug repurposing reuses approved drugs (often generic, low-cost). Health equity in diabetes focuses on insulin affordability, access to newer drugs. The intersection — repurposing as an equity strategy — is unstudied. Generic metformin costs ~$4/month; novel GLP-1 agonists cost ~$1,000/month (PMID:34763823). Repurposing could bridge this gap.</div>
+                        <div class="section-content">Drug repurposing reuses approved drugs (often generic, low-cost). Health equity in diabetes focuses on insulin affordability, access to newer drugs. The intersection — repurposing as an equity strategy — is unstudied. Generic metformin costs ~$4/month; novel GLP-1 agonists cost ~$1,000/month (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>). Repurposing could bridge this gap.</div>
                     </div>
 
                     <div class="section">
@@ -1974,7 +2051,7 @@
             <div class="footer-section">
                 <h3>Key Validation Sources</h3>
                 <ul style="margin: 0; padding-left: 1.5rem;">
-                    <li>ADA Standards of Care 2025 (PMID:39651984)</li>
+                    <li>ADA Standards of Care 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/39651984/" target="_blank" rel="noopener" title="View on PubMed">PMID:39651984</a>)</li>
                     <li>Helmsley Charitable Trust T1D Programs (helmsleytrust.org)</li>
                     <li>JDRF/Breakthrough T1D Research Strategy (jdrf.org)</li>
                     <li>National Academies: Confronting Inequities in Organ Transplantation</li>

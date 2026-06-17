@@ -436,14 +436,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html" class="drh-current">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -468,14 +544,14 @@
         <p>GKA clinical development is active and fast-moving; pipeline status may be outdated within months. Repurposing potential is scored computationally from mechanism analysis, not clinical evidence. Hypoglycemia risk — the main GKA safety concern — is not modeled at the individual patient level.</p>
     </div>
 
-    <div class="tabs">
-        <button class="tab-button active" data-tab="tab1">What is Glucokinase?</button>
-        <button class="tab-button" data-tab="tab2">Drug Landscape</button>
-        <button class="tab-button" data-tab="tab3">Why They Failed</button>
-        <button class="tab-button" data-tab="tab4">Repurposing</button>
-        <button class="tab-button" data-tab="tab5">Dorzagliatin</button>
-        <button class="tab-button" data-tab="tab6">Pricing</button>
-        <button class="tab-button" data-tab="tab7">References</button>
+    <div class="tabs" role="tablist">
+        <button role="tab" class="tab-button active" data-tab="tab1">What is Glucokinase?</button>
+        <button role="tab" class="tab-button" data-tab="tab2">Drug Landscape</button>
+        <button role="tab" class="tab-button" data-tab="tab3">Why They Failed</button>
+        <button role="tab" class="tab-button" data-tab="tab4">Repurposing</button>
+        <button role="tab" class="tab-button" data-tab="tab5">Dorzagliatin</button>
+        <button role="tab" class="tab-button" data-tab="tab6">Pricing</button>
+        <button role="tab" class="tab-button" data-tab="tab7">References</button>
     </div>
 
     <div id="tab1" class="content active">
@@ -494,7 +570,7 @@
             <li>Causes membrane depolarization and calcium influx</li>
             <li>Initiates the insulin secretion cascade</li>
         </ul>
-        <p class="source">Source: PMID:30949058 (Matschinsky, Glucokinase as glucose sensor)</p>
+        <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank" rel="noopener" title="View on PubMed">PMID:30949058</a> (Matschinsky, Glucokinase as glucose sensor)</p>
 
         <h3>Role in Liver</h3>
         <p>In hepatocytes, glucokinase drives:</p>
@@ -546,7 +622,7 @@
 
         <p>Over two decades, pharmaceutical companies have invested heavily in glucokinase activators. Below is a comprehensive map of the major programs:</p>
 
-        <table>
+        <table role="table">
             <thead>
                 <tr>
                     <th>Drug Name</th>
@@ -739,7 +815,7 @@
                     <li>Eliminates hypoglycemia risk from pancreatic overstimulation</li>
                     <li>Efficacy is more modest (HbA1c -0.21% as T1D adjunctive) but safer</li>
                 </ul>
-                <p class="source">Source: PMID:33622669 (SimpliciT1 trial)</p>
+                <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" rel="noopener" title="View on PubMed">PMID:33622669</a> (SimpliciT1 trial)</p>
             </div>
         </div>
 
@@ -1011,7 +1087,7 @@
             <li>Patent landscape: Dorzagliatin patents may face challenges in patent-strict regions</li>
         </ul>
 
-        <p class="source">Source: PMID:38783768 (SEED trial)</p>
+        <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" rel="noopener" title="View on PubMed">PMID:38783768</a> (SEED trial)</p>
     </div>
 
     <div id="tab6" class="content">
@@ -1023,22 +1099,22 @@
         <div class="comparison">
             <div class="comparison-box">
                 <h4>Generic Metformin</h4>
-                <p>~$50/year (PMID:32175717) | Market: Commodity pricing | Setting: Global</p>
+                <p>~$50/year (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>) | Market: Commodity pricing | Setting: Global</p>
             </div>
             <div class="comparison-box">
                 <h4>Generic DPP-4i (Sitagliptin)</h4>
-                <p>~$300-400/year (PMID:34763823) | Market: Moderate competition | Setting: Global</p>
+                <p>~$300-400/year (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) | Market: Moderate competition | Setting: Global</p>
             </div>
         </div>
 
         <div class="comparison">
             <div class="comparison-box">
                 <h4>Dorzagliatin (China)</h4>
-                <p>~$2,500/year (estimated) (PMID:36449148) | Market: Premium branded | Setting: China market with negotiated pricing</p>
+                <p>~$2,500/year (estimated) (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank" rel="noopener" title="View on PubMed">PMID:36449148</a>) | Market: Premium branded | Setting: China market with negotiated pricing</p>
             </div>
             <div class="comparison-box">
                 <h4>GLP-1 Agonists (Branded)</h4>
-                <p>$10,000-15,000/year (PMID:34763823) | Market: Specialty | Setting: US (uninsured); $200-500 with copay (PMID:34763823) | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
+                <p>$10,000-15,000/year (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) | Market: Specialty | Setting: US (uninsured); $200-500 with copay (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
             </div>
         </div>
 
@@ -1056,8 +1132,8 @@
         <h3>Trajectory to Generic Status</h3>
         <p>Once dorzagliatin patents expire in key markets:</p>
         <ul>
-            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs) (PMID:29710129)</li>
-            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available) (PMID:34763823)</li>
+            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs) (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>)</li>
+            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available) (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>)</li>
             <li><strong>Comparison:</strong> 3-5x more expensive than metformin, but far cheaper than GLP-1 agonists</li>
         </ul>
 
@@ -1072,10 +1148,10 @@
                 <ul>
                     <li><strong>Metformin:</strong> Cheap, but insufficient in advanced disease</li>
                     <li><strong>Sulfonylureas:</strong> Cheap, but hypoglycemia risk; beta cell exhaustion</li>
-                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year) (PMID:34763823)</li>
+                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year) (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>)</li>
                 </ul>
 
-                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) (PMID:34763823) oral drug with:</p>
+                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) oral drug with:</p>
                 <ul>
                     <li>Dual mechanism (insulin secretion + hepatic glucose uptake)</li>
                     <li>Good glycemic control without weight gain</li>
@@ -1096,7 +1172,7 @@
 
         <h3>Competitive Pricing Model</h3>
         <div class="data-point">
-            Generic Dorzagliatin (projected India): $200-300/year (PMID:34763823) | Generic Sitagliptin (current): $100-150/year (PMID:34763823) | Branded Dorzagliatin (China): $2,500/year (PMID:36449148) | Branded GLP-1 RA (US): $12,000/year (PMID:34763823)
+            Generic Dorzagliatin (projected India): $200-300/year (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) | Generic Sitagliptin (current): $100-150/year (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>) | Branded Dorzagliatin (China): $2,500/year (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank" rel="noopener" title="View on PubMed">PMID:36449148</a>) | Branded GLP-1 RA (US): $12,000/year (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>)
         </div>
 
         <h3>Connection to Gap #15: GKA Pricing Trajectory Model (BRONZE)</h3>
@@ -1118,18 +1194,18 @@
         <div class="reference-list">
             <h3>Foundational Glucokinase Biology</h3>
             <div class="reference">
-                <strong>PMID:30949058</strong> | Matschinsky FM. "Glucokinase as a glucose sensor and therapeutic target for diabetes mellitus." Diabetes Care. 2002;25(10):1897-1902.
+                <strong><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank" rel="noopener" title="View on PubMed">PMID:30949058</a></strong> | Matschinsky FM. "Glucokinase as a glucose sensor and therapeutic target for diabetes mellitus." Diabetes Care. 2002;25(10):1897-1902.
                 <br><span class="pmid">Topic: Glucokinase as the primary glucose sensor enzyme in beta cells and liver</span>
             </div>
 
             <h3>GKA Clinical Trials and Programs</h3>
             <div class="reference">
-                <strong>PMID:38783768</strong> | Dorzagliatin SEED Trial (Phase 3, 52-week efficacy and safety in China)
+                <strong><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" rel="noopener" title="View on PubMed">PMID:38783768</a></strong> | Dorzagliatin SEED Trial (Phase 3, 52-week efficacy and safety in China)
                 <br><span class="pmid">Topic: Dorzagliatin monotherapy HbA1c -1.07%, hypoglycemia risk, weight neutrality</span>
             </div>
 
             <div class="reference">
-                <strong>PMID:33622669</strong> | SimpliciT1 Trial (TTP399 in Type 1 Diabetes adjunctive therapy)
+                <strong><a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" rel="noopener" title="View on PubMed">PMID:33622669</a></strong> | SimpliciT1 Trial (TTP399 in Type 1 Diabetes adjunctive therapy)
                 <br><span class="pmid">Topic: Liver-selective GKA TTP399 HbA1c -0.21% reduction, reduced hypoglycemia in T1D</span>
             </div>
 
@@ -1145,7 +1221,7 @@
 
             <h3>GK Genetics and Monogenic Diabetes</h3>
             <div class="reference">
-                <strong>Chakera et al. Diabetes Care 2015 (PMID:26106223)</strong> | GCK-MODY genetics and phenotype
+                <strong>Chakera et al. Diabetes Care 2015 (<a href="https://pubmed.ncbi.nlm.nih.gov/26106223/" target="_blank" rel="noopener" title="View on PubMed">PMID:26106223</a>)</strong> | GCK-MODY genetics and phenotype
                 <br><span class="pmid">Topic: Glucokinase mutations causing MODY-2; inactivating mutations reduce GK function by ~50%</span>
             </div>
 
