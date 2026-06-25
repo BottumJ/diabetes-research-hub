@@ -45,7 +45,7 @@ SCRIPTS = {
     'genericdrug': ('build_generic_drug_catalog.py', 'Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)'),
     'gkalada': ('build_gka_lada.py', 'Building GKA in LADA Analysis (Gap #9 EXPLORATORY)'),
     'ladaprev': ('build_lada_prevalence.py', 'Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)'),
-    'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 BRONZE)'),
+    'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 SILVER)'),
     'nutrilada': ('build_nutrition_lada.py', 'Building Personalized Nutrition for LADA (Gap #14 BRONZE)'),
     'gkapricing': ('build_gka_pricing.py', 'Building GKA Pricing Trajectory Model (Gap #15 BRONZE)'),
     'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 GOLD)'),

@@ -39,10 +39,17 @@ GIT_DIR = REPO_ROOT / ".git"
 
 REFRESH_SCRIPTS = [
     "baseline_clinical_trials.py",
+    "resolve_predictions.py",        # science arm: score ledger vs fresh snapshot
+    "build_prediction_ledger.py",    # science arm: rebuild ledger dashboard
     "baseline_pubmed_alerts.py",
     "hub_monitor.py",
     "project1_literature_gap_analysis.py",
 ]
+
+# Scripts whose non-zero exit is a SIGNAL, not a failure.
+# resolve_predictions.py returns 2 when a locked prediction's trial has posted
+# results and awaits manual resolution -- that must not abort the daily chain.
+TOLERATED_EXITS = {"resolve_predictions.py": (0, 2)}
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -198,7 +205,13 @@ def main() -> None:
         if not path.exists():
             sys.exit(f"Missing script: {path}")
         print(f"\n--- {script} ---")
-        run([sys.executable, str(path)], cwd=REPO_ROOT)
+        allowed = TOLERATED_EXITS.get(script, (0,))
+        r = run([sys.executable, str(path)], cwd=REPO_ROOT, check=False)
+        if r.returncode not in allowed:
+            sys.exit(f"Command failed (exit {r.returncode}): {script}")
+        if script == "resolve_predictions.py" and r.returncode == 2:
+            print("  NOTE: a locked prediction's trial has posted results and "
+                  "awaits manual resolution (see prediction_ledger_report.md).")
 
     if args.no_commit:
         header("Done (--no-commit set; git skipped)")
