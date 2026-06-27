@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-06-27",
- "last_run": "2026-06-27",
+ "last_updated": "2026-06-25",
+ "last_run": "2026-06-25",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -4807,7 +4807,7 @@
   },
   "2": {
    "tier": "GOLD",
-   "last_audited": "2026-06-27",
+   "last_audited": "2026-06-02",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -4830,19 +4830,6 @@
      "new_evidence_found": false,
      "notes": "Early audit (queued due 2026-06-06). PubMed search 2026-05-01 to 2026-06-02 for diabetes CGM equity/disparity RCTs returned ZERO new hits. Existing GOLD-tier evidence (PMC11654833, PMID 40814306 in corpus, Springer Nature 2026 scoping review of 64 studies) remains current. Gap REMAINS GOLD — disparities are well documented but actionable equity-focused RCTs with hard endpoints remain scarce. Next audit: 2026-07-02.",
      "external_sources": []
-    },
-    {
-     "date": "2026-06-27",
-     "new_evidence_found": false,
-     "notes": "Early audit (next due was 2026-07-02). Web sweep 2026-06-27 for diabetes health-equity intervention RCTs with hard endpoints since 2026-06-02 returned only PROTOCOLS / enrolling trials, no completed RCTs: IDEA SMART (PMC11270937, Black/Latine safety-net, CHW+RGM+DSMT sequencing), ACHIEVE (PMC10173964, Medicaid pregnant T2D), South Africa/Kenya pragmatic CGM RCTs (PMC11107040), Share Plus CGM data-sharing pilot (concludes Mar 2026), D1 Now cluster RCT, BEAD-T1D mixed-methods. GOLD HOLDS: disparity documentation robust; completed equity-intervention RCTs with hard endpoints still absent. Interventional pipeline is building (2027+ readouts likely). No promotion/demotion.",
-     "external_sources": [
-      "PMC11270937 - IDEA SMART trial protocol (safety-net, Black/Latine)",
-      "PMC10173964 - ACHIEVE multicomponent provider-patient trial protocol (Medicaid pregnant T2D)",
-      "PMC11107040 - South Africa/Kenya pragmatic CGM RCT protocol",
-      "JMIR Res Protoc 2024 e60004 - Share plus CGM data-sharing pilot RCT"
-     ],
-     "tier_after_audit": "GOLD",
-     "promotion_candidate": false
     }
    ]
   },
@@ -5447,10 +5434,10 @@
   },
   {
    "type": "audit_gap",
-   "target": "Gap #2 (GOLD, audited 2026-06-27) - next monthly audit due ~2026-07-27",
+   "target": "Gap #2 (GOLD, audited 2026-06-02) — next monthly audit due ~2026-07-02",
    "priority": 5,
    "added": "2026-06-02",
-   "next_due": "2026-07-27"
+   "next_due": "2026-07-02"
   },
   {
    "type": "audit_gap",
@@ -5517,8 +5504,8 @@
    "priority": 5,
    "target": "Revisit remaining PARTIALLY_VALIDATED paths. After 2026-06-24 batch (rituximab/tegoprubart/verapamil reaffirmed), stalest remaining: teplizumab_long_term_followup (2026-05-08), TXNIP_NLRP3_beta_cell_DKD & Treg_expansion->T1D (2026-06-16).",
    "added": "2026-06-19",
-   "note": "Revisit remaining PARTIALLY_VALIDATED paths. Done 2026-06-27: empagliflozin->inflammation (REAFFIRMED VALIDATED + PMID verify) & vitamin_d->autoimmune (REAFFIRMED PARTIALLY). verapamil->T1D skipped (fresh 06-24). Next stalest PARTIALLY: empagliflozin->inflammation legacy entry, metformin->nephropathy (06-11), belatacept->T1D, rapamycin->islet_transplant/nephropathy, tacrolimus->inflammation (2026-05-12/13 cluster). Next batch: metformin->nephropathy & belatacept->T1D.",
-   "last_touched": "2026-06-27"
+   "note": "Done 2026-06-25: teplizumab_long_term_followup (FDA accelerated approval recorded, stays PARTIALLY) + metformin->cardiovascular (reaffirmed PARTIALLY). Stalest remaining PARTIALLY: TXNIP_NLRP3_beta_cell_DKD & Treg_expansion->T1D (both 2026-06-16). Next batch: those two.",
+   "last_touched": "2026-06-25"
   }
  ],
  "run_history": [
@@ -6625,22 +6612,6 @@
    "date": "2026-06-25",
    "weekday": "Thursday",
    "summary": "2026-06-25 (Thu): (a) State loaded - 285 papers all VETTED (no backlog); 56 validated_paths, 15 gaps; queue mostly future-dated (Jul/Aug audits & pubmed rechecks not yet due), top item still p1 git push (USER-BLOCKED). (b) Credibility sweep CLEAN - no PMIDs >42M, no zero-SAE/zero-rejection in scripts; 3 'achieves' hits all legit (TTP399 mechanism / LADA cost-effectiveness / ML macro-AUC); 'curative' only inside verify_before_deploy regex. (c) Path validation x2 (stalest PARTIALLY): teplizumab_long_term_followup (was 2026-05-08) -> NEW: FDA ACCELERATED approval (~Jun 12 2026) for Tzield in pediatric 8-17yo recently-diagnosed STAGE 3 T1D on PROTECT C-peptide SURROGATE; post-approval study required to confirm clinical benefit; >78wk durability still unpublished (extension NCT04598893 no readout) -> stays PARTIALLY_VALIDATED, regulatory note recorded. metformin->cardiovascular (was 2026-06-14) re-checked: updated MA (22 studies n=612,823) CVD RR 0.88 CI crosses 1; GIPS-III & DPP/DPPOS placebo RCTs no significant MACE benefit; no new RCT overturns Griffin 2017 -> stays PARTIALLY_VALIDATED. (d) Pipeline rebuilt: run_quality_improvements.py 41/41 [OK] incl. PubMed PMID verification. git push remains USER-BLOCKED."
-  },
-  {
-   "date": "2026-06-26",
-   "weekday": "Friday",
-   "summary": "2026-06-26 (Fri): (a) State loaded - 285 papers all VETTED (13 FLAGGED off-topic, 0 unvetted backlog); 57 paths / 56 validated_paths, 15 gaps; queue top item still P1 git push (USER-BLOCKED); most audit_gap/search_pubmed items future-dated (Jul/Aug/Sep). Not Monday -> weekly PubMed sweep skipped. (b) Path validation x2 (the two flagged stalest-PARTIALLY in queue): TXNIP_NLRP3_beta_cell_DKD REAFFIRMED PARTIALLY_VALIDATED — added confirming 2025 SR (PMC12206412) on NLRP3 pyroptosis in diabetic nephropathy + canagliflozin TXNIP/NLRP3 podocyte data; axis remains mechanistic/preclinical, clinical confidence NONE. Treg_expansion->T1D REAFFIRMED PARTIALLY_VALIDATED — T-Rex phase 2 (PMID 38718135) null on C-peptide, ld-IL-2 paradoxical dissociation persists; no efficacy-powered RCT since 2026-06-16. (c) Credibility sweep CLEAN — no PMIDs >42M, no zero-SAE/zero-rejection; 3 'achieves' all legit (TTP399 mechanism / LADA cost-effectiveness / ML macro-AUC); 'curative' only in verify_before_deploy regex. (d) Pipeline rebuilt: run_quality_improvements.py 41/41 [OK] incl. PubMed PMID verification, completed in window. git push remains USER-BLOCKED."
-  },
-  {
-   "date": "2026-06-27",
-   "summary": "Sat run (no Mon weekly sweep). Vetting complete (272 VETTED/13 FLAGGED, 0 unvetted). Reaffirmed 2 paths: empagliflozin->inflammation (VALIDATED; verified suspicious PMID 41680826 is GENUINE - Cardiovasc Diabetol Feb 2026; fixed mislabeled year) + vitamin_d->autoimmune (PARTIALLY; added NCT07460336 LADA trial to watch). Early-audited Gap #2 Health Equity (GOLD holds; only protocols, no completed equity-intervention RCTs). Credibility sweep CLEAN (no fabricated PMIDs/zero-SAE/curative overclaims). Pipeline rebuild 41/41 [OK]. Commit/push still blocked in sandbox (priority-1 git/OneDrive lock + no GitHub auth) - changes saved to working files.",
-   "items_completed": [
-    "validate_path:empagliflozin->inflammation",
-    "validate_path:vitamin_d->autoimmune",
-    "audit_gap:Gap#2",
-    "credibility_sweep",
-    "full_rebuild_41_OK"
-   ]
   }
  ],
  "topic_checks": {
@@ -6900,12 +6871,7 @@
   "tegoprubart_islet_2026-06-24": "ADA Jun 2026 update: 12/12 insulin-independent, still press/conference only, not peer-reviewed.",
   "abata_aba201_2026-06-24": "No first-in-human Phase 1 readout located; program initiating clinical studies, preclinical Treg/TCR data only. Reschedule check.",
   "gene_therapy_lada_2026-06-24": "No LADA-specific gene-therapy trial; CRISPR (RNLS target) T1D/preclinical. Gap #1 stays SILVER.",
-  "rituximab_T1D_2026-06-24": "Reaffirmed PARTIALLY; 2025 NMA (PMC12211534) + BMC SR/MA corroborate transient effect.",
-  "vitamin_d_LADA_combination_2026-06-27": {
-   "date": "2026-06-27",
-   "finding": "NCT07460336 cofrogliptin in LADA registered; saxagliptin+vitD (n=301) high-GADA subgroup benefit only. RCT-grade vitamin D prevention still unconfirmed.",
-   "new_pmids": []
-  }
+  "rituximab_T1D_2026-06-24": "Reaffirmed PARTIALLY; 2025 NMA (PMC12211534) + BMC SR/MA corroborate transient effect."
  },
  "combination_validation": {
   "dapagliflozin_plus_colchicine_diabetes": {
@@ -6944,7 +6910,7 @@
    "next_audit_after": "2026-07-25"
   },
   "TXNIP_NLRP3_beta_cell_DKD": {
-   "date": "2026-06-26",
+   "date": "2026-06-16",
    "status": "PARTIALLY_VALIDATED",
    "preclinical_confidence": "HIGH",
    "clinical_confidence": "NONE",
@@ -6953,21 +6919,9 @@
     "Shah 2016 (PMC4736396)": "High glucose + LPS prime ROS/TXNIP/NLRP3/IL-1beta in mesangial cells (DKD).",
     "PMC5102753": "TXNIP mediates NLRP3 activation, susceptibility to ischemic AKI in diabetes.",
     "PMC8645844": "miR-17-5p inhibits TXNIP/NLRP3, suppresses beta-cell pyroptosis in diabetic mice.",
-    "Canagliflozin 2025 (10.1007/s10753-025-02258-9)": "SGLT2i attenuates podocyte injury via suppressing TXNIP/NLRP3 in DKD mice (drug-tractable).",
-    "NLRP3 pyroptosis DKD SR 2025 (PMC12206412)": "Systematic review: NLRP3 inflammasome-mediated pyroptosis in diabetic nephropathy — pathogenic mechanisms & therapeutic targets; reaffirms TXNIP as upstream redox-dependent NLRP3 activator in renal cells. Still mechanistic/preclinical; no human RCT on TXNIP/NLRP3 endpoints."
+    "Canagliflozin 2025 (10.1007/s10753-025-02258-9)": "SGLT2i attenuates podocyte injury via suppressing TXNIP/NLRP3 in DKD mice (drug-tractable)."
    },
-   "note": "2026-06-26 web re-validation: REAFFIRMED PARTIALLY_VALIDATED. New confirming 2025 systematic review (PMC12206412) consolidates TXNIP->NLRP3->pyroptosis axis in diabetic nephropathy; canagliflozin TXNIP/NLRP3 podocyte data (10.1007/s10753-025-02258-9) keeps axis drug-tractable. Cross-tissue (beta cell pyroptosis + renal) mechanistic convergence strong, but clinical translation still unproven — no human meta-analysis or RCT with TXNIP/NLRP3 endpoints. Clinical confidence remains NONE.",
-   "validation_history": [
-    {
-     "date": "2026-06-26",
-     "from": "PARTIALLY_VALIDATED",
-     "to": "PARTIALLY_VALIDATED",
-     "refs": [
-      "PMC12206412",
-      "10.1007/s10753-025-02258-9"
-     ]
-    }
-   ]
+   "note": "All evidence preclinical/mechanistic; no human meta-analysis or RCT on TXNIP/NLRP3 endpoints. Strong cross-tissue mechanistic convergence but clinical translation unproven."
   },
   "verapamil_txnip_beta_cell_t1d": {
    "path_name": "Verapamil -> TXNIP suppression -> beta cell preservation (T1D)",
@@ -7398,11 +7352,9 @@
    "external_pmids": {
     "32358544": "Kim et al. Nat Commun 2020 - empagliflozin 30-day, T2D high CV risk; macrophage NLRP3/IL-1beta down vs sulfonylurea; ketone/insulin mechanism.",
     "38172306": "Acta Pharmacol Sin 2024 - empagliflozin ameliorates vascular calcification via inhibiting Bhlhe40-dependent NLRP3 (diabetic mice).",
-    "41680826": "Cardiovasc Diabetol Feb 2026 (doi 10.1186/s12933-025-03042-7) - VERIFIED REAL via PubMed/Springer 2026-06-27. n=66 RCT-style timing study (early vs 90-day-delayed empagliflozin post-AMI in T2D): early EMPA attenuates NLRP3 priming+activation (down IL1beta mRNA, down caspase-1) likely via reduced Cx43 hemichannel activity. (state previously mislabeled year as 2025)"
+    "41680826": "Cardiovasc Diabetol 2025 - timing-dependent anti-inflammatory effects of empagliflozin in monocyte-derived macrophages, post-MI T2D (n=66 RCT)."
    },
-   "notes": "Strong translational + clinical macrophage evidence; EMPA-REG CV benefit consistent with anti-inflammatory contribution but not proof of mechanism.",
-   "last_reaffirmed": "2026-06-27",
-   "reaffirm_note_2026-06-27": "REAFFIRMED VALIDATED. Suspicious-looking PMID 41680826 confirmed genuine (below 42M fabrication threshold; indexed on PubMed + Springer Cardiovascular Diabetology). Clinical macrophage RCT evidence strengthens the anti-inflammatory mechanism. Still 'contributes to' not 'proves' EMPA-REG CV benefit."
+   "notes": "Strong translational + clinical macrophage evidence; EMPA-REG CV benefit consistent with anti-inflammatory contribution but not proof of mechanism."
   },
   "NF_kB_to_inflammation": {
    "path_name": "NF_kB -> inflammation",
@@ -7523,9 +7475,7 @@
     "17130571"
    ],
    "external_evidence": "REAFFIRMED PARTIALLY_VALIDATED (re-checked 2026-06-23). 2025 systematic review/meta-analysis (Front Immunol, PMC12014702; NUS, 15 studies) finds NO significant effect of vitamin D supplementation on incident T1D (pooled OR 0.55, 95% CI 0.22-1.38) or islet autoimmunity (pooled OR 0.91, 95% CI 0.67-1.25); RR for T1D 0.66 (0.41-1.06), near but not significant. Observational/cohort signal (Finnish birth cohort 2000 IU/day -> lower T1D risk; small new-onset RCTs show increased Tregs, reduced GAD65 titers) persists but RCT/MA-level evidence does NOT confirm prevention. Corpus claim reflects observational signal only.",
-   "note": "No promotion. Protective effect remains observational/mechanistic; not confirmed at RCT/MA level. Watch for large prospective RCT (e.g. high-dose vitamin D in at-risk children).",
-   "last_reaffirmed": "2026-06-27",
-   "reaffirm_note_2026-06-27": "REAFFIRMED PARTIALLY_VALIDATED. Web sweep 2026-06-27: RCT-grade evidence remains mixed. Saxagliptin+vitD adult-onset T1D RCT (n=301, Nat STTT 2023, PMC10115841) MISSED primary fasting C-peptide endpoint; only high-GADA subgroup showed slower beta-cell decline + smaller 2h C-peptide AUC drop. 2025 SR/MA (PMC12014702) no significant prevention effect. NEW: NCT07460336 (cofrogliptin +/- on beta-cell function in LADA) registered - add to LADA combination watch. No tier change."
+   "note": "No promotion. Protective effect remains observational/mechanistic; not confirmed at RCT/MA level. Watch for large prospective RCT (e.g. high-dose vitamin D in at-risk children)."
   },
   "NLRP3_inflammasome -> T2D": {
    "rating": "VALIDATED",
@@ -7560,7 +7510,7 @@
    "confidence": "MEDIUM-HIGH"
   },
   "Treg_expansion -> T1D": {
-   "date": "2026-06-26",
+   "date": "2026-06-16",
    "status": "PARTIALLY_VALIDATED",
    "preclinical_confidence": "HIGH",
    "clinical_confidence": "LOW",
@@ -7570,17 +7520,7 @@
     "Hartemann/NCT02411253": "ld-rhIL-2 safe, expands Tregs; NOT powered for efficacy.",
     "PMC9705541 Nat Commun 2022": "ld-IL2 reduces IL-21+ T cells, anti-inflammatory signature in T1D."
    },
-   "note": "2026-06-26 web re-validation: REAFFIRMED PARTIALLY_VALIDATED. No new efficacy-powered RCT since 2026-06-16. T-Rex phase 2 (Sci Transl Med 2024, scitranslmed.adn2404 / PMID 38718135): single-dose expanded polyclonal Tregs SAFE but did NOT preserve C-peptide in new-onset pediatric T1D. ld-IL-2 paradoxical dissociation persists (Treg expansion + HbA1c signal without consistent C-peptide preservation; vs immunotherapy preserving C-peptide without HbA1c benefit). Target engagement (Treg expansion, safety) robust in humans; durable clinical beta-cell preservation from Treg expansion alone remains unproven. Capped at PARTIALLY until an efficacy-powered RCT reads out.",
-   "validation_history": [
-    {
-     "date": "2026-06-26",
-     "from": "PARTIALLY_VALIDATED",
-     "to": "PARTIALLY_VALIDATED",
-     "pmids": [
-      "38718135"
-     ]
-    }
-   ]
+   "note": "Treg expansion and safety robustly demonstrated in humans; beta-cell preservation/clinical efficacy NOT yet established (trials not powered for efficacy). Capped at PARTIALLY_VALIDATED until an efficacy-powered RCT reads out."
   },
   "metformin -> nephropathy": {
    "path_name": "Metformin -> renoprotection in diabetic kidney disease",
@@ -7790,10 +7730,12 @@
   "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path."
  },
  "last_path_validation_batch": {
-  "date": "2026-06-27",
+  "date": "2026-06-24",
   "paths": [
-   "empagliflozin->inflammation",
-   "vitamin_d->autoimmune"
-  ]
+   "rituximab -> T1D",
+   "tegoprubart_islet_t1d",
+   "verapamil_T1D"
+  ],
+  "result": "all REAFFIRMED PARTIALLY_VALIDATED"
  }
 }
