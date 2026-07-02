@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-06-27 07:09:51
-**Previous scan:** 2026-06-26 07:23:21
-**Hub root:** `/sessions/quirky-zen-rubin/mnt/Diabetes_Research`
+**Scan time:** 2026-07-02 02:17:58
+**Previous scan:** 2026-07-01 02:10:21
+**Hub root:** `/sessions/beautiful-festive-johnson/mnt/Diabetes_Research`
 
 ---
 
@@ -9,57 +9,64 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 983 |
+| Total files tracked | 1001 |
 | New files | 3 |
-| Modified files | 28 |
+| Modified files | 35 |
 | Removed files | 0 |
-| Unchanged files | 952 |
+| Unchanged files | 963 |
 
 ## New Files
 
-- **Analysis/Results/clinical_trials_snapshot_2026-06-27.json** (565.8 KB)
-- **Analysis/Results/iterate_run_report_2026-06-26.md** (3.8 KB)
-- **Analysis/Results/monitor_report_2026-06-26.md** (7.0 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-07-02.json** (564.3 KB)
+- **Analysis/Results/monitor_report_2026-07-01.md** (7.1 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-07-02.json** (124.1 KB)
 
 ## Modified Files
 
-- **Analysis/Results/agent_state.json** (483.0 KB, modified: 2026-06-26T08:09:16.442022)
-- **Analysis/Results/citation_validation.json** (190.8 KB, modified: 2026-06-26T08:08:29.594265)
-- **Analysis/Results/clinical_trials_latest.json** (565.8 KB, modified: 2026-06-27T07:04:48)
-- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-06-27T07:04:48)
-- **Analysis/Results/evidence_network.json** (98.0 KB, modified: 2026-06-26T08:08:29.610101)
-- **Analysis/Results/gap_evidence.json** (216.7 KB, modified: 2026-06-26T08:08:30.068508)
-- **Analysis/Results/hub_monitor_report.md** (4.9 KB, modified: 2026-06-26T07:23:23.744179)
-- **Analysis/Results/hub_monitor_state.json** (234.3 KB, modified: 2026-06-26T07:23:23.712750)
-- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-06-26T08:07:52.930221)
-- **Analysis/Results/paper_library/index.json** (467.7 KB, modified: 2026-06-26T08:08:29.233501)
-- **Analysis/Results/pmid_verification.json** (255.0 KB, modified: 2026-06-26T08:08:06.049291)
-- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-06-26T08:08:06.154631)
-- **Dashboards/Clinical_Trial_Dashboard.html** (463.3 KB, modified: 2026-06-26T08:08:31.528536)
-- **Dashboards/Corpus_Analysis.html** (82.5 KB, modified: 2026-06-26T08:08:31.557612)
-- **Dashboards/Drug_Repurposing_Islet.html** (59.9 KB, modified: 2026-06-26T08:08:31.577350)
-- **Dashboards/Extracted_Evidence.html** (133.7 KB, modified: 2026-06-26T08:08:31.677114)
-- **Dashboards/Gap_Deep_Dives.html** (218.3 KB, modified: 2026-06-26T08:08:31.800067)
-- **Dashboards/Gap_Evidence.html** (182.1 KB, modified: 2026-06-26T08:08:31.867535)
-- **Dashboards/Islet_Drug_Repurposing.html** (115.6 KB, modified: 2026-06-26T08:08:32.015928)
-- **Dashboards/Islet_Transplant_Analysis.html** (74.0 KB, modified: 2026-06-26T08:08:32.039397)
-- **Dashboards/LADA_Diagnostic_Model.html** (57.3 KB, modified: 2026-06-26T08:08:32.096312)
-- **Dashboards/PMID_Verification.html** (172.3 KB, modified: 2026-06-26T08:08:32.398674)
-- **Dashboards/Paper_Library.html** (201.3 KB, modified: 2026-06-26T08:08:32.452754)
-- **Dashboards/Prediction_Ledger.html** (28.6 KB, modified: 2026-06-26T08:08:32.468571)
-- **Dashboards/Research_Paths.html** (129.4 KB, modified: 2026-06-26T08:08:32.529243)
-- **Dashboards/Trial_Equity_Mapper.html** (73.5 KB, modified: 2026-06-26T08:08:32.603052)
-- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-06-26T08:08:06.186459)
-- **docs/index.html** (25.4 KB, modified: 2026-06-26T08:08:31.321608)
+- **Analysis/Results/agent_state.json** (496.9 KB, modified: 2026-07-01T03:18:26.779205)
+- **Analysis/Results/clinical_trials_latest.json** (564.3 KB, modified: 2026-07-02T02:05:14)
+- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-07-02T02:05:14)
+- **Analysis/Results/hub_monitor_report.md** (4.7 KB, modified: 2026-07-01T02:10:25.488452)
+- **Analysis/Results/hub_monitor_state.json** (238.6 KB, modified: 2026-07-01T02:10:25.409622)
+- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-07-01T03:09:19.383610)
+- **Analysis/Results/pmid_verification.json** (255.0 KB, modified: 2026-07-01T03:09:35.683641)
+- **Analysis/Results/pubmed_recent_latest.json** (124.1 KB, modified: 2026-07-02T02:06:00)
+- **Analysis/Results/pubmed_recent_summary.md** (34.0 KB, modified: 2026-07-02T02:06:00)
+- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-07-01T03:09:36.024937)
+- **Dashboards/Acronym_Database.html** (88.9 KB, modified: 2026-07-01T03:09:19.703852)
+- **Dashboards/CART_Access_Barriers.html** (75.6 KB, modified: 2026-07-01T03:09:20.204880)
+- **Dashboards/Clinical_Trial_Dashboard.html** (459.0 KB, modified: 2026-07-01T03:09:19.261945)
+- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-07-01T03:09:20.036891)
+- **Dashboards/Equity_Map.html** (75.2 KB, modified: 2026-07-01T03:09:19.541509)
+- **Dashboards/GKA_LADA.html** (36.4 KB, modified: 2026-07-01T03:09:20.425545)
+- **Dashboards/GKA_Landscape.html** (53.2 KB, modified: 2026-07-01T03:09:20.258471)
+- **Dashboards/GKA_Pricing.html** (39.9 KB, modified: 2026-07-01T03:09:20.650249)
+- **Dashboards/Gap_Deep_Dives.html** (205.2 KB, modified: 2026-07-01T03:09:19.641608)
+- **Dashboards/Gap_Synthesis.html** (115.7 KB, modified: 2026-07-01T03:09:19.465210)
+- **Dashboards/Generic_Drug_Catalog.html** (42.1 KB, modified: 2026-07-01T03:09:20.372091)
+- **Dashboards/Health_Equity.html** (70.2 KB, modified: 2026-07-01T03:09:20.772379)
+- **Dashboards/Immunomod_LADA.html** (44.3 KB, modified: 2026-07-01T03:09:20.080376)
+- **Dashboards/Islet_Transplant_Analysis.html** (68.8 KB, modified: 2026-07-01T03:09:19.973175)
+- **Dashboards/Islet_Transplant_Equity.html** (38.8 KB, modified: 2026-07-01T03:09:20.315322)
+- **Dashboards/LADA_Natural_History.html** (54.7 KB, modified: 2026-07-01T03:09:19.911893)
+- **Dashboards/LADA_Prevalence.html** (49.1 KB, modified: 2026-07-01T03:09:20.483453)
+- **Dashboards/Medical_Data_Dictionary.html** (342.4 KB, modified: 2026-07-01T03:09:19.856597)
+- **Dashboards/Methodology.html** (60.6 KB, modified: 2026-07-01T03:09:20.863059)
+- **Dashboards/Nutrition_Beta_Cells.html** (40.9 KB, modified: 2026-07-01T03:09:20.533178)
+- **Dashboards/Nutrition_LADA.html** (50.1 KB, modified: 2026-07-01T03:09:20.598223)
+- **Dashboards/PMID_Verification.html** (167.7 KB, modified: 2026-07-01T03:09:35.607334)
+- **Dashboards/Research_Dashboard.html** (60.5 KB, modified: 2026-07-01T03:09:19.328032)
+- **Dashboards/Treg_Neuropathy.html** (62.2 KB, modified: 2026-07-01T03:09:20.141786)
+- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-07-01T03:09:36.070567)
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 660 |
-| .md | 178 |
+| .json | 669 |
+| .md | 186 |
 | .html | 73 |
-| .py | 62 |
+| .py | 63 |
 | .txt | 4 |
 | .csv | 3 |
 | .xlsx | 2 |
@@ -71,12 +78,12 @@
 |--------|-------|
 | (root) | 17 |
 | .github/ISSUE_TEMPLATE | 4 |
-| Analysis/Results | 388 |
+| Analysis/Results | 405 |
 | Analysis/Results/paper_library | 1 |
 | Analysis/Results/paper_library/abstracts | 292 |
 | Analysis/Results/paper_library/fulltext | 110 |
 | Analysis/Results/verification_reports | 35 |
-| Analysis/Scripts | 62 |
+| Analysis/Scripts | 63 |
 | Dashboards | 35 |
 | Dashboards/_quarantine | 4 |
 | docs | 2 |
@@ -84,28 +91,26 @@
 
 ## Review Flags
 
-- 751 result file(s) older than 14 days — may need refresh.
+- 767 result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-06-27 07:09:51*
+*Generated by hub_monitor.py — 2026-07-02 02:17:58*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-06-26.json → clinical_trials_snapshot_2026-06-27.json)
+### Clinical Trials (clinical_trials_snapshot_2026-07-01.json → clinical_trials_snapshot_2026-07-02.json)
 - New trials: 2
-- Removed trials: 0
-- Status changes: 3
+- Removed trials: 3
+- Status changes: 1
 - New results posted: 0
 
 **Status Changes:**
-- NCT06959797: NOT_YET_RECRUITING → RECRUITING | Insulin Pump Versus Full Closed-loop for Type 2 Diabetes
-- NCT05180591: RECRUITING → ACTIVE_NOT_RECRUITING | Repeat BCG Vaccinations For The Treatment Of Pediatric Type 1 Diabetes
-- NCT05866536: RECRUITING → ACTIVE_NOT_RECRUITING | Repeat BCG Vaccinations for the Treatment of New Onset Type 1 Diabetes in Childr
+- NCT07527078: NOT_YET_RECRUITING → RECRUITING | Evaluate the Efficacy and Safety of GZR33 Injection in Patients With Type 2 Diab
 
-### PubMed (pubmed_recent_snapshot_2026-06-25.json → pubmed_recent_snapshot_2026-06-26.json)
-- New papers: 42
-- Dropped papers: 41
+### PubMed (pubmed_recent_snapshot_2026-07-01.json → pubmed_recent_snapshot_2026-07-02.json)
+- New papers: 44
+- Dropped papers: 51
 
 **Cross-Domain New Papers (3):**
-- [42345832] The Programmable Microbiome: Integrative AI and Multi-Omics Frameworks for Precision T2DM Management — Domains: Diabetes AI/ML, Diabetes Microbiome, Diabetes Multi-Omics
-- [42347889] Artificial and Other Non-Nutritive Sweeteners, the Microbiome, and Cardiometabolic Health. — Domains: T2D Remission, Diabetes Microbiome
-- [42350705] A bibliometric analysis of research trends and future directions in early detection of pancreatic ca — Domains: Diabetes AI/ML, Diabetes Multi-Omics
+- [42385762] Global, regional, and national burden of tuberculosis and multidrug-resistant tuberculosis by HIV st — Domains: Diabetes Biomarker, Diabetes Health Equity
+- [42387035] Tirzepatide as a multi-organ integrator in metabolic diseases: a review of molecular mechanisms and  — Domains: T2D GLP-1 New, Diabetes Microbiome
+- [42387220] Overcoming Immunological Barriers in MSC-Derived Insulin-Producing Cells through CRISPR-Based Hypoim — Domains: T1D Stem Cell Cure, Diabetes Gene Therapy
