@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-07-02",
-  "last_run": "2026-07-02",
+  "last_updated": "2026-07-01",
+  "last_run": "2026-07-01",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -5413,14 +5413,14 @@
     {
       "priority": 1,
       "type": "manual_cleanup_required",
-      "target": "git PUSH BLOCKED - REQUIRES USER (reconfirmed 2026-07-02). Sandbox CAN commit locally via .git lock rename trick (done this run - HEAD ahead ~43 commits) but PUSH fails: no GitHub auth ('could not read Username for https://github.com'). Renamed .git/*.lock.stale_* cannot be unlinked (OneDrive 'Operation not permitted'), accumulating harmlessly in .git. USER ACTION: cd Diabetes_Research; git push  (optionally clean .git/*.stale_* cruft).",
+      "target": "git BLOCKED from sandbox - REQUIRES USER (reconfirmed 2026-06-30, URGENT - lock now 2 days old). Stale .git/index.lock (created 2026-06-28) cannot be removed: OneDrive denies unlink in sandbox (\"Operation not permitted\"). USER ACTION: on your machine run -> cd Diabetes_Research; del .git\\index.lock; git add -A; git commit -m \"Daily iteration\"; git push. Until cleared, ~30+ modified Results files (incl. 8 daily state updates) remain uncommitted/unpushed.",
       "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth. || 2026-06-03: Confirmed blocker persists — .git/index.lock and .git/HEAD.lock still present (root-owned). Sandbox rm permission denied. State written to agent_state.json on disk (persists for next run). Now ~33 unpushed commits (this run added Validated paths + 2 gap audits + pipeline rebuild but commit failed). USER ACTION: delete .git/HEAD.lock and .git/index.lock from Windows, then git push origin main. || 2026-06-05: index.lock + HEAD.lock cleared via rename trick; commit 2adb8ce SUCCEEDED in sandbox. Push still blocked (no GitHub auth: could not read Username for https://github.com). 33 commits unpushed. USER must git push from local terminal. || 2026-06-10: commit attempt blocked again — .git/index.lock unremovable (Operation not permitted, OneDrive) and push fails (no GitHub auth). Branch ahead of origin/main by 37 commits. All 2026-06-10 data changes saved to working files. USER must clear locks + git push from local PowerShell. || 2026-06-12: commit blocked again - .git/index.lock recreated (Operation not permitted on OneDrive), .git/objects tmp_obj writes denied. Branch still ahead of origin/main by ~37 commits. All 2026-06-12 changes (state, 5 path validations, pipeline rebuild) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-16: commit 6402c50 SUCCEEDED in sandbox via index.lock rename/rm trick (today's path validations + state + run report). Working tree CLEAN. PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 39 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-17: locks cleared via mv trick, repo operable, commit attempted; PUSH still blocked (no GitHub auth in sandbox). ~40 commits ahead. USER: git push from local PowerShell. || 2026-06-23: commit blocked again - .git/index.lock + HEAD.lock unremovable (Operation not permitted, OneDrive). All 2026-06-23 changes (state, 2 path re-validations, run report) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-25: commit 4c1de51 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's path validations + state + pipeline rebuild). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 41 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-27: commit e830598 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's 2 path reaffirmations + Gap#2 early audit + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 42 commits ahead of origin/main. USER must run `git push` from local PowerShell.",
       "queued_date": "2026-05-17",
       "unpushed_commits_count": 42,
       "updated": "2026-05-31",
       "last_attempt": "2026-06-27",
       "last_updated": "2026-06-17",
-      "description": "Push local commits to origin/main. Local commits succeed in sandbox; push needs user GitHub auth.",
+      "description": "git push 30 unpushed commits (latest f63c88b from 2026-06-02). Sandbox commits succeed via rename trick on .git/index.lock and HEAD.lock; push fails — no GitHub auth in sandbox. User must run: git push from local terminal.",
       "last_seen": "2026-06-13",
       "last_confirmed_blocked": "2026-06-27"
     },
@@ -5530,6 +5530,13 @@
       "next_due": "2026-07-10"
     },
     {
+      "priority": 6,
+      "type": "full_rebuild_verify",
+      "target": "Run full run_quality_improvements.py to completion (incl. PMID verification) in a faster/longer window; confirm all stages [OK].",
+      "added": "2026-06-09",
+      "notes": "Completed 41/41 [OK] on 2026-06-13; recheck only if a build script changes."
+    },
+    {
       "type": "audit_gap",
       "priority": 6,
       "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24."
@@ -5559,16 +5566,6 @@
       "target": "oxidative_stress -> T2D reaffirmed VALIDATED 2026-06-30 (therapy=PARTIAL). Re-check for any antioxidant-supplementation RCT showing hard glycemic/prevention endpoint. Next ~2026-08-01.",
       "added": "2026-06-30",
       "next_check": "2026-08-01"
-    },
-    {
-      "type": "validate_path",
-      "priority": 6,
-      "target": "Next-stalest DISTINCT PARTIALLY path after verapamil: rituximab -> beta_cell (2026-06-22) or tacrolimus -> inflammation (2026-06-23). Validate oldest next run."
-    },
-    {
-      "type": "full_rebuild_verify",
-      "priority": 7,
-      "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-02 (24 stages [OK]; 261/261 verified, 0 not found). Re-run ~weekly."
     }
   ],
   "run_history": [
@@ -6707,11 +6704,6 @@
     {
       "date": "2026-07-01",
       "summary": "Wed run 2026-07-01 (no Mon weekly sweep). Vetting complete (272 VETTED/13 FLAGGED, 0 unvetted). Credibility sweep CLEAN: 0 fabricated PMIDs (>42M), 0 'zero SAEs/rejection'; 3 'achieves' hits benign (TTP399 tissue selectivity, LADA screening cost-eff model, microbiome-ML macro-AUC); 2 'curative' hits are verify_before_deploy detector patterns, not claims. PATH: rapamycin->inflammation (oldest un-refreshed PARTIALLY, prev 2026-06-21) REVISITED -> REAFFIRMED PARTIALLY_VALIDATED/MIXED; Dec-2025 Cureus mTOR review reconfirms bidirectional cytokine effects (NF-kB/NLRP3/IL-1b/IL-18 down, Tregs up, but IL-6 microglia up + dose-dependent immunostimulation) -> net immunosuppressant. PIPELINE: 24 build stages all Completed [OK], 0 FAIL/Traceback; PMID verification confirmed 261 verified/0 not found/0 API errors, then final re-verify network stage stalled on NCBI socket (matches standing P6 note) - terminated to avoid unbounded sandbox compute. Git commit/push STILL BLOCKED (OneDrive .git/index.lock, now ~3 days old) - REQUIRES USER."
-    },
-    {
-      "date": "2026-07-02",
-      "run": 79,
-      "summary": "Thu run 2026-07-02 (no Mon weekly sweep). Vetting complete (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>42M), 0 'zero SAE/rejection'; 3 'achieves' benign (TTP399 selectivity, LADA cost-eff model, microbiome-ML AUC), 'curative' only in detector regex. PATH: reconciled duplicate verapamil entries - 'verapamil -> T1D' was stale (still 'no primary pub, next 2026-07-02'); updated to Ver-A-T1D NEGATIVE adult primary (EASD 2025 + multiple 2025 news), stays PARTIALLY_VALIDATED (positive pediatric CLVer + negative adult primary). CREDIBILITY FLAG: Diabetologia DOI 10.1007/s00125-025-06490-8 could NOT be independently re-confirmed via web today - marked UNVERIFIED in both entries. PIPELINE: full run_quality_improvements.py COMPLETED - 24/24 build stages [OK], 0 FAIL/Traceback, full PMID verify 261/261 verified / 0 not found / 0 API errors (resolves deferred full_rebuild_verify). GIT: local commit succeeded via lock-rename trick (HEAD ahead ~43); PUSH still BLOCKED (no GitHub auth in sandbox) - requires user 'git push'."
     }
   ],
   "topic_checks": {
@@ -7149,8 +7141,7 @@
         "Ovalle/Shalev 2018 Nat Med adult RCT": "Earlier positive adult RCT - verapamil preserved C-peptide at 12mo."
       },
       "note": "DOWNGRADE: largest European RCT (Ver-A-T1D) missed primary endpoint; clinical efficacy now MIXED (one positive, one null adult RCT). Mechanism remains strong. Watch Ver-A-T1D full journal pub (queued) and pediatric NCT07199946.",
-      "last_reaffirmed_2026-06-24": "Independently re-confirmed via HCPLive/Medscape + Ver-A-T1D protocol (PMC11605811): adult Ver-A-T1D (n=136) NEGATIVE primary (2h MMTT C-peptide AUC no diff vs placebo at any timepoint); contrasts positive pediatric CLVer (~30% higher C-peptide). Heterogeneity by age/onset confirmed. Status unchanged PARTIALLY_VALIDATED.",
-      "citation_caveat_2026_07_02": "DOI 10.1007/s00125-025-06490-8 not independently re-confirmed by web search 2026-07-02; negative-primary FINDING well corroborated by EASD 2025 + 2025 news, but peer-reviewed full-paper citation remains UNVERIFIED."
+      "last_reaffirmed_2026-06-24": "Independently re-confirmed via HCPLive/Medscape + Ver-A-T1D protocol (PMC11605811): adult Ver-A-T1D (n=136) NEGATIVE primary (2h MMTT C-peptide AUC no diff vs placebo at any timepoint); contrasts positive pediatric CLVer (~30% higher C-peptide). Heterogeneity by age/onset confirmed. Status unchanged PARTIALLY_VALIDATED."
     },
     "empagliflozin_cv_hf_ckd": {
       "status": "VALIDATED",
@@ -7443,9 +7434,8 @@
         "CLVer (NCT04233034)",
         "Ver-A-T1D protocol PMC11605811 / EASD 2025 readout"
       ],
-      "last_validated": "2026-07-02",
-      "revisit_2026_06_22": "Reaffirmed PARTIALLY_VALIDATED. No peer-reviewed Ver-A-T1D primary publication yet (web sweep 2026-06-22 returned only protocol PMC11605811 + pediatric CLVer PMC9960020). Positive pediatric RCT (~30% greater C-peptide), equivocal/just-missed-significance adult RCT. Awaiting journal pub (queue: next 2026-07-02).",
-      "revisit_2026_07_02": "Reconciled with sibling 'verapamil_T1D'. Ver-A-T1D adult primary confirmed NEGATIVE: no significant C-peptide difference vs placebo at 3/6/9/12mo (EASD 2025 Pieber; corroborated Healio 2025-09-24, EurekAlert, News-Medical 2025-09-18, Medscape). Underpowered: untreated placebo decline ~0.09 vs ~0.18 MCID. Net: positive pediatric CLVer (~30% greater C-peptide) + NEGATIVE adult primary -> stays PARTIALLY_VALIDATED. CAVEAT: Diabetologia DOI 10.1007/s00125-025-06490-8 (recorded 2026-06-24) NOT independently re-confirmed via web today - only protocol PMC11605811 + press surfaced. Treat peer-reviewed primary citation as UNVERIFIED. Watch 2yr AUC + OLE."
+      "last_validated": "2026-06-22",
+      "revisit_2026_06_22": "Reaffirmed PARTIALLY_VALIDATED. No peer-reviewed Ver-A-T1D primary publication yet (web sweep 2026-06-22 returned only protocol PMC11605811 + pediatric CLVer PMC9960020). Positive pediatric RCT (~30% greater C-peptide), equivocal/just-missed-significance adult RCT. Awaiting journal pub (queue: next 2026-07-02)."
     },
     "NLRP3_inflammasome -> nephropathy": {
       "rating": "VALIDATED",
@@ -7864,10 +7854,6 @@
       "tier_after": "BRONZE",
       "reason": "no LADA-specific personalized-nutrition RCT located",
       "next_due": "2026-06-26"
-    },
-    {
-      "date": "2026-07-02",
-      "note": "DUPLICATE PATH ENTRIES 'verapamil_T1D' and 'verapamil -> T1D' track same intervention; recommend consolidation to single canonical key in future cleanup. Not merged this run to preserve provenance."
     }
   ],
   "combination_validation_pending": [
@@ -7882,8 +7868,7 @@
     "pmid_threshold_2026-05-04": "The doctrine heuristic \"PMIDs above 42000000 = fabricated\" needs revision. As of 2026-05-04, real PMIDs are in the 42M range (verified via NCBI E-utilities esummary endpoint). The 42M threshold was likely set when PubMed counts were lower. Going forward, verify suspected fabrications via E-utilities lookup, not by PMID number alone.",
     "pmid_range_2026": "As of 2026-05-05, NCBI is assigning PMIDs in the 42,000,000+ range for current 2026 publications. The legacy SKILL.md credibility-sweep heuristic flagging PMIDs > 42,000,000 is stale and produces false positives for legitimately recent papers. PMIDs must still be verified via NCBI esummary, but the numeric ceiling alone is not a fabrication signal. Updated 2026-05-05.",
     "credibility_sweep_2026-05-07": "DEPRECATED ceiling-only PMID > 42,000,000 fabrication test in favor of: (1) round-trip via NCBI esummary for any new PMID, (2) cross-reference against agent_state.json papers map (single source of truth), (3) flag only if year > current year + 1. Numeric ceiling drifts as PubMed grows. Task SKILL.md is in read-only uploads/ so this note replaces an in-place SKILL edit.",
-    "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path.",
-    "credibility_2026_07_02": "A DOI recorded in a prior run (Ver-A-T1D Diabetologia) failed independent web re-confirmation. Practice: flag single-source DOIs as UNVERIFIED until directly hit, rather than propagating."
+    "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path."
   },
   "last_path_validation_batch": {
     "date": "2026-06-29",
