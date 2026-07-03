@@ -1,7 +1,7 @@
 # Hub Monitor Report
-**Scan time:** 2026-07-02 02:17:58
-**Previous scan:** 2026-07-01 02:10:21
-**Hub root:** `/sessions/beautiful-festive-johnson/mnt/Diabetes_Research`
+**Scan time:** 2026-07-03 02:10:20
+**Previous scan:** 2026-07-02 02:17:58
+**Hub root:** `/sessions/dazzling-tender-mayer/mnt/Diabetes_Research`
 
 ---
 
@@ -9,62 +9,43 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 1001 |
+| Total files tracked | 1004 |
 | New files | 3 |
-| Modified files | 35 |
+| Modified files | 16 |
 | Removed files | 0 |
-| Unchanged files | 963 |
+| Unchanged files | 985 |
 
 ## New Files
 
-- **Analysis/Results/clinical_trials_snapshot_2026-07-02.json** (564.3 KB)
-- **Analysis/Results/monitor_report_2026-07-01.md** (7.1 KB)
-- **Analysis/Results/pubmed_recent_snapshot_2026-07-02.json** (124.1 KB)
+- **Analysis/Results/clinical_trials_snapshot_2026-07-03.json** (566.5 KB)
+- **Analysis/Results/monitor_report_2026-07-02.md** (9.7 KB)
+- **Analysis/Results/pubmed_recent_snapshot_2026-07-03.json** (123.8 KB)
 
 ## Modified Files
 
-- **Analysis/Results/agent_state.json** (496.9 KB, modified: 2026-07-01T03:18:26.779205)
-- **Analysis/Results/clinical_trials_latest.json** (564.3 KB, modified: 2026-07-02T02:05:14)
-- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-07-02T02:05:14)
-- **Analysis/Results/hub_monitor_report.md** (4.7 KB, modified: 2026-07-01T02:10:25.488452)
-- **Analysis/Results/hub_monitor_state.json** (238.6 KB, modified: 2026-07-01T02:10:25.409622)
-- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-07-01T03:09:19.383610)
-- **Analysis/Results/pmid_verification.json** (255.0 KB, modified: 2026-07-01T03:09:35.683641)
-- **Analysis/Results/pubmed_recent_latest.json** (124.1 KB, modified: 2026-07-02T02:06:00)
-- **Analysis/Results/pubmed_recent_summary.md** (34.0 KB, modified: 2026-07-02T02:06:00)
-- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-07-01T03:09:36.024937)
-- **Dashboards/Acronym_Database.html** (88.9 KB, modified: 2026-07-01T03:09:19.703852)
-- **Dashboards/CART_Access_Barriers.html** (75.6 KB, modified: 2026-07-01T03:09:20.204880)
-- **Dashboards/Clinical_Trial_Dashboard.html** (459.0 KB, modified: 2026-07-01T03:09:19.261945)
-- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-07-01T03:09:20.036891)
-- **Dashboards/Equity_Map.html** (75.2 KB, modified: 2026-07-01T03:09:19.541509)
-- **Dashboards/GKA_LADA.html** (36.4 KB, modified: 2026-07-01T03:09:20.425545)
-- **Dashboards/GKA_Landscape.html** (53.2 KB, modified: 2026-07-01T03:09:20.258471)
-- **Dashboards/GKA_Pricing.html** (39.9 KB, modified: 2026-07-01T03:09:20.650249)
-- **Dashboards/Gap_Deep_Dives.html** (205.2 KB, modified: 2026-07-01T03:09:19.641608)
-- **Dashboards/Gap_Synthesis.html** (115.7 KB, modified: 2026-07-01T03:09:19.465210)
-- **Dashboards/Generic_Drug_Catalog.html** (42.1 KB, modified: 2026-07-01T03:09:20.372091)
-- **Dashboards/Health_Equity.html** (70.2 KB, modified: 2026-07-01T03:09:20.772379)
-- **Dashboards/Immunomod_LADA.html** (44.3 KB, modified: 2026-07-01T03:09:20.080376)
-- **Dashboards/Islet_Transplant_Analysis.html** (68.8 KB, modified: 2026-07-01T03:09:19.973175)
-- **Dashboards/Islet_Transplant_Equity.html** (38.8 KB, modified: 2026-07-01T03:09:20.315322)
-- **Dashboards/LADA_Natural_History.html** (54.7 KB, modified: 2026-07-01T03:09:19.911893)
-- **Dashboards/LADA_Prevalence.html** (49.1 KB, modified: 2026-07-01T03:09:20.483453)
-- **Dashboards/Medical_Data_Dictionary.html** (342.4 KB, modified: 2026-07-01T03:09:19.856597)
-- **Dashboards/Methodology.html** (60.6 KB, modified: 2026-07-01T03:09:20.863059)
-- **Dashboards/Nutrition_Beta_Cells.html** (40.9 KB, modified: 2026-07-01T03:09:20.533178)
-- **Dashboards/Nutrition_LADA.html** (50.1 KB, modified: 2026-07-01T03:09:20.598223)
-- **Dashboards/PMID_Verification.html** (167.7 KB, modified: 2026-07-01T03:09:35.607334)
-- **Dashboards/Research_Dashboard.html** (60.5 KB, modified: 2026-07-01T03:09:19.328032)
-- **Dashboards/Treg_Neuropathy.html** (62.2 KB, modified: 2026-07-01T03:09:20.141786)
-- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-07-01T03:09:36.070567)
+- **Analysis/Results/agent_state.json** (499.4 KB, modified: 2026-07-02T03:12:46.225560)
+- **Analysis/Results/clinical_trials_latest.json** (566.5 KB, modified: 2026-07-03T02:05:36)
+- **Analysis/Results/clinical_trials_summary.md** (1.6 KB, modified: 2026-07-03T02:05:36)
+- **Analysis/Results/hub_monitor_report.md** (5.4 KB, modified: 2026-07-02T02:18:00.932798)
+- **Analysis/Results/hub_monitor_state.json** (239.3 KB, modified: 2026-07-02T02:18:00.900533)
+- **Analysis/Results/literature_gap_report.md** (11.4 KB, modified: 2026-07-02T03:10:05.113971)
+- **Analysis/Results/pmid_verification.json** (255.0 KB, modified: 2026-07-02T03:10:20.736867)
+- **Analysis/Results/pubmed_recent_latest.json** (123.8 KB, modified: 2026-07-03T02:06:21)
+- **Analysis/Results/pubmed_recent_summary.md** (34.8 KB, modified: 2026-07-03T02:06:21)
+- **Analysis/Results/unfound_pmids.json** (136 B, modified: 2026-07-02T03:10:20.839761)
+- **Dashboards/Clinical_Trial_Dashboard.html** (458.5 KB, modified: 2026-07-02T03:10:05.041642)
+- **Dashboards/Drug_Repurposing_Islet.html** (54.7 KB, modified: 2026-07-02T03:10:05.479434)
+- **Dashboards/Gap_Deep_Dives.html** (205.2 KB, modified: 2026-07-02T03:10:05.255135)
+- **Dashboards/Islet_Transplant_Analysis.html** (68.8 KB, modified: 2026-07-02T03:10:05.442516)
+- **Dashboards/PMID_Verification.html** (167.7 KB, modified: 2026-07-02T03:10:20.688236)
+- **Research_Findings_Summary.md** (17.4 KB, modified: 2026-07-02T03:10:20.873118)
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 669 |
-| .md | 186 |
+| .json | 671 |
+| .md | 187 |
 | .html | 73 |
 | .py | 63 |
 | .txt | 4 |
@@ -78,7 +59,7 @@
 |--------|-------|
 | (root) | 17 |
 | .github/ISSUE_TEMPLATE | 4 |
-| Analysis/Results | 405 |
+| Analysis/Results | 408 |
 | Analysis/Results/paper_library | 1 |
 | Analysis/Results/paper_library/abstracts | 292 |
 | Analysis/Results/paper_library/fulltext | 110 |
@@ -91,26 +72,30 @@
 
 ## Review Flags
 
-- 767 result file(s) older than 14 days — may need refresh.
+- 771 result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-07-02 02:17:58*
+*Generated by hub_monitor.py — 2026-07-03 02:10:20*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-07-01.json → clinical_trials_snapshot_2026-07-02.json)
-- New trials: 2
-- Removed trials: 3
-- Status changes: 1
+### Clinical Trials (clinical_trials_snapshot_2026-07-02.json → clinical_trials_snapshot_2026-07-03.json)
+- New trials: 4
+- Removed trials: 1
+- Status changes: 2
 - New results posted: 0
 
 **Status Changes:**
-- NCT07527078: NOT_YET_RECRUITING → RECRUITING | Evaluate the Efficacy and Safety of GZR33 Injection in Patients With Type 2 Diab
+- NCT07158970: NOT_YET_RECRUITING → RECRUITING | Home-Ultrasound in Routine High-Risk Care of Patients With Gestational Diabetes 
+- NCT07039942: RECRUITING → ACTIVE_NOT_RECRUITING | French Prospective Multicentric Study in Real World
 
-### PubMed (pubmed_recent_snapshot_2026-07-01.json → pubmed_recent_snapshot_2026-07-02.json)
-- New papers: 44
-- Dropped papers: 51
+### PubMed (pubmed_recent_snapshot_2026-07-02.json → pubmed_recent_snapshot_2026-07-03.json)
+- New papers: 37
+- Dropped papers: 38
 
-**Cross-Domain New Papers (3):**
-- [42385762] Global, regional, and national burden of tuberculosis and multidrug-resistant tuberculosis by HIV st — Domains: Diabetes Biomarker, Diabetes Health Equity
-- [42387035] Tirzepatide as a multi-organ integrator in metabolic diseases: a review of molecular mechanisms and  — Domains: T2D GLP-1 New, Diabetes Microbiome
-- [42387220] Overcoming Immunological Barriers in MSC-Derived Insulin-Producing Cells through CRISPR-Based Hypoim — Domains: T1D Stem Cell Cure, Diabetes Gene Therapy
+**Cross-Domain New Papers (6):**
+- [42387310] Efficacy and Safety of Intensifying Once-Weekly Insulin Icodec Treatment With Once-Weekly Semaglutid — Domains: T2D GLP-1 New, Key Therapy: icodec
+- [42388102] Rebooting blood vessel repair: implications of the SEMA-VR CardioLink-15 trial. — Domains: T2D GLP-1 New, T2D Remission
+- [42388875] Dulaglutide versus empagliflozin as add-on therapy to metformin and sulfonylurea in type 2 diabetes: — Domains: T2D GLP-1 New, Diabetes Microbiome
+- [42389273] Omega-3 polyunsaturated fatty acids are associated with microbiota-related 18β-glycyrrhetinic acid a — Domains: T1D Stem Cell Cure, Diabetes Microbiome
+- [42390946] A Validated, Modifiable Proteomic Score from the EXSCEL Trial Predicts Cardiovascular Events in Diab — Domains: T2D GLP-1 New, Diabetes AI/ML, Diabetes Biomarker
+- [42393152] Dual branch fundus deep learning network as an enhanced multi classification system for ocular disea — Domains: Diabetes AI/ML, Diabetes Complications New
