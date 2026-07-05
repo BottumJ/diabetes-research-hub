@@ -328,14 +328,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html" class="drh-current">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -364,12 +440,12 @@
             <p>EXPLORATORY tier — biological plausibility is assessed as very low. If future research reveals GKA effects on immune modulation (not currently known), this assessment would need revision. The deprioritization recommendation is based on current mechanistic understanding only.</p>
         </div>
 
-        <div class="tabs">
-            <button class="tab-button active" data-tab="hypothesis">The Hypothesis</button>
-            <button class="tab-button" data-tab="mechanism">GKA Mechanism</button>
-            <button class="tab-button" data-tab="evidence">Evidence Assessment</button>
-            <button class="tab-button" data-tab="research">Research Path</button>
-            <button class="tab-button" data-tab="catalog">Evidence Catalog</button>
+        <div class="tabs" role="tablist">
+            <button role="tab" class="tab-button active" data-tab="hypothesis">The Hypothesis</button>
+            <button role="tab" class="tab-button" data-tab="mechanism">GKA Mechanism</button>
+            <button role="tab" class="tab-button" data-tab="evidence">Evidence Assessment</button>
+            <button role="tab" class="tab-button" data-tab="research">Research Path</button>
+            <button role="tab" class="tab-button" data-tab="catalog">Evidence Catalog</button>
         </div>
 
         <div id="hypothesis" class="tab-content active">
@@ -425,7 +501,7 @@
 
             <div class="counter-box">
                 <strong>Counter-Argument:</strong> TTP399 (liver-selective GKA) demonstrated HbA1c
-                reduction in type 1 diabetes without hypoglycemia (PMID: 33622669). This shows GKAs
+                reduction in type 1 diabetes without hypoglycemia (<a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" rel="noopener" title="View on PubMed">PMID: 33622669</a>). This shows GKAs
                 CAN work alongside insulin deficiency—suggesting efficacy may not require intact beta
                 cell mass, undermining the LADA-specific hypothesis.
             </div>
@@ -602,8 +678,8 @@
                         Analyze C-peptide decline trajectories in LADA cohorts stratified by
                         prior sulfonylurea use. Does SU use accelerate or delay beta cell loss?
                         If SUs (which stimulate secretion) do not worsen outcomes, the "accelerated
-                        burnout" concern is weakened, supporting GKA trials. Sources: UKPDS (PMID:14706052);
-                        Li et al. J Clin Endocrinol Metab 2020 (PMID:32307525); Buzzetti et al. Diabetes 2020 (PMID:32847960).
+                        burnout" concern is weakened, supporting GKA trials. Sources: UKPDS (<a href="https://pubmed.ncbi.nlm.nih.gov/14706052/" target="_blank" rel="noopener" title="View on PubMed">PMID:14706052</a>);
+                        Li et al. J Clin Endocrinol Metab 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32307525/" target="_blank" rel="noopener" title="View on PubMed">PMID:32307525</a>); Buzzetti et al. Diabetes 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a>).
                     </div>
                 </div>
 
@@ -683,7 +759,7 @@
                 <div class="evidence-item">
                     <div class="evidence-title">TTP399 in Type 1 Diabetes (SimpliciT1)</div>
                     <div class="evidence-detail">
-                        PMID: 33622669. Phase 2 trial showing HbA1c reduction with TTP399
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" rel="noopener" title="View on PubMed">PMID: 33622669</a>. Phase 2 trial showing HbA1c reduction with TTP399
                         (liver-selective GKA) in T1D. Critically, benefit observed without
                         hypoglycemia, suggesting hepatic mechanism may dominate over beta cell
                         stimulation. Most promising GKA candidate for LADA consideration.
@@ -701,7 +777,7 @@
                         No LADA data. Efficacy in T2D is underwhelming given side effect profile.
                     </div>
                     <div class="data-source">
-                        Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs 2022 (PMID:36449148) — first approval profile.
+                        Zhu et al. Nat Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551292</a>) — SEED trial; Yang et al. Nat Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35551293/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551293</a>) — DAWN trial; Syed, Drugs 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank" rel="noopener" title="View on PubMed">PMID:36449148</a>) — first approval profile.
                     </div>
                 </div>
 
@@ -715,7 +791,7 @@
                         trade-off even in T2D.
                     </div>
                     <div class="data-source">
-                        Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 2013 (PMID:24056026) — GKA beta cell preservation.
+                        Yang et al. Front Endocrinol 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37223016/" target="_blank" rel="noopener" title="View on PubMed">PMID:37223016</a>) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 2013 (<a href="https://pubmed.ncbi.nlm.nih.gov/24056026/" target="_blank" rel="noopener" title="View on PubMed">PMID:24056026</a>) — GKA beta cell preservation.
                     </div>
                 </div>
 
@@ -728,7 +804,7 @@
                         and why activation increases insulin secretion.
                     </div>
                     <div class="data-source">
-                        Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249.
+                        Diabetes. 2009 Jul;58(7):1416-28. <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank" rel="noopener" title="View on PubMed">PMID:19373249</a>.
                     </div>
                 </div>
 
@@ -741,7 +817,7 @@
                         intervention.
                     </div>
                     <div class="data-source">
-                        UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052.
+                        UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. <a href="https://pubmed.ncbi.nlm.nih.gov/14706052/" target="_blank" rel="noopener" title="View on PubMed">PMID: 14706052</a>.
                     </div>
                 </div>
 
@@ -754,7 +830,7 @@
                         not address this in LADA.
                     </div>
                     <div class="data-source">
-                        Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — International Expert Panel LADA consensus; Mishra et al. Trends Endocrinol Metab 2018 (PMID:30041834) — LADA global prevalence 4-14% of T2D; Li et al. J Clin Endocrinol Metab 2020 (PMID:32307525) — biphasic beta cell decline in LADA; Palmer et al. Diabetes 2024 (PMID:38349844) — C-peptide as surrogate endpoint.
+                        Diabetes. 2013 Dec;62(12):4297-303. <a href="https://pubmed.ncbi.nlm.nih.gov/23835325/" target="_blank" rel="noopener" title="View on PubMed">PMID:23835325</a>. (LADA review); Buzzetti et al. Diabetes 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a>) — International Expert Panel LADA consensus; Mishra et al. Trends Endocrinol Metab 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/30041834/" target="_blank" rel="noopener" title="View on PubMed">PMID:30041834</a>) — LADA global prevalence 4-14% of T2D; Li et al. J Clin Endocrinol Metab 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32307525/" target="_blank" rel="noopener" title="View on PubMed">PMID:32307525</a>) — biphasic beta cell decline in LADA; Palmer et al. Diabetes 2024 (<a href="https://pubmed.ncbi.nlm.nih.gov/38349844/" target="_blank" rel="noopener" title="View on PubMed">PMID:38349844</a>) — C-peptide as surrogate endpoint.
                     </div>
                 </div>
             </div>
