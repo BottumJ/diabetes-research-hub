@@ -1,5 +1,5 @@
 # PubMed Recent Publications Report
-**Generated:** 2026-07-05
+**Generated:** 2026-07-06
 **Lookback period:** 30 days
 **Unique papers found:** 155
 
@@ -9,18 +9,18 @@
 
 | Domain | Total Papers | Trend Signal |
 |--------|-------------|--------------|
-| Diabetes AI/ML | 207 | HIGH ACTIVITY |
-| Diabetes Microbiome | 172 | HIGH ACTIVITY |
-| T2D GLP-1 New | 171 | HIGH ACTIVITY |
-| Diabetes Biomarker | 131 | HIGH ACTIVITY |
-| Diabetes Health Equity | 62 | HIGH ACTIVITY |
-| Diabetes Multi-Omics | 55 | HIGH ACTIVITY |
+| Diabetes AI/ML | 196 | HIGH ACTIVITY |
+| T2D GLP-1 New | 169 | HIGH ACTIVITY |
+| Diabetes Microbiome | 166 | HIGH ACTIVITY |
+| Diabetes Biomarker | 125 | HIGH ACTIVITY |
+| Diabetes Health Equity | 61 | HIGH ACTIVITY |
 | T2D Remission | 53 | HIGH ACTIVITY |
-| Diabetes Gene Therapy | 48 | ACTIVE |
+| Diabetes Multi-Omics | 53 | HIGH ACTIVITY |
+| Diabetes Gene Therapy | 45 | ACTIVE |
 | Closed Loop AP | 31 | ACTIVE |
 | Diabetes Complications New | 26 | ACTIVE |
-| T1D Immunotherapy | 25 | ACTIVE |
-| T1D Stem Cell Cure | 12 | ACTIVE |
+| T1D Immunotherapy | 24 | ACTIVE |
+| T1D Stem Cell Cure | 11 | ACTIVE |
 | Diabetes Drug Repurpose | 8 | LOW |
 | LADA New Research | 8 | LOW |
 | Diabetes Epigenetics | 3 | LOW |
@@ -98,6 +98,10 @@
 
 ### T2D Remission
 
+- **Revisional Laparoscopic One Anastomosis Gastric Bypass for Weight Loss Failure after Restrictive Procedures.**
+  Obesity surgery (2026-Jul-06) | S Abdelrahim H; Elnabil-Mortada A; Boshra Gerges W
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42402507/) | [DOI](https://doi.org/10.1007/s11695-026-08821-z)
+
 - **Ginsenoside Rk1 mitigates type 2 diabetes mellitus by targeting signal transducer and activator of transcription 3 to alleviate adipocyte hypertrophy and adipose tissue inflammation in diabetic mice.**
   Journal of advanced research (2026-Jul-03) | Vong CT; Tan D; Liu M
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42398756/) | [DOI](https://doi.org/10.1016/j.jare.2026.07.009)
@@ -114,19 +118,15 @@
   Obesity surgery (2026-Jul-02) | Nor Hanipah Z; Boyer LM; Queen KE
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42390672/) | [DOI](https://doi.org/10.1007/s11695-026-08709-y)
 
-- **Potential of circulating miR-29a and miR-142-5p as biomarkers for diabetic nephropathy: a cross-sectional study.**
-  Frontiers in medicine (2026) | Liu Q; Jiao X; Xu T
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42388503/) | [DOI](https://doi.org/10.3389/fmed.2026.1804671)
-
 ### Diabetes AI/ML
-
-- **Dual-decoder multi-task network with graph attention mechanism for OCT retinal layer and fluid segmentation.**
-  BMC ophthalmology (2026-Jul-04) | Dong X; Okuwobi IP
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401859/) | [DOI](https://doi.org/10.1186/s12886-026-05081-4)
 
 - **Diagnostic coding combination patterns, CHS-DRG severity stratification, and hospitalization expenditure in pneumonia with coexisting hypertension or diabetes mellitus: a single-center cautionary case study of definitional circularity.**
   BMC health services research (2026-Jul-04) | Liu T; Li Y; Liang Y
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401880/) | [DOI](https://doi.org/10.1186/s12913-026-15020-0)
+
+- **Dual-decoder multi-task network with graph attention mechanism for OCT retinal layer and fluid segmentation.**
+  BMC ophthalmology (2026-Jul-04) | Dong X; Okuwobi IP
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401859/) | [DOI](https://doi.org/10.1186/s12886-026-05081-4)
 
 - **Interpretable deep learning to predict one year glycemic control in type 1 diabetes using real world data.**
   Scientific reports (2026-Jul-04) | Tapia-Galisteo J; Somolinos-Simón FJ; Hernando ME
@@ -142,6 +142,10 @@
 
 ### Diabetes Biomarker
 
+- **Biomarkers for Diabetic Peripheral Artery Disease: An Integrated Review and Clinical Perspective.**
+  Diabetes/metabolism research and reviews (2026-Jul) | Fang L; Ning Q; Wu Y
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42402062/) | [DOI](https://doi.org/10.1002/dmrr.70200)
+
 - **Lipidomic profiling reveals a distinct lipidomic signature of early gestational diabetes.**
   Communications medicine (2026-Jul-04) | Saadati S; Godini R; Jona E
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401700/) | [DOI](https://doi.org/10.1038/s43856-026-01765-6)
@@ -150,23 +154,19 @@
   Nature communications (2026-Jul-04) | Bledsoe X; Watkins N; Bowen-Moore T
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401576/) | [DOI](https://doi.org/10.1038/s41467-026-75193-4)
 
-- **Protective effects of ACF210, a dual GLP-1/APJ receptor agonist, against cardiovascular-kidney-metabolic syndrome induced by T2D.**
-  Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie (2026-Jul-04) | Wu Q; Wei H; Zhou H
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401045/) | [DOI](https://doi.org/10.1016/j.biopha.2026.119726)
-
 - **The Microbiome-Gut-Gonad Axis: How Microbial Metabolites Orchestrate Reproductive Physiology, Pathology, and Therapy.**
   The Journal of steroid biochemistry and molecular biology (2026-Jul-04) | El-Sehrawy AAMA; Oriquat G; Rizaev J
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401402/) | [DOI](https://doi.org/10.1016/j.jsbmb.2026.107079)
 
-- **Interlaboratory Comparison of a Glucagon and Oxyntomodulin Immuno-LC-MS/MS Assay: Implications for Diabetes Research.**
-  Clinical chemistry (2026-Jul-04) | Moradian A; Becker JO; Nierves LA
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42400596/) | [DOI](https://doi.org/10.1093/clinchem/hvag078)
+- **Protective effects of ACF210, a dual GLP-1/APJ receptor agonist, against cardiovascular-kidney-metabolic syndrome induced by T2D.**
+  Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie (2026-Jul-04) | Wu Q; Wei H; Zhou H
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401045/) | [DOI](https://doi.org/10.1016/j.biopha.2026.119726)
 
 ### Diabetes Microbiome
 
-- **Estrobolome and the Endocrine-Microbiome Axis in Breast and Endometrial Carcinogenesis.**
-  Critical reviews in oncology/hematology (2026-Jul-04) | El-Sehrawy AAMA; Farah H; Oripov F
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401355/) | [DOI](https://doi.org/10.1016/j.critrevonc.2026.105471)
+- **Association between probiotic, prebiotic, and yogurt consumption and colorectal cancer: real-world evidence from the US NHANES.**
+  Nutrition & diabetes (2026-Jul-06) | Tu CW; Wang HL
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42402613/) | [DOI](https://doi.org/10.1038/s41387-026-00432-y)
 
 - **Elevated plasma TMAO levels associated with all-cause mortality in CAD patients in South China.**
   BMC cardiovascular disorders (2026-Jul-04) | Zhang H; Peng YY; Lu XY
@@ -176,13 +176,13 @@
   The Journal of steroid biochemistry and molecular biology (2026-Jul-04) | El-Sehrawy AAMA; Oriquat G; Rizaev J
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401402/) | [DOI](https://doi.org/10.1016/j.jsbmb.2026.107079)
 
+- **Estrobolome and the Endocrine-Microbiome Axis in Breast and Endometrial Carcinogenesis.**
+  Critical reviews in oncology/hematology (2026-Jul-04) | El-Sehrawy AAMA; Farah H; Oripov F
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42401355/) | [DOI](https://doi.org/10.1016/j.critrevonc.2026.105471)
+
 - **Exercise remodels the skeletal muscle immune microenvironment to ameliorate type 2 diabetes mellitus-induced muscle atrophy: From immunometabolism to organ crosstalk.**
   Reviews in endocrine & metabolic disorders (2026-Jul-04) | Pengyu F; Huiyun X; Lijing G
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42400735/) | [DOI](https://doi.org/10.1007/s11154-026-10069-y)
-
-- **Multi-omics profiles of sex hormone-binding globulin are associated with subclinical atherosclerosis in men with HIV.**
-  Genome medicine (2026-Jul-04) | Wang Y; Xue X; Usyk M
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42400043/) | [DOI](https://doi.org/10.1186/s13073-026-01709-8)
 
 ### Diabetes Gene Therapy
 
@@ -332,6 +332,10 @@
 
 ### Diabetes Multi-Omics
 
+- **Single-cell transcriptomics-guided dynamic hydrogel delivery of artemisia argyi-derived EVs relieves ER stress and promotes diabetic wound regeneration.**
+  Journal of nanobiotechnology (2026-Jul-06) | Miao D; Suo X; Geng X
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42402577/) | [DOI](https://doi.org/10.1186/s12951-026-04759-7)
+
 - **Multi-omics profiles of sex hormone-binding globulin are associated with subclinical atherosclerosis in men with HIV.**
   Genome medicine (2026-Jul-04) | Wang Y; Xue X; Usyk M
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42400043/) | [DOI](https://doi.org/10.1186/s13073-026-01709-8)
@@ -348,10 +352,6 @@
   Molecular and cellular biochemistry (2026-Jul-03) | Li B; Wang X; Hao XL
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42397510/) | [DOI](https://doi.org/10.1007/s11010-026-05625-8)
 
-- **Oral‑gut axis in systemic disease: A barrier‑metabolism‑immunity three‑dimensional regulatory model (Review).**
-  International journal of molecular medicine (2026-Sep) | Li Q; Cheng M; Li W
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42396665/) | [DOI](https://doi.org/10.3892/ijmm.2026.5907)
-
 ---
 
 ## Key Therapy Mentions (Abstract Search)
@@ -361,12 +361,12 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 | Therapy | Papers (30d) | Status |
 |---------|-------------|--------|
 | dapagliflozin | 50 | ACTIVE |
-| orforglipron | 12 | ACTIVE |
+| orforglipron | 11 | ACTIVE |
 | retatrutide | 6 | ACTIVE |
 | teplizumab | 6 | ACTIVE |
 | CagriSema | 5 | LOW |
-| baricitinib | 4 | LOW |
 | icodec | 4 | LOW |
+| baricitinib | 3 | LOW |
 | zimislecel | 0 | NONE |
 
 ### orforglipron
@@ -421,9 +421,9 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
   Modern rheumatology case reports (2026-Jun-22) | Ogawa T; Tamura M; Maeda A
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42329752/) | [DOI](https://doi.org/10.1093/mrcr/rxag044)
 
-- **Body mass index and baricitinib treatment effect in hospitalized adults with COVID-19: A secondary analysis of ACTT-2.**
-  Heart & lung : the journal of critical care (2026-Jun-05) | Rigsby R; Gaulton TG
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42247829/) | [DOI](https://doi.org/10.1016/j.hrtlng.2026.102870)
+- **Improved conditioning for hematopoietic chimerism induces islet tolerance to cure diabetes.**
+  JCI insight (2026-Jun-08) | Ramos SA; Bhagchandani P; Burgos DM
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42013280/) | [DOI](https://doi.org/10.1172/jci.insight.194491)
 
 ### teplizumab
 
@@ -505,10 +505,6 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: T2D Remission, Diabetes Multi-Omics
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42394776/)
 
-- **Beyond HbA1c: A CGM-centred three-pillar framework for glycaemic variability in pre-diabetes and type 2 diabetes.**
-  Domains: T2D Remission, Closed Loop AP
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42357829/)
-
 - **Multi-omics integration identifies macrophage senescence driven by the RUNX1-P53 axis as a key mechanism in diabetic foot ulcer.**
   Domains: Diabetes AI/ML, Diabetes Multi-Omics
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42399485/)
@@ -534,4 +530,4 @@ These papers span multiple research domains -- potentially high-value for synthe
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42296503/)
 
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-07-05*
+*Generated by baseline_pubmed_alerts.py -- 2026-07-06*
