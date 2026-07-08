@@ -1,8 +1,8 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-07-07 03:10
+**Generated:** 2026-07-06 03:09
 **Source:** PubMed E-utilities API (esearch.fcgi)
-**Date range:** 2020/01/01 to 2026/07/07
+**Date range:** 2020/01/01 to 2026/07/05
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
@@ -74,6 +74,7 @@ These domain pairs show high gap scores but have not been classified as either m
 | Domain 1 | Domain 2 | Gap Score | Joint Pubs |
 |----------|----------|-----------|------------|
 | Insulin Resistance | Closed Loop / AP | 100.0 | 3 |
+| Islet Transplant | Retinopathy | 100.0 | 1 |
 | Epigenetics | LADA | 100.0 | 1 |
 | Treg / CAR-T | Glucokinase | 100.0 | 0 |
 | SGLT2 Inhibitors | Personalized Nutr | 100.0 | 1 |
@@ -84,7 +85,6 @@ These domain pairs show high gap scores but have not been classified as either m
 | Autoimmunity T1D | Health Equity | 99.9 | 3 |
 | Islet Transplant | SGLT2 Inhibitors | 99.9 | 2 |
 | Islet Transplant | Microbiome Gut | 99.9 | 1 |
-| Islet Transplant | Retinopathy | 99.9 | 2 |
 | Islet Transplant | Nephropathy DKD | 99.9 | 2 |
 | Islet Transplant | Neuropathy | 99.9 | 1 |
 | Islet Transplant | Gestational DM | 99.9 | 1 |
@@ -107,36 +107,36 @@ These domain pairs show high gap scores but have not been classified as either m
 
 | Domain | Publications | Relative Activity |
 |--------|-------------|-------------------|
-| Prevention / DPP | 79,731 | ████████████████████ |
-| CV Complications | 25,628 | ██████░░░░░░░░░░░░░░ |
-| Insulin Resistance | 19,895 | ████░░░░░░░░░░░░░░░░ |
-| Retinopathy | 16,748 | ████░░░░░░░░░░░░░░░░ |
-| Gestational DM | 15,141 | ███░░░░░░░░░░░░░░░░░ |
-| Nephropathy DKD | 13,968 | ███░░░░░░░░░░░░░░░░░ |
-| GLP-1 Agonists | 13,024 | ███░░░░░░░░░░░░░░░░░ |
-| Metabolomics | 12,425 | ███░░░░░░░░░░░░░░░░░ |
-| AI / ML Predict | 11,313 | ██░░░░░░░░░░░░░░░░░░ |
-| Microbiome Gut | 10,273 | ██░░░░░░░░░░░░░░░░░░ |
-| Youth Diabetes | 7,979 | ██░░░░░░░░░░░░░░░░░░ |
-| Epigenetics | 7,508 | █░░░░░░░░░░░░░░░░░░░ |
-| SGLT2 Inhibitors | 7,366 | █░░░░░░░░░░░░░░░░░░░ |
-| CGM Technology | 6,668 | █░░░░░░░░░░░░░░░░░░░ |
-| GWAS / Polygenic | 5,299 | █░░░░░░░░░░░░░░░░░░░ |
-| Proteomics | 4,791 | █░░░░░░░░░░░░░░░░░░░ |
-| Autoimmunity T1D | 4,555 | █░░░░░░░░░░░░░░░░░░░ |
-| Remission T2D | 4,261 | █░░░░░░░░░░░░░░░░░░░ |
-| Neuropathy | 3,136 | ░░░░░░░░░░░░░░░░░░░░ |
-| Gene Therapy | 2,284 | ░░░░░░░░░░░░░░░░░░░░ |
-| Health Equity | 1,979 | ░░░░░░░░░░░░░░░░░░░░ |
-| Closed Loop / AP | 1,891 | ░░░░░░░░░░░░░░░░░░░░ |
-| Multi-Omics | 1,662 | ░░░░░░░░░░░░░░░░░░░░ |
+| Prevention / DPP | 79,666 | ████████████████████ |
+| CV Complications | 25,615 | ██████░░░░░░░░░░░░░░ |
+| Insulin Resistance | 19,885 | ████░░░░░░░░░░░░░░░░ |
+| Retinopathy | 16,735 | ████░░░░░░░░░░░░░░░░ |
+| Gestational DM | 15,133 | ███░░░░░░░░░░░░░░░░░ |
+| Nephropathy DKD | 13,956 | ███░░░░░░░░░░░░░░░░░ |
+| GLP-1 Agonists | 13,007 | ███░░░░░░░░░░░░░░░░░ |
+| Metabolomics | 12,418 | ███░░░░░░░░░░░░░░░░░ |
+| AI / ML Predict | 11,297 | ██░░░░░░░░░░░░░░░░░░ |
+| Microbiome Gut | 10,268 | ██░░░░░░░░░░░░░░░░░░ |
+| Youth Diabetes | 7,975 | ██░░░░░░░░░░░░░░░░░░ |
+| Epigenetics | 7,503 | █░░░░░░░░░░░░░░░░░░░ |
+| SGLT2 Inhibitors | 7,359 | █░░░░░░░░░░░░░░░░░░░ |
+| CGM Technology | 6,660 | █░░░░░░░░░░░░░░░░░░░ |
+| GWAS / Polygenic | 5,297 | █░░░░░░░░░░░░░░░░░░░ |
+| Proteomics | 4,786 | █░░░░░░░░░░░░░░░░░░░ |
+| Autoimmunity T1D | 4,552 | █░░░░░░░░░░░░░░░░░░░ |
+| Remission T2D | 4,257 | █░░░░░░░░░░░░░░░░░░░ |
+| Neuropathy | 3,135 | ░░░░░░░░░░░░░░░░░░░░ |
+| Gene Therapy | 2,283 | ░░░░░░░░░░░░░░░░░░░░ |
+| Health Equity | 1,976 | ░░░░░░░░░░░░░░░░░░░░ |
+| Closed Loop / AP | 1,887 | ░░░░░░░░░░░░░░░░░░░░ |
+| Multi-Omics | 1,658 | ░░░░░░░░░░░░░░░░░░░░ |
 | Beta Cell Regen | 1,457 | ░░░░░░░░░░░░░░░░░░░░ |
-| Treg / CAR-T | 944 | ░░░░░░░░░░░░░░░░░░░░ |
+| Treg / CAR-T | 943 | ░░░░░░░░░░░░░░░░░░░░ |
 | Glucokinase | 852 | ░░░░░░░░░░░░░░░░░░░░ |
 | Personalized Nutr | 655 | ░░░░░░░░░░░░░░░░░░░░ |
 | Drug Repurposing | 604 | ░░░░░░░░░░░░░░░░░░░░ |
 | LADA | 575 | ░░░░░░░░░░░░░░░░░░░░ |
-| Islet Transplant | 248 | ░░░░░░░░░░░░░░░░░░░░ |
+| Islet Transplant | 247 | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---
 
