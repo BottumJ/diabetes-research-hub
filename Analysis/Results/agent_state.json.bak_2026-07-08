@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-08",
- "last_run": "2026-07-08",
+ "last_updated": "2026-07-07",
+ "last_run": "2026-07-07",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5057,7 +5057,7 @@
   },
   "9": {
    "tier": "EXPLORATORY",
-   "last_audited": "2026-07-08",
+   "last_audited": "2026-06-30",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5078,13 +5078,6 @@
      "auditor": "scheduled-iterate",
      "new_evidence_found": false,
      "finding": "No registered or published dorzagliatin/GKA-in-LADA human trial as of 2026-06. New dorzagliatin literature is T2D/mechanism only: ADA mechanistic paper PMID 40272935 (unique clinical success in T2D) and PMID 41659332 (Mendelian-randomization + animal study on cognitive impairment) - neither addresses LADA. Gap remains EXPLORATORY (corpus_evidence_points=0); promotion_candidate stays False. Next audit ~2026-07-30."
-    },
-    {
-     "date": "2026-07-08",
-     "auditor": "scheduled-iterate",
-     "new_evidence_found": false,
-     "finding": "No registered or published glucokinase-activator (dorzagliatin/GKA)-in-LADA human trial as of 2026-07. Web sweep surfaced a NEW LADA interventional trial — Cofrogliptin (a DPP-4 inhibitor, NOT a GKA) on beta-cell function, NCT07460336, start 2026-05-15 — but it does not touch the GKA axis. Dorzagliatin literature remains T2D/MODY only. Retain EXPLORATORY (corpus_evidence_points=0), no promotion.",
-     "action": "Retain EXPLORATORY. Next audit due 2026-08-05."
     }
    ],
    "next_audit_due": "2026-07-03"
@@ -5398,7 +5391,7 @@
   },
   "15": {
    "tier": "BRONZE",
-   "last_audited": "2026-07-08",
+   "last_audited": "2026-06-30",
    "corpus_evidence_points": 1,
    "credibility_issues": [],
    "promotion_candidate": true,
@@ -5438,22 +5431,9 @@
      "auditor": "scheduled-iterate",
      "new_evidence_found": false,
      "notes": "No single study yet DIRECTLY bridges SGLT2 inhibition with nutritional personalization. Closest adjacent evidence: (a) dapagliflozin + protein-rich vs fat-rich formula-diet RCT (PMC8166978, n=130, 24wk) - combines an SGLT2i with structured diet but tests macronutrient composition, not individualized/precision nutrition; (b) precision/personalised-nutrition systematic review in prediabetes/metabolic syndrome (PMC11124316, 7 RCTs, n=873) - not SGLT2i-specific. Second INDEPENDENT source directly at the intersection still absent. Retain BRONZE; promotion_candidate stays True; NO SILVER promotion this cycle. Next audit ~2026-07-30."
-    },
-    {
-     "date": "2026-07-08",
-     "auditor": "scheduled-iterate",
-     "new_evidence_found": true,
-     "notes": "SILVER-promotion check: identified a genuine SECOND source at the SGLT2i x dietary-personalization intersection — Yabe et al., Scientific Reports 2021 (PMC8166978, PMID 34059744, UMIN000024580): multicenter double-blind RCT (n=130 T2D on dapagliflozin) randomizing patients to protein-rich vs fat-rich formula diet for 24wk, explicitly motivated by SGLT2i-induced skeletal-muscle loss; protein arm showed greater fasting-insulin/body-fat reduction and HDL rise. This is macronutrient-level dietary tailoring in SGLT2i-treated patients, a real bridge but NOT individualized/precision (genotype/microbiome/CGM-guided) nutrition. 2026 SR landscape (Joongpan et al. Pharmacol Res Perspect 2026 on SGLT2i & muscle health) confirms muscle-loss signal but our targeted search explicitly found NO SGLT2i x *personalized*-nutrition study — the precision-nutrition bridge is still absent.",
-     "action": "Retain BRONZE. Keep promotion_candidate=true. Do NOT promote to SILVER yet: the second source is macronutrient-composition tailoring, not precision/individualized nutrition. Promotion trigger = a study pairing SGLT2i with genotype/microbiome/CGM-guided individualized nutrition. Next audit 2026-08-05."
     }
    ],
-   "next_audit_due": "2026-07-03",
-   "candidate_second_source": {
-    "pmid": "34059744",
-    "citation": "Yabe et al., Sci Rep 2021, PMC8166978, UMIN000024580",
-    "assessment": "macronutrient-level SGLT2i x diet RCT; near-bridge, not precision nutrition",
-    "logged": "2026-07-08"
-   }
+   "next_audit_due": "2026-07-03"
   }
  },
  "work_queue": [
@@ -5463,19 +5443,41 @@
    "target": "git PUSH BLOCKED - REQUIRES USER (reconfirmed 2026-07-02). Sandbox CAN commit locally via .git lock rename trick (done this run - HEAD ahead ~43 commits) but PUSH fails: no GitHub auth ('could not read Username for https://github.com'). Renamed .git/*.lock.stale_* cannot be unlinked (OneDrive 'Operation not permitted'), accumulating harmlessly in .git. USER ACTION: cd Diabetes_Research; git push  (optionally clean .git/*.stale_* cruft).",
    "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth. || 2026-06-03: Confirmed blocker persists — .git/index.lock and .git/HEAD.lock still present (root-owned). Sandbox rm permission denied. State written to agent_state.json on disk (persists for next run). Now ~33 unpushed commits (this run added Validated paths + 2 gap audits + pipeline rebuild but commit failed). USER ACTION: delete .git/HEAD.lock and .git/index.lock from Windows, then git push origin main. || 2026-06-05: index.lock + HEAD.lock cleared via rename trick; commit 2adb8ce SUCCEEDED in sandbox. Push still blocked (no GitHub auth: could not read Username for https://github.com). 33 commits unpushed. USER must git push from local terminal. || 2026-06-10: commit attempt blocked again — .git/index.lock unremovable (Operation not permitted, OneDrive) and push fails (no GitHub auth). Branch ahead of origin/main by 37 commits. All 2026-06-10 data changes saved to working files. USER must clear locks + git push from local PowerShell. || 2026-06-12: commit blocked again - .git/index.lock recreated (Operation not permitted on OneDrive), .git/objects tmp_obj writes denied. Branch still ahead of origin/main by ~37 commits. All 2026-06-12 changes (state, 5 path validations, pipeline rebuild) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-16: commit 6402c50 SUCCEEDED in sandbox via index.lock rename/rm trick (today's path validations + state + run report). Working tree CLEAN. PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 39 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-17: locks cleared via mv trick, repo operable, commit attempted; PUSH still blocked (no GitHub auth in sandbox). ~40 commits ahead. USER: git push from local PowerShell. || 2026-06-23: commit blocked again - .git/index.lock + HEAD.lock unremovable (Operation not permitted, OneDrive). All 2026-06-23 changes (state, 2 path re-validations, run report) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-25: commit 4c1de51 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's path validations + state + pipeline rebuild). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 41 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-27: commit e830598 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's 2 path reaffirmations + Gap#2 early audit + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 42 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-07-03: commit SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (tacrolimus path reaffirmation + PMID 39836342 + state + pipeline rebuild 24 stages). PUSH still BLOCKED (no GitHub auth). Now 45 commits ahead of origin/main. USER must run git push from local PowerShell.",
    "queued_date": "2026-05-17",
-   "unpushed_commits_count": 46,
+   "unpushed_commits_count": 45,
    "updated": "2026-05-31",
-   "last_attempt": "2026-07-08",
+   "last_attempt": "2026-07-03",
    "last_updated": "2026-06-17",
    "description": "Push local commits to origin/main. Local commits succeed in sandbox; push needs user GitHub auth.",
    "last_seen": "2026-06-13",
-   "last_confirmed_blocked": "2026-07-08"
+   "last_confirmed_blocked": "2026-06-27"
+  },
+  {
+   "type": "audit_gap",
+   "priority": 3,
+   "target": "Gap #9 (EXPLORATORY, GKA-in-LADA) OVERDUE - was due 2026-07-03, last audited 2026-06-30. Audit next run."
+  },
+  {
+   "type": "audit_gap",
+   "priority": 3,
+   "target": "Gap #15 (BRONZE, SGLT2i x personalized nutrition, promotion_candidate) was due 2026-07-03, last 2026-06-30. Audit next run for 2nd independent source."
   },
   {
    "priority": 4,
    "type": "search_pubmed",
    "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - checked 2026-06-29, still pre-FIH (program initiating). Next 2026-08-02.",
    "added": "2026-06-10"
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #10 next monthly audit — due 2026-08-05; promotion_candidate; still awaiting setting-segmented LADA prevalence SR/MA (audited 2026-07-05).",
+   "queued_date": "2026-05-30"
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #8 next monthly audit — due 2026-08-05; watch for LADA-specific GAD-Alum+VitD RCT readout (audited 2026-07-05).",
+   "queued_date": "2026-05-30"
   },
   {
    "type": "check_combination",
@@ -5547,9 +5549,28 @@
   {
    "priority": 5,
    "type": "audit_gap",
+   "target": "Gap #15 (BRONZE, promotion_candidate) audited 2026-06-30 - no direct SGLT2i x personalized-nutrition bridge yet; next monthly audit ~2026-07-30.",
+   "added": "2026-06-03",
+   "next_due": "2026-07-30"
+  },
+  {
+   "priority": 5,
+   "type": "audit_gap",
+   "target": "Gap #9 (EXPLORATORY, GKA in LADA) audited 2026-06-30 - no LADA human trial; next monthly audit ~2026-07-30.",
+   "added": "2026-06-03",
+   "next_due": "2026-07-30"
+  },
+  {
+   "priority": 5,
+   "type": "audit_gap",
    "target": "Gap #14 (BRONZE) - next monthly audit due ~2026-07-10; watch for LADA-specific personalized-nutrition RCT/SR",
    "added": "2026-06-10",
    "next_due": "2026-07-10"
+  },
+  {
+   "type": "audit_gap",
+   "priority": 6,
+   "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24."
   },
   {
    "type": "audit_gap",
@@ -5571,35 +5592,16 @@
    "added": "2026-06-30"
   },
   {
-   "type": "validate_path",
-   "priority": 5,
-   "target": "Next-stalest DISTINCT PARTIALLY path after empagliflozin->inflammation (done 2026-07-05): verapamil->T1D (2026-04-22) - re-check Ver-A-T1D secondary/subgroup analyses.",
-   "id": null,
-   "status": null
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #10 next monthly audit — due 2026-08-05; promotion_candidate; still awaiting setting-segmented LADA prevalence SR/MA (audited 2026-07-05).",
-   "queued_date": "2026-05-30"
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #8 next monthly audit — due 2026-08-05; watch for LADA-specific GAD-Alum+VitD RCT readout (audited 2026-07-05).",
-   "queued_date": "2026-05-30"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24."
-  },
-  {
    "priority": 6,
    "type": "validate_path",
    "target": "oxidative_stress -> T2D reaffirmed VALIDATED 2026-06-30 (therapy=PARTIAL). Re-check for any antioxidant-supplementation RCT showing hard glycemic/prevention endpoint. Next ~2026-08-01.",
    "added": "2026-06-30",
    "next_check": "2026-08-01"
+  },
+  {
+   "type": "full_rebuild_verify",
+   "priority": 7,
+   "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-02 (24 stages [OK]; 261/261 verified, 0 not found). Re-run ~weekly."
   },
   {
    "type": "validate_path",
@@ -5611,6 +5613,13 @@
    "type": "check_combination",
    "priority": 6,
    "target": "Confirm whether Ver-A-T1D primary reached PEER-REVIEWED Diabetologia pub (DOI 10.1007/s00125-025-06490-8 still UNVERIFIED 2026-07-04). If confirmed, restore DOI citation; else keep EASD/news sourcing. Next ~2026-08-04."
+  },
+  {
+   "type": "validate_path",
+   "priority": 5,
+   "target": "Next-stalest DISTINCT PARTIALLY path after empagliflozin->inflammation (done 2026-07-05): verapamil->T1D (2026-04-22) - re-check Ver-A-T1D secondary/subgroup analyses.",
+   "id": null,
+   "status": null
   },
   {
    "type": "monitor_trial",
@@ -5629,23 +5638,6 @@
    "type": "audit_gap",
    "priority": 6,
    "target": "Gap #14 (BRONZE LADA x personalized nutrition) next monthly audit due ~2026-08-07; watch for Berberine+Inulin LADA RCT (PMC9241519) RESULTS publication as potential 2nd source."
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #9 (EXPLORATORY, GKA-in-LADA) next audit — due 2026-08-05 (audited 2026-07-08, no GKA-LADA trial).",
-   "queued_date": "2026-07-08"
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #15 (BRONZE, SGLT2i x nutrition, promotion_candidate) next audit — due 2026-08-05; watch for SGLT2i x PRECISION-nutrition (genotype/microbiome/CGM) study to trigger SILVER. 2nd macronutrient-level source already logged (PMC8166978).",
-   "queued_date": "2026-07-08"
-  },
-  {
-   "type": "full_rebuild_verify",
-   "priority": 7,
-   "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-02 (24 stages [OK]; 261/261 verified, 0 not found). Re-run ~weekly."
   }
  ],
  "run_history": [
@@ -6809,10 +6801,6 @@
   {
    "date": "2026-07-07",
    "summary": "Tue 2026-07-07 run (no Mon weekly sweep). All 285 papers remain vetted (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>42M), 0 zero-SAE/zero-rejection; 'achieves'/'cure' hits all benign (TTP399 selectivity, LADA cost-eff model, microbiome macro-AUC, properly-caveated preclinical/category labels). PATH (stalest overall, not the usual PARTIALLY target): BHB_to_NLRP3_inhibition (VALIDATED, last touched 2026-04-25, 73d) REAFFIRMED VALIDATED. +2 peer-reviewed 2025 PMIDs: 40055596 (BMC Nephrol review, captures previously-uncaptured source) and 40793083 (J Diabetes multi-cohort + Mendelian randomization: higher circulating BHB -> LOWER ESRD risk in DKD, nonlinear). Human OUTCOME association strengthened. Offsetting caveat added from bioRxiv preprint 2025.05.01.650510 (no PMID, weight cautiously): only ACID-form/low-pH BHB inhibits NLRP3, sodium-BHB does not -> questions whether modest neutral-pH SGLT2i-driven BHB rise engages NLRP3. Net: no tier change, clinical_confidence stays MEDIUM; SGLT2i->NLRP3 remains multi-mechanism. next_audit 2026-09-01. GAP: Gap #14 (BRONZE, LADA x personalized nutrition, stalest BRONZE at 27d) monthly audit -> retain BRONZE, no promotion; still no LADA-specific personalized-nutrition RCT results; nearest adjacent = Berberine+Inulin LADA RCT protocol (PMC9241519) + Cofrogliptin-LADA NCT07460336 (pharmacologic). PIPELINE: run_quality_improvements.py all 41 stages [OK], PMIDs verified vs PubMed API. GIT: local commit attempted; PUSH still BLOCKED (no GitHub auth in sandbox) - requires user 'git push'."
-  },
-  {
-   "date": "2026-07-08",
-   "summary": "Wed 2026-07-08 run (no Mon weekly sweep). All 285 papers remain vetted (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN (no fabricated PMIDs >=42M; only 'curative' hits are the detector regex in verify_before_deploy.py). Audited 2 OVERDUE gaps: Gap#9 GKA-in-LADA stays EXPLORATORY (no GKA-LADA trial; new Cofrogliptin/DPP-4i LADA trial NCT07460336 noted but off-axis); Gap#15 SGLT2ixnutrition stays BRONZE but logged genuine 2nd near-source (dapagliflozin protein/fat RCT PMC8166978) — held short of SILVER (macronutrient tailoring, not precision nutrition). Pipeline rebuild 41/41 [OK]."
   }
  ],
  "topic_checks": {
