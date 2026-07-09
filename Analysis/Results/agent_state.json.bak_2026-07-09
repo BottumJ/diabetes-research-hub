@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-09",
- "last_run": "2026-07-09",
+ "last_updated": "2026-07-08",
+ "last_run": "2026-07-08",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -4992,7 +4992,7 @@
   },
   "7": {
    "tier": "SILVER",
-   "last_audited": "2026-07-09",
+   "last_audited": "2026-05-31",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5021,14 +5021,8 @@
       "NEJMoa1907863 — Six-month RCT of closed-loop control in T1D"
      ],
      "verdict": "Gap REMAINS REAL at SILVER. No promotion, no demotion. Cross-domain blind spot persists as of May 2026."
-    },
-    {
-     "date": "2026-07-09",
-     "new_evidence_found": false,
-     "notes": "Web search 'polygenic risk score T1D closed-loop automated insulin delivery 2026' - STILL no study links PRS/GRS predictions to closed-loop/AID response or personalization. PRS side advanced: a trans-ancestry T1D PRS is now formally published in Diabetologia 2026 (doi:10.1007/s00125-026-06706-5), and prior work shows PRS lifts T1D classification-algorithm PPV (Diabetes Care 2023, PMC10090893: 70->97% White, 53->100% non-White). But the specific PRS x closed-loop intersection remains empty. Gap stays SILVER: well-motivated, genuinely open, no direct corpus/external evidence connecting the two axes. Next audit ~2026-08-09."
     }
-   ],
-   "next_due": "2026-08-09"
+   ]
   },
   "8": {
    "tier": "SILVER",
@@ -5506,8 +5500,8 @@
   {
    "priority": 5,
    "type": "search_pubmed",
-   "target": "Tegoprubart islet transplant PEER-REVIEWED publication - UPDATED 2026-07-06: Eledon June-2026 readout now reports ALL 12 IIT participants insulin-independent (median/max follow-up 8/22mo, mean recent HbA1c ~5.4%), up from 10/10; no rejection, no de novo DSA, no nephrotoxicity. STILL press-release/HCPLive/ADA only - NO peer-reviewed journal publication yet. 2026-07-09 recheck: Eledon UChicago IIT still reports 12/12 insulin-independent (ADA Jun-2026, mean recent HbA1c ~5.4%, no rejection/de novo DSA/nephrotoxicity) but ONLY via press release (GlobeNewswire 2026-06-08), HCPLive, StockTitan - NO peer-reviewed journal publication yet. Next 2026-08-02.",
-   "last_updated": "2026-07-09"
+   "target": "Tegoprubart islet transplant PEER-REVIEWED publication - UPDATED 2026-07-06: Eledon June-2026 readout now reports ALL 12 IIT participants insulin-independent (median/max follow-up 8/22mo, mean recent HbA1c ~5.4%), up from 10/10; no rejection, no de novo DSA, no nephrotoxicity. STILL press-release/HCPLive/ADA only - NO peer-reviewed journal publication yet. Next 2026-08-02.",
+   "last_updated": "2026-07-06"
   },
   {
    "priority": 5,
@@ -6819,10 +6813,6 @@
   {
    "date": "2026-07-08",
    "summary": "Wed 2026-07-08 run (no Mon weekly sweep). All 285 papers remain vetted (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN (no fabricated PMIDs >=42M; only 'curative' hits are the detector regex in verify_before_deploy.py). Audited 2 OVERDUE gaps: Gap#9 GKA-in-LADA stays EXPLORATORY (no GKA-LADA trial; new Cofrogliptin/DPP-4i LADA trial NCT07460336 noted but off-axis); Gap#15 SGLT2ixnutrition stays BRONZE but logged genuine 2nd near-source (dapagliflozin protein/fat RCT PMC8166978) — held short of SILVER (macronutrient tailoring, not precision nutrition). Pipeline rebuild 41/41 [OK]."
-  },
-  {
-   "date": "2026-07-09",
-   "summary": "Thu 2026-07-09 run (no Mon weekly sweep). All 285 papers remain vetted (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>=42M), 0 zero-SAE/zero-rejection; 'cure/achieves' hits all benign (category labels, PubMed query strings, caveated CAR-T access copy, TTP399 selectivity, microbiome macro-AUC). PATH (stalest, 73d): verapamil_txnip_beta_cell_t1d DOWNGRADED VALIDATED->PARTIALLY_VALIDATED. Ver-A-T1D (Pieber/Graz, n=136 adults, largest independent adult RCT) reported NEUTRAL 12-mo C-peptide primary at EASD 2025, contradicting the smaller positive Ovalle 2018 adult signal; pediatric CLVer (PMID 36826844) stays positive & TXNIP mechanism robust, so mechanism sound / adult efficacy now uncertain. Fixed 2 dashboard claims in build_drug_repurposing_screen.py: (1) exec-summary 'RCT-proven in T1D' softened; (2) corrected a factual misattribution that credited CLVer's ~30% C-peptide figure to Ver-A-T1D. GAP #7 audited (PRS x closed-loop/AID): stays SILVER - new trans-ancestry T1D PRS published in Diabetologia 2026 (doi 10.1007/s00125-026-06706-5) but STILL zero studies linking PRS to closed-loop response; intersection remains open. QUEUE: tegoprubart IIT still 12/12 insulin-independent but press-release only (GlobeNewswire 2026-06-08/ADA), NO peer-reviewed pub - next 2026-08-02. Pipeline rebuild 41/41 [OK], exit 0. NOTE: sandbox OneDrive mount served a stale/truncated copy of the one edited script; real file verified correct via file tools + reconstruction-parse, then converged."
   }
  ],
  "topic_checks": {
@@ -7173,19 +7163,14 @@
   },
   "verapamil_txnip_beta_cell_t1d": {
    "path_name": "Verapamil -> TXNIP suppression -> beta cell preservation (T1D)",
-   "rating": "PARTIALLY_VALIDATED",
+   "rating": "VALIDATED",
    "rationale": "Two independent RCTs confirm sustained C-peptide preservation. Ovalle 2018 (Nat Med, NCT02372253, n=24 completers, adults) showed verapamil improved MMTT-stimulated C-peptide AUC at both 3 and 12 months (prespecified primary endpoint), with lower insulin requirement increase and fewer hypoglycemic events. Forlenza CLVer trial 2023 (JAMA, n=88 pediatric ages 7-17) showed C-peptide 30% higher at 52 weeks vs placebo, with 95% vs 71% retaining peak C-peptide >=0.2 pmol/mL. Both trials used similar dosing and endpoint timing. Mechanism (TXNIP suppression) consistent with preclinical literature. AEs comparable to placebo.",
    "external_pmids": [
     "29988125",
     "36826844"
    ],
    "caveats": "Both trials are short-term (12 months). The 2022 follow-up exploratory work (Nat Commun, Ovalle group) showed broader systemic effects but did not establish durability beyond 1 year. Ver-A-T1D protocol (PMC11605811) is a multicenter RCT still enrolling - longer-term durability and any disease-modification beyond C-peptide preservation remain open.",
-   "validated_date": "2026-07-09",
-   "revisit_2026_07_09": "DOWNGRADED VALIDATED->PARTIALLY_VALIDATED. Ver-A-T1D (Pieber/Graz; n=136 adults, 21 sites, 6 EU countries; recruitment completed May 2024), the largest and most rigorous independent ADULT replication, reported a NEUTRAL primary at EASD 2025 (Vienna, Sep 2025): NO significant C-peptide (AUC) difference vs placebo at 12 months in ITT, and no difference at 3/6/9 months. This directly contradicts the positive adult signal from the smaller Ovalle 2018 trial (n=24 completers, PMID 29988125). The pediatric CLVer RCT (Forlenza JAMA 2023, n=88, PMID 36826844) remains positive at 52 weeks, and the TXNIP/L-type-Ca-channel mechanism is robust in preclinical work. Net: mechanism sound; pediatric preservation replicated; adult efficacy now UNCERTAIN after a well-powered negative primary. 2-yr AUC and an open-label extension (>3yr) are planned for Ver-A-T1D. As of Jul 2026 the EASD result appears conference-presented; peer-reviewed full publication not yet confirmed.",
-   "external_refs_2026": {
-    "EASD2025_Ver-A-T1D": "Pieber et al., Ver-A-T1D primary results presented EASD 2025 (news-medical 20250918; healio 20250924) - neutral 12-mo C-peptide.",
-    "PMC11605811": "Ver-A-T1D protocol (multicentre RCT)."
-   }
+   "validated_date": "2026-04-27"
   },
   "rituximab -> T1D": {
    "status": "PARTIALLY_VALIDATED",
@@ -8014,9 +7999,10 @@
   "credibility_2026_07_02": "A DOI recorded in a prior run (Ver-A-T1D Diabetologia) failed independent web re-confirmation. Practice: flag single-source DOIs as UNVERIFIED until directly hit, rather than propagating."
  },
  "last_path_validation_batch": {
-  "date": "2026-07-09",
+  "date": "2026-07-06",
   "paths": [
-   "verapamil_txnip_beta_cell_t1d"
+   "verapamil -> T1D",
+   "semaglutide -> retinopathy"
   ]
  }
 }

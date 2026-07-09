@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-07-08T03:08:16.770826",
+  "timestamp": "2026-07-09T03:16:05.025177",
   "summary": {
     "WEAK": 132,
     "CONFIRMED": 63,
     "MISMATCH": 8,
-    "PLAUSIBLE": 57,
+    "PLAUSIBLE": 58,
     "NO_DATA": 1
   },
-  "total_papers": 261,
+  "total_papers": 262,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -2800,7 +2800,7 @@
       "score": "WEAK",
       "confidence": 0.007,
       "details": "1/151 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
-      "claim_count": 68,
+      "claim_count": 67,
       "claims": [
         {
           "file": "build_cart_access.py",
@@ -4206,6 +4206,23 @@
           "file": "add_citations.py",
           "line": 111,
           "text": "Genome-wide association studies have identified approximately 700 genetic variants associated with T2D risk across multi"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "36826844": {
+      "pmid": "36826844",
+      "title": "Effect of Verapamil on Pancreatic Beta Cell Function in Newly Diagnosed Pediatric Type 1 Diabetes: A Randomized Clinical Trial.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.25,
+      "details": "3/12 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 1151,
+          "text": "Key findings: (1) {len([d for d in CANDIDATES.values() if d[\"generic_cost\"] < 1.00])} candidates cost under $1/month"
         }
       ],
       "has_abstract": true,
