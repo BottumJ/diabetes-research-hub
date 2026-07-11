@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-11",
- "last_run": "2026-07-11",
+ "last_updated": "2026-07-09",
+ "last_run": "2026-07-09",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5522,7 +5522,7 @@
   {
    "priority": 5,
    "type": "check_combination",
-   "target": "Ver-A-T1D verapamil ADULT RCT - primary presented EASD Sep-2025 (Pieber), equivocal/NEGATIVE (no significant 2h-MMTT C-peptide AUC diff vs placebo; underpowered, placebo decline ~0.09). RESOLVED 2026-07-11: NO peer-reviewed journal pub of the human RCT yet - source EASD 2025 + news. The DOI 10.1007/s00125-025-06490-8 previously attached here is a DIFFERENT, REAL paper (PMID 40650745, Diabetologia 2025 NOD-MOUSE verapamil+low-dose mATG combo, preclinical) - NOT the human RCT. Watch for RCT secondary/subgroup + 2yr AUC + OLE. Next 2026-09-02."
+   "target": "Ver-A-T1D verapamil RCT - primary already published NEGATIVE (Diabetologia doi:10.1007/s00125-025-06490-8); reaffirmed 2026-06-24. Watch for secondary/subgroup analyses. Next 2026-09-02."
   },
   {
    "priority": 5,
@@ -5622,8 +5622,8 @@
   },
   {
    "type": "check_combination",
-   "priority": 8,
-   "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04."
+   "priority": 6,
+   "target": "Confirm whether Ver-A-T1D primary reached PEER-REVIEWED Diabetologia pub (DOI 10.1007/s00125-025-06490-8 still UNVERIFIED 2026-07-04). If confirmed, restore DOI citation; else keep EASD/news sourcing. Next ~2026-08-04."
   },
   {
    "type": "monitor_trial",
@@ -6854,10 +6854,6 @@
   {
    "date": "2026-07-10",
    "summary": "Fri 2026-07-10 run (no Mon weekly sweep). All 285 papers remain vetted (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP: 0 fabricated PMIDs in .py scripts; no 'zero SAEs/rejection'; 'achieves' hits benign. Audited 2 OVERDUE gaps (both 40d stale): Gap #4 (Islet Tx x Personalized Nutrition) SILVER retained - still no direct-intersection RCT, only adjacent evidence (RSC Food&Function 2026 DOI 10.1039/D5FO02969D; gluten-free islet-autoAb PMC12146266; post-Tx nutrition PMID 33002260/23769100); Gap #12 (Treg/CAR-T x Diabetic Neuropathy) SILVER retained - new adjacent trial NCT07183761 (UC-MSC in DPN, NOT Treg) logged as watch item, no direct Treg-in-DPN intervention. Re-validated stalest PARTIAL path verapamil->T1D: held PARTIALLY_VALIDATED, now leaning cautious - largest adult RCT Ver-A-T1D (n=136) MISSED primary 2h-MMTT C-peptide AUC at 3/6/9/12mo (EASD Sep 2025); Ver-A-Long extension unread. Ver-A-T1D Diabetologia DOI remains UNVERIFIED (per 2026-07-02 note; not directly hit). PMID VERIFY: 262/262 verified vs live PubMed API. Reconfirmed (already-known) doctrine finding: '>42M PMID=fabricated' heuristic stale - PMIDs 42220535/42203900/42218679 confirmed REAL via live esummary; these live only in non-published scratch file _audit_2026-06-02_gap_2_3_6.json. No code fix needed (threshold not hardcoded). Pipeline: run_quality_improvements.py 41/41 stages [OK]."
-  },
-  {
-   "date": "2026-07-11",
-   "summary": "Sat 2026-07-11 run (no Mon weekly sweep). Papers unchanged: 285 total (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>42M hits = PROSPERO CRD420251073207, benign); 0 'zero SAE/rejection'; 'achieves' hits benign (TTP399 selectivity, LADA cost-eff, microbiome macro-AUC, detector regex). MAJOR CREDIBILITY CORRECTION (resolves the weeks-old 'UNVERIFIED Diabetologia DOI' item): DOI 10.1007/s00125-025-06490-8 is NOT the human Ver-A-T1D RCT primary - it is a REAL, verified but DIFFERENT paper, PMID 40650745 (Diabetologia 2025), a NOD-MOUSE preclinical study of verapamil + low-dose mATG combo. Confirmed via Springer link + local paper_library (abstracts/40650745.json, fulltext PMC12423256, index.json, pmid_verification.json). The human Ver-A-T1D adult primary (EASD Sep-2025, Pieber; equivocal/NEGATIVE, underpowered, placebo decline ~0.09) has NO peer-reviewed journal pub located. Fixed 3 state strings (2 queue targets + path external_evidence key) to decouple the mouse DOI from the human RCT and stop labeling it 'primary already published'. Verified 0 build_*.py scripts hardcode this DOI - misattribution was contained to state/report notes, not dashboards. PATH: tegoprubart_islet_t1d re-checked via web - UNCHANGED (12/12 insulin-independent, mean HbA1c ~5.4%, no rejection/de novo DSA; ADA Jun-2026, Witkowski) but STILL press/conference only, NO peer-reviewed pub; logged update_2026-07-11. PIPELINE: run_quality_improvements.py completed EXIT=0, 0 Traceback/FAIL, 94 success markers. GIT: local commit only; push still BLOCKED (no GitHub auth in sandbox) - requires user 'git push'."
   }
  ],
  "topic_checks": {
@@ -7304,7 +7300,7 @@
    "external_evidence": {
     "Xu 2023 Diabetes 72(10):1460": "Verapamil prevents decline of IGF-I, promotes beta-cell IGF-I signaling in T1D.",
     "Ovalle/Shalev 2018 Nat Med adult RCT": "Earlier positive adult RCT - verapamil preserved C-peptide at 12mo.",
-    "Ver-A-T1D adult RCT (EASD 2025, Pieber; conference-presented, NO peer-reviewed journal pub found as of 2026-07-11 - DOI 10.1007/s00125-025-06490-8 does NOT belong to this RCT; it is a separate NOD-mouse paper PMID 40650745)": "136 adults new-onset T1D, SR-verapamil 360mg vs placebo 12mo. PRIMARY 2h-MMTT C-peptide AUC NOT significantly different at 3/6/9/12mo; non-significant trend favoring verapamil. NEGATIVE primary. Confirmed 2026-07-04 via EASD 2025 readout + News-Medical 2025-09-18 + Diabetes UK + HRA study summary. Specific Diabetologia journal DOI still NOT independently confirmable via web - primary appears conference-presented, peer-reviewed journal pub not yet verified. Cite EASD 2025 + news, NOT the DOI, until confirmed."
+    "Ver-A-T1D RCT (EASD 2025, Pieber; presented - Diabetologia DOI 10.1007/s00125-025-06490-8 UNVERIFIED as of 2026-07-04)": "136 adults new-onset T1D, SR-verapamil 360mg vs placebo 12mo. PRIMARY 2h-MMTT C-peptide AUC NOT significantly different at 3/6/9/12mo; non-significant trend favoring verapamil. NEGATIVE primary. Confirmed 2026-07-04 via EASD 2025 readout + News-Medical 2025-09-18 + Diabetes UK + HRA study summary. Specific Diabetologia journal DOI still NOT independently confirmable via web - primary appears conference-presented, peer-reviewed journal pub not yet verified. Cite EASD 2025 + news, NOT the DOI, until confirmed."
    },
    "note": "DOWNGRADE: largest European RCT (Ver-A-T1D) missed primary endpoint; clinical efficacy now MIXED (one positive, one null adult RCT). Mechanism remains strong. Watch Ver-A-T1D full journal pub (queued) and pediatric NCT07199946.",
    "last_reaffirmed_2026-06-24": "Independently re-confirmed via HCPLive/Medscape + Ver-A-T1D protocol (PMC11605811): adult Ver-A-T1D (n=136) NEGATIVE primary (2h MMTT C-peptide AUC no diff vs placebo at any timepoint); contrasts positive pediatric CLVer (~30% higher C-peptide). Heterogeneity by age/onset confirmed. Status unchanged PARTIALLY_VALIDATED.",
@@ -7358,8 +7354,7 @@
    "pmids_supporting": [],
    "caveats": "NOT YET PEER-REVIEWED. Single-center investigator-initiated trial of 12 pts at UChicago; 10 evaluable >4 weeks reportedly insulin-independent with HbA1c <6.0%. CRITICAL: claims of \"no rejection episodes\" and \"no de novo DSAs\" are conference/press-release framing exactly mirroring the doctrine red flag for \"zero rejection\" overclaiming. Short follow-up. Press-release conclusions should NOT be cited as VETTED evidence in dashboards. Re-audit when peer-reviewed publication appears.",
    "notes": "Anti-CD40L mAb tegoprubart used for calcineurin-inhibitor-free immunosuppression in allogeneic islet transplant. Sponsor: Eledon Pharmaceuticals.",
-   "update_2026-06-24": "ADA Scientific Sessions June 2026 + Eledon IR/HCPLive coverage: all 12 UChicago pts reportedly insulin-independent, mean recent HbA1c ~5.4%, median/max follow-up 8/22 mo; reported \"no rejection episodes\" and \"no de novo DSAs\". STILL conference/press-release only - NO peer-reviewed journal publication located. The \"no rejection / no DSA\" framing continues to mirror the doctrine \"zero rejection\" red flag; do NOT propagate as validated. Awaiting peer-reviewed publication (queue item, next check 2026-08-02).",
-   "update_2026-07-11": "2026-07-11 re-check (web): status UNCHANGED, PARTIALLY_VALIDATED. Eledon UChicago IIT still 12/12 insulin-independent, mean recent HbA1c ~5.4%, no rejection/no de novo DSA (source: Eledon IR press release, HCPLive, Breakthrough T1D, presented ADA 86th Sci Sessions Jun-2026, New Orleans, Witkowski). STILL NO peer-reviewed journal publication located. Continue treating press/conference framing (esp. 'no rejection'/'no de novo DSA') as UNVETTED per doctrine. Re-audit for journal pub ~2026-08-02."
+   "update_2026-06-24": "ADA Scientific Sessions June 2026 + Eledon IR/HCPLive coverage: all 12 UChicago pts reportedly insulin-independent, mean recent HbA1c ~5.4%, median/max follow-up 8/22 mo; reported \"no rejection episodes\" and \"no de novo DSAs\". STILL conference/press-release only - NO peer-reviewed journal publication located. The \"no rejection / no DSA\" framing continues to mirror the doctrine \"zero rejection\" red flag; do NOT propagate as validated. Awaiting peer-reviewed publication (queue item, next check 2026-08-02)."
   },
   "teplizumab_long_term_followup": {
    "status": "PARTIALLY_VALIDATED",
