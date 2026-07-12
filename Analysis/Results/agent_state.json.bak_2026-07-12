@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-12",
- "last_run": "2026-07-12",
+ "last_updated": "2026-07-11",
+ "last_run": "2026-07-11",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5617,7 +5617,7 @@
   {
    "type": "validate_path",
    "priority": 6,
-   "target": "DONE 2026-07-12: Treg_expansion -> T1D reaffirmed PARTIALLY. Next-stalest DISTINCT PARTIAL (excl. recently-done rituximab/verapamil/vitamin_d/Treg): metformin -> cardiovascular (last touch 2026-06-25) or TXNIP_NLRP3_beta_cell_DKD (2026-06-26). Validate next run.",
+   "target": "Next-stalest DISTINCT PARTIALLY path after semaglutide->retinopathy & verapamil->T1D (done 2026-07-06): Treg_expansion->T1D (2026-04-30). Validate stalest, add fresh source.",
    "last_updated": "2026-07-06"
   },
   {
@@ -6858,10 +6858,6 @@
   {
    "date": "2026-07-11",
    "summary": "Sat 2026-07-11 run (no Mon weekly sweep). Papers unchanged: 285 total (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>42M hits = PROSPERO CRD420251073207, benign); 0 'zero SAE/rejection'; 'achieves' hits benign (TTP399 selectivity, LADA cost-eff, microbiome macro-AUC, detector regex). MAJOR CREDIBILITY CORRECTION (resolves the weeks-old 'UNVERIFIED Diabetologia DOI' item): DOI 10.1007/s00125-025-06490-8 is NOT the human Ver-A-T1D RCT primary - it is a REAL, verified but DIFFERENT paper, PMID 40650745 (Diabetologia 2025), a NOD-MOUSE preclinical study of verapamil + low-dose mATG combo. Confirmed via Springer link + local paper_library (abstracts/40650745.json, fulltext PMC12423256, index.json, pmid_verification.json). The human Ver-A-T1D adult primary (EASD Sep-2025, Pieber; equivocal/NEGATIVE, underpowered, placebo decline ~0.09) has NO peer-reviewed journal pub located. Fixed 3 state strings (2 queue targets + path external_evidence key) to decouple the mouse DOI from the human RCT and stop labeling it 'primary already published'. Verified 0 build_*.py scripts hardcode this DOI - misattribution was contained to state/report notes, not dashboards. PATH: tegoprubart_islet_t1d re-checked via web - UNCHANGED (12/12 insulin-independent, mean HbA1c ~5.4%, no rejection/de novo DSA; ADA Jun-2026, Witkowski) but STILL press/conference only, NO peer-reviewed pub; logged update_2026-07-11. PIPELINE: run_quality_improvements.py completed EXIT=0, 0 Traceback/FAIL, 94 success markers. GIT: local commit only; push still BLOCKED (no GitHub auth in sandbox) - requires user 'git push'."
-  },
-  {
-   "date": "2026-07-12",
-   "summary": "Sun 2026-07-12 run (no Mon weekly sweep). Papers unchanged: 285 total (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>42M) in scripts; 0 zero-SAE/zero-rejection; only \"curative\" hits are the detector regex in verify_before_deploy.py. PATH VALIDATION: Treg_expansion -> T1D reaffirmed PARTIALLY_VALIDATED (web sweep) - no efficacy-powered Treg RCT since 2026-06-26; T-Rex phase2 single-dose expTreg still negative on C-peptide; CD6-CAR Treg T1D trial only early-phase recruiting; ld-IL-2 target engagement robust but no consistent beta-cell preservation. PIPELINE: run_quality_improvements.py all 41 stages [OK]; PMID verify 262/262 (0 not found, 0 API errors). GIT PUSH still BLOCKED (GitHub auth - requires user)."
   }
  ],
  "topic_checks": {
