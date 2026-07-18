@@ -192,10 +192,17 @@ def generate_report(changes, new_files, old_state, scan_time):
     results_files = [p for p in new_files if "Results" in p]
     if not results_files:
         flags.append("No analysis results found. Run Project scripts to generate outputs.")
-    stale_results = [p for p in results_files
+    # Exclude dated archives (snapshots, backups, logs) from the staleness check —
+    # these are meant to persist and would otherwise flood the flag with noise.
+    ARCHIVE_MARKERS = ("_snapshot_", ".bak_", "_run.log", "agent_state.json.bak")
+    def _is_archive(path):
+        base = os.path.basename(path)
+        return any(m in base for m in ARCHIVE_MARKERS)
+    live_results = [p for p in results_files if not _is_archive(p)]
+    stale_results = [p for p in live_results
                      if (datetime.now() - datetime.fromisoformat(new_files[p]["modified"])).days > 14]
     if stale_results:
-        flags.append(f"{len(stale_results)} result file(s) older than 14 days — may need refresh.")
+        flags.append(f"{len(stale_results)} live result file(s) older than 14 days — may need refresh.")
     tracker = [p for p in new_files if "Tracker" in p and p.endswith(".xlsx")]
     if not tracker:
         flags.append("Research Tracker spreadsheet not found.")
@@ -381,16 +388,4 @@ def append_snapshot_diff_to_report(report_file, diffs):
         d = diffs["pubmed"]
         lines.append(f"### PubMed ({d['old_file']} → {d['new_file']})")
         lines.append(f"- New papers: {d['added']}")
-        lines.append(f"- Dropped papers: {d['removed']}")
-        if d["cross_domain"]:
-            lines.append(f"\n**Cross-Domain New Papers ({len(d['cross_domain'])}):**")
-            for p in d["cross_domain"]:
-                lines.append(f"- [{p['pmid']}] {p['title']} — Domains: {', '.join(p['domains'])}")
-        lines.append("")
-
-    with open(report_file, "a", encoding="utf-8") as f:
-        f.write("\n".join(lines))
-
-
-if __name__ == "__main__":
-    main()
+        lines.append(f"- Dropped 

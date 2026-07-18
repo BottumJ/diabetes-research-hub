@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-18T03:14:03.813287",
- "last_run": "2026-07-18",
+ "last_updated": "2026-07-17T03:10:07.809827",
+ "last_run": "2026-07-17",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5737,18 +5737,6 @@
    "target": "DONE 2026-07-17: rituximab->diabetic-nephropathy reaffirmed CONTRADICTED (RCT evidence only in IgA/membranous GN). Next-stalest DISTINCT VALIDATED path: dapagliflozin_nephropathy (last 2026-05-05) — re-check for any reversal.",
    "added": "2026-07-17",
    "next_due": "2026-08-01"
-  },
-  {
-   "type": "validate_path",
-   "priority": 6,
-   "added": "2026-07-18",
-   "target": "DONE 2026-07-18: dapagliflozin_nephropathy + dapagliflozin_T2D reaffirmed VALIDATED (added PMID 38730538, NDT-2024 time-to-event). Next-stalest DISTINCT paths to re-check: empagliflozin_cv_hf_ckd (2026-05-07), glp1_ra_cv_outcomes (2026-05-08), baricitinib_t1d_beta_cell (2026-05-09)."
-  },
-  {
-   "type": "note",
-   "priority": 8,
-   "added": "2026-07-18",
-   "target": "2026-07-18: Repaired truncated literature_gap_data.json (frozen file corrupted during 2026-07-17 regen). If it truncates again, root cause is an interrupted write in gap_analysis_daily.py -> consider atomic write (tmp+rename) there."
   }
  ],
  "run_history": [
@@ -6963,11 +6951,6 @@
    ],
    "git_committed": false,
    "git_blocker": "Stale .git/index.lock (0-byte, 2026-07-14) cannot be removed from sandbox (Operation not permitted). git add/commit blocked. Requires user to delete .git/index.lock."
-  },
-  {
-   "date": "2026-07-18",
-   "timestamp": "2026-07-18T03:14:03.813315",
-   "summary": "Sat 2026-07-18 run (not Mon; no weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>=42M); 0 zero-SAE/zero-rejection; 30 cure/achieves hits all benign (stem-cell 'Cure' category labels, hedged Preclinical/Phase-1 status, ML macro-AUC, mission text). WORK: (1) Re-validated 2 stalest paths (both ~2026-05-05): dapagliflozin_nephropathy & dapagliflozin_T2D reaffirmed VALIDATED/STRONG, added confirming NDT-2024 time-to-event analysis PMID 38730538 (6.6-yr delay to kidney failure). (2) FIXED PIPELINE BUG: literature_gap_data.json (frozen file, regenerated 2026-07-17 10:14 but TRUNCATED mid-write -> invalid JSON, broke improve_gap_analysis.py). Repaired by dropping dangling final object + closing JSON; preserved fresher 2026-07-17 data (372 ranked_gaps intact). (3) Pipeline rebuild now 41/41 [OK] exit 0. GIT: commit/push still blocked (see priority-1 item); state saved to disk."
   }
  ],
  "topic_checks": {
@@ -7386,34 +7369,30 @@
   "dapagliflozin_nephropathy": {
    "date": "2026-05-05",
    "level": "STRONG",
-   "evidence_summary": "DAPA-CKD landmark RCT (NEJM 2020 PMID 32970396, n=4304): dapagliflozin 10 mg vs placebo over median 2.4 y reduced composite (sustained ≥50% eGFR decline, ESKD, renal or CV death) HR 0.61 (95% CI 0.51-0.72). Confirmed by 2024 SR/MA (PMC11370938, 9 RCTs, ~30k participants) showing OR 0.61 (0.57-0.65) for primary kidney composite and OR 0.69 (0.63-0.76) for mortality, with UACR reduction of -23.99% (95% CI -34.82 to -13.15). Effect present in patients with and without T2D. Mechanism strongly supported. | 2026-07-18 reaffirmation: NDT 2024 time-to-event analysis (McEwan et al., PMID 38730538, DOI 10.1093/ndt/gfae106) using DAPA-CKD patient-level data projects dapagliflozin delays time to kidney failure by 6.6 y (25.2 vs 18.5 y), plus delays to all-cause mortality, sustained eGFR decline, and HF hospitalization — strengthens durability of the renoprotective signal. Rating unchanged VALIDATED (STRONG).",
+   "evidence_summary": "DAPA-CKD landmark RCT (NEJM 2020 PMID 32970396, n=4304): dapagliflozin 10 mg vs placebo over median 2.4 y reduced composite (sustained ≥50% eGFR decline, ESKD, renal or CV death) HR 0.61 (95% CI 0.51-0.72). Confirmed by 2024 SR/MA (PMC11370938, 9 RCTs, ~30k participants) showing OR 0.61 (0.57-0.65) for primary kidney composite and OR 0.69 (0.63-0.76) for mortality, with UACR reduction of -23.99% (95% CI -34.82 to -13.15). Effect present in patients with and without T2D. Mechanism strongly supported.",
    "sources": [
     "32970396",
     "32862232",
     "PMC11370938",
-    "NCT03036150",
-    "38730538"
+    "NCT03036150"
    ],
    "rating": "VALIDATED",
-   "note": "Duplicate of 'dapagliflozin -> nephropathy' (VALIDATED via DAPA-CKD, PMID 32862232/35364937). Status reconciled 2026-06-18.",
-   "last_validated": "2026-07-18"
+   "note": "Duplicate of 'dapagliflozin -> nephropathy' (VALIDATED via DAPA-CKD, PMID 32862232/35364937). Status reconciled 2026-06-18."
   },
   "dapagliflozin_T2D": {
    "date": "2026-05-06",
    "status": "VALIDATED",
    "level": "STRONG",
-   "evidence_summary": "Landmark indication for dapagliflozin in T2D — VALIDATED. DECLARE-TIMI 58 (NEJM 2019, PMID 30415602; n=17,160 T2D patients, median 4.2 y follow-up): dapagliflozin 10 mg vs placebo MET non-inferiority for MACE (HR 0.93, 95% CI 0.84-1.03; p=0.17 for superiority) and was SUPERIOR for the co-primary composite of CV death/HF hospitalization (HR 0.83, 95% CI 0.73-0.95; p=0.005), driven primarily by HF-hospitalization reduction (HR 0.73). Cardiorenal secondary composite (Mosenzon Lancet Diabetes Endocrinol 2019, PMID 31196815): HR 0.76 (0.67-0.87); renal-specific composite excluding CV death HR 0.53 (0.43-0.66). Effect consistent in patients with and without established CVD; benefit present in preserved-EF and reduced-EF subgroups. Multi-trial SGLT2i SR/MA (Zelniker Lancet 2019; updated 2024-2025 meta-analyses) places DECLARE alongside EMPA-REG, CANVAS, CREDENCE, EMPEROR, DAPA-HF, DAPA-CKD as collectively defining SGLT2i benefit in T2D for cardio-renal outcomes. ADA Standards of Care 2025 list dapagliflozin as guideline-recommended in T2D with established/at-risk CVD, HF, or CKD. | 2026-07-18 reaffirmation: no contradicting evidence; SGLT2i cardiorenal benefit remains ADA-guideline-standard. Linked kidney-outcome durability further supported by NDT 2024 time-to-event analysis (PMID 38730538). Rating unchanged VALIDATED (STRONG).",
+   "evidence_summary": "Landmark indication for dapagliflozin in T2D — VALIDATED. DECLARE-TIMI 58 (NEJM 2019, PMID 30415602; n=17,160 T2D patients, median 4.2 y follow-up): dapagliflozin 10 mg vs placebo MET non-inferiority for MACE (HR 0.93, 95% CI 0.84-1.03; p=0.17 for superiority) and was SUPERIOR for the co-primary composite of CV death/HF hospitalization (HR 0.83, 95% CI 0.73-0.95; p=0.005), driven primarily by HF-hospitalization reduction (HR 0.73). Cardiorenal secondary composite (Mosenzon Lancet Diabetes Endocrinol 2019, PMID 31196815): HR 0.76 (0.67-0.87); renal-specific composite excluding CV death HR 0.53 (0.43-0.66). Effect consistent in patients with and without established CVD; benefit present in preserved-EF and reduced-EF subgroups. Multi-trial SGLT2i SR/MA (Zelniker Lancet 2019; updated 2024-2025 meta-analyses) places DECLARE alongside EMPA-REG, CANVAS, CREDENCE, EMPEROR, DAPA-HF, DAPA-CKD as collectively defining SGLT2i benefit in T2D for cardio-renal outcomes. ADA Standards of Care 2025 list dapagliflozin as guideline-recommended in T2D with established/at-risk CVD, HF, or CKD.",
    "external_pmids": [
     "30415602",
     "31196815",
-    "31041827",
-    "38730538"
+    "31041827"
    ],
    "caveats": [
     "DAPA-HF and DAPA-CKD established benefit in patients without diabetes too — the dapagliflozin->T2D label has expanded into broader cardiorenal indications.",
     "DECLARE was not powered for kidney hard endpoints (kidney-specific composite a secondary analysis); DAPA-CKD provides the dedicated kidney-outcome RCT (already validated separately as dapagliflozin_nephropathy)."
-   ],
-   "last_validated": "2026-07-18"
+   ]
   },
   "verapamil_T1D": {
    "date": "2026-06-16",
@@ -8185,5 +8164,5 @@
   "credibility_2026_07_02": "A DOI recorded in a prior run (Ver-A-T1D Diabetologia) failed independent web re-confirmation. Practice: flag single-source DOIs as UNVERIFIED until directly hit, rather than propagating.",
   "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs."
  },
- "last_path_validation_batch": "2026-07-18"
+ "last_path_validation_batch": "2026-07-17"
 }

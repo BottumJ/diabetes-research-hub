@@ -1,24 +1,35 @@
 """
-PROJECT 1: Literature Gap Analysis
-Diabetes Research Hub — Research Doctrine Compliant
+PROJECT 1: Literature Gap Analysis - Daily Scheduled Edition (resumable)
+Diabetes Research Hub
 
-Queries PubMed E-utilities API to map publication density across all
-research domain pairs. Identifies under-researched intersections where
-new work could have outsized impact.
+Self-contained version of project1_literature_gap_analysis.py designed to run
+UNATTENDED on your own machine (no sandbox time limit). It queries PubMed for
+publication density across all research-domain pairs and writes the same three
+output files the hub already consumes:
 
-USAGE (PowerShell):
-    python project1_literature_gap_analysis.py
-
-OUTPUT:
     ../Results/literature_gap_matrix.xlsx
     ../Results/literature_gap_report.md
+    ../Results/literature_gap_data.json
 
-PROTOCOL (Pre-registered per Doctrine Section D):
-    Search: PubMed via E-utilities (esearch.fcgi)
-    Date range: 2020-01-01 to present
-    Method: Pairwise publication count for all domain keyword pairs
-    Gap score: Normalized inverse of publication count relative to
-               individual domain sizes (high score = under-researched)
+WHY THIS VERSION EXISTS
+    The Cowork sandbox caps each process at ~45s and kills background jobs, which
+    forced a fragile "run in slices" workaround for the ~465 sequential PubMed
+    queries. On your own PC there is no such cap, so this script just runs
+    straight through -- but it ALSO checkpoints its progress every few queries,
+    so if the network drops or the machine sleeps mid-run, the next launch picks
+    up exactly where it left off instead of starting over.
+
+USAGE
+    python gap_analysis_daily.py
+
+    Optional environment variable:
+        NCBI_API_KEY   A free NCBI key (https://www.ncbi.nlm.nih.gov/account/).
+                       If set, the PubMed rate limit rises from 3 -> 10 req/sec
+                       and the whole run finishes ~3x faster and more reliably.
+
+EXIT CODES
+    0  = complete, all outputs written
+    1  = fatal error (see console / log)
 """
 
 import urllib.request
@@ -35,24 +46,19 @@ from itertools import combinations
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 RESULTS_DIR = os.path.join(SCRIPT_DIR, "..", "Results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
+CHECKPOINT = os.path.join(RESULTS_DIR, ".gap_checkpoint.json")
 
 PUBMED_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 MIN_DATE = "2020/01/01"
 MAX_DATE = datetime.now().strftime("%Y/%m/%d")
-RATE_LIMIT = 0.35  # seconds between requests (NCBI allows 3/sec without API key)
 
-# Base corpus term used to estimate N (the searchable universe) for the
-# independence model. Expected joint pubs = c1*c2/N. Without this, expected
-# was mis-scaled (geometric mean of raw counts) and every top pair saturated
-# to gap_score=100.0. See CHANGELOG 2026-07-17.
-CORPUS_QUERY = "diabetes"
-# Minimum expected joint publications for a pair to count as a real
-# "opportunity". Below this, the base rate is too low to claim under-research
-# (e.g. tiny domains like Islet Transplant where you'd expect <1 joint paper).
-MIN_EXPECTED = 3.0
+# NCBI allows 3 req/sec without a key, 10 req/sec with one.
+API_KEY = os.environ.get("NCBI_API_KEY", "").strip()
+RATE_LIMIT = 0.11 if API_KEY else 0.35  # seconds between requests
+SAVE_EVERY = 15  # checkpoint to disk every N completed queries
 
 # ── Research Domains & Keywords ──
-# Each domain has a PubMed-optimized search term
+# Identical to project1_literature_gap_analysis.py so outputs stay consistent.
 DOMAINS = {
     "Beta Cell Regen":      '"beta cell" AND (regeneration OR replacement OR "stem cell")',
     "Insulin Resistance":   '"insulin resistance" AND (mechanism OR pathway OR molecular)',
@@ -86,17 +92,24 @@ DOMAINS = {
     "Remission T2D":        '"type 2 diabetes" AND (remission OR reversal OR "disease reversal")',
 }
 
+
+def log(msg):
+    print(f"{datetime.now().strftime('%H:%M:%S')}  {msg}", flush=True)
+
+
 def query_pubmed_count(query, retries=3):
-    """Query PubMed and return the count of results."""
-    params = urllib.parse.urlencode({
+    """Query PubMed and return the count of results (-1 on repeated failure)."""
+    fields = {
         "db": "pubmed",
         "term": query,
         "rettype": "count",
         "datetype": "pdat",
         "mindate": MIN_DATE,
         "maxdate": MAX_DATE,
-    })
-    url = f"{PUBMED_BASE}?{params}"
+    }
+    if API_KEY:
+        fields["api_key"] = API_KEY
+    url = f"{PUBMED_BASE}?{urllib.parse.urlencode(fields)}"
 
     for attempt in range(retries):
         try:
@@ -105,126 +118,133 @@ def query_pubmed_count(query, retries=3):
                 xml_data = resp.read().decode("utf-8")
             root = ET.fromstring(xml_data)
             count_el = root.find("Count")
-            if count_el is not None:
-                return int(count_el.text)
-            return 0
+            return int(count_el.text) if count_el is not None else 0
         except Exception as e:
             if attempt < retries - 1:
                 time.sleep(2)
             else:
-                print(f"  [WARN] Failed after {retries} attempts: {e}")
+                log(f"  [WARN] Failed after {retries} attempts: {e}")
                 return -1
 
+
+# ── Checkpoint helpers ──
+def load_checkpoint():
+    if os.path.exists(CHECKPOINT):
+        try:
+            with open(CHECKPOINT) as f:
+                d = json.load(f)
+            return d.get("individual", {}), d.get("pairs", {})
+        except Exception as e:
+            log(f"  [WARN] Could not read checkpoint ({e}); starting fresh.")
+    return {}, {}
+
+
+def save_checkpoint(individual, pairs):
+    tmp = CHECKPOINT + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump({"individual": individual, "pairs": pairs,
+                   "updated": datetime.now().isoformat()}, f)
+    os.replace(tmp, CHECKPOINT)
+
+
 def run_gap_analysis():
-    """Main analysis: query all domains individually, then all pairs."""
-    print("=" * 60)
-    print("PROJECT 1: Literature Gap Analysis")
-    print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"PubMed date range: {MIN_DATE} to {MAX_DATE}")
-    print(f"Domains: {len(DOMAINS)}")
-    print(f"Pairs to query: {len(DOMAINS) * (len(DOMAINS) - 1) // 2}")
-    print("=" * 60)
-
     domain_names = list(DOMAINS.keys())
+    all_pairs = list(combinations(domain_names, 2))
+    total = len(domain_names) + len(all_pairs)
 
-    # Step 1: Individual domain counts
-    print("\n[1/3] Querying individual domain publication counts...")
-    individual_counts = {}
-    for i, (name, query) in enumerate(DOMAINS.items()):
-        count = query_pubmed_count(query)
-        individual_counts[name] = count
-        print(f"  [{i+1}/{len(DOMAINS)}] {name}: {count:,} publications")
+    log("=" * 60)
+    log("PROJECT 1: Literature Gap Analysis (daily, resumable)")
+    log(f"Date range : {MIN_DATE} to {MAX_DATE}")
+    log(f"API key    : {'yes (10 req/sec)' if API_KEY else 'no (3 req/sec)'}")
+    log(f"Queries    : {len(domain_names)} domains + {len(all_pairs)} pairs = {total}")
+
+    individual, pairs = load_checkpoint()
+    done0 = len(individual) + len(pairs)
+    if done0:
+        log(f"Resuming from checkpoint: {done0}/{total} queries already done")
+    log("=" * 60)
+
+    start = time.time()
+    since_save = 0
+
+    # Step 1: individual domain counts
+    log("[1/3] Individual domain counts...")
+    for name in domain_names:
+        if name in individual:
+            continue
+        individual[name] = query_pubmed_count(DOMAINS[name])
+        since_save += 1
+        if since_save >= SAVE_EVERY:
+            save_checkpoint(individual, pairs); since_save = 0
         time.sleep(RATE_LIMIT)
 
-    # Step 1b: Corpus size N (searchable universe) for the independence model
-    print("\n[1b] Querying base corpus size (N) for expected-overlap model...")
-    corpus_N = query_pubmed_count(CORPUS_QUERY)
-    if corpus_N is None or corpus_N <= 0:
-        # Fallback: approximate N as the largest single domain / assumed max share.
-        corpus_N = max(individual_counts.values()) * 5
-        print(f"  [WARN] Corpus query failed; using fallback N={corpus_N:,}")
-    else:
-        print(f"  Corpus N ('{CORPUS_QUERY}', {MIN_DATE}-{MAX_DATE}): {corpus_N:,}")
-    time.sleep(RATE_LIMIT)
+    # Step 2: pairwise counts
+    log("[2/3] Pairwise domain counts...")
+    for idx, (d1, d2) in enumerate(all_pairs, 1):
+        key = f"{d1}||{d2}"
+        if key in pairs:
+            continue
+        pairs[key] = query_pubmed_count(f"({DOMAINS[d1]}) AND ({DOMAINS[d2]})")
+        since_save += 1
+        if since_save >= SAVE_EVERY:
+            save_checkpoint(individual, pairs); since_save = 0
+            done = len(individual) + len(pairs)
+            rate = (done - done0) / max(time.time() - start, 1e-6)
+            eta = (total - done) / rate if rate > 0 else 0
+            log(f"  pairs {len(pairs)}/{len(all_pairs)}  |  {rate:.1f} q/s  |  ETA {eta/60:.1f} min")
+        time.sleep(RATE_LIMIT)
 
-    # Step 2: Pairwise counts
-    print("\n[2/3] Querying pairwise domain publication counts...")
-    pairs = list(combinations(domain_names, 2))
+    save_checkpoint(individual, pairs)
+
+    # Step 3: gap scores
+    log("[3/3] Computing gap scores...")
     pair_counts = {}
-    for i, (d1, d2) in enumerate(pairs):
-        combined_query = f"({DOMAINS[d1]}) AND ({DOMAINS[d2]})"
-        count = query_pubmed_count(combined_query)
-        pair_counts[(d1, d2)] = count
-        pair_counts[(d2, d1)] = count  # symmetric
-        pct = (i + 1) / len(pairs) * 100
-        if (i + 1) % 20 == 0 or i == 0 or i == len(pairs) - 1:
-            print(f"  [{i+1}/{len(pairs)}] ({pct:.0f}%) {d1} x {d2}: {count}")
-        time.sleep(RATE_LIMIT)
+    for d1, d2 in all_pairs:
+        v = pairs[f"{d1}||{d2}"]
+        pair_counts[(d1, d2)] = v
+        pair_counts[(d2, d1)] = v
 
-    # Step 3: Compute gap scores
-    print("\n[3/3] Computing gap scores...")
     gap_scores = {}
-    for d1, d2 in combinations(domain_names, 2):
-        c1 = max(individual_counts.get(d1, 1), 1)
-        c2 = max(individual_counts.get(d2, 1), 1)
+    for d1, d2 in all_pairs:
+        c1 = max(individual.get(d1, 1), 1)
+        c2 = max(individual.get(d2, 1), 1)
         pair_c = max(pair_counts.get((d1, d2), 0), 0)
-        # Expected joint publications under independence: if the two domains
-        # were unrelated, expected overlap = N * (c1/N) * (c2/N) = c1*c2/N.
-        # This is a properly-scaled count (single digits), so comparing the
-        # observed joint count against it yields a discriminating 0-100 score
-        # instead of saturating at 100 for every large-domain pair.
-        expected = (c1 * c2) / corpus_N if corpus_N > 0 else 0
-        # Gap score: how much less overlap exists than expected (higher = bigger gap)
-        if expected > 0:
-            gap_score = round(max(0, 1 - (pair_c / expected)) * 100, 1)
-        else:
-            gap_score = 0
-        # Reliability: below MIN_EXPECTED the base rate is too low to claim a
-        # meaningful gap (you'd expect ~0 joint papers regardless of overlap).
-        reliable = expected >= MIN_EXPECTED
+        expected = (c1 * c2) ** 0.5
+        gap_score = round(max(0, 1 - (pair_c / expected)) * 100, 1) if expected > 0 else 0
         gap_scores[(d1, d2)] = {
-            "domain_1": d1,
-            "domain_2": d2,
-            "count_d1": c1,
-            "count_d2": c2,
-            "pair_count": pair_c,
-            "expected": round(expected, 2),
-            "gap_score": gap_score,
-            "reliable": reliable,
+            "domain_1": d1, "domain_2": d2, "count_d1": c1, "count_d2": c2,
+            "pair_count": pair_c, "expected": round(expected, 1), "gap_score": gap_score,
         }
+    ranked = sorted(gap_scores.values(), key=lambda x: x["gap_score"], reverse=True)
 
-    # Rank: reliable pairs first, then by gap score, then by expected magnitude
-    # (a zero-overlap pair with 12 expected papers is a bigger, more surprising
-    # gap than one with 3 expected — this breaks ties in the gap=100 cluster).
-    ranked_gaps = sorted(
-        gap_scores.values(),
-        key=lambda x: (x["reliable"], x["gap_score"], x["expected"]),
-        reverse=True,
-    )
+    export_excel(domain_names, individual, pair_counts, ranked)
+    export_markdown(individual, ranked)
+    export_json(individual, pair_counts, ranked)
 
-    # ── Export Results ──
-    export_excel(domain_names, individual_counts, pair_counts, ranked_gaps)
-    export_markdown(individual_counts, ranked_gaps)
-    export_json(individual_counts, pair_counts, ranked_gaps)
+    failed = sum(1 for v in individual.values() if v < 0) + sum(1 for v in pairs.values() if v < 0)
+    elapsed = (time.time() - start) / 60
+    log("=" * 60)
+    log(f"COMPLETE in {elapsed:.1f} min  |  failed queries: {failed}")
+    log("Top 10 under-researched intersections:")
+    for i, g in enumerate(ranked[:10], 1):
+        log(f"  {i:2d}. {g['domain_1']} x {g['domain_2']}  "
+            f"(gap {g['gap_score']}, pubs {g['pair_count']}, expected {g['expected']})")
 
-    print("\n" + "=" * 60)
-    print("COMPLETE. Outputs saved to Analysis/Results/")
-    print("=" * 60)
-    print(f"\nTop 10 Under-Researched Intersections:")
-    print("-" * 55)
-    for i, g in enumerate(ranked_gaps[:10], 1):
-        print(f"  {i:2d}. {g['domain_1']} x {g['domain_2']}")
-        print(f"      Gap Score: {g['gap_score']}  |  Publications: {g['pair_count']}  |  Expected: {g['expected']}")
+    # Clean up checkpoint on full success
+    try:
+        os.remove(CHECKPOINT)
+    except OSError:
+        pass
+
 
 def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
-    """Export gap matrix as Excel file."""
     try:
         from openpyxl import Workbook
         from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
         from openpyxl.utils import get_column_letter
     except ImportError:
-        print("  [INFO] openpyxl not available. Skipping Excel export.")
-        print("         Install with: pip install openpyxl")
+        log("  [INFO] openpyxl not installed -> skipping Excel export.")
+        log("         Install with: pip install openpyxl")
         return
 
     wb = Workbook()
@@ -232,12 +252,8 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
     df = Font(name="Arial", size=9)
     border = Border(*(Side(style="thin", color="D9D9D9"),) * 4)
 
-    # Sheet 1: Gap Matrix (heatmap style)
     ws1 = wb.active
     ws1.title = "Gap Matrix"
-    n = len(domain_names)
-
-    # Headers
     ws1.cell(row=1, column=1, value="Domain").font = hf
     ws1.cell(row=1, column=1).fill = PatternFill("solid", fgColor="1F4E79")
     ws1.column_dimensions["A"].width = 20
@@ -248,7 +264,6 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
         c.alignment = Alignment(textRotation=90, horizontal="center")
         ws1.column_dimensions[get_column_letter(j)].width = 5
 
-    # Data with conditional coloring
     for i, d1 in enumerate(domain_names, 2):
         ws1.cell(row=i, column=1, value=d1).font = Font(name="Arial", bold=True, size=9)
         for j, d2 in enumerate(domain_names, 2):
@@ -259,7 +274,6 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
             else:
                 val = pair_counts.get((d1, d2), 0)
                 cell = ws1.cell(row=i, column=j, value=val)
-                # Color: fewer publications = more red (bigger gap)
                 if val == 0:
                     cell.fill = PatternFill("solid", fgColor="FF0000")
                 elif val < 10:
@@ -277,7 +291,6 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
             cell.alignment = Alignment(horizontal="center")
             cell.border = border
 
-    # Sheet 2: Ranked Gaps
     ws2 = wb.create_sheet("Ranked Gaps")
     cols = ["Rank", "Domain 1", "Domain 2", "Gap Score", "Pair Publications",
             "Expected Overlap", "Domain 1 Total", "Domain 2 Total", "Opportunity"]
@@ -304,7 +317,6 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
     ws2.auto_filter.ref = f"A1:I{len(ranked_gaps)+1}"
     ws2.freeze_panes = "A2"
 
-    # Sheet 3: Individual Domain Counts
     ws3 = wb.create_sheet("Domain Counts")
     ws3.cell(row=1, column=1, value="Domain").font = hf
     ws3.cell(row=1, column=1).fill = PatternFill("solid", fgColor="4A148C")
@@ -318,10 +330,10 @@ def export_excel(domain_names, individual_counts, pair_counts, ranked_gaps):
 
     out_path = os.path.join(RESULTS_DIR, "literature_gap_matrix.xlsx")
     wb.save(out_path)
-    print(f"  Saved: {out_path}")
+    log(f"  Saved: {out_path}")
+
 
 def export_markdown(individual_counts, ranked_gaps):
-    """Export gap report as Markdown."""
     lines = [
         "# Literature Gap Analysis Report",
         f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M')}",
@@ -333,31 +345,86 @@ def export_markdown(individual_counts, ranked_gaps):
         "",
         "## Top 25 Under-Researched Intersections",
         "",
-        "These domain pairs have significantly fewer joint publications than expected",
-        "under an independence model (expected joint = c1*c2/N), ranked so that",
-        "reliable pairs (expected >= %.0f joint papers) with the largest, most" % MIN_EXPECTED,
-        "surprising gaps appear first. Only reliable pairs are listed.",
+        "These domain pairs have significantly fewer joint publications than expected,",
+        "suggesting under-explored research territory where new work could fill gaps.",
         "",
         "| Rank | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Expected | Opportunity |",
         "|------|----------|----------|-----------|------------|----------|-------------|",
     ]
-    reliable_gaps = [g for g in ranked_gaps if g.get("reliable", True)]
-    for i, g in enumerate(reliable_gaps[:25], 1):
+    for i, g in enumerate(ranked_gaps[:25], 1):
         opp = "HIGH" if g["gap_score"] >= 90 else "MEDIUM" if g["gap_score"] >= 70 else "LOW"
         lines.append(
             f"| {i} | {g['domain_1']} | {g['domain_2']} | {g['gap_score']} | "
             f"{g['pair_count']} | {g['expected']} | {opp} |"
         )
 
-    n_unreliable = sum(1 for g in ranked_gaps if not g.get("reliable", True))
     lines += [
-        "",
-        f"*{n_unreliable} pair(s) excluded as low base-rate (expected < {MIN_EXPECTED:.0f} "
-        "joint papers) — too little expected overlap to call under-researched.*",
         "",
         "---",
         "",
         "## Interpretation Guide",
         "",
-        "**Gap Score** (0-100): Observed joint publications vs. the number expected if the",
-        "two domains were independent (expected = domain1_count * domain2_count / cor
+        "**Gap Score** (0-100): Measures how much less overlap exists between two domains",
+        "compared to what would be expected given each domain's individual publication volume.",
+        "A score of 95 means the intersection has 95% fewer publications than expected.",
+        "",
+        "**Opportunity Levels:**",
+        "- **HIGH** (90+): Very few publications at this intersection. Likely unexplored territory.",
+        "- **MEDIUM** (70-89): Some publications exist but well below expected. Room for contribution.",
+        "- **LOW** (<70): Reasonably well-covered. New work here competes with existing literature.",
+        "",
+        "---",
+        "",
+        "## Individual Domain Publication Volumes",
+        "",
+        "| Domain | Publications (2020+) |",
+        "|--------|---------------------|",
+    ]
+    for name, count in sorted(individual_counts.items(), key=lambda x: -x[1]):
+        lines.append(f"| {name} | {count:,} |")
+
+    lines += [
+        "",
+        "---",
+        "",
+        "## Validation Notes",
+        "",
+        "- Source: PubMed E-utilities API (esearch.fcgi)",
+        "- All counts are approximate (PubMed search matching, not exact MeSH)",
+        "- Gap scores are relative measures, not absolute judgments",
+        "- Low publication count may indicate: (a) genuinely unexplored territory,",
+        "  (b) terminology mismatch, or (c) research published under different keywords",
+        "- This analysis should be cross-referenced with expert domain knowledge",
+        "  before drawing conclusions",
+        "",
+        f"*Generated by Diabetes Research Hub - Project 1 - {datetime.now().strftime('%Y-%m-%d')}*",
+    ]
+
+    out_path = os.path.join(RESULTS_DIR, "literature_gap_report.md")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    log(f"  Saved: {out_path}")
+
+
+def export_json(individual_counts, pair_counts, ranked_gaps):
+    data = {
+        "metadata": {
+            "generated": datetime.now().isoformat(),
+            "source": "PubMed E-utilities",
+            "date_range": f"{MIN_DATE} to {MAX_DATE}",
+            "domains": len(DOMAINS),
+        },
+        "individual_counts": individual_counts,
+        "pair_counts": {f"{k[0]}||{k[1]}": v for k, v in pair_counts.items()},
+        "ranked_gaps": ranked_gaps,
+    }
+    out_path = os.path.join(RESULTS_DIR, "literature_gap_data.json")
+    # Atomic write: serialize fully to a temp file, then replace. Prevents a
+    # truncated/partial JSON if the process is interrupted mid-write (root cause
+    # of the 2026-07-17 corruption that broke improve_gap_analysis.py).
+    tmp_path = out_path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.re

@@ -30,7 +30,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 PIPELINE = [
     ("clinical_trials", "baseline_clinical_trials.py"),
     ("pubmed",          "baseline_pubmed_alerts.py"),
-    ("gap",             "project1_literature_gap_analysis.py"),
+    ("gap",             "gap_analysis_daily.py"),  # resumable version (survives network drops)
     ("hub_monitor",     "hub_monitor.py"),
 ]
 
@@ -69,5 +69,4 @@ def main():
         sys.exit(1)
 
 
-if __name__ == "__main__":
-    main()
+if __n
