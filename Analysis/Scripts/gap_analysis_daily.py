@@ -427,4 +427,17 @@ def export_json(individual_counts, pair_counts, ranked_gaps):
         json.dump(data, f, indent=2)
         f.flush()
         os.fsync(f.fileno())
-    os.re
+    os.replace(tmp_path, out_path)
+    log(f"  Saved: {out_path}")
+
+
+if __name__ == "__main__":
+    try:
+        run_gap_analysis()
+        sys.exit(0)
+    except KeyboardInterrupt:
+        log("Interrupted -- progress saved to checkpoint; rerun to resume.")
+        sys.exit(1)
+    except Exception as e:
+        log(f"[FATAL] {e}")
+        sys.exit(1)

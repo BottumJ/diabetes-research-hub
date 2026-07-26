@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-26T03:13:10.441300",
- "last_run": "2026-07-26",
+ "last_updated": "2026-07-24T03:15:00",
+ "last_run": "2026-07-24",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5338,7 +5338,7 @@
   },
   "14": {
    "tier": "BRONZE",
-   "last_audited": "2026-07-26",
+   "last_audited": "2026-07-07",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5458,11 +5458,6 @@
       "NCT07460336 - Cofrogliptin on beta-cell function in LADA (pharmacologic watch item)",
       "PMC7809717 / PMID 32847960 - LADA management consensus (personalized in principle, no nutrition arm)"
      ]
-    },
-    {
-     "date": "2026-07-26",
-     "new_evidence_found": false,
-     "notes": "Audit (BRONZE, LADA personalized nutrition). Web/PubMed search since 2026-07-07 found NO new LADA-specific personalized-nutrition RCT or systematic review. Only a single-patient ketogenic case report (PMC10553975) + general LADA reviews reiterating the gap without filling it. No independent secondary source -> remains BRONZE, not a SILVER promotion candidate. Gap still open."
     }
    ]
   },
@@ -5560,7 +5555,7 @@
   {
    "priority": 5,
    "type": "validate_path",
-   "target": "DONE 2026-07-25: oxidative_stress->T2D therapy-arm re-validated. Association VALIDATED (robust); therapy_rating UPGRADED to PARTIALLY_VALIDATED (ALA + vit-D show significant HbA1c reduction across 109-RCT Nutrition Reviews MA DOI 10.1093/nutrit/nuaf292; +vitC/E nuaf133; +astaxanthin 11786388261432862). Next-stalest DISTINCT PARTIAL: rituximab->T1D (last 2026-05-01, PARTIALLY_VALIDATED).",
+   "target": "DONE 2026-07-24: metformin->cardiovascular reaffirmed PARTIALLY_VALIDATED (no new placebo-controlled hard-MACE RCT overturns Griffin 2017 PMID 28776086; 2023 umbrella review DOI 10.1007/s40200-023-01309-y added; 2025 work = AF sub-outcome/observational). Next-stalest DISTINCT PARTIAL: oxidative_stress->T2D therapy-arm (last 2026-06-30).",
    "added": "2026-06-30"
   },
   {
@@ -5585,7 +5580,7 @@
   {
    "type": "search_pubmed",
    "priority": 5,
-   "target": "RESOLVED-PARTIAL, rechecked 2026-07-25: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, NLRP3->ferroptosis diabetic kidney, PRECLINICAL mouse/HK-2, pub 2026-05-10) re-confirmed REAL via MDPI but STILL no retrievable PubMed PMID; Wiley iid3.70424 (Zhao hub-gene bioinformatics) DOI-verified, no PMID. Both remain UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Next PubMed-indexing re-verify 2026-07-27."
+   "target": "RESOLVED-PARTIAL, rechecked 2026-07-23: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, ferroptosis, PRECLINICAL) CONFIRMED REAL via publisher (pub 2026-05-10) but STILL no retrievable PubMed PMID; Wiley iid3.70424 (Zhao hub-gene bioinformatics) also DOI-verified, no PMID. Both remain UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Re-verify PubMed indexing. Next 2026-07-27."
   },
   {
    "priority": 5,
@@ -5759,18 +5754,6 @@
    "type": "check_combination",
    "priority": 8,
    "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04."
-  },
-  {
-   "priority": 5,
-   "type": "validate_path",
-   "target": "validate_path: next stalest DISTINCT paths after glp1_ra_cv_outcomes (done 2026-07-26): baricitinib_t1d_beta_cell (2026-05-09) / golimumab_t1d_beta_cell (2026-05-09) / dorzagliatin->T2D (2026-05-11).",
-   "added": "2026-07-26"
-  },
-  {
-   "priority": 6,
-   "type": "search_pubmed",
-   "target": "Run full run_quality_improvements.py (incl. pmidverify/ingest network stages) on LOCAL machine; sandbox cannot complete network stages within 45s cap. Added 2026-07-26.",
-   "added": "2026-07-26"
   }
  ],
  "run_history": [
@@ -7041,22 +7024,6 @@
     "git index.lock still unremovable from sandbox (OneDrive mount, Operation not permitted) - user must clear locally",
     "network PMID/trial verification unreachable from sandbox"
    ]
-  },
-  {
-   "date": "2026-07-25",
-   "summary": "Sat 2026-07-25 run (no Mon weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (only >42M hit = PROSPERO CRD420251073207 substring, benign/labeled unverified); 0 'zero SAE/rejection'; 'achieves'/'cure' hits all contextual (FDA-trial sensitivity, cost-effectiveness models, category labels). PATH VALIDATED: oxidative_stress->T2D therapy-arm (was stalest distinct partial, last 2026-06-30). Located 3 new 2025-26 RCT meta-analyses (food-bioactive 109-RCT Nutrition Reviews DOI 10.1093/nutrit/nuaf292 -> ALA & vit-D significant HbA1c drop; vitC/E subgroup MA nuaf133; astaxanthin MA 11786388261432862 n=403). Association remains ROBUST-VALIDATED; therapy_rating UPGRADED PARTIAL->PARTIALLY_VALIDATED (>=2 agents now hit hard HbA1c endpoint) but stays agent-specific, causality-for-antioxidants-broadly unproven. WATCH ITEMS rechecked: ferroptosis IJMS DOI 10.3390/ijms27104257 + Wiley iid3.70424 still DOI-verified/no-PMID (PENDING, not fabricated); next 2026-07-27. PIPELINE: run_quality_improvements.py FINISHED, 214 [PASS], 0 traceback/FAIL; 28 dashboards+results regenerated. GIT: commit+push STILL BLOCKED - .git/index.lock (0-byte, dated 2026-07-20 03:08) unremovable from sandbox ('Operation not permitted' on OneDrive mount) AND no GitHub push auth in sandbox. Requires USER to clear lock + commit/push locally."
-  },
-  {
-   "date": "2026-07-26",
-   "day": "Sunday",
-   "summary": "Sun 2026-07-26 run (no Mon weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs >42M, 0 zero-SAE/zero-rejection; all 'cure'/'achieves' hits contextual (category labels, query names, headings, var names). PATH VALIDATION: re-validated stalest path glp1_ra_cv_outcomes (prior 2026-05-08) -> STRENGTHENED, remains VALIDATED; added SOUL PMID 40162642 (NEJM 2025, oral sema MACE HR 0.86 superiority) + 2025 JACC MA 99,599 pts. GAP AUDIT: Gap #14 (BRONZE, LADA nutrition) reaffirmed BRONZE, no new independent source. PIPELINE FIX: build_paper_library.py was failing on a TRUNCATED citation_validation.json (24576 B, cut at 24KB boundary) -- root cause: non-atomic write in validate_citations.py. Hardened validate_citations.py with atomic temp-file+os.replace+fsync (same fix class as 2026-07-18 gap_data fix); regenerated citation_validation.json (196KB, 262 papers, valid) + evidence_network.json; rebuilt Paper_Library.html. All 35 local build stages [OK], 0 corrupt JSON in Results. Network stages (pmidverify/ingest) not run -- exceed sandbox 45s cap / no persistent background; verify_pmids best run locally by user.",
-   "changes": [
-    "validate_citations.py atomic-write hardening",
-    "regenerated citation_validation.json + evidence_network.json",
-    "glp1_ra_cv_outcomes re-validated (+SOUL PMID 40162642)",
-    "Gap #14 audited (remains BRONZE)",
-    "rebuilt 35 dashboards"
-   ]
   }
  ],
  "topic_checks": {
@@ -7602,22 +7569,16 @@
   },
   "glp1_ra_cv_outcomes": {
    "status": "VALIDATED",
-   "date": "2026-07-26",
+   "date": "2026-05-08",
    "source": "Multiple landmark CVOTs + 2024-2025 meta-analyses",
    "pmids_supporting": [
     "27295427",
     "27633186",
     "31185157",
-    "38953365",
-    "40162642"
+    "38953365"
    ],
    "notes": "LEADER (liraglutide, PMID 27295427, NEJM 2016): MACE HR 0.87 (0.78-0.97). SUSTAIN-6 (s.c. semaglutide, PMID 27633186, NEJM 2016): MACE HR 0.74 (0.58-0.95). PIONEER 6 (oral semaglutide, PMID 31185157, NEJM 2019): MACE HR 0.79 (0.57-1.11), met noninferiority. REWIND (dulaglutide): MACE reduction in primary prevention. 2024 meta-analysis (PMID 38953365) MACE reduction confirmed across patients with and without diabetes. Class effect supported.",
-   "caveats": "REWIND population had only 31.5% with CVD vs ~70% in others; heterogeneity in dosing and follow-up duration; trial-level analyses not at individual patient level except IPD subset.",
-   "last_validated": "2026-07-26",
-   "revisit_2026-07-26": "Re-validated (stalest path, prior 2026-05-08). STRENGTHENED. SOUL trial (PMID 40162642, NEJM 2025-03-29): oral semaglutide in T2D with ASCVD/CKD, MACE HR 0.86 (95% CI 0.77-0.96), P=0.0028 over median 47.5 mo -- upgrades oral-semaglutide evidence from PIONEER 6 noninferiority to demonstrated superiority; nonfatal MI driver (-26%). Supported by 2025 JACC SR/MA of 99,599 patients across 21 trials (10.1016/j.jacc.2025.08.027) confirming consistent class-level MACE benefit incl. non-diabetic obesity (~20% MACE reduction). Rating unchanged: VALIDATED (robust class effect).",
-   "external_pmids_2026": [
-    "40162642"
-   ]
+   "caveats": "REWIND population had only 31.5% with CVD vs ~70% in others; heterogeneity in dosing and follow-up duration; trial-level analyses not at individual patient level except IPD subset."
   },
   "tegoprubart_islet_t1d": {
    "status": "PARTIALLY_VALIDATED",
@@ -8166,18 +8127,12 @@
   },
   "oxidative_stress -> T2D": {
    "rating": "VALIDATED",
-   "date": "2026-07-25",
+   "date": "2026-06-30",
    "external_pmids": [
     "34622023",
     "PMC11771208"
    ],
-   "evidence": "Banik 2021 SR/MA (Health Sci Rep, PMID 34622023): 22 case-control studies, 2853 subjects; MDA & nitric oxide elevated, glutathione/total antioxidant status reduced in T2D vs controls. Pathogenic association well-supported. CAVEAT: antioxidant-supplementation RCTs have failed to show glycemic/prevention benefit, so association is robust but therapeutic causality unproven. | 2026-06-30 reaffirmed with fresh therapeutic-side evidence: resveratrol meta-analysis (Front Endocrinol 2024, DOI 10.3389/fendo.2024.1463027, PMC11771208; 6 RCTs, n=533) shows resveratrol significantly lowered CRP, lipid peroxides and 8-isoprostanes and raised GPx/catalase in T2D, BUT malondialdehyde, SOD, total antioxidant capacity, IL-6 and TNF-alpha were NOT significantly changed. NET: pathogenic oxidative-stress association remains robust; antioxidant-therapy signal is partial/marker-selective and therapeutic causality still unproven. Rating unchanged: VALIDATED (association), therapy=PARTIAL. | 2026-07-25 therapy-arm re-validation: THREE new 2025-26 RCT meta-analyses located. (1) Brandimonte-Hernandez/Gil, Nutrition Reviews 2026, DOI 10.1093/nutrit/nuaf292 (advance access; PMID pending) - 109 human RCTs of food bioactive compounds: alpha-lipoic acid and vitamin D produced SIGNIFICANT HbA1c reductions; zinc/selenium/chromium improved glycemic control + raised total antioxidant capacity/enzyme activity. (2) Vitamin C/E subgroup MA, Nutrition Reviews 2026, DOI 10.1093/nutrit/nuaf133 (PMC12793614): high-antioxidant-capacity C/E inversely associated with insulin resistance but agent/dose/duration dependent. (3) Astaxanthin MA 2026, DOI 10.1177/11786388261432862, 9 RCTs n=403 prediabetes/T2D: glycemic+lipid signal. NET: pathogenic association remains ROBUST (VALIDATED). Therapy-side signal is STRENGTHENED but remains AGENT-SPECIFIC (ALA, vit-D, Zn/Se/Cr show HbA1c benefit) and heterogeneous; classic antioxidant vitamins (C/E alone) stay weak. Therapy rating = PARTIALLY_VALIDATED (upgraded from marker-selective PARTIAL: now at least two agents show a hard glycemic endpoint, HbA1c). Therapeutic causality for 'antioxidants broadly' still unproven.",
-   "external_dois": [
-    "10.1093/nutrit/nuaf292",
-    "10.1093/nutrit/nuaf133",
-    "10.1177/11786388261432862"
-   ],
-   "therapy_rating": "PARTIALLY_VALIDATED"
+   "evidence": "Banik 2021 SR/MA (Health Sci Rep, PMID 34622023): 22 case-control studies, 2853 subjects; MDA & nitric oxide elevated, glutathione/total antioxidant status reduced in T2D vs controls. Pathogenic association well-supported. CAVEAT: antioxidant-supplementation RCTs have failed to show glycemic/prevention benefit, so association is robust but therapeutic causality unproven. | 2026-06-30 reaffirmed with fresh therapeutic-side evidence: resveratrol meta-analysis (Front Endocrinol 2024, DOI 10.3389/fendo.2024.1463027, PMC11771208; 6 RCTs, n=533) shows resveratrol significantly lowered CRP, lipid peroxides and 8-isoprostanes and raised GPx/catalase in T2D, BUT malondialdehyde, SOD, total antioxidant capacity, IL-6 and TNF-alpha were NOT significantly changed. NET: pathogenic oxidative-stress association remains robust; antioxidant-therapy signal is partial/marker-selective and therapeutic causality still unproven. Rating unchanged: VALIDATED (association), therapy=PARTIAL."
   },
   "empagliflozin -> T2D": {
    "rating": "VALIDATED",
@@ -8337,10 +8292,6 @@
    "type": "pipeline_rebuild",
    "result": "OK",
    "detail": "run_quality_improvements.py: all gap dashboards (Gap #2-#15) rebuilt; PMID verification 262/262 verified, 0 not found, 0 API errors; 24 dashboards regenerated. Trailing buffered validation sub-loop hung (no new output) and was terminated after core build verified complete."
-  },
-  {
-   "date": "2026-07-25",
-   "note": "MINOR: spot-check suggests the 13 eutils-verified 42M-range papers (added 2026-05) may not be in paper_library/index.json (index lookup returned False). Non-blocking - papers are VETTED in state with full metadata. Verify index-membership check on next paper_library rebuild; possible index-format false negative."
   }
  ],
  "combination_validation_pending": [
@@ -8357,10 +8308,9 @@
   "credibility_sweep_2026-05-07": "DEPRECATED ceiling-only PMID > 42,000,000 fabrication test in favor of: (1) round-trip via NCBI esummary for any new PMID, (2) cross-reference against agent_state.json papers map (single source of truth), (3) flag only if year > current year + 1. Numeric ceiling drifts as PubMed grows. Task SKILL.md is in read-only uploads/ so this note replaces an in-place SKILL edit.",
   "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path.",
   "credibility_2026_07_02": "A DOI recorded in a prior run (Ver-A-T1D Diabetologia) failed independent web re-confirmation. Practice: flag single-source DOIs as UNVERIFIED until directly hit, rather than propagating.",
-  "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs.",
-  "pmid_cutoff_heuristic": "As of 2026-07-25 the SKILL Step-4 rule 'PMIDs >42000000 = fabricated' is STALE and produces FALSE POSITIVES. PubMed sequential IDs legitimately reach the 42.0-42.2M range by mid-2026. State currently holds 13 REAL eutils-verified papers with PMIDs in 42021540-42160884 (e.g. 42113684 = Diabetes/ADA DOI 10.2337/db25-0933; 42160884 = J Autoimmun). Correct fabrication test is NOT a fixed numeric cutoff but: (a) does the PMID resolve via NCBI eutils, and (b) does its title/journal/year match the state record. Apply that test; do not auto-flag on the 42M threshold alone. Re-baseline the numeric tripwire to ~>43000000 for the next few months and re-check quarterly."
+  "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs."
  },
- "last_path_validation_batch": "2026-07-26",
+ "last_path_validation_batch": "2026-07-21",
  "watch_items_pending_pmid": [
   {
    "authors": "Zhao S, Li Y, Li W",

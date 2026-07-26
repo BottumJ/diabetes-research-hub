@@ -388,4 +388,16 @@ def append_snapshot_diff_to_report(report_file, diffs):
         d = diffs["pubmed"]
         lines.append(f"### PubMed ({d['old_file']} → {d['new_file']})")
         lines.append(f"- New papers: {d['added']}")
-        lines.append(f"- Dropped 
+        lines.append(f"- Dropped papers: {d['removed']}")
+        if d["cross_domain"]:
+            lines.append(f"\n**Cross-Domain New Papers ({len(d['cross_domain'])}):**")
+            for p in d["cross_domain"]:
+                lines.append(f"- [{p['pmid']}] {p['title']} — Domains: {', '.join(p['domains'])}")
+        lines.append("")
+
+    with open(report_file, "a", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+
+if __name__ == "__main__":
+    main()

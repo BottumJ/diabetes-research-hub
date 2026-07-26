@@ -370,27 +370,35 @@ def main():
     print('  Building evidence network...')
     network = build_evidence_network(index_data)
 
-    # Save results
+    # Save results (atomic write: temp file + os.replace to prevent truncation
+    # on interrupted/partial writes -- same hardening applied to
+    # gap_analysis_daily.py on 2026-07-18 for literature_gap_data.json)
+    def _atomic_write_json(path, payload):
+        tmp_path = path + '.tmp'
+        with open(tmp_path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp_path, path)
+
     validation_path = os.path.join(results_dir, 'citation_validation.json')
-    with open(validation_path, 'w', encoding='utf-8') as f:
-        json.dump({
-            'timestamp': datetime.now().isoformat(),
-            'summary': dict(score_counts),
-            'total_papers': len(papers),
-            'results': validation_results
-        }, f, indent=2, ensure_ascii=False)
+    _atomic_write_json(validation_path, {
+        'timestamp': datetime.now().isoformat(),
+        'summary': dict(score_counts),
+        'total_papers': len(papers),
+        'results': validation_results
+    })
 
     network_path = os.path.join(results_dir, 'evidence_network.json')
-    with open(network_path, 'w', encoding='utf-8') as f:
-        json.dump({
-            'timestamp': datetime.now().isoformat(),
-            'metadata': {
-                'nodes': len(network['nodes']),
-                'citation_edges': len(network['edges']),
-                'topic_clusters': len(network['clusters']),
-            },
-            'network': network
-        }, f, indent=2, ensure_ascii=False)
+    _atomic_write_json(network_path, {
+        'timestamp': datetime.now().isoformat(),
+        'metadata': {
+            'nodes': len(network['nodes']),
+            'citation_edges': len(network['edges']),
+            'topic_clusters': len(network['clusters']),
+        },
+        'network': network
+    })
 
     # Console report
     print()

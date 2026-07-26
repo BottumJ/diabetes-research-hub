@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-26T03:13:10.441300",
- "last_run": "2026-07-26",
+ "last_updated": "2026-07-18T03:15:27.829344",
+ "last_run": "2026-07-18",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5338,7 +5338,7 @@
   },
   "14": {
    "tier": "BRONZE",
-   "last_audited": "2026-07-26",
+   "last_audited": "2026-07-07",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5458,11 +5458,6 @@
       "NCT07460336 - Cofrogliptin on beta-cell function in LADA (pharmacologic watch item)",
       "PMC7809717 / PMID 32847960 - LADA management consensus (personalized in principle, no nutrition arm)"
      ]
-    },
-    {
-     "date": "2026-07-26",
-     "new_evidence_found": false,
-     "notes": "Audit (BRONZE, LADA personalized nutrition). Web/PubMed search since 2026-07-07 found NO new LADA-specific personalized-nutrition RCT or systematic review. Only a single-patient ketogenic case report (PMC10553975) + general LADA reviews reiterating the gap without filling it. No independent secondary source -> remains BRONZE, not a SILVER promotion candidate. Gap still open."
     }
    ]
   },
@@ -5530,7 +5525,7 @@
   {
    "priority": 1,
    "type": "manual_cleanup_required",
-   "target": "git COMMIT+PUSH BLOCKED - REQUIRES USER. (1) Stale 0-byte .git/index.lock (dated 2026-07-14 03:09) cannot be removed from sandbox ('Operation not permitted' on OneDrive mount) - blocks all commits; user must delete .git/index.lock manually. (2) Push auth: 'could not read Username for https://github.com'. As of 2026-07-16 the working tree has many uncommitted changes (agent_state.json + rebuilt dashboards/results) that cannot be committed until the lock is cleared. AS OF 2026-07-21: lock still present (0-byte, dated 2026-07-20 03:08), removal 'Operation not permitted' on OneDrive mount. Uncommitted: agent_state.json + rebuilt dashboards. USER MUST clear lock and commit/push locally.",
+   "target": "git COMMIT+PUSH BLOCKED - REQUIRES USER. (1) Stale 0-byte .git/index.lock (dated 2026-07-14 03:09) cannot be removed from sandbox ('Operation not permitted' on OneDrive mount) - blocks all commits; user must delete .git/index.lock manually. (2) Push auth: 'could not read Username for https://github.com'. As of 2026-07-16 the working tree has many uncommitted changes (agent_state.json + rebuilt dashboards/results) that cannot be committed until the lock is cleared.",
    "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth. || 2026-06-03: Confirmed blocker persists — .git/index.lock and .git/HEAD.lock still present (root-owned). Sandbox rm permission denied. State written to agent_state.json on disk (persists for next run). Now ~33 unpushed commits (this run added Validated paths + 2 gap audits + pipeline rebuild but commit failed). USER ACTION: delete .git/HEAD.lock and .git/index.lock from Windows, then git push origin main. || 2026-06-05: index.lock + HEAD.lock cleared via rename trick; commit 2adb8ce SUCCEEDED in sandbox. Push still blocked (no GitHub auth: could not read Username for https://github.com). 33 commits unpushed. USER must git push from local terminal. || 2026-06-10: commit attempt blocked again — .git/index.lock unremovable (Operation not permitted, OneDrive) and push fails (no GitHub auth). Branch ahead of origin/main by 37 commits. All 2026-06-10 data changes saved to working files. USER must clear locks + git push from local PowerShell. || 2026-06-12: commit blocked again - .git/index.lock recreated (Operation not permitted on OneDrive), .git/objects tmp_obj writes denied. Branch still ahead of origin/main by ~37 commits. All 2026-06-12 changes (state, 5 path validations, pipeline rebuild) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-16: commit 6402c50 SUCCEEDED in sandbox via index.lock rename/rm trick (today's path validations + state + run report). Working tree CLEAN. PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 39 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-17: locks cleared via mv trick, repo operable, commit attempted; PUSH still blocked (no GitHub auth in sandbox). ~40 commits ahead. USER: git push from local PowerShell. || 2026-06-23: commit blocked again - .git/index.lock + HEAD.lock unremovable (Operation not permitted, OneDrive). All 2026-06-23 changes (state, 2 path re-validations, run report) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-25: commit 4c1de51 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's path validations + state + pipeline rebuild). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 41 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-27: commit e830598 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's 2 path reaffirmations + Gap#2 early audit + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 42 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-07-03: commit SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (tacrolimus path reaffirmation + PMID 39836342 + state + pipeline rebuild 24 stages). PUSH still BLOCKED (no GitHub auth). Now 45 commits ahead of origin/main. USER must run git push from local PowerShell. || 2026-07-09: commit 548d34f SUCCEEDED via index.lock/HEAD.lock rename trick (verapamil downgrade + 2 dashboard fixes + Gap#7 audit + pipeline rebuild 41/41). PUSH still BLOCKED (no GitHub auth in sandbox). Now 53 commits ahead of origin/main. USER: run `git push` from local PowerShell. || 2026-07-18: locks cleared via rename trick; commit SUCCEEDED in sandbox (today's gap-data repair + atomic-write fix + 2 path re-validations + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 59 commits ahead of origin/main. USER must run git push from local PowerShell.",
    "queued_date": "2026-05-17",
    "unpushed_commits_count": 59,
@@ -5544,13 +5539,40 @@
   {
    "priority": 4,
    "type": "search_pubmed",
-   "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - 2026-07-22 recheck: still pre-FIH (program initiating; ABA-101/MS is clinical lead). Next 2026-08-02.",
+   "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - checked 2026-06-29, still pre-FIH (program initiating). Next 2026-08-02.",
    "added": "2026-06-10"
+  },
+  {
+   "type": "check_combination",
+   "target": "SAFEGUARD NCT07187531 enrollment milestone — next quarterly check",
+   "priority": 5,
+   "added": "2026-05-09",
+   "next_check": "2026-08-10",
+   "notes": "2026-05-10 check: enrolling at US/AU/NZ; EU sites coming online; on track to complete enrollment end-2026, data 2H 2027. No milestone update beyond Mar 2026 financial release. Recheck 2026-08-10."
+  },
+  {
+   "type": "audit_gap",
+   "target": "Gap #11 (GOLD) audited 2026-07-14 (no direct CAR-Treg+nutrition protocol; still open). Next monthly audit due ~2026-08-13",
+   "priority": 6,
+   "added": "2026-05-27",
+   "next_due": "2026-08-13"
+  },
+  {
+   "priority": 5,
+   "type": "check_combination",
+   "target": "Ver-A-T1D verapamil ADULT RCT - primary presented EASD Sep-2025 (Pieber), equivocal/NEGATIVE (no significant 2h-MMTT C-peptide AUC diff vs placebo; underpowered, placebo decline ~0.09). RESOLVED 2026-07-11: NO peer-reviewed journal pub of the human RCT yet - source EASD 2025 + news. The DOI 10.1007/s00125-025-06490-8 previously attached here is a DIFFERENT, REAL paper (PMID 40650745, Diabetologia 2025 NOD-MOUSE verapamil+low-dose mATG combo, preclinical) - NOT the human RCT. Watch for RCT secondary/subgroup + 2yr AUC + OLE. Next 2026-09-02."
   },
   {
    "priority": 5,
    "type": "search_pubmed",
-   "target": "BANDIT trial 2-year off-therapy follow-up journal pub (next 2026-09-02)"
+   "target": "Tegoprubart islet transplant PEER-REVIEWED publication - 2026-07-17 recheck: STILL no peer-reviewed journal pub (data only via Eledon IR + HCPLive; 12/12 insulin-independent, CNI-free). Next 2026-08-17.",
+   "last_updated": "2026-07-09",
+   "next_check": "2026-08-17"
+  },
+  {
+   "priority": 5,
+   "type": "search_pubmed",
+   "target": "PROTECT extension peer-reviewed long-term readout NCT04598893 (next 2026-09-02)"
   },
   {
    "priority": 5,
@@ -5559,9 +5581,20 @@
   },
   {
    "priority": 5,
-   "type": "validate_path",
-   "target": "DONE 2026-07-25: oxidative_stress->T2D therapy-arm re-validated. Association VALIDATED (robust); therapy_rating UPGRADED to PARTIALLY_VALIDATED (ALA + vit-D show significant HbA1c reduction across 109-RCT Nutrition Reviews MA DOI 10.1093/nutrit/nuaf292; +vitC/E nuaf133; +astaxanthin 11786388261432862). Next-stalest DISTINCT PARTIAL: rituximab->T1D (last 2026-05-01, PARTIALLY_VALIDATED).",
-   "added": "2026-06-30"
+   "type": "search_pubmed",
+   "target": "SAB-142 phase 1 HUMAN trial peer-reviewed publication (next 2026-08-02)"
+  },
+  {
+   "priority": 5,
+   "type": "search_pubmed",
+   "target": "BANDIT trial 2-year off-therapy follow-up journal pub (next 2026-09-02)"
+  },
+  {
+   "type": "audit_gap",
+   "target": "Gap #2 (GOLD, Health Equity) audited 2026-07-16 — REMAINS GOLD; equity RCTs emerging but pilot-stage. Next monthly audit ~2026-08-16; watch FQHC Hispanic CGM pilot + IDEA SMART + SA/Kenya CGM RCT readouts.",
+   "priority": 6,
+   "added": "2026-06-02",
+   "next_due": "2026-07-27"
   },
   {
    "type": "audit_gap",
@@ -5578,39 +5611,67 @@
    "next_due": "2026-08-16"
   },
   {
-   "priority": 5,
-   "type": "search_pubmed",
-   "target": "PROTECT extension peer-reviewed long-term readout NCT04598893 (next 2026-09-02)"
+   "type": "audit_gap",
+   "priority": 6,
+   "target": "Gap #5 (Islet Transplant x Drug Repurposing, SILVER) audited 2026-07-13 (no new SR); next monthly audit ~2026-08-13; watch for dedicated generic-repurposing-in-islet-tx SR/MA.",
+   "added": "2026-06-18",
+   "next_due": "2026-08-13"
   },
   {
-   "type": "search_pubmed",
-   "priority": 5,
-   "target": "RESOLVED-PARTIAL, rechecked 2026-07-25: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, NLRP3->ferroptosis diabetic kidney, PRECLINICAL mouse/HK-2, pub 2026-05-10) re-confirmed REAL via MDPI but STILL no retrievable PubMed PMID; Wiley iid3.70424 (Zhao hub-gene bioinformatics) DOI-verified, no PMID. Both remain UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Next PubMed-indexing re-verify 2026-07-27."
+   "type": "audit_gap",
+   "priority": 6,
+   "target": "Gap #13 (Personalized Nutrition for Beta Cells, SILVER, promotion_candidate) audited 2026-07-13; next ~2026-08-13; WATCH peer-reviewed T1D dietary MA (medRxiv 2025 preprint) + T1D personalized-nutrition RCT w/ beta-cell endpoint.",
+   "added": "2026-06-19",
+   "next_due": "2026-08-13"
   },
   {
    "priority": 5,
-   "type": "search_pubmed",
-   "target": "SAB-142 phase 1 HUMAN trial peer-reviewed publication - 2026-07-22 recheck: new IDS 2026 data (n=4 T1D, C-peptide preserved D120, 3/4 super-responders, CD4+ Tconv exhaustion) - conference/PR only, small-n signal, no journal pub. Next 2026-08-02."
+   "type": "validate_path",
+   "target": "DONE 2026-07-13: vitamin_d->autoimmune reaffirmed PARTIAL (2025 SR/MA null). Next-stalest DISTINCT PARTIAL (excl vitamin_d/verapamil/rituximab/treg/teplizumab families): rituximab->beta_cell (2026-06-22) or metformin->cardiovascular (2026-06-25).",
+   "added": "2026-06-30"
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #10 next monthly audit — due 2026-08-05; promotion_candidate; still awaiting setting-segmented LADA prevalence SR/MA (audited 2026-07-05).",
+   "queued_date": "2026-05-30"
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #8 next monthly audit — due 2026-08-05; watch for LADA-specific GAD-Alum+VitD RCT readout (audited 2026-07-05).",
+   "queued_date": "2026-05-30"
+  },
+  {
+   "type": "audit_gap",
+   "priority": 6,
+   "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24."
+  },
+  {
+   "priority": 6,
+   "type": "validate_path",
+   "target": "oxidative_stress -> T2D reaffirmed VALIDATED 2026-06-30 (therapy=PARTIAL). Re-check for any antioxidant-supplementation RCT showing hard glycemic/prevention endpoint. Next ~2026-08-01.",
+   "added": "2026-06-30",
+   "next_check": "2026-08-01"
+  },
+  {
+   "type": "validate_path",
+   "priority": 6,
+   "target": "DONE 2026-07-12: Treg_expansion -> T1D reaffirmed PARTIALLY. Next-stalest DISTINCT PARTIAL (excl. recently-done rituximab/verapamil/vitamin_d/Treg): metformin -> cardiovascular (last touch 2026-06-25) or TXNIP_NLRP3_beta_cell_DKD (2026-06-26). Validate next run.",
+   "last_updated": "2026-07-06"
   },
   {
    "type": "check_combination",
-   "target": "SAFEGUARD NCT07187531 enrollment milestone — next quarterly check",
-   "priority": 5,
-   "added": "2026-05-09",
-   "next_check": "2026-08-10",
-   "notes": "2026-05-10 check: enrolling at US/AU/NZ; EU sites coming online; on track to complete enrollment end-2026, data 2H 2027. No milestone update beyond Mar 2026 financial release. Recheck 2026-08-10."
+   "priority": 8,
+   "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04."
   },
   {
-   "priority": 5,
-   "type": "search_pubmed",
-   "target": "Tegoprubart islet transplant PEER-REVIEWED publication - 2026-07-22 recheck: STILL no journal pub (ATTD Mar + ADA Jun 2026 + Eledon IR only; 12/12 insulin-independent, CNI-free, no rejection/DSA). Next 2026-08-17.",
-   "last_updated": "2026-07-09",
-   "next_check": "2026-08-17"
-  },
-  {
-   "priority": 5,
-   "type": "check_combination",
-   "target": "Ver-A-T1D verapamil ADULT RCT - primary presented EASD Sep-2025 (Pieber), equivocal/NEGATIVE (no significant 2h-MMTT C-peptide AUC diff vs placebo; underpowered, placebo decline ~0.09). RESOLVED 2026-07-11: NO peer-reviewed journal pub of the human RCT yet - source EASD 2025 + news. The DOI 10.1007/s00125-025-06490-8 previously attached here is a DIFFERENT, REAL paper (PMID 40650745, Diabetologia 2025 NOD-MOUSE verapamil+low-dose mATG combo, preclinical) - NOT the human RCT. Watch for RCT secondary/subgroup + 2yr AUC + OLE. Next 2026-09-02."
+   "type": "monitor_trial",
+   "priority": 6,
+   "target": "FOCUS trial (NCT03811561, n=1500) definitive semaglutide-vs-placebo diabetic retinopathy readout - expected 2026 (est. completion 2027). Watch for primary results to resolve semaglutide->retinopathy path. Next ~2026-08-06.",
+   "queued_date": "2026-07-06",
+   "last_updated": "2026-07-06",
+   "notes": "Added 2026-07-06 from Monday sweep."
   },
   {
    "type": "validate_path",
@@ -5618,10 +5679,46 @@
    "target": "BHB_to_NLRP3_inhibition next audit due ~2026-09-01; watch for peer-reviewed version of bioRxiv acidosis-licensing preprint (2025.05.01.650510) + any RCT testing SGLT2i BHB->NLRP3 pharmacodynamics."
   },
   {
+   "type": "audit_gap",
+   "priority": 6,
+   "target": "Gap #14 (BRONZE LADA x personalized nutrition) next monthly audit due ~2026-08-07; watch for Berberine+Inulin LADA RCT (PMC9241519) RESULTS publication as potential 2nd source."
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #9 (EXPLORATORY, GKA-in-LADA) next audit — due 2026-08-05 (audited 2026-07-08, no GKA-LADA trial).",
+   "queued_date": "2026-07-08"
+  },
+  {
+   "priority": 6,
+   "type": "audit_gap",
+   "target": "Gap #15 (BRONZE, SGLT2i x nutrition, promotion_candidate) next audit — due 2026-08-05; watch for SGLT2i x PRECISION-nutrition (genotype/microbiome/CGM) study to trigger SILVER. 2nd macronutrient-level source already logged (PMC8166978).",
+   "queued_date": "2026-07-08"
+  },
+  {
+   "type": "full_rebuild_verify",
+   "priority": 7,
+   "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-16 (41 stages [OK], network verify ran clean). Re-run ~weekly."
+  },
+  {
+   "type": "audit_gap",
+   "priority": 6,
+   "added": "2026-07-10",
+   "next_due": "2026-08-09",
+   "target": "Gap #4 (SILVER) audited 2026-07-10; next monthly audit ~2026-08-09; watch for islet-transplant + personalized/precision-nutrition RCT"
+  },
+  {
+   "type": "audit_gap",
+   "priority": 6,
+   "added": "2026-07-10",
+   "next_due": "2026-08-09",
+   "target": "Gap #12 (SILVER) audited 2026-07-10; next monthly audit ~2026-08-09; watch NCT07183761 UC-MSC DPN readout (~2028) + any Treg-in-DPN intervention trial"
+  },
+  {
    "type": "validate_path",
    "priority": 6,
-   "target": "DONE 2026-07-12: Treg_expansion -> T1D reaffirmed PARTIALLY. Next-stalest DISTINCT PARTIAL (excl. recently-done rituximab/verapamil/vitamin_d/Treg): metformin -> cardiovascular (last touch 2026-06-25) or TXNIP_NLRP3_beta_cell_DKD (2026-06-26). Validate next run.",
-   "last_updated": "2026-07-06"
+   "added": "2026-07-10",
+   "target": "verapamil->T1D re-validated 2026-07-10 (PARTIAL, cautious post Ver-A-T1D primary miss). Next-stalest DISTINCT PARTIAL: rituximab->T1D (2026-05-01) / rituximab->beta_cell (2026-05-02)."
   },
   {
    "type": "validate_path",
@@ -5645,132 +5742,13 @@
    "type": "validate_path",
    "priority": 6,
    "added": "2026-07-18",
-   "target": "DONE 2026-07-21: empagliflozin_cv_hf_ckd REAFFIRMED VALIDATED (EMPEROR-Reduced PMID 32865377 filled; 3 fresh 2025-2026 SR/MA added; no reversal). Next-stalest DISTINCT VALIDATED paths to re-check: glp1_ra_cv_outcomes (2026-05-08), baricitinib_t1d_beta_cell (2026-05-09). Validate next run."
-  },
-  {
-   "type": "monitor_trial",
-   "priority": 6,
-   "target": "FOCUS trial (NCT03811561, n=1500) definitive semaglutide-vs-placebo diabetic retinopathy readout - expected 2026 (est. completion 2027). Watch for primary results to resolve semaglutide->retinopathy path. Next ~2026-08-06.",
-   "queued_date": "2026-07-06",
-   "last_updated": "2026-07-06",
-   "notes": "Added 2026-07-06 from Monday sweep."
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #10 next monthly audit — due 2026-08-05; promotion_candidate; still awaiting setting-segmented LADA prevalence SR/MA (audited 2026-07-05).",
-   "queued_date": "2026-05-30"
-  },
-  {
-   "type": "audit_gap",
-   "target": "Gap #11 (GOLD) audited 2026-07-14 (no direct CAR-Treg+nutrition protocol; still open). Next monthly audit due ~2026-08-13",
-   "priority": 6,
-   "added": "2026-05-27",
-   "next_due": "2026-08-13"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "added": "2026-07-10",
-   "next_due": "2026-08-09",
-   "target": "Gap #12 (SILVER) audited 2026-07-10; next monthly audit ~2026-08-09; watch NCT07183761 UC-MSC DPN readout (~2028) + any Treg-in-DPN intervention trial"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "target": "Gap #13 (Personalized Nutrition for Beta Cells, SILVER, promotion_candidate) audited 2026-07-13; next ~2026-08-13; WATCH peer-reviewed T1D dietary MA (medRxiv 2025 preprint) + T1D personalized-nutrition RCT w/ beta-cell endpoint.",
-   "added": "2026-06-19",
-   "next_due": "2026-08-13"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "target": "Gap #14 (BRONZE LADA x personalized nutrition) next monthly audit due ~2026-08-07; watch for Berberine+Inulin LADA RCT (PMC9241519) RESULTS publication as potential 2nd source."
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #15 (BRONZE, SGLT2i x nutrition, promotion_candidate) next audit — due 2026-08-05; watch for SGLT2i x PRECISION-nutrition (genotype/microbiome/CGM) study to trigger SILVER. 2nd macronutrient-level source already logged (PMC8166978).",
-   "queued_date": "2026-07-08"
-  },
-  {
-   "type": "audit_gap",
-   "target": "Gap #2 (GOLD, Health Equity) audited 2026-07-16 — REMAINS GOLD; equity RCTs emerging but pilot-stage. Next monthly audit ~2026-08-16; watch FQHC Hispanic CGM pilot + IDEA SMART + SA/Kenya CGM RCT readouts.",
-   "priority": 6,
-   "added": "2026-06-02",
-   "next_due": "2026-07-27"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "added": "2026-07-10",
-   "next_due": "2026-08-09",
-   "target": "Gap #4 (SILVER) audited 2026-07-10; next monthly audit ~2026-08-09; watch for islet-transplant + personalized/precision-nutrition RCT"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "target": "Gap #5 (Islet Transplant x Drug Repurposing, SILVER) audited 2026-07-13 (no new SR); next monthly audit ~2026-08-13; watch for dedicated generic-repurposing-in-islet-tx SR/MA.",
-   "added": "2026-06-18",
-   "next_due": "2026-08-13"
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #8 next monthly audit — due 2026-08-05; watch for LADA-specific GAD-Alum+VitD RCT readout (audited 2026-07-05).",
-   "queued_date": "2026-05-30"
-  },
-  {
-   "priority": 6,
-   "type": "audit_gap",
-   "target": "Gap #9 (EXPLORATORY, GKA-in-LADA) next audit — due 2026-08-05 (audited 2026-07-08, no GKA-LADA trial).",
-   "queued_date": "2026-07-08"
-  },
-  {
-   "type": "audit_gap",
-   "priority": 6,
-   "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24."
-  },
-  {
-   "priority": 6,
-   "type": "validate_path",
-   "target": "oxidative_stress -> T2D reaffirmed VALIDATED 2026-06-30 (therapy=PARTIAL). Re-check for any antioxidant-supplementation RCT showing hard glycemic/prevention endpoint. Next ~2026-08-01.",
-   "added": "2026-06-30",
-   "next_check": "2026-08-01"
-  },
-  {
-   "type": "validate_path",
-   "priority": 5,
-   "added": "2026-07-10",
-   "target": "DONE 2026-07-24: metformin->cardiovascular reaffirmed PARTIALLY_VALIDATED (no new placebo-controlled hard-MACE RCT overturns Griffin 2017 PMID 28776086; 2023 umbrella review DOI 10.1007/s40200-023-01309-y added; 2025 work = AF sub-outcome/observational). Next-stalest DISTINCT PARTIAL: oxidative_stress->T2D therapy-arm (last 2026-06-30)."
-  },
-  {
-   "type": "full_rebuild_verify",
-   "priority": 7,
-   "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-16 (41 stages [OK], network verify ran clean). Re-run ~weekly."
+   "target": "DONE 2026-07-18: dapagliflozin_nephropathy + dapagliflozin_T2D reaffirmed VALIDATED (added PMID 38730538, NDT-2024 time-to-event). Next-stalest DISTINCT paths to re-check: empagliflozin_cv_hf_ckd (2026-05-07), glp1_ra_cv_outcomes (2026-05-08), baricitinib_t1d_beta_cell (2026-05-09)."
   },
   {
    "type": "note",
    "priority": 8,
    "added": "2026-07-18",
    "target": "2026-07-18: Repaired truncated literature_gap_data.json (frozen file corrupted during 2026-07-17 regen). If it truncates again, root cause is an interrupted write in gap_analysis_daily.py -> consider atomic write (tmp+rename) there."
-  },
-  {
-   "type": "check_combination",
-   "priority": 8,
-   "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04."
-  },
-  {
-   "priority": 5,
-   "type": "validate_path",
-   "target": "validate_path: next stalest DISTINCT paths after glp1_ra_cv_outcomes (done 2026-07-26): baricitinib_t1d_beta_cell (2026-05-09) / golimumab_t1d_beta_cell (2026-05-09) / dorzagliatin->T2D (2026-05-11).",
-   "added": "2026-07-26"
-  },
-  {
-   "priority": 6,
-   "type": "search_pubmed",
-   "target": "Run full run_quality_improvements.py (incl. pmidverify/ingest network stages) on LOCAL machine; sandbox cannot complete network stages within 45s cap. Added 2026-07-26.",
-   "added": "2026-07-26"
   }
  ],
  "run_history": [
@@ -6990,73 +6968,6 @@
    "date": "2026-07-18",
    "timestamp": "2026-07-18T03:14:03.813315",
    "summary": "Sat 2026-07-18 run (not Mon; no weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED, 0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (>=42M); 0 zero-SAE/zero-rejection; 30 cure/achieves hits all benign (stem-cell 'Cure' category labels, hedged Preclinical/Phase-1 status, ML macro-AUC, mission text). WORK: (1) Re-validated 2 stalest paths (both ~2026-05-05): dapagliflozin_nephropathy & dapagliflozin_T2D reaffirmed VALIDATED/STRONG, added confirming NDT-2024 time-to-event analysis PMID 38730538 (6.6-yr delay to kidney failure). (2) FIXED PIPELINE BUG: literature_gap_data.json (frozen file, regenerated 2026-07-17 10:14 but TRUNCATED mid-write -> invalid JSON, broke improve_gap_analysis.py). Repaired by dropping dangling final object + closing JSON; preserved fresher 2026-07-17 data (372 ranked_gaps intact). (3) Pipeline rebuild now 41/41 [OK] exit 0. GIT: commit/push still blocked (see priority-1 item); state saved to disk."
-  },
-  {
-   "date": "2026-07-20",
-   "timestamp": "2026-07-20T03:09:40.322128",
-   "summary": "Mon 2026-07-20 run WITH weekly sweep (7 areas). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). No new verifiable PMIDs (2 NLRP3/DKD 2026 papers logged as watch items pending PMID verification - no fabrication). Credibility sweep CLEAN. Pipeline rebuild 41/41 [OK].",
-   "items_completed": [
-    "weekly_pubmed_sweep_7areas",
-    "credibility_sweep_clean",
-    "pipeline_rebuild_41_OK",
-    "state_update"
-   ],
-   "git_committed": false,
-   "git_blocker": "OneDrive-mount .git/index.lock recreated by git add and cannot be removed (Operation not permitted). Same recurring blocker - requires user to run commit/push locally."
-  },
-  {
-   "date": "2026-07-21",
-   "timestamp": "2026-07-21T03:20:40.378704",
-   "summary": "Tue 2026-07-21 run (no weekly sweep - not Monday). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). Item 36: both 2026 NLRP3/DKD papers CONFIRMED REAL via publisher DOI (Wiley iid3.70424 + MDPI ijms27104257) but NO retrievable PubMed PMID yet -> logged as UNVETTED_NO_PMID watch items with pmid=PENDING (no fabrication); reverify 2026-07-27. Path validation: empagliflozin_cv_hf_ckd REAFFIRMED VALIDATED - filled null EMPEROR-Reduced PMID (32865377, DOI-confirmed), added 3 fresh 2025-2026 confirming SR/MA, no reversal. Credibility sweep CLEAN (no fabricated PMIDs>42M, no zero-SAE/curative overstatement). Pipeline rebuild 39/39 [OK] (excluded 2 network-only stages pmidverify+ingest: verify_pmids.py hung on NCBI rate-limit this run).",
-   "items_completed": [
-    "item36_nlrp3dkd_pmid_verify(PENDING-real-no-PMID)",
-    "validate_path_empagliflozin_cv_hf_ckd_REAFFIRMED",
-    "credibility_sweep_clean",
-    "pipeline_rebuild_39_OK",
-    "state_update"
-   ],
-   "git_committed": false,
-   "git_blocker": "OneDrive .git/index.lock (0-byte, dated 2026-07-20 03:08) still 'Operation not permitted' from sandbox - unchanged; requires user to delete lock + commit/push locally.",
-   "notes": "2 new watch-item paper(s) logged. Network pmidverify stage skipped due to NCBI unavailability - local credibility sweep covers fabrication check."
-  },
-  {
-   "date": "2026-07-22",
-   "summary": "Wed 2026-07-22 run (no weekly sweep - not Monday). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN (0 fabricated PMIDs, 0 zero-SAE/rejection claims). Pipeline rebuilt: PMID verification 262/262 verified 0 not-found, 24 dashboards regenerated. Validated 3 time-sensitive queue items via web: Tegoprubart islet (still conf/IR only, no journal pub -> next 08-17); SAB-142 Ph1 (new IDS 2026 data, n=4 T1D, C-peptide preserved D120, 3/4 super-responders - small-n signal, no pub -> next 08-02); Abata ABA-201 (still pre-FIH -> next 08-02). GIT COMMIT/PUSH STILL BLOCKED: .git/index.lock (0-byte, dated 2026-07-20) removal \"Operation not permitted\" on OneDrive mount; requires user."
-  },
-  {
-   "date": "2026-07-23",
-   "summary": "Thu 2026-07-23 run (no weekly sweep - not Monday). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN (0 fabricated PMIDs >42M, 0 zero-SAE/zero-rejection claims; the 2 'curative' hits are the verify_before_deploy.py blocklist itself, not claims). PATH VALIDATION: rituximab->beta_cell reaffirmed PARTIALLY_VALIDATED (transient effect; PMID 24026563 2-yr waning; 2025 NMA PMC12211534 does not rank rituximab top-tier). NLRP3/DKD recheck (opportunistic, item 8): MDPI IJMS 27(10):4257 ferroptosis paper CONFIRMED REAL (publisher, pub May 10 2026, PRECLINICAL NLRP3-KO mouse + HK-2) but STILL no retrievable PubMed PMID -> remains pmid=PENDING (NOT fabricated). Next 2026-07-27. PIPELINE: 38/40 stages [OK] (all local build + validate/evidence/citations/pmidtracker). 2 network stages (pmidverify, ingest) hang on sandbox's restricted PubMed API - unchanged env limitation, deferred. GIT still BLOCKED (stale .git/index.lock + push auth) - requires user."
-  },
-  {
-   "date": "2026-07-24",
-   "day": "Friday",
-   "summary": "Vetting complete (285/285 papers). Validated metformin->cardiovascular (PARTIALLY_VALIDATED maintained; no new placebo-controlled hard-MACE RCT; added 2023 umbrella-review DOI). Rechecked 2 UNVETTED_NO_PMID watch items (IJMS ferroptosis + Wiley Zhao hub-gene): both still DOI-verified real, still not PubMed-indexed, pmid=PENDING (not fabricated), next 2026-08-07. Credibility sweep CLEAN (no fabricated PMIDs, no zero-SAE/curative claims). Pipeline rebuilt: all non-network stages [OK] with fresh dashboards; network stages (pmidverify/pmidtracker/citations/trialequity) blocked in sandbox - require local run (P7).",
-   "items_completed": [
-    "validate_path:metformin->cardiovascular",
-    "recheck:watch_items_pending_pmid(2)",
-    "credibility_sweep",
-    "pipeline_rebuild(local stages)"
-   ],
-   "blockers": [
-    "git index.lock still unremovable from sandbox (OneDrive mount, Operation not permitted) - user must clear locally",
-    "network PMID/trial verification unreachable from sandbox"
-   ]
-  },
-  {
-   "date": "2026-07-25",
-   "summary": "Sat 2026-07-25 run (no Mon weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs (only >42M hit = PROSPERO CRD420251073207 substring, benign/labeled unverified); 0 'zero SAE/rejection'; 'achieves'/'cure' hits all contextual (FDA-trial sensitivity, cost-effectiveness models, category labels). PATH VALIDATED: oxidative_stress->T2D therapy-arm (was stalest distinct partial, last 2026-06-30). Located 3 new 2025-26 RCT meta-analyses (food-bioactive 109-RCT Nutrition Reviews DOI 10.1093/nutrit/nuaf292 -> ALA & vit-D significant HbA1c drop; vitC/E subgroup MA nuaf133; astaxanthin MA 11786388261432862 n=403). Association remains ROBUST-VALIDATED; therapy_rating UPGRADED PARTIAL->PARTIALLY_VALIDATED (>=2 agents now hit hard HbA1c endpoint) but stays agent-specific, causality-for-antioxidants-broadly unproven. WATCH ITEMS rechecked: ferroptosis IJMS DOI 10.3390/ijms27104257 + Wiley iid3.70424 still DOI-verified/no-PMID (PENDING, not fabricated); next 2026-07-27. PIPELINE: run_quality_improvements.py FINISHED, 214 [PASS], 0 traceback/FAIL; 28 dashboards+results regenerated. GIT: commit+push STILL BLOCKED - .git/index.lock (0-byte, dated 2026-07-20 03:08) unremovable from sandbox ('Operation not permitted' on OneDrive mount) AND no GitHub push auth in sandbox. Requires USER to clear lock + commit/push locally."
-  },
-  {
-   "date": "2026-07-26",
-   "day": "Sunday",
-   "summary": "Sun 2026-07-26 run (no Mon weekly sweep). Papers unchanged: 285 (272 VETTED/13 FLAGGED/0 unvetted). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs >42M, 0 zero-SAE/zero-rejection; all 'cure'/'achieves' hits contextual (category labels, query names, headings, var names). PATH VALIDATION: re-validated stalest path glp1_ra_cv_outcomes (prior 2026-05-08) -> STRENGTHENED, remains VALIDATED; added SOUL PMID 40162642 (NEJM 2025, oral sema MACE HR 0.86 superiority) + 2025 JACC MA 99,599 pts. GAP AUDIT: Gap #14 (BRONZE, LADA nutrition) reaffirmed BRONZE, no new independent source. PIPELINE FIX: build_paper_library.py was failing on a TRUNCATED citation_validation.json (24576 B, cut at 24KB boundary) -- root cause: non-atomic write in validate_citations.py. Hardened validate_citations.py with atomic temp-file+os.replace+fsync (same fix class as 2026-07-18 gap_data fix); regenerated citation_validation.json (196KB, 262 papers, valid) + evidence_network.json; rebuilt Paper_Library.html. All 35 local build stages [OK], 0 corrupt JSON in Results. Network stages (pmidverify/ingest) not run -- exceed sandbox 45s cap / no persistent background; verify_pmids best run locally by user.",
-   "changes": [
-    "validate_citations.py atomic-write hardening",
-    "regenerated citation_validation.json + evidence_network.json",
-    "glp1_ra_cv_outcomes re-validated (+SOUL PMID 40162642)",
-    "Gap #14 audited (remains BRONZE)",
-    "rebuilt 35 dashboards"
-   ]
   }
  ],
  "topic_checks": {
@@ -7256,13 +7167,9 @@
    }
   ],
   "abata_aba201": {
-   "last_checked": "2026-07-22",
-   "status": "PRE_FIH",
-   "note": "ABA-201 (TCR-Treg for T1D w/ residual beta-cell fn, HLA-restricted) still pre-first-in-human / program initiating. No readout. ABA-101 (progressive MS) is the clinical-stage lead (FIH 2024). Next 2026-08-02.",
-   "sources": [
-    "abatatx.com pipeline",
-    "biospace Abata ABA-201 announcement"
-   ]
+   "last_checked": "2026-06-02",
+   "finding": "no peer-reviewed publication; clinical study initiated 2024-2025 per press releases",
+   "next_check": "2026-07-02"
   },
   "ver_a_t1d": {
    "last_checked": "2026-06-02",
@@ -7285,13 +7192,9 @@
    "next_check": "2026-09-02"
   },
   "sab142_phase1": {
-   "last_checked": "2026-07-22",
-   "status": "CONFERENCE_ONLY_early_signal",
-   "note": "New data at IDS 2026 (Immunology of Diabetes Society, Brisbane, Mar/Apr 2026). Phase 1 HUMAN: T1D cohort n=4 + 1 placebo. C-peptide preserved vs baseline at Day 120 (placebo declined); 3/4 \"super responders\" correlated w/ CD4+ Tconv exhaustion; improved CGM TIR. VERY SMALL n=4 - signal only, not efficacy. Press-release/conference only, no peer-reviewed pub. Next 2026-08-02.",
-   "sources": [
-    "globenewswire SAB BIO IDS 2026 (2026-04-22)",
-    "biospace SAB-142 IDS 2026"
-   ]
+   "last_checked": "2026-06-02",
+   "finding": "IDS Brisbane Apr 22 2026 — 3/4 super-responders; no peer-reviewed pub yet",
+   "next_check": "2026-08-02"
   },
   "bandit_2yr_followup": {
    "last_checked": "2026-06-02",
@@ -7344,36 +7247,6 @@
    "date": "2026-06-29",
    "finding": "ABA-201 TCR-Treg still pre/initiating FIH; no first-in-human readout. Next 2026-08-02.",
    "new_pmids": []
-  },
-  "2026-07-20_weekly_sweep": {
-   "date": "2026-07-20",
-   "day": "Monday",
-   "areas_searched": [
-    "LADA",
-    "islet transplant 2026",
-    "NLRP3 DKD",
-    "drug repurposing generic diabetes",
-    "oxidative stress combination",
-    "verapamil T1D beta cell",
-    "dapagliflozin+colchicine"
-   ],
-   "result": "No new VERIFIABLE PMIDs added (doctrine: never fabricate PMIDs).",
-   "findings": {
-    "islet_tegoprubart": "Eledon Tegoprubart 12/12 insulin-independent (median 8mo, max 22mo f/u) STILL IR/HCPLive only, no peer-reviewed journal pub. Confirms existing queue item; Eledon to engage regulators later 2026.",
-    "verapamil_ver_a_t1d": "Ver-A-T1D adult RCT still only EASD Sep-2025 conference data, no peer-reviewed pub. Confirms existing queue item.",
-    "nlrp3_dkd_watch": "Two 2026 NLRP3/DKD papers surfaced WITHOUT verifiable PMIDs in snippets: (1) Zhao et al., \"Characterization of NLRP3 Inflammasome-Associated Hub Genes in Diabetic Nephropathy\", Immunity Inflammation & Disease 2026, doi:10.1002/iid3.70424; (2) MDPI IJMS 27(10):4257 (May 2026), NLRP3 inhibition attenuates diabetic kidney injury via ferroptosis suppression (in vivo/in vitro, PRECLINICAL). Added to queue to verify+obtain PMIDs next run.",
-    "dapa_colchicine": "No dapagliflozin+colchicine diabetes trial found; empagliflozin+colchicine post-STEMI is a different, non-diabetes study. No change.",
-    "oxidative_stress": "2026 Nutrition Reviews SR/MA on food bioactive compounds & oxidative stress in T2D (doi:10.1093/nutrit/nuaf292) - candidate, no verifiable PMID. Watch item."
-   }
-  },
-  "tegoprubart_islet_pub": {
-   "last_checked": "2026-07-22",
-   "status": "NO_PEER_REVIEWED_PUB",
-   "note": "As of 2026-07-22 still conference/IR only (ATTD Mar-2026, ADA Jun-2026). 12/12 insulin-independent, CNI-free, no rejection, no de novo DSA. Pilot n=12 (10 >4wk post-tx all insulin-independent, HbA1c<6.0%). No journal publication. Next 2026-08-17.",
-   "sources": [
-    "hcplive.com tegoprubart ADA/ATTD 2026",
-    "biotuesdays.com 2026-06-08 Eledon"
-   ]
   }
  },
  "combination_validation": {
@@ -7495,10 +7368,9 @@
     "10.1186/s12916-025-04201-z (BMC Med network MA 2025)",
     "PMC12636228 (BMC Endocr Disord SR/MA 2025)"
    ],
-   "last_validated": "2026-07-23",
+   "last_validated": "2026-06-22",
    "revisit_2026_06_22": "Reaffirmed PARTIALLY_VALIDATED. Web sweep returned only pre-2026 evidence: NEJMoa0904452 (PMID 19940299, 1-yr partial preservation), Diabetes Care 2014 2-yr results (PMID 24026563) showing 8.2-mo delay in C-peptide decline that then parallels placebo. Comparative MA still ranks rituximab BELOW low-dose ATG & teplizumab. No new 2026 RCT/MA. No upgrade.",
-   "revisit_note_2026_07_04": "Reaffirmed PARTIALLY_VALIDATED. 2025 BMC Medicine network meta-analysis (PMC12211534 / doi 10.1186/s12916-025-04201-z; 60 RCTs, 4597 pts, lit through 2024-07-31) reports 11 interventions with significantly higher 12-mo C-peptide than placebo - rituximab/anti-CD20 is NOT among them; anti-CD20 effect described as transient (patients eventually progress). Landmark Pescovitz NEJM 2009 (PMC6410357) positive at 1yr but wanes. No upgrade - effect modest/transient, does not arrest beta-cell loss.",
-   "revisit_2026_07_23": "Reaffirmed PARTIALLY_VALIDATED (Thu run). Web sweep: 12-mo C-peptide preservation confirmed (Pescovitz NEJM 2009, PMID 19940299); effect transient - Diabetes Care 2014 2-yr results (PMID 24026563) show ~8.2-mo delay then decline parallels placebo as CD19+ B-cells recover (~69% baseline by 1yr). 2025 network MA (PMC12211534) lists 11 interventions beating placebo at 12-mo C-peptide; anti-CD20/rituximab NOT among top performers (teplizumab, baricitinib, cyclosporin lead). No new 2026 rituximab RCT/MA. No upgrade."
+   "revisit_note_2026_07_04": "Reaffirmed PARTIALLY_VALIDATED. 2025 BMC Medicine network meta-analysis (PMC12211534 / doi 10.1186/s12916-025-04201-z; 60 RCTs, 4597 pts, lit through 2024-07-31) reports 11 interventions with significantly higher 12-mo C-peptide than placebo - rituximab/anti-CD20 is NOT among them; anti-CD20 effect described as transient (patients eventually progress). Landmark Pescovitz NEJM 2009 (PMC6410357) positive at 1yr but wanes. No upgrade - effect modest/transient, does not arrest beta-cell loss."
   },
   "rituximab -> nephropathy (DIABETIC)": {
    "rating": "CONTRADICTED",
@@ -7562,7 +7434,7 @@
   },
   "empagliflozin_cv_hf_ckd": {
    "status": "VALIDATED",
-   "date": "2026-07-21",
+   "date": "2026-05-07",
    "sources": [
     {
      "pmid": "26378978",
@@ -7577,47 +7449,27 @@
      "finding": "Kidney disease progression or CV death 13.1% vs 16.9% (HR 0.72, 95% CI 0.64-0.82, p<0.001) in CKD with or without diabetes (n=6,609)."
     },
     {
-     "pmid": "32865377",
+     "pmid": null,
      "trial": "EMPEROR-Reduced",
      "journal": "NEJM 2020 NEJMoa2022190",
-     "finding": "Empagliflozin reduced composite CV death/HF hospitalization 25% in HFrEF; benefit extends to non-diabetic HF.",
-     "doi": "10.1056/NEJMoa2022190",
-     "pmid_note": "Primary EMPEROR-Reduced (Packer et al, NEJM 2020;383:1413-1424); DOI-confirmed; sibling subgroup PMID 33175585 confirms trial family."
+     "finding": "Empagliflozin reduced composite CV death/HF hospitalization 25% in HFrEF; benefit extends to non-diabetic HF."
     }
    ],
    "rating": "VALIDATED",
-   "notes": "Three independent landmark RCTs from regulatory-quality sources; effect sizes consistent across CV/HF/CKD endpoints. | 2026-07-21: reaffirmed VALIDATED; EMPEROR-Reduced PMID filled (32865377); added 3 2025-2026 confirming SR/MA; no reversal.",
-   "reaffirmations": [
-    {
-     "date": "2026-07-21",
-     "result": "VALIDATED (reaffirmed)",
-     "new_external_evidence": [
-      "Haider SH et al 2025 SR/MA of 92,920 patients (SAGE Cardiol Rev, doi:10.1177/11795468251347777): empagliflozin reduces MACE, CV mortality, HF hospitalization added to SoC.",
-      "Empagliflozin IPD meta-analysis of acute+chronic kidney outcomes, Lancet Diab Endocrinol 2025 (PIIS2213-8587(25)00222-0): benefit irrespective of acute eGFR dip.",
-      "Bahardoust et al 2026 SR/MA (Endocrinol Diabetes Metab, doi:10.1002/edm2.70203): empagliflozin reduces CKD outcomes in established-CVD patients."
-     ],
-     "note": "No contradicting/reversal evidence found. Three landmark RCTs (EMPA-REG, EMPA-KIDNEY, EMPEROR-Reduced) plus 2025-2026 meta-analyses remain consistent. EMPEROR-Reduced null PMID resolved."
-    }
-   ]
+   "notes": "Three independent landmark RCTs from regulatory-quality sources; effect sizes consistent across CV/HF/CKD endpoints."
   },
   "glp1_ra_cv_outcomes": {
    "status": "VALIDATED",
-   "date": "2026-07-26",
+   "date": "2026-05-08",
    "source": "Multiple landmark CVOTs + 2024-2025 meta-analyses",
    "pmids_supporting": [
     "27295427",
     "27633186",
     "31185157",
-    "38953365",
-    "40162642"
+    "38953365"
    ],
    "notes": "LEADER (liraglutide, PMID 27295427, NEJM 2016): MACE HR 0.87 (0.78-0.97). SUSTAIN-6 (s.c. semaglutide, PMID 27633186, NEJM 2016): MACE HR 0.74 (0.58-0.95). PIONEER 6 (oral semaglutide, PMID 31185157, NEJM 2019): MACE HR 0.79 (0.57-1.11), met noninferiority. REWIND (dulaglutide): MACE reduction in primary prevention. 2024 meta-analysis (PMID 38953365) MACE reduction confirmed across patients with and without diabetes. Class effect supported.",
-   "caveats": "REWIND population had only 31.5% with CVD vs ~70% in others; heterogeneity in dosing and follow-up duration; trial-level analyses not at individual patient level except IPD subset.",
-   "last_validated": "2026-07-26",
-   "revisit_2026-07-26": "Re-validated (stalest path, prior 2026-05-08). STRENGTHENED. SOUL trial (PMID 40162642, NEJM 2025-03-29): oral semaglutide in T2D with ASCVD/CKD, MACE HR 0.86 (95% CI 0.77-0.96), P=0.0028 over median 47.5 mo -- upgrades oral-semaglutide evidence from PIONEER 6 noninferiority to demonstrated superiority; nonfatal MI driver (-26%). Supported by 2025 JACC SR/MA of 99,599 patients across 21 trials (10.1016/j.jacc.2025.08.027) confirming consistent class-level MACE benefit incl. non-diabetic obesity (~20% MACE reduction). Rating unchanged: VALIDATED (robust class effect).",
-   "external_pmids_2026": [
-    "40162642"
-   ]
+   "caveats": "REWIND population had only 31.5% with CVD vs ~70% in others; heterogeneity in dosing and follow-up duration; trial-level analyses not at individual patient level except IPD subset."
   },
   "tegoprubart_islet_t1d": {
    "status": "PARTIALLY_VALIDATED",
@@ -8006,18 +7858,14 @@
   },
   "metformin -> cardiovascular": {
    "rating": "PARTIALLY_VALIDATED",
-   "date": "2026-07-24",
+   "date": "2026-06-25",
    "external_pmids": [
     "28776086"
    ],
    "external_evidence": "Meta-analysis of 13 RCTs (Griffin et al., Diabetologia 2017, PMID 28776086): point estimates favored metformin for all-cause mortality (RR 0.96), CV death (0.97), MI (0.89), but NONE reached statistical significance; UKPDS dominated the pooled weight. Authors conclude genuine uncertainty about CV benefit.",
    "note": "Deliberately NOT rated VALIDATED. Widely-used first-line drug, but placebo-controlled CV-endpoint evidence is weak/inconclusive. Avoid overstating.",
    "refresh_2026-06-14": "Re-checked external literature (Jun 2026): no new placebo-controlled CV-endpoint RCT overturns Griffin 2017. Recent 2024-2025 work is sub-outcome specific (new-onset atrial fibrillation SR/MA, screened to Nov 2024) and observational; does NOT establish hard-MACE benefit. PARTIALLY_VALIDATED maintained - honest.",
-   "refresh_2026-06-25": "Re-checked Jun 2026: still NO new placebo-controlled hard-MACE RCT overturning Griffin 2017 (PMID 28776086). 2023-2026 updated MA (22 studies, n=612,823) pooled CVD RR 0.88 (95% CI 0.76-1.03, crosses 1; CV-mortality RR ~0.75 significant but driven by observational data). Placebo-controlled RCTs remain mixed: GIPS-III STEMI (non-diabetic) negative for long-term MACE; DPP/DPPOS (PMID 35603600) no significant MACE benefit. PARTIALLY_VALIDATED maintained - honest.",
-   "refresh_2026-07-24": "Re-checked Jul 2026: STILL no new placebo-controlled hard-MACE RCT overturning Griffin 2017 (PMID 28776086). 2020 updated MA (NMCD S0939-4753(20)30508-1) shows MACE association but pools active comparators (not clean placebo). 2023 umbrella review of SR/MA (J Diabetes Metab Disord, DOI 10.1007/s40200-023-01309-y) reaffirms uncertainty vs placebo. 2025 work is atrial-fibrillation sub-outcome + observational, does not establish hard-MACE benefit. PARTIALLY_VALIDATED MAINTAINED - honest; placebo-controlled CV-endpoint evidence remains weak.",
-   "external_dois": [
-    "10.1007/s40200-023-01309-y"
-   ]
+   "refresh_2026-06-25": "Re-checked Jun 2026: still NO new placebo-controlled hard-MACE RCT overturning Griffin 2017 (PMID 28776086). 2023-2026 updated MA (22 studies, n=612,823) pooled CVD RR 0.88 (95% CI 0.76-1.03, crosses 1; CV-mortality RR ~0.75 significant but driven by observational data). Placebo-controlled RCTs remain mixed: GIPS-III STEMI (non-diabetic) negative for long-term MACE; DPP/DPPOS (PMID 35603600) no significant MACE benefit. PARTIALLY_VALIDATED maintained - honest."
   },
   "dapagliflozin -> cardiovascular": {
    "rating": "VALIDATED",
@@ -8166,18 +8014,12 @@
   },
   "oxidative_stress -> T2D": {
    "rating": "VALIDATED",
-   "date": "2026-07-25",
+   "date": "2026-06-30",
    "external_pmids": [
     "34622023",
     "PMC11771208"
    ],
-   "evidence": "Banik 2021 SR/MA (Health Sci Rep, PMID 34622023): 22 case-control studies, 2853 subjects; MDA & nitric oxide elevated, glutathione/total antioxidant status reduced in T2D vs controls. Pathogenic association well-supported. CAVEAT: antioxidant-supplementation RCTs have failed to show glycemic/prevention benefit, so association is robust but therapeutic causality unproven. | 2026-06-30 reaffirmed with fresh therapeutic-side evidence: resveratrol meta-analysis (Front Endocrinol 2024, DOI 10.3389/fendo.2024.1463027, PMC11771208; 6 RCTs, n=533) shows resveratrol significantly lowered CRP, lipid peroxides and 8-isoprostanes and raised GPx/catalase in T2D, BUT malondialdehyde, SOD, total antioxidant capacity, IL-6 and TNF-alpha were NOT significantly changed. NET: pathogenic oxidative-stress association remains robust; antioxidant-therapy signal is partial/marker-selective and therapeutic causality still unproven. Rating unchanged: VALIDATED (association), therapy=PARTIAL. | 2026-07-25 therapy-arm re-validation: THREE new 2025-26 RCT meta-analyses located. (1) Brandimonte-Hernandez/Gil, Nutrition Reviews 2026, DOI 10.1093/nutrit/nuaf292 (advance access; PMID pending) - 109 human RCTs of food bioactive compounds: alpha-lipoic acid and vitamin D produced SIGNIFICANT HbA1c reductions; zinc/selenium/chromium improved glycemic control + raised total antioxidant capacity/enzyme activity. (2) Vitamin C/E subgroup MA, Nutrition Reviews 2026, DOI 10.1093/nutrit/nuaf133 (PMC12793614): high-antioxidant-capacity C/E inversely associated with insulin resistance but agent/dose/duration dependent. (3) Astaxanthin MA 2026, DOI 10.1177/11786388261432862, 9 RCTs n=403 prediabetes/T2D: glycemic+lipid signal. NET: pathogenic association remains ROBUST (VALIDATED). Therapy-side signal is STRENGTHENED but remains AGENT-SPECIFIC (ALA, vit-D, Zn/Se/Cr show HbA1c benefit) and heterogeneous; classic antioxidant vitamins (C/E alone) stay weak. Therapy rating = PARTIALLY_VALIDATED (upgraded from marker-selective PARTIAL: now at least two agents show a hard glycemic endpoint, HbA1c). Therapeutic causality for 'antioxidants broadly' still unproven.",
-   "external_dois": [
-    "10.1093/nutrit/nuaf292",
-    "10.1093/nutrit/nuaf133",
-    "10.1177/11786388261432862"
-   ],
-   "therapy_rating": "PARTIALLY_VALIDATED"
+   "evidence": "Banik 2021 SR/MA (Health Sci Rep, PMID 34622023): 22 case-control studies, 2853 subjects; MDA & nitric oxide elevated, glutathione/total antioxidant status reduced in T2D vs controls. Pathogenic association well-supported. CAVEAT: antioxidant-supplementation RCTs have failed to show glycemic/prevention benefit, so association is robust but therapeutic causality unproven. | 2026-06-30 reaffirmed with fresh therapeutic-side evidence: resveratrol meta-analysis (Front Endocrinol 2024, DOI 10.3389/fendo.2024.1463027, PMC11771208; 6 RCTs, n=533) shows resveratrol significantly lowered CRP, lipid peroxides and 8-isoprostanes and raised GPx/catalase in T2D, BUT malondialdehyde, SOD, total antioxidant capacity, IL-6 and TNF-alpha were NOT significantly changed. NET: pathogenic oxidative-stress association remains robust; antioxidant-therapy signal is partial/marker-selective and therapeutic causality still unproven. Rating unchanged: VALIDATED (association), therapy=PARTIAL."
   },
   "empagliflozin -> T2D": {
    "rating": "VALIDATED",
@@ -8325,22 +8167,6 @@
   {
    "date": "2026-07-02",
    "note": "DUPLICATE PATH ENTRIES 'verapamil_T1D' and 'verapamil -> T1D' track same intervention; recommend consolidation to single canonical key in future cleanup. Not merged this run to preserve provenance."
-  },
-  {
-   "date": "2026-07-22",
-   "type": "credibility_sweep",
-   "result": "CLEAN",
-   "detail": "No fabricated PMIDs >42000000; no \"zero SAEs/zero rejection\"; \"achieves\" hits benign (TTP399 tissue-selectivity design language, LADA cost-effectiveness metric, microbiome model AUC, verify_before_deploy checker). No preclinical overstatement."
-  },
-  {
-   "date": "2026-07-22",
-   "type": "pipeline_rebuild",
-   "result": "OK",
-   "detail": "run_quality_improvements.py: all gap dashboards (Gap #2-#15) rebuilt; PMID verification 262/262 verified, 0 not found, 0 API errors; 24 dashboards regenerated. Trailing buffered validation sub-loop hung (no new output) and was terminated after core build verified complete."
-  },
-  {
-   "date": "2026-07-25",
-   "note": "MINOR: spot-check suggests the 13 eutils-verified 42M-range papers (added 2026-05) may not be in paper_library/index.json (index lookup returned False). Non-blocking - papers are VETTED in state with full metadata. Verify index-membership check on next paper_library rebuild; possible index-format false negative."
   }
  ],
  "combination_validation_pending": [
@@ -8357,40 +8183,7 @@
   "credibility_sweep_2026-05-07": "DEPRECATED ceiling-only PMID > 42,000,000 fabrication test in favor of: (1) round-trip via NCBI esummary for any new PMID, (2) cross-reference against agent_state.json papers map (single source of truth), (3) flag only if year > current year + 1. Numeric ceiling drifts as PubMed grows. Task SKILL.md is in read-only uploads/ so this note replaces an in-place SKILL edit.",
   "path_key_canonicalization_2026-05-11": "Consolidated 25 duplicate path entries (arrow-style 'drug -> target' merged with underscore-style 'drug_target'). Kept arrow-style as canonical. Validation statuses, external_pmids, validation_notes merged, preferring stronger status. SGLT2i_NLRP3_DKD retained as 3-way path.",
   "credibility_2026_07_02": "A DOI recorded in a prior run (Ver-A-T1D Diabetologia) failed independent web re-confirmation. Practice: flag single-source DOIs as UNVERIFIED until directly hit, rather than propagating.",
-  "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs.",
-  "pmid_cutoff_heuristic": "As of 2026-07-25 the SKILL Step-4 rule 'PMIDs >42000000 = fabricated' is STALE and produces FALSE POSITIVES. PubMed sequential IDs legitimately reach the 42.0-42.2M range by mid-2026. State currently holds 13 REAL eutils-verified papers with PMIDs in 42021540-42160884 (e.g. 42113684 = Diabetes/ADA DOI 10.2337/db25-0933; 42160884 = J Autoimmun). Correct fabrication test is NOT a fixed numeric cutoff but: (a) does the PMID resolve via NCBI eutils, and (b) does its title/journal/year match the state record. Apply that test; do not auto-flag on the 42M threshold alone. Re-baseline the numeric tripwire to ~>43000000 for the next few months and re-check quarterly."
+  "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs."
  },
- "last_path_validation_batch": "2026-07-26",
- "watch_items_pending_pmid": [
-  {
-   "authors": "Zhao S, Li Y, Li W",
-   "year": 2026,
-   "title": "Characterization of NLRP3 Inflammasome-Associated Hub Genes in the Progression of Diabetic Nephropathy",
-   "journal": "Immunity, Inflammation and Disease",
-   "doi": "10.1002/iid3.70424",
-   "pmid": "PENDING",
-   "status": "UNVETTED_NO_PMID",
-   "design": "bioinformatics (GEO GSE142025/GSE96804 hub-gene analysis)",
-   "verified_real": "YES via Wiley Online Library DOI 2026-07-21",
-   "pubmed_indexed": "NOT YET (rechecked 2026-07-24: DOI still verifies real via publisher; no PubMed PMID retrievable)",
-   "logged_date": "2026-07-21",
-   "last_rechecked": "2026-07-24",
-   "next_recheck": "2026-08-07"
-  },
-  {
-   "authors": "(MDPI IJMS authors)",
-   "year": 2026,
-   "title": "NLRP3 Inflammasome Inhibition Attenuates Diabetic Kidney Injury via the Suppression of Ferroptosis: Mechanistic Insights from In Vivo and In Vitro Models",
-   "journal": "Int J Mol Sci 27(10):4257",
-   "doi": "10.3390/ijms27104257",
-   "pmid": "PENDING",
-   "status": "UNVETTED_NO_PMID",
-   "design": "PRECLINICAL (STZ diabetic WT + NLRP3-KO mice; HG HK-2 cells + siNLRP3)",
-   "verified_real": "YES via MDPI DOI 2026-07-21",
-   "pubmed_indexed": "NOT YET (rechecked 2026-07-24: DOI still verifies real via publisher; no PubMed PMID retrievable)",
-   "logged_date": "2026-07-21",
-   "last_rechecked": "2026-07-24",
-   "next_recheck": "2026-08-07"
-  }
- ]
+ "last_path_validation_batch": "2026-07-18"
 }
