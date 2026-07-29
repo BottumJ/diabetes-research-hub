@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-07-27T03:09:45.455323",
- "last_run": "2026-07-27",
+ "last_updated": "2026-07-29T08:22:28.562368",
+ "last_run": "2026-07-29",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -3901,12 +3901,18 @@
    "last_checked": "2026-05-29T08:07:08.997338"
   },
   "40696181": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added_date": "2026-07-27",
    "source": "Monday weekly sweep 2026-07-27 (health equity / drug-repurposing-access area)",
    "title": "Disparities in access to and use of diabetes technologies and therapeutics: a narrative review",
    "priority": "normal",
-   "note": "PubMed-indexed narrative review; supports Gap #2. To be vetted next run."
+   "note": "PubMed-indexed narrative review; supports Gap #2. To be vetted next run.",
+   "pmid_verified": true,
+   "claims_checked": true,
+   "vetted_date": "2026-07-28T03:08:41.614980",
+   "last_checked": "2026-07-28T03:08:41.614980",
+   "issues_found": [],
+   "verification_note": "PMID 40696181 confirmed real: Addala et al., Diabetologia 2025;68(11):2430-2448, DOI 10.1007/s00125-025-06494-4. Legitimate PubMed-indexed narrative review on disparities in diabetes tech/therapeutics access (neo-materialist framework; race/ethnicity/SES). Supports Gap #2. No red flags: review, no fabricated stats."
   }
  },
  "paths": {
@@ -4788,7 +4794,7 @@
  "gaps": {
   "1": {
    "tier": "SILVER",
-   "last_audited": "2026-06-24",
+   "last_audited": "2026-07-29",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -4833,6 +4839,11 @@
      "date": "2026-06-24",
      "new_evidence_found": false,
      "notes": "Audit (interim, ahead of 2026-06-29 due date). Web/lit search \"gene therapy LADA adults CRISPR 2026 beta cell\". No LADA-specific gene-therapy clinical trial exists. CRISPR beta-cell-protection work (e.g. genome-scale in vivo CRISPR identifying RNLS as a beta-cell-protective target) remains T1D-focused and preclinical. LADA reviews (Frontiers Endocrinol PMC9389314; PMC12522475 2025) emphasize the residual-beta-cell time window as a therapeutic rationale but cite NO gene-therapy intervention. Gap remains genuine and VALID; tier stays SILVER (no second independent LADA-specific source -> not a promotion candidate). RNLS noted as a mechanistic watch-item."
+    },
+    {
+     "date": "2026-07-29",
+     "new_evidence_found": false,
+     "notes": "2026-07-29 audit. Searches for CRISPR/gene therapy LADA 2025-2026. Findings: (1) CRISPR Tx CTX211 (allogeneic gene-edited hypoimmune stem-cell-derived islets) remains T1D-focused; Phase 1 update expected 2025 — LADA not a target. (2) Only actively-recruiting LADA-specific interventional trial is a GAD-alum follow-up (Sweden/Norway) — immunomodulation, NOT gene therapy. (3) No LADA-specific gene/CRISPR trial has initiated. Decision: RETAIN SILVER. Gap genuinely understudied; still zero direct LADA gene-therapy sources, so not a promotion candidate (single-source, adjacency only). Next audit ~2026-08-28."
     }
    ],
    "last_audit_date": "2026-06-07",
@@ -5549,22 +5560,17 @@
   {
    "priority": 1,
    "type": "manual_cleanup_required",
-   "target": "git COMMIT+PUSH BLOCKED - REQUIRES USER. (1) Stale 0-byte .git/index.lock (dated 2026-07-14 03:09) cannot be removed from sandbox ('Operation not permitted' on OneDrive mount) - blocks all commits; user must delete .git/index.lock manually. (2) Push auth: 'could not read Username for https://github.com'. As of 2026-07-16 the working tree has many uncommitted changes (agent_state.json + rebuilt dashboards/results) that cannot be committed until the lock is cleared. AS OF 2026-07-21: lock still present (0-byte, dated 2026-07-20 03:08), removal 'Operation not permitted' on OneDrive mount. Uncommitted: agent_state.json + rebuilt dashboards. USER MUST clear lock and commit/push locally.",
-   "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth. || 2026-06-03: Confirmed blocker persists — .git/index.lock and .git/HEAD.lock still present (root-owned). Sandbox rm permission denied. State written to agent_state.json on disk (persists for next run). Now ~33 unpushed commits (this run added Validated paths + 2 gap audits + pipeline rebuild but commit failed). USER ACTION: delete .git/HEAD.lock and .git/index.lock from Windows, then git push origin main. || 2026-06-05: index.lock + HEAD.lock cleared via rename trick; commit 2adb8ce SUCCEEDED in sandbox. Push still blocked (no GitHub auth: could not read Username for https://github.com). 33 commits unpushed. USER must git push from local terminal. || 2026-06-10: commit attempt blocked again — .git/index.lock unremovable (Operation not permitted, OneDrive) and push fails (no GitHub auth). Branch ahead of origin/main by 37 commits. All 2026-06-10 data changes saved to working files. USER must clear locks + git push from local PowerShell. || 2026-06-12: commit blocked again - .git/index.lock recreated (Operation not permitted on OneDrive), .git/objects tmp_obj writes denied. Branch still ahead of origin/main by ~37 commits. All 2026-06-12 changes (state, 5 path validations, pipeline rebuild) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-16: commit 6402c50 SUCCEEDED in sandbox via index.lock rename/rm trick (today's path validations + state + run report). Working tree CLEAN. PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 39 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-17: locks cleared via mv trick, repo operable, commit attempted; PUSH still blocked (no GitHub auth in sandbox). ~40 commits ahead. USER: git push from local PowerShell. || 2026-06-23: commit blocked again - .git/index.lock + HEAD.lock unremovable (Operation not permitted, OneDrive). All 2026-06-23 changes (state, 2 path re-validations, run report) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-25: commit 4c1de51 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's path validations + state + pipeline rebuild). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 41 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-27: commit e830598 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's 2 path reaffirmations + Gap#2 early audit + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 42 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-07-03: commit SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (tacrolimus path reaffirmation + PMID 39836342 + state + pipeline rebuild 24 stages). PUSH still BLOCKED (no GitHub auth). Now 45 commits ahead of origin/main. USER must run git push from local PowerShell. || 2026-07-09: commit 548d34f SUCCEEDED via index.lock/HEAD.lock rename trick (verapamil downgrade + 2 dashboard fixes + Gap#7 audit + pipeline rebuild 41/41). PUSH still BLOCKED (no GitHub auth in sandbox). Now 53 commits ahead of origin/main. USER: run `git push` from local PowerShell. || 2026-07-18: locks cleared via rename trick; commit SUCCEEDED in sandbox (today's gap-data repair + atomic-write fix + 2 path re-validations + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 59 commits ahead of origin/main. USER must run git push from local PowerShell. || 2026-07-26: locks cleared via rename trick; commit 75e728c SUCCEEDED in sandbox (atomic-write fix for citation_validation.json + glp1 re-validation + Gap#14 audit + 35 dashboards rebuilt). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 60 commits ahead of origin/main. USER must run `git push` from local PowerShell.",
+   "target": "git COMMIT+PUSH BLOCKED - REQUIRES USER. Stale 0-byte .git/index.lock (2026-07-27 03:12) cannot be removed from sandbox (rm -> \"Operation not permitted\" on OneDrive mount). As of 2026-07-28: 62 commits ahead of origin + uncommitted changes (agent_state.json, rebuilt dashboards/JSON). FIX (user, locally): delete .git\\index.lock, then: git add -A; git commit; git push. All research work + state persist to disk regardless of git.",
+   "notes": "2026-05-22: stale .git/HEAD.lock AND .git/index.lock are BOTH blocking commits in sandbox (Operation not permitted on OneDrive-synced files). User must run from PowerShell at C:\\Users\\justi\\OneDrive\\Diabetes_Research: `Remove-Item .git\\HEAD.lock`; `Remove-Item .git\\index.lock`; `git add -A`; `git commit -m 'Manual sync 2026-05-22 — daily iterations 2026-05-21, 2026-05-22'`; `git push`. 16+ commits unpushed; today's work (12 claims-checked, pipeline rebuild) is staged in index but NOT committed. | 2026-05-23 update: today's claims-check + 3-PMID-fix + add_citations.py-truncation-fix are staged but UNCOMMITTABLE in sandbox. User must run from PowerShell: Remove-Item .git/HEAD.lock; Remove-Item .git/index.lock; git commit -m '...' ; git push. | 2026-05-27: today's commit (2b7a3b1) succeeded in sandbox despite .git/HEAD.lock still being unremovable; OneDrive denied removal of HEAD.lock and 9 tmp_obj_* files in .git/objects but commit went through. Push still blocked by missing GitHub auth. || 2026-06-03: Confirmed blocker persists — .git/index.lock and .git/HEAD.lock still present (root-owned). Sandbox rm permission denied. State written to agent_state.json on disk (persists for next run). Now ~33 unpushed commits (this run added Validated paths + 2 gap audits + pipeline rebuild but commit failed). USER ACTION: delete .git/HEAD.lock and .git/index.lock from Windows, then git push origin main. || 2026-06-05: index.lock + HEAD.lock cleared via rename trick; commit 2adb8ce SUCCEEDED in sandbox. Push still blocked (no GitHub auth: could not read Username for https://github.com). 33 commits unpushed. USER must git push from local terminal. || 2026-06-10: commit attempt blocked again — .git/index.lock unremovable (Operation not permitted, OneDrive) and push fails (no GitHub auth). Branch ahead of origin/main by 37 commits. All 2026-06-10 data changes saved to working files. USER must clear locks + git push from local PowerShell. || 2026-06-12: commit blocked again - .git/index.lock recreated (Operation not permitted on OneDrive), .git/objects tmp_obj writes denied. Branch still ahead of origin/main by ~37 commits. All 2026-06-12 changes (state, 5 path validations, pipeline rebuild) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-16: commit 6402c50 SUCCEEDED in sandbox via index.lock rename/rm trick (today's path validations + state + run report). Working tree CLEAN. PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 39 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-17: locks cleared via mv trick, repo operable, commit attempted; PUSH still blocked (no GitHub auth in sandbox). ~40 commits ahead. USER: git push from local PowerShell. || 2026-06-23: commit blocked again - .git/index.lock + HEAD.lock unremovable (Operation not permitted, OneDrive). All 2026-06-23 changes (state, 2 path re-validations, run report) saved to working files on disk. USER must clear .git/index.lock + .git/HEAD.lock and git push from local PowerShell. || 2026-06-25: commit 4c1de51 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's path validations + state + pipeline rebuild). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 41 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-06-27: commit e830598 SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (today's 2 path reaffirmations + Gap#2 early audit + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 42 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-07-03: commit SUCCEEDED in sandbox via index.lock/HEAD.lock rename trick (tacrolimus path reaffirmation + PMID 39836342 + state + pipeline rebuild 24 stages). PUSH still BLOCKED (no GitHub auth). Now 45 commits ahead of origin/main. USER must run git push from local PowerShell. || 2026-07-09: commit 548d34f SUCCEEDED via index.lock/HEAD.lock rename trick (verapamil downgrade + 2 dashboard fixes + Gap#7 audit + pipeline rebuild 41/41). PUSH still BLOCKED (no GitHub auth in sandbox). Now 53 commits ahead of origin/main. USER: run `git push` from local PowerShell. || 2026-07-18: locks cleared via rename trick; commit SUCCEEDED in sandbox (today's gap-data repair + atomic-write fix + 2 path re-validations + state + pipeline rebuild 41/41). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 59 commits ahead of origin/main. USER must run git push from local PowerShell. || 2026-07-26: locks cleared via rename trick; commit 75e728c SUCCEEDED in sandbox (atomic-write fix for citation_validation.json + glp1 re-validation + Gap#14 audit + 35 dashboards rebuilt). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 60 commits ahead of origin/main. USER must run `git push` from local PowerShell. || 2026-07-27: locks cleared via rename trick; commit e4fc728 SUCCEEDED in sandbox (Mon weekly sweep + Gap#2 audit + baricitinib reaffirm + PMID 40696181 UNVETTED + 7 offline stages rebuilt). PUSH still BLOCKED: 'could not read Username for https://github.com' (no GitHub auth in sandbox). Now 62 commits ahead of origin/main. USER must run `git push` from local PowerShell.",
    "queued_date": "2026-05-17",
-   "unpushed_commits_count": 60,
+   "unpushed_commits_count": 62,
    "updated": "2026-07-10",
-   "last_attempt": "2026-07-26",
-   "last_updated": "2026-06-17",
+   "last_attempt": "2026-07-27",
+   "last_updated": "2026-07-28",
    "description": "Push local commits to origin/main. Local commits succeed in sandbox; push needs user GitHub auth.",
    "last_seen": "2026-06-13",
-   "last_confirmed_blocked": "2026-07-26"
-  },
-  {
-   "priority": 4,
-   "type": "search_pubmed",
-   "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - 2026-07-22 recheck: still pre-FIH (program initiating; ABA-101/MS is clinical lead). Next 2026-08-02.",
-   "added": "2026-06-10"
+   "last_confirmed_blocked": "2026-07-27",
+   "commits_behind_origin": 62
   },
   {
    "priority": 5,
@@ -5579,8 +5585,8 @@
   {
    "priority": 5,
    "type": "validate_path",
-   "target": "DONE 2026-07-25: oxidative_stress->T2D therapy-arm re-validated. Association VALIDATED (robust); therapy_rating UPGRADED to PARTIALLY_VALIDATED (ALA + vit-D show significant HbA1c reduction across 109-RCT Nutrition Reviews MA DOI 10.1093/nutrit/nuaf292; +vitC/E nuaf133; +astaxanthin 11786388261432862). Next-stalest DISTINCT PARTIAL: rituximab->T1D (last 2026-05-01, PARTIALLY_VALIDATED).",
-   "added": "2026-06-30"
+   "target": "DONE 2026-07-29: rituximab->T1D re-validated, REMAINS PARTIALLY_VALIDATED (strengthened by 2025 NMA PMC12211534 + repeated-course trial NCT07041268). Next-stalest DISTINCT partial to re-check: rituximab->beta_cell was revisited 2026-07-04; scan validated_paths for next oldest PARTIAL.",
+   "added": "2026-07-29"
   },
   {
    "type": "audit_gap",
@@ -5754,15 +5760,15 @@
   {
    "priority": 6,
    "type": "validate_path",
-   "target": "oxidative_stress -> T2D reaffirmed VALIDATED 2026-06-30 (therapy=PARTIAL). Re-check for any antioxidant-supplementation RCT showing hard glycemic/prevention endpoint. Next ~2026-08-01.",
-   "added": "2026-06-30",
+   "target": "DONE 2026-07-29: rituximab->T1D re-validated, REMAINS PARTIALLY_VALIDATED (strengthened by 2025 NMA PMC12211534 + repeated-course trial NCT07041268). Next-stalest DISTINCT partial to re-check: rituximab->beta_cell was revisited 2026-07-04; scan validated_paths for next oldest PARTIAL.",
+   "added": "2026-07-29",
    "next_check": "2026-08-01"
   },
   {
    "type": "validate_path",
    "priority": 5,
-   "added": "2026-07-10",
-   "target": "DONE 2026-07-24: metformin->cardiovascular reaffirmed PARTIALLY_VALIDATED (no new placebo-controlled hard-MACE RCT overturns Griffin 2017 PMID 28776086; 2023 umbrella review DOI 10.1007/s40200-023-01309-y added; 2025 work = AF sub-outcome/observational). Next-stalest DISTINCT PARTIAL: oxidative_stress->T2D therapy-arm (last 2026-06-30)."
+   "added": "2026-07-29",
+   "target": "DONE 2026-07-29: rituximab->T1D re-validated, REMAINS PARTIALLY_VALIDATED (strengthened by 2025 NMA PMC12211534 + repeated-course trial NCT07041268). Next-stalest DISTINCT partial to re-check: rituximab->beta_cell was revisited 2026-07-04; scan validated_paths for next oldest PARTIAL."
   },
   {
    "type": "full_rebuild_verify",
@@ -5798,6 +5804,25 @@
    "type": "vet_papers_batch",
    "target": "Vet new UNVETTED paper PMID 40696181 (added 2026-07-27 Monday sweep, health equity).",
    "added": "2026-07-27"
+  },
+  {
+   "priority": 6,
+   "type": "search_pubmed",
+   "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - 2026-07-28 recheck: still pre-FIH (ABA-101/MS clinical lead). Next 2026-08-22",
+   "added": "2026-07-28",
+   "next_check": "2026-08-22"
+  },
+  {
+   "priority": 7,
+   "type": "validate_path",
+   "target": "Re-validate next stalest validated path (dorzagliatin -> T2D, last 2026-05-11) — GKA landscape",
+   "added": "2026-07-28"
+  },
+  {
+   "priority": 8,
+   "type": "vet_papers_batch",
+   "target": "Re-check 10-15 oldest last_checked VETTED papers for claim drift (all 286 currently VETTED/FLAGGED; 0 unvetted)",
+   "added": "2026-07-28"
   }
  ],
  "run_history": [
@@ -7088,6 +7113,22 @@
   {
    "date": "2026-07-27",
    "summary": "Mon 2026-07-27 run WITH weekly sweep. 7-area PubMed sweep = reaffirmations + 1 new UNVETTED PMID (40696181 health-equity review); MDPI ijms27104257 still not PubMed-indexed (PENDING, not fabricated). Gap #2 audited -> REMAINS GOLD (new equity RCTs are behavioral/telehealth, not advanced-therapy). baricitinib_t1d_beta_cell reaffirmed VALIDATED (phase-3 DMT trials now underway). Papers now 286 (272 VETTED / 13 FLAGGED / 1 UNVETTED). Credibility sweep + pipeline rebuild pending in this run."
+  },
+  {
+   "date": "2026-07-28",
+   "day": "Tuesday",
+   "summary": "Tue 2026-07-28 run (no Mon weekly sweep). Papers: 286 -> now 273 VETTED / 13 FLAGGED / 0 UNVETTED. VETTED PMID 40696181 (Addala, Diabetologia 2025;68(11):2430-2448, DOI 10.1007/s00125-025-06494-4; disparities narrative review; supports Gap #2) — PMID confirmed real via PubMed, no red flags. PATH VALIDATION: golimumab_t1d_beta_cell re-validated -> REMAINS VALIDATED (T1GER NEJM 2020 PMID 33207093 C-peptide AUC 0.64 vs 0.43 p<0.001 + 2yr Diabetes Care 2023 PMID 36576974). PUBMED RECHECK: Abata ABA-201 still pre-FIH (ABA-101/MS clinical lead); no new PMID; next check 2026-08-22. CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs >42M, 0 zero-SAE/zero-rejection; only \"curative\" hits are verify_before_deploy.py detector regex (benign). GIT: commit+push STILL BLOCKED by unremovable stale .git/index.lock (rm -> Operation not permitted on OneDrive mount); requires user to delete lock + push locally. State saved to disk regardless."
+  },
+  {
+   "date": "2026-07-29",
+   "day": "Wednesday",
+   "summary": "Wed 2026-07-29 run (no Mon weekly sweep). Papers unchanged: 286 (273 VETTED/13 FLAGGED/0 UNVETTED). CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs >42M, 0 zero-SAE/zero-rejection; 3 'achieves' hits all benign (TTP399 tissue-selectivity design statement, cost-effectiveness model output, ML macro-AUC metric). PATH VALIDATION: stalest distinct partial rituximab->T1D (prior 2026-05-01) re-validated -> REMAINS PARTIALLY_VALIDATED, strengthened by 2025 NMA (PMC12211534, 60 RCTs/4597 pts) + new repeated-course trial NCT07041268. GAP AUDIT: Gap #1 (Gene Therapy for LADA, SILVER, stalest since 2026-06-24) audited -> REMAINS SILVER; still zero LADA-specific gene/CRISPR trials (CTX211 T1D-only; sole active LADA trial is GAD-alum immunomod). GIT: commit+push STILL BLOCKED by unremovable stale .git/index.lock (OneDrive mount); requires user to delete lock + push locally. State saved to disk regardless.",
+   "changes": [
+    "rituximab->T1D re-validated (+2025 NMA PMC12211534, +NCT07041268 repeated-course)",
+    "Gap #1 audited (remains SILVER)",
+    "credibility sweep clean",
+    "pipeline rebuild"
+   ]
   }
  ],
  "topic_checks": {
@@ -7102,14 +7143,10 @@
    "implication": "Teplizumab efficacy in pivotal NEJM trial reproduces in early real-world cohorts; continues to support teplizumab->T1D path as VALIDATED."
   },
   "abata_aba201_car_treg_2026": {
-   "topic": "abata_aba201_car_treg_2026",
-   "date_checked": "2026-04-20",
-   "findings": [
-    "Abata Therapeutics public pipeline (abatatx.com/pipeline) lists ABA-201 — autologous, TCR-engineered polyclonal Treg product targeting T1D patients with residual beta-cell function and a specific HLA haplotype.",
-    "Corporate announcements (Business Wire 2023; BioSpace BMS investment 2024) signaled FIH initiation timeline of 2024-2025. No peer-reviewed publication of FIH clinical data located as of April 2026.",
-    "Adjacent scientific context: Passerini 2025 (Eur J Immunol) review on Treg cell therapy strategies for T1D; Diabetologia 2023 (PMID 38036009) on genetic engineering of Tregs for autoimmune disease."
-   ],
-   "implication": "Gap 13 (Treg/CAR-T x CGM / personalized nutrition intersection) supported by near-term clinical readiness of ABA-201 and GAD65-CAR-Treg. No published clinical efficacy yet — do not upgrade from mechanism-plausible to clinically validated. Retain SILVER tier for Gap 13 until read-out."
+   "last_checked": "2026-07-28",
+   "status": "PRE_FIRST_IN_HUMAN",
+   "note": "Recheck 2026-07-28: ABA-201 (TCR-Treg, T1D) still pre-FIH. Clinical initiation slated 2025 per company; ABA-101 (progressive MS) remains clinical lead (FDA IND cleared, Fast Track). No FIH readout / no journal PMID yet.",
+   "next_check": "2026-08-22"
   },
   "diagnode3_futility_combination_2026": {
    "topic": "diagnode3_futility_combination_2026",
@@ -7518,10 +7555,11 @@
    "evidence": "Pescovitz NEJM 2009 (PMID 19940299): RCT n=87, 4-dose rituximab vs placebo in newly diagnosed T1D. At 1 year, rituximab group had significantly higher C-peptide AUC, lower HbA1c, lower insulin requirements vs placebo. 2-year extension Pescovitz Diabetes Care 2014 (PMID 24026563): rate of C-peptide decline became parallel to placebo after ~8.2-month delay; effect transient. Conclusion: rituximab DELAYS but does not arrest beta-cell loss in recent-onset T1D. PARTIALLY_VALIDATED — real but limited durable benefit.",
    "external_pmids": [
     "19940299",
-    "24026563"
+    "24026563",
+    "PMC12211534"
    ],
    "caveat": "Effect plateaus by 30 months; no evidence of disease modification beyond delayed C-peptide loss. Underlying autoimmunity not arrested.",
-   "last_validated": "2026-06-24",
+   "last_validated": "2026-07-29",
    "external_evidence_2026": {
     "2025_network_MA (PMC12211534, Diabetologia)": "Network MA of immunomodulatory RCTs in new-onset T1D; rituximab among agents reducing C-peptide loss vs placebo - confirms transient/partial beta-cell preservation.",
     "2025_BMC_Endocr_Disord (s12902-025-02088-8)": "SR/MA finds paradoxical dissociation between beta-cell preservation and glycemic control across immunomodulators incl. rituximab - reinforces PARTIALLY (real C-peptide effect, limited durable clinical benefit)."
@@ -7529,7 +7567,8 @@
    "reaffirm_note_2026-06-24": "REAFFIRMED PARTIALLY_VALIDATED. Two independent 2025 SR/MA now externally corroborate the transient/partial effect; no change in tier.",
    "rating": "PARTIALLY_VALIDATED",
    "revisited_date": "2026-07-14",
-   "revisit_note": "2026-07-14 reaffirmed PARTIAL: Rituximab delays C-peptide decline ~8.2 mo at 1 yr (NEJM 2009 PMID 19940299) and effect persists to 2 yr (Diabetes Care 2014 PMID 24026563 / PMC6410357), but extended follow-up shows benefit disappears by ~30 mo (decline parallels placebo) — B-cell depletion alone does not alter underlying pathophysiology. No net-new RCT/SR since last check. Rating unchanged."
+   "revisit_note": "2026-07-14 reaffirmed PARTIAL: Rituximab delays C-peptide decline ~8.2 mo at 1 yr (NEJM 2009 PMID 19940299) and effect persists to 2 yr (Diabetes Care 2014 PMID 24026563 / PMC6410357), but extended follow-up shows benefit disappears by ~30 mo (decline parallels placebo) — B-cell depletion alone does not alter underlying pathophysiology. No net-new RCT/SR since last check. Rating unchanged.",
+   "reaffirm_note": "2026-07-29: PARTIALLY_VALIDATED reaffirmed & strengthened. 2025 systematic review + network meta-analysis (PMC12211534; 60 RCTs, 4597 pts, 32 intervention classes, searches to 2024-07-31) confirms rituximab partially preserves 1-yr C-peptide but ranks below low-dose ATG/teplizumab; benefit transient (~8.2-mo delay in decline, parallels placebo by 30 mo). NEW: NCT07041268 (2025) testing REPEATED rituximab courses in adolescents — directly probes whether re-dosing addresses the known transience. No evidence yet of durable disease modification. Status unchanged: real but limited durable benefit."
   },
   "rituximab -> beta_cell": {
    "rating": "PARTIALLY_VALIDATED",
@@ -7712,7 +7751,14 @@
    "trial_name": "T1GER (A Study of SIMPONI to Arrest Beta-Cell Loss in Type 1 Diabetes)",
    "key_results": "n=84 (56 golimumab vs 28 placebo, 2:1), age 6-21 yrs new-onset T1D within 100 d of randomization, 52-week subcutaneous treatment. Primary: 4-h C-peptide AUC at week 52 0.64 vs 0.43 pmol/mL (mean diff 0.21, P<0.001). Off-therapy benefits persisted through 2 years (PMID 36576974).",
    "notes": "Anti-TNF (golimumab/Simponi). Sponsor: Janssen (J&J).",
-   "caveats": "Phase 2; not powered for long-term safety. No phase 3 confirmation. NMA reported substantial heterogeneity across 60 trials/42 interventions."
+   "caveats": "Phase 2; not powered for long-term safety. No phase 3 confirmation. NMA reported substantial heterogeneity across 60 trials/42 interventions.",
+   "rating": "VALIDATED",
+   "last_validated": "2026-07-28",
+   "external_pmids": [
+    "33207093",
+    "36576974"
+   ],
+   "reaffirm_note": "Re-validated 2026-07-28: T1GER phase 2 (Quattrin et al., NEJM 2020, PMID 33207093) 4h C-peptide AUC 0.64 vs 0.43 pmol/mL p<0.001, lower insulin use; 2-yr off-therapy follow-up (Diabetes Care 2023;46(3):561, PMID 36576974) continued metabolic benefit. Anti-TNF beta-cell preservation in new-onset T1D VALIDATED."
   },
   "baricitinib_t1d_beta_cell": {
    "status": "VALIDATED",
@@ -8413,7 +8459,7 @@
   "pmid_range_reconfirm_2026_07_10": "Reconfirmation of pmid_threshold_2026-05-04 / pmid_range_2026: the '>42,000,000 PMID = fabricated' heuristic remains STALE. On 2026-07-10 the live NCBI esummary API returned real records for 42220535 (Front Immunol 2026), 42203900 (Bone Marrow Transplant 2026, EBMT activity report), and 42218679 (Magyar Onkologia 2026). These IDs exist ONLY in non-published scratch file Analysis/Results/_audit_2026-06-02_gap_2_3_6.json and are referenced by no live script/dashboard/doc; the numeric ceiling is not hardcoded in any .py. Operative fabrication gate stays live-API verification (verify_pmids.py: 262/262 today). Do NOT delete these IDs.",
   "pmid_cutoff_heuristic": "As of 2026-07-25 the SKILL Step-4 rule 'PMIDs >42000000 = fabricated' is STALE and produces FALSE POSITIVES. PubMed sequential IDs legitimately reach the 42.0-42.2M range by mid-2026. State currently holds 13 REAL eutils-verified papers with PMIDs in 42021540-42160884 (e.g. 42113684 = Diabetes/ADA DOI 10.2337/db25-0933; 42160884 = J Autoimmun). Correct fabrication test is NOT a fixed numeric cutoff but: (a) does the PMID resolve via NCBI eutils, and (b) does its title/journal/year match the state record. Apply that test; do not auto-flag on the 42M threshold alone. Re-baseline the numeric tripwire to ~>43000000 for the next few months and re-check quarterly."
  },
- "last_path_validation_batch": "2026-07-26",
+ "last_path_validation_batch": "2026-07-29",
  "watch_items_pending_pmid": [
   {
    "authors": "Zhao S, Li Y, Li W",
