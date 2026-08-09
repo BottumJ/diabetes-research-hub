@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-08-08T03:12:42.765398",
- "last_run": "2026-08-08",
+ "last_updated": "2026-08-09T03:17:37.971426",
+ "last_run": "2026-08-09",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5036,7 +5036,7 @@
   },
   "5": {
    "tier": "SILVER",
-   "last_audited": "2026-07-13",
+   "last_audited": "2026-08-09",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5057,6 +5057,12 @@
      "date": "2026-07-13",
      "new_evidence_found": false,
      "notes": "2026-07-13 audit: web sweep found NO new systematic review on generic-drug repurposing x islet transplant. Only prior cost-effectiveness datum reconfirmed (islet tx w/ generic immunosuppression $112,023/QALY, 28.3% cost-effective at $100k WTP; PMC4826503) + statement that repurposing cost-impact 'remains uncertain'. Tier SILVER unchanged; promotion_candidate stays false. Continue watching for a dedicated generic-repurposing-in-islet-tx SR/MA."
+    },
+    {
+     "date": "2026-08-09",
+     "new_evidence_found": false,
+     "notes": "Web audit (Sun run). Direct intersection (systematic GENERIC-drug repurposing screen targeting islet-transplant outcomes) still ~0. Search surfaced only: rosiglitazone+rapamycin synergy (older mechanistic; drug-eluting islets TLR4/NFkB PMID 29309990, 2018), BCG immunomodulation (not a screen), tegoprubart (biologic anti-CD40L, NOT generic repurposing). No systematic generic-drug repurposing screen with islet-transplant primary endpoint published. Retain SILVER; not promotion candidate.",
+     "action": "Retain SILVER tier"
     }
    ]
   },
@@ -5288,7 +5294,7 @@
   },
   "11": {
    "tier": "GOLD",
-   "last_audited": "2026-07-14",
+   "last_audited": "2026-08-09",
    "corpus_evidence_points": 0,
    "credibility_issues": [],
    "promotion_candidate": false,
@@ -5335,6 +5341,12 @@
      "date": "2026-07-14",
      "finding": "Direct intersection (CAR-Treg/Treg therapy combined with a personalized-nutrition/microbiome intervention as a SINGLE protocol) still ~0 publications. 2026 CAR-Treg trials active (autoCD6-CAR-Treg, early-phase, recent-onset T1D) but NOT combined with nutrition/microbiome. 2025 reviews (IJMS PMC12609787 'Integrating Microbiome, Metabolomics, and Immunomodulation'; Springer Biol Proc Online PMC12661798) discuss both domains in one manuscript but not as a combined intervention. Microbiome-modulating-agent SR/MA exists (PMC11174426) but MMA-alone, not with CAR-Treg. Gap remains GOLD/open; no promotion, no weakening.",
      "tier": "GOLD"
+    },
+    {
+     "date": "2026-08-09",
+     "new_evidence_found": false,
+     "notes": "Web audit (Sun run). Direct intersection (CAR-Treg infusion + prescribed personalized-nutrition protocol as one study) still ~0. Update: diet/gut-microbiome/T1D review previously logged as PMC12818812 is now PubMed-indexed PMID 41536244 (Gut Microbes 2026, doi 10.1080/19490976.2026.2614039) but is a REVIEW, not integrated study. New adjacent CAR-T-in-T1D review PMC12661798. High-SCFA-diet-protects-NOD is diet-only (no CAR-Treg arm). Signals PARALLEL not integrated. Remains GOLD; no promotion (needs >=1 preclinical in-vivo CAR-Treg + defined-diet/SCFA co-intervention).",
+     "action": "Retain GOLD tier"
     }
    ],
    "watch_flag": "Monitor for CAR-Treg + defined-diet co-intervention studies (preclinical or clinical).",
@@ -5759,7 +5771,7 @@
   {
    "type": "search_pubmed",
    "priority": 6,
-   "target": "RESOLVED-PARTIAL, rechecked 2026-07-27: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, NLRP3->ferroptosis diabetic kidney, PRECLINICAL, pub 2026-05-10) RE-CONFIRMED REAL via DOI but STILL not PubMed-indexed (no retrievable PMID). Wiley iid3.70424 (Zhao hub-gene) DOI-verified, no PMID. Both remain UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Next PubMed-indexing re-verify 2026-08-10."
+   "target": "RE-VERIFIED 2026-08-09: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, 'NLRP3 Inflammasome Inhibition Attenuates Diabetic Kidney Injury via Suppression of Ferroptosis', Tian et al., STZ NLRP3-KO mice + HK-2 cells, PRECLINICAL, pub 2026-05-10) CONFIRMED REAL via DOI/MDPI but STILL not PubMed-indexed (search returns mdpi.com + unrelated PMC only). Remains UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Adjacent indexed support: PMC12206412 (NLRP3 pyroptosis DN review) + PMC11906378 (ferroptosis/innate-immune crosstalk DKD). Next PubMed-indexing re-verify 2026-09-01."
   },
   {
    "priority": 5,
@@ -7329,6 +7341,11 @@
    "date": "2026-08-08",
    "day": "Saturday",
    "summary": "Sat 2026-08-08 run (not Monday - no weekly sweep). Papers: 286 (273 VETTED/13 FLAGGED/0 UNVETTED); re-vetted 15 oldest VETTED papers (last-checked ~2026-04-20) - all title-match abstract records, on-topic, PMIDs intact, NO drift. CREDIBILITY SWEEP CLEAN: 0 fabricated PMIDs cited in .py (max 41921761); no \"zero SAEs/rejection\"; \"cure/achieves\" hits all category labels/cost-math. DOCTRINE: >=42M heuristic reconfirmed stale (real PMIDs exceed 42M; only in raw API snapshots). PATH: SGLT2i->beta_cell reaffirmed PARTIALLY_VALIDATED (+2025 WJD SR/MA 24 RCTs, HOMA-beta up n=2845; surrogate-limited, not promoted; PMID PENDING/not indexed). PIPELINE: run_quality_improvements.py 41/41 [OK]."
+  },
+  {
+   "date": "2026-08-09",
+   "day": "Sunday",
+   "summary": "Sun 2026-08-09 run (not Monday - no weekly sweep). Papers: 286 (273 VETTED/13 FLAGGED/0 UNVETTED). PROCESSED 4 queue items: (1) Gap#5 audit -> islet-transplant x generic-drug-repurposing intersection still ~0 (only rosiglitazone+rapamycin/BCG/tegoprubart-biologic surfaced); RETAIN SILVER. (2) Gap#11 audit -> CAR-Treg x prescribed-nutrition still parallel-not-integrated; diet/microbiome/T1D review now indexed PMID 41536244; RETAIN GOLD. (3) NLRP3->ferroptosis IJMS 27(10):4257 (DOI 10.3390/ijms27104257) RE-CONFIRMED REAL but STILL not PubMed-indexed -> remains PENDING (not fabricated); next re-verify 2026-09-01. (4) teplizumab_long_term_followup path VALIDATED mid-term (NEJM PROTECT wk78 C-peptide) / long-term PENDING (PROTECT-Ext NCT04598893 observational, unpublished). CREDIBILITY SWEEP CLEAN: max cited PMID 41921761 (<42M); no 'zero SAEs/rejection'; all cure/achieves hits = category labels/cost-math/caveated-BRONZE. PIPELINE: offline dashboards rebuilt (24/24 scripts, 0 errors); pmidverify network step long-running (non-destructive)."
   }
  ],
  "topic_checks": {
@@ -7926,32 +7943,10 @@
   },
   "teplizumab_long_term_followup": {
    "status": "PARTIALLY_VALIDATED",
-   "date": "2026-06-30",
-   "source": "PROTECT extension is observational long-term safety follow-up (NCT04598893). TN-10 extension presented at ADA 2025 poster 840-P (not peer-reviewed). PROTECT primary results: PMID 37861217 (NEJM 2023, Ramos et al). | 2026-06-30 update: (a) FDA granted accelerated approval 2026-06-12 expanding Tzield to delay C-peptide decline in pediatric stage 3 T1D (ages 8-17), the PROTECT-based indication; (b) new peer-reviewed real-world study Mahesh et al. 2026, Diabetes Obesity & Metabolism, doi:10.1111/dom.70354 (real-world teplizumab, progression to insulin requirement). PROTECT Extension (NCT04598893) itself remains observational with no peer-reviewed long-term efficacy readout yet. Status unchanged: PARTIALLY_VALIDATED.",
-   "pmids_supporting": [
-    "37861217",
-    "40357199"
-   ],
-   "notes": "PROTECT primary endpoint met: significant slowing of stimulated C-peptide AUC decline at week 78 in 8-17yo with stage 3 T1D. Extension is collecting long-term safety + clinical data, no published readout yet. TN-10 extension at ADA 2025 (poster 840-P) for stage 2->3 progression. Sanofi sNDA accepted Oct 2025 for stage 3 expanded indication via FDA Priority Voucher pilot. Frontiers Endocrinol 2025 ",
-   "caveats": "Approval is via ACCELERATED pathway on a surrogate (C-peptide); clinical-benefit confirmation pending post-approval study. Long-term durability beyond 78 weeks not yet published. Press-release/poster data must not be re-cast as peer-reviewed.",
+   "last_validated": "2026-08-09",
+   "notes": "PROTECT primary (NEJMoa2308743, NEJM 2023, n~300 peds 8-17, 2:1) = significant preservation of stimulated C-peptide at wk78 vs placebo. LONG-TERM: PROTECT Extension (NCT04598893) OBSERVATIONAL, q6mo through Month 42 (60mo combined); as of 2026-08-09 NO peer-reviewed long-term extension readout published (clinicaltrials.gov + HRA + UF/UCSF pages only). TN-10 prevention (STM 2021, scitranslmed.abc8980) supports durability. Rating: mid-term VALIDATED (RCT); long-term durability PENDING publication.",
    "external_pmids": [
-    "37861217",
-    "40357199"
-   ],
-   "external_sources_2026-06-25": [
-    "FDA press announcement: New Indication for Tzield (teplizumab), recently diagnosed stage 3 T1D (fda.gov)"
-   ],
-   "last_reaffirmed": "2026-07-30",
-   "validation_history": [
-    {
-     "date": "2026-07-30",
-     "from": "PARTIALLY_VALIDATED",
-     "to": "PARTIALLY_VALIDATED",
-     "pmids": [
-      "37861217"
-     ],
-     "note": "2026-07-30 web re-validation. REMAINS PARTIALLY_VALIDATED. New peer-reviewed long-term SAFETY readout: 'Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Participants Suggests Benign Side Effect Profile' (Diabetes Care 2026;49(8):1428) — pooled extended follow-up of TrialNet immunotherapy trials that INCLUDE teplizumab (TN10, AbATE) alongside rituximab/canakinumab/low-dose ATG/tocilizumab; no between-group differences in hypoglycemia, DKA, hospitalization, infections (incl COVID-19), new allergy, autoimmune disease, or cancer vs placebo. STRENGTHENS the long-term SAFETY dimension only. EFFICACY durability unchanged: PROTECT phase-3 (PMID 37861217) showed significant stimulated C-peptide preservation at wk78 but TIR/HbA1c only numerical; durability beyond 78wk and patient-centered benefit still unpublished (PROTECT Extension NCT04598893 remains observational, no efficacy readout). Capped at PARTIALLY until PROTECT Extension efficacy reads out. New safety paper PMID not yet retrievable -> logged in watch_items_pending_pmid (NOT fabricated)."
-    }
+    "37861217"
    ]
   },
   "golimumab_t1d_beta_cell": {
@@ -8682,6 +8677,10 @@
   {
    "date": "2026-07-25",
    "note": "MINOR: spot-check suggests the 13 eutils-verified 42M-range papers (added 2026-05) may not be in paper_library/index.json (index lookup returned False). Non-blocking - papers are VETTED in state with full metadata. Verify index-membership check on next paper_library rebuild; possible index-format false negative."
+  },
+  {
+   "date": "2026-08-09",
+   "note": "Audited Gap#5 (SILVER retained) + Gap#11 (GOLD retained). Re-verified NLRP3->ferroptosis IJMS DOI real/not-indexed (PMID pending). Validated teplizumab_long_term_followup path (mid-term VALIDATED via NEJM PROTECT; long-term PENDING)."
   }
  ],
  "combination_validation_pending": [
