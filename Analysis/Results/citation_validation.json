@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-14T03:08:28.816531",
+  "timestamp": "2026-08-16T09:11:58.186974",
   "summary": {
-    "WEAK": 132,
-    "CONFIRMED": 63,
-    "MISMATCH": 8,
-    "PLAUSIBLE": 58,
+    "WEAK": 134,
+    "CONFIRMED": 65,
+    "MISMATCH": 1,
+    "PLAUSIBLE": 59,
     "NO_DATA": 1
   },
-  "total_papers": 262,
+  "total_papers": 260,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -194,9 +194,14 @@
       "title": "Denpasar Declaration on Population and Development.",
       "score": "MISMATCH",
       "confidence": 0.0,
-      "details": "0/7 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 2,
+      "details": "0/9 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
+      "claim_count": 3,
       "claims": [
+        {
+          "file": "check_citation_mismatches.py",
+          "line": 55,
+          "text": "'(\"match PMID: 12345678\"). No claim is attached to it.'"
+        },
         {
           "file": "postprocess_dashboards.py",
           "line": 117,
@@ -859,12 +864,12 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "18794064": {
-      "pmid": "18794064",
-      "title": "Treatment of recurrent metastatic colon cancer in the age of modern adjuvant therapy.",
-      "score": "MISMATCH",
-      "confidence": 0.091,
-      "details": "1/11 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
+    "18843118": {
+      "pmid": "18843118",
+      "title": "GAD treatment and insulin secretion in recent-onset type 1 diabetes.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.273,
+      "details": "3/11 claim terms found in paper; 5 diabetes domain terms; 0 phrase matches",
       "claim_count": 1,
       "claims": [
         {
@@ -981,23 +986,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "19237585": {
-      "pmid": "19237585",
-      "title": "Nicotine normalizes intracellular subunit stoichiometry of nicotinic receptors carrying mutations linked to autosomal dominant nocturnal frontal lobe epilepsy.",
-      "score": "MISMATCH",
-      "confidence": 0.0,
-      "details": "0/13 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_drug_repurposing_screen.py",
-          "line": 594,
-          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "19373249": {
       "pmid": "19373249",
       "title": "Assessing the potential of glucokinase activators in diabetes therapy.",
@@ -1054,6 +1042,23 @@
           "file": "build_treg_neuropathy.py",
           "line": 1109,
           "text": "Feuerer, M., et al. (2009). \"Lean, but not obese, fat is enriched for naive T cells and a unique subset of naturally occ"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "19805629": {
+      "pmid": "19805629",
+      "title": "Glyburide inhibits the Cryopyrin/Nalp3 inflammasome.",
+      "score": "WEAK",
+      "confidence": 0.154,
+      "details": "2/13 claim terms found in paper; 4 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 594,
+          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated direct NLRP3 inhibition at concentrations ach"
         }
       ],
       "has_abstract": true,
@@ -1588,30 +1593,13 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "23223116": {
-      "pmid": "23223116",
-      "title": "Status of anesthesiology resident research education in the United States: structured education programs increase resident research productivity.",
-      "score": "MISMATCH",
-      "confidence": 0.0,
-      "details": "0/13 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_drug_repurposing_screen.py",
-          "line": 632,
-          "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "23248199": {
       "pmid": "23248199",
       "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
       "score": "PLAUSIBLE",
-      "confidence": 0.333,
-      "details": "24/72 claim terms found in paper; 8 diabetes domain terms; 4 phrase matches",
-      "claim_count": 22,
+      "confidence": 0.282,
+      "details": "24/85 claim terms found in paper; 8 diabetes domain terms; 11 phrase matches",
+      "claim_count": 28,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1682,7 +1670,7 @@
         {
           "file": "build_drug_repurposing_screen.py",
           "line": 594,
-          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19237585) demonstrated direct NLRP3 inhibition at concentrations ach"
+          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated direct NLRP3 inhibition at concentrations ach"
         }
       ],
       "has_abstract": true,
@@ -1700,6 +1688,23 @@
           "file": "build_data_dictionary.py",
           "line": 331,
           "text": "'source': 'Ziegler AG et al. Seroconversion to multiple islet autoantibodies and risk of progression to diabetes. JAMA 2"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "23817699": {
+      "pmid": "23817699",
+      "title": "Salicylate (salsalate) in patients with type 2 diabetes: a randomized trial.",
+      "score": "WEAK",
+      "confidence": 0.154,
+      "details": "2/13 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 632,
+          "text": "\"evidence\": \"Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves i"
         }
       ],
       "has_abstract": true,
@@ -3400,33 +3405,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "32243867": {
-      "pmid": "32243867",
-      "title": "Serum levels of matrix metalloproteinase-2, -9, and vitamin D in patients with multiple sclerosis with or without herpesvirus-6 seropositivity.",
-      "score": "MISMATCH",
-      "confidence": 0.056,
-      "details": "2/36 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 7,
-      "claims": [
-        {
-          "file": "build_lada_prevalence.py",
-          "line": 420,
-          "text": "ACTION LADA Study (PMID:32243867)"
-        },
-        {
-          "file": "build_lada_prevalence.py",
-          "line": 455,
-          "text": "Data source: ACTION LADA Study (PMID:32243867); IDF Diabetes Atlas 2021; UKPDS Group outcomes data"
-        },
-        {
-          "file": "build_lada_prevalence.py",
-          "line": 601,
-          "text": "Data sources: ACTION LADA (PMID:32243867); HUNT study (Norway); NIRAD study (Italy); IDF Diabetes Atlas"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "32307525": {
       "pmid": "32307525",
       "title": "Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.",
@@ -3703,23 +3681,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "33515517": {
-      "pmid": "33515517",
-      "title": "Underlying factors in paediatric invasive pneumococcal disease in Belgium.",
-      "score": "MISMATCH",
-      "confidence": 0.0,
-      "details": "0/5 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_nutrition_lada.py",
-          "line": 868,
-          "text": "Ludvigsson et al. Diabetes, 2021. <a href=\"https://pubmed.ncbi.nlm.nih.gov/33515517/\" target"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "33550442": {
       "pmid": "33550442",
       "title": "New closed-loop insulin systems.",
@@ -3764,6 +3725,28 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "34021020": {
+      "pmid": "34021020",
+      "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+      "score": "CONFIRMED",
+      "confidence": 0.475,
+      "details": "9/24 claim terms found in paper; 8 diabetes domain terms; 1 phrase matches",
+      "claim_count": 2,
+      "claims": [
+        {
+          "file": "build_immunomod_lada.py",
+          "line": 69,
+          "text": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (321 randomized, 57 sites; interim on 174 evaluable at 15 months, HLA DR3-DQ2 enrich"
+        },
+        {
+          "file": "build_nutrition_lada.py",
+          "line": 868,
+          "text": "Casas/Ludvigsson et al. Diabetes Care, 2021 (DIAGNODE-2). <a href=\"https://pubmed.ncbi.nlm.n"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "34180979": {
       "pmid": "34180979",
       "title": "The β Cell in Diabetes: Integrating Biomarkers With Functional Measures.",
@@ -3793,23 +3776,6 @@
           "file": "build_nutrition_lada.py",
           "line": 844,
           "text": "Marco et al. (Proc Nutr Soc, 2017); Wastyk et al. Cell, 2021. <a href=\"https://pubmed.ncbi.n"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
-    "34299352": {
-      "pmid": "34299352",
-      "title": "Genome-Wide Identification of GRAS Gene Family and Their Responses to Abiotic Stress in Medicago sativa.",
-      "score": "MISMATCH",
-      "confidence": 0.059,
-      "details": "1/17 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_immunomod_lada.py",
-          "line": 69,
-          "text": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (n=174 evaluable, HLA DR3-DQ2 enriched) met pre-specified FUTILITY criteria at Mar 2"
         }
       ],
       "has_abstract": true,
@@ -3952,23 +3918,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "35491968": {
-      "pmid": "35491968",
-      "title": "The CaPti1-CaERF3 module positively regulates resistance of Capsicum annuum to bacterial wilt disease by coupling enhanced immunity and dehydration tolerance.",
-      "score": "MISMATCH",
-      "confidence": 0.0,
-      "details": "0/17 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_immunomod_lada.py",
-          "line": 69,
-          "text": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (n=174 evaluable, HLA DR3-DQ2 enriched) met pre-specified FUTILITY criteria at Mar 2"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "35551292": {
       "pmid": "35551292",
       "title": "Dorzagliatin add-on therapy to metformin in patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
@@ -4052,6 +4001,23 @@
           "file": "build_data_dictionary.py",
           "line": 1259,
           "text": "'source': 'Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572. PMID:35"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "35665810": {
+      "pmid": "35665810",
+      "title": "Intralymphatic GAD-Alum (Diamyd®) Improves Glycemic Control in Type 1 Diabetes With HLA DR3-DQ2.",
+      "score": "CONFIRMED",
+      "confidence": 0.571,
+      "details": "8/17 claim terms found in paper; 10 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_immunomod_lada.py",
+          "line": 69,
+          "text": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (321 randomized, 57 sites; interim on 174 evaluable at 15 months, HLA DR3-DQ2 enrich"
         }
       ],
       "has_abstract": true,

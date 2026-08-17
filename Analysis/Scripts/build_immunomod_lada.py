@@ -66,7 +66,7 @@ DRUG_CANDIDATES = [
     {
         "name": "GAD-alum (Diamyd / retogatein)",
         "mechanism": "GAD65 antigen-specific immunotherapy",
-        "t1d_evidence": "DIAGNODE-3 Phase 3 (n=174 evaluable, HLA DR3-DQ2 enriched) met pre-specified FUTILITY criteria at Mar 2026 interim - no clinically meaningful C-peptide effect in overall population or pre-specified subgroups. Diamyd announced discontinuation April 2026. Earlier DIAGNODE-2 (PMID 34299352) and 2022 IPD meta-analysis (PMID 35491968) showed modest HLA DR3-DQ2 subgroup signal that did NOT replicate in confirmatory Phase 3.",
+        "t1d_evidence": "DIAGNODE-3 Phase 3 (321 randomized, 57 sites; interim on 174 evaluable at 15 months, HLA DR3-DQ2 enriched) did NOT reach statistical significance on the primary C-peptide endpoint and did not meet pre-specified continuation criteria (Diamyd press release 2026-03-27). Diamyd formally closed the trial for FUTILITY on 2026-07-27; its structured review found no single cause, no material protocol violations, and no new safety concerns. Sponsor-reported contributing hypotheses (all explicitly hypothesis-generating, NOT established): intralymphatic administration burden across low-volume sites, longer diagnosis-to-treatment interval, and lower measured drug-product potency than DIAGNODE-2. Subgroup numerical trends were observed but were underpowered and exploratory. Earlier DIAGNODE-2 (PMID 34021020) and 2022 IPD meta-analysis (PMID 35665810) showed a modest HLA DR3-DQ2 subgroup signal that did NOT replicate in the confirmatory Phase 3.",
         "lada_evidence": "GAD-alum trials in LADA have shown variable results; small pilot data (NCT04262479, n=14) does not yet address efficacy. Monotherapy path now contradicted for T1D.",
         "rationale": "Antigen-specific, minimal systemic immunosuppression. Following DIAGNODE-3 futility, monotherapy path is contradicted for recent-onset T1D; combination strategies (GAD + vitamin D + etanercept) remain under study. LADA-specific pivotal data absent.",
         "window": "Early-to-middle phase (0-4 years)",
@@ -231,7 +231,7 @@ PRIORITY_SCORES = [
         "lada_advantage": 4,
         "composite": 3.4,
         "rank": 3,
-        "notes": "DOWNGRADED April 2026: DIAGNODE-3 Phase 3 (HLA DR3-DQ2 enriched) met futility criteria - no clinically meaningful C-peptide effect. Monotherapy path contradicted in T1D. Combination and LADA-specific strategies still open but unproven. Antigen-specific mechanism preserved, but clinical evidence downgraded from 4 to 2."
+        "notes": "DOWNGRADED 2026 (negative interim 2026-03-27; futility closure confirmed 2026-07-27): DIAGNODE-3 Phase 3 (HLA DR3-DQ2 enriched) missed the primary C-peptide endpoint and did not meet continuation criteria. Monotherapy path contradicted in recent-onset T1D. Combination and LADA-specific strategies still open but unproven. Antigen-specific mechanism preserved, but clinical evidence downgraded from 4 to 2."
     },
     {
         "drug": "Teplizumab (anti-CD3)",
@@ -960,7 +960,7 @@ html_content = """<!DOCTYPE html>
         <li>Most immunomodulatory drugs are studied in classical T1D, not LADA specifically</li>
         <li>LADA therapeutic window timing is not well-established</li>
         <li>Drug rankings are based on mechanism fit, not LADA-specific trial data</li>
-        <li>GAD-alum monotherapy is contradicted for recent-onset T1D: DIAGNODE-3 Phase 3 (n=174, HLA DR3-DQ2 enriched) met pre-specified futility criteria at the March 2026 interim, and Diamyd announced discontinuation in April 2026. Combination strategies (GAD-alum + vitamin D + etanercept) remain under study but are unproven.</li>
+        <li>GAD-alum (retogatein, rhGAD65) monotherapy is contradicted for recent-onset T1D: the DIAGNODE-3 Phase 3 interim (174 of 321 randomized, 15 months, HLA DR3-DQ2 enriched) missed statistical significance on the primary C-peptide endpoint and failed pre-specified continuation criteria (announced 2026-03-27); Diamyd closed the trial for futility on 2026-07-27, reporting no single identified cause, no material protocol violations and no new safety concerns. Combination strategies (GAD-alum + vitamin D + etanercept) remain under study but are unproven, and no LADA-specific pivotal data exist.</li>
         <li>Sample sizes in LADA subgroup analyses are typically small</li>
       </ul>
       <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>

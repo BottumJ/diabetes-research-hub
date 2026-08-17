@@ -198,24 +198,101 @@
             .container { margin: 0; }
             .path-card { page-break-inside: avoid; margin: 15px 0; }
         }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html" class="drh-current">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
     <header>
         <h1>Validated Research Paths</h1>
         <p class="subtitle">Evidence-Backed Mechanisms in Diabetes Research</p>
-        <p class="byline">Dashboard generated March 29, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
+        <p class="byline">Dashboard generated August 16, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
     </header>
 
     <div class="context-block">
         <h4>What This Dashboard Answers</h4>
-        <p>48 research paths were extracted from 472 data points across 61 full-text papers. 25 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
+        <p>42 research paths were extracted from 472 data points across 61 full-text papers. 27 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
     </div>
 
     <div class="context-block">
         <h4>How to Use This Dashboard</h4>
-        <p><strong>VALIDATED</strong> paths (18 total) are backed by 2+ independent published sources including systematic reviews or landmark RCTs. <strong>PARTIALLY_VALIDATED</strong> paths (6 total) have supporting evidence with important caveats or limited human data. <strong>UNVALIDATED</strong> paths (1 total) lack external confirmation despite corpus presence. Use the external PMIDs to trace the validation chain back to original evidence.</p>
+        <p><strong>VALIDATED</strong> paths (22 total) are backed by 2+ independent published sources including systematic reviews or landmark RCTs. <strong>PARTIALLY_VALIDATED</strong> paths (5 total) have supporting evidence with important caveats or limited human data. <strong>UNVALIDATED</strong> paths (1 total) lack external confirmation despite corpus presence. Use the external PMIDs to trace the validation chain back to original evidence.</p>
     </div>
 
     <div class="context-block">
@@ -225,19 +302,19 @@
 
     <div class="stats-grid">
         <div class="stat-box">
-            <div class="stat-number">48</div>
+            <div class="stat-number">42</div>
             <div class="stat-label">Paths Identified</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">25</div>
+            <div class="stat-number">27</div>
             <div class="stat-label">Validated</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">18</div>
+            <div class="stat-number">22</div>
             <div class="stat-label">Fully Validated</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">6</div>
+            <div class="stat-number">5</div>
             <div class="stat-label">Partially Validated</div>
         </div>
     </div>
@@ -245,24 +322,24 @@
     <h2>Executive Summary</h2>
     <p><strong>Key Finding:</strong> Oxidative stress emerges as a central hub mechanism, connecting inflammation, T2D pathology, diabetic nephropathy, and cardiovascular disease. This path (oxidative_stress_inflammation) links to 5+ other validated mechanisms, suggesting targeting ROS production could have pleiotropic benefits across diabetes complications.</p>
 
-    <p><strong>Validation Landscape:</strong> 18 paths achieved full VALIDATED status, primarily in established pharmacotherapy areas (SGLT2i, metformin, GLP-1 receptor agonists) and core inflammatory mechanisms (NLRP3, NF-kB, oxidative stress). 6 paths require further clinical validation, often in newer drug classes (dapagliflozin for inflammation) or controversial areas (semaglutide retinopathy). 1 path(s) could not be corroborated.</p>
+    <p><strong>Validation Landscape:</strong> 22 paths achieved full VALIDATED status, primarily in established pharmacotherapy areas (SGLT2i, metformin, GLP-1 receptor agonists) and core inflammatory mechanisms (NLRP3, NF-kB, oxidative stress). 5 paths require further clinical validation, often in newer drug classes (dapagliflozin for inflammation) or controversial areas (semaglutide retinopathy). 1 path(s) could not be corroborated.</p>
 
     <p><strong>Hub Mechanisms:</strong></p>
     <ul style="margin: 12px 0 12px 25px;">
-        <li><strong>oxidative_stress_inflammation</strong> connects to 12 other paths</li>
-        <li><strong>oxidative_stress_nephropathy</strong> connects to 12 other paths</li>
-        <li><strong>NLRP3_inflammasome_inflammation</strong> connects to 11 other paths</li>
-        <li><strong>dapagliflozin_T2D</strong> connects to 11 other paths</li>
-        <li><strong>dapagliflozin_inflammation</strong> connects to 11 other paths</li>
+        <li><strong>oxidative_stress_inflammation</strong> connects to 13 other paths</li>
+        <li><strong>oxidative_stress_nephropathy</strong> connects to 13 other paths</li>
+        <li><strong>NLRP3_inflammasome_inflammation</strong> connects to 12 other paths</li>
+        <li><strong>dapagliflozin_T2D</strong> connects to 12 other paths</li>
+        <li><strong>dapagliflozin_inflammation</strong> connects to 12 other paths</li>
     </ul>
 
     <h2>Validated Research Paths</h2>
-    <p>The following 18 paths have been confirmed by independent published evidence:</p>
+    <p>The following 22 paths have been confirmed by independent published evidence:</p>
 
-    <div class="tabs">
-        <button class="tab-button active" onclick="switchTab(event, 'all-validated')">All Validated (18)</button>
-        <button class="tab-button" onclick="switchTab(event, 'high-confidence')">High Confidence</button>
-        <button class="tab-button" onclick="switchTab(event, 'network')">Connection Network</button>
+    <div class="tabs" role="tablist">
+        <button role="tab" class="tab-button active" onclick="switchTab(event, 'all-validated')">All Validated (22)</button>
+        <button role="tab" class="tab-button" onclick="switchTab(event, 'high-confidence')">High Confidence</button>
+        <button role="tab" class="tab-button" onclick="switchTab(event, 'network')">Connection Network</button>
     </div>
 
     <div id="all-validated" class="tab-content active">
@@ -460,7 +537,7 @@
                     <strong>Corpus PMIDs:</strong> 2
                 </div>
                 <div class="stat-item">
-                    <strong>External PMIDs:</strong> 1
+                    <strong>External PMIDs:</strong> 2
                 </div>
             </div>
 
@@ -478,7 +555,8 @@
                 </div>
                 <div class="pmid-list">
                     <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">Published in Nature Reviews Endocrinology 2025</span>
+                    <span class="pmid-badge">35551294</span>
+                    <span class="pmid-badge">35551292</span>
                 </div>
             </div>
 
@@ -576,13 +654,13 @@
                     <strong>Corpus PMIDs:</strong> 2
                 </div>
                 <div class="stat-item">
-                    <strong>External PMIDs:</strong> 1
+                    <strong>External PMIDs:</strong> 2
                 </div>
             </div>
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>DAPA-CKD landmark trial (NEJM 2020): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
+                <p>DAPA-CKD landmark trial (NEJM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/32970396/" target="_blank" rel="noopener" title="View on PubMed">PMID:32970396</a>): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
             </div>
 
             <div class="path-section">
@@ -594,6 +672,7 @@
                 </div>
                 <div class="pmid-list">
                     <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">32970396</span>
                     <span class="pmid-badge">PMC12237297</span>
                 </div>
             </div>
@@ -634,7 +713,7 @@
                     <strong>Corpus PMIDs:</strong> 1
                 </div>
                 <div class="stat-item">
-                    <strong>External PMIDs:</strong> 1
+                    <strong>External PMIDs:</strong> 3
                 </div>
             </div>
 
@@ -651,7 +730,9 @@
                 </div>
                 <div class="pmid-list">
                     <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">Nature Medicine 2022 (dual trials, s41591-022-01802-6)</span>
+                    <span class="pmid-badge">35551294</span>
+                    <span class="pmid-badge">35551292</span>
+                    <span class="pmid-badge">40896829</span>
                 </div>
             </div>
 
@@ -695,7 +776,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>SGLT2i class standard of care in T2D. EMPA-REG OUTCOME (2015) landmark trial showed cardiovascular benefit (composite CV endpoint 10.5% vs 12.1% placebo). Glucose-lowering modest (~0.5-1% HbA1c)</p>
+                <p>SGLT2i class standard of care in T2D. EMPA-REG OUTCOME (NEJM 2015, <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener" title="View on PubMed">PMID:26378978</a>) landmark trial showed cardiovascular benefit (composite CV endpoint 10.5% vs 12.1% placebo). Glucose-lowering modest (~0.5-1% HbA1c)</p>
             </div>
 
             <div class="path-section">
@@ -706,7 +787,7 @@
                 </div>
                 <div class="pmid-list">
                     <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">NEJM</span>
+                    <span class="pmid-badge">26378978</span>
                 </div>
             </div>
 
@@ -752,7 +833,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>SGLT2i class reduces cardiovascular death/HF hospitalization by 23%. Empagliflozin has FDA-approved indications for HFrEF and HFpEF independent of T2D status. Benefits sustained across multiple RCTs (EMPA-REG, EMPEROR trials)</p>
+                <p>SGLT2i class reduces cardiovascular death/HF hospitalization by 23%. Empagliflozin has FDA-approved indications for HFrEF and HFpEF independent of T2D status. Benefits sustained across multiple RCTs (EMPA-REG <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener" title="View on PubMed">PMID:26378978</a>, EMPEROR trials)</p>
             </div>
 
             <div class="path-section">
@@ -763,7 +844,7 @@
                 </div>
                 <div class="pmid-list">
                     <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">Nature Reviews Endocrinology</span>
+                    <span class="pmid-badge">26378978</span>
                 </div>
             </div>
 
@@ -1274,7 +1355,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (PMID: 39613428)</p>
+                <p>Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (<a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener" title="View on PubMed">PMID: 39613428</a>)</p>
             </div>
 
             <div class="path-section">
@@ -1303,6 +1384,62 @@
             <div class="path-section">
                 <span class="section-label">Relevant Research Gaps</span>
                 <div><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span><span class="gap-tag">Gap 9: Autoimmune Beta Cell Epitopes in LADA</span></div>
+            </div>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">verapamil_TXNIP_beta_cell_preservation</div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 0
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high">Confidence:</strong> HIGH
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 0
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 2
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">29988125</span>
+                    <span class="pmid-badge">36826844</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Both trials are short-term (12 months). Durability beyond 1 year not yet established. Multicenter Ver-A-T1D protocol (PMC11605811) still enrolling.</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">verapamil_T1D</div>
+                    <div class="connection-item">verapamil_beta_cell</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 12: GLP-1 Effects on Beta Cell Function</span><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span></div>
             </div>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
@@ -1417,6 +1554,67 @@
                 <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span><span class="gap-tag">Gap 9: Autoimmune Beta Cell Epitopes in LADA</span></div>
             </div>
         </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">BHB_NLRP3_inhibition</div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 0
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high_preclinical_medium_clinical">Confidence:</strong> HIGH_PRECLINICAL_MEDIUM_CLINICAL
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 2
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 3
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>β-hydroxybutyrate inhibits NLRP3 assembly by blocking K+ efflux and ASC oligomerization (Youm et al. Nat Med 2015 - <a href="https://pubmed.ncbi.nlm.nih.gov/25686106/" target="_blank" rel="noopener" title="View on PubMed">PMID 25686106</a>). SGLT2i elevate serum BHB and reduce NLRP3-IL-1β in human macrophages (Kim et al. Nat Commun 2020 - <a href="https://pubmed.ncbi.nlm.nih.gov/32358544/" target="_blank" rel="noopener" title="View on PubMed">PMID 32358544</a>; 30-day RCT vs sulfonylurea in T2D+CVD patients). Endogenic anti-inflammatory effect confirmed in stress models (Yamanashi 2017 Sci Rep - <a href="https://pubmed.ncbi.nlm.nih.gov/28794421/" target="_blank" rel="noopener" title="View on PubMed">PMID 28794421</a>). Mechanism connects to existing SGLT2i->DKD path via NLRP3 suppression.</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                    <span class="pmid-badge">34918381</span>
+                    <span class="pmid-badge">39412512</span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">25686106</span>
+                    <span class="pmid-badge">28794421</span>
+                    <span class="pmid-badge">32358544</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Most BHB->NLRP3 evidence is preclinical (in vitro/mouse). The in-human Kim 2020 study is a pharmacodynamic biomarker readout, not a clinical-outcome RCT. BHB rise from SGLT2i is modest (~0.1-0.5 mmol/L); whether this magnitude is sufficient to produce clinically meaningful NLRP3 inhibition in humans is not yet proven.</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">NLRP3_inflammasome_inflammation</div>
+                    <div class="connection-item">NLRP3_inflammasome_nephropathy</div>
+                    <div class="connection-item">dapagliflozin_nephropathy</div>
+                    <div class="connection-item">empagliflozin_inflammation</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span></div>
+            </div>
+        </div>
     </div>
 
     <div id="high-confidence" class="tab-content">
@@ -1454,7 +1652,7 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">dapagliflozin_nephropathy</div>
-            <p><strong>Validation Source:</strong> DAPA-CKD landmark trial (NEJM 2020): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
+            <p><strong>Validation Source:</strong> DAPA-CKD landmark trial (NEJM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/32970396/" target="_blank" rel="noopener" title="View on PubMed">PMID:32970396</a>): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
             <p><strong>Caveats:</strong> Mechanism likely via reduced intraglomerular pressure from natriuresis; benefits maintained with progressive CKD</p>
             <p><strong>Data Points from Corpus:</strong> 3</p>
         </div>
@@ -1466,13 +1664,13 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">empagliflozin_T2D</div>
-            <p><strong>Validation Source:</strong> SGLT2i class standard of care in T2D. EMPA-REG OUTCOME (2015) landmark trial showed cardiovascular benefit (composite CV endpoint 10.5% vs 12.1% placebo). Glucose-lowering modest (~0.5-1% HbA1c)</p>
+            <p><strong>Validation Source:</strong> SGLT2i class standard of care in T2D. EMPA-REG OUTCOME (NEJM 2015, <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener" title="View on PubMed">PMID:26378978</a>) landmark trial showed cardiovascular benefit (composite CV endpoint 10.5% vs 12.1% placebo). Glucose-lowering modest (~0.5-1% HbA1c)</p>
             <p><strong>Caveats:</strong> Primary benefit is CV/renal protection, not glucose control; glucose-lowering effect plateaus over time</p>
             <p><strong>Data Points from Corpus:</strong> 1</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">empagliflozin_cardiovascular</div>
-            <p><strong>Validation Source:</strong> SGLT2i class reduces cardiovascular death/HF hospitalization by 23%. Empagliflozin has FDA-approved indications for HFrEF and HFpEF independent of T2D status. Benefits sustained across multiple RCTs (EMPA-REG, EMPEROR trials)</p>
+            <p><strong>Validation Source:</strong> SGLT2i class reduces cardiovascular death/HF hospitalization by 23%. Empagliflozin has FDA-approved indications for HFrEF and HFpEF independent of T2D status. Benefits sustained across multiple RCTs (EMPA-REG <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener" title="View on PubMed">PMID:26378978</a>, EMPEROR trials)</p>
             <p><strong>Caveats:</strong> CV benefits independent of glucose lowering; mechanism involves improved cardiac metabolism, reduced preload, potential direct cardiac effects</p>
             <p><strong>Data Points from Corpus:</strong> 1</p>
         </div>
@@ -1526,9 +1724,15 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">verapamil_T1D</div>
-            <p><strong>Validation Source:</strong> Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (PMID: 39613428)</p>
+            <p><strong>Validation Source:</strong> Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (<a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener" title="View on PubMed">PMID: 39613428</a>)</p>
             <p><strong>Caveats:</strong> Effect is modest beta-cell preservation, not reversal; most benefit in early disease; mechanism involves TXNIP reduction in beta cells</p>
             <p><strong>Data Points from Corpus:</strong> 7</p>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-name">verapamil_TXNIP_beta_cell_preservation</div>
+            <p><strong>Validation Source:</strong> Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
+            <p><strong>Caveats:</strong> Both trials are short-term (12 months). Durability beyond 1 year not yet established. Multicenter Ver-A-T1D protocol (PMC11605811) still enrolling.</p>
+            <p><strong>Data Points from Corpus:</strong> 0</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">verapamil_beta_cell</div>
@@ -1542,7 +1746,7 @@
         <h3>Research Path Network</h3>
         <p>Paths that share external PMIDs or mechanistic connections:</p>
 
-        <table>
+        <table role="table">
             <thead>
                 <tr>
                     <th>Path Name</th>
@@ -1552,39 +1756,44 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><strong>BHB_NLRP3_inhibition</strong></td>
+                    <td>12</td>
+                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                </tr>
+                <tr>
                     <td><strong>NF_kB_inflammation</strong></td>
-                    <td>11</td>
-                    <td>NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy, dapagliflozin_T2D...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
                 </tr>
                 <tr>
                     <td><strong>NLRP3_inflammasome_inflammation</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_nephropathy, dapagliflozin_T2D...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_nephropathy...</td>
                 </tr>
                 <tr>
                     <td><strong>NLRP3_inflammasome_nephropathy</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, dapagliflozin_T2D...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>dapagliflozin_T2D</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>dapagliflozin_cardiovascular</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>dapagliflozin_inflammation</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>dapagliflozin_nephropathy</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>dorzagliatin_T2D</strong></td>
@@ -1593,18 +1802,18 @@
                 </tr>
                 <tr>
                     <td><strong>empagliflozin_T2D</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>empagliflozin_cardiovascular</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>empagliflozin_inflammation</strong></td>
-                    <td>11</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>12</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>hydroxychloroquine_T2D</strong></td>
@@ -1643,13 +1852,13 @@
                 </tr>
                 <tr>
                     <td><strong>oxidative_stress_inflammation</strong></td>
-                    <td>12</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>13</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>oxidative_stress_nephropathy</strong></td>
-                    <td>12</td>
-                    <td>NF_kB_inflammation, NLRP3_inflammasome_inflammation, NLRP3_inflammasome_nephropathy...</td>
+                    <td>13</td>
+                    <td>BHB_NLRP3_inhibition, NF_kB_inflammation, NLRP3_inflammasome_inflammation...</td>
                 </tr>
                 <tr>
                     <td><strong>pioglitazone_T2D</strong></td>
@@ -1673,7 +1882,7 @@
     <h2>Research Path Gap Mapping</h2>
     <p>How validated research paths support the 15 research gaps. Gaps with more validated paths have stronger evidence backing:</p>
 
-    <table>
+    <table role="table">
         <thead>
             <tr>
                 <th>Gap ID</th>
@@ -1722,14 +1931,14 @@
         <tr>
             <td><strong>Gap 7</strong></td>
             <td>Cardiovascular-Inflammation Intersection</td>
-            <td>NLRP3_inflammasome_inflammation, metformin_T2D, oxidative_stress_inflammation, dapagliflozin_inflammation, NF_kB_inflammation, empagliflozin_inflammation, dapagliflozin_nephropathy, pioglitazone_T2D, oxidative_stress_cardiovascular, NLRP3_inflammasome_nephropathy, dorzagliatin_T2D, dapagliflozin_cardiovascular, rapamycin_inflammation, hydroxychloroquine_inflammation, insulin_glargine_T2D, oxidative_stress_T2D, oxidative_stress_nephropathy, oxidative_stress_autoimmune, empagliflozin_cardiovascular</td>
-            <td>19</td>
+            <td>NLRP3_inflammasome_inflammation, metformin_T2D, oxidative_stress_inflammation, dapagliflozin_inflammation, NF_kB_inflammation, empagliflozin_inflammation, dapagliflozin_nephropathy, pioglitazone_T2D, oxidative_stress_cardiovascular, NLRP3_inflammasome_nephropathy, dorzagliatin_T2D, dapagliflozin_cardiovascular, rapamycin_inflammation, hydroxychloroquine_inflammation, insulin_glargine_T2D, oxidative_stress_T2D, oxidative_stress_nephropathy, oxidative_stress_autoimmune, empagliflozin_cardiovascular, BHB_NLRP3_inhibition</td>
+            <td>20</td>
         </tr>
         <tr>
             <td><strong>Gap 8</strong></td>
             <td>Drug Repurposing for Beta Cell Protection</td>
-            <td>hydroxychloroquine_T2D, verapamil_T1D, verapamil_beta_cell, rapamycin_inflammation, hydroxychloroquine_inflammation</td>
-            <td>5</td>
+            <td>hydroxychloroquine_T2D, verapamil_T1D, verapamil_beta_cell, rapamycin_inflammation, hydroxychloroquine_inflammation, verapamil_TXNIP_beta_cell_preservation</td>
+            <td>6</td>
         </tr>
         <tr>
             <td><strong>Gap 9</strong></td>
@@ -1752,8 +1961,8 @@
         <tr>
             <td><strong>Gap 12</strong></td>
             <td>GLP-1 Effects on Beta Cell Function</td>
-            <td>verapamil_beta_cell, semaglutide_retinopathy</td>
-            <td>2</td>
+            <td>verapamil_beta_cell, semaglutide_retinopathy, verapamil_TXNIP_beta_cell_preservation</td>
+            <td>3</td>
         </tr>
         <tr>
             <td><strong>Gap 13</strong></td>
@@ -1777,7 +1986,7 @@
     </table>
 
     <h2>Partially Validated Paths</h2>
-    <p>The following 6 paths have supporting evidence with important caveats:</p>
+    <p>The following 5 paths have supporting evidence with important caveats:</p>
     <div class="path-card" style="background-color: #fef8e8; border-color: #8b7500;">
         <div class="path-header">
             <div class="path-name">dapagliflozin_inflammation</div>
@@ -1916,118 +2125,10 @@
     <h2>Unvalidated Paths</h2>
     <p>The following 1 path(s) extracted from the corpus but could not be validated through published evidence search:</p>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">tacrolimus -> inflammation</div>
+        <div class="path-name">belatacept -> islet_transplant</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 23061757</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">semaglutide -> retinopathy</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 37122431</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">NLRP3_inflammasome -> T2D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 31036962</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">NLRP3_inflammasome -> nephropathy</div>
-        <p><strong>Data Points:</strong> 3</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">oxidative_stress -> beta_cell</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 29885104</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">dapagliflozin -> T2D</div>
-        <p><strong>Data Points:</strong> 7</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512, 39843169</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">metformin -> T2D</div>
-        <p><strong>Data Points:</strong> 26</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661, 38783768</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">empagliflozin -> inflammation</div>
-        <p><strong>Data Points:</strong> 3</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">dapagliflozin -> nephropathy</div>
-        <p><strong>Data Points:</strong> 3</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512, 39843169</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">teplizumab -> autoimmune</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 31180194</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">calcineurin -> islet_transplant</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 32627352</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">NLRP3_inflammasome -> inflammation</div>
-        <p><strong>Data Points:</strong> 61</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 31036962, 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">vitamin_d -> autoimmune</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 40988828</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">rapamycin -> inflammation</div>
-        <p><strong>Data Points:</strong> 2</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 23061757, 37105208</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">rapamycin -> nephropathy</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 37105208</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">rituximab -> T1D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 19940299</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">verapamil -> beta_cell</div>
-        <p><strong>Data Points:</strong> 6</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39613428</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">metformin -> nephropathy</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39843169</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">hydroxychloroquine -> T2D</div>
-        <p><strong>Data Points:</strong> 32</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661</p>
+        <p><strong>PMIDs:</strong> 37359825</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
         <div class="path-name">empagliflozin -> nephropathy</div>
@@ -2036,40 +2137,34 @@
         <p><strong>PMIDs:</strong> 39412512</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">metformin -> cardiovascular</div>
+        <div class="path-name">rituximab -> beta_cell</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 22683128</p>
+        <p><strong>PMIDs:</strong> 19940299</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">NF_kB -> inflammation</div>
-        <p><strong>Data Points:</strong> 5</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 28086098, 31036962, 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">belatacept -> islet_transplant</div>
+        <div class="path-name">belatacept -> T1D</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
         <p><strong>PMIDs:</strong> 37359825</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">empagliflozin -> T2D</div>
+        <div class="path-name">rapamycin -> nephropathy</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
+        <p><strong>PMIDs:</strong> 37105208</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">oxidative_stress -> inflammation</div>
-        <p><strong>Data Points:</strong> 22</p>
+        <div class="path-name">Treg_expansion -> T1D</div>
+        <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 21997792, 26656660, 26897744, 31036962, 39412512</p>
+        <p><strong>PMIDs:</strong> 41567805</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">dorzagliatin -> T2D</div>
-        <p><strong>Data Points:</strong> 2</p>
+        <div class="path-name">NLRP3_inflammasome -> inflammation</div>
+        <p><strong>Data Points:</strong> 61</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 38783768</p>
+        <p><strong>PMIDs:</strong> 31036962, 39412512</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
         <div class="path-name">oxidative_stress -> autoimmune</div>
@@ -2078,10 +2173,28 @@
         <p><strong>PMIDs:</strong> 21997792, 25751624</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">empagliflozin -> cardiovascular</div>
+        <div class="path-name">oxidative_stress -> T2D</div>
+        <p><strong>Data Points:</strong> 2</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 20228401, 29885104</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">vitamin_d -> autoimmune</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
+        <p><strong>PMIDs:</strong> 40988828</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">metformin -> cardiovascular</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 22683128</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">calcineurin -> islet_transplant</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 32627352</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
         <div class="path-name">rapamycin -> islet_transplant</div>
@@ -2090,8 +2203,74 @@
         <p><strong>PMIDs:</strong> 37105208</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">pioglitazone -> T2D</div>
+        <div class="path-name">teplizumab -> T1D</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 31180194</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">metformin -> T2D</div>
+        <p><strong>Data Points:</strong> 26</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 35466661, 38783768</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">dapagliflozin -> T2D</div>
+        <p><strong>Data Points:</strong> 7</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512, 39843169</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">verapamil -> T1D</div>
+        <p><strong>Data Points:</strong> 7</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39613428</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">dapagliflozin -> cardiovascular</div>
+        <p><strong>Data Points:</strong> 2</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">NLRP3_inflammasome -> T2D</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 31036962</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">tacrolimus -> inflammation</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 23061757</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">canagliflozin -> inflammation</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">NLRP3_inflammasome -> nephropathy</div>
         <p><strong>Data Points:</strong> 3</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">rapamycin -> inflammation</div>
+        <p><strong>Data Points:</strong> 2</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 23061757, 37105208</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">oxidative_stress -> T1D</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 26897744</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">hydroxychloroquine -> T2D</div>
+        <p><strong>Data Points:</strong> 32</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
         <p><strong>PMIDs:</strong> 35466661</p>
     </div>
@@ -2102,94 +2281,34 @@
         <p><strong>PMIDs:</strong> 20228401, 36474045</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">oxidative_stress -> T2D</div>
-        <p><strong>Data Points:</strong> 2</p>
+        <div class="path-name">oxidative_stress -> inflammation</div>
+        <p><strong>Data Points:</strong> 22</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 20228401, 29885104</p>
+        <p><strong>PMIDs:</strong> 21997792, 26656660, 26897744, 31036962, 39412512</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">teplizumab -> T1D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 31180194</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">dapagliflozin -> cardiovascular</div>
-        <p><strong>Data Points:</strong> 2</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">Treg_expansion -> T1D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 41567805</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">dapagliflozin -> inflammation</div>
-        <p><strong>Data Points:</strong> 7</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">rituximab -> nephropathy</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 19940299</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">oxidative_stress -> nephropathy</div>
-        <p><strong>Data Points:</strong> 2</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 29885104, 39412512</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">verapamil -> T1D</div>
-        <p><strong>Data Points:</strong> 7</p>
+        <div class="path-name">verapamil -> beta_cell</div>
+        <p><strong>Data Points:</strong> 6</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
         <p><strong>PMIDs:</strong> 39613428</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">hydroxychloroquine -> inflammation</div>
-        <p><strong>Data Points:</strong> 2</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">metformin -> inflammation</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">oxidative_stress -> T1D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 26897744</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">belatacept -> T1D</div>
-        <p><strong>Data Points:</strong> 1</p>
-        <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 37359825</p>
-    </div>
-    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">rituximab -> beta_cell</div>
+        <div class="path-name">rituximab -> T1D</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
         <p><strong>PMIDs:</strong> 19940299</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">pioglitazone -> inflammation</div>
-        <p><strong>Data Points:</strong> 1</p>
+        <div class="path-name">dorzagliatin -> T2D</div>
+        <p><strong>Data Points:</strong> 2</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661</p>
+        <p><strong>PMIDs:</strong> 38783768</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">canagliflozin -> inflammation</div>
-        <p><strong>Data Points:</strong> 1</p>
+        <div class="path-name">NF_kB -> inflammation</div>
+        <p><strong>Data Points:</strong> 5</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 39412512</p>
+        <p><strong>PMIDs:</strong> 28086098, 31036962, 39412512</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
         <div class="path-name">insulin_glargine -> T2D</div>
@@ -2198,10 +2317,64 @@
         <p><strong>PMIDs:</strong> 35466661</p>
     </div>
     <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
-        <div class="path-name">atorvastatin -> T2D</div>
+        <div class="path-name">empagliflozin -> T2D</div>
         <p><strong>Data Points:</strong> 1</p>
         <p><strong>Status:</strong> Not yet validated against published evidence</p>
-        <p><strong>PMIDs:</strong> 35466661</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">oxidative_stress -> beta_cell</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 29885104</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">dapagliflozin -> nephropathy</div>
+        <p><strong>Data Points:</strong> 3</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512, 39843169</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">oxidative_stress -> nephropathy</div>
+        <p><strong>Data Points:</strong> 2</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 29885104, 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">teplizumab -> autoimmune</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 31180194</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">empagliflozin -> cardiovascular</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">dapagliflozin -> inflammation</div>
+        <p><strong>Data Points:</strong> 7</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">semaglutide -> retinopathy</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 37122431</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">metformin -> nephropathy</div>
+        <p><strong>Data Points:</strong> 1</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39843169</p>
+    </div>
+    <div class="path-card" style="background-color: #f8f0e8; border-color: #8b4513;">
+        <div class="path-name">empagliflozin -> inflammation</div>
+        <p><strong>Data Points:</strong> 3</p>
+        <p><strong>Status:</strong> Not yet validated against published evidence</p>
+        <p><strong>PMIDs:</strong> 39412512</p>
     </div>
     <h2>Methodology</h2>
     <div class="methodology">

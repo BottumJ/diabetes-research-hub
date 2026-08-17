@@ -417,7 +417,7 @@ html_content = """<!DOCTYPE html>
             <p>Latent Autoimmune Diabetes in Adults (LADA) is the most common form of autoimmune diabetes in adults, yet remains dramatically underdiagnosed and widely misunderstood. It occurs more frequently than classical Type 1 Diabetes (T1D), yet is routinely missed in clinical practice.</p>
 
             <div class="highlight-box">
-                <p><strong>ACTION LADA Study (PMID:32243867)</strong></p>
+                <p><strong>ACTION LADA 7 (Hawa, Diabetes Care 2013, PMID:23248199)</strong></p>
                 <p>Among 6,156 adults diagnosed with Type 2 Diabetes, <span class="stat-number">8.8%</span> were actually found to have LADA when tested for autoantibodies (GAD, IA-2, ZnT8).</p>
             </div>
 
@@ -452,7 +452,7 @@ html_content = """<!DOCTYPE html>
             <p>The consequence: misdiagnosed LADA patients on inappropriate therapy progress more rapidly to complete insulin dependence, experience worse long-term glycemic control, and face higher rates of complications.</p>
 
             <div class="footnote">
-                <strong>Data source:</strong> ACTION LADA Study (PMID:32243867); IDF Diabetes Atlas 2021; UKPDS Group outcomes data
+                <strong>Data source:</strong> ACTION LADA 7 (Hawa, Diabetes Care 2013, PMID:23248199); IDF Diabetes Atlas 2021; UKPDS Group outcomes data
             </div>
         </div>
     </div>
@@ -598,7 +598,7 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <div class="footnote">
-                <strong>Data sources:</strong> ACTION LADA (PMID:32243867); HUNT study (Norway); NIRAD study (Italy); IDF Diabetes Atlas 2021
+                <strong>Data sources:</strong> ACTION LADA (PMID:23248199); HUNT study (Norway); NIRAD study (Italy); IDF Diabetes Atlas 2021
             </div>
         </div>
     </div>
@@ -787,7 +787,7 @@ html_content = """<!DOCTYPE html>
             </div>
 
             <h3>The Prevention Paradox</h3>
-            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—roughly $100-200 (PMID:32243867). Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
+            <p>Early, correct diagnosis of LADA is preventive medicine. The cost of autoantibody testing (GADA, IA-2, ZnT8) in a newly diagnosed adult with diabetes is modest—commonly cited in the $100-200 range, though we have not identified a peer-reviewed source establishing this figure (uncited pending verification). Lifetime complication costs for mismanaged LADA are substantial but precise estimates are not well-established in the literature; early correct treatment likely reduces long-term costs significantly. Yet autoantibody testing is not performed in most primary care settings due to lack of awareness, no reimbursement incentive, and absence of clear diagnostic guidance.</p>
 
             <div class="footnote">
                 <strong>The Crisis:</strong> 47 million people with undiagnosed LADA receiving suboptimal therapy, accelerating their disease course and complication rates, while the solution—systematic autoantibody testing in primary care—remains unavailable.
@@ -807,7 +807,7 @@ html_content = """<!DOCTYPE html>
             <div class="reference-item">
                 <strong>ACTION LADA Study: Adult-onset autoimmune diabetes</strong><br>
                 Primary reference establishing 8.8% LADA prevalence among T2D patients in Europe. Large, prospective, multisite study with systematic autoantibody testing.
-                <div class="pmid">PMID: 32243867</div>
+                <div class="pmid">PMID: 23248199</div>
             </div>
 
             <div class="reference-item">
@@ -901,7 +901,7 @@ html_content = """<!DOCTYPE html>
                 </div>
                 <div class="expand-content">
                     <ul style="line-height: 2;">
-                        <li>ACTION LADA (PMID:32243867) — 8.8% prevalence, n=6,156</li>
+                        <li>ACTION LADA (PMID:23248199) — 8.8% prevalence, n=6,156</li>
                         <li>HUNT Study — 4.2% prevalence, Norway population</li>
                         <li>NIRAD Study — 4.5% prevalence, Italy</li>
                         <li>LADA China Study — 5.9% prevalence, first large Asian data</li>

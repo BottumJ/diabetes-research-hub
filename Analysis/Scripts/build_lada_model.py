@@ -85,12 +85,12 @@ REFERENCES = [
     },
     {
         'id': 'GADALUM2021',
-        'authors': 'Ludvigsson et al.',
+        'authors': 'Casas / Ludvigsson et al.',
         'year': 2021,
-        'title': 'GAD-alum vaccine in HLA-DR3-DQ2+ LADA patients',
-        'journal': 'Diabetes',
-        'pmid': '33515517',
-        'key_finding': 'Dose-dependent C-peptide preservation in responders'
+        'title': 'Intralymphatic GAD-alum with vitamin D in recent-onset type 1 diabetes (DIAGNODE-2)',
+        'journal': 'Diabetes Care',
+        'pmid': '34021020',
+        'key_finding': 'C-peptide preservation confined to the HLA DR3-DQ2 subgroup (hypothesis-generating); NOT replicated in the confirmatory DIAGNODE-3 Phase 3, closed for futility 2026-07-27. Trial population was recent-onset T1D, not LADA.'
     }
 ]
 

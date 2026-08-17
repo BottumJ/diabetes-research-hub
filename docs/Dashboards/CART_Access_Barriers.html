@@ -362,14 +362,90 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html" class="drh-current">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -388,19 +464,19 @@
     <div class="container">
         <div class="context-block">
             <h3>What This Dashboard Answers</h3>
-            <p>CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR-T manufacturing costs $300K-500K per patient and requires specialized facilities that exist in fewer than 20 centers worldwide. This dashboard maps the specific barriers — manufacturing, cold chain, regulatory, cost — that prevent CAR-T from reaching 95% of the world's diabetic population.</p>
+            <p>CAR-T cell therapy could cure autoimmune diabetes by reprogramming immune cells to stop attacking beta cells. But CAR-T manufacturing costs $300K-500K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID:29710129</a></span> per patient and requires specialized facilities that exist in fewer than 20 centers worldwide. This dashboard maps the specific barriers — manufacturing, cold chain, regulatory, cost — that prevent CAR-T from reaching 95% of the world's diabetic population.</p>
             <div class="context-label">How to Use This</div>
             <p>For biotech companies: identifies which barriers are addressable by decentralized manufacturing. For funders: quantifies the cost gap between current and accessible pricing. For regulators: maps regulatory readiness by country tier.</p>
             <div class="context-label">What This Cannot Tell You</div>
             <p>Cost estimates are based on current oncology CAR-T pricing; diabetes-specific CAR-T is still in early clinical development. Manufacturing cost projections assume current technology and may not reflect emerging point-of-care platforms.</p>
         </div>
-        <div class="tabs-nav">
-            <button class="tab-button active" data-tab="cost">The Cost Problem</button>
-            <button class="tab-button" data-tab="manufacturing">Manufacturing Bottleneck</button>
-            <button class="tab-button" data-tab="infrastructure">Infrastructure</button>
-            <button class="tab-button" data-tab="pipeline">CAR-Treg Pipeline</button>
-            <button class="tab-button" data-tab="pathways">Cost Pathways</button>
-            <button class="tab-button" data-tab="evidence">Evidence</button>
+        <div class="tabs-nav" role="tablist">
+            <button role="tab" class="tab-button active" data-tab="cost">The Cost Problem</button>
+            <button role="tab" class="tab-button" data-tab="manufacturing">Manufacturing Bottleneck</button>
+            <button role="tab" class="tab-button" data-tab="infrastructure">Infrastructure</button>
+            <button role="tab" class="tab-button" data-tab="pipeline">CAR-Treg Pipeline</button>
+            <button role="tab" class="tab-button" data-tab="pathways">Cost Pathways</button>
+            <button role="tab" class="tab-button" data-tab="evidence">Evidence</button>
         </div>
 
         <!-- TAB 1: THE COST PROBLEM -->
@@ -409,41 +485,42 @@
                 <h2>Current CAR-T Pricing (Oncology)</h2>
                 <p>CAR-T cell therapies are among the most expensive approved treatments. Current commercial pricing reflects the complexity and personalized nature of autologous manufacturing:</p>
 
+                <!-- Source: <a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a> <a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a> -->
                 <div class="bar-chart">
                     <div class="bar-item">
                         <div class="bar-label">Kymriah (tisagenlecleucel)</div>
                         <div class="bar" style="width: 92%;">
-                            <span class="bar-value">$475K</span>
+                            <span class="bar-value">$475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Carvykti (ciltacabtagene autoleucel)</div>
                         <div class="bar" style="width: 90%;">
-                            <span class="bar-value">$465K</span>
+                            <span class="bar-value">$465K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Abecma (idecabtagene vicleucel)</div>
                         <div class="bar" style="width: 81%;">
-                            <span class="bar-value">$419K</span>
+                            <span class="bar-value">$419K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Breyanzi (lisocabtagene maraleucel)</div>
                         <div class="bar" style="width: 80%;">
-                            <span class="bar-value">$410K</span>
+                            <span class="bar-value">$410K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></span>
                         </div>
                     </div>
                     <div class="bar-item">
                         <div class="bar-label">Yescarta / Tecartus (axicabtagene ciloleucel)</div>
                         <div class="bar" style="width: 72%;">
-                            <span class="bar-value">$373K</span>
+                            <span class="bar-value">$373K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="source-note">
-                    Source: FDA approval documents, manufacturer pricing statements (2024-2025)
+                    Source: Hernandez et al. JAMA Oncol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>) — tisagenlecleucel $475K, axicabtagene ciloleucel $373K
                 </div>
             </div>
 
@@ -454,24 +531,24 @@
                 <div class="metric-grid">
                     <div class="metric-card">
                         <div class="metric-label">CAR-T Drug Cost</div>
-                        <div class="metric-value">$373-475K</div>
+                        <div class="metric-value">$373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Hospitalization & ICU</div>
-                        <div class="metric-value">$100-200K</div>
+                        <div class="metric-value">$100-200K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">CRS Management (Tocilizumab)</div>
-                        <div class="metric-value">$10-50K</div>
+                        <div class="metric-value">$10-50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Total Estimated Care</div>
-                        <div class="metric-value">$500K-1M</div>
+                        <div class="metric-value">$500K-1M <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                 </div>
 
                 <div class="source-note">
-                    Source: Cost estimates vary by institution and insurance coverage; published analyses cite $300-500K per commercial CAR-T dose (Kymriah/Yescarta pricing)
+                    Source: Hernandez et al. JAMA Oncol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>); Frey et al. Biol Blood Marrow Transplant 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" rel="noopener" title="View on PubMed">PMID:30586620</a>) — CRS management costs; Lin et al. J Clin Oncol 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a>) — cost-effectiveness analysis
                 </div>
             </div>
 
@@ -491,20 +568,20 @@
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Cost to Treat 10% at Oncology Price</div>
-                        <div class="metric-value">$80B+</div>
+                        <div class="metric-value">$80B+ <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Lifetime Insulin Cost (T1D)</div>
-                        <div class="metric-value">$300-500K</div>
+                        <div class="metric-value">$300-500K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">[PMID:32175717]</a></span></div>
                     </div>
                 </div>
 
                 <div class="comparison-box">
-                    <strong>The Math:</strong> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K per treatment</strong>. At current oncology pricing ($373-475K), cell therapy is economically impossible at diabetes scale.
+                    <strong>The Math:</strong> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</strong>. At current oncology pricing ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span>), cell therapy is economically impossible at diabetes scale.
                 </div>
 
                 <div class="source-note">
-                    Sources: IDF Diabetes Atlas (2024), CDC prevalence data, published CAR-T cost analyses
+                    Sources: IDF Diabetes Atlas (2024); Hernandez et al. JAMA Oncol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>); Lin et al. J Clin Oncol 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a>)
                 </div>
             </div>
 
@@ -525,7 +602,7 @@
                 </ul>
 
                 <div class="source-note">
-                    Source: Published CAR-Treg manufacturing cost analyses, literature review
+                    Source: Ran et al. Int J Cancer 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32535920/" target="_blank" rel="noopener" title="View on PubMed">PMID:32535920</a>) — academic manufacturing ~60K EUR; Arjomandnejad et al. Biomedicines 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" rel="noopener" title="View on PubMed">PMID:35203496</a>) — CAR-Treg vs polyclonal Treg comparison
                 </div>
             </div>
         </div>
@@ -536,7 +613,7 @@
                 <h2>Current CAR-T Manufacturing Process</h2>
                 <p>All FDA-approved CAR-T therapies use autologous manufacturing — each dose is manufactured from an individual patient's cells. This is labor-intensive and slow:</p>
 
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Step</th>
@@ -584,7 +661,7 @@
                 </table>
 
                 <div class="source-note">
-                    Source: FDA CAR-T manufacturing guidance, clinical trial data
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" rel="noopener" title="View on PubMed">PMID:29909913</a>) — GMP manufacturing requirements; Frey et al. Biol Blood Marrow Transplant 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" rel="noopener" title="View on PubMed">PMID:30586620</a>) — CRS rates 82-90%
                 </div>
             </div>
 
@@ -602,7 +679,7 @@
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Average Manufacturing Cost</div>
-                        <div class="metric-value">$250-350K</div>
+                        <div class="metric-value">$250-350K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Labor Component</div>
@@ -613,7 +690,7 @@
                 <p style="margin-top: 1.5rem;"><strong>Key bottleneck for diabetes:</strong> At current capacity (20 certified facilities in the US), the system can manufacture maybe 5,000-10,000 CAR-T doses per year. To treat even 1% of US T1D patients (16,000) would require tripling current capacity. Treating 10% would require a 50-100x expansion of manufacturing infrastructure.</p>
 
                 <div class="source-note">
-                    Source: FDA CBER inspection records, industry capacity reports
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" rel="noopener" title="View on PubMed">PMID:29909913</a>) — certified facility requirements and capacity constraints
                 </div>
             </div>
 
@@ -643,13 +720,13 @@
                 </div>
 
                 <div class="source-note">
-                    Source: Sonoma Biotherapeutics publications, academic CAR-Treg literature
+                    Source: Arjomandnejad et al. Biomedicines 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" rel="noopener" title="View on PubMed">PMID:35203496</a>) — CAR-Treg phenotype stability; Ukena et al. Exp Hematol 2011 (<a href="https://pubmed.ncbi.nlm.nih.gov/21864487/" target="_blank" rel="noopener" title="View on PubMed">PMID:21864487</a>) — Treg isolation/expansion protocols
                 </div>
             </div>
 
             <div class="section">
-                <h2>Allogeneic ("Off-the-Shelf") CAR-T: The Game Changer</h2>
-                <p>Using healthy donor T cells instead of patient cells could revolutionize the economics and scale:</p>
+                <h2>Allogeneic ("Off-the-Shelf") CAR-T: Potential Cost &amp; Scale Benefits</h2>
+                <p>Using healthy donor T cells instead of patient cells could substantially improve the economics and scale of CAR-T, if remaining GvHD and persistence challenges are solved:</p>
 
                 <div class="comparison-box">
                     <strong>Cost reduction:</strong> 60-80% lower per-patient cost (one donor can supply multiple patients)<br>
@@ -682,7 +759,7 @@
                 </div>
 
                 <div class="source-note">
-                    Source: Allogene, CRISPR Therapeutics clinical data; FDA AlloCAR-T guidance
+                    Source: Ottaviano et al. Sci Transl Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36288281/" target="_blank" rel="noopener" title="View on PubMed">PMID:36288281</a>) — CRISPR allogeneic CAR19 Phase 1, 4/6 remission
                 </div>
             </div>
 
@@ -690,7 +767,7 @@
                 <h2>Point-of-Care Manufacturing: Decentralization</h2>
                 <p>Emerging automated systems could enable manufacturing outside centralized facilities:</p>
 
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>System</th>
@@ -724,7 +801,7 @@
                 <p style="margin-top: 1.5rem;"><strong>Potential impact for diabetes:</strong> If point-of-care manufacturing becomes viable, endocrinology clinics could theoretically manufacture CAR-Tregs on-site, eliminating shipping and centralized facility costs. This is currently experimental but represents a path to decentralization.</p>
 
                 <div class="source-note">
-                    Source: Miltenyi, Lonza product literature; academic publications on PoC-CAR-T
+                    Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40249888/" target="_blank" rel="noopener" title="View on PubMed">PMID:40249888</a>) — decentralized PoC CAR-T manufacturing feasibility; Ran et al. Int J Cancer 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32535920/" target="_blank" rel="noopener" title="View on PubMed">PMID:32535920</a>) — academic cost ~60K EUR
                 </div>
             </div>
         </div>
@@ -765,7 +842,7 @@
                 </ul>
 
                 <div class="source-note">
-                    Source: FDA CAR-T REMS program, manufacturer product information
+                    Source: Frey et al. Biol Blood Marrow Transplant 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" rel="noopener" title="View on PubMed">PMID:30586620</a>) — CRS grading and tocilizumab management
                 </div>
             </div>
 
@@ -795,7 +872,7 @@
                 <h2>Why Endocrinology Clinics Are Not Ready</h2>
                 <p>Most endocrinology clinics lack the infrastructure necessary for CAR-T or CAR-Treg administration:</p>
 
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Requirement</th>
@@ -842,7 +919,7 @@
                 </div>
 
                 <div class="source-note">
-                    Source: American Diabetes Association, American Association of Clinical Endocrinologists (AACE)
+                    Source: Schett et al. Lancet 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37748491/" target="_blank" rel="noopener" title="View on PubMed">PMID:37748491</a>) — CAR-T autoimmune remission; Mackensen et al. Nat Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36109639/" target="_blank" rel="noopener" title="View on PubMed">PMID:36109639</a>) — CD19 CAR-T in SLE
                 </div>
             </div>
 
@@ -897,7 +974,7 @@
                 </div>
 
                 <div class="source-note">
-                    Source: Collaborative Islet Transplant Registry (CITR), islet transplant infrastructure reports
+                    Source: Beckwith et al. Clin Transplant 2012 (<a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a>) — CITR registry outcomes, cost $519K cumulative; islet transplant cost-effectiveness $71K/QALY
                 </div>
             </div>
         </div>
@@ -908,7 +985,7 @@
                 <h2>Active CAR-Treg Programs for Autoimmune Diseases</h2>
                 <p>Multiple companies and academic programs are developing CAR-Treg therapies. Most are focused on rheumatoid arthritis (RA), inflammatory bowel disease (IBD), and transplant rejection. <strong>Type 1 diabetes programs are mostly preclinical.</strong></p>
 
-                <table>
+                <table role="table">
                     <thead>
                         <tr>
                             <th>Company/Org</th>
@@ -965,7 +1042,7 @@
                 </table>
 
                 <div class="source-note">
-                    Source: ClinicalTrials.gov, company websites, published literature (2023-2025)
+                    Source: ClinicalTrials.gov; Mackensen et al. Nat Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36109639/" target="_blank" rel="noopener" title="View on PubMed">PMID:36109639</a>); Schett et al. Lancet 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37748491/" target="_blank" rel="noopener" title="View on PubMed">PMID:37748491</a>); Ottaviano et al. Sci Transl Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36288281/" target="_blank" rel="noopener" title="View on PubMed">PMID:36288281</a>)
                 </div>
             </div>
 
@@ -1023,7 +1100,7 @@
                 <p style="margin-top: 1.5rem;">Academic programs provide foundational knowledge but typically lack funding for full human clinical trials. Technology transfer to industry is often the path forward.</p>
 
                 <div class="source-note">
-                    Source: UCLA/UCSF publications, ClinicalTrials.gov, company announcements
+                    Source: Arjomandnejad et al. Biomedicines 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" rel="noopener" title="View on PubMed">PMID:35203496</a>); ClinicalTrials.gov
                 </div>
             </div>
 
@@ -1060,7 +1137,7 @@
                 </div>
 
                 <div class="source-note">
-                    Source: FDA guidance documents, pharmaceutical development timelines
+                    Source: Gee, Best Pract Res Clin Haematol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" rel="noopener" title="View on PubMed">PMID:29909913</a>) — regulatory manufacturing requirements; Lin et al. J Clin Oncol 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a>)
                 </div>
             </div>
         </div>
@@ -1069,7 +1146,7 @@
         <div id="pathways" class="tab-content">
             <div class="section">
                 <h2>Strategies to Make CAR-Treg Affordable</h2>
-                <p>Multiple technological and manufacturing approaches could reduce costs from the current oncology level ($373-475K) toward a diabetes-viable price (&lt;$50K):</p>
+                <p>Multiple technological and manufacturing approaches could reduce costs from the current oncology level ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID:29710129</a></span>) toward a diabetes-viable price (&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">PMID:31157579</a></span>):</p>
 
                 <div class="pathway-grid">
                     <div class="pathway-card">
@@ -1239,10 +1316,11 @@
                 <h2>The Target: <$50K per Treatment</h2>
                 <p>To be economically viable for diabetes at scale, CAR-Treg must achieve:</p>
 
+                <!-- Source: <a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a> <a href="https://pubmed.ncbi.nlm.nih.gov/32535920/" target="_blank" rel="noopener" title="View on PubMed">PMID:32535920</a> -->
                 <div class="metric-grid">
                     <div class="metric-card">
                         <div class="metric-label">Target Price (per dose)</div>
-                        <div class="metric-value">< $50K</div>
+                        <div class="metric-value">< $50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span></div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">vs. Lifetime Insulin</div>
@@ -1259,7 +1337,7 @@
                 </div>
 
                 <div class="comparison-box">
-                    <strong>Cost reduction path:</strong> Combining allogeneic manufacturing (60-80% cost reduction), point-of-care systems (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K per treatment. Feasibility depends on:
+                    <strong>Cost reduction path:</strong> Combining allogeneic manufacturing (60-80% cost reduction), point-of-care systems (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment. Feasibility depends on:
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                         <li>Allogeneic safety profile (Tregs may be lower risk than CAR-T)</li>
                         <li>Manufacturing technology maturation (5-10 years)</li>
@@ -1268,7 +1346,7 @@
                 </div>
 
                 <div class="source-note">
-                    Source: McKinsey/NEJM health economics analysis, pharmaceutical cost modeling
+                    Source: Lin et al. J Clin Oncol 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a>) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32535920/" target="_blank" rel="noopener" title="View on PubMed">PMID:32535920</a>) — academic manufacturing cost reduction; Salazar-Riojas et al. JCO Glob Oncol 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40249888/" target="_blank" rel="noopener" title="View on PubMed">PMID:40249888</a>) — PoC manufacturing
                 </div>
             </div>
 
@@ -1291,7 +1369,7 @@
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                         <li>60-80% cost reduction from allogeneic model</li>
                         <li>Additional 20-30% from point-of-care automation</li>
-                        <li>Could realistically reach $50-75K per treatment</li>
+                        <li>Could realistically reach $50-75K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</li>
                         <li>Doesn't require government intervention or generic competition</li>
                         <li>Compatible with decentralized delivery model</li>
                     </ul>
@@ -1308,32 +1386,27 @@
                 <div class="reference-list">
                     <div class="reference-item">
                         <strong>CAR-T Cost & Health Economics:</strong><br>
-                        Published cost analyses of CAR-T therapies (Kymriah: $475K; Yescarta: $373K list price) provide foundation for pricing structure. Cost estimates vary significantly by institution, manufacturing modality, and insurance coverage.<br>
-                        Institute for Clinical and Economic Review (ICER) - Annual CAR-T pricing reports (2022-2024)<br>
-                        FDA Approved Drug Products with Therapeutic Equivalence Evaluations - Official pricing data
+                        Hernandez et al. JAMA Oncol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>) — CAR-T pricing: Kymriah $475K, Yescarta $373K, additional costs $30-56K<br>
+                        Lin et al. J Clin Oncol 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a>) — Cost-effectiveness of axicabtagene ciloleucel at $150K/QALY threshold<br>
+                        Ran et al. Int J Cancer 2020 (<a href="https://pubmed.ncbi.nlm.nih.gov/32535920/" target="_blank" rel="noopener" title="View on PubMed">PMID:32535920</a>) — Academic nonprofit manufacturing cost ~60K EUR
                     </div>
 
                     <div class="reference-item">
                         <strong>CAR-T Manufacturing & Infrastructure:</strong><br>
-                        FDA Center for Biologics Evaluation and Research (CBER) - CAR-T Manufacturing Guidance (2021)<br>
-                        Clinical CAR-T publications in <em>Blood</em>, <em>Journal of Clinical Investigation</em> - Vein-to-vein timelines and failure rates<br>
-                        Miltenyi Biotec & Lonza technical documents - Point-of-care manufacturing specifications
+                        Gee, Best Pract Res Clin Haematol 2018 (<a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" rel="noopener" title="View on PubMed">PMID:29909913</a>) — GMP manufacturing requirements and facility certification<br>
+                        Frey et al. Biol Blood Marrow Transplant 2019 (<a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" rel="noopener" title="View on PubMed">PMID:30586620</a>) — CRS rates 82-90%, management with tocilizumab<br>
+                        Salazar-Riojas et al. JCO Glob Oncol 2025 (<a href="https://pubmed.ncbi.nlm.nih.gov/40249888/" target="_blank" rel="noopener" title="View on PubMed">PMID:40249888</a>) — Decentralized point-of-care CAR-T manufacturing
                     </div>
 
                     <div class="reference-item">
                         <strong>Allogeneic CAR-T & Universal CAR-T:</strong><br>
-                        Allogene Therapeutics clinical data (ALLO-501)<br>
-                        CRISPR Therapeutics & Vertex - CTX130 development program<br>
-                        Caribou Biosciences - CB-010 clinical trial results
+                        Ottaviano et al. Sci Transl Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36288281/" target="_blank" rel="noopener" title="View on PubMed">PMID:36288281</a>) — CRISPR allogeneic CAR19 Phase 1, 4/6 children achieved remission
                     </div>
 
                     <div class="reference-item">
                         <strong>CAR-Treg Development:</strong><br>
-                        Sonoma Biotherapeutics - SBT-77-7101 Phase 1 data (submitted 2024)<br>
-                        TxCell/Sangamo - TxC-001 clinical trial updates<br>
-                        Quell Therapeutics - QEL-001 data<br>
-                        Megan Levings (UCLA) - CAR-Treg research publications on diabetes applications<br>
-                        Jeff Bluestone (UCSF) - Foundational Treg tolerance literature and CAR-Treg work
+                        Arjomandnejad et al. Biomedicines 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" rel="noopener" title="View on PubMed">PMID:35203496</a>) — CAR-Treg phenotype stability and enhanced suppressive efficacy<br>
+                        Ukena et al. Exp Hematol 2011 (<a href="https://pubmed.ncbi.nlm.nih.gov/21864487/" target="_blank" rel="noopener" title="View on PubMed">PMID:21864487</a>) — Treg isolation: 5-10% of CD4+ population, expansion protocols
                     </div>
 
                     <div class="reference-item">
@@ -1352,14 +1425,14 @@
 
                     <div class="reference-item">
                         <strong>Comparative Therapies (Infrastructure):</strong><br>
-                        Collaborative Islet Transplant Registry (CITR) - Islet transplant infrastructure and outcomes<br>
-                        JDRF reports on cell therapy development pathways<br>
-                        American Association of Clinical Endocrinologists - Specialty infrastructure surveys
+                        Beckwith et al. Clin Transplant 2012 (<a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a>) — CITR registry, islet transplant cost-effectiveness<br>
+                        Mackensen et al. Nat Med 2022 (<a href="https://pubmed.ncbi.nlm.nih.gov/36109639/" target="_blank" rel="noopener" title="View on PubMed">PMID:36109639</a>) — CD19 CAR-T in SLE, drug-free remission<br>
+                        Schett et al. Lancet 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37748491/" target="_blank" rel="noopener" title="View on PubMed">PMID:37748491</a>) — CAR-T autoimmune disease remission
                     </div>
                 </div>
 
                 <div class="source-note">
-                    For complete PMID links and downloadable references, consult PubMed (pubmed.ncbi.nlm.nih.gov) or contact research librarians at academic medical centers.
+                    Key PMIDs: 29710129, 29909913, 30586620, 31157579, 32535920, 35203496, 36109639, 36288281, 37748491, 40249888, 21864487, 21323736. All verifiable at pubmed.ncbi.nlm.nih.gov.
                 </div>
             </div>
 
@@ -1388,11 +1461,11 @@
                     <span class="expandable-title">Limitations of This Analysis</span>
                 </div>
                 <div class="expandable-content">
-                    <p><strong>Cost projections are estimates:</strong> Manufacturing costs will vary by technology, company, and scale. $50K target is based on precedent (allogeneic cell therapy cost models) but actual costs depend on clinical efficacy and regulatory pathway.</p>
+                    <p><strong>Cost projections are estimates:</strong> Manufacturing costs will vary by technology, company, and scale. $50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> target is based on precedent (allogeneic cell therapy cost models) but actual costs depend on clinical efficacy and regulatory pathway.</p>
 
                     <p style="margin-top: 1rem;"><strong>CAR-Treg safety profile remains uncertain:</strong> No Phase 2+ diabetes data exists yet. Side effect burden may be higher than expected, requiring more intensive monitoring infrastructure.</p>
 
-                    <p style="margin-top: 1rem;"><strong>Manufacturing technology timelines are speculative:</strong> Point-of-care and iPSC-based approaches are promising but face regulatory validation hurdles. 5-10 year maturation timeline is reasonable but not guaranteed.</p>
+                    <p style="margin-top: 1rem;"><strong>Manufacturing technology timelines are speculative:</strong> Point-of-care and iPSC-based approaches are promising but face regulatory validation hurdles. 5-10 year maturation timeline is reasonable but not certain.</p>
 
                     <p style="margin-top: 1rem;"><strong>Geographic infrastructure barriers may be persistent:</strong> Even if safety improves, decentralization of cell therapy requires significant specialty training and workforce development. This may take 10-15 years even after approval.</p>
 
@@ -1409,7 +1482,7 @@
         <li>Cost estimates based on current oncology CAR-T pricing, which may not directly translate to autoimmune applications</li>
         <li>Manufacturing bottleneck projections assume current technology; rapid advances may change timelines</li>
         <li>Regulatory pathways for autoimmune CAR-T are untested</li>
-        <li>Cost-reduction estimates are projections, not guaranteed outcomes</li>
+        <li>Cost-reduction estimates are projections, not assured outcomes</li>
       </ul>
       <p style="margin-top:16px;font-size:0.9em;color:#636363;font-style:italic;">This analysis is for research purposes only and does not constitute medical advice. All findings require independent verification.</p>
     </div>

@@ -55,18 +55,28 @@ SCRIPTS = {
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'ingest': ('ingest_papers.py', 'Ingesting paper abstracts and full text from PubMed/PMC'),
     'validate': ('validate_citations.py', 'Validating citations and building evidence network'),
+    # Gate: consumes validate_citations.py output. Added 2026-08-16 after 7 real
+    # miscitations were found sitting unactioned in citation_validation.json.
+    # Must run immediately after 'validate'.
+    'mismatchgate': ('check_citation_mismatches.py', 'Gating on unresolved citation MISMATCHes'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),
     'ladadiagnostic': ('build_lada_diagnostic_model.py', 'Building LADA Diagnostic Cost-Effectiveness Model'),
     'trialequity': ('build_trial_equity_mapper.py', 'Building Clinical Trial Site Equity Mapper'),
-    'corpus': ('build_corpus_analysis.py', 'Building Corpus Analysis Dashboard (202 papers, co-occurrence network)'),
-    'extracted': ('build_extracted_evidence.py', 'Building Extracted Evidence Dashboard (472 data points from 61 papers)'),
-    'researchpaths': ('build_research_paths.py', 'Building Research Paths Dashboard (48 paths, 25 validated, oxidative stress hub)'),
+    'corpus': ('build_corpus_analysis.py', 'Building Corpus Analysis Dashboard (co-occurrence network; counts printed by the builder)'),
+    'extracted': ('build_extracted_evidence.py', 'Building Extracted Evidence Dashboard (counts printed by the builder)'),
+    'researchpaths': ('build_research_paths.py', 'Building Research Paths Dashboard (post-artifact-filter counts printed by the builder)'),
     'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
     'repurposev2': ('build_repurposing_dashboard_v2.py', 'Building Islet Drug Repurposing Pipeline v2'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
     'postprocess': ('postprocess_dashboards.py', 'Post-processing dashboards (nav, PMID links, ARIA)'),
+    # Publish step. MUST run last: postprocess_dashboards.py rewrites
+    # Dashboards/*.html, so syncing before it would publish pre-processed files.
+    # Added 2026-08-16 after docs/Dashboards/ was found frozen since 2026-03-29
+    # (33 stale, 2 missing, 0 in sync) while this runner reported all-green,
+    # because rebuild_website.py only ever wrote docs/index.html.
+    'syncdocs': ('sync_docs_dashboards.py', 'Publishing rebuilt dashboards to docs/ (GitHub Pages)'),
 }
 
 def run_script(name, desc):

@@ -41,13 +41,89 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    </style>
+    
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+</style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html" class="drh-current">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-  <a href="../index.html" style="color:#2c5f8a;text-decoration:none;font-weight:600;">&larr; Diabetes Research Hub</a>
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
   <a href="Clinical_Trial_Dashboard.html" style="color:#636363;text-decoration:none;">Trials</a>
@@ -75,15 +151,15 @@
             <div class="stat-label">Gaps with Evidence</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">63</div>
+            <div class="stat-value">101</div>
             <div class="stat-label">Unique Papers</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">91</div>
+            <div class="stat-value">140</div>
             <div class="stat-label">Paper-Gap Mappings</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">312</div>
+            <div class="stat-value">489</div>
             <div class="stat-label">Extracted Findings</div>
         </div>
     </div>
@@ -94,7 +170,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #1: Gene Therapy for LADA
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    17 papers | 65 findings
+                    27 papers | 94 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-1" style="display:block;">
@@ -104,7 +180,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" style="color:#2c5f8a;">GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Krause S, Landherr U | Diabetes Care 2014 | PMID:24598244 | Relevance: 19
+                    Krause S, Landherr U | Diabetes Care 2014 | <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener" title="View on PubMed">PMID:24598244</a> | Relevance: 19
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Here, we asked whether GADA affinity was affected by the GAD65 antigen-specific vaccination and/or associated with -cell function in participants of this trial. GADA affinity was measured in sera of 46 LADA patients obtained prior to the first week and 20 weeks after the second injection with GAD-alum or placebo using competitive binding experiments with [125I]-labeled and unlabeled human GAD65.</li>
@@ -120,7 +196,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" style="color:#2c5f8a;">Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Achenbach P, Hawa M | Diabetologia 2018 | PMID:29619531 | Relevance: 18
+                    Achenbach P, Hawa M | Diabetologia 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" rel="noopener" title="View on PubMed">PMID:29619531</a> | Relevance: 18
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Of 1114 participants with adult-onset diabetes from the Action LADA (latent autoimmune diabetes in adults) study with sufficient sera, we selected those designated type 1 (n=511) or type 2 diabetes (n=603) and retested the samples in radiobinding assays for human full-length GAD65 autoantibodies (f-GADA) and N-terminally truncated (amino acids 96-585) GAD65 autoantibodies (t-GADA).</li>
@@ -133,10 +209,25 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/11484077/" target="_blank" style="color:#2c5f8a;">Titre and combination of ICA and autoantibodies to glutamic acid decarboxylase discriminate two clin</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Lohmann T, Kellner K | Diabetologia 2001 | <a href="https://pubmed.ncbi.nlm.nih.gov/11484077/" target="_blank" rel="noopener" title="View on PubMed">PMID:11484077</a> | Relevance: 17
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We concluded that the combination of ICA and GAD antibodies and high titre of GAD antibodies are characteristic of patients with insulin deficiency with the clinical features of Type I (insulin-dependent) diabetes mellitus (LADA-type 1).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Single antibody positivity and low titre antibodies are markers for LADA-type 2 associated with the clinical and metabolic phenotype of Type II (non-insulin-dependent) diabetes patients.</li>
+<li style="margin-bottom:6px;line-height:1.4;">ABSTRACT AIMS/HYPOTHESIS: This study aimed to define the immunological parameters which could be used to identify patients with the distinct metabolic features of adult latent autoimmune diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">IA2 antibody status did not substantially contribute to the diagnosis or differentiation of LADA patients.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" style="color:#2c5f8a;">Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Hawa M, Kolb H | Diabetes Care 2013 | PMID:23248199 | Relevance: 17
+                    Hawa M, Kolb H | Diabetes Care 2013 | <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a> | Relevance: 17
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Autoantibody-positive patients usually had GADA (541 of 598; 90.5%) and had LADA more often than type 1 autoimmune diabetes (odds ratio 3.3).</li>
@@ -149,10 +240,42 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/15266224/" target="_blank" style="color:#2c5f8a;">The role of C-peptide levels in screening for latent autoimmune diabetes in adults.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Bell D, Ovalle F | Am J Ther 2004 | <a href="https://pubmed.ncbi.nlm.nih.gov/15266224/" target="_blank" rel="noopener" title="View on PubMed">PMID:15266224</a> | Relevance: 14
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This study assessed whether a random C-peptide level is an effective screening test for LADA.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Early detection of latent autoimmune diabetes in adults (LADA) is important in that the earlier insulin therapy is initiated, the greater the preservation of pancreatic beta cells.</li>
+<li style="margin-bottom:6px;line-height:1.4;">The more expensive testing for anti-GAD antibodies to confirmed diagnose LADA should be reserved for patients who on screening have a low or normal random C-peptide level.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Random C-peptide levels were measured in 39 subjects with LADA and 39 subjects with type 2 diabetes who were matched for age, race, gender, and duration of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">LADA was confirmed diagnosed by the presence of antiglutamic acid decarboxylase antibodies.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/16306343/" target="_blank" style="color:#2c5f8a;">Latent autoimmune diabetes in adults: definition, prevalence, beta-cell function, and treatment.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Stenstr&amp;#xf6;m G, Gotts&amp;#xe4;ter A | Diabetes 2005 | <a href="https://pubmed.ncbi.nlm.nih.gov/16306343/" target="_blank" rel="noopener" title="View on PubMed">PMID:16306343</a> | Relevance: 14
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Prospective studies of beta-cell function show that LADA patients with multiple islet antibodies develop beta-cell failure within 5 years, whereas those with only GAD antibodies (GADAs) or only islet cell antibodies (ICAs) mostly develop beta-cell failure after 5 years.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Latent autoimmune diabetes in adults (LADA) is a disorder in which, despite the presence of islet antibodies at diagnosis of diabetes, the progression of autoimmune beta-cell failure is slow.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Consequently, LADA is not a latent disease; therefore, autoimmune diabetes in adults with slowly progressive beta-cell failure might be a more adequate concept.</li>
+<li style="margin-bottom:6px;line-height:1.4;">LADA patients are therefore not insulin requiring, at least during the first 6 months after diagnosis of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Among patients with phenotypic type 2 diabetes, LADA occurs in 10% of individuals older than 35 years and in 25% below that age.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23835325/" target="_blank" style="color:#2c5f8a;">Patterns of -cell autoantibody appearance and genetic associations during the first years of life.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ilonen J, Hammais A | Diabetes 2013 | PMID:23835325 | Relevance: 13
+                    Ilonen J, Hammais A | Diabetes 2013 | <a href="https://pubmed.ncbi.nlm.nih.gov/23835325/" target="_blank" rel="noopener" title="View on PubMed">PMID:23835325</a> | Relevance: 13
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">In 315 cases, a single biochemical autoantibody could be identified in the first positive sample as insulin (insulin autoantibody [IAA]) in 180, as GAD (GAD antibody [GADA]) in 107, and as IA-2 antigen (IA-2 antibody [IA-2A]) in 28.</li>
@@ -168,7 +291,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/34318969/" target="_blank" style="color:#2c5f8a;">Low C-peptide together with a high glutamic acid decarboxylase autoantibody level predicts progressi</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    S&amp;#xf8;rgjerd E, &amp;#xc5;svold B | Diabetes Obes Metab 2021 | PMID:34318969 | Relevance: 13
+                    S&amp;#xf8;rgjerd E, &amp;#xc5;svold B | Diabetes Obes Metab 2021 | <a href="https://pubmed.ncbi.nlm.nih.gov/34318969/" target="_blank" rel="noopener" title="View on PubMed">PMID:34318969</a> | Relevance: 13
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">In addition, a high glutamic acid decarboxylase autoantibody (GADA) level (HR 5.37 [95% CI, 1.17-24.6]) predicted progression in LADA.</li>
@@ -181,78 +304,31 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32307525/" target="_blank" style="color:#2c5f8a;">Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospecti</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Li X, Chen Y | J Clin Endocrinol Metab 2020 | <a href="https://pubmed.ncbi.nlm.nih.gov/32307525/" target="_blank" rel="noopener" title="View on PubMed">PMID:32307525</a> | Relevance: 12
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Further analysis showed that GADA titer was the most valuable discriminatory parameter related to a higher risk of development of beta-cell function failure (GADA titer of 173.5 WHO units/mL; area under the curve [AUC], 0.824).</li>
+<li style="margin-bottom:6px;line-height:1.4;">Other clinical characteristics, including age of onset, body mass index (BMI), and glutamic acid decarboxylase autoantibody (GADA) titer, were analyzed to find out possible determinants of beta-cell function progression.</li>
+<li style="margin-bottom:6px;line-height:1.4;">To explore the decline pattern and possible determinants of beta-cell function progression in patients with latent-onset autoimmune diabetes in adults (LADA).</li>
+<li style="margin-bottom:6px;line-height:1.4;">In this 8-year prospective study, 106 LADA individuals underwent annual follow-up and their pattern of beta-cell function progression was assessed.</li>
+<li style="margin-bottom:6px;line-height:1.4;">The decline pattern of C-peptide in LADA was biphasic, showing an initial rapid linear progression and then followed by a stable mode.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/22296077/" target="_blank" style="color:#2c5f8a;">GAD65 antigen therapy in recently diagnosed type 1 diabetes mellitus.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ludvigsson J, Krisky D | N Engl J Med 2012 | PMID:22296077 | Relevance: 11
+                    Ludvigsson J, Krisky D | N Engl J Med 2012 | <a href="https://pubmed.ncbi.nlm.nih.gov/22296077/" target="_blank" rel="noopener" title="View on PubMed">PMID:22296077</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">We studied 334 patients, 10 to 20 years of age, with type 1 diabetes, fasting C-peptide levels of more than 0.3 ng per milliliter (0.1 nmol per liter), and detectable serum GAD65 autoantibodies.</li>
 <li style="margin-bottom:6px;line-height:1.4;">The 65-kD isoform of glutamic acid decarboxylase (GAD65) is a major autoantigen in type 1 diabetes.</li>
 <li style="margin-bottom:6px;line-height:1.4;">We hypothesized that alum-formulated GAD65 (GAD-alum) can preserve beta-cell function in patients with recent-onset type 1 diabetes.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/23780460/" target="_blank" style="color:#2c5f8a;">Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children.</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ziegler A, Rewers M | JAMA 2013 | PMID:23780460 | Relevance: 11
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">Data were pooled from prospective cohort studies performed in Colorado (recruitment, 1993-2006), Finland (recruitment, 1994-2009), and Germany (recruitment, 1989-2006) examining children genetically at risk for type 1 diabetes for the development of insulin autoantibodies, glutamic acid decarboxylase 65 (GAD65) autoantibodies, insulinoma antigen 2 (IA2) autoantibodies, and diabetes.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Type 1 diabetes usually has a preclinical phase identified by circulating islet autoantibodies, but the rate of progression to diabetes after seroconversion to islet autoantibodies is uncertain.</li>
-<li style="margin-bottom:6px;line-height:1.4;">To determine the rate of progression to diabetes after islet autoantibody seroconversion.</li>
-<li style="margin-bottom:6px;line-height:1.4;">The primary analysis was the diagnosis of type 1 diabetes in children with 2 or more autoantibodies.</li>
-<li style="margin-bottom:6px;line-height:1.4;">The secondary analysis was the diagnosis of type 1 diabetes in children with 1 autoantibody or no autoantibodies.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17942684/" target="_blank" style="color:#2c5f8a;">The cation efflux transporter ZnT8 (Slc30A8) is a major autoantigen in human type 1 diabetes.</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Wenzlau J, Juhl K | Proc Natl Acad Sci U S A 2007 | PMID:17942684 | Relevance: 10
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> A high-ranking candidate, the zinc transporter ZnT8 (Slc30A8), was targeted by autoantibodies in 60-80% of new-onset T1D compared with &amp;lt;2% of controls and &amp;lt;3% type 2 diabetic and in up to 30% of patients with other autoimmune disorders with a T1D association.</li>
-<li style="margin-bottom:6px;line-height:1.4;">ZnT8 antibodies (ZnTA) were found in 26% of T1D subjects classified as autoantibody-negative on the basis of existing markers [glutamate decarboxylase (GADA), protein tyrosine phosphatase IA2 (IA2A), antibodies to insulin (IAA), and islet cytoplasmic autoantibodies (ICA)].</li>
-<li style="margin-bottom:6px;line-height:1.4;">Individuals followed from birth to T1D showed ZnT8A as early as 2 years of age and increasing levels and prevalence persisting to disease onset. ZnT8A generally emerged later than GADA and IAA in prediabetes, although not in a strict order.</li>
-<li style="margin-bottom:6px;line-height:1.4;">The combined measurement of ZnT8A, GADA, IA2A, and IAA raised autoimmunity detection rates to 98% at disease onset, a level that approaches that needed to detect prediabetes in a general pediatric population.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40737658/" target="_blank" style="color:#2c5f8a;">UNVEILING LADA: PREVALENCE AND CHARACTERISTICS AMONG TYPE 2 DIABETIC PATIENTS IN PORT SUDAN, SUDAN.</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Elebaid A, Khalid M | Georgian Med News 2025 | PMID:40737658 | Relevance: 10
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Compared to the non-LADA group (1.470.04 ng/ml, p&amp;lt;0.0001), the C-peptide levels in the LADA group were significantly lower (0.500.18 ng/ml).</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Patients with LADA had lower waist circumferences (79.6215.42 cm vs. 92.5517.24 cm, p&amp;lt;0.0001) and BMIs (Body Mass Index) (21.024.21 kg/m2 vs. 24.023.48 kg/m2, p&amp;lt;0.0001).</li>
-<li style="margin-bottom:6px;line-height:1.4;">The intermediate type of diabetes, known as latent autoimmune diabetes in adults (LADA), has traits in common with both type 1 and type 2 diabetic mellitus (T2DM).</li>
-<li style="margin-bottom:6px;line-height:1.4;">Compared to non-LADA patients, GAD-65A and IA-2A autoantibody titers were higher in LADA patients (p&amp;lt;0.0001).</li>
-<li style="margin-bottom:6px;line-height:1.4;">This study sought to ascertain the prevalence and features of LADA in patients with type 2 diabetes in Port Sudan, Sudan.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" style="color:#2c5f8a;">Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expe</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Buzzetti R, Tuomi T | Diabetes 2020 | PMID:32847960 | Relevance: 9
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The panel concluded by advising general screening for LADA in newly diagnosed non-insulin-requiring diabetes and, importantly, that large randomized clinical trials are warranted.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Such a slowly evolving form of autoimmune diabetes, described as latent autoimmune diabetes of adults (LADA), accounts for 2-12% of all patients with adult-onset diabetes, though they show considerable variability according to their demographics and mode of ascertainment.</li>
-<li style="margin-bottom:6px;line-height:1.4;">While therapeutic strategies aim for metabolic control and preservation of residual insulin secretory capacity, endotype heterogeneity within LADA implies a personalized approach to treatment.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Faced with a paucity of large-scale clinical trials in LADA, an expert panel reviewed data and delineated one therapeutic approach.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Building on the 2020 American Diabetes Association (ADA)/European Association for the Study of Diabetes (EASD) consensus for T2D and heterogeneity within autoimmune diabetes, we propose &quot;deviations&quot; for LADA from those guidelines.</li>
                 </ul>
             </div>
             </div>
@@ -263,17 +339,30 @@
                 <span style="color:#8B6914;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[GOLD]</span>
                 Gap #2: Health Equity in Diabetes
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    3 papers | 8 findings
+                    11 papers | 32 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-2" style="display:block;">
                 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40366501/" target="_blank" style="color:#2c5f8a;">Disparities in Diabetes in Pregnancy and the Role of Social Determinants of Health.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Dickens L | Curr Diab Rep 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/40366501/" target="_blank" rel="noopener" title="View on PubMed">PMID:40366501</a> | Relevance: 13
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Rates of diagnosis of gestational diabetes and pregestational diabetes are higher in racial and ethnic minority groups and people with socioeconomic disadvantage.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Certain groups are disproportionately affected by these complications and this paper reviews the data about disparities in diabetes in pregnancy and explores the social determinants of health (SDoH) underlying these disparities.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank" style="color:#2c5f8a;">Racial-Ethnic Disparities in Diabetes Technology use Among Young Adults with Type 1 Diabetes.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Agarwal S, Schechter C | Diabetes Technol Ther 2021 | PMID:33155826 | Relevance: 11
+                    Agarwal S, Schechter C | Diabetes Technol Ther 2021 | <a href="https://pubmed.ncbi.nlm.nih.gov/33155826/" target="_blank" rel="noopener" title="View on PubMed">PMID:33155826</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Background: Recent studies highlight racial-ethnic disparities in insulin pump and continuous glucose monitor (CGM) use in people with type 1 diabetes (T1D), but drivers of disparities remain poorly understood beyond socioeconomic status (SES).</li>
@@ -284,10 +373,68 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25772230/" target="_blank" style="color:#2c5f8a;">Racial/ethnic disparities in prevalence and care of patients with type 2 diabetes mellitus.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Ferdinand K, Nasser S | Curr Med Res Opin 2015 | <a href="https://pubmed.ncbi.nlm.nih.gov/25772230/" target="_blank" rel="noopener" title="View on PubMed">PMID:25772230</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> To ensure optimal outcomes, educational programs that integrate culturally relevant approaches should highlight the importance of risk-factor control in minority patients.</li>
+<li style="margin-bottom:6px;line-height:1.4;">While the prevalence of diabetes has risen across all racial/ethnic groups over the past 30 years, rates are higher in minority populations.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Additionally, we performed a comprehensive literature search of clinical trials that evaluated glucose-lowering drugs in racial minority populations.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Clinical data are needed for guiding diabetes treatment among racial minority populations.</li>
+<li style="margin-bottom:6px;line-height:1.4;">A multi-faceted approach, including vigilant screening in at-risk populations, aggressive treatment, and culturally sensitive patient education, could help reduce the burden of diabetes on minority populations.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/39697180/" target="_blank" style="color:#2c5f8a;">Health and Racial Disparities in Diabetes Mellitus Prevalence, Management, Policies, and Outcomes in</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Yedjou C, Sims J | J Community Med Public Health 2024 | <a href="https://pubmed.ncbi.nlm.nih.gov/39697180/" target="_blank" rel="noopener" title="View on PubMed">PMID:39697180</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The overall objective of this review article is to comprehensively address racial disparities in DM within the United States, emphasizing prevalence rates, management strategies, and health outcomes across diverse ethnic groups.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Socioeconomic factors, particularly income and education, significantly contribute to these disparities.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Our findings highlight significant racial disparities in DM prevalence, with minority populations, including African Americans, Hispanics, and Native Americans, consistently exhibiting higher rates than their Caucasian counterparts.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Additionally, challenges in DM management, including access to optimal treatment modalities, medication adherence, and diabetes self-management education, are identified among minority populations.</li>
+<li style="margin-bottom:6px;line-height:1.4;">This review article contributes to the growing body of evidence guiding policymakers, healthcare professionals, and researchers in developing targeted strategies to achieve health equity in diabetes management and prevention.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40814306/" target="_blank" style="color:#2c5f8a;">Race and ethnic disparities in insulin pump and continuous glucose monitor use between 2017 and 2024</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Underwood P, Chirokas K | J Health Equity 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/40814306/" target="_blank" rel="noopener" title="View on PubMed">PMID:40814306</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Secondary analyses examining the influence of glycemic control, patient experience, and social determinants of health (SDoH) on the relationship between race/ethnicity and DM technology use were conducted.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/29414425/" target="_blank" style="color:#2c5f8a;">Neighborhood characteristics, food deserts, rurality, and type 2 diabetes in youth: Findings from a </a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Liese A, Lamichhane A | Health Place 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29414425/" target="_blank" rel="noopener" title="View on PubMed">PMID:29414425</a> | Relevance: 7
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">We used data from the SEARCH for Diabetes in Youth Case-Control Study to evaluate the association of neighborhood characteristics, including food desert status of the census tract, with T2D in youth.</li>
+<li style="margin-bottom:6px;line-height:1.4;">We found a larger proportion of T2D cases in tracts with lower population density, larger minority population, and lower levels of education, household income, housing value, and proportion of the population in a managerial position.</li>
+<li style="margin-bottom:6px;line-height:1.4;">However, most associations of T2D with neighborhood socioeconomic characteristics were attributable to differences in individual characteristics.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37016949/" target="_blank" style="color:#2c5f8a;">Involvement of Racially and Ethnically Minoritized Youths in Behavioral Type 1 Diabetes Intervention</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Dimentstein K, Greenberg B | J Pediatr Psychol 2023 | PMID:37016949 | Relevance: 7
+                    Dimentstein K, Greenberg B | J Pediatr Psychol 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37016949/" target="_blank" rel="noopener" title="View on PubMed">PMID:37016949</a> | Relevance: 7
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Nonetheless, disparities in T1D treatment and outcomes are pervasive among racially/ethnically minoritized (REM) youth and a systematic review examining the inclusion of REM youth in psychosocial interventions is lacking.</li>
@@ -300,12 +447,39 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" style="color:#2c5f8a;">Inequities in Health Outcomes in Children and Adults With Type 1 Diabetes: Data From the T1D Exchang</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Majidi S, Ebekozien O | Clin Diabetes 2021 | PMID:34421203 | Relevance: 5
+                    Majidi S, Ebekozien O | Clin Diabetes 2021 | <a href="https://pubmed.ncbi.nlm.nih.gov/34421203/" target="_blank" rel="noopener" title="View on PubMed">PMID:34421203</a> | Relevance: 5
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> For people with type 1 diabetes who require increased medical access and care, disparities are seen in access to care and health outcomes.</li>
 <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> These results underscore the crucial need to study and overcome the barriers that lead to inequities in the care and outcomes of people with type 1 diabetes.</li>
 <li style="margin-bottom:6px;line-height:1.4;">Health care inequities among racial and ethnic groups remain prevalent.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/22349456/" target="_blank" style="color:#2c5f8a;">Recruitment of a rural, southern, predominantly African-American population into a diabetes self-man</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Andreae S, Halanych J | Contemp Clin Trials 2012 | <a href="https://pubmed.ncbi.nlm.nih.gov/22349456/" target="_blank" rel="noopener" title="View on PubMed">PMID:22349456</a> | Relevance: 4
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">We describe recruitment and data collection approaches used, focusing on strategies that created community partnerships and facilitated recruitment in underserved, rural, largely minority communities.</li>
+<li style="margin-bottom:6px;line-height:1.4;">We exceeded recruitment goals in underserved, rural communities in Alabama.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25131812/" target="_blank" style="color:#2c5f8a;">Strategies addressing barriers to clinical trial enrollment of underrepresented populations: a syste</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Heller C, Balls-Berry J | Contemp Clin Trials 2014 | <a href="https://pubmed.ncbi.nlm.nih.gov/25131812/" target="_blank" rel="noopener" title="View on PubMed">PMID:25131812</a> | Relevance: 4
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The strategies were further categorized by whether they would address barriers associated with minority perceptions of the research process and barriers related to how studies were designed and implemented.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Underrepresentation of racial and ethnic minorities in clinical trials remains a reality while they have disproportionately higher rates of health disparities.</li>
+<li style="margin-bottom:6px;line-height:1.4;">A systematic review of the literature on interventions addressing enrollment barriers to clinical trials for racial and ethnic minorities was performed in Ovid MEDLINE, EBSCO Megafile, and EBSCO CINAHL.</li>
                 </ul>
             </div>
             </div>
@@ -316,7 +490,7 @@
                 <span style="color:#8B6914;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[GOLD]</span>
                 Gap #3: Insulin Resistance in Islet Transplant
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    15 papers | 54 findings
+                    16 papers | 58 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-3" style="display:block;">
@@ -326,7 +500,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" style="color:#2c5f8a;">Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free im</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Shapiro A, Lakey J | N Engl J Med 2000 | PMID:10911004 | Relevance: 13
+                    Shapiro A, Lakey J | N Engl J Med 2000 | <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID:10911004</a> | Relevance: 13
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Seven consecutive patients with type 1 diabetes and a history of severe hypoglycemia and metabolic instability underwent islet transplantation in conjunction with a glucocorticoid-free immunosuppressive regimen consisting of sirolimus, tacrolimus, and daclizumab.</li>
@@ -340,7 +514,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" style="color:#2c5f8a;">A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppress</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Wisel S, Posselt A | Transpl Int 2023 | PMID:37359825 | Relevance: 13
+                    Wisel S, Posselt A | Transpl Int 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a> | Relevance: 13
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Ten consecutive non-uremic patients with Type 1 diabetes underwent islet transplant with immunosuppression based on belatacept (BELA; n = 5) or efalizumab (EFA; n = 5).</li>
@@ -356,7 +530,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" style="color:#2c5f8a;">Isolated human islets trigger an instant blood mediated inflammatory reaction: implications for intr</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Bennet W, Groth C | Ups J Med Sci 2000 | PMID:11095109 | Relevance: 11
+                    Bennet W, Groth C | Ups J Med Sci 2000 | <a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" rel="noopener" title="View on PubMed">PMID:11095109</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> When heparin and a complement inhibitor (SCRI), was added to the system, IBMIR was suppressed and islet damage reduced.</li>
@@ -372,7 +546,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" style="color:#2c5f8a;">Association between primary graft function and 5-year outcomes of islet allogeneic transplantation i</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | PMID:37105208 | Relevance: 11
+                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We evaluated the distinct association between primary graft function (PGF) and 5-year islet transplantation outcomes.</li>
@@ -388,7 +562,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank" style="color:#2c5f8a;">International trial of the Edmonton protocol for islet transplantation.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Shapiro A, Ricordi C | N Engl J Med 2006 | PMID:17005949 | Relevance: 10
+                    Shapiro A, Ricordi C | N Engl J Med 2006 | <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank" rel="noopener" title="View on PubMed">PMID:17005949</a> | Relevance: 10
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">We conducted an international, multicenter trial to explore the feasibility and reproducibility of islet transplantation with the use of a single common protocol (the Edmonton protocol).</li>
@@ -403,7 +577,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/18094377/" target="_blank" style="color:#2c5f8a;">Reduced exposure to calcineurin inhibitors in renal transplantation.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ekberg H, Tedesco-Silva H | N Engl J Med 2007 | PMID:18094377 | Relevance: 9
+                    Ekberg H, Tedesco-Silva H | N Engl J Med 2007 | <a href="https://pubmed.ncbi.nlm.nih.gov/18094377/" target="_blank" rel="noopener" title="View on PubMed">PMID:18094377</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Allograft survival differed significantly among the four groups (P=0.02) and was highest in the low-dose tacrolimus group (94.2%), followed by the low-dose cyclosporine group (93.1%), the standard-dose cyclosporine group (89.3%), and the low-dose sirolimus group (89.3%).</li>
@@ -419,7 +593,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" style="color:#2c5f8a;">Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept for cl</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Takita M, Matsumoto S | Clin Transplant 2012 | PMID:23061757 | Relevance: 9
+                    Takita M, Matsumoto S | Clin Transplant 2012 | <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" rel="noopener" title="View on PubMed">PMID:23061757</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">We have implemented a new immunosuppression protocol with antithymoglobulin plus anti-inflammatory agents of anakinra and eternacept for induction and tacrolimus plus mycophenolate mofetil for maintenance [T-cell depletion with anti-inflammatory (TCD-AI) protocol], resulting in successful single-donor ICT.</li>
@@ -432,7 +606,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" style="color:#2c5f8a;">2008 Update from the Collaborative Islet Transplant Registry.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Alejandro R, Barton F | Transplantation 2008 | PMID:19104422 | Relevance: 8
+                    Alejandro R, Barton F | Transplantation 2008 | <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" rel="noopener" title="View on PubMed">PMID:19104422</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This report summarizes the primary efficacy and the safety outcomes of islet transplantation reported to the NIDDK and JDRF funded Collaborative Islet Transplant Registry (CITR), currently the most comprehensive collection of human-to-human islet transplant data.</li>
@@ -445,29 +619,30 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" style="color:#2c5f8a;">Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/16898223/" target="_blank" style="color:#2c5f8a;">Chemokines and their receptors in islet allograft rejection and as targets for tolerance induction.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Markmann J, Rickels M | Am J Transplant 2021 | PMID:32627352 | Relevance: 7
+                    Merani S, Truong W | Cell Transplant 2006 | <a href="https://pubmed.ncbi.nlm.nih.gov/16898223/" target="_blank" rel="noopener" title="View on PubMed">PMID:16898223</a> | Relevance: 7
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> These results add to evidence establishing allogeneic islet transplant as a safe and effective treatment for patients with T1D and unstable glucose control despite intensive insulin treatment, supporting the indication for PHPI in the post-renal transplant setting.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Allogeneic islet transplant offers a minimally invasive option for cell replacement in the treatment of type 1 diabetes (T1D).</li>
-<li style="margin-bottom:6px;line-height:1.4;">The procedure was safe and kidney allograft function remained stable after 3 years.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;">Importantly, chemokine blockade may potentiate tolerance induction regimens to be used following transplantation surgery, and prevent the need for life-long immunosuppression of islet transplant recipients.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Islet transplantation introduces insulin secreting tissue into type 1 diabetes mellitus recipients, relieving patients from exogenous insulin injection.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Chemokine blockade, using antagonists and monoclonal antibodies directed against chemokine receptors, is an emerging and specific immunosuppressive strategy.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Here, the role for chemokine blockade in islet transplant rejection and tolerance is reviewed.</li>
                 </ul>
             </div>
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank" style="color:#2c5f8a;">Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancre</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" style="color:#2c5f8a;">Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Shapiro A, Thompson D | Cell Rep Med 2021 | PMID:35028608 | Relevance: 7
+                    Markmann J, Rickels M | Am J Transplant 2021 | <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" rel="noopener" title="View on PubMed">PMID:32627352</a> | Relevance: 7
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">In this study of 17 subjects aged 22-57 with type 1 diabetes, PEC-01 cells were implanted subcutaneously in VC-02 macroencapsulation devices, allowing for direct vascularization of the cells.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Most reported adverse events were related to surgical implant or explant procedures (27.9%) or to side-effects of immunosuppression (33.7%).</li>
-<li style="margin-bottom:6px;line-height:1.4;">Initial data suggest that pluripotent stem cells, which can be propagated to the desired biomass and differentiated into pancreatic islet-like tissue, may offer a scalable, renewable alternative to pancreatic islet transplants.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> These results add to evidence establishing allogeneic islet transplant as a safe and effective treatment for patients with T1D and unstable glucose control despite intensive insulin treatment, supporting the indication for PHPI in the post-renal transplant setting.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Allogeneic islet transplant offers a minimally invasive option for cell replacement in the treatment of type 1 diabetes (T1D).</li>
+<li style="margin-bottom:6px;line-height:1.4;">The procedure was safe and kidney allograft function remained stable after 3 years.</li>
                 </ul>
             </div>
             </div>
@@ -478,7 +653,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #4: Drug Repurposing for Islet Transplant
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    11 papers | 35 findings
+                    12 papers | 39 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-4" style="display:none;">
@@ -488,7 +663,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" style="color:#2c5f8a;">Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept for cl</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Takita M, Matsumoto S | Clin Transplant 2012 | PMID:23061757 | Relevance: 11
+                    Takita M, Matsumoto S | Clin Transplant 2012 | <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" target="_blank" rel="noopener" title="View on PubMed">PMID:23061757</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">We have implemented a new immunosuppression protocol with antithymoglobulin plus anti-inflammatory agents of anakinra and eternacept for induction and tacrolimus plus mycophenolate mofetil for maintenance [T-cell depletion with anti-inflammatory (TCD-AI) protocol], resulting in successful single-donor ICT.</li>
@@ -500,7 +675,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" style="color:#2c5f8a;">2008 Update from the Collaborative Islet Transplant Registry.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Alejandro R, Barton F | Transplantation 2008 | PMID:19104422 | Relevance: 10
+                    Alejandro R, Barton F | Transplantation 2008 | <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" rel="noopener" title="View on PubMed">PMID:19104422</a> | Relevance: 10
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This report summarizes the primary efficacy and the safety outcomes of islet transplantation reported to the NIDDK and JDRF funded Collaborative Islet Transplant Registry (CITR), currently the most comprehensive collection of human-to-human islet transplant data.</li>
@@ -516,7 +691,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" style="color:#2c5f8a;">Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free im</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Shapiro A, Lakey J | N Engl J Med 2000 | PMID:10911004 | Relevance: 9
+                    Shapiro A, Lakey J | N Engl J Med 2000 | <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID:10911004</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Seven consecutive patients with type 1 diabetes and a history of severe hypoglycemia and metabolic instability underwent islet transplantation in conjunction with a glucocorticoid-free immunosuppressive regimen consisting of sirolimus, tacrolimus, and daclizumab.</li>
@@ -530,7 +705,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" style="color:#2c5f8a;">Isolated human islets trigger an instant blood mediated inflammatory reaction: implications for intr</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Bennet W, Groth C | Ups J Med Sci 2000 | PMID:11095109 | Relevance: 8
+                    Bennet W, Groth C | Ups J Med Sci 2000 | <a href="https://pubmed.ncbi.nlm.nih.gov/11095109/" target="_blank" rel="noopener" title="View on PubMed">PMID:11095109</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> When heparin and a complement inhibitor (SCRI), was added to the system, IBMIR was suppressed and islet damage reduced.</li>
@@ -546,7 +721,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" style="color:#2c5f8a;">A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppress</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Wisel S, Posselt A | Transpl Int 2023 | PMID:37359825 | Relevance: 8
+                    Wisel S, Posselt A | Transpl Int 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In our series, repeat islet transplant is ineffective at maintaining long-term insulin independence.</li>
@@ -559,10 +734,25 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/16898223/" target="_blank" style="color:#2c5f8a;">Chemokines and their receptors in islet allograft rejection and as targets for tolerance induction.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Merani S, Truong W | Cell Transplant 2006 | <a href="https://pubmed.ncbi.nlm.nih.gov/16898223/" target="_blank" rel="noopener" title="View on PubMed">PMID:16898223</a> | Relevance: 7
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Importantly, chemokine blockade may potentiate tolerance induction regimens to be used following transplantation surgery, and prevent the need for life-long immunosuppression of islet transplant recipients.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Islet transplantation introduces insulin secreting tissue into type 1 diabetes mellitus recipients, relieving patients from exogenous insulin injection.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Chemokine blockade, using antagonists and monoclonal antibodies directed against chemokine receptors, is an emerging and specific immunosuppressive strategy.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Here, the role for chemokine blockade in islet transplant rejection and tolerance is reviewed.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank" style="color:#2c5f8a;">International trial of the Edmonton protocol for islet transplantation.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Shapiro A, Ricordi C | N Engl J Med 2006 | PMID:17005949 | Relevance: 7
+                    Shapiro A, Ricordi C | N Engl J Med 2006 | <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank" rel="noopener" title="View on PubMed">PMID:17005949</a> | Relevance: 7
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Islet transplantation offers the potential to improve glycemic control in a subgroup of patients with type 1 diabetes mellitus who are disabled by refractory hypoglycemia.</li>
@@ -577,11 +767,11 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" style="color:#2c5f8a;">A health economic analysis of clinical islet transplantation.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Beckwith J, Nyman J | Clin Transplant 2012 | PMID:21323736 | Relevance: 6
+                    Beckwith J, Nyman J | Clin Transplant 2012 | <a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" rel="noopener" title="View on PubMed">PMID:21323736</a> | Relevance: 6
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Islet transplantation had a cumulative cost of $519,000, a cumulative effectiveness of 10.9 QALY, and an average cost-effectiveness ratio of $47,800.</li>
-<li style="margin-bottom:6px;line-height:1.4;">In sensitivity analyses, the need for one instead of two transplants during the first year did not affect the conclusions, and islet transplantation remained cost-saving up to an initial cost of the procedure of $240,000.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Islet transplantation had a cumulative cost of $519,000, a cumulative effectiveness of 10.9 QALY, and an average cost-effectiveness ratio of $47,800. <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:21323736</a>]</span></li>
+<li style="margin-bottom:6px;line-height:1.4;">In sensitivity analyses, the need for one instead of two transplants during the first year did not affect the conclusions, and islet transplantation remained cost-saving up to an initial cost of the procedure of $240,000. <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/21323736/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:21323736</a>]</span></li>
                 </ul>
             </div>
 
@@ -590,7 +780,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" style="color:#2c5f8a;">Association between primary graft function and 5-year outcomes of islet allogeneic transplantation i</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | PMID:37105208 | Relevance: 6
+                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> | Relevance: 6
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We evaluated the distinct association between primary graft function (PGF) and 5-year islet transplantation outcomes.</li>
@@ -606,23 +796,11 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" style="color:#2c5f8a;">Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Markmann J, Rickels M | Am J Transplant 2021 | PMID:32627352 | Relevance: 5
+                    Markmann J, Rickels M | Am J Transplant 2021 | <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" rel="noopener" title="View on PubMed">PMID:32627352</a> | Relevance: 5
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> These results add to evidence establishing allogeneic islet transplant as a safe and effective treatment for patients with T1D and unstable glucose control despite intensive insulin treatment, supporting the indication for PHPI in the post-renal transplant setting.</li>
 <li style="margin-bottom:6px;line-height:1.4;">Allogeneic islet transplant offers a minimally invasive option for cell replacement in the treatment of type 1 diabetes (T1D).</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank" style="color:#2c5f8a;">Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Reichman T, Markmann J | N Engl J Med 2025 | PMID:40544428 | Relevance: 5
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">All the participants also received glucocorticoid-free immunosuppressive therapy.</li>
                 </ul>
             </div>
             </div>
@@ -633,17 +811,33 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #5: Treg in Diabetic Neuropathy
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    12 papers | 40 findings
+                    14 papers | 50 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-5" style="display:none;">
                 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21864487/" target="_blank" style="color:#2c5f8a;">Isolation strategies of regulatory T cells for clinical trials: phenotype, function, stability, and </a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Ukena S, H&amp;#xf6;pting M | Exp Hematol 2011 | <a href="https://pubmed.ncbi.nlm.nih.gov/21864487/" target="_blank" rel="noopener" title="View on PubMed">PMID:21864487</a> | Relevance: 10
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Recent clinical results demonstrate the highly effective potency of regulatory T cells (Tregs) to control graft-versus-host disease (GvHD).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Invitro expansion of CD4(+)CD25(hi)CD45RA(+) and CD49d(-)CD127(-) Tregs resulted in cell populations with less suppressive potency compared with CD4(+)CD25(hi) expanded Tregs correlating well with a higher TSDR demethylation level.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Different Treg cell populations have been isolated from healthy donors and characterized by fluorescence activated cell sorting (FACS) analysis for their phenotypic marker and purity, functional properties by suppression assay, stability by Treg-specific demethylated region (TSDR) of the Foxp3 promoter and their invitro expansion capacity.</li>
+<li style="margin-bottom:6px;line-height:1.4;">In this presented study, we directly compared different Treg subpopulations in order to define the most promising Treg target cell population for cellular intervention studies with respect to their phenotype, functional properties, stability, and expansion capacity.</li>
+<li style="margin-bottom:6px;line-height:1.4;">The direct comparison of the respective Treg target cell populations identified CD4(+)CD25(hi)CD127(-) and CD4(+)CD25(hi)ICOS(+) Tregs as the most promising Treg population for fresh cell infusions in clinical trials with respect to cell yield, phenotype, function, and stability.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/32017635/" target="_blank" style="color:#2c5f8a;">Regulatory T Cells and Human Disease.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Sakaguchi S, Mikami N | Annu Rev Immunol 2020 | PMID:32017635 | Relevance: 10
+                    Sakaguchi S, Mikami N | Annu Rev Immunol 2020 | <a href="https://pubmed.ncbi.nlm.nih.gov/32017635/" target="_blank" rel="noopener" title="View on PubMed">PMID:32017635</a> | Relevance: 10
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Naturally occurring CD4+ regulatory T cells (Tregs), which specifically express the transcription factor FoxP3 in the nucleus and CD25 and CTLA-4 on the cell surface, are a functionally distinct T cell subpopulation actively engaged in the maintenance of immunological self-tolerance and homeostasis.</li>
@@ -658,7 +852,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/41567805/" target="_blank" style="color:#2c5f8a;">Regulatory T cell dysfunction and immunotherapeutic breakthroughs in type 1 diabetes.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Zhou K, Rong S | Front Endocrinol (Lausanne) 2025 | PMID:41567805 | Relevance: 10
+                    Zhou K, Rong S | Front Endocrinol (Lausanne) 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/41567805/" target="_blank" rel="noopener" title="View on PubMed">PMID:41567805</a> | Relevance: 10
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This review aimed to discuss Treg biology including the developmental trajectory, phenotypic heterogeneity, and suppressive function, by which we sought to emphasize their compromised role in T1D pathogenesis associated with genetic/epigenetic factors along with impaired cytokine signaling.</li>
@@ -674,7 +868,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank" style="color:#2c5f8a;">IL-17 and Th17 Cells.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Korn T, Bettelli E | Annu Rev Immunol 2009 | PMID:19132915 | Relevance: 9
+                    Korn T, Bettelli E | Annu Rev Immunol 2009 | <a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank" rel="noopener" title="View on PubMed">PMID:19132915</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">The participation of TGF-beta in the differentiation of Th17 cells places the Th17 lineage in close relationship with CD4+CD25+Foxp3+ regulatory T cells (Tregs), as TGF-beta also induces differentiation of naive T cells into Foxp3+ Tregs in the peripheral immune compartment.</li>
@@ -686,7 +880,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" style="color:#2c5f8a;">Regulatory T cells are key cerebroprotective immunomodulators in acute experimental stroke.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Liesz A, Suri-Payer E | Nat Med 2009 | PMID:19169263 | Relevance: 8
+                    Liesz A, Suri-Payer E | Nat Med 2009 | <a href="https://pubmed.ncbi.nlm.nih.gov/19169263/" target="_blank" rel="noopener" title="View on PubMed">PMID:19169263</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">We examined the role of the key immunomodulators CD4(+)CD25(+) forkhead box P3 (Foxp3)(+) regulatory T lymphocytes (T(reg) cells), after experimental brain ischemia.</li>
@@ -698,7 +892,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" style="color:#2c5f8a;">Lean, but not obese, fat is enriched for a unique population of regulatory T cells that affect metab</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Feuerer M, Herrero L | Nat Med 2009 | PMID:19633656 | Relevance: 8
+                    Feuerer M, Herrero L | Nat Med 2009 | <a href="https://pubmed.ncbi.nlm.nih.gov/19633656/" target="_blank" rel="noopener" title="View on PubMed">PMID:19633656</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> CD4(+) Foxp3(+) T regulatory (T(reg)) cells with a unique phenotype were highly enriched in the abdominal fat of normal mice, but their numbers were strikingly and specifically reduced at this site in insulin-resistant models of obesity.</li>
@@ -710,7 +904,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank" style="color:#2c5f8a;">Regulatory T Cell Responses in Participants with Type 1 Diabetes after a Single Dose of Interleukin-</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Todd J, Evangelou M | PLoS Med 2016 | PMID:27727279 | Relevance: 8
+                    Todd J, Evangelou M | PLoS Med 2016 | <a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank" rel="noopener" title="View on PubMed">PMID:27727279</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Primary analysis of the evaluable population (n = 39) found that the optimal doses of aldesleukin to induce 10% and 20% increases in Tregs were 0.101 106 IU/m2 (standard error [SE] = 0.078, 95% CI = -0.052, 0.254) and 0.497 106 IU/m2 (SE = 0.092, 95% CI = 0.316, 0.678), respectively.</li>
@@ -726,7 +920,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/12612578/" target="_blank" style="color:#2c5f8a;">Foxp3 programs the development and function of CD4+CD25+ regulatory T cells.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Fontenot J, Gavin M | Nat Immunol 2003 | PMID:12612578 | Relevance: 6
+                    Fontenot J, Gavin M | Nat Immunol 2003 | <a href="https://pubmed.ncbi.nlm.nih.gov/12612578/" target="_blank" rel="noopener" title="View on PubMed">PMID:12612578</a> | Relevance: 6
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Here we report that the forkhead transcription factor Foxp3 is specifically expressed in CD4+CD25+ regulatory T cells and is required for their development.</li>
@@ -742,7 +936,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" style="color:#2c5f8a;">Diabetic neuropathy.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Feldman E, Callaghan B | Nat Rev Dis Primers 2019 | PMID:31197153 | Relevance: 6
+                    Feldman E, Callaghan B | Nat Rev Dis Primers 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener" title="View on PubMed">PMID:31197153</a> | Relevance: 6
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Glucose control effectively halts the progression of diabetic neuropathy in patients with type 1 diabetes mellitus, but the effects are more modest in those with type 2 diabetes mellitus.</li>
@@ -758,7 +952,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/32953989/" target="_blank" style="color:#2c5f8a;">Human regulatory T cells (Treg) and their response to cancer.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Whiteside T | Expert Rev Precis Med Drug Dev 2019 | PMID:32953989 | Relevance: 6
+                    Whiteside T | Expert Rev Precis Med Drug Dev 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/32953989/" target="_blank" rel="noopener" title="View on PubMed">PMID:32953989</a> | Relevance: 6
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Regulatory T cells (Treg) and their role in health and disease is being intensively investigated.</li>
@@ -766,19 +960,6 @@
 <li style="margin-bottom:6px;line-height:1.4;">In cancer, Treg occupy a critical although not yet entirely understood role.</li>
 <li style="margin-bottom:6px;line-height:1.4;">Newly acquired insights into Treg indicate a much greater plasticity and functional heterogeneity of this T cell subset than was previously known.</li>
 <li style="margin-bottom:6px;line-height:1.4;">Functional redundancy of Treg and their interactions with a variety of immune and non-immune cellular targets emphasize the central role Treg play in cancer.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21775755/" target="_blank" style="color:#2c5f8a;">Efficacy and safety of antioxidant treatment with -lipoic acid over 4 years in diabetic polyneuropat</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ziegler D, Low P | Diabetes Care 2011 | PMID:21775755 | Relevance: 5
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Secondary outcome measures included NIS, NIS-LL, nerve conduction, and quantitative sensory tests (QSTs).</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Nerve conduction and QST results did not significantly worsen with placebo.</li>
                 </ul>
             </div>
             </div>
@@ -789,17 +970,90 @@
                 <span style="color:#8B6914;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[GOLD]</span>
                 Gap #6: CAR-T Access Barriers
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    3 papers | 7 findings
+                    13 papers | 32 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-6" style="display:none;">
                 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36109639/" target="_blank" style="color:#2c5f8a;">Anti-CD19 CAR T cell therapy for refractory systemic lupus erythematosus.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Mackensen A, M&amp;#xfc;ller F | Nat Med 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/36109639/" target="_blank" rel="noopener" title="View on PubMed">PMID:36109639</a> | Relevance: 11
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Five patients with SLE (four women and one man) with a median (range) age of 22 (6) years, median (range) disease duration of 4 (8) years and active disease (median (range) SLE disease activity index Systemic Lupus Erythematosus Disease Activity Index: 16 (8)) refractory to several immunosuppressive drug treatments were enrolled in a compassionate-use chimeric antigen receptor (CAR) T cell program.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Drug-free remission was maintained during longer follow-up (median (range) of 8 (12) months after CAR T cell administration) and even after the reappearance of B cells, which was observed after a mean (s.d.) of 11032d after CAR T cell treatment.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> These data suggest that CD19 CAR T cell transfer is feasible, tolerable and highly effective in SLE.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Autologous T cells from patients with SLE were transduced with a lentiviral anti-CD19 CAR vector, expanded and reinfused at a dose of 1106 CAR T cells per kg body weight into the patients after lymphodepletion with fludarabine and cyclophosphamide.</li>
+<li style="margin-bottom:6px;line-height:1.4;">CAR T cells expanded in vivo, led to deep depletion of B cells, improvement of clinical symptoms and normalization of laboratory parameters including seroconversion of anti-double-stranded DNA antibodies.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40249888/" target="_blank" style="color:#2c5f8a;">Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Salazar-Riojas R, Alvarado-Navarro D | JCO Glob Oncol 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/40249888/" target="_blank" rel="noopener" title="View on PubMed">PMID:40249888</a> | Relevance: 11
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> After T-cell culture harvest, the products contained a median CAR-T cell concentration of 16.5 106/mL (range, 7.7-22.2 106/mL), with a median transduction percentage of 44.7% (range, 39.2%-60.5%) and a median CD3+ cell viability of 97.7% (range, 90.4%-98.7%).</li>
+<li style="margin-bottom:6px;line-height:1.4;">To validate and replicate an automated decentralized CD19 chimeric antigen receptor T (CAR-T) cell manufacturing process from healthy adult volunteers in an academic institution in a middle-income country.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Clinical-grade CAR-T cell manufacturing was performed in a closed system using a second-generation CD19 vector with 41BB costimulatory domain.</li>
+<li style="margin-bottom:6px;line-height:1.4;">The target dose formulation was 1 106/kg viable CAR-T cells per volunteer.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Dose formulations were 1.1 CAR-T cells 106/kg (range, 1.0-1.2 CAR-T cells 106/kg).</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/37748491/" target="_blank" style="color:#2c5f8a;">CAR T-cell therapy in autoimmune diseases.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Schett G, Mackensen A | Lancet 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37748491/" target="_blank" rel="noopener" title="View on PubMed">PMID:37748491</a> | Relevance: 10
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The adoptive transfer of T cells engineered to target tumour cells via chimeric antigen receptors (CARs) has emerged as an effective treatment modality in B-cell malignancies.</li>
+<li style="margin-bottom:6px;line-height:1.4;">In the last 2 years treatment with autologous CAR T cells directed against the CD19 antigen has been introduced in therapy of autoimmune disease.</li>
+<li style="margin-bottom:6px;line-height:1.4;">CD19 CAR T cells induced a rapid and sustained depletion of circulating B cells, as well as in a complete clinical and serological remission of refractory systemic lupus erythematosus and dermatomyositis.</li>
+<li style="margin-bottom:6px;line-height:1.4;">In this paper, we discuss the evolving strategies for targeting autoreactive B cells via CAR T cells, which might be used for targeted therapy in autoimmune diseases.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" style="color:#2c5f8a;">GMP CAR-T cell production.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Gee A | Best Pract Res Clin Haematol 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29909913/" target="_blank" rel="noopener" title="View on PubMed">PMID:29909913</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">The clinical success achieved using CD19-directed CAR-T cells has stimulated many academic institutions to explore the feasibility of manufacturing these, and other CAR-T cells, in-house.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" style="color:#2c5f8a;">Cytokine Release Syndrome with Chimeric Antigen Receptor T Cell Therapy.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Frey N, Porter D | Biol Blood Marrow Transplant 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/30586620/" target="_blank" rel="noopener" title="View on PubMed">PMID:30586620</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Chimeric antigen receptor (CAR)-modified T cells (CAR-Ts) targeting CD19 have resulted in unprecedented durable remissions for patients with relapsed and refractory B cell malignancies.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Cytokine release syndrome (CRS), resulting from rapid immune activation induced by CAR-Ts, is the most significant treatment-related toxicity.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Collaborative efforts are underway to harmonize the definition and grading of CRS to allow for better interpretation of toxicities across CAR-T products and clinical trials and allow for informed management algorithms.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/29567707/" target="_blank" style="color:#2c5f8a;">CAR T cell immunotherapy for human cancer.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    June C, O'Connor R | Science 2018 | PMID:29567707 | Relevance: 8
+                    June C, O'Connor R | Science 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29567707/" target="_blank" rel="noopener" title="View on PubMed">PMID:29567707</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">The field has rapidly advanced from a promising form of immuno-oncology in preclinical models to the recent commercial approvals of chimeric antigen receptor (CAR) T cells to treat leukemia and lymphoma.</li>
@@ -808,10 +1062,48 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" style="color:#2c5f8a;">Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Ad</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Lin J, Muffly L | J Clin Oncol 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" rel="noopener" title="View on PubMed">PMID:31157579</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Two anti-CD19 chimeric antigen receptor T-cell (CAR-T) therapies are approved for diffuse large B-cell lymphoma, axicabtagene ciloleucel (axi-cel) and tisagenlecleucel; each costs $373,000. <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:31157579</a>]</span></li>
+<li style="margin-bottom:6px;line-height:1.4;">Administering CAR-T to all indicated patients would increase US health care costs by approximately $10 billion over 5 years. <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:31157579</a>]</span></li>
+<li style="margin-bottom:6px;line-height:1.4;">At 2018 prices, it is possible that both CAR-T therapies meet a less than $150,000/QALY threshold. <span style="color:#2c5f8a;font-size:0.85em;">[<a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank" style="color:#2c5f8a;text-decoration:none;">PMID:31157579</a>]</span></li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" style="color:#2c5f8a;">CAR-T Regulatory (CAR-Treg) Cells: Engineering and Applications.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Arjomandnejad M, Kopec A | Biomedicines 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/35203496/" target="_blank" rel="noopener" title="View on PubMed">PMID:35203496</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">To address this limitation, antigen specificity can be conferred to Tregs by engineering the expression of transgenic T-cell receptor (TCR) or chimeric antigen receptor (CAR).</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36288281/" target="_blank" style="color:#2c5f8a;">Phase 1 clinical trial of CRISPR-engineered CAR19 universal T cells for treatment of children with r</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Ottaviano G, Georgiadis C | Sci Transl Med 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/36288281/" target="_blank" rel="noopener" title="View on PubMed">PMID:36288281</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Genome editing of allogeneic T cells can provide &quot;off-the-shelf&quot; alternatives to autologous chimeric antigen receptor (CAR) T cell therapies.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" style="color:#2c5f8a;">Antigen-Specific Chimeric Antigen Receptor-T Regulatory Cells Home to Human Islets, Suppress Cytotox</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Imam S, Dar P | Diabetes Technol Ther 2025 | PMID:41468096 | Relevance: 7
+                    Imam S, Dar P | Diabetes Technol Ther 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> | Relevance: 7
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Results: Using live-cell imaging, we observed these glutamic acid decarboxylase, 65 kD isoform (GAD65)-CAR-Tregs home to human pancreatic islets exvivo and proliferate upon encountering the cognate GAD65 antigen in the islets.</li>
@@ -819,18 +1111,6 @@
 <li style="margin-bottom:6px;line-height:1.4;">We confirmed these findings invivo, in a spontaneous humanized T1D mouse model (T1D mice) by showing that mouse GAD65-CAR-Tregs also suppressed diabetogenic T responsive (Tresp) cells and were superior to normal Tregs.</li>
 <li style="margin-bottom:6px;line-height:1.4;">We also show that mouse GAD65-CAR-Tregs homed to mouse pancreatic islets invivo.</li>
 <li style="margin-bottom:6px;line-height:1.4;">Moreover, we conducted a 30-day preclinical trial in T1D mice, and observed normalization of fasting blood glucose, fasting insulin, and glucose tolerance tests in GAD65-CAR-Treg-treated T1D mice.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/28397826/" target="_blank" style="color:#2c5f8a;">Immunotherapy: Hiding in plain sight: immune escape in the era of targeted T-cell-based immunotherap</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Daniyan A, Brentjens R | Nat Rev Clin Oncol 2017 | PMID:28397826 | Relevance: 5
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">Adoptive cellular therapy (ACT) is now considered a bona fide treatment modality within the evolving field of anticancer immunotherapy.</li>
                 </ul>
             </div>
             </div>
@@ -841,7 +1121,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #7: GKA Drug Repurposing
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    5 papers | 16 findings
+                    15 papers | 61 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-7" style="display:none;">
@@ -851,7 +1131,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" style="color:#2c5f8a;">Recent drug development of dorzagliatin, a new glucokinase activator, with the potential to treat Ty</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Jiang Y, Wang L | J Diabetes 2024 | PMID:38783768 | Relevance: 14
+                    Jiang Y, Wang L | J Diabetes 2024 | <a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" rel="noopener" title="View on PubMed">PMID:38783768</a> | Relevance: 14
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Glucokinase activators (GKA) represented by dorzagliatin could activate GK and mimic its function that triggers a counter-regulatory response to blood glucose changes.</li>
@@ -864,10 +1144,26 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40272935/" target="_blank" style="color:#2c5f8a;">Functional and Mechanistic Explanation for the Unique Clinical Success of the Glucokinase Activator </a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Roman J, Yuan Y | Diabetes 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/40272935/" target="_blank" rel="noopener" title="View on PubMed">PMID:40272935</a> | Relevance: 14
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">The type 2 diabetes (T2D) treatment dorzagliatin has achieved singular success among its drug class, known as glucokinase (GK) activators (GKAs).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Dorzagliatin improved glucose-stimulated insulin secretion in a dose- and glucose-dependent manner, in contrast to MK-0941, which induced maximal insulin secretion at low doses and glucose concentrations.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> To understand these functional differences, the atomic resolution structure of the dorzagliatin-GK complex was determined and compared with the GK-MK-0941 structure.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> A comprehensive approach using human islet perifusions, enzyme kinetics, X-ray crystallography, and modeling studies revealed the unique mechanism by which dorzagliatin activates GK.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Glucokinase (GK) activators (GKAs) are a long-sought therapeutic modality for the treatment of type 2 diabetes.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank" style="color:#2c5f8a;">Assessing the potential of glucokinase activators in diabetes therapy.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Matschinsky F | Nat Rev Drug Discov 2009 | PMID:19373249 | Relevance: 13
+                    Matschinsky F | Nat Rev Drug Discov 2009 | <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank" rel="noopener" title="View on PubMed">PMID:19373249</a> | Relevance: 13
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Glucokinase serves as a glucose sensor of the insulin-producing pancreatic islet beta-cells, controls the conversion of glucose to glycogen in the liver and regulates hepatic glucose production.</li>
@@ -878,42 +1174,112 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank" style="color:#2c5f8a;">The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study of TT</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24056026/" target="_blank" style="color:#2c5f8a;">Treatment with glucokinase activator, YH-GKA, increases cell proliferation and decreases glucotoxic </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Klein K, Freeman J | Diabetes Care 2021 | PMID:33622669 | Relevance: 9
+                    Oh Y, Lee Y | Eur J Pharm Sci 2014 | <a href="https://pubmed.ncbi.nlm.nih.gov/24056026/" target="_blank" rel="noopener" title="View on PubMed">PMID:24056026</a> | Relevance: 12
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We conducted a randomized controlled trial to determine whether TTP399, a novel hepatoselective glucokinase activator, improved glycemic control in people with type 1 diabetes without increasing hypoglycemia or ketosis.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> YH-GKA treatment increased cell numbers at 3 mM glucose via upregulation of insulin receptor substrate-2 and subsequent activation of AKT/protein kinase B phosphorylation.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> YH-GKA also increased beta-catenin and cyclin D2 mRNA expression and inactivated GSK3 by increasing phosphorylation.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Moreover, YH-GKA reduced annexin-V-stained cells and expression levels of cleaved poly (ADP-ribose) polymerase and caspase-3 induced by glucotoxicity.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> YH-GKA inhibited apoptotic signaling via induction of ATP content, mitochondrial membrane potential, and citrate synthase activity and was correlated with changes of the mitochondrial function-related genes.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> YH-GKA also increased interaction between GK and voltage-dependent anion-selective channel protein.</li>
                 </ul>
             </div>
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40573322/" target="_blank" style="color:#2c5f8a;">In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3K Inhibitor-I</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank" style="color:#2c5f8a;">Dorzagliatin add-on therapy to metformin in patients with type 2 diabetes: a randomized, double-blin</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Jin G, Zheng K | Pharmaceuticals (Basel) 2025 | PMID:40573322 | Relevance: 7
+                    Yang W, Zhu D | Nat Med 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551292</a> | Relevance: 12
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Objectives: The anticancer effects of PI3K inhibitors (PI3Ki) are constrained by their hyperglycemic side effects, while the efficacy of conventional hypoglycemic agents, such as insulin, metformin, and SGLT-2 inhibitors, in mitigating PI3Ki-induced hyperglycemia remains suboptimal. Dorzagliatin, a novel glucokinase activator, has been approved in China for the management of hyperglycemia, offering a promising alternative.</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In contrast, co-administration of these PI3Ki with dorzagliatin resulted in minimal increase in their plasma exposure.</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Conclusions: Our findings indicate that the drug-drug interactions (DDIs) between dorzagliatin and multiple PI3Ki (including WX390 and BYL719) may partially account for the enhanced antitumor efficacy observed in the combination therapy group compared to PI3Ki monotherapy.</li>
-<li style="margin-bottom:6px;line-height:1.4;">This study aims to investigate the pharmacokinetic properties and potential mechanisms of drug interactions of dorzagliatin in the regulation of PI3K-induced hyperglycemia.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Blood glucose levels at various time points and tumor volume changes over a four-week period were assessed to explore the interactions when PI3Ki were combined with dorzagliatin.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;">Dorzagliatin, a dual-acting orally bioavailable glucokinase activator targeting both the pancreas and liver glucokinase, decreases postprandial glucose in patients with T2D.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In this randomized, double-blind, placebo-controlled phase 3 trial, the efficacy and safety of dorzagliatin as an add-on therapy to metformin were assessed in patients with T2D who had inadequate glycemic control using metformin alone.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The primary efficacy endpoint was the change in glycated hemoglobin (HbA1c) levels from baseline to week 24, and safety was assessed throughout the trial. At week 24, the least-squares mean change from baseline in HbA1c (95% confidence interval (CI)) was -1.02% (-1.11, -0.93) in the dorzagliatin group and -0.36% (-0.45, -0.26) in the placebo group (estimated treatment difference, -0.66%; 95% CI: -0.79, -0.53; P&amp;lt;0.0001).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In patients with T2D who experienced inadequate glycemic control with metformin alone, dorzagliatin resulted in effective glycemic control with good tolerability and safety profile ( NCT03141073 ).</li>
+<li style="margin-bottom:6px;line-height:1.4;">Metformin, the first-line therapy for type 2 diabetes (T2D), decreases hepatic glucose production and reduces fasting plasma glucose levels.</li>
                 </ul>
             </div>
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank" style="color:#2c5f8a;">The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating t</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/37223016/" target="_blank" style="color:#2c5f8a;">Evaluation of efficacy and safety of glucokinase activators-a systematic review and meta-analysis.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Matschinsky F, Wilson D | Front Physiol 2019 | PMID:30949058 | Relevance: 5
+                    Yang W, Wu H | Front Endocrinol (Lausanne) 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37223016/" target="_blank" rel="noopener" title="View on PubMed">PMID:37223016</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">It is hypothesized that glucokinase (GCK) is the glucose sensor not only for regulation of insulin release by pancreatic -cells, but also for the rest of the cells that contribute to glucose homeostasis in mammals.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Having a common glucose sensor couples complementary regulatory mechanisms into a tightly regulated and stable glucose homeostatic network.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;">Glucokinase activators (GKAs) promote the activity of glucokinase (GK) and is under development for the treatment of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The efficacy and safety of GKAs require evaluation.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In type 2 diabetes, the level of HbA1c decreased greater in patients with GKA treatment compared with placebo (WMD = -0.339%, 95% CI -0.524 to -0.154%, P &amp;lt; 0.001).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The OR comparing GKA versus placebo was 1.448 for risk of hypoglycemia (95% CI 0.808 to 2.596, P = 0.214).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The WMD comparing GKA versus placebo was 0.322 mmol/L for triglyceride (TG) levels (95% CI 0.136 to 0.508 mmol/L, P = 0.001).</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank" style="color:#2c5f8a;">Dorzagliatin in drug-nave patients with type 2 diabetes: a randomized, double-blind, placebo-control</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Zhu D, Li X | Nat Med 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551294</a> | Relevance: 10
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Dorzagliatin is a dual-acting, orally bioavailable glucokinase activator that enhances glucokinase activity in a glucose-dependent manner, improves glucose-stimulated insulin secretion and demonstrates effects on glycemic control in patients with T2D.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We report the findings of a randomized, double-blind, placebo-controlled phase 3 clinical trial to evaluate the efficacy and safety of dorzagliatin in patients with T2D.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Safety was assessed throughout the trial. At week 24, the least-squares mean change in glycated hemoglobin from baseline (95% confidence interval) was -1.07% (-1.19%, -0.95%) in the dorzagliatin group and -0.50% (-0.68%, -0.32%) in the placebo group (estimated treatment difference, -0.57%; 95% confidence interval: -0.79%, -0.36%; P&amp;lt;0.001).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In summary, dorzagliatin improved glycemic control in drug-nave patients with T2D and showed a good tolerability and safety profile.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Eligible drug-nave patients with T2D (n=463) were randomly assigned to the dorzagliatin or placebo group at a ratio of 2:1 for 24 weeks of double-blind treatment, followed by 28 weeks of open-label treatment with dorzagliatin for all patients.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank" style="color:#2c5f8a;">Dorzagliatin: First Approval.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Syed Y | Drugs 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank" rel="noopener" title="View on PubMed">PMID:36449148</a> | Relevance: 10
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Dorzagliatin (HuaTangNing) is an oral glucokinase activator that is being developed by Hua Medicine for the treatment of type 2 diabetes mellitus (T2DM), type 1 diabetes mellitus (T1DM) and diabetic kidney disease (DKD).</li>
+<li style="margin-bottom:6px;line-height:1.4;">Dorzagliatin improves glycaemic control by activating pancreatic and hepatic glucokinase in a glucose-dependent manner.</li>
+<li style="margin-bottom:6px;line-height:1.4;">In September 2022, dorzagliatin (with diet control and exercise) as monotherapy and as an add-on to metformin (when glycaemic control is inadequate with metformin alone) was approved in China for improving glycaemic control in adult patients with T2DM.</li>
+<li style="margin-bottom:6px;line-height:1.4;">This article summarizes the milestones in the development of dorzagliatin leading to this first approval.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/39629068/" target="_blank" style="color:#2c5f8a;">Evaluating the Overall Safety of Glucokinase Activators in Patients with Type 2 Diabetes Mellitus.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Liang T, Cao M | Diabetes Metab Syndr Obes 2024 | <a href="https://pubmed.ncbi.nlm.nih.gov/39629068/" target="_blank" rel="noopener" title="View on PubMed">PMID:39629068</a> | Relevance: 10
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This study aimed to assess the overall clinical adverse events (AEs) associated with glucokinase activators (GKAs) in patients with type 2 diabetes mellitus (T2DM).</li>
+<li style="margin-bottom:6px;line-height:1.4;">Glucokinase activators (GKAs) reduce blood glucose by increasing the activity of glucokinase (GK) and are being developed for the treatment of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> GKA treatment was associated with a higher risk of any AEs (OR 1.220, 95% CI 1.072-1.389), mild AEs (OR 1.373, 95% CI 1.085-1.738), hyperlipidemia (OR 1.532, 95% CI 1.071-2.189), and hyperuricemia (OR 2.768, 95% CI 1.562-4.903) compared to patients in the control groups.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The results of our meta-analysis indicated that GKAs were associated with a higher risk of any AEs, mild AEs, hyperlipidemia, and hyperuricemia.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Further subgroup analyses revealed that the increased occurrence of hyperlipidemia, and hyperuricemia mainly originated from dorzagliatin treatment.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/2189759/" target="_blank" style="color:#2c5f8a;">Glucokinase as glucose sensor and metabolic signal generator in pancreatic beta-cells and hepatocyte</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Matschinsky F | Diabetes 1990 | <a href="https://pubmed.ncbi.nlm.nih.gov/2189759/" target="_blank" rel="noopener" title="View on PubMed">PMID:2189759</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">This article reviews evidence for a pivotal role of glucokinase as glucose sensor of the pancreatic beta-cells.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Glucokinase explains the capacity, hexose specificity, affinities, sigmoidicity, and anomeric preference of pancreatic islet glycolysis, and because stimulation of glucose metabolism is a prerequisite of glucose stimulation of insulin release, glucokinase also explains many characteristics of this beta-cell function.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Glucokinase of the beta-cell is induced or activated by glucose in contrast to liver glucokinase, which is regulated by insulin.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Tissue-specific regulation corresponds with observations that liver and pancreatic beta-cell glucokinase are structurally distinct.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Glucokinase could play a glucose-sensor role in hepatocytes as well, and certain forms of diabetes mellitus might be due to glucokinase deficiencies in pancreatic beta-cells, hepatocytes, or both.</li>
                 </ul>
             </div>
             </div>
@@ -924,7 +1290,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #8: Immunomodulatory Drugs for LADA
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    16 papers | 56 findings
+                    23 papers | 92 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-8" style="display:none;">
@@ -934,7 +1300,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank" style="color:#2c5f8a;">Rituximab, B-lymphocyte depletion, and preservation of beta-cell function.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Pescovitz M, Greenbaum C | N Engl J Med 2009 | PMID:19940299 | Relevance: 11
+                    Pescovitz M, Greenbaum C | N Engl J Med 2009 | <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank" rel="noopener" title="View on PubMed">PMID:19940299</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> At 1 year, the mean AUC for the level of C peptide was significantly higher in the rituximab group than in the placebo group.</li>
@@ -950,7 +1316,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" style="color:#2c5f8a;">GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Krause S, Landherr U | Diabetes Care 2014 | PMID:24598244 | Relevance: 10
+                    Krause S, Landherr U | Diabetes Care 2014 | <a href="https://pubmed.ncbi.nlm.nih.gov/24598244/" target="_blank" rel="noopener" title="View on PubMed">PMID:24598244</a> | Relevance: 10
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Here, we asked whether GADA affinity was affected by the GAD65 antigen-specific vaccination and/or associated with -cell function in participants of this trial. GADA affinity was measured in sera of 46 LADA patients obtained prior to the first week and 20 weeks after the second injection with GAD-alum or placebo using competitive binding experiments with [125I]-labeled and unlabeled human GAD65.</li>
@@ -962,10 +1328,25 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/11484077/" target="_blank" style="color:#2c5f8a;">Titre and combination of ICA and autoantibodies to glutamic acid decarboxylase discriminate two clin</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Lohmann T, Kellner K | Diabetologia 2001 | <a href="https://pubmed.ncbi.nlm.nih.gov/11484077/" target="_blank" rel="noopener" title="View on PubMed">PMID:11484077</a> | Relevance: 9
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We concluded that the combination of ICA and GAD antibodies and high titre of GAD antibodies are characteristic of patients with insulin deficiency with the clinical features of Type I (insulin-dependent) diabetes mellitus (LADA-type 1).</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Single antibody positivity and low titre antibodies are markers for LADA-type 2 associated with the clinical and metabolic phenotype of Type II (non-insulin-dependent) diabetes patients.</li>
+<li style="margin-bottom:6px;line-height:1.4;">ABSTRACT AIMS/HYPOTHESIS: This study aimed to define the immunological parameters which could be used to identify patients with the distinct metabolic features of adult latent autoimmune diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">IA2 antibody status did not substantially contribute to the diagnosis or differentiation of LADA patients.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank" style="color:#2c5f8a;">Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Herold K, Gitelman S | Diabetes 2013 | PMID:23835333 | Relevance: 9
+                    Herold K, Gitelman S | Diabetes 2013 | <a href="https://pubmed.ncbi.nlm.nih.gov/23835333/" target="_blank" rel="noopener" title="View on PubMed">PMID:23835333</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We treated 52 subjects with new-onset T1D with teplizumab for 2 weeks at diagnosis and after 1 year in an open-label, randomized, controlled trial. In the intent to treat analysis of the primary end point, patients treated with teplizumab had a reduced decline in C-peptide at 2 years (mean -0.28 nmol/L [95% CI -0.36 to -0.20]) versus control (mean -0.46 nmol/L [95% CI -0.57 to -0.35]; P = 0.002), a 75% improvement.</li>
@@ -980,7 +1361,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/31180194/" target="_blank" style="color:#2c5f8a;">An Anti-CD3 Antibody, Teplizumab, in Relatives at Risk for Type 1 Diabetes.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Herold K, Bundy B | N Engl J Med 2019 | PMID:31180194 | Relevance: 9
+                    Herold K, Bundy B | N Engl J Med 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/31180194/" target="_blank" rel="noopener" title="View on PubMed">PMID:31180194</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The median time to the diagnosis of type 1 diabetes was 48.4 months in the teplizumab group and 24.4 months in the placebo group; the disease was diagnosed in 19 (43%) of the participants who received teplizumab and in 23 (72%) of those who received placebo.</li>
@@ -993,10 +1374,42 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/15266224/" target="_blank" style="color:#2c5f8a;">The role of C-peptide levels in screening for latent autoimmune diabetes in adults.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Bell D, Ovalle F | Am J Ther 2004 | <a href="https://pubmed.ncbi.nlm.nih.gov/15266224/" target="_blank" rel="noopener" title="View on PubMed">PMID:15266224</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This study assessed whether a random C-peptide level is an effective screening test for LADA.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Early detection of latent autoimmune diabetes in adults (LADA) is important in that the earlier insulin therapy is initiated, the greater the preservation of pancreatic beta cells.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Random C-peptide levels were measured in 39 subjects with LADA and 39 subjects with type 2 diabetes who were matched for age, race, gender, and duration of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">LADA was confirmed diagnosed by the presence of antiglutamic acid decarboxylase antibodies.</li>
+<li style="margin-bottom:6px;line-height:1.4;">The mean C-peptide level in the LADA group was 1.0 +/- 0.2 ng/mL and 5.1 +/- 0.4 ng/mL in the group with type 2 diabetes.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/16306343/" target="_blank" style="color:#2c5f8a;">Latent autoimmune diabetes in adults: definition, prevalence, beta-cell function, and treatment.</a>
+                </div>
+                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
+                    Stenstr&amp;#xf6;m G, Gotts&amp;#xe4;ter A | Diabetes 2005 | <a href="https://pubmed.ncbi.nlm.nih.gov/16306343/" target="_blank" rel="noopener" title="View on PubMed">PMID:16306343</a> | Relevance: 8
+                </div>
+                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
+                    <li style="margin-bottom:6px;line-height:1.4;">Latent autoimmune diabetes in adults (LADA) is a disorder in which, despite the presence of islet antibodies at diagnosis of diabetes, the progression of autoimmune beta-cell failure is slow.</li>
+<li style="margin-bottom:6px;line-height:1.4;">LADA patients are therefore not insulin requiring, at least during the first 6 months after diagnosis of diabetes.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Among patients with phenotypic type 2 diabetes, LADA occurs in 10% of individuals older than 35 years and in 25% below that age.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Prospective studies of beta-cell function show that LADA patients with multiple islet antibodies develop beta-cell failure within 5 years, whereas those with only GAD antibodies (GADAs) or only islet cell antibodies (ICAs) mostly develop beta-cell failure after 5 years.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Consequently, LADA is not a latent disease; therefore, autoimmune diabetes in adults with slowly progressive beta-cell failure might be a more adequate concept.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
+                <div style="font-weight:600;margin-bottom:4px;">
                     <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" style="color:#2c5f8a;">Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA </a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Hawa M, Kolb H | Diabetes Care 2013 | PMID:23248199 | Relevance: 8
+                    Hawa M, Kolb H | Diabetes Care 2013 | <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> More autoantibody-positive than autoantibody-negative patients were younger, leaner, on insulin (49.5 vs. 13.2%), and female (P &amp;lt; 0.0001 for each), though LADA patients (9.7% of total) did not show categorically distinct clinical features from autoantibody-negative type 2 diabetes.</li>
@@ -1011,7 +1424,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" style="color:#2c5f8a;">Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Achenbach P, Hawa M | Diabetologia 2018 | PMID:29619531 | Relevance: 8
+                    Achenbach P, Hawa M | Diabetologia 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" rel="noopener" title="View on PubMed">PMID:29619531</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Of 1114 participants with adult-onset diabetes from the Action LADA (latent autoimmune diabetes in adults) study with sufficient sera, we selected those designated type 1 (n=511) or type 2 diabetes (n=603) and retested the samples in radiobinding assays for human full-length GAD65 autoantibodies (f-GADA) and N-terminally truncated (amino acids 96-585) GAD65 autoantibodies (t-GADA).</li>
@@ -1023,7 +1436,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37428296/" target="_blank" style="color:#2c5f8a;">The worldwide prevalence of latent autoimmune diabetes of adults among adult-onset diabetic individu</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ramu D, Ramaswamy S | Endocrine 2023 | PMID:37428296 | Relevance: 8
+                    Ramu D, Ramaswamy S | Endocrine 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37428296/" target="_blank" rel="noopener" title="View on PubMed">PMID:37428296</a> | Relevance: 8
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The Meta-analysis revealed a worldwide prevalence of LADA as 8.9%, with the highest prevalence in Bahrain and the lowest in United Arab Emirates.</li>
@@ -1031,48 +1444,6 @@
 <li style="margin-bottom:6px;line-height:1.4;">Hence the present systematic review and meta-analysis were performed to estimate the prevalence of LADA among diabetic individuals using the studies published at global levels.</li>
 <li style="margin-bottom:6px;line-height:1.4;">A comprehensive literature revival was performed to identify articles on the prevalence of LADA published till 2023.</li>
 <li style="margin-bottom:6px;line-height:1.4;">The overall pooled prevalence of LADA obtained from a total of 51,725 diabetic individuals was found to be 8.9% (95%CI 7.5-10.4, P&amp;lt;0.001) with a prevalence range of 2.3% in to 18.9% in United Arab Emirates and Bahrain respectively.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32754804/" target="_blank" style="color:#2c5f8a;">Efficacy of GAD-alum immunotherapy associated with HLA-DR3-DQ2 in recently diagnosed type 1 diabetes</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Hannelius U, Beam C | Diabetologia 2020 | PMID:32754804 | Relevance: 6
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">The aim of this study was to determine if retention of C-peptide following immunotherapy using recombinant GAD65 conjugated to aluminium hydroxide (GAD-alum) is influenced by HLA risk haplotypes DR3-DQ2 and DR4-DQ8.</li>
-<li style="margin-bottom:6px;line-height:1.4;">HLA-dependent treatment effect of GAD-alum therapy on C-peptide retention in individuals with recent-onset type 1 diabetes was evaluated using individual-level patient data from three placebo-controlled, randomised clinical trials using a mixed repeated measures model.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/1611143/" target="_blank" style="color:#2c5f8a;">Cyclosporine in recent onset type I diabetes mellitus. Effects on islet beta cell function. Miami Cy</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Skyler J, Rabinovitch A | J Diabetes Complications 1992 | PMID:1611143 | Relevance: 5
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">To confirm the immunological basis of type I diabetes and to determine if immune intervention alters the course of the disease, we studied the use of cyclosporine in a 1-year randomized, double-masked, placebo-controlled trial in 23 subjects enrolled within 6 weeks of diagnosis.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Side effects were minimal and reversible upon cessation of immune intervention.</li>
-<li style="margin-bottom:6px;line-height:1.4;">The preservation of islet beta cell function by immune intervention is consistent with the hypothesis that type I diabetes has an immune mechanism involved in its pathogenesis.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
-                <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/22296077/" target="_blank" style="color:#2c5f8a;">GAD65 antigen therapy in recently diagnosed type 1 diabetes mellitus.</a>
-                </div>
-                <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Ludvigsson J, Krisky D | N Engl J Med 2012 | PMID:22296077 | Relevance: 5
-                </div>
-                <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The use of GAD-alum as compared with placebo did not affect the insulin dose, glycated hemoglobin level, or hypoglycemia rate.</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Treatment with GAD-alum did not significantly reduce the loss of stimulated C peptide or improve clinical outcomes over a 15-month period. (Funded by Diamyd Medical and the Swedish Child Diabetes Foundation; ClinicalTrials.gov number, NCT00723411.).</li>
-<li style="margin-bottom:6px;line-height:1.4;">We hypothesized that alum-formulated GAD65 (GAD-alum) can preserve beta-cell function in patients with recent-onset type 1 diabetes.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Within 3 months after diagnosis, patients were randomly assigned to receive one of three study treatments: four doses of GAD-alum, two doses of GAD-alum followed by two doses of placebo, or four doses of placebo.</li>
                 </ul>
             </div>
             </div>
@@ -1106,7 +1477,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" style="color:#2c5f8a;">Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Achenbach P, Hawa M | Diabetologia 2018 | PMID:29619531 | Relevance: 3
+                    Achenbach P, Hawa M | Diabetologia 2018 | <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" rel="noopener" title="View on PubMed">PMID:29619531</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">Of 1114 participants with adult-onset diabetes from the Action LADA (latent autoimmune diabetes in adults) study with sufficient sera, we selected those designated type 1 (n=511) or type 2 diabetes (n=603) and retested the samples in radiobinding assays for human full-length GAD65 autoantibodies (f-GADA) and N-terminally truncated (amino acids 96-585) GAD65 autoantibodies (t-GADA).</li>
@@ -1130,7 +1501,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" style="color:#2c5f8a;">2008 Update from the Collaborative Islet Transplant Registry.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Alejandro R, Barton F | Transplantation 2008 | PMID:19104422 | Relevance: 11
+                    Alejandro R, Barton F | Transplantation 2008 | <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" rel="noopener" title="View on PubMed">PMID:19104422</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This report summarizes the primary efficacy and the safety outcomes of islet transplantation reported to the NIDDK and JDRF funded Collaborative Islet Transplant Registry (CITR), currently the most comprehensive collection of human-to-human islet transplant data.</li>
@@ -1144,7 +1515,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" style="color:#2c5f8a;">Association between primary graft function and 5-year outcomes of islet allogeneic transplantation i</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | PMID:37105208 | Relevance: 9
+                    Chetboun M, Drumez E | Lancet Diabetes Endocrinol 2023 | <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> | Relevance: 9
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;">In this retrospective, multicentre, observational cohort study, we enrolled all patients from the Collaborative Islet Transplant Registry who received islet transplantation alone (ITA recipients) or islet-after-kidney transplantation (IAK recipients) between Jan 19, 1999, and July 17, 2020, with a calculable PGF (exposure of interest), measured 28 days after last islet infusion with a validated composite index of islet graft function (BETA-2 score).</li>
@@ -1168,7 +1539,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank" style="color:#2c5f8a;">Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Qing L, Fu J | Am J Transl Res 2019 | PMID:30899369 | Relevance: 3
+                    Qing L, Fu J | Am J Transl Res 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank" rel="noopener" title="View on PubMed">PMID:30899369</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We also found that the level of relative proteins of NLRP3 inflammasome was markedly decreased after metformin treatment.</li>
@@ -1184,7 +1555,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank" style="color:#2c5f8a;">The NLRP3 inflammasome: molecular activation and regulation to therapeutics.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Swanson K, Deng M | Nat Rev Immunol 2019 | PMID:31036962 | Relevance: 3
+                    Swanson K, Deng M | Nat Rev Immunol 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank" rel="noopener" title="View on PubMed">PMID:31036962</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Recent studies have revealed new regulators of the NLRP3 inflammasome, including new interacting or regulatory proteins, metabolic pathways and a regulatory mitochondrial hub.</li>
@@ -1199,7 +1570,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/31182921/" target="_blank" style="color:#2c5f8a;">Metformin Inhibits the NLRP3 Inflammasome via AMPK/mTOR-dependent Effects in Diabetic Cardiomyopathy</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Yang F, Qin Y | Int J Biol Sci 2019 | PMID:31182921 | Relevance: 3
+                    Yang F, Qin Y | Int J Biol Sci 2019 | <a href="https://pubmed.ncbi.nlm.nih.gov/31182921/" target="_blank" rel="noopener" title="View on PubMed">PMID:31182921</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The NLRP3 inflammasome has been demonstrated to be activated in diabetic cardiomyopathy (DCM).</li>
@@ -1224,7 +1595,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/18397984/" target="_blank" style="color:#2c5f8a;">Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Zhang Y, Li X | J Clin Endocrinol Metab 2008 | PMID:18397984 | Relevance: 3
+                    Zhang Y, Li X | J Clin Endocrinol Metab 2008 | <a href="https://pubmed.ncbi.nlm.nih.gov/18397984/" target="_blank" rel="noopener" title="View on PubMed">PMID:18397984</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> The objective of the study was to evaluate the efficacy and safety of berberine in the treatment of type 2 diabetic patients with dyslipidemia.</li>
@@ -1240,7 +1611,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/18442638/" target="_blank" style="color:#2c5f8a;">Efficacy of berberine in patients with type 2 diabetes mellitus.</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Yin J, Xing H | Metabolism 2008 | PMID:18442638 | Relevance: 3
+                    Yin J, Xing H | Metabolism 2008 | <a href="https://pubmed.ncbi.nlm.nih.gov/18442638/" target="_blank" rel="noopener" title="View on PubMed">PMID:18442638</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> This pilot study was to determine the efficacy and safety of berberine in the treatment of type 2 diabetes mellitus patients.</li>
@@ -1256,7 +1627,7 @@
                     <a href="https://pubmed.ncbi.nlm.nih.gov/25498346/" target="_blank" style="color:#2c5f8a;">Meta-analysis of the effect and safety of berberine in the treatment of type 2 diabetes mellitus, hy</a>
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Lan J, Zhao Y | J Ethnopharmacol 2015 | PMID:25498346 | Relevance: 3
+                    Lan J, Zhao Y | J Ethnopharmacol 2015 | <a href="https://pubmed.ncbi.nlm.nih.gov/25498346/" target="_blank" rel="noopener" title="View on PubMed">PMID:25498346</a> | Relevance: 3
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
                     <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> It is necessary to assess the efficacy and safety of berberine in the treatment of type 2 diabetes mellitus, hyperlipidemia and hypertension by conducting a systematic review and meta-analysis of available clinical data.</li>
@@ -1295,7 +1666,7 @@
             </div>
         </div>
 
-    <p class="timestamp">Generated 2026-03-29 09:14 | Evidence extracted from PubMed abstracts and PMC Open Access full text</p>
+    <p class="timestamp">Generated 2026-08-16 09:12 | Evidence extracted from PubMed abstracts and PMC Open Access full text</p>
 </div>
 <script>
 function toggleGap(id) {

@@ -885,7 +885,7 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
       Bayesian pathway synthesis priors informed by systematic review evidence
       (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
       Monte Carlo sensitivity analysis parameters derived from LADA screening model
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/32243867/" target="_blank">PMID 32243867</a> &mdash; ACTION LADA study).
+      (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">PMID 23248199</a> &mdash; ACTION LADA study).
     </p>
   </div>
 </div>

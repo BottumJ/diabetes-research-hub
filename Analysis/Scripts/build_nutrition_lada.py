@@ -865,8 +865,8 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">GAD-Alum Immunotherapy in LADA</div>
-                    <div class="reference-meta">Ludvigsson et al. Diabetes, 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/33515517/" target="_blank">PMID:33515517</a></div>
-                    <p>GAD-alum (recombinant GAD65 with aluminium hydroxide adjuvant) showed dose-dependent C-peptide preservation in HLA-DR3-DQ2+ patients. Benefit was modest and not statistically significant in primary analysis. Earlier trial data: Ludvigsson et al. NEJM, 2008 (<a href="https://pubmed.ncbi.nlm.nih.gov/18794064/" target="_blank">PMID:18794064</a>). Combined approaches (nutrition + immunotherapy) may be more effective.</p>
+                    <div class="reference-meta">Casas/Ludvigsson et al. Diabetes Care, 2021 (DIAGNODE-2). <a href="https://pubmed.ncbi.nlm.nih.gov/34021020/" target="_blank">PMID:34021020</a></div>
+                    <p>GAD-alum (recombinant GAD65 with aluminium hydroxide adjuvant) showed dose-dependent C-peptide preservation in HLA-DR3-DQ2+ patients. Benefit was modest and not statistically significant in primary analysis. Earlier trial data: Ludvigsson et al. NEJM, 2008 (<a href="https://pubmed.ncbi.nlm.nih.gov/18843118/" target="_blank">PMID:18843118</a>). Combined approaches (nutrition + immunotherapy) may be more effective.</p>
                 </div>
             </div>
         </div>
