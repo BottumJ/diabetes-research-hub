@@ -1,7 +1,7 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-08-17T03:14:32.720008",
+ "last_updated": "2026-08-17T03:17:50.446927",
  "last_run": "2026-08-17",
  "papers": {
   "10415738": {
@@ -6526,6 +6526,12 @@
    "queue_pos": 2
   },
   {
+   "priority": 2,
+   "type": "fix_pipeline",
+   "added": "2026-08-17",
+   "target": "Wire Analysis/Scripts/git_commit_safe.py into the end of run_quality_improvements.py (or the daily task) so commits stop depending on the intermittent `git commit` path."
+  },
+  {
    "priority": 3,
    "type": "vet_papers_batch",
    "added": "2026-08-17",
@@ -6548,9 +6554,9 @@
   },
   {
    "priority": 2,
-   "type": "manual_cleanup_required",
+   "type": "user_action_required",
    "added": "2026-08-16",
-   "target": "git PUSH (only) blocked - COMMIT IS NOW UNBLOCKED. Prior \"stale index.lock\" diagnosis was WRONG; see doctrine_notes/2026-08-17_git_rootcause. The mount denies unlink() inside .git at any file age, so git leaves a fresh lock every run. FIX APPLIED: export GIT_INDEX_FILE=/tmp/gitidx before git add/commit - verified working, commit 3a737ed cleared the 80-commit backlog. REMAINING ASK (small, host-side): the sandbox has no GitHub credential, so push fails with \"could not read Username\". Run on Windows: cd C:\\Users\\justi\\OneDrive\\Diabetes_Research ; git push origin main",
+   "target": "PUSH ONLY - commit is fully unblocked as of 2026-08-17 via Analysis/Scripts/git_commit_safe.py. The sandbox has no GitHub credential, so `git push` fails with \"could not read Username for https://github.com\". 81 commits are committed locally and awaiting a single host-side push. RUN ON WINDOWS: cd C:\\Users\\justi\\OneDrive\\Diabetes_Research ; git push origin main",
    "blocked_since": "2026-07-27",
    "updated": "2026-08-17",
    "queue_pos": 6
@@ -9940,7 +9946,7 @@
    "generalisation": "Same failure class as the citation MISMATCH gap found the same day: a step reporting success while the artifact a reader actually sees goes untouched. Verify the OUTPUT changed, not that the PRODUCER exited zero."
   },
   "2026-08-17_state_integrity": "THREE parallel path stores exist and had drifted: state[\"paths\"] (57), state[\"validated_paths\"] (59), and Analysis/Results/validated_research_paths.json (reports paths_validated=27). 16 paths were in state[\"paths\"] but absent from state[\"validated_paths\"]; 18 the reverse. The work-queue generator reads only ONE store, which is why the 2026-08-16 run emitted six \"NEVER-VALIDATED\" items for paths that had documented validations (SGLT2i_NLRP3_DKD 2026-04-24, teplizumab->autoimmune 2026-05-12, GLP1_RA->T1D 2026-06-21, etc). Stores reconciled this run. The dashboard figure \"27 validated\" understates the true count and should be regenerated from the reconciled store, not hardcoded.",
-  "2026-08-17_git_rootcause": "GIT BLOCKER ROOT-CAUSED AND PARTLY FIXED - prior diagnosis was WRONG. It was recorded for 3 weeks as \"a stale index.lock needing one manual delete\". It is not. The OneDrive mount denies unlink() on files inside .git at ANY age (tested at 0s/20s/60s: all BLOCKED), so git cannot complete its write-index-lock-then-rename sequence and leaves a fresh lock behind on EVERY invocation. Deleting the lock on the host would have fixed exactly one run - which is why ~150 renamed lock corpses have accumulated in .git/ since April. WORKAROUND THAT WORKS: set GIT_INDEX_FILE to a path outside the mount (e.g. /tmp/gitidx) - git then writes its index off-mount, and objects/refs (create-new and rename-over, both permitted) succeed. Verified this run: 92 files staged, commit 3a737ed created, ending an 80-commit 3-week backlog. REMAINING BLOCKER IS DIFFERENT AND SMALLER: push fails with \"could not read Username for https://github.com\" - credentials only, no token in the sandbox. Commit is now automatable; push still needs the user."
+  "2026-08-17_git_rootcause": "GIT BLOCKER ROOT-CAUSED AND PARTLY FIXED - prior diagnosis was WRONG. It was recorded for 3 weeks as \"a stale index.lock needing one manual delete\". It is not. The OneDrive mount denies unlink() on files inside .git at ANY age (tested at 0s/20s/60s: all BLOCKED), so git cannot complete its write-index-lock-then-rename sequence and leaves a fresh lock behind on EVERY invocation. Deleting the lock on the host would have fixed exactly one run - which is why ~150 renamed lock corpses have accumulated in .git/ since April. WORKAROUND THAT WORKS: set GIT_INDEX_FILE to a path outside the mount (e.g. /tmp/gitidx) - git then writes its index off-mount, and objects/refs (create-new and rename-over, both permitted) succeed. Verified this run: 92 files staged, commit 3a737ed created, ending an 80-commit 3-week backlog. REMAINING BLOCKER IS DIFFERENT AND SMALLER: push fails with \"could not read Username for https://github.com\" - credentials only, no token in the sandbox. Commit is now automatable; push still needs the user. UPDATE (end of run): `git commit` succeeds only INTERMITTENTLY even with GIT_INDEX_FILE, because commit still touches .git/index.lock. The DETERMINISTIC recipe is plumbing + direct ref write, now codified in Analysis/Scripts/git_commit_safe.py: (1) GIT_INDEX_FILE off-mount, (2) git add -A, (3) git write-tree, (4) git commit-tree, (5) write .git/refs/heads/main by writing a temp file and os.rename() over it - NOT `git update-ref`, which needs HEAD.lock and fails. GOTCHA: write-tree/commit-tree print \"unable to unlink tmp_obj_*\" warnings onto stdout, so the SHA must be regex-extracted, not read via .strip(). ALL FUTURE RUNS SHOULD CALL git_commit_safe.py INSTEAD OF `git commit`. Confirmed working: commit 9437b70."
  },
  "last_path_validation_batch": "2026-08-16",
  "watch_items_pending_pmid": [
