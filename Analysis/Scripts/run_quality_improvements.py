@@ -54,6 +54,12 @@ SCRIPTS = {
     'pmidtracker': ('track_unfound_pmids.py', 'Tracking unfound PMIDs (Verify-* markers)'),
     'citations': ('add_citations.py', 'Adding source citations to Research Findings Summary'),
     'ingest': ('ingest_papers.py', 'Ingesting paper abstracts and full text from PubMed/PMC'),
+    # Must run AFTER ingest and BEFORE validate. verify_pmids.py only scans .py
+    # source literals, so any paper that entered via extraction output or a
+    # PubMed sweep never reached index.json and the citation gate was blind to
+    # it. 39 such orphans were found on 2026-08-18 (13% of fetched abstracts),
+    # including the sole source for NLRP3_inflammasome -> nephropathy.
+    'orphans': ('reconcile_paper_index.py', 'Folding un-indexed corpus papers into the audit gate'),
     'validate': ('validate_citations.py', 'Validating citations and building evidence network'),
     # Gate: consumes validate_citations.py output. Added 2026-08-16 after 7 real
     # miscitations were found sitting unactioned in citation_validation.json.
@@ -67,6 +73,10 @@ SCRIPTS = {
     'corpus': ('build_corpus_analysis.py', 'Building Corpus Analysis Dashboard (co-occurrence network; counts printed by the builder)'),
     'extracted': ('build_extracted_evidence.py', 'Building Extracted Evidence Dashboard (counts printed by the builder)'),
     'researchpaths': ('build_research_paths.py', 'Building Research Paths Dashboard (post-artifact-filter counts printed by the builder)'),
+    # Resolves state.paths / state.validated_paths / validated_research_paths.json
+    # into one canonical store. Reading any single store directly is what emitted
+    # six false "NEVER-VALIDATED" work items on 2026-08-16.
+    'pathstore': ('path_store.py', 'Resolving the canonical research-path store (merge rule: recency, conservative tie-break)'),
     'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
     'repurposev2': ('build_repurposing_dashboard_v2.py', 'Building Islet Drug Repurposing Pipeline v2'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
@@ -115,8 +125,58 @@ def run_script(name, desc):
         return False
 
 
+def commit_changes(message):
+    """Commit via git_commit_safe.py rather than plain `git commit`.
+
+    The mount denies unlink() inside .git/ at every file age, so git's standard
+    create-lock/rename-over-then-delete cycle leaves a fresh lock on EVERY
+    invocation and `git commit` only succeeds intermittently (~150 lock corpses
+    had accumulated since April, one per daily run). git_commit_safe.py builds
+    the commit with plumbing against an index held off the mount, which is
+    deterministic. Push still requires host credentials -- see that script.
+    """
+    safe = os.path.join(SCRIPT_DIR, 'git_commit_safe.py')
+    if not os.path.exists(safe):
+        print('  ! git_commit_safe.py not found; skipping commit')
+        return False
+    print(f"\n{'='*60}")
+    print('  Committing via git_commit_safe.py (deterministic plumbing path)')
+    print(f"{'='*60}")
+    try:
+        # Must run from the repo root: git_commit_safe.py resolves the repository
+        # from the current working directory, and a bare subprocess inherits the
+        # caller's cwd (often Analysis/Scripts) -> "not a git repository".
+        repo_root = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
+        result = subprocess.run([sys.executable, safe, '-m', message],
+                                capture_output=True, text=True, timeout=180,
+                                cwd=repo_root)
+        for line in (result.stdout or '').strip().split('\n'):
+            if line:
+                print(f'  {line}')
+        if result.returncode != 0:
+            for line in (result.stderr or '').strip().split('\n')[:10]:
+                print(f'  ! {line}')
+            print('  COMMIT FAILED')
+            return False
+        print('  [OK] committed')
+        return True
+    except Exception as e:
+        print(f'  EXCEPTION during commit: {e}')
+        return False
+
+
 def main():
     args = sys.argv[1:]
+
+    commit_msg = None
+    if '--commit' in args:
+        i = args.index('--commit')
+        if i + 1 < len(args) and not args[i + 1].startswith('-'):
+            commit_msg = args[i + 1]
+            del args[i:i + 2]
+        else:
+            commit_msg = 'Automated pipeline rebuild'
+            del args[i]
 
     if not args:
         targets = list(SCRIPTS.keys())
@@ -150,11 +210,18 @@ def main():
         sys.exit(1)
     else:
         print(f"\n  All {len(results)} improvements completed successfully.")
+        # Only commit a green build. A failed build must never be committed.
+        if commit_msg:
+            commit_changes(commit_msg)
         print(f"\n  NEXT STEPS:")
         print(f"  1. Review the updated files in your project folder")
         print(f"  2. Verify placeholder citations marked 'verify' in Research_Findings_Summary.md")
         print(f"  3. Open the dashboards in a browser to confirm visual quality")
-        print(f"  4. When satisfied, commit and push: git add -A && git commit -m 'Quality improvements' && git push")
+        if commit_msg:
+            print(f"  4. Push from the Windows host (sandbox has no credential):")
+            print(f"     cd C:\\Users\\justi\\OneDrive\\Diabetes_Research ; git push origin main")
+        else:
+            print(f"  4. To commit automatically next time, pass --commit \"message\"")
 
 
 if __name__ == '__main__':

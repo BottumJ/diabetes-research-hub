@@ -1,19 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2026-08-18T06:49:11.754474",
-    "total_pmids": 265,
-    "abstracts_fetched": 264,
-    "pmc_available": 134,
-    "fulltext_fetched": 115,
-    "total_indexed": 301,
-    "orphans_reconciled": 36,
-    "orphans_reconciled_on": "2026-08-18",
-    "orphan_status_counts": {
-      "OFF_TOPIC": 6,
-      "OFF_TOPIC_PRESUMED": 20,
-      "UNSCREENED_ORPHAN": 10
-    },
-    "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see."
+    "generated_at": "2026-08-17T03:13:44.154042",
+    "total_pmids": 260,
+    "abstracts_fetched": 259,
+    "pmc_available": 131,
+    "fulltext_fetched": 114
   },
   "papers": {
     "10415738": {
@@ -6763,7 +6754,7 @@
         },
         {
           "file": "build_corpus_analysis.py",
-          "line": 888,
+          "line": 878,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/29710129/\" target=\"_blank\">PMID 29710129</a>)."
         },
         {
@@ -7614,11 +7605,6 @@
           "file": "build_data_dictionary.py",
           "line": 520,
           "context": "'source': 'Swanson KV et al. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nature Reviews"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 120,
-          "context": "'The path total of 61 is shared with PMID 31036962 (Nat Rev Immunol 2019), which '"
         }
       ],
       "mesh_terms": [
@@ -8433,7 +8419,7 @@
         },
         {
           "file": "build_corpus_analysis.py",
-          "line": 892,
+          "line": 882,
           "context": "<a href=\"https://pubmed.ncbi.nlm.nih.gov/32175717/\" target=\"_blank\">PMID 32175717</a>)."
         },
         {
@@ -8733,56 +8719,6 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1632
-    },
-    "32358544": {
-      "pmid": "32358544",
-      "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-      "journal": "Nat Commun",
-      "year": "2020",
-      "doi": "10.1038/s41467-020-15983-6",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 158,
-          "context": "'PMID 32358544 (Kim et al., Nat Commun 2020) is a randomized human trial: '"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 328,
-          "context": "'confirmed PARTIALLY_VALIDATED on EXTERNAL evidence (PMID 32358544, Kim et al. Nat '"
-        }
-      ],
-      "mesh_terms": [
-        "Aged",
-        "Animals",
-        "Cardiovascular Diseases",
-        "Diabetes Mellitus, Type 2",
-        "Glucose",
-        "Humans",
-        "Inflammasomes",
-        "Insulin",
-        "Interleukin-1beta",
-        "Ketones",
-        "Macrophages",
-        "Middle Aged",
-        "NLR Family, Pyrin Domain-Containing 3 Protein",
-        "Sodium-Glucose Transporter 2 Inhibitors",
-        "Sulfonylurea Compounds",
-        "Tumor Necrosis Factor-alpha"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "cited_pmids_in_hub": [
-        "26378978",
-        "3899825"
-      ],
-      "abstract_length": 1108
     },
     "32535920": {
       "pmid": "32535920",
@@ -9693,7 +9629,7 @@
       "dashboard_locations": [
         {
           "file": "build_corpus_analysis.py",
-          "line": 890,
+          "line": 880,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/34763823/\" target=\"_blank\">PMID 34763823</a>;"
         },
         {
@@ -10083,51 +10019,6 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 737
-    },
-    "34918381": {
-      "pmid": "34918381",
-      "title": "SGLT2 inhibitor counteracts NLRP3 inflammasome via tubular metabolite itaconate in fibrosis kidney.",
-      "journal": "FASEB J",
-      "year": "2022",
-      "doi": "10.1096/fj.202100909RR",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 162,
-          "context": "'mechanism. PMID 34918381 (FASEB J 2022) shows SGLT2i counteracting NLRP3 via the '"
-        }
-      ],
-      "mesh_terms": [
-        "Animals",
-        "Benzhydryl Compounds",
-        "Citric Acid Cycle",
-        "Fibrosis",
-        "Glucosides",
-        "Inflammasomes",
-        "Kidney Diseases",
-        "Male",
-        "Mice",
-        "NLR Family, Pyrin Domain-Containing 3 Protein",
-        "Sodium-Glucose Transporter 2",
-        "Sodium-Glucose Transporter 2 Inhibitors",
-        "Succinates"
-      ],
-      "keywords": [
-        "SGLT2",
-        "fibrosis",
-        "inflammasome",
-        "metabolism",
-        "metabolite"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 1661
     },
     "35028608": {
       "pmid": "35028608",
@@ -10976,7 +10867,7 @@
       "dashboard_locations": [
         {
           "file": "build_corpus_analysis.py",
-          "line": 894,
+          "line": 884,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/37105208/\" target=\"_blank\">PMID 37105208</a>)."
         },
         {
@@ -11646,7 +11537,7 @@
       "dashboard_locations": [
         {
           "file": "build_corpus_analysis.py",
-          "line": 891,
+          "line": 881,
           "context": "<a href=\"https://pubmed.ncbi.nlm.nih.gov/37909353/\" target=\"_blank\">PMID 37909353</a>;"
         },
         {
@@ -12239,66 +12130,6 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1746
     },
-    "39412512": {
-      "pmid": "39412512",
-      "title": "SGLT2 inhibitors and NLRP3 inflammasome: potential target in diabetic kidney disease.",
-      "journal": "J Bras Nefrol",
-      "year": "2024",
-      "doi": "10.1590/2175-8239-JBN-2023-0187en",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "reconcile_paper_index.py",
-          "line": 23,
-          "context": "39 such orphans (13% of the 298 fetched abstracts), including PMID 39412512,"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 144,
-          "context": "'All 3 corpus data points come from a single NARRATIVE REVIEW (PMID 39412512, '"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 174,
-          "context": "'corpus_contribution': 'NEGLIGIBLE - see PMID 39412512 vetting notes.',"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 240,
-          "context": "'Backfill PMID 39412512',"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 268,
-          "context": "'target': ('EXTRACTOR DOUBLE-COUNTS BILINGUAL PAPERS. PMID 39412512 (J Bras Nefrol, '"
-        },
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 322,
-          "context": "'were never indexed and could not be audited - including PMID 39412512, sole source '"
-        }
-      ],
-      "mesh_terms": [
-        "Humans",
-        "Sodium-Glucose Transporter 2 Inhibitors",
-        "NLR Family, Pyrin Domain-Containing 3 Protein",
-        "Diabetic Nephropathies",
-        "Inflammasomes",
-        "Oxidative Stress"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "cited_pmids_in_hub": [
-        "11565518",
-        "26378978"
-      ],
-      "abstract_length": 1917
-    },
     "39525461": {
       "pmid": "39525461",
       "title": "The diabetes cardiovascular outcomes trials and racial and ethnic minority enrollment: impact, barriers, and potential solutions.",
@@ -12543,59 +12374,6 @@
       ],
       "abstract_length": 1772
     },
-    "39869107": {
-      "pmid": "39869107",
-      "title": "Long Term Outcomes of Transplant Recipients Comparing Belatacept vs. Tacrolimus: A UNOS Database Analysis.",
-      "journal": "Clin Transplant",
-      "year": "2025",
-      "doi": "10.1111/ctr.70075",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 212,
-          "context": "'PMID 39869107 (belatacept vs tacrolimus, UNOS transplant outcomes - relevant to '"
-        }
-      ],
-      "mesh_terms": [
-        "Humans",
-        "Kidney Transplantation",
-        "Abatacept",
-        "Female",
-        "Tacrolimus",
-        "Male",
-        "Graft Rejection",
-        "Immunosuppressive Agents",
-        "Middle Aged",
-        "Graft Survival",
-        "Follow-Up Studies",
-        "Prognosis",
-        "Adult",
-        "Risk Factors",
-        "Retrospective Studies",
-        "Postoperative Complications",
-        "Kidney Failure, Chronic",
-        "Transplant Recipients",
-        "Kidney Function Tests",
-        "Databases, Factual",
-        "Survival Rate",
-        "Glomerular Filtration Rate",
-        "Delayed Graft Function"
-      ],
-      "keywords": [
-        "belatacept",
-        "kidney transplant outcomes",
-        "tacrolimus"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Comparative Study"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 1557
-    },
     "40032831": {
       "pmid": "40032831",
       "title": "Identification of plasma proteomic markers underlying polygenic risk of type 2 diabetes and related comorbidities.",
@@ -12726,40 +12504,6 @@
         "2189759"
       ],
       "abstract_length": 2173
-    },
-    "40291594": {
-      "pmid": "40291594",
-      "title": "Cost-effective strategies for CAR-T cell therapy manufacturing.",
-      "journal": "Mol Ther Oncol",
-      "year": "2025",
-      "doi": "10.1016/j.omton.2025.200980",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "_run_2026_08_18.py",
-          "line": 213,
-          "context": "'Gap #3/#11) and PMID 40291594 (CAR-T manufacturing cost - relevant to Gap #6) were '"
-        }
-      ],
-      "mesh_terms": [],
-      "keywords": [
-        "B cell tumor",
-        "CAR-T cell",
-        "MT: Regular Issue",
-        "cost-effective",
-        "immunotherapy",
-        "manufacturing"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "cited_pmids_in_hub": [
-        "36288281"
-      ],
-      "abstract_length": 1581
     },
     "40366501": {
       "pmid": "40366501",
@@ -13652,1288 +13396,6 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1580
-    },
-    "18794064": {
-      "pmid": "18794064",
-      "title": "Treatment of recurrent metastatic colon cancer in the age of modern adjuvant therapy.",
-      "journal": "Clin Colorectal Cancer",
-      "year": "2008",
-      "doi": "10.3816/CCC.2008.n.042",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Antineoplastic Agents",
-        "Colonic Neoplasms",
-        "Combined Modality Therapy",
-        "Drug Therapy, Combination",
-        "Humans",
-        "Neoplasm Recurrence, Local",
-        "Survival Rate"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: Oncology paper (colon cancer) - unclear relevance to diabetes research corpus",
-      "topic_hits": []
-    },
-    "19237585": {
-      "pmid": "19237585",
-      "title": "Nicotine normalizes intracellular subunit stoichiometry of nicotinic receptors carrying mutations linked to autosomal dominant nocturnal frontal lobe epilepsy.",
-      "journal": "Mol Pharmacol",
-      "year": "2009",
-      "doi": "10.1124/mol.108.054494",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Cells, Cultured",
-        "Epilepsy, Frontal Lobe",
-        "Fluorescence Resonance Energy Transfer",
-        "Humans",
-        "Mutation",
-        "Nicotine",
-        "Photobleaching",
-        "Protein Subunits",
-        "Receptors, Nicotinic"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC: Nicotinic receptors and epilepsy, not diabetes-related",
-      "topic_hits": []
-    },
-    "19729482": {
-      "pmid": "19729482",
-      "title": "Suppression of activation and costimulatory signaling in splenic CD4+ T cells after trauma-hemorrhage reduces T-cell function: a mechanism of post-traumatic immune suppression.",
-      "journal": "Am J Pathol",
-      "year": "2009",
-      "doi": "10.2353/ajpath.2009.081174",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Antigens, CD",
-        "Antigens, Differentiation, T-Lymphocyte",
-        "CD28 Antigens",
-        "CD4-Positive T-Lymphocytes",
-        "CTLA-4 Antigen",
-        "Cell Proliferation",
-        "Cells, Cultured",
-        "Concanavalin A",
-        "Cytokines",
-        "Enzyme Activation",
-        "Hemorrhage",
-        "Immune Tolerance",
-        "Lectins, C-Type",
-        "Lymphocyte Activation",
-        "Mice",
-        "Ovalbumin",
-        "Proto-Oncogene Proteins c-akt",
-        "Signal Transduction",
-        "Spleen",
-        "Wounds and Injuries",
-        "CD69 Antigens"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "23223116": {
-      "pmid": "23223116",
-      "title": "Status of anesthesiology resident research education in the United States: structured education programs increase resident research productivity.",
-      "journal": "Anesth Analg",
-      "year": "2013",
-      "doi": "10.1213/ANE.0b013e31826f087d",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Anesthesiology",
-        "Biomedical Research",
-        "Data Collection",
-        "Education, Medical, Graduate",
-        "Efficiency",
-        "Faculty",
-        "Humans",
-        "Internship and Residency",
-        "Leadership",
-        "United States"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "24105098": {
-      "pmid": "24105098",
-      "title": "",
-      "journal": "",
-      "year": "Unknown",
-      "doi": "",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "27505628": {
-      "pmid": "27505628",
-      "title": "Evaluation of smokers with and without asthma in terms of smoking cessation outcome, nicotine withdrawal symptoms, and craving: Findings from a self-guided quit attempt.",
-      "journal": "Addict Behav",
-      "year": "2016",
-      "doi": "10.1016/j.addbeh.2016.07.021",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Asthma",
-        "Comorbidity",
-        "Craving",
-        "Female",
-        "Humans",
-        "Male",
-        "Self Care",
-        "Smokers",
-        "Smoking Cessation",
-        "Substance Withdrawal Syndrome",
-        "Tobacco Use Disorder",
-        "Treatment Outcome"
-      ],
-      "keywords": [
-        "Asthma",
-        "Craving",
-        "Smoking cessation",
-        "Smoking urges",
-        "Withdrawal symptoms"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "28086769": {
-      "pmid": "28086769",
-      "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
-      "journal": "BMC Complement Altern Med",
-      "year": "2017",
-      "doi": "10.1186/s12906-016-1507-0",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Carbon Tetrachloride",
-        "Humans",
-        "Interleukin-10",
-        "Interleukin-8",
-        "Liver Cirrhosis",
-        "Male",
-        "Panax",
-        "Plant Extracts",
-        "Protein Serine-Threonine Kinases",
-        "Rats",
-        "Rats, Wistar",
-        "Receptor, Transforming Growth Factor-beta Type I",
-        "Receptor, Transforming Growth Factor-beta Type II",
-        "Receptors, Transforming Growth Factor beta",
-        "Signal Transduction",
-        "Smad Proteins",
-        "Transforming Growth Factor beta1"
-      ],
-      "keywords": [
-        "Carbon tetrachloride",
-        "Gene expression",
-        "Ginseng extract",
-        "Real time PCR"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "28916733": {
-      "pmid": "28916733",
-      "title": "Clonal expansion and epigenetic reprogramming following deletion or amplification of mutant IDH1.",
-      "journal": "Proc Natl Acad Sci U S A",
-      "year": "2017",
-      "doi": "10.1073/pnas.1708914114",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Brain Neoplasms",
-        "DNA Copy Number Variations",
-        "DNA Methylation",
-        "Epigenomics",
-        "Gene Amplification",
-        "Gene Expression Profiling",
-        "Glioma",
-        "Glutarates",
-        "Humans",
-        "Isocitrate Dehydrogenase",
-        "Mutation",
-        "Neoplasm Recurrence, Local",
-        "Sequence Deletion",
-        "Tumor Cells, Cultured"
-      ],
-      "keywords": [
-        "2HG",
-        "DNA methylation",
-        "IDH1",
-        "copy number",
-        "glioma"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "30078372": {
-      "pmid": "30078372",
-      "title": "Latent Profile Analysis of Alcohol Consumption and Sexual Attitudes Among College Women: Associations With Sexual Victimization Risk.",
-      "journal": "Violence Against Women",
-      "year": "2018",
-      "doi": "10.1177/1077801218787926",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adolescent",
-        "Alcohol Drinking",
-        "Attitude",
-        "Crime Victims",
-        "Female",
-        "Humans",
-        "Prospective Studies",
-        "Psychometrics",
-        "Sexual Behavior",
-        "Students",
-        "Universities",
-        "Young Adult"
-      ],
-      "keywords": [
-        "alcohol use",
-        "latent profile analysis",
-        "prospective study",
-        "sexual victimization",
-        "sociosexuality"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "30144957": {
-      "pmid": "30144957",
-      "title": "Generation of novel Id2 and E2-2, E2A and HEB antibodies reveals novel Id2 binding partners and species-specific expression of E-proteins in NK cells.",
-      "journal": "Mol Immunol",
-      "year": "2019",
-      "doi": "10.1016/j.molimm.2018.08.017",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Antibodies",
-        "Basic Helix-Loop-Helix Proteins",
-        "Cell Line",
-        "Cell Lineage",
-        "Chromatin",
-        "Humans",
-        "Inhibitor of Differentiation Protein 2",
-        "Killer Cells, Natural",
-        "Mice",
-        "Mice, Inbred C57BL",
-        "Transcription Factor 4"
-      ],
-      "keywords": [
-        "NK cells"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "30291106": {
-      "pmid": "30291106",
-      "title": "Management of Hyperglycemia in Type 2 Diabetes, 2018. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD).",
-      "journal": "Diabetes Care",
-      "year": "2018",
-      "doi": "10.2337/dci18-0033",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Diabetes Mellitus, Type 2",
-        "Europe",
-        "Humans",
-        "Hyperglycemia",
-        "Hypoglycemic Agents",
-        "Life Style",
-        "Obesity",
-        "Sodium-Glucose Transporter 2 Inhibitors",
-        "United States",
-        "Weight Loss"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't",
-        "Consensus Statement"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, hyperglyc); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet",
-        "glucose",
-        "glycem",
-        "hyperglyc"
-      ]
-    },
-    "30578413": {
-      "pmid": "30578413",
-      "title": "Your genomic inheritance matters.",
-      "journal": "Nat Rev Cancer",
-      "year": "2019",
-      "doi": "10.1038/s41568-018-0099-z",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Genes, Neoplasm",
-        "Genomics",
-        "Germ Cells",
-        "Humans",
-        "Neoplasms",
-        "Polymorphism, Genetic"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Comment"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "30778000": {
-      "pmid": "30778000",
-      "title": "Statistical fallacies &amp; errors can also jeopardize life &amp; health of many.",
-      "journal": "Indian J Med Res",
-      "year": "2018",
-      "doi": "10.4103/ijmr.IJMR_853_18",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Bias",
-        "Biomedical Research",
-        "Biostatistics",
-        "Confidence Intervals",
-        "Correlation of Data",
-        "Data Interpretation, Statistical",
-        "Humans",
-        "Probability",
-        "Statistics as Topic"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "31220820": {
-      "pmid": "31220820",
-      "title": "Effects of stimulation frequency and stimulation waveform on steady-state visual evoked potentials using a computer monitor.",
-      "journal": "J Neural Eng",
-      "year": "2019",
-      "doi": "10.1088/1741-2552/ab2b7d",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Computers",
-        "Electroencephalography",
-        "Evoked Potentials, Visual",
-        "Female",
-        "Humans",
-        "Male",
-        "Photic Stimulation",
-        "Psychomotor Performance",
-        "Random Allocation",
-        "Young Adult"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "32243867": {
-      "pmid": "32243867",
-      "title": "Serum levels of matrix metalloproteinase-2, -9, and vitamin D in patients with multiple sclerosis with or without herpesvirus-6 seropositivity.",
-      "journal": "Braz J Infect Dis",
-      "year": "2020",
-      "doi": "10.1016/j.bjid.2020.02.001",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Antibodies, Viral",
-        "Enzyme-Linked Immunosorbent Assay",
-        "Female",
-        "Herpesvirus 6, Human",
-        "Humans",
-        "Male",
-        "Matrix Metalloproteinase 2",
-        "Matrix Metalloproteinase 9",
-        "Middle Aged",
-        "Multiple Sclerosis",
-        "Roseolovirus Infections",
-        "Vitamin D"
-      ],
-      "keywords": [
-        "Human herpesvirus-6",
-        "Matrix metalloproteinase-2",
-        "Matrix metalloproteinase-9",
-        "Multiple sclerosis",
-        "Vitamin D"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC for diabetes research scope: MS + HHV-6 + MMP-2/MMP-9/vitamin D study (Braz J Infect Dis). Likely entered corpus via MMP-9 or vitamin-D keyword sweep. Recommend exclusion from primary diabetes corpus; keep tagged for cross-domain inflammation reference only.",
-      "topic_hits": []
-    },
-    "33082274": {
-      "pmid": "33082274",
-      "title": "",
-      "journal": "",
-      "year": "Unknown",
-      "doi": "",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "33515517": {
-      "pmid": "33515517",
-      "title": "Underlying factors in paediatric invasive pneumococcal disease in Belgium.",
-      "journal": "Lancet Infect Dis",
-      "year": "2021",
-      "doi": "10.1016/S1473-3099(20)30867-7",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Belgium",
-        "Child",
-        "Humans",
-        "Pneumococcal Infections",
-        "Pneumococcal Vaccines",
-        "Retrospective Studies",
-        "Vaccines, Conjugate"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Letter",
-        "Comment"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "33989382": {
-      "pmid": "33989382",
-      "title": "Neuroscientific therapies for atrial fibrillation.",
-      "journal": "Cardiovasc Res",
-      "year": "2021",
-      "doi": "10.1093/cvr/cvab172",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Action Potentials",
-        "Animals",
-        "Anti-Arrhythmia Agents",
-        "Atrial Fibrillation",
-        "Atrial Remodeling",
-        "Autonomic Denervation",
-        "Autonomic Nervous System",
-        "Electric Stimulation Therapy",
-        "Heart",
-        "Heart Rate",
-        "Humans",
-        "Neurotransmitter Agents",
-        "Spinal Cord Stimulation",
-        "Treatment Outcome",
-        "Vagus Nerve Stimulation"
-      ],
-      "keywords": [
-        "Atrial fibrillation",
-        "Autonomic nervous system",
-        "Neurocardiology",
-        "Neuromodulation",
-        "Vagus nerve"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "34299352": {
-      "pmid": "34299352",
-      "title": "Genome-Wide Identification of GRAS Gene Family and Their Responses to Abiotic Stress in Medicago sativa.",
-      "journal": "Int J Mol Sci",
-      "year": "2021",
-      "doi": "10.3390/ijms22147729",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Amino Acid Sequence",
-        "Droughts",
-        "Gene Expression Profiling",
-        "Gene Expression Regulation, Plant",
-        "Genome, Plant",
-        "Medicago sativa",
-        "Multigene Family",
-        "Phylogeny",
-        "Plant Breeding",
-        "Plant Leaves",
-        "Plant Proteins",
-        "Salinity",
-        "Sequence Alignment",
-        "Stress, Physiological",
-        "Transcription Factors"
-      ],
-      "keywords": [
-        "GRAS genes",
-        "Medicago sativa",
-        "expression",
-        "phylogeny",
-        "salinity and drought stresses"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "35437333": {
-      "pmid": "35437333",
-      "title": "The gut microbial metabolite formate exacerbates colorectal cancer progression.",
-      "journal": "Nat Metab",
-      "year": "2022",
-      "doi": "10.1038/s42255-022-00558-0",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Bacteria",
-        "Colorectal Neoplasms",
-        "Formates",
-        "Fusobacterium nucleatum",
-        "Gastrointestinal Microbiome",
-        "Humans",
-        "Mice",
-        "Tumor Microenvironment"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
-      "topic_hits": []
-    },
-    "35491968": {
-      "pmid": "35491968",
-      "title": "The CaPti1-CaERF3 module positively regulates resistance of Capsicum annuum to bacterial wilt disease by coupling enhanced immunity and dehydration tolerance.",
-      "journal": "Plant J",
-      "year": "2022",
-      "doi": "10.1111/tpj.15790",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Abscisic Acid",
-        "Capsicum",
-        "Dehydration",
-        "Disease Resistance",
-        "Gene Expression Regulation, Plant",
-        "Plant Diseases",
-        "Plant Growth Regulators",
-        "Plant Proteins",
-        "Ralstonia solanacearum",
-        "Transcription Factors"
-      ],
-      "keywords": [
-        "Ralstonia solanacearum",
-        "kinase",
-        "pepper",
-        "trans-activation",
-        "transcription factor"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "37133585": {
-      "pmid": "37133585",
-      "title": "Trifluridine-Tipiracil and Bevacizumab in Refractory Metastatic Colorectal Cancer.",
-      "journal": "N Engl J Med",
-      "year": "2023",
-      "doi": "10.1056/NEJMoa2214963",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Humans",
-        "Antineoplastic Combined Chemotherapy Protocols",
-        "Bevacizumab",
-        "Colonic Neoplasms",
-        "Colorectal Neoplasms",
-        "Drug Combinations",
-        "Pyrrolidines",
-        "Rectal Neoplasms",
-        "Trifluridine",
-        "Uracil",
-        "Thymine"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Randomized Controlled Trial"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: off-topic-oncology: refractory metastatic CRC trial; no diabetes mechanism",
-      "topic_hits": []
-    },
-    "37467726": {
-      "pmid": "37467726",
-      "title": "",
-      "journal": "",
-      "year": "Unknown",
-      "doi": "",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "37544201": {
-      "pmid": "37544201",
-      "title": "Transfer and biotransformation of the COVID-19 prodrug molnupiravir and its metabolite &#x3b2;-D-N4-hydroxycytidine across the blood-placenta barrier.",
-      "journal": "EBioMedicine",
-      "year": "2023",
-      "doi": "10.1016/j.ebiom.2023.104748",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Pregnancy",
-        "Rats",
-        "Female",
-        "Humans",
-        "Animals",
-        "Prodrugs",
-        "Tandem Mass Spectrometry",
-        "COVID-19",
-        "SARS-CoV-2",
-        "Placenta",
-        "Amniotic Fluid",
-        "Biotransformation",
-        "Antiviral Agents",
-        "Cytidine",
-        "Hydroxylamines"
-      ],
-      "keywords": [
-        "Blood-placenta barrier",
-        "Molnupiravir",
-        "Pharmacokinetics",
-        "SARS-CoV-2",
-        "&#x3b2;-D-N4-hydroxycytidine"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "37932527": {
-      "pmid": "37932527",
-      "title": "",
-      "journal": "",
-      "year": "Unknown",
-      "doi": "",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "38587236": {
-      "pmid": "38587236",
-      "title": "Probiotics induce intestinal IgA secretion in weanling mice potentially through promoting intestinal APRIL expression and modulating the gut microbiota composition.",
-      "journal": "Food Funct",
-      "year": "2024",
-      "doi": "10.1039/d4fo00962b",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Female",
-        "Male",
-        "Mice",
-        "Bifidobacterium bifidum",
-        "Gastrointestinal Microbiome",
-        "Immunoglobulin A",
-        "Intestinal Mucosa",
-        "Intestines",
-        "Mice, Inbred BALB C",
-        "Probiotics",
-        "Toll-Like Receptor 4",
-        "Tumor Necrosis Factor Ligand Superfamily Member 13",
-        "Weaning"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: unknown - abstract on disk with no traceable referrer",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC_PRESUMED",
-      "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "39173844": {
-      "pmid": "39173844",
-      "title": "Compromised chronic efficacy of a glucokinase activator AZD1656 in mouse models for common human GCKR variants.",
-      "journal": "Biochem Pharmacol",
-      "year": "2024",
-      "doi": "10.1016/j.bcp.2024.116499",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Humans",
-        "Glucokinase",
-        "Mice",
-        "Adaptor Proteins, Signal Transducing",
-        "Liver",
-        "Hypoglycemic Agents",
-        "Blood Glucose",
-        "Male",
-        "Diabetes Mellitus, Type 2",
-        "Mice, Inbred C57BL",
-        "Mice, Transgenic",
-        "Genetic Variation",
-        "Azetidines",
-        "Pyrazines"
-      ],
-      "keywords": [
-        "GCKR",
-        "Glucokinase",
-        "Glucokinase activators",
-        "Liver steatosis",
-        "Type 2 diabetes",
-        "rs1260326"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet",
-        "glucose",
-        "glycem"
-      ]
-    },
-    "39428507": {
-      "pmid": "39428507",
-      "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-      "journal": "J Neuroinflammation",
-      "year": "2024",
-      "doi": "10.1186/s12974-024-03262-w",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "T-Lymphocytes, Regulatory",
-        "Humans",
-        "Myelin-Oligodendrocyte Glycoprotein",
-        "Mice",
-        "Multiple Sclerosis",
-        "Encephalomyelitis, Autoimmune, Experimental",
-        "Receptors, Chimeric Antigen",
-        "Immunotherapy, Adoptive"
-      ],
-      "keywords": [
-        "CAR-Treg",
-        "Cell therapy",
-        "MOG",
-        "Multiple sclerosis"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; statistical analysis input; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (autoimmun); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "autoimmun"
-      ]
-    },
-    "39613428": {
-      "pmid": "39613428",
-      "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
-      "journal": "BMJ Open",
-      "year": "2024",
-      "doi": "10.1136/bmjopen-2024-091597",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adolescent",
-        "Adult",
-        "Female",
-        "Humans",
-        "Male",
-        "Middle Aged",
-        "Young Adult",
-        "Blood Glucose",
-        "C-Peptide",
-        "Calcium Channel Blockers",
-        "Diabetes Mellitus, Type 1",
-        "Double-Blind Method",
-        "Glycated Hemoglobin",
-        "Insulin",
-        "Insulin-Secreting Cells",
-        "Multicenter Studies as Topic",
-        "Randomized Controlled Trials as Topic",
-        "Verapamil"
-      ],
-      "keywords": [
-        "Clinical Trial",
-        "DIABETES &amp; ENDOCRINOLOGY",
-        "Randomized Controlled Trial"
-      ],
-      "pub_types": [
-        "Clinical Trial Protocol",
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (autoimmun, beta cell, beta-cell, diabet, glucose, insulin); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "autoimmun",
-        "beta cell",
-        "beta-cell",
-        "diabet",
-        "glucose",
-        "insulin"
-      ]
-    },
-    "40598585": {
-      "pmid": "40598585",
-      "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
-      "journal": "BMC Med",
-      "year": "2025",
-      "doi": "10.1186/s12916-025-04201-z",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "PMC12211534",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (beta cell, diabet, insulin, pancrea); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "beta cell",
-        "diabet",
-        "insulin",
-        "pancrea"
-      ]
-    },
-    "40988828": {
-      "pmid": "40988828",
-      "title": "Vitamin D Supplementation in Deficiency States and Combined Calcium-Vitamin D Therapy in Diabetes Prevention and Management: A Systematic Review of Clinical Evidence.",
-      "journal": "Cureus",
-      "year": "2025",
-      "doi": "10.7759/cureus.90776",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [
-        "calcium",
-        "co-supplementation",
-        "glycemic control",
-        "insulin production",
-        "insulin resistance",
-        "systematic review",
-        "type 1 diabetes mellitus",
-        "type 2 diabetes mellitus",
-        "vitamin d"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet, glycem, insulin); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet",
-        "glycem",
-        "insulin"
-      ]
-    },
-    "41618067": {
-      "pmid": "41618067",
-      "title": "Artificial Intelligence-Based Medical Devices for Diabetic Retinopathy Screening in the European Union.",
-      "journal": "Ophthalmol Ther",
-      "year": "2026",
-      "doi": "10.1007/s40123-026-01322-3",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [
-        "Artificial intelligence",
-        "CE certification",
-        "Diabetic retinopathy",
-        "EU AI Act",
-        "EU Medical Device Regulation",
-        "Screening"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet, retinopath); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet",
-        "retinopath"
-      ]
-    },
-    "41827829": {
-      "pmid": "41827829",
-      "title": "Isolation and Characterization of Marrow-Isolated Adult Multilineage Inducible (MIAMI) Cell-Derived Extracellular Vesicles Demonstrate Multifunctional Therapeutic Potential in Tissue Regeneration and Anti-Inflammatory Immunomodulation.",
-      "journal": "Cells",
-      "year": "2026",
-      "doi": "10.3390/cells15050396",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Extracellular Vesicles",
-        "Humans",
-        "Mesenchymal Stem Cells",
-        "Immunomodulation",
-        "Regeneration",
-        "MicroRNAs",
-        "Cell Lineage",
-        "Anti-Inflammatory Agents",
-        "Bone Marrow Cells"
-      ],
-      "keywords": [
-        "MIAMI cells",
-        "cell-free therapy",
-        "extracellular vesicles",
-        "immunomodulation",
-        "irradiation",
-        "mesenchymal stem/stromal cells",
-        "microRNA",
-        "osteosarcoma",
-        "regenerative medicine",
-        "wound healing"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
-      "topic_hits": []
-    },
-    "41935855": {
-      "pmid": "41935855",
-      "title": "Subclinical carotid atherosclerosis in latent autoimmune diabetes in adults and type 2 diabetes mellitus: a cross-sectional study.",
-      "journal": "Nutr Metab Cardiovasc Dis",
-      "year": "2026",
-      "doi": "10.1016/j.numecd.2026.104675",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, lada); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "autoimmun",
-        "diabet",
-        "lada"
-      ]
-    },
-    "41986815": {
-      "pmid": "41986815",
-      "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes",
-      "journal": "Diabetologia",
-      "year": "Unknown",
-      "doi": "10.1007/s00125-026-06721-6",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet"
-      ]
-    },
-    "41994768": {
-      "pmid": "41994768",
-      "title": "Sodium-Glucose Cotransporter-2 Inhibitors Across the Glycemic Spectrum: Cardiovascular and Renal Outcomes With Mechanistic Insights.",
-      "journal": "Cureus",
-      "year": "2026",
-      "doi": "10.7759/cureus.105114",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "PMC13081046",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-18",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, sglt2); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet",
-        "glucose",
-        "glycem",
-        "sglt2"
-      ]
     }
   },
   "cross_references": {
@@ -15088,10 +13550,6 @@
         "30657336",
         "8366922"
       ],
-      "32358544": [
-        "26378978",
-        "3899825"
-      ],
       "32627352": [
         "8366922"
       ],
@@ -15220,10 +13678,6 @@
         "35551292",
         "37356446"
       ],
-      "39412512": [
-        "11565518",
-        "26378978"
-      ],
       "39525461": [
         "26378978",
         "28010783",
@@ -15254,9 +13708,6 @@
         "35551294",
         "35551292",
         "2189759"
-      ],
-      "40291594": [
-        "36288281"
       ],
       "40464081": [
         "37356446"
@@ -15339,10 +13790,8 @@
         "31175156",
         "31182921",
         "32017635",
-        "32358544",
         "32694767",
         "32943753",
-        "34918381",
         "40650745",
         "41567805",
         "8439348",
@@ -15467,7 +13916,6 @@
         "30415610",
         "31173679",
         "32175717",
-        "32358544",
         "32847960",
         "32929230",
         "33264825",
@@ -15511,7 +13959,6 @@
         "33264825",
         "36449148",
         "37351171",
-        "39412512",
         "8366922"
       ],
       "Diabetic Retinopathy": [
@@ -15589,7 +14036,6 @@
         "32847960",
         "33264825",
         "34256014",
-        "34918381",
         "35028608",
         "36109639",
         "36826844",
@@ -15598,7 +14044,6 @@
         "37366315",
         "39634180",
         "39843169",
-        "39869107",
         "40032831",
         "40249888",
         "40544428",
@@ -15681,7 +14126,6 @@
         "37428296",
         "3899825",
         "39843169",
-        "39869107",
         "40249888",
         "40544428",
         "40737658",
@@ -15970,7 +14414,6 @@
         "32175717",
         "32307525",
         "32312859",
-        "32358544",
         "32535920",
         "32627352",
         "32694767",
@@ -16024,11 +14467,9 @@
         "38639547",
         "38783768",
         "3899825",
-        "39412512",
         "39525461",
         "39634180",
         "39843169",
-        "39869107",
         "40032831",
         "40249888",
         "40272935",
@@ -16058,7 +14499,6 @@
         "23061757",
         "30415610",
         "37359825",
-        "39869107",
         "40544428"
       ],
       "Insulin": [
@@ -16086,7 +14526,6 @@
         "31296866",
         "31529065",
         "31618560",
-        "32358544",
         "32627352",
         "33550442",
         "33622669",
@@ -16167,7 +14606,6 @@
         "32175717",
         "32307525",
         "32312859",
-        "32358544",
         "32847960",
         "34256014",
         "35028608",
@@ -16175,7 +14613,6 @@
         "3899825",
         "39634180",
         "39843169",
-        "39869107",
         "40032831",
         "40544428",
         "40737658",
@@ -16189,8 +14626,7 @@
       "Tacrolimus": [
         "10911004",
         "17359512",
-        "18094377",
-        "39869107"
+        "18094377"
       ],
       "Aged": [
         "10919952",
@@ -16228,7 +14664,6 @@
         "31733140",
         "32175717",
         "32312859",
-        "32358544",
         "32847960",
         "33264825",
         "35028608",
@@ -16318,7 +14753,6 @@
         "37366315",
         "39634180",
         "39843169",
-        "39869107",
         "40032831",
         "40249888",
         "40366501",
@@ -16482,7 +14916,6 @@
         "30415610",
         "31733140",
         "32312859",
-        "32358544",
         "37845117",
         "39525461"
       ],
@@ -16540,11 +14973,6 @@
         "25498346",
         "27159554",
         "28522654"
-      ],
-      "Kidney Failure, Chronic": [
-        "11565518",
-        "28522654",
-        "39869107"
       ],
       "Hypoglycemic Agents": [
         "11832527",
@@ -16633,7 +15061,6 @@
         "35551307",
         "37356446",
         "37845117",
-        "39869107",
         "9742976"
       ],
       "Weight Loss": [
@@ -16671,7 +15098,6 @@
         "28086098",
         "29617641",
         "31182921",
-        "34918381",
         "40650745",
         "9867128"
       ],
@@ -16688,8 +15114,7 @@
         "12122111",
         "15919794",
         "25230243",
-        "26656660",
-        "32358544"
+        "26656660"
       ],
       "Down-Regulation": [
         "12612578",
@@ -16717,8 +15142,7 @@
         "19805629",
         "21997792",
         "23562078",
-        "25714673",
-        "32358544"
+        "25714673"
       ],
       "Signal Transduction": [
         "14525967",
@@ -16785,8 +15209,7 @@
         "15016488",
         "23061757",
         "23413806",
-        "25940230",
-        "39869107"
+        "25940230"
       ],
       "Europe": [
         "15043959",
@@ -17040,7 +15463,6 @@
         "30303773",
         "31175156",
         "31182921",
-        "32358544",
         "35551294"
       ],
       "Myocardial Infarction": [
@@ -17081,11 +15503,6 @@
         "18397984",
         "37845117"
       ],
-      "Graft Rejection": [
-        "16898223",
-        "18094377",
-        "39869107"
-      ],
       "Autoantigens": [
         "1697648",
         "17942684",
@@ -17108,7 +15525,6 @@
         "23835325",
         "28864502",
         "30415610",
-        "39869107",
         "40544428",
         "8366922"
       ],
@@ -17163,8 +15579,7 @@
       "Kidney Transplantation": [
         "17359512",
         "18094377",
-        "32627352",
-        "39869107"
+        "32627352"
       ],
       "Diabetes, Gestational": [
         "17596481",
@@ -17221,8 +15636,7 @@
         "20228401",
         "20538833",
         "28522654",
-        "33264825",
-        "39869107"
+        "33264825"
       ],
       "Kaplan-Meier Estimate": [
         "18094377",
@@ -17373,11 +15787,6 @@
         "25324018",
         "40650745"
       ],
-      "Interleukin-1beta": [
-        "19805629",
-        "30415610",
-        "32358544"
-      ],
       "Mutation": [
         "19805629",
         "25287711",
@@ -17389,10 +15798,7 @@
       "NLR Family, Pyrin Domain-Containing 3 Protein": [
         "19805629",
         "31036962",
-        "31182921",
-        "32358544",
-        "34918381",
-        "39412512"
+        "31182921"
       ],
       "Random Allocation": [
         "19805629",
@@ -17448,11 +15854,6 @@
         "20519905",
         "22683128",
         "25940230"
-      ],
-      "Kidney Diseases": [
-        "20538833",
-        "32943753",
-        "34918381"
       ],
       "Cohort Studies": [
         "20570966",
@@ -17636,16 +16037,6 @@
         "29617641",
         "37366315"
       ],
-      "Benzhydryl Compounds": [
-        "26378978",
-        "34918381",
-        "39843169"
-      ],
-      "Glucosides": [
-        "26378978",
-        "34918381",
-        "39843169"
-      ],
       "Gastrointestinal Microbiome": [
         "26590418",
         "29590046",
@@ -17674,11 +16065,6 @@
         "32312859",
         "9742976"
       ],
-      "Oxidative Stress": [
-        "26897744",
-        "29754952",
-        "39412512"
-      ],
       "Quality of Life": [
         "26897744",
         "31197153",
@@ -17686,10 +16072,7 @@
       ],
       "Sodium-Glucose Transporter 2 Inhibitors": [
         "27878313",
-        "32358544",
-        "34918381",
         "38639547",
-        "39412512",
         "39843169"
       ],
       "Pyrazoles": [
@@ -17705,7 +16088,6 @@
       ],
       "Sulfonylurea Compounds": [
         "28864502",
-        "32358544",
         "32847960",
         "9742976"
       ],
@@ -17752,13 +16134,6 @@
         "37428296",
         "40737658"
       ],
-      "Inflammasomes": [
-        "31036962",
-        "31182921",
-        "32358544",
-        "34918381",
-        "39412512"
-      ],
       "Vitamin D": [
         "31173679",
         "34021020",
@@ -17778,11 +16153,6 @@
         "35665810",
         "39634180",
         "40464081"
-      ],
-      "Retrospective Studies": [
-        "37105208",
-        "37217319",
-        "39869107"
       ],
       "Remission Induction": [
         "39634180",

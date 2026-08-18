@@ -154,9 +154,19 @@ paper_concepts = defaultdict(set)  # pmid -> set of concepts
 all_mesh_terms = Counter()
 year_counts = Counter()
 
+# Orphans folded in by reconcile_paper_index.py are indexed so the citation gate
+# can audit them, but the ones screened OFF_TOPIC must not enter the corpus
+# co-occurrence network -- they are miscitation intake (colon cancer, pepper-plant
+# genetics, anesthesiology education), not corpus evidence.
+EXCLUDED_CORPUS_STATUS = {'OFF_TOPIC', 'OFF_TOPIC_PRESUMED'}
+papers = {p: rec for p, rec in papers.items()
+          if rec.get('corpus_status') not in EXCLUDED_CORPUS_STATUS}
+
 for pmid, paper in papers.items():
-    year = paper.get('year', 'Unknown')
-    if year != 'Unknown':
+    # `year` may be absent, 'Unknown', or an empty string (PubMed records with no
+    # print date). int('') raised ValueError here on 2026-08-18.
+    year = str(paper.get('year', '') or '').strip()
+    if year.isdigit():
         year_counts[int(year)] += 1
 
     # Load abstract
