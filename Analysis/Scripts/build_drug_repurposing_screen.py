@@ -15,6 +15,21 @@ import json
 from datetime import datetime
 from collections import defaultdict
 
+
+def _corpus_figures():
+    """Live corpus counts. Hardcoded "472 data points from 61 full-text papers"
+    went stale when the 2026-08-19 text-level dedupe cut the corpus to 414."""
+    import json as _json, os as _os
+    try:
+        _p = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                           '..', 'Results', 'extracted_corpus_data.json')
+        with open(_p, encoding='utf-8') as _f:
+            _m = _json.load(_f).get('metadata', {})
+        return str(_m.get('total_extractions', '')), str(_m.get('papers_processed', ''))
+    except Exception:
+        return 'the extracted', 'the corpus'
+
+
 # Drug candidate database with evidence-based scoring
 CANDIDATES = {
     "Metformin": {
@@ -1523,7 +1538,7 @@ def generate_html():
     # Combination Candidates section
     html_parts.append('''    <section class="section">
         <h2>Combination Candidates: Multi-Pathway Targeting</h2>
-        <p><strong>Context:</strong> These combinations were identified through corpus co-occurrence analysis of 472 data points from 61 full-text papers, then cross-validated against published literature. Status indicates current evidence level. NOVEL combinations represent genuinely new research directions not yet reported in the literature. Combination costs from Hernandez 2018 (PMID:29710129) and WHO pricing databases.</p>
+        <p><strong>Context:</strong> These combinations were identified through corpus co-occurrence analysis of ''' + _corpus_figures()[0] + ''' de-duplicated data points from ''' + _corpus_figures()[1] + ''' full-text papers, then cross-validated against published literature. Status indicates current evidence level. NOVEL combinations represent genuinely new research directions not yet reported in the literature. Combination costs from Hernandez 2018 (PMID:29710129) and WHO pricing databases.</p>
 
         <table class="candidates-table" style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
             <thead>

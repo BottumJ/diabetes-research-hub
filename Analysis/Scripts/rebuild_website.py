@@ -232,7 +232,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Extracted Evidence Dashboard</h3>
-    <p>Quantitative data extracted from 61 full-text papers: 472 data points across 9 categories. C-peptide, survival rates, inflammatory markers, and drug doses with direct links to source PMIDs and context.</p>
+    <p>Quantitative data extracted from 69 full-text papers: 414 de-duplicated data points across 9 categories. C-peptide, survival rates, inflammatory markers, and drug doses with direct links to source PMIDs and context.</p>
     <a href="Dashboards/Extracted_Evidence.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

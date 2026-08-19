@@ -382,6 +382,83 @@ def dedupe_state(dry_run=False):
     return report
 
 
+BOOKKEEPING_FIELDS = {
+    'status', 'rating', 'date', 'validated_date', 'effective_date',
+    'mirrored_from', 'mirrored_on', 'note', 'merged_from', 'merged_on',
+    'merge_note', 'data_point_count', 'last_data_point_count',
+    'path_name', 'last_updated',
+}
+
+EVIDENCE_FIELDS = (
+    'external_pmids', 'external_refs', 'external_sources', 'external_evidence',
+    'external_urls', 'key_sources', 'notes', 'validation_notes',
+    'validation_history', 'supporting_pmids_context', 'evidence',
+    'corpus_pmids', 'clinical_anchor', 'mechanism',
+)
+
+
+def has_evidence(record):
+    """True if a path record carries anything that could justify its status.
+
+    A bare `external_pmids: []` does NOT count. That is the exact shape that let
+    `insulin_glargine -> T2D` sit at VALIDATED from 2026-03-20 to 2026-08-19 and
+    reach the published dashboard with nothing behind it.
+    """
+    if not isinstance(record, dict):
+        return False
+    for field in EVIDENCE_FIELDS:
+        val = record.get(field)
+        if isinstance(val, (list, dict, tuple)):
+            if len(val) > 0:
+                return True
+        elif isinstance(val, str) and val.strip():
+            return True
+    return False
+
+
+def find_unbacked_status():
+    """Report paths asserting a validated status with NO evidence in EITHER store.
+
+    Added 2026-08-19. The 2026-08-17 mirroring copied status LABELS between
+    stores without their evidence payload, so `validated_paths` filled with
+    entries holding only {rating, date, mirrored_from, mirrored_on, note}. That
+    looked alarming (12 of 16) but was mostly a display artifact: 11 of those 12
+    still had full evidence in `state.paths`.
+
+    The check that actually matters is therefore a UNION check across both
+    stores, not a per-store one. Exactly one edge failed it. Any path claiming
+    VALIDATED / PARTIALLY_VALIDATED while failing this is unpublishable.
+    """
+    state = _load(STATE_FILE)
+    if not state:
+        return []
+    asserted = {'VALIDATED', 'PARTIALLY_VALIDATED'}
+    paths = state.get('paths', {})
+    validated = state.get('validated_paths', {})
+
+    by_canon = {}
+    for store_name, store in (('paths', paths), ('validated_paths', validated)):
+        for raw_key, rec in store.items():
+            by_canon.setdefault(normalise_key(raw_key), []).append(
+                (store_name, raw_key, rec))
+
+    offenders = []
+    for ck, entries in by_canon.items():
+        statuses = {status_of(rec) for _, _, rec in entries}
+        if not (statuses & asserted):
+            continue
+        if any(has_evidence(rec) for _, _, rec in entries):
+            continue
+        offenders.append({
+            'canonical_key': ck,
+            'display_key': entries[0][1],
+            'status': sorted(x for x in statuses if x),
+            'stores': [s for s, _, _ in entries],
+            'reason': 'asserts a validated status but no evidence field is populated in any store',
+        })
+    return sorted(offenders, key=lambda o: o['display_key'])
+
+
 def main():
     import sys
     if '--dedupe' in sys.argv:
@@ -414,6 +491,15 @@ def main():
             for s in r['sources']:
                 if s['status']:
                     print(f"         {s['store']:<32} {s['status']:<22} {s['effective_date']}")
+
+    unbacked = find_unbacked_status()
+    print('\n  UNBACKED-STATUS GATE (union across both stores):')
+    if unbacked:
+        print(f'    [FAIL] {len(unbacked)} path(s) assert a validated status with no evidence anywhere:')
+        for o in unbacked:
+            print(f"      {o['display_key']}  {o['status']}  stores={o['stores']}")
+    else:
+        print('    [OK] every VALIDATED / PARTIALLY_VALIDATED path has evidence in at least one store.')
 
     sync = sync_validated_research_paths()
     if sync:

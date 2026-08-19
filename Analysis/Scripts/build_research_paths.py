@@ -100,11 +100,61 @@ import re
 # with independent external validation (e.g. pioglitazone->T2D, HCQ->T2D, which
 # have real meta-analysis PMIDs in agent_state['validated_paths']) keep that
 # external rating; it is sourced separately and is unaffected.
+#
+# REVISED 2026-08-19: the background-therapy prefix pattern recognised only
+# "on <drug> <dose>". The same table writes concomitant therapy several ways --
+# "on gliclazide 80 mg/day, with metformin 1000 mg/day, along with insulin
+# glargine (>=30 units/day)" -- so "with"/"along with"/"plus"/"taking" forms
+# slipped through. That leak is what published `insulin_glargine -> T2D`: both
+# its key_claims are inclusion-criteria background therapy from PMID 35466661,
+# where insulin glargine is neither intervention nor comparator nor outcome.
 DOSE_FRAGMENT_PATTERNS = [
     re.compile(r'^\s*\d+\s*[Mm]?[Gg](?:/[A-Za-z]+)?\s*(?:OD|BID|TID|QD|daily|in|on)?\s*$', re.IGNORECASE),
-    re.compile(r'^\s*on\s+\w+\s+\d+\s*[Mm]?[Gg](?:/[A-Za-z]+)?\s*(?:daily|OD|BID|TID|QD)?\s*$', re.IGNORECASE),
+    re.compile(r'^\s*(?:on|with|plus|along\s+with|taking|receiving|added\s+to)\s+\w+\s+'
+               r'\d+\s*[Mm]?[Gg](?:/[A-Za-z]+)?\s*(?:daily|OD|BID|TID|QD)?\s*$', re.IGNORECASE),
     re.compile(r'^\s*\d+\s*[Mm]?[Gg]\s+in\s*$', re.IGNORECASE),
 ]
+
+# Statuses that must NEVER reach the published dashboard, regardless of what the
+# text-pattern filter concludes. Added 2026-08-19: `insulin_glargine -> T2D` was
+# adjudicated EXTRACTION_ARTIFACT in agent_state.json and still published,
+# because the dashboard filtered on matched_text patterns only and never
+# consulted the adjudicated status. Pattern matching is a heuristic; an explicit
+# adjudication is a decision, and the decision must win.
+SUPPRESSED_STATUSES = {
+    'EXTRACTION_ARTIFACT',
+    'CONTRADICTED',
+    'CONTRADICTED_FOR_DIABETIC_NEPHROPATHY',
+}
+
+
+def _norm_path_key(key):
+    """Collapse every spelling of one edge to a single comparable token.
+
+    The same edge is written `insulin_glargine -> T2D` in research_paths.json
+    and `insulin_glargine_T2D` in validated_research_paths.json. Stripping
+    arrows, underscores, spaces and case makes both resolve to the same token,
+    so a suppression decision cannot be defeated by key spelling.
+    """
+    return re.sub(r'[\s_>-]+', '', (key or '')).lower()
+
+
+def _canonical_statuses():
+    """Map normalised path key -> adjudicated status from the canonical store."""
+    out = {}
+    canon_file = os.path.join(base_dir, 'Analysis', 'Results', 'canonical_paths.json')
+    try:
+        with open(canon_file, encoding='utf-8') as f:
+            payload = json.load(f)
+    except (OSError, ValueError):
+        return out
+    for rec in (payload.get('paths') or {}).values():
+        if not isinstance(rec, dict):
+            continue
+        key = _norm_path_key(rec.get('display_key'))
+        if key:
+            out[key] = rec.get('status')
+    return out
 MECHANISM_KEYWORDS = (
     'inhibit', 'activat', 'block', 'increase', 'decrease', 'reduce', 'induce',
     'mediat', 'pathway', 'signal', 'receptor', 'nf-kb', 'nlrp3', 'tnf', 'il-',
@@ -145,10 +195,18 @@ def load_research_paths():
     with open(research_paths_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     paths = data.get('paths', {})
+    statuses = _canonical_statuses()
     kept = {}
     filtered = {}
     for name, pdata in paths.items():
-        if is_dose_fragment_artifact(pdata):
+        adjudicated = statuses.get(_norm_path_key(name))
+        if adjudicated in SUPPRESSED_STATUSES:
+            filtered[name] = {
+                'reason': f'adjudicated {adjudicated} in the canonical path store',
+                'pmids': pdata.get('pmids', []),
+                'matched_text': (pdata.get('key_claims', [{}])[0].get('matched_text') or '')[:120],
+            }
+        elif is_dose_fragment_artifact(pdata):
             filtered[name] = {
                 'reason': 'all key_claims are non-mechanistic dose fragments (comparator-arm labels)',
                 'pmids': pdata.get('pmids', []),
@@ -167,9 +225,41 @@ def load_research_paths():
     return data
 
 def load_validated_paths():
-    """Load validated research paths from JSON."""
+    """Load validated research paths from JSON, applying the same suppression.
+
+    Added 2026-08-19. Suppressing artifacts only in load_research_paths() was
+    not enough: that store keys paths in ARROW spelling (`insulin_glargine ->
+    T2D`) while this one uses UNDERSCORE spelling (`insulin_glargine_T2D`), and
+    the validated-paths table + co-occurrence network render from here. So the
+    edge disappeared from one section of the dashboard and kept rendering as
+    VALIDATED in another. Suppression has to be applied wherever paths enter the
+    page, and it has to be key-spelling agnostic.
+    """
     with open(validated_paths_file, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        data = json.load(f)
+    statuses = _canonical_statuses()
+    paths = data.get('paths')
+    if not isinstance(paths, dict):
+        return data
+    kept, suppressed = {}, {}
+    for name, pdata in paths.items():
+        adjudicated = statuses.get(_norm_path_key(name))
+        if adjudicated in SUPPRESSED_STATUSES:
+            suppressed[name] = adjudicated
+        else:
+            kept[name] = pdata
+    if suppressed:
+        print(f"[build_research_paths] Suppressed {len(suppressed)} adjudicated-artifact "
+              f"validated path(s): {suppressed}")
+    data['paths'] = kept
+    data['suppressed_artifacts'] = suppressed
+    # DECREMENT, do not overwrite. `paths_validated` (63) counts the whole
+    # validated corpus across stores; `paths` (27) holds only the records that
+    # carry renderable detail. Setting one from the other silently understated
+    # the validated count by 37 on first attempt.
+    if isinstance(data.get('paths_validated'), int) and suppressed:
+        data['paths_validated'] = max(0, data['paths_validated'] - len(suppressed))
+    return data
 
 def normalize_path_name(path_name):
     """Convert path name to normalized key for matching."""
@@ -244,6 +334,23 @@ def generate_html(research_paths, validated_data):
     # Count stats
     total_paths = research_paths['total_paths']
     validated_paths = validated_data['paths_validated']
+
+    # Corpus figures read live from the extraction output. These were hardcoded
+    # ("472 data points across 61 full-text papers", "48 unique research paths")
+    # and had gone stale: the 2026-08-19 text-level dedupe cut the corpus from
+    # 528 to 414 data points, so the published prose was overstating the
+    # evidence base by ~14% while the tables below it showed the real numbers.
+    corpus_points, corpus_papers = 0, 0
+    try:
+        with open(os.path.join(base_dir, 'Analysis', 'Results',
+                               'extracted_corpus_data.json'), encoding='utf-8') as f:
+            meta = json.load(f).get('metadata', {})
+        corpus_points = meta.get('total_extractions', 0)
+        corpus_papers = meta.get('papers_processed', 0)
+    except (OSError, ValueError):
+        pass
+    corpus_points_txt = str(corpus_points) if corpus_points else 'the extracted'
+    corpus_papers_txt = str(corpus_papers) if corpus_papers else 'the corpus'
     validation_summary = validated_data['validation_summary']
 
     # Build network
@@ -487,7 +594,7 @@ def generate_html(research_paths, validated_data):
 
     <div class="context-block">
         <h4>What This Dashboard Answers</h4>
-        <p>''' + str(total_paths) + ''' research paths were extracted from 472 data points across 61 full-text papers. ''' + str(validated_paths) + ''' were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
+        <p>''' + str(total_paths) + ''' research paths are shown, extracted from ''' + corpus_points_txt + ''' de-duplicated data points across ''' + corpus_papers_txt + ''' full-text papers. ''' + str(validated_paths) + ''' were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
     </div>
 
     <div class="context-block">
@@ -792,7 +899,7 @@ def generate_html(research_paths, validated_data):
         <h3>Research Path Extraction & Validation Pipeline</h3>
         <p><strong>Stage 1: Corpus Analysis</strong> 91 full-text papers on diabetes complications were automatically extracted. Regex-based information extraction identified 472 key claims linking mechanisms (inflammation, oxidative stress, specific protein pathways) to outcomes (T1D, T2D, complications).</p>
 
-        <p><strong>Stage 2: Path Clustering</strong> These 472 data points were grouped by mechanism-outcome relationships, resulting in 48 unique research paths (e.g., "NLRP3_inflammasome → inflammation").</p>
+        <p><strong>Stage 2: Path Clustering</strong> These ''' + corpus_points_txt + ''' data points were grouped by mechanism-outcome relationships. Counts are computed at build time, not hardcoded. Identical matched text repeated within the same paper is collapsed to one data point (a dose restated 18 times is one dose, not 18 findings).</p>
 
         <p><strong>Stage 3: Validation Selection</strong> The top 25 paths (by data point frequency and clinical relevance) were selected for external validation.</p>
 
@@ -808,7 +915,7 @@ def generate_html(research_paths, validated_data):
     </div>
 
     <footer style="margin-top: 50px; padding-top: 25px; border-top: 1px solid #ddd; color: #999; font-size: 0.9em;">
-        <p>Dashboard built with Tufte-inspired design principles (minimal decoration, data-ink ratio focus). Data source: Diabetes Research Corpus (61 full-text papers). GA4 Analytics: G-JGMD5VRYPH.</p>
+        <p>Dashboard built with Tufte-inspired design principles (minimal decoration, data-ink ratio focus). Data source: Diabetes Research Corpus (''' + corpus_papers_txt + ''' full-text papers). GA4 Analytics: G-JGMD5VRYPH.</p>
     </footer>
 
 </div>

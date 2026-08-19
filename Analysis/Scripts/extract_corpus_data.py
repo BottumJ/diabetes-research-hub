@@ -203,6 +203,7 @@ def run_extraction():
     """Run all extractors across the corpus."""
     all_extractions = defaultdict(list)
     paper_stats = {}
+    dedupe_log = []
 
     ft_dir = os.path.join(library_dir, 'fulltext')
     ft_files = sorted(Path(ft_dir).glob('*.json'))
@@ -254,7 +255,7 @@ def run_extraction():
                     })
 
             if matches_found:
-                # Deduplicate by position (within 50 chars)
+                # Pass 1: deduplicate by position (within 50 chars)
                 deduped = []
                 seen_positions = set()
                 for m in sorted(matches_found, key=lambda x: x['position']):
@@ -263,8 +264,47 @@ def run_extraction():
                         deduped.append(m)
                         seen_positions.add(pos_bucket)
 
-                paper_extractions[data_type] = deduped
+                # Pass 2: deduplicate by NORMALIZED MATCHED TEXT within this
+                # (paper, data_type).
+                #
+                # Added 2026-08-19 after audit found 113/490 corpus data points
+                # (23.1%) were the same fact restated in different parts of the
+                # same paper. Position bucketing alone cannot catch this: e.g.
+                # "360 mg verapamil" occurs 18x in PMID 39613428 at 18 distinct
+                # positions and was counted as 18 independent data points. That
+                # is one dose, one fact. Counting restatements as evidence
+                # inflates data_point_count and makes a single paper look like a
+                # body of literature.
+                #
+                # The first occurrence is kept (with its context); repeat
+                # occurrences are recorded as `occurrences` so nothing is lost
+                # and the collapse remains auditable.
+                text_deduped = []
+                by_text = {}
                 for m in deduped:
+                    norm_text = re.sub(r'\s+', ' ', m['matched_text']).strip().lower()
+                    if norm_text in by_text:
+                        first = by_text[norm_text]
+                        first['occurrences'] += 1
+                        first['occurrence_positions'].append(m['position'])
+                        continue
+                    m['occurrences'] = 1
+                    m['occurrence_positions'] = [m['position']]
+                    by_text[norm_text] = m
+                    text_deduped.append(m)
+
+                dupes_collapsed = len(deduped) - len(text_deduped)
+                if dupes_collapsed:
+                    dedupe_log.append({
+                        'pmid': pmid,
+                        'data_type': data_type,
+                        'raw': len(deduped),
+                        'unique': len(text_deduped),
+                        'collapsed': dupes_collapsed,
+                    })
+
+                paper_extractions[data_type] = text_deduped
+                for m in text_deduped:
                     all_extractions[data_type].append({
                         'pmid': pmid,
                         'pmcid': pmcid,
@@ -274,6 +314,7 @@ def run_extraction():
                         'matched_text': m['matched_text'],
                         'values': m['groups'],
                         'context': m['context'],
+                        'occurrences': m['occurrences'],
                         'gap_relevance': config['gap_relevance'],
                     })
 
@@ -289,7 +330,7 @@ def run_extraction():
 
     if skipped_flagged:
         print(f"  Skipped {skipped_flagged} FLAGGED off-topic full-text papers.")
-    return dict(all_extractions), paper_stats
+    return dict(all_extractions), paper_stats, dedupe_log
 
 
 def build_cross_gap_evidence(all_extractions):
@@ -316,7 +357,7 @@ if __name__ == '__main__':
     print("  CORPUS DATA EXTRACTION PIPELINE")
     print("=" * 60)
 
-    all_extractions, paper_stats = run_extraction()
+    all_extractions, paper_stats, dedupe_log = run_extraction()
 
     # Build cross-gap evidence map
     gap_evidence = build_cross_gap_evidence(all_extractions)
@@ -354,12 +395,28 @@ if __name__ == '__main__':
         print(f"    Gap {gap_num:2d} ({name}): {total} data points [{type_list}]")
 
     # Save output
+    collapsed_total = sum(d['collapsed'] for d in dedupe_log)
+    print(f"\n  TEXT DEDUPE (added 2026-08-19):")
+    print(f"    repeat restatements collapsed: {collapsed_total}")
+    print(f"    papers affected              : {len({d['pmid'] for d in dedupe_log})}")
+    for d in sorted(dedupe_log, key=lambda x: -x['collapsed'])[:8]:
+        print(f"      PMID {d['pmid']} {d['data_type']}: {d['raw']} -> {d['unique']}")
+
     output = {
         'metadata': {
             'papers_processed': len(paper_stats),
             'total_extractions': total_extractions,
             'extraction_types': {k: len(v) for k, v in all_extractions.items()},
+            'text_dedupe': {
+                'enabled': True,
+                'added': '2026-08-19',
+                'rule': 'collapse identical normalized matched_text within (pmid, data_type); '
+                        'repeat count preserved in the "occurrences" field',
+                'restatements_collapsed': collapsed_total,
+                'papers_affected': len({d['pmid'] for d in dedupe_log}),
+            },
         },
+        'dedupe_log': dedupe_log,
         'extractions': all_extractions,
         'paper_stats': paper_stats,
         'gap_evidence_map': gap_evidence,
