@@ -199,7 +199,11 @@ def generate_html(data):
     <div class="container">
         <header>
             <h1>Extracted Evidence Dashboard</h1>
-            <p class="subtitle">Quantitative data extraction from 61 full-text diabetes research papers</p>
+            <!-- Read live, not hardcoded. This subtitle said "61 full-text papers"
+                 while the paragraph below it rendered the live figure (69) from the
+                 same data file - the page contradicted itself. Any count that is not
+                 read at build time is a future stale claim. Fixed 2026-08-20. -->
+            <p class="subtitle">Quantitative data extraction from ''' + str(papers_with_data) + ''' full-text diabetes research papers</p>
             <p class="subtitle">Generated: ''' + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + '''</p>
         </header>
 

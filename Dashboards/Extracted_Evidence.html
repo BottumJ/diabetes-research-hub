@@ -150,8 +150,12 @@
     <div class="container">
         <header>
             <h1>Extracted Evidence Dashboard</h1>
-            <p class="subtitle">Quantitative data extraction from 61 full-text diabetes research papers</p>
-            <p class="subtitle">Generated: 2026-08-19 03:17:31</p>
+            <!-- Read live, not hardcoded. This subtitle said "61 full-text papers"
+                 while the paragraph below it rendered the live figure (69) from the
+                 same data file - the page contradicted itself. Any count that is not
+                 read at build time is a future stale claim. Fixed 2026-08-20. -->
+            <p class="subtitle">Quantitative data extraction from 69 full-text diabetes research papers</p>
+            <p class="subtitle">Generated: 2026-08-20 03:21:07</p>
         </header>
 
         <div class="context-block">
@@ -1573,7 +1577,7 @@
         </div>
 
         <div class="footer">
-            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-08-19</p>
+            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-08-20</p>
         </div>
     </div>
 

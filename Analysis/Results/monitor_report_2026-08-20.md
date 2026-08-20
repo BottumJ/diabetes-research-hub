@@ -1,0 +1,86 @@
+# Monitor Report — 2026-08-20
+
+**Run type:** Automated review (read-only). No hub files modified.
+**Prior report:** `monitor_report_2026-08-19.md` — read. Its findings are not restated.
+**Day 34 of frozen fetch layer.**
+
+Yesterday's report ended: *"The next report should not be longer. It should not exist, because the command should have been run."* It wasn't run. This report is deliberately short and adds only what is new.
+
+---
+
+## What changed since 2026-08-19
+
+Nothing in the fetch layer. `agent_state.json` (03:18) and a git pack are the only writes. **[Certain]** — `find -newermt "2026-08-19 00:00"` returns 1253 files, all `.git/` internals plus `agent_state.json`.
+
+---
+
+## New finding #1 — The freeze now has a documented, external cost
+
+Prior reports argued staleness in the abstract. Here is the concrete miss, verifiable today:
+
+| Event | When | State in our snapshot |
+|---|---|---|
+| Retatrutide TRIUMPH-2 readout (n=1,152; ≤20.8% wt loss, ≤1.6 pp HbA1c @80wk) | Jul 2026 | absent |
+| Retatrutide TRIUMPH-3 readout (n=1,949; ≤22.6% wt loss @80wk) | Jul 2026 | absent |
+| TRANSCEND-T2D-1 (HbA1c −1.7 to −1.9 vs −0.8 placebo @40wk) | 2026 | absent |
+| Novo zenagamtide Ph2 positive → Ph3 program planned H2 2026 | Jun 2026 | absent (no NCT in snapshot) |
+| Garzulys (insulin aspart-fsan), NovoLog biosimilar, FDA approved | 2026-07-24 | absent |
+
+All three retatrutide NCTs in `clinical_trials_latest.json` still read `ACTIVE_NOT_RECRUITING`, `results_posted=""`. **[Certain]** — direct jq query. Retatrutide is a tracked key therapy under Tier 3 (Clinical Trial Intelligence, 18/20). The monitor's stated job is to "flag trials with unexpected results that deserve attention." It is now demonstrably failing that job on its highest-profile tracked asset.
+
+*Evidence level:* the readouts above are **BRONZE** (secondary press/aggregator sources, not the CT.gov results record or primary publication). They are cited here to prove the pipeline missed events, not as findings to enter the tracker. Running `baseline_clinical_trials.py` is what would upgrade them.
+
+## New finding #2 — 84 commits exist only on this machine
+
+`git rev-list --count origin/main..main` = **84**. `origin/main` last moved **2026-04-20**. **[Certain]**
+
+Four months of daily-iteration work — path store reconciliation, citation gate fixes, extractor de-dup, the Gap #2 GOLD audit — has no remote copy. Prior reports logged "push blocked by credentials" as a plumbing note. At 84 commits and 4 months it is not a plumbing note; it is the largest single-point-of-failure in the hub. OneDrive sync is file-level backup, not history.
+
+This is a **separate P0 from the fetch freeze** and is fixable in one step (`git push` with a PAT). It has been deferred behind the fetch problem for two weeks and should not be.
+
+## New finding #3 — Permanent PubMed coverage hole is 3 days
+
+`lookback_days: 30`. Last capture window ≈ **Jun 17 → Jul 17**. A run today covers **Jul 21 → Aug 20**.
+
+```
+Jun17 ────────── Jul17 │ Jul18-20 │ Jul21 ────────── Aug20
+   captured           GAP (3d)        recoverable today
+```
+
+Jul 18–20 is **permanently unrecoverable** by this script and grows one day per day of delay. **[Certain]** — arithmetic on `metadata.lookback_days`.
+
+---
+
+## Unchanged (verified, not re-argued)
+
+- Fetch layer dead since 2026-07-17 across all four collectors. Snapshot series terminate at `*_2026-07-17.json`. `Analysis/Logs/` last write `gap_analysis_2026-07-17.log`.
+- Render-layer files (`literature_gap_report.md` @ 2026-08-19, `gap_evidence.json`, `citation_validation.json`) carry fresh mtimes over July inputs. `literature_gap_report.md` self-reports `Date range: 2020/01/01 to 2026/07/17`. **Doctrine: cite the input date, not the render date.**
+- Gap analysis top pairs, trial counts (858 trials; 152 T1D cure/cell), PubMed domain volumes — all identical to the 2026-07-17 snapshot by construction. No delta to report because no data was collected.
+
+## Gap analysis vs. Tier 1 (unchanged, for reference)
+
+Three of the seven "potentially meaningful" gaps are Health Equity intersections (Beta Cell Regen, Treg/CAR-T, Glucokinase — all joint=0), which maps to Doctrine Tier 1 #6 Epidemiological/Equity Analysis. Treg/CAR-T × Neuropathy (joint=0) remains rank 1. All **BRONZE**, all computed on July data.
+
+---
+
+## Recommended actions — ordered, two items
+
+**1. Run the fetch layer. Today.**
+```bash
+cd <hub>/Analysis/Scripts
+python baseline_clinical_trials.py   # 34 d stale — recovers retatrutide/zenagamtide/Garzulys
+python baseline_pubmed_alerts.py     # 34 d stale — stops the 3-day hole growing
+python gap_analysis_daily.py         # 33 d stale
+python hub_monitor.py                # 34 d stale — regenerates the real diff
+```
+
+**2. Push the 84 commits.**
+```bash
+cd <hub> && git push origin main    # use a PAT; origin/main is 4 months behind
+```
+
+Everything else in this report is context. If only one line gets executed, make it line 1 of block 1.
+
+---
+
+*Generated by scheduled monitor — read-only review. Report length: intentionally ~1/3 of the 2026-08-19 report.*

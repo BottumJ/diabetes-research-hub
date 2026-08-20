@@ -65,6 +65,14 @@ SCRIPTS = {
     # miscitations were found sitting unactioned in citation_validation.json.
     # Must run immediately after 'validate'.
     'mismatchgate': ('check_citation_mismatches.py', 'Gating on unresolved citation MISMATCHes'),
+    # Added 2026-08-20. check_citation_mismatches.py consumes validate_citations.py,
+    # which scans .py SOURCE LITERALS - it never saw the external_pmids stored on
+    # research paths in agent_state.json. Screening those against PubMed titles found
+    # 17 real PMIDs attached to unrelated papers, including PMID 37889505 ("probiotic
+    # breads") cited as the PROTECT teplizumab trial and recorded as verified evidence
+    # in the 2026-08-19 run history. Presence of a PMID is not correctness of a PMID.
+    'pathcitegate': ('audit_path_citations.py',
+                     'Gating on off-topic / unresolvable external citations on research paths'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),
@@ -87,6 +95,16 @@ SCRIPTS = {
     # (33 stale, 2 missing, 0 in sync) while this runner reported all-green,
     # because rebuild_website.py only ever wrote docs/index.html.
     'syncdocs': ('sync_docs_dashboards.py', 'Publishing rebuilt dashboards to docs/ (GitHub Pages)'),
+    # POST-PUBLISH ASSERTION. Must run dead last - it reads docs/, which only
+    # exists in its final form after syncdocs. Added 2026-08-20 after an
+    # adjudicated EXTRACTION_ARTIFACT (insulin_glargine -> T2D) reached the
+    # published page TWICE on 2026-08-19: once because the dashboard consulted
+    # text patterns instead of the adjudication, and once because the two path
+    # stores use different key spellings. Both holes were patched in
+    # build_research_paths.py, but a patch is not a guarantee - this gate is the
+    # standing proof that the patches still hold.
+    'suppressiongate': ('regression_suppression_gate.py',
+                        'Asserting no adjudicated-artifact path is live on the published site'),
 }
 
 def run_script(name, desc):

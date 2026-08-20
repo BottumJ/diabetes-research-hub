@@ -31,8 +31,40 @@ def get_trial_count():
     except Exception:
         return 746
 
+def get_indexed_paper_count():
+    """Live count of papers in the library index.
+
+    Was hardcoded as "202 indexed papers" on the Corpus Analysis card while the
+    library actually held 301 - the landing page understated its own corpus by
+    a third. Any count not read at build time is a future stale claim.
+    Fixed 2026-08-20.
+    """
+    try:
+        path = os.path.join(RESULTS_DIR, 'paper_library', 'index.json')
+        with open(path, encoding='utf-8') as f:
+            return len(json.load(f)['papers'])
+    except Exception:
+        return None
+
+
+def get_corpus_figures():
+    """Live (data_points, papers) from the extraction output, post-dedupe."""
+    try:
+        path = os.path.join(RESULTS_DIR, 'extracted_corpus_data.json')
+        with open(path, encoding='utf-8') as f:
+            meta = json.load(f).get('metadata', {})
+        return meta.get('total_extractions'), meta.get('papers_processed')
+    except Exception:
+        return None, None
+
+
 def generate_site():
     trial_count = get_trial_count()
+    indexed_papers = get_indexed_paper_count()
+    corpus_points, corpus_papers = get_corpus_figures()
+    indexed_label = f'{indexed_papers} indexed papers' if indexed_papers else 'the indexed corpus'
+    corpus_label = (f'{corpus_papers} full-text papers: {corpus_points} de-duplicated data points'
+                    if corpus_points and corpus_papers else 'the full-text corpus')
     now = datetime.now().strftime('%Y-%m-%d')
 
     return f'''<!DOCTYPE html>
@@ -226,13 +258,13 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Corpus Analysis</h3>
-    <p>Term frequency, co-occurrence networks, and gap coverage analysis across 202 indexed papers. Identifies uncovered research intersections and surprising cross-domain connections.</p>
+    <p>Term frequency, co-occurrence networks, and gap coverage analysis across {indexed_label}. Identifies uncovered research intersections and surprising cross-domain connections.</p>
     <a href="Dashboards/Corpus_Analysis.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>Extracted Evidence Dashboard</h3>
-    <p>Quantitative data extracted from 69 full-text papers: 414 de-duplicated data points across 9 categories. C-peptide, survival rates, inflammatory markers, and drug doses with direct links to source PMIDs and context.</p>
+    <p>Quantitative data extracted from {corpus_label} across 9 categories. C-peptide, survival rates, inflammatory markers, and drug doses with direct links to source PMIDs and context.</p>
     <a href="Dashboards/Extracted_Evidence.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
