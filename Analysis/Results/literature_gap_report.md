@@ -1,6 +1,6 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-08-20 03:20
+**Generated:** 2026-08-21 07:53
 **Source:** PubMed E-utilities API (esearch.fcgi)
 **Date range:** 2020/01/01 to 2026/07/17
 **Domains analyzed:** 30

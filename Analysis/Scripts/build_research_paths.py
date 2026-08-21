@@ -184,6 +184,28 @@ def is_dose_fragment_artifact(path_data):
     return True
 
 
+def _hollow_path_keys():
+    """Normalised keys of every path recount_paths_from_corpus.py marked HOLLOW.
+
+    Added 2026-08-21. Read from research_paths.json (the recount writes
+    `status: HOLLOW` there) and normalised with _norm_path_key so the set is
+    key-spelling agnostic and usable against the underscore-spelled validated
+    store.
+    """
+    try:
+        with open(research_paths_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception:
+        return set()
+    paths = data.get('paths', {})
+    items = paths.items() if isinstance(paths, dict) else enumerate(paths)
+    return {
+        _norm_path_key(name if isinstance(name, str) else (p.get('name') or ''))
+        for name, p in items
+        if isinstance(p, dict) and p.get('status') == 'HOLLOW'
+    }
+
+
 def load_research_paths():
     """Load all research paths from JSON.
 
@@ -206,6 +228,27 @@ def load_research_paths():
                 'pmids': pdata.get('pmids', []),
                 'matched_text': (pdata.get('key_claims', [{}])[0].get('matched_text') or '')[:120],
             }
+        elif pdata.get('status') == 'HOLLOW':
+            # Added 2026-08-21. recount_paths_from_corpus.py marks a path HOLLOW
+            # when the live extraction contains ZERO data points for the (pmid,
+            # data_type) buckets the path itself declares. Because that recount
+            # rule is a SUPERSET of the original clustering, an empty result is
+            # exact: the path has no surviving corpus evidence whatsoever.
+            #
+            # 29 of 47 paths went HOLLOW when the inflammatory_markers patterns
+            # were fixed, including the site's former #1 path
+            # `NLRP3_inflammasome -> inflammation` (61 displayed data points, all
+            # of them regex artifacts - the "3" in NLRP3, the "1" in IL-1, a
+            # section number "7.2", a sample size "500"). Publishing a path with
+            # no evidence behind it is the exact failure mode this repo exists
+            # to prevent, so they are suppressed here rather than shown at zero.
+            filtered[name] = {
+                'reason': 'HOLLOW - zero live corpus data points after the 2026-08-21 '
+                          'extraction-gate fix; evidence was regex artifacts',
+                'pmids': pdata.get('pmids', []),
+                'displayed_count_before': pdata.get('data_point_count_stored', 0),
+                'matched_text': (pdata.get('key_claims', [{}]) or [{}])[0].get('matched_text', '')[:120],
+            }
         elif is_dose_fragment_artifact(pdata):
             filtered[name] = {
                 'reason': 'all key_claims are non-mechanistic dose fragments (comparator-arm labels)',
@@ -215,8 +258,13 @@ def load_research_paths():
         else:
             kept[name] = pdata
     if filtered:
-        print(f"[build_research_paths] Filtered {len(filtered)} dose-fragment artifact path(s): "
-              f"{list(filtered.keys())}")
+        hollow_n = sum(1 for v in filtered.values() if v['reason'].startswith('HOLLOW'))
+        print(f"[build_research_paths] Filtered {len(filtered)} path(s): "
+              f"{hollow_n} HOLLOW (no live evidence), "
+              f"{len(filtered) - hollow_n} dose-fragment/adjudicated artifacts")
+        for n, v in sorted(filtered.items(),
+                           key=lambda x: -x[1].get('displayed_count_before', 0))[:8]:
+            print(f"    - {n} ({v['reason'][:48]})")
     data['paths'] = kept
     data['filtered_artifacts'] = filtered
     # Update total_paths if present so downstream displays match
@@ -241,16 +289,25 @@ def load_validated_paths():
     paths = data.get('paths')
     if not isinstance(paths, dict):
         return data
+    # 2026-08-21: HOLLOW paths must be suppressed here too, for exactly the
+    # key-spelling reason documented above. On first application of the hollow
+    # filter the page printed "Total paths: 17, Validated: 22" - more validated
+    # paths than paths - because this store spells the same edge differently and
+    # never saw the filter. A path with zero live evidence cannot be VALIDATED;
+    # whatever validated it was validating artifacts.
+    hollow_keys = _hollow_path_keys()
     kept, suppressed = {}, {}
     for name, pdata in paths.items():
         adjudicated = statuses.get(_norm_path_key(name))
         if adjudicated in SUPPRESSED_STATUSES:
             suppressed[name] = adjudicated
+        elif _norm_path_key(name) in hollow_keys:
+            suppressed[name] = 'HOLLOW (no live corpus evidence 2026-08-21)'
         else:
             kept[name] = pdata
     if suppressed:
-        print(f"[build_research_paths] Suppressed {len(suppressed)} adjudicated-artifact "
-              f"validated path(s): {suppressed}")
+        print(f"[build_research_paths] Suppressed {len(suppressed)} validated path(s) "
+              f"(adjudicated artifacts + HOLLOW)")
     data['paths'] = kept
     data['suppressed_artifacts'] = suppressed
     # DECREMENT, do not overwrite. `paths_validated` (63) counts the whole
@@ -259,6 +316,26 @@ def load_validated_paths():
     # the validated count by 37 on first attempt.
     if isinstance(data.get('paths_validated'), int) and suppressed:
         data['paths_validated'] = max(0, data['paths_validated'] - len(suppressed))
+
+    # RECOMPUTE the validation summary from the surviving paths (2026-08-21).
+    #
+    # `validation_summary` was previously read straight out of the stored JSON
+    # and never recomputed, so suppression never reached the headline counters.
+    # After the hollow filter the page rendered "Total paths: 17" beside
+    # "VALIDATED paths (22 total)" and then listed 3 of them - the same
+    # suppress-in-one-place-only defect found on 2026-08-19, in a third
+    # location. Deriving the summary from `kept` makes the counter structurally
+    # unable to disagree with the table beneath it.
+    if suppressed or 'validation_summary' in data:
+        recomputed = {'VALIDATED': 0, 'PARTIALLY_VALIDATED': 0, 'UNVALIDATED': 0}
+        for pdata in kept.values():
+            st = (pdata.get('validation_status') or pdata.get('status') or '').upper()
+            if st in recomputed:
+                recomputed[st] += 1
+        data['validation_summary_stored'] = data.get('validation_summary')
+        data['validation_summary'] = recomputed
+        print(f"[build_research_paths] Recomputed validation summary from surviving "
+              f"paths: {recomputed} (was {data['validation_summary_stored']})")
     return data
 
 def normalize_path_name(path_name):

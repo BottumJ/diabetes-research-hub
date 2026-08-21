@@ -448,8 +448,9 @@ h3 {
   <ul>
     <li><strong>Pooled HbA1c reduction: -0.93%</strong> (-0.968 to -0.901) from 2 pooled studies. Heterogeneity: HIGH (I²=98.7%)</li>
     <li><strong>Remission rate distribution:</strong> Mean 50%, Median 44%, Range 6%-95% (n=68 estimates)</li>
-    <li><strong>Oxidative stress → inflammation:</strong> Highest Bayesian posterior probability at 72.7%, classified as MODERATE</li>
+    <li><strong>metformin -> T2D:</strong> Highest Bayesian posterior probability at 55.3%, classified as WEAK</li>
     <li><strong>Top research path strength distribution:</strong> 0 STRONG, 1 MODERATE, 8 WEAK, 39 INSUFFICIENT (of 48 total)</li>
+    <li><strong>Suppressed from this ranking:</strong> 29 path(s) had zero surviving corpus evidence after the 2026-08-21 extraction-gate fix and are excluded. Posteriors computed from regex artifacts are not weak evidence, they are no evidence. Strength-distribution counters above are inherited from the pre-fix synthesis and are being recomputed.</li>
   </ul>
 </div>
 
@@ -611,16 +612,8 @@ h3 {
 
 <h3>Top 15 Ranked Paths by Posterior Probability</h3>
 
-<div class="bayesian-path moderate">
-  <div class="path-name" style="color: #d4a017;">1. oxidative_stress -> inflammation</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>72.7%</strong></span>
-    <span>Strength: <strong>MODERATE</strong></span>
-  </div>
-</div>
-
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">2. NLRP3_inflammasome -> inflammation</div>
+  <div class="path-name" style="color: #d67c3b;">1. metformin -> T2D</div>
   <div class="path-metric">
     <span>Posterior: <strong>55.3%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -628,15 +621,7 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">3. metformin -> T2D</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>55.3%</strong></span>
-    <span>Strength: <strong>WEAK</strong></span>
-  </div>
-</div>
-
-<div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">4. hydroxychloroquine -> T2D</div>
+  <div class="path-name" style="color: #d67c3b;">2. hydroxychloroquine -> T2D</div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -644,7 +629,7 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">5. dapagliflozin -> T2D</div>
+  <div class="path-name" style="color: #d67c3b;">3. dapagliflozin -> T2D</div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -652,7 +637,7 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">6. dapagliflozin -> inflammation</div>
+  <div class="path-name" style="color: #d67c3b;">4. verapamil -> T1D</div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -660,23 +645,7 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">7. verapamil -> T1D</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>40.0%</strong></span>
-    <span>Strength: <strong>WEAK</strong></span>
-  </div>
-</div>
-
-<div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">8. verapamil -> beta_cell</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>40.0%</strong></span>
-    <span>Strength: <strong>WEAK</strong></span>
-  </div>
-</div>
-
-<div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">9. NF_kB -> inflammation</div>
+  <div class="path-name" style="color: #d67c3b;">5. verapamil -> beta_cell</div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -684,7 +653,7 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">10. empagliflozin -> inflammation</div>
+  <div class="path-name" style="color: #999999;">6. dapagliflozin -> nephropathy</div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -692,7 +661,7 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">11. dapagliflozin -> nephropathy</div>
+  <div class="path-name" style="color: #999999;">7. oxidative_stress -> cardiovascular</div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -700,7 +669,7 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">12. pioglitazone -> T2D</div>
+  <div class="path-name" style="color: #999999;">8. dorzagliatin -> T2D</div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -708,7 +677,7 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">13. oxidative_stress -> cardiovascular</div>
+  <div class="path-name" style="color: #999999;">9. rapamycin -> inflammation</div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -716,17 +685,49 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">14. NLRP3_inflammasome -> nephropathy</div>
+  <div class="path-name" style="color: #999999;">10. semaglutide -> retinopathy</div>
   <div class="path-metric">
-    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
   </div>
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">15. dorzagliatin -> T2D</div>
+  <div class="path-name" style="color: #999999;">11. metformin -> nephropathy</div>
   <div class="path-metric">
-    <span>Posterior: <strong>26.4%</strong></span>
+    <span>Posterior: <strong>14.3%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">12. vitamin_d -> autoimmune</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>14.3%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">13. metformin -> cardiovascular</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>14.3%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">14. tacrolimus -> inflammation</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>14.3%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">15. calcineurin -> islet_transplant</div>
+  <div class="path-metric">
+    <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
   </div>
 </div>

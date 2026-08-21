@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-08-20T03:21:02.078588",
+  "timestamp": "2026-08-21T07:53:52.931830",
   "summary": {
-    "WEAK": 137,
-    "CONFIRMED": 74,
+    "WEAK": 136,
+    "CONFIRMED": 75,
     "MISMATCH": 1,
-    "PLAUSIBLE": 62,
+    "PLAUSIBLE": 63,
     "NO_CLAIM": 39,
     "NO_DATA": 1
   },
-  "total_papers": 314,
+  "total_papers": 315,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -3753,6 +3753,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "32862232": {
+      "pmid": "32862232",
+      "title": "The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (DAPA-CKD) trial: baseline characteristics.",
+      "score": "CONFIRMED",
+      "confidence": 0.767,
+      "details": "4/6 claim terms found in paper; 10 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "_close_run_2026_08_21.py",
+          "line": 196,
+          "text": "'dapagliflozin -> nephropathy cited PMID 32862232, the DAPA-CKD BASELINE '"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "32929230": {
       "pmid": "32929230",
       "title": "Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes mellitus.",
@@ -4921,15 +4938,20 @@
     "37889505": {
       "pmid": "37889505",
       "title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
-      "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/6 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.308,
+      "details": "4/13 claim terms found in paper; 3 diabetes domain terms; 2 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "fix_path_citations_2026_08_20.py",
           "line": 13,
           "text": "The most consequential is PMID 37889505. `teplizumab -> autoimmune` cites it as"
+        },
+        {
+          "file": "_close_run_2026_08_20.py",
+          "line": 160,
+          "text": "'Worst case: PMID 37889505 (\"Recent advances in probiotic breads\") is cited by '"
         }
       ],
       "has_abstract": true,
@@ -5143,14 +5165,19 @@
       "pmid": "39412512",
       "title": "SGLT2 inhibitors and NLRP3 inflammasome: potential target in diabetic kidney disease.",
       "score": "WEAK",
-      "confidence": 0.125,
-      "details": "1/8 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.062,
+      "details": "1/16 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "reconcile_paper_index.py",
           "line": 23,
           "text": "39 such orphans (13% of the 298 fetched abstracts), including PMID 39412512,"
+        },
+        {
+          "file": "_close_run_2026_08_21.py",
+          "line": 255,
+          "text": "'to SKIP_SECTION_TYPES. PMID 39412512 carries its results table twice (English section '"
         }
       ],
       "has_abstract": true,
@@ -5188,9 +5215,9 @@
       "pmid": "39613428",
       "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
       "score": "PLAUSIBLE",
-      "confidence": 0.227,
-      "details": "5/22 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
-      "claim_count": 5,
+      "confidence": 0.308,
+      "details": "8/26 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
+      "claim_count": 6,
       "claims": [
         {
           "file": "audit_path_count_staleness.py",
@@ -5632,10 +5659,15 @@
       "pmid": "41326666",
       "title": "Liraglutide in mild to moderate Alzheimer's disease: a phase 2b clinical trial.",
       "score": "CONFIRMED",
-      "confidence": 0.569,
-      "details": "15/32 claim terms found in paper; 7 diabetes domain terms; 7 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.517,
+      "details": "15/36 claim terms found in paper; 7 diabetes domain terms; 7 phrase matches",
+      "claim_count": 5,
       "claims": [
+        {
+          "file": "_close_run_2026_08_20.py",
+          "line": 171,
+          "text": "'HIGH on zero resolvable PMIDs; its flagship source is ELAD, now PMID 41326666, which '"
+        },
         {
           "file": "_run_2026_08_20.py",
           "line": 16,
@@ -5645,11 +5677,6 @@
           "file": "_run_2026_08_20.py",
           "line": 127,
           "text": "'PMID 41326666 - Liraglutide in mild to moderate Alzheimer\\'s disease: a phase 2b '"
-        },
-        {
-          "file": "_run_2026_08_20.py",
-          "line": 149,
-          "text": "'ELAD (PMID 41326666) missed its primary endpoint (P = 0.14) and was null on both '"
         }
       ],
       "has_abstract": true,

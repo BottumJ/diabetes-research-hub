@@ -39,6 +39,62 @@ output_path = os.path.join(dashboards_dir, 'Statistical_Analysis.html')
 
 meta_analysis = stats_data['meta_analysis']
 bayesian = stats_data['bayesian_synthesis']
+
+
+# ---------------------------------------------------------------------------
+# HOLLOW-PATH SUPPRESSION (added 2026-08-21)
+# ---------------------------------------------------------------------------
+# The Bayesian synthesis scores each path partly on corpus evidence depth. When
+# the inflammatory_markers extraction patterns were fixed on 2026-08-21, 29 of
+# 47 paths dropped to ZERO live corpus data points - their "evidence" had been
+# regex artifacts (the 3 in NLRP3, the 1 in IL-1, section numbers, sample
+# sizes). statistical_analysis.json predates that fix, so this page was still
+# publishing:
+#     #1  oxidative_stress -> inflammation    posterior 72.7%  MODERATE
+#     #2  NLRP3_inflammasome -> inflammation  posterior 55.3%  WEAK
+# Both have zero surviving evidence. A posterior computed from artifact counts
+# is not a weak result, it is a meaningless one, and presenting it beside a
+# percentage implies a precision that does not exist.
+#
+# Suppression is applied HERE, at the publishing layer, because that is where
+# the numbers reach a reader. This is the fourth location this same
+# suppress-in-one-place-only defect has surfaced (2026-08-19 validated store,
+# 2026-08-21 validated summary counter, path dashboard, now here), so the
+# hollow set is loaded from research_paths.json rather than re-derived.
+def _hollow_path_names():
+    try:
+        with open(os.path.join(results_dir, 'research_paths.json'), encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception:
+        return set()
+    paths = data.get('paths', {})
+    items = paths.items() if isinstance(paths, dict) else enumerate(paths)
+
+    def norm(k):
+        return ''.join(ch for ch in str(k).lower() if ch.isalnum())
+
+    return {
+        norm(name if isinstance(name, str) else (p.get('name') or ''))
+        for name, p in items
+        if isinstance(p, dict) and p.get('status') == 'HOLLOW'
+    }
+
+
+_hollow = _hollow_path_names()
+if _hollow:
+    def _norm(k):
+        return ''.join(ch for ch in str(k).lower() if ch.isalnum())
+
+    _before = len(bayesian.get('ranked', []))
+    bayesian['ranked'] = [
+        p for p in bayesian.get('ranked', [])
+        if _norm(p.get('path') or p.get('name') or '') not in _hollow
+    ]
+    _removed = _before - len(bayesian['ranked'])
+    bayesian['hollow_suppressed'] = _removed
+    print(f"[build_statistical_analysis] Suppressed {_removed} HOLLOW path(s) from the "
+          f"Bayesian ranking (zero live corpus evidence after the 2026-08-21 "
+          f"extraction-gate fix); {len(bayesian['ranked'])} remain.")
 monte_carlo_lada = stats_data.get('monte_carlo_lada', {})
 monte_carlo_drugs = stats_data.get('monte_carlo_drugs', {})
 
@@ -467,8 +523,9 @@ h3 {{
   <ul>
     <li><strong>Pooled HbA1c reduction: {hba1c_pooled['pooled_effect']:.2f}%</strong> {format_ci(hba1c_pooled['ci_lower'], hba1c_pooled['ci_upper'], decimals=3)} from {hba1c_pooled['n_studies']} pooled studies. Heterogeneity: {hba1c_pooled['heterogeneity']} (I²={hba1c_pooled['I_squared']:.1f}%)</li>
     <li><strong>Remission rate distribution:</strong> Mean {remission['mean_rate']:.0f}%, Median {remission['median_rate']:.0f}%, Range {remission['range'][0]:.0f}%-{remission['range'][1]:.0f}% (n={remission['n_estimates']} estimates)</li>
-    <li><strong>Oxidative stress → inflammation:</strong> Highest Bayesian posterior probability at {bayesian['ranked'][0]['posterior']*100:.1f}%, classified as {bayesian['ranked'][0]['strength']}</li>
+    <li><strong>{bayesian['ranked'][0].get('path', bayesian['ranked'][0].get('name', 'Top path'))}:</strong> Highest Bayesian posterior probability at {bayesian['ranked'][0]['posterior']*100:.1f}%, classified as {bayesian['ranked'][0]['strength']}</li>
     <li><strong>Top research path strength distribution:</strong> {bayesian['strong_paths']} STRONG, {bayesian['moderate_paths']} MODERATE, {bayesian['weak_paths']} WEAK, {bayesian['insufficient_paths']} INSUFFICIENT (of {bayesian['total_paths']} total)</li>
+    <li><strong>Suppressed from this ranking:</strong> {bayesian.get('hollow_suppressed', 0)} path(s) had zero surviving corpus evidence after the 2026-08-21 extraction-gate fix and are excluded. Posteriors computed from regex artifacts are not weak evidence, they are no evidence. Strength-distribution counters above are inherited from the pre-fix synthesis and are being recomputed.</li>
   </ul>
 </div>
 
