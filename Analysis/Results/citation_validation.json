@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-08-21T07:53:52.931830",
+  "timestamp": "2026-08-22T03:25:24.585791",
   "summary": {
     "WEAK": 136,
-    "CONFIRMED": 75,
+    "CONFIRMED": 74,
     "MISMATCH": 1,
-    "PLAUSIBLE": 63,
+    "PLAUSIBLE": 64,
     "NO_CLAIM": 39,
     "NO_DATA": 1
   },
@@ -3756,15 +3756,25 @@
     "32862232": {
       "pmid": "32862232",
       "title": "The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (DAPA-CKD) trial: baseline characteristics.",
-      "score": "CONFIRMED",
-      "confidence": 0.767,
-      "details": "4/6 claim terms found in paper; 10 diabetes domain terms; 1 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.286,
+      "details": "4/14 claim terms found in paper; 10 diabetes domain terms; 2 phrase matches",
+      "claim_count": 3,
       "claims": [
+        {
+          "file": "audit_baseline_citations.py",
+          "line": 10,
+          "text": "run: dapagliflozin -> nephropathy cited PMID 32862232, the DAPA-CKD"
+        },
         {
           "file": "_close_run_2026_08_21.py",
           "line": 196,
           "text": "'dapagliflozin -> nephropathy cited PMID 32862232, the DAPA-CKD BASELINE '"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 248,
+          "text": "'reached PMID 32862232 until this run re-ran it by hand. Now step 33 of '"
         }
       ],
       "has_abstract": true,
@@ -4509,13 +4519,23 @@
       "title": "Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Level in Coronary Artery Disease Patients with Type 2 Diabetes Mellitus and Enhanced Inflammatory Response Protocol for a Randomized, Double-Blind, Placebo-Controlled, Phase 2, Dose-Finding Study.",
       "score": "PLAUSIBLE",
       "confidence": 0.2,
-      "details": "2/10 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
-      "claim_count": 1,
+      "details": "4/20 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
+      "claim_count": 4,
       "claims": [
         {
-          "file": "_run_2026_08_20.py",
-          "line": 70,
-          "text": "'still thin. EXPLICITLY EXCLUDED: PMID 36643381 (Biomed Hub 2022, low-dose colchicine '"
+          "file": "_close_run_2026_08_22.py",
+          "line": 99,
+          "text": "'catch PMID 36643381 publishing a power-calculation assumption '"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 190,
+          "text": "'PMID 36643381 (colchicine protocol) was publishing a power-calculation '"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 231,
+          "text": "'(4) PROVENANCE, A NEW DEFECT CLASS. PMID 36643381 is a colchicine trial '"
         }
       ],
       "has_abstract": true,
@@ -5215,9 +5235,9 @@
       "pmid": "39613428",
       "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
       "score": "PLAUSIBLE",
-      "confidence": 0.308,
-      "details": "8/26 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
-      "claim_count": 6,
+      "confidence": 0.27,
+      "details": "10/37 claim terms found in paper; 11 diabetes domain terms; 1 phrase matches",
+      "claim_count": 8,
       "claims": [
         {
           "file": "audit_path_count_staleness.py",
@@ -5631,14 +5651,19 @@
       "pmid": "40982327",
       "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
       "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/12 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.188,
+      "details": "3/16 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "build_nutrition_beta.py",
           "line": 329,
           "text": "SILVER tier (promoted from BRONZE 2026-04-20; tier reconciled across state and dashboard 2026-06-19). Independent sys"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 117,
+          "text": "'by 2%\" (PMID 40982327) and \"remission could be no more than 1%\" '"
         }
       ],
       "has_abstract": true,

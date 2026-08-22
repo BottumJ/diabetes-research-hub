@@ -58,13 +58,61 @@ def get_corpus_figures():
         return None, None
 
 
+# Human-readable names for extraction types, used to describe the evidence
+# dashboard without hardcoding a list that goes stale.
+_TYPE_LABELS = {
+    'dose_response': 'drug doses',
+    'odds_ratio': 'odds ratios',
+    'hazard_ratio': 'hazard ratios',
+    'remission': 'remission rates',
+    'hba1c_change': 'HbA1c changes',
+    'inflammatory_markers': 'inflammatory markers',
+    'survival_graft': 'graft survival',
+    'autoantibody': 'autoantibody prevalence',
+    'c_peptide': 'C-peptide',
+    'cost_qaly': 'cost per QALY',
+}
+
+
+def get_corpus_categories():
+    """(n_categories, 'a, b, c and d') describing the LIVE extraction types.
+
+    Hardcoded here until 2026-08-22 as "9 categories. C-peptide, survival
+    rates, inflammatory markers, and drug doses". Both halves went stale the
+    moment the extractors were tightened that day: the corpus dropped to 8
+    populated categories and C-peptide - named first - fell to ZERO surviving
+    extractions, because every C-peptide "measurement" in the corpus turned out
+    to be an unbounded-wildcard artifact. A landing page advertising C-peptide
+    evidence the corpus does not contain is the exact failure mode this repo
+    keeps finding, so the sentence is now derived rather than written.
+    """
+    try:
+        path = os.path.join(RESULTS_DIR, 'extracted_corpus_data.json')
+        with open(path, encoding='utf-8') as f:
+            types = json.load(f).get('metadata', {}).get('extraction_types', {})
+        live = [t for t, n in sorted(types.items(), key=lambda kv: -kv[1]) if n]
+        if not live:
+            return None, None
+        top = [_TYPE_LABELS.get(t, t.replace('_', ' ')) for t in live[:4]]
+        if len(top) > 1:
+            listed = ', '.join(top[:-1]) + ' and ' + top[-1]
+        else:
+            listed = top[0]
+        return len(live), listed
+    except Exception:
+        return None, None
+
+
 def generate_site():
     trial_count = get_trial_count()
     indexed_papers = get_indexed_paper_count()
     corpus_points, corpus_papers = get_corpus_figures()
+    n_categories, category_list = get_corpus_categories()
     indexed_label = f'{indexed_papers} indexed papers' if indexed_papers else 'the indexed corpus'
     corpus_label = (f'{corpus_papers} full-text papers: {corpus_points} de-duplicated data points'
                     if corpus_points and corpus_papers else 'the full-text corpus')
+    category_label = (f'{n_categories} categories. {category_list[0].upper()}{category_list[1:]}'
+                      if n_categories and category_list else 'several categories. Measurements')
     now = datetime.now().strftime('%Y-%m-%d')
 
     return f'''<!DOCTYPE html>
@@ -264,7 +312,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Extracted Evidence Dashboard</h3>
-    <p>Quantitative data extracted from {corpus_label} across 9 categories. C-peptide, survival rates, inflammatory markers, and drug doses with direct links to source PMIDs and context.</p>
+    <p>Quantitative data extracted from {corpus_label} across {category_label} with direct links to source PMIDs and context.</p>
     <a href="Dashboards/Extracted_Evidence.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

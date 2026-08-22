@@ -73,6 +73,40 @@ SCRIPTS = {
     # in the 2026-08-19 run history. Presence of a PMID is not correctness of a PMID.
     'pathcitegate': ('audit_path_citations.py',
                      'Gating on off-topic / unresolvable external citations on research paths'),
+    # Added 2026-08-22. extract_corpus_data.py was NOT in this pipeline. It was
+    # run by hand, while build_corpus_analysis.py, build_extracted_evidence.py,
+    # build_research_paths.py and rebuild_website.py all read its output - so
+    # every corpus figure on the published site could be arbitrarily stale
+    # while this runner reported 47/47 green. Structurally identical to the
+    # docs/Dashboards freeze found on 2026-08-16 (33 stale, 2 missing, runner
+    # all-green), and to the reason the 2026-08-21 extractor fix did not reach
+    # PMID 32862232 until it was re-run manually on 2026-08-22.
+    # Must precede every consumer of extracted_corpus_data.json.
+    'extractcorpus': ('extract_corpus_data.py',
+                      'Extracting quantitative data points from the full-text corpus'),
+    # Added 2026-08-22. Third distinct citation-defect class in four days, and
+    # each slipped the gate built for the previous one:
+    #   PMID >= 42M sweep         -> catches FABRICATION only
+    #   audit_path_citations.py   -> catches wrong SUBJECT only
+    #   this                      -> catches wrong PAPER TYPE
+    # A trial publishes a design paper, a baseline-characteristics paper and an
+    # outcomes paper. All three resolve, all three are on topic, and only one
+    # reports a result. `dapagliflozin -> nephropathy` cited the DAPA-CKD
+    # BASELINE paper (PMID 32862232) as proof of renoprotection and every prior
+    # gate passed it. The corpus arm of the same script found the larger case:
+    # PMID 39613428 is a trial PROTOCOL supplying 15 data points to the paths
+    # that published at ranks #7 and #8.
+    'designcitegate': ('audit_baseline_citations.py',
+                       'Gating on design/baseline papers cited as outcome evidence'),
+    # Added 2026-08-22. Measures the artifact rate of every extractor and fails
+    # if an unbounded `.*?` wildcard gap reappears between a marker token and
+    # its capture group. That construction is the single root cause of the
+    # 2026-08-21 inflammatory_markers defect (57% artifact) and of the five
+    # further extractors measured on 2026-08-22 (remission 71%, survival_graft
+    # 100%, c_peptide 100%, autoantibody 60%, hba1c_change 50%). Regression
+    # protection: the pattern style, not the symptom.
+    'wildcardaudit': ('audit_extractor_wildcards.py',
+                      'Auditing extractors for unbounded-wildcard artifacts'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),

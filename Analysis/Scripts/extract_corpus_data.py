@@ -103,8 +103,11 @@ _NAME_STEMS = (
 )
 
 
-def rejection_reason(matched_text, values):
+def rejection_reason(matched_text, values, preceding=''):
     """Return a rejection reason string, or None if the match is acceptable.
+
+    `preceding` is the text immediately before the match. It is used only by
+    the provenance check, which needs to know whose number this is.
 
     Order matters: the cheapest, most certain checks run first.
     """
@@ -137,7 +140,104 @@ def rejection_reason(matched_text, values):
     if matched_text.count('(') > matched_text.count(')') and matched_text.rstrip().endswith(value):
         return 'UNCLOSED_PAREN_FRAGMENT'
 
+    # 5. IDENTIFIER-SHAPED FRACTION (added 2026-08-22).
+    #    Bounding the gaps stops a fraction pairing with a remission mention
+    #    two sentences away, but an identifier sitting NEXT TO the word still
+    #    matches. These are the ones found in the 2026-08-22 audit:
+    #        CTRI/2020/08/027072   trial registration
+    #        2018/23JAN/023        ethics approval
+    #        CD80/86               co-stimulatory molecule pair
+    #        F4/80+                macrophage surface marker
+    #        HLA DR3/4             genotype
+    #    None is a numerator over a denominator.
+    if _IDENTIFIER_FRACTION.search(matched_text):
+        return 'IDENTIFIER_FRACTION'
+
+    # 6. DEFINITION THRESHOLD (added 2026-08-22). "remission was defined as an
+    #    HbA1c <6.5%" states the study's ENDPOINT DEFINITION, not its result.
+    #    Bounding the gaps left three of these as the only surviving remission
+    #    artifacts; all three captured 6.5, which is the ADA remission
+    #    threshold rather than any trial's remission rate.
+    if _DEFINITION_CONTEXT.search(matched_text):
+        return 'DEFINITION_THRESHOLD'
+
+    # 7. IMPLAUSIBLE FRACTION: for an n/N event rate the numerator cannot
+    #    exceed the denominator. Catches date-shaped pairs (2020/07) that
+    #    carry no identifier keyword.
+    frac = re.search(r'\b(\d{1,5})\s*/\s*(\d{1,5})\b', matched_text)
+    if frac:
+        num, den = int(frac.group(1)), int(frac.group(2))
+        if den == 0 or num > den:
+            return 'IMPLAUSIBLE_FRACTION'
+
+    # 8. WRONG PROVENANCE (added 2026-08-22).
+    #
+    #    A number in a paper is not automatically a finding OF that paper. Two
+    #    provenance classes were found in PMID 36643381 (a colchicine trial
+    #    PROTOCOL) while building audit_baseline_citations.py, both published
+    #    as corpus evidence for `colchicine -> inflammation`:
+    #
+    #      "we ESTIMATED that hs-CRP is suppressed to 3.22 mg/L in the
+    #       0.25 mg/day treatment group"
+    #          -> a sample-size assumption. The trial had not run. This is a
+    #             PROJECTION being served as a measurement, which is the most
+    #             damaging error class this repository can make.
+    #
+    #      "because of the PREVIOUS REPORT indicating that colchicine 1 mg for
+    #       4 weeks reduced hs-CRP by about 60% in CAD patients with
+    #       hs-CRP >=0.2 mg/dL"
+    #          -> another trial's result, quoted in the rationale. The captured
+    #             0.2 mg/dL is in fact an eligibility threshold.
+    #
+    #    Same family as the 2026-08-19 insulin_glargine finding, where the
+    #    "evidence" came from a meta-analysis's characteristics-of-included-
+    #    studies table: the number was real, it just belonged to someone else.
+    if preceding and _PROJECTED_VALUE.search(preceding):
+        return 'PROJECTED_NOT_MEASURED'
+    if preceding and _ATTRIBUTED_ELSEWHERE.search(preceding):
+        return 'ATTRIBUTED_TO_OTHER_STUDY'
+
     return None
+
+
+# Language marking a number as PROJECTED rather than observed.
+#
+# Deliberately does NOT include protocol future tense ("will be randomised",
+# "participants will receive"). A first draft did, and it rejected "360 mg
+# verapamil" from the Ver-A-T1D protocol - but a planned dose is still the
+# dose, and a protocol is the correct source for it. What must be rejected is
+# a projected RESULT: a number the study has not yet observed but has assumed
+# in order to size itself.
+_PROJECTED_VALUE = re.compile(
+    r'(?:we\s+(?:estimate|estimated|assume|assumed|anticipate|anticipated|'
+    r'expect|expected|project|projected)|assuming\s|sample\s+size\s+'
+    r'(?:calculation|estimation|of)|power(?:ed)?\s+(?:calculation|to\s+detect)|'
+    r'to\s+achieve\s+\d+\s*%\s+power|is\s+expected\s+to)',
+    re.IGNORECASE)
+
+# Language attributing a number to a DIFFERENT study.
+_ATTRIBUTED_ELSEWHERE = re.compile(
+    r'(?:previous(?:ly)?\s+(?:report|reported|study|studies|trial|shown|'
+    r'demonstrated)|prior\s+(?:report|study|studies|trial)|earlier\s+'
+    r'(?:report|study|trial)|report\s+indicating|has\s+been\s+reported|'
+    r'have\s+been\s+reported|\bet\s+al\.?\s|according\s+to\s+(?:the\s+)?'
+    r'(?:previous|prior|a\s+recent))',
+    re.IGNORECASE)
+
+
+# Endpoint-definition phrasing. A number inside one of these is the study's
+# threshold for calling an outcome, not the outcome.
+_DEFINITION_CONTEXT = re.compile(
+    r'(?:defined\s+as|\(defined|definition\s+of|was\s+defined|were\s+defined|'
+    r'criteri\w+\s+(?:was|were|of|for)|cut[- ]?off)',
+    re.IGNORECASE)
+
+# Identifier contexts in which a `\d+/\d+` string is a name, not a rate.
+_IDENTIFIER_FRACTION = re.compile(
+    r'(?:CTRI|NCT|ISRCTN|ChiCTR|EudraCT|IRB|REC\b|ethics|approval|'
+    r'registr\w*|accession|\bCD\s?\d+\s*/|\bF4\s*/\s*80|\bLy6[A-Z]?\s*/|'
+    r'\bHLA|\bDRB1|\bDQB1|\bDQA1|genotype|haplotype)',
+    re.IGNORECASE)
 
 
 def numeric_fingerprint(text):
@@ -156,13 +256,49 @@ def numeric_fingerprint(text):
 # ============================================================================
 
 EXTRACTORS = {
+    # ------------------------------------------------------------------
+    # c_peptide, hba1c_change, survival_graft, remission, autoantibody and
+    # cost_qaly - BOUNDED 2026-08-22
+    #
+    # Work-queue item P1 (2026-08-21) flagged these as "suspect by
+    # construction" because they carried the same unbounded `.*?` gap that was
+    # proven fatal in inflammatory_markers. audit_extractor_wildcards.py
+    # measured them on 2026-08-22 and the suspicion was correct - and the
+    # damage was larger than the item estimated:
+    #
+    #     data_type              total   artifact   rate
+    #     survival_graft             6          6   100%
+    #     c_peptide                  5          5   100%
+    #     remission                 48         34    71%
+    #     autoantibody               5          3    60%   (not on the suspect list)
+    #     hba1c_change              10          5    50%
+    #     inflammatory_markers       7          0     0%   (rewritten 2026-08-21)
+    #
+    # The zero on inflammatory_markers is the control: the same signature set
+    # that fails these five passes the one already fixed, so the signal is the
+    # wildcard, not the audit.
+    #
+    # Representative captures the old patterns published as evidence:
+    #     "glycated hemoglobin level and insulin dose. RESULTS At 1 year, the
+    #      mean AUC for the level of C peptide..."          -> HbA1c = 6.76
+    #     "insulin independence was 45.5 +/- 32.0 months"   -> survival = 7.1%
+    #     "stimulated C-peptide in ng/mL, fasting blood
+    #      glucose in mg/dL, daily needs of..."             -> C-peptide = 0.2
+    #     "CTRI/2020/08/027072 ... remission"               -> remission = 2020/07
+    #
+    # The fix is the same three rules applied to inflammatory_markers:
+    #   1. the gap may not cross a sentence boundary or newline -> [^.\n]{0,N}?
+    #   2. the captured number must carry a unit, a percent sign, or an
+    #      explicit n/N denominator
+    #   3. identifier-shaped fractions are rejected by the gate below
+    # ------------------------------------------------------------------
     'c_peptide': {
         'patterns': [
             r'[Cc]-peptide\s+(?:level|concentration|was|of|=)\s*(\d+\.?\d*)\s*(pmol/[Ll]|ng/m[Ll]|nmol/[Ll])',
             r'[Cc]-peptide\s+(\d+\.?\d*)\s*±\s*(\d+\.?\d*)\s*(pmol/[Ll]|ng/m[Ll])',
-            r'fasting\s+[Cc]-peptide\s*[=:]\s*(\d+\.?\d*)',
-            r'[Cc]-peptide\s+(?:increased|decreased|declined|preserved).*?(\d+\.?\d*)\s*%',
-            r'stimulated\s+[Cc]-peptide.*?(\d+\.?\d*)\s*(pmol/[Ll]|ng/m[Ll])',
+            r'fasting\s+[Cc]-peptide\s*[=:]\s*(\d+\.?\d*)\s*(pmol/[Ll]|ng/m[Ll]|nmol/[Ll])',
+            r'[Cc]-peptide\s+(?:increased|decreased|declined|preserved)[^.\n]{0,40}?(\d+\.?\d*)\s*%',
+            r'stimulated\s+[Cc]-peptide[^.\n]{0,40}?(\d+\.?\d*)\s*(pmol/[Ll]|ng/m[Ll])',
         ],
         'context_window': 200,
         'gap_relevance': [1, 3, 5, 8, 10],
@@ -172,7 +308,10 @@ EXTRACTORS = {
             r'HbA1c\s*(?:reduction|decrease|change|lowering)\s*(?:of|was|=)\s*[-−]?\s*(\d+\.?\d*)\s*%',
             r'HbA1c\s*[-−]\s*(\d+\.?\d*)\s*%',
             r'A1c\s+(?:from|was)\s+(\d+\.?\d*)\s*%?\s+to\s+(\d+\.?\d*)\s*%',
-            r'glycated\s+hemoglobin.*?(\d+\.?\d*)\s*±\s*(\d+\.?\d*)',
+            # The trailing `%` is the load-bearing addition: without it this
+            # pattern returned the next mean +/- SD in the paper, whatever
+            # variable it belonged to (insulin dose, time-in-range, age).
+            r'glycated\s+h(?:a)?emoglobin[^.\n]{0,30}?(\d+\.?\d*)\s*±\s*(\d+\.?\d*)\s*%',
             r'HbA1c\s*(\d+\.?\d*)\s*±\s*(\d+\.?\d*)\s*%',
         ],
         'context_window': 200,
@@ -181,9 +320,9 @@ EXTRACTORS = {
     'survival_graft': {
         'patterns': [
             r'(?:graft|islet|transplant)\s+survival\s*(?:rate|was|of|=)\s*(\d+\.?\d*)\s*%',
-            r'insulin\s+independence\s*(?:rate|was|at|of).*?(\d+\.?\d*)\s*%',
+            r'insulin\s+independence\s*(?:rate|was|at|of)?[^.\n]{0,40}?(\d+\.?\d*)\s*%',
             r'(\d+\.?\d*)\s*%\s*(?:of\s+)?(?:patients?|recipients?)\s+(?:achieved|maintained|remained)\s+insulin\s+independence',
-            r'(?:at|after)\s+(\d+)\s*(?:year|yr|month|mo).*?(\d+\.?\d*)\s*%\s*(?:graft|insulin|survival)',
+            r'(?:at|after)\s+(\d+)\s*(?:year|yr|month|mo)[^.\n]{0,40}?(\d+\.?\d*)\s*%\s*(?:graft|insulin|survival)',
             r'(\d+)/(\d+)\s*(?:patients?|recipients?)\s+(?:achieved|were)\s+insulin[- ]independent',
         ],
         'context_window': 300,
@@ -216,9 +355,17 @@ EXTRACTORS = {
     },
     'remission': {
         'patterns': [
-            r'(?:remission|complete\s+response)\s*(?:rate|was|of|in).*?(\d+\.?\d*)\s*%',
+            # 34 of 48 remission "data points" were artifact. Pattern 1 ran
+            # `.*?` from the word "remission" until it found any digit followed
+            # by a percent sign, routinely hundreds of characters and several
+            # sentences downstream. Pattern 3 paired ANY two numbers in a
+            # sentence with a later mention of remission, which is how the
+            # trial-registration number CTRI/2020/08/027072, the ethics
+            # approval 2018/23JAN/023, the CD80/86 co-stimulatory pair and the
+            # F4/80 macrophage marker all entered the corpus as remission data.
+            r'(?:remission|complete\s+response)[^.\n]{0,40}?(\d+\.?\d*)\s*%',
             r'(\d+\.?\d*)\s*%\s*(?:remission|complete\s+response)',
-            r'(\d+)/(\d+).*?(?:remission|complete\s+response)',
+            r'\b(\d{1,4})\s*/\s*(\d{1,4})\b[^.\n]{0,40}?(?:remission|complete\s+response)',
         ],
         'context_window': 200,
         'gap_relevance': [7, 8, 9],
@@ -227,7 +374,7 @@ EXTRACTORS = {
         'patterns': [
             r'\$\s*(\d[\d,]*\.?\d*)\s*(?:per|/)\s*QALY',
             r'ICER\s*(?:of|was|=)\s*\$?\s*(\d[\d,]*\.?\d*)',
-            r'cost[- ]effective(?:ness)?\s*(?:ratio|threshold).*?\$\s*(\d[\d,]*\.?\d*)',
+            r'cost[- ]effective(?:ness)?\s*(?:ratio|threshold)[^.\n]{0,40}?\$\s*(\d[\d,]*\.?\d*)',
             r'\$\s*(\d[\d,]*\.?\d*)\s*(?:per\s+patient|annually|per\s+year)',
         ],
         'context_window': 250,
@@ -279,10 +426,15 @@ EXTRACTORS = {
     },
     'autoantibody': {
         'patterns': [
-            r'(?:GAD65?|GADA?|GAD\s+antibod)\s*(?:positive|titer|level|>|=)\s*(\d+\.?\d*)',
-            r'(?:IA-2A?|IA-2\s+antibod)\s*(?:positive|titer|level).*?(\d+\.?\d*)',
-            r'(?:ZnT8A?|ZnT8\s+antibod)\s*(?:positive|titer|level).*?(\d+\.?\d*)',
-            r'autoantibod\w*\s+(?:positive|prevalence).*?(\d+\.?\d*)\s*%',
+            # Every pattern now requires a percent sign or a titre unit. The
+            # bare `(\d+\.?\d*)` in pattern 1 and the `.*?` in patterns 2-4
+            # captured the first digit downstream, which produced "95" from
+            # "The DIPP study recruited newborns ... HLA DR/DQ genotypes" and
+            # "84.6" from "A total of 6,810 patients were screened".
+            r'(?:GAD65?|GADA?|GAD\s+antibod)\w*\s*(?:positive|positivity|titer|titre|level|>|=)[^.\n]{0,30}?(\d+\.?\d*)\s*(%|U/m[Ll]|IU/m[Ll])',
+            r'(?:IA-2A?|IA-2\s+antibod)\w*\s*(?:positive|positivity|titer|titre|level)[^.\n]{0,30}?(\d+\.?\d*)\s*(%|U/m[Ll]|IU/m[Ll])',
+            r'(?:ZnT8A?|ZnT8\s+antibod)\w*\s*(?:positive|positivity|titer|titre|level)[^.\n]{0,30}?(\d+\.?\d*)\s*(%|U/m[Ll]|IU/m[Ll])',
+            r'autoantibod\w*\s+(?:positive|positivity|prevalence)[^.\n]{0,30}?(\d+\.?\d*)\s*%',
         ],
         'context_window': 200,
         'gap_relevance': [1, 8, 10],
@@ -394,7 +546,14 @@ def run_extraction():
 
                     # Rejection gate (2026-08-21): drop matches that are
                     # provably not measurements. Logged, never silent.
-                    reason = rejection_reason(matched_text, groups)
+                    #
+                    # The 180-char lookback (added 2026-08-22) feeds the
+                    # provenance checks. 180 is roughly one sentence plus its
+                    # lead-in, which is the span over which "we estimated" or
+                    # "a previous report indicated" governs a number. A wider
+                    # window starts capturing unrelated clauses.
+                    preceding = full_text[max(0, match.start() - 180):match.start()]
+                    reason = rejection_reason(matched_text, groups, preceding)
                     if reason:
                         rejected_log.append({
                             'pmid': pmid,
