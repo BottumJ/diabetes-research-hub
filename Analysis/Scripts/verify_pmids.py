@@ -163,6 +163,30 @@ def generate_html_report(pmid_locations, verification_results, output_path):
 
     now = datetime.now().strftime('%Y-%m-%d %H:%M')
 
+    # ADJUDICATED OFF-TOPIC VERDICTS (added 2026-08-23).
+    #
+    # Until today this table rendered a green "VERIFIED" badge next to
+    # "Recent advances in probiotic breads; a market trend in the functional
+    # bakery products" - a paper this repository had ALREADY adjudicated, on
+    # 2026-08-20, as an off-topic citation wrongly standing in for the PROTECT
+    # teplizumab trial. The badge was not lying by its own definition: here
+    # VERIFIED has only ever meant "this PMID resolves". But the page said so in
+    # a footnote 24,000 characters below the row, and a reader scanning a green
+    # column does not read footers.
+    #
+    # Presence is not correctness. That sentence is written in three scripts in
+    # this repo and was still being contradicted by the published page. So the
+    # verdict is now JOINED IN and the label states what was actually checked.
+    offtopic = {}
+    _reg = os.path.join(results_dir, 'adjudicated_offtopic_pmids.json')
+    if os.path.exists(_reg):
+        try:
+            with open(_reg, encoding='utf-8') as _f:
+                offtopic = json.load(_f).get('pmids', {})
+        except Exception as _e:
+            print(f'  WARNING: could not load adjudicated off-topic registry: {_e}')
+    print(f'  Adjudicated off-topic PMIDs loaded: {len(offtopic)}')
+
     # Build table rows
     rows = ''
     for pmid in sorted(verification_results.keys(), key=lambda x: int(x)):
@@ -170,8 +194,15 @@ def generate_html_report(pmid_locations, verification_results, output_path):
         locs = pmid_locations.get(pmid, [])
         files_list = ', '.join(set(l['file'] for l in locs))
 
-        if v.get('exists') is True:
-            status = 'VERIFIED'
+        if v.get('exists') is True and pmid in offtopic:
+            # Resolves, but adjudicated as attached to the wrong claim. This is
+            # strictly worse than NOT FOUND: a dead PMID gets fixed, a live one
+            # cited for something it does not say gets believed.
+            status = 'OFF-TOPIC'
+            status_color = '#c62828'
+            status_bg = '#ffebee'
+        elif v.get('exists') is True:
+            status = 'RESOLVES'
             status_color = '#2d7d46'
             status_bg = '#e8f5e9'
         elif v.get('exists') is False:
@@ -356,7 +387,8 @@ def generate_html_report(pmid_locations, verification_results, output_path):
 
     <div class="filter-row">
         <button class="filter-btn active" onclick="filterTable('all')">All</button>
-        <button class="filter-btn" onclick="filterTable('VERIFIED')">Verified</button>
+        <button class="filter-btn" onclick="filterTable('RESOLVES')">Resolves</button>
+        <button class="filter-btn" onclick="filterTable('OFF-TOPIC')">Off-topic</button>
         <button class="filter-btn" onclick="filterTable('NOT FOUND')">Not Found</button>
         <button class="filter-btn" onclick="filterTable('API ERROR')">API Errors</button>
         <input type="text" id="searchBox" placeholder="Search by PMID, title, author..." oninput="searchTable()">
@@ -381,8 +413,9 @@ def generate_html_report(pmid_locations, verification_results, output_path):
 
     <p style="margin-top:20px;font-size:0.9em;color:#636363;">
         <strong>What this checks:</strong> Each PMID is queried against the NCBI PubMed database via E-utilities API.
-        "VERIFIED" means the PMID resolves to a real paper. It does NOT automatically confirm that the paper
-        supports the specific claim it is cited for — that requires manual review of the paper's content.
+        "RESOLVES" means only that the PMID returns a real record from PubMed. It does NOT confirm that the
+        paper supports the claim it is cited for. "OFF-TOPIC" means the PMID resolves but this repository has
+        adjudicated it as attached to the wrong claim — see citation_identifier_audit.json.
         Click any PMID to open it on PubMed for manual verification.
     </p>
 

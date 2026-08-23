@@ -103,11 +103,16 @@ _NAME_STEMS = (
 )
 
 
-def rejection_reason(matched_text, values, preceding=''):
+def rejection_reason(matched_text, values, preceding='', data_type=''):
     """Return a rejection reason string, or None if the match is acceptable.
 
     `preceding` is the text immediately before the match. It is used only by
     the provenance check, which needs to know whose number this is.
+
+    `data_type` scopes the rules that are only valid for LEVEL-typed extractors.
+    A relative change is an artifact in a remission RATE and the whole point of
+    an hba1c_change, so the same string must be judged differently depending on
+    which extractor produced it.
 
     Order matters: the cheapest, most certain checks run first.
     """
@@ -197,6 +202,56 @@ def rejection_reason(matched_text, values, preceding=''):
     if preceding and _ATTRIBUTED_ELSEWHERE.search(preceding):
         return 'ATTRIBUTED_TO_OTHER_STUDY'
 
+    # 9. RATIO / BOUND / THRESHOLD MISTYPED AS A RATE (added 2026-08-23).
+    #
+    #    Raised as a P3 queue item on 2026-08-22: three surviving remission
+    #    "rates" are nothing of the kind. Reviewing all 19 found a FOURTH the
+    #    item did not list, because it is a different sub-class:
+    #
+    #      "remission; every 1%"   (40982327)  per-percentage-point effect
+    #      "remission by 2%"       (40982327)  relative change, not a level
+    #      "remission could be no more than 1%" (37356446)  an upper bound
+    #      "remission; <6.0%"      (40982327)  an endpoint threshold  <- MISSED
+    #
+    #    The fourth escaped the 2026-08-22 DEFINITION_THRESHOLD rule because
+    #    that rule keys on the words "defined as"/"criteria"/"cut-off", and
+    #    this sentence states the threshold with a bare inequality and no
+    #    definitional verb. Checking the abstract of 40982327 confirms the
+    #    diagnosis: it is a meta-analysis whose actual remission results are
+    #    RISK RATIOS (RR 1.75 and RR 5.80), so no figure in it is a remission
+    #    rate at all.
+    #
+    #    Each number is real. The defect is the TYPE, and a per-point effect
+    #    published under a heading that reads "remission rate" is a false
+    #    statement about the literature even when every digit is correct.
+    #
+    #    Anchored to the end of the match so it only fires on the captured
+    #    value itself. An unanchored inequality test would reject legitimate
+    #    results whose sentence merely contains an eligibility threshold
+    #    somewhere earlier ("HbA1c <7% was achieved in 44%").
+    if _PER_UNIT_RATE.search(matched_text):
+        return 'PER_UNIT_NOT_RATE'
+    if _BOUND_NOT_POINT.search(matched_text):
+        return 'BOUND_NOT_MEASUREMENT'
+    if _TRAILING_INEQUALITY.search(matched_text):
+        return 'THRESHOLD_NOT_RATE'
+
+    #    Scoped sub-rule. "increases the probability of reaching remission BY 2%"
+    #    is the SAME sentence as the "every 1%" slope above - one statement, two
+    #    captures - and it is a change, not a level. But "HbA1c reduced by 1.2%"
+    #    is exactly what hba1c_change exists to find. So this only applies to the
+    #    extractors whose output is a LEVEL or a RATE.
+    #    The verb sits OUTSIDE the match. Every remission pattern anchors on the
+    #    word "remission", so in "...increases the probability of reaching
+    #    remission by 2%" the match is only "remission by 2%" and the verb that
+    #    marks it as a change is in `preceding`. Testing matched_text alone
+    #    silently does nothing - which is exactly what happened on the first
+    #    attempt at this rule. Joined with a bounded tail of `preceding` for the
+    #    same reason the provenance checks read a lookback.
+    if data_type in LEVEL_TYPED_EXTRACTORS and \
+            _RELATIVE_CHANGE.search(preceding[-120:] + matched_text):
+        return 'RELATIVE_CHANGE_NOT_RATE'
+
     return None
 
 
@@ -230,6 +285,35 @@ _ATTRIBUTED_ELSEWHERE = re.compile(
 _DEFINITION_CONTEXT = re.compile(
     r'(?:defined\s+as|\(defined|definition\s+of|was\s+defined|were\s+defined|'
     r'criteri\w+\s+(?:was|were|of|for)|cut[- ]?off)',
+    re.IGNORECASE)
+
+# A number introduced by "every"/"per"/"for each" is an effect PER UNIT of
+# something else, not a level. "increases remission; every 1% reduction in
+# HbA1c..." is a slope, and a slope filed as a rate is a false claim.
+_PER_UNIT_RATE = re.compile(r'\b(?:every|per|for\s+each|each\s+additional)\s+\d',
+                            re.IGNORECASE)
+
+# Explicitly bounded or hedged quantities. An upper bound is a statement about
+# what the value is NOT.
+_BOUND_NOT_POINT = re.compile(
+    r'\b(?:no\s+more\s+than|no\s+less\s+than|no\s+greater\s+than|no\s+fewer\s+than|'
+    r'at\s+most|at\s+least|not\s+exceed(?:ing)?|up\s+to)\s+[<>≤≥]?\s*\d',
+    re.IGNORECASE)
+
+# The captured value is written as an inequality and ends the match: a threshold
+# or eligibility criterion, never a measured point estimate.
+_TRAILING_INEQUALITY = re.compile(r'[<>≤≥]\s*\d+\.?\d*\s*%?\s*$')
+
+# Extractors whose output is a level or a proportion. For these, a relative
+# change ("increased ... by 2%") is a different quantity from the thing being
+# extracted. hba1c_change and inflammatory_markers are deliberately absent: a
+# change is what they are supposed to capture.
+LEVEL_TYPED_EXTRACTORS = {'remission', 'survival_graft', 'autoantibody'}
+
+# "<verb> ... by N%" - a relative change rather than an absolute level.
+_RELATIVE_CHANGE = re.compile(
+    r'\b(?:increas|decreas|reduc|lower|rais|improv|declin|drop|boost|cut)\w*'
+    r'(?:\s+\S+){0,6}?\s+by\s+\d+\.?\d*\s*%?\s*$',
     re.IGNORECASE)
 
 # Identifier contexts in which a `\d+/\d+` string is a name, not a rate.
@@ -553,7 +637,8 @@ def run_extraction():
                     # "a previous report indicated" governs a number. A wider
                     # window starts capturing unrelated clauses.
                     preceding = full_text[max(0, match.start() - 180):match.start()]
-                    reason = rejection_reason(matched_text, groups, preceding)
+                    reason = rejection_reason(matched_text, groups, preceding,
+                                              data_type)
                     if reason:
                         rejected_log.append({
                             'pmid': pmid,

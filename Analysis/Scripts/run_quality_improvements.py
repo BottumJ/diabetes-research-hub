@@ -98,6 +98,26 @@ SCRIPTS = {
     # that published at ranks #7 and #8.
     'designcitegate': ('audit_baseline_citations.py',
                        'Gating on design/baseline papers cited as outcome evidence'),
+    # Added 2026-08-23. FOURTH distinct citation-defect class, and again it slipped
+    # every gate built for the previous three - this time not by being a different
+    # KIND of wrong paper, but by living in a different FIELD and a different
+    # IDENTIFIER NAMESPACE.
+    #
+    # audit_path_citations.py reads `external_pmids` and nothing else. Path records
+    # carry citations under at least nine field names and in three namespaces
+    # (PMID, PMC id, DOI). Consequence measured 2026-08-23: NINE of the PMIDs the
+    # 2026-08-20 run reported as PURGED were still asserted as fact in narrative
+    # fields, including `teplizumab -> autoimmune` still reading
+    #     "PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505 ...)"
+    # where 37889505 is the probiotic-breads paper. The purge cleaned the list and
+    # left the prose making the identical false claim. Repaired by
+    # repair_prose_citations_20260823.py; this gate is what stops it recurring.
+    #
+    # It also resolves PMC ids and DOIs, which no gate had ever checked: two
+    # VALIDATED HIGH/HIGH paths (`NF_kB -> inflammation`,
+    # `oxidative_stress -> cardiovascular`) rest entirely on them.
+    'identifiergate': ('audit_citation_identifiers.py',
+                       'Gating on citations in every field and identifier namespace'),
     # Added 2026-08-22. Measures the artifact rate of every extractor and fails
     # if an unbounded `.*?` wildcard gap reappears between a marker token and
     # its capture group. That construction is the single root cause of the

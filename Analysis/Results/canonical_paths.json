@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-22T03:25:34.859098",
+  "generated": "2026-08-23T03:21:46.912511",
   "generator": "Analysis/Scripts/path_store.py",
   "merge_rule": "recency wins; conservative (weaker claim) tie-break; keys normalised across stores",
   "total_paths": 68,
   "status_counts": {
-    "HOLLOW": 28,
-    "LIVE": 16,
-    "PARTIALLY_VALIDATED": 10,
+    "HOLLOW": 21,
+    "LIVE": 15,
+    "VALIDATED": 18,
+    "PARTIALLY_VALIDATED": 11,
     "CONTRADICTED_FOR_DIABETIC_NEPHROPATHY": 1,
-    "VALIDATED": 11,
     "CONTRADICTED": 2
   },
   "divergent_count": 48,
@@ -253,9 +253,9 @@
     },
     "dapagliflozin_cardiovascular": {
       "display_key": "dapagliflozin -> cardiovascular",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 2,
       "divergent": true,
       "sources": [
@@ -269,7 +269,7 @@
           "store": "state.validated_paths",
           "raw_key": "dapagliflozin -> cardiovascular",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "validated_research_paths.json",
@@ -650,8 +650,8 @@
     "metformin_cardiovascular": {
       "display_key": "metformin -> cardiovascular",
       "status": "PARTIALLY_VALIDATED",
-      "resolved_from": "state.validated_paths",
-      "effective_date": "2026-08-21",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -659,7 +659,7 @@
           "store": "state.paths",
           "raw_key": "metformin -> cardiovascular",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -677,9 +677,9 @@
     },
     "tacrolimus_inflammation": {
       "display_key": "tacrolimus -> inflammation",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -687,7 +687,7 @@
           "store": "state.paths",
           "raw_key": "tacrolimus -> inflammation",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-05-13"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -733,9 +733,9 @@
     },
     "metformin_inflammation": {
       "display_key": "metformin -> inflammation",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -743,7 +743,7 @@
           "store": "state.paths",
           "raw_key": "metformin -> inflammation",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -761,9 +761,9 @@
     },
     "pioglitazone_inflammation": {
       "display_key": "pioglitazone -> inflammation",
-      "status": "PARTIALLY_VALIDATED",
-      "resolved_from": "state.validated_paths",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -771,7 +771,7 @@
           "store": "state.paths",
           "raw_key": "pioglitazone -> inflammation",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -901,9 +901,9 @@
     },
     "rapamycin_islet_transplant": {
       "display_key": "rapamycin -> islet_transplant",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -911,7 +911,7 @@
           "store": "state.paths",
           "raw_key": "rapamycin -> islet_transplant",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-05-13"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -1041,9 +1041,9 @@
     },
     "nlrp3_inflammasome_t2d": {
       "display_key": "NLRP3_inflammasome -> T2D",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -1051,7 +1051,7 @@
           "store": "state.paths",
           "raw_key": "NLRP3_inflammasome -> T2D",
           "status": "VALIDATED",
-          "effective_date": "2026-05-13"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -1175,9 +1175,9 @@
     },
     "teplizumab_t1d": {
       "display_key": "teplizumab -> T1D",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -1185,7 +1185,7 @@
           "store": "state.paths",
           "raw_key": "teplizumab -> T1D",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -1203,9 +1203,9 @@
     },
     "teplizumab_autoimmune": {
       "display_key": "teplizumab -> autoimmune",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -1213,7 +1213,7 @@
           "store": "state.paths",
           "raw_key": "teplizumab -> autoimmune",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",
@@ -1689,9 +1689,9 @@
     },
     "dapagliflozin_inflammation": {
       "display_key": "dapagliflozin -> inflammation",
-      "status": "HOLLOW",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.paths",
+      "effective_date": "2026-08-23",
       "data_point_count": 7,
       "divergent": true,
       "sources": [
@@ -1699,7 +1699,7 @@
           "store": "state.paths",
           "raw_key": "dapagliflozin -> inflammation",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-23"
         },
         {
           "store": "state.validated_paths",

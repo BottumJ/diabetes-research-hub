@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "papers_processed": 58,
-    "total_extractions": 240,
+    "papers_processed": 56,
+    "total_extractions": 236,
     "extraction_types": {
       "dose_response": 173,
       "odds_ratio": 26,
       "survival_graft": 2,
-      "remission": 19,
       "inflammatory_markers": 5,
+      "remission": 15,
       "hba1c_change": 6,
       "hazard_ratio": 7,
       "autoantibody": 2
@@ -16,10 +16,14 @@
       "enabled": true,
       "added": "2026-08-21",
       "rule": "reject matches that are provably not measurements: tab-crossed table fragments, 4-digit years, digits belonging to molecule names (the 3 in NLRP3), and values ending inside an unclosed parenthesis. Section types FIG/TABLE/ABBR also added to SKIP_SECTION_TYPES, matching the intent documented in the source comment since the file was written.",
-      "rejected_total": 19,
+      "rejected_total": 23,
       "rejected_by_reason": {
+        "BOUND_NOT_MEASUREMENT": 1,
         "PROJECTED_NOT_MEASURED": 5,
         "DEFINITION_THRESHOLD": 3,
+        "PER_UNIT_NOT_RATE": 1,
+        "RELATIVE_CHANGE_NOT_RATE": 1,
+        "THRESHOLD_NOT_RATE": 1,
         "ATTRIBUTED_TO_OTHER_STUDY": 7,
         "UNCLOSED_PAREN_FRAGMENT": 4
       },
@@ -143,6 +147,13 @@
   ],
   "rejected_log": [
     {
+      "pmid": "37356446",
+      "data_type": "remission",
+      "reason": "BOUND_NOT_MEASUREMENT",
+      "matched_text": "remission could be no more than 1%",
+      "value": "1"
+    },
+    {
       "pmid": "39613428",
       "data_type": "dose_response",
       "reason": "PROJECTED_NOT_MEASURED",
@@ -169,6 +180,27 @@
       "reason": "DEFINITION_THRESHOLD",
       "matched_text": "remission of diabetes (defined as HbA1c <6.5%",
       "value": "6.5"
+    },
+    {
+      "pmid": "40982327",
+      "data_type": "remission",
+      "reason": "PER_UNIT_NOT_RATE",
+      "matched_text": "remission; every 1%",
+      "value": "1"
+    },
+    {
+      "pmid": "40982327",
+      "data_type": "remission",
+      "reason": "RELATIVE_CHANGE_NOT_RATE",
+      "matched_text": "remission by 2%",
+      "value": "2"
+    },
+    {
+      "pmid": "40982327",
+      "data_type": "remission",
+      "reason": "THRESHOLD_NOT_RATE",
+      "matched_text": "remission; <6.0%",
+      "value": "6.0"
     },
     {
       "pmid": "27821710",
@@ -4508,25 +4540,107 @@
         ]
       }
     ],
-    "remission": [
+    "inflammatory_markers": [
       {
-        "pmid": "37356446",
-        "pmcid": "PMC10364581",
-        "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.",
-        "year": "2023",
-        "journal": "Lancet",
-        "matched_text": "remission could be no more than 1%",
+        "pmid": "39428507",
+        "pmcid": "PMC11490997",
+        "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
+        "year": "2024",
+        "journal": "J Neuroinflammation",
+        "matched_text": "IL-1β 20ng/ml",
         "values": [
-          "1"
+          "20",
+          "ng/ml"
         ],
-        "context": "ed there was no remission (ie, no cure). In the total diabetes model, we included two predictive covariates—prevalence of obesity and year as predictors of diabetes prevalence—and assumed that annual remission could be no more than 1% (appendix sections 4.3.1 and 4.3.2). Because most data sources in adults reported prevalence of total diabetes or did not use a robust strategy to exclude people with type 1 diabetes, we were not con",
+        "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex, France). After 3 days, 25 to 10 million cells were injected intraperitoneally (I.P). EAE onset typically start",
         "occurrences": 1,
         "gap_relevance": [
-          7,
+          4,
+          5,
           8,
-          9
+          12
         ]
       },
+      {
+        "pmid": "27821710",
+        "pmcid": "PMC5118642",
+        "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+        "year": "2016",
+        "journal": "J Pharmacol Exp Ther",
+        "matched_text": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+        "values": [
+          "4.6"
+        ],
+        "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whether Glassia alters dendritic cell maturation as reported using other preparations of hAAT, cultured bone marrow-derived dendritic cells were treated wi",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "28086769",
+        "pmcid": "PMC5237131",
+        "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
+        "year": "2017",
+        "journal": "BMC Complement Altern Med",
+        "matched_text": "IL-10 4-fold",
+        "values": [
+          "4"
+        ],
+        "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the expression of IL-8 5.4-fold (p <0.01). However, the administration of CCl4 + ginseng significantly restored the alt",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "32358544",
+        "pmcid": "PMC7195385",
+        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+        "year": "2020",
+        "journal": "Nat Commun",
+        "matched_text": "NLRP3 trigger, with 0.1 μg/mL",
+        "values": [
+          "0.1",
+          "μg/mL"
+        ],
+        "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was significantly reduced after both SGLT2 inhibitor and sulfonylurea treatment (3733 ± 360 to 2549 ± 320 pg/mL, P < 0.001; and 3777 ± 485",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "32358544",
+        "pmcid": "PMC7195385",
+        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+        "year": "2020",
+        "journal": "Nat Commun",
+        "matched_text": "IL-1β and IL-18 were 0.033 pg/mL",
+        "values": [
+          "0.033",
+          "pg/mL"
+        ],
+        "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standard deviation. Isolation and culture of PBMCs Samples of whole blood were collected into acid citrate dextrose tubes. PBMCs were isol",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      }
+    ],
+    "remission": [
       {
         "pmid": "39634180",
         "pmcid": "PMC11615876",
@@ -4744,60 +4858,6 @@
         ]
       },
       {
-        "pmid": "40982327",
-        "pmcid": "PMC12635883",
-        "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-        "year": "2025",
-        "journal": "Diabetes Care",
-        "matched_text": "remission; every 1%",
-        "values": [
-          "1"
-        ],
-        "context": "thophysiological effect on β-cell capacity is more pronounced in the early stages of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. Loss of >10% of baseline body weight in the first year after diagnosis of type 2 diabetes is associated with a 70% highe",
-        "occurrences": 1,
-        "gap_relevance": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "pmid": "40982327",
-        "pmcid": "PMC12635883",
-        "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-        "year": "2025",
-        "journal": "Diabetes Care",
-        "matched_text": "remission by 2%",
-        "values": [
-          "2"
-        ],
-        "context": "of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. Loss of >10% of baseline body weight in the first year after diagnosis of type 2 diabetes is associated with a 70% higher chance of remission at 5 years. Thus, interventions with the aim of achievin",
-        "occurrences": 1,
-        "gap_relevance": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "pmid": "40982327",
-        "pmcid": "PMC12635883",
-        "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-        "year": "2025",
-        "journal": "Diabetes Care",
-        "matched_text": "remission; <6.0%",
-        "values": [
-          "6.0"
-        ],
-        "context": "op consensus on type 2 diabetes remission definitions, discordance remains even among international expert groups. In most studies in our review an A1C threshold of <6.5% was used for type 2 diabetes remission; <6.0% was used for type 2 diabetes remission in only three studies. Based on the literature included in our review, questions remain about the clinical and patient significance of having A1C <6.0% compared",
-        "occurrences": 1,
-        "gap_relevance": [
-          7,
-          8,
-          9
-        ]
-      },
-      {
         "pmid": "23413806",
         "pmcid": "PMC3748788",
         "title": "The clinical utility of C-peptide measurement in the care of patients with diabetes.",
@@ -4849,106 +4909,6 @@
           7,
           8,
           9
-        ]
-      }
-    ],
-    "inflammatory_markers": [
-      {
-        "pmid": "39428507",
-        "pmcid": "PMC11490997",
-        "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-        "year": "2024",
-        "journal": "J Neuroinflammation",
-        "matched_text": "IL-1β 20ng/ml",
-        "values": [
-          "20",
-          "ng/ml"
-        ],
-        "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex, France). After 3 days, 25 to 10 million cells were injected intraperitoneally (I.P). EAE onset typically start",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "27821710",
-        "pmcid": "PMC5118642",
-        "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-        "year": "2016",
-        "journal": "J Pharmacol Exp Ther",
-        "matched_text": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-        "values": [
-          "4.6"
-        ],
-        "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whether Glassia alters dendritic cell maturation as reported using other preparations of hAAT, cultured bone marrow-derived dendritic cells were treated wi",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "28086769",
-        "pmcid": "PMC5237131",
-        "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
-        "year": "2017",
-        "journal": "BMC Complement Altern Med",
-        "matched_text": "IL-10 4-fold",
-        "values": [
-          "4"
-        ],
-        "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the expression of IL-8 5.4-fold (p <0.01). However, the administration of CCl4 + ginseng significantly restored the alt",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "32358544",
-        "pmcid": "PMC7195385",
-        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-        "year": "2020",
-        "journal": "Nat Commun",
-        "matched_text": "NLRP3 trigger, with 0.1 μg/mL",
-        "values": [
-          "0.1",
-          "μg/mL"
-        ],
-        "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was significantly reduced after both SGLT2 inhibitor and sulfonylurea treatment (3733 ± 360 to 2549 ± 320 pg/mL, P < 0.001; and 3777 ± 485",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "32358544",
-        "pmcid": "PMC7195385",
-        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-        "year": "2020",
-        "journal": "Nat Commun",
-        "matched_text": "IL-1β and IL-18 were 0.033 pg/mL",
-        "values": [
-          "0.033",
-          "pg/mL"
-        ],
-        "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standard deviation. Isolation and culture of PBMCs Samples of whole blood were collected into acid citrate dextrose tubes. PBMCs were isol",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
         ]
       }
     ],
@@ -5269,16 +5229,6 @@
       ],
       "total_extractions": 5
     },
-    "37356446": {
-      "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.",
-      "year": "2023",
-      "journal": "Lancet",
-      "pmcid": "PMC10364581",
-      "extraction_types": [
-        "remission"
-      ],
-      "total_extractions": 1
-    },
     "37467726": {
       "title": "",
       "year": "Unknown",
@@ -5450,16 +5400,6 @@
         "dose_response"
       ],
       "total_extractions": 5
-    },
-    "40982327": {
-      "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-      "year": "2025",
-      "journal": "Diabetes Care",
-      "pmcid": "PMC12635883",
-      "extraction_types": [
-        "remission"
-      ],
-      "total_extractions": 3
     },
     "41326666": {
       "title": "Liraglutide in mild to moderate Alzheimer's disease: a phase 2b clinical trial.",
@@ -8317,13 +8257,6 @@
       ],
       "remission": [
         {
-          "pmid": "37356446",
-          "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.",
-          "year": "2023",
-          "value": "remission could be no more than 1%",
-          "context": "ed there was no remission (ie, no cure). In the total diabetes model, we included two predictive covariates—prevalence of obesity and year as predictors of diabetes prevalence—and assumed that annual remission could be no more than 1% (appendix sections 4.3.1 and 4.3.2). Because most data sources in"
-        },
-        {
           "pmid": "39634180",
           "title": "Personalized nutrition in type 2 diabetes remission: application of digital twin technology for predictive glycemic control.",
           "year": "2024",
@@ -8406,27 +8339,6 @@
           "year": "2025",
           "value": "complete response rates range from 62%",
           "context": "improved safety profile for patients. The long-term outcomes for patients with incurable cancer treated with CAR-T cell therapy are promising. In B cell acute lymphoblastic leukemia (B-ALL) patients, complete response rates range from 62% to 86% in studies with a follow-up of at least 13 months. For"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; every 1%",
-          "context": "thophysiological effect on β-cell capacity is more pronounced in the early stages of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. L"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission by 2%",
-          "context": "of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. Loss of >10% of baseline body weight in the first year after diagnosis of type 2 di"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; <6.0%",
-          "context": "op consensus on type 2 diabetes remission definitions, discordance remains even among international expert groups. In most studies in our review an A1C threshold of <6.5% was used for type 2 diabetes remission; <6.0% was used for type 2 diabetes remission in only three studies. Based on the literatu"
         },
         {
           "pmid": "23413806",
@@ -9709,14 +9621,44 @@
           "context": "a dose-finding study was planned with a lower daily dose of 0.25 mg. To evaluate the linearity of the dose-response relationship, a plan with a daily dose of 0.125 mg was ideal, but it was difficult in terms of formulation production and was abandoned. From the results of our pharmacokinetic study, "
         }
       ],
-      "remission": [
+      "inflammatory_markers": [
         {
-          "pmid": "37356446",
-          "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.",
-          "year": "2023",
-          "value": "remission could be no more than 1%",
-          "context": "ed there was no remission (ie, no cure). In the total diabetes model, we included two predictive covariates—prevalence of obesity and year as predictors of diabetes prevalence—and assumed that annual remission could be no more than 1% (appendix sections 4.3.1 and 4.3.2). Because most data sources in"
+          "pmid": "39428507",
+          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
+          "year": "2024",
+          "value": "IL-1β 20ng/ml",
+          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
         },
+        {
+          "pmid": "27821710",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "year": "2016",
+          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
+        },
+        {
+          "pmid": "28086769",
+          "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
+          "year": "2017",
+          "value": "IL-10 4-fold",
+          "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the exp"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "NLRP3 trigger, with 0.1 μg/mL",
+          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "IL-1β and IL-18 were 0.033 pg/mL",
+          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
+        }
+      ],
+      "remission": [
         {
           "pmid": "39634180",
           "title": "Personalized nutrition in type 2 diabetes remission: application of digital twin technology for predictive glycemic control.",
@@ -9802,27 +9744,6 @@
           "context": "improved safety profile for patients. The long-term outcomes for patients with incurable cancer treated with CAR-T cell therapy are promising. In B cell acute lymphoblastic leukemia (B-ALL) patients, complete response rates range from 62% to 86% in studies with a follow-up of at least 13 months. For"
         },
         {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; every 1%",
-          "context": "thophysiological effect on β-cell capacity is more pronounced in the early stages of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. L"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission by 2%",
-          "context": "of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. Loss of >10% of baseline body weight in the first year after diagnosis of type 2 di"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; <6.0%",
-          "context": "op consensus on type 2 diabetes remission definitions, discordance remains even among international expert groups. In most studies in our review an A1C threshold of <6.5% was used for type 2 diabetes remission; <6.0% was used for type 2 diabetes remission in only three studies. Based on the literatu"
-        },
-        {
           "pmid": "23413806",
           "title": "The clinical utility of C-peptide measurement in the care of patients with diabetes.",
           "year": "2013",
@@ -9842,43 +9763,6 @@
           "year": "2021",
           "value": "remission (IDAA1c ≤9; 78.6%",
           "context": "C-peptide decline continued more rapidly up to 15 months in the placebo group than in the actively treated group. A higher proportion of actively treated patients with HLA DR3-DQ2 remained in partial remission (IDAA1c ≤9; 78.6% in active [CI 59.0–91.7] and 40.0% in placebo [CI 16.3–67.7]; P = 0.0310"
-        }
-      ],
-      "inflammatory_markers": [
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
-          "pmid": "27821710",
-          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-          "year": "2016",
-          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
-        },
-        {
-          "pmid": "28086769",
-          "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
-          "year": "2017",
-          "value": "IL-10 4-fold",
-          "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the exp"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "NLRP3 trigger, with 0.1 μg/mL",
-          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "IL-1β and IL-18 were 0.033 pg/mL",
-          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
         }
       ],
       "hba1c_change": [
@@ -12201,15 +12085,47 @@
         }
       ]
     },
+    "5": {
+      "inflammatory_markers": [
+        {
+          "pmid": "39428507",
+          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
+          "year": "2024",
+          "value": "IL-1β 20ng/ml",
+          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
+        },
+        {
+          "pmid": "27821710",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "year": "2016",
+          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
+        },
+        {
+          "pmid": "28086769",
+          "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
+          "year": "2017",
+          "value": "IL-10 4-fold",
+          "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the exp"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "NLRP3 trigger, with 0.1 μg/mL",
+          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "IL-1β and IL-18 were 0.033 pg/mL",
+          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
+        }
+      ]
+    },
     "9": {
       "remission": [
-        {
-          "pmid": "37356446",
-          "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021.",
-          "year": "2023",
-          "value": "remission could be no more than 1%",
-          "context": "ed there was no remission (ie, no cure). In the total diabetes model, we included two predictive covariates—prevalence of obesity and year as predictors of diabetes prevalence—and assumed that annual remission could be no more than 1% (appendix sections 4.3.1 and 4.3.2). Because most data sources in"
-        },
         {
           "pmid": "39634180",
           "title": "Personalized nutrition in type 2 diabetes remission: application of digital twin technology for predictive glycemic control.",
@@ -12295,27 +12211,6 @@
           "context": "improved safety profile for patients. The long-term outcomes for patients with incurable cancer treated with CAR-T cell therapy are promising. In B cell acute lymphoblastic leukemia (B-ALL) patients, complete response rates range from 62% to 86% in studies with a follow-up of at least 13 months. For"
         },
         {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; every 1%",
-          "context": "thophysiological effect on β-cell capacity is more pronounced in the early stages of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. L"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission by 2%",
-          "context": "of type 2 diabetes diagnosis. There is also a strong dose-response relationship between body weight loss and diabetes remission; every 1% decrease in body weight increases the probability of reaching remission by 2%. Loss of >10% of baseline body weight in the first year after diagnosis of type 2 di"
-        },
-        {
-          "pmid": "40982327",
-          "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
-          "year": "2025",
-          "value": "remission; <6.0%",
-          "context": "op consensus on type 2 diabetes remission definitions, discordance remains even among international expert groups. In most studies in our review an A1C threshold of <6.5% was used for type 2 diabetes remission; <6.0% was used for type 2 diabetes remission in only three studies. Based on the literatu"
-        },
-        {
           "pmid": "23413806",
           "title": "The clinical utility of C-peptide measurement in the care of patients with diabetes.",
           "year": "2013",
@@ -12379,45 +12274,6 @@
           "year": "2022",
           "value": "HbA1c reduction of -1.35%",
           "context": "s to holistically analyze the efficacy and safety of HCQ in managing glycemia in people with T2DM with rigorous grading of the results. In our meta-analysis, HCQ use over 6 months was associated with HbA1c reduction of -1.35% (95% CI:-2.10 to -0.59) compared to placebo and by -0.17% (95% CI:-0.30 to"
-        }
-      ]
-    },
-    "5": {
-      "inflammatory_markers": [
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
-          "pmid": "27821710",
-          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-          "year": "2016",
-          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
-        },
-        {
-          "pmid": "28086769",
-          "title": "Effect of ginseng extract on the TGF-&#x3b2;1 signaling pathway in CCl4-induced liver fibrosis in rats.",
-          "year": "2017",
-          "value": "IL-10 4-fold",
-          "context": "l4 group. The effect of CCl4, ginseng, and CCl4 + ginseng on IL-10 and IL-8 gene expression is shown in Fig. 7a and b. The administration of CCl4 for 8 weeks significantly decreased the expression of IL-10 4-fold compared with the control group (p <0.05). The administration of CCl4 increased the exp"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "NLRP3 trigger, with 0.1 μg/mL",
-          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "IL-1β and IL-18 were 0.033 pg/mL",
-          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
         }
       ]
     },

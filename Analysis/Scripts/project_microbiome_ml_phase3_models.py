@@ -488,13 +488,21 @@ def generate_report(all_results, baseline_auc, feature_sets, cross_pop, ablation
 
 ## Executive Summary
 
-Phase 3 trained and evaluated 5 binary classification models and 1 multi-class subtype classifier on the feature-engineered multi-omic dataset (1,200 samples × 71 features). **The best model ({best['model_name']}) achieved AUC = {best['auc_roc']:.4f}**, exceeding the target of 0.88. The microbiome-only baseline achieved AUC = {baseline_auc:.4f}, confirming replication of PMID 41921761's AUC > 0.83.
+> **THESE ARE SYNTHETIC-DATA RESULTS.** Every figure below was produced by
+> models trained on data SIMULATED from published effect sizes, not on patient
+> samples. They measure whether the pipeline runs and how the feature sets rank
+> against each other. They are NOT estimates of clinical accuracy, and no AUC
+> here should be quoted as a performance figure for this approach.
+
+Phase 3 trained and evaluated 5 binary classification models and 1 multi-class subtype classifier on a SIMULATED multi-omic dataset (1,200 synthetic samples × 71 features). **The best model ({best['model_name']}) reached AUC = {best['auc_roc']:.4f}** on that synthetic data, above the 0.88 pipeline target. The microbiome-only baseline reached AUC = {baseline_auc:.4f}.
+
+The synthetic data was generated FROM the effect sizes reported in PMID 41921761 (Diabetes Res Clin Pract 2026, oral-gut microbiome axis in diabetes, systematic review). Recovering that paper's AUC from data simulated out of its own effect sizes is circular and is NOT a replication of it; it is a check that the simulation and the model are mutually consistent. An earlier version of this summary called it a replication. Independent replication requires the real cohort.
 
 **Key results:**
 - Multi-omic models consistently outperform single-omic baselines
 - Cross-omic interaction features are the most important category in ablation analysis
-- Cross-population validation shows mean AUC = {cross_pop['_summary']['mean_auc']:.4f} (target ≥ 0.75)
-- Subtype discrimination achieves macro-AUC = {subtype_res['macro_auc']:.4f}
+- Cross-population validation shows mean AUC = {cross_pop['_summary']['mean_auc']:.4f} across SIMULATED populations (target ≥ 0.75)
+- Subtype discrimination reaches macro-AUC = {subtype_res['macro_auc']:.4f} (synthetic)
 
 ---
 

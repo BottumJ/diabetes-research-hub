@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-08-23T03:22:44",
- "last_run": "2026-08-23",
+ "last_updated": "2026-08-23T03:09:58",
+ "last_run": "2026-08-22",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -5715,7 +5715,7 @@
     "31700865"
    ],
    "validation_status": "VALIDATED",
-   "evidence_summary": "Multiple RCTs and mechanistic studies confirm dapagliflozin reduces NLRP3 inflammasome activation, lowers IL-1β/IL-6/TNF-α. Nature Comms 2020 (PMID 32358544) shows SGLT2i modulates NLRP3 via ketones. Springer 2017 shows dapagliflozin reduces NLRP3/ASC/caspase-1 in diabetic cardiomyopathy mice.",
+   "evidence_summary": "Multiple RCTs and mechanistic studies confirm dapagliflozin reduces NLRP3 inflammasome activation, lowers IL-1β/IL-6/TNF-α. Nature Comms 2020 (PMID 32332732) shows SGLT2i modulates NLRP3 via ketones. Springer 2017 shows dapagliflozin reduces NLRP3/ASC/caspase-1 in diabetic cardiomyopathy mice.",
    "confidence": "HIGH",
    "last_validated": "2026-06-20",
    "validation_notes": "2026-06-20 web re-validation: 18-RCT meta-analysis (5,311 pts) shows SGLT2i significantly lower IL-6, with dapagliflozin the highest-potency agent vs empa/cana. Clinical RCT (Cardiovascular Diabetology 2024) confirms dapagliflozin reduces systemic inflammation in T2D without HF. NLRP3/itaconate + ketone mechanism corroborated. Top-level status reconciled PARTIALLY_VALIDATED->VALIDATED to match internal validation_status (was stale since 2026-03-20).",
@@ -5739,17 +5739,6 @@
       "31700865"
      ],
      "reason": "off-topic external citations found by audit_path_citations.py"
-    }
-   ],
-   "prose_citation_repairs": [
-    {
-     "date": "2026-08-23",
-     "field": "evidence_summary",
-     "was": "32332732",
-     "now": "32358544",
-     "claim_in_prose": "Nat Commun 2020, SGLT2i modulates NLRP3 via ketones",
-     "verified_title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease. [Nat Commun 2020]",
-     "why": "purged from external_pmids on 2026-08-20 as off-topic but left asserted as fact in narrative text; replacement resolved live from PubMed by searching for the paper the prose describes"
     }
    ]
   },
@@ -6907,36 +6896,6 @@
  "work_queue": [
   {
    "priority": 1,
-   "type": "verify_citations",
-   "added": "2026-08-23",
-   "target": "SCREEN THE OTHER TWO STORES THE SAME WAY. audit_citation_identifiers.py now covers every field of state[\"paths\"] and state[\"validated_paths\"]. It does NOT cover (a) the gap evidence written by extract_evidence.py, (b) the PMIDs hardcoded as literals in the ~50 build_*.py dashboard builders, which validate_citations.py checks for EXISTENCE but never for RELEVANCE, or (c) research_paths.json. Today proved the defect travels by FIELD and by NAMESPACE, not by subject matter, so assume all three carry it until measured. Reuse harvest() and the topic screen directly - they are namespace-agnostic."
-  },
-  {
-   "priority": 1,
-   "type": "audit_gap",
-   "added": "2026-08-23",
-   "target": "AUDIT WHETHER NARRATIVE FIELDS REACH THE PUBLISHED SITE. The prose citations repaired today were wrong for three days. The reason that mattered is unknown: nobody has checked which of notes / validation_notes / evidence_summary / external_evidence are RENDERED into docs/ and which are internal-only. If any is rendered, every one of the nine false claims was live on the site; if none is, the exposure was internal. Measure it - grep a distinctive phrase from each field type against docs/ - and record the answer, because it sets the severity of this whole class."
-  },
-  {
-   "priority": 2,
-   "type": "fix_pipeline",
-   "added": "2026-08-23",
-   "target": "THE VERIFICATION PAGE NEEDS THE SAME TREATMENT FOR \"UNVETTED\". PMID_Verification.html now distinguishes RESOLVES from OFF-TOPIC. But 275 PMIDs render as RESOLVES, which a reader will still read as endorsement - it means only that NCBI returned a record. The repo already knows more than that per PMID: whether it is VETTED in state[\"papers\"], whether it is on-topic, whether it is a design/protocol paper (audit_baseline_citations knows this). Join those in and give the column three or four honest levels instead of one green one. Same defect shape as the badge fixed today."
-  },
-  {
-   "priority": 2,
-   "type": "vet_papers_batch",
-   "added": "2026-08-23",
-   "target": "37889505 IS STILL IN THE PAPER LIBRARY INDEX. The probiotic-breads paper is indexed as a corpus paper (index.json, has_abstract=true) and is absent from state[\"papers\"] entirely, so it has never been vetted and never will be by the batch process, which iterates state[\"papers\"]. Its only dashboard_locations are the three audit/repair scripts that name it as a BAD citation - i.e. it is in the corpus solely because this repo wrote about it being wrong. Check how many other index entries have that shape; a paper cited only by its own error report should not count as corpus."
-  },
-  {
-   "priority": 3,
-   "type": "check_combination",
-   "added": "2026-08-23",
-   "target": "RE-CHECK tegoprubart_islet_t1d FOR A PEER-REVIEWED PUBLICATION. It is the one path exempted from the new identifier gate (UNINDEXED_BY_DESIGN): its entire evidence base is ADA/ATTD conference material and Eledon press releases, and its own record forbids citing it as vetted. Last checked 2026-07-11, still nothing indexed. Monthly."
-  },
-  {
-   "priority": 1,
    "type": "user_action_required",
    "added": "2026-08-22",
    "target": "HUMAN CALL: THE #2 AND #3 RESEARCH PATHS REST ENTIRELY ON A TRIAL PROTOCOL. `verapamil -> beta_cell` and `verapamil -> T1D` each cite exactly one corpus paper, PMID 39613428, whose title ends \"protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial\" (Ver-A-T1D, BMJ Open 2024). Every one of their data points is a dose_response label - a PLANNED dose. A protocol reports no outcomes, so neither path has any corpus evidence that verapamil does anything. NOTE both retain real external validation (29988125, 36826844, 40111679 and others) and verapamil beta-cell preservation is a genuine finding in the literature - the claim is about the CORPUS, not about verapamil. Options: (a) delist both until Ver-A-T1D reports, (b) keep them as external-evidence-only hypotheses with no corpus count, (c) publish the protocol source explicitly on the card. Delisting two of the top three paths is not an unattended change, same reasoning as the 2026-08-20 dose-label item."
@@ -6954,6 +6913,12 @@
    "target": "EXTEND THE PROVENANCE GATE BEYOND THE 180-CHAR LOOKBACK. The new PROJECTED_NOT_MEASURED / ATTRIBUTED_TO_OTHER_STUDY rules in extract_corpus_data.py read only the 180 characters before a match, which is about one sentence plus its lead-in. That was enough to catch PMID 36643381 publishing a power-calculation assumption (\"we estimated that hs-CRP is suppressed to 3.22 mg/L\") and another trial's result (\"the previous report indicating that colchicine 1 mg for 4 weeks reduced hs-CRP by about 60%\") as its own findings. It will NOT catch attribution that opens a paragraph and governs several sentences. Better signal available: section_type. A number in INTRO or a rationale section is almost never a finding of the paper reporting it. Measure before applying - INTRO is also where some papers state their own headline result."
   },
   {
+   "priority": 3,
+   "type": "fix_pipeline",
+   "added": "2026-08-22",
+   "target": "REVIEW THE THREE REMISSION EXTRACTIONS THAT ARE RATIOS, NOT RATES. Surviving remission set includes \"remission; every 1%\", \"remission by 2%\" (PMID 40982327) and \"remission could be no more than 1%\" (37356446). These are per-percentage-point effect statements or upper bounds, not remission rates, so they are typed wrongly even though the number is real and the sentence is about remission. Low severity - 3 of 240 - but it is the residue of the 2026-08-22 bounding work and should not be forgotten."
+  },
+  {
    "priority": 1,
    "type": "user_action_required",
    "added": "2026-08-21",
@@ -6961,11 +6926,26 @@
    "queue_position": 0
   },
   {
+   "priority": 2,
+   "type": "verify_citations",
+   "added": "2026-08-21",
+   "target": "REPLACE THE REMAINING 8 PURGED OFF-TOPIC CITATIONS. Three done and verified via eutils this run (metformin -> cardiovascular, dapagliflozin -> nephropathy, pioglitazone -> inflammation). Still needed: rapamycin -> islet_transplant (was 11961148), NF_kB -> inflammation (was 21067385), oxidative_stress -> inflammation (was 29515440), dapagliflozin -> inflammation (was 32332732 + 37973095), metformin -> inflammation (was 32398655 + 34107285), dapagliflozin -> cardiovascular (was 36041242), empagliflozin -> inflammation (was 36547847), empagliflozin -> nephropathy (was 38934094). All eight are currently HOLLOW, so this is lower urgency than it was - but if the human call above re-sources any of them, its external citation must be correct first.",
+   "queue_position": 4
+  },
+  {
    "priority": 3,
    "type": "fix_pipeline",
    "added": "2026-08-21",
    "target": "RESTORE EXACT PER-PATH COUNTS. recount_paths_from_corpus.py deliberately publishes an UPPER BOUND, because its rule (pmids x data_types cross product) is a superset of the original clustering - verified: it yields 62 for NF_kB -> inflammation where the file stores 5. Zero is exact, so the HOLLOW verdicts are safe, but nonzero figures must not be published as measurements and are currently written to data_point_count_upper_bound rather than data_point_count. Recovering exact counts needs the original clustering rule, which is still not in the repo.",
    "queue_position": 5
+  },
+  {
+   "priority": 1,
+   "type": "verify_citations",
+   "added": "2026-08-20",
+   "target": "REPLACE THE 13 PURGED OFF-TOPIC CITATIONS WITH CORRECT SOURCES. Purged today because they resolve to unrelated papers; each path still needs the source it was MEANT to cite, and guessing is exactly how the wrong PMIDs got in. One per path, verify each against PubMed before storing: rapamycin -> islet_transplant (was 11961148 group A streptococci); pioglitazone -> inflammation (was 19136609 cardiac fibroblasts - note validated_paths already holds the correct thiazolidinedione/CRP meta-analyses 16490432 + 20926154, so this may just need the union); NF_kB -> inflammation (was 21067385 breast cancer); metformin -> cardiovascular (was 22473097 aspirin/cancer); oxidative_stress -> inflammation (was 29515440 resveratrol/foodborne); dapagliflozin -> inflammation (was 32332732 zonulin/arthritis AND 37973095 phytoplankton); metformin -> inflammation (was 32398655 borosilicate glass AND 34107285 NSAID halogenation); dapagliflozin -> nephropathy (was 35364937 Bhattacharyya distance); dapagliflozin -> cardiovascular (was 36041242 cesarean anesthesia); empagliflozin -> inflammation (was 36547847 Nrf2/hippocampus); empagliflozin -> nephropathy (was 38934094 ageing-in-place China). DO NOT close this item by deleting the paths - all of them retain other verified external evidence.",
+   "queue_pos": 0,
+   "queue_position": 6
   },
   {
    "priority": 1,
@@ -6982,6 +6962,14 @@
    "target": "REVIEW THE TESTED DOSE_FRAGMENT_PATTERNS WIDENING (written and measured 2026-08-20, NOT applied). Current patterns allow only a short trailing-token list (OD|BID|TID|QD|daily|in|on), so \"360 mg verapamil\", \"120 mg tablets\" and \"120 mg to\" all escape the artifact filter - which is why verapamil -> T1D and verapamil -> beta_cell published at ranks #7 and #8 on 100% dose-label evidence. Proposed addition: r\"^\\s*(?:(?:a\\s+)?dose\\s+of\\s+)?\\d+(?:\\.\\d+)?\\s*[Mm]?[Gg](?:/[A-Za-z]+)?(?:\\s+[A-Za-z]+){0,3}\\s*$\" plus a trailing-conjunction variant, keeping the MECHANISM_KEYWORDS veto. MEASURED EFFECT: +118 distinct strings flagged (all manually verified as dose labels, no findings among them), 0 regressions, but paths filtered off the dashboard go 6 -> 18 of 47. Removing a third of the page is not an unattended change. Decide: apply the pattern, or keep the paths and rely on the corpus_contribution=ARTIFACT marking applied today.",
    "queue_pos": 5,
    "queue_position": 8
+  },
+  {
+   "priority": 2,
+   "type": "verify_citations",
+   "added": "2026-08-20",
+   "target": "EXTEND THE TOPIC SCREEN BEYOND external_pmids. audit_path_citations.py now checks that every PMID cited by a path resolves AND is on-topic, which found 17 bad citations that four earlier gates missed. But it only reads external_pmids. The same defect class can live in: key_sources free-text strings (which embed PMIDs in prose), gap evidence in extract_evidence.py output, and the PMIDs hardcoded in builder literals that validate_citations.py checks for EXISTENCE but not for RELEVANCE. Reuse the DOMAIN regex and the path-token fallback from audit_path_citations.py. [2026-08-22 PARTIAL: the corpus arm of audit_baseline_citations.py now screens paper_stats titles, which is how the Ver-A-T1D protocol was found supplying 15 data points to two top-ranked paths. Still open: key_sources free-text PMIDs, extract_evidence.py gap evidence, and RELEVANCE (not just existence) of builder-literal PMIDs.]",
+   "queue_pos": 6,
+   "queue_position": 9
   },
   {
    "priority": 2,
@@ -8907,15 +8895,6 @@
    "issues_found": 6,
    "changes_pushed": false,
    "summary": "Sat 2026-08-22 - FIVE MORE EXTRACTORS WERE MAJORITY ARTIFACT, AND THE EXTRACTION STEP WAS NOT IN THE PIPELINE. (1) THE MEASUREMENT. The P1 item flagged c_peptide, hba1c_change, survival_graft and remission as suspect BY CONSTRUCTION. All four were, and so was autoantibody, which the item did not list: survival_graft 6/6 artifact, c_peptide 5/5, remission 34/48, autoantibody 3/5, hba1c_change 5/10. Corpus artifact rate 18.2%. The control that makes this credible: inflammatory_markers, rewritten the day before, scored 0% under the identical signature set. (2) WHAT THEY WERE PUBLISHING. \"insulin independence was 45.5 +/- 32.0 months\" became a 7.1% graft survival figure. \"glycated hemoglobin level and insulin dose. RESULTS At 1 year, the mean AUC for the level of C peptide...\" became an HbA1c of 6.76. The trial registration CTRI/2020/08/027072 became a remission denominator. (3) THE FIX. Every gap bounded to [^.\\n]{0,N}?, every capture required to carry a unit, a percent sign or an explicit denominator - the same three rules applied to inflammatory_markers on 2026-08-21. Plus five new rejection reasons: IDENTIFIER_FRACTION, IMPLAUSIBLE_FRACTION, DEFINITION_THRESHOLD, PROJECTED_NOT_MEASURED, ATTRIBUTED_TO_OTHER_STUDY. Corpus 292 -> 240; artifact rate 18.2% -> 0.0%. (4) PROVENANCE, A NEW DEFECT CLASS. PMID 36643381 is a colchicine trial PROTOCOL. It was supplying two inflammatory-marker data points: one from \"we estimated that hs-CRP is suppressed to 3.22 mg/L\" - a sample-size assumption for a trial that had not run - and one from \"the previous report indicating that colchicine 1 mg for 4 weeks reduced hs-CRP by about 60%\", which is somebody else's result. A projection served as a measurement is the worst error this repo can make. (5) THE BIGGER ONE, FOUND SIDEWAYS. Building the design-paper gate revealed that PMID 39613428 - titled \"...protocol for a randomised, double-blind ... trial\" - is the SOLE corpus source for both `verapamil -> beta_cell` and `verapamil -> T1D`, the #2 and #3 paths on the dashboard, and contributes nothing but planned doses. Escalated as a human call rather than delisted unattended. (6) THE STRUCTURAL FINDING. extract_corpus_data.py was never in run_quality_improvements.py. Four dashboards and the landing page read its output, so the runner could report 47/47 green over arbitrarily stale extraction - and did: the 2026-08-21 extractor fix had not reached PMID 32862232 until this run re-ran it by hand. Now step 33 of 50. Two new gates registered alongside it (audit_extractor_wildcards.py, audit_baseline_citations.py); the wildcard gate was negative-tested by reinjecting the historical remission pattern, which it caught along with all 23 artifacts it reproduced. Pipeline 50/50 [OK]."
-  },
-  {
-   "date": "2026-08-23",
-   "day": "Sunday",
-   "papers_checked": 0,
-   "paths_validated": 0,
-   "issues_found": 6,
-   "changes_pushed": false,
-   "summary": "Sun 2026-08-23 - THE 2026-08-20 CITATION PURGE ONLY CLEANED ONE FIELD; THE PROSE STILL SAID THE SAME FALSE THING. (1) THE MEASUREMENT. Built audit_citation_identifiers.py, which harvests citation identifiers from EVERY field of every path record in BOTH stores and in THREE namespaces (PMID, PMC id, DOI). audit_path_citations.py, the gate written on 2026-08-20 after the bakery-paper finding, reads external_pmids and nothing else. Path records store citations under at least nine field names. First run: 440 identifiers across 134 records, 69 PMC ids and 41 DOIs that NO gate in this repo had ever resolved or topic-screened. (2) THE PURGE LEAKED. Nine of the PMIDs the 2026-08-20 run reported as purged were still asserted as fact in narrative fields. teplizumab -> autoimmune still read 'PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505, n=328)' - 37889505 is the probiotic-breads paper, the single worst citation this repo has found. Same class: NLRP3_inflammasome -> T2D citing the Larsen NEJM 2007 anakinra trial as 17554302 (a DNA-repair/haematopoietic-stem-cell paper), rapamycin -> islet_transplant citing the Edmonton protocol as 16968130 (an essay on regenerative medicine in the developing world). All 11 repaired; every replacement was resolved LIVE from PubMed by searching for the paper the prose DESCRIBES, then checked against the returned title. Two of the guesses a human would most plausibly have made were wrong: Boussageon 2012 PLoS Med is 22509138 not 22563304, Edmonton is 17005949 not 16968130. Verified after: zero off-topic PMIDs remain in any non-audit field. (3) THE FALSE NEGATIVE THAT MATTERED MORE. Two paths rated VALIDATED with clinical confidence HIGH - NF_kB -> inflammation and oxidative_stress -> cardiovascular - have ZERO entries in external_pmids. They are not uncited; their support is PMC ids and a DOI, which no gate could see. An unscreened citation is not safer because it is in a different namespace. Now resolved via the NCBI ID converter and esearch-by-DOI and topic-screened like everything else. (4) THE PUBLISHED PAGE WAS CONTRADICTING THE REPO. PMID_Verification.html rendered a green 'VERIFIED' badge next to 'Recent advances in probiotic breads' - a citation this repo adjudicated as wrong on 2026-08-20. The badge was true by its own definition (VERIFIED meant 'the PMID resolves') and the page said so - in a footnote 24,000 characters below the row. 'Presence is not correctness' is written in three scripts here and was still being contradicted by the site. Badge is now RESOLVES / OFF-TOPIC, joined against a new PERSISTENT registry (adjudicated_offtopic_pmids.json, 20 entries) rather than the live audit output - a verdict that vanishes once the defect is fixed cannot stop the defect returning. (5) REMISSION TYPING. The P3 item listed three mistyped remission extractions; reviewing all 19 found FOUR. The extra one, 'remission; <6.0%', escaped the 2026-08-22 DEFINITION_THRESHOLD rule because that rule keys on the words 'defined as'/'criteria' and this sentence states the threshold as a bare inequality. Checking the source confirmed the diagnosis is worse than the item said: PMID 40982327 is a meta-analysis whose remission results are RISK RATIOS (RR 1.75, RR 5.80), so it contains no remission rate at all. Four new rejection reasons (PER_UNIT_NOT_RATE, BOUND_NOT_MEASUREMENT, THRESHOLD_NOT_RATE, RELATIVE_CHANGE_NOT_RATE); the last is scoped to level-typed extractors, because a relative change is an artifact in a remission rate and the entire point of hba1c_change. Corpus 240 -> 236; all 15 surviving remission extractions are genuine rates. (6) A CIRCULAR REPLICATION CLAIM. The credibility sweep found no fabricated PMIDs, but project_microbiome_ml_phase3_models.py published an executive summary reading 'the best model achieved AUC = X, confirming replication of PMID 41921761's AUC > 0.83'. The models are trained on SYNTHETIC data generated from that paper's own effect sizes - recovering its AUC is circular, not a replication. The synthetic-data caveat existed, in section 6, below the claim it was meant to govern. Summary rewritten with the qualifier first. (7) PIPELINE. audit_citation_identifiers.py wired in as gate #4 in the citation family; 51/51 [OK]; docs/ republished."
   }
  ],
  "topic_checks": {
@@ -10837,10 +10816,6 @@
     "PMID 36643381 (colchicine protocol) was publishing a power-calculation assumption and another trial's result as its own inflammatory-marker findings. Both are now rejected as PROJECTED_NOT_MEASURED and ATTRIBUTED_TO_OTHER_STUDY.",
     "Trial-registration and molecule-name fractions (CTRI/2020/08/027072, ethics approval 2018/23JAN/023, CD80/86, F4/80+, HLA DR3/4) were being counted as remission n/N denominators."
    ]
-  },
-  {
-   "date": "2026-08-23",
-   "note": "Citations live under >=9 field names in 3 identifier namespaces across 2 stores. Any future citation gate must be written against that shape, not against a field name."
   }
  ],
  "combination_validation_pending": [
@@ -10994,40 +10969,5 @@
    }
   },
   "active_count": 7
- },
- "closed_queue_items": [
-  {
-   "priority": 3,
-   "type": "fix_pipeline",
-   "added": "2026-08-22",
-   "target": "REVIEW THE THREE REMISSION EXTRACTIONS THAT ARE RATIOS, NOT RATES. Surviving remission set includes \"remission; every 1%\", \"remission by 2%\" (PMID 40982327) and \"remission could be no more than 1%\" (37356446). These are per-percentage-point effect statements or upper bounds, not remission rates, so they are typed wrongly even though the number is real and the sentence is about remission. Low severity - 3 of 240 - but it is the residue of the 2026-08-22 bounding work and should not be forgotten.",
-   "closed": "2026-08-23"
-  },
-  {
-   "priority": 2,
-   "type": "verify_citations",
-   "added": "2026-08-21",
-   "target": "REPLACE THE REMAINING 8 PURGED OFF-TOPIC CITATIONS. Three done and verified via eutils this run (metformin -> cardiovascular, dapagliflozin -> nephropathy, pioglitazone -> inflammation). Still needed: rapamycin -> islet_transplant (was 11961148), NF_kB -> inflammation (was 21067385), oxidative_stress -> inflammation (was 29515440), dapagliflozin -> inflammation (was 32332732 + 37973095), metformin -> inflammation (was 32398655 + 34107285), dapagliflozin -> cardiovascular (was 36041242), empagliflozin -> inflammation (was 36547847), empagliflozin -> nephropathy (was 38934094). All eight are currently HOLLOW, so this is lower urgency than it was - but if the human call above re-sources any of them, its external citation must be correct first.",
-   "queue_position": 4,
-   "closed": "2026-08-23"
-  },
-  {
-   "priority": 1,
-   "type": "verify_citations",
-   "added": "2026-08-20",
-   "target": "REPLACE THE 13 PURGED OFF-TOPIC CITATIONS WITH CORRECT SOURCES. Purged today because they resolve to unrelated papers; each path still needs the source it was MEANT to cite, and guessing is exactly how the wrong PMIDs got in. One per path, verify each against PubMed before storing: rapamycin -> islet_transplant (was 11961148 group A streptococci); pioglitazone -> inflammation (was 19136609 cardiac fibroblasts - note validated_paths already holds the correct thiazolidinedione/CRP meta-analyses 16490432 + 20926154, so this may just need the union); NF_kB -> inflammation (was 21067385 breast cancer); metformin -> cardiovascular (was 22473097 aspirin/cancer); oxidative_stress -> inflammation (was 29515440 resveratrol/foodborne); dapagliflozin -> inflammation (was 32332732 zonulin/arthritis AND 37973095 phytoplankton); metformin -> inflammation (was 32398655 borosilicate glass AND 34107285 NSAID halogenation); dapagliflozin -> nephropathy (was 35364937 Bhattacharyya distance); dapagliflozin -> cardiovascular (was 36041242 cesarean anesthesia); empagliflozin -> inflammation (was 36547847 Nrf2/hippocampus); empagliflozin -> nephropathy (was 38934094 ageing-in-place China). DO NOT close this item by deleting the paths - all of them retain other verified external evidence.",
-   "queue_pos": 0,
-   "queue_position": 6,
-   "closed": "2026-08-23"
-  },
-  {
-   "priority": 2,
-   "type": "verify_citations",
-   "added": "2026-08-20",
-   "target": "EXTEND THE TOPIC SCREEN BEYOND external_pmids. audit_path_citations.py now checks that every PMID cited by a path resolves AND is on-topic, which found 17 bad citations that four earlier gates missed. But it only reads external_pmids. The same defect class can live in: key_sources free-text strings (which embed PMIDs in prose), gap evidence in extract_evidence.py output, and the PMIDs hardcoded in builder literals that validate_citations.py checks for EXISTENCE but not for RELEVANCE. Reuse the DOMAIN regex and the path-token fallback from audit_path_citations.py. [2026-08-22 PARTIAL: the corpus arm of audit_baseline_citations.py now screens paper_stats titles, which is how the Ver-A-T1D protocol was found supplying 15 data points to two top-ranked paths. Still open: key_sources free-text PMIDs, extract_evidence.py gap evidence, and RELEVANCE (not just existence) of builder-literal PMIDs.]",
-   "queue_pos": 6,
-   "queue_position": 9,
-   "closed": "2026-08-23"
-  }
- ]
+ }
 }
