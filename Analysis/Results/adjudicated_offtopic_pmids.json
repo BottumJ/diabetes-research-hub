@@ -1,6 +1,6 @@
 {
- "note": "PMIDs adjudicated as attached to the WRONG CLAIM. Every one resolves to a real PubMed record, which is exactly why they survived four gates. This registry is PERSISTENT on purpose: once the live audit is clean it reports nothing, and a verdict that disappears when the defect is fixed cannot stop the defect returning, nor label the record on the published verification page. Seeded 2026-08-23 from fix_path_citations_2026_08_20.py and repair_prose_citations_20260823.py.",
- "generated": "2026-08-23",
+ "note": "PMIDs adjudicated as attached to the WRONG CLAIM. Every one resolves to a real PubMed record, which is exactly why they survived four gates. This registry is PERSISTENT on purpose: once the live audit is clean it reports nothing, and a verdict that disappears when the defect is fixed cannot stop the defect returning, nor label the record on the published verification page. Seeded 2026-08-23 from fix_path_citations_2026_08_20.py and repair_prose_citations_20260823.py. Extended 2026-08-24 with 10 builder-literal miscitations found by audit_builder_title_agreement.py, the first gate in this repo to compare an ASSERTED title against the title PubMed returns; four of them had passed every topic screen because the wrong paper was also a diabetes paper. 2026-08-24: added claim_scoped_verdicts for PMIDs that were misattached at one site but remain correctly cited at another; a PMID-keyed verdict cannot express that distinction and applying one anyway would replace a false citation with a false badge.",
+ "generated": "2026-08-24",
  "pmids": {
   "11961148": {
    "actual_title": "Erythromycin-resistant group A streptococci in schoolchildren in Pittsburgh",
@@ -111,6 +111,87 @@
    "adjudicated": "2026-08-23",
    "by": "repair_prose_citations_20260823.py",
    "replaced_by": "27295076"
+  },
+  "28864502": {
+   "actual_title": "Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "resolution": "WITHDRAWN - described paper could not be located in PubMed; no substitute asserted"
+  },
+  "15644441": {
+   "actual_title": "Syncytin-A and syncytin-B, two fusogenic placenta-specific murine envelope genes.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "resolution": "WITHDRAWN - described paper could not be located in PubMed; no substitute asserted"
+  },
+  "22723585": {
+   "actual_title": "Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation (Larsen, NEJM)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "17429083"
+  },
+  "24931610": {
+   "actual_title": "SETD2-dependent histone H3K36 trimethylation is required for homologous recombination repair.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "Verapamil blocks TXNIP and protects beta cells from apoptosis (Shalev)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "22442301"
+  },
+  "16498215": {
+   "actual_title": "Novel approach to calvarial bone transport using a rabbit model.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "resolution": "WITHDRAWN - described paper could not be located in PubMed; no substitute asserted"
+  },
+  "19148081": {
+   "actual_title": "Your inbox, Mr President.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "Edmonton Protocol international trial (Shapiro, NEJM 2006)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "17005949"
+  },
+  "31529065": {
+   "actual_title": "A mobile app identifies momentary psychosocial and contextual factors related to glycemia.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "Biphasic C-peptide decline in Chinese LADA cohort (2020)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "32307525"
+  },
+  "30369313": {
+   "actual_title": "Long-Term Outcomes of Cardiac Resynchronization Therapy Using Apical Versus Nonapical Left Ventricular Pacing.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "HUNT study autoantibody risk stratification; HR 6.40 low C-peptide, HR 5.37 high GADA titre",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "34318969"
+  },
+  "23835333": {
+   "actual_title": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_builder_title_agreement.py / repair_builder_citations_20260824.py",
+   "was_asserted_as": "ACTION LADA: clinical and genetic characteristics of LADA (Hawa, Diabetes Care 2013)",
+   "note": "Builder dict asserted a title/authors/year/journal that belong to a DIFFERENT paper. Six of these carried an evidence_tier of GOLD or SILVER on published dashboards.",
+   "replaced_by": "23248199"
+  }
+ },
+ "claim_scoped_verdicts": {
+  "9742976": {
+   "actual_title": "Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33).",
+   "wrong_for": "the LADA claim \"84% GADA+ require insulin by 6 years\" in build_lada_model.py, which is UKPDS 25 (9357409), not UKPDS 33",
+   "still_correct_for": "build_health_equity.py, where UKPDS 33 is cited as the landmark T2D trial in a participant-representation analysis",
+   "adjudicated": "2026-08-24",
+   "why_not_in_pmids": "A blanket OFF-TOPIC badge on this PMID would have been a NEW false claim about a citation that is correct where it still stands. The defect was the ATTACHMENT, not the paper. This registry keys verdicts by PMID, which cannot express that, so claim-scoped verdicts are recorded separately rather than forced into the wrong shape."
   }
  }
 }

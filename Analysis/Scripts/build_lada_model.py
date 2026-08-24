@@ -49,38 +49,38 @@ CPEPTIDE_DATA = {
 REFERENCES = [
     {
         'id': 'JCEM2020',
-        'authors': 'Zhou et al.',
+        'authors': 'Li X, Chen Y, Xie Y, Xiang Y, et al.',
         'year': 2020,
-        'title': 'Biphasic C-peptide decline in Chinese LADA cohort',
-        'journal': 'Journal of Clinical Endocrinology & Metabolism',
-        'pmid': '31529065',
+        'title': 'Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.',
+        'journal': 'J Clin Endocrinol Metab',
+        'pmid': '32307525',
         'key_finding': 'Phase 1 decline: 55.19 pmol/L/year; Phase 2: ~20 pmol/L/year'
     },
     {
         'id': 'UKPDS1995',
-        'authors': 'Turner et al.',
-        'year': 1995,
-        'title': 'UKPDS: 84% GADA+ patients require insulin by 6 years',
-        'journal': 'Diabetes',
-        'pmid': '9742976',
+        'authors': 'Turner R, Stratton I, Horton V, et al.',
+        'year': 1997,
+        'title': 'UKPDS 25: autoantibodies to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes.',
+        'journal': 'Lancet',
+        'pmid': '9357409',
         'key_finding': '84% GADA-positive require insulin within 6 years of diagnosis'
     },
     {
         'id': 'HUNT2019',
-        'authors': 'Hjort et al.',
-        'year': 2019,
-        'title': 'HUNT study: Autoantibody risk stratification',
-        'journal': 'Diabetes Care',
-        'pmid': '30369313',
+        'authors': 'Sorgjerd EP, Asvold BO, Grill V',
+        'year': 2021,
+        'title': 'Low C-peptide together with a high glutamic acid decarboxylase autoantibody level predicts progression to insulin dependence in latent autoimmune diabetes in adults.',
+        'journal': 'Diabetes Obes Metab',
+        'pmid': '34318969',
         'key_finding': 'HR 6.40 for low C-peptide; HR 5.37 for high GADA titer'
     },
     {
         'id': 'ACTION2013',
-        'authors': 'Hawa et al.',
+        'authors': 'Hawa MI, Kolb H, Schloot N, et al.',
         'year': 2013,
-        'title': 'ACTION LADA: Clinical and genetic characteristics of LADA',
+        'title': 'Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.',
         'journal': 'Diabetes Care',
-        'pmid': '23835333',
+        'pmid': '23248199',
         'key_finding': '8.8% LADA prevalence in adult-onset diabetes (n=6,156)'
     },
     {
@@ -124,7 +124,7 @@ AUTOANTIBODY_RISK = [
         'characteristics': 'Single or multiple antibodies, rapid progression',
         'time_to_insulin': '4-6 years',
         'risk_level': 'High',
-        'evidence': 'UKPDS: 84% require insulin by 6yr (PMID:9742976)'
+        'evidence': 'UKPDS: 84% require insulin by 6yr (PMID:9357409)'
     },
     {
         'category': 'LADA2 (GADA < 180 U/mL)',
@@ -658,7 +658,7 @@ def generate_html():
                 <h3>Clinical Context</h3>
                 <p>LADA demonstrates characteristic biphasic C-peptide decline:</p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
-                    <li><strong>Phase 1 (0-5 years):</strong> 55.19 pmol/L/year decline in Chinese cohort <span class="cite">(JCEM 2020, PMID:31529065)</span></li>
+                    <li><strong>Phase 1 (0-5 years):</strong> 55.19 pmol/L/year decline in Chinese cohort <span class="cite">(JCEM 2020, PMID:32307525)</span></li>
                     <li><strong>Phase 2 (5-15 years):</strong> ~20 pmol/L/year decline, plateau phase</li>
                     <li><strong>Clinical thresholds:</strong> &lt;0.3 nmol/L = insulin required; 0.3-0.7 = gray zone; &gt;0.7 = T2D-like management</li>
                 </ul>
@@ -740,7 +740,7 @@ def generate_html():
                         </tr>
                     </tbody>
                 </table>
-                <div class="cite">Source: UKPDS cohort characterization (PMID:9742976)</div>
+                <div class="cite">Source: UKPDS cohort characterization (PMID:9357409)</div>
             </div>
         </div>
 
@@ -755,7 +755,7 @@ def generate_html():
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
                     <li><strong>GADA >= 180 U/mL (LADA1):</strong> Strong autoimmunity, rapid progression</li>
                     <li><strong>GADA &lt; 180 U/mL (LADA2):</strong> Borderline autoimmunity, slower decline</li>
-                    <li><strong>84% GADA+ require insulin by 6 years</strong> <span class="cite">(UKPDS, PMID:9742976)</span></li>
+                    <li><strong>84% GADA+ require insulin by 6 years</strong> <span class="cite">(UKPDS, PMID:9357409)</span></li>
                 </ul>
             </div>
 
@@ -826,7 +826,7 @@ def generate_html():
                 <h3>Key Evidence</h3>
                 <ul style="margin-left: 2rem;">
                     <li><strong>HUNT Study:</strong> HR 6.40 for low C-peptide; HR 5.37 for high GADA titer <span class="cite">(PMID:34318969)</span></li>
-                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23835333)</span></li>
+                    <li><strong>ACTION LADA:</strong> 8.8% LADA prevalence in adult-onset diabetes (n=6,156) <span class="cite">(Hawa et al. 2013, PMID:23248199)</span></li>
                     <li><strong>IA-2A positivity:</strong> Accelerates progression ~2-3 years earlier than GADA alone</li>
                 </ul>
             </div>

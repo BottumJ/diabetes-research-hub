@@ -1,0 +1,28 @@
+{
+  "note": "Citations that FAIL the DOMAIN topic screen but are CORRECT, adjudicated one at a time with a written reason. This registry exists so the screen is never widened to make a failure disappear. Widening DOMAIN to admit these two titles would also admit every future miscitation that happens to contain the added words - which is precisely how the bakery paper and the 'Your inbox, Mr President' editorial survived four gates. The screen stays narrow; the exceptions are named and reviewable.",
+  "generated": "2026-08-24",
+  "review_rule": "An entry here asserts that a human (or an agent run recording its reasoning) read the citing claim AND the paper's actual title and judged the attachment correct. Re-verify if the citing site changes.",
+  "pmids": {
+    "21997792": {
+      "actual_title": "Protective and pathogenic functions of macrophage subsets.",
+      "journal": "Nat Rev Immunol",
+      "year": "2011",
+      "authors": "Murray PJ, Wynn TA",
+      "cited_at": "build_data_dictionary.py:320 - source for the macrophage polarisation (M1/M2) term definition",
+      "why_screen_failed": "The title contains no diabetes, islet, inflammation or immunology vocabulary that the DOMAIN regex matches. 'Macrophage' is not in DOMAIN and is deliberately not being added: it is a generic cell-biology term that would admit large volumes of unrelated literature.",
+      "verdict": "ON_TOPIC_BY_REVIEW",
+      "reasoning": "This is the standard reference for macrophage subset nomenclature and is cited for a definition, not for a diabetes result. The attachment is correct.",
+      "adjudicated": "2026-08-24"
+    },
+    "36474045": {
+      "actual_title": "Discovery and systematic characterization of risk variants and genes for coronary artery disease in over a million participants.",
+      "journal": "Nat Genet",
+      "year": "2022",
+      "cited_at": "add_citations.py:111 - genetics/genomics section, GWAS variant-count context",
+      "why_screen_failed": "'Coronary' is not in the DOMAIN vocabulary; 'cardiovascular' is. Adding 'coronary' would be a defensible widening, but the same argument will be available for every future near-miss, and each widening lowers the gate for miscitations too.",
+      "verdict": "ON_TOPIC_BY_REVIEW",
+      "reasoning": "Cited for GWAS methodology and scale in a section about polygenic risk in T2D, alongside DIAMANTE. Cardiometabolic GWAS is within scope for that claim.",
+      "adjudicated": "2026-08-24"
+    }
+  }
+}

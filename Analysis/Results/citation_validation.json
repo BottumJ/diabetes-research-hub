@@ -1,14 +1,13 @@
 {
-  "timestamp": "2026-08-23T03:21:36.125316",
+  "timestamp": "2026-08-24T03:37:16.134512",
   "summary": {
-    "WEAK": 137,
-    "CONFIRMED": 74,
-    "MISMATCH": 1,
-    "PLAUSIBLE": 63,
+    "WEAK": 131,
+    "CONFIRMED": 77,
+    "PLAUSIBLE": 64,
     "NO_CLAIM": 39,
     "NO_DATA": 1
   },
-  "total_papers": 315,
+  "total_papers": 312,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -185,33 +184,6 @@
           "file": "build_nutrition_lada.py",
           "line": 852,
           "text": "Doolan et al. Diabetes Care, 2005. <a href=\"https://pubmed.ncbi.nlm.nih.gov/15793177/\" targe"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
-    "12345678": {
-      "pmid": "12345678",
-      "title": "Denpasar Declaration on Population and Development.",
-      "score": "MISMATCH",
-      "confidence": 0.0,
-      "details": "0/9 claim terms found in paper; 0 diabetes domain terms; 0 phrase matches",
-      "claim_count": 3,
-      "claims": [
-        {
-          "file": "check_citation_mismatches.py",
-          "line": 55,
-          "text": "'(\"match PMID: 12345678\"). No claim is attached to it.'"
-        },
-        {
-          "file": "postprocess_dashboards.py",
-          "line": 117,
-          "text": "r'(PMID[:\\s]*(\\d{6,9}))' # match PMID: 12345678 or PMID 12345678"
-        },
-        {
-          "file": "postprocess_dashboards.py",
-          "line": 117,
-          "text": "r'(PMID[:\\s]*(\\d{6,9}))' # match PMID: 12345678 or PMID 12345678"
         }
       ],
       "has_abstract": true,
@@ -650,6 +622,33 @@
           "file": "build_islet_outcomes.py",
           "line": 1289,
           "text": "Vincenti et al., Am J Transplant"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "17429083": {
+      "pmid": "17429083",
+      "title": "Interleukin-1-receptor antagonist in type 2 diabetes mellitus.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.316,
+      "details": "6/19 claim terms found in paper; 10 diabetes domain terms; 3 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "build_drug_repurposing_islet.py",
+          "line": 127,
+          "text": "\"reference\": \"PMID:17429083\","
+        },
+        {
+          "file": "build_drug_repurposing_islet.py",
+          "line": 867,
+          "text": "Evidence: PMID:17429083 shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to"
+        },
+        {
+          "file": "build_drug_repurposing_islet.py",
+          "line": 1066,
+          "text": "Source 2: IL-1 blockade trials in T1D/T2D (Larsen et al., PMID:17429083) show beta cell"
         }
       ],
       "has_abstract": true,
@@ -1556,33 +1555,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "22723585": {
-      "pmid": "22723585",
-      "title": "Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis of controlled feeding trials.",
-      "score": "WEAK",
-      "confidence": 0.125,
-      "details": "4/32 claim terms found in paper; 6 diabetes domain terms; 0 phrase matches",
-      "claim_count": 6,
-      "claims": [
-        {
-          "file": "build_drug_repurposing_islet.py",
-          "line": 127,
-          "text": "\"reference\": \"PMID:22723585\","
-        },
-        {
-          "file": "build_drug_repurposing_islet.py",
-          "line": 867,
-          "text": "Evidence: PMID:22723585 shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to"
-        },
-        {
-          "file": "build_drug_repurposing_islet.py",
-          "line": 1066,
-          "text": "Source 2: IL-1 blockade trials in T1D/T2D (Larsen et al., PMID:22723585) show beta cell"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "22980982": {
       "pmid": "22980982",
       "title": "Pancreatic β cell dedifferentiation as a mechanism of diabetic β cell failure.",
@@ -1643,8 +1615,8 @@
       "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
       "score": "PLAUSIBLE",
       "confidence": 0.282,
-      "details": "24/85 claim terms found in paper; 8 diabetes domain terms; 11 phrase matches",
-      "claim_count": 28,
+      "details": "24/85 claim terms found in paper; 8 diabetes domain terms; 13 phrase matches",
+      "claim_count": 29,
       "claims": [
         {
           "file": "build_gap_deep_dives.py",
@@ -1772,23 +1744,6 @@
           "file": "build_lada_diagnostic_model.py",
           "line": 13,
           "text": "- PMID:23835325: LADA diagnostic criteria review"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
-    "23835333": {
-      "pmid": "23835333",
-      "title": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes in a randomized controlled trial: metabolic and immunologic features at baseline identify a subgroup of responders.",
-      "score": "WEAK",
-      "confidence": 0.1,
-      "details": "1/10 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_lada_model.py",
-          "line": 829,
-          "text": "ACTION LADA: 8.8% LADA prevalence in adult-onset diabetes (n=6,156) (Hawa et al."
         }
       ],
       "has_abstract": true,
@@ -2594,6 +2549,33 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "28375156": {
+      "pmid": "28375156",
+      "title": "ω-3 polyunsaturated fatty acids ameliorate type 1 diabetes and autoimmunity.",
+      "score": "CONFIRMED",
+      "confidence": 0.574,
+      "details": "9/19 claim terms found in paper; 10 diabetes domain terms; 9 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "build_nutrition_beta.py",
+          "line": 354,
+          "text": "Omega-3 Fatty Acids (EPA/DHA): Anti-inflammatory and membrane-protective. Support mitochondrial fun"
+        },
+        {
+          "file": "build_nutrition_beta.py",
+          "line": 401,
+          "text": "Omega-3 (EPA/DHA) PMID:28375156"
+        },
+        {
+          "file": "build_nutrition_beta.py",
+          "line": 620,
+          "text": "Bi X, et al. Omega-3 polyunsaturated fatty acids ameliorate type 1 diabetes and autoimmunity"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "28397826": {
       "pmid": "28397826",
       "title": "Immunotherapy: Hiding in plain sight: immune escape in the era of targeted T-cell-based immunotherapies.",
@@ -2689,28 +2671,6 @@
           "file": "build_data_dictionary.py",
           "line": 700,
           "text": "'source': 'Rena G et al. The mechanisms of action of metformin. Diabetologia 2017;60(9):1577-1585. PMID:28776086'"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
-    "28864502": {
-      "pmid": "28864502",
-      "title": "Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.",
-      "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/2 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
-      "claim_count": 2,
-      "claims": [
-        {
-          "file": "build_drug_repurposing_islet.py",
-          "line": 23,
-          "text": "\"reference\": \"PMID:28864502\","
-        },
-        {
-          "file": "build_drug_repurposing_islet.py",
-          "line": 36,
-          "text": "\"reference\": \"PMID:28864502\","
         }
       ],
       "has_abstract": true,
@@ -3460,23 +3420,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "31529065": {
-      "pmid": "31529065",
-      "title": "A mobile app identifies momentary psychosocial and contextual factors related to mealtime self-management in adolescents with type 1 diabetes.",
-      "score": "WEAK",
-      "confidence": 0.067,
-      "details": "1/15 claim terms found in paper; 6 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
-      "claims": [
-        {
-          "file": "build_lada_model.py",
-          "line": 661,
-          "text": "Phase 1 (0-5 years): 55.19 pmol/L/year decline in Chinese cohort (JCEM 2020, PMI"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "31618560": {
       "pmid": "31618560",
       "title": "Six-Month Randomized, Multicenter Trial of Closed-Loop Control in Type 1 Diabetes.",
@@ -3574,10 +3517,10 @@
     "32307525": {
       "pmid": "32307525",
       "title": "Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.",
-      "score": "WEAK",
-      "confidence": 0.158,
-      "details": "3/19 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
-      "claim_count": 2,
+      "score": "PLAUSIBLE",
+      "confidence": 0.303,
+      "details": "10/33 claim terms found in paper; 7 diabetes domain terms; 1 phrase matches",
+      "claim_count": 3,
       "claims": [
         {
           "file": "build_gka_lada.py",
@@ -3588,6 +3531,11 @@
           "file": "build_gka_lada.py",
           "line": 773,
           "text": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+        },
+        {
+          "file": "build_lada_model.py",
+          "line": 661,
+          "text": "Phase 1 (0-5 years): 55.19 pmol/L/year decline in Chinese cohort (JCEM 2020, PMI"
         }
       ],
       "has_abstract": true,
@@ -4955,33 +4903,6 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "37889505": {
-      "pmid": "37889505",
-      "title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
-      "score": "WEAK",
-      "confidence": 0.19,
-      "details": "4/21 claim terms found in paper; 3 diabetes domain terms; 2 phrase matches",
-      "claim_count": 3,
-      "claims": [
-        {
-          "file": "fix_path_citations_2026_08_20.py",
-          "line": 13,
-          "text": "The most consequential is PMID 37889505. `teplizumab -> autoimmune` cites it as"
-        },
-        {
-          "file": "repair_prose_citations_20260823.py",
-          "line": 15,
-          "text": "\"PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505, n=328 ...)\""
-        },
-        {
-          "file": "_close_run_2026_08_20.py",
-          "line": 160,
-          "text": "'Worst case: PMID 37889505 (\"Recent advances in probiotic breads\") is cited by '"
-        }
-      ],
-      "has_abstract": true,
-      "has_fulltext": false
-    },
     "37909353": {
       "pmid": "37909353",
       "title": "Economic Costs of Diabetes in the U.S. in 2022.",
@@ -5943,6 +5864,33 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "9357409": {
+      "pmid": "9357409",
+      "title": "UKPDS 25: autoantibodies to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes. UK Prospective Diabetes Study Group.",
+      "score": "CONFIRMED",
+      "confidence": 0.562,
+      "details": "6/13 claim terms found in paper; 7 diabetes domain terms; 1 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "build_lada_model.py",
+          "line": 127,
+          "text": "'evidence': 'UKPDS: 84% require insulin by 6yr (PMID:9357409)'"
+        },
+        {
+          "file": "build_lada_model.py",
+          "line": 743,
+          "text": "Source: UKPDS cohort characterization (PMID:9357409)"
+        },
+        {
+          "file": "build_lada_model.py",
+          "line": 758,
+          "text": "84% GADA+ require insulin by 6 years (UKPDS, PMID:9357409)"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "9521319": {
       "pmid": "9521319",
       "title": "Dendritic cells and the control of immunity.",
@@ -5963,10 +5911,10 @@
     "9742976": {
       "pmid": "9742976",
       "title": "Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33). UK Prospective Diabetes Study (UKPDS) Group.",
-      "score": "PLAUSIBLE",
-      "confidence": 0.308,
-      "details": "4/13 claim terms found in paper; 12 diabetes domain terms; 0 phrase matches",
-      "claim_count": 5,
+      "score": "CONFIRMED",
+      "confidence": 0.6,
+      "details": "1/2 claim terms found in paper; 12 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "build_health_equity.py",
@@ -5977,11 +5925,6 @@
           "file": "build_health_equity.py",
           "line": 1272,
           "text": "PMID: 9742976"
-        },
-        {
-          "file": "build_lada_model.py",
-          "line": 127,
-          "text": "'evidence': 'UKPDS: 84% require insulin by 6yr (PMID:9742976)'"
         }
       ],
       "has_abstract": true,

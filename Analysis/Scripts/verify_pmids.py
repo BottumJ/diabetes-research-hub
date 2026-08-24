@@ -187,6 +187,26 @@ def generate_html_report(pmid_locations, verification_results, output_path):
             print(f'  WARNING: could not load adjudicated off-topic registry: {_e}')
     print(f'  Adjudicated off-topic PMIDs loaded: {len(offtopic)}')
 
+    # NOT-A-CORPUS-PAPER VERDICTS (added 2026-08-24).
+    #
+    # Same defect shape as the off-topic join above, one layer further out.
+    # PMID 12345678 ("Denpasar Declaration on Population and Development",
+    # Integration 1994) rendered here as a green RESOLVES row. It does resolve.
+    # It is also not a citation at all: it was harvested from the comment
+    # `# match PMID: 12345678` beside a regex in postprocess_dashboards.py. It
+    # was purged from the paper library index today, but this page does not read
+    # the index - it scans scripts for PMID literals - so purging the index left
+    # the row standing. A verdict is only as good as the surfaces that join it.
+    not_corpus = {}
+    _nc = os.path.join(results_dir, 'not_corpus_pmids.json')
+    if os.path.exists(_nc):
+        try:
+            with open(_nc, encoding='utf-8') as _f:
+                not_corpus = json.load(_f).get('pmids', {})
+        except Exception as _e:
+            print(f'  WARNING: could not load not-corpus registry: {_e}')
+    print(f'  Not-corpus PMIDs loaded: {len(not_corpus)}')
+
     # Build table rows
     rows = ''
     for pmid in sorted(verification_results.keys(), key=lambda x: int(x)):
@@ -194,7 +214,14 @@ def generate_html_report(pmid_locations, verification_results, output_path):
         locs = pmid_locations.get(pmid, [])
         files_list = ', '.join(set(l['file'] for l in locs))
 
-        if v.get('exists') is True and pmid in offtopic:
+        if v.get('exists') is True and pmid in not_corpus:
+            # Resolves, but is not a corpus paper and never was: no claim in
+            # this repository rests on it. Rendering it green implied the
+            # opposite.
+            status = 'NOT CORPUS'
+            status_color = '#6a1b9a'
+            status_bg = '#f3e5f5'
+        elif v.get('exists') is True and pmid in offtopic:
             # Resolves, but adjudicated as attached to the wrong claim. This is
             # strictly worse than NOT FOUND: a dead PMID gets fixed, a live one
             # cited for something it does not say gets believed.
@@ -389,6 +416,7 @@ def generate_html_report(pmid_locations, verification_results, output_path):
         <button class="filter-btn active" onclick="filterTable('all')">All</button>
         <button class="filter-btn" onclick="filterTable('RESOLVES')">Resolves</button>
         <button class="filter-btn" onclick="filterTable('OFF-TOPIC')">Off-topic</button>
+        <button class="filter-btn" onclick="filterTable('NOT CORPUS')">Not corpus</button>
         <button class="filter-btn" onclick="filterTable('NOT FOUND')">Not Found</button>
         <button class="filter-btn" onclick="filterTable('API ERROR')">API Errors</button>
         <input type="text" id="searchBox" placeholder="Search by PMID, title, author..." oninput="searchTable()">
@@ -414,7 +442,9 @@ def generate_html_report(pmid_locations, verification_results, output_path):
     <p style="margin-top:20px;font-size:0.9em;color:#636363;">
         <strong>What this checks:</strong> Each PMID is queried against the NCBI PubMed database via E-utilities API.
         "RESOLVES" means only that the PMID returns a real record from PubMed. It does NOT confirm that the
-        paper supports the claim it is cited for. "OFF-TOPIC" means the PMID resolves but this repository has
+        paper supports the claim it is cited for. "NOT CORPUS" means the PMID resolves but is not a corpus
+        paper at all - it was harvested from a code comment or exists here only because this repository
+        documented it as a bad citation; no claim rests on it. "OFF-TOPIC" means the PMID resolves but this repository has
         adjudicated it as attached to the wrong claim — see citation_identifier_audit.json.
         Click any PMID to open it on PubMed for manual verification.
     </p>

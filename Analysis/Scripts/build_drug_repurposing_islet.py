@@ -20,7 +20,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Type 2 Diabetes",
         "mechanism": "Beta cell protection, reduce insulin resistance, anti-inflammatory",
         "evidence_level": "SILVER",
-        "reference": "PMID:28864502",
+        "reference": "citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located",
         "preclinical": 4,
         "clinical": 3,
         "safety": 5,
@@ -33,7 +33,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Type 2 Diabetes",
         "mechanism": "Beta cell protection, reduce insulin resistance, anti-inflammatory",
         "evidence_level": "SILVER",
-        "reference": "PMID:28864502",
+        "reference": "citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located",
         "preclinical": 4,
         "clinical": 3,
         "safety": 5,
@@ -124,7 +124,7 @@ DRUG_CANDIDATES = [
         "original_indication": "Rheumatoid Arthritis",
         "mechanism": "IL-1beta blockade protects beta cells from apoptosis and IBMIR",
         "evidence_level": "SILVER",
-        "reference": "PMID:22723585",
+        "reference": "PMID:17429083",
         "preclinical": 5,
         "clinical": 3,
         "safety": 4,
@@ -231,51 +231,51 @@ CLINICAL_TRIALS = [
 
 EVIDENCE_REFERENCES = [
     {
-        "pmid": "28864502",
-        "title": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models",
-        "authors": "Markmann et al.",
+        "pmid": "",
+        "title": "UNSOURCED - citation withdrawn 2026-08-24: GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
+        "authors": "not established",
         "year": 2017,
         "journal": "Transplantation",
-        "evidence_tier": "SILVER"
+        "evidence_tier": "UNSOURCED"
     },
     {
-        "pmid": "15644441",
-        "title": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation",
-        "authors": "Bennet et al.",
+        "pmid": "",
+        "title": "UNSOURCED - citation withdrawn 2026-08-24: Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
+        "authors": "not established",
         "year": 2005,
         "journal": "Transplantation",
+        "evidence_tier": "UNSOURCED"
+    },
+    {
+        "pmid": "17429083",
+        "title": "Interleukin-1-receptor antagonist in type 2 diabetes mellitus.",
+        "authors": "Larsen CM, et al.",
+        "year": 2007,
+        "journal": "N Engl J Med",
         "evidence_tier": "GOLD"
     },
     {
-        "pmid": "22723585",
-        "title": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation",
-        "authors": "Larsen et al.",
+        "pmid": "22442301",
+        "title": "Preventing beta-cell loss and diabetes with calcium channel blockers.",
+        "authors": "Xu G, Chen J, Jing G, Shalev A",
         "year": 2012,
-        "journal": "NEJM",
-        "evidence_tier": "GOLD"
-    },
-    {
-        "pmid": "24931610",
-        "title": "Verapamil blocks TXNIP and protects beta cells from apoptosis",
-        "authors": "Shalev et al.",
-        "year": 2014,
-        "journal": "Cell Metabolism",
+        "journal": "Diabetes",
         "evidence_tier": "SILVER"
     },
     {
-        "pmid": "16498215",
-        "title": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation",
-        "authors": "Nilsson et al.",
+        "pmid": "",
+        "title": "UNSOURCED - citation withdrawn 2026-08-24: Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
+        "authors": "not established",
         "year": 2006,
         "journal": "Transplantation Reviews",
-        "evidence_tier": "GOLD"
+        "evidence_tier": "UNSOURCED"
     },
     {
-        "pmid": "19148081",
-        "title": "Edmonton Protocol: allogeneic islet transplantation with T-cell depleting induction and steroid-free maintenance",
-        "authors": "Shapiro et al.",
+        "pmid": "17005949",
+        "title": "International trial of the Edmonton protocol for islet transplantation.",
+        "authors": "Shapiro AM, et al.",
         "year": 2006,
-        "journal": "NEJM",
+        "journal": "N Engl J Med",
         "evidence_tier": "GOLD"
     }
 ]
@@ -864,7 +864,7 @@ def generate_html():
                 </div>
                 <div class="expandable-content">
                     <p><strong>Mechanism:</strong> Blocks IL-1beta, a central hub cytokine in the IBMIR cascade.</p>
-                    <p><strong>Evidence:</strong> PMID:22723585 shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to transplant destruction.</p>
+                    <p><strong>Evidence:</strong> PMID:17429083 shows IL-1 blockade preserves beta cells in T2D; mechanistically similar to transplant destruction.</p>
                     <p><strong>Why it works:</strong> IL-1beta is rapidly produced by platelets and neutrophils during IBMIR and drives the amplification cascade.</p>
                 </div>
             </div>
@@ -1063,7 +1063,7 @@ def generate_html():
                     (etanercept) improves early islet transplant function, establishing proof-of-concept for repurposed drug benefit.
                 </p>
                 <p style="margin-top: 0.5rem;">
-                    <strong>Source 2:</strong> IL-1 blockade trials in T1D/T2D (Larsen et al., PMID:22723585) show beta cell
+                    <strong>Source 2:</strong> IL-1 blockade trials in T1D/T2D (Larsen et al., PMID:17429083) show beta cell
                     preservation through IL-1 antagonism, with direct applicability to transplant islet destruction mechanisms.
                 </p>
                 <p style="margin-top: 1rem;">

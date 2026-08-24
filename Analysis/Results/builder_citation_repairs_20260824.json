@@ -1,0 +1,107 @@
+{
+ "date": "2026-08-24",
+ "found_by": "audit_builder_title_agreement.py",
+ "files_changed": [
+  "build_drug_repurposing_islet.py",
+  "build_lada_model.py"
+ ],
+ "repairs": [
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "REPLACE",
+   "was": "22723585",
+   "now": "17429083",
+   "verified_title": "Interleukin-1-receptor antagonist in type 2 diabetes mellitus.",
+   "described_as": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation (Larsen, NEJM)",
+   "why": "Builder asserted NEJM 2012; the anakinra T2D NEJM paper is 2007. 22723585 is a fructose/glycemic-control systematic review in Diabetes Care.",
+   "other_occurrences_rewritten": 3
+  },
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "REPLACE",
+   "was": "24931610",
+   "now": "22442301",
+   "verified_title": "Preventing beta-cell loss and diabetes with calcium channel blockers.",
+   "described_as": "Verapamil blocks TXNIP and protects beta cells from apoptosis (Shalev)",
+   "why": "Builder asserted Cell Metabolism 2014; the Shalev TXNIP/CCB beta-cell paper is Diabetes 2012. 24931610 is a SETD2 histone methylation paper in Cell Reports.",
+   "other_occurrences_rewritten": 0
+  },
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "REPLACE",
+   "was": "19148081",
+   "now": "17005949",
+   "verified_title": "International trial of the Edmonton protocol for islet transplantation.",
+   "described_as": "Edmonton Protocol international trial (Shapiro, NEJM 2006)",
+   "why": "19148081 is \"Your inbox, Mr President.\", a Nature 2009 editorial. Published on the site as GOLD-tier evidence.",
+   "other_occurrences_rewritten": 0
+  },
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "WITHDRAW",
+   "was": "28864502",
+   "now": null,
+   "described_as": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
+   "why": "28864502 is a sulfonylurea cardiovascular-risk paper in Diabetes Care. Searches for Markmann islet 2017 and for GLP-1/islet-transplantation/graft-function returned no paper matching this description. No substitute is asserted.",
+   "other_occurrences_rewritten": 4
+  },
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "WITHDRAW",
+   "was": "15644441",
+   "now": null,
+   "described_as": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
+   "why": "15644441 is a placental syncytin gene paper in PNAS. Bennet's IBMIR paper is Ups J Med Sci 2000 (11095109) and concerns no etanercept; the etanercept islet trial found is a 2023 pilot (36443174). Neither is the asserted paper.",
+   "other_occurrences_rewritten": 0
+  },
+  {
+   "file": "build_drug_repurposing_islet.py",
+   "action": "WITHDRAW",
+   "was": "16498215",
+   "now": null,
+   "described_as": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
+   "why": "16498215 is a rabbit calvarial bone transport paper in Neurol Med Chir. No 2006 Nilsson IBMIR review was located; the nearest is Curr Opin Organ Transplant 2011 (21971510), which is a different paper.",
+   "other_occurrences_rewritten": 0
+  },
+  {
+   "file": "build_lada_model.py",
+   "action": "REPLACE",
+   "was": "31529065",
+   "now": "32307525",
+   "verified_title": "Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.",
+   "described_as": "Biphasic C-peptide decline in Chinese LADA cohort (2020)",
+   "why": "31529065 is a mobile-app psychosocial study in JAMIA. The described study is the Central South University 8-year LADA beta-cell decline cohort. Builder had named Zhou as first author; PubMed lists Li X first, so authors are corrected too.",
+   "other_occurrences_rewritten": 1
+  },
+  {
+   "file": "build_lada_model.py",
+   "action": "REPLACE",
+   "was": "9742976",
+   "now": "9357409",
+   "verified_title": "UKPDS 25: autoantibodies to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes.",
+   "described_as": "UKPDS: 84% GADA+ patients require insulin by 6 years",
+   "why": "9742976 is UKPDS 33 (intensive glucose control), which contains no autoantibody prediction result. The GADA/ICA insulin-requirement finding is UKPDS 25.",
+   "other_occurrences_rewritten": 3
+  },
+  {
+   "file": "build_lada_model.py",
+   "action": "REPLACE",
+   "was": "30369313",
+   "now": "34318969",
+   "verified_title": "Low C-peptide together with a high glutamic acid decarboxylase autoantibody level predicts progression to insulin dependence in latent autoimmune diabetes in adults.",
+   "described_as": "HUNT study autoantibody risk stratification; HR 6.40 low C-peptide, HR 5.37 high GADA titre",
+   "why": "30369313 is a cardiac resynchronisation therapy outcomes paper in JAHA. Sorgjerd/Asvold are the HUNT (Nord-Trondelag) group and this is the paper carrying the C-peptide/GADA hazard ratios the record cites.",
+   "other_occurrences_rewritten": 0
+  },
+  {
+   "file": "build_lada_model.py",
+   "action": "REPLACE",
+   "was": "23835333",
+   "now": "23248199",
+   "verified_title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
+   "described_as": "ACTION LADA: clinical and genetic characteristics of LADA (Hawa, Diabetes Care 2013)",
+   "why": "23835333 is the teplizumab anti-CD3 C-peptide paper in Diabetes - a real diabetes paper, which is why the topic screen passed it and only title agreement caught it.",
+   "other_occurrences_rewritten": 1
+  }
+ ]
+}

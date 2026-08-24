@@ -128,8 +128,48 @@ def provenance_for(pmid):
     return sources or ['unknown - abstract on disk with no traceable referrer']
 
 
+def load_not_corpus():
+    """PMIDs adjudicated as not corpus papers; see not_corpus_pmids.json.
+
+    Added 2026-08-24. ingest_papers.py was given this guard first, and the
+    index still came back with both entries: this function re-adds any PMID
+    whose abstract is on disk, which is the second door into the index. A
+    guard on one intake path is not a guard.
+    """
+    path = os.path.join(RESULTS, 'not_corpus_pmids.json')
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f).get('pmids') or {}
+    except (OSError, ValueError):
+        return {}
+
+
 def reconcile(dry_run=False):
     orphans, index = find_orphans()
+    not_corpus = load_not_corpus()
+    if not_corpus:
+        blocked = [p for p in orphans if p in not_corpus]
+        if blocked:
+            print('  [not_corpus] refusing to reconcile %d adjudicated '
+                  'non-corpus PMID(s): %s'
+                  % (len(blocked), ', '.join(sorted(blocked))))
+        orphans = [p for p in orphans if p not in not_corpus]
+        # Also evict any that a previous run already admitted.
+        stale = [p for p in list(index.get('papers', {})) if p in not_corpus]
+        for p in stale:
+            del index['papers'][p]
+        if stale and not dry_run:
+            print('  [not_corpus] evicted %d stale index entr(ies): %s'
+                  % (len(stale), ', '.join(sorted(stale))))
+            # Persist immediately. The `if not orphans` early return below does
+            # not write the index, so an eviction with nothing else to do would
+            # otherwise be silently discarded and the entries would survive.
+            index.setdefault('metadata', {})['not_corpus_evicted_on'] = \
+                datetime.now().strftime('%Y-%m-%d')
+            with open(INDEX, 'w', encoding='utf-8') as f:
+                json.dump(index, f, indent=2, ensure_ascii=False)
     if not orphans:
         return {'added': [], 'total_before': len(index.get('papers', {})),
                 'total_after': len(index.get('papers', {}))}

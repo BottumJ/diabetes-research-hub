@@ -361,8 +361,39 @@ def fetch_all_fulltext(pmcid_map, existing_fulltext):
 # ---------------------------------------------------------------------------
 # Stage 5: Build master index
 # ---------------------------------------------------------------------------
+def load_not_corpus():
+    """PMIDs adjudicated as not-corpus-papers; see not_corpus_pmids.json.
+
+    Added 2026-08-24. Two entries were found in the index that resolve to real
+    PubMed records but were never cited as evidence by anything: PMID 12345678,
+    harvested from a regex example in a code comment, and PMID 37889505, present
+    only because three repair scripts name it as a bad citation. Existence
+    checks cannot catch either, because both records exist. Without this guard
+    the next ingestion run puts them straight back.
+    """
+    path = os.path.join(results_dir, 'not_corpus_pmids.json')
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f).get('pmids') or {}
+    except (OSError, ValueError) as exc:
+        print(f'  [WARN] could not read not_corpus_pmids.json: {exc}')
+        return {}
+
+
 def build_index(verified_pmids, abstract_data, pmcid_map, fulltext_pmcids):
     """Build the master paper library index with cross-references."""
+    not_corpus = load_not_corpus()
+    if not_corpus:
+        blocked = [p for p in verified_pmids if p in not_corpus]
+        if blocked:
+            print(f'  [not_corpus] excluding {len(blocked)} adjudicated '
+                  f'non-corpus PMID(s): {", ".join(sorted(blocked))}')
+        # verified_pmids is a MAPPING pmid -> record; rebuilding it as a list
+        # silently breaks build_index two lines later. Preserve the type.
+        verified_pmids = {k: v for k, v in verified_pmids.items()
+                          if k not in not_corpus}
     index = {
         'metadata': {
             'generated_at': datetime.now().isoformat(),

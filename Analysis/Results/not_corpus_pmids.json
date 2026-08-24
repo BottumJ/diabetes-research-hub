@@ -1,0 +1,115 @@
+{
+  "note": "PMIDs that must never be indexed as corpus papers. Each resolves to a real PubMed record - that is precisely why every existence-checking gate passed it. The disqualifier is PROVENANCE, not existence: nothing in this repo ever cited these as evidence for a claim. This registry is PERSISTENT so that re-ingestion cannot reintroduce them, and so the reason survives after the index is clean. Enforced by audit_index_provenance.py (which fails the build if an entry here is present in the index) and honoured by ingest_papers.py.",
+  "generated": "2026-08-24",
+  "pmids": {
+    "12345678": {
+      "actual_title": "Denpasar Declaration on Population and Development.",
+      "journal": "Integration",
+      "year": "1994",
+      "provenance": "CODE_ARTIFACT",
+      "why": "Its entire provenance is the comment `# match PMID: 12345678 or PMID 12345678` next to a regex in postprocess_dashboards.py, plus check_citation_mismatches.py quoting that same comment. The index harvester read a regex example as a citation. It was rendered as a corpus paper on Paper_Library.html and PMID_Verification.html.",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py"
+    },
+    "37889505": {
+      "actual_title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
+      "journal": "Crit Rev Food Sci Nutr",
+      "year": "2024",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "The probiotic-breads paper that was wrongly cited on the teplizumab path and purged on 2026-08-20. Its only citing sites are the three scripts that name it AS A BAD CITATION. It was in the corpus solely because this repo wrote about it being wrong, and it was absent from state['papers'], so the vetting batch could never reach it.",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json"
+    },
+    "28864502": {
+      "actual_title": "Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
+      "replaced_by": null,
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "15644441": {
+      "actual_title": "Syncytin-A and syncytin-B, two fusogenic placenta-specific murine envelope genes.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
+      "replaced_by": null,
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "22723585": {
+      "actual_title": "Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation (Larsen, NEJM)",
+      "replaced_by": "17429083",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "24931610": {
+      "actual_title": "SETD2-dependent histone H3K36 trimethylation is required for homologous recombination repair.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "Verapamil blocks TXNIP and protects beta cells from apoptosis (Shalev)",
+      "replaced_by": "22442301",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "16498215": {
+      "actual_title": "Novel approach to calvarial bone transport using a rabbit model.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
+      "replaced_by": null,
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "19148081": {
+      "actual_title": "Your inbox, Mr President.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "Edmonton Protocol international trial (Shapiro, NEJM 2006)",
+      "replaced_by": "17005949",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "31529065": {
+      "actual_title": "A mobile app identifies momentary psychosocial and contextual factors related to glycemia.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "Biphasic C-peptide decline in Chinese LADA cohort (2020)",
+      "replaced_by": "32307525",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "30369313": {
+      "actual_title": "Long-Term Outcomes of Cardiac Resynchronization Therapy Using Apical Versus Nonapical Left Ventricular Pacing.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "HUNT study autoantibody risk stratification; HR 6.40 low C-peptide, HR 5.37 high GADA titre",
+      "replaced_by": "34318969",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    },
+    "23835333": {
+      "actual_title": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes.",
+      "provenance": "SELF_REFERENTIAL",
+      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+      "was_asserted_as": "ACTION LADA: clinical and genetic characteristics of LADA (Hawa, Diabetes Care 2013)",
+      "replaced_by": "23248199",
+      "adjudicated": "2026-08-24",
+      "by": "audit_index_provenance.py",
+      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+    }
+  }
+}
