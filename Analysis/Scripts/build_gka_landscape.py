@@ -744,14 +744,25 @@ html_content = '''<!DOCTYPE html>
                 <span class="expand-icon">+</span>
             </div>
             <div class="section-content">
-                <p>TTP399 achieves tissue selectivity through molecular design.</p>
+                <p>TTP399 is <em>designed</em> for hepatoselectivity; the claims below separate
+                   the design rationale from what the trial actually measured.</p>
                 <ul>
-                    <li>Preferentially activates glucokinase in hepatocytes, not beta cells</li>
-                    <li>Increases hepatic glucose uptake without directly stimulating insulin secretion</li>
-                    <li>Eliminates hypoglycemia risk from pancreatic overstimulation</li>
-                    <li>Efficacy is more modest (HbA1c -0.21% as T1D adjunctive) but safer</li>
+                    <li>Mechanistic rationale: preferentially activates glucokinase in hepatocytes rather than beta cells</li>
+                    <li>Mechanistic rationale: increases hepatic glucose uptake without directly stimulating insulin secretion</li>
+                    <li><strong>Measured:</strong> severe or symptomatic hypoglycaemia fell by 40% relative to
+                        placebo in part 2 &mdash; a reduction, NOT elimination. The drug does not abolish
+                        hypoglycaemia risk, which remains driven by background insulin therapy.</li>
+                    <li><strong>Measured:</strong> HbA1c difference vs placebo was &minus;0.21% (95% CI &minus;0.39, &minus;0.04)
+                        in part 2 (n=85) and &minus;0.7% (95% CI &minus;1.3, &minus;0.07) in part 1 (n=20).
+                        The smaller, better-powered part-2 estimate is the one quoted elsewhere on this site.</li>
+                    <li><strong>Measured:</strong> plasma &beta;-hydroxybutyrate and urinary ketones were lower on
+                        TTP399 than placebo</li>
                 </ul>
-                <p class="source">Source: PMID:33622669 (SimpliciT1 trial)</p>
+                <p class="source">Source: PMID:33622669 &mdash; Klein KR et al.,
+                   "The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2
+                   Adaptive Study of TTP399, a Hepatoselective Glucokinase Activator, for Adjunctive
+                   Treatment of Type 1 Diabetes." <em>Diabetes Care</em> 2021;44(4):960-968.
+                   Phase 1b/2, 12 weeks &mdash; not a phase 3 outcome trial.</p>
             </div>
         </div>
 

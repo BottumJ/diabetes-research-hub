@@ -44,6 +44,21 @@ if os.path.exists(_state_path):
     except Exception as _e:
         print(f"  WARNING: could not load agent_state.json FLAGGED list: {_e}")
 
+# Adjudicated non-corpus PMIDs must ALSO be excluded here (added 2026-08-25).
+# FLAGGED is derived from state['papers'], but the papers in
+# not_corpus_pmids.json were never in state['papers'] at all -- being absent
+# from state is precisely why they went unnoticed. So the FLAGGED filter alone
+# could not stop them, and their cached full text kept reaching extraction.
+_NOT_CORPUS_PMIDS = set()
+_nc_path = os.path.join(results_dir, 'not_corpus_pmids.json')
+if os.path.exists(_nc_path):
+    try:
+        with open(_nc_path, encoding='utf-8') as _f:
+            _NOT_CORPUS_PMIDS = {str(p) for p in json.load(_f).get('pmids', {})}
+    except Exception as _e:
+        print(f"  WARNING: could not load not_corpus_pmids.json: {_e}")
+FLAGGED_PMIDS |= _NOT_CORPUS_PMIDS
+
 # Section types in PubMed Open-Access XML that should NOT be scanned for
 # quantitative claims about the corpus drugs/conditions:
 #   REF       - bibliography/references (cites unrelated papers)

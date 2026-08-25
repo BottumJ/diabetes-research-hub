@@ -1139,8 +1139,12 @@ class TufteHTMLDashboard:
         </p>
         <p class="citation">
             <strong>Evidence:</strong> Feasibility varies by setting (80% in Tier 2, 60% in Tier 3).
-            Clinical enrichment improves test yield and reduces false-positives. Targeted screening
-            achieves 80% of universal screening's cost-effectiveness at 50% the testing cost.
+            Clinical enrichment improves test yield and reduces false-positives.
+            <strong>Model projection, not a measured result:</strong> under this repo's own
+            cost-effectiveness model, targeted screening recovers roughly 80% of universal
+            screening's cost-effectiveness at about 50% of the testing cost. That 80%/50% pair is
+            an OUTPUT of the model's own assumptions &mdash; no published study has measured it, and
+            it should not be cited as a literature finding.
         </p>
     </div>
 

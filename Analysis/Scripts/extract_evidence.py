@@ -338,15 +338,41 @@ def load_papers():
     with open(index_path, 'r', encoding='utf-8') as f:
         index = json.load(f)
 
+    # THIRD INTAKE DOOR (found 2026-08-25). This function walks abstracts_dir
+    # with os.listdir and never consulted not_corpus_pmids.json, so a paper
+    # purged from the index kept its cached abstract on disk and kept feeding
+    # the Extracted Evidence dashboard. Concretely: PMID 30078372, a study of
+    # alcohol consumption and sexual attitudes among college women, was still
+    # publishing 4 data points against Gaps 2, 6, 10 and 11 after the index
+    # evicted it, because "Latent Profile Analysis" collides with LADA.
+    # Guarding ingest_papers.py and reconcile_paper_index.py was not enough:
+    # extraction reads the filesystem, not the index.
+    not_corpus = set()
+    nc_path = os.path.join(results_dir, 'not_corpus_pmids.json')
+    if os.path.exists(nc_path):
+        try:
+            with open(nc_path, 'r', encoding='utf-8') as f:
+                not_corpus = set(json.load(f).get('pmids', {}))
+        except (json.JSONDecodeError, IOError):
+            not_corpus = set()
+
     abstracts = {}
+    skipped = []
     for fname in os.listdir(abstracts_dir):
         if fname.endswith('.json'):
             pmid = fname.replace('.json', '')
+            if pmid in not_corpus:
+                skipped.append(pmid)
+                continue
             try:
                 with open(os.path.join(abstracts_dir, fname), 'r', encoding='utf-8') as f:
                     abstracts[pmid] = json.load(f)
             except (json.JSONDecodeError, IOError):
                 pass
+
+    if skipped:
+        print('  [not_corpus] excluded %d adjudicated non-corpus paper(s) from extraction: %s'
+              % (len(skipped), ', '.join(sorted(skipped))))
 
     return index, abstracts
 
