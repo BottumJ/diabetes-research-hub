@@ -118,6 +118,29 @@ SCRIPTS = {
     # `oxidative_stress -> cardiovascular`) rest entirely on them.
     'identifiergate': ('audit_citation_identifiers.py',
                        'Gating on citations in every field and identifier namespace'),
+    # Added 2026-08-26. The one citation defect where EVERY gate above is silent
+    # by construction. A retracted paper resolves, is on-topic, and carries a
+    # correct title, so validate_citations, audit_path_citations,
+    # audit_builder_title_agreement and audit_prose_citation_titles all pass it.
+    # Found on its first run: PMID 38918878 (IL-1 inhibitors and colchicine in
+    # T2D, Diabetol Metab Syndr 2024), pubtype "Retracted Publication", cited in
+    # 18 files, published on three dashboards, and supplying two colchicine
+    # dose_response extractions to Gap 4 and Gap 7. Nothing had ever asked
+    # PubMed whether a paper had been withdrawn.
+    'retractiongate': ('audit_retractions.py',
+                       'Gating on retracted papers cited as evidence'),
+    # Added 2026-08-26. Replaces the free-text adjudication step of the
+    # credibility sweep with a rule that can be checked: an absolute verb
+    # (eliminates / abolishes / prevents / cures / guarantees / zero) attached
+    # to a CLINICAL ENDPOINT must cite a PMID whose abstract contains a
+    # same-family absolute. The grep was never the problem - both
+    # overstatements repaired on 2026-08-25 had been read by earlier sweeps and
+    # cleared as "factual/contextual", and "eliminates hypoglycemia risk" sat
+    # live for four months after being looked at twice. Judgement drifts; a
+    # fetched abstract does not.
+    'absoluteclaims': ('audit_absolute_claims.py',
+                       'Gating on absolute clinical claims not echoed by their '
+                       'cited abstract'),
     # Added 2026-08-22. Measures the artifact rate of every extractor and fails
     # if an unbounded `.*?` wildcard gap reappears between a marker token and
     # its capture group. That construction is the single root cause of the

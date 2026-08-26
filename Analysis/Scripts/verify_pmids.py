@@ -214,7 +214,17 @@ def generate_html_report(pmid_locations, verification_results, output_path):
         locs = pmid_locations.get(pmid, [])
         files_list = ', '.join(set(l['file'] for l in locs))
 
-        if v.get('exists') is True and pmid in not_corpus:
+        if v.get('exists') is True and pmid in not_corpus \
+                and (not_corpus[pmid] or {}).get('provenance') == 'RETRACTED':
+            # A retraction is NOT the same fact as "never was a corpus paper",
+            # and rendering it as NOT CORPUS would hide the more serious one.
+            # This paper WAS cited as evidence and the literature withdrew it.
+            # It gets its own colour so a reader cannot mistake exclusion-for-
+            # provenance for exclusion-for-retraction.
+            status = 'RETRACTED'
+            status_color = '#b71c1c'
+            status_bg = '#ffcdd2'
+        elif v.get('exists') is True and pmid in not_corpus:
             # Resolves, but is not a corpus paper and never was: no claim in
             # this repository rests on it. Rendering it green implied the
             # opposite.
@@ -444,7 +454,11 @@ def generate_html_report(pmid_locations, verification_results, output_path):
         "RESOLVES" means only that the PMID returns a real record from PubMed. It does NOT confirm that the
         paper supports the claim it is cited for. "NOT CORPUS" means the PMID resolves but is not a corpus
         paper at all - it was harvested from a code comment or exists here only because this repository
-        documented it as a bad citation; no claim rests on it. "OFF-TOPIC" means the PMID resolves but this repository has
+        documented it as a bad citation; no claim rests on it. "RETRACTED" is a different and more serious
+        finding: the paper resolves, is on-topic, has a correct title, and WAS cited as evidence here — the
+        journal has withdrawn it. PubMed's publication type is the source; see retraction_audit.json.
+        Note that a retracted paper passes every other check on this page by construction, which is why
+        audit_retractions.py exists. "OFF-TOPIC" means the PMID resolves but this repository has
         adjudicated it as attached to the wrong claim — see citation_identifier_audit.json.
         Click any PMID to open it on PubMed for manual verification.
     </p>

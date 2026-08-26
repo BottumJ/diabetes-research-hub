@@ -1,8 +1,8 @@
 {
  "version": 1,
  "created": "2026-04-14T03:05:18.579342",
- "last_updated": "2026-08-25T03:40:00",
- "last_run": "2026-08-25",
+ "last_updated": "2026-08-26T03:31:39",
+ "last_run": "2026-08-26",
  "papers": {
   "10415738": {
    "status": "VETTED",
@@ -4810,7 +4810,7 @@
    "pmid_verified_how": "live NCBI esummary; stored title matched PubMed exactly"
   },
   "16306343": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Latent autoimmune diabetes in adults: definition, prevalence, beta-cell function, and treatment.",
@@ -4820,10 +4820,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "17429083": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Interleukin-1-receptor antagonist in type 2 diabetes mellitus.",
@@ -4833,10 +4845,24 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "18843118": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "GAD treatment and insulin secretion in recent-onset type 1 diabetes.",
@@ -4846,10 +4872,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Randomized Controlled Trial",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "19805629": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Glyburide inhibits the Cryopyrin/Nalp3 inflammasome.",
@@ -4859,10 +4898,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "23817699": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Salicylate (salsalate) in patients with type 2 diabetes: a randomized trial.",
@@ -4872,10 +4922,25 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Clinical Trial, Phase II",
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial",
+     "Research Support, N.I.H., Extramural"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "28375156": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "ω-3 polyunsaturated fatty acids ameliorate type 1 diabetes and autoimmunity.",
@@ -4885,10 +4950,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "30291106": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Management of Hyperglycemia in Type 2 Diabetes, 2018. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD).",
@@ -4898,10 +4974,24 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Consensus Statement",
+     "Journal Article",
+     "Research Support, N.I.H., Extramural",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "31304320": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices.",
@@ -4911,10 +5001,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "32358544": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
@@ -4924,10 +5025,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "32712220": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Dapagliflozin promotes beta cell regeneration by inducing pancreatic endocrine cell phenotype conversion in type 2 diabetic mice.",
@@ -4937,10 +5050,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "32862232": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (DAPA-CKD) trial: baseline characteristics.",
@@ -4950,10 +5075,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Randomized Controlled Trial",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "34021020": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
@@ -4963,10 +5101,25 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Clinical Trial, Phase II",
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "34918381": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "SGLT2 inhibitor counteracts NLRP3 inflammasome via tubular metabolite itaconate in fibrosis kidney.",
@@ -4976,10 +5129,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "35180212": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "SGLT2 inhibitors therapy protects glucotoxicity-induced β-cell failure in a mouse model of human KATP-induced diabetes through mitigation of oxidative and ER stress.",
@@ -4989,10 +5154,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, N.I.H., Extramural",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "35563495": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Effects of Sodium-Glucose Co-Transporter-2 Inhibitors on Pancreatic β-Cell Mass and Function.",
@@ -5002,10 +5180,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "35665810": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Intralymphatic GAD-Alum (Diamyd®) Improves Glycemic Control in Type 1 Diabetes With HLA DR3-DQ2.",
@@ -5015,10 +5205,24 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "36643381": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Level in Coronary Artery Disease Patients with Type 2 Diabetes Mellitus and Enhanced Inflammatory Response Protocol for a Randomized, Double-Blind, Placebo-Controlled, Phase 2, Dose-Finding Study.",
@@ -5028,10 +5232,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "36826844": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Effect of Verapamil on Pancreatic Beta Cell Function in Newly Diagnosed Pediatric Type 1 Diabetes: A Randomized Clinical Trial.",
@@ -5041,10 +5256,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "37861217": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Teplizumab and β-Cell Function in Newly Diagnosed Type 1 Diabetes.",
@@ -5054,10 +5281,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Clinical Trial, Phase III",
+     "Journal Article",
+     "Randomized Controlled Trial"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "38918878": {
-   "status": "UNVETTED",
+   "status": "FLAGGED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Emerging insights into the role of IL-1 inhibitors and colchicine for inflammation control in type 2 diabetes.",
@@ -5067,10 +5307,18 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "FLAGGED",
+    "claim_class": "RETRACTED",
+    "why": "PubMed publication type is \"Retracted Publication\". Excluded from the corpus via not_corpus_pmids.json the same day. Contributed 2 colchicine dose_response extractions to Gaps 4 and 7 and was published on 3 dashboards.",
+    "evidence_strength": "NONE - withdrawn by the literature"
+   },
+   "excluded_from_corpus": true
   },
   "39173844": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Compromised chronic efficacy of a glucokinase activator AZD1656 in mouse models for common human GCKR variants.",
@@ -5080,10 +5328,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "39428507": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
@@ -5093,10 +5353,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "39613428": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
@@ -5106,10 +5377,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PROTOCOL",
+    "evidence_strength": "DESIGN ONLY - a protocol reports no outcomes, so it cannot support an effect claim",
+    "pubtype": [
+     "Clinical Trial Protocol",
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "39634180": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Personalized nutrition in type 2 diabetes remission: application of digital twin technology for predictive glycemic control.",
@@ -5119,10 +5402,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Randomized Controlled Trial"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "39843169": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Dapagliflozin plus calorie restriction for remission of type 2 diabetes: multicentre, double blind, randomised, placebo controlled trial.",
@@ -5132,10 +5427,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "39869107": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Long Term Outcomes of Transplant Recipients Comparing Belatacept vs. Tacrolimus: A UNOS Database Analysis.",
@@ -5145,10 +5453,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "OBSERVATIONAL",
+    "evidence_strength": "OBSERVATIONAL - association only, no causal claim",
+    "pubtype": [
+     "Comparative Study",
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40291594": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Cost-effective strategies for CAR-T cell therapy manufacturing.",
@@ -5158,10 +5478,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40648980": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "The Role of NLRP3 Inflammasome in Type 2 Diabetes Mellitus and Its Macrovascular Complications.",
@@ -5171,10 +5503,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40697602": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Sodium-glucose co-transporter 2 inhibitors improve insulin resistance and β-cell function in type 2 diabetes: A meta-analysis.",
@@ -5184,10 +5528,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40898408": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Real-world observations of GLP-1 receptor agonists and SGLT-2 inhibitors as potential treatments for Alzheimer's disease.",
@@ -5197,10 +5552,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, N.I.H., Extramural"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40982327": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Type 2 Diabetes Remission: A Systematic Review and Meta-analysis of Nonsurgical Randomized Controlled Trials.",
@@ -5210,10 +5577,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Meta-Analysis",
+     "Systematic Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "40988828": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Vitamin D Supplementation in Deficiency States and Combined Calcium-Vitamin D Therapy in Diabetes Prevention and Management: A Systematic Review of Clinical Evidence.",
@@ -5223,10 +5603,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "41326666": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Liraglutide in mild to moderate Alzheimer's disease: a phase 2b clinical trial.",
@@ -5236,10 +5628,24 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "INTERVENTIONAL_TRIAL",
+    "evidence_strength": "PRIMARY - reports measured outcomes in humans",
+    "pubtype": [
+     "Clinical Trial, Phase II",
+     "Journal Article",
+     "Multicenter Study",
+     "Randomized Controlled Trial"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "41356006": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "GLP-1 receptor agonists in Alzheimer's and Parkinson's disease: endocrine pathways, clinical evidence, and future directions.",
@@ -5249,10 +5655,22 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "41889274": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Effect of colchicine for secondary prevention of cardiovascular diseases in individuals with diabetes: A meta-analysis of randomized trials.",
@@ -5262,10 +5680,23 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "SECONDARY",
+    "evidence_strength": "SECONDARY - synthesises other studies; any number taken from it must be traced to the primary source",
+    "pubtype": [
+     "Journal Article",
+     "Meta-Analysis",
+     "Systematic Review"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "41986815": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes.",
@@ -5275,10 +5706,21 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article"
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "9357409": {
-   "status": "UNVETTED",
+   "status": "VETTED",
    "added": "2026-08-25",
    "source": "reconcile_unreachable_papers_20260825",
    "title": "UKPDS 25: autoantibodies to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes. UK Prospective Diabetes Study Group.",
@@ -5288,7 +5730,20 @@
    "pmid_verified": true,
    "pmid_verified_on": "2026-08-25",
    "pmid_verified_how": "live NCBI esummary; index title agreed with PubMed title",
-   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
+   "note": "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not.",
+   "vetting": {
+    "on": "2026-08-26",
+    "verdict": "VETTED",
+    "claim_class": "PRIMARY_OTHER",
+    "evidence_strength": "PRIMARY but design not declared by PubMed - may be preclinical, in vitro or a registry analysis; read before quoting as clinical evidence",
+    "pubtype": [
+     "Journal Article",
+     "Research Support, Non-U.S. Gov't",
+     "Research Support, U.S. Gov't, P.H.S."
+    ],
+    "method": "PMID existence and title were already verified 2026-08-25. This pass added the CLAIM-CLASS check: publication type resolved live from NCBI esummary, plus a retraction check (audit_retractions.py) and a citation-reachability check (all 37 are cited in the repo and all 37 appear on docs/).",
+    "title_agrees_with_pubmed": true
+   }
   },
   "18713146": {
    "status": "VETTED",
@@ -7665,21 +8120,15 @@
   },
   {
    "priority": 1,
-   "type": "verify_citations",
-   "added": "2026-08-24",
-   "target": "EXTEND TITLE AGREEMENT TO PROSE CITATIONS. audit_builder_title_agreement.py only reads dict literals with pmid+title keys - 11 records repo-wide. The 10th miscitation found today (22723585 asserted as \"Bi et al. Omega-3 fatty acids and diabetes\", actually a fructose systematic review) was in an HTML template string in build_nutrition_beta.py and the gate could not see it. Every builder emits citations as prose of the form \"Author. Title. Journal Year. PMID:xxxxxxxx\". Parse that shape and run the same overlap test. Expect more: the dict-literal sample had a 9/11 defect rate and there is no reason prose is cleaner."
-  },
-  {
-   "priority": 1,
    "type": "fix_pipeline",
    "added": "2026-08-25",
    "target": "SEAL THE REMAINING INTAKE DOORS BY CLASS, NOT BY NAME. Three doors are now known: the index harvester (reads PMIDs out of comments and regex literals in .py files), verify_pmids.py (scans scripts independently of the index), and - found today - the two extractors, which walk abstracts/ and fulltext/ on the filesystem and bypassed the index entirely. The extractors are patched, but the pattern is that every NEW reader of PMIDs starts life unguarded. Build ONE shared corpus_membership.py that owns not_corpus_pmids.json + FLAGGED and make every consumer import it, then add an audit that FAILS if any script reads abstracts_dir/fulltext_dir/the index without going through it. Proof it is needed: _run_2026_08_25.py mentioned external-validation PMID 18713146 in a comment and that alone put it back in the index as a new unreachable entry, same day the count was driven to 0."
   },
   {
    "priority": 1,
-   "type": "verify_publish",
-   "added": "2026-08-25",
-   "target": "THE CREDIBILITY SWEEP FINDS LINES AND THEN CLEARS THEM. Both overstatements fixed today were inspected by earlier sweeps and written up as 'factual/contextual' (monitor_report_2026-04-11, iterate_run_report_2026-05-22). 'Eliminates hypoglycemia risk' sat live for four months after being read. The grep works; the ADJUDICATION does not. Replace the free-text judgement with a rule: any absolute verb (eliminates, abolishes, prevents, guarantees, achieves) attached to a clinical endpoint must cite a PMID, and the cited abstract must be fetched and shown to contain a matching absolute. If the abstract says 'reduced by 40%', the page may not say 'eliminates'. Start by re-running the sweep over ALL builders under that rule - assume more survivors, since the sample of 2 had a 2/2 defect rate."
+   "type": "verify_citations",
+   "added": "2026-08-26",
+   "target": "FINISH THE PROSE-CITATION BACKLOG: 14 MISMATCHES REMAIN AND THE GATE IS NOT YET IN THE PIPELINE. audit_prose_citation_titles.py went from 249 raw hits to 14 by learning to classify before scoring, and 10 confirmed defects were repaired today, but it is run STANDALONE because wiring a red gate into run_quality_improvements.py would leave the build permanently failing - which is how a gate stops being read. Remaining by file: build_gka_lada.py 4 (760 asserts \"UKPDS Group. Diabet Med. 2004\" for PMID 14706052, which is Aronson on fasting glucose and CRP - highest confidence of the batch), build_gap_deep_dives.py 3 (all PMID 36449148, \"Dorzagliatin: First Approval\" Drugs 2022, cited for a China NRDL listing dated Jan 2024 that a 2022 paper cannot report), build_gka_pricing.py 3, build_drug_repurposing_screen.py 1 (628: \"Feutren et al, Lancet 1986\" is PMID 1611143, which is Skyler in J Diabetes Complications 1992), build_lada_model.py 1, build_treg_neuropathy.py 1, build_trial_equity_mapper.py 1. Resolve each against PubMed, repair, THEN add to run_quality_improvements.py. Also 26 WEAK need a human read; 12 of those are in build_data_dictionary.py and are probably honest title shortenings."
   },
   {
    "priority": 2,
@@ -7764,6 +8213,24 @@
    "type": "audit_gap",
    "added": "2026-08-25",
    "target": "DECIDE WHETHER BIBLIOMETRIC AND IN-VITRO-ONLY PAPERS COUNT AS CORPUS EVIDENCE. Today FLAGGED PMID 42611761, a bibliometric analysis of mitochondrial research in diabetic nephropathy - it counts PUBLICATIONS, so it contains no patients, no animals and no experiments and can support no causal claim, yet it entered as an ordinary corpus paper. Same run flagged 42618537, a metformin result from HK-2 CELL CULTURE published in Diabetes Obes Metab. This is the same open question as the 2026-08-22 design/protocol-paper item (3 papers, 24 of 240 data points) and should be settled together: define an evidence_tier ladder (HUMAN_RCT > HUMAN_OBSERVATIONAL > PRECLINICAL > IN_VITRO > REVIEW > NOT_PRIMARY_EVIDENCE) and publish the corpus count BROKEN DOWN by tier instead of as one number. The headline count is currently tier-blind."
+  },
+  {
+   "priority": 2,
+   "type": "verify_citations",
+   "added": "2026-08-26",
+   "target": "WIDEN THE ABSOLUTE-CLAIMS GATE DELIBERATELY AND MEASURE WHAT EACH RELAXATION ADMITS. audit_absolute_claims.py went 65 raw hits -> 9 (finite verb forms only) -> 4 (hedge/blob/purpose filters) -> 1 (label-form filter). Every removal was inspected and none was an absolute clinical claim, but a filter tuned on 65 examples over-fits, and ONE finding repo-wide is not a credible measurement of a corpus this size. Specifically suspect: past-tense forms are excluded wholesale (\"rejection cascades ARE PREVENTED\", \"ACHIEVED insulin independence\"), which is the largest deliberate blind spot. Relax one filter at a time, record the count delta and read every newly-admitted hit before keeping the change. Same discipline as the 2026-08-20 dose_fragment_patterns widening."
+  },
+  {
+   "priority": 2,
+   "type": "audit_gap",
+   "added": "2026-08-26",
+   "target": "CHECK RETRACTION STATUS OF THE 8 SECONDARY PAPERS VETTED TODAY, AND SET A RE-CHECK CADENCE. audit_retractions.py is a point-in-time snapshot: it read PubMed pubtype on 2026-08-26 and 354 of 355 were clean. Retraction is not a static property. The one hit, PMID 38918878, was published in 2024 and retracted later - had this gate existed in 2024 it would have passed. Decide a re-check interval (monthly is the obvious default since the .pubtype_cache.json means a re-check is cheap) and make the cache expire rather than persist forever, otherwise the gate will report the 2026-08-26 answer indefinitely. Highest risk first: the 8 SECONDARY (review/meta-analysis) papers vetted today, because review articles in low-impact journals are the population 38918878 came from."
+  },
+  {
+   "priority": 2,
+   "type": "vet_papers_batch",
+   "added": "2026-08-26",
+   "target": "READ THE 16 PRIMARY_OTHER PAPERS AND SEPARATE PRECLINICAL FROM CLINICAL. All 37 newly-reachable papers were vetted today on publication type, which resolved 10 as interventional trials, 8 as secondary, 1 protocol (39613428, corroborating the existing P1 item), 1 observational and 1 retracted. The remaining 16 are PRIMARY_OTHER: PubMed declares no design, so they may be human RCTs, rodent studies or in vitro work and the gate cannot tell. At least four are near-certainly preclinical - 19805629 (glyburide inhibits Cryopyrin/Nalp3, J Cell Biol 2009), 32712220 (dapagliflozin beta cell regeneration, Metabolism 2020), 34918381 (FASEB J 2022), 35180212 (PLoS One 2022) - and all four sit on SGLT2i/NLRP3 paths. If any path presents them as clinical evidence, that is the preclinical-overstatement class this repo already knows about, in a new place. Read the abstracts; record species and n."
   },
   {
    "priority": 3,
@@ -9698,6 +10165,15 @@
   {
    "date": "2026-08-25",
    "summary": "Tue 2026-08-25 - THE DENOMINATOR IS FIXED, AND FIXING IT EXPOSED A THIRD INTAKE DOOR. (1) THE 55 UNREACHABLE PAPERS, ADJUDICATED ONE BY ONE. The P1 item warned against bulk import, so all 55 were resolved LIVE against NCBI esummary and split: 37 RETAINED (folded into state['papers'] as UNVETTED with pmid_verified=True, so the vetting batch can finally reach them) and 18 PURGED to not_corpus_pmids.json with a per-paper written reason. Every purge is UNCITED *and* off-domain: alfalfa GRAS genes (harvested on 'GRAS', which here means Generally Recognized As Safe), pepper bacterial wilt, a college-drinking study (harvested on 'Latent', which here means LADA), a quasi-classical trajectory calculation, bacterial anti-phage defence, SSVEP engineering, molnupiravir placental PK. Four of them carried BLANK titles in the index, so nothing had ever displayed what they were. audit_index_provenance.py: 55 unreachable -> 0. Index 312 -> 296. (2) THE THIRD DOOR. Purging from the index did NOT remove them from the site. PMID 30078372 (alcohol consumption and sexual attitudes among college women) was still publishing 4 data points against Gaps 2/6/10/11 on Extracted_Evidence.html, because extract_evidence.py walks the abstracts directory with os.listdir and extract_corpus_data.py globs the fulltext directory - neither consulted not_corpus_pmids.json. The FLAGGED filter could not catch them either, since FLAGGED derives from state['papers'] and these were never in state at all. Both extractors now honour the registry; 25 papers excluded, and all 18 purged PMIDs now render on 0 pages. Guarding ingest and reconcile was not enough - extraction reads the filesystem, not the index. (3) THE FABRICATION HEURISTIC IS NOW BACKWARDS. The task file still says PMIDs above 42000000 are fabricated. Measured live today: esearch 2026[dp] returns PMIDs to 42626404 and the corpus holds 30 real PMIDs at or above 42000000. The rule would have destroyed PMID 42608595, the highest-value paper in the queue. Replacement rule recorded in doctrine_notes: resolve against esummary and compare titles; magnitude proves nothing. (4) PATH VALIDATION - ONE PATH STRENGTHENED, ONE DELIBERATELY NOT. PMID 42608595 (Rogers NM, Diabetologia 2026, Australian Islet Consortium) is the first multi-centre human test of belatacept+sirolimus in islet transplantation: 8/9 (89%) met the 12-month composite vs 12 (52%) on tac/MMF, renal function preserved only in the bela/siro arm. belatacept -> islet_transplant STRENGTHENED (single-centre n=5 -> multi-centre n=9 with a contemporaneous comparator), still VALIDATED and NOT elevated to a recommendation: non-randomised, open-label, and 89% is 8 of 9 people. rapamycin -> islet_transplant UNCHANGED - the queue expected it to strengthen too, but sirolimus appears only inside the combination, so it is confounded with belatacept and no arm isolates it. Also logged a denominator inconsistency: 12 of a stated 24 is 50%, not the reported 52%. (5) GAP #3 REINFORCED BY A NULL. A 2026 multi-centre islet study reporting Igls, BETA-2, C-peptide, HbA1c, allosensitisation and immune subsets still measured NO insulin sensitivity. That is positive evidence the gap is real, not mere absence. Gap #11 unchanged: a Treg READOUT is not a Treg INTERVENTION. (6) TWO LIVE OVERSTATEMENTS FIXED, BOTH PREVIOUSLY CLEARED BY THIS REPO'S OWN SWEEP. build_gka_landscape.py published 'Eliminates hypoglycemia risk' for TTP399; SimpliciT1 (PMID 33622669, read in full) reports a 40% RELATIVE reduction in severe/symptomatic hypoglycaemia - a reduction, not elimination. build_lada_diagnostic_model.py published an unsourced '80% of cost-effectiveness at 50% of cost' under an 'Evidence:' heading; it is an output of this repo's own model and is now labelled as such. The 2026-04-11 and 2026-05-22 sweeps both inspected these exact two lines and recorded them as 'factual/contextual'. A grep that finds the right line and then waves it through is not a control. (7) PAPERS VETTED: 13 Monday-sweep papers, all PMIDs resolving with exact title agreement - so the finding is WEIGHT, not existence: only 2 of 13 are human clinical evidence. FLAGGED 3 - a BIBLIOMETRIC analysis (counts publications, contains no patients or animals, can support no causal claim), a network-pharmacology herbal study, and a metformin result from HK-2 CELL CULTURE published in Diabetes Obes Metab, whose clinical-sounding journal title sits directly on the metformin -> NLRP3 -> kidney path. (8) SELF-INFLICTED DEFECT, CAUGHT PRE-EXECUTION. The first draft of the reconciliation script reconstructed titles and journals for 19 papers from truncated 92-char audit strings instead of fetching them; live esummary showed 9 of 19 wrong (PLoS One written as Diabetes, Nat Med as Lancet Neurol, Cureus as Nutrients, and so on). Same defect class the 2026-08-24 run found in the builders, reproduced by the repair process one day later. Corrected before the script ran; nothing wrong reached state or the site. Logged in audit_notes. All 51 pipeline scripts [OK]. Papers 306 -> 344 (290 VETTED / 17 FLAGGED / 37 UNVETTED)."
+  },
+  {
+   "date": "2026-08-26",
+   "day": "Wednesday",
+   "papers_checked": 37,
+   "paths_validated": 0,
+   "issues_found": 13,
+   "changes_pushed": false,
+   "summary": "Wed 2026-08-26 - A RETRACTED PAPER WAS FEEDING THE EVIDENCE BASE, AND NO GATE IN THIS REPO HAD EVER ASKED. (1) THE FINDING. Vetting the 37 papers folded in on 2026-08-25 by publication type surfaced PMID 38918878 (IL-1 inhibitors and colchicine in T2D, Diabetol Metab Syndr 2024) carrying pubtype 'Retracted Publication'. It was cited in 18 files, published on three dashboards, and supplying 2 colchicine dose_response extractions to Gap 4 and Gap 7. It had passed every control this repo owns, and it passed them by construction: a retracted paper resolves, is on-topic, and has a correct title, so PMID validation, topic screening and both title-agreement gates are all silent on it. This is the FIFTH distinct citation-defect class and the first where the existing gates were not merely aimed elsewhere but structurally incapable. Built audit_retractions.py (355 PMIDs checked, 1 retracted, 0 errata), excluded the paper with a written reason, and extended not_corpus_pmids.json - whose own note said its disqualifier is PROVENANCE - to name RETRACTION as a second and different disqualifier, because filing a withdrawn paper under 'never was a corpus paper' would have erased the more serious fact. Extraction 240 -> 228. PMID_Verification.html now renders RETRACTED in its own colour instead of NOT CORPUS. (2) THE GATE ALMOST FAILED ON THE RECORD OF ITS OWN FIX. First wired-in run went red because it counted the exclusion registry, its own report and the pipeline comment explaining it as citations. Split into LIVE EVIDENCE (evidence stores + builders, fails) vs AUDIT TRAIL (fails nothing) vs OTHER (human read), same reasoning as AUDIT_TRAIL_FIELDS in audit_citation_identifiers.py. (3) PROSE CITATIONS, CHECKED FOR THE FIRST TIME. audit_prose_citation_titles.py reads the 'Author. Title. Journal Year. PMID:x' shape that the dict-literal gate cannot see. Its first run reported 249 mismatches and almost all were the gate's fault: the dominant shape here asserts author/journal/year and NO title, and scoring that on title overlap returns 0.00 for a correct citation. Classifying before scoring - TITLE_ASSERTED vs METADATA_ONLY vs DESCRIPTIVE - took it to 14. 10 confirmed miscitations repaired in build_data_dictionary.py, every correction resolved live against NCBI: a fabricated co-author 'Bhatt T' on two records live on the site (real co-authors Stein R and Bevan MJ), an off-by-one PMID (27512794 'Drugs for Smoking Cessation' cited for the De Meyts insulin-receptor chapter, 27512793), a PMID copied from the neighbouring record (28431241 Manning AKT used for Saxton mTOR), and 'Vincenti F, Belatacept, NEJM 2010;363(7):611-621' which is Rachoin on endotoxin removal in Contributions to Nephrology. NOT yet wired into the pipeline: 14 remain and a permanently red gate is an ignored gate. (4) THE CREDIBILITY SWEEP NOW HAS A RULE INSTEAD OF A JUDGEMENT. audit_absolute_claims.py requires an absolute verb on a clinical endpoint to cite a PMID whose fetched abstract contains a same-family absolute. Two overstatements fixed. Its own weakness is recorded in the report: 65 raw hits filtered to 1, which is suspiciously clean, so a measured widening is queued rather than declared unnecessary. (5) 53/53 pipeline improvements [OK]; fabricated-PMID and overstatement sweeps clean. Papers VETTED 290 -> 326, FLAGGED 17 -> 18, UNVETTED 37 -> 0."
   }
  ],
  "topic_checks": {
@@ -11683,6 +12159,10 @@
    "what": "While folding the 55 unreachable index entries into state, the first draft of the retain-list filled in full titles and journals for 19 papers from the truncated 92-character strings in the audit output, rather than fetching them. Live esummary then showed 9 of those 19 were wrong: PLoS One written as Diabetes, Biomed Hub as Am J Cardiol, J Clin Med as Int J Mol Sci, World J Diabetes as Diabetes Obes Metab, Alzheimers Dement as Diabetes Res Clin Pract, Nat Med as Lancet Neurol, Diab Vasc Dis Res as Cardiovasc Diabetol, Biochem Pharmacol as Biomed Pharmacother, Cureus as Nutrients, plus several silently truncated titles.",
    "why_it_matters": "This is the SAME defect class the 2026-08-24 run found in the builders (9 of 11 asserted titles wrong), reproduced by the repair process itself, one day later. The lesson is that plausible-looking bibliographic metadata is exactly what gets confabulated, and truncated source strings invite it. Corrected before the script was run, so nothing wrong reached state or the site.",
    "control": "Every title now written into state or into not_corpus_pmids.json this run came from a live esummary response in the same session."
+  },
+  {
+   "date": "2026-08-26",
+   "note": "audit_retractions.py added. Retraction is the one citation defect where PMID resolution, topic screening and title agreement are silent BY CONSTRUCTION, not by oversight. 355 PMIDs checked, 1 retracted (38918878). The check is a snapshot: pubtype is read live and cached, so the cache must be made to expire or the gate will report the 2026-08-26 answer forever. Queued."
   }
  ],
  "combination_validation_pending": [
@@ -11922,6 +12402,22 @@
    "added": "2026-08-24",
    "target": "NEW MULTI-CENTRE ISLET EVIDENCE: PMID 42608595, \"A multi-centre study of belatacept and sirolimus for islet transplantation\" (Monday sweep). belatacept -> islet_transplant currently rests on 37359825 (Posselt 2023, CIT-04/08) and rapamycin -> islet_transplant on the Edmonton protocol trial. A multi-centre study is stronger evidence than either. Read it, check whether it strengthens, weakens or contradicts both paths, and whether Gap #3 / Gap #11 tiers move.",
    "closed": "2026-08-25"
+  },
+  {
+   "priority": 1,
+   "type": "verify_citations",
+   "added": "2026-08-24",
+   "target": "EXTEND TITLE AGREEMENT TO PROSE CITATIONS. audit_builder_title_agreement.py only reads dict literals with pmid+title keys - 11 records repo-wide. The 10th miscitation found today (22723585 asserted as \"Bi et al. Omega-3 fatty acids and diabetes\", actually a fructose systematic review) was in an HTML template string in build_nutrition_beta.py and the gate could not see it. Every builder emits citations as prose of the form \"Author. Title. Journal Year. PMID:xxxxxxxx\". Parse that shape and run the same overlap test. Expect more: the dict-literal sample had a 9/11 defect rate and there is no reason prose is cleaner.",
+   "closed": "2026-08-26",
+   "closed_because": "DONE. audit_prose_citation_titles.py built and run. 778 PMID references in builder prose; 211 assert an identity and were checked (27.1%% coverage, the other 567 are descriptive support and are explicitly NOT verified by this gate). 10 miscitations confirmed against live PubMed and repaired in build_data_dictionary.py, including a fabricated co-author (\"Bhatt T\" on two records, live on docs/Dashboards/Medical_Data_Dictionary.html) and an off-by-one PMID (27512794 \"Drugs for Smoking Cessation\" for 27512793 De Meyts). Predicted defect rate was 9/11; observed rate among CHECKABLE title assertions in that file was 10/22."
+  },
+  {
+   "priority": 1,
+   "type": "verify_publish",
+   "added": "2026-08-25",
+   "target": "THE CREDIBILITY SWEEP FINDS LINES AND THEN CLEARS THEM. Both overstatements fixed today were inspected by earlier sweeps and written up as 'factual/contextual' (monitor_report_2026-04-11, iterate_run_report_2026-05-22). 'Eliminates hypoglycemia risk' sat live for four months after being read. The grep works; the ADJUDICATION does not. Replace the free-text judgement with a rule: any absolute verb (eliminates, abolishes, prevents, guarantees, achieves) attached to a clinical endpoint must cite a PMID, and the cited abstract must be fetched and shown to contain a matching absolute. If the abstract says 'reduced by 40%', the page may not say 'eliminates'. Start by re-running the sweep over ALL builders under that rule - assume more survivors, since the sample of 2 had a 2/2 defect rate.",
+   "closed": "2026-08-26",
+   "closed_because": "DONE. audit_absolute_claims.py built, wired into run_quality_improvements.py, and green. Rule: an absolute verb attached to a clinical endpoint must cite a PMID whose ABSTRACT is fetched and shown to contain a same-family absolute. Two overstatements fixed: build_lada_diagnostic_model.py claimed \"All healthcare settings achieve break-even ... universal screening is financially viable everywhere\" from a cost model (now stated as a model output with its assumptions), and build_data_dictionary.py said tacrolimus \"blocks T cell activation preventing rejection\" (now \"lowers the rate of rejection but does not remove it\"). CAUTION recorded in the report: the gate now finds ONE claim repo-wide, which is suspiciously clean - see calibration_2026_08_26 and the new widening item."
   }
  ]
 }

@@ -1,0 +1,35 @@
+{
+ "generated": "2026-08-26",
+ "rule": "absolute verb + clinical endpoint => must cite a PMID whose abstract contains a same-family absolute",
+ "cite_window_chars": 400,
+ "calibration_2026_08_26": {
+  "raw_vocabulary_grep": 65,
+  "after_finite_verb_forms_only": 9,
+  "after_hedge_and_blob_and_purpose_filters": 4,
+  "after_label_form_filter": 1,
+  "note": "The 64 removed were nominalisations (\"prevention\", \"reversible\"), hedged proposals (\"could prevent\"), bibliometric zeros (\"zero publications\"), serialised dict blobs, infinitives of purpose (\"drugs used to prevent rejection\") and list-item labels (\"Prevent autoimmunity:\"). NONE was an absolute clinical claim. But a filter tuned on 65 examples can over-fit: this gate now finds ONE claim repo-wide, which is a suspiciously clean result and should be widened deliberately, measuring what each relaxation admits."
+ },
+ "claims_found": 1,
+ "unsourced_absolute": [],
+ "overstated": [],
+ "no_abstract": [],
+ "supported": [
+  {
+   "file": "build_generic_drug_catalog.py",
+   "sentence": "Fenofibrate costs $20/year and prevents retinopathy progression in 30% of patients (FIELD trial) PMID:32175717 .",
+   "term": "prevents",
+   "family": "prevent",
+   "pmids": [
+    "3217571",
+    "32175717"
+   ],
+   "verdict": "SUPPORTED",
+   "echoed_by": [
+    {
+     "pmid": "32175717",
+     "matched": "prevent"
+    }
+   ]
+  }
+ ]
+}

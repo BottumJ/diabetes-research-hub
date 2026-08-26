@@ -878,8 +878,10 @@ class TufteHTMLDashboard:
 
     <p>
         <em>Break-even calculation:</em> (Annual test cost) / (Cost difference between T2D and
-        LADA management per case). All healthcare settings achieve break-even well below LADA
-        prevalence thresholds, indicating universal screening is financially viable everywhere.
+        LADA management per case). Under the cost assumptions used here, every setting modelled
+        breaks even below its assumed LADA prevalence. This is a model output, not an observed
+        result: it holds only for the test and management costs tabulated above, and no
+        prospective economic evaluation of LADA screening has been published to test it.
     </p>
 </section>
 '''

@@ -1,314 +1,325 @@
 {
-  "note": "PMIDs that must never be indexed as corpus papers. Each resolves to a real PubMed record - that is precisely why every existence-checking gate passed it. The disqualifier is PROVENANCE, not existence: nothing in this repo ever cited these as evidence for a claim. This registry is PERSISTENT so that re-ingestion cannot reintroduce them, and so the reason survives after the index is clean. Enforced by audit_index_provenance.py (which fails the build if an entry here is present in the index) and honoured by ingest_papers.py.",
-  "generated": "2026-08-24",
-  "pmids": {
-    "12345678": {
-      "actual_title": "Denpasar Declaration on Population and Development.",
-      "journal": "Integration",
-      "year": "1994",
-      "provenance": "CODE_ARTIFACT",
-      "why": "Its entire provenance is the comment `# match PMID: 12345678 or PMID 12345678` next to a regex in postprocess_dashboards.py, plus check_citation_mismatches.py quoting that same comment. The index harvester read a regex example as a citation. It was rendered as a corpus paper on Paper_Library.html and PMID_Verification.html.",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py"
-    },
-    "37889505": {
-      "actual_title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
-      "journal": "Crit Rev Food Sci Nutr",
-      "year": "2024",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "The probiotic-breads paper that was wrongly cited on the teplizumab path and purged on 2026-08-20. Its only citing sites are the three scripts that name it AS A BAD CITATION. It was in the corpus solely because this repo wrote about it being wrong, and it was absent from state['papers'], so the vetting batch could never reach it.",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json"
-    },
-    "28864502": {
-      "actual_title": "Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
-      "replaced_by": null,
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "15644441": {
-      "actual_title": "Syncytin-A and syncytin-B, two fusogenic placenta-specific murine envelope genes.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
-      "replaced_by": null,
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "22723585": {
-      "actual_title": "Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation (Larsen, NEJM)",
-      "replaced_by": "17429083",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "24931610": {
-      "actual_title": "SETD2-dependent histone H3K36 trimethylation is required for homologous recombination repair.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "Verapamil blocks TXNIP and protects beta cells from apoptosis (Shalev)",
-      "replaced_by": "22442301",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "16498215": {
-      "actual_title": "Novel approach to calvarial bone transport using a rabbit model.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
-      "replaced_by": null,
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "19148081": {
-      "actual_title": "Your inbox, Mr President.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "Edmonton Protocol international trial (Shapiro, NEJM 2006)",
-      "replaced_by": "17005949",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "31529065": {
-      "actual_title": "A mobile app identifies momentary psychosocial and contextual factors related to glycemia.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "Biphasic C-peptide decline in Chinese LADA cohort (2020)",
-      "replaced_by": "32307525",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "30369313": {
-      "actual_title": "Long-Term Outcomes of Cardiac Resynchronization Therapy Using Apical Versus Nonapical Left Ventricular Pacing.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "HUNT study autoantibody risk stratification; HR 6.40 low C-peptide, HR 5.37 high GADA titre",
-      "replaced_by": "34318969",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "23835333": {
-      "actual_title": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes.",
-      "provenance": "SELF_REFERENTIAL",
-      "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
-      "was_asserted_as": "ACTION LADA: clinical and genetic characteristics of LADA (Hawa, Diabetes Care 2013)",
-      "replaced_by": "23248199",
-      "adjudicated": "2026-08-24",
-      "by": "audit_index_provenance.py",
-      "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
-    },
-    "19729482": {
-      "actual_title": "Suppression of activation and costimulatory signaling in splenic CD4+ T cells after trauma-hemorrhage reduces T-cell function: a mechanism of post-traumatic immune suppression.",
-      "journal": "Am J Pathol",
-      "year": "2009",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Trauma immunology. Harvested on 'costimulatory'/'CD4+', which are corpus vocabulary via belatacept and Treg work, but the model is haemorrhagic shock, not diabetes.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "24105098": {
-      "actual_title": "Bond and mode selectivity in the OH + NH2D reaction: a quasi-classical trajectory calculation.",
-      "journal": "Phys Chem Chem Phys",
-      "year": "2013",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Computational gas-phase reaction dynamics. No biological content of any kind. The index carried it with a BLANK title, so no human or gate ever saw what it was.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "27505628": {
-      "actual_title": "Evaluation of smokers with and without asthma in terms of smoking cessation outcome, nicotine withdrawal symptoms, and craving: Findings from a self-guided quit attempt.",
-      "journal": "Addict Behav",
-      "year": "2016",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Smoking-cessation behavioural study. No diabetes content.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "28086769": {
-      "actual_title": "Effect of ginseng extract on the TGF-β1 signaling pathway in CCl4-induced liver fibrosis in rats.",
-      "journal": "BMC Complement Altern Med",
-      "year": "2017",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Rodent hepatic fibrosis / herbal extract. Harvested on 'TGF-β1'. No diabetes endpoint.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "28916733": {
-      "actual_title": "Clonal expansion and epigenetic reprogramming following deletion or amplification of mutant IDH1.",
-      "journal": "Proc Natl Acad Sci U S A",
-      "year": "2017",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Glioma genomics. Harvested on 'clonal expansion'/'epigenetic reprogramming'. Oncology, not diabetes.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "30078372": {
-      "actual_title": "Latent Profile Analysis of Alcohol Consumption and Sexual Attitudes Among College Women: Associations With Sexual Victimization Risk.",
-      "journal": "Violence Against Women",
-      "year": "2018",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Harvested on 'Latent', which in this corpus means LADA (Latent Autoimmune Diabetes in Adults). Acronym/keyword collision, nothing more.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "30144957": {
-      "actual_title": "Generation of novel Id2 and E2-2, E2A and HEB antibodies reveals novel Id2 binding partners and species-specific expression of E-proteins in NK cells.",
-      "journal": "Mol Immunol",
-      "year": "2019",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Antibody-reagent methods paper on NK-cell transcription factors. Basic immunology tooling with no diabetes, islet or Treg endpoint.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "30578413": {
-      "actual_title": "Your genomic inheritance matters.",
-      "journal": "Nat Rev Cancer",
-      "year": "2019",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "A one-page Research Highlight comment in an oncology journal. Not a study, not diabetes, never cited by this repo.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "30778000": {
-      "actual_title": "Statistical fallacies & errors can also jeopardize life & health of many.",
-      "journal": "Indian J Med Res",
-      "year": "2018",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "General biostatistics editorial. No diabetes content and no claim in this repo rests on it.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "31220820": {
-      "actual_title": "Effects of stimulation frequency and stimulation waveform on steady-state visual evoked potentials using a computer monitor.",
-      "journal": "J Neural Eng",
-      "year": "2019",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Brain-computer-interface engineering. No diabetes content.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "33082274": {
-      "actual_title": "HLA Polymorphisms Are Associated with Treatment-Free Remission Following Discontinuation of Tyrosine Kinase Inhibitors in Chronic Myeloid Leukemia.",
-      "journal": "Mol Cancer Ther",
-      "year": "2021",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Oncology/CML. Indexed with a BLANK title. Plausibly harvested because 'HLA' and 'remission' are corpus vocabulary, but the subject is leukaemia, not diabetes.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "33989382": {
-      "actual_title": "Neuroscientific therapies for atrial fibrillation.",
-      "journal": "Cardiovasc Res",
-      "year": "2021",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Cardiac electrophysiology review. Cardiovascular, but nothing to do with diabetes, islets or beta cells, and uncited here.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "34299352": {
-      "actual_title": "Genome-Wide Identification of GRAS Gene Family and Their Responses to Abiotic Stress in Medicago sativa.",
-      "journal": "Int J Mol Sci",
-      "year": "2021",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Plant genomics (alfalfa). Almost certainly harvested on the token 'GRAS', which in this corpus means Generally Recognized As Safe. Textbook acronym collision.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "35491968": {
-      "actual_title": "The CaPti1-CaERF3 module positively regulates resistance of Capsicum annuum to bacterial wilt disease by coupling enhanced immunity and dehydration tolerance.",
-      "journal": "Plant J",
-      "year": "2022",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Plant pathology (pepper). Harvested on 'immunity'/'tolerance', which are corpus vocabulary in an entirely different sense.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "37467726": {
-      "actual_title": "Fast and low-dose medical imaging generation empowered by hybrid deep-learning and iterative reconstruction.",
-      "journal": "Cell Rep Med",
-      "year": "2023",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Radiology image reconstruction. Indexed with a BLANK title. No diabetes, islet or beta-cell content.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "37544201": {
-      "actual_title": "Transfer and biotransformation of the COVID-19 prodrug molnupiravir and its metabolite β-D-N4-hydroxycytidine across the blood-placenta barrier.",
-      "journal": "EBioMedicine",
-      "year": "2023",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "COVID antiviral placental pharmacokinetics. Plausibly harvested by the drug-repurposing screen on 'prodrug'/'biotransformation'.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "37932527": {
-      "actual_title": "Auto-inhibition and activation of a short Argonaute-associated TIR-APAZ defense system.",
-      "journal": "Nat Chem Biol",
-      "year": "2024",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Bacterial anti-phage defence structural biology. Indexed with a BLANK title.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    },
-    "38587236": {
-      "actual_title": "Probiotics induce intestinal IgA secretion in weanling mice potentially through promoting intestinal APRIL expression and modulating the gut microbiota composition.",
-      "journal": "Food Funct",
-      "year": "2024",
-      "provenance": "OFF_DOMAIN_UNCITED",
-      "why": "Weanling-mouse gut IgA/probiotics. Adjacent to the microbiome work but reports no diabetes, glycaemic or autoimmunity endpoint, and is uncited. Same class as the probiotic-breads paper purged 2026-08-20.",
-      "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
-      "adjudicated": "2026-08-25",
-      "by": "reconcile_unreachable_papers_20260825.py",
-      "title_source": "live NCBI esummary 2026-08-25"
-    }
+ "note": "PMIDs that must never be indexed as corpus papers. Two DISTINCT disqualifiers live here and they must not be confused, because the remedy differs:\n(1) PROVENANCE - the PMID resolves to a real record, which is precisely why every existence-checking gate passed it, but nothing in this repo ever cited it as evidence for a claim. It arrived from a code comment, a regex example or a bulk harvest. The right remedy is deletion; there was never anything there.\n(2) RETRACTED (added 2026-08-26) - the paper WAS legitimately cited as evidence and the literature has since withdrawn it. Its provenance is sound; its findings are not. The right remedy is exclusion from the evidence base WITH the retraction recorded, so the repo can say why the evidence count changed and cannot silently re-ingest it. Retracted entries are found by audit_retractions.py, which reads PubMed's publication type - the one defect class where title agreement, topic screening and PMID resolution are all silent by construction, because a retracted paper passes every one of them.\nThis registry is PERSISTENT so that a later harvest cannot reintroduce an entry that a previous run adjudicated.",
+ "generated": "2026-08-24",
+ "pmids": {
+  "12345678": {
+   "actual_title": "Denpasar Declaration on Population and Development.",
+   "journal": "Integration",
+   "year": "1994",
+   "provenance": "CODE_ARTIFACT",
+   "why": "Its entire provenance is the comment `# match PMID: 12345678 or PMID 12345678` next to a regex in postprocess_dashboards.py, plus check_citation_mismatches.py quoting that same comment. The index harvester read a regex example as a citation. It was rendered as a corpus paper on Paper_Library.html and PMID_Verification.html.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py"
   },
-  "last_updated": "2026-08-25"
+  "37889505": {
+   "actual_title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
+   "journal": "Crit Rev Food Sci Nutr",
+   "year": "2024",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "The probiotic-breads paper that was wrongly cited on the teplizumab path and purged on 2026-08-20. Its only citing sites are the three scripts that name it AS A BAD CITATION. It was in the corpus solely because this repo wrote about it being wrong, and it was absent from state['papers'], so the vetting batch could never reach it.",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json"
+  },
+  "28864502": {
+   "actual_title": "Pharmacologic Differences of Sulfonylureas and the Risk of Adverse Cardiovascular and Hypoglycemic Events.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)",
+   "replaced_by": null,
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "15644441": {
+   "actual_title": "Syncytin-A and syncytin-B, two fusogenic placenta-specific murine envelope genes.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)",
+   "replaced_by": null,
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "22723585": {
+   "actual_title": "Effect of fructose on glycemic control in diabetes: a systematic review and meta-analysis.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "IL-1 receptor antagonist in type 2 diabetes and beta cell preservation (Larsen, NEJM)",
+   "replaced_by": "17429083",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "24931610": {
+   "actual_title": "SETD2-dependent histone H3K36 trimethylation is required for homologous recombination repair.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "Verapamil blocks TXNIP and protects beta cells from apoptosis (Shalev)",
+   "replaced_by": "22442301",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "16498215": {
+   "actual_title": "Novel approach to calvarial bone transport using a rabbit model.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)",
+   "replaced_by": null,
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "19148081": {
+   "actual_title": "Your inbox, Mr President.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "Edmonton Protocol international trial (Shapiro, NEJM 2006)",
+   "replaced_by": "17005949",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "31529065": {
+   "actual_title": "A mobile app identifies momentary psychosocial and contextual factors related to glycemia.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "Biphasic C-peptide decline in Chinese LADA cohort (2020)",
+   "replaced_by": "32307525",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "30369313": {
+   "actual_title": "Long-Term Outcomes of Cardiac Resynchronization Therapy Using Apical Versus Nonapical Left Ventricular Pacing.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "HUNT study autoantibody risk stratification; HR 6.40 low C-peptide, HR 5.37 high GADA titre",
+   "replaced_by": "34318969",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "23835333": {
+   "actual_title": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes.",
+   "provenance": "SELF_REFERENTIAL",
+   "why": "Miscited builder literal repaired on 2026-08-24. Its only remaining citing site is repair_builder_citations_20260824.py, which names it in order to document the repair. A paper present in the corpus solely because this repo wrote about it being wrong is not a corpus paper.",
+   "was_asserted_as": "ACTION LADA: clinical and genetic characteristics of LADA (Hawa, Diabetes Care 2013)",
+   "replaced_by": "23248199",
+   "adjudicated": "2026-08-24",
+   "by": "audit_index_provenance.py",
+   "see_also": "adjudicated_offtopic_pmids.json (the verdict about the CLAIM stays there; this registry only governs corpus membership)"
+  },
+  "19729482": {
+   "actual_title": "Suppression of activation and costimulatory signaling in splenic CD4+ T cells after trauma-hemorrhage reduces T-cell function: a mechanism of post-traumatic immune suppression.",
+   "journal": "Am J Pathol",
+   "year": "2009",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Trauma immunology. Harvested on 'costimulatory'/'CD4+', which are corpus vocabulary via belatacept and Treg work, but the model is haemorrhagic shock, not diabetes.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "24105098": {
+   "actual_title": "Bond and mode selectivity in the OH + NH2D reaction: a quasi-classical trajectory calculation.",
+   "journal": "Phys Chem Chem Phys",
+   "year": "2013",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Computational gas-phase reaction dynamics. No biological content of any kind. The index carried it with a BLANK title, so no human or gate ever saw what it was.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "27505628": {
+   "actual_title": "Evaluation of smokers with and without asthma in terms of smoking cessation outcome, nicotine withdrawal symptoms, and craving: Findings from a self-guided quit attempt.",
+   "journal": "Addict Behav",
+   "year": "2016",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Smoking-cessation behavioural study. No diabetes content.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "28086769": {
+   "actual_title": "Effect of ginseng extract on the TGF-β1 signaling pathway in CCl4-induced liver fibrosis in rats.",
+   "journal": "BMC Complement Altern Med",
+   "year": "2017",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Rodent hepatic fibrosis / herbal extract. Harvested on 'TGF-β1'. No diabetes endpoint.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "28916733": {
+   "actual_title": "Clonal expansion and epigenetic reprogramming following deletion or amplification of mutant IDH1.",
+   "journal": "Proc Natl Acad Sci U S A",
+   "year": "2017",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Glioma genomics. Harvested on 'clonal expansion'/'epigenetic reprogramming'. Oncology, not diabetes.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "30078372": {
+   "actual_title": "Latent Profile Analysis of Alcohol Consumption and Sexual Attitudes Among College Women: Associations With Sexual Victimization Risk.",
+   "journal": "Violence Against Women",
+   "year": "2018",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Harvested on 'Latent', which in this corpus means LADA (Latent Autoimmune Diabetes in Adults). Acronym/keyword collision, nothing more.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "30144957": {
+   "actual_title": "Generation of novel Id2 and E2-2, E2A and HEB antibodies reveals novel Id2 binding partners and species-specific expression of E-proteins in NK cells.",
+   "journal": "Mol Immunol",
+   "year": "2019",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Antibody-reagent methods paper on NK-cell transcription factors. Basic immunology tooling with no diabetes, islet or Treg endpoint.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "30578413": {
+   "actual_title": "Your genomic inheritance matters.",
+   "journal": "Nat Rev Cancer",
+   "year": "2019",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "A one-page Research Highlight comment in an oncology journal. Not a study, not diabetes, never cited by this repo.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "30778000": {
+   "actual_title": "Statistical fallacies & errors can also jeopardize life & health of many.",
+   "journal": "Indian J Med Res",
+   "year": "2018",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "General biostatistics editorial. No diabetes content and no claim in this repo rests on it.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "31220820": {
+   "actual_title": "Effects of stimulation frequency and stimulation waveform on steady-state visual evoked potentials using a computer monitor.",
+   "journal": "J Neural Eng",
+   "year": "2019",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Brain-computer-interface engineering. No diabetes content.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "33082274": {
+   "actual_title": "HLA Polymorphisms Are Associated with Treatment-Free Remission Following Discontinuation of Tyrosine Kinase Inhibitors in Chronic Myeloid Leukemia.",
+   "journal": "Mol Cancer Ther",
+   "year": "2021",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Oncology/CML. Indexed with a BLANK title. Plausibly harvested because 'HLA' and 'remission' are corpus vocabulary, but the subject is leukaemia, not diabetes.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "33989382": {
+   "actual_title": "Neuroscientific therapies for atrial fibrillation.",
+   "journal": "Cardiovasc Res",
+   "year": "2021",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Cardiac electrophysiology review. Cardiovascular, but nothing to do with diabetes, islets or beta cells, and uncited here.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "34299352": {
+   "actual_title": "Genome-Wide Identification of GRAS Gene Family and Their Responses to Abiotic Stress in Medicago sativa.",
+   "journal": "Int J Mol Sci",
+   "year": "2021",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Plant genomics (alfalfa). Almost certainly harvested on the token 'GRAS', which in this corpus means Generally Recognized As Safe. Textbook acronym collision.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "35491968": {
+   "actual_title": "The CaPti1-CaERF3 module positively regulates resistance of Capsicum annuum to bacterial wilt disease by coupling enhanced immunity and dehydration tolerance.",
+   "journal": "Plant J",
+   "year": "2022",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Plant pathology (pepper). Harvested on 'immunity'/'tolerance', which are corpus vocabulary in an entirely different sense.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "37467726": {
+   "actual_title": "Fast and low-dose medical imaging generation empowered by hybrid deep-learning and iterative reconstruction.",
+   "journal": "Cell Rep Med",
+   "year": "2023",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Radiology image reconstruction. Indexed with a BLANK title. No diabetes, islet or beta-cell content.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "37544201": {
+   "actual_title": "Transfer and biotransformation of the COVID-19 prodrug molnupiravir and its metabolite β-D-N4-hydroxycytidine across the blood-placenta barrier.",
+   "journal": "EBioMedicine",
+   "year": "2023",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "COVID antiviral placental pharmacokinetics. Plausibly harvested by the drug-repurposing screen on 'prodrug'/'biotransformation'.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "37932527": {
+   "actual_title": "Auto-inhibition and activation of a short Argonaute-associated TIR-APAZ defense system.",
+   "journal": "Nat Chem Biol",
+   "year": "2024",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Bacterial anti-phage defence structural biology. Indexed with a BLANK title.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "38587236": {
+   "actual_title": "Probiotics induce intestinal IgA secretion in weanling mice potentially through promoting intestinal APRIL expression and modulating the gut microbiota composition.",
+   "journal": "Food Funct",
+   "year": "2024",
+   "provenance": "OFF_DOMAIN_UNCITED",
+   "why": "Weanling-mouse gut IgA/probiotics. Adjacent to the microbiome work but reports no diabetes, glycaemic or autoimmunity endpoint, and is uncited. Same class as the probiotic-breads paper purged 2026-08-20.",
+   "disqualifier": "UNCITED (zero dashboard_locations) AND outside the diabetes / islet / beta-cell / diabetes-immunology domain. Resolves to a real PubMed record, which is exactly why every existence-checking gate passed it.",
+   "adjudicated": "2026-08-25",
+   "by": "reconcile_unreachable_papers_20260825.py",
+   "title_source": "live NCBI esummary 2026-08-25"
+  },
+  "38918878": {
+   "actual_title": "Emerging insights into the role of IL-1 inhibitors and colchicine for inflammation management in type 2 diabetes and cardiovascular disease.",
+   "journal": "Diabetology & metabolic syndrome",
+   "year": "2024",
+   "provenance": "RETRACTED",
+   "why": "PubMed publication type is \"Retracted Publication\". Found 2026-08-26 by audit_retractions.py (new that day) while vetting the 37 papers folded in on 2026-08-25. Unlike every other entry in this registry its provenance was legitimate: it was cited in 18 files and published on three dashboards (Extracted_Evidence.html, Paper_Library.html, PMID_Verification.html), and it contributed 2 colchicine dose_response extractions to Gap 4 and Gap 7. It passed every existing gate - it resolves, it is on-topic, and its title is correct - because none of them asks about retraction. NOTE the stored title also drifted: the repo said \"inflammation control\", PubMed says \"inflammation management\".",
+   "excluded_on": "2026-08-26",
+   "found_by": "audit_retractions.py",
+   "evidence_removed": "2 dose_response extractions (colchicine 1.0 mg, 0.5 mg three times daily) mapped to Gap 4 and Gap 7",
+   "replacement_needed": "The colchicine dosing claim is not necessarily wrong, but it can no longer rest on this paper. PMID 41889274 (Diab Vasc Dis Res 2026, systematic review/meta-analysis of colchicine for secondary cardiovascular prevention in diabetes) is already in the corpus and is a candidate replacement - it must be read before being used, not assumed."
+  }
+ },
+ "last_updated": "2026-08-26"
 }

@@ -117,7 +117,7 @@ TERMS = {
         'disease': 'Beta cell loss in T1D (insulitis); hypervascularization in T2D',
         'connections': ['Beta Cell', 'Alpha Cell', 'Somatostatin', 'Insulin'],
         'gap_relevance': [3, 4, 13],
-        'source': 'Brissova M et al. Assessment of human pancreatic islet architecture and composition. Diabetes 2005;54(6):1726-1731. PMID:15919794'
+        'source': 'Brissova M et al. Assessment of human pancreatic islet architecture and composition by laser scanning confocal microscopy. J Histochem Cytochem 2005;53(9):1087-1097. PMID:15923354'
     },
     'Insulin': {
         'plain': 'A hormone made by beta cells that tells your cells to take up sugar from the blood and store it.',
@@ -161,7 +161,7 @@ TERMS = {
         'disease': 'Elevated ratio indicates beta cell dysfunction in both T1D and T2D',
         'connections': ['Insulin', 'C-peptide', 'Beta Cell'],
         'gap_relevance': [1, 2],
-        'source': 'Loopstra-Masters RC et al. Proinsulin as a biomarker of beta cell stress. Diabetes 2011;60(5):1447-1450. PMID:21471512'
+        'source': 'Loopstra-Masters RC et al. Proinsulin-to-C-peptide ratio versus proinsulin-to-insulin ratio in the prediction of incident diabetes: the Insulin Resistance Atherosclerosis Study (IRAS). Diabetologia 2011;54(12):3047-3054. PMID:21959959'
     },
     'Glucagon': {
         'plain': 'A hormone made by alpha cells that raises blood sugar by telling the liver to release stored glucose. It opposes insulin.',
@@ -205,7 +205,7 @@ TERMS = {
         'disease': 'Reduced expression in T2D; MAFA mutations cause neonatal diabetes',
         'connections': ['Beta Cell', 'PDX1', 'Insulin'],
         'gap_relevance': [1, 13],
-        'source': 'Hang Y, Bhatt T. MAFA and MAFB activity in pancreatic beta cells. Trends in Endocrinology & Metabolism 2023;34(12):846-862. PMID:37845117'
+        'source': 'Hang Y, Stein R. MafA and MafB activity in pancreatic beta cells. Trends Endocrinol Metab 2011;22(9):364-373. PMID:21719305'
     },
 
     # IMMUNE SYSTEM
@@ -240,7 +240,7 @@ TERMS = {
         'disease': 'Autoreactive CD8+ cells infiltrate pancreatic islets in T1D; 25-fold increased in DPN nerve biopsies',
         'connections': ['T Cell', 'Cytotoxic function', 'Perforin', 'Beta Cell destruction'],
         'gap_relevance': [2, 3, 7, 9],
-        'source': 'Zhang N, Bhatt T. CD8+ T cells: foot soldiers of the immune system. Immunity 2018;48(3):434-452. PMID:29562193'
+        'source': 'Zhang N, Bevan MJ. CD8(+) T cells: foot soldiers of the immune system. Immunity 2011;35(2):161-168. PMID:21867926'
     },
     'Regulatory T Cell': {
         'plain': 'A specialized immune cell that suppresses harmful immune responses and maintains tolerance to self-proteins. Low levels of Tregs are found in people with T1D.',
@@ -350,7 +350,7 @@ TERMS = {
         'disease': 'Positive in 50-60% of T1D; associated with faster progression',
         'connections': ['Autoantibodies', 'B Cell', 'T1D'],
         'gap_relevance': [1, 2, 3],
-        'source': 'Lan MS et al. Molecular cloning and identification of IA-2. DNA and Cell Biology 1996;15(2):113-123. PMID:9828138'
+        'source': 'Lan MS et al. Molecular cloning and identification of a receptor-type protein tyrosine phosphatase, IA-2, from human insulinoma. DNA Cell Biol 1994;13(5):505-514. PMID:8024693'
     },
     'ZnT8': {
         'plain': 'Zinc transporter 8. A protein that transports zinc into beta cell granules. The immune system attacks ZnT8 in T1D.',
@@ -539,7 +539,7 @@ TERMS = {
         'disease': 'mTORC1 hyperactivation in T2D; inhibition promotes islet transplant tolerance',
         'connections': ['Rapamycin', 'Regulatory T Cell', 'Autophagy', 'Transplant'],
         'gap_relevance': [3, 5, 6, 8],
-        'source': 'Saxton RA, Sabatini DM. mTOR signaling in growth, metabolism, and disease. Cell 2017;168(6):960-976. PMID:28431241'
+        'source': 'Saxton RA, Sabatini DM. mTOR Signaling in Growth, Metabolism, and Disease. Cell 2017;168(6):960-976. PMID:28283069'
     },
     'PI3K/Akt': {
         'plain': 'Phosphoinositide 3-kinase/Akt. The main insulin signaling pathway. Insulin binds its receptor, activates PI3K/Akt, which allows cells to take up glucose.',
@@ -755,7 +755,7 @@ TERMS = {
         'source': 'Matschinsky FM et al. Glucokinase activators for diabetes therapy. Diabetes Care 2011;34(Suppl 2):S236-S243. PMID:21525462'
     },
     'Tacrolimus': {
-        'plain': 'Immunosuppressant used after islet transplant. Blocks T cell activation preventing rejection. But paradoxically causes insulin resistance (tacrolimus-induced diabetes, TID).',
+        'plain': 'Immunosuppressant used after islet transplant. Blocks T cell activation, which lowers the rate of rejection but does not remove it. But paradoxically causes insulin resistance (tacrolimus-induced diabetes, TID).',
         'medical': 'Calcineurin inhibitor. Binds FKBP12, inhibits calcineurin->NFAT blockade->T cell suppression. BUT: blocks NFAT in beta cells too (impairs secretion) and causes IR in peripheral tissues.',
         'systems': ['immune', 'pancreas'],
         'indicators': ['Tacrolimus blood level'],
@@ -785,7 +785,7 @@ TERMS = {
         'disease': 'Kidney transplant (FDA approved); islet transplant (investigational); 70% graft survival at 10yr vs 50% with tacrolimus-based',
         'connections': ['Costimulation blockade', 'T cell suppression', 'Transplant tolerance'],
         'gap_relevance': [3, 5, 6, 8],
-        'source': 'Vincenti F et al. Belatacept in renal transplant recipients. New England Journal of Medicine 2010;363(7):611-621. PMID:20519905'
+        'source': 'Vincenti F et al. Costimulation blockade with belatacept in renal transplantation. N Engl J Med 2005;353(8):770-781. PMID:16120857'
     },
     'Baricitinib': {
         'plain': 'JAK inhibitor. FDA approved for rheumatoid arthritis. Shows complete diabetes reversal in NOD mouse models (preclinical only); no human diabetes trial data exists.',
@@ -818,7 +818,7 @@ TERMS = {
         'disease': 'Investigational for autoimmune conditions including T1D/LADA',
         'connections': ['Opioid signaling', 'Regulatory T Cell', 'Autoimmunity'],
         'gap_relevance': [2, 3, 5, 6, 7],
-        'source': 'Younger J et al. Low-dose naltrexone for disease prevention and quality of life. Medical Hypotheses 2014;82(6):631-637. PMID:24636767'
+        'source': 'Brown N, Panksepp J. Low-dose naltrexone for disease prevention and quality of life. Med Hypotheses 2009;72(3):333-337. PMID:19041189'
     },
 
     # DIABETES TYPES
@@ -967,7 +967,7 @@ TERMS = {
         'disease': 'Central to T2D, MetS, obesity; driven by inflammation, lipotoxicity, mitochondrial dysfunction',
         'connections': ['HOMA-IR', 'TNF-alpha', 'IL-6', 'Metabolic syndrome'],
         'gap_relevance': [4, 11, 12],
-        'source': 'Petersen MC et al. Regulation of hepatic glucose metabolism. Physiological Reviews 2017;97(3):1085-1128. PMID:28539434'
+        'source': 'Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. PMID:28731034'
     },
     'Gluconeogenesis': {
         'plain': 'The process by which the liver makes new glucose from non-carbohydrate sources (proteins, fats). Elevated in diabetes, contributing to high fasting blood sugar.',
@@ -978,7 +978,7 @@ TERMS = {
         'disease': 'Unrestrained gluconeogenesis in T2D and T1D drives fasting hyperglycemia',
         'connections': ['Glucagon', 'Liver', 'Fasting glucose'],
         'gap_relevance': [4, 11, 12],
-        'source': 'Petersen MC et al. Regulation of hepatic glucose metabolism. Physiological Reviews 2017;97(3):1085-1128. PMID:28539434'
+        'source': 'Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. PMID:28731034'
     },
     'Glycogenolysis': {
         'plain': 'The breakdown of stored glycogen in the liver and muscles to release glucose into the blood.',
@@ -1011,7 +1011,7 @@ TERMS = {
         'disease': 'Downregulation in IR; mutations cause severe neonatal diabetes or lipodystrophy-associated diabetes',
         'connections': ['Insulin', 'PI3K/Akt', 'GLUT4', 'Glucose uptake'],
         'gap_relevance': [4, 11, 12],
-        'source': 'De Meyts P. The insulin receptor and its signal transduction network. 2016 Apr 27. In: Endotext. PMID:27512794'
+        'source': 'De Meyts P. The Insulin Receptor and Its Signal Transduction Network. In: Endotext [Internet]. South Dartmouth (MA): MDText.com; updated 2016 Apr 27. PMID:27512793'
     },
     'Glycemic Variability': {
         'plain': 'How much blood glucose fluctuates throughout the day. High variability is harmful even if average glucose is controlled.',
