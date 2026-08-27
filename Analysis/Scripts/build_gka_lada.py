@@ -699,13 +699,13 @@ html_content = '''<!DOCTYPE html>
                 <div class="evidence-item">
                     <div class="evidence-title">TTP399 in Type 1 Diabetes (SimpliciT1)</div>
                     <div class="evidence-detail">
-                        PMID: 33622669. Phase 2 trial showing HbA1c reduction with TTP399
-                        (liver-selective GKA) in T1D. Critically, benefit observed without
+                        PMID: 33622669. Phase 1b/2 adaptive trial showing HbA1c reduction with
+                        TTP399 (liver-selective GKA) in T1D. Critically, benefit observed without
                         hypoglycemia, suggesting hepatic mechanism may dominate over beta cell
                         stimulation. Most promising GKA candidate for LADA consideration.
                     </div>
                     <div class="data-source">
-                        Nat Med. 2021 Mar;27(3):455-460. doi:10.1038/s41591-021-01275-z
+                        Klein KR et al. The SimpliciT1 Study. Diabetes Care. 2021 Apr;44(4):960-968. PMID: 33622669.
                     </div>
                 </div>
 
@@ -717,7 +717,7 @@ html_content = '''<!DOCTYPE html>
                         No LADA data. Efficacy in T2D is underwhelming given side effect profile.
                     </div>
                     <div class="data-source">
-                        Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs 2022 (PMID:36449148) — first approval profile.
+                        Zhu D et al. Nat Med 2022;28(5):965-973 (PMID:35551294) — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022;28(5):974-981 (PMID:35551292) — DAWN trial, add-on to metformin; Syed YY, Drugs 2022;82(18):1745-1750 (PMID:36449148) — first-approval drug profile.
                     </div>
                 </div>
 
@@ -731,7 +731,7 @@ html_content = '''<!DOCTYPE html>
                         trade-off even in T2D.
                     </div>
                     <div class="data-source">
-                        Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 2013 (PMID:24056026) — GKA beta cell preservation.
+                        Yang W et al. Front Endocrinol (Lausanne) 2023;14:1175198 (PMID:37223016) — systematic review and meta-analysis of GKA efficacy and safety; Oh YS et al. Eur J Pharm Sci 2014;51:137-45 (PMID:24056026) — PRECLINICAL, INS-1 beta cell line: GKA increased proliferation and reduced glucotoxic apoptosis. Cell-line evidence, not clinical.
                     </div>
                 </div>
 
@@ -744,20 +744,41 @@ html_content = '''<!DOCTYPE html>
                         and why activation increases insulin secretion.
                     </div>
                     <div class="data-source">
-                        Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249.
+                        Matschinsky FM. Nat Rev Drug Discov. 2009 May;8(5):399-416. PMID:19373249.
                     </div>
                 </div>
 
                 <div class="evidence-item">
                     <div class="evidence-title">LADA C-Peptide Kinetics and UKPDS</div>
                     <div class="evidence-detail">
-                        UKPDS includes LADA subgroup. C-peptide declines over 5–7 years from
-                        diagnosis to full insulin dependence. Average baseline C-peptide at
-                        diagnosis: ~0.5–0.8 nmol/L. This defines the "LADA window" for GKA
-                        intervention.
+                        UKPDS identified an autoantibody-positive subgroup within its type 2
+                        diabetes cohort — ICA- and GAD-positive patients who progress to insulin
+                        requirement — which is the population later termed LADA. Beta cell
+                        function in adult-onset autoimmune diabetes declines in a biphasic
+                        pattern over years rather than months, and that interval is what would
+                        define any "LADA window" for GKA intervention.
+                        <br><br>
+                        <strong>Withdrawn 2026-08-27:</strong> this item previously asserted an
+                        average baseline C-peptide at diagnosis of ~0.5–0.8 nmol/L and a 5–7 year
+                        decline to full insulin dependence, sourced to a citation reading
+                        &ldquo;UKPDS Group, Diabetic Medicine 2004, volume 21 issue 1, pages
+                        31&ndash;37&rdquo;. That citation was wrong in every component: the PMID
+                        attached to it resolves to Aronson et al., &ldquo;Association between
+                        fasting glucose and C-reactive protein in middle-aged subjects&rdquo;,
+                        Diabetic Medicine 2004, volume 21 issue 1, pages <em>39&ndash;44</em>
+                        — not a UKPDS paper and not about C-peptide — and the asserted page
+                        range 31&ndash;37 resolves to no PubMed record at all. No
+                        source in this corpus supports the 0.5–0.8 nmol/L figure, so the figure
+                        is withdrawn rather than re-attributed. The qualitative statements above
+                        are sourced; the numbers are not, and are therefore not shown.
                     </div>
                     <div class="data-source">
-                        UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052.
+                        Turner R et al. UKPDS 25: autoantibodies to islet-cell cytoplasm and
+                        glutamic acid decarboxylase for prediction of insulin requirement in
+                        type 2 diabetes. Lancet. 1997 Nov 1;350(9087):1288-93. PMID: 9357409
+                        — autoantibody-positive subgroup;
+                        Li X et al. J Clin Endocrinol Metab. 2020 Jul 1;105(7) PMID: 32307525
+                        — biphasic beta cell decline in adult-onset autoimmune diabetes.
                     </div>
                 </div>
 
@@ -770,7 +791,7 @@ html_content = '''<!DOCTYPE html>
                         not address this in LADA.
                     </div>
                     <div class="data-source">
-                        Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — International Expert Panel LADA consensus; Mishra et al. Trends Endocrinol Metab 2018 (PMID:30041834) — LADA global prevalence 4-14% of T2D; Li et al. J Clin Endocrinol Metab 2020 (PMID:32307525) — biphasic beta cell decline in LADA; Palmer et al. Diabetes 2024 (PMID:38349844) — C-peptide as surrogate endpoint.
+                        Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; Mishra R et al. Trends Endocrinol Metab 2018;29(9):638-650 (PMID:30041834) — global perspective on LADA; Li X et al. J Clin Endocrinol Metab 2020;105(7) (PMID:32307525) — biphasic beta cell decline in LADA; Latres E et al. Diabetes 2024;73(6):823-833 (PMID:38349844) — C-peptide as a validated surrogate endpoint; Ilonen J et al. Diabetes 2013;62(10):3636-40 (PMID:23835325) — PAEDIATRIC cohort: patterns of beta cell autoantibody appearance in the first years of life. Not a LADA study; included for autoantibody sequence only.
                     </div>
                 </div>
             </div>

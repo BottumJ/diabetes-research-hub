@@ -129,6 +129,32 @@ SCRIPTS = {
     # PubMed whether a paper had been withdrawn.
     'retractiongate': ('audit_retractions.py',
                        'Gating on retracted papers cited as evidence'),
+    # Added 2026-08-27. The SIXTH defect class, and the second where every gate
+    # above is silent by construction rather than merely aimed elsewhere.
+    #
+    # Every control this repo owns asks a question about the PAPER: does the
+    # PMID resolve, is it on-topic, is the title right, was it retracted. This
+    # one asks whether the BIBLIOGRAPHIC COORDINATE is real. Found on its first
+    # run in build_gka_lada.py (CITATION-EXAMPLE: the coordinate quoted below
+    # is the defect being described, not a live citation - the marker is what
+    # exempts it from the gate, and every exemption must be written by name):
+    #     prose:      "Matschinsky FM et al. (2009). Comprehensive review of
+    #                  glucokinase as beta cell glucose sensor."     <- TRUE
+    #     coordinate: "Diabetes. 2009 Jul;58(7):1416-28"             <- FICTION
+    # PMID 19373249 is Nat Rev Drug Discov 2009;8(5):399-416. Diabetes vol 58
+    # issue 7 exists and holds 34 articles; page 1416 is not among them.
+    # audit_prose_citation_titles PASSES this, correctly - it scores the prose,
+    # and the prose is the part that is true.
+    #
+    # Eight more were found the same way, including three in
+    # build_data_dictionary.py where a real paper was given an invented journal
+    # (Gao et al. is Cell Metab 2014;19(2):259-71, published as "Journal of
+    # Clinical Investigation 2014;124(10):4017-4024") and one in
+    # build_gka_landscape.py. All repaired 2026-08-27; the gate is GREEN at
+    # 102/102 coordinates, which is why it is wired here rather than left
+    # standalone like the prose gate.
+    'coordinategate': ('audit_citation_coordinates.py',
+                       'Gating on invented journal/volume/page coordinates'),
     # Added 2026-08-26. Replaces the free-text adjudication step of the
     # credibility sweep with a rule that can be checked: an absolute verb
     # (eliminates / abolishes / prevents / cures / guarantees / zero) attached

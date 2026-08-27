@@ -1034,7 +1034,7 @@ html_content = '''<!DOCTYPE html>
             <li>Patent landscape: Dorzagliatin patents may face challenges in patent-strict regions</li>
         </ul>
 
-        <p class="source">Source: PMID:38783768 (SEED trial)</p>
+        <p class="source">Source: PMID:36449148 (Syed YY. Dorzagliatin: First Approval. Drugs. 2022;82(18):1745-1750) &mdash; regulatory status</p>
     </div>
 
     <div id="tab6" class="content">
@@ -1141,13 +1141,13 @@ html_content = '''<!DOCTYPE html>
         <div class="reference-list">
             <h3>Foundational Glucokinase Biology</h3>
             <div class="reference">
-                <strong>PMID:30949058</strong> | Matschinsky FM. "Glucokinase as a glucose sensor and therapeutic target for diabetes mellitus." Diabetes Care. 2002;25(10):1897-1902.
+                <strong>PMID:30949058</strong> | Matschinsky FM, Wilson DF. "The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans." Front Physiol. 2019;10:148.
                 <br><span class="pmid">Topic: Glucokinase as the primary glucose sensor enzyme in beta cells and liver</span>
             </div>
 
             <h3>GKA Clinical Trials and Programs</h3>
             <div class="reference">
-                <strong>PMID:38783768</strong> | Dorzagliatin SEED Trial (Phase 3, 52-week efficacy and safety in China)
+                <strong>PMID:38783768</strong> | Jiang Y et al. "Recent drug development of dorzagliatin, a new glucokinase activator." J Diabetes. 2024;16(6):e13563. REVIEW, not a trial. The SEED phase 3 monotherapy trial is Zhu D et al. Nat Med. 2022;28(5):965-973 (PMID:35551294)
                 <br><span class="pmid">Topic: Dorzagliatin monotherapy HbA1c -1.07%, hypoglycemia risk, weight neutrality</span>
             </div>
 

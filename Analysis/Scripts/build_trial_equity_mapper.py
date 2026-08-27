@@ -1397,7 +1397,7 @@ def generate_html():
             <div style="background: white; padding: 1.5rem; border: 1px solid #e0e0e0; margin: 1.5rem 0;">
                 <h3 style="margin-top: 0;">Cost Break-Even Timeline</h3>
                 <ul>
-                    <li><span class="emphasis">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost ~$10,000/year (PMID:34763823); VX-880 projected $250-300K in 2035 (PMID:21323736).</li>
+                    <li><span class="emphasis">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost ~$10,000/year (PMID:34763823); VX-880 projected $250-300K in 2035 [PROJECTION, not a sourced figure]. Anchored on the per-patient cost of clinical islet transplantation reported by Beckwith J et al., Clin Transplant 2012;26(1):23-33 (PMID:21323736); the 2035 extrapolation is this project's, not that paper's.</li>
                     <li><span class="emphasis">Upper-Middle-Income Countries (UMIC):</span> Break-even by 2035+. Current insulin cost ~$5,000/year (PMID:34763823); requires pricing negotiation and local manufacturing.</li>
                     <li><span class="emphasis">Lower-Middle/Low-Income Countries (LMIC/LIC):</span> Break-even unlikely in current health systems. Current insulin access only ~{income_summary['LMIC']['avg_insulin_access']:.0f}% adequate; requires universal insulin access first.</li>
                 </ul>

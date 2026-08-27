@@ -150,7 +150,7 @@ TERMS = {
         'disease': 'Loss-of-function mutations cause permanent neonatal diabetes; reduced activity in T2D beta cell dysfunction',
         'connections': ['Beta Cell', 'Proinsulin', 'PDX1'],
         'gap_relevance': [1, 2],
-        'source': 'Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019;29:1-24. PMID:30949058'
+        'source': 'Matschinsky FM, Wilson DF. The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans. Front Physiol 2019;10:148. PMID:30949058'
     },
     'Proinsulin': {
         'plain': 'The raw precursor protein that cells make before processing it into insulin. An elevated ratio of proinsulin to actual insulin suggests the beta cells are stressed or struggling.',
@@ -183,7 +183,7 @@ TERMS = {
         'disease': 'Impaired somatostatin secretion contributes to glucagon dysregulation in T1D',
         'connections': ['Alpha Cell', 'Beta Cell', 'Islets of Langerhans'],
         'gap_relevance': [1],
-        'source': 'Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. PMID:30303773'
+        'source': 'Huising MO et al. The Difference delta-Cells Make in Glucose Control. Physiology (Bethesda) 2018;33(6):403-411. PMID:30303773'
     },
     'PDX1': {
         'plain': 'A master control protein that tells cells to become beta cells during development and keeps them functioning as beta cells throughout life.',
@@ -194,7 +194,7 @@ TERMS = {
         'disease': 'Loss of PDX1 expression in T2D; haploinsufficiency causes MODY4',
         'connections': ['Beta Cell', 'MAFA', 'Glucokinase'],
         'gap_relevance': [1, 13],
-        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4017-4024. PMID:24506867'
+        'source': 'Gao T et al. Pdx1 maintains beta cell identity and function by repressing an alpha cell program. Cell Metab 2014;19(2):259-71. PMID:24506867'
     },
     'MAFA': {
         'plain': 'A protein that activates the genes needed to make insulin. When MAFA is lost, beta cells lose their ability to produce insulin properly.',
@@ -1300,7 +1300,7 @@ TERMS = {
         'disease': 'Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course (PMID:37202589); access limited to specialized centers',
         'connections': ['Monoclonal Antibody (Humanized)', 'T Cell', 'Regulatory T Cell', 'CD3'],
         'gap_relevance': [1, 2, 6, 8],
-        'source': 'Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):379-380. PMID:37202589'
+        'source': 'Speake C, Herold KC. Approval of teplizumab: implications for patients. Nat Rev Endocrinol 2023;19(7):377-378. PMID:37202589'
     },
     'GLP-1 Receptor Agonist': {
         'plain': 'A type of diabetes and obesity drug that mimics GLP-1, a hormone that increases insulin release, reduces appetite, and slows digestion. Examples include semaglutide (Ozempic/Wegovy) and liraglutide.',
@@ -1377,7 +1377,7 @@ TERMS = {
         'disease': 'Enables classification beyond T1D/T2D into 5+ clusters; MODY genetic testing identifies monogenic forms; precision nutrition using CGM shows 20-fold individual glycemic response variation to identical foods',
         'connections': ['GWAS', 'Genetic Predisposition to Disease', 'Continuous Glucose Monitor (CGM)', 'LADA'],
         'gap_relevance': [1, 2, 7, 8, 10, 13, 14],
-        'source': 'Florez JC. Precision medicine in diabetes: is it time? Diabetes Care 2022;45(12):3019-3032. PMID:36455116'
+        'source': 'Forouhi NG. Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base for South Asians. Diabetes Care 2022;45(12):2811-2813. PMID:36455116'
     }
 }
 

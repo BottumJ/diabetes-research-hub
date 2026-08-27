@@ -625,7 +625,7 @@ CANDIDATES = {
         "class": "Calcineurin inhibitor, immunosuppressant",
         "primary_indication": "Organ transplant rejection, autoimmune diseases",
         "mechanism_diabetes": "T cell suppression via calcineurin inhibition, beta cell preservation in autoimmune diabetes",
-        "evidence": "RCT-proven beta cell preservation in new-onset T1D (Bougneres et al, NEJM 1988; Feutren et al, Lancet 1986, PMID:1611143). Demonstrated remission induction in T1D when given early. Nephrotoxicity and long-term immunosuppression limit chronic use. Effect reversed upon discontinuation",
+        "evidence": "RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396; Skyler & Rabinovitch, J Diabetes Complications 1992;6(2):77-88, PMID:1611143 - Miami Cyclosporine Diabetes Study Group). Demonstrated remission induction in T1D when given early. Nephrotoxicity and long-term immunosuppression limit chronic use. Effect reversed upon discontinuation",
         "generic_cost": 30.00,  # CORRECTED: Generic cyclosporine ~$30-100/mo depending on dose and market; $1.50 was fabricated. Requires therapeutic drug monitoring adding further cost
         "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
         "who_essential": True,

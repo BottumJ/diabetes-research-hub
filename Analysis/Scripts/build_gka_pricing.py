@@ -659,7 +659,7 @@ html_content = f"""<!DOCTYPE html>
                 <tr>
                     <td>Current Generic Price</td>
                     <td>2024-2026</td>
-                    <td>$200-$400/year (PMID:34763823)</td>
+                    <td>$200-$400/year <span class="unsourced" title="Citation removed 2026-08-27: the source previously cited here was published in 2021 and cannot report 2024-2026 prices">[UNSOURCED]</span></td>
                 </tr>
             </table>
 
@@ -667,7 +667,7 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="metric">
                 <strong>Earliest Generic GKA: 2038-2042</strong><br>
-                Precedent: SGLT2i 7-year window from patent cliff to generic penetration (2015-2022) (PMID:34763823)
+                Precedent: SGLT2i 7-year window from patent cliff to generic penetration (2015-2022) [UNSOURCED - the citation removed here was a review of insulin pricing and contains no SGLT2i patent timeline]
             </div>
 
             <div class="metric">
@@ -790,9 +790,10 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="expand-content">
                     <p><strong>Reference:</strong> Empagliflozin (Jardiance), Dapagliflozin (Farxiga)</p>
-                    <p><strong>Launch Pricing (2014):</strong> $5,000-$8,000/year (PMID:34763823)</p>
+                    <p><strong>Launch Pricing (2014):</strong> $5,000-$8,000/year <span class="unsourced">[UNSOURCED]</span></p>
                     <p><strong>Patent Cliff:</strong> 2022-2025</p>
-                    <p><strong>Generic Pricing (2024+):</strong> $200-$400/year (PMID:34763823)</p>
+                    <p><strong>Generic Pricing (2024+):</strong> $200-$400/year <span class="unsourced">[UNSOURCED]</span></p>
+                    <p style="font-size:0.85em;color:#8a6d3b;">Citations removed 2026-08-27: these SGLT2i figures were attributed to PMID:34763823, which is Herman &amp; Kuo, "100 years of Insulin: Why is Insulin So Expensive", Endocrinol Metab Clin North Am 2021 — a review of <em>insulin</em> pricing that contains no SGLT2i launch or generic prices, and which predates the 2024+ figures it was cited for. The numbers are retained as unsourced pending a primary pricing source.</p>
                     <p><strong>Lessons for GKA:</strong> Rapid price decline post-patent cliff; branded tier maintains 50-100% premium for 2-3 years after generic entry</p>
                     <p><strong>Data source:</strong> Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823); CMS drug pricing databases; IQVIA IMS Health reports</p>
                 </div>
@@ -855,7 +856,7 @@ html_content = f"""<!DOCTYPE html>
                 </tr>
                 <tr>
                     <td>IDF Epidemiology</td>
-                    <td>IDF Diabetes Atlas 2023 (PMID:32175717)</td>
+                    <td>Khan MAB et al. J Epidemiol Glob Health 2020;10(1):107-111 (PMID:32175717)</td>
                     <td>T1D (1.4M US), T2D (537M global); care costs (PMID:32175717)</td>
                 </tr>
                 <tr>

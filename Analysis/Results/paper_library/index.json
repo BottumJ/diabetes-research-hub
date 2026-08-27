@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "generated_at": "2026-08-26T03:29:59.059191",
+    "generated_at": "2026-08-27T03:28:24.751666",
     "total_pmids": 275,
     "abstracts_fetched": 274,
     "pmc_available": 143,
     "fulltext_fetched": 130,
-    "total_indexed": 304,
-    "orphans_reconciled": 29,
-    "orphans_reconciled_on": "2026-08-26",
+    "total_indexed": 305,
+    "orphans_reconciled": 30,
+    "orphans_reconciled_on": "2026-08-27",
     "orphan_status_counts": {
       "OFF_TOPIC": 8,
       "OFF_TOPIC_PRESUMED": 6,
-      "UNSCREENED_ORPHAN": 15
+      "UNSCREENED_ORPHAN": 16
     },
     "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see."
   },
@@ -536,11 +536,6 @@
           "file": "build_gka_lada.py",
           "line": 621,
           "context": "burnout\" concern is weakened, supporting GKA trials. Sources: UKPDS (PMID:14706052);"
-        },
-        {
-          "file": "build_gka_lada.py",
-          "line": 760,
-          "context": "UKPDS Group. Diabet Med. 2004 Jan;21(1):31-7. PMID: 14706052."
         }
       ],
       "mesh_terms": [
@@ -984,7 +979,7 @@
         {
           "file": "build_drug_repurposing_screen.py",
           "line": 628,
-          "context": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Bougneres et al, NEJM 1988; Feutren et al, Lancet 1986,"
+          "context": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396"
         }
       ],
       "mesh_terms": [
@@ -2450,9 +2445,19 @@
       "pmcid": "",
       "dashboard_locations": [
         {
+          "file": "audit_citation_coordinates.py",
+          "line": 26,
+          "context": "Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249."
+        },
+        {
+          "file": "audit_citation_coordinates.py",
+          "line": 29,
+          "context": "PMID 19373249 resolves. It is on-topic. It is not retracted. The prose"
+        },
+        {
           "file": "build_gka_lada.py",
           "line": 747,
-          "context": "Diabetes. 2009 Jul;58(7):1416-28. PMID:19373249."
+          "context": "Matschinsky FM. Nat Rev Drug Discov. 2009 May;8(5):399-416. PMID:19373249."
         }
       ],
       "mesh_terms": [
@@ -3370,7 +3375,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -4249,8 +4254,8 @@
       "dashboard_locations": [
         {
           "file": "build_gka_lada.py",
-          "line": 773,
-          "context": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+          "line": 794,
+          "context": "Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; "
         },
         {
           "file": "build_lada_diagnostic_model.py",
@@ -4340,7 +4345,7 @@
         {
           "file": "build_gka_lada.py",
           "line": 734,
-          "context": "Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 20"
+          "context": "Yang W et al. Front Endocrinol (Lausanne) 2023;14:1175198 (PMID:37223016) — systematic review and meta-analysis of GKA e"
         }
       ],
       "mesh_terms": [
@@ -4415,7 +4420,7 @@
         {
           "file": "build_data_dictionary.py",
           "line": 197,
-          "context": "'source': 'Gao T et al. Pdx1 maintains beta cell identity and function. Journal of Clinical Investigation 2014;124(10):4"
+          "context": "'source': 'Gao T et al. Pdx1 maintains beta cell identity and function by repressing an alpha cell program. Cell Metab 2"
         }
       ],
       "mesh_terms": [
@@ -6337,6 +6342,51 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1234
     },
+    "2873396": {
+      "pmid": "2873396",
+      "title": "Cyclosporin increases the rate and length of remissions in insulin-dependent diabetes of recent onset. Results of a multicentre double-blind trial.",
+      "journal": "Lancet",
+      "year": "1986",
+      "doi": "10.1016/s0140-6736(86)91943-4",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "build_drug_repurposing_screen.py",
+          "line": 628,
+          "context": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396"
+        }
+      ],
+      "mesh_terms": [
+        "Administration, Oral",
+        "Adolescent",
+        "Adult",
+        "Bacterial Infections",
+        "Clinical Trials as Topic",
+        "Cyclosporins",
+        "Diabetes Mellitus, Type 1",
+        "Double-Blind Method",
+        "Drug Therapy, Combination",
+        "Female",
+        "Humans",
+        "Hypertension",
+        "Hypertrichosis",
+        "Insulin",
+        "Kidney Function Tests",
+        "Male",
+        "Random Allocation"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1431
+    },
     "28776086": {
       "pmid": "28776086",
       "title": "The mechanisms of action of metformin.",
@@ -7274,8 +7324,8 @@
       "dashboard_locations": [
         {
           "file": "build_gka_lada.py",
-          "line": 773,
-          "context": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+          "line": 794,
+          "context": "Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; "
         }
       ],
       "mesh_terms": [
@@ -7311,7 +7361,7 @@
         {
           "file": "build_data_dictionary.py",
           "line": 186,
-          "context": "'source': 'Huising MO et al. The difference delta cells make. Trends in Endocrinology & Metabolism 2018;29(10):725-737. "
+          "context": "'source': 'Huising MO et al. The Difference delta-Cells Make in Glucose Control. Physiology (Bethesda) 2018;33(6):403-41"
         }
       ],
       "mesh_terms": [
@@ -7595,7 +7645,7 @@
         {
           "file": "build_data_dictionary.py",
           "line": 153,
-          "context": "'source': 'Matschinsky FM, Wilson DF. The central role of glucokinase in glucose homeostasis. Frontiers in Diabetes 2019"
+          "context": "'source': 'Matschinsky FM, Wilson DF. The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years Aft"
         },
         {
           "file": "build_gka_landscape.py",
@@ -7605,7 +7655,7 @@
         {
           "file": "build_gka_landscape.py",
           "line": 1144,
-          "context": "<strong>PMID:30949058</strong> | Matschinsky FM. \"Glucokinase as a glucose sensor and therapeutic target for diabetes me"
+          "context": "<strong>PMID:30949058</strong> | Matschinsky FM, Wilson DF. \"The Central Role of Glucokinase in Glucose Homeostasis: A P"
         }
       ],
       "mesh_terms": [],
@@ -8523,27 +8573,27 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 823,
+          "line": 824,
           "context": "<p><strong>Source:</strong> Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717); IDF Diabetes Atlas 2023</p>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 827,
+          "line": 828,
           "context": "<p><strong>T1D care cost (US):</strong> $14,000-$20,000/year per patient (PMID:32175717)</p>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 858,
-          "context": "<td>IDF Diabetes Atlas 2023 (PMID:32175717)</td>"
+          "line": 859,
+          "context": "<td>Khan MAB et al. J Epidemiol Glob Health 2020;10(1):107-111 (PMID:32175717)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 859,
+          "line": 860,
           "context": "<td>T1D (1.4M US), T2D (537M global); care costs (PMID:32175717)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         },
         {
@@ -8626,8 +8676,13 @@
         },
         {
           "file": "build_gka_lada.py",
-          "line": 773,
-          "context": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+          "line": 780,
+          "context": "Li X et al. J Clin Endocrinol Metab. 2020 Jul 1;105(7) PMID: 32307525"
+        },
+        {
+          "file": "build_gka_lada.py",
+          "line": 794,
+          "context": "Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; "
         },
         {
           "file": "build_lada_model.py",
@@ -9004,8 +9059,8 @@
         },
         {
           "file": "build_gka_lada.py",
-          "line": 773,
-          "context": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+          "line": 794,
+          "context": "Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; "
         },
         {
           "file": "build_lada_diagnostic_model.py",
@@ -9444,7 +9499,12 @@
         {
           "file": "build_gka_lada.py",
           "line": 702,
-          "context": "PMID: 33622669. Phase 2 trial showing HbA1c reduction with TTP399"
+          "context": "PMID: 33622669. Phase 1b/2 adaptive trial showing HbA1c reduction with"
+        },
+        {
+          "file": "build_gka_lada.py",
+          "line": 708,
+          "context": "Klein KR et al. The SimpliciT1 Study. Diabetes Care. 2021 Apr;44(4):960-968. PMID: 33622669."
         },
         {
           "file": "build_gka_landscape.py",
@@ -9458,12 +9518,12 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 848,
+          "line": 849,
           "context": "<td>PMID:33622669</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -9737,6 +9797,11 @@
       "pmcid": "",
       "dashboard_locations": [
         {
+          "file": "audit_citation_load_bearing.py",
+          "line": 8,
+          "context": "Found 2026-08-27. PMID 34763823 is Herman WH & Kuo S, \"100 years of Insulin:"
+        },
+        {
           "file": "build_corpus_analysis.py",
           "line": 890,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/34763823/\" target=\"_blank\">PMID 34763823</a>;"
@@ -9749,22 +9814,17 @@
         {
           "file": "build_gap_deep_dives.py",
           "line": 941,
-          "context": "\"key_finding\": \"Dorzagliatin China NRDL Jan 2024 (PMID:36449148); GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglut"
+          "context": "\"key_finding\": \"Dorzagliatin China NRDL Jan 2024 [UNSOURCED - see note]; GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); s"
         },
         {
           "file": "build_gap_deep_dives.py",
           "line": 955,
-          "context": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
+          "context": "\"summary\": \"Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglutide"
         },
         {
           "file": "build_gap_deep_dives.py",
           "line": 958,
           "context": "\"GLP-1 RA pricing: $10.8K-$15.6K/yr (PMID:34763823); liraglutide generic approved Dec 2024 (Hikma)\","
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 994,
-          "context": "\"expanded_clinical_context\": \"Dorzagliatin China pricing mystery: NRDL (National Reimbursement Drug List) listed Jan 202"
         },
         {
           "file": "build_gap_deep_dives.py",
@@ -9998,16 +10058,6 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 662,
-          "context": "<td>$200-$400/year (PMID:34763823)</td>"
-        },
-        {
-          "file": "build_gka_pricing.py",
-          "line": 670,
-          "context": "Precedent: SGLT2i 7-year window from patent cliff to generic penetration (2015-2022) (PMID:34763823)"
-        },
-        {
-          "file": "build_gka_pricing.py",
           "line": 675,
           "context": "Generic GKAs could cost $200-$500/year by 2042-2045 (from $2,000-$8,000 branded) (PMID:34763823)"
         },
@@ -10018,42 +10068,37 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 793,
-          "context": "<p><strong>Launch Pricing (2014):</strong> $5,000-$8,000/year (PMID:34763823)</p>"
+          "line": 796,
+          "context": "<p style=\"font-size:0.85em;color:#8a6d3b;\">Citations removed 2026-08-27: these SGLT2i figures were attributed to PMID:34"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 795,
-          "context": "<p><strong>Generic Pricing (2024+):</strong> $200-$400/year (PMID:34763823)</p>"
-        },
-        {
-          "file": "build_gka_pricing.py",
-          "line": 797,
+          "line": 798,
           "context": "<p><strong>Data source:</strong> Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823); CMS drug pricing databases"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 808,
+          "line": 809,
           "context": "<p><strong>Launch Pricing (2009-2012):</strong> $10,000-$15,000/year (US) (PMID:34763823)</p>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 829,
+          "line": 830,
           "context": "<p><strong>Relevance:</strong> GKA T1D pricing of $8-15K/year adds 40-75% to existing T1D care cost; offset by insulin-s"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 863,
+          "line": 864,
           "context": "<td>CMS/IQVIA/PubMed (PMID:34763823)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 864,
+          "line": 865,
           "context": "<td>$5-8K launch, $200-400 generic; 5-year window (PMID:34763823)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         },
         {
@@ -10338,7 +10383,7 @@
         {
           "file": "build_gka_lada.py",
           "line": 720,
-          "context": "Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs"
+          "context": "Zhu D et al. Nat Med 2022;28(5):965-973 (PMID:35551294) — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022"
         },
         {
           "file": "build_gka_pricing.py",
@@ -10352,7 +10397,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -10384,35 +10429,6 @@
       ],
       "abstract_length": 1697
     },
-    "35551293": {
-      "pmid": "35551293",
-      "title": "A new class of drug in the diabetes toolbox.",
-      "journal": "Nat Med",
-      "year": "2022",
-      "doi": "10.1038/s41591-022-01783-6",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_gka_lada.py",
-          "line": 720,
-          "context": "Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs"
-        }
-      ],
-      "mesh_terms": [
-        "Diabetes Mellitus",
-        "Humans",
-        "Software"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Comment"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 0
-    },
     "35551294": {
       "pmid": "35551294",
       "title": "Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
@@ -10429,6 +10445,16 @@
           "context": "'source': 'Zhu D et al. Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-co"
         },
         {
+          "file": "build_gka_lada.py",
+          "line": 720,
+          "context": "Zhu D et al. Nat Med 2022;28(5):965-973 (PMID:35551294) — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022"
+        },
+        {
+          "file": "build_gka_landscape.py",
+          "line": 1150,
+          "context": "<strong>PMID:38783768</strong> | Jiang Y et al. \"Recent drug development of dorzagliatin, a new glucokinase activator.\" "
+        },
+        {
           "file": "build_gka_pricing.py",
           "line": 445,
           "context": "Sources: Syed, Drugs 2022 (PMID:36449148) — dorzagliatin first approval; Zhu et al. Nat Med 2022 (PMID:35551294) — SEED "
@@ -10440,7 +10466,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -10796,29 +10822,14 @@
           "context": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
         },
         {
-          "file": "build_gap_deep_dives.py",
-          "line": 941,
-          "context": "\"key_finding\": \"Dorzagliatin China NRDL Jan 2024 (PMID:36449148); GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglut"
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 955,
-          "context": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 957,
-          "context": "\"Dorzagliatin: China NRDL listed Jan 2024 (PMID:36449148); pricing not publicly disclosed\","
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 994,
-          "context": "\"expanded_clinical_context\": \"Dorzagliatin China pricing mystery: NRDL (National Reimbursement Drug List) listed Jan 202"
-        },
-        {
           "file": "build_gka_lada.py",
           "line": 720,
-          "context": "Zhu et al. Nat Med 2022 (PMID:35551292) — SEED trial; Yang et al. Nat Med 2022 (PMID:35551293) — DAWN trial; Syed, Drugs"
+          "context": "Zhu D et al. Nat Med 2022;28(5):965-973 (PMID:35551294) — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022"
+        },
+        {
+          "file": "build_gka_landscape.py",
+          "line": 1037,
+          "context": "<p class=\"source\">Source: PMID:36449148 (Syed YY. Dorzagliatin: First Approval. Drugs. 2022;82(18):1745-1750) &mdash; re"
         },
         {
           "file": "build_gka_landscape.py",
@@ -10887,17 +10898,17 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 853,
+          "line": 854,
           "context": "<td>NMPA/Hua Medicine (PMID:36449148)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 854,
+          "line": 855,
           "context": "<td>China regulatory approval Sept 2022; pricing $2-3K/yr (PMID:36449148)</td>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         },
         {
@@ -10937,7 +10948,7 @@
         {
           "file": "build_data_dictionary.py",
           "line": 1380,
-          "context": "'source': 'Florez JC. Precision medicine in diabetes: is it time? Diabetes Care 2022;45(12):3019-3032. PMID:36455116'"
+          "context": "'source': 'Forouhi NG. Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base fo"
         }
       ],
       "mesh_terms": [
@@ -11230,7 +11241,7 @@
         {
           "file": "build_data_dictionary.py",
           "line": 1303,
-          "context": "'source': 'Mathieu C et al. Approval of teplizumab: implications for patients. Nature Reviews Endocrinology 2023;19(7):3"
+          "context": "'source': 'Speake C, Herold KC. Approval of teplizumab: implications for patients. Nat Rev Endocrinol 2023;19(7):377-378"
         }
       ],
       "mesh_terms": [
@@ -11313,7 +11324,7 @@
         {
           "file": "build_gka_lada.py",
           "line": 734,
-          "context": "Yang et al. Front Endocrinol 2023 (PMID:37223016) — systematic review of 13 GKA RCTs; Park et al. J Diabetes Investig 20"
+          "context": "Yang W et al. Front Endocrinol (Lausanne) 2023;14:1175198 (PMID:37223016) — systematic review and meta-analysis of GKA e"
         },
         {
           "file": "build_gka_pricing.py",
@@ -11322,7 +11333,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -12105,8 +12116,8 @@
       "dashboard_locations": [
         {
           "file": "build_gka_lada.py",
-          "line": 773,
-          "context": "Diabetes. 2013 Dec;62(12):4297-303. PMID:23835325. (LADA review); Buzzetti et al. Diabetes 2020 (PMID:32847960) — Intern"
+          "line": 794,
+          "context": "Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (PMID:32847960) — International Expert Panel LADA consensus statement; "
         }
       ],
       "mesh_terms": [
@@ -12186,7 +12197,7 @@
         {
           "file": "build_gap_deep_dives.py",
           "line": 955,
-          "context": "\"summary\": \"Dorzagliatin China listing Jan 2024 (PMID:36449148); GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglu"
+          "context": "\"summary\": \"Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglutide"
         },
         {
           "file": "build_gap_deep_dives.py",
@@ -12240,17 +12251,17 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 809,
+          "line": 810,
           "context": "<p><strong>Current Pricing (2024):</strong> $10,000-$20,000/year (weight loss boom) (PMID:38639547)</p>"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 811,
+          "line": 812,
           "context": "<p><strong>Data source:</strong> Schousboe et al. Ann Intern Med 2024 (PMID:38639547); FDA NDA approvals; pharmacy benef"
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -12305,13 +12316,8 @@
         },
         {
           "file": "build_gka_landscape.py",
-          "line": 1037,
-          "context": "<p class=\"source\">Source: PMID:38783768 (SEED trial)</p>"
-        },
-        {
-          "file": "build_gka_landscape.py",
           "line": 1150,
-          "context": "<strong>PMID:38783768</strong> | Dorzagliatin SEED Trial (Phase 3, 52-week efficacy and safety in China)"
+          "context": "<strong>PMID:38783768</strong> | Jiang Y et al. \"Recent drug development of dorzagliatin, a new glucokinase activator.\" "
         },
         {
           "file": "build_gka_pricing.py",
@@ -12320,7 +12326,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -12583,7 +12589,7 @@
         },
         {
           "file": "build_gka_pricing.py",
-          "line": 869,
+          "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
         }
       ],
@@ -14012,6 +14018,11 @@
       "pmcid": "",
       "dashboard_locations": [
         {
+          "file": "build_gka_lada.py",
+          "line": 778,
+          "context": "type 2 diabetes. Lancet. 1997 Nov 1;350(9087):1288-93. PMID: 9357409"
+        },
+        {
           "file": "build_lada_model.py",
           "line": 127,
           "context": "'evidence': 'UKPDS: 84% require insulin by 6yr (PMID:9357409)'"
@@ -14223,7 +14234,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14256,7 +14267,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: Oncology paper (colon cancer) - unclear relevance to diabetes research corpus",
       "topic_hits": []
@@ -14290,7 +14301,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC: Nicotinic receptors and epilepsy, not diabetes-related",
       "topic_hits": []
@@ -14330,7 +14341,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC: Endotoxin removal in septic shock, not diabetes-related",
       "topic_hits": []
@@ -14368,7 +14379,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (glucose); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14403,7 +14414,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14452,7 +14463,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14494,7 +14505,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14533,7 +14544,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: off-topic oncology: ICB combination cancer therapy — not diabetes",
       "topic_hits": []
@@ -14570,7 +14581,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, hyperglyc); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14617,7 +14628,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC for diabetes research scope: MS + HHV-6 + MMP-2/MMP-9/vitamin D study (Braz J Infect Dis). Likely entered corpus via MMP-9 or vitamin-D keyword sweep. Recommend exclusion from primary diabetes corpus; keep tagged for cross-domain inflammation reference only.",
       "topic_hits": []
@@ -14657,7 +14668,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, insulin, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14695,7 +14706,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14738,7 +14749,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14777,10 +14788,39 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
       "topic_hits": []
+    },
+    "35551293": {
+      "pmid": "35551293",
+      "title": "A new class of drug in the diabetes toolbox.",
+      "journal": "Nat Med",
+      "year": "2022",
+      "doi": "10.1038/s41591-022-01783-6",
+      "has_abstract": false,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [],
+      "mesh_terms": [
+        "Diabetes Mellitus",
+        "Humans",
+        "Software"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Comment"
+      ],
+      "index_provenance": "reconcile_paper_index.py",
+      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
+      "index_reconciled_on": "2026-08-27",
+      "corpus_status": "UNSCREENED_ORPHAN",
+      "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
+      "topic_hits": [
+        "diabet"
+      ]
     },
     "37133585": {
       "pmid": "37133585",
@@ -14813,7 +14853,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: off-topic-oncology: refractory metastatic CRC trial; no diabetes mechanism",
       "topic_hits": []
@@ -14852,7 +14892,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14900,7 +14940,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14941,7 +14981,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; statistical analysis input; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14994,7 +15034,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -15024,7 +15064,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -15044,7 +15084,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (beta cell, diabet, insulin, pancrea); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15082,7 +15122,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glycem, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15116,7 +15156,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, retinopath); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15162,7 +15202,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "OFF_TOPIC",
       "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
       "topic_hits": []
@@ -15182,7 +15222,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, lada); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15206,7 +15246,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15228,7 +15268,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15277,7 +15317,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-26",
+      "index_reconciled_on": "2026-08-27",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15797,6 +15837,7 @@
         "27727279",
         "28118453",
         "28375156",
+        "2873396",
         "29617641",
         "29619531",
         "29988125",
@@ -15981,6 +16022,7 @@
         "28118453",
         "28199814",
         "28731034",
+        "2873396",
         "29414425",
         "29590046",
         "29619531",
@@ -16070,6 +16112,7 @@
         "27727279",
         "28118453",
         "28199814",
+        "2873396",
         "29590046",
         "29619531",
         "29754952",
@@ -16200,6 +16243,7 @@
         "24508508",
         "24997559",
         "28199814",
+        "2873396",
         "35551292",
         "35551294",
         "40650745"
@@ -16363,6 +16407,7 @@
         "28431241",
         "28522654",
         "28731034",
+        "2873396",
         "28776086",
         "29291885",
         "29414425",
@@ -16416,7 +16461,6 @@
         "35180212",
         "35466661",
         "35551292",
-        "35551293",
         "35551294",
         "35551307",
         "35563495",
@@ -16512,6 +16556,7 @@
         "26784127",
         "27189025",
         "28118453",
+        "2873396",
         "29617641",
         "29619531",
         "29988125",
@@ -16734,6 +16779,7 @@
         "28118453",
         "28199814",
         "28731034",
+        "2873396",
         "29414425",
         "29590046",
         "29619531",
@@ -16969,6 +17015,7 @@
         "24598244",
         "24997559",
         "28199814",
+        "2873396",
         "30415610",
         "31173679",
         "31180194",
@@ -16993,7 +17040,8 @@
         "20228401",
         "25498346",
         "27159554",
-        "28522654"
+        "28522654",
+        "2873396"
       ],
       "Kidney Failure, Chronic": [
         "11565518",
@@ -17230,7 +17278,6 @@
         "32312859",
         "34763823",
         "35180212",
-        "35551293",
         "37217319",
         "37356449",
         "37909353",
@@ -17377,6 +17424,7 @@
         "23817699",
         "24997559",
         "27727279",
+        "2873396",
         "29414425",
         "30657336",
         "31180194",
@@ -17824,6 +17872,7 @@
         "21864487",
         "25131812",
         "28010783",
+        "2873396",
         "29567707",
         "38349844",
         "39525461"
@@ -17909,6 +17958,7 @@
       ],
       "Random Allocation": [
         "19805629",
+        "2873396",
         "40650745",
         "9867128"
       ],
@@ -18194,6 +18244,7 @@
       ],
       "Administration, Oral": [
         "28199814",
+        "2873396",
         "31173679",
         "35180212"
       ],
