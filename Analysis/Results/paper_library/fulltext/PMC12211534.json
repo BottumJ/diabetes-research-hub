@@ -1,0 +1,923 @@
+{
+  "pmcid": "PMC12211534",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Background"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Type 1 diabetes is characterised by the immune-mediated destruction of pancreatic beta cells. We aimed to determine the effectiveness of immunotherapies for preserving residual beta cell function in newly diagnosed (stage 3) type 1 diabetes."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Methods"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Searches were carried out in MEDLINE, Embase, Cochrane CENTRAL and trial registries until 31st Jul 2024. RCTs of immunotherapies to preserve beta cells in newly diagnosed type 1 diabetes were included. Data were extracted using a bespoke, piloted extraction sheet. Risk of bias was assessed using Cochrane Risk of Bias Tool 1. A random effects network meta-analysis was undertaken in R. The primary outcome was C-peptide. Interventions were analysed by class."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Results"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Sixty trials were included (4597 patients, 32 intervention classes). Forty-one trials of 42 interventions were eligible for network meta-analysis. Eleven interventions demonstrated statistically significantly higher levels of C-peptide than placebo at 12 months, mesenchymal stem cells (autologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, rankings demonstrated relatively wide confidence intervals and thus uncertainty in exact rank order of near adjacent therapies. Risk of bias assessment identified poor reporting, particularly in older trials, but few studies demonstrated high risk overall."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Conclusions"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Eleven of 42 interventions demonstrated statistically significantly higher C-peptide levels than placebo at 12 months in the network meta-analysis. These results have identified the 11 most promising therapies trialled and help to direct future head-to-head clinical trials to support approvals for interventions to treat those newly diagnosed with type 1 diabetes. However, data for some interventions originated from small studies (mesenchymal stem cell therapies, azathioprine, autologous dendritic cells) and findings should be considered as hypothesis generating and interpreted with caution due to evidence heterogeneity."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Systematic review registration"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "The protocol for the systematic review was registered on PROSPERO, the international database of prospectively registered systematic reviews (registration: CRD42018107904)."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Supplementary Information"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "The online version contains supplementary material available at 10.1186/s12916-025-04201-z."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Background"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Type 1 diabetes is a chronic autoimmune condition resulting from immune-mediated destruction of pancreatic insulin-secreting beta cells and insulin insufficiency. A significant number of functioning beta cells remain at diagnosis and persistence of these cells is associated with better glucose control and fewer microvascular complications. Therefore, therapies that preserve beta cell function could have real clinical benefit."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Clinical trials over the last four decades have tested many therapies with the aim of slowing the loss of beta cells in people newly diagnosed with type 1 diabetes. The efficacy of these therapies has not previously been formally synthesised and reviewed in a comprehensive manner. A network meta-analysis is important to understand the relative effects of the therapies. This paper reports the effectiveness of interventions which modulate the immune system, specifically those that do so in a broad way and do not specifically target pancreatic autoimmunity."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The rationale for immunomodulatory therapy for beta cell preservation is based on immune cells playing a central role in the aetiology of type 1 diabetes, both through failure in immune regulation and in orchestrating inflammatory beta cell death. The rationale for exploring immunomodulatory therapies also comes from evidence of clinical benefit of such therapies which are now licenced for routine use in other autoimmune diseases."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Several systematic reviews of the efficacy of immunomodulatory agents for preservation of beta cell function in newly diagnosed type 1 diabetes have previously been undertaken. Gandhi (2008) included a review of only a small number of potential immunomodulatory agents and Felton (2023) employed a limited search strategy, focusing on features potentially linked to treatment response, with little information about overall effectiveness of, or comparison between therapies. More recently, a cross-trial efficacy comparison of seven agents for beta cell preservation trialled in the last 10 years has been reported (Jacobsen 2020), as well as a systematic review and meta-analysis of immunotherapies (Lin 2024). Through analysis of co-variance modelling of the different outcome measures, two different agents, anti-thymocyte globulin (ATG) and anti-CD3 T-cell agent anti-CD3 teplizumab, were shown to demonstrate most efficacy by Jacobsen. However, this study did not include older trials and restricted their analysis to the chosen agents. Conversely, Lin combined antigen-specific and non-antigen-specific immunotherapies together respectively and demonstrated that collectively non-antigen-specific immunotherapies significantly improved C-peptide, rather than which therapies were relatively most effective. Not all relevant trials and interventions were included. This paper aims to overcome these limitations."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "A systematic review and network meta-analysis of randomised controlled trials of immunomodulatory therapies in patients newly diagnosed with type 1 diabetes that report C-peptide was undertaken with a view to comparing the relative effectiveness of these agents."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Search strategy and selection criteria"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The systematic review methods were guided by current best practice. The protocol for the systematic review was registered on PROSPERO, the international database of prospectively registered systematic reviews (registration: CRD42018107904) and the review is reported in accordance with the Preferred Reporting Items for Systematic Reviews involving Network Meta-Analyses statement."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Bibliographic database searches of MEDLINE, Embase, Cochrane CENTRAL, Clinical Trials.gov and WHO International Clinical Trials Registry were undertaken, supplemented by citation checking. Bibliographic databases were searched using a combination of index and free text terms (search strategies available in Additional file 1: Search strategies). A study design filter with maximised sensitivity for randomised controlled trials (RCTs) was used in MEDLINE and Embase (via Ovid). Databases were searched from inception to 31 st July 2024. Searches were not restricted by language or publication date. Study authors were contacted where necessary for further information."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "RCTs were eligible if they included adults or children diagnosed with type 1 diabetes within the previous 3 years (or population mean duration of diabetes ≤ 3 years) randomised to any immunomodulatory therapies or any comparator in any setting with at least 1 month follow-up. The primary outcome was defined as beta cell function through any measurement of C-peptide. Secondary outcomes were insulin doses, glucose control measured by HbA1c and adverse events. Journal articles, conference abstracts and trial registration records were eligible."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Endnote 20 (X9 Clarivate Analytics) was used to facilitate deduplication automatically and manually. Titles and abstracts were screened for relevance using Rayyan. Full text copies of relevant articles were assessed against inclusion criteria. Studies meeting all selection criteria were included. Reasons for exclusion of articles were recorded. Study selection was conducted by two reviewers independently with disagreements resolved by discussion or a third reviewer. Screening and selection were undertaken by SEB, CT, PS, IMH, AA, LMQ, RG, TJH, DJM, PN, FM and MB."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Data analysis and risk of bias"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Data extraction"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Data were extracted using a bespoke and piloted sheet in MS Excel by a single reviewer with 10% checked by a second reviewer, with additional checking during analysis (see Additional file 1: Further details on data extraction and data synthesis, for more details). Authors were contacted regarding any missing or unclear data, and this was included where acquired. Where missing data were not acquired, these were computed where possible. No imputations were undertaken."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Risk of bias in included studies was assessed using the Cochrane Risk of Bias tool (version 1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Data synthesis and analysis"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Included studies were grouped by intervention class. Within each grouping, data for each relevant outcome and the method of assessment were considered. Where reported, outcomes were assessed at 6, 9, 12, 18, 24, 36, 48 and 60 months after initiation of intervention. Studies were categorised by population age; children < 12 (C), adolescents 12–18 (AD) or adults > 18 years (A), or a mixed group of these (MI). Details of pairwise meta-analysis methods can be found in the Additional file 1: Further details on data extraction and data synthesis."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Network meta-analysis"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Suitability of a network meta-analysis was considered based on assessment of clinical heterogeneity by comparing study population characteristics across trials. The transitivity assumption was evaluated by comparing key clinical and methodological characteristics of studies."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analyses were carried out in R (R version 4.3.3). A frequentist approach was taken using the R package “netmeta”, fit using the graph theoretical model."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The primary outcome was difference in C-peptide (any meal, glucagon or glucose stimulated measure; fasting, peak or AUC levels) at 12 months follow-up reported as standardised mean difference (SMD). Reports of urinary C-peptide were not included due to contrasts in measurement methodology. Correlations between different measures of C-peptide were assessed and deemed similar enough to be combined (Additional file 1: Table 1). Where studies reported multiple methods of C-peptide measurement, meal-stimulated 2-h AUC was prioritised. Analysis at 24 months follow-up was considered, but there was insufficient trial data to carry this out. Where doses or frequency of delivery of the same interventions differed, those strategies that were most similar (when considering mean cumulative dose by body surface or weight, and decided with speciality clinical input) were combined within the same node (e.g. Anti-CD3 teplizumab, ATG). Analysis was performed by drug class."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Secondary outcomes were HbA1c (%) and insulin dose (units/kg/day) presented using mean differences. Adverse events were summarised and reported but were not suitable for combination in NMA due to differences in the expected types of events elicited from different classes of interventions."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "A random-effects model was utilised due to underlying differences in the studies included. Appropriate pooled effect estimates with 95% confidence intervals were reported for each contrast. Correlation effects in multi-arm studies were accounted for by re-weighting all comparisons of each multi-arm study (as per the “netmeta” package). Placebo or no treatment were the reference standard."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Overall heterogeneity was assessed using I2 and tau2statistic. Total network inconsistency was assessed using the design-by-treatment interaction model. Where significant heterogeneity or inconsistency was found, this was explored, and subgroup and sensitivity analyses were carried out where sufficient studies were available. Sensitivity analyses were considered based on the key effect modifiers of baseline C-peptide, age and risk of bias."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "It was planned that small study effects would be assessed using a comparison-adjusted funnel plot. However, as many of our included comparisons had only one trial contributing data, the funnel plots did not provide meaningful results as the pooled effect for each comparison is used as the reference, resulting in the effect being centred on 1 for all comparisons consisting of only one trial."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The main analysis included all available C-peptide data at 12 months. Some trials reported both 2- and 4-h AUC. In this case, the 2-h data were used in the primary analysis (and throughout the sensitivity analyses)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Restriction to analysis of trials from the main analysis that were assessed as low risk of bias (allocation concealment, double-blinding and loss to follow-up < 20%)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analysis of only those trials without imbalances of > 20% in baseline C-peptide."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analysis of trials that report change from baseline data only."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analysis of trials that report endpoint data only."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Repeated main analysis of all C-peptide data but using 4-h AUC data where both 2- and 4-h data are reported in a trial."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analysis of trials reporting 2- and 4-h AUC data only with 2-h data used where both 2- and 4-h are reported."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Several sensitivity analyses were also planned and undertaken as follows:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analysis of secondary outcomes included all trials that contributed to the main C-peptide NMA if they also reported insulin dose and/or HbA1c. A sensitivity analysis of trials that were assessed as low risk of bias for each secondary outcome was also undertaken."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Details of assessment of potential effect modifiers are reported in Additional file 1: Further details on data extraction and data synthesis."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Forest plots were used to display results. A drug class hierarchy was produced using the frequentist P-value approach as well as the Surface Under the Cumulative Ranking Curve (SUCRA) statistic. The P-value is a frequentist approach to ranking treatments and is based on the point estimates and standard errors of the NMA estimates under normality assumption. The P-values measure the degree of certainty that a treatment is better than those it is being compared against. The probability of each intervention being at each rank was also calculated, and median rankings with 95% confidence intervals were derived. These analyses were presented in tables and ranking curves."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results"
+    },
+    {
+      "section_type": "FIG",
+      "text": "PRISMA flow diagram of studies included in the systematic review and the immunomodulatory group from both the original and updated searches. *The study selection process was utilised for all trials of therapies in T1D across the series of reviews. Some studies compared immunomodulatory therapies with other T1D interventions, and these studies are represented more than once in the flow diagram. Results of the immunomodulatory therapies only are reported here"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "There were 36,932 records identified from the searches (Fig. 1 PRISMA flowchart). Following removal of duplicates, screening and selection, 307 studies (reported in 500 articles) were included in the wider review on all therapies. Of these, 60 published studies (106 articles) were related to immunomodulatory interventions. There were also 43 ongoing or unpublished studies related to immunomodulatory interventions (Additional file 1: Table 2)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Table of characteristics of studies included in the systematic review"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Study ID (No. articles, Age category)Inclusion criteria for time since diagnosis and mean/median duration (where reported)\tSample Size at randomisation(Intervention; comparator)\tMean duration of disease (SD)\tMean age at baseline (SD)\tBaseline C-pep (nmol/L)\tIntervention (Dose; frequency)\tComparator (Dose; Frequency)\tIntervention/Comparator Duration\tC-Peptide Measurement; Stimulant\tTimepoints at which C-Peptide measurement reported\tTime outcome reported (months)\tOther outcomes of relevance measured\t \tAnti-CD3 (Teplizumab)\t \tHerold 2002  (1, MI)Within 6 weeks\t24 (12; 12)\tNR\tIntervention median 13 Control median 16\t4H AUC Intervention 0.46 Control 0.56\tTeplizumab (14-day course of 1.42 μg per kg of body weight on day 1; 5.67 μg per kg day 2; 11.3 μg per kg day 3; 22.6 μg per kg day 4; 45.4 μg per kg days 5 through 14)\tNothing (placebo not used)\t14 days/N/A\tFasting, AUC; Meal stimulated\t4H AUC\t0, 6, 12\tHbA1c; Insulin dose; Adverse events\t \tHerold 2005  (1, MI)Within 6 weeks\t42 (21; 21)\tNR\tIntervention 13.9 (1.17) Control 14.9 (1.31)\t4H AUC Intervention 0.49 Control 0.48\tTeplizumab (2 or 4 days of incremental dose escalation to 10 days of a “full dose”. The dose was modified for patients 13–21, approximately 3 mg cumulatively per m2)\tNothing (placebo not used)\t12–14 days/N/A\tAUC; Meal stimulated\t0, 15, 30, 60, 120, 150, 180, 210, 240 min, 4H AUC\t0, 6, 12, 18, 24\tHbA1c; Insulin dose; Adverse events\t \tHerold 2009  (1,MI)Within 6 weeks\t10 (6; 4)\t1 month (range 19–54 days)\tIntervention 15.5 (1.8) Control 9 (0.9)\t4H AUC Intervention 0.88 Control 0.41\tTeplizumab (day 1: 460 μg/m2, day 2: 919 μg/m2, and days 3–12: 1818 μg/m2. approximately 3 mg cumulatively per m2)\tNothing (placebo not used)\t12 days/N/A\tAUC; Meal stimulated\t0, 15, 30, 60, 90, 120, 180, 210 and 240 min, 4H AUC\t0, 12, 24\tHbA1c; Insulin dose; Adverse events\t \tSherry 2011  (2, MI)4 arm trialWithin 12 weeks\t516 (14-day full dose 209, 14-day low dose 102, 6-day full dose 106; 99)\t(weeks) 14-day full dose 8.4 (2.6), 14-day low dose 8.4 (2.6), 6-day full dose 9 (4.5), placebo 8.3 (2.6)\tIntervention 14-day full dose 18.9 (7.6) 14-day low dose 17.9 (6.1) 6-day full dose 18.1 (6.9) Control 18.2 (7.3)\t4H AUC Intervention 14-day full dose 0.65 14-day low dose NR 6-day full dose NR Control 0.65\tTeplizumab (2 groups each with escalating dose daily for 14 days, 1 group escalating dose daily for 6 days plus 8 days of placebo. All doses were repeated at 26 weeks)\tPlacebo (daily for 14 days, repeated at week 26)\t6–14 days × 2/14 days × 2\tAUC; Meal stimulated\t4H AUC\t0, 6, 12, 15, 18, 24\tHbA1c; Insulin dose; Hypoglycaemia, Clinical remission, Adverse events\t \tHerold 2013a  (1, MI)Between 4 and 12 months\t63 (34; 29)\tIntervention 7.09 (2.45) months, control 7.14 (2.44) months\tIntervention 12.9 (4.18) Control 12.0 (5.2)\t4H AUC Intervention 0.62 Control 0.6\tTeplizumab (escalating dose daily up to 826 μg/m2 over 14 days.)\tPlacebo (154 mmol/l NaCl daily for 14 days)\t14 days/14 days\tAUC; Meal stimulated\t4H AUC (11 other timepoints not specified)\t0, 6, 12\tHbA1c; Insulin dose; Adverse events\t \tHerold 2013b  (2, MI)Within 8 weeks\t83 (56; 27)\tIntervention 40.4 (8.3) days, control 37.6 (9.0) days\tIntervention 12.7 (4.9) Control 12.3 (4.1)\t4H AUC Intervention 0.72 Control 0.67\tTeplizumab (escalating dose daily with median cumulative dose 11.6 mg over 14 days, course repeated at 12 months)\tStandard insulin therapy only\t14 days × 2/N/A\tAUC; Meal stimulated\t4H AUC\t0, 12\tHbA1c; Insulin dose; Adverse events\t \tMathieu 2024  (2, A, AD)This study consisted of 2 parts only the second part was randomisedWithin 150 days\t18 (15; 3)\tIntervention adults 101 (35.9) days, control 70 (15.6) days; adolescents 122.6 (36.3) days, control 90 (0) days\tIntervention adults 27.9 (6.7) adolescents 13.6 (1.1) Control adults 29 (5.7) adolescents 12 (NR, n = 1)\t2H AUC Intervention adults 0.48 adolescents 0.57 Control (combined) 0.57\tTeplizumab (12 days of infusions) and AG019 (a genetically modified Lactococcus lactis secreting human proinsulin and interleukin-10, 6 capsules twice daily)\tPlacebo and AG019 (Placebo delivered as teplizumab)\tTeplizumab (12 days) AG019 (8 weeks)/Placebo as intervention\tAUC; Meal stimulated\t4H AUC\t0, 3, 6, 12\tHbA1c; Insulin dose; Adverse events\t \tRamos 2023  (1, C, AD)Within 6 weeks\t329 (217; 111)\tWhole study population 5.3 (0.8) weeks\tIntervention 12 (2.5) Control 12.3 (2.6)\t4H AUC Intervention 0.51 Control 0.39\tTeplizumab (106 μg/m2 body surface area on day 1, 425 μg/m2 on day 2, and 850 μg/m2 on days 3 through 12; total cumulative dose of 9 mg/m2 repeated at week 26)\tPlacebo (Delivered as intervention)\t26 weeks/26 weeks\tAUC, Meal stimulated\t2 and 4H AUC\t0, weeks 26, 52, and 78\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Clinical remission; Quality of Life; Adverse events\t \tAnti-CD3 (Otelixizumab)\t \tKeymeulen 2005  (4, AD, A)Within 4 weeks\t80 (40; 40)\tIntervention median 21 (IQR 18–24) days, control 25 (IQR 19–27 days)\tIntervention 27 (7) Control 26 (7)\t6 min AUC Intervention 0.86 Control 0.94\tOtelixizumab (day 1 24 mg then 8 mg for 5 days, this was then reduced to 8 mg on day 1 then 8 mg for 5 days after the first 9 patients due to side effects)\tPlacebo (delivered as the intervention)\t6 days/6 days\tC-peptide release during a glucose-clamp, C-peptide as AUC in absence/presence\tAUC before glucagon injection (at 60, 90, 120, 140) AUC afterward (140 and 146 min)\t0, 6, 12, 18\tHbA1c; Insulin dose; Adverse events; Weight;\t \tAmbery 2014  (2, AD, A)Within 90 days\t179 (118; 61)\tNR\tIntervention 23.6 (8.3) Control 22.5 (8.2)\t2H AUC Intervention 0.77 Control 0.7\tOtelixizumab (3.1 mg over 8 consecutive days)\tPlacebo (delivered as the intervention)\t8 days/8 days\tAUC, Max stimulated; Meal stimulated Urinary c-peptide\t2H AUC, Max stimulated (time NR)\t0, 6, 12\tHbA1c; Insulin dose; Adverse events\t \tAronson 2014  (1, AD, A)Within 90 days\t272 (181; 91)\tNR\tIntervention 24.8 (6.6) Control 25.3 (7.2)\t2H AUC Intervention 0.77 Control 0.7\tOtelixizumab (3.1 mg over 8 consecutive days)\tPlacebo (delivered as the intervention)\t8 days/8 days\tAUC, Max stimulated; Meal stimulated\t−10, 0, 15, 30, 60, 90, 120 min, 2H AUC\t0, 6, 12\tHbA1c; Insulin dose; Glucose variability; Hypoglycaemia; Adverse events\t \tKeymeulen 2021  (2, AD, A)4 arm trialWithin 32 days\t30 (9 mg group 9, 18 mg group 8, 27 mg group 7; 6)\tNR\tIntervention 9 mg 22.4 (2.13), 18 mg 20.5 (4.31), 27 mg 22.1 (3.98) Control 24.8 (4.4)\t2H AUC Intervention (groups combined) 0.7 Control 0.55\tOtelixizumab (9, 18 or 27 mg over 6 days)\tPlacebo (delivered as the intervention)\t6 days/6 days\tAUC, Meal stimulated\t−10, 0, 15, 30, 60, 90 and 120 min, 2H AUC\t0, 6, 12, 18, 24\tHbA1c; Insulin dose; Glucose variability; Adverse events\t \tCyclosporin\t \tVague 1989  (2, AD, A)Within 6 months\t28 (15; 13)\tNR\tIntervention 26.1 (NR) Control 23.2 (NR)\tFasting Intervention 0.17 Control 0.16 Glucagon stimulated 5 min Intervention 0.31 Control 0.27\tCyclosporin (7.5 mg/kg initial dose; increased up to 10 mg/kg after 3 months if insulin requirements exceeded 50% of initial needs. Discontinued at 6 months if remission achieve, continued until 12 if not)\tPlacebo (delivered as the intervention)\t6–12 months/6–12 months\tFasting; 5 min stimulated, Glucagon stimulated\t0, 5 min\t0, 12, 24, 36\tHbA1c; Insulin dose; Adverse events\t \tChase 1990  (2, MI)“At diagnosis”\t43 (22; 21)\tNR\tIntervention 15.3 (6.2) Control 17.0 (8.3)\tNR\tCyclosporin (10 mg/kg body weight per day, decreased if necessary)\tNo intervention (no further details)\t4 months/N/A\tMax stimulated 6, 12 min; Glucagon stimulated\t6, 12 min\t4, 12, 36 months\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tMartin 1991  (4, MI)Within 6 weeks\t188 (93; 94)\tIntervention 3.9 (2.7) weeks, control 4 (2.6) weeks\tIntervention 21.3 (6.4) Control 22.2 (5.1)\tFasting Intervention 0.37 Control 0.29 Glucagon stimulated 6 min Intervention 0.33 Control 0.4\tCyclosporin (initial dose 10 mg/kg daily orally in divided doses at 12-h intervals, adjusted based on serum creatinine levels)\tPlacebo (delivered as the intervention)\t12 months/12 months\tFasting, Max stimulated 6 min; Glucagon stimulated\t0, 6 min\t0, 6, 9, 12, 18, 24\tHbA1c; Glucose variability; Insulin dose; Weight; Clinical remission; Adverse events\t \tSkyler 1992  (2, MI)Within 6 weeks\t25 (12; 13)\tNR\tIntervention 19 (2.5) Control 20.2 (2.6)\tFasting Intervention 0.37 Control 0.29 2H AUC Intervention 0.68 Control 0.57\tCyclosporin (initial dose 10 mg/kg once daily, adjusted based on serum creatinine levels)\tPlacebo (olive oil-Labrafil solution delivered daily as intervention)\t12 months/12 months\tFasting, Max stimulated, stimulated at various timepoints, AUC; Glucagon stimulated, Meal stimulated, Glucose stimulated\tM- before meal, and at 15, 30, 60, 90, 120, 150, 180, 210, and 240 min after the meal, AUC.G- before meal and 6 min after meal GS—0, 1, 3, 5, 10, 20, 30,45, and 60 min after meal\t0, 6, 9, 12\tHbA1c; Insulin dose; Adverse events\t \tPozzilli 1994  (2, MI)3 arm trialWithin 4 weeks\t90 (Cyclosporin and nicotinamide 30, nicotinamide 30; 30)\tNR\tIntervention 20.1 (9.4) Control 18.5 (8.8)\tFasting Intervention 0.33 Control 0.26 Glucagon stimulated Intervention 0.59 Control 0.43\tCyclosporin and nicotinamide group (Cyclosporin 5 mg/kg of bodyweight daily in divided doses at 12-h intervals, adjusted based on serum creatinine levels)\tInsulin therapy only\t12 months/N/A\tFasting, Stimulated; Glucagon stimulated\t0, time stimulated measured NR\t0 only\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tCD2 (Alefacept)\t \tRigby 2013  (4, AD, A)Within 100 days\t49 (33; 16)\tNR\tIntervention 20.3 (6.41) Control 19.5 (6.15)\t2H AUC Intervention 0.85 Control 0.64\tAlefacept (15 mg weekly for 12 weeks, 12 week break then further 12 week treatment)\tPlacebo (Delivered as intervention)\t36 weeks/36 weeks\tAUC, 4H peak; Meal stimulated\t2H and 4H AUC, no other timepoints reported\t0, 6, 12, 24\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tAnti-CD20 (Rituximab)\t \tPescovitz 2009  (2, MI)Between 3 weeks and 3 months\t87 (57; 30)\tIntervention 80 (22) days, control 83 (19) days\tIntervention 19 (8.6) Control 17.3 (7.8)\t2H AUC Intervention 0.71 Control 0.71\tRituximab (375 mg per square metre of body-surface area given on study days 1, 8, 15, and 22)\tPlacebo (identical solution without rituximab, delivered as intervention)\t22 days/22 days\tAUC; Meal stimulated\tIntervals of 15 to 30 min for 2 h, AUC\t0, 6, 12, 18, 24, 30\tHbA1c; Insulin dose; Adverse events\t \tZielinski 2022  (2, C, AD)(Also included in the T-cell group)NR, mean duration 6 months\t25 (Tregs/rituximab 12; Tregs/Placebo 13)\tTregs/Rituximab 6 (4.2) months, Tregs/Placebo 6.5 (4.2) months\tIntervention (Tregs/Rituximab) 12.9 (1.2) Control (Tregs/Placebo) 13.3 (1.5)\t4H AUC Intervention 0.91 Control 0.836 Fasting Intervention 0.36 Control 0.36\tTregs/Rituximab (4 infusions of rituximab, 375 mg/m2 of body surface area on days 14, 22, 29 and 36)\tTregs/Placebo (2 doses of Tresg, 30 × 10^6Tregs/kg body weight; each at day 0 and month 3 and placebo delivered as intervention)\t36 days/36 days\tFasting, AUC; Meal stimulated\t0, 15, 30, 60, 90, 120, 180, 210 and 240 min, AUC\tWeeks 2, 5, 12, 26, 39, 52, 65, 78, 92 and 104\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Clinical remission; Adverse events\t \tCTLA-4—Abatacept\t \tOrban 2011  (3, MI)Within 100 days\t112 (77; 35)\tIntervention 87.9 (14.1) days, control 83.2 (17.8) days\tIntervention 13.9 (6.9) Control 13.7 (5.3)\t2H AUC Intervention 0.74 Control 0.75\tAbatacept (10 mg/kg, maximum 1000 mg per dose, given on days 1, 14, and 28, and then every 28 days with the last dose on day 700)\tPlacebo (saline infusion, delivered as intervention)\t700 days/700 days\tAUC; Meal stimulated\t2H AUC\t0, 6, 12, 18,24\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tAnti-thymocyte globulin (ATG)(Haller 2014b and Haller 2018 are also in the GCSF group)\t \tSaudek 2004  (1, A)Within 1 month\t17 (11; 6)\tIntervention 10.9 (9.46) days, control 8.4 (9.5) days\tIntervention 28.8 (5.2) Control 26 (NR)\tFasting Intervention 0.39 Control 0.3\tATG (9 mg/kg first dose, additional doses of 3 mg/kg on further 3 days)\tPlacebo (Saline delivered as intervention)\t4 days/4 days\tFasting, Stimulated; Glucagon stimulated\tPost-glucagon stimulated timepoint NR\t0, 6, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tGitelman 2013  (2, MI)Within 100 days\t58 (38, 20)\tIntervention 69 (21) days, control 76.5 (18) days\tIntervention 19.4 (6.6) Control 20.5 (7.0)\t2H AUC Intervention 0.86 Control 0.93\tATG (6.5 mg/kg on day 1, and 2 mg/kg on days 2–4)\tPlacebo (saline delivered as intervention)\t4 days/4 days\tAUC; Meal stimulated\t2H and 4H AUC\t0, 6, 12, 18, 24\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Adverse events\t \tHaller 2018  (2, A, AD)Also listed in GCSF group. 3-arm trial with ATG/GCSF combination group and ATG alone groupWithin 100 days\t89 (ATG 29, ATG/GCSF 29; 31)\tATG/GCSF median 83 (range 49–97) days, ATG 81 (range 47–100) days, control 84 (range 52–99) days\tIntervention ATG (and GCSF placebo) 18.1 (6.9), Control 16.9 (4.6)\t2H AUC Intervention ATG 0.88 Control 0.97\tATG/GCSF placebo (2.5 mg/kg as two divided intravenous infusions of 0.5 mg/kg and 2 mg/kg)\tPlacebo (delivered as intervention)\t1 day/1 day\tAUC; Meal stimulated\t2H AUC\t0, 6, 9, 12, 18, 24,\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tHaller 2014b  (3, A, AD)Also listed in GCSF group due to combination > 4 months (but mean duration 12 months)\t25 (17; 8)\tWhole study population 12 (6) months\tIntervention 24.7 (9.9) Control 24.5 (11)\t2H AUC Intervention 0.71 Control 0.71\tCombination ATG/GCSF (2.5 mg/kg given intravenously as 0.5 mg per kilogram on day 1 and 2 mg/kg on day 2))\tPlacebo (delivered as intervention)\t12 weeks (GCSF)/12 weeks\tAUC, Peak stimulated; Meal stimulated\t2H, 4H AUC, peak stimulated (timepoint NR)\t0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tChujo  2023 (1, A)Conference abstract onlyWithin 12 months\t12 (6; 6)\tNR\tNR\tNR\tATG/pegfilgrastim (2.0 mg/kg ATG and six times of 3.5 mg PEG)\tDescribed only as “control”\tNR\tAUC; Meal stimulated\tAUC time NR\tNR\tHbA1c; Insulin dose; Adverse events\t \tGranulocyte colony-stimulating factor (GCSF)(Haller 2014b and Haller 2018 are also in the ATG group)\t \tHaller 2014a  (2, AD, A)Within 6 months\t21 (14; 7)\tIntervention 3.74 (SAE 0.61) months, control 4.12 (SE 0.81) months\tIntervention 17.61 (7.8) Control 19.34 (6.3)\t2H AUC Intervention 0.51 Control 0.84\tPegylated GCSF (6 mg/dose, every 2 weeks)\tPlacebo (delivered as intervention)\t10 weeks/10 weeks\tPeak stimulated, AUC; Meal simulated\t2H AUC, peak time NR\t0, 6, 9, 12\tHbA1c; Insulin dose; Adverse events\t \tHaller 2014b  (3, A, AD)Also listed in ATG group due to combination > 4 months (but mean duration 12 months)\t25 (17; 8)\tWhole study population 12 (6) months\tIntervention 24.7 (9.9) Control 24.5 (11)\t2H AUC Intervention 0.71 Control 0.71\tCombination ATG/GCSF (GCSF 6 mg subcutaneously every 2 weeks for a total of 6 doses)\tPlacebo (delivered as intervention)\t12 weeks (GCSF)/12 weeks\tAUC, Peak stimulated; Meal stimulated\t2H, 4H AUC, peak stimulated (timepoint NR)\t0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tHaller 2018  (2, A, AD)Also listed in ATG group. 3-arm trial with ATG/GCSF combination group and ATG alone groupWithin 100 days\t89 (ATG 29, ATG/GCSF 29; 31)\tATG/GCSF median 83 (range 49–97) days, ATG 81 (range 47–100) days, control 84 (range 52–99) days\tIntervention ATG/GCSF 17.2 (5.0) Control 16.9 (4.6)\t2H AUC Intervention ATG/GCSF 0.8 Control 0.97\tCombination ATG/GCSF (GCSF 6 mg every 2 weeks for 6 doses or, if the patient weighed < 44.5 kg, a dose of 100 mg/kg)\tPlacebo (delivered as intervention)\t1 day/1 day\tAUC; Meal stimulated\t2H AUC\t0, 6, 9, 12, 18, 24,\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tIL-1\t \tHessner 2013  (1, AD, A)Within 12 weeks\t47 (22; 25)\tNR\tNR\tNR\tHuman recombinant (h) IL-1 receptor antagonist (100 mg, once daily)\tPlacebo (delivered as intervention)\t9 months/9 months\tAUC; Meal stimulated\t2H AUC\t9\tN/A\t \tMoran 2013a  (1, MI)Within 100 days\t69 (47; 22)\tIntervention 75.8 (17.9) days, control 75.6 (21.8) days\tIntervention 11 (4.0) Control 12.5 (6.4)\t2H AUC Intervention 0.63 Control 0.61\tCanakinumab (2 mg/kg, max 300 mg, monthly) [binds IL1beta]\tPlacebo (delivered as intervention)\t12 months/12 months\tAUC; Meal stimulated\t–10, 0, 15, 30, 60, 90, and 120 min, AUC\t0, 6, 9, 12\tHbA1c; Insulin dose; Adverse events\t \tMoran 2013b  (1, MI)Both Moran studies are the same paper, but report 2 separate trialsWithin 12 weeks\t69 (35;34)\tIntervention 64.2 (18.0) days, control 59.8 (17.1)\tIntervention 26.6 (5.3) Control 25.0 (4.5)\t2H AUC Intervention 0.63 Control 0.7\tAnakinra (100 mg daily) [stimulates IL1alpha and beta]\tPlacebo (delivered as intervention)\t9 months/9 months\tAUC; Meal stimulated\t−10, 0, 15, 30, 60, 90, and 120 min, AUC\t0, 6, 9\tHbA1c; Adverse events\t \tMesenchymal stem cell (MSC)\t \tHu 2013  (1, MI)Within 6 months\t29 (15;14)\tNR\tIntervention 17.6 (8.7) Control 18.2 (7.9)\tFasting Intervention 0.27 Control 0.29\tIntravenous delivery of Wharton’s jelly-derived mesenchymal stem cells (2 doses, 4 weeks apart. Dose NR)\tPlacebo (delivered as intervention)\t1 month/1 month\tFasting; Meal stimulated\t0\t0, 6, 9, 12, 15, 18, 21, 24\tHbA1c; Insulin dose; Adverse events\t \tCarlsson 2015  (1, A)Within 3 weeks\t20 (10; 10)\tNR\tIntervention 24 (2) Control 27 (2)\tFasting Intervention 0.29 Control 0.28\tIntravenous infusion of Mesenchymal Stromal Cells (2.1–3.6 × 106 autologous cells/kg, one dose)\tControl group (no further details given)\tOne dose/NR\tFasting; Meal stimulated\t0, 15, 30, 60, 90, 120, AUC\t10 weeks, 12 months\tHbA1c; Insulin dose; Adverse events\t \tIzadi 2022  (2, MI)Within 6 weeks\t21 (11; 10)\tNR\tIntervention 10.27 (1.67) Control 11.5 (2.63)\tMeasure of c-peptide NR Intervention 0.24 Control 0.31\tIntravenous infusion of Mesenchymal stem cell (MSC) (1 × 106 autologous MSCs per kilogram of body weight, in two infusions each at week 0 and 3)\tPlacebo (Saline delivered as intervention)\t3 weeks/3 weeks\tNR\tNR\t0, 6, 9, 12\tHbA1c; Glucose variability; Insulin dose; Hypoglycaemia; Quality of life; Adverse events\t \tCarlsson 2023  (2, A)Within 2 years\t15 (10; 5)\tIntervention median 1 (SD 0.7) years, control 1 (SD 0.3) years*\tMedian (SD) Intervention 31 (4) Control 31 (9)*\t2H AUC (median) Intervention 0.77 Control 0.4\tIntravenous infusion of Wharton’s jelly mesenchymal stromal cell (ProTrans) (200 million cells procured from donated Wharton’s jelly tissue and expanded in adherent culture over approximately 4–5 weeks. One dose)\tPlacebo (Excipients as the intervention without cell product, delivered as intervention)\tOne dose/one dose\tFasting; Meal stimulated\t0, 15, 30, 60, 90, 120 min, AUC\t0, 12\tHbA1c; Glucose variability; Insulin dose; Hypoglycaemia; Adverse events\t \tAzathioprine\t \tSilverstein 1988 (1, MI)Also in the Prednisolone group)Within 2 weeks\t46 (23; 23)\tNR\tIntervention 11.7 (NR) Control 10.4 (NR)\tPeak c-peptide Intervention 0.4 Control 0.41\tCombination Prednisolone/Azathioprine (azathioprine 2 mg/kg, adjusted to 1–3 mg/kg/day, max 150 mg/day, daily)\tControl (Unclear, appears to be no treatment)\t12 months/NR\tPeak; Meal stimulated\t0, 30, 60, 90, 120 min\t0, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tCook 1989  (1, MI)Within 20 days\t50 (25;25)\tNR\tIntervention 11.7 (NR) Control 9.9 (NR)\tFasting (Median) Intervention 0.14 Control 0.14\tAzathioprine (2 mg/kg day 1. Dosage adjusted according to increases in body weight. Daily)\tPlacebo (delivered as intervention)\t12 months/12 months\tFasting, Peak; Meal stimulated\t0, 60 min\t0, 6, 9, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tHarrison 1985  (1, AD, A)Within 12 weeks\t24 (13; 11)\tIntervention 2.2 (1.5) weeks, control 3.5 (3.5) weeks\tIntervention 24.7 (7.5) Control 24.8 (7.5)\tFasting Intervention 0.42 Control 0.31\tAzathioprine (2 mg/kg, daily)\tNo treatment\t12 months/N/A\tFasting, Peak; Glucagon stimulated\t0, 6 min\t0, 12\tInsulin dose; Clinical remission; Adverse events\t \tAnti-Immunoglobulin\t \tPanto 1990  (1, MI)Within 6 weeks\t16 (8; 8)\tWhole study population 45.3 (9 days)\tIntervention 19 (2) Control 14.1 (2.7)\tNon-fasting Intervention 0.23 Control 0.36\t7S immunoglobulin (0.4 g/kg body weight, once weekly after 1 intensive week)\tNo treatment\t6 months/N/A\tNon-fasting\tNR\t0, 6\tHbA1c; Insulin dose;\t \tLorini 1991  s(1, C, AD)“Newly diagnosed”,\t25 (10; 15)\tMean duration of symptoms intervention 20 (16) days, control 21 (17) days\tIntervention 7.9 (3.9) Control 9.2 (3.4)\tGlucagon stimulated 6 min Intervention 0.36 Control 0.32\tGamma-globulin (400 mg/kg body weight, daily first week, then once a week up to 6 months, then twice a month up to 12 months)\tNo treatment\t12 months/N/A\tMax simulated; Glucagon stimulated\t6 min\t0, 6, 7.5, 9, 10.5, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tColagiuri 1996  (1, C, AD)3 arm trialWithin 2 years, but mean duration 24 weeks\t52 (Gammaglobulin 17; transfer factor 18; 17)\tGammaglobulin 155 (148) days, transfer factor 171 (196) days, control 176 (107) days\tGammaglobulin 16.6 (7.8) Control 17.6 (7.1)\tFasting Intervention (Immunoglobulin) 0.22 Control 0.32\tGammaglobulin group (2 g/kg body weight, given over 2 days every 2 months)\tPlacebo (saline, delivered as intervention)\t24 months/24 months\tFasting; Glucagon stimulated, Meal stimulated\t0, 120, 300 min\t0, 6, 12\tHbA1c; Insulin dose; Adverse events\t \tInterferon α\t \tRother 2009  (1, MI)3 arm trialWithin 6 weeks\t128 (5000 units 39, 30,000 units 45; 44)\tNR\tIntervention 5000 units 10.5 (5.1) 30,000 units 9.9 (4.4) Control 10.8 (4.8)\tFasting 5000 units 0.39 30,000 units 0.5 Control 0.46 2H AUC 5000 units 0.91 30,000 units 0.85 Control 0.89\tInterferon-α (5000 or 30,000 units, once daily)\tPlacebo (saline with 6 mg human serum albumin, daily)\t12 months/12 months\tFasting, AUC; Meal stimulated\t–10, 0, 30, 60, 90, 120 min, and AUC\t0, 6, 9, 12\tHbA1c; Insulin dose; Adverse events\t \tIL2 (Daclizumab) + Mycophenolate mofetil (MMF)\t \tGottlieb 2010  (1, MI)3 arm trialWithin 3 months\t126 (MMF/daclizumab 41, MMF/daclizumab placebo 31; 42)\tWhole study population 76 days\tIntervention MMF/daclizumab 18.3 (9.1) MMF/daclizumab placebo 17.1 (6.7) Control 18.8 (10.5)\t2H AUC MMF/Daclizumab 0.71 MMF/Daclizumab placebo 0.65 Control 0.71\tMMF/Daclizumab (Daclizumab 1 mg/kg at study day 0 and 2 weeks later)\tPlacebo (delivered as intervention)\t2 weeks/2 weeks\tAUC; Meal stimulated\t15–30 min intervals, 2H AUC\t0, 6, 12, 18, 24\tHbA1c; Insulin dose; Adverse events\t \tPrednisolone\t \tSecchi 1990  (1, A)3 arm trial (Also in the wider “others group of interventions, focus only on prednisolone group here)Within 8 weeks\t25 (Prednisolone 10, indomethacin 5; 10)\tPrednisolone 4.0 (SE 0.9) weeks, control 4.0 (SE 0.8) weeks\tPrednisolone 26 (7.9) Control 23 (4.7)\tNR\tPrednisolone (15 mg daily)\tPlacebo (delivered as intervention)\t8 months/8 months\tUrinary c-peptide only\tN/A\t0, 6, 9, 12, 18, 24, 30, 36\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tHehmke 1994  (1, C, AD)(Also in the Anti-CD4 group)Within 1 week\t11 (5; 6)\tNR\tIntervention 12 (2) Control 15 (1)\tNR\tPrednisolone and Anti-CD4 (Pred 1.0 mg/kg, 5 days intravenous, 5 days oral)\tConventional insulin therapy only\t10 days/N/A\tFasting; Stimulation NR\tNR\t6, 9, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tSilverstein 1988  (1, MI)(Also in the azathioprine group)Within 2 weeks\t46 (23; 23)\tNR\tIntervention 11.7 (NR) Control 10.4 (NR)\tPeak c-peptide Intervention 0.4 Control 0.41\tPrednisolone/Azathioprine (Pred 30 mg/kg alternate days for 4 doses, then 2 mg/kg, max 100 mg/day. Then tapered every 2 weeks decreasing first to 1 mg/kg/day then to alternate-day administration with a gradual discontinuation in 10 weeks.)\tControl (Unclear, appears to be no treatment)\t12 months/NR\tPeak; Meal stimulated\t0, 30, 60, 90, 120 min\t0, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tAnti-CD4\t \tHehmke 1994  (1, C, AD)(Also in the prednisolone group)Within 1 week\t11 (5; 6)\tNR\tIntervention 12 (2) Control 15 (1)\tNR\tPrednisolone and Anti-CD4 (Anti-CD4 0.5 mg/kg IV 30 min on a 5 consecutive days)\tConventional insulin therapy only\t10 days/N/A\tFasting; Stimulation NR\tNR\t6, 9, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tAnti-TNF (Golimumab)\t \tQuattrin 2020  (4, C, AD)Within 100 days\t84 (56; 28)\tIntervention 73.6 (19.6) days, control 75.7 (19.0) days\tIntervention 13.9 (3.7) Control 14.0 (4.0)\t4H AUC Intervention 0.78 Control 0.64\tGolimumab (body weight < 45 kg induction dose 60 mg per square metre body-surface area at weeks 0 and 2, body weight ≥ 45 kg induction dose 100 mg at weeks 0 and 2. Maintenance dose 30 mg/50 mg per square metre week 4 and every 2 weeks until 52 weeks)\tPlacebo (delivered as intervention)\t12 months/12 months\tAUC; Meal stimulated\t2H and 4H AUC\t0, 6, 9, 12, 18, 24\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Clinical remission; Adverse events\t \tTyrosine kinase Inhibitor\t \tGitelman 2021  (1, A)Within 100 days\t67 (45; 22)\tIntervention median 82 (IQR 70–91) days, control 94 (IQR 73–96) days\tIntervention median 26.6 (IQR 22.4–32.4) Control median 23.4 (IQR 21.6–29.9)\t4H AUC Intervention 0.74 Control 0.68\tImatinib (4 × 100 mg film-coated tablets per day)\tPlacebo (delivered as intervention)\t6 months/6 months\tAUC; Meal stimulated\t0, 15, 30, 60, 90, 120 min; 2H and 4H AUC\t0, 6, 12, 18, 24,\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Body weight; BMI; Adverse events\t \tAnti-IL 6 receptor\t \tGreenbaum 2021  (1, MI)Within 100 days\tAdults 55 (35; 20) Paediatric 81 (54; 27)\tAdults intervention 82.5 (13.63) days, control 84.6 (12.39) daysPaediatric intervention 85.9 (15.47) days, control 83.9 (16.65) days\tAdults Intervention 27.9 (7.37) Control 29.2 (9.33) Paediatric Intervention 11.1 (2.90) Control 11.1 (2.47)\t2H AUC Adults Intervention 0.77 Control 0.97 Paediatric Intervention 0.73 Control 0.66\tToclizumab (≥ 30 kg body weight, 8 mg/kg to a maximum of 800 mg. < 30 kg, the dose was 10 mg/kg, every 4 weeks for 7 doses)\tPlacebo (delivered as intervention)\t6 months/6 months\tAUC; Meal stimulated\t–10 and 0, then at min 15 and 30, and then every 30 min for 2 h, AUC\t0, 6, 9, 12\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Adverse events\t \tAnti-IL 8 receptor\t \tPiemonti 2022  (3, AD, A)Within 100 days\t76 (50; 26)\tNR\tIntervention 27.6 (7.06) Control 8 (6.35)\tFasting Intervention 0.22 Control 0.23 2H AUC Intervention 0.5 Control 0.49\tLadarixin (400 mg twice daily for three cycles of 14 days on/14 days off)\tPlacebo (delivered as intervention)\t3 months/3 months\tFasting, Peak stimulated, AUC; Meal stimulated\t0, 15–120 min, 2H AUC\t0, 6, 12\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tRegulatory T-cell (Low dose IL-2, Aldesleukin)\t \tRosenzwajg 2020  (1, C, AD)4 arm trialWithin 3 months\t24 (0.125MIU 5, 0.25MIU 6, 0.5MIU 6; 7)\tNR\tIntervention 0.125MIU 10.6 (1.1), 0.25MIU 9.7 (1.6), 0.5MIU 10.2 (2) Control 9.3 (1.4)\tFasting Intervention 0.125MIU 0.33, 0.25MIU 0.3, 0.5MIU 0.33 Control 0.232H AUC Intervention 0.125MIU 0.62, 0.25MIU 0.57, 0.5MIU 0.6 Control 0.48\tIL-2 Aldesleukin (0.125, 0.25 or 0.5 MIU m−2 day−1 based on body surface area)\tPlacebo (delivered as intervention)\t12 months/12 months\tFasting, AUC; Meal stimulated\t0, 2H AUC\t0, 6, 12, 14\tHbA1c; Glucose variability; Insulin dose; Hypoglycaemia; Adverse events\t \tRegulatory T-cell (Tregs)\t \tZielinski 2022  (2, C, AD)(Also included in the B-cell group)NR, mean duration 6 months\t25 (Tregs/rituximab 12; Tregs/Placebo 13)\tTregs/Rituximab 6 (4.2) months, Tregs/Placebo 6.5 (4.2) months\tIntervention (Tregs/Rituximab) 12.9 (1.2) Control (Tregs/Placebo) 13.3 (1.5)\t4H AUC Intervention 0.91 Control 0.836 Fasting Intervention 0.36 Control 0.36\tTregs/Rituximab (Tregs 30 × 106 of Tregs/kg body weight each, 2 doses 3 months apart)\tTregs/Placebo (2 doses of Tregs, 30 × 10^6Tregs/kg body weight; each at day 0 and month 3 and placebo delivered as intervention)\t36 days/36 days\tFasting, AUC; Meal stimulated\t0, 15, 30, 60, 90, 120, 180, 210 and 240 min, 4H AUC\tWeeks26, 39, 52, 65, 78, 92 and 104\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Clinical remission; Adverse events\t \tBender 2024  (3, C, AD)Within 100 days\t131 (low dose 38; high dose 37; placebo 39)\tIntervention low dose 85.12 (13.43) days, high dose 86.54 (14.69) days, control 85.15 (13.83)\tIntervention low dose 13.49 (2.48) High dose 13.78 (2.86) Control 13.67 (2.46)\t2H AUC Intervention low dose 0.75 High dose 0.78 Control 0.72\tPolyclonal autologous Tregs (IV infusion of 1 × 106 to 7 × 106 cells/kg of body weight, or 11 × 106 to 24 × 106 cells/kg of body weight)\tPlacebo (Infusion solution only: 0.5% human albumin USP in an equal mixture of USP PlasmaLyte-A and USP 5% dextrose/0.45% NaCl; delivered as intervention)\tOne infusion/one infusion\tAUC; Meal stimulated\t2 and 4H AUC\t0, weeks 26, 52, and 104 for 4 h and weeks 13 and 78 for 2 h\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Adverse events\t \tIL-21\t \tVon Herrath 2021  (3, A)(3 arm trial, focus given to those which included Anti IL-21)Within 20 weeks\t308 (Anti IL-21/liraglutide 77, Anti IL-21/placebo 63, liraglutide/placebo 77; 77)\tIntervention Anti IL-21/liraglutide 11.6 (5.7) weeks, Anti IL-21/placebo 11.5 (5.3 weeks), liraglutide/placebo 10.8 (4.8) weeks, control 10.2 (4.7) weeks\tIntervention Anti IL-21/liraglutide 28 (7.5), Anti IL-21/placebo 28.6 (7.9), liraglutide/placebo 28 (7.1) Control 29 (7.0)\tFasting Intervention Anti IL-21/liraglutide 0.13 Anti IL-21/placebo 0.23 Control 0.23 4H AUC Intervention Anti IL-21/liraglutide 0.48 Anti IL-21/placebo 0.53 Control 0.56\tAnti IL-21 and liraglutide (Anti IL-21 12 mg/kg every 6 weeks)\tPlacebo (matching Anti IL-21 and liraglutide delivered as intervention)\t12 months/12 months\tFasting, AUC; Meal stimulated\t(0), and at 15, 30, 60, 90, 120, 150, 180, 210 and 240 min, 2 and 4H AUC\t0, 6, 9, 12, 15, 18\tHbA1c; Insulin dose; Glucose variability; Hypoglycaemia; Ketoacidosis; Body weight; Adverse events\t \tDeflazacort\t \tPozzilli 1994  (1, MI)Within 4 weeks\t36 (18; 18)\tNR\tIntervention Adult 25.1 (5.7) children 11. (1.5) Control Adult 23.2 (4.8) Children 11 (1.7)\tFasting Intervention (Deflazacort and nicotinamide) 0.17 Control (Nicotinamide and placebo) 0.2\tDeflazacort and nicotinamide (Deflazacort 0.6 mg/kg body weight daily for 1 month, reduced to 0.3 mg/kg of body weight daily for 2 months)\tNicotinamide and placebo (placebo delivered as intervention, nicotinamide 25 mg/kg of body weight daily)\t3 months/3 months\tFasting, stimulated; Glucagon stimulated\tNR\t0, 6, 12\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tMethotrexate\t \tBuckingham 2000  (1, C, AD)Within 11 days\t10 (5; 5)\tNR\tIntervention 9.8 (SE 0.8) Control 10.7 (SE 0.9)\tMeal stimulated 60 min Intervention 0.011 Control 0.014\tMethotrexate (5 mg/m2 per week)\tNo methotrexate\t36 months/N/A\tFasting, Max stimulated; Meal stimulated\t0, 60 min\t0\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tPhotophoresis\t \tLudvigsson 2001  (1, C, AD)Within 25 days of symptoms\t49 (25; 24)\tNR\tIntervention 13.8 (1.6) Control 13.4 (1.9)\tFasting Intervention 0.48 Control 0.58\tPhotophoresis, (oral 8-methoxypsoralen, 1 h later, apheresis was started, administered on two consecutive days (double treatment). First double treatment given at day 5–6 after diagnosis, then repeated after 2, 4, 8 and 12 weeks so that every patient should receive five double treatments in 3 months)\tPlacebo (placebo tablets and sham pheresis with saline solution. Same frequency as intervention)\t3 months/3 months\tFasting, Stimulated; Meal stimulated, also urinary\t0, stimulated timepoint NR\t1, 6, 12, 18, 24, 30, 36\tHbA1c; Insulin dose; Clinical remission; Adverse events\t \tEtanercept\t \tMastrandrea 2009  (1, C, AD)Within 4 weeks\t18 (10; 8)\tIntervention 21.4 (4.4) days, control 28.5 (7.5) days\tIntervention 12.5 (3.3) Control 12.4 (3.6)\t2H AUC Intervention 0.51 Control 0.78\tEtanercept (0.4 mg/kg up to a maximum dose of 25 mg/dose, twice weekly)\tPlacebo (no further information)\t24 weeks/24 weeks\tFasting, AUC; Meal stimulated\t0, 30, 60, and 120 min and AUC\t0, 6\tHbA1c; Glucose variability; Insulin dose; Adverse events\t \tHumanised monoclonal antibody IgG1 (Itolizumab)\t \tCabrera-Rode 2022  (1, NR)4 arm trialWithin 12 weeks\t12 (0.4 mg 3, 0.8 mg 2, 1.6 mg 3; 3)\tNR\tReported for all patients only 24.08 (4.68)\tFasting Intervention 0.4 mg 0.35 0.8 mg 0.36 1.6 mg 0.32 Control 0.37 2H AUC Intervention 0.4 mg 0.84 0.8 mg 0.57 1.6 mg 0.7 Control 0.62\tHumanised monoclonal antibody Itolizumab (0.4/0.8 mg/kg body weight once a week or 1.6 mg/kg body weight every 2 weeks for 9 weeks then every 4 weeks until 24 weeks of treatment)\tPlacebo (delivered as intervention)\t6 months/6 months\tFasting, AUC; Meal stimulated\t0, 30, 60, 90, 120, 2H AUC\t0, 12\tHbA1c; Insulin dose; BMI; Adverse events\t \tHumanised monoclonal antibody IgG4 (Temelimab)\t \tCurtin 2020  (1, MI)Within 3 years\t64 (43; 21)\tNR\tIntervention 31.4 (10.2) Control 34.9 (10.1)\t2H AUC Intervention 0.47 Control 0.77\tTemelimab, humanised IgG4 monoclonal antibody) (6 mg/kg, 6 administrations at 4 week intervals)\tPlacebo (placebo solution delivered as intervention)\t6 months/6 months\tAUC; Meal stimulated\t0, 90 min peak, 120 min, AUC 2HR\t0, 6\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tAutologous immature dendritic cells\t \tGaglia 2024  (2, MI)Within 12 months\t27 (16; 11)\tIntervention 7.9 (2.7) months, control 8.8 (2.0) months\tIntervention 26.5 (9.0) Control 26.2(6.2)\tIntervention 0.53 Control 0.61\tAVT001 (Individualised preparation of autologous immature dendritic cells derived from participant’s adherent primary monocytes. 20 ml AVT001 suspension in 10% dimethyl sulfoxide and 12.5% human serum albumin; approximately 10 million synthetic oligopeptide- loaded, CD11cþ immature dendritic cells per dose; monthly for 3 doses)\tPlacebo (Volume also 20 ml, containing only 12.5%humanserum albumin with 10% dimethyl sulfoxide; delivered as intervention)\t3 months/3 months\tAUC, Peak; Meal stimulated\t4H AUC, Peak time NR\t0, 5, 12\tHbA1c; Insulin dose; Hypoglycaemia; Adverse events\t \tJanus kinase inhibitor (Baricitinib)\t \tWaibel 2023  (2, MI)Within 100 days\t91 (60; 31)\tIntervention median 88 (IQR 70–95) days, control 72 (IQR 59–90) days\tIntervention 18.5 (5.7) Control 18.7 (5.9)\t2H AUC Intervention median 0.6 Control median 0.67\tBaricitinib (4 mg per day orally)\tPlacebo (Delivered as intervention)\t48 weeks/48 weeks\tAUC; Meal stimulated\t2H AUC\t0, 6, 9, 12 months\tHbA1c; Insulin dose; Hypoglycaemia; Ketoacidosis; Adverse events\t \tHumanised monoclonal antibody IgG1k (Ustekinumab)\t \tTatovic 2024  (3, AD)Within 100 days\t72 (47; 25)\tNR\tIntervention 14.49 (1.78) Control 15.0 (1.63)\t2H AUC Intervention 0.89 Control 0.92\tUstekinumab (2 mg/kg body weight if the participant was ≤ 40 kg and 90 mg if > 40 kg; weeks 0, 4, 12, 20, 28, 36 and 44)\tPlacebo (Delivered as intervention)\t44 weeks/44 weeks\tPeak, AUC; Meal stimulated\t0, 15, 30, 60, 90 and 120 min, AUC\t − 2, 28 and 52 weeks\tHba1c; Insulin dose; Glucose variability; Hypoglycaemia; Quality of LifAdverse events"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Abbreviations: HbA1c haemoglobin A1c, Age categories C children, AD adolescents, A adults, MI mixed population, NR not reported; N/A not applicable, AUC area under the curve, ATG Antithymocyte globulin, GCSF Granulocyte colony-stimulating factor, BCG Bacillus Calmette–Guérin, MMF Mycophenolate mofetil, MIU Milli-international units, SE standard error. *Paper only reported median and SD, no further information could be acquired on this"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Included studies were categorised into 32 classes by intervention type (53 different interventions). Study characteristics are described in Table 1. Some studies with multiple arms (n = 11) or combination therapies (n = 7) were present in multiple classes. There were 4597 participants in total. Sample sizes varied from 10 to 516 patients. The mean age of participants ranged from 7.9 to 34.9 years. All but two trials reported inclusion criteria of duration of type 1 diabetes of no more than 12 months."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Risk of bias varied (Additional file 1: Table 3), though few studies were considered high risk of bias. Issues with reporting were indicated due to the large number of domains assigned as “unclear,” particularly for blinding of C-peptide measurement which was generally not described (though unlikely to largely impact upon the outcome). Most trials were double-blind resulting in mostly low risk of bias within this domain. There may be issues within this domain as some immunomodulatory drugs may incur side effects that could potentially have led patients to believe they were in a particular group; however, this was unlikely to have impacted upon the outcomes. Over time, it seems that generally reporting and risk of bias have improved, with many newer studies demonstrating low risk across all domains compared to older studies which resulted in uncertainty and/or high risk."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Pairwise meta-analysis"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results of the pairwise meta-analyses were varied (results not shown). Several interventions demonstrated statistically significantly preserved C-peptide levels at 12 months versus placebo or no treatment. For example, granulocyte colony-stimulating factor (GCSF), anti-CD3 teplizumab, interferon-alpha, anti-CD3 otelixizumab, anti-TNF golimumab, ATG, azathioprine and cyclosporin demonstrated statistically significantly higher C-peptide (various C-peptide measurement methods and varying number of studies contributing). In the few trials that included longer follow-up at 24 months, several interventions showed statistically significantly higher C-peptide levels than comparator (GCSF, ATG, Anti-CD3 teplizumab, anti-TNF golimumab, mesenchymal stem cells (MSC))."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Network meta-analysis"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Main analysis"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Forty-one trials of 42 interventions (from the wider 60 trials of 53 interventions) were included in the main network analysis of all C-peptide data (Additional file 1: Fig. S1). Some trials could not be included due to uncommon methods of measuring C-peptide, lack of reporting of certainty data (e.g., standard deviations, standard errors, 95% CI) or short follow-up (e.g. less than 12 months) (see Additional file 1: Table 4)."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Forest plot of standardised mean differences (95% confidence intervals) in C-peptide of all therapies versus placebo or no comparator included in main network meta-analysis at 12 months. Effect estimates favouring intervention are seen to the right of the line of no effect"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Probabilities of each intervention being ranked first both as frequentist p-scores and SUCRA scores as well as median rankings and 95% confidence intervals for each intervention based on the outcome of C-peptide at 12 months follow-up"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Frequentist P-score Rankings\tSUCRA Score Rankings\tMedian rankings and 95% confidence interval\t \tIntervention\tP-score\tIntervention\tSUCRA Score\tIntervention\tMedian rank\t95% confidence interval\t \tInterferon-alpha 5000 IU\t0.908\tAzathioprine\t0.9151\tAzathioprine\t3\t1–14\t \tAzathioprine\t0.9072\tAutologous dendritic cells\t0.908\tAutologous dendritic cells\t4\t1–19\t \tAutologous dendritic cells\t0.8804\tInterferon-alpha 5000 IU\t0.9073\tInterferon-alpha 5000 IU\t4\t1–14\t \tMSC (Autologous)\t0.8247\tMSC (Autologous)\t0.8424\tMSC (Autologous)\t5\t1–26\t \tAnti-TNF Golimumab\t0.7807\tMSC (Wharton’s Jelly)\t0.781\tMSC (Wharton’s Jelly)\t8\t2–28\t \tLow-dose ATG\t0.7577\tAnti-TNF Golimumab\t0.7744\tAnti-TNF Golimumab\t9\t2–25\t \tMSC (Wharton’s Jelly)\t0.757\tLow-dose ATG\t0.7563\tLow-dose ATG\t9\t3–24\t \t1 course 3 mg Anti-CD3 Teplizumab\t0.7133\t1 course 3 mg Anti-CD3 Teplizumab\t0.7276\t1 course 3 mg Anti-CD3 Teplizumab\t11\t4–27\t \tJAK Inhibitor Baricitinib\t0.6791\tJAK Inhibitor Baricitinib\t0.662\t9 mg Anti-CD3 Otelixizumab\t12\t1–37\t \t9 mg Anti-CD3 Otelixizumab\t0.666\tIL-12/23 Ustekinumab\t0.6585\tJAK Inhibitor Baricitinib\t13\t4–30\t \tIL-12/23 Ustekinumab\t0.6485\t9 mg Anti-CD3 Otelixizumab\t0.6202\tIL-12/23 Ustekinumab\t14\t4–31\t \tCyclosporin\t0.6115\tCyclosporin\t0.6146\tMedium-dose IL2\t15\t2–39\t \tDeflazacort\t0.602\tDeflazacort\t0.6127\tCyclosporin\t16\t7–27\t \tMedium-dose IL2\t0.6004\tMedium-dose IL2\t0.5902\tDeflazacort\t16\t3–34\t \t1 course 0.5 mg Anti-CD3 Teplizumab\t0.5881\t1 course 9 mg Anti-CD3 Teplizumab\t0.5773\t1 course 0.5 mg Anti-CD3 Teplizumab\t17\t3–37\t \t1 course 9 mg Anti-CD3 Teplizumab\t0.5698\t1 course 0.5 mg Anti-CD3 Teplizumab\t0.569\t1 course 9 mg Anti-CD3 Teplizumab\t18\t5–34\t \tATG/GCSF\t0.5615\tATG/GCSF\t0.5505\tGCSF\t18\t3–38\t \tGCSF\t0.5572\tInterferon-alpha 30,000 IU\t0.5451\tATG/GCSF\t19\t8–32\t \tInterferon-alpha 30,000 IU\t0.5499\tAnti-CD2 Alefacept\t0.5383\tInterferon-alpha 30,000 IU\t19\t6–35\t \t2 course 9/11 mg Anti-CD3 Teplizumab\t0.5449\tGCSF\t0.5256\tTyrosine Kinase inhibitor Imatinib\t19\t6–35\t \tTyrosine Kinase inhibitor Imatinib\t0.5371\t2 course 9/11 mg Anti-CD3 Teplizumab\t0.519\t2 course 9/11 mg Anti-CD3 Teplizumab\t20\t11–29\t \tAnti-CD2 Alefacept\t0.5265\tTyrosine Kinase inhibitor Imatinib\t0.5024\tAnti-CD2 Alefacept\t20\t5–37\t \tHigh-dose ATG\t0.5208\tHigh-dose ATG\t0.4988\tHigh-dose ATG\t21\t8–35\t \tCTLA4\t0.488\tCTLA4\t0.4778\t27 mg Anti-CD3 Otelixizumab\t22\t3–41\t \t27 mg Anti-CD3 Otelixizumab\t0.4849\tAnti-CD20 Rituximab\t0.4693\tCTLA4\t22\t8–36\t \tAnti-CD20 Rituximab\t0.4688\t48 mg Anti-CD3 Otelixizumab\t0.4437\tAnti-CD20 Rituximab\t23\t9–37\t \t48 mg Anti-CD3 Otelixizumab\t0.4346\t27 mg Anti-CD3 Otelixizumab\t0.4407\t48 mg Anti-CD3 Otelixizumab\t25\t10–38\t \t2 course 3 mg Anti-CD3 Teplizumab\t0.3534\tPrednisolone/Anti-CD4\t0.3927\t2 course 3 mg Anti-CD3 Teplizumab\t27\t15–38\t \tPrednisolone/Anti-CD4\t0.3507\tIGG\t0.3698\tIGG\t28\t13–39\t \tIGG\t0.3455\tMMF/Daclizumab\t0.3571\tMMF/Daclizumab\t29\t14–40\t \tMMF/Daclizumab\t0.3317\t2 course 3 mg Anti-CD3 Teplizumab\t0.3507\tPrednisolone/Anti-CD4\t29\t6–42\t \tIL1\t0.2901\tHigh-dose IL2\t0.3273\tIL1\t31\t16–41\t \tIL8\t0.2679\tIL1\t0.2744\tIL8\t32\t15–41\t \tHigh dose IL2\t0.2651\tMMF\t0.2651\tPlacebo/No treatment\t32\t29–36\t \tMMF\t0.2467\tIL8\t0.2605\tIL6\t34\t19–41\t \tLow-dose TREGS\t0.2387\tPlacebo/No treatment\t0.2385\tLow-dose TREGS\t34\t17–41\t \tPlacebo/No treatment\t0.2336\tIL6\t0.2305\tMMF\t34\t17–41\t \tIL6\t0.2327\tLow-dose TREGS\t0.2171\tHigh-dose IL2\t35\t10–42\t \t18 mg Anti-CD3 Otelixizumab\t0.2073\t18 mg Anti-CD3 Otelixizumab\t0.21\t3 mg Anti-CD3 Otelixizumab\t36\t26–41\t \tLow-dose IL2\t0.1921\tLow-dose IL2\t0.2085\t18 mg Anti-CD3 Otelixizumab\t38\t12–42\t \t3 mg Anti-CD3 Otelixizumab\t0.1717\t3 mg Anti-CD3 Otelixizumab\t0.1666\tLow-dose IL2\t38\t15–42\t \tHigh-dose TREGS\t0.1043\tHigh-dose TREGS\t0.1032\tHigh-dose TREGS\t39\t27–42"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "The Surface Under the Cumulative Ranking curve (SUCRA) is the rank of treatment i within the range of treatments, measured on a scale from 0 (worst) to 1 (best). Frequentist p-scores can be interpreted as the mean extent of certainty that treatment i is better than another treatment. Interpretation of both scores is comparable"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Eleven interventions demonstrated statistically significantly higher levels of C-peptide than placebo/no comparator at 12 months; (in order of highest effect size) azathioprine, interferon-alpha (dose of 5000 IU), autologous dendritic cells (ADC), MSC (autologous), anti-TNF golimumab, MSC (Wharton’s Jelly derived), low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab, Fig. 2). All of these interventions, except for 9/11 mg 2-course anti-CD3 teplizumab and cyclosporin, demonstrated > 60% chance of being ranked first, with interferon-alpha (5000 IU) having a 91% chance (frequentist p-scores) and azathioprine a 92% chance (SUCRA scores, Table 2) (see Additional file 1: Fig. S2 for non-cumulative ranking curves). Order of rankings remained comparable between both methods. Whilst median rankings and associated 95% CIs were generally comparable in terms of the higher ranked interventions (Table 2), a high level of uncertainty was present across almost all intervention rankings. Some interventions showed a clear trend towards higher c-peptide levels but were not statistically significant (e.g. Ustekinumab). Therapies that were found to show no evidence of effect were consistently at the bottom of the rankings. It should be noted that rankings should be interpreted with caution as for some therapies data are from smaller pilot or safety trials (e.g. MSC trials) that were not powered to detect efficacy. Some comparisons were also based on data from only one trial (e.g. anti-TNF golimumab, baricitinib, azathioprine, interferon-alpha)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Low risk of bias analysis"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Twenty-one trials of 29 treatments were included in the subset of trials from the main analysis that were rated low risk of bias. Only two interventions still demonstrated statistically higher C-peptide levels than placebo/no comparator at 12 months: interferon-alpha (5000 IU) and ADC. MSC (Wharton’s Jelly), low-dose ATG, anti-TNF golimumab, baricitinib, ustekinumab and 9/11 mg 2-course anti-CD3 teplizumab showed an improvement versus comparator, but these comparisons were not statistically significant. This was following removal of trials contributing data to some of these comparisons. Interferon-alpha (5000 IU) and ADC were consistently the highest ranked therapies (median rank 3, 95% CI 1–12 and 3 (95% CI 1–14) respectively, Additional file 1: Table 5). However, there was large uncertainty around most of the rankings. Azathioprine and cyclosporin were removed from this analysis."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Secondary outcomes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Thirty-five trials from the main C-peptide analysis were included in the analysis of insulin dose and 37 in the analysis of HbA1c. Most studies found no evidence of a difference in daily insulin dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus comparator at 12 months. Several interventions showed a trend towards a small reduction in insulin dose, but this was not significant. CTLA4 reduced daily insulin dose by − 0.18 units/kg/day (95% CI − 0.35 to − 0.01), median rank 5 (95% CI 1–21, Additional file 1: Table 6) but did not demonstrate any significant difference in C-peptide levels."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Several interventions demonstrated a reduction in HbA1c, but only two were statistically significantly lower than placebo or no comparator (mean difference low-dose ATG − 0.91% (− 9.9 mmol/mol), 95% CI − 1.59 (− 17.4 mmol/mol) to − 0.22% (− 2.4 mmol/mol); CTLA4 − 0.57% (− 6.2 mmol/mol), 95% CI − 1.12 (− 12.2 mmol/mol) to − 0.02% (0.2 mmol/mol), Additional file 1: Fig. S4). MSC, autologous and Wharton’s jelly-derived, both had a median rank of third (95% CIs 1–19 and 1–35 respectively), with low-dose ATG fifth (95% CI 2–14, Additional file 1: Table 7). This suggests that MSC and low-dose ATG may be effective in reducing HbA1c and maintaining levels of C-peptide, though data from the MSC interventions were based on individual trials with small sample sizes."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "When only trials with low risk of bias were included in the analysis of secondary outcomes, few differences were noted in the findings (Additional file 1: Figs. S5 and S6)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Heterogeneity and bias"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In the main analysis of all available C-peptide data, moderate to high heterogeneity was present (I2 66.5%, 95% CI 34.5–82.1%, tau2 = 0.101). There was also clear evidence of inconsistency across the network (design-by-treatment interaction p = 0.004). When only those trials which were considered low risk of bias were included in the analysis, heterogeneity was not attenuated (I2 94%, 95% CI 81–98.1%, tau2 = 0.232) and in fact increased. There was also further evidence of inconsistency (p = < 0.001). Detailed results for each analysis are available in Additional file 1: Table 8."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In the analysis of secondary outcomes HbA1c and insulin dose, there was no evidence of heterogeneity or inconsistency."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Sensitivity analyses"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Planned sensitivity analyses resulted in few differences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 months. When considering only 2H and 4H AUC (the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compared to control. In this analysis, some interventions were removed completely due to measuring C-peptide via alternative approaches. Furthermore, there was sometimes less certainty in these analyses, often due to removal of contributing trials. Heterogeneity remained moderate to high when removing trials with baseline imbalances in C-peptide, though was demonstrably lower when including only endpoint data. Further results from sensitivity and post hoc analyses can be found in the Additional file 1: Figs. S7 – S11, Tables 9–13."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Adverse events"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Adverse events varied (see Additional file 1: Table 14) and were sometimes poorly reported. In terms of interventions showing statistically significantly higher C-peptide levels and found to be ranked as most effective, no significant differences were found in number of events between groups in the anti-TNF golimumab trial and the interferon -alpha trial. In the ATG trials, minor events were noted within the first month in the ATG arm (e.g. cytokine release syndrome) but these generally did not persist. Findings were similar in studies of anti-CD3 teplizumab; some cases of transient lymphopenia were noted, but this was expected due to the mechanism of action. Trials of azathioprine, MSC (both autologous and Wharton’s jelly derived), baricitinib and cyclosporin reported no serious side effects that were thought to be related to the intervention, though some minor events were observed."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Discussion"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Summary of findings"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "This systematic review and network meta-analysis identifies eleven interventions that demonstrate efficacy in preserving beta cells and provides a ranking of the relative effectiveness of these therapies. Ten of these eleven therapies demonstrated > 60% chance of being ranked first; however, given the wide confidence intervals of median rankings, there is uncertainty in exact rank order of near adjacent therapies. Therefore, findings should be considered as hypothesis generating to inform future trials."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Strengths and limitations of the evidence"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Whilst the evidence included in this review are vast, trials contributing to the NMA were sometimes limited. For example, only one published trial has been undertaken of anti-TNF golimumab, baricitinib, MSC interventions and interferon- alpha. The sample size was small in four of the intervention trials (both MSC trials, ADC and azathioprine), though it is unjustifiable to exclude these trials based on sample size alone as this may introduce further issues to the analysis. Data for most interventions stems from larger sample sizes. However, the results of the analysis should be considered as hypothesis generating. There were also only eleven direct head-to-head trials. Planned and ongoing trials may add value to the network in the future and also demonstrate the importance of continuing research in this field."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Dosing of interventions is also an important consideration. For example, anti-CD3 teplizumab groups with different cumulative doses (mg/m2) and different course lengths (one or two during the trial) were analysed separately. Only some of these doses demonstrated statistically significantly better C-peptide levels and there were no trials delivering the same dosing strategy as approved by the FDA for the prevention of stage 3 type 1 diabetes. In some interventions, increasing dose appeared to have a greater effect, whereas in others, increasing dose worsened the effect, reiterating the importance of dose-finding studies."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Heterogeneity was often substantial across different analyses which may be due to differences in populations or other clinical or methodological characteristics. Whilst we considered this in our planning, we could not account for the levels of heterogeneity observed in sensitivity analyses by risk of bias and baseline imbalances. There was also evidence of inconsistency within the network in some of the analyses."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Strengths and limitations of the review"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "This is the most comprehensive systematic review of its kind, including more trials and interventions than previous reviews. The NMA approach is novel in this field and is key for identifying which interventions are the most likely to be effective and should be studied further, from a large pool of clinical trial evidence."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Efforts were made to address potential effect modifiers (e.g. baseline C-peptide and age) via sensitivity analyses and assessment of correlations of effect modifiers with treatment effects. However, it would be difficult to consider all possible effect modifiers."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "There are also issues interpretating SMDs, as the units are standard deviations so determining the clinical relevance of effect sizes is difficult. Following Cochrane Handbook guidance on re-expressing SMDs, when thresholds were applied to group SMDs into small, moderate or large effects, most of the statistically significant interventions demonstrated “large” effects. Further approaches recommended by Cochrane were deemed inappropriate and either inflated or underestimated findings of individual trials. Even in its natural units, C-peptide may be difficult to interpret, particularly relating it to clinically important effects. However, recent evidence supports C-peptide as an appropriate surrogate outcome measure for therapeutic efficacy in trials of newly diagnosed type 1 diabetes patients, with the FDA recently acknowledging C-peptide as a surrogate endpoint to predict clinical benefit."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "To incorporate as many trials as feasibly possible, we used both difference between endpoint and difference between change from baseline data in the SMD meta-analyses. Some could consider this a limitation; however, the approach is supported by recent evidence and was mitigated through sensitivity analyses."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Whilst we included 60 trials in this review, only 41 were eligible for inclusion in the NMA due to poor reporting and differences in C-peptide measurement methods. There may also be limitations when combining different C-peptide measurements within this analysis due to the differences in stimulation (e.g. glucagon vs mixed meal or fasting) or duration of measurement (e.g. 2-h or 4-h AUC, peak at different 90 or 120 min). This may result in varied results even in similar populations. However, as noted previously, many studies demonstrate that most of these measures are highly correlated. Sometimes there were differences in findings between studies of the same interventions included in the NMA and those not eligible. For example, two azathioprine studies not included in the NMA reported unclear findings, whereas a further MSC (Wharton’s Jelly derived) study ineligible for inclusion agreed with the NMA findings. Measurement and reporting of C-peptide should be standardised in future research to aid in evidence synthesis."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Finally, it could be questioned whether differences in HbA1c between treatment arms reflect the success of immunomodulatory therapies due to improved patient care via optimal glycaemic control through standard care. However, in a well-designed, blinded RCT, both intervention and control groups follow the same standardised diabetes management protocols and, consequently, any differences observed in outcomes such as HbA1c, or insulin dose are more likely attributable to the immunomodulatory intervention itself."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Findings in context"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Some of the eleven therapies identified in this review as being potentially effective have been identified in other reviews, e.g. teplizumab, low-dose ATG, golimumab (Gandhi, Felton, Jacobson). However, this NMA included new therapies from recently published trials, identified older therapies not previously considered (e.g. azathioprine), has considered the effect of dose, and furthermore, has been able to rank effectiveness. Therapies such as azathioprine may have previously been dismissed due to side effects or a belief of minimal incremental benefits when patients are already on insulin therapy. For example, Lin 2024 excluded azathioprine from their analysis. However, they are used in the management of other immune disorders. It is also noteworthy that many of the therapies (anti-CD3 teplizumab, ATG, cyclosporin, azathioprine) directly target T cell function, a central cell in type 1 diabetes pathogenesis."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Whilst this analysis has identified some of the more effective therapies for beta cell preservation, the benefits to glucose control and insulin dose were not consistent. CTLA4 demonstrated the strongest significant effect on HbA1c but showed no C-peptide benefit, and the C-peptide benefit of anti-CD3 teplizumab translated only mildly to HbA1c and insulin dose. However, this review focusses on C-peptide and will have skewed study selection to RCTs with a C-peptide focus."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Other factors that will influence choice of agent include mode of administration and duration of treatment. Whilst intravenous infusion of MSC may be the highest-ranking therapy in this NMA, the practicalities of administration are likely more complex than that of taking a tablet of azathioprine. Similarly, the short administration of teplizumab is likely to be more acceptable to patients than repeated anti-TNF infusion. Therefore, studies of acceptability with patients and healthcare professionals, and review of long-term safety will be important aspects to consider going forward and will support decisions on which interventions should be prioritised in future trials."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "C-peptide preservation will be able to prevent type 1 diabetes in those predisposed. Indeed, anti-CD3 teplizumab is now licenced by the FDA for type 1 diabetes prevention. The results of our review potentially inform which other therapies could be investigated in this space."
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Conclusions"
+    },
+    {
+      "section_type": "CONCL",
+      "text": "Whilst several interventions were found to preserve beta cell function compared to placebo/no treatment at 12 months, more research is needed. These results should be interpreted with caution, due to uncertainty in some statistical findings and potential issues with heterogeneity and inconsistency. Rather than recommend interventions for practice, these findings highlight the interventions that should be the focus of future head-to-head, high-quality clinical trials with the goal of finding the best therapies for treating newly diagnosed type 1 diabetes. The difference across dose ranges suggests that dose finding studies also need to be considered for new agents and before larger studies are conducted."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary Information"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Abbreviations"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "ADC"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Autologous dendritic cells"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "ATG"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Anti-thymocyte globulin"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "FDA"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "US Food and Drug Administration"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "GCSF"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Granulocyte colony-stimulating factor"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "IU"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "International unit"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "MSC"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Mesenchymal stem/stromal cells"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "NMA"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Network meta-analysis"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "SMD"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Standardised mean difference"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "SUCRA"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Surface under the cumulative ranking curve"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Publisher’s Note"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Authors’ contributions"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "PN conceived the research idea. PN and DM are joint principal investigators providing clinical and methodological leadership respectively. CT, PS, PN, RA, MP and DM drafted the protocol with input from all authors. CT ran searches. CT, PS, SEB, IH, AA, FM, MB, LMQ, RG, TJH undertook study selection, data extraction and or risk of bias assessment. SB undertook final data checking. CT, SEB, and PS amalgamated data, and SEB undertook data synthesis and meta-analysis. SEB undertook network meta-analysis with oversight from MP who gave input on all statistical matters. RA provided detailed clinical input and guidance at all stages, including contextualisation of findings and the discussion. FM and MB provided the adult patient perspective on living with type 1 diabetes. KN and GNT provided methodological and clinical guidance. SEB, PN, DM, and MP drafted this manuscript. All authors read and approved the final manuscript."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Author’s Twitter handles"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "@parthnarendran."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Funding"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "National Institute of Health Research – Research for Patient Benefit and Breakthrough T1D."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Data availability"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "The datasets used and/or analysed during the current study are available from the corresponding author on reasonable request."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Declarations"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Ethics approval and consent to participate"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Consent for publication"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Not applicable."
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Competing interests"
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Dr. D J Moore - Early parts of this research stem from a research grant from the UK NIHR Research for Patient Benefit programme ((2018-2019) Ref: PB-PG-0317-20046; Co-Principal Investigator Dr. M J Price - Early parts of this research stem from a research grant from the UK NIHR Research for Patient Benefit programme ((2018-2019) Ref: PB-PG-0317-20046; Co-Investigator Prof P Narendran – Consulting fees for advisory board for medical devices for Abbott in 2022 and 2023 (not therapy related to current review) and OmniPod 5 in 2022. Payment received for lecture delivered on diabetes for Lilly Diabetes. Dr. R C Andrews – Payment received for delivering teaching sessions on type 1 diabetes and exercise for Eli Lilly and AstraZeneca. Early parts of this research stem from a research grant from the UK NIHR Research for Patient Benefit programme ((2018-2019) Ref: PB-PG-0317-20046 Ms. P Sharma - PS is a former employee of University of Birmingham and currently works for ICON plc, a healthcare consulting company funded by different pharmaceutical companies. The work on this manuscript is not related to her current role in ICON. Ms. A Adriano – AA worked at University of Birmingham at the time of the work being undertaken. Since contributing to the research in the manuscript, AA has since gone on to work for MSD (UK) Limited, London, UK who is the Marketing Authorisation Holder of the following medicinal products: ertugliflozin (Steglatro®) and sitagliptin (Januvia®, Janumet®), both indicated for the treatment of adults with type 2 diabetes mellitus as a monotherapy or in addition to other medicinal products for the treatment of diabetes. These drugs are not relevant to or mentioned in this manuscript. No other conflicts were identified."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Beta-cell function and the development of diabetes-related complications in the diabetes control and complications trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune interventions to preserve β cell function in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "The role of immunomodulation therapy in autoimmune diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunomodulatory therapy of autoimmune diseases : Quo vadis?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunotherapeutic agents in type 1 diabetes: a systematic review and meta-analysis of randomized trials"
+    },
+    {
+      "section_type": "REF",
+      "text": "Disease-modifying therapies and features linked to treatment response in type 1 diabetes prevention: a systematic review"
+    },
+    {
+      "section_type": "REF",
+      "text": "Comparing Beta Cell Preservation Across Clinical Trials in Recent-Onset Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "The opportunities and challenges of the disease-modifying immunotherapy for type 1 diabetes: A systematic review and meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "The PRISMA Extension Statement for Reporting of Systematic Reviews Incorporating Network Meta-analyses of Health Care Interventions: Checklist and Explanations"
+    },
+    {
+      "section_type": "REF",
+      "text": "Lefebvre C GJ, Briscoe S, Featherstone R, Littlewood A, Metzendorf M-I, Noel-Storr A, Paynter R, Rader T, Thomas J, Wieland LS.,. Chapter 4: Searching for and selecting studies (chapter last updated September 2024). In: Higgins JPT TJ, Chandler J, Cumpston M, Li T, Page MJ, Welch VA,, editor(s). Cochrane Handbook for Systematic Reviews of Interventions Version 6.4 (updated August 2024). Cochrane; 2024. Available from training.cochrane.org/handbook. https://community.cochrane.org/style-manual/references/reference-types/cochranepublications#handbook-chapter."
+    },
+    {
+      "section_type": "REF",
+      "text": "The EndNote Team. EndNote. EndNote 2025. Philadelphia, PA: Clarivate; 2013. https://support.clarivate.com/Endnote/s/article/Citing-the-EndNoteprogram-as-a-reference?language=en_US."
+    },
+    {
+      "section_type": "REF",
+      "text": "Rayyan—a web and mobile app for systematic reviews"
+    },
+    {
+      "section_type": "REF",
+      "text": "R Core Team. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing; 2023. https://cran.r-project.org/web/packages/report/vignettes/cite_packages.html."
+    },
+    {
+      "section_type": "REF",
+      "text": "netmeta: An R Package for Network Meta-Analysis Using Frequentist Methods"
+    },
+    {
+      "section_type": "REF",
+      "text": "Network meta-analysis, electrical networks and graph theory"
+    },
+    {
+      "section_type": "REF",
+      "text": "The impact of insulin administration during the mixed meal tolerance test"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mixed-meal tolerance test versus glucagon stimulation test for the assessment of beta-cell function in therapeutic trials in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Correlations between fasting plasma C-peptide, glucagon-stimulated plasma C-peptide, and urinary C-peptide in insulin-treated diabetics"
+    },
+    {
+      "section_type": "REF",
+      "text": "Two- and Four-Hour Tests Differ in Capture of C-Peptide Responses to a Mixed Meal in Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Fasting parameters for estimation of stimulated β cell function in islet transplant recipients with or without basal insulin treatment"
+    },
+    {
+      "section_type": "REF",
+      "text": "Consistency and inconsistency in network meta-analysis: concepts and models for multi-arm studies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Checking consistency in mixed treatment comparison meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ranking treatments in frequentist network meta-analysis works without resampling methods"
+    },
+    {
+      "section_type": "REF",
+      "text": "Herold, Kevan C, Hagopian W, Auger Julie A, Poumian-Ruiz E, Taylor L, et al. Anti-CD3 Monoclonal Antibody in New-Onset Type 1 Diabetes Mellitus. N Engl J Med. 2002;346(22):1692–8."
+    },
+    {
+      "section_type": "REF",
+      "text": "A single course of anti-CD3 monoclonal antibody hOKT3gamma1(Ala-Ala) results in improvement in C-peptide responses and clinical parameters for at least 2 years after onset of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Treatment of patients with new onset Type 1 diabetes with a single course of anti-CD3 mAb Teplizumab preserves insulin production for up to 5 years"
+    },
+    {
+      "section_type": "REF",
+      "text": "Teplizumab for treatment of type 1 diabetes (Protege study): 1-year results from a randomised, placebo-controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Teplizumab treatment may improve C-peptide responses in participants with type 1 diabetes after the new-onset period: a randomised controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Teplizumab (anti-CD3 mAb) treatment preserves C-peptide responses in patients with new-onset type 1 diabetes in a randomized controlled trial: metabolic and immunologic features at baseline identify a subgroup of responders"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ag019 ActoBiotics as monotherapy or in association with teplizumab in recent-onset type 1 diabetes was safe and demonstrated encouraging metabolic and immunological effects"
+    },
+    {
+      "section_type": "REF",
+      "text": "Ramos EL, Dayan CM, Chatenoud L, Sumnik Z, Simmons KM, Szypowska A, et al. Teplizumab and β-Cell Function in Newly Diagnosed Type 1 Diabetes. N Engl J Med. 2023;389(23):2151-61."
+    },
+    {
+      "section_type": "REF",
+      "text": "Insulin needs after CD3-antibody therapy in new-onset type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Efficacy and safety of low-dose otelixizumab anti-CD3 monoclonal antibody in preserving C-peptide secretion in adolescent type 1 diabetes: DEFEND-2, a randomized, placebo-controlled, double-blind, multi-centre study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Low-dose otelixizumab anti-CD3 monoclonal antibody DEFEND-1 study: results of the randomized phase III study in recent-onset human type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "A randomised, single-blind, placebo-controlled, dose-finding safety and tolerability study of the anti-CD3 monoclonal antibody otelixizumab in new-onset type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Vague P, Vialettes B, Picq R, Dol S, Lassmann-Vague V. Effect of cyclosporin A on B-cell loss in Type 1 (insulin-dependent) diabetes mellitus. Diabetologia. 1989;32(12):887-."
+    },
+    {
+      "section_type": "REF",
+      "text": "Cyclosporine A for the treatment of new-onset insulin-dependent diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Follow-up of cyclosporin A treatment in type 1 (insulin-dependent) diabetes mellitus: lack of long-term effects"
+    },
+    {
+      "section_type": "REF",
+      "text": "Skyler JS, Rabinovitch A. Cyclosporine in recent onset type I diabetes mellitus. Effects on islet beta cell function. Miami Cyclosporine Diabetes Study Group. J Diabetes Complications. 1992;6(2):77–88."
+    },
+    {
+      "section_type": "REF",
+      "text": "Pozzilli P, Visalli N, Boccuni m L, Baroni MG, Buzzetti R, Fioriti E, et al. Randomized trial comparing nicotinamide and nicotinamide plus cyclosporin in recent onset insulin-dependent diabetes (IMDIAB 1). Diabet Med. 1994;11(1):98–104."
+    },
+    {
+      "section_type": "REF",
+      "text": "Targeting of memory T cells with alefacept in new-onset type 1 diabetes (T1DAL study): 12 month results of a randomised, double-blind, placebo-controlled phase 2 trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Rituximab, B-lymphocyte depletion, and preservation of beta-cell function"
+    },
+    {
+      "section_type": "REF",
+      "text": "Combined therapy with CD4(+) CD25highCD127(-) T regulatory cells and anti-CD20 antibody in recent-onset type 1 diabetes is superior to monotherapy: Randomized phase I/II trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Polyclonal anti-T-cell therapy for type 1 diabetes mellitus of recent onset"
+    },
+    {
+      "section_type": "REF",
+      "text": "Antithymocyte globulin treatment for patients with recent-onset type 1 diabetes: 12-month results of a randomised, placebo-controlled, phase 2 trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Low-Dose Anti-Thymocyte Globulin (ATG) Preserves β-Cell Function and Improves HbA(1c) in New-Onset Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Anti-thymocyte globulin/G-CSF treatment preserves β cell function in patients with established type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Chujo D, Enkaku A, Kamigishi M, Takikawa A, Matsushita M, Kobayashi M, et al. 298-OR: Safety and Efficacy of Immunomodulatory Therapy Using Antithymocyte Globulin and Pegfilgrastim in Japanese Patients with Type 1 Diabetes—A Pilot Randomized Clinical Trial. Diabetes. 2023;72(Supplement_1):298-OR."
+    },
+    {
+      "section_type": "REF",
+      "text": "Mobilization without immune depletion fails to restore immunological tolerance or preserve beta cell function in recent onset type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Hessner M, Kaldunski M, Jia S, Wang X, Cheong S, Pickersgill L, et al. Serum signature analysis of participants of the anti-interleukin-1 in diabetes action (AIDA) trial. Diabetes. 2013;1:A63-4. https://www.iris.unicampus.it/handle/20.500.12610/18185."
+    },
+    {
+      "section_type": "REF",
+      "text": "Interleukin-1 antagonism in type 1 diabetes of recent onset: two multicentre, randomised, double-blind, placebo-controlled trials"
+    },
+    {
+      "section_type": "REF",
+      "text": "Long term effects of the implantation of Wharton's jelly-derived mesenchymal stem cells from the umbilical cord for newly-onset type 1 diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Preserved β-cell function in type 1 diabetes by mesenchymal stromal cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Izadi M, Sadr Hashemi Nejad A, Moazenchi M, Masoumi S, Rabbani A, Kompani F, et al. Mesenchymal stem cell transplantation in newly diagnosed type-1 diabetes patients: a phase I/II randomized placebo-controlled clinical trial. Stem Cell Res Ther. 2022;13(1):264."
+    },
+    {
+      "section_type": "REF",
+      "text": "Umbilical cord-derived mesenchymal stromal cells preserve endogenous insulin production in type 1 diabetes: a Phase I/II randomised double-blind placebo-controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Double-blind controlled trial of azathioprine in children with newly diagnosed type I diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Increase in remission rate in newly diagnosed type I diabetic subjects treated with azathioprine"
+    },
+    {
+      "section_type": "REF",
+      "text": "The influence of high dose intravenous immunoglobulins on immunological and metabolic pattern in newly diagnosed type I diabetic patients"
+    },
+    {
+      "section_type": "REF",
+      "text": "Intravenous immunoglobulin therapy for autoimmune diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Effect of ingested interferon-alpha on beta-cell function in children with new-onset type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Failure to preserve beta-cell function with mycophenolate mofetil and daclizumab combined therapy in patients with new- onset type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prednisone administration in recent onset type I diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Anti-CD4 monoclonal antibody immune intervention in patients with newly diagnosed Type I (insulin-dependent) diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunosuppression with azathioprine and prednisone in recent-onset insulin-dependent diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Golimumab and Beta-Cell Function in Youth with New-Onset Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Imatinib therapy for patients with recent-onset type 1 diabetes: a multicentre, randomised, double-blind, placebo-controlled, phase 2 trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Greenbaum CJ, Serti E, Lambert K, Weiner LJ, Kanaparthi S, Lord S, et al. IL-6 receptor blockade does not slow β cell loss in new-onset type 1 diabetes. JCI Insight. 2021;6(21):e150074."
+    },
+    {
+      "section_type": "REF",
+      "text": "Ladarixin, an inhibitor of the interleukin-8 receptors CXCR1 and CXCR2, in new-onset type 1 diabetes: A multicentre, randomized, double-blind, placebo-controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Low-dose IL-2 in children with recently diagnosed type 1 diabetes: a Phase I/II randomised, double-blind, placebo-controlled, dose-finding study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Bender C, Wiedeman AE, Hu A, Ylescupidez A, Sietsema WK, Herold KC, et al. A phase 2 randomized trial with autologous polyclonal expanded regulatory T cells in children with new-onset type 1 diabetes. Sci Transl Med. 2024;16(746):eadn2404."
+    },
+    {
+      "section_type": "REF",
+      "text": "Anti-interleukin-21 antibody and liraglutide for the preservation of β-cell function in adults with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled, phase 2 trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Combination of nicotinamide and steroid versus nicotinamide in recent-onset IDDM"
+    },
+    {
+      "section_type": "REF",
+      "text": "A randomized trial of methotrexate in newly diagnosed patients with type 1 diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Photopheresis at onset of type 1 diabetes: a randomised, double blind, placebo controlled trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Etanercept treatment in children with new-onset type 1 diabetes: pilot randomized, placebo-controlled, double-blind study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cabrera-Rode E, Cubas-Dueñas I, Rodríguez-Acosta J, García-García Y, Torres-López Y, Prieto-Noa C, et al. An Exploratory Study of Itolizumab on the Preservation of Beta Cell Function in Adults with Recent-Onset Type 1 Diabetes. J Clin Med. 2022;11(7):1789."
+    },
+    {
+      "section_type": "REF",
+      "text": "A safety and pharmacodynamics study of temelimab, an antipathogenic human endogenous retrovirus type W envelope monoclonal antibody, in patients with type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Gaglia JL, Daley HL, Bryant NK, Ritz J, Dong T, Skyler JS, et al. Novel Autologous Dendritic Cell Therapy AVT001 for Type 1 Diabetes. NEJM Evid. 2024;3(7):EVIDoa2300238."
+    },
+    {
+      "section_type": "REF",
+      "text": "Baricitinib and β-Cell Function in Patients with New-Onset Type 1 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Tatovic D, Marwaha A, Taylor P, Hanna SJ, Carter K, Cheung WY, et al. Ustekinumab for type 1 diabetes in adolescents: a multicenter, double-blind, randomized phase 2 trial. Nat Med. 2024."
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 diabetes grand challenge. Combination therapy could help protect insulin-producing beta cells; 2023 [Available from: https://type1diabetesgrandchallenge.org.uk/funded-projects/combination-therapy-could-help-protect-insulin-producing-beta-cells/]."
+    },
+    {
+      "section_type": "REF",
+      "text": "FDA. Full Prescribing Information TZIELD: FDA; 2022 Available from: https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/761183s000lbl.pdf.]"
+    },
+    {
+      "section_type": "REF",
+      "text": "A Golden Hour and Golden Opportunity for β-Cell Preservation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Synapse. FDA Positive on Diamyd Medical's Accelerated Approval for Type 1 Diabetes Drug; 2024. [Available from: https://synapse.patsnap.com/article/fda-positive-on-diamyd-medicals-accelerated-approval-for-type-1-diabetes-drug."
+    },
+    {
+      "section_type": "REF",
+      "text": "Deeks JJ HJ, Altman DG,. Chapter 10: Analysing data and undertaking meta-analyses. In: Higgins JPT TJ, Chandler J, Cumpston M, Li T, Page MJ, Welch VA,, editor. Cochrane Handbook for Systematic Reviews of Interventions. version 6.4 ed: Cochrane; 2023."
+    },
+    {
+      "section_type": "REF",
+      "text": "Ostinelli EG, Efthimiou O, Luo Y, Miguel C, Karyotaki E, Cuijpers P, et al. Combining endpoint and change data did not affect the summary standardised mean difference in pairwise and network meta-analyses: An empirical study in depression. Res Synth Methods. 2024."
+    },
+    {
+      "section_type": "REF",
+      "text": "Teplizumab approval for type 1 diabetes in the USA"
+    }
+  ],
+  "fetched_at": "2026-08-28T08:41:55.431587",
+  "pmid": 40598585
+}

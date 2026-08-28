@@ -197,15 +197,22 @@ def generate_html_report(pmid_locations, verification_results, output_path):
     # was purged from the paper library index today, but this page does not read
     # the index - it scans scripts for PMID literals - so purging the index left
     # the row standing. A verdict is only as good as the surfaces that join it.
-    not_corpus = {}
-    _nc = os.path.join(results_dir, 'not_corpus_pmids.json')
-    if os.path.exists(_nc):
-        try:
-            with open(_nc, encoding='utf-8') as _f:
-                not_corpus = json.load(_f).get('pmids', {})
-        except Exception as _e:
-            print(f'  WARNING: could not load not-corpus registry: {_e}')
-    print(f'  Not-corpus PMIDs loaded: {len(not_corpus)}')
+    # Rewired 2026-08-28 to corpus_membership. This page scans SCRIPTS for
+    # PMID literals rather than reading the index, which is exactly why it
+    # needed its own guard - and why reading only not_corpus_pmids.json left
+    # it rendering 17 adjudicated-off-topic papers as ordinary RESOLVES rows.
+    # The reason dict now carries the CLASS, so OFF_TOPIC and BACKGROUND can
+    # be rendered as the different things they are instead of collapsing into
+    # "NOT CORPUS", which would have said "never was a corpus paper" about a
+    # correctly-cited TGF-beta definition.
+    import corpus_membership
+    not_corpus = {p: corpus_membership.reason(p)
+                  for p in corpus_membership.excluded_pmids()}
+    _by = {}
+    for _r in not_corpus.values():
+        _by[_r['code']] = _by.get(_r['code'], 0) + 1
+    print('  Excluded PMIDs loaded: %d (%s)'
+          % (len(not_corpus), ', '.join('%s=%d' % kv for kv in sorted(_by.items()))))
 
     # Build table rows
     rows = ''
@@ -224,6 +231,16 @@ def generate_html_report(pmid_locations, verification_results, output_path):
             status = 'RETRACTED'
             status_color = '#b71c1c'
             status_bg = '#ffcdd2'
+        elif v.get('exists') is True and pmid in not_corpus \
+                and (not_corpus[pmid] or {}).get('code') == 'BACKGROUND':
+            # Added 2026-08-28. Resolves, is cited CORRECTLY, and supplies no
+            # diabetes finding - definitional, methodological or preclinical
+            # context. Rendering this as NOT CORPUS would assert "never was a
+            # corpus paper" about a true citation; rendering it as RESOLVES
+            # would let a reader count it as evidence. It is neither.
+            status = 'BACKGROUND'
+            status_color = '#8d6e00'
+            status_bg = '#fff8e1'
         elif v.get('exists') is True and pmid in not_corpus:
             # Resolves, but is not a corpus paper and never was: no claim in
             # this repository rests on it. Rendering it green implied the

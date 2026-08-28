@@ -370,7 +370,21 @@ def load_not_corpus():
     only because three repair scripts name it as a bad citation. Existence
     checks cannot catch either, because both records exist. Without this guard
     the next ingestion run puts them straight back.
+
+    Extended 2026-08-28 to ask corpus_membership instead of reading the
+    registry directly. This function read only not_corpus_pmids.json, so the
+    17 papers adjudicated off-topic in agent_state.json were re-admitted to
+    the index on every ingest run while extract_corpus_data.py was excluding
+    them from extraction - the index and the evidence disagreed by
+    construction. Returns the same shape, so build_index is unchanged.
     """
+    import corpus_membership
+    return {p: corpus_membership.reason(p) for p in corpus_membership.excluded_pmids()}
+
+
+def _load_not_corpus_registry_only():
+    """Kept for the audit trail: the pre-2026-08-28 behaviour, so the
+    unguarded-reader audit can show what the narrow read used to miss."""
     path = os.path.join(results_dir, 'not_corpus_pmids.json')
     if not os.path.exists(path):
         return {}

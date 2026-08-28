@@ -38,7 +38,26 @@ def get_indexed_paper_count():
     library actually held 301 - the landing page understated its own corpus by
     a third. Any count not read at build time is a future stale claim.
     Fixed 2026-08-20.
+
+    Corrected again 2026-08-28. Reading len(index['papers']) counted every
+    indexed record, including papers this repo had adjudicated as not
+    evidence - a retracted paper, eleven off-topic papers and the
+    provenance registry. The landing page was therefore advertising a corpus
+    larger than the one the extractors would actually use. Counting what is
+    on disk is not the same claim as counting what counts.
     """
+    try:
+        import corpus_membership
+        path = os.path.join(RESULTS_DIR, 'paper_library', 'index.json')
+        with open(path, encoding='utf-8') as f:
+            pmids = json.load(f)['papers']
+        return sum(1 for p in pmids if corpus_membership.counts_as_evidence(p))
+    except Exception:
+        return None
+
+
+def _unused_get_paper_count_raw():
+    """Retained to name what the headline used to count."""
     try:
         path = os.path.join(RESULTS_DIR, 'paper_library', 'index.json')
         with open(path, encoding='utf-8') as f:

@@ -91,7 +91,7 @@ DRUG_CANDIDATES = [
     {
         "name": "Abatacept (CTLA4-Ig)",
         "mechanism": "T-cell costimulation blockade",
-        "t1d_evidence": "TrialNet: slowed C-peptide decline (PMID:20570966)",
+        "t1d_evidence": "TrialNet: slowed C-peptide decline (PMID:21719096)",
         "lada_evidence": "No LADA trials",
         "rationale": "If T-cell autoreactivity drives gradual LADA progression, costimulation blockade during the slow phase could halt decline.",
         "window": "Middle phase (2-4 years)"
@@ -328,7 +328,15 @@ EVIDENCE_CATALOG = [
     ("PMID:23248199", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
     ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
     ("PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
-    ("PMID:20570966", "Orban et al.", "Abatacept Phase 2 in T1D; costimulation blockade"),
+    # Repaired 2026-08-28. This entry read PMID:20570966, which is
+    # "Fucosyltransferase 2 (FUT2) non-secretor status is associated with
+    # Crohn's disease", Hum Mol Genet 2010 - not an abatacept trial and not a
+    # diabetes paper. The correct paper was resolved live against NCBI
+    # (esearch Orban[au] AND abatacept AND type 1 diabetes) and confirmed on
+    # first author, drug, population and design. The stored description is
+    # now the PubMed title so it cannot drift back into paraphrase.
+    ("PMID:21719096", "Orban T et al., Lancet 2011",
+     "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial"),
     ("PMID:27727279", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
     ("PMID:24997559", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
     ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"),

@@ -144,6 +144,42 @@ SKIP_FILES = {os.path.basename(__file__)}
 EXEMPT_MARKER = 'CITATION-EXAMPLE'
 EXEMPT_RADIUS = 1200   # generous on purpose: the marker is opt-IN, never inherited
 
+# AUDIT TRAIL vs LIVE EVIDENCE (added 2026-08-28).
+#
+# The gate went red on 5 coordinates, all 5 inside _run_2026_08_27.py - the
+# dated close-out script that RECORDS the miscitations it repaired the day
+# before. Every one of them is a quotation of a defect, written down so the
+# repair is explicable. Four are proximity artifacts on top of that: the
+# harvester pairs a PMID from one repair tuple with a coordinate from the
+# next, because these files are prose about citations rather than citations.
+#
+# The two coordinates that also appear in LIVE builders were checked by hand
+# before this exemption was written, and both are correct:
+#   Latres E, Diabetes 2024;73(6):823-833 -> PMID 38349844 (build_gka_lada.py)
+#   Speake C, Nat Rev Endocrinol 2023;19(7):377-378 -> 37202589 (build_data_dictionary.py)
+# The gate's own probe resolved both coordinates to exactly those PMIDs. So
+# nothing is being suppressed here that is wrong on the site.
+#
+# Repairing the run files instead would be worse than the finding: it would
+# edit the historical record of a repair to make a gate green. This is the
+# THIRD time this repo has hit the shape - audit_retractions.py counted its
+# own exclusion registry, audit_citation_identifiers.py needed
+# AUDIT_TRAIL_FIELDS - so it is applied here as the established rule rather
+# than rediscovered. Reported, never failed; the count is printed so the
+# category can never go silent.
+# NEGATIVE CONTROL, run 2026-08-28 before this exemption was accepted: a
+# fabricated coordinate ("Diabetes Care 1999;22(3):999-1000. PMID:32847960")
+# was appended to build_lada_prevalence.py, a LIVE builder. The gate failed
+# with exactly 1 live suspect while the 5 audit-trail records stayed reported
+# and non-failing; the injection was then reverted. An exemption is only
+# worth having if the gate still fires without it, and that was measured
+# rather than assumed.
+RE_ONESHOT = re.compile(r'^(_run_|_close_run_|_tmp_)|_\d{8}\.py$')
+
+
+def is_audit_trail(filename):
+    return bool(RE_ONESHOT.match(filename) or RE_ONESHOT.search(filename))
+
 
 def strip_html(text):
     return RE_WS.sub(' ', RE_TAG.sub(' ', text)).strip()
@@ -453,11 +489,22 @@ def main():
             if r.get('probe'):
                 print('     PROBE    %s' % r['probe'])
 
-    bad = sum(len(buckets[k]) for k in
-              ('NONRESOLVING', 'POINTS_ELSEWHERE', 'COORD_MISMATCH', 'UNRESOLVED'))
+    suspect = [r for k in ('NONRESOLVING', 'POINTS_ELSEWHERE',
+                           'COORD_MISMATCH', 'UNRESOLVED')
+               for r in buckets[k]]
+    live = [r for r in suspect if not is_audit_trail(r['file'])]
+    trail = [r for r in suspect if is_audit_trail(r['file'])]
+    bad = len(live)
+
     print('\nReport: %s' % REPORT)
-    print('Checked %d coordinates: %d OK, %d suspect'
-          % (len(refs), len(buckets['OK']), bad))
+    print('Checked %d coordinates: %d OK, %d suspect (%d live, %d audit-trail)'
+          % (len(refs), len(buckets['OK']), len(suspect), bad, len(trail)))
+    if trail:
+        # Printed, not hidden. A category that stops being counted is a
+        # category that can start hiding real defects.
+        print('  Audit-trail records quoting a repaired defect (do not fail):')
+        for r in trail:
+            print('    %s:%s  PMID %s' % (r['file'], r['line'], r['pmid']))
     if bad:
         print('[FAIL] %d citation coordinate(s) do not match their PMID' % bad)
         return 1

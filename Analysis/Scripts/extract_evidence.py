@@ -347,14 +347,14 @@ def load_papers():
     # evicted it, because "Latent Profile Analysis" collides with LADA.
     # Guarding ingest_papers.py and reconcile_paper_index.py was not enough:
     # extraction reads the filesystem, not the index.
-    not_corpus = set()
-    nc_path = os.path.join(results_dir, 'not_corpus_pmids.json')
-    if os.path.exists(nc_path):
-        try:
-            with open(nc_path, 'r', encoding='utf-8') as f:
-                not_corpus = set(json.load(f).get('pmids', {}))
-        except (json.JSONDecodeError, IOError):
-            not_corpus = set()
+    # AND IT WAS STILL NOT ENOUGH (found 2026-08-28). The 2026-08-25 patch
+    # read not_corpus_pmids.json only. FLAGGED - the repo's older and larger
+    # off-topic adjudication, 18 papers - was never consulted here, and 12 of
+    # those 18 still had cached abstracts in this very directory. So this
+    # loop kept admitting papers that extract_corpus_data.py had been
+    # excluding for months. Membership now comes from one place.
+    import corpus_membership
+    not_corpus = corpus_membership.excluded_pmids()
 
     abstracts = {}
     skipped = []

@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "papers_processed": 52,
-    "total_extractions": 229,
+    "papers_processed": 53,
+    "total_extractions": 232,
     "extraction_types": {
-      "dose_response": 169,
+      "dose_response": 173,
       "odds_ratio": 24,
       "survival_graft": 2,
-      "inflammatory_markers": 4,
       "remission": 15,
       "hba1c_change": 6,
       "hazard_ratio": 7,
-      "autoantibody": 2
+      "autoantibody": 2,
+      "inflammatory_markers": 3
     },
     "rejection_gate": {
       "enabled": true,
@@ -34,8 +34,8 @@
       "enabled": true,
       "added": "2026-08-19",
       "rule": "collapse identical normalized matched_text within (pmid, data_type); repeat count preserved in the \"occurrences\" field",
-      "restatements_collapsed": 65,
-      "papers_affected": 14
+      "restatements_collapsed": 69,
+      "papers_affected": 15
     }
   },
   "dedupe_log": [
@@ -59,6 +59,13 @@
       "raw": 8,
       "unique": 7,
       "collapsed": 1
+    },
+    {
+      "pmid": "40598585",
+      "data_type": "dose_response",
+      "raw": 9,
+      "unique": 5,
+      "collapsed": 4
     },
     {
       "pmid": "41889274",
@@ -750,48 +757,6 @@
         ]
       },
       {
-        "pmid": "39428507",
-        "pmcid": "PMC11490997",
-        "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-        "year": "2024",
-        "journal": "J Neuroinflammation",
-        "matched_text": "216μg MOG35",
-        "values": [
-          "216",
-          "μg",
-          "MOG35"
-        ],
-        "context": "ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells w",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          7,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "39428507",
-        "pmcid": "PMC11490997",
-        "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-        "year": "2024",
-        "journal": "J Neuroinflammation",
-        "matched_text": "350μg mycobacterium",
-        "values": [
-          "350",
-          "μg",
-          "mycobacterium"
-        ],
-        "context": "EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen and inguinal lymph n",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          7,
-          8,
-          12
-        ]
-      },
-      {
         "pmid": "39613428",
         "pmcid": "PMC11605811",
         "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
@@ -1202,6 +1167,111 @@
           "BYL719"
         ],
         "context": "of CYP3A4 inhibitors, warranting caution during co-administration. However, studies evaluating the pharmacokinetic interactions of repeated doses of 300 mg BYL719 with single doses of sensitive substrates for CYP3A4 (midazolam), CYP2C8 (repaglinide), CYP2C9 (warfarin), CYP2C19 (omeprazole), and CYP2B6 (bupropio",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "40598585",
+        "pmcid": "PMC12211534",
+        "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+        "year": "2025",
+        "journal": "BMC Med",
+        "matched_text": "3 mg 1",
+        "values": [
+          "3",
+          "mg",
+          "1"
+        ],
+        "context": "utologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%).",
+        "occurrences": 2,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "40598585",
+        "pmcid": "PMC12211534",
+        "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+        "year": "2025",
+        "journal": "BMC Med",
+        "matched_text": "11 mg 2",
+        "values": [
+          "11",
+          "mg",
+          "2"
+        ],
+        "context": "eron-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, rankings",
+        "occurrences": 4,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "40598585",
+        "pmcid": "PMC12211534",
+        "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+        "year": "2025",
+        "journal": "BMC Med",
+        "matched_text": "3 mg dose",
+        "values": [
+          "3",
+          "mg",
+          "dose"
+        ],
+        "context": "dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus comparato",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "40598585",
+        "pmcid": "PMC12211534",
+        "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+        "year": "2025",
+        "journal": "BMC Med",
+        "matched_text": "11 mg dose",
+        "values": [
+          "11",
+          "mg",
+          "dose"
+        ],
+        "context": "ifferences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 months. When c",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "40598585",
+        "pmcid": "PMC12211534",
+        "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+        "year": "2025",
+        "journal": "BMC Med",
+        "matched_text": "3 mg and",
+        "values": [
+          "3",
+          "mg",
+          "and"
+        ],
+        "context": "(the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compared to",
         "occurrences": 1,
         "gap_relevance": [
           4,
@@ -1827,6 +1897,26 @@
           "mg"
         ],
         "context": "e, Rosa26-eGfp, InsR+/− and Foxo1flox/lox mice have been described. We performed genotyping as described. Metabolic Studies We injected STZ i.p. at a dose of 50mg/kg for five consecutive days in 3–4 month-old male mice and began to analyze them 21 days later. We analyzed multiparous females (defined as having c",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "21719096",
+        "pmcid": "PMC3462593",
+        "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+        "year": "2011",
+        "journal": "Lancet",
+        "matched_text": "dose of 10 mg",
+        "values": [
+          "10",
+          "mg"
+        ],
+        "context": "s Squibb) was given on days 1, 14, 28, and then every 28 days with the last dose on day 700 (total 27 doses) as a 30 minute intravenous infusion at a dose of 10 mg/kg (maximum 1000 mg/dose) in a 100 ml 0.9% sodium chloride infusion. Normal saline infusion was used as placebo. Patients did not receive any premedi",
         "occurrences": 1,
         "gap_relevance": [
           4,
@@ -4415,87 +4505,6 @@
         ]
       }
     ],
-    "inflammatory_markers": [
-      {
-        "pmid": "39428507",
-        "pmcid": "PMC11490997",
-        "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-        "year": "2024",
-        "journal": "J Neuroinflammation",
-        "matched_text": "IL-1β 20ng/ml",
-        "values": [
-          "20",
-          "ng/ml"
-        ],
-        "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex, France). After 3 days, 25 to 10 million cells were injected intraperitoneally (I.P). EAE onset typically start",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "27821710",
-        "pmcid": "PMC5118642",
-        "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-        "year": "2016",
-        "journal": "J Pharmacol Exp Ther",
-        "matched_text": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-        "values": [
-          "4.6"
-        ],
-        "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whether Glassia alters dendritic cell maturation as reported using other preparations of hAAT, cultured bone marrow-derived dendritic cells were treated wi",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "32358544",
-        "pmcid": "PMC7195385",
-        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-        "year": "2020",
-        "journal": "Nat Commun",
-        "matched_text": "NLRP3 trigger, with 0.1 μg/mL",
-        "values": [
-          "0.1",
-          "μg/mL"
-        ],
-        "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was significantly reduced after both SGLT2 inhibitor and sulfonylurea treatment (3733 ± 360 to 2549 ± 320 pg/mL, P < 0.001; and 3777 ± 485",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      },
-      {
-        "pmid": "32358544",
-        "pmcid": "PMC7195385",
-        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-        "year": "2020",
-        "journal": "Nat Commun",
-        "matched_text": "IL-1β and IL-18 were 0.033 pg/mL",
-        "values": [
-          "0.033",
-          "pg/mL"
-        ],
-        "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standard deviation. Isolation and culture of PBMCs Samples of whole blood were collected into acid citrate dextrose tubes. PBMCs were isol",
-        "occurrences": 1,
-        "gap_relevance": [
-          4,
-          5,
-          8,
-          12
-        ]
-      }
-    ],
     "remission": [
       {
         "pmid": "39634180",
@@ -5050,6 +5059,67 @@
           10
         ]
       }
+    ],
+    "inflammatory_markers": [
+      {
+        "pmid": "27821710",
+        "pmcid": "PMC5118642",
+        "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+        "year": "2016",
+        "journal": "J Pharmacol Exp Ther",
+        "matched_text": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+        "values": [
+          "4.6"
+        ],
+        "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whether Glassia alters dendritic cell maturation as reported using other preparations of hAAT, cultured bone marrow-derived dendritic cells were treated wi",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "32358544",
+        "pmcid": "PMC7195385",
+        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+        "year": "2020",
+        "journal": "Nat Commun",
+        "matched_text": "NLRP3 trigger, with 0.1 μg/mL",
+        "values": [
+          "0.1",
+          "μg/mL"
+        ],
+        "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was significantly reduced after both SGLT2 inhibitor and sulfonylurea treatment (3733 ± 360 to 2549 ± 320 pg/mL, P < 0.001; and 3777 ± 485",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "32358544",
+        "pmcid": "PMC7195385",
+        "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+        "year": "2020",
+        "journal": "Nat Commun",
+        "matched_text": "IL-1β and IL-18 were 0.033 pg/mL",
+        "values": [
+          "0.033",
+          "pg/mL"
+        ],
+        "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standard deviation. Isolation and culture of PBMCs Samples of whole blood were collected into acid citrate dextrose tubes. PBMCs were isol",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          5,
+          8,
+          12
+        ]
+      }
     ]
   },
   "paper_stats": {
@@ -5094,17 +5164,6 @@
         "dose_response"
       ],
       "total_extractions": 7
-    },
-    "39428507": {
-      "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-      "year": "2024",
-      "journal": "J Neuroinflammation",
-      "pmcid": "PMC11490997",
-      "extraction_types": [
-        "dose_response",
-        "inflammatory_markers"
-      ],
-      "total_extractions": 3
     },
     "39613428": {
       "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
@@ -5176,6 +5235,16 @@
         "dose_response"
       ],
       "total_extractions": 3
+    },
+    "40598585": {
+      "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+      "year": "2025",
+      "journal": "BMC Med",
+      "pmcid": "PMC12211534",
+      "extraction_types": [
+        "dose_response"
+      ],
+      "total_extractions": 5
     },
     "40697602": {
       "title": "Sodium-glucose co-transporter 2 inhibitors improve insulin resistance and β-cell function in type 2 diabetes: A meta-analysis.",
@@ -5266,6 +5335,16 @@
         "dose_response"
       ],
       "total_extractions": 2
+    },
+    "21719096": {
+      "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+      "year": "2011",
+      "journal": "Lancet",
+      "pmcid": "PMC3462593",
+      "extraction_types": [
+        "dose_response"
+      ],
+      "total_extractions": 1
     },
     "23248199": {
       "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
@@ -5717,20 +5796,6 @@
           "context": "tiveness and safety of dorzagliatin as a tailpiece to metformin in patients who are not able to achieve the best control of glycemia with a metformin dose of 1500 mg per day. Another Phase 3 test of the DAWN study was performed in patients suffering from medium T2DM with glycemic deficiency controll"
         },
         {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "216μg MOG35",
-          "context": "ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathoge"
-        },
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "350μg mycobacterium",
-          "context": "EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen a"
-        },
-        {
           "pmid": "39613428",
           "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
           "year": "2024",
@@ -5869,6 +5934,41 @@
           "year": "2025",
           "value": "300 mg BYL719",
           "context": "of CYP3A4 inhibitors, warranting caution during co-administration. However, studies evaluating the pharmacokinetic interactions of repeated doses of 300 mg BYL719 with single doses of sensitive substrates for CYP3A4 (midazolam), CYP2C8 (repaglinide), CYP2C9 (warfarin), CYP2C19 (omeprazole), and CYP2"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg 1",
+          "context": "utologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = "
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg 2",
+          "context": "eron-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, r"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg dose",
+          "context": "dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus c"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg dose",
+          "context": "ifferences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 mont"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg and",
+          "context": "(the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compa"
         },
         {
           "pmid": "40697602",
@@ -6079,6 +6179,13 @@
           "year": "2012",
           "value": "dose of 50mg",
           "context": "e, Rosa26-eGfp, InsR+/− and Foxo1flox/lox mice have been described. We performed genotyping as described. Metabolic Studies We injected STZ i.p. at a dose of 50mg/kg for five consecutive days in 3–4 month-old male mice and began to analyze them 21 days later. We analyzed multiparous females (defined"
+        },
+        {
+          "pmid": "21719096",
+          "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+          "year": "2011",
+          "value": "dose of 10 mg",
+          "context": "s Squibb) was given on days 1, 14, 28, and then every 28 days with the last dose on day 700 (total 27 doses) as a 30 minute intravenous infusion at a dose of 10 mg/kg (maximum 1000 mg/dose) in a 100 ml 0.9% sodium chloride infusion. Normal saline infusion was used as placebo. Patients did not receiv"
         },
         {
           "pmid": "23413806",
@@ -6792,13 +6899,6 @@
       ],
       "inflammatory_markers": [
         {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
           "pmid": "27821710",
           "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
           "year": "2016",
@@ -6950,20 +7050,6 @@
           "context": "tiveness and safety of dorzagliatin as a tailpiece to metformin in patients who are not able to achieve the best control of glycemia with a metformin dose of 1500 mg per day. Another Phase 3 test of the DAWN study was performed in patients suffering from medium T2DM with glycemic deficiency controll"
         },
         {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "216μg MOG35",
-          "context": "ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathoge"
-        },
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "350μg mycobacterium",
-          "context": "EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen a"
-        },
-        {
           "pmid": "39613428",
           "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
           "year": "2024",
@@ -7102,6 +7188,41 @@
           "year": "2025",
           "value": "300 mg BYL719",
           "context": "of CYP3A4 inhibitors, warranting caution during co-administration. However, studies evaluating the pharmacokinetic interactions of repeated doses of 300 mg BYL719 with single doses of sensitive substrates for CYP3A4 (midazolam), CYP2C8 (repaglinide), CYP2C9 (warfarin), CYP2C19 (omeprazole), and CYP2"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg 1",
+          "context": "utologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = "
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg 2",
+          "context": "eron-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, r"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg dose",
+          "context": "dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus c"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg dose",
+          "context": "ifferences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 mont"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg and",
+          "context": "(the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compa"
         },
         {
           "pmid": "40697602",
@@ -7312,6 +7433,13 @@
           "year": "2012",
           "value": "dose of 50mg",
           "context": "e, Rosa26-eGfp, InsR+/− and Foxo1flox/lox mice have been described. We performed genotyping as described. Metabolic Studies We injected STZ i.p. at a dose of 50mg/kg for five consecutive days in 3–4 month-old male mice and began to analyze them 21 days later. We analyzed multiparous females (defined"
+        },
+        {
+          "pmid": "21719096",
+          "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+          "year": "2011",
+          "value": "dose of 10 mg",
+          "context": "s Squibb) was given on days 1, 14, 28, and then every 28 days with the last dose on day 700 (total 27 doses) as a 30 minute intravenous infusion at a dose of 10 mg/kg (maximum 1000 mg/dose) in a 100 ml 0.9% sodium chloride infusion. Normal saline infusion was used as placebo. Patients did not receiv"
         },
         {
           "pmid": "23413806",
@@ -8288,20 +8416,6 @@
           "context": "tiveness and safety of dorzagliatin as a tailpiece to metformin in patients who are not able to achieve the best control of glycemia with a metformin dose of 1500 mg per day. Another Phase 3 test of the DAWN study was performed in patients suffering from medium T2DM with glycemic deficiency controll"
         },
         {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "216μg MOG35",
-          "context": "ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathoge"
-        },
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "350μg mycobacterium",
-          "context": "EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen a"
-        },
-        {
           "pmid": "39613428",
           "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
           "year": "2024",
@@ -8440,6 +8554,41 @@
           "year": "2025",
           "value": "300 mg BYL719",
           "context": "of CYP3A4 inhibitors, warranting caution during co-administration. However, studies evaluating the pharmacokinetic interactions of repeated doses of 300 mg BYL719 with single doses of sensitive substrates for CYP3A4 (midazolam), CYP2C8 (repaglinide), CYP2C9 (warfarin), CYP2C19 (omeprazole), and CYP2"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg 1",
+          "context": "utologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = "
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg 2",
+          "context": "eron-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, r"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg dose",
+          "context": "dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus c"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg dose",
+          "context": "ifferences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 mont"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg and",
+          "context": "(the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compa"
         },
         {
           "pmid": "40697602",
@@ -8650,6 +8799,13 @@
           "year": "2012",
           "value": "dose of 50mg",
           "context": "e, Rosa26-eGfp, InsR+/− and Foxo1flox/lox mice have been described. We performed genotyping as described. Metabolic Studies We injected STZ i.p. at a dose of 50mg/kg for five consecutive days in 3–4 month-old male mice and began to analyze them 21 days later. We analyzed multiparous females (defined"
+        },
+        {
+          "pmid": "21719096",
+          "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+          "year": "2011",
+          "value": "dose of 10 mg",
+          "context": "s Squibb) was given on days 1, 14, 28, and then every 28 days with the last dose on day 700 (total 27 doses) as a 30 minute intravenous infusion at a dose of 10 mg/kg (maximum 1000 mg/dose) in a 100 ml 0.9% sodium chloride infusion. Normal saline infusion was used as placebo. Patients did not receiv"
         },
         {
           "pmid": "23413806",
@@ -9343,36 +9499,6 @@
           "year": "2022",
           "value": "dose of 0.125 mg",
           "context": "a dose-finding study was planned with a lower daily dose of 0.25 mg. To evaluate the linearity of the dose-response relationship, a plan with a daily dose of 0.125 mg was ideal, but it was difficult in terms of formulation production and was abandoned. From the results of our pharmacokinetic study, "
-        }
-      ],
-      "inflammatory_markers": [
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
-          "pmid": "27821710",
-          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-          "year": "2016",
-          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "NLRP3 trigger, with 0.1 μg/mL",
-          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "IL-1β and IL-18 were 0.033 pg/mL",
-          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
         }
       ],
       "remission": [
@@ -9541,6 +9667,29 @@
           "value": "autoantibody positive), and 24 (11.8%",
           "context": "whom 114 (56.2%) were designated as type 1 diabetic (started insulin at diagnosis and all autoantibody positive), 65 (32.0%) were classified as LADA (free of insulin for >6 months from diagnosis and autoantibody positive), and 24 (11.8%) were intermediate (started insulin within 6 months but after 1"
         }
+      ],
+      "inflammatory_markers": [
+        {
+          "pmid": "27821710",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "year": "2016",
+          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "NLRP3 trigger, with 0.1 μg/mL",
+          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "IL-1β and IL-18 were 0.033 pg/mL",
+          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
+        }
       ]
     },
     "12": {
@@ -9670,20 +9819,6 @@
           "year": "2024",
           "value": "dose of 1500 mg",
           "context": "tiveness and safety of dorzagliatin as a tailpiece to metformin in patients who are not able to achieve the best control of glycemia with a metformin dose of 1500 mg per day. Another Phase 3 test of the DAWN study was performed in patients suffering from medium T2DM with glycemic deficiency controll"
-        },
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "216μg MOG35",
-          "context": "ioimager (Perkin Elmer, USA). For passive EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathoge"
-        },
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "350μg mycobacterium",
-          "context": "EAE induction, CD45.1 C57Bl/6 mice were immunized with subcutaneous injection of MOG35 − 55 peptide in CFA (216μg MOG35 − 55 (Biosynthesis, USA), and 350μg mycobacterium tuberculosis H37 RA (ThermoFisher scientific, France) in 100 µl). 2 weeks later, pathogenic cells were harvested from the spleen a"
         },
         {
           "pmid": "39613428",
@@ -9824,6 +9959,41 @@
           "year": "2025",
           "value": "300 mg BYL719",
           "context": "of CYP3A4 inhibitors, warranting caution during co-administration. However, studies evaluating the pharmacokinetic interactions of repeated doses of 300 mg BYL719 with single doses of sensitive substrates for CYP3A4 (midazolam), CYP2C8 (repaglinide), CYP2C9 (warfarin), CYP2C19 (omeprazole), and CYP2"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg 1",
+          "context": "utologous and Wharton’s jelly-derived cells), azathioprine, interferon-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = "
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg 2",
+          "context": "eron-alpha (5000 IU), autologous dendritic cells, anti-TNF golimumab, low-dose ATG, 3 mg 1-course anti-CD3 teplizumab, baricitinib, cyclosporin and 9/11 mg 2-course anti-CD3 teplizumab but with substantial heterogeneity present (I2 = 66%). Azathioprine ranked highest (median ranking 3rd); however, r"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg dose",
+          "context": "dose with interventions when compared to placebo/no treatment (Additional file 1: Fig. S3). CTLA4, anti-TNF golimumab, baricitinib and both 1 course 3 mg dose and 2 course 9/11 mg dose anti-CD3 teplizumab therapies showed a small but statistically significant reduction in daily insulin dose versus c"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "11 mg dose",
+          "context": "ifferences in highest ranked interventions, with MSC, ADC, baricitinib, interferon-alpha 5000 IU, anti-TNF golimumab, anti-CD3 teplizumab (2 course 9/11 mg dose) and low-dose ATG remaining near the top and consistently demonstrating significantly higher levels of C-peptide than comparator at 12 mont"
+        },
+        {
+          "pmid": "40598585",
+          "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+          "year": "2025",
+          "value": "3 mg and",
+          "context": "(the most highly correlated measures of C-peptide), interferon-alpha 5000 IU, ADC, MSC (Autologous), anti-TNF golimumab, low-dose ATG, both 1 course 3 mg and 2 course 9/11 mg anti-CD3 teplizumab and JAK inhibitor baricitinib continued to show statistically significantly higher C-peptide levels compa"
         },
         {
           "pmid": "40697602",
@@ -10034,6 +10204,13 @@
           "year": "2012",
           "value": "dose of 50mg",
           "context": "e, Rosa26-eGfp, InsR+/− and Foxo1flox/lox mice have been described. We performed genotyping as described. Metabolic Studies We injected STZ i.p. at a dose of 50mg/kg for five consecutive days in 3–4 month-old male mice and began to analyze them 21 days later. We analyzed multiparous females (defined"
+        },
+        {
+          "pmid": "21719096",
+          "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+          "year": "2011",
+          "value": "dose of 10 mg",
+          "context": "s Squibb) was given on days 1, 14, 28, and then every 28 days with the last dose on day 700 (total 27 doses) as a 30 minute intravenous infusion at a dose of 10 mg/kg (maximum 1000 mg/dose) in a 100 ml 0.9% sodium chloride infusion. Normal saline infusion was used as placebo. Patients did not receiv"
         },
         {
           "pmid": "23413806",
@@ -10729,36 +10906,6 @@
           "context": "a dose-finding study was planned with a lower daily dose of 0.25 mg. To evaluate the linearity of the dose-response relationship, a plan with a daily dose of 0.125 mg was ideal, but it was difficult in terms of formulation production and was abandoned. From the results of our pharmacokinetic study, "
         }
       ],
-      "inflammatory_markers": [
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
-          "pmid": "27821710",
-          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-          "year": "2016",
-          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "NLRP3 trigger, with 0.1 μg/mL",
-          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "IL-1β and IL-18 were 0.033 pg/mL",
-          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
-        }
-      ],
       "hba1c_change": [
         {
           "pmid": "40464081",
@@ -10801,6 +10948,29 @@
           "year": "2022",
           "value": "HbA1c reduction of -1.35%",
           "context": "s to holistically analyze the efficacy and safety of HCQ in managing glycemia in people with T2DM with rigorous grading of the results. In our meta-analysis, HCQ use over 6 months was associated with HbA1c reduction of -1.35% (95% CI:-2.10 to -0.59) compared to placebo and by -0.17% (95% CI:-0.30 to"
+        }
+      ],
+      "inflammatory_markers": [
+        {
+          "pmid": "27821710",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "year": "2016",
+          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "NLRP3 trigger, with 0.1 μg/mL",
+          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "IL-1β and IL-18 were 0.033 pg/mL",
+          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
         }
       ]
     },
@@ -11711,38 +11881,6 @@
         }
       ]
     },
-    "5": {
-      "inflammatory_markers": [
-        {
-          "pmid": "39428507",
-          "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-          "year": "2024",
-          "value": "IL-1β 20ng/ml",
-          "context": "1mM sodium Pyruvate, 0.1mM non-essential amino acids, 1% Penicillin-Streptavidin and 5 µM 2-βetamercapto-ethanol (all from ThermoLife Tech, France) and with a polarizing cytokine cocktail comprising IL-1β 20ng/ml, IL-23 20ng/ml, IL-6 20ng/ml (all from Biolegend, USA) and anti-TGFβ 10ng/ml (Euromedex"
-        },
-        {
-          "pmid": "27821710",
-          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
-          "year": "2016",
-          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
-          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "NLRP3 trigger, with 0.1 μg/mL",
-          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
-        },
-        {
-          "pmid": "32358544",
-          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
-          "year": "2020",
-          "value": "IL-1β and IL-18 were 0.033 pg/mL",
-          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
-        }
-      ]
-    },
     "9": {
       "remission": [
         {
@@ -11911,6 +12049,31 @@
           "year": "2013",
           "value": "autoantibody positive), and 24 (11.8%",
           "context": "whom 114 (56.2%) were designated as type 1 diabetic (started insulin at diagnosis and all autoantibody positive), 65 (32.0%) were classified as LADA (free of insulin for >6 months from diagnosis and autoantibody positive), and 24 (11.8%) were intermediate (started insulin within 6 months but after 1"
+        }
+      ]
+    },
+    "5": {
+      "inflammatory_markers": [
+        {
+          "pmid": "27821710",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "year": "2016",
+          "value": "IL-1β/IFNγ, its levels further increased 4.6-fold",
+          "context": "erage. Treatment with Glassia also reduced MCP-1 levels (33.8 ± 0.07% from stimulated levels) and IL-6 levels (52.9 ± 0.10% from stimulated levels). Although IL-10 levels increased in the presence of IL-1β/IFNγ, its levels further increased 4.6-fold in the presence of added Glassia. To assess whethe"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "NLRP3 trigger, with 0.1 μg/mL",
+          "context": "egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was signi"
+        },
+        {
+          "pmid": "32358544",
+          "title": "SGLT2 inhibition modulates NLRP3 inflammasome activity via ketones and insulin in diabetes with cardiovascular disease.",
+          "year": "2020",
+          "value": "IL-1β and IL-18 were 0.033 pg/mL",
+          "context": "iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2 standa"
         }
       ]
     }

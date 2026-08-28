@@ -28,36 +28,22 @@ with open(os.path.join(library_dir, 'index.json'), encoding='utf-8') as f:
     index = json.load(f)
 papers_meta = index['papers']
 
-# Load agent state to identify FLAGGED off-topic papers that must be excluded
-# from the published evidence pipeline (e.g., CRC, smoking-cessation, melanoma
-# papers that survived the original PubMed pull but are not diabetes-relevant).
-FLAGGED_PMIDS = set()
-_state_path = os.path.join(results_dir, 'agent_state.json')
-if os.path.exists(_state_path):
-    try:
-        with open(_state_path, encoding='utf-8') as _f:
-            _state = json.load(_f)
-        FLAGGED_PMIDS = {
-            str(pmid) for pmid, p in _state.get('papers', {}).items()
-            if p.get('status') == 'FLAGGED'
-        }
-    except Exception as _e:
-        print(f"  WARNING: could not load agent_state.json FLAGGED list: {_e}")
+# Membership is asked ONCE, in corpus_membership.py (2026-08-28).
+#
+# This file used to hand-roll the load of agent_state FLAGGED plus
+# not_corpus_pmids.json, and it was the ONLY consumer of five that read both.
+# extract_evidence.py and ingest_papers.py read only the registry, so 17
+# papers this repo had adjudicated off-topic were excluded here and admitted
+# there. The divergence was invisible because each loader looked correct on
+# its own. Importing the shared answer is the point: a sixth reader can no
+# longer start life with a sixth opinion.
+#
+# excluded_pmids() is the EVIDENCE-level question, which is the right one
+# here - extraction produces data points, and a BACKGROUND paper (citable,
+# no diabetes finding) must not produce any.
+import corpus_membership
 
-# Adjudicated non-corpus PMIDs must ALSO be excluded here (added 2026-08-25).
-# FLAGGED is derived from state['papers'], but the papers in
-# not_corpus_pmids.json were never in state['papers'] at all -- being absent
-# from state is precisely why they went unnoticed. So the FLAGGED filter alone
-# could not stop them, and their cached full text kept reaching extraction.
-_NOT_CORPUS_PMIDS = set()
-_nc_path = os.path.join(results_dir, 'not_corpus_pmids.json')
-if os.path.exists(_nc_path):
-    try:
-        with open(_nc_path, encoding='utf-8') as _f:
-            _NOT_CORPUS_PMIDS = {str(p) for p in json.load(_f).get('pmids', {})}
-    except Exception as _e:
-        print(f"  WARNING: could not load not_corpus_pmids.json: {_e}")
-FLAGGED_PMIDS |= _NOT_CORPUS_PMIDS
+FLAGGED_PMIDS = corpus_membership.excluded_pmids()
 
 # Section types in PubMed Open-Access XML that should NOT be scanned for
 # quantitative claims about the corpus drugs/conditions:

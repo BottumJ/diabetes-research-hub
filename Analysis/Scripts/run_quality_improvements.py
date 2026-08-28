@@ -176,6 +176,24 @@ SCRIPTS = {
     # protection: the pattern style, not the symptom.
     'wildcardaudit': ('audit_extractor_wildcards.py',
                       'Auditing extractors for unbounded-wildcard artifacts'),
+    # Added 2026-08-28. Closes the intake-door class instead of naming doors.
+    # Every previous seal here was applied to a specific script after that
+    # script leaked; this one fails any LIVE script that reads the abstracts
+    # dir, the fulltext dir or the library index without importing
+    # corpus_membership, whether or not it has leaked yet. Its first run
+    # found three more unguarded readers (build_corpus_analysis.py,
+    # rebuild_website.py, validate_citations.py) that no leak had surfaced.
+    'membershipgate': ('audit_unguarded_pmid_readers.py',
+                       'Gating on PMID readers that bypass corpus_membership'),
+    # Added 2026-08-28. Grades what KIND of study each live path rests on,
+    # from PubMed publication type rather than from this repo's own regexes.
+    # First run: the four highest-ranked paths by data-point count all rest
+    # on no primary data - ranks 1 and 2 on a meta-analysis whose numbers
+    # cannot be attributed, ranks 4 and 5 on a clinical trial PROTOCOL. A
+    # count answers "how much" and never "of what". Reports, never fails:
+    # labelling honest weak evidence is the goal, deleting it is not.
+    'pathdesign': ('audit_path_evidence_design.py',
+                   'Grading research-path evidence by study design (PubMed pubtype)'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),

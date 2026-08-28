@@ -250,9 +250,15 @@ def build_evidence_network(index_data):
     """
     papers = index_data.get('papers', {})
     cross_refs = index_data.get('cross_references', {})
-    flagged = _load_flagged_pmids()
+    # Rewired 2026-08-28. _load_flagged_pmids() was a SIXTH independent
+    # loader, found by audit_unguarded_pmid_readers.py rather than by a leak.
+    # It read FLAGGED only, so the 30 papers in not_corpus_pmids.json - which
+    # include a retracted paper - were still eligible to be nodes in the
+    # published evidence network.
+    import corpus_membership
+    flagged = corpus_membership.excluded_pmids()
     if flagged:
-        print(f'  Excluding {len(flagged)} FLAGGED PMIDs from evidence network.')
+        print(f'  Excluding {len(flagged)} non-evidence PMIDs from evidence network.')
 
     network = {
         'nodes': [],

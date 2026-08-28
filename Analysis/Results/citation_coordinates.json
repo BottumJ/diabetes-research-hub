@@ -1,17 +1,160 @@
 {
- "generated": "2026-08-27",
+ "generated": "2026-08-28",
  "window_chars": 200,
- "coordinates_checked": 107,
+ "coordinates_checked": 119,
  "counts": {
-  "OK": 107,
-  "COORD_MISMATCH": 0,
-  "POINTS_ELSEWHERE": 0,
-  "NONRESOLVING": 0,
+  "OK": 114,
+  "COORD_MISMATCH": 1,
+  "POINTS_ELSEWHERE": 2,
+  "NONRESOLVING": 2,
   "UNRESOLVED": 0
  },
- "nonresolving": [],
- "points_elsewhere": [],
- "coord_mismatch": [],
+ "nonresolving": [
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 48,
+   "pmid": "19373249",
+   "asserted": {
+    "journal": "Diabetes",
+    "year": "2009",
+    "volume": "58",
+    "issue": "7",
+    "page": "1416"
+   },
+   "record": "tles \" \"scores the NARRATIVE, and the narrative is the true part.\" ), \"canonical_example\": ( \"build_gka_lada.py published 'Diabetes. 2009 Jul;58(7):1416-28. \" \"",
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Rev Drug Discov",
+    "pages": "399-416",
+    "title": "Assessing the potential of glucokinase activators in diabetes therapy.",
+    "volume": "8",
+    "year": "2009"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": true
+   },
+   "verdict": "NONRESOLVING",
+   "probe": "no PubMed record at Diabetes 58:1416"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 180,
+   "pmid": "32307525",
+   "asserted": {
+    "journal": "Diabetes",
+    "year": "2013",
+    "volume": "62",
+    "issue": "12",
+    "page": "4297"
+   },
+   "record": ").\"), (\"build_gka_lada.py\", \"23835325\", \"published as 'Diabetes. 2013 Dec;62(12):4297-303 ... (LADA review)'\", \"Ilonen J et al., Diabetes 2013;62(10):3636-40, a",
+   "actual": {
+    "issue": "7",
+    "journal": "J Clin Endocrinol Metab",
+    "pages": "",
+    "title": "Decline Pattern of Beta-cell Function in Adult-onset Latent Autoimmune Diabetes: an 8-year Prospective Study.",
+    "volume": "105",
+    "year": "2020"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "NONRESOLVING",
+   "probe": "no PubMed record at Diabetes 62:4297"
+  }
+ ],
+ "points_elsewhere": [
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 190,
+   "pmid": "2873396",
+   "asserted": {
+    "journal": "Diabetes",
+    "year": "2024",
+    "volume": "73",
+    "issue": "6",
+    "page": "823"
+   },
+   "record": "24;73(6):823-833.\"), (\"build_drug_repurposing_screen.py\", \"1611143\", \"published as 'Feutren et al, Lancet 1986'\", \"The Feutren Lancet 1986 cyclosporine trial is",
+   "actual": {
+    "issue": "8499",
+    "journal": "Lancet",
+    "pages": "119-24",
+    "title": "Cyclosporin increases the rate and length of remissions in insulin-dependent diabetes of recent onset. Results of a multicentre double-blind trial.",
+    "volume": "2",
+    "year": "1986"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "POINTS_ELSEWHERE",
+   "probe": "coordinate resolves to PMID 38349844"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 207,
+   "pmid": "37221401",
+   "asserted": {
+    "journal": "Nat Rev Endocrinol",
+    "year": "2023",
+    "volume": "19",
+    "issue": "7",
+    "page": "377"
+   },
+   "record": "ews Endocrinology \" \"2023;19(7):379-380'\", \"Speake C & Herold KC, Nat Rev Endocrinol 2023;19(7):377-378. The asserted \" \"page 379 resolves to a DIFFERENT paper,",
+   "actual": {
+    "issue": "7",
+    "journal": "Nat Rev Endocrinol",
+    "pages": "379",
+    "title": "Gut microbiota influences effectiveness of anti-diabetic drug.",
+    "volume": "19",
+    "year": "2023"
+   },
+   "checks": {
+    "volume": true,
+    "page": false,
+    "year": true
+   },
+   "verdict": "POINTS_ELSEWHERE",
+   "probe": "coordinate resolves to PMID 37202589"
+  }
+ ],
+ "coord_mismatch": [
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 357,
+   "pmid": "30949058",
+   "asserted": {
+    "journal": "Care",
+    "year": "2002",
+    "volume": "25",
+    "issue": "10",
+    "page": "1897"
+   },
+   "record": "ndependent end-to-end check of docs/*.html found a \" \"real defect the same minute: build_gka_landscape.py asserted 'Diabetes \" \"Care. 2002;25(10):1897-1902' for",
+   "actual": {
+    "issue": "",
+    "journal": "Front Physiol",
+    "pages": "148",
+    "title": "The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans.",
+    "volume": "10",
+    "year": "2019"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "COORD_MISMATCH",
+   "probe": "journal token not indexed - could not conclude"
+  }
+ ],
  "unresolved": [],
  "ok": [
   {
@@ -60,6 +203,168 @@
     "title": "Sodium-glucose co-transporter 2 inhibitors improve insulin resistance and β-cell function in type 2 diabetes: A meta-analysis.",
     "volume": "16",
     "year": "2025"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 49,
+   "pmid": "19373249",
+   "asserted": {
+    "journal": "",
+    "year": "2009",
+    "volume": "8",
+    "issue": "5",
+    "page": "399"
+   },
+   "record": "is Nat Rev Drug Discov \" \"2009;8(5):399-416. Diabetes vol 58 issue 7 exists and holds 34 \" \"articles; page 1416 is not among them.\" ), \"found_by\": \"audit_citati",
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Rev Drug Discov",
+    "pages": "399-416",
+    "title": "Assessing the potential of glucokinase activators in diabetes therapy.",
+    "volume": "8",
+    "year": "2009"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 162,
+   "pmid": "35551294",
+   "asserted": {
+    "journal": "Nat Med",
+    "year": "2022",
+    "volume": "28",
+    "issue": "5",
+    "page": "965"
+   },
+   "record": " pubtype Comment. A News & Views \" \"commentary was being published as a phase 3 trial result. The real SEED \" \"trial is Zhu D et al. Nat Med 2022;28(5):965-973,",
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Med",
+    "pages": "965-973",
+    "title": "Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
+    "volume": "28",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 179,
+   "pmid": "9357409",
+   "asserted": {
+    "journal": "Lancet",
+    "year": "1997",
+    "volume": "350",
+    "issue": "9087",
+    "page": "1288"
+   },
+   "record": " was removed and the withdrawal \" \"is stated on the card. The qualitative claims are now sourced to UKPDS 25 \" \"(Turner R et al., Lancet 1997;350(9087):1288-93,",
+   "actual": {
+    "issue": "9087",
+    "journal": "Lancet",
+    "pages": "1288-93",
+    "title": "UKPDS 25: autoantibodies to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes. UK Prospective Diabetes Study Group.",
+    "volume": "350",
+    "year": "1997"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 226,
+   "pmid": "36449148",
+   "asserted": {
+    "journal": "Drugs",
+    "year": "2022",
+    "volume": "82",
+    "issue": "18",
+    "page": "1745"
+   },
+   "record": "t drug development of dorzagliatin', J Diabetes \" \"2024;16(6):e13563 - a REVIEW. Regulatory-status claim re-sourced to Syed \" \"YY, Drugs 2022;82(18):1745-1750 (",
+   "actual": {
+    "issue": "18",
+    "journal": "Drugs",
+    "pages": "1745-1750",
+    "title": "Dorzagliatin: First Approval.",
+    "volume": "82",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_27.py",
+   "line": 247,
+   "pmid": "21323736",
+   "asserted": {
+    "journal": "Clin Transplant",
+    "year": "2012",
+    "volume": "26",
+    "issue": "1",
+    "page": "23"
+   },
+   "record": "(Beckwith J \" \"et al., Clin Transplant 2012;26(1):23-33) is retained ONLY as the islet \" \"transplantation cost anchor it actually provides; the 2035 extrapolati",
+   "actual": {
+    "issue": "1",
+    "journal": "Clin Transplant",
+    "pages": "23-33",
+    "title": "A health economic analysis of clinical islet transplantation.",
+    "volume": "26",
+    "year": "2012"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_08_28.py",
+   "line": 93,
+   "pmid": "40111679",
+   "asserted": {
+    "journal": "Ther",
+    "year": "2026",
+    "volume": "40",
+    "issue": "1",
+    "page": "347"
+   },
+   "record": "ct of Verapamil on Blood Glucose in Type 1 and Type 2 ' 'Diabetes Mellitus: A Systematic Review and Meta-Analysis\", Cardiovasc Drugs ' 'Ther 2026;40(1):347-359.",
+   "actual": {
+    "issue": "1",
+    "journal": "Cardiovasc Drugs Ther",
+    "pages": "347-359",
+    "title": "Effect of Verapamil on Blood Glucose in Type 1 and Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis.",
+    "volume": "40",
+    "year": "2026"
    },
    "checks": {
     "volume": true,
@@ -2841,6 +3146,33 @@
     "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
     "volume": "10",
     "year": "2020"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_nutrition_lada.py",
+   "line": 20,
+   "pmid": "28885622",
+   "asserted": {
+    "journal": "Nat Rev Endocrinol",
+    "year": "2017",
+    "volume": "13",
+    "issue": "11",
+    "page": "674"
+   },
+   "record": ", Buzzetti R, Zampetti S, Maddaloni # E, \"Adult-onset autoimmune diabetes: current knowledge and implications for # management\", Nat Rev Endocrinol 2017;13(11):",
+   "actual": {
+    "issue": "11",
+    "journal": "Nat Rev Endocrinol",
+    "pages": "674-686",
+    "title": "Adult-onset autoimmune diabetes: current knowledge and implications for management.",
+    "volume": "13",
+    "year": "2017"
    },
    "checks": {
     "volume": true,

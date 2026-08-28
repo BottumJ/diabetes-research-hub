@@ -135,15 +135,15 @@ def load_not_corpus():
     index still came back with both entries: this function re-adds any PMID
     whose abstract is on disk, which is the second door into the index. A
     guard on one intake path is not a guard.
+
+    Rewired 2026-08-28 to corpus_membership. This function and
+    load_flagged_pmids() above were reading the two registries separately and
+    treating them differently - FLAGGED produced a REPORTED note, the
+    registry produced an EXCLUSION - so an off-topic paper adjudicated in
+    state was described here and admitted anyway.
     """
-    path = os.path.join(RESULTS, 'not_corpus_pmids.json')
-    if not os.path.exists(path):
-        return {}
-    try:
-        with open(path, encoding='utf-8') as f:
-            return json.load(f).get('pmids') or {}
-    except (OSError, ValueError):
-        return {}
+    import corpus_membership
+    return {p: corpus_membership.reason(p) for p in corpus_membership.excluded_pmids()}
 
 
 def reconcile(dry_run=False):

@@ -8,6 +8,27 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(script_dir, '..', '..')
 output_path = os.path.join(base_dir, 'Dashboards', 'Nutrition_LADA.html')
 
+# CITATION REPAIR, 2026-08-28. The LADA classification reference read
+# PMID:28397826, which is "Immunotherapy: Hiding in plain sight: immune escape
+# in the era of targeted T-cell-based immunotherapies", Nat Rev Clin Oncol
+# 2017 - not a LADA paper. A plausible transposition, since both it and the
+# intended source are 2017 Nature Reviews titles, and exactly the near-miss a
+# topic screen cannot see: the paper was flagged off-topic in agent_state.json
+# in April and the dashboard kept publishing it for four months because
+# nothing enforced FLAGGED. Correct paper resolved live via
+# esearch Buzzetti[au] AND "Nat Rev Endocrinol"[ta], confirmed on first
+# author, journal and year: PMID 28885622, Buzzetti R, Zampetti S, Maddaloni
+# E, "Adult-onset autoimmune diabetes: current knowledge and implications for
+# management", Nat Rev Endocrinol 2017;13(11):674-686. The asserted title is
+# now PubMed's rather than a paraphrase, so it cannot drift again.
+#
+# This note lives in the BUILDER and not in the emitted HTML on purpose. It
+# was first written as an HTML comment; postprocess_dashboards.py then
+# linkified the quoted PMID inside that comment, putting a dead citation back
+# onto the published page in exactly the shape - a PMID sitting in a comment -
+# that put PMID 12345678 into this corpus in the first place. Explanations of
+# a bad citation must not ship next to the good one.
+
 html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -773,7 +794,7 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">LADA: Autoimmune Diabetes in Adults</div>
-                    <div class="reference-meta">Buzzetti et al. Management of latent autoimmune diabetes in adults. Nat Rev Endocrinol. <a href="https://pubmed.ncbi.nlm.nih.gov/28397826/" target="_blank">PMID:28397826</a></div>
+                    <div class="reference-meta">Buzzetti R, Zampetti S, Maddaloni E. Adult-onset autoimmune diabetes: current knowledge and implications for management. Nat Rev Endocrinol. 2017;13(11):674-686. <a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">PMID:28885622</a></div>
                     <p>LADA is defined by positive autoantibodies (GADA, IA-2A, or both) + onset age >30 years + initial nonketotic presentation. Represents 5-10% of apparent T2D in most populations. Characterized by slowly progressive beta cell destruction.</p>
                 </div>
 

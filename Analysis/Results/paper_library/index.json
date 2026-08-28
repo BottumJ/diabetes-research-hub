@@ -1,17 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2026-08-27T03:28:24.751666",
-    "total_pmids": 275,
-    "abstracts_fetched": 274,
+    "generated_at": "2026-08-28T08:44:05.035887",
+    "total_pmids": 277,
+    "abstracts_fetched": 276,
     "pmc_available": 143,
-    "fulltext_fetched": 130,
-    "total_indexed": 305,
-    "orphans_reconciled": 30,
-    "orphans_reconciled_on": "2026-08-27",
+    "fulltext_fetched": 132,
+    "total_indexed": 296,
+    "orphans_reconciled": 19,
+    "orphans_reconciled_on": "2026-08-28",
     "orphan_status_counts": {
-      "OFF_TOPIC": 8,
       "OFF_TOPIC_PRESUMED": 6,
-      "UNSCREENED_ORPHAN": 16
+      "UNSCREENED_ORPHAN": 13
     },
     "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see."
   },
@@ -252,7 +251,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 782,
+          "line": 803,
           "context": "<div class=\"reference-meta\">Lohmann et al. Diabetologia, 2001. <a href=\"https://pubmed.ncbi.nlm.nih.gov/11484077/\" targe"
         }
       ],
@@ -433,7 +432,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 852,
+          "line": 873,
           "context": "<div class=\"reference-meta\">Doolan et al. Diabetes Care, 2005. <a href=\"https://pubmed.ncbi.nlm.nih.gov/15793177/\" targe"
         }
       ],
@@ -658,7 +657,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 782,
+          "line": 803,
           "context": "<div class=\"reference-meta\">Lohmann et al. Diabetologia, 2001. <a href=\"https://pubmed.ncbi.nlm.nih.gov/11484077/\" targe"
         }
       ],
@@ -818,7 +817,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 852,
+          "line": 873,
           "context": "<div class=\"reference-meta\">Doolan et al. Diabetes Care, 2005. <a href=\"https://pubmed.ncbi.nlm.nih.gov/15793177/\" targe"
         }
       ],
@@ -1816,7 +1815,7 @@
         },
         {
           "file": "build_immunomod_lada.py",
-          "line": 824,
+          "line": 832,
           "context": "<td><span class=\"source\">UKPDS (PMID:18073361)</span></td>"
         }
       ],
@@ -2038,40 +2037,6 @@
       ],
       "abstract_length": 2080
     },
-    "18662538": {
-      "pmid": "18662538",
-      "title": "TGFbeta in Cancer.",
-      "journal": "Cell",
-      "year": "2008",
-      "doi": "10.1016/j.cell.2008.07.001",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_data_dictionary.py",
-          "line": 465,
-          "context": "'source': 'Massague J. TGFbeta in cancer. Cell 2008;134(2):215-230. PMID:18662538'"
-        }
-      ],
-      "mesh_terms": [
-        "Animals",
-        "Disease Progression",
-        "Humans",
-        "Neoplasms",
-        "Signal Transduction",
-        "Transforming Growth Factor beta"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't",
-        "Review"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 799
-    },
     "18713146": {
       "pmid": "18713146",
       "title": "Rapamycin in islet transplantation: friend or foe?",
@@ -2160,7 +2125,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 869,
+          "line": 890,
           "context": "<p>GAD-alum (recombinant GAD65 with aluminium hydroxide adjuvant) showed dose-dependent C-peptide preservation in HLA-DR"
         }
       ],
@@ -2361,7 +2326,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 810,
+          "line": 831,
           "context": "<div class=\"reference-meta\">Poudyal et al. (J Nutr Metab, 2011); Hartweg et al. Curr Opin Lipidol, 2009. <a href=\"https:"
         }
       ],
@@ -2458,6 +2423,21 @@
           "file": "build_gka_lada.py",
           "line": 747,
           "context": "Matschinsky FM. Nat Rev Drug Discov. 2009 May;8(5):399-416. PMID:19373249."
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 48,
+          "context": "\"PMID:19373249' under prose correctly describing Matschinsky's 2009 \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 49,
+          "context": "\"glucokinase review. PMID 19373249 is Nat Rev Drug Discov \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 405,
+          "context": "\"2009 Jul;58(7):1416-28. PMID:19373249' in build_gka_lada.py, sitting \""
         }
       ],
       "mesh_terms": [
@@ -2645,7 +2625,7 @@
         },
         {
           "file": "extract_corpus_data.py",
-          "line": 549,
+          "line": 535,
           "context": "titles do not generate spurious extractions (root cause of PMID 19940299"
         }
       ],
@@ -2850,12 +2830,12 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 465,
+          "line": 486,
           "context": "<li><strong>Autoimmune Effect:</strong> Mediterranean diet reduces TNF-alpha, IL-6, CRP, and other inflammatory markers."
         },
         {
           "file": "build_nutrition_lada.py",
-          "line": 796,
+          "line": 817,
           "context": "<div class=\"reference-meta\">Calder PC. Omega-3 fatty acids and inflammatory processes. <a href=\"https://pubmed.ncbi.nlm."
         }
       ],
@@ -2929,54 +2909,6 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1681
-    },
-    "20570966": {
-      "pmid": "20570966",
-      "title": "Fucosyltransferase 2 (FUT2) non-secretor status is associated with Crohn's disease.",
-      "journal": "Hum Mol Genet",
-      "year": "2010",
-      "doi": "10.1093/hmg/ddq248",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_immunomod_lada.py",
-          "line": 94,
-          "context": "\"t1d_evidence\": \"TrialNet: slowed C-peptide decline (PMID:20570966)\","
-        },
-        {
-          "file": "build_immunomod_lada.py",
-          "line": 331,
-          "context": "(\"PMID:20570966\", \"Orban et al.\", \"Abatacept Phase 2 in T1D; costimulation blockade\"),"
-        }
-      ],
-      "mesh_terms": [
-        "Adolescent",
-        "Adult",
-        "Aged",
-        "Child",
-        "Child, Preschool",
-        "Cohort Studies",
-        "Crohn Disease",
-        "Female",
-        "Fucosyltransferases",
-        "Genome-Wide Association Study",
-        "Humans",
-        "Male",
-        "Middle Aged",
-        "Polymorphism, Single Nucleotide",
-        "Young Adult",
-        "Galactoside 2-alpha-L-fucosyltransferase"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 1642
     },
     "21212348": {
       "pmid": "21212348",
@@ -3095,6 +3027,11 @@
           "file": "build_trial_equity_mapper.py",
           "line": 1400,
           "context": "<li><span class=\"emphasis\">High-Income Countries (HIC):</span> Break-even achievable by 2030-2032. Current insulin cost "
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 247,
+          "context": "\"Relabelled [PROJECTION, not a sourced figure]. PMID 21323736 (Beckwith J \""
         }
       ],
       "mesh_terms": [
@@ -3189,6 +3126,62 @@
         "17261637"
       ],
       "abstract_length": 0
+    },
+    "21719096": {
+      "pmid": "21719096",
+      "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+      "journal": "Lancet",
+      "year": "2011",
+      "doi": "10.1016/S0140-6736(11)60886-6",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "build_immunomod_lada.py",
+          "line": 94,
+          "context": "\"t1d_evidence\": \"TrialNet: slowed C-peptide decline (PMID:21719096)\","
+        },
+        {
+          "file": "build_immunomod_lada.py",
+          "line": 338,
+          "context": "(\"PMID:21719096\", \"Orban T et al., Lancet 2011\","
+        }
+      ],
+      "mesh_terms": [
+        "Abatacept",
+        "Adolescent",
+        "Adult",
+        "Autoimmunity",
+        "Child",
+        "Diabetes Mellitus, Type 1",
+        "Double-Blind Method",
+        "Female",
+        "Humans",
+        "Immunoconjugates",
+        "Immunosuppressive Agents",
+        "Insulin-Secreting Cells",
+        "Male",
+        "Randomized Controlled Trials as Topic",
+        "T-Lymphocytes",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "19940299",
+        "18843118",
+        "16120857",
+        "8366922"
+      ],
+      "abstract_length": 2503
     },
     "21719305": {
       "pmid": "21719305",
@@ -3491,7 +3484,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 537,
+          "line": 558,
           "context": "<p><strong>Rationale:</strong> Increased intestinal permeability (\"leaky gut\") allows bacterial lipopolysaccharide (LPS)"
         }
       ],
@@ -3861,7 +3854,7 @@
         },
         {
           "file": "build_immunomod_lada.py",
-          "line": 836,
+          "line": 844,
           "context": "<td><span class=\"source\">ACTION LADA (PMID:23248199)</span></td>"
         },
         {
@@ -4327,6 +4320,7 @@
       "cited_pmids_in_hub": [
         "15043959",
         "19940299",
+        "21719096",
         "22296077",
         "10911004"
       ],
@@ -4575,7 +4569,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 555,
+          "line": 576,
           "context": "<li><strong>Type 1 diabetes:</strong> Celiac disease co-occurs in 3-5% of T1D patients. Possible shared genetics (HLA-DQ"
         }
       ],
@@ -4656,7 +4650,7 @@
         },
         {
           "file": "build_immunomod_lada.py",
-          "line": 333,
+          "line": 341,
           "context": "(\"PMID:24997559\", \"Sanda et al.\", \"REPAIR-T1D: DPP-4i and PPI combination therapy\"),"
         }
       ],
@@ -4688,7 +4682,8 @@
         "Randomized Controlled Trial"
       ],
       "cited_pmids_in_hub": [
-        "19940299"
+        "19940299",
+        "21719096"
       ],
       "abstract_length": 2671
     },
@@ -5024,60 +5019,6 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 785
     },
-    "25714673": {
-      "pmid": "25714673",
-      "title": "Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in type 1 diabetic mice.",
-      "journal": "Am J Physiol Endocrinol Metab",
-      "year": "2015",
-      "doi": "10.1152/ajpendo.00504.2014",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_generic_drug_catalog.py",
-          "line": 236,
-          "context": "'key_pmids': '25714673, 24497205',"
-        }
-      ],
-      "mesh_terms": [
-        "Animals",
-        "Anti-Inflammatory Agents, Non-Steroidal",
-        "Astrocytes",
-        "Diabetes Mellitus, Type 1",
-        "Diabetic Neuropathies",
-        "Disease Progression",
-        "Down-Regulation",
-        "Encephalitis",
-        "Hypothalamus",
-        "Indoleamine-Pyrrole 2,3,-Dioxygenase",
-        "Inflammation Mediators",
-        "Insulin-Like Growth Factor Binding Protein 3",
-        "Insulin-Like Growth Factor I",
-        "Macrophages",
-        "Male",
-        "Mice, Inbred C57BL",
-        "Microglia",
-        "Minocycline",
-        "Nerve Tissue Proteins",
-        "Neurons",
-        "Sympathetic Nervous System",
-        "Up-Regulation"
-      ],
-      "keywords": [
-        "brain",
-        "diabetes",
-        "inflammation",
-        "sympathetic nervous system"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 1722
-    },
     "25751624": {
       "pmid": "25751624",
       "title": "Fine mapping of type 1 diabetes susceptibility loci and evidence for colocalization of causal variants with lymphoid gene enhancers.",
@@ -5211,12 +5152,12 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 464,
+          "line": 485,
           "context": "<li><strong>PREDIMED Trial:</strong> Mediterranean diet reduced new-onset type 2 diabetes by 30% in high-risk individual"
         },
         {
           "file": "build_nutrition_lada.py",
-          "line": 790,
+          "line": 811,
           "context": "<div class=\"reference-meta\">Salas-Salvado et al. PREDIMED. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25940230/\" target=\"_"
         }
       ],
@@ -5736,7 +5677,7 @@
         },
         {
           "file": "build_immunomod_lada.py",
-          "line": 332,
+          "line": 340,
           "context": "(\"PMID:27727279\", \"Todd et al.\", \"Low-dose IL-2 (DIABIL-2) Treg expansion in T1D\"),"
         }
       ],
@@ -5769,6 +5710,7 @@
       "cited_pmids_in_hub": [
         "23890997",
         "19940299",
+        "21719096",
         "8366922"
       ],
       "abstract_length": 3710
@@ -6174,43 +6116,10 @@
       "cited_pmids_in_hub": [
         "10911004",
         "22296077",
+        "21719096",
         "17005949"
       ],
       "abstract_length": 1547
-    },
-    "28397826": {
-      "pmid": "28397826",
-      "title": "Immunotherapy: Hiding in plain sight: immune escape in the era of targeted T-cell-based immunotherapies.",
-      "journal": "Nat Rev Clin Oncol",
-      "year": "2017",
-      "doi": "10.1038/nrclinonc.2017.49",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_nutrition_lada.py",
-          "line": 776,
-          "context": "<div class=\"reference-meta\">Buzzetti et al. Management of latent autoimmune diabetes in adults. Nat Rev Endocrinol. <a h"
-        }
-      ],
-      "mesh_terms": [
-        "Humans",
-        "Immunotherapy, Adoptive",
-        "Molecular Targeted Therapy",
-        "Neoplasms",
-        "T-Lymphocyte Subsets",
-        "Tumor Escape"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't",
-        "Review"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 480
     },
     "28431241": {
       "pmid": "28431241",
@@ -6356,6 +6265,11 @@
           "file": "build_drug_repurposing_screen.py",
           "line": 628,
           "context": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 190,
+          "context": "\"The Feutren Lancet 1986 cyclosporine trial is PMID 2873396 \""
         }
       ],
       "mesh_terms": [
@@ -6432,6 +6346,49 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1212
     },
+    "28885622": {
+      "pmid": "28885622",
+      "title": "Adult-onset autoimmune diabetes: current knowledge and implications for management.",
+      "journal": "Nat Rev Endocrinol",
+      "year": "2017",
+      "doi": "10.1038/nrendo.2017.99",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "build_nutrition_lada.py",
+          "line": 797,
+          "context": "<div class=\"reference-meta\">Buzzetti R, Zampetti S, Maddaloni E. Adult-onset autoimmune diabetes: current knowledge and "
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Age of Onset",
+        "Autoantibodies",
+        "Autoimmunity",
+        "Diabetes Complications",
+        "Diabetes Mellitus, Type 1",
+        "Diabetes Mellitus, Type 2",
+        "Humans",
+        "Hypoglycemic Agents",
+        "Insulin",
+        "Insulin Resistance",
+        "Insulin-Secreting Cells",
+        "Latent Autoimmune Diabetes in Adults"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "cited_pmids_in_hub": [
+        "23248199",
+        "9357409",
+        "16306343"
+      ],
+      "abstract_length": 1345
+    },
     "29291885": {
       "pmid": "29291885",
       "title": "Short children born small for gestational age outcomes in the era of growth hormone therapy.",
@@ -6449,7 +6406,7 @@
         },
         {
           "file": "build_immunomod_lada.py",
-          "line": 334,
+          "line": 342,
           "context": "(\"PMID:29291885\", \"Herold et al.\", \"Teplizumab Phase 3 (TN-10); delayed T1D onset\"),"
         }
       ],
@@ -6840,7 +6797,7 @@
         },
         {
           "file": "build_corpus_analysis.py",
-          "line": 888,
+          "line": 901,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/29710129/\" target=\"_blank\">PMID 29710129</a>)."
         },
         {
@@ -7144,12 +7101,12 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 641,
+          "line": 662,
           "context": "<li><strong>Time-restricted eating (optional):</strong> Some evidence (weak) that 8-10 hour eating window improves beta "
         },
         {
           "file": "build_nutrition_lada.py",
-          "line": 860,
+          "line": 881,
           "context": "<div class=\"reference-meta\">Sutton et al. Early time-restricted feeding improves insulin sensitivity. Cell Metab. <a hre"
         }
       ],
@@ -7656,6 +7613,11 @@
           "file": "build_gka_landscape.py",
           "line": 1144,
           "context": "<strong>PMID:30949058</strong> | Matschinsky FM, Wilson DF. \"The Central Role of Glucokinase in Glucose Homeostasis: A P"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 357,
+          "context": "\"Care. 2002;25(10):1897-1902' for PMID 30949058 (actually Front Physiol \""
         }
       ],
       "mesh_terms": [],
@@ -8458,7 +8420,7 @@
         },
         {
           "file": "build_corpus_analysis.py",
-          "line": 892,
+          "line": 905,
           "context": "<a href=\"https://pubmed.ncbi.nlm.nih.gov/32175717/\" target=\"_blank\">PMID 32175717</a>)."
         },
         {
@@ -8630,6 +8592,11 @@
           "file": "rebuild_research_dashboard.py",
           "line": 829,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/32175717/\" target=\"_blank\">PMID 32175717</a>)."
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 347,
+          "context": "\"PMID 32175717 'Khan et al. 2020' is correct in author and year; scenario \""
         }
       ],
       "mesh_terms": [
@@ -8688,6 +8655,11 @@
           "file": "build_lada_model.py",
           "line": 661,
           "context": "<li><strong>Phase 1 (0-5 years):</strong> 55.19 pmol/L/year decline in Chinese cohort <span class=\"cite\">(JCEM 2020, PMI"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 180,
+          "context": "\"et al. JCEM 2020;105(7) (PMID 32307525).\"),"
         }
       ],
       "mesh_terms": [
@@ -9118,6 +9090,7 @@
         "9357409",
         "23248199",
         "30041834",
+        "28885622",
         "29619531",
         "32307525"
       ],
@@ -9571,7 +9544,7 @@
         },
         {
           "file": "build_nutrition_lada.py",
-          "line": 868,
+          "line": 889,
           "context": "<div class=\"reference-meta\">Casas/Ludvigsson et al. Diabetes Care, 2021 (DIAGNODE-2). <a href=\"https://pubmed.ncbi.nlm.n"
         }
       ],
@@ -9640,6 +9613,7 @@
       ],
       "cited_pmids_in_hub": [
         "28314945",
+        "28885622",
         "27189025",
         "30949058",
         "25751624",
@@ -9668,7 +9642,7 @@
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
-          "line": 844,
+          "line": 865,
           "context": "<div class=\"reference-meta\">Marco et al. (Proc Nutr Soc, 2017); Wastyk et al. Cell, 2021. <a href=\"https://pubmed.ncbi.n"
         }
       ],
@@ -9803,7 +9777,7 @@
         },
         {
           "file": "build_corpus_analysis.py",
-          "line": 890,
+          "line": 903,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/34763823/\" target=\"_blank\">PMID 34763823</a>;"
         },
         {
@@ -10150,6 +10124,31 @@
           "file": "rebuild_research_dashboard.py",
           "line": 826,
           "context": "<a href=\"https://pubmed.ncbi.nlm.nih.gov/34763823/\" target=\"_blank\">PMID 34763823</a>;"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 85,
+          "context": "\"PMID 34763823 (Herman WH & Kuo S, '100 years of Insulin: Why is \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 234,
+          "context": "\"Citation to PMID 34763823 removed and the figures marked [UNSOURCED]. \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 244,
+          "context": "\"Citation to PMID 34763823 (2021) removed for the same reason.\"),"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 305,
+          "context": "\"PMID 34763823 (Herman & Kuo, '100 years of Insulin: Why is Insulin So \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 426,
+          "context": "\"(SEVENTH class) and this: PMID 34763823, a 2021 review of INSULIN \""
         }
       ],
       "mesh_terms": [
@@ -10429,6 +10428,35 @@
       ],
       "abstract_length": 1697
     },
+    "35551293": {
+      "pmid": "35551293",
+      "title": "A new class of drug in the diabetes toolbox.",
+      "journal": "Nat Med",
+      "year": "2022",
+      "doi": "10.1038/s41591-022-01783-6",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 441,
+          "context": "\"32307525. Also removed: PMID 35551293, a Nat Med News & Views \""
+        }
+      ],
+      "mesh_terms": [
+        "Diabetes Mellitus",
+        "Humans",
+        "Software"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Comment"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 0
+    },
     "35551294": {
       "pmid": "35551294",
       "title": "Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
@@ -10468,6 +10496,16 @@
           "file": "build_gka_pricing.py",
           "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 162,
+          "context": "\"trial is Zhu D et al. Nat Med 2022;28(5):965-973, PMID 35551294, now cited.\"),"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 227,
+          "context": "\"PMID 35551294.\"),"
         }
       ],
       "mesh_terms": [
@@ -10915,6 +10953,16 @@
           "file": "build_repurposing_dashboard_v2.py",
           "line": 514,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/36449148/\" target=\"_blank\">PMID 36449148</a>)."
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 226,
+          "context": "\"YY, Drugs 2022;82(18):1745-1750 (PMID 36449148); SEED correctly named as \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 240,
+          "context": "\"Citation to PMID 36449148 removed. Syed, Drugs 2022, cannot report a \""
         }
       ],
       "mesh_terms": [
@@ -11083,6 +11131,7 @@
       "cited_pmids_in_hub": [
         "29988125",
         "31177185",
+        "21719096",
         "19940299"
       ],
       "abstract_length": 2657
@@ -11135,7 +11184,7 @@
       "dashboard_locations": [
         {
           "file": "build_corpus_analysis.py",
-          "line": 894,
+          "line": 907,
           "context": "(<a href=\"https://pubmed.ncbi.nlm.nih.gov/37105208/\" target=\"_blank\">PMID 37105208</a>)."
         },
         {
@@ -11310,6 +11359,31 @@
         "33139407"
       ],
       "abstract_length": 1797
+    },
+    "37221401": {
+      "pmid": "37221401",
+      "title": "Gut microbiota influences effectiveness of anti-diabetic drug.",
+      "journal": "Nat Rev Endocrinol",
+      "year": "2023",
+      "doi": "10.1038/s41574-023-00854-z",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 207,
+          "context": "\"page 379 resolves to a DIFFERENT paper, PMID 37221401 (Greenhill C, gut \""
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Comment"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 0
     },
     "37223016": {
       "pmid": "37223016",
@@ -11812,7 +11886,7 @@
       "dashboard_locations": [
         {
           "file": "build_corpus_analysis.py",
-          "line": 891,
+          "line": 904,
           "context": "<a href=\"https://pubmed.ncbi.nlm.nih.gov/37909353/\" target=\"_blank\">PMID 37909353</a>;"
         },
         {
@@ -12099,6 +12173,7 @@
         "23780460",
         "26404926",
         "30041834",
+        "28885622",
         "36113507",
         "31180194"
       ],
@@ -12328,6 +12403,11 @@
           "file": "build_gka_pricing.py",
           "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 365,
+          "context": "\"positive (PMID 38783768 in GKA_Landscape.html) precisely because it \""
         }
       ],
       "mesh_terms": [
@@ -12816,6 +12896,56 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1075
     },
+    "40111679": {
+      "pmid": "40111679",
+      "title": "Effect of Verapamil on Blood Glucose in Type 1 and Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis.",
+      "journal": "Cardiovasc Drugs Ther",
+      "year": "2026",
+      "doi": "10.1007/s10557-025-07683-4",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_28.py",
+          "line": 93,
+          "context": "'Ther 2026;40(1):347-359. PMID 40111679. Eight RCTs, 1100 patients. '"
+        }
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Verapamil",
+        "Diabetes Mellitus, Type 2",
+        "Blood Glucose",
+        "Calcium Channel Blockers",
+        "Diabetes Mellitus, Type 1",
+        "Randomized Controlled Trials as Topic",
+        "Glycated Hemoglobin",
+        "Hypoglycemic Agents",
+        "Treatment Outcome",
+        "Biomarkers"
+      ],
+      "keywords": [
+        "Blood glucose",
+        "Diabetes",
+        "HbA1c",
+        "TXNIP",
+        "Verapamil"
+      ],
+      "pub_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "29988125",
+        "36826844",
+        "21719096",
+        "19940299"
+      ],
+      "abstract_length": 1906
+    },
     "40249888": {
       "pmid": "40249888",
       "title": "Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.",
@@ -13107,6 +13237,28 @@
         "35551294"
       ],
       "abstract_length": 1982
+    },
+    "40598585": {
+      "pmid": "40598585",
+      "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
+      "journal": "BMC Med",
+      "year": "2025",
+      "doi": "10.1186/s12916-025-04201-z",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_28.py",
+          "line": 147,
+          "context": "'PMID 40598585 (BMC Med 2025 network meta-analysis) names 11 interventions '"
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 2166
     },
     "40648980": {
       "pmid": "40648980",
@@ -13940,6 +14092,11 @@
           "file": "build_treg_neuropathy.py",
           "line": 1063,
           "context": "DCCT Research Group. (1993). \"The effect of intensive diabetes therapy on the development and progression of neuropathy."
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 265,
+          "context": "\"why\": \"The citation is CORRECT - PMID 8366922 is the DCCT 1993 NEJM \""
         }
       ],
       "mesh_terms": [
@@ -14036,6 +14193,16 @@
           "file": "build_lada_model.py",
           "line": 758,
           "context": "<li><strong>84% GADA+ require insulin by 6 years</strong> <span class=\"cite\">(UKPDS, PMID:9357409)</span></li>"
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 179,
+          "context": "\"(Turner R et al., Lancet 1997;350(9087):1288-93, PMID 9357409) and Li X \""
+        },
+        {
+          "file": "_run_2026_08_27.py",
+          "line": 440,
+          "context": "\"re-sourced to UKPDS 25 (PMID 9357409, verified live) and PMID \""
         }
       ],
       "mesh_terms": [
@@ -14234,117 +14401,12 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
         "insulin"
       ]
-    },
-    "18794064": {
-      "pmid": "18794064",
-      "title": "Treatment of recurrent metastatic colon cancer in the age of modern adjuvant therapy.",
-      "journal": "Clin Colorectal Cancer",
-      "year": "2008",
-      "doi": "10.3816/CCC.2008.n.042",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Antineoplastic Agents",
-        "Colonic Neoplasms",
-        "Combined Modality Therapy",
-        "Drug Therapy, Combination",
-        "Humans",
-        "Neoplasm Recurrence, Local",
-        "Survival Rate"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: Oncology paper (colon cancer) - unclear relevance to diabetes research corpus",
-      "topic_hits": []
-    },
-    "19237585": {
-      "pmid": "19237585",
-      "title": "Nicotine normalizes intracellular subunit stoichiometry of nicotinic receptors carrying mutations linked to autosomal dominant nocturnal frontal lobe epilepsy.",
-      "journal": "Mol Pharmacol",
-      "year": "2009",
-      "doi": "10.1124/mol.108.054494",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Cells, Cultured",
-        "Epilepsy, Frontal Lobe",
-        "Fluorescence Resonance Energy Transfer",
-        "Humans",
-        "Mutation",
-        "Nicotine",
-        "Photobleaching",
-        "Protein Subunits",
-        "Receptors, Nicotinic"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC: Nicotinic receptors and epilepsy, not diabetes-related",
-      "topic_hits": []
-    },
-    "20519905": {
-      "pmid": "20519905",
-      "title": "Endotoxin removal: how far from the evidence? From EUPHAS to EUPHRATES.",
-      "journal": "Contrib Nephrol",
-      "year": "2010",
-      "doi": "10.1159/000315925",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "APACHE",
-        "Adult",
-        "Cost of Illness",
-        "Endotoxins",
-        "Hemoperfusion",
-        "Hospital Mortality",
-        "Humans",
-        "Intensive Care Units",
-        "Japan",
-        "Meta-Analysis as Topic",
-        "Oxygen",
-        "Polymyxin B",
-        "Risk Reduction Behavior",
-        "Shock, Septic",
-        "Survival Rate",
-        "United States",
-        "Vasoconstrictor Agents"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC: Endotoxin removal in septic shock, not diabetes-related",
-      "topic_hits": []
     },
     "21471512": {
       "pmid": "21471512",
@@ -14379,7 +14441,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (glucose); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14414,7 +14476,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14463,7 +14525,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14505,48 +14567,9 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
-      "topic_hits": []
-    },
-    "29562193": {
-      "pmid": "29562193",
-      "title": "Combination Cancer Therapy with Immune Checkpoint Blockade: Mechanisms and Strategies.",
-      "journal": "Immunity",
-      "year": "2018",
-      "doi": "10.1016/j.immuni.2018.03.007",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Antineoplastic Agents, Immunological",
-        "Biomarkers, Tumor",
-        "Combined Modality Therapy",
-        "Humans",
-        "Immune System",
-        "Immunomodulation",
-        "Immunotherapy",
-        "Molecular Targeted Therapy",
-        "Neoplasms",
-        "Receptors, Pattern Recognition",
-        "Signal Transduction",
-        "Tumor Microenvironment"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't",
-        "Review"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: off-topic oncology: ICB combination cancer therapy — not diabetes",
       "topic_hits": []
     },
     "30291106": {
@@ -14581,7 +14604,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, hyperglyc); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14590,48 +14613,6 @@
         "glycem",
         "hyperglyc"
       ]
-    },
-    "32243867": {
-      "pmid": "32243867",
-      "title": "Serum levels of matrix metalloproteinase-2, -9, and vitamin D in patients with multiple sclerosis with or without herpesvirus-6 seropositivity.",
-      "journal": "Braz J Infect Dis",
-      "year": "2020",
-      "doi": "10.1016/j.bjid.2020.02.001",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Antibodies, Viral",
-        "Enzyme-Linked Immunosorbent Assay",
-        "Female",
-        "Herpesvirus 6, Human",
-        "Humans",
-        "Male",
-        "Matrix Metalloproteinase 2",
-        "Matrix Metalloproteinase 9",
-        "Middle Aged",
-        "Multiple Sclerosis",
-        "Roseolovirus Infections",
-        "Vitamin D"
-      ],
-      "keywords": [
-        "Human herpesvirus-6",
-        "Matrix metalloproteinase-2",
-        "Matrix metalloproteinase-9",
-        "Multiple sclerosis",
-        "Vitamin D"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: OFF-TOPIC for diabetes research scope: MS + HHV-6 + MMP-2/MMP-9/vitamin D study (Braz J Infect Dis). Likely entered corpus via MMP-9 or vitamin-D keyword sweep. Recommend exclusion from primary diabetes corpus; keep tagged for cross-domain inflammation reference only.",
-      "topic_hits": []
     },
     "32358544": {
       "pmid": "32358544",
@@ -14668,7 +14649,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, insulin, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14706,7 +14687,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14749,7 +14730,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14759,104 +14740,6 @@
         "nlrp3",
         "sglt2"
       ]
-    },
-    "35437333": {
-      "pmid": "35437333",
-      "title": "The gut microbial metabolite formate exacerbates colorectal cancer progression.",
-      "journal": "Nat Metab",
-      "year": "2022",
-      "doi": "10.1038/s42255-022-00558-0",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "Bacteria",
-        "Colorectal Neoplasms",
-        "Formates",
-        "Fusobacterium nucleatum",
-        "Gastrointestinal Microbiome",
-        "Humans",
-        "Mice",
-        "Tumor Microenvironment"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
-      "topic_hits": []
-    },
-    "35551293": {
-      "pmid": "35551293",
-      "title": "A new class of drug in the diabetes toolbox.",
-      "journal": "Nat Med",
-      "year": "2022",
-      "doi": "10.1038/s41591-022-01783-6",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Diabetes Mellitus",
-        "Humans",
-        "Software"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Comment"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet"
-      ]
-    },
-    "37133585": {
-      "pmid": "37133585",
-      "title": "Trifluridine-Tipiracil and Bevacizumab in Refractory Metastatic Colorectal Cancer.",
-      "journal": "N Engl J Med",
-      "year": "2023",
-      "doi": "10.1056/NEJMoa2214963",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Adult",
-        "Humans",
-        "Antineoplastic Combined Chemotherapy Protocols",
-        "Bevacizumab",
-        "Colonic Neoplasms",
-        "Colorectal Neoplasms",
-        "Drug Combinations",
-        "Pyrrolidines",
-        "Rectal Neoplasms",
-        "Trifluridine",
-        "Uracil",
-        "Thymine"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Journal Article",
-        "Randomized Controlled Trial"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: off-topic-oncology: refractory metastatic CRC trial; no diabetes mechanism",
-      "topic_hits": []
     },
     "37845117": {
       "pmid": "37845117",
@@ -14892,7 +14775,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14940,52 +14823,13 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
       "topic_hits": [
         "diabet",
         "glucose",
         "glycem"
-      ]
-    },
-    "39428507": {
-      "pmid": "39428507",
-      "title": "MOG-specific CAR Tregs: a novel approach to treat multiple sclerosis.",
-      "journal": "J Neuroinflammation",
-      "year": "2024",
-      "doi": "10.1186/s12974-024-03262-w",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Animals",
-        "T-Lymphocytes, Regulatory",
-        "Humans",
-        "Myelin-Oligodendrocyte Glycoprotein",
-        "Mice",
-        "Multiple Sclerosis",
-        "Encephalomyelitis, Autoimmune, Experimental",
-        "Receptors, Chimeric Antigen",
-        "Immunotherapy, Adoptive"
-      ],
-      "keywords": [
-        "CAR-Treg",
-        "Cell therapy",
-        "MOG",
-        "Multiple sclerosis"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; statistical analysis input; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (autoimmun); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "autoimmun"
       ]
     },
     "39869107": {
@@ -15034,7 +14878,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -15064,35 +14908,10 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
-    },
-    "40598585": {
-      "pmid": "40598585",
-      "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
-      "journal": "BMC Med",
-      "year": "2025",
-      "doi": "10.1186/s12916-025-04201-z",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "PMC12211534",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (beta cell, diabet, insulin, pancrea); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "beta cell",
-        "diabet",
-        "insulin",
-        "pancrea"
-      ]
     },
     "40988828": {
       "pmid": "40988828",
@@ -15122,7 +14941,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glycem, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15156,56 +14975,13 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, retinopath); needs human relevance review before counting as corpus.",
       "topic_hits": [
         "diabet",
         "retinopath"
       ]
-    },
-    "41827829": {
-      "pmid": "41827829",
-      "title": "Isolation and Characterization of Marrow-Isolated Adult Multilineage Inducible (MIAMI) Cell-Derived Extracellular Vesicles Demonstrate Multifunctional Therapeutic Potential in Tissue Regeneration and Anti-Inflammatory Immunomodulation.",
-      "journal": "Cells",
-      "year": "2026",
-      "doi": "10.3390/cells15050396",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [
-        "Extracellular Vesicles",
-        "Humans",
-        "Mesenchymal Stem Cells",
-        "Immunomodulation",
-        "Regeneration",
-        "MicroRNAs",
-        "Cell Lineage",
-        "Anti-Inflammatory Agents",
-        "Bone Marrow Cells"
-      ],
-      "keywords": [
-        "MIAMI cells",
-        "cell-free therapy",
-        "extracellular vesicles",
-        "immunomodulation",
-        "irradiation",
-        "mesenchymal stem/stromal cells",
-        "microRNA",
-        "osteosarcoma",
-        "regenerative medicine",
-        "wound healing"
-      ],
-      "pub_types": [
-        "Journal Article"
-      ],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
-      "corpus_status": "OFF_TOPIC",
-      "corpus_status_reason": "Already FLAGGED off-topic in agent_state: no reason recorded",
-      "topic_hits": []
     },
     "41935855": {
       "pmid": "41935855",
@@ -15222,7 +14998,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, lada); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15246,7 +15022,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15268,7 +15044,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15317,7 +15093,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-27",
+      "index_reconciled_on": "2026-08-28",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15359,6 +15135,12 @@
         "19373249",
         "17261637"
       ],
+      "21719096": [
+        "19940299",
+        "18843118",
+        "16120857",
+        "8366922"
+      ],
       "21719305": [
         "10911004"
       ],
@@ -15397,6 +15179,7 @@
       "23890997": [
         "15043959",
         "19940299",
+        "21719096",
         "22296077",
         "10911004"
       ],
@@ -15404,7 +15187,8 @@
         "22980982"
       ],
       "24997559": [
-        "19940299"
+        "19940299",
+        "21719096"
       ],
       "25131812": [
         "22349456",
@@ -15427,6 +15211,7 @@
       "27727279": [
         "23890997",
         "19940299",
+        "21719096",
         "8366922"
       ],
       "27878313": [
@@ -15441,6 +15226,7 @@
       "28375156": [
         "10911004",
         "22296077",
+        "21719096",
         "17005949"
       ],
       "28431241": [
@@ -15452,6 +15238,11 @@
         "11565518",
         "20228401",
         "26378978"
+      ],
+      "28885622": [
+        "23248199",
+        "9357409",
+        "16306343"
       ],
       "29619531": [
         "23248199",
@@ -15504,6 +15295,7 @@
         "9357409",
         "23248199",
         "30041834",
+        "28885622",
         "29619531",
         "32307525"
       ],
@@ -15532,6 +15324,7 @@
       ],
       "34180979": [
         "28314945",
+        "28885622",
         "27189025",
         "30949058",
         "25751624",
@@ -15591,6 +15384,7 @@
       "36826844": [
         "29988125",
         "31177185",
+        "21719096",
         "19940299"
       ],
       "37122431": [
@@ -15632,6 +15426,7 @@
         "23780460",
         "26404926",
         "30041834",
+        "28885622",
         "36113507",
         "31180194"
       ],
@@ -15675,6 +15470,12 @@
       ],
       "39843169": [
         "3899825"
+      ],
+      "40111679": [
+        "29988125",
+        "36826844",
+        "21719096",
+        "19940299"
       ],
       "40272935": [
         "38783768",
@@ -15743,7 +15544,6 @@
         "1697648",
         "17261637",
         "17965721",
-        "18662538",
         "18725575",
         "19132915",
         "19169263",
@@ -15770,7 +15570,6 @@
         "2523712",
         "25287711",
         "25324018",
-        "25714673",
         "25834231",
         "26897744",
         "28086098",
@@ -15820,6 +15619,7 @@
         "19104422",
         "19940299",
         "21323736",
+        "21719096",
         "22296077",
         "22315720",
         "23061757",
@@ -15831,13 +15631,13 @@
         "24598244",
         "24838679",
         "24997559",
-        "25714673",
         "25751624",
         "26404926",
         "27727279",
         "28118453",
         "28375156",
         "2873396",
+        "28885622",
         "29617641",
         "29619531",
         "29988125",
@@ -15864,6 +15664,7 @@
         "37861217",
         "38349844",
         "39613428",
+        "40111679",
         "40464081",
         "40544428",
         "40650745",
@@ -15910,6 +15711,7 @@
         "28314945",
         "28731034",
         "28776086",
+        "28885622",
         "29414425",
         "29590046",
         "29617641",
@@ -15946,6 +15748,7 @@
         "39634180",
         "39843169",
         "40032831",
+        "40111679",
         "40272935",
         "40464081",
         "40737658",
@@ -15998,8 +15801,8 @@
         "19805629",
         "19940299",
         "20228401",
-        "20570966",
         "21323736",
+        "21719096",
         "21775755",
         "21864487",
         "21959959",
@@ -16015,7 +15818,6 @@
         "24838679",
         "24997559",
         "25230243",
-        "25714673",
         "25751624",
         "26378978",
         "27727279",
@@ -16098,8 +15900,8 @@
         "18539917",
         "19104422",
         "19940299",
-        "20570966",
         "21323736",
+        "21719096",
         "21775755",
         "21864487",
         "22683128",
@@ -16113,6 +15915,7 @@
         "28118453",
         "28199814",
         "2873396",
+        "28885622",
         "29590046",
         "29619531",
         "29754952",
@@ -16199,6 +16002,7 @@
         "39613428",
         "39634180",
         "39843169",
+        "40111679",
         "40544428",
         "41827917",
         "8366922",
@@ -16281,6 +16085,7 @@
         "38783768",
         "39613428",
         "39843169",
+        "40111679",
         "40544428",
         "9742976",
         "9867128"
@@ -16325,7 +16130,6 @@
         "18397984",
         "18442638",
         "18539917",
-        "18662538",
         "18713146",
         "18725575",
         "18843118",
@@ -16344,11 +16148,11 @@
         "20336151",
         "20500789",
         "20538833",
-        "20570966",
         "21212348",
         "21323736",
         "21372320",
         "21525462",
+        "21719096",
         "21775755",
         "21864487",
         "21867926",
@@ -16403,12 +16207,12 @@
         "28283069",
         "28314945",
         "28375156",
-        "28397826",
         "28431241",
         "28522654",
         "28731034",
         "2873396",
         "28776086",
+        "28885622",
         "29291885",
         "29414425",
         "29567707",
@@ -16461,6 +16265,7 @@
         "35180212",
         "35466661",
         "35551292",
+        "35551293",
         "35551294",
         "35551307",
         "35563495",
@@ -16501,6 +16306,7 @@
         "39634180",
         "39843169",
         "40032831",
+        "40111679",
         "40249888",
         "40272935",
         "40366501",
@@ -16533,6 +16339,7 @@
         "17359512",
         "18094377",
         "18713146",
+        "21719096",
         "23061757",
         "30415610",
         "37359825",
@@ -16557,6 +16364,7 @@
         "27189025",
         "28118453",
         "2873396",
+        "28885622",
         "29617641",
         "29619531",
         "29988125",
@@ -16621,7 +16429,6 @@
         "18539917",
         "20228401",
         "20538833",
-        "20570966",
         "21775755",
         "21864487",
         "21959959",
@@ -16692,7 +16499,6 @@
         "18539917",
         "20228401",
         "20538833",
-        "20570966",
         "21864487",
         "23248199",
         "23817699",
@@ -16756,8 +16562,8 @@
         "18843118",
         "19940299",
         "20228401",
-        "20570966",
         "21323736",
+        "21719096",
         "21775755",
         "21864487",
         "21959959",
@@ -16881,6 +16687,7 @@
         "24598244",
         "25751624",
         "26404926",
+        "28885622",
         "29619531",
         "30041834",
         "32307525",
@@ -16988,14 +16795,12 @@
       "Disease Progression": [
         "11565518",
         "16306343",
-        "18662538",
         "20538833",
         "22683128",
         "23780460",
         "23835325",
         "24598244",
         "25230243",
-        "25714673",
         "26404926",
         "28522654",
         "31180194",
@@ -17012,6 +16817,7 @@
         "17429083",
         "18397984",
         "19940299",
+        "21719096",
         "24598244",
         "24997559",
         "28199814",
@@ -17069,6 +16875,7 @@
         "28118453",
         "28522654",
         "28776086",
+        "28885622",
         "29617641",
         "29619531",
         "30657336",
@@ -17088,6 +16895,7 @@
         "38639547",
         "38783768",
         "39525461",
+        "40111679",
         "40272935",
         "40464081",
         "40544428",
@@ -17182,8 +16990,7 @@
         "19169263",
         "19633656",
         "19805629",
-        "23562078",
-        "25714673"
+        "23562078"
       ],
       "Trans-Activators": [
         "12122111",
@@ -17221,14 +17028,12 @@
         "14525967",
         "19805629",
         "21997792",
-        "23562078",
-        "25714673"
+        "23562078"
       ],
       "Signal Transduction": [
         "14525967",
         "15928679",
         "16731815",
-        "18662538",
         "19575028",
         "20192806",
         "2189759",
@@ -17278,6 +17083,7 @@
         "32312859",
         "34763823",
         "35180212",
+        "35551293",
         "37217319",
         "37356449",
         "37909353",
@@ -17339,6 +17145,7 @@
         "37105208",
         "37366315",
         "39843169",
+        "40111679",
         "41326666",
         "41889274",
         "8366922"
@@ -17388,7 +17195,8 @@
         "32017635",
         "34180979",
         "38349844",
-        "40032831"
+        "40032831",
+        "40111679"
       ],
       "Insulin Resistance": [
         "15356308",
@@ -17400,6 +17208,7 @@
         "27189025",
         "27878313",
         "28731034",
+        "28885622",
         "29754952",
         "31175156",
         "31263284",
@@ -17417,7 +17226,7 @@
         "17942684",
         "18843118",
         "19940299",
-        "20570966",
+        "21719096",
         "21775755",
         "22296077",
         "23780460",
@@ -17453,7 +17262,7 @@
         "17942684",
         "18843118",
         "19940299",
-        "20570966",
+        "21719096",
         "22296077",
         "23780460",
         "24997559",
@@ -17478,6 +17287,7 @@
         "15919781",
         "22683128",
         "27159554",
+        "28885622",
         "29623672"
       ],
       "Hyperglycemia": [
@@ -17523,6 +17333,7 @@
       "T-Lymphocytes": [
         "15928679",
         "16120857",
+        "21719096",
         "23061757",
         "29567707",
         "29909913",
@@ -17599,6 +17410,7 @@
       "Age of Onset": [
         "16306343",
         "17942684",
+        "28885622",
         "29619531",
         "32307525",
         "9867128"
@@ -17639,11 +17451,13 @@
       "Autoimmunity": [
         "1697648",
         "17942684",
+        "21719096",
         "23835325",
         "24838679",
         "25751624",
         "26404926",
         "28375156",
+        "28885622",
         "32017635"
       ],
       "Brain": [
@@ -17707,6 +17521,7 @@
         "17429083",
         "18713146",
         "19940299",
+        "21719096",
         "21719305",
         "22980982",
         "24506867",
@@ -17714,6 +17529,7 @@
         "24997559",
         "26404926",
         "27189025",
+        "28885622",
         "29754952",
         "29988125",
         "30303773",
@@ -17739,7 +17555,6 @@
       ],
       "Child, Preschool": [
         "17942684",
-        "20570966",
         "23780460",
         "23835325",
         "30657336",
@@ -17804,17 +17619,6 @@
         "37223016",
         "40544428"
       ],
-      "Neoplasms": [
-        "18662538",
-        "19041189",
-        "21212348",
-        "21997792",
-        "24508508",
-        "25587654",
-        "28283069",
-        "28397826",
-        "29567707"
-      ],
       "B-Lymphocytes": [
         "18725575",
         "19940299",
@@ -17840,6 +17644,15 @@
         "21867926",
         "28375156",
         "36109639"
+      ],
+      "Neoplasms": [
+        "19041189",
+        "21212348",
+        "21997792",
+        "24508508",
+        "25587654",
+        "28283069",
+        "29567707"
       ],
       "Quality of Life": [
         "19041189",
@@ -17885,7 +17698,6 @@
       "Inflammation Mediators": [
         "19169263",
         "20538833",
-        "25714673",
         "27727279"
       ],
       "Mice, Knockout": [
@@ -17964,8 +17776,8 @@
       ],
       "Young Adult": [
         "19940299",
-        "20570966",
         "21323736",
+        "21719096",
         "21775755",
         "21864487",
         "22296077",
@@ -17996,19 +17808,6 @@
         "25940230",
         "41889274"
       ],
-      "Genome-Wide Association Study": [
-        "20570966",
-        "22315720",
-        "25287711",
-        "35551307",
-        "36474045",
-        "40032831"
-      ],
-      "Polymorphism, Single Nucleotide": [
-        "20570966",
-        "25751624",
-        "35551307"
-      ],
       "Cost-Benefit Analysis": [
         "21323736",
         "31157579",
@@ -18021,17 +17820,28 @@
         "38639547",
         "40464081"
       ],
+      "Randomized Controlled Trials as Topic": [
+        "21719096",
+        "22336824",
+        "25498346",
+        "25940230",
+        "32312859",
+        "32754804",
+        "36109742",
+        "39613428",
+        "40111679",
+        "40982327",
+        "41889274"
+      ],
       "Diabetic Neuropathies": [
         "21775755",
         "25230243",
-        "25714673",
         "26897744",
         "31197153",
         "8366922"
       ],
       "Immunotherapy, Adoptive": [
         "21864487",
-        "28397826",
         "29567707",
         "29909913",
         "31157579",
@@ -18070,22 +17880,17 @@
         "35551307",
         "40032831"
       ],
+      "Genome-Wide Association Study": [
+        "22315720",
+        "25287711",
+        "35551307",
+        "36474045",
+        "40032831"
+      ],
       "Anti-Inflammatory Agents, Non-Steroidal": [
         "22336824",
         "23817699",
-        "25714673",
         "9867128"
-      ],
-      "Randomized Controlled Trials as Topic": [
-        "22336824",
-        "25498346",
-        "25940230",
-        "32312859",
-        "32754804",
-        "36109742",
-        "39613428",
-        "40982327",
-        "41889274"
       ],
       "Disease Management": [
         "22349456",
@@ -18258,10 +18063,14 @@
         "40650745",
         "9867128"
       ],
-      "Molecular Targeted Therapy": [
-        "28397826",
-        "28431241",
-        "32017635"
+      "Latent Autoimmune Diabetes in Adults": [
+        "28885622",
+        "30041834",
+        "32307525",
+        "32847960",
+        "34318969",
+        "37428296",
+        "40737658"
       ],
       "Socioeconomic Factors": [
         "29414425",
@@ -18303,15 +18112,8 @@
         "29988125",
         "36826844",
         "39613428",
+        "40111679",
         "40650745"
-      ],
-      "Latent Autoimmune Diabetes in Adults": [
-        "30041834",
-        "32307525",
-        "32847960",
-        "34318969",
-        "37428296",
-        "40737658"
       ],
       "Inflammasomes": [
         "31036962",
@@ -18342,6 +18144,11 @@
         "35665810",
         "39634180",
         "40464081"
+      ],
+      "Calcium Channel Blockers": [
+        "39613428",
+        "40111679",
+        "40650745"
       ],
       "Remission Induction": [
         "39634180",

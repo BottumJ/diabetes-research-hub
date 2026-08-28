@@ -1,13 +1,12 @@
 {
-  "generated": "2026-08-27T03:28:53.640435",
+  "generated": "2026-08-28T08:44:43.698308",
   "generator": "Analysis/Scripts/path_store.py",
   "merge_rule": "recency wins; conservative (weaker claim) tie-break; keys normalised across stores",
   "total_paths": 68,
   "status_counts": {
     "HOLLOW": 21,
-    "LIVE": 14,
-    "VALIDATED": 19,
-    "PARTIALLY_VALIDATED": 11,
+    "VALIDATED": 27,
+    "PARTIALLY_VALIDATED": 17,
     "CONTRADICTED_FOR_DIABETIC_NEPHROPATHY": 1,
     "CONTRADICTED": 2
   },
@@ -49,9 +48,9 @@
     },
     "hydroxychloroquine_t2d": {
       "display_key": "hydroxychloroquine -> T2D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 32,
       "divergent": true,
       "sources": [
@@ -65,7 +64,7 @@
           "store": "state.validated_paths",
           "raw_key": "hydroxychloroquine -> T2D",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -83,9 +82,9 @@
     },
     "metformin_t2d": {
       "display_key": "metformin -> T2D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 26,
       "divergent": true,
       "sources": [
@@ -99,7 +98,7 @@
           "store": "state.validated_paths",
           "raw_key": "metformin -> T2D",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -151,9 +150,9 @@
     },
     "verapamil_beta_cell": {
       "display_key": "verapamil -> beta_cell",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 6,
       "divergent": true,
       "sources": [
@@ -166,8 +165,8 @@
         {
           "store": "state.validated_paths",
           "raw_key": "verapamil -> beta_cell",
-          "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "status": "PARTIALLY_VALIDATED",
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -287,9 +286,9 @@
     },
     "rapamycin_inflammation": {
       "display_key": "rapamycin -> inflammation",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 2,
       "divergent": true,
       "sources": [
@@ -303,7 +302,7 @@
           "store": "state.validated_paths",
           "raw_key": "rapamycin -> inflammation",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-01"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -491,9 +490,9 @@
     },
     "semaglutide_retinopathy": {
       "display_key": "semaglutide -> retinopathy",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -507,7 +506,7 @@
           "store": "state.validated_paths",
           "raw_key": "semaglutide -> retinopathy",
           "status": "VALIDATED",
-          "effective_date": "2026-06-09"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -593,9 +592,9 @@
     },
     "metformin_nephropathy": {
       "display_key": "metformin -> nephropathy",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -609,7 +608,7 @@
           "store": "state.validated_paths",
           "raw_key": "metformin -> nephropathy",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -621,9 +620,9 @@
     },
     "vitamin_d_autoimmune": {
       "display_key": "vitamin_d -> autoimmune",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -637,7 +636,7 @@
           "store": "state.validated_paths",
           "raw_key": "vitamin_d -> autoimmune",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-02"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -650,8 +649,8 @@
     "metformin_cardiovascular": {
       "display_key": "metformin -> cardiovascular",
       "status": "PARTIALLY_VALIDATED",
-      "resolved_from": "state.paths",
-      "effective_date": "2026-08-23",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -665,7 +664,7 @@
           "store": "state.validated_paths",
           "raw_key": "metformin -> cardiovascular",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-21"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -678,8 +677,8 @@
     "tacrolimus_inflammation": {
       "display_key": "tacrolimus -> inflammation",
       "status": "PARTIALLY_VALIDATED",
-      "resolved_from": "state.paths",
-      "effective_date": "2026-08-23",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -693,7 +692,7 @@
           "store": "state.validated_paths",
           "raw_key": "tacrolimus -> inflammation",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-06"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -705,9 +704,9 @@
     },
     "calcineurin_islet_transplant": {
       "display_key": "calcineurin -> islet_transplant",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -721,7 +720,7 @@
           "store": "state.validated_paths",
           "raw_key": "calcineurin -> islet_transplant",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -817,9 +816,9 @@
     },
     "belatacept_t1d": {
       "display_key": "belatacept -> T1D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -833,7 +832,7 @@
           "store": "state.validated_paths",
           "raw_key": "belatacept -> T1D",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-17"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -846,8 +845,8 @@
     "belatacept_islet_transplant": {
       "display_key": "belatacept -> islet_transplant",
       "status": "VALIDATED",
-      "resolved_from": "state.paths",
-      "effective_date": "2026-08-25",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -861,7 +860,7 @@
           "store": "state.validated_paths",
           "raw_key": "belatacept -> islet_transplant",
           "status": "VALIDATED",
-          "effective_date": "2026-08-25"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -1069,9 +1068,9 @@
     },
     "treg_expansion_t1d": {
       "display_key": "Treg_expansion -> T1D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 1,
       "divergent": true,
       "sources": [
@@ -1085,7 +1084,7 @@
           "store": "state.validated_paths",
           "raw_key": "Treg_expansion -> T1D",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-04"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "research_paths.json",
@@ -1655,9 +1654,9 @@
     },
     "dapagliflozin_t2d": {
       "display_key": "dapagliflozin -> T2D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 7,
       "divergent": true,
       "sources": [
@@ -1671,7 +1670,7 @@
           "store": "state.validated_paths",
           "raw_key": "dapagliflozin -> T2D",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -1723,9 +1722,9 @@
     },
     "verapamil_t1d": {
       "display_key": "verapamil -> T1D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "PARTIALLY_VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 7,
       "divergent": true,
       "sources": [
@@ -1739,7 +1738,7 @@
           "store": "state.validated_paths",
           "raw_key": "verapamil -> T1D",
           "status": "PARTIALLY_VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -1827,7 +1826,7 @@
       "display_key": "dapagliflozin -> nephropathy",
       "status": "VALIDATED",
       "resolved_from": "state.validated_paths",
-      "effective_date": "2026-08-21",
+      "effective_date": "2026-08-28",
       "data_point_count": 3,
       "divergent": true,
       "sources": [
@@ -1841,7 +1840,7 @@
           "store": "state.validated_paths",
           "raw_key": "dapagliflozin -> nephropathy",
           "status": "VALIDATED",
-          "effective_date": "2026-08-21"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -1859,9 +1858,9 @@
     },
     "oxidative_stress_cardiovascular": {
       "display_key": "oxidative_stress -> cardiovascular",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 3,
       "divergent": true,
       "sources": [
@@ -1875,7 +1874,7 @@
           "store": "state.validated_paths",
           "raw_key": "oxidative_stress -> cardiovascular",
           "status": "VALIDATED",
-          "effective_date": "2026-08-18"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",
@@ -1893,9 +1892,9 @@
     },
     "dorzagliatin_t2d": {
       "display_key": "dorzagliatin -> T2D",
-      "status": "LIVE",
-      "resolved_from": "research_paths.json",
-      "effective_date": "2026-08-21",
+      "status": "VALIDATED",
+      "resolved_from": "state.validated_paths",
+      "effective_date": "2026-08-28",
       "data_point_count": 2,
       "divergent": true,
       "sources": [
@@ -1909,7 +1908,7 @@
           "store": "state.validated_paths",
           "raw_key": "dorzagliatin -> T2D",
           "status": "VALIDATED",
-          "effective_date": "2026-08-20"
+          "effective_date": "2026-08-28"
         },
         {
           "store": "validated_research_paths.json",

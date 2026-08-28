@@ -162,6 +162,19 @@ EXCLUDED_CORPUS_STATUS = {'OFF_TOPIC', 'OFF_TOPIC_PRESUMED'}
 papers = {p: rec for p, rec in papers.items()
           if rec.get('corpus_status') not in EXCLUDED_CORPUS_STATUS}
 
+# Added 2026-08-28. The index's own corpus_status field was a SEVENTH
+# independent notion of membership, and it disagreed with both registries:
+# the co-occurrence network kept nodes for papers that extraction had been
+# excluding for months, because a paper can be adjudicated off-topic in
+# agent_state.json without ever acquiring corpus_status in the index.
+import corpus_membership
+_before = len(papers)
+papers = {p: rec for p, rec in papers.items()
+          if corpus_membership.counts_as_evidence(p)}
+if _before != len(papers):
+    print('  [corpus_membership] co-occurrence network: %d -> %d papers'
+          % (_before, len(papers)))
+
 for pmid, paper in papers.items():
     # `year` may be absent, 'Unknown', or an empty string (PubMed records with no
     # print date). int('') raised ValueError here on 2026-08-18.
