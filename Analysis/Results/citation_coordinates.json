@@ -1,9 +1,9 @@
 {
- "generated": "2026-08-28",
+ "generated": "2026-08-29",
  "window_chars": 200,
- "coordinates_checked": 119,
+ "coordinates_checked": 120,
  "counts": {
-  "OK": 114,
+  "OK": 115,
   "COORD_MISMATCH": 1,
   "POINTS_ELSEWHERE": 2,
   "NONRESOLVING": 2,
@@ -3183,7 +3183,7 @@
   },
   {
    "file": "build_research_paths.py",
-   "line": 75,
+   "line": 175,
    "pmid": "35466661",
    "asserted": {
     "journal": "J Postgrad Med",
@@ -3227,6 +3227,33 @@
     "title": "A health economic analysis of clinical islet transplantation.",
     "volume": "26",
     "year": "2012"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "repair_cost_provenance_20260829.py",
+   "line": 17,
+   "pmid": "29710129",
+   "asserted": {
+    "journal": "JAMA Oncology",
+    "year": "2018",
+    "volume": "4",
+    "issue": "7",
+    "page": "994"
+   },
+   "record": "is Hernandez I, Prasad V, Gellad WF, \"Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy\", JAMA Oncology 2018;4(7):994-996. It is a cost analysis of ",
+   "actual": {
+    "issue": "7",
+    "journal": "JAMA Oncol",
+    "pages": "994-996",
+    "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
+    "volume": "4",
+    "year": "2018"
    },
    "checks": {
     "volume": true,

@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-28T08:44:10.377885",
+  "timestamp": "2026-08-29T03:20:55.499293",
   "summary": {
     "WEAK": 124,
-    "CONFIRMED": 88,
-    "PLAUSIBLE": 64,
+    "CONFIRMED": 86,
+    "PLAUSIBLE": 66,
     "NO_CLAIM": 19,
     "NO_DATA": 1
   },
@@ -1102,13 +1102,23 @@
       "title": "Glyburide inhibits the Cryopyrin/Nalp3 inflammasome.",
       "score": "WEAK",
       "confidence": 0.154,
-      "details": "2/13 claim terms found in paper; 4 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "details": "4/26 claim terms found in paper; 4 diabetes domain terms; 0 phrase matches",
+      "claim_count": 5,
       "claims": [
         {
           "file": "build_drug_repurposing_screen.py",
           "line": 609,
-          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated direct NLRP3 inhibition at concentrations ach"
+          "text": "\"evidence\": \"PRECLINICAL. Lamkanfi et al (J Cell Biol 2009, PMID:19805629) showed glyburide prevents Cryopyrin/NLRP3 inf"
+        },
+        {
+          "file": "repair_cost_provenance_20260829.py",
+          "line": 58,
+          "text": "1. Glyburide evidence read \"Lamkanfi et al (J Cell Biol 2009, PMID:19805629)"
+        },
+        {
+          "file": "repair_cost_provenance_20260829.py",
+          "line": 159,
+          "text": "old_gly = ('Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated '"
         }
       ],
       "has_abstract": true,
@@ -1725,14 +1735,24 @@
       "pmid": "23738527",
       "title": "A method for accounting for maintenance costs in flux balance analysis improves the prediction of plant cell metabolic phenotypes under stress conditions.",
       "score": "WEAK",
-      "confidence": 0.077,
-      "details": "1/13 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.273,
+      "details": "3/11 claim terms found in paper; 1 diabetes domain terms; 12 phrase matches",
+      "claim_count": 5,
       "claims": [
         {
-          "file": "build_drug_repurposing_screen.py",
-          "line": 609,
-          "text": "\"evidence\": \"Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated direct NLRP3 inhibition at concentrations ach"
+          "file": "repair_cost_provenance_20260829.py",
+          "line": 66,
+          "text": "(PMID:23738527).\" PMID 23738527 is \"A method for accounting for maintenance"
+        },
+        {
+          "file": "repair_cost_provenance_20260829.py",
+          "line": 66,
+          "text": "(PMID:23738527).\" PMID 23738527 is \"A method for accounting for maintenance"
+        },
+        {
+          "file": "repair_cost_provenance_20260829.py",
+          "line": 163,
+          "text": "'studied in gestational diabetes (PMID:23738527). Hypoglycemia '"
         }
       ],
       "has_abstract": true,
@@ -2858,9 +2878,9 @@
       "pmid": "29710129",
       "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
       "score": "WEAK",
-      "confidence": 0.007,
-      "details": "1/149 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
-      "claim_count": 68,
+      "confidence": 0.005,
+      "details": "1/193 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 87,
       "claims": [
         {
           "file": "audit_prose_citation_titles.py",
@@ -4351,24 +4371,24 @@
       "pmid": "36643381",
       "title": "Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Level in Coronary Artery Disease Patients with Type 2 Diabetes Mellitus and Enhanced Inflammatory Response Protocol for a Randomized, Double-Blind, Placebo-Controlled, Phase 2, Dose-Finding Study.",
       "score": "PLAUSIBLE",
-      "confidence": 0.2,
-      "details": "4/20 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.207,
+      "details": "6/29 claim terms found in paper; 5 diabetes domain terms; 3 phrase matches",
+      "claim_count": 6,
       "claims": [
+        {
+          "file": "audit_pubtype_title_disagreement.py",
+          "line": 17,
+          "text": "PMID 36643381 Biomed Hub 2022. Title ends \"... Protocol for a Randomized,"
+        },
+        {
+          "file": "build_research_paths.py",
+          "line": 913,
+          "text": "the same day: PMID 36643381 is a trial protocol whose title says so and whose PubMed record"
+        },
         {
           "file": "_close_run_2026_08_22.py",
           "line": 99,
           "text": "'catch PMID 36643381 publishing a power-calculation assumption '"
-        },
-        {
-          "file": "_close_run_2026_08_22.py",
-          "line": 190,
-          "text": "'PMID 36643381 (colchicine protocol) was publishing a power-calculation '"
-        },
-        {
-          "file": "_close_run_2026_08_22.py",
-          "line": 231,
-          "text": "'(4) PROVENANCE, A NEW DEFECT CLASS. PMID 36643381 is a colchicine trial '"
         }
       ],
       "has_abstract": true,
@@ -4378,14 +4398,24 @@
       "pmid": "36826844",
       "title": "Effect of Verapamil on Pancreatic Beta Cell Function in Newly Diagnosed Pediatric Type 1 Diabetes: A Randomized Clinical Trial.",
       "score": "PLAUSIBLE",
-      "confidence": 0.25,
-      "details": "3/12 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.333,
+      "details": "8/24 claim terms found in paper; 9 diabetes domain terms; 2 phrase matches",
+      "claim_count": 3,
       "claims": [
+        {
+          "file": "audit_pubtype_title_disagreement.py",
+          "line": 25,
+          "text": "PMID 36826844 JAMA 2023. Title ends \"... A Randomized Clinical Trial\"."
+        },
         {
           "file": "build_drug_repurposing_screen.py",
           "line": 1166,
           "text": "Key findings: (1) {len([d for d in CANDIDATES.values() if d[\"generic_cost\"] < 1.00])} candidates cost under $1/month"
+        },
+        {
+          "file": "build_research_paths.py",
+          "line": 914,
+          "text": "does not, and PMID 36826844 is a JAMA randomised trial (CLVer, n=88) that PubMed has not"
         }
       ],
       "has_abstract": true,
@@ -4974,9 +5004,9 @@
       "pmid": "39613428",
       "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
       "score": "PLAUSIBLE",
-      "confidence": 0.27,
-      "details": "10/37 claim terms found in paper; 11 diabetes domain terms; 1 phrase matches",
-      "claim_count": 8,
+      "confidence": 0.25,
+      "details": "11/44 claim terms found in paper; 11 diabetes domain terms; 1 phrase matches",
+      "claim_count": 9,
       "claims": [
         {
           "file": "audit_path_count_staleness.py",
@@ -5128,11 +5158,16 @@
     "40111679": {
       "pmid": "40111679",
       "title": "Effect of Verapamil on Blood Glucose in Type 1 and Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis.",
-      "score": "CONFIRMED",
-      "confidence": 0.6,
-      "details": "5/10 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.294,
+      "details": "5/17 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "_close_run_2026_08_28.py",
+          "line": 100,
+          "text": "'design, and an external anchor was found: PMID 40111679, a 2026 SR/MA of 8 '"
+        },
         {
           "file": "_run_2026_08_28.py",
           "line": 93,
@@ -5278,11 +5313,16 @@
     "40598585": {
       "pmid": "40598585",
       "title": "A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.",
-      "score": "CONFIRMED",
-      "confidence": 0.544,
-      "details": "4/9 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "4/12 claim terms found in paper; 8 diabetes domain terms; 1 phrase matches",
+      "claim_count": 2,
       "claims": [
+        {
+          "file": "_close_run_2026_08_28.py",
+          "line": 71,
+          "text": "\"verapamil from the 11 winners in PMID 40598585 (BMC Med 2025 network MA) is \""
+        },
         {
           "file": "_run_2026_08_28.py",
           "line": 147,

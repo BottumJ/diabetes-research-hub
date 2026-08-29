@@ -53,6 +53,106 @@ STATUS_BG = {
     'CONTRADICTED': '#f8e8e8',  # light red
 }
 
+# ---------------------------------------------------------------------------
+# Evidence-design tier (wired 2026-08-29, work queue P1 of 2026-08-28)
+# ---------------------------------------------------------------------------
+# audit_path_evidence_design.py has graded every live path by the PUBLICATION
+# TYPE of the papers it rests on since 2026-08-28, and wrote the grade to
+# path_evidence_design.json. This builder did not read it, so the published
+# dashboard still ordered paths by data-point count alone -- and on 2026-08-28
+# the count was shown to be INVERSELY related to evidence quality at the top:
+# the four highest-count paths graded SYNTHESIS_ONLY, SYNTHESIS_ONLY,
+# NO_RESULTS, NO_RESULTS. A reader sorting by the first column was reading the
+# ranking backwards, and the repo knew it.
+#
+# Two changes, both required. Sorting alone would hide the reason; badging
+# alone would leave a protocol-only path sitting at the top of the page.
+#   1. Paths sort by (tier_rank, status, confidence, count) -- design first.
+#   2. Every card carries its tier badge and the grader's one-line reason.
+#
+# UNGRADED is rendered, not hidden. Two rendered paths (BHB_NLRP3_inhibition,
+# verapamil_TXNIP_beta_cell_preservation) exist in validated_research_paths.json
+# but not in research_paths.json, so the grader never saw them. Suppressing the
+# badge for those two would silently exempt exactly the paths whose provenance
+# is least clear. They rank LAST: unknown design is not a passing grade.
+EVIDENCE_TIER_RANK = {
+    'PRIMARY': 0,
+    'SYNTHESIS_ONLY': 1,
+    'NARRATIVE_ONLY': 2,
+    'NO_RESULTS': 3,
+    'UNGRADED': 4,
+}
+
+EVIDENCE_TIER_COLORS = {
+    'PRIMARY': '#2d5016',         # forest green - measured outcomes exist
+    'SYNTHESIS_ONLY': '#1f4e79',  # blue - strong evidence, attribution caveat
+    'NARRATIVE_ONLY': '#8b7500',  # olive - narrative review only
+    'NO_RESULTS': '#8b0000',      # dark red - protocol/editorial, no outcome
+    'UNGRADED': '#555555',        # grey - grader never saw this path
+}
+
+EVIDENCE_TIER_FALLBACK_WHY = {
+    'UNGRADED': ('not present in research_paths.json when the evidence-design '
+                 'grader last ran, so its publication types were never read'),
+}
+
+evidence_design_file = os.path.join(
+    base_dir, 'Analysis', 'Results', 'path_evidence_design.json')
+
+
+def _tier_key(path_name):
+    """Collapse the two path-name spellings onto one key.
+
+    research_paths.json / path_evidence_design.json spell a path
+    'metformin -> T2D'; validated_research_paths.json spells the same path
+    'metformin_T2D'. normalize_path_name() maps the first to
+    'metformin___T2D' (three underscores: one for each space and one for the
+    arrow), which never matched the second. Collapsing runs of underscores is
+    what makes the join work.
+    """
+    if not path_name:
+        return ''
+    key = path_name.replace('->', '_').replace('→', '_').replace(' ', '_')
+    return re.sub(r'_+', '_', key).strip('_').lower()
+
+
+def load_evidence_design():
+    """Return {tier_key: {'tier','why','data_points'}} from the grader.
+
+    Missing or unreadable file is not fatal: every path then renders UNGRADED,
+    which is the honest state of the world when no grading exists.
+    """
+    try:
+        with open(evidence_design_file, 'r', encoding='utf-8') as fh:
+            raw = json.load(fh)
+    except (OSError, ValueError):
+        return {}, None
+    graded = {}
+    for name, entry in raw.get('paths', {}).items():
+        graded[_tier_key(name)] = {
+            'tier': entry.get('tier', 'UNGRADED'),
+            'why': entry.get('why', ''),
+            'data_points': entry.get('data_points'),
+            'source_name': name,
+        }
+    return graded, raw.get('generated')
+
+
+def tier_for(path_name, graded):
+    """Tier + reason for one path. Never raises, never invents a grade."""
+    entry = graded.get(_tier_key(path_name))
+    if entry:
+        return entry['tier'], entry.get('why', '')
+    return 'UNGRADED', EVIDENCE_TIER_FALLBACK_WHY['UNGRADED']
+
+
+def tier_badge_html(tier, why):
+    """One badge. The reason travels with the grade or the grade misleads."""
+    color = EVIDENCE_TIER_COLORS.get(tier, '#555555')
+    safe_why = (why or '').replace('"', '&quot;')
+    return (f'<span class="tier-badge" style="border-color: {color}; '
+            f'color: {color};" title="{safe_why}">{tier.replace("_", " ")}</span>')
+
 def truncate(text, length=300):
     """Truncate text to specified length."""
     if not text:
@@ -430,6 +530,11 @@ def generate_html(research_paths, validated_data):
     corpus_papers_txt = str(corpus_papers) if corpus_papers else 'the corpus'
     validation_summary = validated_data['validation_summary']
 
+    # Evidence-design grades (wired 2026-08-29). Loaded once; every render
+    # site below reads from this dict rather than re-opening the file, so the
+    # sort order and the badges cannot disagree with each other.
+    evidence_design, evidence_design_generated = load_evidence_design()
+
     # Build network
     network = build_path_network(validated_data)
     path_to_gaps = map_paths_to_gaps(validated_data)
@@ -635,6 +740,39 @@ def generate_html(research_paths, validated_data):
         .confidence-medium { color: #8b7500; font-weight: 600; }
         .confidence-low { color: #8b4513; font-weight: 600; }
 
+        /* Evidence-design tier. Outlined, not filled: the tier is a
+           disclosure about study design, not a validation verdict, and it
+           must not compete visually with the filled status badge. */
+        .tier-badge {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #555;
+            padding: 4px 9px;
+            margin-left: 8px;
+            font-size: 0.72em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: help;
+        }
+        .tier-why {
+            font-size: 0.82em;
+            color: #555;
+            font-style: italic;
+            margin: 6px 0 0 0;
+        }
+        .tier-legend {
+            background-color: #f5f5f0;
+            border: 1px solid #ddd;
+            border-left: 3px solid #1a1a1a;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 0.88em;
+        }
+        .tier-legend dt { font-weight: 600; margin-top: 8px; }
+        .tier-legend dd { margin: 2px 0 0 0; color: #444; }
+
         .gap-tag {
             display: inline-block;
             background-color: #f0f8e8;
@@ -729,10 +867,67 @@ def generate_html(research_paths, validated_data):
     <div id="all-validated" class="tab-content active">
 '''
 
-    # Sort paths by confidence and name
+    # Legend. A badge nobody can decode is decoration; the tier definitions
+    # and the ordering rule are stated once, at the top of the first tab.
+    _tier_present = {}
+    for _pn, _pd in validated_data['paths'].items():
+        if _pd['status'] != 'VALIDATED':
+            continue
+        _t = tier_for(_pn, evidence_design)[0]
+        _tier_present[_t] = _tier_present.get(_t, 0) + 1
+    _generated_txt = (f' Grades read from path_evidence_design.json, generated '
+                      f'{evidence_design_generated}.' if evidence_design_generated
+                      else ' No evidence-design grading was available at build time;'
+                           ' every path renders UNGRADED.')
+    html += f'''        <div class="tier-legend">
+            <p style="margin-top:0;"><strong>Cards are ordered by evidence design, not by data-point count.</strong>
+            Counting answers &ldquo;how much&rdquo; and never &ldquo;of what&rdquo;. On 2026-08-28 the four
+            highest-count paths on this page graded SYNTHESIS ONLY, SYNTHESIS ONLY,
+            NO RESULTS and NO RESULTS &mdash; ranking by count was ranking the page
+            backwards. The badge on each card is the publication type of the corpus
+            papers that path rests on, taken from PubMed rather than from this
+            repository's own text matching.{_generated_txt}</p>
+            <dl>
+                <dt style="color:{EVIDENCE_TIER_COLORS['PRIMARY']};">PRIMARY ({_tier_present.get('PRIMARY', 0)} paths)</dt>
+                <dd>At least one citing paper reports primary data. A measured outcome exists under this path.</dd>
+                <dt style="color:{EVIDENCE_TIER_COLORS['SYNTHESIS_ONLY']};">SYNTHESIS ONLY ({_tier_present.get('SYNTHESIS_ONLY', 0)} paths)</dt>
+                <dd>Rests on a systematic review or meta-analysis. <em>Not</em> weak &mdash; an SR/MA outranks a
+                single trial &mdash; but a number scraped out of one may be the pooled estimate or may be one of
+                the trials it tabulates, and extraction cannot tell them apart. Flagged for attribution, not weight.</dd>
+                <dt style="color:{EVIDENCE_TIER_COLORS['NARRATIVE_ONLY']};">NARRATIVE ONLY ({_tier_present.get('NARRATIVE_ONLY', 0)} paths)</dt>
+                <dd>Every citing paper is a narrative review. Genuinely weak.</dd>
+                <dt style="color:{EVIDENCE_TIER_COLORS['NO_RESULTS']};">NO RESULTS ({_tier_present.get('NO_RESULTS', 0)} paths)</dt>
+                <dd>Every citing paper is a protocol, editorial, comment or bibliometric study.
+                <strong>No measured outcome exists anywhere under this path.</strong></dd>
+                <dt style="color:{EVIDENCE_TIER_COLORS['UNGRADED']};">UNGRADED ({_tier_present.get('UNGRADED', 0)} paths)</dt>
+                <dd>The grader never saw this path &mdash; it is published here but absent from
+                research_paths.json, so its provenance is the least clear on the page, not the most.
+                Ranked last deliberately.</dd>
+            </dl>
+            <p style="margin-bottom:0;"><strong>Limit of this badge, measured 2026-08-29.</strong>
+            The tier is only as good as PubMed's publication-type field, and that field is assigned on
+            a lag. 134 of 359 papers in this corpus (37%) carry no design-bearing publication type at
+            all &mdash; 66% of 2026 papers and 46% of 2025 papers, against about 31% of papers published
+            before 2018. The badge is therefore most reliable on the oldest evidence and least reliable
+            on the newest, which is the opposite of what a reader would assume. Two concrete cases found
+            the same day: PMID 36643381 is a trial protocol whose title says so and whose PubMed record
+            does not, and PMID 36826844 is a JAMA randomised trial (CLVer, n=88) that PubMed has not
+            tagged as one. See pubtype_title_disagreement.json.</p>
+        </div>
+'''
+
+    # Sort paths by EVIDENCE DESIGN first, then confidence and name.
+    #
+    # Changed 2026-08-29. The previous key ordered on status and confidence,
+    # and within a tie the page fell back to data-point count, which put a
+    # protocol-only path (verapamil, NO_RESULTS) above a randomised trial
+    # (dapagliflozin, PRIMARY) because the protocol's dose table yielded more
+    # scrapeable numbers. Design leads the key now; count no longer decides
+    # anything the reader sees first.
     validated_items = sorted(
         validated_data['paths'].items(),
         key=lambda x: (
+            EVIDENCE_TIER_RANK.get(tier_for(x[0], evidence_design)[0], 4),
             0 if x[1]['status'] == 'VALIDATED' else 1,
             0 if x[1]['confidence'] == 'HIGH' else (1 if x[1]['confidence'] == 'MEDIUM' else 2),
             x[0]
@@ -746,17 +941,19 @@ def generate_html(research_paths, validated_data):
         confidence_class = f"confidence-{path_data['confidence'].lower()}"
         status_color = STATUS_COLORS.get(path_data['status'], '#999')
         status_bg = STATUS_BG.get(path_data['status'], '#f9f9f9')
+        tier, tier_why = tier_for(path_name, evidence_design)
 
         gaps = path_to_gaps.get(path_name, set())
         gap_html = ''.join([f'<span class="gap-tag">Gap {gap}: {GAPS_METADATA.get(gap, {}).get("title", "Unknown")}</span>' for gap in sorted(gaps)])
 
         html += f'''        <div class="path-card" style="background-color: {status_bg}; border-color: {status_color};">
             <div class="path-header">
-                <div class="path-name">{path_name}</div>
+                <div class="path-name">{path_name}{tier_badge_html(tier, tier_why)}</div>
                 <div class="status-badge" style="background-color: {status_color}; color: white;">
                     {path_data['status']}
                 </div>
             </div>
+            <p class="tier-why">Evidence design &mdash; {tier.replace('_', ' ').lower()}: {tier_why}</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -828,16 +1025,26 @@ def generate_html(research_paths, validated_data):
 
     <div id="high-confidence" class="tab-content">
         <h3>High Confidence Validated Paths</h3>
-        <p>These paths have the strongest evidence base from systematic reviews and/or landmark RCTs:</p>
+        <p>Paths whose <em>external validation search</em> returned a high-confidence
+        match. Corrected 2026-08-29: this heading previously read &ldquo;the strongest
+        evidence base from systematic reviews and/or landmark RCTs&rdquo;, which was not
+        true of every path listed here. Confidence is scored on the external source
+        found during validation; it says nothing about the design of the
+        <em>corpus</em> papers the path's data points were scraped from. Some paths
+        below are HIGH confidence and still carry a NO RESULTS design badge, meaning
+        every corpus paper under them is a protocol or editorial with no measured
+        outcome. Read the badge, not the heading:</p>
 '''
 
     high_conf = [p for p in validated_items if p[1]['status'] == 'VALIDATED' and p[1]['confidence'] == 'HIGH']
     for path_name, path_data in high_conf:
         status_bg = STATUS_BG.get(path_data['status'], '#f9f9f9')
         status_color = STATUS_COLORS.get(path_data['status'], '#999')
+        tier, tier_why = tier_for(path_name, evidence_design)
 
         html += f'''        <div class="path-card" style="background-color: {status_bg}; border-color: {status_color};">
-            <div class="path-name">{path_name}</div>
+            <div class="path-name">{path_name}{tier_badge_html(tier, tier_why)}</div>
+            <p class="tier-why">Evidence design &mdash; {tier.replace('_', ' ').lower()}: {tier_why}</p>
             <p><strong>Validation Source:</strong> {path_data.get('validation_source', 'N/A')}</p>
             <p><strong>Caveats:</strong> {path_data.get('caveats', 'None')}</p>
             <p><strong>Data Points from Corpus:</strong> {path_data['data_point_count']}</p>
@@ -925,14 +1132,16 @@ def generate_html(research_paths, validated_data):
         status_bg = STATUS_BG.get(path_data['status'], '#f9f9f9')
         status_color = STATUS_COLORS.get(path_data['status'], '#999')
         confidence_class = f"confidence-{path_data['confidence'].lower()}"
+        tier, tier_why = tier_for(path_name, evidence_design)
 
         html += f'''    <div class="path-card" style="background-color: {status_bg}; border-color: {status_color};">
         <div class="path-header">
-            <div class="path-name">{path_name}</div>
+            <div class="path-name">{path_name}{tier_badge_html(tier, tier_why)}</div>
             <div class="status-badge" style="background-color: {status_color}; color: white;">
                 {path_data['status']}
             </div>
         </div>
+        <p class="tier-why">Evidence design &mdash; {tier.replace('_', ' ').lower()}: {tier_why}</p>
 
         <div class="path-stats">
             <div class="stat-item">

@@ -38,7 +38,7 @@ CANDIDATES = {
         "mechanism_diabetes": "AMPK activation, NLRP3 inflammasome suppression, mitochondrial complex I inhibition",
         "evidence": "Seminal landmark therapy; PMID:30899369 demonstrates NLRP3 inflammasome suppression; UK Prospective Diabetes Study established cardioprotection",
         "generic_cost": 0.05,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing database",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 10,
@@ -57,7 +57,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Beta cell preservation, anti-apoptotic signaling, islet protection; TXNIP inhibition demonstrated in rodent models but not confirmed as mechanism in humans",
         "evidence": "PMID:29988125 (Ovalle et al, Nature Medicine 2018) demonstrates preserved C-peptide and beta cell function in new-onset T1D. TXNIP inhibition is the proposed mechanism from preclinical models but has not been directly validated in human islets in vivo",
         "generic_cost": 0.15,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 9,
@@ -76,7 +76,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Indirect NLRP3 inflammasome inhibition via microtubule disruption (not direct NLRP3 binding), IL-1beta suppression, monocyte activation blockade",
         "evidence": "COLCOT trial demonstrates cardiovascular benefit in stable CAD; LoDoCo2 confirms anti-inflammatory cardiovascular effects. Mechanism is INDIRECT \u2014 colchicine disrupts microtubule-dependent NLRP3 assembly rather than directly inhibiting the inflammasome. Multiple Phase 2 studies in metabolic inflammation",
         "generic_cost": 0.50,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,  # CORRECTED: Colchicine is on WHO EML 2023 (Section 29, Gout medicines)
         "global_availability": "high",
         "mechanism_score": 9,
@@ -95,7 +95,7 @@ CANDIDATES = {
         "mechanism_diabetes": "TLR signaling inhibition, anti-inflammatory, immunomodulatory",
         "evidence": "WHO Essential Medicine with decades of rheumatologic safety data. Insulin sensitivity claims based on observational/retrospective studies only \u2014 no RCT specifically evaluating HCQ for insulin sensitivity exists. Metabolic benefits observed incidentally in RA/SLE populations. Treg expansion is mechanistically plausible but not directly demonstrated for HCQ",
         "generic_cost": 0.20,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -114,7 +114,7 @@ CANDIDATES = {
         "mechanism_diabetes": "TNF-alpha inhibition, improved microcirculatory flow, insulin sensitivity improvement in NASH",
         "evidence": "Multiple Phase 2 studies demonstrate TNF-alpha reduction in metabolic syndrome; improves insulin sensitivity in NASH populations with metabolic dysfunction",
         "generic_cost": 0.25,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -133,7 +133,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Neutrophil inhibition, oxidative stress reduction, anti-inflammatory",
         "evidence": "Decades of safety data; WHO Essential Medicines for leprosy; immunomodulatory effects demonstrated in multiple autoimmune conditions",
         "generic_cost": 0.10,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -152,7 +152,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Preservation of renal function, anti-inflammatory; pancreatic islet protection demonstrated in animal models only",
         "evidence": "Extensive human evidence for diabetic nephropathy (RENAAL trial); cardiovascular outcome trials in diabetes. Islet protection claims based on rodent models \u2014 no human RCT has evaluated losartan for beta cell preservation",
         "generic_cost": 0.08,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 8,
@@ -171,7 +171,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Anti-inflammatory in adipose tissue, improved insulin sensitivity, mitochondrial protection",
         "evidence": "WHO Essential Medicine; multiple observational studies show metabolic benefits; cardiac and renal protection in diabetes; improving evidence base in metabolic syndrome",
         "generic_cost": 0.12,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -190,7 +190,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PPARG agonism, improved insulin sensitivity, mitochondrial biogenesis; Treg expansion demonstrated in preclinical models but not confirmed in human diabetes trials",
         "evidence": "Extensive clinical trial evidence for insulin sensitization. PPARG-driven Treg differentiation demonstrated in murine models; human evidence for immune modulation is indirect and observational",
         "generic_cost": 0.30,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,  # CORRECTED: Pioglitazone is on WHO EML 2023 (Section 18.5, Insulins and other antidiabetic agents)
         "global_availability": "high",
         "mechanism_score": 9,
@@ -209,7 +209,7 @@ CANDIDATES = {
         "mechanism_diabetes": "B cell and T cell suppression, selective lymphocyte targeting, anti-autoimmune",
         "evidence": "Standard transplant immunosuppression; accumulating evidence in T1D and LADA; selective B cell targeting relevant to beta cell autoimmunity",
         "generic_cost": 2.00,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "moderate",
         "mechanism_score": 9,
@@ -228,7 +228,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Purine metabolism inhibition, T cell and B cell suppression, anti-autoimmune",
         "evidence": "Historical T1D prevention trials; extensive use in autoimmune conditions; well-characterized mechanism in lymphocyte suppression",
         "generic_cost": 0.40,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 8,
@@ -247,7 +247,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Toll-like receptor 4 antagonism, microglial suppression, immune modulation at sub-analgesic doses",
         "evidence": "Emerging evidence in autoimmune and metabolic conditions; Phase 2 trials in multiple sclerosis and fibromyalgia; TLR4 mechanism relevant to diabetic inflammation",
         "generic_cost": 0.50,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -266,7 +266,7 @@ CANDIDATES = {
         "mechanism_diabetes": "NAD+ augmentation, PARP inhibition, beta cell preservation, anti-apoptotic",
         "evidence": "ENDIT trial (European Nicotinamide Diabetes Intervention Trial) was NEGATIVE \u2014 did not prevent T1D in high-risk individuals (Lancet 2004; PMID:15016488). Preclinical mechanistic studies support PARP inhibition and beta cell protection in vitro, but clinical translation has not been demonstrated",
         "generic_cost": 0.05,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 8,
@@ -285,7 +285,7 @@ CANDIDATES = {
         "mechanism_diabetes": "AMPK activation, mitochondrial function modulation, improved insulin sensitivity",
         "evidence": "PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin comparison trial. Subsequent meta-analyses (PMID:25498346) suggest glucose-lowering effects, but head-to-head non-inferiority to metformin is not established. AMPK activation confirmed in preclinical models",
         "generic_cost": 0.15,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -304,7 +304,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Delayed carbohydrate absorption, GLP-1 enhancement, improved beta cell sensitivity",
         "evidence": "Extensive clinical trial evidence; GLP-1 augmentation mechanism; cardiovascular outcome data from ACE trial",
         "generic_cost": 0.25,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -323,7 +323,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Microbiome modulation, improved insulin sensitivity, reduced endotoxemia, SCFA production",
         "evidence": "Emerging Phase 2 data in metabolic syndrome; microbiome-based mechanism; selective gut targeting with minimal systemic absorption",
         "generic_cost": 1.50,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "moderate",
         "mechanism_score": 7,
@@ -342,7 +342,7 @@ CANDIDATES = {
         "mechanism_diabetes": "mTOR suppression, Treg expansion, anti-proliferative, metabolic reprogramming",
         "evidence": "Standard transplant therapy; extensive Treg expansion data; metabolic reprogramming of immune cells; multiple preclinical beta cell preservation studies",
         "generic_cost": 3.00,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "moderate",
         "mechanism_score": 9,
@@ -361,7 +361,7 @@ CANDIDATES = {
         "mechanism_diabetes": "JAK-STAT inhibition, Treg expansion, reduced pro-inflammatory cytokines",
         "evidence": "FDA-approved for RA; preclinical islet transplant tolerance data in mouse models; no human diabetes-specific RCT. Mechanistic studies on immune modulation are preclinical",
         "generic_cost": 50.00,  # CORRECTED: Brand Olumiant ~$300/mo; Indian generics ~$30-60/mo; $5 was fabricated. No FDA-approved generic exists as of 2025
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "limited",
         "mechanism_score": 8,
@@ -380,7 +380,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Gasdermin D inhibition, inflammasome suppression via copper chelation; NLRP3 effect is indirect through gasdermin D cleavage inhibition",
         "evidence": "PRECLINICAL: Hu et al (Nature 2020, PMID:32943753) demonstrated gasdermin D inhibition. Inflammasome suppression via copper-dependent mechanism shown in cell and animal models only. No human diabetes data. Repurposing cancer trial data provides safety context but not diabetes efficacy",
         "generic_cost": 0.30,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -399,7 +399,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Nrf2 pathway activation, oxidative stress reduction, anti-inflammatory, immunomodulatory",
         "evidence": "FDA-approved for MS; multiple mechanistic studies on Nrf2-dependent immune modulation; oxidative stress reduction in metabolic diseases",
         "generic_cost": 8.00,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "limited",
         "mechanism_score": 8,
@@ -418,7 +418,7 @@ CANDIDATES = {
         "mechanism_diabetes": "GSK-3beta inhibition, Wnt signaling activation, neurotropic protection",
         "evidence": "PRECLINICAL ONLY: GSK-3beta inhibition promotes beta cell proliferation in rodent models and cell lines. No human clinical evidence for beta cell proliferation or diabetes prevention. Narrow therapeutic index requires serum monitoring. Observational data from bipolar cohorts show mixed metabolic effects",
         "generic_cost": 0.20,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 5,
@@ -437,7 +437,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Anti-inflammatory, endothelial protection, paradoxical new-onset diabetes risk",
         "evidence": "Cardiovascular outcome trials; mixed evidence on new-onset diabetes; anti-inflammatory pleiotropic effects; WHO Essential Medicine for cardiovascular risk reduction",
         "generic_cost": 0.08,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 6,
@@ -456,7 +456,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Oxidative stress reduction, xanthine oxidase-derived ROS suppression, improved endothelial function",
         "evidence": "WHO Essential Medicine; observational studies in metabolic syndrome; uric acid as inflammatory marker in diabetes; endothelial protective effects",
         "generic_cost": 0.05,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 6,
@@ -475,7 +475,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PPAR-gamma agonism (off-target), improved insulin sensitivity, anti-inflammatory",
         "evidence": "Observational studies demonstrating metabolic benefits; partial PPAR-gamma agonism; multiple cardiovascular outcome trials in hypertensive diabetics",
         "generic_cost": 0.10,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -494,7 +494,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PPARG agonism, Treg expansion, improved insulin sensitivity, mitochondrial function",
         "evidence": "Extensive clinical data; similar PPARG agonism to pioglitazone; cardiac concerns limit use but metabolic benefits confirmed",
         "generic_cost": 0.20,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "moderate",
         "mechanism_score": 9,
@@ -513,7 +513,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PDGF receptor inhibition, anti-fibrotic, immune modulation through kinase inhibition",
         "evidence": "Preclinical studies in beta cell preservation; anti-fibrotic mechanisms relevant to islet transplant; emerging diabetes prevention data",
         "generic_cost": 2.50,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "moderate",
         "mechanism_score": 6,
@@ -532,7 +532,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Sodium-potassium pump inhibition, improved cellular signaling, cardiac efficiency",
         "evidence": "Historic cardiovascular data; established mechanism; limited direct diabetes evidence but relevant to diabetes-associated heart failure",
         "generic_cost": 0.05,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 4,
@@ -551,7 +551,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Oxidative stress reduction, glutathione replenishment, anti-inflammatory",
         "evidence": "Multiple metabolic syndrome and T2D trials; antioxidant mechanism; glutathione-dependent immune regulation",
         "generic_cost": 0.15,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 6,
@@ -570,7 +570,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Anti-inflammatory, immunomodulatory, gut barrier reinforcement",
         "evidence": "Established use in autoimmune conditions; multiple immune modulation mechanisms; potential gut dysbiosis correction",
         "generic_cost": 0.30,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -589,7 +589,7 @@ CANDIDATES = {
         "mechanism_diabetes": "PPAR-alpha agonism, improved lipid metabolism, anti-inflammatory",
         "evidence": "Cardiovascular outcome trials; PPAR-alpha immune modulation; metabolic benefits in dyslipidemic diabetics",
         "generic_cost": 0.20,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
         "global_availability": "high",
         "mechanism_score": 6,
@@ -606,9 +606,9 @@ CANDIDATES = {
         "class": "Sulfonylurea, NLRP3 inhibitor",
         "primary_indication": "Type 2 diabetes",
         "mechanism_diabetes": "NLRP3 inflammasome inhibition (independent of glucose-lowering), KATP channel closure, insulin secretion stimulation",
-        "evidence": "Lamkanfi et al (J Cell Biol 2009, PMID:19805629) demonstrated direct NLRP3 inhibition at concentrations achievable in vivo. WHO Essential Medicine. Dual mechanism: glucose-lowering via insulin secretion AND anti-inflammatory via NLRP3. Widely studied in gestational diabetes (PMID:23738527). Hypoglycemia risk is the primary safety limitation",
+        "evidence": "PRECLINICAL. Lamkanfi et al (J Cell Biol 2009, PMID:19805629) showed glyburide prevents Cryopyrin/NLRP3 inflammasome activation in mouse macrophages and in human monocytes ex vivo, and delayed LPS-induced lethality in mice. No human received glyburide for an inflammatory outcome in that study, and it makes no claim about concentrations achievable in vivo - that phrase appeared here until 2026-08-29 and is not supported by the paper. WHO Essential Medicine. Proposed dual mechanism: glucose-lowering via insulin secretion AND anti-inflammatory via NLRP3, the second demonstrated only preclinically. Hypoglycemia risk is the primary safety limitation",
         "generic_cost": 0.03,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 8,
@@ -627,7 +627,7 @@ CANDIDATES = {
         "mechanism_diabetes": "T cell suppression via calcineurin inhibition, beta cell preservation in autoimmune diabetes",
         "evidence": "RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396; Skyler & Rabinovitch, J Diabetes Complications 1992;6(2):77-88, PMID:1611143 - Miami Cyclosporine Diabetes Study Group). Demonstrated remission induction in T1D when given early. Nephrotoxicity and long-term immunosuppression limit chronic use. Effect reversed upon discontinuation",
         "generic_cost": 30.00,  # CORRECTED: Generic cyclosporine ~$30-100/mo depending on dose and market; $1.50 was fabricated. Requires therapeutic drug monitoring adding further cost
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "moderate",
         "mechanism_score": 9,
@@ -646,7 +646,7 @@ CANDIDATES = {
         "mechanism_diabetes": "High-dose (>3g/day) NF-kB inhibition, improved insulin sensitivity; low-dose: COX-1 antiplatelet only",
         "evidence": "Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves insulin sensitivity via NF-kB inhibition. TINSAL-T2D trial (Goldfine, Ann Intern Med 2013, PMID:23817699) confirmed glucose-lowering with salsalate in T2D. Standard low-dose aspirin does NOT have this effect. GI toxicity at high doses is limiting",
         "generic_cost": 0.02,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 7,
@@ -665,7 +665,7 @@ CANDIDATES = {
         "mechanism_diabetes": "Immunomodulation via VDR signaling, Treg support, beta cell function, reduced autoimmunity",
         "evidence": "Multiple RCTs with mixed results. Pittas et al (D2d trial, NEJM 2019, PMID:31173679) showed no significant T2D prevention in vitamin D-sufficient population. However, sub-analyses in vitamin D-deficient individuals and meta-analyses (PMID:32953989) suggest benefit in deficient populations. T1D prevention data from EURODIAB and DAISY cohorts are observational only",
         "generic_cost": 0.01,
-        "cost_source": "Hernandez 2018 (PMID:29710129) generic drug pricing",
+        "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,
         "global_availability": "high",
         "mechanism_score": 6,
@@ -1163,7 +1163,7 @@ def generate_html():
     html_parts.append(f'''    <section id="executive-summary" class="section executive-summary">
         <h2 style="margin-top: 0; border: none;">Executive Summary</h2>
         <p>This computational screen evaluates {num_drugs} generic drugs across five dimensions (mechanism relevance 25%, safety profile 20%, generic availability 20%, evidence strength 20%, equity score 15%) to identify existing agents with mechanisms pertinent to diabetes pathophysiology that could serve as low-cost interventions in resource-limited settings.</p>
-        <p>Key findings: (1) {len([d for d in CANDIDATES.values() if d["generic_cost"] < 1.00])} candidates cost under $1/month with relevant mechanisms for both T2D and autoimmune diabetes (Hernandez 2018, PMID:29710129), (2) NLRP3 inflammasome inhibitors emerge as leading candidates across {len(PATHWAYS["NLRP3 Inflammasome"])} drugs including glyburide (pennies/month, WHO Essential), (3) beta cell preservation is supported for verapamil ($0.15/month; pediatric RCT positive — CLVer/Forlenza JAMA 2023, PMID:36826844 — but the larger adult Ver-A-T1D RCT (n=136) reported a NEUTRAL 12-month C-peptide primary at EASD 2025, so adult efficacy is unproven) and cyclosporine (RCT-proven but toxicity-limited), and (4) {num_who} drugs are already WHO Essential Medicines with existing global supply chains.</p>
+        <p>Key findings: (1) {len([d for d in CANDIDATES.values() if d["generic_cost"] < 1.00])} candidates cost under $1/month with relevant mechanisms for both T2D and autoimmune diabetes (cost figures are UNSOURCED: they were attributed to Hernandez 2018, PMID:29710129 until 2026-08-29, but that paper is a JAMA Oncology analysis of CAR-T therapy costs and holds no generic drug prices; the figures are retained unchanged and their provenance is open), (2) NLRP3 inflammasome inhibitors emerge as leading candidates across {len(PATHWAYS["NLRP3 Inflammasome"])} drugs including glyburide (pennies/month, WHO Essential), (3) beta cell preservation is supported for verapamil ($0.15/month; pediatric RCT positive — CLVer/Forlenza JAMA 2023, PMID:36826844 — but the larger adult Ver-A-T1D RCT (n=136) reported a NEUTRAL 12-month C-peptide primary at EASD 2025, so adult efficacy is unproven) and cyclosporine (RCT-proven but toxicity-limited), and (4) {num_who} drugs are already WHO Essential Medicines with existing global supply chains.</p>
         <p>Important caveats: nicotinamide scored high on mechanism and cost but the landmark ENDIT trial was negative for T1D prevention. Hydroxychloroquine insulin sensitivity claims lack RCT support. Lithium beta cell proliferation is preclinical only. <strong>NLRP3 caveat:</strong> the NLRP3 inflammasome candidates listed here all act <em>indirectly</em> on the pathway (metformin via AMPK, colchicine via microtubules, glyburide via the sulfonylurea side mechanism, disulfiram via gasdermin D). No clinical-stage <em>direct</em> NLRP3 inhibitor is currently in diabetic kidney disease development — MCC950 was discontinued for hepatotoxicity, and dapansutrile (OLT1177) and selnoflast (RG6418) are advancing in gout/cardiovascular indications, not DKD. The TXNIP→NLRP3→β-cell/DKD path validated in our state is therefore at the mechanistic/repurposed-agent level, not the direct-inhibitor clinical level. All evidence qualifiers are noted in individual drug entries below.</p>
     </section>
 ''')
@@ -1180,7 +1180,7 @@ def generate_html():
         </div>
         <div class="stat">
             <div class="stat-number">{len([d for d in CANDIDATES.values() if d["generic_cost"] < 1.00])}</div>
-            <div class="stat-label">Agents Under $1/Month (PMID:29710129)</div>
+            <div class="stat-label">Agents Under $1/Month (cost source unverified)</div>
         </div>
         <div class="stat">
             <div class="stat-number">{num_pathways}</div>
@@ -1273,7 +1273,14 @@ def generate_html():
 
     for drug_name, drug_data in ranked_drugs:
         who_badge = '<span class="badge badge-essential">YES</span>' if drug_data["who_essential"] else ""
-        cost_formatted = f"${drug_data['generic_cost']:.2f}<br/><small>(PMID:29710129)</small>"
+        # Provenance corrected 2026-08-29. This footnote read "(PMID:29710129)"
+        # on every row. That PMID is Hernandez et al, "Total Costs of Chimeric
+        # Antigen Receptor T-Cell Immunotherapy", JAMA Oncol 2018 - a CAR-T cost
+        # analysis holding no generic drug prices. No pricing source for these
+        # figures exists in this repository, so they are marked unsourced rather
+        # than re-attributed to a plausible substitute. Values are unchanged.
+        cost_formatted = (f"${drug_data['generic_cost']:.2f}<br/>"
+                          f"<small>(unsourced)</small>")
 
         # Score coloring
         if drug_data["composite_score"] >= 8.0:
@@ -1302,7 +1309,7 @@ def generate_html():
     # Cost comparison chart
     html_parts.append('''    <section class="section">
         <h2>Generic Cost Comparison</h2>
-        <p>Monthly cost of generic agents screened. Agents under $0.50/month highlighted for LMIC applicability. Pricing data from Hernandez 2018 (PMID:29710129) and WHO generic drug databases.</p>
+        <p>Monthly cost of generic agents screened. Agents under $0.50/month highlighted for LMIC applicability. Pricing provenance is UNRESOLVED. These figures were attributed to Hernandez 2018 (PMID:29710129) until 2026-08-29; that paper is a JAMA Oncology analysis of CAR-T therapy costs and holds no generic drug prices. No WHO database extract is held in this repository either. The values are unchanged and unverified.</p>
 ''')
 
     sorted_by_cost = sorted(ranked_drugs, key=lambda x: x[1]["generic_cost"])
@@ -1321,7 +1328,7 @@ def generate_html():
         html_parts.append(f'''        <div style="margin-bottom: 1.5rem;">
             <div style="font-weight: bold; margin-bottom: 0.25rem;">{drug_name}</div>
             <div class="cost-bar">
-                <div class="cost-bar-fill {cost_class}" style="width: {pct}%;">${cost:.2f}/month <span style="font-size: 0.75rem;">(PMID:29710129)</span></div>
+                <div class="cost-bar-fill {cost_class}" style="width: {pct}%;">${cost:.2f}/month <span style="font-size: 0.75rem;">(unsourced)</span></div>
             </div>
         </div>
 ''')
@@ -1507,7 +1514,7 @@ def generate_html():
             <dd>Decades of clinical use, well-characterized side effect profile, documented drug-drug interactions, and safety in diverse populations. Agents with WHO Essential status and extensive use across continents score 9-10. Agents with established use but narrower databases score 7-8. Novel agents or agents with narrow therapeutic windows score 5-7.</dd>
 
             <dt>Generic Availability (20%)</dt>
-            <dd>Global manufacturing infrastructure for generic formulations, WHO Essential Medicines List status, price point sustainability, and supply chain reliability. Sub-$0.20/month agents widely manufactured score 9-10 (Hernandez 2018, PMID:29710129). Agents under $1/month with established generics score 7-9 (PMID:29710129). Agents requiring specialized manufacturing or pricing >$2/month score 4-6 (PMID:29710129).</dd>
+            <dd>Global manufacturing infrastructure for generic formulations, WHO Essential Medicines List status, price point sustainability, and supply chain reliability. Sub-$0.20/month agents widely manufactured score 9-10; agents under $1/month with established generics score 7-9; agents requiring specialized manufacturing or pricing >$2/month score 4-6. These thresholds were attributed to Hernandez 2018 (PMID:29710129) until 2026-08-29. That paper is a CAR-T cost analysis and sets none of them; the thresholds are this screen own convention.</dd>
 
             <dt>Evidence Strength (20%)</dt>
             <dd>Published evidence specifically demonstrating diabetes-relevant effects in humans or translational models. Evidence from randomized controlled trials scores 9-10. Phase 2 efficacy data or multiple observational studies score 7-8. Mechanistic preclinical evidence or limited observational data score 4-6. Theoretical relevance only scores 1-3.</dd>
@@ -1517,7 +1524,7 @@ def generate_html():
         </dl>
 
         <h3>Data Sources</h3>
-        <p>Drug efficacy and safety data derived from peer-reviewed literature, clinical trial registries (ClinicalTrials.gov), WHO guidelines, and established pharmacoepidemiologic databases. All cited PMIDs represent verifiable landmark publications. Where specific PMIDs are not cited, evidence is derived from Phase 2 trials or systematic reviews documented in standard medical databases. Generic drug pricing data sourced from Hernandez 2018 (PMID:29710129) systematic review of global generic drug pricing and WHO Essential Medicines List procurement databases. Individual drug costs represent median monthly costs in generic global markets for standard dosing. Actual costs vary by geographic region, formulation, strength, and local manufacturing capacity.</p>
+        <p>Drug efficacy and safety data derived from peer-reviewed literature, clinical trial registries (ClinicalTrials.gov), WHO guidelines, and established pharmacoepidemiologic databases. All cited PMIDs represent verifiable landmark publications. Where specific PMIDs are not cited, evidence is derived from Phase 2 trials or systematic reviews documented in standard medical databases. Generic drug pricing data are UNSOURCED. Until 2026-08-29 this paragraph described PMID:29710129 as a systematic review of global generic drug pricing; it is Hernandez I, Prasad V, Gellad WF, Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy, JAMA Oncol 2018 - a research letter on CAR-T therapy costs, not a systematic review, not about generic drugs and not about international pricing. No WHO procurement extract is held here either. The cost figures on this page are retained unchanged and should be treated as unverified order-of-magnitude estimates. Individual drug costs represent median monthly costs in generic global markets for standard dosing. Actual costs vary by geographic region, formulation, strength, and local manufacturing capacity.</p>
 
         <h3>Limitations</h3>
         <p>This analysis represents a computational screen and does not constitute clinical evidence for therapeutic use of agents outside their approved indications. Individual patient factors, drug interactions, contraindications, and regulatory approval status must be evaluated before any clinical application. The scoring framework reflects current understanding of diabetes pathophysiology and may be refined as new mechanistic evidence emerges.</p>
@@ -1538,7 +1545,7 @@ def generate_html():
     # Combination Candidates section
     html_parts.append('''    <section class="section">
         <h2>Combination Candidates: Multi-Pathway Targeting</h2>
-        <p><strong>Context:</strong> These combinations were identified through corpus co-occurrence analysis of ''' + _corpus_figures()[0] + ''' de-duplicated data points from ''' + _corpus_figures()[1] + ''' full-text papers, then cross-validated against published literature. Status indicates current evidence level. NOVEL combinations represent genuinely new research directions not yet reported in the literature. Combination costs from Hernandez 2018 (PMID:29710129) and WHO pricing databases.</p>
+        <p><strong>Context:</strong> These combinations were identified through corpus co-occurrence analysis of ''' + _corpus_figures()[0] + ''' de-duplicated data points from ''' + _corpus_figures()[1] + ''' full-text papers, then cross-validated against published literature. Status indicates current evidence level. NOVEL combinations represent genuinely new research directions not yet reported in the literature. Combination costs are UNSOURCED. They were attributed to Hernandez 2018 (PMID:29710129) until 2026-08-29; that paper is a CAR-T cost analysis and holds no generic drug prices. No WHO pricing extract is held in this repository.</p>
 
         <table class="candidates-table" style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
             <thead>
@@ -1557,7 +1564,7 @@ def generate_html():
                     <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #e8f5e9; padding: 0.25rem 0.5rem; border-radius: 3px;">STUDIED</span></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>CV-inflammation-nephropathy triangle</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Published 2024-2025 outcomes data showing reduced MACE and all-cause mortality vs colchicine alone in CAD + T2D patients</small></td>
-                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$15/mo combined (generic markets; Hernandez 2018, PMID:29710129)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$15/mo combined (generic markets; cost unsourced)</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>dapagliflozin→nephropathy (3 pts), NLRP3→nephropathy (3 pts); Safety: Both well-tolerated; colchicine requires renal monitoring</small></td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
@@ -1565,7 +1572,7 @@ def generate_html():
                     <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #fff3e0; padding: 0.25rem 0.5rem; border-radius: 3px;">PRECLINICAL</span></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Dual NLRP3 suppression via different mechanisms</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Preclinical mouse NASH model shows synergistic AMPK/NRF2/GDF15 effects</small></td>
-                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined (Hernandez 2018, PMID:29710129)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined (cost unsourced)</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>metformin→T2D (26 pts), NLRP3→inflammation (61 pts); Safety: Both WHO Essential Medicines; colchicine has narrow therapeutic window</small></td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
@@ -1573,7 +1580,7 @@ def generate_html():
                     <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #fff3e0; padding: 0.25rem 0.5rem; border-radius: 3px;">PRECLINICAL</span></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Metabolic correction + oxidative stress reduction</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>In vitro cardiac protection demonstrated; NAC failed as standalone glucose-lowering agent in human T2D</small></td>
-                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined (Hernandez 2018, PMID:29710129)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$1/mo combined (cost unsourced)</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>oxidative_stress→inflammation (22 pts); Safety: Both well-tolerated; NAC is OTC supplement</small></td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
@@ -1581,7 +1588,7 @@ def generate_html():
                     <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #f3e5f5; padding: 0.25rem 0.5rem; border-radius: 3px;">NOVEL</span></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Beta cell preservation + immune tolerance in T1D</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Verapamil monotherapy showed ~30% better C-peptide preservation in the pediatric CLVer RCT (JAMA 2023); the larger adult Ver-A-T1D RCT was NEUTRAL at 12 months (EASD 2025); combination not yet studied</small></td>
-                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined (Hernandez 2018, PMID:29710129)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined (cost unsourced)</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>verapamil→T1D (7 pts), verapamil→beta_cell (6 pts); Safety: Moderate interaction — vitamin D may reduce verapamil calcium-channel blocking</small></td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
@@ -1589,7 +1596,7 @@ def generate_html():
                     <td style="padding: 0.75rem; vertical-align: top;"><span style="background-color: #f3e5f5; padding: 0.25rem 0.5rem; border-radius: 3px;">NOVEL</span></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Dual Treg expansion for LADA/islet transplant</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>Strong biological rationale (complementary Treg pathways); no human or animal combination studies</small></td>
-                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined (generic; Hernandez 2018, PMID:29710129)</small></td>
+                    <td style="padding: 0.75rem; vertical-align: top;"><small>~$5/mo combined (generic; cost unsourced)</small></td>
                     <td style="padding: 0.75rem; vertical-align: top;"><small>rapamycin→inflammation (2 pts), Treg→T1D (1 pt); Safety: Unknown — requires preclinical assessment before clinical translation</small></td>
                 </tr>
             </tbody>

@@ -1,0 +1,73 @@
+{
+  "generated": "2026-08-29",
+  "target": "Analysis/Scripts/build_drug_repurposing_screen.py",
+  "defect_class": "CITATION RESOLVES AND IDENTIFIES THE RIGHT PAPER, BUT THE PAPER DOES NOT SUPPORT THE CLAIM",
+  "note_on_this_file": "Consolidated record. The repair was applied in three passes during development, so the script's own last-run output records only the final pass. This file is the full inventory. Re-running repair_cost_provenance_20260829.py on a fresh checkout applies all 47 sites in one pass and is a no-op here.",
+  "wrong_source": {
+    "pmid": "29710129",
+    "actual": "Hernandez I, Prasad V, Gellad WF. Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy. JAMA Oncol. 2018;4(7):994-996.",
+    "was_cited_as": "generic drug pricing database / systematic review of global generic drug pricing",
+    "correct_use_elsewhere": "build_cart_access.py cites the same PMID correctly, in a CAR-T access context",
+    "why_gates_missed_it": "Every identifier is correct - PMID resolves, author Hernandez, year 2018, title agrees with PubMed - so PMID validation, title agreement, coordinate checking and the retraction gate are all silent by construction. audit_prose_citation_titles.py DID see it at line 41 and filed it under journal_not_recognised, a gate-artifact bucket, because the citation string names no journal for the gate to compare."
+  },
+  "sites_repaired": [
+    {
+      "what": "cost_source strings (one per screened drug)",
+      "count": 34
+    },
+    {
+      "what": "per-drug cost table footnote",
+      "count": 1
+    },
+    {
+      "what": "executive-summary cost claim",
+      "count": 1
+    },
+    {
+      "what": "stat-card label",
+      "count": 1
+    },
+    {
+      "what": "cost-chart caption",
+      "count": 1
+    },
+    {
+      "what": "cost bar labels",
+      "count": 1
+    },
+    {
+      "what": "availability-score rubric thresholds",
+      "count": 1
+    },
+    {
+      "what": "methodology paragraph (invented description of the cited paper)",
+      "count": 1
+    },
+    {
+      "what": "combination-therapy cost cells",
+      "count": 5
+    },
+    {
+      "what": "combination-cost caption",
+      "count": 1
+    }
+  ],
+  "total_sites": 47,
+  "passes_required": 3,
+  "lesson": "A wrong source spreads by paraphrase. Two passes reported success while the same claim survived in differently-worded captions ('WHO generic drug databases' vs 'WHO pricing databases'). Only grep for the bare identifier cleared it.",
+  "numbers_changed": 0,
+  "provenance_after_repair": "NONE - figures retained unchanged and marked unsourced; no substitute source was invented",
+  "unrelated_citation_removed": {
+    "pmid": "23738527",
+    "actual": "A method for accounting for maintenance costs in flux balance analysis improves the prediction of plant cell metabolic phenotypes under stress conditions.",
+    "was_cited_as": "glyburide widely studied in gestational diabetes",
+    "action": "claim removed, not re-sourced"
+  },
+  "preclinical_overstatement_repaired": {
+    "pmid": "19805629",
+    "paper": "Lamkanfi et al. Glyburide inhibits the Cryopyrin/Nalp3 inflammasome. J Cell Biol 2009.",
+    "removed_claim": "demonstrated direct NLRP3 inhibition at concentrations achievable in vivo",
+    "why": "in vitro mouse macrophage and human monocyte work plus one mouse LPS-lethality experiment; the abstract states no in vivo achievable concentration and no human received glyburide for an inflammatory outcome",
+    "replacement": "entry now opens PRECLINICAL and states the models"
+  }
+}

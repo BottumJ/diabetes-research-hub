@@ -174,6 +174,39 @@
         .confidence-medium { color: #8b7500; font-weight: 600; }
         .confidence-low { color: #8b4513; font-weight: 600; }
 
+        /* Evidence-design tier. Outlined, not filled: the tier is a
+           disclosure about study design, not a validation verdict, and it
+           must not compete visually with the filled status badge. */
+        .tier-badge {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #555;
+            padding: 4px 9px;
+            margin-left: 8px;
+            font-size: 0.72em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: help;
+        }
+        .tier-why {
+            font-size: 0.82em;
+            color: #555;
+            font-style: italic;
+            margin: 6px 0 0 0;
+        }
+        .tier-legend {
+            background-color: #f5f5f0;
+            border: 1px solid #ddd;
+            border-left: 3px solid #1a1a1a;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 0.88em;
+        }
+        .tier-legend dt { font-weight: 600; margin-top: 8px; }
+        .tier-legend dd { margin: 2px 0 0 0; color: #444; }
+
         .gap-tag {
             display: inline-block;
             background-color: #f0f8e8;
@@ -282,7 +315,7 @@
     <header>
         <h1>Validated Research Paths</h1>
         <p class="subtitle">Evidence-Backed Mechanisms in Diabetes Research</p>
-        <p class="byline">Dashboard generated August 28, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
+        <p class="byline">Dashboard generated August 29, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
     </header>
 
     <div class="context-block">
@@ -343,13 +376,49 @@
     </div>
 
     <div id="all-validated" class="tab-content active">
+        <div class="tier-legend">
+            <p style="margin-top:0;"><strong>Cards are ordered by evidence design, not by data-point count.</strong>
+            Counting answers &ldquo;how much&rdquo; and never &ldquo;of what&rdquo;. On 2026-08-28 the four
+            highest-count paths on this page graded SYNTHESIS ONLY, SYNTHESIS ONLY,
+            NO RESULTS and NO RESULTS &mdash; ranking by count was ranking the page
+            backwards. The badge on each card is the publication type of the corpus
+            papers that path rests on, taken from PubMed rather than from this
+            repository's own text matching. Grades read from path_evidence_design.json, generated 2026-08-29.</p>
+            <dl>
+                <dt style="color:#2d5016;">PRIMARY (3 paths)</dt>
+                <dd>At least one citing paper reports primary data. A measured outcome exists under this path.</dd>
+                <dt style="color:#1f4e79;">SYNTHESIS ONLY (2 paths)</dt>
+                <dd>Rests on a systematic review or meta-analysis. <em>Not</em> weak &mdash; an SR/MA outranks a
+                single trial &mdash; but a number scraped out of one may be the pooled estimate or may be one of
+                the trials it tabulates, and extraction cannot tell them apart. Flagged for attribution, not weight.</dd>
+                <dt style="color:#8b7500;">NARRATIVE ONLY (1 paths)</dt>
+                <dd>Every citing paper is a narrative review. Genuinely weak.</dd>
+                <dt style="color:#8b0000;">NO RESULTS (2 paths)</dt>
+                <dd>Every citing paper is a protocol, editorial, comment or bibliometric study.
+                <strong>No measured outcome exists anywhere under this path.</strong></dd>
+                <dt style="color:#555555;">UNGRADED (2 paths)</dt>
+                <dd>The grader never saw this path &mdash; it is published here but absent from
+                research_paths.json, so its provenance is the least clear on the page, not the most.
+                Ranked last deliberately.</dd>
+            </dl>
+            <p style="margin-bottom:0;"><strong>Limit of this badge, measured 2026-08-29.</strong>
+            The tier is only as good as PubMed's publication-type field, and that field is assigned on
+            a lag. 134 of 359 papers in this corpus (37%) carry no design-bearing publication type at
+            all &mdash; 66% of 2026 papers and 46% of 2025 papers, against about 31% of papers published
+            before 2018. The badge is therefore most reliable on the oldest evidence and least reliable
+            on the newest, which is the opposite of what a reader would assume. Two concrete cases found
+            the same day: <a href="https://pubmed.ncbi.nlm.nih.gov/36643381/" target="_blank" rel="noopener" title="View on PubMed">PMID 36643381</a> is a trial protocol whose title says so and whose PubMed record
+            does not, and <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a> is a JAMA randomised trial (CLVer, n=88) that PubMed has not
+            tagged as one. See pubtype_title_disagreement.json.</p>
+        </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">dapagliflozin_T2D</div>
+                <div class="path-name">dapagliflozin_T2D<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -405,11 +474,12 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">dapagliflozin_nephropathy</div>
+                <div class="path-name">dapagliflozin_nephropathy<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -464,185 +534,12 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">dorzagliatin_T2D</div>
+                <div class="path-name">oxidative_stress_cardiovascular<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
-
-            <div class="path-stats">
-                <div class="stat-item">
-                    <strong>Data Points:</strong> 2
-                </div>
-                <div class="stat-item">
-                    <strong class="confidence-high">Confidence:</strong> HIGH
-                </div>
-                <div class="stat-item">
-                    <strong>Corpus PMIDs:</strong> 1
-                </div>
-                <div class="stat-item">
-                    <strong>External PMIDs:</strong> 3
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Validation Source</span>
-                <p>Glucokinase activator approved in China and India. Meta-analysis of phase II/III trials shows HbA1c reduction 0.66% vs placebo, FPG -6.77 mg/dL, 2h-PPG -43.87 mg/dL. Phase 3 trials show sustained efficacy to 52 weeks in drug-naive and metformin-treated patients</p>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Evidence Details</span>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
-                    <span class="pmid-badge">38783768</span>
-                </div>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">35551294</span>
-                    <span class="pmid-badge">35551292</span>
-                    <span class="pmid-badge">40896829</span>
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Caveats</span>
-                <div class="caveat">Newer agent with limited long-term safety data; only available in select markets; hypoglycemia risk as monotherapy low</div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Cross-Connections to Other Paths</span>
-                <div class="connection-list">
-                    <div class="connection-item">metformin_T2D</div>
-                </div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Relevant Research Gaps</span>
-                <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span></div>
-            </div>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-header">
-                <div class="path-name">hydroxychloroquine_T2D</div>
-                <div class="status-badge" style="background-color: #2d5016; color: white;">
-                    VALIDATED
-                </div>
-            </div>
-
-            <div class="path-stats">
-                <div class="stat-item">
-                    <strong>Data Points:</strong> 32
-                </div>
-                <div class="stat-item">
-                    <strong class="confidence-high">Confidence:</strong> HIGH
-                </div>
-                <div class="stat-item">
-                    <strong>Corpus PMIDs:</strong> 1
-                </div>
-                <div class="stat-item">
-                    <strong>External PMIDs:</strong> 3
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Validation Source</span>
-                <p>Systematic review and meta-analysis of 11 RCTs (2,723 patients) demonstrates HCQ reduces HbA1c by 0.88% vs placebo and 0.32% vs other agents. PMC9196294 meta-analysis shows sustained efficacy</p>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Evidence Details</span>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
-                    <span class="pmid-badge">35466661</span>
-                </div>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">24669876</span>
-                    <span class="pmid-badge">PMC7320244</span>
-                    <span class="pmid-badge">PMC4575248</span>
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Caveats</span>
-                <div class="caveat">Effect size modest; HbA1c reduction 0.56-0.88% varies by dose and study. Best used as add-on therapy in uncontrolled diabetes.</div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Cross-Connections to Other Paths</span>
-                <div class="connection-list">
-                    <div class="connection-item">metformin_T2D</div>
-                    <div class="connection-item">oxidative_stress_T2D</div>
-                </div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Relevant Research Gaps</span>
-                <div><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span></div>
-            </div>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-header">
-                <div class="path-name">metformin_T2D</div>
-                <div class="status-badge" style="background-color: #2d5016; color: white;">
-                    VALIDATED
-                </div>
-            </div>
-
-            <div class="path-stats">
-                <div class="stat-item">
-                    <strong>Data Points:</strong> 26
-                </div>
-                <div class="stat-item">
-                    <strong class="confidence-high">Confidence:</strong> HIGH
-                </div>
-                <div class="stat-item">
-                    <strong>Corpus PMIDs:</strong> 2
-                </div>
-                <div class="stat-item">
-                    <strong>External PMIDs:</strong> 2
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Validation Source</span>
-                <p>Landmark meta-analyses confirm metformin monotherapy reduces HbA1c by 0.95-1.32% vs placebo and reduces T2DM incidence by 23-31% in high-risk populations. Multiple RCT-based systematic reviews confirm first-line status</p>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Evidence Details</span>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
-                    <span class="pmid-badge">35466661</span>
-                    <span class="pmid-badge">38783768</span>
-                </div>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">29605144</span>
-                    <span class="pmid-badge">40725640</span>
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Caveats</span>
-                <div class="caveat">Gastrointestinal side effects limit tolerability in 10-30% of patients; no benefit in established kidney disease (eGFR <30)</div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Cross-Connections to Other Paths</span>
-                <div class="connection-list">
-                    <div class="connection-item">hydroxychloroquine_T2D</div>
-                    <div class="connection-item">pioglitazone_T2D</div>
-                    <div class="connection-item">dorzagliatin_T2D</div>
-                </div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Relevant Research Gaps</span>
-                <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span></div>
-            </div>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-header">
-                <div class="path-name">oxidative_stress_cardiovascular</div>
-                <div class="status-badge" style="background-color: #2d5016; color: white;">
-                    VALIDATED
-                </div>
-            </div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -697,11 +594,189 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">verapamil_T1D</div>
+                <div class="path-name">hydroxychloroquine_T2D<span class="tier-badge" style="border-color: #1f4e79; color: #1f4e79;" title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
+            <p class="tier-why">Evidence design &mdash; synthesis only: rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial</p>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 32
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high">Confidence:</strong> HIGH
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 1
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 3
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>Systematic review and meta-analysis of 11 RCTs (2,723 patients) demonstrates HCQ reduces HbA1c by 0.88% vs placebo and 0.32% vs other agents. PMC9196294 meta-analysis shows sustained efficacy</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                    <span class="pmid-badge">35466661</span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">24669876</span>
+                    <span class="pmid-badge">PMC7320244</span>
+                    <span class="pmid-badge">PMC4575248</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Effect size modest; HbA1c reduction 0.56-0.88% varies by dose and study. Best used as add-on therapy in uncontrolled diabetes.</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">metformin_T2D</div>
+                    <div class="connection-item">oxidative_stress_T2D</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span></div>
+            </div>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">metformin_T2D<span class="tier-badge" style="border-color: #1f4e79; color: #1f4e79;" title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span></div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+            <p class="tier-why">Evidence design &mdash; synthesis only: rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial</p>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 26
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high">Confidence:</strong> HIGH
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 2
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 2
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>Landmark meta-analyses confirm metformin monotherapy reduces HbA1c by 0.95-1.32% vs placebo and reduces T2DM incidence by 23-31% in high-risk populations. Multiple RCT-based systematic reviews confirm first-line status</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                    <span class="pmid-badge">35466661</span>
+                    <span class="pmid-badge">38783768</span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">29605144</span>
+                    <span class="pmid-badge">40725640</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Gastrointestinal side effects limit tolerability in 10-30% of patients; no benefit in established kidney disease (eGFR <30)</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">hydroxychloroquine_T2D</div>
+                    <div class="connection-item">pioglitazone_T2D</div>
+                    <div class="connection-item">dorzagliatin_T2D</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span></div>
+            </div>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">dorzagliatin_T2D<span class="tier-badge" style="border-color: #8b7500; color: #8b7500;" title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span></div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+            <p class="tier-why">Evidence design &mdash; narrative only: every citing paper is a narrative review - no primary data and no systematic synthesis</p>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 2
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high">Confidence:</strong> HIGH
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 1
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 3
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>Glucokinase activator approved in China and India. Meta-analysis of phase II/III trials shows HbA1c reduction 0.66% vs placebo, FPG -6.77 mg/dL, 2h-PPG -43.87 mg/dL. Phase 3 trials show sustained efficacy to 52 weeks in drug-naive and metformin-treated patients</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                    <span class="pmid-badge">38783768</span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">35551294</span>
+                    <span class="pmid-badge">35551292</span>
+                    <span class="pmid-badge">40896829</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Newer agent with limited long-term safety data; only available in select markets; hypoglycemia risk as monotherapy low</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">metformin_T2D</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 7: Cardiovascular-Inflammation Intersection</span></div>
+            </div>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">verapamil_T1D<span class="tier-badge" style="border-color: #8b0000; color: #8b0000;" title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span></div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+            <p class="tier-why">Evidence design &mdash; no results: every citing paper is a protocol/editorial/comment - no measured outcome exists under this path</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -753,11 +828,68 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">verapamil_TXNIP_beta_cell_preservation</div>
+                <div class="path-name">verapamil_beta_cell<span class="tier-badge" style="border-color: #8b0000; color: #8b0000;" title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
+            <p class="tier-why">Evidence design &mdash; no results: every citing paper is a protocol/editorial/comment - no measured outcome exists under this path</p>
+
+            <div class="path-stats">
+                <div class="stat-item">
+                    <strong>Data Points:</strong> 6
+                </div>
+                <div class="stat-item">
+                    <strong class="confidence-high">Confidence:</strong> HIGH
+                </div>
+                <div class="stat-item">
+                    <strong>Corpus PMIDs:</strong> 1
+                </div>
+                <div class="stat-item">
+                    <strong>External PMIDs:</strong> 1
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Validation Source</span>
+                <p>Mechanism: L-type calcium channel blocker reduces TXNIP expression in beta cells, promoting functional beta-cell mass. Demonstrated in rodent and human islet studies. Clinical trials confirm improved C-peptide secretion</p>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Evidence Details</span>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
+                    <span class="pmid-badge">39613428</span>
+                </div>
+                <div class="pmid-list">
+                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
+                    <span class="pmid-badge">29988125</span>
+                </div>
+            </div>
+
+            <div class="path-section">
+                <span class="section-label">Caveats</span>
+                <div class="caveat">Mechanism limited to TXNIP pathway; requires early intervention in disease course for maximal effect</div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Cross-Connections to Other Paths</span>
+                <div class="connection-list">
+                    <div class="connection-item">verapamil_T1D</div>
+                </div>
+            </div>
+            <div class="path-section">
+                <span class="section-label">Relevant Research Gaps</span>
+                <div><span class="gap-tag">Gap 12: GLP-1 Effects on Beta Cell Function</span><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span></div>
+            </div>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-header">
+                <div class="path-name">verapamil_TXNIP_beta_cell_preservation<span class="tier-badge" style="border-color: #555555; color: #555555;" title="not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read">UNGRADED</span></div>
+                <div class="status-badge" style="background-color: #2d5016; color: white;">
+                    VALIDATED
+                </div>
+            </div>
+            <p class="tier-why">Evidence design &mdash; ungraded: not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -809,66 +941,12 @@
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-header">
-                <div class="path-name">verapamil_beta_cell</div>
+                <div class="path-name">BHB_NLRP3_inhibition<span class="tier-badge" style="border-color: #555555; color: #555555;" title="not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read">UNGRADED</span></div>
                 <div class="status-badge" style="background-color: #2d5016; color: white;">
                     VALIDATED
                 </div>
             </div>
-
-            <div class="path-stats">
-                <div class="stat-item">
-                    <strong>Data Points:</strong> 6
-                </div>
-                <div class="stat-item">
-                    <strong class="confidence-high">Confidence:</strong> HIGH
-                </div>
-                <div class="stat-item">
-                    <strong>Corpus PMIDs:</strong> 1
-                </div>
-                <div class="stat-item">
-                    <strong>External PMIDs:</strong> 1
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Validation Source</span>
-                <p>Mechanism: L-type calcium channel blocker reduces TXNIP expression in beta cells, promoting functional beta-cell mass. Demonstrated in rodent and human islet studies. Clinical trials confirm improved C-peptide secretion</p>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Evidence Details</span>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>Corpus PMIDs:</strong></span>
-                    <span class="pmid-badge">39613428</span>
-                </div>
-                <div class="pmid-list">
-                    <span style="margin-right: 15px;"><strong>External PMIDs:</strong></span>
-                    <span class="pmid-badge">29988125</span>
-                </div>
-            </div>
-
-            <div class="path-section">
-                <span class="section-label">Caveats</span>
-                <div class="caveat">Mechanism limited to TXNIP pathway; requires early intervention in disease course for maximal effect</div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Cross-Connections to Other Paths</span>
-                <div class="connection-list">
-                    <div class="connection-item">verapamil_T1D</div>
-                </div>
-            </div>
-            <div class="path-section">
-                <span class="section-label">Relevant Research Gaps</span>
-                <div><span class="gap-tag">Gap 12: GLP-1 Effects on Beta Cell Function</span><span class="gap-tag">Gap 8: Drug Repurposing for Beta Cell Protection</span></div>
-            </div>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-header">
-                <div class="path-name">BHB_NLRP3_inhibition</div>
-                <div class="status-badge" style="background-color: #2d5016; color: white;">
-                    VALIDATED
-                </div>
-            </div>
+            <p class="tier-why">Evidence design &mdash; ungraded: not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read</p>
 
             <div class="path-stats">
                 <div class="stat-item">
@@ -927,60 +1005,77 @@
 
     <div id="high-confidence" class="tab-content">
         <h3>High Confidence Validated Paths</h3>
-        <p>These paths have the strongest evidence base from systematic reviews and/or landmark RCTs:</p>
+        <p>Paths whose <em>external validation search</em> returned a high-confidence
+        match. Corrected 2026-08-29: this heading previously read &ldquo;the strongest
+        evidence base from systematic reviews and/or landmark RCTs&rdquo;, which was not
+        true of every path listed here. Confidence is scored on the external source
+        found during validation; it says nothing about the design of the
+        <em>corpus</em> papers the path's data points were scraped from. Some paths
+        below are HIGH confidence and still carry a NO RESULTS design badge, meaning
+        every corpus paper under them is a protocol or editorial with no measured
+        outcome. Read the badge, not the heading:</p>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">dapagliflozin_T2D</div>
+            <div class="path-name">dapagliflozin_T2D<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
             <p><strong>Validation Source:</strong> SGLT2 inhibitor class has extensive RCT evidence. Dapagliflozin FDA-approved for T2D with cardiovascular/renal benefits beyond glucose lowering. NEJM DAPA-CKD trial shows 39% risk reduction in composite kidney/CV endpoint</p>
             <p><strong>Caveats:</strong> Glucose-lowering modest (0.5-1% HbA1c); primary benefit is cardiovascular/renal protection independent of glucose control</p>
             <p><strong>Data Points from Corpus:</strong> 7</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">dapagliflozin_nephropathy</div>
+            <div class="path-name">dapagliflozin_nephropathy<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
             <p><strong>Validation Source:</strong> DAPA-CKD landmark trial (NEJM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/32970396/" target="_blank" rel="noopener" title="View on PubMed">PMID:32970396</a>): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
             <p><strong>Caveats:</strong> Mechanism likely via reduced intraglomerular pressure from natriuresis; benefits maintained with progressive CKD</p>
             <p><strong>Data Points from Corpus:</strong> 3</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">dorzagliatin_T2D</div>
-            <p><strong>Validation Source:</strong> Glucokinase activator approved in China and India. Meta-analysis of phase II/III trials shows HbA1c reduction 0.66% vs placebo, FPG -6.77 mg/dL, 2h-PPG -43.87 mg/dL. Phase 3 trials show sustained efficacy to 52 weeks in drug-naive and metformin-treated patients</p>
-            <p><strong>Caveats:</strong> Newer agent with limited long-term safety data; only available in select markets; hypoglycemia risk as monotherapy low</p>
-            <p><strong>Data Points from Corpus:</strong> 2</p>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">hydroxychloroquine_T2D</div>
-            <p><strong>Validation Source:</strong> Systematic review and meta-analysis of 11 RCTs (2,723 patients) demonstrates HCQ reduces HbA1c by 0.88% vs placebo and 0.32% vs other agents. PMC9196294 meta-analysis shows sustained efficacy</p>
-            <p><strong>Caveats:</strong> Effect size modest; HbA1c reduction 0.56-0.88% varies by dose and study. Best used as add-on therapy in uncontrolled diabetes.</p>
-            <p><strong>Data Points from Corpus:</strong> 32</p>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">metformin_T2D</div>
-            <p><strong>Validation Source:</strong> Landmark meta-analyses confirm metformin monotherapy reduces HbA1c by 0.95-1.32% vs placebo and reduces T2DM incidence by 23-31% in high-risk populations. Multiple RCT-based systematic reviews confirm first-line status</p>
-            <p><strong>Caveats:</strong> Gastrointestinal side effects limit tolerability in 10-30% of patients; no benefit in established kidney disease (eGFR <30)</p>
-            <p><strong>Data Points from Corpus:</strong> 26</p>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">oxidative_stress_cardiovascular</div>
+            <div class="path-name">oxidative_stress_cardiovascular<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
+            <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
             <p><strong>Validation Source:</strong> Strong mechanistic evidence: Diabetes-induced ROS impairs endothelial NO synthase and prostacyclin synthase → endothelial dysfunction, vascular inflammation, atherosclerosis acceleration. Multiple reviews in Circulation Research, JACC, Cardiovascular Diabetology confirm mechanism</p>
             <p><strong>Caveats:</strong> Causality proven in animal models; antioxidant supplementation trials in humans show minimal CV benefit</p>
             <p><strong>Data Points from Corpus:</strong> 3</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">verapamil_T1D</div>
+            <div class="path-name">hydroxychloroquine_T2D<span class="tier-badge" style="border-color: #1f4e79; color: #1f4e79;" title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span></div>
+            <p class="tier-why">Evidence design &mdash; synthesis only: rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial</p>
+            <p><strong>Validation Source:</strong> Systematic review and meta-analysis of 11 RCTs (2,723 patients) demonstrates HCQ reduces HbA1c by 0.88% vs placebo and 0.32% vs other agents. PMC9196294 meta-analysis shows sustained efficacy</p>
+            <p><strong>Caveats:</strong> Effect size modest; HbA1c reduction 0.56-0.88% varies by dose and study. Best used as add-on therapy in uncontrolled diabetes.</p>
+            <p><strong>Data Points from Corpus:</strong> 32</p>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-name">metformin_T2D<span class="tier-badge" style="border-color: #1f4e79; color: #1f4e79;" title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span></div>
+            <p class="tier-why">Evidence design &mdash; synthesis only: rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial</p>
+            <p><strong>Validation Source:</strong> Landmark meta-analyses confirm metformin monotherapy reduces HbA1c by 0.95-1.32% vs placebo and reduces T2DM incidence by 23-31% in high-risk populations. Multiple RCT-based systematic reviews confirm first-line status</p>
+            <p><strong>Caveats:</strong> Gastrointestinal side effects limit tolerability in 10-30% of patients; no benefit in established kidney disease (eGFR <30)</p>
+            <p><strong>Data Points from Corpus:</strong> 26</p>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-name">dorzagliatin_T2D<span class="tier-badge" style="border-color: #8b7500; color: #8b7500;" title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span></div>
+            <p class="tier-why">Evidence design &mdash; narrative only: every citing paper is a narrative review - no primary data and no systematic synthesis</p>
+            <p><strong>Validation Source:</strong> Glucokinase activator approved in China and India. Meta-analysis of phase II/III trials shows HbA1c reduction 0.66% vs placebo, FPG -6.77 mg/dL, 2h-PPG -43.87 mg/dL. Phase 3 trials show sustained efficacy to 52 weeks in drug-naive and metformin-treated patients</p>
+            <p><strong>Caveats:</strong> Newer agent with limited long-term safety data; only available in select markets; hypoglycemia risk as monotherapy low</p>
+            <p><strong>Data Points from Corpus:</strong> 2</p>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-name">verapamil_T1D<span class="tier-badge" style="border-color: #8b0000; color: #8b0000;" title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span></div>
+            <p class="tier-why">Evidence design &mdash; no results: every citing paper is a protocol/editorial/comment - no measured outcome exists under this path</p>
             <p><strong>Validation Source:</strong> Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (<a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener" title="View on PubMed">PMID: 39613428</a>)</p>
             <p><strong>Caveats:</strong> Effect is modest beta-cell preservation, not reversal; most benefit in early disease; mechanism involves TXNIP reduction in beta cells</p>
             <p><strong>Data Points from Corpus:</strong> 7</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">verapamil_TXNIP_beta_cell_preservation</div>
-            <p><strong>Validation Source:</strong> Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
-            <p><strong>Caveats:</strong> Both trials are short-term (12 months). Durability beyond 1 year not yet established. Multicenter Ver-A-T1D protocol (PMC11605811) still enrolling.</p>
-            <p><strong>Data Points from Corpus:</strong> 0</p>
-        </div>
-        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
-            <div class="path-name">verapamil_beta_cell</div>
+            <div class="path-name">verapamil_beta_cell<span class="tier-badge" style="border-color: #8b0000; color: #8b0000;" title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span></div>
+            <p class="tier-why">Evidence design &mdash; no results: every citing paper is a protocol/editorial/comment - no measured outcome exists under this path</p>
             <p><strong>Validation Source:</strong> Mechanism: L-type calcium channel blocker reduces TXNIP expression in beta cells, promoting functional beta-cell mass. Demonstrated in rodent and human islet studies. Clinical trials confirm improved C-peptide secretion</p>
             <p><strong>Caveats:</strong> Mechanism limited to TXNIP pathway; requires early intervention in disease course for maximal effect</p>
             <p><strong>Data Points from Corpus:</strong> 6</p>
+        </div>
+        <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
+            <div class="path-name">verapamil_TXNIP_beta_cell_preservation<span class="tier-badge" style="border-color: #555555; color: #555555;" title="not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read">UNGRADED</span></div>
+            <p class="tier-why">Evidence design &mdash; ungraded: not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read</p>
+            <p><strong>Validation Source:</strong> Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
+            <p><strong>Caveats:</strong> Both trials are short-term (12 months). Durability beyond 1 year not yet established. Multicenter Ver-A-T1D protocol (PMC11605811) still enrolling.</p>
+            <p><strong>Data Points from Corpus:</strong> 0</p>
         </div>
     </div>
 
@@ -1151,11 +1246,12 @@
     <p>The following 2 paths have supporting evidence with important caveats:</p>
     <div class="path-card" style="background-color: #fef8e8; border-color: #8b7500;">
         <div class="path-header">
-            <div class="path-name">rapamycin_inflammation</div>
+            <div class="path-name">rapamycin_inflammation<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
             <div class="status-badge" style="background-color: #8b7500; color: white;">
                 PARTIALLY_VALIDATED
             </div>
         </div>
+        <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
 
         <div class="path-stats">
             <div class="stat-item">
@@ -1178,11 +1274,12 @@
     </div>
     <div class="path-card" style="background-color: #fef8e8; border-color: #8b7500;">
         <div class="path-header">
-            <div class="path-name">semaglutide_retinopathy</div>
+            <div class="path-name">semaglutide_retinopathy<span class="tier-badge" style="border-color: #8b7500; color: #8b7500;" title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span></div>
             <div class="status-badge" style="background-color: #8b7500; color: white;">
                 PARTIALLY_VALIDATED
             </div>
         </div>
+        <p class="tier-why">Evidence design &mdash; narrative only: every citing paper is a narrative review - no primary data and no systematic synthesis</p>
 
         <div class="path-stats">
             <div class="stat-item">

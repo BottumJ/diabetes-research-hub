@@ -612,8 +612,27 @@ h3 {
 
 <h3>Top 15 Ranked Paths by Posterior Probability</h3>
 
+<div class="info-box context" style="border-left: 4px solid #c0392b;">
+  <strong>Read this before the ranking: the posterior does not know what kind of study it came from.</strong><br>
+  The prior in this model is a function of data-point count and PMID count only. Neither it nor the
+  likelihood term reads publication type, so a path can rank highly because a protocol's dose table
+  yielded many scrapeable numbers. Measured on 2026-08-29:
+  <strong>48 of 77 comparable ordered pairs (62.3%) are discordant</strong> &mdash; this page
+  scores the path higher while its evidence design is weaker. <strong>16</strong> of those pairs rank a
+  NO RESULTS path above a path resting on primary data. For example this page ranks <strong>verapamil -> T1D</strong> (40.0%, no measured outcome in any citing paper) above <strong>dapagliflozin -> nephropathy</strong> (26.4%, rests on primary data). 
+  Each row below therefore carries its evidence-design tier, read from PubMed publication types rather
+  than from this repository's own text matching. <em>Where the tier and the percentage disagree, the tier
+  is the more reliable of the two.</em> Refitting the prior to encode study design is a modelling decision
+  and is open in the work queue; it has deliberately not been done unattended.
+</div>
+
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">1. metformin -> T2D</div>
+  <div class="path-name" style="color: #d67c3b;">1. metformin -> T2D
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #1f4e79;
+                 color:#1f4e79; background:#fff; cursor:help;"
+          title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>55.3%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -621,7 +640,12 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">2. hydroxychloroquine -> T2D</div>
+  <div class="path-name" style="color: #d67c3b;">2. hydroxychloroquine -> T2D
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #1f4e79;
+                 color:#1f4e79; background:#fff; cursor:help;"
+          title="rests on a systematic review or meta-analysis - high evidence level, but extracted numbers cannot be attributed to the pooled estimate rather than to a tabulated trial">SYNTHESIS ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -629,23 +653,12 @@ h3 {
 </div>
 
 <div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">3. dapagliflozin -> T2D</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>40.0%</strong></span>
-    <span>Strength: <strong>WEAK</strong></span>
+  <div class="path-name" style="color: #d67c3b;">3. dapagliflozin -> T2D
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
   </div>
-</div>
-
-<div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">4. verapamil -> T1D</div>
-  <div class="path-metric">
-    <span>Posterior: <strong>40.0%</strong></span>
-    <span>Strength: <strong>WEAK</strong></span>
-  </div>
-</div>
-
-<div class="bayesian-path weak">
-  <div class="path-name" style="color: #d67c3b;">5. verapamil -> beta_cell</div>
   <div class="path-metric">
     <span>Posterior: <strong>40.0%</strong></span>
     <span>Strength: <strong>WEAK</strong></span>
@@ -653,7 +666,38 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">6. dapagliflozin -> nephropathy</div>
+  <div class="path-name" style="color: #999999;">4. verapamil -> T1D
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #c0392b;
+                 color:#c0392b; background:#fff; cursor:help;"
+          title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span>
+  </div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong> <span style="color:#c0392b;">(capped from WEAK: no measured outcome exists under this path)</span></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">5. verapamil -> beta_cell
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #c0392b;
+                 color:#c0392b; background:#fff; cursor:help;"
+          title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span>
+  </div>
+  <div class="path-metric">
+    <span>Posterior: <strong>40.0%</strong></span>
+    <span>Strength: <strong>INSUFFICIENT</strong> <span style="color:#c0392b;">(capped from WEAK: no measured outcome exists under this path)</span></span>
+  </div>
+</div>
+
+<div class="bayesian-path insufficient">
+  <div class="path-name" style="color: #999999;">6. dapagliflozin -> nephropathy
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -661,7 +705,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">7. oxidative_stress -> cardiovascular</div>
+  <div class="path-name" style="color: #999999;">7. oxidative_stress -> cardiovascular
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -669,7 +718,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">8. dorzagliatin -> T2D</div>
+  <div class="path-name" style="color: #999999;">8. dorzagliatin -> T2D
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #d4a017;
+                 color:#d4a017; background:#fff; cursor:help;"
+          title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -677,7 +731,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">9. rapamycin -> inflammation</div>
+  <div class="path-name" style="color: #999999;">9. rapamycin -> inflammation
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>26.4%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -685,7 +744,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">10. semaglutide -> retinopathy</div>
+  <div class="path-name" style="color: #999999;">10. semaglutide -> retinopathy
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #d4a017;
+                 color:#d4a017; background:#fff; cursor:help;"
+          title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -693,7 +757,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">11. metformin -> nephropathy</div>
+  <div class="path-name" style="color: #999999;">11. metformin -> nephropathy
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -701,7 +770,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">12. vitamin_d -> autoimmune</div>
+  <div class="path-name" style="color: #999999;">12. vitamin_d -> autoimmune
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #d4a017;
+                 color:#d4a017; background:#fff; cursor:help;"
+          title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -709,7 +783,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">13. metformin -> cardiovascular</div>
+  <div class="path-name" style="color: #999999;">13. metformin -> cardiovascular
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #d4a017;
+                 color:#d4a017; background:#fff; cursor:help;"
+          title="every citing paper is a narrative review - no primary data and no systematic synthesis">NARRATIVE ONLY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -717,7 +796,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">14. tacrolimus -> inflammation</div>
+  <div class="path-name" style="color: #999999;">14. tacrolimus -> inflammation
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>
@@ -725,7 +809,12 @@ h3 {
 </div>
 
 <div class="bayesian-path insufficient">
-  <div class="path-name" style="color: #999999;">15. calcineurin -> islet_transplant</div>
+  <div class="path-name" style="color: #999999;">15. calcineurin -> islet_transplant
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid #2d7d46;
+                 color:#2d7d46; background:#fff; cursor:help;"
+          title="at least one citing paper reports primary data">PRIMARY</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>14.3%</strong></span>
     <span>Strength: <strong>INSUFFICIENT</strong></span>

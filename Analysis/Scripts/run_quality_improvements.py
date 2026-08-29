@@ -194,6 +194,16 @@ SCRIPTS = {
     # labelling honest weak evidence is the goal, deleting it is not.
     'pathdesign': ('audit_path_evidence_design.py',
                    'Grading research-path evidence by study design (PubMed pubtype)'),
+    # Added 2026-08-29. pathdesign trusts PubMed's publication-type field
+    # because a builder cannot invent it - true, but PubMed can OMIT it, and
+    # absence reads as "unknown design". Found running BOTH ways in one
+    # 16-paper batch: PMID 36643381 is an untagged protocol supplying 7 live
+    # extractions, PMID 36826844 is an untagged JAMA RCT (CLVer, n=88)
+    # supplying none. 134 of 359 corpus papers carry no design pubtype at all,
+    # rising to 66% for 2026 papers. Must run BEFORE pathdesign consumers so
+    # the caveat is current when the dashboards render it.
+    'pubtypegap': ('audit_pubtype_title_disagreement.py',
+                   'Checking PubMed pubtype against the verified title (design-blind coverage)'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),
@@ -206,6 +216,13 @@ SCRIPTS = {
     # into one canonical store. Reading any single store directly is what emitted
     # six false "NEVER-VALIDATED" work items on 2026-08-16.
     'pathstore': ('path_store.py', 'Resolving the canonical research-path store (merge rule: recency, conservative tie-break)'),
+    # Added 2026-08-29, and it MUST sit between pathstore and statistics: it
+    # reads statistical_analysis.json plus the design grades and writes the
+    # discordance figures that build_statistical_analysis.py prints above its
+    # Bayesian ranking. Run it after that builder and the page publishes last
+    # run's numbers beside this run's ranking.
+    'posterioragree': ('audit_posterior_design_agreement.py',
+                       'Measuring posterior-vs-study-design discordance on the Bayesian ranking'),
     'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
     'repurposev2': ('build_repurposing_dashboard_v2.py', 'Building Islet Drug Repurposing Pipeline v2'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),

@@ -14,6 +14,7 @@ Pure CSS/HTML visualization (no external charting libraries).
 """
 
 import os
+import re
 import json
 import statistics
 from datetime import datetime
@@ -39,6 +40,79 @@ output_path = os.path.join(dashboards_dir, 'Statistical_Analysis.html')
 
 meta_analysis = stats_data['meta_analysis']
 bayesian = stats_data['bayesian_synthesis']
+
+
+# ---------------------------------------------------------------------------
+# EVIDENCE-DESIGN DISCLOSURE ON THE POSTERIOR (added 2026-08-29)
+# ---------------------------------------------------------------------------
+# statistical_analysis.py::bayesian_path_scoring builds the prior from
+# data_point_count and PMID count alone. Neither the prior nor the likelihood
+# reads what KIND of study those numbers came from. On 2026-08-29
+# audit_posterior_design_agreement.py measured the consequence on this page:
+# 48 of 77 comparable ordered pairs (62.3%) are DISCORDANT - the page scores
+# the path higher while its evidence design is weaker - and 16 of those rank a
+# NO_RESULTS path (no measured outcome in any citing paper) above a path
+# resting on primary data. Published examples:
+#     #4 verapamil -> T1D              40.0%  NO_RESULTS (protocol only)
+#     #6 dapagliflozin -> nephropathy  26.4%  PRIMARY
+#
+# What is done here and what is deliberately NOT done:
+#   DONE - every posterior carries its design tier and the discordance is
+#          stated in full at the top of the section. A reader cannot now read
+#          the ranking without reading what it is made of.
+#   NOT DONE - the prior is not refit. What a prior should encode is a
+#          modelling decision, and an unattended run that quietly rewrites a
+#          published probability is a worse failure than the one it fixes.
+#          Carried to the work queue as a human call.
+#
+# The STRENGTH LABEL is capped, which is a different act from editing the
+# number: a NO_RESULTS path may not be labelled above INSUFFICIENT, because
+# "WEAK evidence" asserts that evidence exists. The uncapped value is printed
+# beside it so nothing is hidden.
+_design_tiers = {}
+_design_generated = None
+try:
+    with open(os.path.join(results_dir, 'path_evidence_design.json'),
+              'r', encoding='utf-8') as _fh:
+        _dj = json.load(_fh)
+    _design_generated = _dj.get('generated')
+    for _n, _e in _dj.get('paths', {}).items():
+        _k = re.sub(r'_+', '_', _n.replace('->', '_').replace('→', '_')
+                    .replace(' ', '_')).strip('_').lower()
+        _design_tiers[_k] = {'tier': _e.get('tier', 'UNGRADED'),
+                             'why': _e.get('why', '')}
+except (OSError, ValueError):
+    pass
+
+_agreement = {}
+try:
+    with open(os.path.join(results_dir, 'posterior_design_agreement.json'),
+              'r', encoding='utf-8') as _fh:
+        _agreement = json.load(_fh)
+except (OSError, ValueError):
+    pass
+
+TIER_COLORS = {
+    'PRIMARY': '#2d7d46',
+    'SYNTHESIS_ONLY': '#1f4e79',
+    'NARRATIVE_ONLY': '#d4a017',
+    'NO_RESULTS': '#c0392b',
+    'UNGRADED': '#777777',
+}
+
+# Weakest strength word a tier is allowed to reach past.
+TIER_STRENGTH_CAP = {'NO_RESULTS': 'INSUFFICIENT'}
+
+
+def design_for(path_name):
+    """Tier + reason for a path. UNGRADED when the grader never saw it."""
+    key = re.sub(r'_+', '_', str(path_name).replace('->', '_')
+                 .replace('→', '_').replace(' ', '_')).strip('_').lower()
+    entry = _design_tiers.get(key)
+    if entry:
+        return entry['tier'], entry['why']
+    return 'UNGRADED', ('absent from research_paths.json when the evidence-design '
+                        'grader last ran, so its study types were never read')
 
 
 # ---------------------------------------------------------------------------
@@ -706,20 +780,73 @@ h3 {{
 
 '''
 
+    # ------------------------------------------------------------------
+    # Discordance disclosure (2026-08-29). Stated BEFORE the ranking, not
+    # in a footnote after it: a reader who has already absorbed the order
+    # has already taken the claim.
+    # ------------------------------------------------------------------
+    if _agreement.get('comparable_pairs'):
+        _disc = _agreement.get('discordant_pairs', 0)
+        _comp = _agreement.get('comparable_pairs', 0)
+        _rate = _agreement.get('discordance_rate', 0) * 100
+        _nrap = _agreement.get('no_results_above_primary', 0)
+        _worst = [d for d in _agreement.get('detail', [])
+                  if d['higher_tier'] == 'NO_RESULTS' and d['lower_tier'] == 'PRIMARY']
+        _example = ''
+        if _worst:
+            _w = _worst[0]
+            _example = (f"For example this page ranks <strong>{_w['higher_posterior']}</strong> "
+                        f"({_w['higher_posterior_value'] * 100:.1f}%, no measured outcome in any "
+                        f"citing paper) above <strong>{_w['lower_posterior']}</strong> "
+                        f"({_w['lower_posterior_value'] * 100:.1f}%, rests on primary data). ")
+        html += f'''<div class="info-box context" style="border-left: 4px solid #c0392b;">
+  <strong>Read this before the ranking: the posterior does not know what kind of study it came from.</strong><br>
+  The prior in this model is a function of data-point count and PMID count only. Neither it nor the
+  likelihood term reads publication type, so a path can rank highly because a protocol's dose table
+  yielded many scrapeable numbers. Measured on {_agreement.get('generated', 'this build')}:
+  <strong>{_disc} of {_comp} comparable ordered pairs ({_rate:.1f}%) are discordant</strong> &mdash; this page
+  scores the path higher while its evidence design is weaker. <strong>{_nrap}</strong> of those pairs rank a
+  NO RESULTS path above a path resting on primary data. {_example}
+  Each row below therefore carries its evidence-design tier, read from PubMed publication types rather
+  than from this repository's own text matching. <em>Where the tier and the percentage disagree, the tier
+  is the more reliable of the two.</em> Refitting the prior to encode study design is a modelling decision
+  and is open in the work queue; it has deliberately not been done unattended.
+</div>
+
+'''
+
     # Show top 15 paths grouped by strength
     for i, path_entry in enumerate(bayesian['ranked'][:15]):
         strength = path_entry.get('strength', 'INSUFFICIENT')
         posterior = path_entry['posterior']
         path_name = path_entry['path']
 
-        strength_lower = strength.lower()
-        color = strength_color(strength)
+        tier, tier_why = design_for(path_name)
+        tier_color = TIER_COLORS.get(tier, '#777777')
+
+        # Cap the WORD, never the number. "WEAK evidence" asserts that
+        # evidence exists; under a NO_RESULTS path none does.
+        capped_to = TIER_STRENGTH_CAP.get(tier)
+        shown_strength = strength
+        cap_note = ''
+        if capped_to and strength != capped_to:
+            shown_strength = capped_to
+            cap_note = (f' <span style="color:#c0392b;">(capped from {strength}: '
+                        f'no measured outcome exists under this path)</span>')
+
+        strength_lower = shown_strength.lower()
+        color = strength_color(shown_strength)
 
         html += f'''<div class="bayesian-path {strength_lower}">
-  <div class="path-name" style="color: {color};">{i+1}. {path_name}</div>
+  <div class="path-name" style="color: {color};">{i+1}. {path_name}
+    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
+                 font-weight:600; letter-spacing:0.04em; border:1px solid {tier_color};
+                 color:{tier_color}; background:#fff; cursor:help;"
+          title="{tier_why.replace('"', '&quot;')}">{tier.replace('_', ' ')}</span>
+  </div>
   <div class="path-metric">
     <span>Posterior: <strong>{posterior*100:.1f}%</strong></span>
-    <span>Strength: <strong>{strength}</strong></span>
+    <span>Strength: <strong>{shown_strength}</strong>{cap_note}</span>
   </div>
 </div>
 
