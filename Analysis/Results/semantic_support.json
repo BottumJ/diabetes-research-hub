@@ -1,0 +1,4876 @@
+{
+  "generated": "2026-08-30",
+  "method": "IDF-weighted content-word overlap between the citing sentence and the cited title+abstract+MeSH+keywords; IDF computed over this corpus so corpus-wide vocabulary is nearly free",
+  "gates": false,
+  "instances_scanned": 991,
+  "instances_scored": 647,
+  "unscoreable_vague_claim": 211,
+  "excluded_coordinate_only": 15,
+  "excluded_insufficient_paper_text": 116,
+  "excluded_insufficient_paper_text_pmids": [
+    "15356308",
+    "15919781",
+    "17596481",
+    "19095723",
+    "19148081",
+    "21525462",
+    "24838679",
+    "2523712",
+    "28010783",
+    "29710129",
+    "33139407",
+    "36455116",
+    "37202589",
+    "37356449",
+    "37385277",
+    "8439348"
+  ],
+  "min_abstract_words": 30,
+  "length_confound_measured_2026_08_30": {
+    "pearson_r_support_vs_log_abstract_words": 0.226,
+    "bands": {
+      "1-30w": {
+        "n": 94,
+        "median": 0.0
+      },
+      "31-120w": {
+        "n": 122,
+        "median": 0.133
+      },
+      "121-250w": {
+        "n": 319,
+        "median": 0.153
+      },
+      "251+w": {
+        "n": 228,
+        "median": 0.167
+      }
+    },
+    "note": "confound is a cliff at ~30 abstract words, not a gradient; papers at or below it are excluded from the semantic ranking"
+  },
+  "claim_density": [
+    {
+      "pmid": "29710129",
+      "distinct_claims": 101,
+      "source_words": 22,
+      "claims_per_100_source_words": 459.1,
+      "abstract_words": 14,
+      "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
+      "journal": "JAMA Oncol",
+      "year": "2018",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "15356308",
+      "distinct_claims": 1,
+      "source_words": 1,
+      "claims_per_100_source_words": 100.0,
+      "abstract_words": 0,
+      "title": "Thiazolidinediones.",
+      "journal": "N Engl J Med",
+      "year": "2004",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "34763823",
+      "distinct_claims": 87,
+      "source_words": 135,
+      "claims_per_100_source_words": 64.4,
+      "abstract_words": 118,
+      "title": "100&#xa0;years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?",
+      "journal": "Endocrinol Metab Clin North Am",
+      "year": "2021",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "17596481",
+      "distinct_claims": 6,
+      "source_words": 12,
+      "claims_per_100_source_words": 50.0,
+      "abstract_words": 0,
+      "title": "Summary and recommendations of the Fifth International Workshop-Conference on Gestational Diabetes Mellitus.",
+      "journal": "Diabetes Care",
+      "year": "2007",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "37202589",
+      "distinct_claims": 2,
+      "source_words": 6,
+      "claims_per_100_source_words": 33.3,
+      "abstract_words": 0,
+      "title": "Approval of teplizumab: implications for patients.",
+      "journal": "Nat Rev Endocrinol",
+      "year": "2023",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "33139407",
+      "distinct_claims": 3,
+      "source_words": 9,
+      "claims_per_100_source_words": 33.3,
+      "abstract_words": 0,
+      "title": "Social Determinants of Health and Diabetes: A Scientific Review.",
+      "journal": "Diabetes Care",
+      "year": "2020",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "15919781",
+      "distinct_claims": 2,
+      "source_words": 8,
+      "claims_per_100_source_words": 25.0,
+      "abstract_words": 0,
+      "title": "The pathobiology of diabetic complications: a unifying mechanism.",
+      "journal": "Diabetes",
+      "year": "2005",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "19148081",
+      "distinct_claims": 1,
+      "source_words": 4,
+      "claims_per_100_source_words": 25.0,
+      "abstract_words": 0,
+      "title": "Your inbox, Mr President.",
+      "journal": "Nature",
+      "year": "2009",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "36449148",
+      "distinct_claims": 21,
+      "source_words": 103,
+      "claims_per_100_source_words": 20.4,
+      "abstract_words": 100,
+      "title": "Dorzagliatin: First Approval.",
+      "journal": "Drugs",
+      "year": "2022",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "8439348",
+      "distinct_claims": 1,
+      "source_words": 6,
+      "claims_per_100_source_words": 16.7,
+      "abstract_words": 0,
+      "title": "The role of interleukin-1 in disease.",
+      "journal": "N Engl J Med",
+      "year": "1993",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "32175717",
+      "distinct_claims": 39,
+      "source_words": 245,
+      "claims_per_100_source_words": 15.9,
+      "abstract_words": 232,
+      "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
+      "journal": "J Epidemiol Glob Health",
+      "year": "2020",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "24838679",
+      "distinct_claims": 2,
+      "source_words": 15,
+      "claims_per_100_source_words": 13.3,
+      "abstract_words": 0,
+      "title": "Autoantibodies and type 1 diabetes: are we still in the cave of an ancient myth?",
+      "journal": "Diabetologia",
+      "year": "2014",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "37909353",
+      "distinct_claims": 47,
+      "source_words": 360,
+      "claims_per_100_source_words": 13.1,
+      "abstract_words": 351,
+      "title": "Economic Costs of Diabetes in the U.S. in 2022.",
+      "journal": "Diabetes Care",
+      "year": "2024",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "39651984",
+      "distinct_claims": 1,
+      "source_words": 8,
+      "claims_per_100_source_words": 12.5,
+      "abstract_words": 0,
+      "title": "Summary of Revisions: Standards of Care in Diabetes-2025.",
+      "journal": "Diabetes Care",
+      "year": "2025",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "23248199",
+      "distinct_claims": 30,
+      "source_words": 269,
+      "claims_per_100_source_words": 11.2,
+      "abstract_words": 254,
+      "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
+      "journal": "Diabetes Care",
+      "year": "2013",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "21525462",
+      "distinct_claims": 1,
+      "source_words": 9,
+      "claims_per_100_source_words": 11.1,
+      "abstract_words": 0,
+      "title": "Glucokinase activators for diabetes therapy: May 2010 status report.",
+      "journal": "Diabetes Care",
+      "year": "2011",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "28010783",
+      "distinct_claims": 1,
+      "source_words": 10,
+      "claims_per_100_source_words": 10.0,
+      "abstract_words": 0,
+      "title": "Minority underrepresentation in cardiovascular outcome trials for type 2 diabetes.",
+      "journal": "Lancet Diabetes Endocrinol",
+      "year": "2017",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "31157579",
+      "distinct_claims": 32,
+      "source_words": 332,
+      "claims_per_100_source_words": 9.6,
+      "abstract_words": 315,
+      "title": "Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Adult Large B-Cell Lymphoma.",
+      "journal": "J Clin Oncol",
+      "year": "2019",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "37385277",
+      "distinct_claims": 1,
+      "source_words": 11,
+      "claims_per_100_source_words": 9.1,
+      "abstract_words": 0,
+      "title": "The pursuit of optimal semaglutide dosing in type 2 diabetes continues.",
+      "journal": "Lancet",
+      "year": "2023",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "17965721",
+      "distinct_claims": 7,
+      "source_words": 83,
+      "claims_per_100_source_words": 8.4,
+      "abstract_words": 72,
+      "title": "B lymphocyte-directed immunotherapy promotes long-term islet allograft survival in nonhuman primates.",
+      "journal": "Nat Med",
+      "year": "2007",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "17065674",
+      "distinct_claims": 19,
+      "source_words": 230,
+      "claims_per_100_source_words": 8.3,
+      "abstract_words": 221,
+      "title": "Trends in hyperinsulinemia among nondiabetic adults in the U.S.",
+      "journal": "Diabetes Care",
+      "year": "2006",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "37356449",
+      "distinct_claims": 1,
+      "source_words": 13,
+      "claims_per_100_source_words": 7.7,
+      "abstract_words": 0,
+      "title": "Measuring the global burden of diabetes: implications for health policy, practice, and research.",
+      "journal": "Lancet",
+      "year": "2023",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "41921761",
+      "distinct_claims": 16,
+      "source_words": 214,
+      "claims_per_100_source_words": 7.5,
+      "abstract_words": 200,
+      "title": "The oral-gut microbiome axis in diabetes mellitus: a systematic review and emerging clinical perspectives.",
+      "journal": "Diabetes Res Clin Pract",
+      "year": "2026",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "2523712",
+      "distinct_claims": 1,
+      "source_words": 14,
+      "claims_per_100_source_words": 7.1,
+      "abstract_words": 0,
+      "title": "TH1 and TH2 cells: different patterns of lymphokine secretion lead to different functional properties.",
+      "journal": "Annu Rev Immunol",
+      "year": "1989",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "29909913",
+      "distinct_claims": 4,
+      "source_words": 60,
+      "claims_per_100_source_words": 6.7,
+      "abstract_words": 56,
+      "title": "GMP CAR-T cell production.",
+      "journal": "Best Pract Res Clin Haematol",
+      "year": "2018",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "21323736",
+      "distinct_claims": 14,
+      "source_words": 210,
+      "claims_per_100_source_words": 6.7,
+      "abstract_words": 202,
+      "title": "A health economic analysis of clinical islet transplantation.",
+      "journal": "Clin Transplant",
+      "year": "2012",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "19095723",
+      "distinct_claims": 1,
+      "source_words": 16,
+      "claims_per_100_source_words": 6.2,
+      "abstract_words": 0,
+      "title": "C-reactive protein: eighty years from discovery to emergence as a major risk marker for cardiovascular disease.",
+      "journal": "Clin Chem",
+      "year": "2009",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "36455116",
+      "distinct_claims": 1,
+      "source_words": 16,
+      "claims_per_100_source_words": 6.2,
+      "abstract_words": 0,
+      "title": "Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base for South Asians.",
+      "journal": "Diabetes Care",
+      "year": "2022",
+      "semantically_scoreable": false
+    },
+    {
+      "pmid": "30899369",
+      "distinct_claims": 14,
+      "source_words": 265,
+      "claims_per_100_source_words": 5.3,
+      "abstract_words": 248,
+      "title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathwa",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "38639547",
+      "distinct_claims": 15,
+      "source_words": 342,
+      "claims_per_100_source_words": 4.4,
+      "abstract_words": 319,
+      "title": "Cost-Effectiveness of Newer Pharmacologic Treatments in Adults With Type 2 Diabetes: A Systematic Review of Cost-Effectiveness Studies for t",
+      "journal": "Ann Intern Med",
+      "year": "2024",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "26590418",
+      "distinct_claims": 7,
+      "source_words": 159,
+      "claims_per_100_source_words": 4.4,
+      "abstract_words": 152,
+      "title": "Personalized Nutrition by Prediction of Glycemic Responses.",
+      "journal": "Cell",
+      "year": "2015",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "29590046",
+      "distinct_claims": 6,
+      "source_words": 141,
+      "claims_per_100_source_words": 4.3,
+      "abstract_words": 130,
+      "title": "Gut bacteria selectively promoted by dietary fibers alleviate type 2 diabetes.",
+      "journal": "Science",
+      "year": "2018",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "33622669",
+      "distinct_claims": 11,
+      "source_words": 266,
+      "claims_per_100_source_words": 4.1,
+      "abstract_words": 242,
+      "title": "The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study of TTP399, a Hepatoselective Glucokinase Acti",
+      "journal": "Diabetes Care",
+      "year": "2021",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "12345678",
+      "distinct_claims": 9,
+      "source_words": 220,
+      "claims_per_100_source_words": 4.1,
+      "abstract_words": 214,
+      "title": "Denpasar Declaration on Population and Development.",
+      "journal": "Integration",
+      "year": "1994",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "32847960",
+      "distinct_claims": 10,
+      "source_words": 296,
+      "claims_per_100_source_words": 3.4,
+      "abstract_words": 281,
+      "title": "Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.",
+      "journal": "Diabetes",
+      "year": "2020",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "19805629",
+      "distinct_claims": 5,
+      "source_words": 174,
+      "claims_per_100_source_words": 2.9,
+      "abstract_words": 169,
+      "title": "Glyburide inhibits the Cryopyrin/Nalp3 inflammasome.",
+      "journal": "J Cell Biol",
+      "year": "2009",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "32627352",
+      "distinct_claims": 6,
+      "source_words": 212,
+      "claims_per_100_source_words": 2.8,
+      "abstract_words": 201,
+      "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
+      "journal": "Am J Transplant",
+      "year": "2021",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "24598244",
+      "distinct_claims": 8,
+      "source_words": 290,
+      "claims_per_100_source_words": 2.8,
+      "abstract_words": 272,
+      "title": "GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participants of a GAD65 vaccination trial.",
+      "journal": "Diabetes Care",
+      "year": "2014",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "26322160",
+      "distinct_claims": 6,
+      "source_words": 212,
+      "claims_per_100_source_words": 2.8,
+      "abstract_words": 207,
+      "title": "Magnesium and type 2 diabetes.",
+      "journal": "World J Diabetes",
+      "year": "2015",
+      "semantically_scoreable": true
+    },
+    {
+      "pmid": "30586620",
+      "distinct_claims": 4,
+      "source_words": 152,
+      "claims_per_100_source_words": 2.6,
+      "abstract_words": 142,
+      "title": "Cytokine Release Syndrome with Chimeric Antigen Receptor T Cell Therapy.",
+      "journal": "Biol Blood Marrow Transplant",
+      "year": "2019",
+      "semantically_scoreable": true
+    }
+  ],
+  "pmids_without_local_abstract": [
+    "27512793",
+    "40517209"
+  ],
+  "min_claim_terms": 4,
+  "self_test": null,
+  "worst": [
+    {
+      "pmid": "25714673",
+      "file": "adjudicate_flagged_membership_20260828.py",
+      "line": 28,
+      "support": 0.0,
+      "flag": "",
+      "claim": "VENANCE. THE DISTINCTION WAS ALREADY WRITTEN   ENCODED ---------------------------------------------------------- This is not a new taxonomy invented today. The note stored against",
+      "paper_title": "Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in type 1 diabetic mice.",
+      "journal": "Am J Physiol Endocrinol Metab",
+      "year": "2015",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "provenance",
+        "invented",
+        "stored",
+        "filed",
+        "taxonomy",
+        "already"
+      ]
+    },
+    {
+      "pmid": "40249888",
+      "file": "build_cart_access.py",
+      "line": 747,
+      "support": 0.0,
+      "flag": "",
+      "claim": "centralized facility costs. This is currently experimental but represents a path to decentralization.",
+      "paper_title": "Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.",
+      "journal": "JCO Glob Oncol",
+      "year": "2025",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "facility",
+        "decentralization",
+        "path",
+        "centralized",
+        "represents",
+        "currently"
+      ]
+    },
+    {
+      "pmid": "30586620",
+      "file": "build_cart_access.py",
+      "line": 788,
+      "support": 0.0,
+      "flag": "",
+      "claim": "ity Infectious disease consultation available",
+      "paper_title": "Cytokine Release Syndrome with Chimeric Antigen Receptor T Cell Therapy.",
+      "journal": "Biol Blood Marrow Transplant",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "infectious",
+        "consultation",
+        "available",
+        "disease"
+      ]
+    },
+    {
+      "pmid": "37748491",
+      "file": "build_cart_access.py",
+      "line": 865,
+      "support": 0.0,
+      "flag": "",
+      "claim": "ble to administer it. The entire specialty would require   investment.",
+      "paper_title": "CAR T-cell therapy in autoimmune diseases.",
+      "journal": "Lancet",
+      "year": "2023",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "investment",
+        "entire",
+        "administer",
+        "specialty",
+        "require"
+      ]
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_cart_access.py",
+      "line": 920,
+      "support": 0.0,
+      "flag": "",
+      "claim": "safety/side effect profile, or (2) active investment in  .",
+      "paper_title": "A health economic analysis of clinical islet transplantation.",
+      "journal": "Clin Transplant",
+      "year": "2012",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "investment",
+        "side",
+        "active",
+        "profile",
+        "safety",
+        "effect"
+      ]
+    },
+    {
+      "pmid": "29909913",
+      "file": "build_cart_access.py",
+      "line": 1083,
+      "support": 0.0,
+      "flag": "",
+      "claim": "hows disease-modifying effect (C-peptide preservation)",
+      "paper_title": "GMP CAR-T cell production.",
+      "journal": "Best Pract Res Clin Haematol",
+      "year": "2018",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "hows",
+        "disease-modifying",
+        "preservation",
+        "c-peptide",
+        "effect"
+      ]
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1262,
+      "support": 0.0,
+      "flag": "",
+      "claim": "The Target: To be economically viable for diabetes at scale, CAR-Treg must achieve: <!-- Source:",
+      "paper_title": "Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Adult Large B-Cell Lymphoma.",
+      "journal": "J Clin Oncol",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "economically",
+        "viable",
+        "car-treg",
+        "scale",
+        "achieve",
+        "target"
+      ]
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1283,
+      "support": 0.0,
+      "flag": "",
+      "claim": "st reduction), point-of-care systems (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K [",
+      "paper_title": "Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Adult Large B-Cell Lymphoma.",
+      "journal": "J Clin Oncol",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "theoretically",
+        "scaled",
+        "batch",
+        "point-of-care",
+        "sizes",
+        "achieve"
+      ]
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1315,
+      "support": 0.0,
+      "flag": "",
+      "claim": "Additional 20-30% from point-of-care automation Could realistically reach $50-75K [",
+      "paper_title": "Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractory Adult Large B-Cell Lymphoma.",
+      "journal": "J Clin Oncol",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "automation",
+        "realistically",
+        "reach",
+        "point-of-care",
+        "additional"
+      ]
+    },
+    {
+      "pmid": "32535920",
+      "file": "build_cart_access.py",
+      "line": 1334,
+      "support": 0.0,
+      "flag": "",
+      "claim": ") — Cost-effectiveness of axicabtagene ciloleucel at $150K/QALY threshold   Int J",
+      "paper_title": "Cost of decentralized CAR T-cell production in an academic nonprofit setting.",
+      "journal": "Int J Cancer",
+      "year": "2020",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "ciloleucel",
+        "axicabtagene",
+        "cost-effectiveness",
+        "qaly",
+        "threshold"
+      ]
+    },
+    {
+      "pmid": "36109639",
+      "file": "build_cart_access.py",
+      "line": 1372,
+      "support": 0.0,
+      "flag": "",
+      "claim": ") — CITR registry, islet transplant cost-effectiveness",
+      "paper_title": "Anti-CD19 CAR T cell therapy for refractory systemic lupus erythematosus.",
+      "journal": "Nat Med",
+      "year": "2022",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "citr",
+        "cost-effectiveness",
+        "registry",
+        "transplant",
+        "islet"
+      ]
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_corpus_analysis.py",
+      "line": 903,
+      "support": 0.0,
+      "flag": "",
+      "claim": "). Gap identification informed by systematic review principles (<a",
+      "paper_title": "100&#xa0;years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?",
+      "journal": "Endocrinol Metab Clin North Am",
+      "year": "2021",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "principles",
+        "informed",
+        "identification",
+        "systematic",
+        "review"
+      ]
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_corpus_analysis.py",
+      "line": 903,
+      "support": 0.0,
+      "flag": "",
+      "claim": "). Gap identification informed by systematic review principles (",
+      "paper_title": "100&#xa0;years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?",
+      "journal": "Endocrinol Metab Clin North Am",
+      "year": "2021",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "principles",
+        "informed",
+        "identification",
+        "systematic",
+        "review"
+      ]
+    },
+    {
+      "pmid": "23061757",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 878,
+      "support": 0.0,
+      "flag": "",
+      "claim": "Mechanism: Blocks TNF-alpha, which amplifies IBMIR via NF-kappa-B signaling. Evidence:",
+      "paper_title": "Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept for clinical islet cell transplantation.",
+      "journal": "Clin Transplant",
+      "year": "2012",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "amplifies",
+        "nf-kappa-b",
+        "ibmir",
+        "tnf-alpha",
+        "blocks",
+        "mechanism"
+      ]
+    },
+    {
+      "pmid": "25498346",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 286,
+      "support": 0.0,
+      "flag": "",
+      "claim": "(  2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin comparison trial. Subsequent meta-analyses (",
+      "paper_title": "Meta-analysis of the effect and safety of berberine in the treatment of type 2 diabetes mellitus, hyperlipemia and hypertension.",
+      "journal": "J Ethnopharmacol",
+      "year": "2015",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "meta-analyses",
+        "subsequent",
+        "comparison",
+        "metformin",
+        "direct",
+        "demonstrated"
+      ]
+    },
+    {
+      "pmid": "32943753",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 381,
+      "support": 0.0,
+      "flag": "",
+      "claim": "es\": \"Gasdermin D inhibition, inflammasome suppression via copper chelation; NLRP3 effect is indirect through gasdermin D cleavage inhibition\", \"evidence\": \"PRECLINICAL: Hu et al (",
+      "paper_title": "Nuclear receptors in podocyte biology and glomerular disease.",
+      "journal": "Nat Rev Nephrol",
+      "year": "2021",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "cleavage",
+        "chelation",
+        "copper",
+        "gasdermin",
+        "indirect",
+        "suppression"
+      ]
+    },
+    {
+      "pmid": "40464081",
+      "file": "build_equity_map.py",
+      "line": 842,
+      "support": 0.0,
+      "flag": "OUT_OF_CORPUS_VOCAB",
+      "claim": "s $50-100M cGMP facilities - currently concentrated in Boston, Portsmouth NH, Bothell WA, Germantown MD, Bordeaux. Decentralized manufacturing is not yet planned.",
+      "paper_title": "The health economics of insulin therapy: How do we address the rising demands, costs, inequalities and barriers to achieving optimal outcomes.",
+      "journal": "Diabetes Obes Metab",
+      "year": "2025",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "germantown",
+        "cgmp",
+        "boston",
+        "portsmouth",
+        "bordeaux",
+        "bothell"
+      ]
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 132,
+      "support": 0.0,
+      "flag": "",
+      "claim": "\"Trial site optimization: identify high-burden, low-access regions for new centers\", \"Health economics: cost-effectiveness by GDP-PPP quintile\" ], \"key_literature\": [ \"",
+      "paper_title": "Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.",
+      "journal": "N Engl J Med",
+      "year": "2025",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "gdp-ppp",
+        "quintile",
+        "low-access",
+        "high-burden",
+        "economics",
+        "optimization"
+      ]
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_gap_deep_dives.py",
+      "line": 216,
+      "support": 0.0,
+      "flag": "",
+      "claim": "with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (",
+      "paper_title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
+      "journal": "Am J Transplant",
+      "year": "2021",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "lantidra",
+        "corpus",
+        "fda-approved",
+        "well-characterized",
+        "post-transplant",
+        "march"
+      ]
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 482,
+      "support": 0.0,
+      "flag": "",
+      "claim": "1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K (",
+      "paper_title": "100&#xa0;years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?",
+      "journal": "Endocrinol Metab Clin North Am",
+      "year": "2021",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "tion",
+        "advantage",
+        "cost-effectiveness",
+        "episodes",
+        "gain",
+        "required"
+      ]
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 493,
+      "support": 0.0,
+      "flag": "",
+      "claim": "ry Drugs for LADA\", \"tier\": \"SILVER\", \"score\": 0.79, \"cluster\": \"B\", \"domain_pubs\": {\"glp1\": 11732, \"lada\": 535}, \"joint_pubs\": 0, \"trial_count\": 11, \"key_refs\": [\"",
+      "paper_title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "tier",
+        "silver",
+        "pubs",
+        "joint",
+        "cluster",
+        "count"
+      ]
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 502,
+      "support": 0.0,
+      "flag": "",
+      "claim": "re\": 0.79, \"joint_pubs\": 0, \"domain_counts\": {\"GLP-1\": 11732, \"LADA\": 535}, \"trial_counts\": {\"DPP-4i\": 8, \"GLP-1 RA\": 0, \"SGLT2i\": 0}, \"key_references\": [ \"",
+      "paper_title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "references",
+        "pubs",
+        "joint",
+        "counts",
+        "domain",
+        "lada"
+      ]
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 529,
+      "support": 0.0,
+      "flag": "",
+      "claim": "\"Immune trajectory prediction: model C-peptide preservation on immunomodulatory monotherapy\", \"Drug interaction networks: SGLT2i + DPP-4i synergy modeling\" ], \"key_literature\": [ \"",
+      "paper_title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "synergy",
+        "trajectory",
+        "networks",
+        "modeling",
+        "immunomodulatory",
+        "prediction"
+      ]
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 741,
+      "support": 0.0,
+      "flag": "",
+      "claim": "from different research groups)\", \"score\": 0.78, \"cluster\": \"C\", \"domain_pubs\": {\"drug_repurposing\": 555, \"glp1\": 11732}, \"joint_pubs\": 0, \"trial_count\": 3, \"key_refs\": [\"",
+      "paper_title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "pubs",
+        "repurposing",
+        "joint",
+        "cluster",
+        "count",
+        "domain"
+      ]
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 750,
+      "support": 0.0,
+      "flag": "",
+      "claim": "8, \"joint_pubs\": 0, \"domain_counts\": {\"Drug Repurposing\": 555, \"GLP-1\": 11732}, \"trial_counts\": {\"Immunological\": 3, \"Standard\": 100}, \"key_references\": [ \"",
+      "paper_title": "Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3 inflammasome singling pathway.",
+      "journal": "Am J Transl Res",
+      "year": "2019",
+      "shared_terms": [],
+      "unsupported_terms": [
+        "references",
+        "pubs",
+        "repurposing",
+        "joint",
+        "counts",
+        "domain"
+      ]
+    }
+  ],
+  "all_scores": [
+    {
+      "pmid": "25714673",
+      "file": "adjudicate_flagged_membership_20260828.py",
+      "line": 28,
+      "support": 0.0
+    },
+    {
+      "pmid": "40249888",
+      "file": "build_cart_access.py",
+      "line": 747,
+      "support": 0.0
+    },
+    {
+      "pmid": "30586620",
+      "file": "build_cart_access.py",
+      "line": 788,
+      "support": 0.0
+    },
+    {
+      "pmid": "37748491",
+      "file": "build_cart_access.py",
+      "line": 865,
+      "support": 0.0
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_cart_access.py",
+      "line": 920,
+      "support": 0.0
+    },
+    {
+      "pmid": "29909913",
+      "file": "build_cart_access.py",
+      "line": 1083,
+      "support": 0.0
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1262,
+      "support": 0.0
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1283,
+      "support": 0.0
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1315,
+      "support": 0.0
+    },
+    {
+      "pmid": "32535920",
+      "file": "build_cart_access.py",
+      "line": 1334,
+      "support": 0.0
+    },
+    {
+      "pmid": "36109639",
+      "file": "build_cart_access.py",
+      "line": 1372,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_corpus_analysis.py",
+      "line": 903,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_corpus_analysis.py",
+      "line": 903,
+      "support": 0.0
+    },
+    {
+      "pmid": "23061757",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 878,
+      "support": 0.0
+    },
+    {
+      "pmid": "25498346",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 286,
+      "support": 0.0
+    },
+    {
+      "pmid": "32943753",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 381,
+      "support": 0.0
+    },
+    {
+      "pmid": "40464081",
+      "file": "build_equity_map.py",
+      "line": 842,
+      "support": 0.0
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 132,
+      "support": 0.0
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_gap_deep_dives.py",
+      "line": 216,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 482,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 493,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 502,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 529,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 741,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 750,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 848,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 914,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 955,
+      "support": 0.0
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_gap_deep_dives.py",
+      "line": 1459,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 1651,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 1658,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 1665,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 1672,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 296,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 308,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 768,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 842,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 842,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 896,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 896,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 903,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 903,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 908,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 908,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 908,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 908,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 910,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 910,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 910,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_generic_drug_catalog.py",
+      "line": 910,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 942,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 944,
+      "support": 0.0
+    },
+    {
+      "pmid": "32307525",
+      "file": "build_gka_lada.py",
+      "line": 780,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1064,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1098,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 410,
+      "support": 0.0
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 445,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 470,
+      "support": 0.0
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 478,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 521,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 527,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 533,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 539,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 545,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 586,
+      "support": 0.0
+    },
+    {
+      "pmid": "2189759",
+      "file": "build_gka_pricing.py",
+      "line": 779,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 796,
+      "support": 0.0
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gka_pricing.py",
+      "line": 810,
+      "support": 0.0
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gka_pricing.py",
+      "line": 812,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 995,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 995,
+      "support": 0.0
+    },
+    {
+      "pmid": "37356445",
+      "file": "build_health_equity.py",
+      "line": 1220,
+      "support": 0.0
+    },
+    {
+      "pmid": "37356445",
+      "file": "build_health_equity.py",
+      "line": 1220,
+      "support": 0.0
+    },
+    {
+      "pmid": "9742976",
+      "file": "build_health_equity.py",
+      "line": 1272,
+      "support": 0.0
+    },
+    {
+      "pmid": "18539917",
+      "file": "build_health_equity.py",
+      "line": 1278,
+      "support": 0.0
+    },
+    {
+      "pmid": "18539917",
+      "file": "build_health_equity.py",
+      "line": 1278,
+      "support": 0.0
+    },
+    {
+      "pmid": "18073361",
+      "file": "build_immunomod_lada.py",
+      "line": 30,
+      "support": 0.0
+    },
+    {
+      "pmid": "29291885",
+      "file": "build_immunomod_lada.py",
+      "line": 78,
+      "support": 0.0
+    },
+    {
+      "pmid": "18073361",
+      "file": "build_immunomod_lada.py",
+      "line": 327,
+      "support": 0.0
+    },
+    {
+      "pmid": "19940299",
+      "file": "build_immunomod_lada.py",
+      "line": 330,
+      "support": 0.0
+    },
+    {
+      "pmid": "20570966",
+      "file": "build_immunomod_lada.py",
+      "line": 331,
+      "support": 0.0
+    },
+    {
+      "pmid": "24997559",
+      "file": "build_immunomod_lada.py",
+      "line": 341,
+      "support": 0.0
+    },
+    {
+      "pmid": "18073361",
+      "file": "build_immunomod_lada.py",
+      "line": 832,
+      "support": 0.0
+    },
+    {
+      "pmid": "30657336",
+      "file": "build_islet_equity.py",
+      "line": 536,
+      "support": 0.0
+    },
+    {
+      "pmid": "30657336",
+      "file": "build_islet_equity.py",
+      "line": 536,
+      "support": 0.0
+    },
+    {
+      "pmid": "33155826",
+      "file": "build_islet_equity.py",
+      "line": 658,
+      "support": 0.0
+    },
+    {
+      "pmid": "10919952",
+      "file": "build_islet_outcomes.py",
+      "line": 1251,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 76,
+      "support": 0.0
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 683,
+      "support": 0.0
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 691,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 752,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 768,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 853,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 922,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1082,
+      "support": 0.0
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1310,
+      "support": 0.0
+    },
+    {
+      "pmid": "31173679",
+      "file": "build_nutrition_beta.py",
+      "line": 355,
+      "support": 0.0
+    },
+    {
+      "pmid": "29590046",
+      "file": "build_nutrition_beta.py",
+      "line": 365,
+      "support": 0.0
+    },
+    {
+      "pmid": "29590046",
+      "file": "build_nutrition_beta.py",
+      "line": 365,
+      "support": 0.0
+    },
+    {
+      "pmid": "28397826",
+      "file": "build_nutrition_lada.py",
+      "line": 12,
+      "support": 0.0
+    },
+    {
+      "pmid": "28885622",
+      "file": "build_nutrition_lada.py",
+      "line": 20,
+      "support": 0.0
+    },
+    {
+      "pmid": "12345678",
+      "file": "build_nutrition_lada.py",
+      "line": 29,
+      "support": 0.0
+    },
+    {
+      "pmid": "19133409",
+      "file": "build_nutrition_lada.py",
+      "line": 831,
+      "support": 0.0
+    },
+    {
+      "pmid": "19133409",
+      "file": "build_nutrition_lada.py",
+      "line": 831,
+      "support": 0.0
+    },
+    {
+      "pmid": "34256014",
+      "file": "build_nutrition_lada.py",
+      "line": 865,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 509,
+      "support": 0.0
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 509,
+      "support": 0.0
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 514,
+      "support": 0.0
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 514,
+      "support": 0.0
+    },
+    {
+      "pmid": "36643381",
+      "file": "build_research_paths.py",
+      "line": 913,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_statistical_analysis.py",
+      "line": 1067,
+      "support": 0.0
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_statistical_analysis.py",
+      "line": 1067,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_statistical_analysis.py",
+      "line": 1070,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_statistical_analysis.py",
+      "line": 1070,
+      "support": 0.0
+    },
+    {
+      "pmid": "19169263",
+      "file": "build_treg_neuropathy.py",
+      "line": 683,
+      "support": 0.0
+    },
+    {
+      "pmid": "37217319",
+      "file": "build_treg_neuropathy.py",
+      "line": 1037,
+      "support": 0.0
+    },
+    {
+      "pmid": "32312859",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1533,
+      "support": 0.0
+    },
+    {
+      "pmid": "12345678",
+      "file": "check_citation_mismatches.py",
+      "line": 56,
+      "support": 0.0
+    },
+    {
+      "pmid": "25714673",
+      "file": "corpus_membership.py",
+      "line": 60,
+      "support": 0.0
+    },
+    {
+      "pmid": "18662538",
+      "file": "corpus_membership.py",
+      "line": 82,
+      "support": 0.0
+    },
+    {
+      "pmid": "36643381",
+      "file": "extract_corpus_data.py",
+      "line": 182,
+      "support": 0.0
+    },
+    {
+      "pmid": "30078372",
+      "file": "extract_evidence.py",
+      "line": 344,
+      "support": 0.0
+    },
+    {
+      "pmid": "39613428",
+      "file": "fix_path_citations_2026_08_20.py",
+      "line": 30,
+      "support": 0.0
+    },
+    {
+      "pmid": "12345678",
+      "file": "ingest_papers.py",
+      "line": 368,
+      "support": 0.0
+    },
+    {
+      "pmid": "37889505",
+      "file": "ingest_papers.py",
+      "line": 369,
+      "support": 0.0
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 465,
+      "support": 0.0
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase3_models.py",
+      "line": 329,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "rebuild_research_dashboard.py",
+      "line": 829,
+      "support": 0.0
+    },
+    {
+      "pmid": "32175717",
+      "file": "rebuild_research_dashboard.py",
+      "line": 829,
+      "support": 0.0
+    },
+    {
+      "pmid": "22723585",
+      "file": "repair_builder_citations_20260824.py",
+      "line": 242,
+      "support": 0.0
+    },
+    {
+      "pmid": "23738527",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 163,
+      "support": 0.0
+    },
+    {
+      "pmid": "19805629",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 165,
+      "support": 0.0
+    },
+    {
+      "pmid": "23738527",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 190,
+      "support": 0.0
+    },
+    {
+      "pmid": "37889505",
+      "file": "repair_prose_citations_20260823.py",
+      "line": 15,
+      "support": 0.0
+    },
+    {
+      "pmid": "37889505",
+      "file": "run_quality_improvements.py",
+      "line": 71,
+      "support": 0.0
+    },
+    {
+      "pmid": "32862232",
+      "file": "run_quality_improvements.py",
+      "line": 83,
+      "support": 0.0
+    },
+    {
+      "pmid": "39613428",
+      "file": "run_quality_improvements.py",
+      "line": 97,
+      "support": 0.0
+    },
+    {
+      "pmid": "37889505",
+      "file": "run_quality_improvements.py",
+      "line": 111,
+      "support": 0.0
+    },
+    {
+      "pmid": "38918878",
+      "file": "run_quality_improvements.py",
+      "line": 125,
+      "support": 0.0
+    },
+    {
+      "pmid": "36826844",
+      "file": "run_quality_improvements.py",
+      "line": 201,
+      "support": 0.0
+    },
+    {
+      "pmid": "37217319",
+      "file": "build_equity_map.py",
+      "line": 841,
+      "support": 0.017
+    },
+    {
+      "pmid": "21719096",
+      "file": "build_immunomod_lada.py",
+      "line": 338,
+      "support": 0.019
+    },
+    {
+      "pmid": "2873396",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 628,
+      "support": 0.024
+    },
+    {
+      "pmid": "15016488",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 687,
+      "support": 0.026
+    },
+    {
+      "pmid": "41468096",
+      "file": "build_gap_synthesis.py",
+      "line": 182,
+      "support": 0.029
+    },
+    {
+      "pmid": "35466661",
+      "file": "build_research_paths.py",
+      "line": 209,
+      "support": 0.03
+    },
+    {
+      "pmid": "37105208",
+      "file": "rebuild_clinical_trial_dashboard.py",
+      "line": 250,
+      "support": 0.03
+    },
+    {
+      "pmid": "37105208",
+      "file": "rebuild_clinical_trial_dashboard.py",
+      "line": 250,
+      "support": 0.03
+    },
+    {
+      "pmid": "35466661",
+      "file": "build_research_paths.py",
+      "line": 175,
+      "support": 0.031
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 96,
+      "support": 0.032
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 729,
+      "support": 0.033
+    },
+    {
+      "pmid": "15016488",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 267,
+      "support": 0.035
+    },
+    {
+      "pmid": "39412512",
+      "file": "reconcile_paper_index.py",
+      "line": 23,
+      "support": 0.035
+    },
+    {
+      "pmid": "36643381",
+      "file": "run_quality_improvements.py",
+      "line": 200,
+      "support": 0.035
+    },
+    {
+      "pmid": "37356445",
+      "file": "build_equity_map.py",
+      "line": 837,
+      "support": 0.036
+    },
+    {
+      "pmid": "35203496",
+      "file": "build_cart_access.py",
+      "line": 1046,
+      "support": 0.038
+    },
+    {
+      "pmid": "23061757",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 114,
+      "support": 0.038
+    },
+    {
+      "pmid": "12345678",
+      "file": "verify_pmids.py",
+      "line": 193,
+      "support": 0.038
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 777,
+      "support": 0.039
+    },
+    {
+      "pmid": "19940299",
+      "file": "extract_corpus_data.py",
+      "line": 535,
+      "support": 0.039
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1269,
+      "support": 0.04
+    },
+    {
+      "pmid": "23738527",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 66,
+      "support": 0.04
+    },
+    {
+      "pmid": "23061757",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 101,
+      "support": 0.041
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 825,
+      "support": 0.042
+    },
+    {
+      "pmid": "39412512",
+      "file": "extract_corpus_data.py",
+      "line": 63,
+      "support": 0.042
+    },
+    {
+      "pmid": "35466661",
+      "file": "mark_dose_label_paths_2026_08_20.py",
+      "line": 38,
+      "support": 0.042
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_equity_map.py",
+      "line": 699,
+      "support": 0.043
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_gap_deep_dives.py",
+      "line": 68,
+      "support": 0.045
+    },
+    {
+      "pmid": "37861217",
+      "file": "fix_path_citations_2026_08_20.py",
+      "line": 168,
+      "support": 0.046
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 381,
+      "support": 0.049
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 735,
+      "support": 0.049
+    },
+    {
+      "pmid": "31304320",
+      "file": "add_citations.py",
+      "line": 147,
+      "support": 0.05
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 228,
+      "support": 0.05
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 988,
+      "support": 0.052
+    },
+    {
+      "pmid": "12345678",
+      "file": "verify_before_deploy.py",
+      "line": 44,
+      "support": 0.053
+    },
+    {
+      "pmid": "23835325",
+      "file": "build_gka_lada.py",
+      "line": 794,
+      "support": 0.055
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 172,
+      "support": 0.056
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 237,
+      "support": 0.057
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1417,
+      "support": 0.058
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 284,
+      "support": 0.059
+    },
+    {
+      "pmid": "9742976",
+      "file": "build_health_equity.py",
+      "line": 1272,
+      "support": 0.061
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1125,
+      "support": 0.061
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_landscape.py",
+      "line": 1037,
+      "support": 0.062
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 66,
+      "support": 0.064
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gap_deep_dives.py",
+      "line": 463,
+      "support": 0.065
+    },
+    {
+      "pmid": "26404926",
+      "file": "build_gap_deep_dives.py",
+      "line": 70,
+      "support": 0.066
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1223,
+      "support": 0.066
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase1_data.py",
+      "line": 138,
+      "support": 0.067
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase3_models.py",
+      "line": 499,
+      "support": 0.067
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1292,
+      "support": 0.068
+    },
+    {
+      "pmid": "31173679",
+      "file": "build_nutrition_beta.py",
+      "line": 355,
+      "support": 0.068
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1283,
+      "support": 0.069
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 282,
+      "support": 0.069
+    },
+    {
+      "pmid": "38578067",
+      "file": "add_citations.py",
+      "line": 125,
+      "support": 0.07
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_islet_equity.py",
+      "line": 512,
+      "support": 0.07
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_islet_equity.py",
+      "line": 512,
+      "support": 0.07
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 960,
+      "support": 0.071
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1366,
+      "support": 0.072
+    },
+    {
+      "pmid": "12345678",
+      "file": "postprocess_dashboards.py",
+      "line": 117,
+      "support": 0.072
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 615,
+      "support": 0.073
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 628,
+      "support": 0.073
+    },
+    {
+      "pmid": "39613428",
+      "file": "extract_corpus_data.py",
+      "line": 680,
+      "support": 0.073
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 264,
+      "support": 0.074
+    },
+    {
+      "pmid": "30041834",
+      "file": "build_gka_lada.py",
+      "line": 794,
+      "support": 0.075
+    },
+    {
+      "pmid": "1611143",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 628,
+      "support": 0.076
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gka_pricing.py",
+      "line": 724,
+      "support": 0.076
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1315,
+      "support": 0.077
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_gap_deep_dives.py",
+      "line": 618,
+      "support": 0.078
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_landscape.py",
+      "line": 1049,
+      "support": 0.079
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 798,
+      "support": 0.079
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 977,
+      "support": 0.079
+    },
+    {
+      "pmid": "32953989",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 666,
+      "support": 0.08
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gap_deep_dives.py",
+      "line": 444,
+      "support": 0.081
+    },
+    {
+      "pmid": "36109742",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1532,
+      "support": 0.081
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 333,
+      "support": 0.082
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 105,
+      "support": 0.083
+    },
+    {
+      "pmid": "34421203",
+      "file": "build_health_equity.py",
+      "line": 541,
+      "support": 0.083
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gap_deep_dives.py",
+      "line": 465,
+      "support": 0.084
+    },
+    {
+      "pmid": "33155826",
+      "file": "build_islet_equity.py",
+      "line": 658,
+      "support": 0.084
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1425,
+      "support": 0.084
+    },
+    {
+      "pmid": "19805629",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 58,
+      "support": 0.085
+    },
+    {
+      "pmid": "8366922",
+      "file": "build_health_equity.py",
+      "line": 1266,
+      "support": 0.086
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 958,
+      "support": 0.087
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 939,
+      "support": 0.09
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1122,
+      "support": 0.09
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 551,
+      "support": 0.091
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gap_deep_dives.py",
+      "line": 446,
+      "support": 0.092
+    },
+    {
+      "pmid": "37861217",
+      "file": "fix_path_citations_2026_08_20.py",
+      "line": 18,
+      "support": 0.092
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 407,
+      "support": 0.093
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 106,
+      "support": 0.094
+    },
+    {
+      "pmid": "12345678",
+      "file": "verify_pmids.py",
+      "line": 196,
+      "support": 0.094
+    },
+    {
+      "pmid": "17429083",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 867,
+      "support": 0.096
+    },
+    {
+      "pmid": "35551292",
+      "file": "build_gka_lada.py",
+      "line": 720,
+      "support": 0.097
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 687,
+      "support": 0.097
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 941,
+      "support": 0.098
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1332,
+      "support": 0.098
+    },
+    {
+      "pmid": "30949058",
+      "file": "build_gka_landscape.py",
+      "line": 1144,
+      "support": 0.099
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 592,
+      "support": 0.1
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 657,
+      "support": 0.1
+    },
+    {
+      "pmid": "19132915",
+      "file": "build_data_dictionary.py",
+      "line": 397,
+      "support": 0.102
+    },
+    {
+      "pmid": "39525461",
+      "file": "build_equity_map.py",
+      "line": 840,
+      "support": 0.102
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 756,
+      "support": 0.102
+    },
+    {
+      "pmid": "35466661",
+      "file": "build_research_paths.py",
+      "line": 193,
+      "support": 0.103
+    },
+    {
+      "pmid": "36826844",
+      "file": "build_research_paths.py",
+      "line": 914,
+      "support": 0.103
+    },
+    {
+      "pmid": "36113507",
+      "file": "build_health_equity.py",
+      "line": 1260,
+      "support": 0.104
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 460,
+      "support": 0.105
+    },
+    {
+      "pmid": "12122111",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 647,
+      "support": 0.107
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gap_deep_dives.py",
+      "line": 438,
+      "support": 0.107
+    },
+    {
+      "pmid": "37105208",
+      "file": "rebuild_research_dashboard.py",
+      "line": 823,
+      "support": 0.107
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 591,
+      "support": 0.108
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 597,
+      "support": 0.109
+    },
+    {
+      "pmid": "39697180",
+      "file": "build_equity_map.py",
+      "line": 838,
+      "support": 0.11
+    },
+    {
+      "pmid": "39613428",
+      "file": "fix_path_citations_2026_08_20.py",
+      "line": 173,
+      "support": 0.11
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 1679,
+      "support": 0.111
+    },
+    {
+      "pmid": "23562078",
+      "file": "build_treg_neuropathy.py",
+      "line": 1099,
+      "support": 0.111
+    },
+    {
+      "pmid": "34021020",
+      "file": "build_immunomod_lada.py",
+      "line": 69,
+      "support": 0.112
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_gap_deep_dives.py",
+      "line": 32,
+      "support": 0.113
+    },
+    {
+      "pmid": "39613428",
+      "file": "mark_dose_label_paths_2026_08_20.py",
+      "line": 27,
+      "support": 0.114
+    },
+    {
+      "pmid": "23890997",
+      "file": "build_data_dictionary.py",
+      "line": 834,
+      "support": 0.117
+    },
+    {
+      "pmid": "22315720",
+      "file": "build_data_dictionary.py",
+      "line": 957,
+      "support": 0.117
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 690,
+      "support": 0.118
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 823,
+      "support": 0.118
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1316,
+      "support": 0.118
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1401,
+      "support": 0.118
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 871,
+      "support": 0.12
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 973,
+      "support": 0.121
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_gap_deep_dives.py",
+      "line": 645,
+      "support": 0.122
+    },
+    {
+      "pmid": "22315720",
+      "file": "build_data_dictionary.py",
+      "line": 1237,
+      "support": 0.124
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 416,
+      "support": 0.124
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 995,
+      "support": 0.124
+    },
+    {
+      "pmid": "40737658",
+      "file": "build_gap_synthesis.py",
+      "line": 58,
+      "support": 0.124
+    },
+    {
+      "pmid": "38349844",
+      "file": "build_gka_lada.py",
+      "line": 794,
+      "support": 0.124
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 162,
+      "support": 0.125
+    },
+    {
+      "pmid": "40737658",
+      "file": "build_gap_synthesis.py",
+      "line": 229,
+      "support": 0.125
+    },
+    {
+      "pmid": "32307525",
+      "file": "build_gka_lada.py",
+      "line": 794,
+      "support": 0.125
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 589,
+      "support": 0.125
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1140,
+      "support": 0.125
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase1_data.py",
+      "line": 146,
+      "support": 0.125
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_lada_prevalence.py",
+      "line": 775,
+      "support": 0.126
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_gap_deep_dives.py",
+      "line": 609,
+      "support": 0.128
+    },
+    {
+      "pmid": "37909353",
+      "file": "rebuild_clinical_trial_dashboard.py",
+      "line": 247,
+      "support": 0.128
+    },
+    {
+      "pmid": "32535920",
+      "file": "build_cart_access.py",
+      "line": 548,
+      "support": 0.129
+    },
+    {
+      "pmid": "31197153",
+      "file": "build_data_dictionary.py",
+      "line": 1069,
+      "support": 0.129
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 844,
+      "support": 0.129
+    },
+    {
+      "pmid": "30949058",
+      "file": "build_gka_landscape.py",
+      "line": 509,
+      "support": 0.129
+    },
+    {
+      "pmid": "8366922",
+      "file": "build_health_equity.py",
+      "line": 1266,
+      "support": 0.131
+    },
+    {
+      "pmid": "31173679",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 666,
+      "support": 0.132
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gap_deep_dives.py",
+      "line": 482,
+      "support": 0.132
+    },
+    {
+      "pmid": "35466661",
+      "file": "build_gap_deep_dives.py",
+      "line": 547,
+      "support": 0.132
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1064,
+      "support": 0.132
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_deep_dives.py",
+      "line": 995,
+      "support": 0.133
+    },
+    {
+      "pmid": "37428296",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 56,
+      "support": 0.136
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 768,
+      "support": 0.136
+    },
+    {
+      "pmid": "33155826",
+      "file": "build_health_equity.py",
+      "line": 1304,
+      "support": 0.137
+    },
+    {
+      "pmid": "37223016",
+      "file": "build_gka_pricing.py",
+      "line": 780,
+      "support": 0.138
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 865,
+      "support": 0.138
+    },
+    {
+      "pmid": "31197153",
+      "file": "build_data_dictionary.py",
+      "line": 992,
+      "support": 0.139
+    },
+    {
+      "pmid": "17429083",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 1066,
+      "support": 0.139
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 791,
+      "support": 0.139
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 1257,
+      "support": 0.14
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gka_pricing.py",
+      "line": 849,
+      "support": 0.141
+    },
+    {
+      "pmid": "37351171",
+      "file": "add_citations.py",
+      "line": 213,
+      "support": 0.142
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 929,
+      "support": 0.142
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 579,
+      "support": 0.143
+    },
+    {
+      "pmid": "37889505",
+      "file": "fix_path_citations_2026_08_20.py",
+      "line": 13,
+      "support": 0.144
+    },
+    {
+      "pmid": "21372320",
+      "file": "build_data_dictionary.py",
+      "line": 509,
+      "support": 0.145
+    },
+    {
+      "pmid": "17065674",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 859,
+      "support": 0.145
+    },
+    {
+      "pmid": "23562078",
+      "file": "build_treg_neuropathy.py",
+      "line": 643,
+      "support": 0.145
+    },
+    {
+      "pmid": "31197153",
+      "file": "build_data_dictionary.py",
+      "line": 1058,
+      "support": 0.148
+    },
+    {
+      "pmid": "26378978",
+      "file": "build_health_equity.py",
+      "line": 1284,
+      "support": 0.148
+    },
+    {
+      "pmid": "37105208",
+      "file": "rebuild_research_dashboard.py",
+      "line": 823,
+      "support": 0.148
+    },
+    {
+      "pmid": "22980982",
+      "file": "add_citations.py",
+      "line": 101,
+      "support": 0.149
+    },
+    {
+      "pmid": "25190079",
+      "file": "build_data_dictionary.py",
+      "line": 432,
+      "support": 0.149
+    },
+    {
+      "pmid": "40982327",
+      "file": "build_nutrition_beta.py",
+      "line": 329,
+      "support": 0.15
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gap_deep_dives.py",
+      "line": 427,
+      "support": 0.151
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase3_models.py",
+      "line": 7,
+      "support": 0.151
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 729,
+      "support": 0.152
+    },
+    {
+      "pmid": "41468096",
+      "file": "build_gap_synthesis.py",
+      "line": 159,
+      "support": 0.152
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 808,
+      "support": 0.153
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1053,
+      "support": 0.153
+    },
+    {
+      "pmid": "41468096",
+      "file": "build_gap_synthesis.py",
+      "line": 58,
+      "support": 0.154
+    },
+    {
+      "pmid": "29885104",
+      "file": "build_immunomod_lada.py",
+      "line": 329,
+      "support": 0.154
+    },
+    {
+      "pmid": "20500789",
+      "file": "build_nutrition_lada.py",
+      "line": 486,
+      "support": 0.155
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 469,
+      "support": 0.156
+    },
+    {
+      "pmid": "37223016",
+      "file": "build_gka_lada.py",
+      "line": 734,
+      "support": 0.158
+    },
+    {
+      "pmid": "36288281",
+      "file": "build_cart_access.py",
+      "line": 705,
+      "support": 0.159
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 1686,
+      "support": 0.159
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1062,
+      "support": 0.159
+    },
+    {
+      "pmid": "18725575",
+      "file": "build_data_dictionary.py",
+      "line": 287,
+      "support": 0.161
+    },
+    {
+      "pmid": "22315720",
+      "file": "build_data_dictionary.py",
+      "line": 375,
+      "support": 0.161
+    },
+    {
+      "pmid": "29988125",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 58,
+      "support": 0.161
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 807,
+      "support": 0.161
+    },
+    {
+      "pmid": "14706052",
+      "file": "build_gka_lada.py",
+      "line": 621,
+      "support": 0.161
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_prevalence.py",
+      "line": 455,
+      "support": 0.162
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1400,
+      "support": 0.162
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 699,
+      "support": 0.163
+    },
+    {
+      "pmid": "39613428",
+      "file": "mark_dose_label_paths_2026_08_20.py",
+      "line": 133,
+      "support": 0.163
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase3_models.py",
+      "line": 442,
+      "support": 0.164
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 4,
+      "support": 0.165
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 983,
+      "support": 0.166
+    },
+    {
+      "pmid": "37909353",
+      "file": "rebuild_clinical_trial_dashboard.py",
+      "line": 247,
+      "support": 0.166
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 113,
+      "support": 0.167
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 863,
+      "support": 0.167
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 12,
+      "support": 0.167
+    },
+    {
+      "pmid": "11015619",
+      "file": "build_data_dictionary.py",
+      "line": 575,
+      "support": 0.169
+    },
+    {
+      "pmid": "24850385",
+      "file": "build_data_dictionary.py",
+      "line": 531,
+      "support": 0.17
+    },
+    {
+      "pmid": "37016949",
+      "file": "add_citations.py",
+      "line": 162,
+      "support": 0.172
+    },
+    {
+      "pmid": "28522654",
+      "file": "build_data_dictionary.py",
+      "line": 1080,
+      "support": 0.173
+    },
+    {
+      "pmid": "40814306",
+      "file": "build_equity_map.py",
+      "line": 843,
+      "support": 0.174
+    },
+    {
+      "pmid": "20500789",
+      "file": "build_nutrition_lada.py",
+      "line": 486,
+      "support": 0.174
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 660,
+      "support": 0.175
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase2_features.py",
+      "line": 747,
+      "support": 0.176
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 955,
+      "support": 0.177
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1288,
+      "support": 0.178
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_synthesis.py",
+      "line": 79,
+      "support": 0.181
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase1_data.py",
+      "line": 4,
+      "support": 0.181
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1107,
+      "support": 0.185
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1321,
+      "support": 0.185
+    },
+    {
+      "pmid": "31197153",
+      "file": "build_data_dictionary.py",
+      "line": 1047,
+      "support": 0.186
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_gap_deep_dives.py",
+      "line": 693,
+      "support": 0.186
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_gap_deep_dives.py",
+      "line": 199,
+      "support": 0.187
+    },
+    {
+      "pmid": "26590418",
+      "file": "build_gap_deep_dives.py",
+      "line": 817,
+      "support": 0.187
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 10,
+      "support": 0.189
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1407,
+      "support": 0.19
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1407,
+      "support": 0.19
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 809,
+      "support": 0.191
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1400,
+      "support": 0.191
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 572,
+      "support": 0.192
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gap_synthesis.py",
+      "line": 322,
+      "support": 0.193
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_landscape.py",
+      "line": 1083,
+      "support": 0.194
+    },
+    {
+      "pmid": "27727279",
+      "file": "build_immunomod_lada.py",
+      "line": 340,
+      "support": 0.194
+    },
+    {
+      "pmid": "37105208",
+      "file": "build_islet_outcomes.py",
+      "line": 759,
+      "support": 0.198
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_gka_lada.py",
+      "line": 794,
+      "support": 0.199
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 830,
+      "support": 0.199
+    },
+    {
+      "pmid": "34421203",
+      "file": "build_health_equity.py",
+      "line": 1254,
+      "support": 0.199
+    },
+    {
+      "pmid": "33550442",
+      "file": "build_data_dictionary.py",
+      "line": 946,
+      "support": 0.2
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 941,
+      "support": 0.2
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 807,
+      "support": 0.201
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gka_landscape.py",
+      "line": 1155,
+      "support": 0.201
+    },
+    {
+      "pmid": "37351171",
+      "file": "add_citations.py",
+      "line": 152,
+      "support": 0.203
+    },
+    {
+      "pmid": "18397984",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 286,
+      "support": 0.204
+    },
+    {
+      "pmid": "19805629",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 187,
+      "support": 0.204
+    },
+    {
+      "pmid": "34021020",
+      "file": "build_nutrition_lada.py",
+      "line": 889,
+      "support": 0.205
+    },
+    {
+      "pmid": "34021020",
+      "file": "build_nutrition_lada.py",
+      "line": 889,
+      "support": 0.205
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 989,
+      "support": 0.209
+    },
+    {
+      "pmid": "22349456",
+      "file": "build_trial_equity_mapper.py",
+      "line": 1536,
+      "support": 0.209
+    },
+    {
+      "pmid": "35203496",
+      "file": "build_cart_access.py",
+      "line": 666,
+      "support": 0.21
+    },
+    {
+      "pmid": "37105208",
+      "file": "build_corpus_analysis.py",
+      "line": 907,
+      "support": 0.21
+    },
+    {
+      "pmid": "37105208",
+      "file": "build_corpus_analysis.py",
+      "line": 907,
+      "support": 0.21
+    },
+    {
+      "pmid": "19373249",
+      "file": "build_gka_lada.py",
+      "line": 747,
+      "support": 0.21
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_statistical_analysis.py",
+      "line": 1072,
+      "support": 0.211
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_statistical_analysis.py",
+      "line": 1072,
+      "support": 0.211
+    },
+    {
+      "pmid": "19575028",
+      "file": "build_data_dictionary.py",
+      "line": 476,
+      "support": 0.212
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_immunomod_lada.py",
+      "line": 42,
+      "support": 0.214
+    },
+    {
+      "pmid": "24598244",
+      "file": "build_gap_deep_dives.py",
+      "line": 42,
+      "support": 0.216
+    },
+    {
+      "pmid": "20154735",
+      "file": "build_data_dictionary.py",
+      "line": 454,
+      "support": 0.218
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 989,
+      "support": 0.221
+    },
+    {
+      "pmid": "21719305",
+      "file": "build_data_dictionary.py",
+      "line": 208,
+      "support": 0.222
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 994,
+      "support": 0.222
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 557,
+      "support": 0.222
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 918,
+      "support": 0.224
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_health_equity.py",
+      "line": 983,
+      "support": 0.224
+    },
+    {
+      "pmid": "19805629",
+      "file": "repair_cost_provenance_20260829.py",
+      "line": 159,
+      "support": 0.224
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 479,
+      "support": 0.226
+    },
+    {
+      "pmid": "21997792",
+      "file": "build_data_dictionary.py",
+      "line": 320,
+      "support": 0.228
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_islet_equity.py",
+      "line": 813,
+      "support": 0.228
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_immunomod_lada.py",
+      "line": 844,
+      "support": 0.229
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gka_lada.py",
+      "line": 708,
+      "support": 0.233
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_islet_equity.py",
+      "line": 813,
+      "support": 0.233
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 981,
+      "support": 0.233
+    },
+    {
+      "pmid": "38078589",
+      "file": "build_data_dictionary.py",
+      "line": 599,
+      "support": 0.234
+    },
+    {
+      "pmid": "41921761",
+      "file": "project_microbiome_ml_phase3_models.py",
+      "line": 4,
+      "support": 0.234
+    },
+    {
+      "pmid": "32017635",
+      "file": "build_data_dictionary.py",
+      "line": 254,
+      "support": 0.236
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 99,
+      "support": 0.236
+    },
+    {
+      "pmid": "27821710",
+      "file": "build_gap_synthesis.py",
+      "line": 127,
+      "support": 0.237
+    },
+    {
+      "pmid": "35551294",
+      "file": "build_gka_lada.py",
+      "line": 720,
+      "support": 0.237
+    },
+    {
+      "pmid": "41827917",
+      "file": "add_citations.py",
+      "line": 115,
+      "support": 0.238
+    },
+    {
+      "pmid": "20336151",
+      "file": "build_data_dictionary.py",
+      "line": 408,
+      "support": 0.238
+    },
+    {
+      "pmid": "38078589",
+      "file": "build_data_dictionary.py",
+      "line": 610,
+      "support": 0.238
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gka_lada.py",
+      "line": 444,
+      "support": 0.238
+    },
+    {
+      "pmid": "19373249",
+      "file": "run_quality_improvements.py",
+      "line": 144,
+      "support": 0.238
+    },
+    {
+      "pmid": "21719096",
+      "file": "build_immunomod_lada.py",
+      "line": 94,
+      "support": 0.241
+    },
+    {
+      "pmid": "34256014",
+      "file": "build_nutrition_lada.py",
+      "line": 865,
+      "support": 0.243
+    },
+    {
+      "pmid": "9357409",
+      "file": "build_lada_model.py",
+      "line": 127,
+      "support": 0.245
+    },
+    {
+      "pmid": "25287711",
+      "file": "build_nutrition_beta.py",
+      "line": 353,
+      "support": 0.245
+    },
+    {
+      "pmid": "23817699",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 647,
+      "support": 0.247
+    },
+    {
+      "pmid": "33155826",
+      "file": "build_islet_equity.py",
+      "line": 803,
+      "support": 0.248
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1327,
+      "support": 0.249
+    },
+    {
+      "pmid": "28731034",
+      "file": "build_data_dictionary.py",
+      "line": 970,
+      "support": 0.252
+    },
+    {
+      "pmid": "39843169",
+      "file": "rebuild_research_dashboard.py",
+      "line": 45,
+      "support": 0.252
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_prevalence.py",
+      "line": 810,
+      "support": 0.254
+    },
+    {
+      "pmid": "19633656",
+      "file": "build_treg_neuropathy.py",
+      "line": 653,
+      "support": 0.254
+    },
+    {
+      "pmid": "17429083",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 127,
+      "support": 0.256
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_equity_map.py",
+      "line": 879,
+      "support": 0.257
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gap_deep_dives.py",
+      "line": 436,
+      "support": 0.262
+    },
+    {
+      "pmid": "15551269",
+      "file": "build_data_dictionary.py",
+      "line": 131,
+      "support": 0.263
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 695,
+      "support": 0.263
+    },
+    {
+      "pmid": "16306343",
+      "file": "add_citations.py",
+      "line": 164,
+      "support": 0.266
+    },
+    {
+      "pmid": "29909913",
+      "file": "build_cart_access.py",
+      "line": 636,
+      "support": 0.267
+    },
+    {
+      "pmid": "11095109",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 884,
+      "support": 0.271
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 1333,
+      "support": 0.273
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 675,
+      "support": 0.279
+    },
+    {
+      "pmid": "22109896",
+      "file": "build_nutrition_lada.py",
+      "line": 558,
+      "support": 0.28
+    },
+    {
+      "pmid": "40650745",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 166,
+      "support": 0.282
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 864,
+      "support": 0.283
+    },
+    {
+      "pmid": "29754952",
+      "file": "build_nutrition_lada.py",
+      "line": 662,
+      "support": 0.283
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_gka_pricing.py",
+      "line": 647,
+      "support": 0.284
+    },
+    {
+      "pmid": "26378978",
+      "file": "build_health_equity.py",
+      "line": 1284,
+      "support": 0.284
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 687,
+      "support": 0.285
+    },
+    {
+      "pmid": "33155826",
+      "file": "build_islet_equity.py",
+      "line": 803,
+      "support": 0.285
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_prevalence.py",
+      "line": 420,
+      "support": 0.285
+    },
+    {
+      "pmid": "31618560",
+      "file": "build_data_dictionary.py",
+      "line": 1267,
+      "support": 0.287
+    },
+    {
+      "pmid": "23413806",
+      "file": "build_data_dictionary.py",
+      "line": 142,
+      "support": 0.288
+    },
+    {
+      "pmid": "36474045",
+      "file": "add_citations.py",
+      "line": 111,
+      "support": 0.289
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_gap_synthesis.py",
+      "line": 237,
+      "support": 0.29
+    },
+    {
+      "pmid": "25287711",
+      "file": "build_nutrition_beta.py",
+      "line": 353,
+      "support": 0.291
+    },
+    {
+      "pmid": "26322160",
+      "file": "build_nutrition_beta.py",
+      "line": 357,
+      "support": 0.291
+    },
+    {
+      "pmid": "9357409",
+      "file": "build_lada_model.py",
+      "line": 758,
+      "support": 0.292
+    },
+    {
+      "pmid": "35551307",
+      "file": "build_data_dictionary.py",
+      "line": 1259,
+      "support": 0.293
+    },
+    {
+      "pmid": "36826844",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 1166,
+      "support": 0.293
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 283,
+      "support": 0.296
+    },
+    {
+      "pmid": "25834231",
+      "file": "build_data_dictionary.py",
+      "line": 175,
+      "support": 0.297
+    },
+    {
+      "pmid": "28776086",
+      "file": "build_data_dictionary.py",
+      "line": 700,
+      "support": 0.297
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 859,
+      "support": 0.297
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 744,
+      "support": 0.303
+    },
+    {
+      "pmid": "26378978",
+      "file": "build_data_dictionary.py",
+      "line": 1325,
+      "support": 0.304
+    },
+    {
+      "pmid": "30657336",
+      "file": "build_islet_equity.py",
+      "line": 818,
+      "support": 0.304
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 523,
+      "support": 0.305
+    },
+    {
+      "pmid": "28431241",
+      "file": "build_data_dictionary.py",
+      "line": 553,
+      "support": 0.305
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_prevalence.py",
+      "line": 601,
+      "support": 0.307
+    },
+    {
+      "pmid": "28375156",
+      "file": "build_nutrition_beta.py",
+      "line": 354,
+      "support": 0.307
+    },
+    {
+      "pmid": "38639547",
+      "file": "build_gap_deep_dives.py",
+      "line": 960,
+      "support": 0.308
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 854,
+      "support": 0.309
+    },
+    {
+      "pmid": "23061757",
+      "file": "build_drug_repurposing_islet.py",
+      "line": 885,
+      "support": 0.312
+    },
+    {
+      "pmid": "11832527",
+      "file": "add_citations.py",
+      "line": 105,
+      "support": 0.315
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 39,
+      "support": 0.315
+    },
+    {
+      "pmid": "29754952",
+      "file": "build_nutrition_lada.py",
+      "line": 662,
+      "support": 0.319
+    },
+    {
+      "pmid": "18843118",
+      "file": "build_nutrition_lada.py",
+      "line": 890,
+      "support": 0.32
+    },
+    {
+      "pmid": "26656660",
+      "file": "build_data_dictionary.py",
+      "line": 443,
+      "support": 0.323
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 216,
+      "support": 0.323
+    },
+    {
+      "pmid": "28314945",
+      "file": "build_data_dictionary.py",
+      "line": 878,
+      "support": 0.326
+    },
+    {
+      "pmid": "19805629",
+      "file": "build_drug_repurposing_screen.py",
+      "line": 609,
+      "support": 0.326
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 11,
+      "support": 0.326
+    },
+    {
+      "pmid": "19169263",
+      "file": "build_treg_neuropathy.py",
+      "line": 1119,
+      "support": 0.327
+    },
+    {
+      "pmid": "12612578",
+      "file": "build_data_dictionary.py",
+      "line": 265,
+      "support": 0.328
+    },
+    {
+      "pmid": "19041189",
+      "file": "build_data_dictionary.py",
+      "line": 821,
+      "support": 0.329
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 516,
+      "support": 0.329
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_repurposing_dashboard_v2.py",
+      "line": 516,
+      "support": 0.329
+    },
+    {
+      "pmid": "26897744",
+      "file": "build_treg_neuropathy.py",
+      "line": 608,
+      "support": 0.33
+    },
+    {
+      "pmid": "28199814",
+      "file": "build_data_dictionary.py",
+      "line": 799,
+      "support": 0.331
+    },
+    {
+      "pmid": "11484077",
+      "file": "build_nutrition_lada.py",
+      "line": 803,
+      "support": 0.331
+    },
+    {
+      "pmid": "11484077",
+      "file": "build_nutrition_lada.py",
+      "line": 803,
+      "support": 0.331
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_lada.py",
+      "line": 720,
+      "support": 0.335
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 786,
+      "support": 0.336
+    },
+    {
+      "pmid": "28731034",
+      "file": "build_data_dictionary.py",
+      "line": 981,
+      "support": 0.337
+    },
+    {
+      "pmid": "37428296",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 35,
+      "support": 0.338
+    },
+    {
+      "pmid": "18843118",
+      "file": "build_nutrition_lada.py",
+      "line": 890,
+      "support": 0.34
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 969,
+      "support": 0.341
+    },
+    {
+      "pmid": "27727279",
+      "file": "build_immunomod_lada.py",
+      "line": 102,
+      "support": 0.342
+    },
+    {
+      "pmid": "16898223",
+      "file": "project_islet_drug_repurposing_phase1.py",
+      "line": 250,
+      "support": 0.342
+    },
+    {
+      "pmid": "8366922",
+      "file": "build_treg_neuropathy.py",
+      "line": 1063,
+      "support": 0.343
+    },
+    {
+      "pmid": "37122431",
+      "file": "add_citations.py",
+      "line": 125,
+      "support": 0.344
+    },
+    {
+      "pmid": "37356446",
+      "file": "add_citations.py",
+      "line": 158,
+      "support": 0.344
+    },
+    {
+      "pmid": "19940299",
+      "file": "build_immunomod_lada.py",
+      "line": 86,
+      "support": 0.347
+    },
+    {
+      "pmid": "29567707",
+      "file": "build_data_dictionary.py",
+      "line": 276,
+      "support": 0.348
+    },
+    {
+      "pmid": "22296077",
+      "file": "build_data_dictionary.py",
+      "line": 810,
+      "support": 0.357
+    },
+    {
+      "pmid": "31296866",
+      "file": "build_data_dictionary.py",
+      "line": 867,
+      "support": 0.357
+    },
+    {
+      "pmid": "25230243",
+      "file": "add_citations.py",
+      "line": 150,
+      "support": 0.359
+    },
+    {
+      "pmid": "27878313",
+      "file": "build_data_dictionary.py",
+      "line": 722,
+      "support": 0.36
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1333,
+      "support": 0.361
+    },
+    {
+      "pmid": "27159554",
+      "file": "build_data_dictionary.py",
+      "line": 1091,
+      "support": 0.362
+    },
+    {
+      "pmid": "26322160",
+      "file": "build_nutrition_beta.py",
+      "line": 357,
+      "support": 0.365
+    },
+    {
+      "pmid": "22109896",
+      "file": "build_nutrition_lada.py",
+      "line": 558,
+      "support": 0.366
+    },
+    {
+      "pmid": "28885622",
+      "file": "build_nutrition_lada.py",
+      "line": 797,
+      "support": 0.366
+    },
+    {
+      "pmid": "17965721",
+      "file": "build_gap_deep_dives.py",
+      "line": 247,
+      "support": 0.37
+    },
+    {
+      "pmid": "20228401",
+      "file": "build_treg_neuropathy.py",
+      "line": 1069,
+      "support": 0.373
+    },
+    {
+      "pmid": "40544428",
+      "file": "rebuild_research_dashboard.py",
+      "line": 17,
+      "support": 0.374
+    },
+    {
+      "pmid": "31263284",
+      "file": "add_citations.py",
+      "line": 135,
+      "support": 0.376
+    },
+    {
+      "pmid": "31157579",
+      "file": "build_cart_access.py",
+      "line": 523,
+      "support": 0.378
+    },
+    {
+      "pmid": "17261637",
+      "file": "build_data_dictionary.py",
+      "line": 109,
+      "support": 0.379
+    },
+    {
+      "pmid": "15928679",
+      "file": "build_data_dictionary.py",
+      "line": 586,
+      "support": 0.379
+    },
+    {
+      "pmid": "25751624",
+      "file": "build_data_dictionary.py",
+      "line": 1248,
+      "support": 0.38
+    },
+    {
+      "pmid": "39634180",
+      "file": "build_nutrition_beta.py",
+      "line": 329,
+      "support": 0.381
+    },
+    {
+      "pmid": "28776086",
+      "file": "build_data_dictionary.py",
+      "line": 692,
+      "support": 0.384
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 855,
+      "support": 0.385
+    },
+    {
+      "pmid": "24506867",
+      "file": "build_data_dictionary.py",
+      "line": 197,
+      "support": 0.386
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1087,
+      "support": 0.388
+    },
+    {
+      "pmid": "31180194",
+      "file": "add_citations.py",
+      "line": 63,
+      "support": 0.389
+    },
+    {
+      "pmid": "9521319",
+      "file": "build_data_dictionary.py",
+      "line": 298,
+      "support": 0.39
+    },
+    {
+      "pmid": "18094377",
+      "file": "build_data_dictionary.py",
+      "line": 766,
+      "support": 0.395
+    },
+    {
+      "pmid": "31036962",
+      "file": "build_data_dictionary.py",
+      "line": 520,
+      "support": 0.396
+    },
+    {
+      "pmid": "30657336",
+      "file": "build_islet_equity.py",
+      "line": 818,
+      "support": 0.402
+    },
+    {
+      "pmid": "38783768",
+      "file": "build_gka_landscape.py",
+      "line": 1150,
+      "support": 0.405
+    },
+    {
+      "pmid": "22683128",
+      "file": "build_data_dictionary.py",
+      "line": 889,
+      "support": 0.409
+    },
+    {
+      "pmid": "19169263",
+      "file": "build_treg_neuropathy.py",
+      "line": 700,
+      "support": 0.409
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1256,
+      "support": 0.41
+    },
+    {
+      "pmid": "21867926",
+      "file": "build_data_dictionary.py",
+      "line": 243,
+      "support": 0.411
+    },
+    {
+      "pmid": "3899825",
+      "file": "build_data_dictionary.py",
+      "line": 621,
+      "support": 0.411
+    },
+    {
+      "pmid": "16120857",
+      "file": "build_data_dictionary.py",
+      "line": 788,
+      "support": 0.412
+    },
+    {
+      "pmid": "28375156",
+      "file": "build_nutrition_beta.py",
+      "line": 354,
+      "support": 0.413
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 672,
+      "support": 0.414
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 786,
+      "support": 0.416
+    },
+    {
+      "pmid": "14525967",
+      "file": "build_data_dictionary.py",
+      "line": 487,
+      "support": 0.417
+    },
+    {
+      "pmid": "23780460",
+      "file": "build_data_dictionary.py",
+      "line": 331,
+      "support": 0.419
+    },
+    {
+      "pmid": "21323736",
+      "file": "build_islet_equity.py",
+      "line": 530,
+      "support": 0.419
+    },
+    {
+      "pmid": "39843169",
+      "file": "rebuild_research_dashboard.py",
+      "line": 194,
+      "support": 0.419
+    },
+    {
+      "pmid": "24508508",
+      "file": "build_data_dictionary.py",
+      "line": 777,
+      "support": 0.422
+    },
+    {
+      "pmid": "17005949",
+      "file": "build_data_dictionary.py",
+      "line": 1226,
+      "support": 0.422
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 784,
+      "support": 0.422
+    },
+    {
+      "pmid": "34763823",
+      "file": "build_generic_drug_catalog.py",
+      "line": 784,
+      "support": 0.422
+    },
+    {
+      "pmid": "19633656",
+      "file": "build_treg_neuropathy.py",
+      "line": 700,
+      "support": 0.422
+    },
+    {
+      "pmid": "19633656",
+      "file": "build_treg_neuropathy.py",
+      "line": 1109,
+      "support": 0.422
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1108,
+      "support": 0.424
+    },
+    {
+      "pmid": "36113507",
+      "file": "build_health_equity.py",
+      "line": 562,
+      "support": 0.428
+    },
+    {
+      "pmid": "32307525",
+      "file": "build_lada_model.py",
+      "line": 661,
+      "support": 0.428
+    },
+    {
+      "pmid": "10911004",
+      "file": "build_data_dictionary.py",
+      "line": 902,
+      "support": 0.43
+    },
+    {
+      "pmid": "19104422",
+      "file": "build_islet_equity.py",
+      "line": 783,
+      "support": 0.43
+    },
+    {
+      "pmid": "27189025",
+      "file": "build_data_dictionary.py",
+      "line": 845,
+      "support": 0.433
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_landscape.py",
+      "line": 1060,
+      "support": 0.434
+    },
+    {
+      "pmid": "28885622",
+      "file": "build_nutrition_lada.py",
+      "line": 797,
+      "support": 0.435
+    },
+    {
+      "pmid": "1697648",
+      "file": "build_data_dictionary.py",
+      "line": 342,
+      "support": 0.438
+    },
+    {
+      "pmid": "32929230",
+      "file": "build_data_dictionary.py",
+      "line": 733,
+      "support": 0.442
+    },
+    {
+      "pmid": "18662538",
+      "file": "build_data_dictionary.py",
+      "line": 465,
+      "support": 0.443
+    },
+    {
+      "pmid": "20500789",
+      "file": "build_nutrition_lada.py",
+      "line": 817,
+      "support": 0.443
+    },
+    {
+      "pmid": "31180194",
+      "file": "build_data_dictionary.py",
+      "line": 1292,
+      "support": 0.446
+    },
+    {
+      "pmid": "20500789",
+      "file": "build_nutrition_lada.py",
+      "line": 817,
+      "support": 0.453
+    },
+    {
+      "pmid": "32694767",
+      "file": "build_data_dictionary.py",
+      "line": 687,
+      "support": 0.456
+    },
+    {
+      "pmid": "40573322",
+      "file": "add_citations.py",
+      "line": 93,
+      "support": 0.457
+    },
+    {
+      "pmid": "31177185",
+      "file": "build_data_dictionary.py",
+      "line": 665,
+      "support": 0.459
+    },
+    {
+      "pmid": "28086098",
+      "file": "build_data_dictionary.py",
+      "line": 498,
+      "support": 0.465
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_immunomod_lada.py",
+      "line": 328,
+      "support": 0.472
+    },
+    {
+      "pmid": "35551294",
+      "file": "build_gka_landscape.py",
+      "line": 1150,
+      "support": 0.475
+    },
+    {
+      "pmid": "28118453",
+      "file": "build_data_dictionary.py",
+      "line": 1281,
+      "support": 0.478
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1421,
+      "support": 0.478
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 918,
+      "support": 0.484
+    },
+    {
+      "pmid": "37366315",
+      "file": "add_citations.py",
+      "line": 83,
+      "support": 0.485
+    },
+    {
+      "pmid": "30303773",
+      "file": "build_data_dictionary.py",
+      "line": 186,
+      "support": 0.487
+    },
+    {
+      "pmid": "16731815",
+      "file": "build_data_dictionary.py",
+      "line": 676,
+      "support": 0.487
+    },
+    {
+      "pmid": "31175156",
+      "file": "build_data_dictionary.py",
+      "line": 1003,
+      "support": 0.489
+    },
+    {
+      "pmid": "31618560",
+      "file": "build_data_dictionary.py",
+      "line": 1270,
+      "support": 0.489
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_data_dictionary.py",
+      "line": 856,
+      "support": 0.492
+    },
+    {
+      "pmid": "17942684",
+      "file": "build_data_dictionary.py",
+      "line": 364,
+      "support": 0.5
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 1067,
+      "support": 0.501
+    },
+    {
+      "pmid": "21864487",
+      "file": "build_cart_access.py",
+      "line": 1352,
+      "support": 0.503
+    },
+    {
+      "pmid": "19104422",
+      "file": "build_islet_equity.py",
+      "line": 783,
+      "support": 0.504
+    },
+    {
+      "pmid": "17359512",
+      "file": "build_islet_outcomes.py",
+      "line": 645,
+      "support": 0.511
+    },
+    {
+      "pmid": "32627352",
+      "file": "build_data_dictionary.py",
+      "line": 913,
+      "support": 0.514
+    },
+    {
+      "pmid": "32175717",
+      "file": "build_gka_pricing.py",
+      "line": 828,
+      "support": 0.514
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 940,
+      "support": 0.515
+    },
+    {
+      "pmid": "9357409",
+      "file": "build_lada_model.py",
+      "line": 743,
+      "support": 0.515
+    },
+    {
+      "pmid": "20192806",
+      "file": "build_data_dictionary.py",
+      "line": 232,
+      "support": 0.521
+    },
+    {
+      "pmid": "29617641",
+      "file": "build_data_dictionary.py",
+      "line": 711,
+      "support": 0.528
+    },
+    {
+      "pmid": "34180979",
+      "file": "build_data_dictionary.py",
+      "line": 98,
+      "support": 0.532
+    },
+    {
+      "pmid": "34318969",
+      "file": "build_lada_model.py",
+      "line": 134,
+      "support": 0.536
+    },
+    {
+      "pmid": "28283069",
+      "file": "build_data_dictionary.py",
+      "line": 542,
+      "support": 0.538
+    },
+    {
+      "pmid": "26784127",
+      "file": "build_data_dictionary.py",
+      "line": 935,
+      "support": 0.546
+    },
+    {
+      "pmid": "37909353",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 768,
+      "support": 0.55
+    },
+    {
+      "pmid": "25587654",
+      "file": "build_data_dictionary.py",
+      "line": 564,
+      "support": 0.555
+    },
+    {
+      "pmid": "40249888",
+      "file": "build_cart_access.py",
+      "line": 1292,
+      "support": 0.567
+    },
+    {
+      "pmid": "21212348",
+      "file": "build_data_dictionary.py",
+      "line": 309,
+      "support": 0.573
+    },
+    {
+      "pmid": "10911004",
+      "file": "build_data_dictionary.py",
+      "line": 1347,
+      "support": 0.574
+    },
+    {
+      "pmid": "29617641",
+      "file": "build_data_dictionary.py",
+      "line": 1102,
+      "support": 0.578
+    },
+    {
+      "pmid": "28375156",
+      "file": "build_nutrition_beta.py",
+      "line": 620,
+      "support": 0.578
+    },
+    {
+      "pmid": "25940230",
+      "file": "build_nutrition_lada.py",
+      "line": 485,
+      "support": 0.578
+    },
+    {
+      "pmid": "15923354",
+      "file": "build_data_dictionary.py",
+      "line": 120,
+      "support": 0.587
+    },
+    {
+      "pmid": "31182921",
+      "file": "build_gap_deep_dives.py",
+      "line": 778,
+      "support": 0.594
+    },
+    {
+      "pmid": "40737658",
+      "file": "build_gap_synthesis.py",
+      "line": 274,
+      "support": 0.597
+    },
+    {
+      "pmid": "25940230",
+      "file": "build_nutrition_lada.py",
+      "line": 485,
+      "support": 0.605
+    },
+    {
+      "pmid": "24997559",
+      "file": "build_immunomod_lada.py",
+      "line": 110,
+      "support": 0.609
+    },
+    {
+      "pmid": "40032831",
+      "file": "add_citations.py",
+      "line": 182,
+      "support": 0.611
+    },
+    {
+      "pmid": "30949058",
+      "file": "build_data_dictionary.py",
+      "line": 153,
+      "support": 0.615
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 513,
+      "support": 0.629
+    },
+    {
+      "pmid": "18442638",
+      "file": "build_nutrition_beta.py",
+      "line": 684,
+      "support": 0.661
+    },
+    {
+      "pmid": "40544428",
+      "file": "build_data_dictionary.py",
+      "line": 924,
+      "support": 0.675
+    },
+    {
+      "pmid": "30899369",
+      "file": "build_gap_deep_dives.py",
+      "line": 1417,
+      "support": 0.681
+    },
+    {
+      "pmid": "34318969",
+      "file": "build_lada_model.py",
+      "line": 828,
+      "support": 0.684
+    },
+    {
+      "pmid": "33622669",
+      "file": "build_gka_landscape.py",
+      "line": 761,
+      "support": 0.687
+    },
+    {
+      "pmid": "32754804",
+      "file": "build_lada_model.py",
+      "line": 871,
+      "support": 0.688
+    },
+    {
+      "pmid": "35551294",
+      "file": "build_data_dictionary.py",
+      "line": 1336,
+      "support": 0.691
+    },
+    {
+      "pmid": "31173679",
+      "file": "build_nutrition_beta.py",
+      "line": 628,
+      "support": 0.7
+    },
+    {
+      "pmid": "29617641",
+      "file": "build_data_dictionary.py",
+      "line": 1314,
+      "support": 0.703
+    },
+    {
+      "pmid": "31304320",
+      "file": "add_citations.py",
+      "line": 174,
+      "support": 0.72
+    },
+    {
+      "pmid": "32862232",
+      "file": "run_quality_improvements.py",
+      "line": 95,
+      "support": 0.73
+    },
+    {
+      "pmid": "19104422",
+      "file": "build_islet_equity.py",
+      "line": 472,
+      "support": 0.731
+    },
+    {
+      "pmid": "31173679",
+      "file": "build_nutrition_beta.py",
+      "line": 628,
+      "support": 0.731
+    },
+    {
+      "pmid": "29754952",
+      "file": "build_nutrition_lada.py",
+      "line": 881,
+      "support": 0.732
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_diagnostic_model.py",
+      "line": 37,
+      "support": 0.741
+    },
+    {
+      "pmid": "8024693",
+      "file": "build_data_dictionary.py",
+      "line": 353,
+      "support": 0.743
+    },
+    {
+      "pmid": "32535920",
+      "file": "build_cart_access.py",
+      "line": 747,
+      "support": 0.746
+    },
+    {
+      "pmid": "36449148",
+      "file": "build_gka_pricing.py",
+      "line": 392,
+      "support": 0.752
+    },
+    {
+      "pmid": "19104422",
+      "file": "build_islet_equity.py",
+      "line": 472,
+      "support": 0.757
+    },
+    {
+      "pmid": "29619531",
+      "file": "build_data_dictionary.py",
+      "line": 1215,
+      "support": 0.763
+    },
+    {
+      "pmid": "29754952",
+      "file": "build_nutrition_lada.py",
+      "line": 881,
+      "support": 0.766
+    },
+    {
+      "pmid": "32847960",
+      "file": "build_data_dictionary.py",
+      "line": 1369,
+      "support": 0.777
+    },
+    {
+      "pmid": "21959959",
+      "file": "build_data_dictionary.py",
+      "line": 164,
+      "support": 0.781
+    },
+    {
+      "pmid": "31182921",
+      "file": "build_gap_deep_dives.py",
+      "line": 751,
+      "support": 0.786
+    },
+    {
+      "pmid": "9357409",
+      "file": "build_gka_lada.py",
+      "line": 778,
+      "support": 0.82
+    },
+    {
+      "pmid": "35028608",
+      "file": "build_data_dictionary.py",
+      "line": 1358,
+      "support": 0.822
+    },
+    {
+      "pmid": "18442638",
+      "file": "build_nutrition_beta.py",
+      "line": 684,
+      "support": 0.834
+    },
+    {
+      "pmid": "29590046",
+      "file": "build_nutrition_beta.py",
+      "line": 642,
+      "support": 0.835
+    },
+    {
+      "pmid": "29590046",
+      "file": "build_nutrition_beta.py",
+      "line": 642,
+      "support": 0.865
+    },
+    {
+      "pmid": "23248199",
+      "file": "build_lada_model.py",
+      "line": 829,
+      "support": 1.0
+    },
+    {
+      "pmid": "25287711",
+      "file": "build_nutrition_beta.py",
+      "line": 608,
+      "support": 1.0
+    },
+    {
+      "pmid": "25287711",
+      "file": "build_nutrition_beta.py",
+      "line": 608,
+      "support": 1.0
+    },
+    {
+      "pmid": "28375156",
+      "file": "build_nutrition_beta.py",
+      "line": 620,
+      "support": 1.0
+    },
+    {
+      "pmid": "25940230",
+      "file": "build_nutrition_lada.py",
+      "line": 811,
+      "support": 1.0
+    },
+    {
+      "pmid": "25940230",
+      "file": "build_nutrition_lada.py",
+      "line": 811,
+      "support": 1.0
+    }
+  ]
+}

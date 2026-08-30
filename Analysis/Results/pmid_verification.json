@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T03:20:27.276647",
+  "timestamp": "2026-08-30T03:16:26.751229",
   "summary": {
     "total": 285,
     "verified": 285,
@@ -464,7 +464,7 @@
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 313,
+          "line": 322,
           "context": "'background': 'Drug repurposing reuses approved drugs (often generic, low-cost). Health equity in diabetes focuses on in"
         },
         {
@@ -789,98 +789,6 @@
         }
       ]
     },
-    "37889505": {
-      "exists": true,
-      "title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
-      "authors": "Sadeghi A",
-      "journal": "Crit Rev Food Sci Nutr",
-      "year": "2024",
-      "doi": "10.1080/10408398.2023.2261056",
-      "error": "",
-      "locations": [
-        {
-          "file": "audit_index_provenance.py",
-          "line": 6,
-          "context": "The 2026-08-23 queue item observed that PMID 37889505 -- the probiotic-breads"
-        },
-        {
-          "file": "fix_path_citations_2026_08_20.py",
-          "line": 13,
-          "context": "The most consequential is PMID 37889505. `teplizumab -> autoimmune` cites it as"
-        },
-        {
-          "file": "ingest_papers.py",
-          "line": 369,
-          "context": "harvested from a regex example in a code comment, and PMID 37889505, present"
-        },
-        {
-          "file": "repair_prose_citations_20260823.py",
-          "line": 15,
-          "context": "\"PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505, n=328 ...)\""
-        },
-        {
-          "file": "_close_run_2026_08_20.py",
-          "line": 160,
-          "context": "'Worst case: PMID 37889505 (\"Recent advances in probiotic breads\") is cited by '"
-        }
-      ]
-    },
-    "39613428": {
-      "exists": true,
-      "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
-      "authors": "Wych J",
-      "journal": "BMJ Open",
-      "year": "2024",
-      "doi": "10.1136/bmjopen-2024-091597",
-      "error": "",
-      "locations": [
-        {
-          "file": "audit_path_count_staleness.py",
-          "line": 8,
-          "context": "verapamil -> beta_cell, both sourced solely from PMID 39613428 (39 -> 16 raw"
-        },
-        {
-          "file": "fix_path_citations_2026_08_20.py",
-          "line": 30,
-          "context": "3. Removes PMID 39613428 from verapamil -> beta_cell external_pmids: that is the"
-        },
-        {
-          "file": "fix_path_citations_2026_08_20.py",
-          "line": 173,
-          "context": "f'Also removed PMID 39613428 from verapamil -> beta_cell external_pmids: it is the '"
-        },
-        {
-          "file": "mark_dose_label_paths_2026_08_20.py",
-          "line": 27,
-          "context": "dose_response extractions from PMID 39613428 are dose LABELS -"
-        },
-        {
-          "file": "mark_dose_label_paths_2026_08_20.py",
-          "line": 133,
-          "context": "'surviving records: all 16 unique dose_response extractions from PMID 39613428 are '"
-        },
-        {
-          "file": "_close_run_2026_08_20.py",
-          "line": 186,
-          "context": "'records from PMID 39613428 are dose labels (\"360 mg verapamil\", \"120 mg tablets\"), '"
-        },
-        {
-          "file": "_close_run_2026_08_22.py",
-          "line": 55,
-          "context": "'exactly one corpus paper, PMID 39613428, whose title ends \"protocol '"
-        },
-        {
-          "file": "_close_run_2026_08_22.py",
-          "line": 239,
-          "context": "'revealed that PMID 39613428 - titled \"...protocol for a randomised, '"
-        },
-        {
-          "file": "_close_run_2026_08_28.py",
-          "line": 98,
-          "context": "'2026-08-22 item asked whether paths resting on PMID 39613428 (Ver-A-T1D '"
-        }
-      ]
-    },
     "29710129": {
       "exists": true,
       "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
@@ -890,6 +798,16 @@
       "doi": "10.1001/jamaoncol.2018.0977",
       "error": "",
       "locations": [
+        {
+          "file": "audit_citation_semantic_support.py",
+          "line": 7,
+          "context": "PMID 29710129 was the source for 47 cost claims across the drug repurposing"
+        },
+        {
+          "file": "audit_citation_semantic_support.py",
+          "line": 73,
+          "context": "burying: THE FOUNDING CASE IS IN THAT BAND. PMID 29710129's entire abstract is"
+        },
         {
           "file": "audit_prose_citation_titles.py",
           "line": 26,
@@ -1329,6 +1247,129 @@
           "file": "repair_cost_provenance_20260829.py",
           "line": 285,
           "context": "'reason': 'asserted PMID:29710129 as a generic-pricing source'})"
+        }
+      ]
+    },
+    "40249888": {
+      "exists": true,
+      "title": "Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.",
+      "authors": "Salazar-Riojas R",
+      "journal": "JCO Glob Oncol",
+      "year": "2025",
+      "doi": "10.1200/GO-24-00581",
+      "error": "",
+      "locations": [
+        {
+          "file": "audit_citation_semantic_support.py",
+          "line": 104,
+          "context": "example in the 2026-08-30 output: PMID 40249888, \"Decentralized Point-of-Care"
+        },
+        {
+          "file": "build_cart_access.py",
+          "line": 747,
+          "context": "Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — decentralized PoC CAR-T manufacturing feasibility; R"
+        },
+        {
+          "file": "build_cart_access.py",
+          "line": 1292,
+          "context": "Source: Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (PMID:3"
+        },
+        {
+          "file": "build_cart_access.py",
+          "line": 1341,
+          "context": "Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — Decentralized point-of-care CAR-T manufacturing"
+        }
+      ]
+    },
+    "37889505": {
+      "exists": true,
+      "title": "Recent advances in probiotic breads; a market trend in the functional bakery products.",
+      "authors": "Sadeghi A",
+      "journal": "Crit Rev Food Sci Nutr",
+      "year": "2024",
+      "doi": "10.1080/10408398.2023.2261056",
+      "error": "",
+      "locations": [
+        {
+          "file": "audit_index_provenance.py",
+          "line": 6,
+          "context": "The 2026-08-23 queue item observed that PMID 37889505 -- the probiotic-breads"
+        },
+        {
+          "file": "fix_path_citations_2026_08_20.py",
+          "line": 13,
+          "context": "The most consequential is PMID 37889505. `teplizumab -> autoimmune` cites it as"
+        },
+        {
+          "file": "ingest_papers.py",
+          "line": 369,
+          "context": "harvested from a regex example in a code comment, and PMID 37889505, present"
+        },
+        {
+          "file": "repair_prose_citations_20260823.py",
+          "line": 15,
+          "context": "\"PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505, n=328 ...)\""
+        },
+        {
+          "file": "_close_run_2026_08_20.py",
+          "line": 160,
+          "context": "'Worst case: PMID 37889505 (\"Recent advances in probiotic breads\") is cited by '"
+        }
+      ]
+    },
+    "39613428": {
+      "exists": true,
+      "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial.",
+      "authors": "Wych J",
+      "journal": "BMJ Open",
+      "year": "2024",
+      "doi": "10.1136/bmjopen-2024-091597",
+      "error": "",
+      "locations": [
+        {
+          "file": "audit_path_count_staleness.py",
+          "line": 8,
+          "context": "verapamil -> beta_cell, both sourced solely from PMID 39613428 (39 -> 16 raw"
+        },
+        {
+          "file": "fix_path_citations_2026_08_20.py",
+          "line": 30,
+          "context": "3. Removes PMID 39613428 from verapamil -> beta_cell external_pmids: that is the"
+        },
+        {
+          "file": "fix_path_citations_2026_08_20.py",
+          "line": 173,
+          "context": "f'Also removed PMID 39613428 from verapamil -> beta_cell external_pmids: it is the '"
+        },
+        {
+          "file": "mark_dose_label_paths_2026_08_20.py",
+          "line": 27,
+          "context": "dose_response extractions from PMID 39613428 are dose LABELS -"
+        },
+        {
+          "file": "mark_dose_label_paths_2026_08_20.py",
+          "line": 133,
+          "context": "'surviving records: all 16 unique dose_response extractions from PMID 39613428 are '"
+        },
+        {
+          "file": "_close_run_2026_08_20.py",
+          "line": 186,
+          "context": "'records from PMID 39613428 are dose labels (\"360 mg verapamil\", \"120 mg tablets\"), '"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 55,
+          "context": "'exactly one corpus paper, PMID 39613428, whose title ends \"protocol '"
+        },
+        {
+          "file": "_close_run_2026_08_22.py",
+          "line": 239,
+          "context": "'revealed that PMID 39613428 - titled \"...protocol for a randomised, '"
+        },
+        {
+          "file": "_close_run_2026_08_28.py",
+          "line": 98,
+          "context": "'2026-08-22 item asked whether paths resting on PMID 39613428 (Ver-A-T1D '"
         }
       ]
     },
@@ -1910,32 +1951,6 @@
           "file": "build_cart_access.py",
           "line": 1346,
           "context": "Ottaviano et al. Sci Transl Med 2022 (PMID:36288281) — CRISPR allogeneic CAR19 Phase 1, 4/6 children achieved remission"
-        }
-      ]
-    },
-    "40249888": {
-      "exists": true,
-      "title": "Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.",
-      "authors": "Salazar-Riojas R",
-      "journal": "JCO Glob Oncol",
-      "year": "2025",
-      "doi": "10.1200/GO-24-00581",
-      "error": "",
-      "locations": [
-        {
-          "file": "build_cart_access.py",
-          "line": 747,
-          "context": "Source: Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — decentralized PoC CAR-T manufacturing feasibility; R"
-        },
-        {
-          "file": "build_cart_access.py",
-          "line": 1292,
-          "context": "Source: Lin et al. J Clin Oncol 2019 (PMID:31157579) — cost-effectiveness modeling; Ran et al. Int J Cancer 2020 (PMID:3"
-        },
-        {
-          "file": "build_cart_access.py",
-          "line": 1341,
-          "context": "Salazar-Riojas et al. JCO Glob Oncol 2025 (PMID:40249888) — Decentralized point-of-care CAR-T manufacturing"
         }
       ]
     },
@@ -3454,7 +3469,7 @@
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 228,
+          "line": 237,
           "context": "'Buzzetti et al. Diabetes 2020 (PMID:32847960) — International Expert Panel LADA consensus',"
         },
         {
@@ -4692,12 +4707,12 @@
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 220,
+          "line": 229,
           "context": "'background': 'LADA is frequently misdiagnosed as T2D (prevalence ~10% of T2D diagnoses, PMID:40737658). Standard T2D dr"
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 265,
+          "line": 274,
           "context": "'background': 'LADA prevalence is ~10% of T2D diagnoses in Sudan (PMID:40737658). GAD antibody testing required for diag"
         }
       ]
@@ -5436,12 +5451,12 @@
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 150,
+          "line": 159,
           "context": "'background': 'Diabetic neuropathy affects ~50% of diabetes patients. Emerging evidence shows neuroinflammation is a dri"
         },
         {
           "file": "build_gap_synthesis.py",
-          "line": 173,
+          "line": 182,
           "context": "'background': 'CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (PMID:4146"
         }
       ]
@@ -5473,7 +5488,7 @@
       "locations": [
         {
           "file": "build_gap_synthesis.py",
-          "line": 173,
+          "line": 182,
           "context": "'background': 'CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (PMID:4146"
         }
       ]
@@ -5489,7 +5504,7 @@
       "locations": [
         {
           "file": "build_gap_synthesis.py",
-          "line": 1029,
+          "line": 1038,
           "context": "<li>ADA Standards of Care 2025 (PMID:39651984)</li>"
         }
       ]

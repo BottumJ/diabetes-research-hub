@@ -204,6 +204,26 @@ SCRIPTS = {
     # the caveat is current when the dashboards render it.
     'pubtypegap': ('audit_pubtype_title_disagreement.py',
                    'Checking PubMed pubtype against the verified title (design-blind coverage)'),
+    # Added 2026-08-30. Gap tiers (GOLD/SILVER/BRONZE) were assigned by
+    # INDEPENDENT-SOURCE COUNT - the same metric shown on 2026-08-29 to rank a
+    # trial protocol above measured evidence on 62.3% of path pairs. Nothing
+    # about that failure was specific to paths. Reads the pubtype cache
+    # offline, so it cannot be the stage that stalls the pipeline. Reports
+    # and never re-tiers: a gap tier is a scientific judgement.
+    'gapdesign': ('audit_gap_evidence_design.py',
+                  'Grading the 15 research gaps by evidence design (offline, from pubtype cache)'),
+    # Added 2026-08-30. THE EIGHTH DEFECT CLASS: every identifier correct and
+    # the claim still unsupported. PMID 29710129 sourced 47 drug-screen cost
+    # claims while being a 14-word JAMA Oncology CAR-T letter; PMID, title,
+    # journal, year and first author were all correct, so all seven existing
+    # gates passed it. Two independent weak signals, deliberately unmerged:
+    # IDF-weighted claim-to-abstract overlap (validated at 4.92x lift over
+    # random pairings) and claims-per-100-source-words, which needs no
+    # semantics and is what actually catches the founding case. Reports the
+    # worst N; never gates, because a gate on topical overlap would fail
+    # honest citations and teach the prose to please a scorer.
+    'semanticsupport': ('audit_citation_semantic_support.py',
+                        'Scoring citation semantic support and claim density (reports worst N)'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),

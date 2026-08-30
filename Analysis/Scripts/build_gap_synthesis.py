@@ -136,7 +136,16 @@ GAPS_DATA = [
             'Frontiers (2024) immunosuppression review',
             'Helmsley Trust islet innovation priorities'
         ],
-        'key_insight': 'Nano-rapamycin achieved 50% dose reduction.',
+        # 2026-08-30 credibility sweep. Was: "Nano-rapamycin achieved 50% dose
+        # reduction." Stated as a bare accomplished fact, with no design
+        # marker, no PMID, and a source line ("Nature Communications (2022)
+        # nanoparticle-rapamycin study") that identifies no paper. A
+        # nanoparticle formulation study is preclinical, and a reader has no
+        # way to see that from the sentence. Marked rather than deleted: the
+        # underlying finding may well be real, and the defect is the framing.
+        'key_insight': 'Nano-rapamycin reported ~50% dose reduction in a '
+                       'PRECLINICAL nanoparticle formulation study '
+                       '[UNSOURCED - no PMID on file; not a human result].',
     },
     {
         'rank': 5,

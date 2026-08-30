@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-08-30",
-  "last_run": "2026-08-30",
+  "last_updated": "2026-08-29",
+  "last_run": "2026-08-29",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -8378,18 +8378,60 @@
   "work_queue": [
     {
       "priority": 1,
+      "type": "user_action_required",
+      "added": "2026-08-29",
+      "target": "HUMAN CALL, AND THE ANSWER MAY ALREADY BE IN THE LIBRARY: THE VERAPAMIL PATHS GRADE NO_RESULTS WHILE THE CORPUS HOLDS A RANDOMISED TRIAL OF THE SAME QUESTION. verapamil->T1D and verapamil->beta_cell cite exactly one paper, PMID 39613428, the Ver-A-T1D PROTOCOL, which is why they grade NO_RESULTS - and that protocol is the single largest contributor to the whole corpus at 15 of 232 live extractions. Meanwhile PMID 36826844 (CLVer, JAMA 2023, double-blind RCT, n=88, children 7-17, 52-week C-peptide, verapamil preserved beta-cell function) IS in the paper library with an abstract, is cited in build_drug_repurposing_screen.py prose, and supplies ZERO extractions to any path. The repo holds measured evidence on its own headline question and no path uses it. Note the screen prose also records that adult Ver-A-T1D reported a NEUTRAL 12-month C-peptide primary at EASD 2025 (n=136), unpublished in PubMed - so pediatric positive and adult neutral must be presented together. Decide: (a) re-source both paths onto 36826844 + external SR/MA 40111679 and re-grade; (b) split into verapamil->glycaemia (supported) and verapamil->beta_cell (pediatric only, adult neutral); (c) suspend until Ver-A-T1D publishes. This is a scientific framing call, but option (a) no longer requires new evidence - only a decision.",
+      "queue_position": 1
+    },
+    {
+      "priority": 1,
+      "type": "user_action_required",
+      "added": "2026-08-29",
+      "target": "HUMAN CALL: SHOULD THE BAYESIAN PRIOR ENCODE STUDY DESIGN? statistical_analysis.py sets the prior from data_point_count and PMID count alone. Measured 2026-08-29: 62.3% of comparable ordered pairs on the published page are discordant with study design, 16 pairs rank a NO_RESULTS path above a PRIMARY one. The page now DISCLOSES this in full above the ranking and caps NO_RESULTS at strength INSUFFICIENT, but the number itself is unchanged, because refitting a published probability is a modelling decision and an unattended run should not make it quietly. Options: (a) leave the prior and rely on disclosure; (b) add a design multiplier (e.g. NO_RESULTS x0.25, NARRATIVE x0.5, SYNTHESIS x0.9, PRIMARY x1.0) and version the change; (c) stop publishing a posterior for paths whose design tier is NO_RESULTS or UNGRADED. Note (b) and (c) both depend on a tier that is itself 37% blind - see the pubtype item below.",
+      "queue_position": 2
+    },
+    {
+      "priority": 2,
+      "type": "fix_pipeline",
+      "added": "2026-08-29",
+      "target": "THE DESIGN GRADER IS 37% BLIND AND GETTING BLINDER. 134 of 359 corpus papers carry no design-bearing PubMed pubtype: ~31% of pre-2018 papers, 46% of 2025, 66% of 2026. PubMed assigns design tags on a lag, so the daily sweeps add papers the grader cannot read, and every one lands in PRIMARY_OTHER, which the dashboards render as ordinary evidence. audit_pubtype_title_disagreement.py now catches the subset whose TITLE gives the design away (5 found: 1 untagged protocol supplying 7 extractions, 1 untagged JAMA RCT supplying 0, 3 untagged syntheses supplying 9). That is a floor, not a solution. Options: re-fetch pubtypes on a cadence so late-assigned tags are picked up; render PRIMARY_OTHER explicitly as UNKNOWN DESIGN rather than folding it in; or read design from the abstract for this subset only, with every inference recorded and reversible.",
+      "queue_position": 3
+    },
+    {
+      "priority": 2,
+      "type": "verify_citations",
+      "added": "2026-08-29",
+      "target": "GENERALISE THE EIGHTH DEFECT CLASS: CITATION CORRECT, CLAIM UNSUPPORTED. PMID 29710129 was the source for 47 cost claims across the drug screen while being a JAMA Oncology CAR-T cost letter. Every identifier gate passed it because every identifier was right. The only signal available was the SEMANTIC distance between the citing sentence and the cited abstract, and nothing here measures that. audit_absolute_claims.py already compares a claim against its abstract for one narrow claim type - the machinery exists. Proposal: extend it to score topical overlap between each citing sentence and the cited title/abstract, and report the worst N rather than gating. START by re-reading the journal_not_recognised bucket in prose_citation_titles.json: that is where this one sat, mislabelled as a gate artifact.",
+      "queue_position": 4
+    },
+    {
+      "priority": 2,
+      "type": "audit_gap",
+      "added": "2026-08-29",
+      "target": "FIND A REAL PRICING SOURCE OR KEEP THE COST COLUMN MARKED UNSOURCED. All 34 generic-drug cost figures on Drug_Repurposing_Screen.html are now labelled unsourced, which is honest but leaves an entire scored dimension (generic availability, 20% of the composite score) resting on unverified numbers. The composite ranking therefore inherits the problem: availability_score thresholds were themselves attributed to the wrong paper. Either source the prices (WHO EML procurement data, MSH International Drug Price Indicator, or a published generic-pricing study) and cite them per-drug, or state on the page that the availability dimension is unverified and show the ranking with and without it.",
+      "queue_position": 5
+    },
+    {
+      "priority": 3,
+      "type": "vet_papers_batch",
+      "added": "2026-08-29",
+      "target": "RESOLVE PMID 41986815. Diabetologia 2026 multi-omics T1D paper: the library record has an EMPTY abstract and a null year, so species, n and design cannot be read and it was left UNCLASSIFIABLE rather than guessed on 2026-08-29. Re-fetch the abstract; if PubMed still returns nothing, decide whether a paper the repo cannot read should count in the corpus denominator.",
+      "queue_position": 6
+    },
+    {
+      "priority": 1,
       "type": "validate_path",
       "added": "2026-08-20",
       "target": "DECIDE WHETHER dose_response BELONGS IN THE HEADLINE CORPUS COUNT. All 192 dose_response extractions - 46% of the 414 data points the site advertises - are bare dose labels (\"360 mg verapamil\", \"120 mg tablets\", \"10 mg of dapagliflozin\"). ZERO carry an outcome or mechanism token. Knowing which doses a trial used is legitimate metadata, but counting it as \"evidence extracted from the corpus\" overstates the evidentiary base by roughly half. Recommended: split the headline into \"N findings + M dose/protocol descriptors\" rather than one blended figure. This is a presentation decision with a credibility cost either way, so it needs a human call - an unattended run should not unilaterally restate the corpus headline.",
       "queue_pos": 2,
-      "queue_position": 1
+      "queue_position": 7
     },
     {
       "priority": 1,
       "type": "user_action_required",
       "added": "2026-08-21",
       "target": "HUMAN CALL: 29 OF 47 RESEARCH PATHS ARE NOW SUPPRESSED AS HOLLOW. The 2026-08-21 extraction fix removed their entire evidence base because it was regex artifact. They are hidden from the dashboards, NOT deleted, and research_paths.json retains data_point_count_stored for every one. Three options per path: (a) re-source it from the corpus with the corrected extractor, (b) keep it as a hypothesis with external-only evidence and no corpus count, (c) retire it. Highest-value first: NLRP3_inflammasome -> inflammation (61 displayed), oxidative_stress -> inflammation (22), dapagliflozin -> inflammation (7), NF_kB -> inflammation (5). NOTE these are mechanistically plausible paths with real external validation - the corpus never supported them, which is a different statement from them being wrong.",
-      "queue_position": 2
+      "queue_position": 8
     },
     {
       "priority": 1,
@@ -8398,42 +8440,21 @@
       "target": "HUMAN CALL: THE #2 AND #3 RESEARCH PATHS REST ENTIRELY ON A TRIAL PROTOCOL. `verapamil -> beta_cell` and `verapamil -> T1D` each cite exactly one corpus paper, PMID 39613428, whose title ends \"protocol for a randomised, double-blind, placebo-controlled, parallel-group, multicentre trial\" (Ver-A-T1D, BMJ Open 2024). Every one of their data points is a dose_response label - a PLANNED dose. A protocol reports no outcomes, so neither path has any corpus evidence that verapamil does anything. NOTE both retain real external validation (29988125, 36826844, 40111679 and others) and verapamil beta-cell preservation is a genuine finding in the literature - the claim is about the CORPUS, not about verapamil. Options: (a) delist both until Ver-A-T1D reports, (b) keep them as external-evidence-only hypotheses with no corpus count, (c) publish the protocol source explicitly on the card. Delisting two of the top three paths is not an unattended change, same reasoning as the 2026-08-20 dose-label item.",
       "superseded_by": "2026-08-28 HUMAN CALL, NOW WITH NUMBERS",
       "superseded_note": "Kept, not deleted: it is the original statement of the question and the 2026-08-28 item is the same question with an external anchor attached (PMID 40111679) and a design grade (NO_RESULTS). Answer the 08-28 item; this one records when the problem was first named.",
-      "queue_position": 3
+      "queue_position": 9
     },
     {
       "priority": 1,
       "type": "user_action_required",
       "added": "2026-08-27",
       "target": "HUMAN CALL: ONE INSULIN-PRICING REVIEW IS CARRYING 91 DISTINCT CLAIMS. PMID 34763823 (Herman & Kuo, '100 years of Insulin: Why is Insulin So Expensive', Endocrinol Metab Clin North Am 2021) is cited across 91 distinct claim contexts, including GLP-1 agonist pricing, SGLT2i launch and generic pricing, GKA generic projections to 2042-2045, drug development cost ($2.6B / $300M), CGM device cost (~$300), verapamil therapy cost ($50/yr), and the Dec 2024 Hikma semaglutide launch. It is a review of INSULIN pricing and contains essentially none of them. Four temporally-impossible instances were stripped and marked [UNSOURCED] today; the remaining ~87 are a presentation decision across the pricing dashboards and were NOT touched unattended. Three options: (a) source each figure properly, (b) mark the unsourceable ones [UNSOURCED] as was done for SGLT2i today, (c) withdraw the figures. Same reasoning as the 2026-08-20 dose-label item: a citation that lends borrowed authority to 91 claims is a credibility exposure larger than any single bad PMID, and restating it is not an unattended change. Full inventory with contexts: Analysis/Results/citation_load_bearing.json. NOTE the next three concentrations are 29710129 (81 claims, CAR-T costs), 37909353 (47) and 32175717 (39) - the pattern is not confined to one paper.",
-      "queue_position": 4
+      "queue_position": 10
     },
     {
       "priority": 1,
       "type": "user_action_required",
       "added": "2026-08-28",
       "target": "HUMAN CALL, NOW WITH NUMBERS: THE TWO VERAPAMIL PATHS RANK 4TH AND 5TH ON A PROTOCOL, AND THE BEST EXTERNAL EVIDENCE FOR THEM POOLS TWO TRIALS. The 2026-08-22 item asked whether paths resting on PMID 39613428 (Ver-A-T1D PROTOCOL, no results) should rank. Today they were graded NO_RESULTS by design, and an external anchor was found: PMID 40111679, a 2026 SR/MA of 8 RCTs, 1100 patients. It supports verapamil on GLYCAEMIA firmly (HbA1c WMD -0.45%, 7 trials) and on BETA-CELL PRESERVATION weakly (C-peptide AUC WMD +0.27 pmol/mL from 2 trials). Ver-A-T1D results remain unpublished in PubMed as of today. Three options and none is obviously right: (a) keep the paths, re-source them to 40111679 and re-rank them below the PRIMARY paths; (b) split them into verapamil->glycaemia (supported) and verapamil->beta_cell (thin); (c) suspend them until Ver-A-T1D publishes. This is a scientific framing decision, not a data-repair task.",
-      "queue_position": 5
-    },
-    {
-      "priority": 1,
-      "type": "user_action_required",
-      "added": "2026-08-29",
-      "target": "HUMAN CALL, AND THE ANSWER MAY ALREADY BE IN THE LIBRARY: THE VERAPAMIL PATHS GRADE NO_RESULTS WHILE THE CORPUS HOLDS A RANDOMISED TRIAL OF THE SAME QUESTION. verapamil->T1D and verapamil->beta_cell cite exactly one paper, PMID 39613428, the Ver-A-T1D PROTOCOL, which is why they grade NO_RESULTS - and that protocol is the single largest contributor to the whole corpus at 15 of 232 live extractions. Meanwhile PMID 36826844 (CLVer, JAMA 2023, double-blind RCT, n=88, children 7-17, 52-week C-peptide, verapamil preserved beta-cell function) IS in the paper library with an abstract, is cited in build_drug_repurposing_screen.py prose, and supplies ZERO extractions to any path. The repo holds measured evidence on its own headline question and no path uses it. Note the screen prose also records that adult Ver-A-T1D reported a NEUTRAL 12-month C-peptide primary at EASD 2025 (n=136), unpublished in PubMed - so pediatric positive and adult neutral must be presented together. Decide: (a) re-source both paths onto 36826844 + external SR/MA 40111679 and re-grade; (b) split into verapamil->glycaemia (supported) and verapamil->beta_cell (pediatric only, adult neutral); (c) suspend until Ver-A-T1D publishes. This is a scientific framing call, but option (a) no longer requires new evidence - only a decision.",
-      "queue_position": 6
-    },
-    {
-      "priority": 1,
-      "type": "user_action_required",
-      "added": "2026-08-29",
-      "target": "HUMAN CALL: SHOULD THE BAYESIAN PRIOR ENCODE STUDY DESIGN? statistical_analysis.py sets the prior from data_point_count and PMID count alone. Measured 2026-08-29: 62.3% of comparable ordered pairs on the published page are discordant with study design, 16 pairs rank a NO_RESULTS path above a PRIMARY one. The page now DISCLOSES this in full above the ranking and caps NO_RESULTS at strength INSUFFICIENT, but the number itself is unchanged, because refitting a published probability is a modelling decision and an unattended run should not make it quietly. Options: (a) leave the prior and rely on disclosure; (b) add a design multiplier (e.g. NO_RESULTS x0.25, NARRATIVE x0.5, SYNTHESIS x0.9, PRIMARY x1.0) and version the change; (c) stop publishing a posterior for paths whose design tier is NO_RESULTS or UNGRADED. Note (b) and (c) both depend on a tier that is itself 37% blind - see the pubtype item below.",
-      "queue_position": 7
-    },
-    {
-      "priority": 1,
-      "type": "analysis",
-      "added": "2026-08-30",
-      "target": "REVIEW THE THREE GOLD/SILVER GAPS THAT REST ON ONE PRIMARY PAPER. audit_gap_evidence_design.py (new 2026-08-30) grades #2 Health Equity GOLD and #6 CAR-T Access GOLD as PRIMARY_THIN: 1 of 6 and 1 of 8 design-readable papers report primary data, the rest being narrative reviews. #5 Treg in Diabetic Neuropathy (2 of 7) and #7 GKA Drug Repurposing (3 of 13) are SILVER and equally thin. NOTE #11 Islet Registry Equity is GOLD on TWO papers total, which the design audit cannot flag because 1 of 1 readable paper is primary - a count problem the design grader is the wrong instrument for. This is the gap analogue of the 2026-08-29 path finding and is a re-tiering decision, so it was reported and NOT applied.",
-      "queue_position": 8
+      "queue_position": 11
     },
     {
       "priority": 2,
@@ -8443,7 +8464,7 @@
       "blocked_since": "2026-07-27",
       "updated": "2026-08-17",
       "queue_pos": 7,
-      "queue_position": 9
+      "queue_position": 12
     },
     {
       "priority": 2,
@@ -8451,7 +8472,7 @@
       "added": "2026-08-18",
       "target": "Review the 22 OFF_TOPIC_PRESUMED orphans from reconcile_paper_index.py and decide purge vs retain. START with the 2 known screen false negatives: 39869107 (belatacept/tacrolimus UNOS - Gap #3/#11) and 40291594 (CAR-T manufacturing cost - Gap #6). Then confirm the other 20 are genuinely off-topic before purging.",
       "queue_pos": 8,
-      "queue_position": 10
+      "queue_position": 13
     },
     {
       "priority": 2,
@@ -8459,126 +8480,104 @@
       "added": "2026-08-20",
       "target": "REVIEW THE TESTED DOSE_FRAGMENT_PATTERNS WIDENING (written and measured 2026-08-20, NOT applied). Current patterns allow only a short trailing-token list (OD|BID|TID|QD|daily|in|on), so \"360 mg verapamil\", \"120 mg tablets\" and \"120 mg to\" all escape the artifact filter - which is why verapamil -> T1D and verapamil -> beta_cell published at ranks #7 and #8 on 100% dose-label evidence. Proposed addition: r\"^\\s*(?:(?:a\\s+)?dose\\s+of\\s+)?\\d+(?:\\.\\d+)?\\s*[Mm]?[Gg](?:/[A-Za-z]+)?(?:\\s+[A-Za-z]+){0,3}\\s*$\" plus a trailing-conjunction variant, keeping the MECHANISM_KEYWORDS veto. MEASURED EFFECT: +118 distinct strings flagged (all manually verified as dose labels, no findings among them), 0 regressions, but paths filtered off the dashboard go 6 -> 18 of 47. Removing a third of the page is not an unattended change. Decide: apply the pattern, or keep the paths and rely on the corpus_contribution=ARTIFACT marking applied today.",
       "queue_pos": 5,
-      "queue_position": 11
+      "queue_position": 14
     },
     {
       "priority": 2,
       "type": "fix_pipeline",
       "added": "2026-08-22",
       "target": "DECIDE HOW DESIGN/PROTOCOL PAPERS SHOULD COUNT IN THE CORPUS. audit_baseline_citations.py (new this run) finds 3 corpus papers that are design or protocol publications, contributing 24 of 240 data points (10%): 39613428 Ver-A-T1D protocol (15), 36643381 colchicine hs-CRP protocol (7), 32862232 DAPA-CKD baseline characteristics (2). All 24 survivors are dose labels, which is defensible metadata - a protocol IS the right source for a planned dose. What is not defensible is counting them toward a headline that reads \"data points extracted\". Recommended: tag them source_type=DESIGN in the extraction output and report them separately, rather than dropping them. Interacts with the still-open dose_response headline question.",
-      "queue_position": 12
+      "queue_position": 15
     },
     {
       "priority": 2,
       "type": "verify_citations",
       "added": "2026-08-22",
       "target": "EXTEND THE PROVENANCE GATE BEYOND THE 180-CHAR LOOKBACK. The new PROJECTED_NOT_MEASURED / ATTRIBUTED_TO_OTHER_STUDY rules in extract_corpus_data.py read only the 180 characters before a match, which is about one sentence plus its lead-in. That was enough to catch PMID 36643381 publishing a power-calculation assumption (\"we estimated that hs-CRP is suppressed to 3.22 mg/L\") and another trial's result (\"the previous report indicating that colchicine 1 mg for 4 weeks reduced hs-CRP by about 60%\") as its own findings. It will NOT catch attribution that opens a paragraph and governs several sentences. Better signal available: section_type. A number in INTRO or a rationale section is almost never a finding of the paper reporting it. Measure before applying - INTRO is also where some papers state their own headline result.",
-      "queue_position": 13
+      "queue_position": 16
     },
     {
       "priority": 2,
       "type": "fix_pipeline",
       "added": "2026-08-23",
       "target": "THE VERIFICATION PAGE NEEDS THE SAME TREATMENT FOR \"UNVETTED\". PMID_Verification.html now distinguishes RESOLVES from OFF-TOPIC. But 275 PMIDs render as RESOLVES, which a reader will still read as endorsement - it means only that NCBI returned a record. The repo already knows more than that per PMID: whether it is VETTED in state[\"papers\"], whether it is on-topic, whether it is a design/protocol paper (audit_baseline_citations knows this). Join those in and give the column three or four honest levels instead of one green one. Same defect shape as the badge fixed today.",
-      "queue_position": 14
+      "queue_position": 17
     },
     {
       "priority": 2,
       "type": "fix_pipeline",
       "added": "2026-08-24",
       "target": "THE INDEX HARVESTER READS CODE AS CITATIONS. PMID 12345678 entered the corpus from the comment \"# match PMID: 12345678\" beside a regex. It is blocked now, but by name, not by class - the next example PMID in a comment will do the same thing. Fix at the harvester: skip matches inside comments, regex literals and docstrings when scanning .py files for PMIDs. Same change protects verify_pmids.py, which scans scripts independently of the index and is why purging the index left the row on the published page.",
-      "queue_position": 15
+      "queue_position": 18
     },
     {
       "priority": 2,
       "type": "audit_gap",
       "added": "2026-08-24",
       "target": "RECONCILE THE HEADLINE CORPUS COUNT WITH WHAT WAS EVICTED. Two entries were removed from the index today as non-papers and nine more as self-referential repair-log residue. index metadata carries total_pmids (cited corpus) and total_indexed (everything the gate can see), and the dashboards consume total_pmids. Verify no published count still includes the evicted entries, and that the two counts are labelled distinctly wherever both appear.",
-      "queue_position": 16
+      "queue_position": 19
     },
     {
       "priority": 2,
       "type": "vet_papers_batch",
       "added": "2026-08-25",
       "target": "VET THE 37 NEWLY-REACHABLE PAPERS - PMID existence is already verified, CLAIMS are not. All 37 folded in today carry pmid_verified=True and a PubMed-confirmed title, and are deliberately UNVETTED because only existence was checked. Prioritise the 12 DASHBOARD-cited ones (a reader can see them now): 17429083, 18843118, 19805629, 23817699, 28375156, 34021020, 35665810, 36826844, 39634180, 39843169, 40982327, 9357409. For each, check the claim the dashboard attaches to it actually matches what the paper reports - that is the test the 2026-08-24 title audit could not perform. Then the 13 RUN_LOG_ONLY and 9 UNCITED, which include two known topic-screen false negatives (39869107 belatacept-vs-tacrolimus UNOS, 40291594 CAR-T manufacturing cost).",
-      "queue_position": 17
+      "queue_position": 20
     },
     {
       "priority": 2,
       "type": "audit_gap",
       "added": "2026-08-25",
       "target": "DECIDE WHETHER BIBLIOMETRIC AND IN-VITRO-ONLY PAPERS COUNT AS CORPUS EVIDENCE. Today FLAGGED PMID 42611761, a bibliometric analysis of mitochondrial research in diabetic nephropathy - it counts PUBLICATIONS, so it contains no patients, no animals and no experiments and can support no causal claim, yet it entered as an ordinary corpus paper. Same run flagged 42618537, a metformin result from HK-2 CELL CULTURE published in Diabetes Obes Metab. This is the same open question as the 2026-08-22 design/protocol-paper item (3 papers, 24 of 240 data points) and should be settled together: define an evidence_tier ladder (HUMAN_RCT > HUMAN_OBSERVATIONAL > PRECLINICAL > IN_VITRO > REVIEW > NOT_PRIMARY_EVIDENCE) and publish the corpus count BROKEN DOWN by tier instead of as one number. The headline count is currently tier-blind.",
-      "queue_position": 18
+      "queue_position": 21
     },
     {
       "priority": 2,
       "type": "verify_citations",
       "added": "2026-08-26",
       "target": "WIDEN THE ABSOLUTE-CLAIMS GATE DELIBERATELY AND MEASURE WHAT EACH RELAXATION ADMITS. audit_absolute_claims.py went 65 raw hits -> 9 (finite verb forms only) -> 4 (hedge/blob/purpose filters) -> 1 (label-form filter). Every removal was inspected and none was an absolute clinical claim, but a filter tuned on 65 examples over-fits, and ONE finding repo-wide is not a credible measurement of a corpus this size. Specifically suspect: past-tense forms are excluded wholesale (\"rejection cascades ARE PREVENTED\", \"ACHIEVED insulin independence\"), which is the largest deliberate blind spot. Relax one filter at a time, record the count delta and read every newly-admitted hit before keeping the change. Same discipline as the 2026-08-20 dose_fragment_patterns widening.",
-      "queue_position": 19
+      "queue_position": 22
     },
     {
       "priority": 2,
       "type": "audit_gap",
       "added": "2026-08-26",
       "target": "CHECK RETRACTION STATUS OF THE 8 SECONDARY PAPERS VETTED TODAY, AND SET A RE-CHECK CADENCE. audit_retractions.py is a point-in-time snapshot: it read PubMed pubtype on 2026-08-26 and 354 of 355 were clean. Retraction is not a static property. The one hit, PMID 38918878, was published in 2024 and retracted later - had this gate existed in 2024 it would have passed. Decide a re-check interval (monthly is the obvious default since the .pubtype_cache.json means a re-check is cheap) and make the cache expire rather than persist forever, otherwise the gate will report the 2026-08-26 answer indefinitely. Highest risk first: the 8 SECONDARY (review/meta-analysis) papers vetted today, because review articles in low-impact journals are the population 38918878 came from.",
-      "queue_position": 20
+      "queue_position": 23
     },
     {
       "priority": 2,
       "type": "verify_citations",
       "added": "2026-08-27",
       "target": "TEACH audit_prose_citation_titles.py ABOUT CORPORATE AUTHORSHIP, THEN WIRE IT. The backlog is down to 2 and BOTH are gate artifacts. (1) PMID 8366922 is the DCCT 1993 NEJM paper cited as '(DCCT, 1993)' - correct - but esummary's first author for a group-authored trial is the study group, so the author check can never pass. UKPDS, DCCT, ACCORD, ADVANCE and EDIC will all fail the same way. Fix: when esummary's author list contains a corporate entry (Group/Trial/Study/Consortium/Collaborative), accept a trial acronym appearing in the prose as author agreement. (2) PMID 32175717 'Khan et al. 2020' is correct in author and year; scenario prose was scored as an asserted title. Once both are handled the gate should be green and can join run_quality_improvements.py alongside the coordinate gate.",
-      "queue_position": 21
+      "queue_position": 24
     },
     {
       "priority": 2,
       "type": "fix_pipeline",
       "added": "2026-08-27",
       "target": "THE SOURCE-SIDE SCAN HAS A PUBLISHED-SIDE BLIND SPOT, AND IT WAS MEASURED, NOT THEORISED. audit_citation_coordinates.py reported 0 suspect while an independent end-to-end check of docs/*.html found a real defect the same minute: build_gka_landscape.py asserted 'Diabetes Care. 2002;25(10):1897-1902' for PMID 30949058 (actually Front Physiol 2019;10:148), assembled across a structural boundary the source-side window did not model. Repaired, and the gate now cuts the right-hand window at block-level HTML boundaries - but the general lesson is the 2026-08-24 lesson repeating: A GATE AIMED AT THE BUILDER IS NOT A GATE AIMED AT THE SITE. Promote the ad-hoc docs/ verifier written today into a permanent audit_published_coordinates.py so both surfaces are checked by construction. NOTE the ad-hoc verifier itself reports one false positive (PMID 38783768 in GKA_Landscape.html) precisely because it lacks the block-boundary rule - port that rule across when promoting it.",
-      "queue_position": 22
+      "queue_position": 25
     },
     {
       "priority": 2,
       "type": "audit_gap",
       "added": "2026-08-27",
       "target": "RE-READ GAP 15 (GKA PRICING) NOW THAT ITS CITATIONS ARE MARKED. build_gka_pricing.py now carries visible [UNSOURCED] markers on the SGLT2i launch/generic figures and the GKA generic precedent. Gap 15 is BRONZE and its dashboard is largely a pricing-trajectory argument; with the load-bearing citation stripped, re-assess whether the remaining sourced evidence still supports BRONZE or whether the gap should be restated as a modelling exercise with an explicit assumptions table.",
-      "queue_position": 23
+      "queue_position": 26
     },
     {
       "priority": 2,
       "type": "verify_citations",
       "added": "2026-08-28",
       "target": "THE OTHER 12 BACKGROUND AND OFF_TOPIC PAPERS WERE CHECKED FOR PRESENCE ON THE SITE, NOT FOR CORRECTNESS OF THEIR PROSE. Today confirmed 0 uncitable PMIDs render on any dashboard except the verification page, which must show them. But the 6 BACKGROUND papers ARE still cited by design, and only two of them (18662538 TGF-beta in the data dictionary, 25714673 minocycline in the generic drug catalog) had their citation prose read against the actual paper. Run audit_builder_title_agreement.py and audit_citation_coordinates.py restricted to the BACKGROUND set and confirm each surviving citation says what its paper says. A BACKGROUND paper is by definition cited for a claim it was not written to support, which is the condition under which paraphrase drifts.",
-      "queue_position": 24
-    },
-    {
-      "priority": 2,
-      "type": "fix_pipeline",
-      "added": "2026-08-29",
-      "target": "THE DESIGN GRADER IS 42% BLIND, NOT 37%, AND RE-FETCHING WILL NOT FIX IT. Worked 2026-08-30. refresh_pubtype_cache.py now exists and gives every cache entry a `fetched` date and a 30-day expiry (the old cache had neither and froze the field permanently). MEASURED: re-fetching all 359 entries produced ZERO pubtype changes over a 4-day window, so the NCBI indexing lag is longer than 4 days and a monthly cadence is right - a daily re-fetch is pure API waste. Corrected numbers: 152 of 359 (42%) carry no type the path grader reads, not 134/37%; the year gradient is pre-2018 12-67% (noisy, NOT '~31%'), 2025 54%, 2026 74% (39 of 53). The 2026 signal is the real one. TWO THINGS STILL NEED A HUMAN: (a) whether PRIMARY_OTHER should render as UNKNOWN DESIGN on the dashboards - a presentation change to a published tier; (b) whether audit_path_evidence_design.py should read 'Clinical Trial, Phase I/II/III', 'Observational Study' and 'Multicenter Study' as primary-asserting, which it currently does not, so two tagged trials sit in its blind set and score identically to untagged papers. audit_gap_evidence_design.py already lists those types explicitly; the two graders now disagree by design and should be reconciled deliberately.",
-      "queue_position": 25,
-      "updated": "2026-08-30"
-    },
-    {
-      "priority": 2,
-      "type": "audit_gap",
-      "added": "2026-08-29",
-      "target": "FIND A REAL PRICING SOURCE OR KEEP THE COST COLUMN MARKED UNSOURCED. All 34 generic-drug cost figures on Drug_Repurposing_Screen.html are now labelled unsourced, which is honest but leaves an entire scored dimension (generic availability, 20% of the composite score) resting on unverified numbers. The composite ranking therefore inherits the problem: availability_score thresholds were themselves attributed to the wrong paper. Either source the prices (WHO EML procurement data, MSH International Drug Price Indicator, or a published generic-pricing study) and cite them per-drug, or state on the page that the availability dimension is unverified and show the ranking with and without it.",
-      "queue_position": 26
-    },
-    {
-      "priority": 2,
-      "type": "analysis",
-      "added": "2026-08-30",
-      "target": "THREE GAPS CANNOT BE GRADED AT ALL AND ONE OF THEM IS THE LARGEST. #1 Gene Therapy for LADA (SILVER) has 18 of 30 papers with no design-bearing pubtype; #12 Generic Drug x Diabetes Mechanism Catalog (SILVER) has 4 of 7 and ZERO primary; #10 LADA Prevalence (SILVER) rests on ONE paper, untagged. These are UNGRADEABLE, which means the published SILVER is unverifiable rather than wrong. Fastest resolution is not a re-tier but reading the 18 untagged papers under #1 and recording design by hand, reversibly, since PubMed will not supply it (measured: a re-fetch changes nothing).",
       "queue_position": 27
     },
     {
       "priority": 2,
-      "type": "analysis",
-      "added": "2026-08-30",
-      "target": "PMID 36449148 'Dorzagliatin: First Approval' CARRIES 21 DISTINCT CLAIMS ON 103 WORDS. Surfaced 2026-08-30 by the new claim-density signal and NOT previously in the queue - the three known concentrations (34763823/87, 32175717/39, 29710129/100) were all found by hand. A 'First Approval' note in Drugs is a one-page regulatory profile. 20.4 claims per 100 source words puts it 4th repo-wide. Read the 21 citing contexts in semantic_support.json and decide per claim: source properly, mark [UNSOURCED], or withdraw. Same three options as the 34763823 P1 item.",
+      "type": "audit_gap",
+      "added": "2026-08-28",
+      "target": "GRADE THE 15 GAPS BY EVIDENCE DESIGN THE WAY THE PATHS NOW ARE. audit_path_evidence_design.py reads research_paths.json only. The gap tiers (GOLD/SILVER/BRONZE) were assigned by independent-source COUNT, the same metric just shown to mislead on paths - a gap can hold two independent narrative reviews and be SILVER. Extend the audit to gap_evidence.json and report, for each gap, how many of its papers report primary data. Expect at least one demotion; do not pre-announce which.",
       "queue_position": 28
     },
     {
@@ -8652,20 +8651,6 @@
       "queue_position": 37
     },
     {
-      "priority": 3,
-      "type": "vet_papers_batch",
-      "added": "2026-08-29",
-      "target": "RESOLVE PMID 41986815. Diabetologia 2026 multi-omics T1D paper: the library record has an EMPTY abstract and a null year, so species, n and design cannot be read and it was left UNCLASSIFIABLE rather than guessed on 2026-08-29. Re-fetch the abstract; if PubMed still returns nothing, decide whether a paper the repo cannot read should count in the corpus denominator.",
-      "queue_position": 38
-    },
-    {
-      "priority": 3,
-      "type": "analysis",
-      "added": "2026-08-30",
-      "target": "WIDEN THE SEMANTIC SCORER WITH SUFFIX NORMALISATION, AND MEASURE IT. audit_citation_semantic_support.py has no stemming, so morphological variants miss. Canonical example from its own 2026-08-30 output: PMID 40249888 'Decentralized Point-of-Care Manufacturing of CD19 CAR-T in Mexico' cited for '...a path to decentralization' scores 0.00 on a CORRECT citation. Apply light suffix normalisation, then re-run --self-test and compare the lift (currently 4.92x, 72.9% real-beats-random) and read every newly-admitted low scorer before keeping it. Same discipline as the 2026-08-20 dose_fragment_patterns widening: relax one rule, count the delta, read the hits.",
-      "queue_position": 39
-    },
-    {
       "type": "check_combination",
       "target": "SAFEGUARD NCT07187531 enrollment milestone — next quarterly check",
       "priority": 4,
@@ -8675,7 +8660,7 @@
       "last_check": "2026-08-14",
       "queue_pos": 18,
       "promoted": "2026-08-20",
-      "queue_position": 40
+      "queue_position": 38
     },
     {
       "type": "audit_gap",
@@ -8685,7 +8670,7 @@
       "next_due": "2026-08-16",
       "queue_pos": 16,
       "promoted": "2026-08-20",
-      "queue_position": 41
+      "queue_position": 39
     },
     {
       "type": "audit_gap",
@@ -8695,7 +8680,7 @@
       "next_due": "2026-08-16",
       "queue_pos": 17,
       "promoted": "2026-08-20",
-      "queue_position": 42
+      "queue_position": 40
     },
     {
       "priority": 4,
@@ -8703,7 +8688,7 @@
       "added": "2026-08-16",
       "target": "Re-examine the 13 FLAGGED off-topic papers. Root cause is now known (they entered via miscitation, all 7 source miscitations fixed 2026-08-16). Decide per paper: purge from corpus, or retain with FLAGGED status if it legitimately supports an adjacent claim (e.g. CAR-T cost papers genuinely underpin Gap #6 access barriers).",
       "queue_pos": 15,
-      "queue_position": 43
+      "queue_position": 41
     },
     {
       "priority": 4,
@@ -8711,14 +8696,53 @@
       "added": "2026-08-17",
       "target": "Human evidence linking SGLT2i-driven NLRP3 suppression to RENAL HARD ENDPOINTS. Current best human data (38849829, 41680826) are surrogate inflammatory biomarkers only. Until such a trial exists, SGLT2i_NLRP3_DKD clinical confidence stays LOW-MEDIUM and no dashboard may imply a demonstrated renal benefit via NLRP3.",
       "queue_pos": 14,
+      "queue_position": 42
+    },
+    {
+      "priority": 5,
+      "type": "search_pubmed",
+      "target": "BANDIT trial 2-year off-therapy follow-up journal pub (next 2026-09-02)",
+      "queue_pos": 19,
+      "queue_position": 43
+    },
+    {
+      "priority": 5,
+      "type": "search_pubmed",
+      "target": "DAPAN-DIA NCT06047262 dapansutrile T2D primary results (next 2026-09-02)",
+      "queue_pos": 20,
       "queue_position": 44
     },
     {
-      "priority": 4,
-      "type": "analysis",
-      "added": "2026-08-30",
-      "target": "SET THE PUBTYPE RE-FETCH CADENCE TO MONTHLY AND WIRE IT. refresh_pubtype_cache.py is written and tested but is NOT in run_quality_improvements.py, deliberately - it is the only network-dependent addition of 2026-08-30 and the pipeline already stalls on network stages in the sandbox. Measured: a 4-day re-fetch changes nothing, so daily is waste. Run it monthly (next ~2026-09-29) with --max-age-days 30, on the local machine where PubMed is reliably reachable.",
+      "priority": 5,
+      "type": "search_pubmed",
+      "target": "PROTECT extension peer-reviewed long-term readout NCT04598893 (next 2026-09-02)",
+      "queue_pos": 22,
       "queue_position": 45
+    },
+    {
+      "priority": 5,
+      "type": "search_pubmed",
+      "target": "SAB-142 phase 1 HUMAN trial peer-reviewed publication - 2026-08-01 recheck: STILL conference/PR only (SAB BIO IR + IDS 2026 Brisbane Apr-2026): n=4 T1D treated, C-peptide preserved vs baseline at Day 120 (placebo declined), 3/4 super-responders, CD4+ Tconv exhaustion (TIGIT+) consistent with rATG MoA. NO peer-reviewed journal pub yet. Small-n signal. Next 2026-08-17.",
+      "last_updated": "2026-08-01",
+      "next_check": "2026-08-17",
+      "queue_pos": 23,
+      "queue_position": 46
+    },
+    {
+      "priority": 5,
+      "type": "search_pubmed",
+      "target": "Tegoprubart islet transplant PEER-REVIEWED publication - 2026-07-22 recheck: STILL no journal pub (ATTD Mar + ADA Jun 2026 + Eledon IR only; 12/12 insulin-independent, CNI-free, no rejection/DSA). Next 2026-08-17.",
+      "last_updated": "2026-07-09",
+      "next_check": "2026-08-17",
+      "queue_pos": 24,
+      "queue_position": 47
+    },
+    {
+      "priority": 5,
+      "type": "check_combination",
+      "target": "Ver-A-T1D verapamil ADULT RCT - primary presented EASD Sep-2025 (Pieber), equivocal/NEGATIVE (no significant 2h-MMTT C-peptide AUC diff vs placebo; underpowered, placebo decline ~0.09). RESOLVED 2026-07-11: NO peer-reviewed journal pub of the human RCT yet - source EASD 2025 + news. The DOI 10.1007/s00125-025-06490-8 previously attached here is a DIFFERENT, REAL paper (PMID 40650745, Diabetologia 2025 NOD-MOUSE verapamil+low-dose mATG combo, preclinical) - NOT the human RCT. Watch for RCT secondary/subgroup + 2yr AUC + OLE. Next 2026-09-02.",
+      "queue_pos": 25,
+      "queue_position": 48
     },
     {
       "type": "audit_gap",
@@ -8728,7 +8752,7 @@
       "next_due": "2026-08-13",
       "queue_pos": 28,
       "promoted": "2026-08-20",
-      "queue_position": 46
+      "queue_position": 49
     },
     {
       "type": "audit_gap",
@@ -8739,7 +8763,7 @@
       "updated": "2026-08-17",
       "queue_pos": 30,
       "promoted": "2026-08-20",
-      "queue_position": 47
+      "queue_position": 50
     },
     {
       "type": "audit_gap",
@@ -8749,7 +8773,7 @@
       "next_due": "2026-09-13",
       "queue_pos": 31,
       "promoted": "2026-08-20",
-      "queue_position": 48
+      "queue_position": 51
     },
     {
       "type": "audit_gap",
@@ -8760,7 +8784,7 @@
       "last_updated": "2026-08-04",
       "queue_pos": 29,
       "promoted": "2026-08-20",
-      "queue_position": 49
+      "queue_position": 52
     },
     {
       "priority": 5,
@@ -8769,7 +8793,7 @@
       "added": "2026-08-01",
       "last_updated": "2026-08-13",
       "queue_pos": 21,
-      "queue_position": 50
+      "queue_position": 53
     },
     {
       "priority": 5,
@@ -8779,7 +8803,7 @@
       "target": "Gap #2 (health equity, GOLD) - trigger REVISED 2026-08-17. Two equity RCTs now exist (41587834, 39063512) but BOTH use HbA1c, a surrogate. New demotion trigger: ONE equity RCT reporting a HARD endpoint (mortality/ESKD/MI/amputation). HbA1c no longer qualifies.",
       "updated": "2026-08-17",
       "queue_pos": 26,
-      "queue_position": 51
+      "queue_position": 54
     },
     {
       "priority": 5,
@@ -8788,136 +8812,21 @@
       "next_due": "2026-08-29",
       "target": "Gap #1 (Gene Therapy for LADA, SILVER) - next monthly audit due ~2026-08-29 (last audited 2026-07-29).",
       "queue_pos": 27,
-      "queue_position": 52
-    },
-    {
-      "priority": 5,
-      "type": "search_pubmed",
-      "target": "BANDIT trial 2-year off-therapy follow-up journal pub (next 2026-09-02)",
-      "queue_pos": 19,
-      "queue_position": 53
-    },
-    {
-      "priority": 5,
-      "type": "search_pubmed",
-      "target": "DAPAN-DIA NCT06047262 dapansutrile T2D primary results (next 2026-09-02)",
-      "queue_pos": 20,
-      "queue_position": 54
-    },
-    {
-      "priority": 5,
-      "type": "search_pubmed",
-      "target": "PROTECT extension peer-reviewed long-term readout NCT04598893 (next 2026-09-02)",
-      "queue_pos": 22,
       "queue_position": 55
-    },
-    {
-      "priority": 5,
-      "type": "search_pubmed",
-      "target": "SAB-142 phase 1 HUMAN trial peer-reviewed publication - 2026-08-01 recheck: STILL conference/PR only (SAB BIO IR + IDS 2026 Brisbane Apr-2026): n=4 T1D treated, C-peptide preserved vs baseline at Day 120 (placebo declined), 3/4 super-responders, CD4+ Tconv exhaustion (TIGIT+) consistent with rATG MoA. NO peer-reviewed journal pub yet. Small-n signal. Next 2026-08-17.",
-      "last_updated": "2026-08-01",
-      "next_check": "2026-08-17",
-      "queue_pos": 23,
-      "queue_position": 56
-    },
-    {
-      "priority": 5,
-      "type": "search_pubmed",
-      "target": "Tegoprubart islet transplant PEER-REVIEWED publication - 2026-07-22 recheck: STILL no journal pub (ATTD Mar + ADA Jun 2026 + Eledon IR only; 12/12 insulin-independent, CNI-free, no rejection/DSA). Next 2026-08-17.",
-      "last_updated": "2026-07-09",
-      "next_check": "2026-08-17",
-      "queue_pos": 24,
-      "queue_position": 57
-    },
-    {
-      "priority": 5,
-      "type": "check_combination",
-      "target": "Ver-A-T1D verapamil ADULT RCT - primary presented EASD Sep-2025 (Pieber), equivocal/NEGATIVE (no significant 2h-MMTT C-peptide AUC diff vs placebo; underpowered, placebo decline ~0.09). RESOLVED 2026-07-11: NO peer-reviewed journal pub of the human RCT yet - source EASD 2025 + news. The DOI 10.1007/s00125-025-06490-8 previously attached here is a DIFFERENT, REAL paper (PMID 40650745, Diabetologia 2025 NOD-MOUSE verapamil+low-dose mATG combo, preclinical) - NOT the human RCT. Watch for RCT secondary/subgroup + 2yr AUC + OLE. Next 2026-09-02.",
-      "queue_pos": 25,
-      "queue_position": 58
-    },
-    {
-      "type": "audit_gap",
-      "priority": 6,
-      "added": "2026-07-10",
-      "next_due": "2026-09-13",
-      "target": "Gap #12 (Treg/CAR-T x Diabetic Neuropathy, SILVER) audited 2026-08-13 - REMAINS SILVER (no Treg intervention for DPN; adjacent MSC trial NCT07183761). Next ~2026-09-13",
-      "queue_pos": 41,
-      "queue_position": 59
-    },
-    {
-      "type": "audit_gap",
-      "priority": 6,
-      "added": "2026-07-10",
-      "next_due": "2026-09-13",
-      "target": "Gap #4 (Islet Transplant x Personalized Nutrition, SILVER) audited 2026-08-13 - REMAINS SILVER (no genomic/microbiome nutrition islet intervention). Next ~2026-09-13",
-      "queue_pos": 44,
-      "queue_position": 60
-    },
-    {
-      "type": "validate_path",
-      "priority": 6,
-      "target": "DONE 2026-07-15: metformin->inflammation reaffirmed VALIDATED (added PMID 31182921; NLRP3/AMPK mechanism, preclinical+limited clinical). Next-stalest DISTINCT PARTIAL to re-validate: pioglitazone/GLP1 anti-inflammatory or sglt2->cardio-renal. Next ~2026-07-22.",
-      "added": "2026-07-14",
-      "queue_pos": 35,
-      "queue_position": 61
-    },
-    {
-      "type": "validate_path",
-      "priority": 6,
-      "target": "DONE 2026-07-17: rituximab->diabetic-nephropathy reaffirmed CONTRADICTED (RCT evidence only in IgA/membranous GN). Next-stalest DISTINCT VALIDATED path: dapagliflozin_nephropathy (last 2026-05-05) — re-check for any reversal.",
-      "added": "2026-07-17",
-      "next_due": "2026-08-01",
-      "queue_pos": 37,
-      "queue_position": 62
-    },
-    {
-      "type": "validate_path",
-      "priority": 6,
-      "added": "2026-07-18",
-      "target": "DONE 2026-07-27: baricitinib_t1d_beta_cell REAFFIRMED VALIDATED (BANDIT phase-2 NEJM; two phase-3 DMT trials now underway). Next stalest DISTINCT paths = never-dated cluster paths: metformin->nephropathy, calcineurin->islet_transplant, canagliflozin->inflammation. Validate one next run.",
-      "last_updated": "2026-07-27",
-      "queue_pos": 38,
-      "queue_position": 63
-    },
-    {
-      "priority": 6,
-      "type": "search_pubmed",
-      "target": "Run full run_quality_improvements.py (incl. pmidverify/ingest/validate-citations network stages) on LOCAL machine. 2026-08-11: offline portion clean (24/24 build+dashboard scripts [OK], 0 errors); pipeline stalls at 'Verifying PMIDs against PubMed API' in sandbox (no reliable PubMed API access) — network stages must run locally.",
-      "added": "2026-07-26",
-      "queue_pos": 48,
-      "queue_position": 64
-    },
-    {
-      "priority": 6,
-      "type": "search_pubmed",
-      "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - 2026-07-28 recheck: still pre-FIH (ABA-101/MS clinical lead). Next 2026-08-22",
-      "added": "2026-07-28",
-      "next_check": "2026-08-22",
-      "queue_pos": 49,
-      "queue_position": 65
-    },
-    {
-      "priority": 6,
-      "type": "vet_papers_batch",
-      "added": "2026-08-15",
-      "target": "Paper vetting is now CAUGHT UP: 287/287 PMIDs verified live 2026-08-15 via bulk esummary. Next batch is not PMID re-verification but CLAIM pressure-testing on the 13 FLAGGED papers - decide keep-with-caveat vs remove from corpus (10 are off-topic oncology/neurology; 27512794 missing title/journal; 35437333 and 41827829 have empty issues_found and need a reason recorded or should be un-flagged).",
-      "queue_pos": 50,
-      "queue_position": 66
     },
     {
       "type": "search_pubmed",
       "priority": 6,
       "target": "RE-VERIFIED 2026-08-09: MDPI IJMS 27(10):4257 (DOI 10.3390/ijms27104257, 'NLRP3 Inflammasome Inhibition Attenuates Diabetic Kidney Injury via Suppression of Ferroptosis', Tian et al., STZ NLRP3-KO mice + HK-2 cells, PRECLINICAL, pub 2026-05-10) CONFIRMED REAL via DOI/MDPI but STILL not PubMed-indexed (search returns mdpi.com + unrelated PMC only). Remains UNVETTED_NO_PMID (pmid=PENDING, NOT fabricated). Adjacent indexed support: PMC12206412 (NLRP3 pyroptosis DN review) + PMC11906378 (ferroptosis/innate-immune crosstalk DKD). Next PubMed-indexing re-verify 2026-09-01.",
       "queue_pos": 32,
-      "queue_position": 67
+      "queue_position": 56
     },
     {
       "type": "validate_path",
       "priority": 6,
       "target": "DONE 2026-08-08: SGLT2i->beta_cell reaffirmed PARTIALLY_VALIDATED (+2025 WJD SR/MA 24 RCTs HOMA-beta n=2845; surrogate-limited so NOT promoted; PMID PENDING). Next revalidate ~2026-11-08.",
       "queue_pos": 33,
-      "queue_position": 68
+      "queue_position": 57
     },
     {
       "type": "validate_path",
@@ -8925,14 +8834,14 @@
       "target": "DONE 2026-08-03: 'metformin -> cardiovascular' re-validated, REMAINS PARTIALLY_VALIDATED (+2024 umbrella review PMID 38932855; still no placebo-RCT CV benefit). Next stalest DISTINCT partials: 'rapamycin -> inflammation' (2026-08-01), 'vitamin_d -> autoimmune' (2026-08-02). Pick oldest distinct next run.",
       "last_updated": "2026-08-03",
       "queue_pos": 34,
-      "queue_position": 69
+      "queue_position": 58
     },
     {
       "priority": 6,
       "type": "validate_path",
       "target": "DONE 2026-08-07: TXNIP_NLRP3_beta_cell_DKD reaffirmed PARTIALLY_VALIDATED (+PMID 40020889 CHOP-TXNIP podocyte, +EGCG TXNIP/NLRP3 DKD, +NLRP3-in-diabetes SR PMC12395217). Preclinical HIGH, clinical early phase1. Next distinct stale partial to pick: 'teplizumab_long_term_followup' (watched via PROTECT item) else next oldest. Next revalidate ~2026-09-06.",
       "queue_pos": 36,
-      "queue_position": 70
+      "queue_position": 59
     },
     {
       "type": "monitor_trial",
@@ -8942,7 +8851,7 @@
       "last_updated": "2026-07-06",
       "notes": "Added 2026-07-06 from Monday sweep.",
       "queue_pos": 39,
-      "queue_position": 71
+      "queue_position": 60
     },
     {
       "priority": 6,
@@ -8952,7 +8861,7 @@
       "next_due": "2026-08-30",
       "last_updated": "2026-08-04",
       "queue_pos": 40,
-      "queue_position": 72
+      "queue_position": 61
     },
     {
       "type": "audit_gap",
@@ -8960,7 +8869,7 @@
       "target": "Gap #14 audited 2026-08-03 — REMAINS BRONZE. Next monthly audit ~2026-09-02.",
       "next_due": "2026-09-02",
       "queue_pos": 42,
-      "queue_position": 73
+      "queue_position": 62
     },
     {
       "priority": 6,
@@ -8969,7 +8878,7 @@
       "queued_date": "2026-07-08",
       "next_due": "2026-09-02",
       "queue_pos": 43,
-      "queue_position": 74
+      "queue_position": 63
     },
     {
       "priority": 6,
@@ -8978,7 +8887,7 @@
       "queued_date": "2026-05-30",
       "next_due": "2026-09-02",
       "queue_pos": 45,
-      "queue_position": 75
+      "queue_position": 64
     },
     {
       "priority": 6,
@@ -8987,14 +8896,97 @@
       "queued_date": "2026-07-08",
       "next_due": "2026-09-02",
       "queue_pos": 46,
-      "queue_position": 76
+      "queue_position": 65
     },
     {
       "type": "audit_gap",
       "priority": 6,
       "target": "Gap 1 (Gene Therapy for LADA, SILVER) - audited 2026-06-24 (no LADA-specific gene-therapy trial; RNLS CRISPR T1D/preclinical). Next monthly audit due ~2026-07-24.",
       "queue_pos": 47,
-      "queue_position": 77
+      "queue_position": 66
+    },
+    {
+      "type": "audit_gap",
+      "priority": 6,
+      "added": "2026-07-10",
+      "next_due": "2026-09-13",
+      "target": "Gap #12 (Treg/CAR-T x Diabetic Neuropathy, SILVER) audited 2026-08-13 - REMAINS SILVER (no Treg intervention for DPN; adjacent MSC trial NCT07183761). Next ~2026-09-13",
+      "queue_pos": 41,
+      "queue_position": 67
+    },
+    {
+      "type": "audit_gap",
+      "priority": 6,
+      "added": "2026-07-10",
+      "next_due": "2026-09-13",
+      "target": "Gap #4 (Islet Transplant x Personalized Nutrition, SILVER) audited 2026-08-13 - REMAINS SILVER (no genomic/microbiome nutrition islet intervention). Next ~2026-09-13",
+      "queue_pos": 44,
+      "queue_position": 68
+    },
+    {
+      "type": "validate_path",
+      "priority": 6,
+      "target": "DONE 2026-07-15: metformin->inflammation reaffirmed VALIDATED (added PMID 31182921; NLRP3/AMPK mechanism, preclinical+limited clinical). Next-stalest DISTINCT PARTIAL to re-validate: pioglitazone/GLP1 anti-inflammatory or sglt2->cardio-renal. Next ~2026-07-22.",
+      "added": "2026-07-14",
+      "queue_pos": 35,
+      "queue_position": 69
+    },
+    {
+      "type": "validate_path",
+      "priority": 6,
+      "target": "DONE 2026-07-17: rituximab->diabetic-nephropathy reaffirmed CONTRADICTED (RCT evidence only in IgA/membranous GN). Next-stalest DISTINCT VALIDATED path: dapagliflozin_nephropathy (last 2026-05-05) — re-check for any reversal.",
+      "added": "2026-07-17",
+      "next_due": "2026-08-01",
+      "queue_pos": 37,
+      "queue_position": 70
+    },
+    {
+      "type": "validate_path",
+      "priority": 6,
+      "added": "2026-07-18",
+      "target": "DONE 2026-07-27: baricitinib_t1d_beta_cell REAFFIRMED VALIDATED (BANDIT phase-2 NEJM; two phase-3 DMT trials now underway). Next stalest DISTINCT paths = never-dated cluster paths: metformin->nephropathy, calcineurin->islet_transplant, canagliflozin->inflammation. Validate one next run.",
+      "last_updated": "2026-07-27",
+      "queue_pos": 38,
+      "queue_position": 71
+    },
+    {
+      "priority": 6,
+      "type": "search_pubmed",
+      "target": "Run full run_quality_improvements.py (incl. pmidverify/ingest/validate-citations network stages) on LOCAL machine. 2026-08-11: offline portion clean (24/24 build+dashboard scripts [OK], 0 errors); pipeline stalls at 'Verifying PMIDs against PubMed API' in sandbox (no reliable PubMed API access) — network stages must run locally.",
+      "added": "2026-07-26",
+      "queue_pos": 48,
+      "queue_position": 72
+    },
+    {
+      "priority": 6,
+      "type": "search_pubmed",
+      "target": "Abata ABA-201 TCR-Treg T1D first-in-human readout - 2026-07-28 recheck: still pre-FIH (ABA-101/MS clinical lead). Next 2026-08-22",
+      "added": "2026-07-28",
+      "next_check": "2026-08-22",
+      "queue_pos": 49,
+      "queue_position": 73
+    },
+    {
+      "priority": 6,
+      "type": "vet_papers_batch",
+      "added": "2026-08-15",
+      "target": "Paper vetting is now CAUGHT UP: 287/287 PMIDs verified live 2026-08-15 via bulk esummary. Next batch is not PMID re-verification but CLAIM pressure-testing on the 13 FLAGGED papers - decide keep-with-caveat vs remove from corpus (10 are off-topic oncology/neurology; 27512794 missing title/journal; 35437333 and 41827829 have empty issues_found and need a reason recorded or should be un-flagged).",
+      "queue_pos": 50,
+      "queue_position": 74
+    },
+    {
+      "type": "full_rebuild_verify",
+      "priority": 7,
+      "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-16 (41 stages [OK], network verify ran clean). Re-run ~weekly.",
+      "queue_pos": 51,
+      "queue_position": 75
+    },
+    {
+      "type": "search_pubmed",
+      "priority": 7,
+      "target": "WJD 16(7) 107335 PubMed-indexing recheck for real PMID (SGLT2i SR/MA beta-cell). Added 2026-08-08. Next ~2026-09-08.",
+      "queue_pos": 53,
+      "queue_position": 76
     },
     {
       "priority": 7,
@@ -9002,21 +8994,14 @@
       "target": "DONE 2026-07-31: dorzagliatin->T2D REMAINS VALIDATED (HIGH); +PMID 40896829 (Diabetes 2025;74(11):2111 beta-cell fn). Next stalest DISTINCT validated path: pioglitazone_T2D or hydroxychloroquine_T2D (GKA/metformin cluster cross-connections).",
       "added": "2026-07-28",
       "queue_pos": 52,
+      "queue_position": 77
+    },
+    {
+      "type": "check_combination",
+      "priority": 8,
+      "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04.",
+      "queue_pos": 55,
       "queue_position": 78
-    },
-    {
-      "type": "full_rebuild_verify",
-      "priority": 7,
-      "target": "Periodic full run_quality_improvements.py incl. network PMID verify. COMPLETED 2026-07-16 (41 stages [OK], network verify ran clean). Re-run ~weekly.",
-      "queue_pos": 51,
-      "queue_position": 79
-    },
-    {
-      "type": "search_pubmed",
-      "priority": 7,
-      "target": "WJD 16(7) 107335 PubMed-indexing recheck for real PMID (SGLT2i SR/MA beta-cell). Added 2026-08-08. Next ~2026-09-08.",
-      "queue_pos": 53,
-      "queue_position": 80
     },
     {
       "type": "note",
@@ -9024,7 +9009,7 @@
       "added": "2026-07-18",
       "target": "2026-07-18: Repaired truncated literature_gap_data.json (frozen file corrupted during 2026-07-17 regen). If it truncates again, root cause is an interrupted write in gap_analysis_daily.py -> consider atomic write (tmp+rename) there.",
       "queue_pos": 54,
-      "queue_position": 81
+      "queue_position": 79
     },
     {
       "priority": 8,
@@ -9033,14 +9018,7 @@
       "added": "2026-07-28",
       "last_updated": "2026-08-13",
       "queue_pos": 56,
-      "queue_position": 82
-    },
-    {
-      "type": "check_combination",
-      "priority": 8,
-      "target": "RESOLVED 2026-07-11: DOI 10.1007/s00125-025-06490-8 = PMID 40650745, a Diabetologia NOD-MOUSE preclinical combo paper (verapamil+low-dose mATG), NOT the human Ver-A-T1D RCT primary. The human RCT primary remains conference-only (EASD Sep-2025, Pieber) with NO peer-reviewed journal pub found. Keep EASD/news sourcing for the RCT; do NOT cite 06490-8 for the human primary. Re-check for a real RCT journal pub ~2026-09-04.",
-      "queue_pos": 55,
-      "queue_position": 83
+      "queue_position": 80
     }
   ],
   "run_history": [
@@ -10596,18 +10574,6 @@
       "citation_sites_repaired": 47,
       "changes_pushed": false,
       "summary": "Sat 2026-08-29 - THE MOST-REPEATED CITATION ON THE DRUG SCREEN WAS CORRECT IN EVERY FIELD AND WRONG ABOUT EVERYTHING IT SUPPORTED. (1) THE P1 ITEM, WORKED, PREMISE CORRECTED. The 2026-08-28 item said the Research Paths dashboard \"still orders by count alone\". It did not - it sorted alphabetically. The real count-derived ranking is on the Statistical Analysis page and is published as a PROBABILITY: the Bayesian prior reads data_point_count and PMID count and nothing else. 48 of 77 ordered pairs (62.3%) discordant with study design; 16 rank a NO_RESULTS path above a PRIMARY one. Shipped design-first ordering and tier badges on Research_Paths, full discordance disclosure above the Bayesian ranking, and a NO_RESULTS cap at strength INSUFFICIENT; did NOT refit the prior, which is a modelling call now in the queue. (2) THE EIGHTH DEFECT CLASS. PMID 29710129 sourced 47 cost claims across the 34-drug screen. It resolves, author Hernandez, year 2018, title agrees with PubMed - and it is a JAMA Oncology research letter on CAR-T therapy costs holding no generic drug price. The methodology paragraph even described it as a \"systematic review of global generic drug pricing\". Every gate this repo owns tests whether a citation identifies the right paper; this one did. All 47 sites marked UNSOURCED, no substitute invented, no cost value changed; three passes needed because the claim had been paraphrased into captions the first two sweeps did not match. Also removed PMID 23738527, cited for \"glyburide widely studied in gestational diabetes\" and actually a PLANT flux-balance-analysis paper, and rewrote the glyburide entry to open PRECLINICAL. (3) THE GRADER IS 37% BLIND. Reading the 16 PRIMARY_OTHER papers found PubMed pubtype missing in BOTH directions in one batch: 36643381 an untagged protocol supplying 7 extractions, 36826844 an untagged JAMA RCT (CLVer, n=88, measured 52-week C-peptide) supplying 0. Net: two protocols supply 22 of 232 live extractions while the trial that measured the outcome supplies none. Across all 359 cached papers 134 carry no design tag, rising to 66% for 2026 papers - the grader is blindest on the newest evidence. New gate audit_pubtype_title_disagreement.py wired ahead of pathdesign. (4) ONE FALSE POSITIVE CLEARED, RECORDED. An apparent metformin-under-SGLT2i miscitation on Gap_Evidence.html traced to correct source data and correct card markup; the mismatch was an artifact of reading tag-stripped text across a card boundary. (5) SWEEP AND BUILD. Credibility sweep clean; the >42000000 fabricated-PMID rule in the task file remains stale (PMID 42608595 and 42631883 are real 2026 papers). All 58 pipeline steps [OK]."
-    },
-    {
-      "date": "2026-08-30",
-      "day": "Sunday",
-      "papers_checked": 0,
-      "paths_validated": 0,
-      "gaps_graded": 15,
-      "issues_found": 9,
-      "new_audits": 3,
-      "pubtypes_refetched": 359,
-      "changes_pushed": false,
-      "summary": "Sun 2026-08-30 - TWO TIER SYSTEMS WERE BUILT ON THE SAME METRIC THAT FAILED LAST WEEK, AND THE NEW AUDIT REPRODUCED THE FAILURE BEFORE IT CAUGHT ANYTHING. (1) THE P1 QUEUE WAS LEFT ALONE ON PURPOSE. All seven P1 items are HUMAN CALLs - the dose_response headline, the 29 hollow paths, the two verapamil paths, the 91-claim insulin-pricing citation, and whether the Bayesian prior should encode study design. Every one restates a published number or delists ranked content. None was touched unattended. Work went to the P2 items that are measurement, not judgement. (2) GAPS GRADED BY DESIGN (queue 2026-08-28), AND THE FIRST DRAFT WAS WRONG IN AN INSTRUCTIVE WAY. Built audit_gap_evidence_design.py reusing the path grader's rule verbatim: PRIMARY means 'at least one paper reports primary data'. On a path citing 1-3 papers that is strict. On a gap citing 10-30 it is nearly unfalsifiable, and it graded three GOLD gaps clean that rest on a single primary paper each - #2 Health Equity 1 of 11, #6 CAR-T Access 1 of 13, #11 Islet Registry 1 of 2. Weakest-wins over a large denominator IS strongest-wins. Added PRIMARY_THIN (floor: 1/3 of design-readable papers). Final: 7 of 12 evidenced gaps flagged - #2 GOLD and #6 GOLD are PRIMARY_THIN (1 of 6 and 1 of 8 readable papers primary); #5 and #7 SILVER likewise; #1, #10, #12 are UNGRADEABLE because most of their papers carry no design tag. REPORTED, NOT APPLIED - re-tiering a published gap is a human call. (3) THE EIGHTH DEFECT CLASS, BUILT AND THEN CAUGHT LYING TWICE (queue 2026-08-29). audit_citation_semantic_support.py scores IDF-weighted overlap between each citing sentence and the cited title/abstract/MeSH. First run: bottom 12 contained ELEVEN false positives - bibliographic coordinates ('Frey et al. Biol Blood Marrow Transplant 2019' cannot share vocabulary with any abstract), HTML attribute residue ('bar-label'), and trade names absent from all abstracts. Fixed. Second problem, measured not guessed: support correlates with abstract length (Pearson r=0.226), and the correlation is a CLIFF at ~30 abstract words, not a gradient (1-30w median 0.000, n=94; 31-120w 0.133; 121-250w 0.153; 251+w 0.167). THE FOUNDING CASE IS IN THAT BAND - PMID 29710129's whole abstract is 14 words, so semantic scoring can never convict it and a version that ranked it first would have been right by accident. (4) THE SIGNAL THAT ACTUALLY CATCHES IT NEEDS NO SEMANTICS. Added claims-per-100-source-words. 29710129: 100 distinct claims on 22 words of title+abstract = 454.5/100w, four and a half times the next entry. It independently reproduced BOTH open P1 concentrations (34763823 insulin-pricing review at 87 claims/135 words; 32175717 at 39/245) and surfaced one NOT in the queue: PMID 36449148 'Dorzagliatin: First Approval', a one-page Drugs profile note, carrying 21 distinct claims on 103 words. (5) THE SCORER WAS VALIDATED AGAINST RANDOM PAIRINGS, NOT AGAINST ITS OWN ANECDOTE. The first self-test used one probe PMID and the later short-abstract filter silently removed that probe, leaving the test INCONCLUSIVE by construction - a validation a later fix can disable is the wrong design. Replaced with a discrimination test: every claim also scored against a random uncited corpus paper. real mean 0.213 vs random 0.043, lift 4.92x, real beats random on 72.9% of claims (17.0% tied). VERDICT: DISCRIMINATES. Known limitation recorded, not hidden: no stemming, so PMID 40249888 'Decentralized ... Manufacturing' cited for 'a path to decentralization' scores 0.00 on a correct citation. Filed for a MEASURED widening, same discipline as dose_fragment_patterns. (6) THE PUBTYPE LAG HYPOTHESIS WAS TESTED AND DID NOT REPRODUCE ON A 4-DAY WINDOW. Built refresh_pubtype_cache.py with an expiring cache (entries now carry a `fetched` date; the old cache had none and froze the exact field most likely to change). Re-fetched all 359: ZERO pubtype changes. So the indexing lag is longer than 4 days and MONTHLY is the right cadence, not daily. But the blindness is WORSE than the queue recorded: 152 of 359 (42%) carry no type the grader reads, not 134 (37%), and the queue's year gradient is partly wrong - pre-2018 is a noisy 12-67% band, not '~31%'. The 2026 signal is real and large: 74% of 2026 papers are design-blind (39 of 53). Also found: the path grader reads 'Randomized Controlled Trial' but not 'Clinical Trial, Phase I/II', 'Observational Study' or 'Multicenter Study', so two tagged trials sit in its blind set; the new gap grader lists those types explicitly. (7) CREDIBILITY SWEEP - one real repair. Runtime PMID ceiling queried live: 42,668,268 (the task file's hardcoded 42,000,000 remains stale and would have produced false fabrication reports; both repo PMIDs above it are real). No PMIDs above the live ceiling, no 'zero SAEs'/'zero rejection'. FIXED: build_gap_synthesis.py stated 'Nano-rapamycin achieved 50% dose reduction.' as a bare accomplished fact - no design marker, no PMID, source line naming no paper, and a nanoparticle formulation study is PRECLINICAL. Now marked PRECLINICAL + [UNSOURCED]. (8) PIPELINE: all 60 stages [OK] including the two new audits."
     }
   ],
   "topic_checks": {
@@ -12833,10 +12799,6 @@
       "date": "2026-08-29",
       "title": "Checked and CLEARED: apparent metformin-under-SGLT2i miscitation on Gap_Evidence.html",
       "detail": "A metformin/AMPK/mTOR/DCM sentence appeared to sit under the title of PMID 32358544 (Nat Commun, SGLT2i and ketones). Traced to source: gap_evidence.json attributes it correctly to PMID 31182921 (Yang F, Int J Biol Sci 2019), and the HTML wraps each paper in its own bordered card. The apparent mismatch was an artifact of reading tag-stripped text across a card boundary. No defect. Recorded because a false positive published as a finding would have been the more damaging error."
-    },
-    {
-      "date": "2026-08-30",
-      "note": "New audits: audit_gap_evidence_design.py (gap design tiers, offline), audit_citation_semantic_support.py (8th defect class + claim density, validated 4.92x lift), refresh_pubtype_cache.py (expiring pubtype cache, NOT wired to pipeline - network stage). Runtime PMID ceiling 2026-08-30: 42,668,268. Pubtype re-fetch over 359 papers: 0 changes."
     }
   ],
   "combination_validation_pending": [
@@ -13200,20 +13162,6 @@
         "added": "2026-08-26",
         "target": "READ THE 16 PRIMARY_OTHER PAPERS AND SEPARATE PRECLINICAL FROM CLINICAL. All 37 newly-reachable papers were vetted today on publication type, which resolved 10 as interventional trials, 8 as secondary, 1 protocol (39613428, corroborating the existing P1 item), 1 observational and 1 retracted. The remaining 16 are PRIMARY_OTHER: PubMed declares no design, so they may be human RCTs, rodent studies or in vitro work and the gate cannot tell. At least four are near-certainly preclinical - 19805629 (glyburide inhibits Cryopyrin/Nalp3, J Cell Biol 2009), 32712220 (dapagliflozin beta cell regeneration, Metabolism 2020), 34918381 (FASEB J 2022), 35180212 (PLoS One 2022) - and all four sit on SGLT2i/NLRP3 paths. If any path presents them as clinical evidence, that is the preclinical-overstatement class this repo already knows about, in a new place. Read the abstracts; record species and n."
       }
-    },
-    {
-      "closed": "2026-08-30",
-      "was_priority": 2,
-      "added": "2026-08-29",
-      "target": "GENERALISE THE EIGHTH DEFECT CLASS: CITATION CORRECT, CLAIM UNSUPPORTED. PMID 29710129 was the source for 47 cost claims across the drug screen while being a JAMA Oncology CAR-T cost letter. Every identifier gate passed it because every identifier was right. The only signal available was the SEMANTIC distance between the citing sentence and the cited abstract, and nothing here measures that. audit",
-      "outcome": "audit_citation_semantic_support.py shipped; validated at 4.92x lift over random pairings; claim-density signal added because semantics provably cannot reach the founding case"
-    },
-    {
-      "closed": "2026-08-30",
-      "was_priority": 2,
-      "added": "2026-08-28",
-      "target": "GRADE THE 15 GAPS BY EVIDENCE DESIGN THE WAY THE PATHS NOW ARE. audit_path_evidence_design.py reads research_paths.json only. The gap tiers (GOLD/SILVER/BRONZE) were assigned by independent-source COUNT, the same metric just shown to mislead on paths - a gap can hold two independent narrative reviews and be SILVER. Extend the audit to gap_evidence.json and report, for each gap, how many of its pap",
-      "outcome": "audit_gap_evidence_design.py shipped; 7 of 12 evidenced gaps flagged, PRIMARY_THIN tier added after the first draft reproduced the count-based defect"
     }
   ]
 }
