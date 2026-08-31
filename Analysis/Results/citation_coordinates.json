@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-30",
+ "generated": "2026-08-31",
  "window_chars": 200,
- "coordinates_checked": 120,
+ "coordinates_checked": 122,
  "counts": {
-  "OK": 115,
+  "OK": 116,
   "COORD_MISMATCH": 1,
   "POINTS_ELSEWHERE": 2,
-  "NONRESOLVING": 2,
+  "NONRESOLVING": 3,
   "UNRESOLVED": 0
  },
  "nonresolving": [
@@ -65,6 +65,34 @@
    },
    "verdict": "NONRESOLVING",
    "probe": "no PubMed record at Diabetes 62:4297"
+  },
+  {
+   "file": "test_markdown_citation_gate.py",
+   "line": 71,
+   "pmid": "38234567",
+   "asserted": {
+    "journal": "Diabetes Care",
+    "year": "2024",
+    "volume": "47",
+    "issue": "3",
+    "page": "456"
+   },
+   "record": " RETRACTED ' 'ginsenoside paper', 'Mehta A, Beatus T, Smith R, et al. \"Islet transplantation outcomes in ' 'Type 1 diabetes.\" Diabetes Care. 2024;47(3):456-468.",
+   "actual": {
+    "issue": "",
+    "journal": "Oxid Med Cell Longev",
+    "pages": "9847476",
+    "title": "Retracted: Ginsenoside Rg1 Ameliorates Acute Renal Ischemia/Reperfusion Injury via Upregulating AMPKα1 Expression.",
+    "volume": "2024",
+    "year": "2024"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": true
+   },
+   "verdict": "NONRESOLVING",
+   "probe": "no PubMed record at Diabetes Care 47:456"
   }
  ],
  "points_elsewhere": [
@@ -3254,6 +3282,33 @@
     "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
     "volume": "4",
     "year": "2018"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "test_markdown_citation_gate.py",
+   "line": 99,
+   "pmid": "32627352",
+   "asserted": {
+    "journal": "Am J Transplant",
+    "year": "2021",
+    "volume": "21",
+    "issue": "4",
+    "page": "1477"
+   },
+   "record": ", 'Markmann JF, Rickels MR, et al. \"Phase 3 trial of human islet-after-kidney ' 'transplantation in type 1 diabetes.\" Am J Transplant. 2021;21(4):1477-1492. ' '",
+   "actual": {
+    "issue": "4",
+    "journal": "Am J Transplant",
+    "pages": "1477-1492",
+    "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
+    "volume": "21",
+    "year": "2021"
    },
    "checks": {
     "volume": true,

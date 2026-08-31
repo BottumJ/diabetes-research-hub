@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: August 30, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: August 31, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -55,9 +55,13 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### Next-Generation GLP-1 & Multi-Agonist Therapies
 
-**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In the TRIUMPH-4 Phase 2 trial, achieved 28.7% mean body weight reduction at 68 weeks. [PMID:37366315, JAMA, 2024] [NCT:NCT05929066] **Validation: SILVER** (Phase 2 RCT; Phase 3 ongoing, final results pending)
+**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In a phase 2, double-blind, placebo-controlled trial in adults with obesity (n=338), least-squares mean body-weight change at 48 weeks was -24.2% in the 12-mg group vs -2.1% with placebo. Population was obesity, not type 2 diabetes. [PMID:37366315, N Engl J Med, 2023] [NCT:NCT04881760] **Validation: SILVER** (single phase 2 RCT; phase 3 TRIUMPH programme ongoing)
 
-**Orforglipron:** First oral non-peptide GLP-1 receptor agonist. Once-daily pill with no food restrictions. FDA decision expected 2026. [PMID:37385277, NEJM, 2023] [NCT:NCT05803421] **Validation: SILVER** (Phase 3 complete; peer-reviewed Phase 2 data)
+> **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *"In the TRIUMPH-4 Phase 2 trial, achieved 28.7% mean body weight reduction at 68 weeks. [PMID:37366315, JAMA, 2024] [NCT:NCT05929066]."* PMID 37366315 is the right paper but it is NEJM 2023, not JAMA 2024; the trial ran 48 weeks, not 68; registration is NCT04881760, not NCT05929066; and 28.7% appears nowhere in it (largest reduction reported: 24.2%).
+
+**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in type 2 diabetes (n=383, 26 weeks) reported dose-dependent HbA1c and weight reduction [PMID:37369232, Lancet, 2023]. Phase 3 has since reported in early type 2 diabetes [PMID:40544435, N Engl J Med, 2025] and head-to-head versus oral semaglutide, ACHIEVE-4 [PMID:41765029, Lancet, 2026]. [NCT:NCT05803421] **Validation: GOLD** (phase 2 plus two independent phase 3 RCTs, all peer-reviewed)
+
+> **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its "peer-reviewed Phase 2 data". PMID 37385277 is *"The pursuit of optimal semaglutide dosing in type 2 diabetes continues"* — a Comment in The Lancet about a different drug, containing no orforglipron data. Tier moves SILVER to GOLD because the real phase 3 evidence published in 2025-2026 and was never picked up here.
 
 **CagriSema:** Semaglutide + cagrilintide (amylin analog) dual-hormone combination. FDA review anticipated 2026. [NCT:NCT04982575] **Validation: SILVER** (Phase 3 data from multiple REDEFINE trials)
 
@@ -65,15 +69,21 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### Novel Mechanisms
 
-**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved in China (2022); US Phase 1b trials underway. [PMID:40573322, Nature Medicine, 2022] **Validation: SILVER** (Chinese approval + US trials initiated)
+**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved by China's NMPA in September 2022; not approved in the US or EU. [PMID:36449148, Drugs, 2022] **Validation: SILVER** (regulatory approval documented in a drug-profile review; no independent replication of the pivotal trials outside China)
 
-**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec demonstrated non-inferiority to daily basal insulin in ONWARDS trials. FDA 2026. [PMID:37356449, NEJM, 2023] **Validation: GOLD** (multiple Phase 3 RCTs + peer-reviewed + regulatory submission)
+> **CORRECTED 2026-08-31.** Previously cited *[PMID:40573322, Nature Medicine, 2022]*. That PMID is about dorzagliatin, so the drug is right, but the paper is *"In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kalpha Inhibitor-Induced Hyperglycemia"*, in Pharmaceuticals (Basel) June 2025 — not Nature Medicine 2022 — and it is a preclinical PK-PD study saying nothing about Chinese approval. The "US Phase 1b trials underway" clause was removed rather than re-sourced: no citation was offered and none was found.
+
+**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin across the phase 3 ONWARDS programme: ONWARDS 3 vs degludec in insulin-naive T2D [PMID:37354562, JAMA, 2023]; ONWARDS 2 vs degludec in basal-treated T2D [PMID:37148899, Lancet Diabetes Endocrinol, 2023]; ONWARDS 4 vs glargine U100 in basal-bolus T2D [PMID:37156252, Lancet, 2023]. **Validation: GOLD** (three independent phase 3 RCTs, each peer-reviewed)
+
+> **CORRECTED 2026-08-31 — a GOLD rating resting on a paper about something else.** Previously cited *[PMID:37356449, NEJM, 2023]* alone. PMID 37356449 is *"Measuring the global burden of diabetes: implications for health policy, practice, and research"*, a Lancet health-policy piece containing no icodec data. The claim was rated GOLD on "multiple Phase 3 RCTs" while citing none of them. The rating stands because the three ONWARDS trials now cited support it; the point is that rating and citation had come apart unnoticed. The "FDA 2026" clause was removed: unsourced and not verifiable from the cited literature.
 
 ### The Remission Question
 
 An RCT reported that SGLT2 inhibitors combined with calorie restriction achieved a 44% remission rate in T2D patients. [Liu et al. BMJ 2025 (PMID requires verification) — dapagliflozin + calorie restriction remission trial] **Validation: SILVER** (multicentre double-blind RCT) **Note: PMID could not be confirmed on PubMed; verify publication details independently before citation.**
 
-Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:22980982, Diabetologia, 2023] **Validation: SILVER** (mechanistic evidence from multiple groups; clinical validation ongoing)
+Beta cell dedifferentiation — rather than beta-cell death alone — is an established mechanism of beta-cell failure, which makes reversal of dedifferentiation a plausible route to remission. Founding evidence: *Pancreatic beta cell dedifferentiation as a mechanism of diabetic beta cell failure* [PMID:22980982, Cell, 2012] — **a mouse study (FoxO1-deleted beta cells)**, not a clinical one. **Validation: BRONZE for the remission inference** (the mechanism is well replicated; the leap from mechanism to a clinical remission route is not).
+
+> **CORRECTED 2026-08-31.** Previously *[PMID:22980982, Diabetologia, 2023]*. The PMID is right; the journal and year are not — it is Cell 2012, off by eleven years and a different journal. Tier moves SILVER to BRONZE: the entry claimed "mechanistic evidence from multiple groups" while citing one 2012 mouse paper.
 
 ### Prevention
 
@@ -97,7 +107,9 @@ B cells play a newly recognized role in damaging protective regulatory T cells e
 
 **CAR-Treg and TCR-Treg therapies** represent a paradigm shift: engineering the immune system to protect rather than suppress. Multiple programs are advancing: MUSC (CAR-Treg), Abata (TCR-Treg ABA-201), and academic groups. **Validation: SILVER** (multiple independent programs; all early-stage)
 
-In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists demonstrate anti-inflammatory effects, with one study reporting 8-15% reduction in non-proliferative diabetic retinopathy (NPDR) progression. [PMID:37122431 — Cigrovski Berkovic 2023, World J Diabetes; PMID:38578067 — Varughese 2024] **Validation: BRONZE** (range from limited analyses; needs independent confirmation)
+In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists have reported anti-inflammatory effects. A figure of 8-15% reduction in non-proliferative diabetic retinopathy (NPDR) progression has circulated with two references attached. First: *Semaglutide - eye-catching results* [PMID:37122431, World J Diabetes, 2023]. Second: *Existing and emerging GLP-1 receptor agonist therapy: Ramifications for diabetic retinopathy screening* [PMID:38578067, J R Coll Physicians Edinb, 2024]. **Both are narrative reviews, not studies** — PubMed types both as Review. **Validation: BRONZE, and the 8-15% range is [UNSOURCED]** — neither cited review is a primary analysis, and the primary source of that range has not been located.
+
+> **CORRECTED 2026-08-31.** Identifiers, authors and years here were all correct — the counter-example to the corrections above. What was wrong was the word *"study"*: the sentence read "one study reporting 8-15% reduction" while pointing at two review articles. Marked [UNSOURCED] following the 2026-08-27 and 2026-08-29 precedent rather than deleted, so the figure stays visible and visibly unsupported.
 
 ---
 

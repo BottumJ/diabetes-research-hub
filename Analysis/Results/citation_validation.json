@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-30T03:16:54.935907",
+  "timestamp": "2026-08-31T03:32:35.457218",
   "summary": {
-    "WEAK": 124,
-    "CONFIRMED": 86,
-    "PLAUSIBLE": 66,
-    "NO_CLAIM": 19,
+    "WEAK": 130,
+    "CONFIRMED": 92,
+    "PLAUSIBLE": 67,
+    "NO_CLAIM": 18,
     "NO_DATA": 1
   },
-  "total_papers": 296,
+  "total_papers": 308,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -148,7 +148,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 105,
+          "line": 115,
           "text": "The Diabetes Prevention Program demonstrated 58% risk reduction with intensive lifestyle intervention. However, estimate"
         }
       ],
@@ -492,7 +492,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 164,
+          "line": 176,
           "text": "**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with"
         }
       ],
@@ -1614,14 +1614,24 @@
       "pmid": "22980982",
       "title": "Pancreatic β cell dedifferentiation as a mechanism of diabetic β cell failure.",
       "score": "PLAUSIBLE",
-      "confidence": 0.25,
-      "details": "3/12 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.261,
+      "details": "6/23 claim terms found in paper; 7 diabetes domain terms; 3 phrase matches",
+      "claim_count": 3,
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 101,
-          "text": "Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:229"
+          "line": 109,
+          "text": "Beta cell dedifferentiation — rather than beta-cell death alone — is an established mechanism of beta-cell failure, whic"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 111,
+          "text": "> **CORRECTED 2026-08-31.** Previously *[PMID:22980982, Diabetologia, 2023]*. The PMID is right; the journal and year ar"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 43,
+          "text": "'as a plausible remission mechanism. [PMID:22980982, Diabetologia, 2023]',"
         }
       ],
       "has_abstract": true,
@@ -2020,7 +2030,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 150,
+          "line": 162,
           "text": "TNF-alpha has been proposed as a multi-complication predictor for nephropathy, retinopathy, and cardiovascular disease."
         }
       ],
@@ -3345,7 +3355,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 135,
+          "line": 147,
           "text": "**Akkermansia muciniphila** supplementation has shown improved glycemic parameters and insulin sensitivity in clinical s"
         }
       ],
@@ -3379,12 +3389,12 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 147,
+          "line": 159,
           "text": "GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal"
         },
         {
           "file": "add_citations.py",
-          "line": 174,
+          "line": 186,
           "text": "**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87%"
         }
       ],
@@ -3560,9 +3570,9 @@
       "pmid": "32627352",
       "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
       "score": "PLAUSIBLE",
-      "confidence": 0.205,
-      "details": "9/44 claim terms found in paper; 13 diabetes domain terms; 6 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.2,
+      "details": "9/45 claim terms found in paper; 13 diabetes domain terms; 6 phrase matches",
+      "claim_count": 5,
       "claims": [
         {
           "file": "build_data_dictionary.py",
@@ -4213,6 +4223,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "35912345": {
+      "pmid": "35912345",
+      "title": "Solvent Gaming Chemistry to Control the Quality of Halide Perovskite Thin Films for Photovoltaics.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/7 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 58,
+          "text": "record it (\"previously cited PMID 35912345 ... a solar-cell paper\"). Those lines"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "36109639": {
       "pmid": "36109639",
       "title": "Anti-CD19 CAR T cell therapy for refractory systemic lupus erythematosus.",
@@ -4310,24 +4337,24 @@
       "pmid": "36449148",
       "title": "Dorzagliatin: First Approval.",
       "score": "WEAK",
-      "confidence": 0.106,
-      "details": "12/113 claim terms found in paper; 12 diabetes domain terms; 4 phrase matches",
-      "claim_count": 22,
+      "confidence": 0.121,
+      "details": "15/124 claim terms found in paper; 12 diabetes domain terms; 6 phrase matches",
+      "claim_count": 24,
       "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 97,
+          "text": "**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved by China's N"
+        },
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 155,
+          "text": "read as naming a journal. `- Use PMID 36449148 ... for approval and"
+        },
         {
           "file": "build_gap_deep_dives.py",
           "line": 482,
           "text": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
-        },
-        {
-          "file": "build_gka_lada.py",
-          "line": 720,
-          "text": "Zhu D et al. Nat Med 2022;28(5):965-973 (PMID:35551294) — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022"
-        },
-        {
-          "file": "build_gka_landscape.py",
-          "line": 1037,
-          "text": "Source: PMID:36449148 (Syed YY. Dorzagliatin: First Approval. Drugs. 2022;82(18):1745-1750) &mdash; re"
         }
       ],
       "has_abstract": true,
@@ -4360,7 +4387,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 111,
+          "line": 121,
           "text": "Genome-wide association studies have identified approximately 700 genetic variants associated with T2D risk across multi"
         }
       ],
@@ -4431,7 +4458,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 162,
+          "line": 174,
           "text": "Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth."
         }
       ],
@@ -4475,8 +4502,42 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 125,
-          "text": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists demonstrate anti-inflammatory"
+          "line": 135,
+          "text": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists have reported anti-inflammator"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37148899": {
+      "pmid": "37148899",
+      "title": "Switching to once-weekly insulin icodec versus once-daily insulin degludec in individuals with basal insulin-treated type 2 diabetes (ONWARDS 2): a phase 3a, randomised, open label, multicentre, treat-to-target trial.",
+      "score": "CONFIRMED",
+      "confidence": 0.85,
+      "details": "9/12 claim terms found in paper; 9 diabetes domain terms; 3 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "text": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37156252": {
+      "pmid": "37156252",
+      "title": "Switching to once-weekly insulin icodec versus once-daily insulin glargine U100 in individuals with basal-bolus insulin-treated type 2 diabetes (ONWARDS 4): a phase 3a, randomised, open-label, multicentre, treat-to-target, non-inferiority trial.",
+      "score": "CONFIRMED",
+      "confidence": 0.85,
+      "details": "9/12 claim terms found in paper; 8 diabetes domain terms; 3 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "text": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
         }
       ],
       "has_abstract": true,
@@ -4580,13 +4641,30 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 152,
+          "line": 164,
           "text": "A urine metabolomics study reported high diagnostic accuracy for biopsy-confirmed diabetic nephropathy. **NOTE: This fin"
         },
         {
           "file": "add_citations.py",
-          "line": 213,
+          "line": 225,
           "text": "- [x] Urine metabolomics: Jiang et al. Theranostics 2023 (PMID:37351171)"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37354562": {
+      "pmid": "37354562",
+      "title": "Once-Weekly Insulin Icodec vs Once-Daily Insulin Degludec in Adults With Insulin-Naive Type 2 Diabetes: The ONWARDS 3 Randomized Clinical Trial.",
+      "score": "CONFIRMED",
+      "confidence": 0.517,
+      "details": "5/12 claim terms found in paper; 10 diabetes domain terms; 2 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "text": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
         }
       ],
       "has_abstract": true,
@@ -4629,7 +4707,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 158,
+          "line": 170,
           "text": "An estimated 589 million adults worldwide had diabetes in 2021, with a projected 46% increase by 2050. [PMID:37356446, T"
         }
       ],
@@ -4641,13 +4719,18 @@
       "title": "Measuring the global burden of diabetes: implications for health policy, practice, and research.",
       "score": "WEAK",
       "confidence": 0.0,
-      "details": "0/11 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "details": "0/13 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 95,
-          "text": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec demonstrated non-inferiority to daily basal insulin in O"
+          "line": 103,
+          "text": "> **CORRECTED 2026-08-31 — a GOLD rating resting on a paper about something else.** Previously cited *[PMID:37356449, NE"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 103,
+          "text": "> **CORRECTED 2026-08-31 — a GOLD rating resting on a paper about something else.** Previously cited *[PMID:37356449, NE"
         }
       ],
       "has_abstract": true,
@@ -4684,14 +4767,41 @@
       "pmid": "37366315",
       "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial.",
       "score": "CONFIRMED",
-      "confidence": 0.567,
-      "details": "7/15 claim terms found in paper; 6 diabetes domain terms; 2 phrase matches",
-      "claim_count": 1,
+      "confidence": 0.457,
+      "details": "10/28 claim terms found in paper; 6 diabetes domain terms; 5 phrase matches",
+      "claim_count": 4,
       "claims": [
         {
           "file": "add_citations.py",
           "line": 83,
-          "text": "**Retatrutide (\"Triple G\"):** GLP-1/GIP/glucagon triple receptor agonist. In the TRIUMPH-4 Phase 2 trial, achieved 28.7%"
+          "text": "**Retatrutide (\"Triple G\"):** GLP-1/GIP/glucagon triple receptor agonist. In a phase 2, double-blind, placebo-controlled"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 85,
+          "text": "> **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *\"In the TRIUMPH-4 Phase 2 trial, ach"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 85,
+          "text": "> **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *\"In the TRIUMPH-4 Phase 2 trial, ach"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37369232": {
+      "pmid": "37369232",
+      "title": "Efficacy and safety of oral orforglipron in patients with type 2 diabetes: a multicentre, randomised, dose-response, phase 2 study.",
+      "score": "CONFIRMED",
+      "confidence": 0.886,
+      "details": "11/14 claim terms found in paper; 11 diabetes domain terms; 7 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 87,
+          "text": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
         }
       ],
       "has_abstract": true,
@@ -4702,13 +4812,35 @@
       "title": "The pursuit of optimal semaglutide dosing in type 2 diabetes continues.",
       "score": "WEAK",
       "confidence": 0.0,
-      "details": "0/13 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "details": "0/11 claim terms found in paper; 3 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 85,
-          "text": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist. Once-daily pill with no food restrictions. FDA decision"
+          "line": 89,
+          "text": "> **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its \"peer-reviewed"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 89,
+          "text": "> **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its \"peer-reviewed"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "37385967": {
+      "pmid": "37385967",
+      "title": "Diabetes remission in drug-naïve patients with type 2 diabetes after dorzagliatin treatment: A prospective cohort study.",
+      "score": "CONFIRMED",
+      "confidence": 0.529,
+      "details": "3/7 claim terms found in paper; 10 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 89,
+          "text": "'- Note: PMID 37385967 found as reference to \"diabetes remission\" study '"
         }
       ],
       "has_abstract": true,
@@ -4845,6 +4977,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "38234567": {
+      "pmid": "38234567",
+      "title": "Retracted: Ginsenoside Rg1 Ameliorates Acute Renal Ischemia/Reperfusion Injury via Upregulating AMPKα1 Expression.",
+      "score": "WEAK",
+      "confidence": 0.111,
+      "details": "1/9 claim terms found in paper; 1 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 71,
+          "text": "'Type 1 diabetes.\" Diabetes Care. 2024;47(3):456-468. PMID: 38234567.',"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "38349844": {
       "pmid": "38349844",
       "title": "Evidence for C-Peptide as a Validated Surrogate to Predict Clinical Benefits in Trials of Disease-Modifying Therapies for Type 1 Diabetes.",
@@ -4865,15 +5014,20 @@
     "38578067": {
       "pmid": "38578067",
       "title": "Existing and emerging GLP-1 receptor agonist therapy: Ramifications for diabetic retinopathy screening.",
-      "score": "PLAUSIBLE",
-      "confidence": 0.25,
-      "details": "3/12 claim terms found in paper; 11 diabetes domain terms; 2 phrase matches",
-      "claim_count": 1,
+      "score": "WEAK",
+      "confidence": 0.176,
+      "details": "3/17 claim terms found in paper; 11 diabetes domain terms; 2 phrase matches",
+      "claim_count": 2,
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 125,
-          "text": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists demonstrate anti-inflammatory"
+          "line": 135,
+          "text": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists have reported anti-inflammator"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 107,
+          "text": "'**Both are narrative reviews, not studies** [PMID:38578067, '"
         }
       ],
       "has_abstract": true,
@@ -4883,10 +5037,15 @@
       "pmid": "38639547",
       "title": "Cost-Effectiveness of Newer Pharmacologic Treatments in Adults With Type 2 Diabetes: A Systematic Review of Cost-Effectiveness Studies for the American College of Physicians.",
       "score": "WEAK",
-      "confidence": 0.076,
-      "details": "9/118 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
-      "claim_count": 15,
+      "confidence": 0.083,
+      "details": "10/121 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 17,
       "claims": [
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 306,
+          "text": "\"- General diabetes drug cost-effectiveness (PMID 38639547) covers"
+        },
         {
           "file": "build_gap_deep_dives.py",
           "line": 482,
@@ -4896,11 +5055,6 @@
           "file": "build_gap_deep_dives.py",
           "line": 955,
           "text": "\"summary\": \"Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglutide"
-        },
-        {
-          "file": "build_gap_deep_dives.py",
-          "line": 960,
-          "text": "\"SGLT2i: $4.5K-$5.6K/yr (PMID:38639547); needs 68-78% reduction for cost-effectiveness ($1,431/yr target) (PMID:38639547"
         }
       ],
       "has_abstract": true,
@@ -5143,12 +5297,12 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 182,
+          "line": 194,
           "text": "**Proteomic:** UK Biobank proteomics analysis identified 617 circulating proteins associated with T2D polygenic risk sco"
         },
         {
           "file": "add_citations.py",
-          "line": 214,
+          "line": 226,
           "text": "- [x] UK Biobank proteomics FAM3D: Loesch et al. Nat Commun 2025 (PMID:40032831)"
         }
       ],
@@ -5293,18 +5447,40 @@
       "has_abstract": true,
       "has_fulltext": false
     },
-    "40573322": {
-      "pmid": "40573322",
-      "title": "In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kα Inhibitor-Induced Hyperglycemia.",
+    "40544435": {
+      "pmid": "40544435",
+      "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes.",
       "score": "CONFIRMED",
-      "confidence": 0.8,
-      "details": "7/10 claim terms found in paper; 6 diabetes domain terms; 3 phrase matches",
+      "confidence": 0.6,
+      "details": "7/14 claim terms found in paper; 5 diabetes domain terms; 1 phrase matches",
       "claim_count": 1,
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 93,
-          "text": "**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved in China (20"
+          "line": 87,
+          "text": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "40573322": {
+      "pmid": "40573322",
+      "title": "In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kα Inhibitor-Induced Hyperglycemia.",
+      "score": "WEAK",
+      "confidence": 0.091,
+      "details": "1/11 claim terms found in paper; 6 diabetes domain terms; 0 phrase matches",
+      "claim_count": 2,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 99,
+          "text": "> **CORRECTED 2026-08-31.** Previously cited *[PMID:40573322, Nature Medicine, 2022]*. That PMID is about dorzagliatin,"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 62,
+          "text": "'underway. [PMID:40573322, Nature Medicine, 2022]',"
         }
       ],
       "has_abstract": true,
@@ -5581,6 +5757,23 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "41765029": {
+      "pmid": "41765029",
+      "title": "Efficacy and safety of once-daily oral orforglipron compared with oral semaglutide in adults with type 2 diabetes (ACHIEVE-3): a multinational, multicentre, non-inferiority, open-label, randomised, phase 3 trial.",
+      "score": "CONFIRMED",
+      "confidence": 0.957,
+      "details": "12/14 claim terms found in paper; 8 diabetes domain terms; 4 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "add_citations.py",
+          "line": 87,
+          "text": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "41827917": {
       "pmid": "41827917",
       "title": "Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic Diabetes.",
@@ -5591,7 +5784,7 @@
       "claims": [
         {
           "file": "add_citations.py",
-          "line": 115,
+          "line": 125,
           "text": "**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment"
         }
       ],
@@ -5665,13 +5858,29 @@
     },
     "41986815": {
       "pmid": "41986815",
-      "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes",
-      "score": "NO_CLAIM",
-      "confidence": 0,
-      "details": "No claim context found in build scripts",
-      "claim_count": 0,
-      "claims": [],
-      "has_abstract": false,
+      "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes.",
+      "score": "WEAK",
+      "confidence": 0.0,
+      "details": "0/12 claim terms found in paper; 2 diabetes domain terms; 0 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 12,
+          "text": "4. P3 #37 CLOSED — PMID 41986815 resolved."
+        },
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 218,
+          "text": "'RESOLVE PMID 41986815': ("
+        },
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 461,
+          "text": "'PMID 41986815 resolved (P3 #37). The most valuable new paper, 42627334 '"
+        }
+      ],
+      "has_abstract": true,
       "has_fulltext": false
     },
     "41994768": {
@@ -5682,6 +5891,23 @@
       "details": "No claim context found in build scripts",
       "claim_count": 0,
       "claims": [],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "42283716": {
+      "pmid": "42283716",
+      "title": "Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Participants Suggests Benign Side Effect Profile.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.2,
+      "details": "2/10 claim terms found in paper; 7 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 192,
+          "text": "f'PMID 42283716, Diabetes Care 2026 Aug 1. Found {TODAY}; the 2026-08-13 '"
+        }
+      ],
       "has_abstract": true,
       "has_fulltext": false
     },
@@ -5707,6 +5933,40 @@
           "file": "_run_2026_08_25.py",
           "line": 146,
           "text": "\"Re-examined 2026-08-25 against PMID 42608595. The new multi-centre study DOES use \""
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "42627334": {
+      "pmid": "42627334",
+      "title": "β-Cell Function and Diabetes Outcomes 1 Year After Stopping Oral Baricitinib Immunotherapy for Type 1 Diabetes.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.333,
+      "details": "2/6 claim terms found in paper; 8 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 297,
+          "text": "'RE-FRAME BARICITINIB ON THE STRENGTH OF PMID 42627334 (Diabetes Care '"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
+    "42642774": {
+      "pmid": "42642774",
+      "title": "The effect of CoQ10 supplementation on cardiovascular risk factors in patients with prediabetes and type 2 diabetes mellitus: a grade-assessed systematic review and dose-response meta-analysis.",
+      "score": "WEAK",
+      "confidence": 0.143,
+      "details": "1/7 claim terms found in paper; 9 diabetes domain terms; 0 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 342,
+          "text": "'DECIDE WHETHER CoQ10 (PMID 42642774) IS IN SCOPE. The hub is about '"
         }
       ],
       "has_abstract": true,

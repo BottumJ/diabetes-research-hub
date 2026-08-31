@@ -174,7 +174,15 @@ EXEMPT_RADIUS = 1200   # generous on purpose: the marker is opt-IN, never inheri
 # and non-failing; the injection was then reverted. An exemption is only
 # worth having if the gate still fires without it, and that was measured
 # rather than assumed.
-RE_ONESHOT = re.compile(r'^(_run_|_close_run_|_tmp_)|_\d{8}\.py$')
+# FOURTH instance of the same shape, 2026-08-31. test_markdown_citation_gate.py
+# is a regression fixture: it stores the verbatim defective citation
+# ("Diabetes Care. 2024;47(3):456-468. PMID: 38234567") so that the markdown
+# gate can be proved to still catch it. That is the same category as a run
+# file quoting a repaired defect - a record of a defect, not an assertion of
+# one - and repairing it would destroy the fixture's whole purpose. Test
+# fixtures are therefore audit-trail by class, matching on the test_ prefix,
+# not by filename.
+RE_ONESHOT = re.compile(r'^(_run_|_close_run_|_tmp_|test_)|_\d{8}\.py$')
 
 
 def is_audit_trail(filename):

@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2026-08-30T03:16:50.827810",
-    "total_pmids": 277,
-    "abstracts_fetched": 276,
-    "pmc_available": 145,
-    "fulltext_fetched": 132,
-    "total_indexed": 296,
-    "orphans_reconciled": 19,
-    "orphans_reconciled_on": "2026-08-30",
+    "generated_at": "2026-08-31T03:32:32.232394",
+    "total_pmids": 290,
+    "abstracts_fetched": 289,
+    "pmc_available": 151,
+    "fulltext_fetched": 136,
+    "total_indexed": 308,
+    "orphans_reconciled": 18,
+    "orphans_reconciled_on": "2026-08-31",
     "orphan_status_counts": {
       "OFF_TOPIC_PRESUMED": 6,
-      "UNSCREENED_ORPHAN": 13
+      "UNSCREENED_ORPHAN": 12
     },
     "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see."
   },
@@ -336,7 +336,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 105,
+          "line": 115,
           "context": "The Diabetes Prevention Program demonstrated 58% risk reduction with intensive lifestyle intervention. However, estimate"
         }
       ],
@@ -1113,7 +1113,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 164,
+          "line": 176,
           "context": "**LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with "
         }
       ],
@@ -3745,8 +3745,18 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 101,
-          "context": "Beta cell recovery through reversal of dedifferentiation is now recognized as a plausible remission mechanism. [PMID:229"
+          "line": 109,
+          "context": "Beta cell dedifferentiation — rather than beta-cell death alone — is an established mechanism of beta-cell failure, whic"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 111,
+          "context": "> **CORRECTED 2026-08-31.** Previously *[PMID:22980982, Diabetologia, 2023]*. The PMID is right; the journal and year ar"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 43,
+          "context": "'as a plausible remission mechanism. [PMID:22980982, Diabetologia, 2023]',"
         }
       ],
       "mesh_terms": [
@@ -4815,7 +4825,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 150,
+          "line": 162,
           "context": "TNF-alpha has been proposed as a multi-complication predictor for nephropathy, retinopathy, and cardiovascular disease. "
         }
       ],
@@ -8301,7 +8311,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 135,
+          "line": 147,
           "context": "**Akkermansia muciniphila** supplementation has shown improved glycemic parameters and insulin sensitivity in clinical s"
         }
       ],
@@ -8381,12 +8391,12 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 147,
+          "line": 159,
           "context": "GLP-1 receptor agonists have been reported to reduce NPDR progression by 8-15% in clinical analyses. AI-powered retinal "
         },
         {
           "file": "add_citations.py",
-          "line": 174,
+          "line": 186,
           "context": "**Complication prediction:** FDA-cleared deep learning models for automated diabetic retinopathy screening achieve >87% "
         }
       ],
@@ -8975,6 +8985,11 @@
           "file": "build_islet_equity.py",
           "line": 813,
           "context": "<div class=\"evidence-desc\">Rural Health Information Hub, HRSA data on specialist availability. Markmann et al. Phase 3 i"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 99,
+          "context": "'PMID: 32627352.',"
         }
       ],
       "mesh_terms": [
@@ -10813,6 +10828,30 @@
       ],
       "abstract_length": 1906
     },
+    "35912345": {
+      "pmid": "35912345",
+      "title": "Solvent Gaming Chemistry to Control the Quality of Halide Perovskite Thin Films for Photovoltaics.",
+      "journal": "ACS Cent Sci",
+      "year": "2022",
+      "doi": "10.1021/acscentsci.2c00385",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 58,
+          "context": "record it (\"previously cited PMID 35912345 ... a solar-cell paper\"). Those lines"
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1085
+    },
     "36109639": {
       "pmid": "36109639",
       "title": "Anti-CD19 CAR T cell therapy for refractory systemic lupus erythematosus.",
@@ -11000,6 +11039,16 @@
       "pmcid": "",
       "dashboard_locations": [
         {
+          "file": "add_citations.py",
+          "line": 97,
+          "context": "**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved by China's N"
+        },
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 155,
+          "context": "read as naming a journal. `- Use PMID 36449148 ... for approval and"
+        },
+        {
           "file": "build_gap_deep_dives.py",
           "line": 482,
           "context": "\"expanded_clinical_context\": \"Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remis"
@@ -11172,7 +11221,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 111,
+          "line": 121,
           "context": "Genome-wide association studies have identified approximately 700 genetic variants associated with T2D risk across multi"
         }
       ],
@@ -11313,7 +11362,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 162,
+          "line": 174,
           "context": "Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. "
         }
       ],
@@ -11413,8 +11462,8 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 125,
-          "context": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists demonstrate anti-inflammatory "
+          "line": 135,
+          "context": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists have reported anti-inflammator"
         }
       ],
       "mesh_terms": [],
@@ -11436,6 +11485,83 @@
         "27159554"
       ],
       "abstract_length": 1284
+    },
+    "37148899": {
+      "pmid": "37148899",
+      "title": "Switching to once-weekly insulin icodec versus once-daily insulin degludec in individuals with basal insulin-treated type 2 diabetes (ONWARDS 2): a phase 3a, randomised, open label, multicentre, treat-to-target trial.",
+      "journal": "Lancet Diabetes Endocrinol",
+      "year": "2023",
+      "doi": "10.1016/S2213-8587(23)00093-1",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "context": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Diabetes Mellitus, Type 2",
+        "Hypoglycemic Agents",
+        "Hypoglycemia",
+        "Treatment Outcome",
+        "Blood Glucose",
+        "Insulin, Long-Acting"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 3231
+    },
+    "37156252": {
+      "pmid": "37156252",
+      "title": "Switching to once-weekly insulin icodec versus once-daily insulin glargine U100 in individuals with basal-bolus insulin-treated type 2 diabetes (ONWARDS 4): a phase 3a, randomised, open-label, multicentre, treat-to-target, non-inferiority trial.",
+      "journal": "Lancet",
+      "year": "2023",
+      "doi": "10.1016/S0140-6736(23)00520-2",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "context": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Blood Glucose",
+        "Blood Glucose Self-Monitoring",
+        "Diabetes Mellitus, Type 2",
+        "Hypoglycemic Agents",
+        "Insulin Glargine",
+        "Treatment Outcome",
+        "Insulin, Long-Acting",
+        "Drug Substitution"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Equivalence Trial"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 2925
     },
     "37202589": {
       "pmid": "37202589",
@@ -11617,12 +11743,12 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 152,
+          "line": 164,
           "context": "A urine metabolomics study reported high diagnostic accuracy for biopsy-confirmed diabetic nephropathy. **NOTE: This fin"
         },
         {
           "file": "add_citations.py",
-          "line": 213,
+          "line": 225,
           "context": "- [x] Urine metabolomics: Jiang et al. Theranostics 2023 (PMID:37351171)"
         }
       ],
@@ -11647,6 +11773,53 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1859
+    },
+    "37354562": {
+      "pmid": "37354562",
+      "title": "Once-Weekly Insulin Icodec vs Once-Daily Insulin Degludec in Adults With Insulin-Naive Type 2 Diabetes: The ONWARDS 3 Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "year": "2023",
+      "doi": "10.1001/jama.2023.11313",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 101,
+          "context": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec met non-inferiority versus once-daily basal insulin acro"
+        }
+      ],
+      "mesh_terms": [
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Blood Glucose",
+        "Body Weight",
+        "Diabetes Mellitus, Type 2",
+        "Glycated Hemoglobin",
+        "Hypoglycemia",
+        "Hypoglycemic Agents",
+        "Treatment Outcome",
+        "Insulin, Long-Acting",
+        "Double-Blind Method",
+        "Aged"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Clinical Trial, Phase III",
+        "Equivalence Trial",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "37156252",
+        "37148899"
+      ],
+      "abstract_length": 2813
     },
     "37356445": {
       "pmid": "37356445",
@@ -11712,7 +11885,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 158,
+          "line": 170,
           "context": "An estimated 589 million adults worldwide had diabetes in 2021, with a projected 46% increase by 2050. [PMID:37356446, T"
         }
       ],
@@ -11754,8 +11927,13 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 95,
-          "context": "**Once-weekly insulin (Icodec):** Novo Nordisk's insulin icodec demonstrated non-inferiority to daily basal insulin in O"
+          "line": 103,
+          "context": "> **CORRECTED 2026-08-31 — a GOLD rating resting on a paper about something else.** Previously cited *[PMID:37356449, NE"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 103,
+          "context": "> **CORRECTED 2026-08-31 — a GOLD rating resting on a paper about something else.** Previously cited *[PMID:37356449, NE"
         }
       ],
       "mesh_terms": [
@@ -11839,7 +12017,22 @@
         {
           "file": "add_citations.py",
           "line": 83,
-          "context": "**Retatrutide (\"Triple G\"):** GLP-1/GIP/glucagon triple receptor agonist. In the TRIUMPH-4 Phase 2 trial, achieved 28.7%"
+          "context": "**Retatrutide (\"Triple G\"):** GLP-1/GIP/glucagon triple receptor agonist. In a phase 2, double-blind, placebo-controlled"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 85,
+          "context": "> **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *\"In the TRIUMPH-4 Phase 2 trial, ach"
+        },
+        {
+          "file": "add_citations.py",
+          "line": 85,
+          "context": "> **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *\"In the TRIUMPH-4 Phase 2 trial, ach"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 52,
+          "context": "'at 68 weeks. [PMID:37366315, JAMA, 2024]',"
         }
       ],
       "mesh_terms": [
@@ -11867,6 +12060,48 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 2497
     },
+    "37369232": {
+      "pmid": "37369232",
+      "title": "Efficacy and safety of oral orforglipron in patients with type 2 diabetes: a multicentre, randomised, dose-response, phase 2 study.",
+      "journal": "Lancet",
+      "year": "2023",
+      "doi": "10.1016/S0140-6736(23)01302-8",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 87,
+          "context": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
+        }
+      ],
+      "mesh_terms": [
+        "Male",
+        "Adult",
+        "Humans",
+        "Female",
+        "Middle Aged",
+        "Diabetes Mellitus, Type 2",
+        "Hypoglycemic Agents",
+        "Glucagon-Like Peptide-1 Receptor",
+        "Treatment Outcome",
+        "Glucagon-Like Peptides",
+        "Hypoglycemia",
+        "Body Weight",
+        "Double-Blind Method"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 3795
+    },
     "37385277": {
       "pmid": "37385277",
       "title": "The pursuit of optimal semaglutide dosing in type 2 diabetes continues.",
@@ -11879,8 +12114,13 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 85,
-          "context": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist. Once-daily pill with no food restrictions. FDA decision"
+          "line": 89,
+          "context": "> **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its \"peer-reviewed "
+        },
+        {
+          "file": "add_citations.py",
+          "line": 89,
+          "context": "> **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its \"peer-reviewed "
         }
       ],
       "mesh_terms": [
@@ -11897,6 +12137,46 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 0
+    },
+    "37385967": {
+      "pmid": "37385967",
+      "title": "Diabetes remission in drug-naïve patients with type 2 diabetes after dorzagliatin treatment: A prospective cohort study.",
+      "journal": "Diabetes Obes Metab",
+      "year": "2023",
+      "doi": "10.1111/dom.15179",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 89,
+          "context": "'- Note: PMID 37385967 found as reference to \"diabetes remission\" study '"
+        }
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Diabetes Mellitus, Type 2",
+        "Prospective Studies",
+        "Glycated Hemoglobin",
+        "Hypoglycemic Agents",
+        "Blood Glucose",
+        "Pyrazoles"
+      ],
+      "keywords": [
+        "dorzagliatin",
+        "glucokinase activator",
+        "remission",
+        "stable glycaemic control",
+        "time in range",
+        "&#x3b2;-cell function"
+      ],
+      "pub_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1937
     },
     "37428296": {
       "pmid": "37428296",
@@ -12344,6 +12624,30 @@
       ],
       "abstract_length": 823
     },
+    "38234567": {
+      "pmid": "38234567",
+      "title": "Retracted: Ginsenoside Rg1 Ameliorates Acute Renal Ischemia/Reperfusion Injury via Upregulating AMPKα1 Expression.",
+      "journal": "Oxid Med Cell Longev",
+      "year": "2024",
+      "doi": "10.1155/2024/9847476",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 71,
+          "context": "'Type 1 diabetes.\" Diabetes Care. 2024;47(3):456-468. PMID: 38234567.',"
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [
+        "Retraction Notice"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 55
+    },
     "38349844": {
       "pmid": "38349844",
       "title": "Evidence for C-Peptide as a Validated Surrogate to Predict Clinical Benefits in Trials of Disease-Modifying Therapies for Type 1 Diabetes.",
@@ -12388,8 +12692,13 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 125,
-          "context": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists demonstrate anti-inflammatory "
+          "line": 135,
+          "context": "In T2D, chronic low-grade inflammation drives insulin resistance. GLP-1 receptor agonists have reported anti-inflammator"
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 107,
+          "context": "'**Both are narrative reviews, not studies** [PMID:38578067, '"
         }
       ],
       "mesh_terms": [
@@ -12429,6 +12738,11 @@
       "has_fulltext": false,
       "pmcid": "",
       "dashboard_locations": [
+        {
+          "file": "audit_markdown_citations.py",
+          "line": 306,
+          "context": "\"- General diabetes drug cost-effectiveness (PMID 38639547) covers"
+        },
         {
           "file": "build_gap_deep_dives.py",
           "line": 482,
@@ -12503,6 +12817,11 @@
           "file": "build_gka_pricing.py",
           "line": 870,
           "context": "Data compiled from: Syed, Drugs 2022 (PMID:36449148); Zhu et al. Nat Med 2022 (PMID:35551294); Yang et al. Nat Med 2022 "
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 81,
+          "context": "'- General diabetes drug cost-effectiveness (PMID 38639547) covers SGLT2i '"
         }
       ],
       "mesh_terms": [
@@ -12600,6 +12919,7 @@
         "35551294",
         "35551292",
         "35551292",
+        "37385967",
         "37356446"
       ],
       "abstract_length": 1845
@@ -13034,12 +13354,12 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 182,
+          "line": 194,
           "context": "**Proteomic:** UK Biobank proteomics analysis identified 617 circulating proteins associated with T2D polygenic risk sco"
         },
         {
           "file": "add_citations.py",
-          "line": 214,
+          "line": 226,
           "context": "- [x] UK Biobank proteomics FAM3D: Loesch et al. Nat Commun 2025 (PMID:40032831)"
         }
       ],
@@ -13385,6 +13705,50 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 2645
     },
+    "40544435": {
+      "pmid": "40544435",
+      "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes.",
+      "journal": "N Engl J Med",
+      "year": "2025",
+      "doi": "10.1056/NEJMoa2505669",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 87,
+          "context": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Administration, Oral",
+        "Diabetes Mellitus, Type 2",
+        "Dose-Response Relationship, Drug",
+        "Double-Blind Method",
+        "Glucagon-Like Peptide-1 Receptor Agonists",
+        "Glycated Hemoglobin",
+        "Glycemic Control",
+        "Hypoglycemia",
+        "Oxadiazoles",
+        "Fluorine Compounds"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 2481
+    },
     "40573322": {
       "pmid": "40573322",
       "title": "In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kα Inhibitor-Induced Hyperglycemia.",
@@ -13397,8 +13761,13 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 93,
-          "context": "**Dorzagliatin:** First-in-class glucokinase activator that targets the glucose-sensing mechanism. Approved in China (20"
+          "line": 99,
+          "context": "> **CORRECTED 2026-08-31.** Previously cited *[PMID:40573322, Nature Medicine, 2022]*. That PMID is about dorzagliatin, "
+        },
+        {
+          "file": "test_markdown_citation_gate.py",
+          "line": 62,
+          "context": "'underway. [PMID:40573322, Nature Medicine, 2022]',"
         }
       ],
       "mesh_terms": [],
@@ -13923,6 +14292,52 @@
       ],
       "abstract_length": 1564
     },
+    "41765029": {
+      "pmid": "41765029",
+      "title": "Efficacy and safety of once-daily oral orforglipron compared with oral semaglutide in adults with type 2 diabetes (ACHIEVE-3): a multinational, multicentre, non-inferiority, open-label, randomised, phase 3 trial.",
+      "journal": "Lancet",
+      "year": "2026",
+      "doi": "10.1016/S0140-6736(26)00202-3",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "add_citations.py",
+          "line": 87,
+          "context": "**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in t"
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Administration, Oral",
+        "Diabetes Mellitus, Type 2",
+        "Drug Administration Schedule",
+        "Glycated Hemoglobin",
+        "Hypoglycemic Agents",
+        "Treatment Outcome",
+        "Glucagon-Like Peptide-1 Receptor Agonists",
+        "Fluorine Compounds",
+        "Oxadiazoles",
+        "Semaglutide"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Clinical Trial, Phase III",
+        "Randomized Controlled Trial",
+        "Comparative Study",
+        "Equivalence Trial"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 4218
+    },
     "41827917": {
       "pmid": "41827917",
       "title": "Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic Diabetes.",
@@ -13935,7 +14350,7 @@
       "dashboard_locations": [
         {
           "file": "add_citations.py",
-          "line": 115,
+          "line": 125,
           "context": "**Monogenic diabetes (MODY):** Remains significantly under-diagnosed. Precision genetic testing could redirect treatment"
         }
       ],
@@ -14131,6 +14546,75 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1637
     },
+    "41986815": {
+      "pmid": "41986815",
+      "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes.",
+      "journal": "Diabetologia",
+      "year": "2026",
+      "doi": "10.1007/s00125-026-06721-6",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 12,
+          "context": "4. P3 #37 CLOSED — PMID 41986815 resolved."
+        },
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 218,
+          "context": "'RESOLVE PMID 41986815': ("
+        },
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 461,
+          "context": "'PMID 41986815 resolved (P3 #37). The most valuable new paper, 42627334 '"
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 0
+    },
+    "42283716": {
+      "pmid": "42283716",
+      "title": "Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Participants Suggests Benign Side Effect Profile.",
+      "journal": "Diabetes Care",
+      "year": "2026",
+      "doi": "10.2337/dc26-0632",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 192,
+          "context": "f'PMID 42283716, Diabetes Care 2026 Aug 1. Found {TODAY}; the 2026-08-13 '"
+        }
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Diabetes Mellitus, Type 1",
+        "Immunotherapy",
+        "Female",
+        "Follow-Up Studies",
+        "Adult",
+        "Male",
+        "Hypoglycemia"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article"
+      ],
+      "cited_pmids_in_hub": [
+        "31180194",
+        "19940299",
+        "21719096"
+      ],
+      "abstract_length": 1122
+    },
     "42608595": {
       "pmid": "42608595",
       "title": "A multi-centre study of belatacept and sirolimus for islet transplantation.",
@@ -14206,6 +14690,72 @@
         "40544428"
       ],
       "abstract_length": 1953
+    },
+    "42627334": {
+      "pmid": "42627334",
+      "title": "β-Cell Function and Diabetes Outcomes 1 Year After Stopping Oral Baricitinib Immunotherapy for Type 1 Diabetes.",
+      "journal": "Diabetes Care",
+      "year": "2026",
+      "doi": "10.2337/dc26-1072",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 297,
+          "context": "'RE-FRAME BARICITINIB ON THE STRENGTH OF PMID 42627334 (Diabetes Care '"
+        }
+      ],
+      "mesh_terms": [],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1665
+    },
+    "42642774": {
+      "pmid": "42642774",
+      "title": "The effect of CoQ10 supplementation on cardiovascular risk factors in patients with prediabetes and type 2 diabetes mellitus: a grade-assessed systematic review and dose-response meta-analysis.",
+      "journal": "BMC Pharmacol Toxicol",
+      "year": "2026",
+      "doi": "10.1186/s40360-025-01002-1",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_run_2026_08_31.py",
+          "line": 342,
+          "context": "'DECIDE WHETHER CoQ10 (PMID 42642774) IS IN SCOPE. The hub is about '"
+        }
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Diabetes Mellitus, Type 2",
+        "Ubiquinone",
+        "Prediabetic State",
+        "Dietary Supplements",
+        "Heart Disease Risk Factors",
+        "Cardiovascular Diseases",
+        "Randomized Controlled Trials as Topic",
+        "Dose-Response Relationship, Drug",
+        "Risk Factors"
+      ],
+      "keywords": [
+        "Cardiovascular risk factors",
+        "CoQ10",
+        "Diabetic patients",
+        "Systematic review and meta-analysis"
+      ],
+      "pub_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 2007
     },
     "8024693": {
       "pmid": "8024693",
@@ -14586,7 +15136,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14626,7 +15176,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (glucose); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14661,7 +15211,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14710,7 +15260,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14752,7 +15302,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14789,7 +15339,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, hyperglyc); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14834,7 +15384,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, insulin, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14872,7 +15422,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -14915,7 +15465,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -14960,7 +15510,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15008,7 +15558,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15063,7 +15613,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -15093,7 +15643,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -15126,7 +15676,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glycem, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15160,7 +15710,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, retinopath); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15183,35 +15733,13 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, lada); needs human relevance review before counting as corpus.",
       "topic_hits": [
         "autoimmun",
         "diabet",
         "lada"
-      ]
-    },
-    "41986815": {
-      "pmid": "41986815",
-      "title": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes",
-      "journal": "Diabetologia",
-      "year": "Unknown",
-      "doi": "10.1007/s00125-026-06721-6",
-      "has_abstract": false,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [],
-      "mesh_terms": [],
-      "keywords": [],
-      "pub_types": [],
-      "index_provenance": "reconcile_paper_index.py",
-      "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
-      "corpus_status": "UNSCREENED_ORPHAN",
-      "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
-      "topic_hits": [
-        "diabet"
       ]
     },
     "41994768": {
@@ -15229,7 +15757,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15278,7 +15806,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-08-30",
+      "index_reconciled_on": "2026-08-31",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -15590,6 +16118,10 @@
         "35551292",
         "33622669"
       ],
+      "37354562": [
+        "37156252",
+        "37148899"
+      ],
       "37356445": [
         "33139407"
       ],
@@ -15621,6 +16153,7 @@
         "35551294",
         "35551292",
         "35551292",
+        "37385967",
         "37356446"
       ],
       "39412512": [
@@ -15708,6 +16241,11 @@
       ],
       "41827917": [
         "38078589"
+      ],
+      "42283716": [
+        "31180194",
+        "19940299",
+        "21719096"
       ],
       "42608595": [
         "10911004",
@@ -15855,6 +16393,7 @@
         "40650745",
         "41567805",
         "41827917",
+        "42283716",
         "8366922",
         "9867128"
       ],
@@ -15919,11 +16458,16 @@
         "36109742",
         "36449148",
         "36455116",
+        "37148899",
+        "37156252",
         "37223016",
         "37351171",
+        "37354562",
         "37356445",
         "37356446",
+        "37369232",
         "37385277",
+        "37385967",
         "37428296",
         "38578067",
         "38639547",
@@ -15936,9 +16480,12 @@
         "40111679",
         "40272935",
         "40464081",
+        "40544435",
         "40737658",
         "40982327",
+        "41765029",
         "41827917",
+        "42642774",
         "9357409",
         "9742976"
       ],
@@ -16034,19 +16581,24 @@
         "36109639",
         "36826844",
         "37105208",
+        "37354562",
         "37356446",
         "37366315",
+        "37369232",
         "39613428",
         "39634180",
         "39843169",
         "40032831",
         "40249888",
         "40544428",
+        "40544435",
         "40737658",
         "40898408",
         "41326666",
+        "41765029",
         "41827917",
         "41889274",
+        "42283716",
         "8366922",
         "9357409",
         "9742976"
@@ -16120,15 +16672,21 @@
         "35028608",
         "36113507",
         "36449148",
+        "37148899",
+        "37156252",
         "37366315",
+        "37369232",
         "37428296",
         "3899825",
         "39613428",
         "39843169",
         "40249888",
         "40544428",
+        "40544435",
         "40737658",
+        "41765029",
         "41889274",
+        "42283716",
         "8366922",
         "9357409"
       ],
@@ -16182,6 +16740,10 @@
         "35665810",
         "36449148",
         "37105208",
+        "37148899",
+        "37156252",
+        "37354562",
+        "37385967",
         "38783768",
         "3899825",
         "39613428",
@@ -16266,12 +16828,16 @@
         "37105208",
         "37217319",
         "37223016",
+        "37354562",
+        "37385967",
         "38578067",
         "38783768",
         "39613428",
         "39843169",
         "40111679",
         "40544428",
+        "40544435",
+        "41765029",
         "9742976",
         "9867128"
       ],
@@ -16465,16 +17031,21 @@
         "36826844",
         "37016949",
         "37105208",
+        "37148899",
+        "37156252",
         "37202589",
         "37217319",
         "37223016",
         "37351171",
+        "37354562",
         "37356445",
         "37356446",
         "37356449",
         "37359825",
         "37366315",
+        "37369232",
         "37385277",
+        "37385967",
         "37428296",
         "37748491",
         "37861217",
@@ -16497,14 +17068,18 @@
         "40366501",
         "40464081",
         "40544428",
+        "40544435",
         "40737658",
         "40898408",
         "40982327",
         "41326666",
         "41356006",
         "41567805",
+        "41765029",
         "41827917",
         "41889274",
+        "42283716",
+        "42642774",
         "8024693",
         "8366922",
         "8439348",
@@ -16645,14 +17220,18 @@
         "34256014",
         "35028608",
         "37105208",
+        "37354562",
+        "37369232",
         "3899825",
         "39613428",
         "39634180",
         "39843169",
         "40032831",
         "40544428",
+        "40544435",
         "40737658",
         "41326666",
+        "41765029",
         "41889274",
         "9357409",
         "9742976"
@@ -16705,13 +17284,16 @@
         "32862232",
         "33264825",
         "35028608",
+        "37354562",
         "37356446",
         "37909353",
         "39843169",
         "40032831",
+        "40544435",
         "40737658",
         "40898408",
         "41326666",
+        "41765029",
         "41889274",
         "9357409"
       ],
@@ -16720,7 +17302,8 @@
         "19133409",
         "31173679",
         "31263284",
-        "34021020"
+        "34021020",
+        "42642774"
       ],
       "Female": [
         "10919952",
@@ -16793,8 +17376,10 @@
         "36109639",
         "36826844",
         "37105208",
+        "37354562",
         "37356446",
         "37366315",
+        "37369232",
         "39613428",
         "39634180",
         "39843169",
@@ -16802,12 +17387,15 @@
         "40249888",
         "40366501",
         "40544428",
+        "40544435",
         "40650745",
         "40737658",
         "40898408",
         "41326666",
+        "41765029",
         "41827917",
         "41889274",
+        "42283716",
         "8024693",
         "8366922",
         "9357409",
@@ -16970,7 +17558,8 @@
         "32312859",
         "32862232",
         "39525461",
-        "41889274"
+        "41889274",
+        "42642774"
       ],
       "Creatinine": [
         "11565518",
@@ -17019,10 +17608,13 @@
         "35551292",
         "35551294",
         "36826844",
+        "37354562",
         "37366315",
+        "37369232",
         "37861217",
         "39613428",
         "39843169",
+        "40544435",
         "41326666"
       ],
       "Hypertension": [
@@ -17073,8 +17665,13 @@
         "35563495",
         "36449148",
         "36826844",
+        "37148899",
+        "37156252",
         "37202589",
+        "37354562",
+        "37369232",
         "37385277",
+        "37385967",
         "37861217",
         "38578067",
         "38639547",
@@ -17086,6 +17683,7 @@
         "40544428",
         "40898408",
         "40982327",
+        "41765029",
         "9742976"
       ],
       "Incidence": [
@@ -17125,6 +17723,7 @@
         "31296866",
         "35551307",
         "37356446",
+        "42642774",
         "9742976"
       ],
       "Weight Loss": [
@@ -17328,10 +17927,15 @@
         "35551292",
         "35551294",
         "37105208",
+        "37148899",
+        "37156252",
+        "37354562",
         "37366315",
+        "37369232",
         "39843169",
         "40111679",
         "41326666",
+        "41765029",
         "41889274",
         "8366922"
       ],
@@ -17610,6 +18214,7 @@
         "26404926",
         "32307525",
         "32627352",
+        "37385967",
         "9742976"
       ],
       "Time Factors": [
@@ -17658,6 +18263,7 @@
         "23835325",
         "30415610",
         "40544428",
+        "42283716",
         "8366922",
         "9357409"
       ],
@@ -17801,8 +18407,13 @@
         "26784127",
         "28118453",
         "37105208",
+        "37148899",
         "37223016",
-        "40544428"
+        "37354562",
+        "37369232",
+        "40544428",
+        "40544435",
+        "42283716"
       ],
       "B-Lymphocytes": [
         "18725575",
@@ -17819,7 +18430,8 @@
         "18843118",
         "29710129",
         "32754804",
-        "41567805"
+        "41567805",
+        "42283716"
       ],
       "Cytokines": [
         "19041189",
@@ -17829,6 +18441,12 @@
         "21867926",
         "28375156",
         "36109639"
+      ],
+      "Dose-Response Relationship, Drug": [
+        "19041189",
+        "27727279",
+        "40544435",
+        "42642774"
       ],
       "Neoplasms": [
         "19041189",
@@ -18016,7 +18634,8 @@
         "39613428",
         "40111679",
         "40982327",
-        "41889274"
+        "41889274",
+        "42642774"
       ],
       "Diabetic Neuropathies": [
         "21775755",
@@ -18051,7 +18670,8 @@
         "22683128",
         "26404926",
         "29754952",
-        "31173679"
+        "31173679",
+        "42642774"
       ],
       "Genetic Predisposition to Disease": [
         "22315720",
@@ -18200,6 +18820,7 @@
         "31177185",
         "33550442",
         "35665810",
+        "37156252",
         "39634180"
       ],
       "Insulin Infusion Systems": [
@@ -18236,12 +18857,15 @@
         "28199814",
         "2873396",
         "31173679",
-        "35180212"
+        "35180212",
+        "40544435",
+        "41765029"
       ],
       "Pyrazoles": [
         "28199814",
         "35551292",
-        "35551294"
+        "35551294",
+        "37385967"
       ],
       "Mice, Inbred NOD": [
         "28375156",
@@ -18269,11 +18893,18 @@
         "31157579",
         "37748491"
       ],
+      "Glucagon-Like Peptide-1 Receptor": [
+        "29617641",
+        "32712220",
+        "37369232"
+      ],
       "Glucagon-Like Peptide-1 Receptor Agonists": [
         "29617641",
         "38578067",
+        "40544435",
         "40898408",
-        "41356006"
+        "41356006",
+        "41765029"
       ],
       "Receptors, Chimeric Antigen": [
         "29710129",
@@ -18328,7 +18959,23 @@
       "Glycemic Control": [
         "35665810",
         "39634180",
-        "40464081"
+        "40464081",
+        "40544435"
+      ],
+      "Insulin, Long-Acting": [
+        "37148899",
+        "37156252",
+        "37354562"
+      ],
+      "Body Weight": [
+        "37354562",
+        "37369232",
+        "9867128"
+      ],
+      "Glucagon-Like Peptides": [
+        "37369232",
+        "37385277",
+        "38578067"
       ],
       "Calcium Channel Blockers": [
         "39613428",

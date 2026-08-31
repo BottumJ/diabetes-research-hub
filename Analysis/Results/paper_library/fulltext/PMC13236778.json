@@ -1,0 +1,1003 @@
+{
+  "pmcid": "PMC13236778",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Aims/hypothesis"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Although genome-wide association studies (GWAS) have identified loci associated with type 1 diabetes, the specific pathways and regulatory networks linking these loci to disease pathology remain largely unknown. We hypothesised that type 1 diabetes genetic risk factors disrupt tissue-specific biological pathways and gene networks that ultimately lead to beta cell loss."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Methods"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "We conducted a multi-tissue multi-omics analysis that integrates human GWAS data for type 1 diabetes with tissue-specific regulatory data for gene expression and gene network models across relevant tissues to highlight key pathways and key driver (KD) genes contributing to type 1 diabetes pathogenesis. KD genes were validated using islet-specific gene expression and protein data from non-obese diabetic (NOD) mice compared with type 2 diabetic and non-diabetic mouse models. Drug repositioning predictions were generated using the INCS L1000 and PharmOmics platforms, and candidate drugs were tested using electronic medical records (EMRs) of individuals with type 1 diabetes from the OneFlorida+ Clinical Data Network."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Results"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Our integrative genomics approach identified known immune pathways across multiple tissues, such as adaptive immune responses, cytokine-mediated inflammation, primary immunodeficiency, and interactions between lymphoid and non-lymphoid cells. Tissue-specific signals included genes related to type 2 diabetes in lymphocytes, viral response pathways in macrophages and monocytes, and Notch signalling in adipose tissue and immune cells. In pancreatic islet analysis, we observed significant enrichment for type 1 diabetes and type 2 diabetes gene sets alongside immune-related pathways, including antigen processing, systemic lupus erythematosus and IFN signalling. Removing HLA genes from the analysis revealed additional immune pathways, such as retinoic acid-inducible gene I (RIG-I)/melanoma differentiation-associated protein 5 (MDA5) induction of interferons, together with melanogenesis, steroid hormone synthesis and iron transport. Network modelling highlighted the autoimmune basis of disease, with KDs such as FYN, TAP1, WAS and HLA-B/C/G, as well as additional immunomodulatory proteins such as LCK, LCP2 and genes such as EMR1 and GC. These KDs were further supported by gene and protein expression data from NOD mice. We additionally highlight various drug classes that target the type 1 diabetes genetic networks and may be useful to delay type 1 diabetes development; some of these were supported by our EMR screen."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Conclusions/interpretation"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Our multi-tissue multi-omics approach provides a detailed landscape of the tissue-specific genetic networks and regulators underlying type 1 diabetes. This analysis confirms the roles of known immune pathways while uncovering additional regulatory elements and disease-associated networks, thus expanding our understanding of type 1 diabetes pathogenesis. The identification of potential drug candidates through network analysis, with supporting evidence from EMRs, offers potential therapeutic strategies for targeting disease pathways and holds promise for delaying or preventing type 1 diabetes progression."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Graphical Abstract"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Supplementary Information"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "The online version contains peer-reviewed but unedited supplementary material available at 10.1007/s00125-026-06721-6."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Introduction"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Type 1 diabetes is characterised as the autoimmune loss of pancreatic beta cells and resultant impairment of glucose homeostasis. Currently, type 1 diabetes affects approximately 8.5 million people globally, representing 5–10% of the total diabetic population, with an annual incidence increase of 2–3%. The risk of developing type 1 diabetes is increased by approximately 5.6% or 50%, respectively, for individuals with a parent or monozygotic twin who has the disease, when compared with the general population. Parental heritability estimates predict that diabetic fathers confer an increased risk of type 1 diabetes development of approximately 12%, while that for diabetic mothers is approximately 6%. Thus, there is a genetic component that predisposes an individual to type 1 diabetes. However, type 1 diabetes is not usually present in individuals with a family history, with only approximately 10% of individuals with type 1 diabetes having a first- or second-degree relative with the disease, thus also suggesting a significant environmental contribution. Interestingly, there seems to be an increased disposition for developing type 1 diabetes for individuals who live in regions of Northern Europe, independent of genetic background. This environmental contribution has several potential manifestations, such as alterations in gut microbiota or pre- and postnatal dietary factors, including early exposure to gluten and vitamin D deficiency. Furthermore, a longstanding hypothesis predicts that exposure to viral infection may also be a causal factor, particularly exposure to enteroviruses, which appear to target pancreatic islet cells. Therefore, both genetic and environmental components contribute to type 1 diabetes incidence and progression, but there is a large gap in understanding the complex genetic and environmental architectures as well as the interaction between the two. It is plausible that genetic risks represent ‘first hits’ and environmental factors act as ‘second hits’, interacting with genetic predisposition to trigger type 1 diabetes development."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "On the genetic front, genome-wide association studies (GWAS) have uncovered over 60 type 1 diabetes genetic risk loci. The main genes that predispose an individual to type 1 diabetes are located within the HLA region on chromosome 6, encoding the major histocompatibility complex (MHC), which is critical for adaptive immunity. While HLA-encoding genes have the strongest association and account for up to 50% of the total genetic type 1 diabetes risk, loci outside the HLA region, including genes encoding protein tyrosine phosphatase, non-receptor type 22 (PTPN22), IL-2 receptor alpha (IL2RA), the insulin gene (INS) and cytotoxic T-lymphocyte-associated protein 4 (CTLA4), have also been shown to be associated with disease development. However, these top loci at genome-wide significance cannot fully explain the total genetic heritability of type 1 diabetes. Moreover, the dominance of the HLA effect may overshadow additional unknown and important processes contributing to type 1 diabetes pathogenesis, with or without interactions with environmental factors. Identifying the missing genetic risks, or the ‘dark matter’, is important to gain a full understanding of the genetic underpinnings of type 1 diabetes pathogenesis. In addition, growing lines of evidence support an ‘omnigenic’ disease model, which states that a large proportion of genes in the genome may contribute to disease development through gene–gene interactions in networks within and between tissues, and key network regulators probably play more central roles than other peripheral disease-associated genes in the networks. In support of this, top GWAS loci for complex diseases have been found to be more concentrated in the periphery of gene networks and are less likely to be network regulators. Therefore, simply focusing on the top GWAS hits will probably miss crucial regulatory genes. We hypothesised that type 1 diabetes genetic risks with a wide spectrum of effect size interact and perturb tissue-specific gene networks through a select set of regulatory genes, resulting in variations in type 1 diabetes susceptibility."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Overview of the study. We integrated diverse datasets using the Mergeomics framework to identify and prioritise therapeutic targets and drugs for type 1 diabetes (T1D). We collected and processed type 1 diabetes GWAS SNPs, mapping them to genes using tissue- and cell-specific eQTLs. The mapped genes were linked to canonical pathways (KEGG, Reactome, BioCarta and GWAS Catalog) and tissue-specific co-expression modules, with overlapping pathways and modules merged and refined to reduce redundancy. We then implemented KDA using tissue-specific GRNs, including PPI and Bayesian networks, to identify KD genes. These KDs were validated in silico using the Attie Lab Diabetes Database by comparing NOD mice with mouse models of type 2 diabetes and without diabetes. Drug repositioning was performed using PharmOmics to identify drugs targeting the KD genes, and candidate drugs were further evaluated in silico using EMRs from the OneFlorida+ Clinical Research Network for evidence of improvement in C-peptide levels in individuals with type 1 diabetes"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Integration of GWAS data with functional genomics information such as tissue-specific expression quantitative trait loci (eQTLs) and gene networks has proven to be a powerful tool to pinpoint genes and their associated pathogenic mechanisms and regulators within the context of specific tissues. In this study, we use a computational pipeline, Mergeomics (Fig. 1) to integrate type 1 diabetes GWAS with tissue-specific functional information, such as the genetics of gene expression and gene regulatory networks (GRNs), from a broad range of type 1 diabetes relevant tissues or cell types. By understanding how type 1 diabetes genetic risks affect gene networks within and across tissues, and by identifying key regulators, our study offers comprehensive insights into type 1 diabetes pathogenesis, and helps to prioritise regulators and potential therapeutic strategies."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Overview of study design"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "As shown in Fig. 1, we first assessed which biological pathways were enriched for type 1 diabetes GWAS signals between type 1 diabetes and control individuals from two independent cohorts (see below). We used the full GWAS summary statistics for single nucleotide polymorphisms (SNPs) filtered by r2 >0.7 (see electronic supplementary material [ESM] Methods)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "To identify tissue-specific pathways or gene networks associated with type 1 diabetes GWAS SNPs, we used tissue-specific eQTLs to guide SNP-to-gene mapping for each tissue. This analysis included a total of 18 eQTL sets from the GTEx database, the Cardiogenics Consortium and the DICE study, and pancreatic islet-specific eQTLs. The genes mapped to the GWAS SNPs through each tissue-specific eQTL set were analysed against biological pathways based on literature-based functional categories and tissue-specific gene co-expression network modules that define data-driven functional gene sets, using marker set enrichment analysis (MSEA) from Mergeomics (XiaYangLabOrg GitHub repository: https://github.com/XiaYangLabOrg/mergeomics, accessed 01 March 2025). This approach identifies functionally related gene sets based on gene expression patterns, and has previously helped to derive novel biological insights into various diseases. Integration of type 1 diabetes GWAS, tissue-specific eQTLs, and pathways and co-expression modules using MSEA reveals pathways and modules that are enriched for stronger genetic associations with type 1 diabetes compared with random gene sets. To prioritise the tissues on which to focus the downstream analysis, we used the tissues that had the highest number of significantly enriched pathways (false discovery rate [FDR] <5%), as these tissues probably play a more important role in type 1 diabetes pathogenesis, as informed by the GWAS and eQTL data."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "After the MSEA, we carried out a meta-MSEA to meta-analyse the two independent GWAS datasets to look for shared pathways/modules, which we further simplified into independent ‘supersets’ to reduce redundancy between similar pathways/modules. To identify regulatory genes of these supersets, we mapped them to GRNs and protein–protein interaction (PPI) networks to identify key drivers (KDs) using key driver analysis (KDA). KDs are central network genes whose network neighbours are highly enriched for genes in the type 1 diabetes pathways/modules. We further carried out in silico validation using curated islet gene expression and protein data from eight strains of mice to highlight whether our KDs showed significantly higher/lower expression at the mRNA and/or protein level in non-obese diabetic (NOD) mice, a spontaneous autoimmune type 1 diabetes model, compared with control strains."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Lastly, we used our KDs as input into the LINCS L1000 perturbational gene expression database and PharmOmics to highlight potential drug candidates for type 1 diabetes treatment. Drugs were prioritised based on matching of type 1 diabetes KDs across multiple tissues with drug signatures, and predicted drugs were further validated by assessing changes in C-peptide levels in individuals with type 1 diabetes using electronic medical records (EMRs) from the OneFlorida+ Clinical Data Network (see below)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "No ethics permission is required for this study."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Type 1 diabetes GWAS datasets"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The summary statistics of GWAS for type 1 diabetes were obtained from the JDRF/Wellcome Diabetes and Inflammation Laboratory, University of Oxford, UK. The study comprised 5913 type 1 diabetes individuals of European descent, comprising 3983 from the UK GRID who were genotyped using the Illumina HumanHap550 version 3 (550k) Infinium Beadchip, and 1930 from the WTCCC who were genotyped using Affymetrix 500K. There were a total of 8828 control individuals, comprising 3999 from the 1958 birth cohort who were genotyped using the Illumina HumanHap550 version 3 (550k) Infinium Beadchip, 1490 who were genotyped using Affymetrix 500K (1958 birth cohort), 1455 from the UK Blood Services (UKBS) who were genotyped using Affymetrix 500K, and 1884 from a cohort of people with bipolar disorders who were genotyped using Affymetrix 500K."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The above type 1 diabetes and control individuals were partitioned into two independent cohorts based on matching genotyping platforms: cohort 1 (Affymetrix) comprised 1930 individuals with type 1 diabetes and 4829 control individuals; cohort 2 (Illumina) comprised 3983 individuals with type 1 diabetes and 3999 control individuals (see ESM Methods)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Mapping SNPs to genes"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "To link GWAS SNPs to their potential target genes, tissue-specific eQTLs were used to provide functional insight for the role of SNPs in gene expression regulation within a given tissue. Thirteen eQTL sets were obtained from the GTEx database (subcutaneous adipose tissue, visceral omentum adipose tissue, blood, brain, colon, heart, liver, lymphocyte, muscle, pancreas, pituitary, spleen and stomach). Additionally, we obtained macrophage and monocyte eQTLs from the Cardiogenics Consortium, pancreatic islet-specific eQTLs from various sources, and immune cell eQTLs including lymphocytes from the DICE study. In addition, we incorporated beta cell eQTLs from the InsPIRE Consortium at FDR <5% to increase cell-type resolution within the islet. We additionally queried for type 1 diabetes-specific islet eQTLs; however, type 1 diabetes-stratified datasets were either unavailable or underpowered. A broader spectrum of tissues was considered at this step to help objectively infer which tissues may be more informative for type 1 diabetes association. GWAS results containing summary statistics for SNP to disease associations were mapped to each tissue eQTL set separately to derive individual SNP–gene mapping sets reflecting tissue origins to allow assessment of tissue-specific signals."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "A high degree of linkage disequilibrium (LD) was observed in the eQTL data, which may cause biases in the downstream analysis. For this reason, we removed redundant SNPs that had LD of r2 >0.7 with a chosen SNP (details in ESM Methods)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Data-driven modules of co-expressed genes"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "In order to assess whether type 1 diabetes GWAS signals are enriched in specific gene subnetworks, we derived gene co-expression networks using tissue-specific transcriptomic datasets from the GTEx portal, including subcutaneous adipose tissue, visceral omentum adipose tissue, blood and pancreas datasets. These tissues were chosen because of their relevance to type 1 diabetes. The WGCNA package was used to construct co-expression networks based on gene expression profiles. Each tissue network contains multiple ‘modules’, and each module comprises tens to hundreds or thousands of genes that show co-expression. A total of 272 co-expression modules were curated."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Knowledge-based biological pathways"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We used a total of 1827 canonical pathways from Reactome (version 45), the BioCarta database and the Kyoto Encyclopedia of Genes and Genomes (KEGG) database. In addition to the knowledge-based pathways, we constructed a type 1 diabetes positive control gene set based on candidate causal genes curated in the GWAS Catalog (p<5.0 × 10−8). Similar control gene sets for coronary heart disease, type 2 diabetes and height were also constructed to compare with the type 1 diabetes positive control set. Non-HLA pathways included all 1827 canonical pathways with HLA genes removed."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Marker set enrichment analysis"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "To identify co-expression modules and pathways that show evidence for genetic association with type 1 diabetes, we applied MSEA within the Mergeomics package to each of the GWAS cohorts separately in conjunction with the eQTL sources. MSEA employs a χ2-like statistic with multiple quantile thresholds to assess whether a co-expression module or pathway shows enrichment of functional disease SNPs (i.e. those that are likely to regulate gene expression as captured in eQTLs) compared with random chance. The Benjamini–Hochberg FDR was estimated across all co-expression modules and pathways tested for each GWAS. Gene sets were statistically significant if FDR <5% in at least one SNP–gene mapping set. To evaluate gene sets across both GWAS studies, we performed a meta-analysis at the module/pathway level using the meta-MSEA function in Mergeomics, to retrieve robust gene sets across both cohorts. Merging of overlapping pathways/co-expression modules into supersets was performed to reduce redundancy (see ESM Methods)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Tissue-specific GRNs and KDA"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Tissue-specific Bayesian GRNs of adipose tissue, blood, islet and pancreas tissue were previously constructed, and PPI networks were obtained from the STRING database. We additionally constructed a beta cell GRN using RIMBANet based on beta cell-enriched expression data, integrating transcription factor priors and beta cell cis-eQTLs. We chose to focus on these tissue networks due to our MSEA results showing the strongest statistical significance for these tissues. Using these networks, we performed a KDA in Mergeomics to identify potential KDs whose network neighbours are enriched for genes within the type 1 diabetes-associated supersets uncovered by MSEA. The algorithm employed a χ2 -like statistic similar to that described for MSEA, and an FDR <5% was used to focus on top robust KDs."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "In silico validation of KDs"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "To determine the relevance of the KDs to type 1 diabetes, we examined the islet RNA sequencing and proteomics profiles from the Attie Lab Diabetes Database (http://diabetes.wisc.edu) generated from eight genetically diverse Collaborative Cross founder mouse strains, including NOD/ShiLtJ (NOD), a mouse model that spontaneously develops autoimmune diabetes; NZO/HlLtJ (NZO), a type 2 diabetic/obesity-associated diabetic strain; and A/J, 129S1/SvImJ (129), C57BL/6J (B6), CAST/EiJ (CAST), PWK/PhJ (PWK) and WSB/EiJ (WSB), which are non-diabetic strains. Starting at 4 weeks of age, the mice were placed on a Western-style diet high in fat and sucrose for 16 weeks. Most strains were euthanised at 20–22 weeks, except for NZO male mice, which were euthanised at 14 weeks. All groups remained euglycaemic except the NZO male mice, which were hyperglycaemic. We used Student’s t test on the RNA and protein expression levels for prioritised KDs between the NOD mice and B6 mice to evaluate significant differences."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We also incorporated data from a previously published study that compared pancreatic islet gene expression profiles between prediabetic 2–3-week-old NOD mice and non-obese resistant (NOR) mice using a microarray. NOR mice serve as a diabetes-free, MHC II-matched control strain for NOD mice. A total of 213 differentially expressed genes (DEGs) between NOD and NOR islets were obtained from this study and cross-referenced with the islet PPI network KDs and their neighbours to assess overlap."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Drug repositioning"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We used the online web tool LINCS L1000 to match compounds and drugs with our type 1 diabetes KDs of individual tissues. We collated all compounds and drugs that matched with each KD list at a median tau score of ≥90 on the LINCS L1000 database, and then calculated the absolute mean for the median tau scores across blood (which includes macrophages and monocytes), lymphocytes, pancreas, pancreatic islets, and non-HLA analysis to identify the drugs/compounds whose gene signatures best matched each of our KD networks."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We also used PharmOmics for drug repurposing, focusing on the KDs from islets, adipose tissue, blood, lymphocytes, macrophages, monocytes and pancreas. Drugs with gene signatures matching the KDs were filtered by significance (p<0.05), and the top 100 drugs for each tissue were selected."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "In silico drug validation"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "As the directionality of drug effects relative to disease signatures was not inferred directly, subsequent validation was pursued using EMRs from the OneFlorida+ Clinical Data Network. Individuals with type 1 diabetes aged 18 years and over were identified using ICD-10 code E10 and ICD-9 codes 250.01 and 250.03. The cohort included 72,274 individuals with type 1 diabetes, of whom 55.71% were female and 44.29% were male, with a mean birth year of 1967 (SD=17.3 years; median 1965). The racial composition of the cohort was 55.84% White, 29.85% Black or African American, 1.35% Asian, 0.21% American Indian or Alaska Native, 0.05% Native Hawaiian or other Pacific Islander, and 0.26% multiracial, with 2.26% classified as other, 0.29% refusing to answer, 0.14% with no information, and 9.10% unknown. Our analysis focused on C-peptide measurements (nmol/l). For each drug identified in the drug repositioning analysis, we determined the treatment duration based on the earliest recorded start date and the latest end date, and only included drugs taken for at least 30 days. We then calculated the mean C-peptide levels before and after drug use, with ‘before’ defined as 6 months, 1 year, or 2 years prior to treatment initiation, and ‘after’ defined as the corresponding periods following treatment cessation. A one-sided paired t test and corresponding confidence interval were used to identify drugs that significantly increased C-peptide levels (p<0.05) in individuals with type 1 diabetes. A minimum of five individuals per drug was required for analysis."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Identification of consistent and divergent canonical pathways and gene co-expression modules associated with type 1 diabetes across cohorts and tissues"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We first assessed which knowledge-based biological (canonical) pathways and data-driven gene co-expression modules were enriched for type 1 diabetes GWAS signals. The use of tissue-specific eQTLs served to guide SNP-to-gene mapping and to capture tissue-specific results. From the 18 eQTL sets used, we prioritised seven tissues as the most informative in terms of how many pathways/modules showed significant enrichment for type 1 diabetes GWAS signals at FDR <5% based on MSEA, and their biological relevance to type 1 diabetes: blood, lymphocytes, macrophages, monocytes, pancreas, subcutaneous adipose tissue and visceral omentum adipose tissue. We therefore focus on reporting the results from these seven informative tissues only, with results for other tissues serving to supplement the main results."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Enriched canonical pathways and co-expression modules for both type 1 diabetes GWAS cohorts. (a) The independent and overlapping knowledge-driven biological pathways (derived from KEGG, BioCarta, GWAS Catalog and Reactome) for both cohorts (FDR <5%). (b) Independent and overlapping data-driven co-expression modules (derived from WGCNA) for both cohorts (FDR <5%). T1D, type 1 diabetes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Out of the 1827 curated canonical pathways, we identified 187 pathways from cohort 1 enriched for type 1 diabetes GWAS association at an FDR <5% in at least one of the seven chosen tissues (ESM Table 1). From cohort 2, we found a total of 143 pathways enriched for type 1 diabetes GWAS association at an FDR <5% (ESM Table 2). Between cohort 1 and cohort 2, 121 pathways were significant in both (overlap fold enrichment =8.27, Fisher’s exact test p=5.84 × 10−116), 66 were unique to cohort 1, and 22 were unique to cohort 2 (Fig. 2a). The significant overlap in the enriched pathways across cohorts suggests reproducibility. We then used meta-MSEA to confirm significance across datasets (Fig. 2a). The shared pathways were mainly related to immune processes and the type 1 diabetes positive control gene set containing top type 1 diabetes hits from the GWAS Catalog (ESM Table 3). Unique pathways for cohort 1 included influenza/HIV infection, nuclear envelope breakdown and transport of mature mRNA. Unique pathways for cohort 2 included purine metabolism, inositol phosphate metabolism and RNA degradation."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We generated 272 data-driven gene co-expression modules from individual tissues from the GTEx transcriptomic database using WGCNA, with which we integrated the cohort 1 and cohort 2 type 1 diabetes GWAS datasets. Cohort 1 showed enrichment in a total of 36 unique modules (FDR <5%) in at least one tissue (ESM Table 4), while cohort 2 showed significance in 38 modules (FDR <5%) (ESM Table 5). We found 31 modules that overlapped between the two cohorts (overlap fold enrichment =6.16, Fisher’s exact test p=6.76 × 10−29), including those associated with immune pathways, such as interferon signalling and cytokine signalling. We also identified five unique modules from cohort 1 (e.g. Akt signalling, complement pathway and ion transport) and seven unique modules from cohort 2 (e.g. cytosine production/response, mTOR pathways and extracellular matrix organisation) (Fig. 2b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To assess the reproducibility of pathway enrichment within tissues, we compared the pathways identified in each tissue across cohort 1 and cohort 2 (ESM Fig. 1). All tissues demonstrated statistically significant overlap in the identified pathways between cohorts (p<0.05 by Fisher’s exact test), again supporting reproducibility."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We further assessed tissue specificity vs systemic changes in the significant canonical pathways and co-expression modules in both cohorts (ESM Table 6 for cohort 1 and ESM Table 7 for cohort 2). We found that monocytes, lymphocytes and blood contributed distinct processes. In contrast, macrophages, subcutaneous adipose tissue, visceral adipose tissue and pancreas were dominated by shared pathways. In addition, we found largely confirmatory results with the other tissue types tested across both cohorts (ESM Table 8 for cohort 1 and ESM Table 9 for cohort 2)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Merging of pathways and co-expression modules into independent supersets"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Top pathways associated with type 1 diabetes identified across multiple tissues at an FDR <5%"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Supersets\tSuperset gene number\tTissuesa\tPathways\t \tType 1 diabetes positive control\t60\t1, 2, 3, 4, 5, 6, 7\tPositive control gene set for type 1 diabetes\t \tS1: complement cascade\t75\t1, 2, 3, 4, 6, 7\tComplement cascade; initial triggering of complement\t \tS2: HIV infection\t222\t2, 3, 4, 6\tHIV infection; host interactions of HIV factors\t \tS3: signalling by Notch\t122\t1, 2, 3, 6, 7\tSignalling by Notch; pre-Notch transcription and translation; pre-Notch expression and processing\t \tS4: protein folding\t53\t1, 2, 4, 5, 6, 7\tProtein folding; chaperone-mediated protein folding; association of TriC/CCT with target proteins during biosynthesis\t \tS5: signalling by the B cell receptor\t170\t3, 4, 6, 7\tSignalling by the B cell receptor; downstream signalling events of the B cell receptor\t \tS6: RNA polymerase I, RNA polymerase III and mitochondrial transcription\t95\t3, 4, 6\tRNA polymerase I, RNA polymerase Iii and mitochondrial transcription; RNA polymerase I transcription; RNA polymerase I promoter clearance; RNA polymerase I chain elongation\t \tS7: RNA polymerase II transcription elongation\t43\t3, 4\tRNA polymerase II transcription elongation; Tat-mediated elongation of the HIV-1 transcript; formation of the HIV elongation complex in the absence of HIV Tat; formation of the HIV-1 elongation complex containing HIV-1 Tat; formation of the RNA polymerase II elongation complex\t \tS8: adaptive immune system\t197\t1, 3, 4, 6, 7\tAdaptive immune system; class I MHC-mediated antigen processing and presentation\t \tS9: tRNA aminoacylation\t46\t1, 2, 3, 4, 5, 7\ttRNA aminoacylation; aminoacyl-tRNA biosynthesis; mitochondrial tRNA aminoacylation\t \tS10: M phase\t161\t3, 4\tMitotic M–M/G1 phases; mitotic metaphase and anaphase; cell cycle; cell cycle, mitotic; M phase; mitotic anaphase\t \tS11: signalling by GPCR\t230\t2, 4, 6\tSignalling by GPCR; GPCR downstream signalling; GPCR ligand binding\t \tS12: GABA receptor activation\t54\t1, 2, 4, 6\tGABA receptor activation; activation of GABA B receptors; activation of GABA B receptors\t \tS13: S phase\t156\t2, 3, 4, 6, 7\tS phase, mitotic G1–G1/S phases; cell-cycle checkpoints; DNA replication, G1/S transition; synthesis of DNA, M/G1 transition; DNA replication pre-initiation; regulation of mitotic cell cycle; APC/C-mediated degradation of cell-cycle proteins; regulation of APC/C activators between G1/S and early anaphase"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "aTissue codes are: 1, blood; 2, macrophage; 3, monocyte; 4, pancreas; 5, subcutaneous adipose tissue; 6, visceral omentum adipose tissue; 7, lymphocyte"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Tissue-specific meta-MSEA results from the combined cohort 1 and cohort 2 datasets for the supersets derived from the canonical pathways and co-expression network modules. (a) Heatmap for the statistical significance of type 1 diabetes genetic association across the supersets derived from the canonical pathways (KEGG, BioCarta and Reactome) (FDR <5%) in tissue-specific and cross-tissue analyses. (b) Heatmap for the statistical significance of type 1 diabetes genetic association across the superset-derived co-expression modules (WGCNA) (FDR <5%) in tissue-specific and cross-tissue analyses. ‘Trend only’ signifies that the given WGCNA module label did not pass an FDR<0.05 but was labelled with the most highly ranked pathway label match. Sub., subcutaneous; Vis., visceral; T1D, type 1 diabetes; T2D, type 2 diabetes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We focused on the 152 shared significant gene sets uncovered in our meta-analysis between cohort 1 and cohort 2 (31 co-expression modules and 121 canonical pathways) as they reflect reproducible signals for type 1 diabetes genetic association (Fig. 2a, b). As the co-expression modules and pathways were obtained from various sources, the gene sets had the potential to share a high number of overlapping gene members. We found that 92 of the 152 significant gene sets shared gene members with at least one other gene set. To reduce redundancy, we merged the 92 overlapping gene sets into 13 independent supersets (Table 1). Interestingly, the canonical pathways tended to merge with canonical pathways, and co-expression modules tended to merge with co-expression modules, suggesting that the two types of gene sets exhibited different biological properties. The supersets represented diverse biological pathways, including the adaptive immune system, complement cascade, cell cycle, viral infection, protein folding, RNA polymerase I/III, signalling by GPCR, signalling by Notch, activation of the GABA B receptor, B cell receptor signalling, and tRNA aminoacylation. The other 60 non-overlapping gene sets were kept intact, giving a total of 73 non-overlapping supersets. We ran a second round of MSEA to confirm that all 73 non-overlapping supersets, including 44 supersets derived from canonical pathways (Fig. 3a and ESM Table 10) and 29 from co-expression modules (Fig. 3b), retained statistical significance in our combined cohort 1 and cohort 2 datasets. Across the studied tissues, immune and cell cycle-related processes were consistently enriched, particularly in monocytes, macrophages, lymphocytes, blood, adipose tissue and pancreas."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Pathways and co-expression modules based on pancreatic islet eQTLs were highly consistent between the two cohorts"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Statistically significant pancreatic islet MSEA results (FDR <0.05) from the cohort 1 and cohort 2 datasets for the canonical pathways and co-expression network modules in (a) pancreatic islet tissue-specific analyses, and (b) pancreatic islet non-HLA tissue-specific analyses for each cohort independently. ‘Trend only’ signifies that the given WGCNA module label did not pass an FDR<0.05 but was labelled with the most highly ranked pathway label match"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "As the pancreatic islet is the primary site of destruction in type 1 diabetes pathogenesis, we investigated this tissue separately to capture the unique perturbed pathways. From the 1827 canonical pathways and the 272 co-expression modules we evaluated, we found a total of eight pathways to be significant in cohort 1 (ESM Table 11) and 16 to be significant in cohort 2 (ESM Table 12). The eight pathways uncovered in cohort 1 included antigen presentation, calcium signalling, metabolism, transcriptional control and the type 1 diabetes positive control gene set. All of these pathways were significant in cohort 2 with stronger statistical significance. The eight pathways that were unique to cohort 2 included genes associated with coronary heart disease, immune pathways, height and insulin receptor signalling. We note that it is important to interpret pathway labels with caution. For example, the height pathway contains many immune or growth factor signalling genes that are relevant to type 1 diabetes pathogenesis. Given the smaller population size of cohort 1 and the limited availability of islet eQTL expression data (which reduce statistical power), we kept all 16 pathways uncovered in cohort 2 in our downstream analysis (including the eight pathways replicated in cohort 1) (Fig. 4a)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To gain further cell-type insight, we curated beta cell eQTLs and repeated the MSEA (ESM Table 13). In both cohorts, no pathways reached significance at FDR <5% (ESM Table 14). The absence of significant signals probably reflects the limited number of beta cell eQTLs, which is attributable to the small sample size of the beta cell eQTL dataset (n=26 donor samples)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The effect of removal of HLA genes on biological pathways and modules enriched for type 1 diabetes GWAS signals"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "As most of the known biology involved in type 1 diabetes pathogenesis is concerned with the MHC region, specifically the class I and II (HLA) genes, we hypothesised that these genes may overshadow additional important processes involved in disease pathology. We therefore performed an additional MSEA analysis that excluded the HLA genes from the 1872 canonical pathways and 272 co-expression modules."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We first examined the non-HLA MSEA results for pancreatic islets in cohort 1 and cohort 2, identifying nine significant pathways/modules in cohort 1 (ESM Table 15) and five significant pathways/modules in cohort 2 (ESM Table 16), with three that overlapped between cohorts: metabolism of lipids, antigen processing and presentation, and the positive control gene set for type 1 diabetes (Fig. 4b). Other significant pathways in cohort 1 included apoptosis, the cell cycle and immune-related pathways (e.g. the HIV pathway, cytokine receptor interaction, and chemokine receptor binding). The two unique pathways in cohort 2 were systematic lupus erythematosus and pathogenic Escherichia coli infection."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We then focused our non-HLA MSEA analysis on the seven informative tissues (blood, lymphocytes, macrophages, monocytes, pancreas, subcutaneous adipose tissue and visceral omentum adipose tissue). We found a total of 166 gene sets to be significant (FDR<5%) in both cohort 1 (ESM Table 15) and cohort 2 (ESM Table 16); these were also significant in meta-MSEA across both cohorts. After using our merging algorithm to reduce redundancy, we discovered a total of 64 non-overlapping supersets (ESM Table 17). Comparing these supersets to the 73 non-overlapping supersets in our results from the HLA inclusion analysis above, we observed that 39 supersets were preserved when HLA genes were removed. These include immune pathways (e.g. the adaptive immune system, cytokine signalling, and signalling by B cell receptors), insulin signalling, tRNA aminoacylation, apoptosis, protein folding and the complement cascade."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Number of preserved and gained pathways after removing the ‘HLA effect’. (a) Number of gained vs preserved pathways (FDR<5%). (b) Heatmap for gained pathways for both cohort 1 and cohort 2 above the grey cells (FDR<5%), and the pathways that were significant (FDR<5%) in either cohort 1 or cohort 2 but not both"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Importantly, removal of HLA genes uncovered 25 unique supersets that were absent in our HLA inclusion results (ESM Table 17). These supersets included immune-related pathways such as antigen processing and RIG-I/MDA5 induction of IFN pathways, together with more diverse pathways including melanogenesis, steroid hormone biosynthesis, iron uptake and transport, and the role of mitochondria in apoptotic signalling (Fig. 5)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Identification of central regulators for type 1 diabetes via a KDA"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Bayesian GRNs. Combined immune-tissue GRN (blood, macrophages, monocytes, lymphocytes) inferred using a Bayesian ensemble (RIMBANet) with tissue-matched expression, transcription factor/motif priors and cis-eQTL anchors. Blue circles indicate p<5×10–6 in GWAS; a larger node size indicates a KD gene; coloured nodes represent member genes; edge connections between nodes highlight the specific cell/tissue that the connections are relevant to (green: lymphocyte, orange: macrophage/monocyte, grey: blood, monocyte, macrophage and lymphocyte)"
+    },
+    {
+      "section_type": "FIG",
+      "text": "PPI networks. (a) Islet PPI network constructed from genes in islet-enriched pathways (MSEA, FDR<0.05) and high-confidence curated physical interactions. Edges are undirected PPIs; node size reflects connectivity degree. (b) Lymphocyte PPI network built as in (a), highlighting immune signalling hubs (e.g. LCK, FYN, CRKL, SOS1/2, STAT5) and modules for GPCR signalling, mRNA metabolism, natural killer cell cytotoxicity and signal transduction. Blue circles indicate p<5×10–6 in GWAS; a larger node size indicates a KD gene; grey nodes represent non-member genes (not derived from GWAS data); coloured nodes represent member genes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To identify central regulatory genes of the type 1 diabetes-associated gene sets uncovered by MSEA, we performed a KDA to identify KDs whose network neighbours are enriched for the type 1 diabetes-associated gene sets using PPI and tissue-specific Bayesian GRNs (Figs 6 and 7, and ESM Fig. 2)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Gene regulatory networks"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We first used the islet Bayesian network due to the importance of islets in type 1 diabetes. As the islet network is sparser than the other tissue networks, probably due to the smaller sample size of available islet datasets and the highly specialised transcriptional programmes of islet cells compared with more heterogeneous tissues, we also used a combined network for islets and the hypothalamus (due to their similarity in expression patterns to those of the islet). The islet-specific network highlighted KD candidates including TREM2, LY86 and C1QC under antigen processing and presentation, and PARP14 and PSMB8, which are related to IFN signalling. These KDs were also present in the combined hypothalamic/islet network, but additionally we found KDs such as CTSS (involved in inflammation and antigen presentation), CFB (associated with the complement and coagulation cascade) and RTP4 (under antigen processing and presentation) in the combined network (ESM Fig. 2a)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Next, focusing on the other informative tissues outside of the islet, we found a total of 348 unique KDs from our Bayesian network across the adipose tissue, blood, macrophage, monocyte, lymphocyte, and pancreas networks (FDR <5%) (ESM Table 18). To focus on the most central regulators, we chose the top five ranked KDs satisfying an FDR <5% for each type 1 diabetes-associated superset in each tissue-specific network. Among these, 17 were shared among at least two supersets and two KDs (RPS29 and RPS18) were shared across the adipose tissue (including both visceral omentum and subcutaneous), blood, lymphocyte, monocyte and macrophage networks. Among the tissue networks, the adipose tissue network revealed the largest number of 47 KDs (ESM Fig. 2b), of which ten were shared with KDs uncovered in the blood, lymphocyte, monocyte and macrophage networks (Fig. 6). The uncovered KDs are related to cell cycle, metabolism and immune pathways. Notably, many of the KDs (e.g. RPS29, RPLP2, CD19, IFIH1 and PTPN6) have been found to be involved in viral infections and autoimmune and childhood-onset diseases, all of which are associated with type 1 diabetes."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "PPI networks"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To complement the results from using GRNs and to expand our search for KDs, we performed a KDA using the tissue-specific type 1 diabetes pathways and PPI networks from the STRING database. Using the islet pathways, we identified top KDs such as SMAD2, CD74, LCK, FYN, SHC1, EGFR, PIK3R2, TAP1 and HLA-DRA (Fig. 7a and ESM Table 19). For adipose tissue, blood, lymphocytes, monocytes, macrophages and pancreatic tissues (ESM Table 20), we found a total of 614 KDs. Representative KDs identified in lymphocytes included ITGAM, IGF1R, SOS1, CBL, LCK, FYN and STAT5A (Fig. 7b). Representative KDs identified in the adipose tissue included CASP9, FLNA, BRF1, CD74 and HLA-DRA, while PTPRC and MYC were identified as top KDs in blood and POLR2G and PROS1 were identified as top KDs in macrophages."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "When comparing KDs from the PPI network with those from the Bayesian GRN networks, we found 26 overlapping KDs for tissue-specific networks (24 for adipose tissue, two in blood and other tissues). The top five shared KDs (FDR<5%) from both types of networks are LCK, VAV1 and PTPN6 for natural killer cell cytotoxicity and F2 and PLG for complement and coagulation pathways. Other KDs include immune-related genes such as CD19 and CD74, and DNA replication genes such as MCM2 and MCM6, as well as those linked to autoimmunity and inflammatory responses, such as STAT1, SERPING1 and GZMB."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Identification of KDs of non-HLA-specific supersets using PPI networks"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "As the 20 additional pathways gained from the HLA-excluded analysis were found to be significant across numerous tissues, we chose to perform a KDA using a PPI network rather than performing a tissue-specific analysis through Bayesian networks (ESM Fig. 3). We found a total of 33 unique KDs, some of which have previously been linked to type 1 diabetes, including CASP3 and CASP9 as KDs for the role of mitochondria in apoptotic signalling pathway, as well as TBP for the transcription pathway. Several KDs have also been studied in relation to type 2 diabetes and insulin resistance, including AKT1 and FGFR1 in the signalling by insulin receptor pathway, CTNNB1 in the Hedgehog signalling and melanogenesis pathway, IKBKB in the RIG-I/MDA5 induction of IFN pathways, and CHUK in the cytosolic sensors of pathogen-associated DNA pathway. Additional KDs of interest include RNF11 for antigen processing, together with RAF1 and EGFR for melanogenesis. These findings suggest that, after HLA removal, robust regulatory hubs contributing to metabolic, apoptotic and immune pathways can be identified, which are less attributable to HLA genetic contributions to type 1 diabetes."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In silico validation of the islet KDs"
+    },
+    {
+      "section_type": "FIG",
+      "text": "In silico validation by screening for KD gene RNA expression and proteomics patterns across the six non-diabetic mice and the one type 2 diabetic (NZO) mouse in comparison with type 1 diabetic NOD mice. The RNA expression level of the islet PPI KDs Traf1 (a), Lcp2 (b), Was (c), Fyn (d), Tap1 (e) and Lck (f) was significantly higher in NOD mice. The RNA expression level of the islet PPI KD Sos1 (g) was significantly lower in NOD mice. The protein expression level of the islet PPI KDs CD74 (h) and TAP1 (i) was significantly higher in NOD mice. *p<0.05; **p<0.01; ***p<0.001 between NOD and B6 mice. F, female mice; M, male mice"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To cross-validate the KDs for specific relevance to type 1 diabetes, we examined the islet RNA sequencing and proteomics profiles from the Attie Lab Diabetes Database, in which eight founder strains of mice, such as the B6 strain and the NOD mouse (an autoimmune type 1 diabetes model), are profiled. Among the islet PPI KDs, most were upregulated in NOD mice compared with the seven non-diabetic mouse strains (Fig. 8a–f and ESM Fig. 4a–f), except for downregulation of SOS1 (Fig. 8g). Additionally, in female NOD mice, which are more susceptible to type 1 diabetes, KD genes such as Was, Traf1, Lcp2, Fyn, Lck, Cd74 and others showed higher gene expression in islet profiles. Furthermore, at the protein level, KDs CD74 and TAP1 exhibited significantly higher protein expression in NOD mice compared with the non-diabetic strains (Fig. 8h, i). Within the islet Bayesian network, a majority of the 12 KDs, including Ctss, Mpeg1, Psmb8, C1qb, Fscn1 and Gpb4, were found to be significantly upregulated in NOD mice (ESM Fig. 4g–l). Therefore, the network KDs showed relevance to type 1 diabetes in independent mouse model data."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We note that, while expression of many KD genes was elevated in NOD mice, this could reflect either type 1 diabetes-specific processes or generalised inflammation during insulitis. However, another mouse strain with inflammatory phenotypes, NZO mice, did not show the same pattern of islet upregulation for the prioritised KDs, suggesting the KDs may not reflect general inflammation but are likely to be specific to autoimmunity-driven type 1 diabetes. To further assess whether the KDs and associated networks are driven by the MHC, we compared our results with a previous study that compared gene expression profiles of pancreatic islets in prediabetic 2–3-week-old NOD mice and NOR mice. NOR mice serve as a diabetes-free, MHC II-matched control for NOD mice, allowing separation of MHC effects from other processes. In our islet PPI network, we found two KDs that overlap with their DEGs: Cbl and Sos1. Cbl is part of the natural killer cell-mediated cytotoxicity module, which has four KD-neighbour nodes that also overlap with the NOD vs NOR DEGs: Plcg1, Ptprj, Sos2 and Ube2d2. Sos1, a hub gene of the adaptive immune system, together with one network neighbour gene (Plcg1), also overlaps with the NOD vs NOR DEGs. These findings suggest that at least some KDs and their network genes are not MHC-driven, and may represent broader regulatory mechanisms that are relevant to islet autoimmunity in type 1 diabetes."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Drug repositioning using network KDs identified drug candidates"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Drug repositioning results. (a) Heatmap showing repositioning of the top drugs using LINCS L1000 based on the KD genes for each tissue/analysis. All drugs collectively passed a median tau threshold of 90 using the absolute mean across all groups. The highest median tau score is presented in order from top to bottom. (b) Heatmap showing repositioning of the top drugs using PharmOmics based on the KD genes for each tissue. Only the top 100 significant drugs were included for each tissue, and common drugs with more than five appearances across all tissues are shown in the heatmaps. (c) Forest plot showing the individual drugs evaluated in EMR data for their association with improvement in C-peptide levels in individuals with type 1 diabetes (higher C-peptide 1 year after drug use compared with 1 year before drug use). Each drug is represented with its effect size estimate, 95% CI, and p value from a paired t test (*p<0.05; **p<0.01; ***p<0.001), together with the number of individuals included in the statistical model and the corresponding significance counts across tissues from the drug repositioning analysis. Drugs validated in (c) were drawn from the full predicted drug lists in ESM Tables 21 and 22"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To identify drugs that could be repositioned to target gene networks associated with type 1 diabetes, we used KD genes from individual tissues as an input into the drug repositioning tools LINCS L1000 and PharmOmics. For results from LINCS L1000, we filtered the drugs that pass a median tau threshold of ±90 as we cannot infer directionality from our input genes (Fig. 9a and ESM Table 21). From PharmOmics, we selected the significant drugs that ranked within the top 100 in each tissue and appeared at least five times in any of the screened tissues (Fig. 9b and ESM Table 22). These complementary approaches identified several mechanistically coherent drug categories that may be broadly grouped into immune and inflammatory modulators and metabolic and stress modulators."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Within the immune and inflammatory domain, we identified apicidin, etinostat, Merck60, droxinostat and vorinostat, which are all selective HDAC inhibitors mainly targeting HDAC1, HDAC3, HDAC6 and HDAC9, as top hits in our drug search across various tissues in both PPI and Bayesian type 1 diabetes networks. The GSK-3β inhibitors kenpaullone and indirubin were also significant hits in our lymphocyte and pancreas networks, which agrees with previous literature showing that inhibition of GSK-3β protects against pancreatic beta cell death. Kenpaullone is not only involved in GSK-3β inhibition but is also a CDK inhibitor and an Src inhibitor, which may provide further protection to beta cells. Additionally, the mTOR inhibitor sirolimus and the PI3K inhibitor LY-294002, which were found to be significant drugs using adipose tissue, macrophage and monocyte network KDs, also indirectly regulate GSK-3β via the PI3K–Akt–mTOR signalling axis."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "IKK inhibitors (TPCA-1, BMS-345541, BX-795, parthenolide and IKK2 inhibitor V) were the third major drug class identified in our analysis of islet, lymphocyte, adipose tissue and non-HLA blood network KDs. IKK inhibitors are potential drug options to consider in various autoimmune diseases, such as rheumatoid arthritis, lupus erythematosus, multiple sclerosis and irritable bowel disease, through their modulation of NF-κB signalling, which is also a known key pathway in type 1 diabetes. Finally, glucocorticoids (prednisolone, hydrocortisone and fluticasone) were predicted by both LINCS L1000 and PharmOmics. Glucocorticoids are well-established immunosuppressants that reduce inflammation by dampening signal transduction downstream of cytokine receptors, inhibiting cytokine production and broadly suppressing immune responses."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In addition to these immune-related categories, our analyses also identified metabolic and stress modulators. Pain and proton modulators such as paracetamol (acetaminophen), omeprazole and pantoprazole were predicted across multiple tissues. These agents are known to influence glutathione metabolism, oxidative stress buffering and mitochondrial function, all of which are processes critical to beta cell survival in type 1 diabetes. Cardiometabolic modulators, including carvedilol and troglitazone, were also predicted by the analyses. Carvedilol, a non-selective β-blocker with antioxidant properties, improves insulin sensitivity and reduces oxidative stress, while troglitazone, a PPARγ agonist, directly enhances insulin sensitivity and glucose use. Another important metabolic category included uric acid and purine metabolism modulators, represented by allopurinol and benzbromarone, which were the top two hits found via PharmOmics. These agents lower uric acid levels through either xanthine oxidase inhibition (allopurinol) or increased renal excretion (benzbromarone), which is noteworthy given the strong links between hyperuricaemia, oxidative stress, inflammation and beta cell dysfunction. Additionally, the anti-emetic ondansetron (a 5-HT3 receptor antagonist) and the laxative bisacodyl were also predicted."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Drugs of interest that only targeted the islet network KDs included tenofovir, PKCβ inhibitors and YM-976. All of these have been indicated for treatment of various immune and autoimmune diseases. The reverse transcriptase inhibitor tenofovir, administered as a component of the HIV medication Truvada, has been shown to improve hereditary autoimmune inflammation thought to be caused by build-up of retroelement cDNA in mice. Levonorgestrel, a progesterone receptor agonist, was found to pass our drug match criteria in the LINCS L1000 for our lymphocyte KDs. Increasing progesterone levels has been found to be protective against rheumatoid arthritis and multiple sclerosis; reducing stress hormones has been shown to reduce inflammation, which may help delay the progression of beta cell death."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Collectively, our network-based drug repositioning captures both immune/inflammatory regulators (HDAC, GSK-3β, IKK inhibitors and glucocorticoids) and metabolic/stress modulators acting on redox, cardiometabolic and uric acid pathways. These results underscore the complementary roles of immune control and metabolic regulation in the pathophysiology of type 1 diabetes, and provide multiple mechanistically supported avenues for therapeutic intervention."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In silico validation of predicted drugs"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To validate our drug predictions, we assessed whether any predicted drugs significantly increased C-peptide levels in individuals with type 1 diabetes. C-peptide, which is a by-product of proinsulin cleavage during insulin synthesis, is released in equimolar amounts alongside endogenous insulin. Thus, C-peptide is not affected by exogenous insulin therapy, making it a reliable biomarker for endogenous insulin secretion and islet function."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Using EMRs from the OneFlorida+ Clinical Data Network, we extracted medication histories and C-peptide levels (nmol/l) for individuals with type 1 diabetes. For each drug, we compared the mean C-peptide levels during the year before vs the year after drug exposure. Notably, individuals with type 1 diabetes who used predicted drugs and drug classes such as paracetamol, pantoprazole and glucocorticoids (prednisolone and fluticasone) showed significantly increased C-peptide levels (Fig. 9c). Other predicted drugs that showed significance in EMR validation include bisacodyl, ondansetron, tadalafil, ganciclovir, dapsone and zolpidem. When narrowing the window to 6 months before and after exposure, only prednisolone, carvedilol, ondansetron and bisacodyl remained significant among the drugs shown in Fig. 9c. By contrast, when extending the window to 2 years, the drugs shown in Fig. 9c remained or became significant except for bisacodyl and tadalafil. These findings suggest that these drugs may have potential therapeutic benefits in improving pancreatic islet function in individuals with type 1 diabetes."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Discussion"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Previous genetic studies have uncovered at least 60 loci linked with type 1 diabetes development, yet our understanding of the intricate mechanisms underlying these associations and GWAS-based intervention approaches remains limited. To this end, we used a multi-omics integrative approach to advance our understanding of type 1 diabetes aetiology and prioritise potential therapeutic targets among the large number of disease-associated signals. The dysregulated pathways and key regulators of type 1 diabetes aetiology were elucidated by combined analysis of the full summary statistics of two independent type 1 diabetes GWAS datasets, functional genomics data, knowledge-driven pathways, and data-driven gene co-expression and regulatory networks. This approach enabled identification of both well-known immune regulators and novel candidates, several of which showed increased expression specifically in islets of diabetic NOD mice, supporting their functional relevance. We further used the networks to guide drug repositioning, identifying drug candidates that target the type 1 diabetes networks, some of which were validated in an EMR cohort."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "We identified a significant number of networks involved in immune and apoptosis-related processes that have previously been implicated in type 1 diabetes. We also found several pathways that have previously been considered to be less associated with the genetic contribution of type 1 diabetes, such as viral infection, Notch signalling, amino acid degradation, and the IGF-1 and insulin signalling pathways. Our tissue-specific analyses revealed a consistent enrichment of antigen processing/presentation, natural killer cell cytotoxicity and IFN-α/β/γ signalling pathways across multiple tissues, supporting the immune origin of type 1 diabetes highlighted in the literature, and emphasising the presence of systemic dysregulation of immune function beyond insulitis."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In addition to the classic immune components, we identified several pathways that imply a pathogenic change in the molecular machinery coordinating protein production and processing, including the spliceosome in monocytes, mRNA metabolism in blood, macrophages and monocytes, tRNA aminoacylation in macrophages, monocytes and subcutaneous adipose tissue, and proteasome in blood, macrophages and monocytes. Kracht et al reported that production of a non-conventional insulin-derived product due to alternative translation of the insulin transcript results in a polypeptide that is detected by T cells and elicits an autoimmune response in individuals with type 1 diabetes. It has also been predicted that the formation of hybrid insulin peptides within beta cells activates CD4 T cells in NOD mice, thus further supporting the association between type 1 diabetes and the failure of proteins to be processed correctly. It is plausible that variations within genes governing mRNA processing as well as protein formation and processing components induce antigenic protein products within the pancreatic tissue itself or within immune cells, resulting in activation of an autoimmune response, beta cell death and development of type 1 diabetes."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Importantly, within our tissue-specific networks, we were able to capture and highlight numerous previously implicated contributors to type 1 diabetes, either as hub genes (e.g. IFIH1, HLA-C, SLC15A3 and RAD51) or peripheral genes (CTLA4, PTPN22, INS, INSR and HLA-DQA). Of note, within the expected type 1 diabetes immune pathways such as cytokine signalling, we uncovered KD genes that are not well recognised for their specific role in type 1 diabetes but were consistent across tissues and connected to well-known type 1 diabetes GWAS hits. For example, FYN, a KD in both lymphocyte (Fig. 6) and islet PPI networks (Fig. 7a), was connected with type 1 diabetes GWAS loci (CTLA4, INSR, CD226 and PTPN11). This gene is essential in T cell signalling and interacts with ZAP-70 and VAV1, which are key components of the T cell-mediated immune response and are connected to FYN in our lymphocyte and islet PPI networks. Similarly, the KD LCK in the islet network has also been previously shown to inhibit autoimmune responses through its interaction with DUSP22 as a negative regulator of T cell activation. Both Fyn and Lck showed increased expression specifically in NOD mouse islets compared with mouse models of type 2 diabetes and non-diabetes (Fig. 7)."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Interestingly, in less well-studied tissues for type 1 diabetes such as adipose tissue, we captured previously documented type 1 diabetes genes such as SLC15A3 and IFIH1. Our network analysis suggests a role for SLC15A3 in signal transduction in adipose tissue, including the regulation of inflammatory signals. IFIH1, a player in the innate immune response, is triggered by viral infections and is a regulator of the diabetogenic T cell response."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Viral infection and its association with type 1 diabetes have been suggested as the potential causal environmental trigger, particularly antenatal maternal infection and the subsequent incidence of type 1 diabetes. In support of this, we found several pathways associated with HIV and influenza virus infection across multiple tissues tested. Given that these pathways are genetically perturbed as informed by type 1 diabetes GWAS datasets, our finding implies that genetic variants in genes involved in viral infection may confer vulnerability to infections and/or promote an over-reactive viral response that induces autoimmunity, which may explain how viral infection triggers type 1 diabetes pathogenesis. Moreover, we found numerous KDs that are known to have a link with viruses but for which there is limited evidence for direct genetic association with type 1 diabetes, such as Ifit1, which has been shown to be induced in NOD mice after rotavirus infection, Oas2, which encodes an innate immune-activated antiviral enzyme, and Isg15, which encodes an antiviral effector linked to anti-apoptosis in MIN6 cells. These genes were found to be within our blood and lymphocyte GRNs under the IFN signalling pathway, and were KDs in our type 1 diabetes adipose tissue network."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "To capture additional regulatory pathways and KDs that may have been overshadowed by the ‘HLA effect’, we ran pathway and network analyses after removing HLA-related genes. These analyses captured pathways that may contribute to type 1 diabetes through gene–environment interactions, such as viral infection pathways (including RIG-I/MDA5 induction, IFIH1-related genes and cytosolic sensors of pathogen-associated DNA), bacterial infection pathways such as epithelial cell signalling in Helicobacter pylori infection, melanogenesis (which may link a lack of vitamin D with type 1 diabetes development), and insulin receptor signalling, which may interact with any or a mixture of the above factors."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Our in silico validation of islet KDs highlights their significant role in the NOD mouse. The upregulation of KDs such as Ctss, which when translated degrades antigenic proteins, Cfb, which contributes to complement activation, and Psmb8, induced by IFN-γ, underscores their potential involvement in type 1 diabetes pathogenesis. The observed sex-specific expression, especially in female NOD mice, further supports the potential role of these KDs in the heightened susceptibility to type 1 diabetes development in female individuals. The elevated protein expression of the immune-related KD genes Cd74 and Tap1 in NOD mice compared with other strains could indicate a more pronounced immune response, which aligns with the autoimmune nature of type 1 diabetes. These orthogonal validation results offer support for these KDs in type 1 diabetes pathogenesis, and may inform future therapeutic strategies."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Collectively taking into account all the type 1 diabetes-associated pathways, KDs and tissues, we next aimed to find compounds that could be used to target these dysfunctional gene networks, using the LINCS L1000 and PharmOmics drug repositioning tools. We observed two complementary therapeutic themes: (1) immune/inflammatory modulators targeting core signalling nodes implicated in beta cell stress and autoimmunity (e.g. HDAC-, GSK-3β- and IKK/NF-κB-linked mechanisms), and (2) metabolic/stress modulators predicted to support beta cell resilience through redox, mitochondrial and broader cardiometabolic pathways. This dual pattern is consistent with the established view that type 1 diabetes progression reflects both immune-mediated injury and beta cell-intrinsic vulnerability, and suggests that multi-pronged strategies that combine immune control with metabolic support may be particularly relevant for preserving endocrine function. Importantly, several predicted compounds that are commonly used clinically showed concordant signals in our OneFlorida+ EMR validation based on pre-treatment/post-treatment changes in C-peptide. In particular, we obtained evidence supporting representative hits from both thematic groups (anti-inflammatory/immunomodulatory agents [glucocorticoids such as prednisolone and fluticasone] and metabolic/stress modulators [e.g. paracetamol and proton pump inhibitors such as pantoprazole/omeprazole]), with additional supportive signals in sensitivity analyses for carvedilol and select gastrointestinal supportive agents (ondansetron and bisacodyl). Together, these overlaps provide a coherent bridge between in silico network targeting and real-world biomarker shifts consistent with preserved endogenous insulin secretion. Additional drug predictions, particularly for strong immune modulators, may not have appeared in the EMRs due to their limited use in the patient population."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "While our integrative approach revealed numerous candidate genes, pathways and drug targets, limitations should be noted. The findings are based primarily on in silico analyses and EMR data, and experimental validation in animal models and human tissues will be essential to establish causality and therapeutic efficacy. Bayesian GRNs infer directionally informed statistical dependencies rather than definitive causality, which requires experimental or clinical perturbation for validation. In addition, we also performed beta cell eQTL-based pathway analysis but found no significant pathway enrichments in either cohort. This probably reflects limited power, sparser SNP-to-gene links after LD pruning, and the use of basal beta cell profiles that may miss context-dependent regulation. Accordingly, larger, type 1 diabetes-specific and single-cell-based beta cell eQTL resources are needed to assess beta cell-intrinsic pathways with adequate power. Similarly, incorporating well-powered disease-specific islet eQTL datasets (when available) will be important for improving such analyses. Additionally, while stage-wise FDR control in sequential designs is expected to be conservative, extending pipeline-wide FDR control to our multi-stage framework remains an important direction for future analyses to further limit false positives. Lastly, we note that cohort-level attributes (e.g. BMI, age, sex and environmental exposures) could contribute to differences between the GWAS cohorts, but detailed metadata were not available to evaluate this."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Overall, our multi-tissue multi-omics integrative analysis recapitulates previously known pathways and genes associated with type 1 diabetes pathogenesis, confirming the validity of the approach. We additionally uncovered novel pathways and key genes in multiple tissues that potentially contribute to type 1 diabetes development through genetic perturbations, including those that can interact with environmental factors. These findings offer a comprehensive understanding of type 1 diabetes pathogenesis based on genetic evidence and through an omnigenic network lens. The KDs prioritised through our comprehensive integrative analyses may serve as putative therapeutic targets for type 1 diabetes, and, together with our drug predictions, if experimentally validated in future studies, may help delay or prevent type 1 diabetes progression."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary Information"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Below is the link to the electronic supplementary material."
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Abbreviations"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "DEG"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Differentially expressed gene"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "EMR"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Electronic medical record"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "eQTL"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Expression quantitative trait locus"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "FDR"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "False discovery rate"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "GRN"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Gene regulatory network"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "GWAS"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Genome-wide association studies"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "KD"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Key driver"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "KDA"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Key driver analysis"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "LD"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Linkage disequilibrium"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "MSEA"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Marker set enrichment analysis"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "NOR"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Non-obese resistant"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "PPI"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Protein–protein interaction"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Publisher's Note"
+    },
+    {
+      "section_type": "ABBR",
+      "text": "Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Acknowledgements"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "We thank the Cardiogenics Consortium for providing eQTL resources, which were supported by the European Union FP6 program (LSHM-CT-2006-037593) and the Leducq CAD Genomics Transatlantic Network. We thank J. Inshaw and J. Todd (both University of Oxford) for providing the GWAS datasets. The analysis of electronic health records for drug validation reported in this publication was supported in part by the OneFlorida+ Clinical Data Network, funded by the Patient-Centered Outcomes Research Institute numbers CDRN-1501-26692 and RI-CRN-2020-005, in part by the OneFlorida+ Cancer Control Alliance, funded by the Florida Department of Health’s James and Esther King Biomedical Research Program number 4KB16, and in part by the University of Florida Clinical and Translational Science Institute and its Clinical and Translational Science Award (CTSA) hub partner, Florida State University, which are supported in part by three CTSA Program grants awarded on 15 August 2015, and renewed for five years on 2 July 2019, by the National Center for Advancing Translational Sciences of the National Institutes of Health. The UF–FSU CTSA grant numbers are UL1TR001427, KL2TR001429 and TL1TR001428. The content is solely the responsibility of the authors and does not necessarily represent the official views of the Patient-Centered Outcomes Research Institute (PCORI), its board of governors or methodology, the OneFlorida Clinical Research Consortium, the University of Florida’s Clinical and Translational Science Institute, the Florida Department of Health, or the National Institutes of Health. We also acknowledge that some of the data were previously submitted as part of a Master’s thesis for Montgomery Blencowe."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Data availability"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "All data supporting the findings of this study are available within the paper and the ESM."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Funding"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "This work was supported by Breakthrough T1D, previously known as JDRF (JDRF 2-SRA-2021-1028-S-B awarded to XY, DK and MB)."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Authors’ relationships and activities"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "NS is a member of the Editorial Board of Diabetologia and declares this position as a potential competing interest in accordance with the journal’s competing interests policy. All other authors declare that there are no relationships or activities that might bias, or be perceived to bias, their work."
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "Contribution statement"
+    },
+    {
+      "section_type": "ACK_FUND",
+      "text": "MB and XY conceived and designed the research. MB, ZS, RL, MW, IT and JW analysed the data. MB, ZS and RL prepared the figures. MB, ZS, RL, MW, JW, SM, YG, FV, NS, DK, CA, IT and XY drafted and edited the manuscript. SM, YG, FV, NS, DK and CA participated in study design and provided data sources. MB, ZS, RL, MW, IT, JW, SM, YG, FV, NS, CA, DK and XY approved the final version of manuscript. MB and XY are responsible for the integrity of the work as a whole."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Maahs DM, West NA, Lawrence JM, Mayer-Davis EJ (2010) Epidemiology of type 1 diabetes. Endocrinol Metab Clin 39(3):481–497. 10.1016/j.ecl.2010.05.011"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prevalence and incidence of type 1 diabetes in the world: a systematic review and meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Changes in the global epidemiology of type 1 diabetes in an evolving landscape of environmental factors: causes, challenges, and opportunities"
+    },
+    {
+      "section_type": "REF",
+      "text": "Secondary attack rate of type 1 diabetes in Colorado families"
+    },
+    {
+      "section_type": "REF",
+      "text": "Laser capture microdissection of human pancreatic islets reveals novel eQTLs associated with type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Prevalence and characteristics of diabetes among Somali children and adolescents living in Helsinki, Finland"
+    },
+    {
+      "section_type": "REF",
+      "text": "Being born in Sweden increases the risk for type 1 diabetes – a study of migration of children to Sweden as a natural experiment"
+    },
+    {
+      "section_type": "REF",
+      "text": "The dynamics of the human infant gut microbiome in development and in progression toward type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Timing of initial cereal exposure in infancy and risk of islet autoimmunity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Seasonality in clinical onset of type 1 diabetes in Belgian patients above the age of 10 is restricted to HLA-DQ2/DQ8-negative males, which explains the male to female excess in incidence"
+    },
+    {
+      "section_type": "REF",
+      "text": "Viral antibodies in diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immunology in the clinic review series: focus on type 1 diabetes and viruses: the role of viruses in type 1 diabetes: a difficult dilemma"
+    },
+    {
+      "section_type": "REF",
+      "text": "Enterovirus infection and type 1 diabetes mellitus: systematic review and meta-analysis of observational molecular studies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetic and environmental interaction in type 1 diabetes: a relationship between genetic risk alleles and molecular traits of enterovirus infection?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Environmental factors associated with type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Environmental factors and the risk of developing type 1 diabetes – old disease and new data"
+    },
+    {
+      "section_type": "REF",
+      "text": "Absolute risk of childhood-onset type 1 diabetes defined by human leukocyte antigen class II genotype: a population-based study in the United Kingdom"
+    },
+    {
+      "section_type": "REF",
+      "text": "The role of HLA class II genes in insulin-dependent diabetes mellitus: molecular analysis of 180 Caucasian, multiplex families"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetics of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "An expanded view of complex traits: from polygenic to omnigenic"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integration of multi-omics data from mouse diversity panel highlights mitochondrial dysfunction in non-alcoholic fatty liver disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Shared and distinct pathways and networks genetically linked to coronary artery disease between human and mouse"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mergeomics: multidimensional data integration to identify pathogenic perturbations to biological systems"
+    },
+    {
+      "section_type": "REF",
+      "text": "Shared genetic regulatory networks for cardiovascular disease and type 2 diabetes in multiple populations of diverse ethnicities in the United States"
+    },
+    {
+      "section_type": "REF",
+      "text": "Gene networks and pathways for plasma lipid traits via multitissue multiomics systems analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integrative genomics analysis unravels tissue-specific pathways, networks, and key regulators of blood pressure regulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Shared molecular pathways and gene networks for cardiovascular disease and type 2 diabetes mellitus in women across diverse ethnicities"
+    },
+    {
+      "section_type": "REF",
+      "text": "The reactome pathway knowledgebase"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mergeomics 2.0: a web server for multi-omics data integration to elucidate disease networks and predict therapeutics"
+    },
+    {
+      "section_type": "REF",
+      "text": "The ratio of pericardial to subcutaneous adipose tissues is associated with insulin resistance"
+    },
+    {
+      "section_type": "REF",
+      "text": "Blood and islet phenotypes indicate immunological heterogeneity in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Redox-sensitive innate immune pathways during macrophage activation in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Abnormalities of the exocrine pancreas in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Increased monocytic activity and biomarkers of inflammation in patients with type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Role of B lymphocytes in the pathogenesis of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "T lymphocyte response against pancreatic beta cell antigens in fulminant type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Lymphocytes from patients with type 1 diabetes display a distinct profile of chromatin histone H3 lysine 9 dimethylation: an epigenetic study in diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Innate immune stimulation of whole blood reveals IFN 1 hyper-responsiveness in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "A high glycemic burden relates to functional and metabolic alterations of human monocytes in patients with type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cooper NJ, Wallace C, Burren O, Cutler A, Walker N, Todd JA (2017) Type 1 diabetes genome-wide association analysis with imputation identifies five new risk regions. BioRxiv 120022. 10.1101/120022"
+    },
+    {
+      "section_type": "REF",
+      "text": "The GTEx Consortium atlas of genetic regulatory effects across human tissues"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integrating genome-wide genetic variations and monocyte expression data reveals trans-regulated gene modules in humans"
+    },
+    {
+      "section_type": "REF",
+      "text": "Impact of genetic polymorphisms on human immune cell gene expression"
+    },
+    {
+      "section_type": "REF",
+      "text": "PharmOmics: a species-and tissue-specific drug signature database and gene-network-based drug repositioning tool"
+    },
+    {
+      "section_type": "REF",
+      "text": "L1000CDS2: LINCS L1000 characteristic direction signatures search engine"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genome-wide association study and meta-analysis find that over 40 loci affect risk of type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "The Genotype-Tissue Expression (GTEx) pilot analysis: multitissue gene regulation in humans"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetic variant effects on gene expression in human pancreatic islets and their implications for type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "NIH initiative to improve understanding of the pancreas, islet, and autoimmunity in type 1 diabetes: the Human Pancreas Analysis Program (HPAP)"
+    },
+    {
+      "section_type": "REF",
+      "text": "WGCNA: an R package for weighted correlation network analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Nishimura D (2001) BioCarta. Biotech Softw Internet Rep 2(3):117–120. 10.1089/152791601750294344"
+    },
+    {
+      "section_type": "REF",
+      "text": "KEGG: Kyoto Encyclopedia of Genes and Genomes"
+    },
+    {
+      "section_type": "REF",
+      "text": "The new NHGRI-EBI Catalog of published genome-wide association studies (GWAS Catalog)"
+    },
+    {
+      "section_type": "REF",
+      "text": "The STRING database in 2021: customizable protein–protein networks, and functional characterization of user-uploaded gene/measurement sets"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integrating large-scale functional genomic data to dissect the complexity of yeast regulatory networks"
+    },
+    {
+      "section_type": "REF",
+      "text": "Islet proteomics reveals genetic variation in dopamine production resulting in altered insulin secretion"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetic drivers of pancreatic islet function"
+    },
+    {
+      "section_type": "REF",
+      "text": "INFIMA leverages multi-omics model organism data to identify effector genes of human GWAS variants"
+    },
+    {
+      "section_type": "REF",
+      "text": "Host genotype and gut microbiome modulate insulin secretion and diet-induced metabolic phenotypes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Early differences in islets from prediabetic NOD mice: combined microarray and proteomic analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "NOD and NOR mice exhibit comparable development of lacrimal gland secretory dysfunction but NOD mice have more severe autoimmune dacryoadenitis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Systematic review of validated case definitions for diabetes in ICD-9-coded and ICD-10-coded data in adult populations"
+    },
+    {
+      "section_type": "REF",
+      "text": "Fine mapping of type 1 diabetes susceptibility loci and evidence for colocalization of causal variants with lymphoid gene enhancers"
+    },
+    {
+      "section_type": "REF",
+      "text": "A type 1 diabetes genetic risk score can aid discrimination between type 1 and type 2 diabetes in young adults"
+    },
+    {
+      "section_type": "REF",
+      "text": "Development and standardization of an improved type 1 diabetes genetic risk score for use in newborn screening and incident diagnosis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Human Proteinpedia as a resource for clinical proteomics"
+    },
+    {
+      "section_type": "REF",
+      "text": "IAPP-induced beta cell stress recapitulates the islet transcriptome in type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "RPLP1 and RPLP2 are essential flavivirus host factors that promote early viral protein accumulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Similar CD19 dysregulation in two autoantibody-associated autoimmune diseases suggests a shared mechanism of B-cell tolerance loss"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integration analysis of a miRNA-mRNA expression in A549 cells infected with a novel H3N2 swine influenza virus and the 2009 H1N1 pandemic influenza virus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Novel regulators of islet function identified from genetic variation in mouse islet Ca2+ oscillations"
+    },
+    {
+      "section_type": "REF",
+      "text": "Inhibition of GSK3 promotes replication and survival of pancreatic beta cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "GSK3 and its interactions with the PI3K/AKT/mTOR signalling network"
+    },
+    {
+      "section_type": "REF",
+      "text": "NF-κB signaling in inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "Notch signaling: a mediator of β-cell de-differentiation in diabetes?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Immune regulation by glucocorticoids"
+    },
+    {
+      "section_type": "REF",
+      "text": "Effects of allopurinol on renal function in patients with diabetes: a systematic review and meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Decreased incidence of diabetes in patients with gout using benzbromarone"
+    },
+    {
+      "section_type": "REF",
+      "text": "An autoimmune disease prevented by anti-retroviral drugs"
+    },
+    {
+      "section_type": "REF",
+      "text": "Progesterone as an anti-inflammatory drug and immunomodulator: new aspects in hormonal regulation of the inflammation"
+    },
+    {
+      "section_type": "REF",
+      "text": "A practical review of C-peptide testing in diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Intracellular pathways of pancreatic β-cell apoptosis in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Viral infections in type 1 diabetes mellitus – why the β cells?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Type 1 and 2 diabetes are associated with reduced natural killer cell cytotoxicity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Autoimmunity against a defective ribosomal insulin gene product in type 1 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Pathogenic CD4 T cells in type 1 diabetes recognize epitopes formed by peptide fusion"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetic and small molecule disruption of the AID/RAD51 axis similarly protects nonobese diabetic mice from type 1 diabetes through expansion of regulatory B lymphocytes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Fyn and ZAP-70 are required for Vav phosphorylation in T cells stimulated by antigen-presenting cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Vav1 and Rac control chemokine-promoted T lymphocyte adhesion mediated by the integrin α4β1"
+    },
+    {
+      "section_type": "REF",
+      "text": "In vitro nuclear interactome of the HIV-1 Tat protein"
+    },
+    {
+      "section_type": "REF",
+      "text": "Differential regulation of pro-inflammatory cytokine signalling by protein tyrosine phosphatases in pancreatic β-cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Metabolic control from the endolysosome: lysosome-resident amino acid transporters open novel therapeutic possibilities"
+    },
+    {
+      "section_type": "REF",
+      "text": "Reduced expression of the MDA5 gene IFIH1 prevents autoimmune diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Maternal virus infections in pregnancy and type 1 diabetes in their offspring: systematic review and meta-analysis of observational studies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Rotavirus acceleration of type 1 diabetes in non-obese diabetic mice depends on type I interferon signalling"
+    },
+    {
+      "section_type": "REF",
+      "text": "IFN-stimulated gene expression is a useful potential molecular marker of response to antiviral treatment with Peg-IFNα 2b and ribavirin in patients with hepatitis C virus genotype 1"
+    },
+    {
+      "section_type": "REF",
+      "text": "Interferon stimulated gene 15 has an anti-apoptotic effect on MIN6 cells"
+    },
+    {
+      "section_type": "REF",
+      "text": "Cathepsin S (CTSS) activity in health and disease – a treasure trove of untapped clinical potential"
+    },
+    {
+      "section_type": "REF",
+      "text": "Overview of complement activation and regulation"
+    },
+    {
+      "section_type": "REF",
+      "text": "IFNɣ but not IFNα increases recognition of insulin defective ribosomal product-derived antigen to amplify islet autoimmunity"
+    }
+  ],
+  "fetched_at": "2026-08-31T03:30:08.778802",
+  "pmid": 41986815
+}

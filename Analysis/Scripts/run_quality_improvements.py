@@ -224,6 +224,27 @@ SCRIPTS = {
     # honest citations and teach the prose to please a scorer.
     'semanticsupport': ('audit_citation_semantic_support.py',
                         'Scoring citation semantic support and claim density (reports worst N)'),
+    # Added 2026-08-31. Every citation gate above scans .py and only .py
+    # (verify_pmids.py:44, audit_prose_citation_titles.py:349), so the markdown
+    # documents were never audited by anything. On the day this was wired, a
+    # first pass over them found misattributed PMIDs in RESEARCH_DOCTRINE.md -
+    # the file that DEFINES the citation standard, whose "PMID-Verified
+    # (Strongest)" exemplar cited a perovskite solar-cell paper and whose
+    # correct-format exemplar cited a RETRACTED ginsenoside study - and a
+    # GOLD-rated claim in Research_Findings_Summary.md resting on a paper about
+    # something else entirely.
+    'mdcitations': ('audit_markdown_citations.py',
+                    'Auditing markdown citations against PubMed (doctrine + summaries)'),
+    # Pins the gate above. It reported 0 findings on its first clean run, which
+    # proves nothing on its own because the same run had just repaired every
+    # defect it was built for. This replays the pre-repair text.
+    'mdcitegate': ('test_markdown_citation_gate.py',
+                   'Regression fixture: markdown gate sensitivity AND specificity'),
+    # Replaces the scheduled-task file's "PMIDs above 42000000 are fabricated"
+    # rule, which PubMed passed months ago (live ceiling 42,669,647 measured
+    # 2026-08-31; 30+ real corpus PMIDs sit above the old threshold).
+    'credibility': ('audit_impossible_pmids.py',
+                    'Credibility sweep: runtime PMID ceiling + preclinical overclaim'),
     'evidence': ('extract_evidence.py', 'Extracting evidence from papers for 15 research gaps'),
     'paperlibrary': ('build_paper_library.py', 'Building Paper Library Dashboard'),
     'drugscreen': ('build_drug_repurposing_screen.py', 'Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)'),

@@ -543,11 +543,23 @@ Every journal reference MUST include:
 Authors (Last, First), "Title," Journal Vol(Issue):Pages, Year. PMID: XXXXX. DOI: XXXXX.
 ```
 
-**Example (Correct):**
+**Example (Correct — every field verified against PubMed 2026-08-31):**
 ```
-Mehta A, Beatus T, Smith R, et al. "Islet transplantation outcomes in Type 1 diabetes." Diabetes
-Care. 2024;47(3):456-468. PMID: 38234567. DOI: 10.2337/dc24-0123.
+Markmann JF, Rickels MR, Eggerman TL, Bridges ND, et al. "Phase 3 trial of human
+islet-after-kidney transplantation in type 1 diabetes." Am J Transplant.
+2021;21(4):1477-1492. PMID: 32627352. DOI: 10.1111/ajt.16174. PMC9074710.
 ```
+
+> **CORRECTED 2026-08-31.** The example above previously read *Mehta A, Beatus T,
+> Smith R, et al. "Islet transplantation outcomes in Type 1 diabetes." Diabetes
+> Care. 2024;47(3):456-468. PMID: 38234567. DOI: 10.2337/dc24-0123.* Every field
+> was invented. PMID 38234567 is real and resolves to **a RETRACTED paper** —
+> *Retracted: Ginsenoside Rg1 Ameliorates Acute Renal Ischemia/Reperfusion Injury
+> via Upregulating AMPKα1 Expression* (Oxid Med Cell Longev 2024). The section
+> teaching this project how to format a citation correctly pointed its worked
+> example at a retracted study of ginseng in rat kidneys. Replaced with a real
+> corpus paper whose author list, journal, volume, issue, page range, PMID, DOI
+> and PMCID were each read back from the PubMed API on the date shown.
 
 **Example (Vague — REJECT):**
 ```
@@ -680,10 +692,24 @@ appear frequently in research documents and dashboards without source attributio
 **Category A: PMID-Verified (Strongest)**
 The dollar amount comes directly from a peer-reviewed publication with a PMID.
 ```
-Example: "Annual direct medical cost of diabetes in the US: $237 billion (CDC analysis,
-2023). PMID: 35912345."
+Example: "Direct medical costs of diagnosed diabetes in the US: $237 billion in 2017,
+within a total economic cost of $327 billion (American Diabetes Association, Economic
+Costs of Diabetes in the U.S. in 2017). Diabetes Care. 2018;41(5):917-928.
+PMID: 29567642. DOI: 10.2337/dci18-0007."
 ```
-Status: Can be presented as fact (with verification).
+Status: Can be presented as fact (with verification), **and the year the figure
+describes must travel with it.** $237 billion is a 2017 figure published in 2018.
+Quoting it as a current annual cost in 2026 is a nine-year-old number wearing a
+present-tense verb.
+
+> **CORRECTED 2026-08-31.** This example previously read *"$237 billion (CDC
+> analysis, 2023). PMID: 35912345."* Three errors in one sentence that was
+> teaching the project what "PMID-Verified (Strongest)" looks like: the source is
+> the ADA, not the CDC; the figure is for 2017, not 2023; and PMID 35912345
+> resolves to *Solvent Gaming Chemistry to Control the Quality of Halide
+> Perovskite Thin Films for Photovoltaics* (ACS Cent Sci 2022) — a solar-cell
+> materials paper. The dollar figure itself was correct, which is precisely the
+> hazard: a right number beside a wrong PMID reads as verified and is not.
 
 **Category B: Institutional Source + Methodology (Strong)**
 The number comes from a reputable institution (CDC, WHO, FDA, national health authority) with explicit methodology documented.
@@ -729,12 +755,53 @@ The Triple-Source Validation Framework (Part II, Section B) is sound, but verifi
 **Definition:** Three independent peer-reviewed sources, from different research groups, each reporting the same finding.
 
 **Example (Correct Application):**
-Claim: "Zimislecel achieves insulin independence in 83% of recipients at 1 year."
-- Source 1: Vertex Pharmaceuticals Phase 3 trial (NEJM 2024, PMID: 37234567)
-- Source 2: FDA Summary Basis of Approval (cites same trial data, independent government review)
-- Source 3: Breakthrough T1D expert commentary in Lancet (2024, PMID: 37456789; independent confirmation of trial results)
 
-**Validation tier assigned:** GOLD
+> **CORRECTED 2026-08-31 — this example was itself a miscitation.** The version
+> that stood here until today read: *Source 1: Vertex Pharmaceuticals Phase 3
+> trial (NEJM 2024, PMID: 37234567); Source 3: Breakthrough T1D expert
+> commentary in Lancet (2024, PMID: 37456789).* Both PMIDs resolve on PubMed —
+> to a cross-sectional study of HPV self-sampling preferences in Minnesota and
+> to a cell-migration bioengineering paper respectively. Neither has anything to
+> do with islet transplantation. The trial phase and year were also wrong. The
+> document that instructs this project never to fabricate or misattribute a
+> citation carried four misattributed PMIDs inside its own worked examples for
+> five months, because the credibility sweep scanned `.py` files only and the
+> PMIDs were syntactically valid. Found by `audit_impossible_pmids.py` on its
+> first run. Treat this as the doctrine's own worked example of why a citation
+> that *resolves* is not a citation that *supports* — see Lesson 12.
+
+Claim: "In the FORWARD phase 1-2 trial, 10 of 12 full-dose recipients (83%) were
+insulin-independent at day 365."
+
+- **Source 1 (primary):** Reichman/Markmann/Odorico et al., *Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes*, **N Engl J Med 2025 Sep 4**, **PMID 40544428** — VX-880-101 FORWARD, NCT04786262. PubMed pubtype: Clinical Trial Phase I + Phase II.
+- **Source 2 (independent commentary):** Rutter et al., *A UK key opinion leader perspective: Navigating the immunological and logistical transformation brought by stem cell-derived islet therapy*, *Diabet Med* 2026 Mar, **PMID 41559876**.
+- **Source 3 (independent synthesis):** *Overview of the major clinical trials investigating stem cell-based therapies for diabetes*, *Diabetes Metab* 2026 Mar, **PMID 41638426**.
+
+**Validation tier assigned:** SILVER, not GOLD — and the demotion is the lesson.
+
+Three sources exist and all three are real, so the *count* clears the GOLD bar.
+The evidence does not, for reasons the count cannot see:
+
+1. **Sources 2 and 3 are not independent observations.** Both are commentary on
+   Source 1. Counting them as confirmation counts the same 12 patients three
+   times. GOLD requires three groups *reporting* the finding, not three
+   documents *mentioning* it.
+2. **The primary source is a 12-patient phase 1-2 trial, not a phase 3.** The
+   superseded text called it phase 3; PubMed's own pubtype says phase I/II.
+3. **The trial states its analyses were interim and not prespecified,** and
+   reports two deaths (cryptococcal meningitis; dementia progression). An
+   exemplar of "correct application" that omits both is not correct.
+
+This is the same defect the path-level and gap-level design audits keep finding:
+a tier assigned from how many citations exist rather than what design they carry.
+See `audit_gap_evidence_design.py` and `audit_path_evidence_design.py`.
+
+> **Open contradiction, logged not resolved:** `10_Questions_Self_Audit.md` §38
+> already rated this same zimislecel finding SILVER while this section used it as
+> the flagship GOLD example. Two governing documents disagreed about the tier of
+> the same claim. This edit aligns the doctrine with the self-audit; whether the
+> *framework* should treat downstream commentary as an independent source is a
+> human call, queued 2026-08-31.
 
 ### SILVER (Double Verified) — Acceptable with Explicit Label
 **Definition:** Two independent sources confirm; a third is unavailable despite good-faith searching.
@@ -744,11 +811,20 @@ Claim: "Zimislecel achieves insulin independence in 83% of recipients at 1 year.
 - Specialized findings reported in only a few publications
 - Trial results from a single large RCT + independent expert commentary, but no third source yet available
 
-**Example:**
+**Example (schematic — deliberately carries no PMIDs):**
 Claim: "Somatic gene editing approach X showed efficacy in murine models."
-- Source 1: Research paper (PMID: 38234123)
-- Source 2: Related technique reviewed in Nature Biotech (PMID: 38345234)
-- Third source: Cannot find independent confirmation yet
+- Source 1: the primary research paper — *[no PMID: this is a template, not a claim]*
+- Source 2: the technique reviewed independently — *[no PMID: template]*
+- Third source: cannot find independent confirmation yet
+
+> **CORRECTED 2026-08-31.** This example previously cited PMID 38234123 and
+> 38345234. Both resolve — to a HeartLogic heart-failure algorithm study and a
+> JoVE computational peptide-binding paper. Neither concerns gene editing. The
+> claim above is a placeholder ("approach X"), so a placeholder claim must not
+> carry real-looking identifiers at all. **Doctrine rule added:** an illustrative
+> example never carries a digit string that PubMed will resolve. If an example
+> needs a citation, use a real one and check it; otherwise write *[no PMID:
+> template]* as above.
 
 **Required label:** "Supported by two independent sources; awaiting independent clinical validation."
 
