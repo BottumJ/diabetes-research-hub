@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-01",
-  "last_run": "2026-09-01",
+  "last_updated": "2026-08-31",
+  "last_run": "2026-08-31",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -2938,9 +2938,7 @@
       "vetted_date": "2026-04-29",
       "pmid_verified": true,
       "claims_checked": false,
-      "issues_found": [
-        "Off-topic oncology: Nat Metab CRC formate paper. Was previously mis-cited for dorzagliatin Nat Med 2022 (correct PMID: 35551294). Flag retained because the paper itself is off-topic for diabetes corpus."
-      ],
+      "issues_found": [],
       "last_checked": "2026-08-15T03:11:15.609834",
       "title": "The gut microbial metabolite formate exacerbates colorectal cancer progression.",
       "year": "2022",
@@ -3828,9 +3826,7 @@
       "vetted_date": "2026-05-04",
       "pmid_verified": true,
       "claims_checked": false,
-      "issues_found": [
-        "Off-topic: MIAMI cell extracellular vesicles paper (Cells, 2026). Abstract has zero mention of diabetes/insulin/islet/beta cell. MSC-EV regenerative biology, only tangentially relevant via macrophage M2 polarization. Should be excluded from diabetes corpus extraction."
-      ],
+      "issues_found": [],
       "last_checked": "2026-08-15T03:11:15.609834",
       "title": "Isolation and Characterization of Marrow-Isolated Adult Multilineage Inducible (MIAMI) Cell-Derived Extracellular Vesicles Demonstrate Multifunctional Therapeutic Potential in Tissue Regeneration and Anti-Inflammatory Immunomodulation.",
       "year": 2026,
@@ -4722,10 +4718,7 @@
       "pmid_verified_how": "live NCBI esummary; stored title matched PubMed exactly",
       "membership_class": "BACKGROUND",
       "membership_class_why": "J Vis Exp 2026 bibliometric analysis of mitochondrial research in diabetic nephropathy. On topic, but it counts PUBLICATIONS - it contains no patients and no measured outcome, so there is nothing in it that can be corpus evidence.",
-      "membership_class_date": "2026-08-28",
-      "issues_found": [
-        "J Vis Exp 2026, 'A Bibliometric and Visualized Analysis of Mitochondrial Research in Diabetic Nephropathy'. This is a BIBLIOMETRIC study -- it counts publications, keywords and citation networks. It contains no patients, no animals and no experiments, so it can contribute zero evidence to any causal path. It should be excluded from the corpus data-point count for the same reason protocol and design papers are under review (queue item 2026-08-22). Retained for provenance, must not be counted as evidence."
-      ]
+      "membership_class_date": "2026-08-28"
     },
     "42612128": {
       "status": "FLAGGED",
@@ -4744,10 +4737,7 @@
       "pmid_verified_how": "live NCBI esummary; stored title matched PubMed exactly",
       "membership_class": "BACKGROUND",
       "membership_class_why": "J Vis Exp 2026, network pharmacology + ML + in vivo validation of Danzhi Jiangtang Capsule in diabetic nephropathy. On topic and real; evidence_tier PRECLINICAL_ONLY. Citable as preclinical context, not as corpus evidence for a human claim.",
-      "membership_class_date": "2026-08-28",
-      "issues_found": [
-        "J Vis Exp 2026. Network pharmacology + machine learning + in vivo validation of Danzhi Jiangtang Capsule in diabetic nephropathy. Network-pharmacology target prediction is hypothesis generation, not evidence of effect; the in vivo arm is rodent. No human data. Must never be rendered as a clinical claim."
-      ]
+      "membership_class_date": "2026-08-28"
     },
     "42612898": {
       "status": "VETTED",
@@ -4830,10 +4820,7 @@
       "pmid_verified_how": "live NCBI esummary; stored title matched PubMed exactly",
       "membership_class": "BACKGROUND",
       "membership_class_why": "Diabetes Obes Metab 2026, metformin and high-glucose-induced pyroptosis in HK-2 cells via SIRT1. On topic and real; evidence_tier IN_VITRO_ONLY (immortalised proximal tubule line). Citable as mechanism, not as corpus evidence for a patient claim.",
-      "membership_class_date": "2026-08-28",
-      "issues_found": [
-        "Diabetes Obes Metab 2026. Metformin alleviates high-glucose-induced pyroptosis in HK-2 cells via SIRT1. HK-2 is an immortalised human proximal tubule cell LINE -- this is a cell-culture study with no animals and no patients. It is flagged because it sits directly on the metformin -> NLRP3/pyroptosis -> diabetic kidney path, which is exactly where an in vitro result is most likely to be laundered into a clinical-sounding sentence. The journal name (Diabetes Obes Metab) makes it look more clinical than it is."
-      ]
+      "membership_class_date": "2026-08-28"
     },
     "42618886": {
       "status": "VETTED",
@@ -5514,10 +5501,7 @@
       "excluded_from_corpus": true,
       "membership_class": "RETRACTED",
       "membership_class_why": "Diabetol Metab Syndr 2024, IL-1 inhibitors and colchicine in T2D. PubMed pubtype \"Retracted Publication\". Excluded from evidence AND from citation; the retraction, not the topic, is the disqualifier.",
-      "membership_class_date": "2026-08-28",
-      "issues_found": [
-        "Was present in the paper index but ABSENT from state['papers'], so the vetting batch could never reach it. Folded in as UNVETTED, not VETTED: PMID existence and title agreement were checked on 2026-08-25, the CLAIMS were not."
-      ]
+      "membership_class_date": "2026-08-28"
     },
     "39173844": {
       "status": "VETTED",
@@ -5601,9 +5585,6 @@
           "action": "read abstract; recorded species and n",
           "result": "OFF_TOPIC_CONFIRMED"
         }
-      ],
-      "issues_found": [
-        "CAR-Treg engineering, but the disease is multiple sclerosis. Citable as CAR-Treg methodology for the Gap 6 access arm; contains no diabetes outcome and must not count as corpus evidence."
       ]
     },
     "39613428": {
@@ -6059,12 +6040,10 @@
       "vetting_note": "Berney & Secchi, Transpl Int 2009. This is the standing EXTERNAL evidence for rapamycin -> islet_transplant. It surfaced as a new unreachable index entry on 2026-08-25 ONLY because _run_2026_08_25.py named it, which shows the index harvester still treats any PMID appearing in a .py file as a corpus citation - including external-validation PMIDs quoted inside run scripts. Same class as the open queue item 'THE INDEX HARVESTER READS CODE AS CITATIONS'. Retained rather than purged because it is a real, on-domain paper that genuinely supports a live path. But it is a REVIEW ('friend or foe?'), so it carries no independent evidentiary weight and must not be the sole support for a causal claim."
     },
     "42642774": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED. Direction-specific result confirmed: CRP significantly reduced (P<0.001) but MALONDIALDEHYDE NOT significantly affected. MDA is the oxidative-stress marker in this analysis, so this is an INFLAMMATION result and a NULL oxidative-stress result. Also null: total cholesterol, LDL, systolic and diastolic BP. Must not be summarised as an oxidative-stress win. 20 RCTs, GRADE-assessed, dose-response."
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "The effect of CoQ10 supplementation on cardiovascular risk factors in patients with prediabetes and type 2 diabetes mellitus: a grade-assessed systematic review and dose-response meta-analysis.",
       "journal": "BMC pharmacology & toxicology",
       "year": "2026",
@@ -6073,16 +6052,13 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "oxidative_stress_combination",
       "vetting_notes": "Bears directly on the suppressed oxidative_stress -> inflammation path (P1 item 2026-08-21). Reports a significant CRP reduction pooled across RCTs in prediabetes/T2D. NOTE it also found NO significant effect on malondialdehyde - the direct oxidative-stress marker - so it is not a clean confirmation and must not be summarised as one. CoQ10 is a supplement, not a repurposed generic drug; scope fit is a judgement call, flagged rather than assumed.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     },
     "42661296": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED. NARRATIVE_REVIEW, correctly tagged. The review is explicit that whether B-cell subset changes are primary drivers or secondary responses 'remains unresolved', and calls B-lymphocyte-targeted interventions 'still investigational'. Any use must carry both hedges; this paper supports a hypothesis, not a mechanism."
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "B Lymphocytes in Latent Autoimmune Diabetes in Adults: From Autoimmune Activation to Immunometabolic Heterogeneity and Precision Therapeutic Perspectives.",
       "journal": "Diabetes/metabolism research and reviews",
       "year": "2026",
@@ -6091,18 +6067,13 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "lada",
       "vetting_notes": "Gaps #1, #8, #10, #14. Describes GAD-antibody-stratified LADA endotypes. CAUTION: this is a narrative review, and the design audits of 2026-08-30 found the gap tiers are already carried disproportionately by narrative reviews (#2 and #6 are GOLD on 1 primary paper each). Adding another review to a LADA gap raises its paper count without raising its evidence. Ingest for context, do NOT let it promote a tier.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     },
     "42627334": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED against PubMed abstract fetched 2026-09-01. Numbers verified verbatim: C-peptide 0.54+/-0.05 vs 0.38+/-0.06 pmol/mL at week 72 (P=0.015), not significant at week 96 (P=0.336); 88 of 91 randomised completed week 96. NOTE A UNIT INCONSISTENCY IN THE SOURCE ITSELF: the week-72 figures are reported in pmol/mL and the week-96 figures in nmol/L within the same sentence. Values are 100x apart if read literally; the week-96 figures are almost certainly pmol/mL. Do not quote the week-96 unit as printed. Age split (adults n=28 preserved, children n=32 declined, P=0.022) is POST HOC and is labelled as such wherever used.",
-        "USED TODAY to re-frame the baricitinib entry on Research_Findings_Summary, which said 'Phase 2 data promising' and omitted the wane.",
-        "SOURCE-SIDE UNIT ERROR (pmol/mL vs nmol/L in one sentence) - flagged, not a repo defect"
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "beta-Cell Function and Diabetes Outcomes 1 Year After Stopping Oral Baricitinib Immunotherapy for Type 1 Diabetes.",
       "journal": "Diabetes care",
       "year": "2026",
@@ -6111,16 +6082,13 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "found via watch-item recheck, NOT by the sweep queries",
       "vetting_notes": "HIGH VALUE AND THE SWEEP MISSED IT. Directly answers a durability question the hub tracks: baricitinib preserved C-peptide at week 72 (0.54 vs 0.38 pmol/mL, P=0.015) but NOT at week 96 (P=0.336), and the authors conclude durable benefit likely requires continuous treatment. Also reports an age split: adults (n=28) fully preserved beta-cell function after stopping, children (n=32) lost 0.09 pmol/mL (P=0.022). Research_Findings_Summary lists baricitinib/BARICADE as BRONZE with \"Phase 2 data promising\" - that framing now needs the waning result beside it. Queued.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     },
     "42283716": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED. Caveats confirmed present in the abstract and MUST travel with any use: 47% of participants from 14 RCTs joined the follow-up, 209-473 responses per question, outcomes SELF-REPORTED, median follow-up 1.78 years (IQR 0.89-4.04). The paper reports NO DIFFERENCE between active and placebo, which is not the same claim as the title's 'benign side effect profile'. Absence of a detected difference at this sample size and participation rate is weak evidence of safety, not evidence of safety."
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Participants Suggests Benign Side Effect Profile.",
       "journal": "Diabetes care",
       "year": "2026",
@@ -6129,16 +6097,13 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "watch_items_pending_pmid resolution",
       "vetting_notes": "Resolves watch item logged 2026-07-30 (Diabetes Care 2026;49(8):1428), DOI 10.2337/dc26-0632. Supports the teplizumab long-term follow-up path. CAVEAT TO CARRY: outcomes are SELF-REPORTED and 53% of eligible participants did not join. \"No differences\" here is absence of a detected signal in a partially-participating self-report cohort, not demonstrated safety, and must never be restated as the latter.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     },
     "41978270": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED with a design caveat. BIOINFORMATICS on two public GEO datasets (GSE142025, GSE96804) with WGCNA plus a small clinical-specimen validation and immunoblot. Hub genes ZFP36, CLEC2D, HCK are ASSOCIATION findings with ROC/AUC diagnostic potential, not demonstrated causal mediators. 'Providing a theoretical basis and candidate targets' is the authors' own framing and is the ceiling for what this paper supports."
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "Characterization of NLRP3 Inflammasome-Associated Hub Genes in the Progression of Diabetic Nephropathy.",
       "journal": "Immunity, inflammation and disease",
       "year": "2026",
@@ -6147,16 +6112,13 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "watch_items_pending_pmid resolution",
       "vetting_notes": "Resolves watch item logged 2026-07-21 (DOI 10.1002/iid3.70424), PENDING for 41 days. NOTE the open P2 question from 2026-08-25 applies squarely: a bioinformatics hub-gene analysis contains no patient outcome, so whether it counts as corpus evidence is exactly the undecided item.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     },
     "42196240": {
-      "status": "VETTED",
+      "status": "UNVETTED",
       "pmid_verified": true,
-      "claims_checked": true,
-      "issues_found": [
-        "Claims check PASSED with a design caveat. PRECLINICAL only: STZ-diabetic wild-type and NLRP3-knockout C57BL/6 mice plus high-glucose HK-2 cells with siNLRP3. No human data. Any statement drawn from it must open PRECLINICAL, per the standing repo rule that produced the 2026-08-30 nano-rapamycin correction. Ferroptosis link (GPX4 up, ACSL4/COX2 down, erastin reversal) is mechanistic and in-model."
-      ],
+      "claims_checked": false,
+      "issues_found": [],
       "title": "NLRP3 Inflammasome Inhibition Attenuates Diabetic Kidney Injury via the Suppression of Ferroptosis: Mechanistic Insights from In Vivo and In Vitro Models.",
       "journal": "International journal of molecular sciences",
       "year": "2026",
@@ -6165,8 +6127,7 @@
       "added_by": "weekly sweep / watch-item resolution 2026-08-31",
       "source_query": "watch_items_pending_pmid resolution",
       "vetting_notes": "Resolves watch item logged 2026-07-21 (DOI 10.3390/ijms27104257). Mouse and cell work only. Does NOT close the standing gap (P4 2026-08-17) between NLRP3 suppression and renal HARD endpoints in humans; it is more preclinical evidence on the side that already had plenty.",
-      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED",
-      "claims_checked_date": "2026-09-01"
+      "claims_checked_method": "existence + title/journal/year confirmed via eutils esummary 2026-08-31; CLAIMS NOT YET VETTED"
     }
   },
   "paths": {
@@ -7918,7 +7879,7 @@
     },
     "8": {
       "tier": "SILVER",
-      "last_audited": "2026-09-02",
+      "last_audited": "2026-08-03",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -7957,18 +7918,13 @@
             "NCT04262479 (GAD-alum+VitD LADA pilot, ongoing)",
             "Nutrients 2024 16(23):4072 (VitD in autoimmune diabetes/LADA review)"
           ]
-        },
-        {
-          "date": "2026-09-02",
-          "new_evidence_found": true,
-          "notes": "Gap #8 audit (prev 2026-08-03). MATERIAL NEGATIVE READOUT, AND THE STATE WAS FIVE MONTHS STALE. The 2026-08-03 note listed DIAGNODE-3 (Diamyd/retogatein, intralymphatic rhGAD65, HLA DR3-DQ2 stratified) as a pending ~2026 readout to watch. It had already failed: Diamyd announced on 2026-03-27 that the pre-specified interim efficacy analysis on C-peptide in the first 174 of 321 participants missed the primary endpoint with no observable C-peptide preservation and did not meet the pre-specified continuation criteria; the company then confirmed futility and DISCONTINUED the trial and opened a strategic review (April 2026). No safety concerns were reported. Consequence for this gap: the largest active antigen-specific immunotherapy programme adjacent to LADA has now read out negative in recent-onset T1D, which weakens rather than strengthens the GAD-alum arm of the LADA immunomodulator case. The LADA-specific GAD-alum+VitD pilot NCT04262479 (Phase 2, COMPLETED per registry, n=14) still has no published primary readout. Retain SILVER - the gap (no LADA-specific immunomodulator RCT) is unchanged and if anything more open - but the watch list must drop DIAGNODE-3 as pending. ACTION TAKEN THIS RUN: the GAD-alum entry in build_data_dictionary.py claimed 'Preserves C-peptide at 20 mcg dose over 5 years in LADA' and 'Phase 3 trial completed; 20 mcg preserves C-peptide 5yr', citing PMID 22296077 (Ludvigsson, NEJM 2012). That paper is a NEGATIVE Phase 3 in recent-onset T1D in 10-20 year olds (stimulated C-peptide declined similarly in all groups; primary outcome at 15 months P=0.10) - wrong population, wrong duration, wrong direction. Rewritten to cite the study that actually supports the residual claim (PMID 19404608, Agardh 2009 Diabetologia, Phase 2, n=47 GADA-positive adults, PRIMARY OUTCOME SAFETY, no significant 5-year fasting C-peptide decline in the 20 mcg n=8 and 100 mcg n=9 arms, no between-group efficacy comparison reported, 500 mcg arm declined like placebo) and to state the Ludvigsson and DIAGNODE-3 negatives explicitly."
         }
       ],
-      "next_audit_due": "2026-10-02"
+      "next_audit_due": "2026-09-02"
     },
     "9": {
       "tier": "EXPLORATORY",
-      "last_audited": "2026-09-02",
+      "last_audited": "2026-08-03",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -8010,18 +7966,13 @@
             "PMID 35551294 (dorzagliatin T2D Ph3)",
             "PMC11361462 (dorzagliatin review, LADA cited as future direction only)"
           ]
-        },
-        {
-          "date": "2026-09-02",
-          "new_evidence_found": false,
-          "notes": "Gap #9 audit (prev 2026-08-03). No change. PubMed and web search for a glucokinase-activator trial in LADA found nothing new: all dorzagliatin human evidence remains T2D and GCK-MODY (Phase 3 monotherapy and metformin add-on, Nat Med 2022; DREAM extension; the 2025 Diabetes alpha/beta-cell function study in IGT/NGT). No registered or published GKA-in-LADA study located. corpus_evidence_points remains 0. Retain EXPLORATORY."
         }
       ],
-      "next_audit_due": "2026-10-02"
+      "next_audit_due": "2026-09-02"
     },
     "10": {
       "tier": "SILVER",
-      "last_audited": "2026-09-02",
+      "last_audited": "2026-08-11",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": true,
@@ -8075,14 +8026,9 @@
             "PMC9270809 (cross-sectional LADA prevalence)"
           ],
           "verdict": "SILVER retained; still no setting-segmented meta-analysis; underrecognition in primary care remains narrative, not quantified"
-        },
-        {
-          "date": "2026-09-02",
-          "new_evidence_found": false,
-          "notes": "Gap #10 audit (prev 2026-08-11, was overdue since 2026-08-30). Still NO setting-segmented (primary-care vs specialist) LADA prevalence systematic review or meta-analysis. New hits remain narrative: SN Compr Clin Med 2025 'LADA: The Evolving Landscape of Adult-Onset Autoimmune Diabetes', DiabetesOnTheNet primary-care review, and the earlier LADA primary-care risk score (PLOS One, PMC9910627). Reviews assert LADA is under-diagnosed in primary care but none quantifies a setting-dependent prevalence differential. SILVER retained, promotion_candidate stays true. SEPARATE DEFECT FIXED THIS RUN: rebuild_website.py line 460 labelled this gap BRONZE on the published index while agent_state, build_lada_prevalence.py and run_quality_improvements.py all said SILVER. The site was contradicting itself on a tier. Corrected to SILVER."
         }
       ],
-      "next_audit_due": "2026-10-02"
+      "next_audit_due": "2026-08-30"
     },
     "11": {
       "tier": "GOLD",
@@ -8302,7 +8248,7 @@
     },
     "14": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-02",
+      "last_audited": "2026-08-03",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -8441,21 +8387,16 @@
             "PMC9241519 (Front Endocrinol 2022 protocol)",
             "MDPI Biomedicines 2023 11(3):707 (gut microbiota-LADA-T1D review)"
           ]
-        },
-        {
-          "date": "2026-09-02",
-          "new_evidence_found": false,
-          "notes": "Gap #14 audit (prev 2026-08-03). No change. The primary watch item, the Berberine+Inulin LADA RCT NCT04698330 (n=240, 4-arm BBR / inulin / both / placebo on insulin, 3-month treatment, 9-month follow-up, primary endpoint HbA1c change, secondary beta-cell function and gut microbiota), still has only the 2022 Front Endocrinol protocol published (PMC9241519) and no peer-reviewed primary results. No LADA-specific personalized-nutrition RCT or systematic review located. Retain BRONZE, promotion_candidate stays false. Recheck NCT04698330 for results next audit."
         }
       ],
-      "next_audit_due": "2026-10-02"
+      "next_audit_due": "2026-09-02"
     },
     "15": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-02",
+      "last_audited": "2026-08-03",
       "corpus_evidence_points": 1,
       "credibility_issues": [],
-      "promotion_candidate": false,
+      "promotion_candidate": true,
       "audit_history": [
         {
           "date": "2026-04-16",
@@ -8513,14 +8454,9 @@
             "PMC12217734 (SGLT2i precision medicine MDT review)",
             "PMC12706267 (GLP-1RA/SGLT2i gut-microbiota modulation T2D)"
           ]
-        },
-        {
-          "date": "2026-09-02",
-          "new_evidence_found": true,
-          "notes": "Gap #15 audit (prev 2026-08-03). THE AUDIT TRAIL FOR THIS GAP HAS BEEN AUDITING THE WRONG QUESTION SINCE APRIL. Canonical Gap #15, per build_data_dictionary.py GAPS, build_gka_pricing.py and run_quality_improvements.py, is the GKA PRICING TRAJECTORY MODEL. Every one of the seven prior audit_history entries on this gap (2026-04-16, 04-21, 05-05, 06-03, 06-30, 07-08, 08-03) audits 'SGLT2 inhibitors x personalized/precision nutrition' instead - a topic that is not any of the 15 gaps, and whose nearest legitimate home is Gap #13 (Personalized Nutrition for Beta Cell Health), which has its own separate and correct history. Consequence: promotion_candidate=true on Gap #15 was set on evidence for a different question and is NOT a statement about GKA pricing. Set promotion_candidate=false pending a real assessment. FIRST ACTUAL GAP #15 AUDIT: dorzagliatin (HuaTangNing, Hua Medicine/Bayer) remains the only approved GKA and remains China-only. It entered China's National Reimbursement Drug List effective 2024-01-01 and was renewed at the same negotiated price for calendar 2026-2027; sales volume rose roughly 740% over 2023 in the first full reimbursed year. The dashboard's headline 'Estimated Price: $2,000-$3,000/year in China (PMID:36449148)' is a pre-reimbursement launch-price estimate and is very likely now too high, but no post-NRDL per-year price was found in a citable source, so the figure was retained and flagged [STALE - PRE-NRDL ESTIMATE] on the published page rather than silently changed. No pricing evidence located for TTP399/cadisegliatin, which is still unapproved. Retain BRONZE."
         }
       ],
-      "next_audit_due": "2026-10-02",
+      "next_audit_due": "2026-09-02",
       "candidate_second_source": {
         "pmid": "34059744",
         "citation": "Yabe et al., Sci Rep 2021, PMC8166978, UMIN000024580",
@@ -8541,6 +8477,30 @@
       "type": "fix_pipeline",
       "added": "2026-08-31",
       "target": "AUDIT THE REMAINING GENERATED MARKDOWN THE SAME WAY. Today proved the gates had a whole file class in their blind spot: verify_pmids.py:44 and audit_prose_citation_titles.py:349 both scan .py only, so RESEARCH_DOCTRINE.md and Research_Findings_Summary.md had never been checked by anything and held 10 misattributed PMIDs between them. audit_markdown_citations.py now covers repo root, docs/ and Notes/. NOT yet covered: Analysis/Results/*.md (excluded as historical record - verify that is still true, since some are linked from dashboards) and any .md under Papers/. Also confirm no OTHER generated markdown exists whose generator holds the real text, the way add_citations.py holds Research_Findings_Summary.md."
+    },
+    {
+      "priority": 2,
+      "type": "analysis",
+      "added": "2026-08-31",
+      "target": "RE-FRAME BARICITINIB ON THE STRENGTH OF PMID 42627334 (Diabetes Care 2026, BANDIT post-treatment follow-up). Research_Findings_Summary currently lists baricitinib/BARICADE as BRONZE with \"Phase 2 data promising; Phase 3 not yet enrolled\". The new paper reports that the benefit WANES: C-peptide significantly greater at week 72 (0.54 vs 0.38 pmol/mL, P=0.015) but not at week 96 (P=0.336), no differences in insulin dose, HbA1c or CGM measures during follow-up, and the CD8+ effector memory changes seen at week 48 had resolved by week 96. The authors conclude durable benefit likely requires continuous treatment. There is also an age split worth carrying: adults (n=28) fully preserved beta-cell function after stopping, children (n=32) declined (P=0.022) - note this is POST HOC. \"Promising\" without \"wanes off-treatment\" is the kind of half-summary this repo keeps catching elsewhere."
+    },
+    {
+      "priority": 2,
+      "type": "vet_papers_batch",
+      "added": "2026-08-31",
+      "target": "VET THE 6 PAPERS INGESTED 2026-08-31. Existence and metadata are confirmed; CLAIMS are not. Highest value first: 42627334 (BANDIT follow-up - read the durability numbers against what the hub currently says about baricitinib), 42283716 (TrialNet safety - confirm the self-report and 47%-participation caveats travel with any use of it), 42642774 (CoQ10 meta-analysis - note it found CRP down but malondialdehyde unchanged; do not let it be summarised as an oxidative-stress win), then 42661296, 41978270, 42196240."
+    },
+    {
+      "priority": 3,
+      "type": "fix_pipeline",
+      "added": "2026-08-31",
+      "target": "FOLD watch_items_pending_pmid INTO THE WORK QUEUE. Three items carried next_recheck dates of 2026-08-07/13 and were passed over by eight consecutive daily runs, then all three resolved on the first attempt with one DOI query each. The side list has no surfacing mechanism: nothing reads the date. Either give it one or move the items into work_queue where the priority ordering already does that job."
+    },
+    {
+      "priority": 3,
+      "type": "analysis",
+      "added": "2026-08-31",
+      "target": "DECIDE WHETHER CoQ10 (PMID 42642774) IS IN SCOPE. The hub is about repurposing GENERIC DRUGS; CoQ10 is a dietary supplement. Its 20-RCT meta-analysis is the strongest new evidence touching the suppressed oxidative_stress -> inflammation path, which makes it tempting, and it is a category the corpus has no rule for. Note the result is mixed on its own terms: significant reductions in triglycerides, FBS, HbA1c, HOMA-IR and CRP, but NO significant effect on malondialdehyde, total cholesterol, LDL or blood pressure. A path about oxidative stress supported by a trial that failed to move the oxidative-stress marker needs that stated, not smoothed over."
     },
     {
       "priority": 1,
@@ -8600,24 +8560,6 @@
       "added": "2026-08-30",
       "target": "REVIEW THE THREE GOLD/SILVER GAPS THAT REST ON ONE PRIMARY PAPER. audit_gap_evidence_design.py (new 2026-08-30) grades #2 Health Equity GOLD and #6 CAR-T Access GOLD as PRIMARY_THIN: 1 of 6 and 1 of 8 design-readable papers report primary data, the rest being narrative reviews. #5 Treg in Diabetic Neuropathy (2 of 7) and #7 GKA Drug Repurposing (3 of 13) are SILVER and equally thin. NOTE #11 Islet Registry Equity is GOLD on TWO papers total, which the design audit cannot flag because 1 of 1 readable paper is primary - a count problem the design grader is the wrong instrument for. This is the gap analogue of the 2026-08-29 path finding and is a re-tiering decision, so it was reported and NOT applied.",
       "queue_position": 8
-    },
-    {
-      "priority": 1,
-      "type": "user_action_required",
-      "added": "2026-09-01",
-      "target": "INFRASTRUCTURE, NOT RESEARCH, AND IT IS NOW THE LARGEST SINGLE RISK IN THE PROJECT. 96 commits have never been pushed; the oldest is 2026-04-21 and .git/FETCH_HEAD does not exist, so the remote has never been contacted since clone. Four and a half months of vetting, gate construction and citation repair has exactly one copy, on one disk. TWO COMPOUNDING DEFECTS MEASURED TODAY: (a) 60 files are staged for deletion in the index while present on disk - the outputs of the last four runs, including all four monitor reports and the paper-library abstracts written by the 2026-08-28 miscitation repair - so the next `git commit` DELETES them; cause is `git add -A` running while OneDrive had them dehydrated to cloud-only placeholders. (b) 176 junk lock files (141MB .git) and two phantom branches in refs/heads (main.lock.old_1786608612, main.lock.z_1786954612656090835) created by five months of runs RENAMING locks the mount would not let them delete. NONE of this is fixable from the sandbox: the unlink denial is the defect, and the push needs credentials an unattended run should not hold. WRITTEN AS A SCRIPT FOR THE HUMAN: Analysis/Scripts/repair_git_state.py (report-only by default, --apply to act; backs up .git/index, unstages the 60, retires the phantom refs, then STOPS and prints the push commands). It also names the OneDrive 'Always keep on this device' setting that caused (a), so it does not recur."
-    },
-    {
-      "type": "user_action_required",
-      "priority": 1,
-      "added": "2026-09-02",
-      "target": "HUMAN CALL, AND IT IS A SMALL ONE THAT UNBLOCKS A BIG ONE. Ver-A-T1D is COMPLETED on ClinicalTrials.gov (NCT04545151, Phase 2, n=136, Medical University of Graz) and Diabetes UK and trial press coverage describe a positive C-peptide result, but a PubMed search on 2026-09-02 for Ver-A-T1D, for NCT04545151, and for verapamil T1D 2026 returns ONLY the protocol, PMID 39613428. There is no citable primary-results paper. The four standing P1 items asking what to do about the verapamil paths all turn on this. The question is narrow: do you want the verapamil paths to stay ranked on a protocol until a results paper exists, or be suppressed to a watch item with the registry completion recorded? Either answer is defensible; the current state - ranked 4th and 5th on a protocol, graded NO_RESULTS - is the one that is not."
-    },
-    {
-      "type": "fix_pipeline",
-      "priority": 1,
-      "added": "2026-09-02",
-      "target": "GENERALISE TODAY'S FINDING: THE \"# --- VERIFIED: ...\" COMMENTS ARE NOT VERIFICATION. build_trial_equity_mapper.py marks every entry VERIFIED; six disagreed with ClinicalTrials.gov and four pointed at unrelated specialties. The same marker style appears in build_drug_repurposing_islet.py, build_gka_landscape.py and build_gap_deep_dives.py. Write a gate that fails when a VERIFIED marker sits above a record whose attributes have never been re-derived from a live registry or PubMed call, or strip the markers. Today's NCT gate only covers NCT ids; sponsor, country and enrollment fields on the same records are still unchecked, and the fused Ver-A-T1D/CLVer entry had a wrong sponsor, wrong country and an enrollment of 450 that belonged to neither trial."
     },
     {
       "priority": 2,
@@ -8724,6 +8666,13 @@
     },
     {
       "priority": 2,
+      "type": "audit_gap",
+      "added": "2026-08-27",
+      "target": "RE-READ GAP 15 (GKA PRICING) NOW THAT ITS CITATIONS ARE MARKED. build_gka_pricing.py now carries visible [UNSOURCED] markers on the SGLT2i launch/generic figures and the GKA generic precedent. Gap 15 is BRONZE and its dashboard is largely a pricing-trajectory argument; with the load-bearing citation stripped, re-assess whether the remaining sourced evidence still supports BRONZE or whether the gap should be restated as a modelling exercise with an explicit assumptions table.",
+      "queue_position": 23
+    },
+    {
+      "priority": 2,
       "type": "verify_citations",
       "added": "2026-08-28",
       "target": "THE OTHER 12 BACKGROUND AND OFF_TOPIC PAPERS WERE CHECKED FOR PRESENCE ON THE SITE, NOT FOR CORRECTNESS OF THEIR PROSE. Today confirmed 0 uncitable PMIDs render on any dashboard except the verification page, which must show them. But the 6 BACKGROUND papers ARE still cited by design, and only two of them (18662538 TGF-beta in the data dictionary, 25714673 minocycline in the generic drug catalog) had their citation prose read against the actual paper. Run audit_builder_title_agreement.py and audit_citation_coordinates.py restricted to the BACKGROUND set and confirm each surviving citation says what its paper says. A BACKGROUND paper is by definition cited for a claim it was not written to support, which is the condition under which paraphrase drifts.",
@@ -8757,42 +8706,6 @@
       "added": "2026-08-30",
       "target": "PMID 36449148 'Dorzagliatin: First Approval' CARRIES 21 DISTINCT CLAIMS ON 103 WORDS. Surfaced 2026-08-30 by the new claim-density signal and NOT previously in the queue - the three known concentrations (34763823/87, 32175717/39, 29710129/100) were all found by hand. A 'First Approval' note in Drugs is a one-page regulatory profile. 20.4 claims per 100 source words puts it 4th repo-wide. Read the 21 citing contexts in semantic_support.json and decide per claim: source properly, mark [UNSOURCED], or withdraw. Same three options as the 34763823 P1 item.",
       "queue_position": 28
-    },
-    {
-      "priority": 2,
-      "type": "audit_gap",
-      "added": "2026-09-01",
-      "target": "ADJUDICATE THE 7 WEAK_TOPIC_OVERLAP TRIAL CITATIONS BY HAND. These share exactly one content word with their registry record, which is the band the gate deliberately refuses to call either way. At least three look like real mismatches on inspection: NCT05210530 labelled 'Sana Bio SC451 hypoimmune' is VCTX210A (CRISPR/ViaCyte); NCT04516564 labelled AZD1656 is AK119, an anti-CD73 antibody - note the correct AZD1656 COVID trial is NCT04516759, which differs by five characters and looks like a transposition; NCT02691247 labelled 'PolTREG (Medical University of Gdansk)' is CLBS03, the Sanford Project T-Rex study. The other four (NCT04262479 GADinLADA, NCT04881760, NCT05791201 VX-264, NCT06176573 now repaired) appear correct or already handled."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 2,
-      "added": "2026-09-02",
-      "target": "RE-HOME THE ORPHANED SGLT2i x PERSONALIZED-NUTRITION AUDIT TRAIL. Seven audits (2026-04-16 through 2026-08-03) currently sit in gaps[\"15\"].audit_history but audit a question that is not Gap #15. Decide whether that body of work belongs under Gap #13 (Personalized Nutrition for Beta Cell Health), belongs as a new gap #16, or should be archived. Do not merge blindly: Gap #13 has its own parallel history and the two may double-count the same sources (PMC8166978 appears in both lines of reasoning)."
-    },
-    {
-      "type": "verify_citations",
-      "priority": 2,
-      "added": "2026-09-02",
-      "target": "FIND OR WITHDRAW THREE IDENTIFIERS MARKED UNSOURCED TODAY. (a) AZD1656 in COVID-19 - build_gka_landscape.py cited NCT04516564, which is AK119 anti-CD73 in healthy subjects. (b) Edmonton Protocol registration - build_trial_equity_mapper.py cited NCT01508429, a misoprostol postpartum-haemorrhage trial. (c) Etanercept and GLP-1RA islet-transplant adjunct trials in build_drug_repurposing_islet.py - NCT02232165 and NCT00750178 both resolve elsewhere. House rule was followed: no substitutes were invented. Either locate the real registrations or delete the rows."
-    },
-    {
-      "type": "verify_citations",
-      "priority": 2,
-      "added": "2026-09-02",
-      "target": "VX-264 IS NOT TRACKED ANYWHERE NOW. Removing NCT05791201 from the zimislecel entry dropped that tier from SILVER to BRONZE and left Vertex's device-encapsulated, immunosuppression-free islet programme with no entry of its own. If it should be on the site, add it as its own record with registry-read attributes; if not, say so once so a later run does not re-attach it to VX-880."
-    },
-    {
-      "priority": 3,
-      "type": "fix_pipeline",
-      "added": "2026-08-31",
-      "target": "FOLD watch_items_pending_pmid INTO THE WORK QUEUE. Three items carried next_recheck dates of 2026-08-07/13 and were passed over by eight consecutive daily runs, then all three resolved on the first attempt with one DOI query each. The side list has no surfacing mechanism: nothing reads the date. Either give it one or move the items into work_queue where the priority ordering already does that job."
-    },
-    {
-      "priority": 3,
-      "type": "analysis",
-      "added": "2026-08-31",
-      "target": "DECIDE WHETHER CoQ10 (PMID 42642774) IS IN SCOPE. The hub is about repurposing GENERIC DRUGS; CoQ10 is a dietary supplement. Its 20-RCT meta-analysis is the strongest new evidence touching the suppressed oxidative_stress -> inflammation path, which makes it tempting, and it is a category the corpus has no rule for. Note the result is mixed on its own terms: significant reductions in triglycerides, FBS, HbA1c, HOMA-IR and CRP, but NO significant effect on malondialdehyde, total cholesterol, LDL or blood pressure. A path about oxidative stress supported by a trial that failed to move the oxidative-stress marker needs that stated, not smoothed over."
     },
     {
       "priority": 3,
@@ -8863,24 +8776,6 @@
       "added": "2026-08-30",
       "target": "WIDEN THE SEMANTIC SCORER WITH SUFFIX NORMALISATION, AND MEASURE IT. audit_citation_semantic_support.py has no stemming, so morphological variants miss. Canonical example from its own 2026-08-30 output: PMID 40249888 'Decentralized Point-of-Care Manufacturing of CD19 CAR-T in Mexico' cited for '...a path to decentralization' scores 0.00 on a CORRECT citation. Apply light suffix normalisation, then re-run --self-test and compare the lift (currently 4.92x, 72.9% real-beats-random) and read every newly-admitted low scorer before keeping it. Same discipline as the 2026-08-20 dose_fragment_patterns widening: relax one rule, count the delta, read the hits.",
       "queue_position": 39
-    },
-    {
-      "priority": 3,
-      "type": "analysis",
-      "added": "2026-09-01",
-      "target": "EXTEND THE NCT GATE TO THE 854 REGISTRY-SNAPSHOT IDS, OR DECIDE NOT TO. Today's gate deliberately scoped itself to the 32 hand-authored ids on the narrative surface, on the reasoning that asking ClinicalTrials.gov whether it agrees with ClinicalTrials.gov proves nothing. That reasoning holds for ids the snapshot script PULLED, but not for ids a human TYPED into a snapshot-shaped file. Also: NCT12345678 appears in the repo, the exact analogue of PMID 12345678, which the 2026-08-24 item traced to the index harvester reading code as citations. Find where it entered."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 3,
-      "added": "2026-09-02",
-      "target": "GAP #15 FOLLOW-UP: find a citable post-NRDL dorzagliatin price. The published dashboard still shows $2,000-$3,000/year (PMID:36449148), now flagged [STALE - PRE-NRDL ESTIMATE]. Dorzagliatin has been NRDL-reimbursed in China since 2024-01-01 and renewed at the same negotiated price for 2026-2027, so the real figure is likely far lower. Hua Medicine annual reports and Chinese NHSA negotiation result publications are the places to look."
-    },
-    {
-      "type": "search_pubmed",
-      "priority": 3,
-      "added": "2026-09-02",
-      "target": "WATCH FOR NCT04698330 (berberine + inulin in LADA, n=240) PRIMARY RESULTS - still protocol-only as of 2026-09-02 and the single most likely near-term event to move Gap #14 off BRONZE."
     },
     {
       "type": "check_combination",
@@ -9160,6 +9055,51 @@
       "notes": "Added 2026-07-06 from Monday sweep.",
       "queue_pos": 39,
       "queue_position": 71
+    },
+    {
+      "priority": 6,
+      "type": "audit_gap",
+      "target": "Gap #10 (LADA prevalence by healthcare setting, SILVER, promotion_candidate) audited 2026-08-11 — REMAINS SILVER (still no setting-segmented SR/MA; only narrative sources). Next monthly audit ~2026-09-10.",
+      "queued_date": "2026-05-30",
+      "next_due": "2026-08-30",
+      "last_updated": "2026-08-04",
+      "queue_pos": 40,
+      "queue_position": 72
+    },
+    {
+      "type": "audit_gap",
+      "priority": 6,
+      "target": "Gap #14 audited 2026-08-03 — REMAINS BRONZE. Next monthly audit ~2026-09-02.",
+      "next_due": "2026-09-02",
+      "queue_pos": 42,
+      "queue_position": 73
+    },
+    {
+      "priority": 6,
+      "type": "audit_gap",
+      "target": "Gap #15 audited 2026-08-03 — REMAINS BRONZE. Next monthly audit ~2026-09-02.",
+      "queued_date": "2026-07-08",
+      "next_due": "2026-09-02",
+      "queue_pos": 43,
+      "queue_position": 74
+    },
+    {
+      "priority": 6,
+      "type": "audit_gap",
+      "target": "Gap #8 audited 2026-08-03 — REMAINS SILVER. Next monthly audit ~2026-09-02.",
+      "queued_date": "2026-05-30",
+      "next_due": "2026-09-02",
+      "queue_pos": 45,
+      "queue_position": 75
+    },
+    {
+      "priority": 6,
+      "type": "audit_gap",
+      "target": "Gap #9 audited 2026-08-03 — REMAINS EXPLORATORY. Next monthly audit ~2026-09-02.",
+      "queued_date": "2026-07-08",
+      "next_due": "2026-09-02",
+      "queue_pos": 46,
+      "queue_position": 76
     },
     {
       "type": "audit_gap",
@@ -10793,41 +10733,6 @@
       "miscitations_repaired": 10,
       "changes_pushed": false,
       "summary": "Mon 2026-08-31 - THE DOCUMENT THAT DEFINES THIS PROJECT'S CITATION STANDARD CONTAINED SIX MISATTRIBUTED CITATIONS, AND NO GATE COULD SEE THEM. (1) THE P1 QUEUE WAS AGAIN LEFT TO THE HUMAN, but not merely deferred: a consolidating item was added arguing the seven standing HUMAN CALLs are one question - count-derived versus design-derived authority - and that answering the doctrine-definition instance first subsumes most of the rest. Eleven days of adding an item a day without resolving one is the thing to stop. (2) THE CREDIBILITY SWEEP WAS REBUILT AND IMMEDIATELY EARNED ITS KEEP. The task file's \"PMIDs above 42000000 are fabricated\" rule was measured stale by 669,647 - the live ceiling is 42,669,647 - and replaced with a runtime measurement. Rewriting the sweep to read .md as well as .py exposed the blind spot: verify_pmids.py:44 and audit_prose_citation_titles.py:349 both scan .py ONLY, so no gate had ever read the markdown. (3) RESEARCH_DOCTRINE.md CARRIED SIX MISATTRIBUTED PMIDs INSIDE ITS OWN WORKED EXAMPLES OF CORRECT CITATION. Its \"PMID-Verified (Strongest)\" exemplar sourced the $237bn US diabetes cost to 35912345, a halide-perovskite solar-cell paper (real figure, real PMID, wrong pairing, and attributed to the CDC in 2023 when it is ADA data for 2017). Its correct-citation-FORMAT exemplar pointed at 38234567, a RETRACTED ginsenoside renal-ischaemia study. Its GOLD-tier exemplar cited 37234567 (HPV self-sampling in Minnesota) and 37456789 (mesoscopic cell migration) as the NEJM zimislecel trial and a Lancet commentary. Every one resolves on PubMed, which is exactly why five months of runs walked past them. (4) THE GOLD EXEMPLAR WAS ALSO WRONG ON THE SCIENCE, which matters more than the identifiers. Re-sourced to the real trial (40544428, NEJM 2025) it is a phase 1-2 study of 14 patients with interim, non-prespecified analyses and two deaths - not the \"Phase 3\" the doctrine claimed - and the two confirmatory sources are both commentary ON that trial. Counting them as independent confirmation counts 12 patients three times. Re-tiered SILVER, aligning with 10_Questions_Self_Audit.md which had rated the same claim SILVER all along: two governing documents had disagreed about the tier of the same claim and nothing noticed. (5) Research_Findings_Summary.md HELD FOUR MORE. A GOLD-rated icodec claim cited 37356449, a Lancet health-policy piece with no icodec data, while the three ONWARDS trials that actually justify GOLD went uncited. Orforglipron cited 37385277, a Lancet Comment about SEMAGLUTIDE. Dorzagliatin cited a 2025 preclinical PK-PD paper as \"Nature Medicine 2022\". Retatrutide cited the right paper with the wrong journal, wrong year, wrong NCT and a weight-loss figure (28.7% at 68 weeks) that does not appear in it - the trial ran 48 weeks and reported 24.2%. All four re-sourced against the live API. (6) THE FIRST ROUND OF FIXES WAS SILENTLY REVERTED AND THE NEW GATE CAUGHT IT. Research_Findings_Summary.md is GENERATED by add_citations.py; editing the .md was undone by the next pipeline run. The markdown gate went red on the regenerated file within the same run. Fixes moved into the generator. This is the strongest evidence the gate works: it caught a regression that no human was watching for. (7) THE GATE ITSELF REPRODUCED THE REPO'S FAVOURITE MISTAKE ON DRAFT ONE - flagging 71 of 73 sites, a 97% false-positive rate, by scoring citations against title claims the text never made. Same failure as audit_prose_citation_titles.py (249 spurious, 2026-08-26) and audit_gap_evidence_design.py (2026-08-30). Fixed by requiring a marked-up title span adjacent to the identifier; a corpus-derived journal lexicon was then tried, measured (235 tokens, 14 findings, 14 of them false because \"drug\" and \"kidney\" appear in journal names), and REJECTED in favour of a small hand-verified alias list. Final: 0 of 61 flagged. (8) A 0-FINDING GATE PROVES NOTHING WHEN THE SAME RUN REPAIRED EVERYTHING IT HUNTS, so test_markdown_citation_gate.py pins it against the verbatim pre-repair text: 4 defects it must catch, 4 correct citations the draft wrongly flagged that it must not. 8/8. The fixture caught a real hole while being written - the JAMA-for-NEJM error survived the year check because YEAR_SLACK=1 and the years were 2024 vs 2023, so a journal-contradiction test was added scoped to the bracketed citation record. (9) HOUSEKEEPING. Weekly sweep: 3 new PMIDs, 1 screened out as an n=1 case report. Three watch items that had been PENDING for 18-41 days past their recheck dates all resolved on the first DOI query - the recheck dates are written but nothing reads them, so a queue item was filed to fold them in. PMID 41986815 resolved (P3 #37). The most valuable new paper, 42627334 (BANDIT: baricitinib's beta-cell benefit WANES within 48 weeks of stopping), was found by accident, not by the sweep - no active query covers immunotherapy durability. All 63 pipeline scripts green."
-    },
-    {
-      "date": "2026-09-01",
-      "day": "Tuesday",
-      "papers_vetted": 6,
-      "papers_unvetted_remaining": 0,
-      "new_gates": 1,
-      "nct_ids_audited": 32,
-      "nct_hard_failures": 10,
-      "nct_repaired": 4,
-      "pipeline": "57/58 OK (nctgate FAILS by design over a known backlog)",
-      "changes_pushed": false,
-      "summary": "Tue 2026-09-01 - NINE GATES GUARD PMIDs. NOTHING GUARDED THE TRIAL NUMBERS, AND A THIRD OF THEM POINT AT THE WRONG STUDY. (1) THE NINTH DEFECT CLASS. Research_Findings_Summary published baricitinib's Phase 3 programme against NCT06640413, which is TheraTri, a phase 1 radioligand oncology study of [177Lu]Lu-OncoFAP-23. The identifier resolves, which is why five months of runs walked past it. Built audit_nct_identifiers.py: of 32 hand-authored trial ids, 11 agree, 4 disagree on an attribute, 7 overlap weakly, 9 name a study in an unrelated field and 1 does not exist. Teplizumab's PETITE cited a chlorhexidine post-cesarean trial ON A GOLD-RATED ENTRY; tirzepatide's SURPASS-T1D cited thyroid ablation; the Edmonton Protocol cited misoprostol for postpartum haemorrhage; CIT-07 cited protamine during TAVI. The repo had ALREADY found one wrong NCT by hand on 2026-03-17 (build_trial_equity_mapper.py still carries the comment) and never generalised it into a gate. Repaired 4 against the live registry, marked ABA-201 UNSOURCED (its NCT06234898 does not exist), queued the other 6 - choosing the right islet trial is research, not repair. (2) THE GATE WAS WRONG TWICE BEFORE IT WAS RIGHT, and both drafts are recorded in its docstring. Its context window bled across adjacent dict literals and reported a neighbouring trial's phase as this one's; and it treated ONE shared content word as topical agreement, on which the chlorhexidine trial PASSED as PETITE via the word 'prevention'. Threshold raised to two with a WEAK_TOPIC_OVERLAP band; attributes now read the enclosing record within 100 chars of the id. (3) THE BARICITINIB SENTENCE WAS WRONG THREE WAYS and only one was the identifier: the status was stale (both Phase 3 trials recruiting since Jan/Feb 2026, not 'enrollment anticipated') and 'Phase 2 data promising' omitted that the effect does not survive stopping - PMID 42627334 reports C-peptide significant at week 72 (P=0.015) but NOT at week 96 (P=0.336), no insulin/HbA1c/CGM difference, CD8+ changes resolved. Also flagged a SOURCE-SIDE unit error in that abstract: pmol/mL and nmol/L in the same sentence, 100x apart. (4) VETTING IS COMPLETE. The last 6 papers were claim-checked; corpus is 331 VETTED / 19 FLAGGED / 0 UNVETTED. Three carry caveats that must travel: 42283716's 'benign side effect profile' is no-difference-detected at 47% participation and self-report; 42642774's CoQ10 result is CRP down but MALONDIALDEHYDE UNCHANGED, an inflammation win and an oxidative-stress null. (5) THE LARGEST RISK IS NOT A RESEARCH RISK. 96 commits have never been pushed, oldest 2026-04-21, and FETCH_HEAD does not exist. Worse, 60 files are staged for DELETION while present on disk - the last four runs' outputs, including the 08-28 miscitation-repair abstracts - so the next commit would delete them; cause is `git add -A` under dehydrated OneDrive placeholders. Plus 176 junk locks (141MB .git) and two phantom branches in refs/heads from five months of renaming locks the mount will not let anyone delete. None fixable from the sandbox; written up as Analysis/Scripts/repair_git_state.py for the human, report-only by default. (6) A FINDING THAT LANDS ON A STANDING HUMAN CALL: NCT04233034 is labelled 'Ver-A-T1D' and is actually CLVer - PMID 36826844, the JAMA RCT the 08-29 item said supplies zero extractions while two top-ranked paths rest on a protocol. The trial, its publication AND its registration were all already in the repo. (7) The seven P1 HUMAN CALLs were again not touched - twelve days. Today added evidence to one instead of an eighth item to the pile."
-    },
-    {
-      "date": "2026-09-02",
-      "day": "Wednesday",
-      "queue_items_worked": [
-        "audit_gap #8",
-        "audit_gap #9",
-        "audit_gap #10",
-        "audit_gap #14",
-        "audit_gap #15",
-        "fix_pipeline: NCT identifier gate to green",
-        "vet_papers_batch: flagged-paper schema"
-      ],
-      "summary": "Five due gap audits (8, 9, 10, 14, 15) plus the first pass that made the NCT identifier gate green. Findings, in order of severity. (1) GAP #15 HAS BEEN AUDITING THE WRONG QUESTION SINCE 2026-04-16: all seven prior audits cover SGLT2i x personalized nutrition, not the canonical GKA Pricing Trajectory Model; promotion_candidate reset to false and a real GKA-pricing audit recorded. (2) GAD-ALUM CLAIM CONTRADICTED ITS OWN SOURCE: the data dictionary asserted C-peptide preservation at 20 mcg over 5 years in LADA citing PMID 22296077, a negative Phase 3 in recent-onset T1D adolescents; rewritten against PMID 19404608 (Agardh 2009, Phase 2, primary outcome safety, n=8 in the 20 mcg arm, no between-group efficacy test). (3) DIAGNODE-3 was discontinued for futility in 2026 after a negative interim C-peptide analysis; the state had been carrying it as a pending readout for five months. (4) SEVEN WRONG TRIAL IDENTIFIERS on the published surface, four of them pointing at unrelated specialties: NCT05794503 (anaesthesia) as VX-880, NCT04582669 (dermatology) as LANTIDRA, NCT02974660 (cardiology) as CIT-07, NCT01508429 (obstetrics) as the Edmonton Protocol, NCT02232165 (spinal cord injury) as an etanercept islet trial, NCT04516564 (an anti-CD73 antibody) as AZD1656 in COVID-19, and NCT06098729 (a T1D digital-exercise study) as a LADA trial. (5) TWO PRODUCT CONFUSIONS that inflated the pipeline: the Sana 6-month no-immunosuppression result was credited to SC451 (iPSC-derived, no human efficacy data) when it belongs to UP421 (primary donor islets), and the zimislecel entry cited NCT05791201 (VX-264, a different Vertex programme) as its second independent report, which was the whole basis of its SILVER tier - now BRONZE. (6) The verapamil entry fused Ver-A-T1D and CLVer into one record with a phase, sponsor, country and enrollment belonging to neither. Ver-A-T1D (NCT04545151, Phase 2, n=136, Graz) is COMPLETED on the registry but STILL has no primary-results paper in PubMed as of today - only the protocol, PMID 39613428 - which confirms the standing P1 queue item rather than closing it. (7) Gap #10 was labelled BRONZE on the published index and SILVER everywhere else. All 64 pipeline steps now pass and the NCT gate is green for the first time.",
-      "gaps_audited": [
-        "8",
-        "9",
-        "10",
-        "14",
-        "15"
-      ],
-      "gate_status": "run_quality_improvements.py 64/64 [OK]; audit_nct_identifiers.py OK 28 / 0 findings"
     }
   ],
   "topic_checks": {
@@ -13194,9 +13099,7 @@
     "watch_item_recheck_dates_are_not_self_executing": {
       "date": "2026-08-31",
       "note": "Three watch items carried next_recheck dates of 2026-08-07 and 2026-08-13 and sat untouched for 18-41 days while eight daily runs went past them. All three resolved on the first attempt with a single DOI query. A date field that nothing reads is a reminder nobody receives. RECOMMENDED: fold watch_items_pending_pmid into the work queue proper so overdue items surface the way queue items do, rather than living in a side list."
-    },
-    "nct_identifiers_2026_09_01": "Trial registry identifiers are citations and are gated like citations. A resolvable NCT is not a supported NCT. Repair only against a registry record fetched live; where no substitute is verified, mark UNSOURCED and invent nothing (the 2026-08-29 rule, extended from PMIDs to NCTs).",
-    "2026-09-02": "Two failure modes, both about labels that assert verification without carrying it. (1) A hand-written '# --- VERIFIED: ...' comment is not verification. build_trial_equity_mapper.py carries that marker on every entry; six of its entries disagreed with ClinicalTrials.gov, four of them pointing at trials in unrelated specialties (a TAVI cardiology study, a postpartum-haemorrhage trial, an acute spinal-cord-injury study, a hidradenitis suppurativa dermatology trial). The gate that caught them, audit_nct_identifiers.py, has existed since 2026-08-29; nothing had made it green. Rule: a VERIFIED marker written by a human or by an earlier run means nothing unless a gate re-derives it. (2) A gap slot number is not a gap identity. Gap #15 accumulated seven audits of a topic that was not Gap #15, and a promotion_candidate flag with it, because nothing checked the audit note against the canonical gap name. Every gap audit should now open by restating the canonical name from build_data_dictionary.py GAPS before searching."
+    }
   },
   "last_path_validation_batch": "2026-08-28",
   "watch_items_pending_pmid": [
@@ -13486,101 +13389,6 @@
       "status": "CLOSED",
       "closed": "2026-08-31",
       "closing_note": "CLOSED 2026-08-31. Diabetologia 2026 Jul, \"Multi-tissue multi-omics integration reveals tissue-specific pathways, gene networks and drug candidates for type 1 diabetes.\" Design: computational integration of human T1D GWAS with tissue-specific regulatory data, key-driver genes validated in NOD mice, drug-repositioning predictions tested against OneFlorida+ EMR. Species: human genomic data + mouse validation; no human n, because there is no human intervention. Relevant to the drug-repurposing gaps as a HYPOTHESIS-GENERATING source - its drug candidates are predictions with EMR support, not trial results, and must not be cited as efficacy."
-    },
-    {
-      "priority": 2,
-      "type": "analysis",
-      "added": "2026-08-31",
-      "target": "RE-FRAME BARICITINIB ON THE STRENGTH OF PMID 42627334 (Diabetes Care 2026, BANDIT post-treatment follow-up). Research_Findings_Summary currently lists baricitinib/BARICADE as BRONZE with \"Phase 2 data promising; Phase 3 not yet enrolled\". The new paper reports that the benefit WANES: C-peptide significantly greater at week 72 (0.54 vs 0.38 pmol/mL, P=0.015) but not at week 96 (P=0.336), no differences in insulin dose, HbA1c or CGM measures during follow-up, and the CD8+ effector memory changes seen at week 48 had resolved by week 96. The authors conclude durable benefit likely requires continuous treatment. There is also an age split worth carrying: adults (n=28) fully preserved beta-cell function after stopping, children (n=32) declined (P=0.022) - note this is POST HOC. \"Promising\" without \"wanes off-treatment\" is the kind of half-summary this repo keeps catching elsewhere.",
-      "closed": "2026-09-01",
-      "closed_by": "2026-09-01 run"
-    },
-    {
-      "priority": 2,
-      "type": "vet_papers_batch",
-      "added": "2026-08-31",
-      "target": "VET THE 6 PAPERS INGESTED 2026-08-31. Existence and metadata are confirmed; CLAIMS are not. Highest value first: 42627334 (BANDIT follow-up - read the durability numbers against what the hub currently says about baricitinib), 42283716 (TrialNet safety - confirm the self-report and 47%-participation caveats travel with any use of it), 42642774 (CoQ10 meta-analysis - note it found CRP down but malondialdehyde unchanged; do not let it be summarised as an oxidative-stress win), then 42661296, 41978270, 42196240.",
-      "closed": "2026-09-01",
-      "closed_by": "2026-09-01 run"
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 2,
-        "type": "audit_gap",
-        "added": "2026-08-27",
-        "target": "RE-READ GAP 15 (GKA PRICING) NOW THAT ITS CITATIONS ARE MARKED. build_gka_pricing.py now carries visible [UNSOURCED] markers on the SGLT2i launch/generic figures and the GKA generic precedent. Gap 15 is BRONZE and its dashboard is largely a pricing-trajectory argument; with the load-bearing citation stripped, re-assess whether the remaining sourced evidence still supports BRONZE or whether the gap should be restated as a modelling exercise with an explicit assumptions table.",
-        "queue_position": 23
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 2,
-        "type": "fix_pipeline",
-        "added": "2026-09-01",
-        "target": "REPAIR THE SIX REMAINING TOPIC_MISMATCH TRIAL CITATIONS IN THE BUILDER SCRIPTS. audit_nct_identifiers.py (new today) found 10 hard failures of 32 hand-authored NCT ids; 4 were repaired against the live registry (baricitinib -> NCT07222137/NCT07222332, PETITE -> NCT05757713, SURPASS-T1D -> NCT06914895/NCT06962280, ABA-201 -> UNSOURCED, no substitute invented). SIX REMAIN, all in builder prose, all needing a research decision rather than a lookup: VX-880 Phase 3 programme cited as NCT05794503 (postoperative urinary retention) - candidate NCT06832410 found but it is the kidney-transplant cohort, n=10, so check it is the programme meant; LANTIDRA cited as NCT04582669 (hidradenitis triamcinolone) - candidate NCT03791567, APPROVED_FOR_MARKETING, unconfirmed; Edmonton Protocol cited as NCT01508429 (misoprostol for postpartum haemorrhage) - no clean substitute, NCT00309231 is WITHDRAWN; CIT-07 cited as NCT02974660 (protamine during TAVI) - NCT00434811 is CIT-07 and its intervention list includes Etanercept, high confidence; Etanercept/islet cited as NCT02232165 (spinal cord injury) - probably also NCT00434811; GLP-1 RA islet adjunct cited as NCT00750178 (vorinostat, oncology) - no substitute found. Mark UNSOURCED where no substitute is verified. The pipeline is deliberately left FAILING on nctgate until this is worked: a gate that goes green over a known backlog is exactly how the 2026-03-17 NCT finding was lost for five months."
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 6,
-        "type": "audit_gap",
-        "target": "Gap #10 (LADA prevalence by healthcare setting, SILVER, promotion_candidate) audited 2026-08-11 — REMAINS SILVER (still no setting-segmented SR/MA; only narrative sources). Next monthly audit ~2026-09-10.",
-        "queued_date": "2026-05-30",
-        "next_due": "2026-08-30",
-        "last_updated": "2026-08-04",
-        "queue_pos": 40,
-        "queue_position": 72
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "type": "audit_gap",
-        "priority": 6,
-        "target": "Gap #14 audited 2026-08-03 — REMAINS BRONZE. Next monthly audit ~2026-09-02.",
-        "next_due": "2026-09-02",
-        "queue_pos": 42,
-        "queue_position": 73
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 6,
-        "type": "audit_gap",
-        "target": "Gap #15 audited 2026-08-03 — REMAINS BRONZE. Next monthly audit ~2026-09-02.",
-        "queued_date": "2026-07-08",
-        "next_due": "2026-09-02",
-        "queue_pos": 43,
-        "queue_position": 74
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 6,
-        "type": "audit_gap",
-        "target": "Gap #8 audited 2026-08-03 — REMAINS SILVER. Next monthly audit ~2026-09-02.",
-        "queued_date": "2026-05-30",
-        "next_due": "2026-09-02",
-        "queue_pos": 45,
-        "queue_position": 75
-      }
-    },
-    {
-      "closed": "2026-09-02",
-      "item": {
-        "priority": 6,
-        "type": "audit_gap",
-        "target": "Gap #9 audited 2026-08-03 — REMAINS EXPLORATORY. Next monthly audit ~2026-09-02.",
-        "queued_date": "2026-07-08",
-        "next_due": "2026-09-02",
-        "queue_pos": 46,
-        "queue_position": 76
-      }
     }
   ],
   "last_sweep": "2026-08-31"

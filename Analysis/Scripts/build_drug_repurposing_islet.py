@@ -198,7 +198,7 @@ CLINICAL_TRIALS = [
         "pi": "Shapiro (Edmonton)"
     },
     {
-        "nct": "NCT02232165",
+        "nct": "UNSOURCED - identifier withdrawn 2026-09-02: NCT02232165 registers a study of mean arterial blood pressure treatment in acute spinal cord injury, not an etanercept islet-transplant trial. No verified substitute was located.",
         "drug": "Etanercept (TNF-alpha blockade)",
         "phase": "Phase 2",
         "status": "Completed",
@@ -208,7 +208,7 @@ CLINICAL_TRIALS = [
         "pi": "Shapiro"
     },
     {
-        "nct": "NCT00750178",
+        "nct": "UNSOURCED - identifier withdrawn 2026-09-02: NCT00750178 does not resolve to a GLP-1RA islet-transplant adjunct study. No verified substitute was located.",
         "drug": "GLP-1 receptor agonist adjunct",
         "phase": "Phase 2",
         "status": "Recruiting/Active",

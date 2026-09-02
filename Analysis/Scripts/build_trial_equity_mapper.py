@@ -650,21 +650,26 @@ TRIALS = [
         'therapy_type': 'Monoclonal Antibody (anti-CD3)',
         'target': 'T1D',
     },
-    # --- VERIFIED: CITR islet transplantation registry ---
+    # --- VERIFIED against ClinicalTrials.gov 2026-09-02 ---
+    # CORRECTED 2026-09-02: the identifier previously here, NCT02974660, registers a
+    # cardiology study of protamine sulfate during transcatheter aortic valve
+    # implantation. CIT-07 is NCT00434811.
     {
-        'nct_id': 'NCT02974660',
+        'nct_id': 'NCT00434811',
         'name': 'Clinical Islet Transplantation (CIT-07)',
         'phase': 'Phase 3',
         'sponsor': 'NIAID',
         'countries': ['United States', 'Canada'],
-        'status': 'Active',
+        'status': 'Completed',
         'enrollment': 125,
         'therapy_type': 'Islet Transplantation',
         'target': 'T1D',
     },
-    # --- VERIFIED: Edmonton Protocol, University of Alberta ---
+    # CORRECTED 2026-09-02: the identifier previously here, NCT01508429, registers a
+    # trial of misoprostol for postpartum haemorrhage. No verified Edmonton Protocol
+    # registration was located, so no substitute identifier is asserted.
     {
-        'nct_id': 'NCT01508429',
+        'nct_id': 'UNSOURCED (identifier withdrawn 2026-09-02)',
         'name': 'Clinical Islet Transplantation (Edmonton Protocol)',
         'phase': 'Phase 2/3',
         'sponsor': 'University of Alberta',
@@ -686,13 +691,17 @@ TRIALS = [
         'therapy_type': 'Immunotherapy',
         'target': 'T1D',
     },
-    # --- VERIFIED: PolTREG autologous Treg therapy ---
+    # --- VERIFIED against ClinicalTrials.gov 2026-09-02 ---
+    # CORRECTED 2026-09-02: NCT02691247 registers CLBS03 (autologous polyclonal
+    # regulatory T cells, The Sanford Project: T-Rex Study) in adolescents with
+    # recent-onset type 1 diabetes. It was listed here under a different sponsor's
+    # programme name. The entry now follows the registry.
     {
         'nct_id': 'NCT02691247',
-        'name': 'PolTREG (Autologous Treg therapy for T1D)',
-        'phase': 'Phase 1/2',
-        'sponsor': 'Medical University of Gdansk',
-        'countries': ['Poland'],
+        'name': 'CLBS03 (autologous polyclonal Treg therapy, T-Rex Study)',
+        'phase': 'Phase 2',
+        'sponsor': 'Caladrius Biosciences',
+        'countries': ['United States'],
         'status': 'Active',
         'enrollment': 24,
         'therapy_type': 'Cell Therapy (regulatory T cells)',
@@ -713,7 +722,7 @@ TRIALS = [
     # --- VERIFIED: Rituximab for new-onset T1D (TrialNet) ---
     {
         'nct_id': 'NCT00279305',
-        'name': 'Anti-CD20 (Rituximab) for new-onset T1D (TrialNet)',
+        'name': 'Rituximab in new onset type 1 diabetes (TrialNet TN05, anti-CD20)',
         'phase': 'Phase 2/3',
         'sponsor': 'NIDDK (Type 1 Diabetes TrialNet)',
         'countries': ['United States', 'Canada', 'United Kingdom', 'Australia'],
@@ -734,28 +743,48 @@ TRIALS = [
         'therapy_type': 'Immunotherapy (CTLA-4 Ig)',
         'target': 'T1D',
     },
-    # --- VERIFIED: Verapamil for new-onset T1D ---
+    # --- VERIFIED against ClinicalTrials.gov 2026-09-02: verapamil for new-onset T1D ---
+    # CORRECTED 2026-09-02: one entry here previously fused two different verapamil
+    # trials under one name, and attributed to the result a design, a sponsor and an
+    # enrollment figure that belong to neither. Both trials are real; both are now
+    # listed separately below with every attribute read from the registry.
     {
-        'nct_id': 'NCT04233034',
-        'name': 'Verapamil for beta cell preservation in T1D (Ver-A-T1D)',
-        'phase': 'Phase 3',
-        'sponsor': 'University of Alabama at Birmingham',
-        'countries': ['United States'],
-        'status': 'Active',
-        'enrollment': 450,
+        'nct_id': 'NCT04545151',
+        'name': 'Verapamil SR for beta cell preservation in adults with new-onset T1D (Ver-A-T1D)',
+        'phase': 'Phase 2',
+        'sponsor': 'Medical University of Graz',
+        'countries': ['Austria', 'France', 'Germany', 'Italy', 'United Kingdom'],
+        'status': 'Completed',
+        'enrollment': 136,
         'therapy_type': 'Drug Repurposing',
         'target': 'T1D',
     },
-    # --- VERIFIED: Sana Bio hypoimmune stem cells ---
+    {
+        'nct_id': 'NCT04233034',
+        'name': 'Hybrid closed loop therapy and verapamil for beta cell preservation in new-onset T1D (CLVer)',
+        'phase': 'Phase 3',
+        'sponsor': 'Jaeb Center for Health Research',
+        'countries': ['United States'],
+        'status': 'Completed',
+        'enrollment': 113,
+        'therapy_type': 'Drug Repurposing',
+        'target': 'T1D',
+    },
+    # --- VERIFIED against ClinicalTrials.gov 2026-09-02: gene-edited SC-islets ---
+    # CORRECTED 2026-09-02. NCT05210530 was listed here as Sana Biotechnology's
+    # SC451. The registry record is VCTX210A, a CRISPR Therapeutics / ViaCyte
+    # gene-edited SC-islet combination product - a different sponsor and a
+    # different product. Sana's SC451 has no registered trial this repo can find;
+    # per house rule no substitute identifier is invented for it.
     {
         'nct_id': 'NCT05210530',
-        'name': 'SC451 (Hypoimmune allogeneic SC-islets)',
+        'name': 'VCTX210A (gene-edited allogeneic SC-islet combination product)',
         'phase': 'Phase 1',
-        'sponsor': 'Sana Biotechnology',
+        'sponsor': 'CRISPR Therapeutics / ViaCyte',
         'countries': ['United States'],
         'status': 'Recruiting',
         'enrollment': 20,
-        'therapy_type': 'Cell Therapy (hypoimmune SC-islets)',
+        'therapy_type': 'Cell Therapy (gene-edited SC-islets)',
         'target': 'T1D',
     },
 ]

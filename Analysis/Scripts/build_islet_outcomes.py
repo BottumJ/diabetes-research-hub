@@ -595,7 +595,7 @@ def generate_html():
             <p class="source">Source: LANTIDRA Phase 3 Trial Data; FDA approval briefing document June 2023</p>
 
             <h3>VX-880 (Stem Cell-Derived Islets)</h3>
-            <p>An investigational allogeneic product derived from human pluripotent stem cells (Vertex / zimislecel). Early Phase 2 data from 5 evaluable patients show elevated C-peptide and insulin independence in most participants out to day 365; the sample is small and follow-up is short, so durability beyond 1-2 years and the confirmed efficacy/safety profile remain to be established in the ongoing Phase 3 program (NCT05794503).</p>
+            <p>An investigational allogeneic product derived from human pluripotent stem cells (Vertex VX-880 / zimislecel), studied in type 1 diabetes with impaired awareness of hypoglycemia and severe hypoglycemia. Early Phase 2 data from 5 evaluable patients show elevated C-peptide and insulin independence in most participants out to day 365; the sample is small and follow-up is short, so durability beyond 1-2 years and the confirmed efficacy/safety profile remain to be established in the ongoing Phase 1/2/3 FORWARD study (NCT04786262).</p>
             <div class="metric">
                 <div class="metric-value">83%</div>
                 <div class="metric-label">Insulin independence at day 365</div>
@@ -605,7 +605,7 @@ def generate_html():
                 <div class="metric-label">Mean C-peptide (pmol/L) at day 365</div>
             </div>
             <p class="reference"><strong>Note:</strong> VX-880 still requires immunosuppression (tacrolimus + mycophenolate mofetil). However, the dramatically elevated C-peptide suggests superior beta-cell mass or function compared to traditional allogeneic islet transplantation.</p>
-            <p class="source">Source: Vertex Pharmaceuticals Phase 2 Data (2024); Ongoing Phase 3 trial (NCT05794503)</p>
+            <p class="source">Source: Vertex Pharmaceuticals Phase 2 Data (2024); Ongoing Phase 1/2/3 FORWARD study (NCT04786262). Corrected 2026-09-02: NCT05794503 previously cited here resolves on ClinicalTrials.gov to an unrelated anaesthesia study.</p>
         </div>
 
         <!-- TAB 2: TACROLIMUS PARADOX -->
@@ -1038,7 +1038,7 @@ def generate_html():
                 <div class="protocol-name">VX-880 Profile</div>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Developer:</strong> Vertex Pharmaceuticals / CRISPR Therapeutics</p>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Source:</strong> Human pluripotent stem cells (hPSCs) differentiated to insulin-producing beta-like cells</p>
-                <p style="font-size: 13px; margin: 8px 0;"><strong>Status:</strong> Phase 2/3 clinical trial (NCT05794503)</p>
+                <p style="font-size: 13px; margin: 8px 0;"><strong>Status:</strong> Phase 1/2/3 clinical trial NCT04786262 (FORWARD). A separate study, NCT06832410, tests VX-880 in a different population &mdash; type 1 diabetes with a kidney transplant &mdash; and is not the registration behind the figures on this page.</p>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Immunosuppression Required:</strong> Yes (tacrolimus + MMF)</p>
             </div>
 
@@ -1311,16 +1311,16 @@ def generate_html():
                 </thead>
                 <tbody>
                     <tr>
-                        <td>NCT05794503</td>
-                        <td>VX-880</td>
-                        <td>2/3</td>
-                        <td>Ongoing</td>
+                        <td>NCT04786262</td>
+                        <td>VX-880 / VX-017 (FORWARD)</td>
+                        <td>1/2/3</td>
+                        <td>Recruiting</td>
                     </tr>
                     <tr>
-                        <td>NCT04582669</td>
-                        <td>LANTIDRA</td>
+                        <td>NCT01897688</td>
+                        <td>LANTIDRA (donislecel), islet transplantation in non-uraemic type 1 diabetes</td>
                         <td>3</td>
-                        <td>Completed (FDA approval 2023)</td>
+                        <td>Completed (FDA approval 2023; expanded-access record NCT03791567). Corrected 2026-09-02 &mdash; NCT04582669 previously listed here is a dermatology trial of intralesional triamcinolone for hidradenitis suppurativa.</td>
                     </tr>
                 </tbody>
             </table>

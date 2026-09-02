@@ -240,6 +240,17 @@ SCRIPTS = {
     # defect it was built for. This replays the pre-repair text.
     'mdcitegate': ('test_markdown_citation_gate.py',
                    'Regression fixture: markdown gate sensitivity AND specificity'),
+    # Every gate above this line checks a PMID. None of them had ever checked an
+    # NCT, and NCT numbers carry claims on the published summary in exactly the
+    # same way. First run, 2026-09-01: 21 of 32 hand-authored trial citations
+    # disagree with ClinicalTrials.gov, 9 of them naming a study in an unrelated
+    # field - the baricitinib Phase 3 entry cited a radioligand oncology trial,
+    # the teplizumab PETITE entry cited a chlorhexidine obstetrics trial. The
+    # repo had already found one wrong NCT by hand in March 2026
+    # (build_trial_equity_mapper.py: "NCT03812588 (wrong study)") and never
+    # generalised it into a gate. This is that gate.
+    'nctgate': ('audit_nct_identifiers.py',
+                'Auditing trial-registry identifiers against ClinicalTrials.gov'),
     # Replaces the scheduled-task file's "PMIDs above 42000000 are fabricated"
     # rule, which PubMed passed months ago (live ceiling 42,669,647 measured
     # 2026-08-31; 30+ real corpus PMIDs sit above the old threshold).

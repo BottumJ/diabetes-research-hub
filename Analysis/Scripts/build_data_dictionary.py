@@ -799,15 +799,15 @@ TERMS = {
         'source': 'Taylor PC et al. Baricitinib versus placebo for rheumatoid arthritis. New England Journal of Medicine 2017;376(7):652-662. PMID:28199814'
     },
     'GAD-alum': {
-        'plain': 'GAD65 antigen with alum adjuvant. Tolerogenic vaccine targeting the autoantigen. Preserves C-peptide at 20 mcg dose over 5 years in LADA.',
-        'medical': 'Antigen-specific immunotherapy. 20 or 40 mcg GAD65 with aluminum hydroxide. Induces regulatory response to GAD65-specific autoreactivity.',
+        'plain': 'GAD65 antigen with alum adjuvant. Tolerogenic vaccine targeting the autoantigen. In a small Phase 2 SAFETY trial in GADA-positive adults, fasting C-peptide did not fall over 5 years in the 20 mcg arm (n=8) while it did fall on placebo (n=13) - a within-group observation, not a demonstrated treatment effect.',
+        'medical': 'Antigen-specific immunotherapy. 4-500 mcg GAD65 with aluminum hydroxide. Intended to induce a regulatory response to GAD65-specific autoreactivity. Efficacy remains unproven: no Phase 3 trial has met a C-peptide primary endpoint.',
         'systems': ['immune', 'pancreas'],
         'indicators': ['C-peptide preservation', 'GAD65-specific T cell response'],
-        'normal_range': 'Four injections at 0, 1, 3, 9 months',
-        'disease': 'LADA-specific; Phase 3 trial completed; 20 mcg preserves C-peptide 5yr',
+        'normal_range': 'Dose and schedule vary by trial (Agardh 2009: 2 injections, weeks 1 and 4; Ludvigsson 2012: 4 doses over 9 months)',
+        'disease': 'EXPLORATORY, NOT CONFIRMED. Agardh 2009 (Phase 2, n=47 GADA-positive adults, primary outcome = SAFETY) reported no significant 5-year fasting C-peptide decline in the 20 mcg (n=8) and 100 mcg (n=9) arms but did not report a between-group efficacy comparison; the 500 mcg arm declined like placebo, so the dose pattern is not monotonic. The Phase 3 subcutaneous trial in recent-onset T1D (Ludvigsson 2012, n=334) MISSED its primary 15-month C-peptide endpoint (P=0.10), and the Phase 3 intralymphatic DIAGNODE-3 trial (retogatein/rhGAD65, HLA DR3-DQ2 stratified) was discontinued for futility in 2026 after an interim analysis of 174/321 participants showed no C-peptide preservation. No adequately powered LADA-specific efficacy trial has reported.',
         'connections': ['GAD65', 'Tolerogenic vaccine', 'Autoimmunity'],
-        'gap_relevance': [2, 3, 5, 6],
-        'source': 'Ludvigsson J et al. GAD65 antigen therapy in recently diagnosed type 1 diabetes mellitus. New England Journal of Medicine 2012;366(5):433-442. PMID:22296077'
+        'gap_relevance': [2, 3, 5, 6, 8],
+        'source': 'Agardh CD, Lynch KF, Palmer M, Link K, Lernmark A. GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset autoimmune diabetes. Diabetologia 2009;52(7):1363-1368. PMID:19404608'
     },
     'Low-dose Naltrexone': {
         'plain': 'Opioid antagonist at 1.5-4.5 mg (much lower than typical 50 mg pain dose). Paradoxically enhances endorphins and promotes Tregs.',

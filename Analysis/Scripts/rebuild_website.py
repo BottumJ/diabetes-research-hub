@@ -457,7 +457,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>LADA Prevalence</h3>
-    <p>The hidden epidemic: 8.8% of adults diagnosed with T2D actually have LADA (~47M globally). Prevalence by healthcare setting, diagnostic confusion, the sulfonylurea trap. Gap #10 (BRONZE).</p>
+    <p>The hidden epidemic: 8.8% of adults diagnosed with T2D actually have LADA (~47M globally). Prevalence by healthcare setting, diagnostic confusion, the sulfonylurea trap. Gap #10 (SILVER).</p>
     <a href="Dashboards/LADA_Prevalence.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

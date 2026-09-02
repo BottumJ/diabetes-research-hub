@@ -73,7 +73,7 @@ GAPS_DATA = {
         "clinical_pipeline": [
             "NCT06688331: PolTREG, Phase 2, 150 pts, presymptomatic T1D, 18-24mo follow-up",
             "NCT06708780: Nanjing, Phase 1, Treg therapy, 20 pts",
-            "NCT04262479: GAD-alum LADA, completed, 14 pts, C-peptide preservation endpoint"
+            "NCT04262479: injections of glutamic acid decarboxylase (GAD-alum) for the LADA type of diabetes, Phase 2, completed, 14 pts, C-peptide preservation endpoint"
         ],
         "status_next_steps": {
             "phase": "Phase 1-2 IND",
@@ -607,7 +607,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 2,
         "key_refs": ["PMID:23248199"],
-        "key_finding": "8.9% of apparent T2D is LADA (17-50M misdiagnosed globally); screening cost EUR 5-6 per test but only 2 LADA trials in 746-trial database",
+        "key_finding": "8.9% of apparent T2D is LADA (17-50M misdiagnosed globally); screening cost EUR 5-6 per test but only 1 registry-verified LADA-specific trial in the 746-trial database",
         "status": "Screening Opportunity",
         "data_profile": {
             "gap_score": 0.71,
@@ -627,7 +627,7 @@ GAPS_DATA = {
                 "Misdiagnosed patients: 17-50M worldwide",
                 "Screening cost: EUR 5-6 per GAD antibody test",
                 "LADA diagnostic criteria: GAD antibodies + age >30 + insulin independence >6mo",
-                "Only 2 LADA-specific trials in 746-trial database (0.27%)"
+                "Only 1 registry-verified LADA-specific trial in 746-trial database (0.13%)"
             ]
         },
         "mechanistic_bridge": {
@@ -649,9 +649,8 @@ GAPS_DATA = {
             "LADA screening recommendations (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
-            "NCT06098729: LADA natural history study, 300 pts, 5yr follow-up",
-            "NCT04262479: GAD-alum LADA trial (completed), 14 pts, C-peptide endpoint",
-            "Only 2 LADA-specific trials among 746 trial database entries (0.27%)"
+            "NCT04262479: GAD-alum LADA trial (Phase 2, completed), 14 pts, C-peptide endpoint - only registry-verified LADA-specific interventional trial in the database",
+            "Only 1 registry-verified LADA-specific trial among 746 trial database entries (0.13%). Corrected 2026-09-02: a second entry previously counted here (NCT06098729) resolves on ClinicalTrials.gov to a digital-exercise study in type 1 diabetes, not LADA, and has been removed."
         ],
         "status_next_steps": {
             "phase": "Epidemiology -> Intervention",
@@ -660,7 +659,7 @@ GAPS_DATA = {
             "dependencies": "Standardized LADA diagnostic criteria, screening program funding, primary care integration"
         },
         "validation_evidence": "BRONZE tier: LADA prevalence well-characterized (8.9%), diagnostic markers available, clinical trial scarcity highlights research gap",
-        "expanded_clinical_context": "ACTION LADA trial (6,156 European patients): GADA+ in 8.8% (95% CI 8.1-9.6%). Global extrapolation: 589M T2D patients diagnosed globally (IDF 2024) -> 52M LADA (8.9%), of which 17-50M currently misdiagnosed and treated with oral agents (high failure rate). Screening cost EUR 5-6 per GAD test; cost-benefit ratio: EUR 300-500 total screening cost vs EUR 30-50K per patient in delayed diagnosis (unnecessary oral agents, delayed insulin initiation, beta cell loss). Two LADA subtypes: LADA1 (T1D-like, 30% of cases) has GADA >100 units, rapid C-peptide decline (3-5yr to insulin), low BMI (<27); LADA2 (T2D-like, 70%) has GADA <100 units, slow decline (5-15yr), higher BMI. Trial scarcity: only 2 LADA-specific interventional trials in 746-trial database (NCT06098729, NCT04262479) = 0.27% representation despite 8.9% prevalence. Estimated unmet need: 10-15 therapeutic trials urgently required to cover LADA1/LADA2 phenotypes and therapeutic classes (immune, metabolic, combination).",
+        "expanded_clinical_context": "ACTION LADA trial (6,156 European patients): GADA+ in 8.8% (95% CI 8.1-9.6%). Global extrapolation: 589M T2D patients diagnosed globally (IDF 2024) -> 52M LADA (8.9%), of which 17-50M currently misdiagnosed and treated with oral agents (high failure rate). Screening cost EUR 5-6 per GAD test; cost-benefit ratio: EUR 300-500 total screening cost vs EUR 30-50K per patient in delayed diagnosis (unnecessary oral agents, delayed insulin initiation, beta cell loss). Two LADA subtypes: LADA1 (T1D-like, 30% of cases) has GADA >100 units, rapid C-peptide decline (3-5yr to insulin), low BMI (<27); LADA2 (T2D-like, 70%) has GADA <100 units, slow decline (5-15yr), higher BMI. Trial scarcity: only 1 registry-verified LADA-specific interventional trial in the 746-trial database (NCT04262479, Phase 2, completed, n=14) = 0.13% representation despite 8.9% prevalence. A second entry previously counted here (NCT06098729) was removed 2026-09-02 after ClinicalTrials.gov resolved it to a digital-exercise study in type 1 diabetes, not LADA. Estimated unmet need: 10-15 therapeutic trials urgently required to cover LADA1/LADA2 phenotypes and therapeutic classes (immune, metabolic, combination).",
         "mechanism_detail": "LADA diagnostic lag mechanism: resemblance to T2D (age >30, insidious onset, obesity in 70%) leads to initial T2D classification. GADA/IA-2/ZnT8 antibodies NOT routinely tested in T2D outside specialized centers. C-peptide monitoring stopped after initial diagnosis. Diagnostic delay consequences: (1) oral agent failure (30-50% secondary failure within 5yr due to continued beta cell loss), (2) delayed insulin initiation (mean 2-3yr after diagnosis vs <1yr optimal), (3) accelerated beta cell exhaustion from hyperglycemia, (4) patient demoralization. LADA1 trajectory: GADA+ -> 2-3yr presymptomatic destruction -> insulin requirement, total disease duration <10yr. LADA2 trajectory: GADA+ -> 10-15yr slow destruction -> insulin requirement, total disease duration 20-30yr. Screening implementation: integrate GADA/IA-2 testing into primary care T2D algorithm using point-of-care assays (10-15 min turnaround, cost EUR 15-20/test)."
 
     },

@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: August 31, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: September 02, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -17,7 +17,9 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 ### Stem Cell–Derived Islet Therapies
 
-**Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262] [NCT:NCT05791201] **Validation: SILVER** (two independent trial reports; Phase 3 data not yet peer-reviewed)
+**Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262 — FORWARD, Phase 1/2/3] **Validation: BRONZE** (one trial programme; Phase 3 data not yet peer-reviewed)
+
+> **CORRECTED 2026-09-02 — wrong product, and the tier depended on it.** This entry also cited NCT05791201, which registers **VX-264**, Vertex's device-encapsulated islet product studied without immunosuppression — a different programme, not a second report of VX-880/zimislecel. The SILVER tier rested on "two independent trial reports"; with the second identifier removed there is one, so the tier moves to BRONZE.
 
 **Sana Biotechnology SC451:** Gene-edited hypoimmune islet cells (SC451) demonstrated insulin production at 6 months in a single patient without immunosuppression. [No PMID — Sana Biotechnology company disclosure 2025; peer-reviewed publication pending] **Validation: BRONZE** (single company report; peer-reviewed publication pending)
 
@@ -31,13 +33,19 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 **Stanford hybrid immune system:** Blood stem cell + islet co-transplant cured T1D in mice (19/19 protected, 9/9 with established T1D cured). [DOI:10.1126/science.adl2102, Science, 2025 — approximate] **Validation: BRONZE** (single preclinical study in mice; human translation uncertain)
 
-**Abata Therapeutics ABA-201:** First T1D-specific TCR-engineered Treg therapy, Phase 1 initiated 2025. [NCT:NCT06234898] **Validation: BRONZE** (Phase 1, no efficacy data yet)
+**Abata Therapeutics ABA-201:** First T1D-specific TCR-engineered Treg therapy, Phase 1 initiated 2025. [NCT: UNSOURCED] **Validation: BRONZE** (Phase 1, no efficacy data yet)
+
+> **CORRECTED 2026-09-01 — the registration does not exist.** Previously cited NCT06234898. ClinicalTrials.gov returns no study with that identifier, and a registry search for "ABA-201" and for "Abata" returns nothing. The programme may be real and unregistered, or registered under an identifier this repo never had; either way the citation asserted a registration that cannot be checked. Marked UNSOURCED rather than replaced — no substitute was found and none was invented.
 
 ### Prevention & Delay
 
-**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE trial extending to children under 8. [PMID:31180194 — Herold KC et al., NEJM 2019, TN-10 trial] [NCT:NCT06176573 — PETITE] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
+**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE-T1D is extending it to children under 8 (single-arm, open-label, n=20, active/not recruiting). [PMID:31180194 — Herold KC et al., NEJM 2019, TN-10 trial] [NCT:NCT05757713 — PETITE-T1D, Sanofi, registry phase PHASE4] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
 
-**Baricitinib (BARICADE):** JAK inhibitor entering Phase 3 trials for T1D beta cell preservation. Enrollment anticipated 2026. [NCT:NCT06640413] **Validation: BRONZE** (Phase 2 data promising; Phase 3 not yet enrolled)
+> **CORRECTED 2026-09-01 — wrong trial entirely.** Previously cited NCT06176573 as PETITE. That identifier is a study of pre- versus post-operative vaginal cleansing with chlorhexidine to prevent post-cesarean infection (n=120). The real PETITE-T1D registration is NCT05757713. Note the GOLD rating never rested on PETITE — it rests on the Phase 3 teplizumab evidence and the FDA approval — so the rating is unchanged, but a GOLD-rated entry was carrying an obstetrics trial as one of its two identifiers.
+
+**Baricitinib (BARICADE):** JAK inhibitor in Phase 3 for T1D beta cell preservation. Two Phase 3 trials are recruiting: BARICADE-DELAY in at-risk children and adults (n=150, started 2026-01-12) and a beta-cell-preservation trial in new-onset T1D (n=300, started 2026-02-05). In the Phase 2 BANDIT trial the benefit **did not persist off treatment**: C-peptide was significantly greater at week 72 (0.54 vs 0.38 pmol/mL, P=0.015) but not at week 96 (P=0.336), with no between-group difference in insulin dose, HbA1c or CGM measures during follow-up, and the week-48 effector-memory CD8+ T-cell changes resolved by week 96. The authors conclude durable benefit is likely to require continuous treatment. A post hoc age split found adults (n=28) preserved beta-cell function after stopping while children (n=32) declined (P=0.022) — post hoc, and not a basis for age-restricted claims. [PMID:38055252 — Waibel et al., NEJM 2023, BANDIT primary] [PMID:42627334 — So et al., Diabetes Care 2026, BANDIT post-treatment follow-up] [NCT:NCT07222137 — BARICADE-DELAY, Phase 3] [NCT:NCT07222332 — Phase 3] **Validation: BRONZE** (Phase 2 benefit demonstrated but not durable off treatment; Phase 3 recruiting, no results)
+
+> **CORRECTED 2026-09-01 — three errors in one sentence.** (1) Previously cited NCT06640413, which is TheraTri, a Phase 1 study of the radioligand [177Lu]Lu-OncoFAP-23 in FAP-expressing tumours — not baricitinib, not diabetes, not Phase 3. (2) "Enrollment anticipated 2026" was stale: both Phase 3 trials have been recruiting since January and February 2026. (3) "Phase 2 data promising" omitted the finding that the effect wanes after treatment stops, which the BANDIT follow-up reported in 2026. The first two are identifier and status repairs; the third is the half-summary this repo keeps catching elsewhere.
 
 ### Technology
 
@@ -55,17 +63,19 @@ The field is converging on a two-part solution: (1) replace beta cells via stem 
 
 ### Next-Generation GLP-1 & Multi-Agonist Therapies
 
-**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In a phase 2, double-blind, placebo-controlled trial in adults with obesity (n=338), least-squares mean body-weight change at 48 weeks was -24.2% in the 12-mg group vs -2.1% with placebo. Population was obesity, not type 2 diabetes. [PMID:37366315, N Engl J Med, 2023] [NCT:NCT04881760] **Validation: SILVER** (single phase 2 RCT; phase 3 TRIUMPH programme ongoing)
+**Retatrutide ("Triple G"):** GLP-1/GIP/glucagon triple receptor agonist. In a phase 2, double-blind, placebo-controlled trial in adults with obesity (n=338), least-squares mean body-weight change at 48 weeks was -24.2% in the 12-mg group vs -2.1% with placebo. Population was obesity, not type 2 diabetes. [PMID:37366315, N Engl J Med, 2023] [NCT:NCT04881760 — LY3437943 in participants with obesity or overweight] **Validation: SILVER** (single phase 2 RCT; phase 3 TRIUMPH programme ongoing)
 
 > **CORRECTED 2026-08-31 — four errors, one a figure with no source.** Previously: *"In the TRIUMPH-4 Phase 2 trial, achieved 28.7% mean body weight reduction at 68 weeks. [PMID:37366315, JAMA, 2024] [NCT:NCT05929066]."* PMID 37366315 is the right paper but it is NEJM 2023, not JAMA 2024; the trial ran 48 weeks, not 68; registration is NCT04881760, not NCT05929066; and 28.7% appears nowhere in it (largest reduction reported: 24.2%).
 
-**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in type 2 diabetes (n=383, 26 weeks) reported dose-dependent HbA1c and weight reduction [PMID:37369232, Lancet, 2023]. Phase 3 has since reported in early type 2 diabetes [PMID:40544435, N Engl J Med, 2025] and head-to-head versus oral semaglutide, ACHIEVE-4 [PMID:41765029, Lancet, 2026]. [NCT:NCT05803421] **Validation: GOLD** (phase 2 plus two independent phase 3 RCTs, all peer-reviewed)
+**Orforglipron:** First oral non-peptide GLP-1 receptor agonist; once-daily, no food or water restrictions. Phase 2 in type 2 diabetes (n=383, 26 weeks) reported dose-dependent HbA1c and weight reduction [PMID:37369232, Lancet, 2023]. Phase 3 has since reported in early type 2 diabetes [PMID:40544435, N Engl J Med, 2025] and head-to-head versus oral semaglutide, ACHIEVE-4 [PMID:41765029, Lancet, 2026]. [NCT:NCT05803421 — Phase 3, orforglipron vs insulin glargine, completed] **Validation: GOLD** (phase 2 plus two independent phase 3 RCTs, all peer-reviewed)
 
 > **CORRECTED 2026-08-31 — wrong paper entirely.** Previously cited *[PMID:37385277, NEJM, 2023]* as its "peer-reviewed Phase 2 data". PMID 37385277 is *"The pursuit of optimal semaglutide dosing in type 2 diabetes continues"* — a Comment in The Lancet about a different drug, containing no orforglipron data. Tier moves SILVER to GOLD because the real phase 3 evidence published in 2025-2026 and was never picked up here.
 
-**CagriSema:** Semaglutide + cagrilintide (amylin analog) dual-hormone combination. FDA review anticipated 2026. [NCT:NCT04982575] **Validation: SILVER** (Phase 3 data from multiple REDEFINE trials)
+**CagriSema:** Semaglutide + cagrilintide (amylin analog) dual-hormone combination. FDA review anticipated 2026. [NCT:NCT04982575 — Phase 2, completed] [NCT:NCT05394519 — REDEFINE 2, Phase 3, completed] [NCT:NCT05669755 — REDEFINE 3, Phase 3] **Validation: SILVER** (Phase 3 data from multiple REDEFINE trials). *Corrected 2026-09-02: this entry previously cited only NCT04982575, a Phase 2 study, as the identifier behind a "Phase 3 data" claim.*
 
-**Tirzepatide in T1D:** GLP-1/GIP dual agonist being studied for T1D patients with obesity (SURPASS-T1D). [NCT:NCT06316895] **Validation: BRONZE** (trial enrolling; no T1D-specific results yet)
+**Tirzepatide in T1D:** GIP/GLP-1 dual agonist being studied in adults with T1D and obesity. Two Phase 3 trials, SURPASS-T1D-1 (placebo-controlled) and SURPASS-T1D-2 (long-term), are active and no longer recruiting. [NCT:NCT06914895 — SURPASS-T1D-1] [NCT:NCT06962280 — SURPASS-T1D-2] **Validation: BRONZE** (trials active; no T1D-specific results published yet)
+
+> **CORRECTED 2026-09-01 — wrong trial, and the status was wrong too.** Previously cited NCT06316895, a study of thermal ablation for low-risk papillary thyroid carcinoma. The SURPASS-T1D programme is real and has two registrations, both of which had moved past "enrolling" to active/not-recruiting by the time this entry was last published.
 
 ### Novel Mechanisms
 

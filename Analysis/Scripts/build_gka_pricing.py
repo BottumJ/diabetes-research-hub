@@ -389,7 +389,9 @@ html_content = f"""<!DOCTYPE html>
             <div class="metric">
                 <strong>Dorzagliatin (Hua Medicine)</strong><br>
                 Approved: China, September 2022 for T2D monotherapy<br>
-                Estimated Price: $2,000-$3,000/year in China (PMID:36449148)<br>
+                Estimated Price: $2,000-$3,000/year in China (PMID:36449148) &mdash;
+                <span class="unsourced" title="Gap #15 audit 2026-09-02: this figure is a pre-reimbursement launch-price estimate and is very likely now too high. Dorzagliatin (HuaTangNing) entered China's National Reimbursement Drug List effective 2024-01-01 and was renewed at the same negotiated price for 2026-2027; NRDL negotiation typically cuts list price substantially. The post-NRDL price has not been located in a citable source, so the original estimate is retained but flagged.">[STALE &mdash; PRE-NRDL ESTIMATE, audited 2026-09-02]</span><br>
+                Reimbursement: included in China's National Reimbursement Drug List from 2024-01-01; renewed at the same price for 2026-2027 (company disclosure, Hua Medicine)<br>
                 Global Status: China-only to date
             </div>
 
