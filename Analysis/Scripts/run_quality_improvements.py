@@ -212,6 +212,18 @@ SCRIPTS = {
     # and never re-tiers: a gap tier is a scientific judgement.
     'gapdesign': ('audit_gap_evidence_design.py',
                   'Grading the 15 research gaps by evidence design (offline, from pubtype cache)'),
+    # Added 2026-09-03. The gate above grades gap N's EVIDENCE. Nothing checked
+    # that gap N meant the same thing in the agent's memory as on the site. On
+    # 2026-09-02 a run found gaps["15"].audit_history had audited SGLT2i x
+    # personalized nutrition since April while canonical Gap #15 is GKA
+    # Pricing, and treated it as one orphaned trail. Sweeping all fifteen finds
+    # FIVE: #4, #5, #7, #11 and #12 are each filed under a number that names a
+    # different question, consistently since April - two numbering schemes
+    # built independently and never reconciled. Also cross-checks the tier in
+    # agent_state, gap_evidence.json and docs/index.html, which disagree on
+    # three gaps. Offline; reports and never re-homes.
+    'gapnumbering': ('audit_gap_numbering.py',
+                     'Checking gap numbering + tier agreement across memory, evidence store and site'),
     # Added 2026-08-30. THE EIGHTH DEFECT CLASS: every identifier correct and
     # the claim still unsupported. PMID 29710129 sourced 47 drug-screen cost
     # claims while being a 14-word JAMA Oncology CAR-T letter; PMID, title,
