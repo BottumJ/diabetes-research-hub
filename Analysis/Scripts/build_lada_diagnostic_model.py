@@ -634,7 +634,7 @@ class TufteHTMLDashboard:
 
 <!-- Navigation -->
 <nav>
-    <a href="index.html">← Back to Index</a>
+    <a href="../docs/index.html">← Back to Index</a>
     <a href="#executive-summary" class="active">Summary</a>
     <a href="#scenarios">Scenarios</a>
     <a href="#healthcare-tiers">Settings</a>

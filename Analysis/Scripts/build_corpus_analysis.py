@@ -627,7 +627,7 @@ html_content = f"""<!DOCTYPE html>
 </head>
 <body>
     <div class="navbar">
-        <a href="/">Diabetes Research Dashboard</a>
+        <a href="../docs/index.html">Diabetes Research Dashboard</a>
         <span class="navbar-divider">|</span>
         <a href="#overview">Corpus Overview</a>
         <a href="#concepts">Concept Frequency</a>

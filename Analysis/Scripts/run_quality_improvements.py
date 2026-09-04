@@ -297,6 +297,11 @@ SCRIPTS = {
     # (33 stale, 2 missing, 0 in sync) while this runner reported all-green,
     # because rebuild_website.py only ever wrote docs/index.html.
     'syncdocs': ('sync_docs_dashboards.py', 'Publishing rebuilt dashboards to docs/ (GitHub Pages)'),
+    # Added 2026-09-04. syncdocs copies *.html only, so the two MARKDOWN reports
+    # the hub advertises as "Available" had never been published at all - their
+    # hrefs resolved to docs/Analysis/Results/..., which has never existed.
+    'syncreports': ('sync_docs_reports.py',
+                    'Publishing the markdown reports the hub advertises to docs/Reports/'),
     # POST-PUBLISH ASSERTION. Must run dead last - it reads docs/, which only
     # exists in its final form after syncdocs. Added 2026-08-20 after an
     # adjudicated EXTRACTION_ARTIFACT (insulin_glargine -> T2D) reached the
@@ -307,6 +312,15 @@ SCRIPTS = {
     # standing proof that the patches still hold.
     'suppressiongate': ('regression_suppression_gate.py',
                         'Asserting no adjudicated-artifact path is live on the published site'),
+    # POST-PUBLISH ASSERTION, and it must stay last for the same reason
+    # suppressiongate does: it reads docs/, which is only final after the sync
+    # stages. Added 2026-09-04, when an end-to-end read of the published site
+    # found 41 dead links against 1359 live ones - including a dead "<- Hub"
+    # back-link on all 34 dashboards, produced BY the publish step, because the
+    # step verified byte equality with the source and byte equality is exactly
+    # what makes a depth-relative link wrong at a different depth.
+    'linkgate': ('audit_published_links.py',
+                 'Asserting every link the published site advertises resolves under docs/'),
 }
 
 def run_script(name, desc):

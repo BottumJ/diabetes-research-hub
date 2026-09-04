@@ -1299,7 +1299,7 @@ def generate_html():
 </head>
 <body>
     <nav class="topbar">
-        <a href="index.html">← Dashboard Home</a>
+        <a href="../docs/index.html">← Dashboard Home</a>
         <a href="#executive">Executive Summary</a>
         <a href="#burden-vs-access">Burden vs Access</a>
         <a href="#regional">Regional Analysis</a>

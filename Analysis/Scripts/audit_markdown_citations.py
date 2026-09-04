@@ -230,7 +230,37 @@ def correction_block(lines, index):
     return any(CORRECTION_MARKER.search(line) for line in lines[start:end + 1])
 
 
+def published_results_markdown():
+    """Analysis/Results markdown that the published hub actually links to.
+
+    The blanket exclusion of Analysis/Results was correct for 255 of its 257
+    markdown files: dated run records, a historical log, not a live claim. It
+    was WRONG for two, and the 2026-08-31 queue item said so - "verify that is
+    still true, since some are linked from dashboards". Verified 2026-09-04 and
+    it was not true: docs/index.html advertises literature_gap_report.md and
+    pubmed_recent_summary.md as live reports. Both are generated, both are
+    undated, and no citation gate had ever read either.
+
+    Scope is DERIVED from the hub rather than listed here, so a report added to
+    or dropped from the site changes what is checked without anyone remembering
+    to edit this function. Both files carry zero PMIDs today; that is a fact
+    about today, not a reason to leave them ungated.
+    """
+    index = os.path.join(REPO, 'docs', 'index.html')
+    if not os.path.exists(index):
+        return
+    with open(index, encoding='utf-8', errors='replace') as fh:
+        html = fh.read()
+    names = set(re.findall(r'href="Reports/([A-Za-z0-9_\-.]+\.md)"', html))
+    names |= set(re.findall(r'href="Analysis/Results/([A-Za-z0-9_\-.]+\.md)"', html))
+    for name in sorted(names):
+        path = os.path.join(RESULTS, name)
+        if os.path.isfile(path):
+            yield path
+
+
 def tracked_markdown():
+    yield from published_results_markdown()
     for rel_dir in TRACKED_DIRS:
         directory = os.path.join(REPO, rel_dir) if rel_dir else REPO
         if not os.path.isdir(directory):

@@ -1126,7 +1126,7 @@ def generate_html():
 
     # Navigation bar
     html_parts.append('''    <nav>
-        <a href="index.html">Home</a>
+        <a href="../docs/index.html">Home</a>
         <a href="#executive-summary">Executive Summary</a>
         <a href="#candidates">Drug Candidates</a>
         <a href="#pathways">Pathways</a>

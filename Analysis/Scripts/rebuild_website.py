@@ -274,13 +274,13 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
     <div class="status live">Available</div>
     <h3>Literature Gap Analysis</h3>
     <p>Pairwise analysis of 30 PubMed domains (435 pairs) with interpreted classifications: meaningful opportunities vs. methodologically distinct pairs.</p>
-    <a href="Analysis/Results/literature_gap_report.md">View report &rarr;</a>
+    <a href="Reports/literature_gap_report.md">View report &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>Publication Monitor</h3>
     <p>Rolling 30-day PubMed snapshot across 15 high-priority research domains. Cross-domain papers flagged for synthesis potential.</p>
-    <a href="Analysis/Results/pubmed_recent_summary.md">View report &rarr;</a>
+    <a href="Reports/pubmed_recent_summary.md">View report &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>

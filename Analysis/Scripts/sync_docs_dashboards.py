@@ -31,15 +31,52 @@ Usage:
     python sync_docs_dashboards.py --check    # report drift only, no writes
 """
 
-import filecmp
 import os
-import shutil
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 SRC_DIR = os.path.join(BASE_DIR, 'Dashboards')
 DST_DIR = os.path.join(BASE_DIR, 'docs', 'Dashboards')
+
+# PUBLISH REWRITE - added 2026-09-04, forced by measurement.
+#
+# A dashboard at Dashboards/X.html and its published copy at
+# docs/Dashboards/X.html sit at DIFFERENT depths relative to the hub page, so
+# the same relative href cannot be correct in both. postprocess_dashboards.py
+# writes `../docs/index.html`, which is right where it runs and wrong once the
+# file is published - docs/Dashboards/../docs/index.html is docs/docs/index.html,
+# which has never existed.
+#
+# audit_published_links.py measured the damage on 2026-09-04: 34 of 34 published
+# dashboards had a dead "<- Hub" back-link, plus three hand-written nav links
+# ("Home", "<- Back to Index", "<- Dashboard Home") and one `href="/"` pointing
+# at the Pages domain root rather than this project. 41 dead links, 1359 live.
+#
+# THE VERIFICATION IS WHY IT SURVIVED SIX MONTHS. This script's success
+# condition was byte equality between source and published copy - and byte
+# equality is precisely what guarantees this defect, because the published copy
+# MUST differ from the source for its links to work. A copy step that verifies
+# sameness cannot detect a defect whose fix is difference.
+#
+# So the transform is declared here, applied on publish, and verified on the
+# transformed text. Keep this table small and exact: every entry is a path that
+# is correct at repo root and wrong under docs/.
+PUBLISH_REWRITES = [
+    ('href="../docs/index.html"', 'href="../index.html"'),
+]
+
+
+def published_form(text):
+    """The bytes that SHOULD be at docs/Dashboards/<name> for this source."""
+    for old, new in PUBLISH_REWRITES:
+        text = text.replace(old, new)
+    return text
+
+
+def read(path):
+    with open(path, encoding='utf-8', errors='replace') as fh:
+        return fh.read()
 
 
 def classify(src_dir, dst_dir):
@@ -53,7 +90,7 @@ def classify(src_dir, dst_dir):
         dst = os.path.join(dst_dir, name)
         if not os.path.exists(dst):
             missing.append(name)
-        elif not filecmp.cmp(src, dst, shallow=False):
+        elif read(dst) != published_form(read(src)):
             stale.append(name)
         else:
             ok.append(name)
@@ -90,10 +127,18 @@ def main():
         return 0
 
     os.makedirs(DST_DIR, exist_ok=True)
-    copied = 0
+    copied, rewritten = 0, 0
     for name in stale + missing:
-        shutil.copy2(os.path.join(SRC_DIR, name), os.path.join(DST_DIR, name))
+        source = read(os.path.join(SRC_DIR, name))
+        publish = published_form(source)
+        if publish != source:
+            rewritten += 1
+        with open(os.path.join(DST_DIR, name), 'w', encoding='utf-8') as fh:
+            fh.write(publish)
         copied += 1
+    if rewritten:
+        print('  %d file(s) had publish-relative links rewritten (see '
+              'PUBLISH_REWRITES).' % rewritten)
 
     # Re-verify: a copy that silently failed is worse than no copy at all.
     stale2, missing2, ok2 = classify(SRC_DIR, DST_DIR)
