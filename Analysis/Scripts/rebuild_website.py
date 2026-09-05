@@ -19,6 +19,53 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
 RESULTS_DIR = os.path.join(BASE_DIR, 'Analysis', 'Results')
+
+# ---------------------------------------------------------------------------
+# Publication Monitor card text, DERIVED (2026-09-05).
+#
+# The card previously hardcoded "Rolling 30-day PubMed snapshot across 15
+# high-priority research domains". Two things were wrong with that sentence and
+# neither could be caught by a citation gate:
+#
+#   * "15 domains" - a 16th (GLP-1 Pharmacogenomics) was added to
+#     baseline_pubmed_alerts.py on 2026-04-17 and the card was never updated.
+#     Small, but it is the same failure mode as everything else found this
+#     week: a number typed in one place describing a list maintained in
+#     another.
+#   * "Rolling 30-day snapshot" was true of the SCRIPT and false of the FILE,
+#     which was 49 days old until 2026-09-05.
+#
+# Both are fixed the same way: the card states what the snapshot says about
+# itself, so it cannot drift from it. It also now discloses the sampling rate,
+# because the report is a sample of the matched literature (141 of 1044 on
+# 2026-09-05), not a census of it.
+def _pubmed_monitor_blurb():
+    import json as _json, os as _os
+    path = _os.path.join(RESULTS_DIR, 'pubmed_recent_latest.json')
+    try:
+        with open(path, encoding='utf-8') as fh:
+            meta = (_json.load(fh) or {}).get('metadata', {})
+        days = meta.get('lookback_days')
+        domains = meta.get('domains_queried')
+        matched = meta.get('papers_matched_by_queries')
+        got = meta.get('unique_papers_retrieved') or meta.get('total_unique_papers')
+        if days and domains:
+            txt = ('Rolling %d-day PubMed snapshot across %d high-priority '
+                   'research domains.' % (days, domains))
+            if matched and got:
+                txt += (' Latest sweep: %s papers matched, %s retrieved and '
+                        'listed (%.0f%%) &mdash; a sample, not a census.'
+                        % (f'{matched:,}', f'{got:,}', 100.0 * got / matched))
+            txt += ' Cross-domain papers flagged for synthesis potential.'
+            return txt
+    except (OSError, ValueError, TypeError, ZeroDivisionError):
+        pass
+    return ('Rolling PubMed snapshot across high-priority research domains. '
+            'Cross-domain papers flagged for synthesis potential.')
+
+
+PUBMED_MONITOR_BLURB = _pubmed_monitor_blurb()
+
 DOCS_DIR = os.path.join(BASE_DIR, 'docs')
 
 def get_trial_count():
@@ -279,7 +326,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Publication Monitor</h3>
-    <p>Rolling 30-day PubMed snapshot across 15 high-priority research domains. Cross-domain papers flagged for synthesis potential.</p>
+    <p>{PUBMED_MONITOR_BLURB}</p>
     <a href="Reports/pubmed_recent_summary.md">View report &rarr;</a>
   </div>
   <div class="card">

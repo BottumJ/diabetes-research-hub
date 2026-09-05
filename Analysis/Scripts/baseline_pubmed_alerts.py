@@ -28,6 +28,17 @@ PUBMED_FETCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 TODAY = datetime.now().strftime("%Y-%m-%d")
 LOOKBACK_DAYS = 30
 
+# Retrieval caps, named rather than left as magic defaults at the three call
+# sites (2026-09-05). The report has to be able to state its own sampling rate,
+# and it cannot do that while the cap is a literal in a function signature.
+DOMAIN_RETMAX = 10
+THERAPY_RETMAX = 5
+# How many of the retrieved papers each section lists. Kept below the retmax on
+# purpose - the sections are a reading list, not the sample - but it now says so
+# instead of silently dropping the tail.
+DOMAIN_LIST_N = 5
+THERAPY_LIST_N = 3
+
 # High-priority alert queries (most likely to surface actionable findings)
 ALERT_QUERIES = {
     "T1D Stem Cell Cure": '"type 1 diabetes" AND ("stem cell" OR islet) AND (transplant OR cure OR "insulin independence")',
@@ -63,7 +74,7 @@ KEY_THERAPY_TERMS = [
     "dapagliflozin",  # generic now approved
 ]
 
-def search_pubmed(query, max_results=10, days_back=LOOKBACK_DAYS):
+def search_pubmed(query, max_results=DOMAIN_RETMAX, days_back=LOOKBACK_DAYS):
     """Search PubMed for recent papers matching query."""
     min_date = (datetime.now() - timedelta(days=days_back)).strftime("%Y/%m/%d")
     max_date = datetime.now().strftime("%Y/%m/%d")
@@ -230,7 +241,7 @@ def main():
         print(f"\n  [Key Therapy Abstract Search]")
         for therapy in KEY_THERAPY_TERMS:
             query = f'diabetes AND {therapy}'
-            pmids, count = search_pubmed(query, max_results=5, days_back=LOOKBACK_DAYS)
+            pmids, count = search_pubmed(query, max_results=THERAPY_RETMAX, days_back=LOOKBACK_DAYS)
             time.sleep(0.4)
             if pmids:
                 papers = fetch_paper_details(pmids)
@@ -256,7 +267,17 @@ def main():
             "generated": datetime.now().isoformat(),
             "source": "PubMed E-utilities",
             "lookback_days": LOOKBACK_DAYS,
+            # Renamed 2026-09-05. This has always been the size of the fetched
+            # sample; the old key name "total_unique_papers" was read as a
+            # corpus total by anything downstream. Both keys are emitted for one
+            # release so no consumer breaks silently.
+            "unique_papers_retrieved": len(all_papers),
             "total_unique_papers": len(all_papers),
+            "papers_matched_by_queries": (
+                sum(v["total_count"] for v in domain_results.values())
+                + sum(v["total_count"] for v in therapy_hits.values())),
+            "domain_retmax": DOMAIN_RETMAX,
+            "therapy_retmax": THERAPY_RETMAX,
             "domains_queried": len(ALERT_QUERIES),
             "key_therapies_tracked": len(KEY_THERAPY_TERMS),
         },
@@ -277,23 +298,61 @@ def main():
         json.dump(snapshot, f, indent=2, default=str)
 
     # Generate summary report
+    #
+    # HEADLINE HONESTY (2026-09-05). The header previously read
+    #     "**Unique papers found:** 141"
+    # directly above a table whose top row said "T2D GLP-1 New | 190". Both
+    # numbers were correct and they answered different questions, which is the
+    # defect: 141 is the size of the SAMPLE this script fetched (retmax=10 per
+    # domain, 5 per therapy, deduplicated), while 960 is the number of papers
+    # the same queries matched in the window. Measured 2026-09-05: the sample
+    # is 14.7% of the matched set.
+    #
+    # Worse, the shortfall is INVERSELY related to activity, because the cap is
+    # per-domain and constant while the matched count is not:
+    #     T2D GLP-1 New          190 matched, 10 fetched   5.3%
+    #     Diabetes AI/ML         182 matched, 10 fetched   5.5%
+    #     LADA New Research        9 matched,  9 fetched 100.0%
+    # So the report samples most thinly exactly where the field is moving
+    # fastest. sort=date means the sample is the most RECENT n, which is a
+    # defensible sample - it is not a defensible total, and the header called
+    # it one. Same class as the 2026-08-20 dose_response finding and the
+    # 2026-08-29 path-count finding: a count that answers "how much" printed
+    # under a label that promises "of what".
+    sampled = len(all_papers)
+    matched = (sum(v["total_count"] for v in domain_results.values())
+               + sum(v["total_count"] for v in therapy_hits.values()))
+    pct = (100.0 * sampled / matched) if matched else 0.0
     lines = [
         "# PubMed Recent Publications Report",
         f"**Generated:** {TODAY}",
         f"**Lookback period:** {LOOKBACK_DAYS} days",
-        f"**Unique papers found:** {len(all_papers)}",
+        f"**Papers matched by these queries:** {matched}",
+        f"**Papers actually retrieved and listed below:** {sampled} "
+        f"({pct:.1f}% of matched)",
+        "",
+        f"> **This report is a sample, not a census.** Each domain query returns "
+        f"at most {DOMAIN_RETMAX} papers and each therapy query at most "
+        f"{THERAPY_RETMAX}, sorted most-recent-first. The per-domain coverage "
+        f"column below shows what fraction of each domain was actually read. "
+        f"Low coverage is not low activity - it is the opposite.",
         "",
         "---",
         "",
-        "## Publication Volume by Domain (Last 30 Days)",
+        f"## Publication Volume by Domain (Last {LOOKBACK_DAYS} Days)",
         "",
-        "| Domain | Total Papers | Trend Signal |",
-        "|--------|-------------|--------------|",
+        "`Matched` is PubMed's count for the query. `Read` is how many this run "
+        "retrieved. `Trend Signal` grades activity from `Matched`.",
+        "",
+        "| Domain | Matched | Read | Coverage | Trend Signal |",
+        "|--------|--------:|-----:|---------:|--------------|",
     ]
     for domain, res in sorted(domain_results.items(), key=lambda x: -x[1]["total_count"]):
         count = res["total_count"]
+        read = len(res["papers"])
+        cov = (100.0 * read / count) if count else 0.0
         signal = "HIGH ACTIVITY" if count > 50 else "ACTIVE" if count > 10 else "LOW" if count > 0 else "NONE"
-        lines.append(f"| {domain} | {count} | {signal} |")
+        lines.append(f"| {domain} | {count} | {read} | {cov:.0f}% | {signal} |")
 
     lines += [
         "",
@@ -306,9 +365,13 @@ def main():
     for domain, res in domain_results.items():
         if not res["papers"]:
             continue
+        shown = min(DOMAIN_LIST_N, len(res["papers"]))
         lines.append(f"### {domain}")
         lines.append("")
-        for p in res["papers"][:5]:
+        lines.append(f"*Showing {shown} of {len(res['papers'])} retrieved; "
+                     f"{res['total_count']} matched the query.*")
+        lines.append("")
+        for p in res["papers"][:DOMAIN_LIST_N]:
             lines.append(f"- **{p['title']}**")
             lines.append(f"  {p['journal']} ({p['date']}) | {p['authors']}")
             lines.append(f"  [PubMed]({p['url']})" + (f" | [DOI](https://doi.org/{p['doi']})" if p['doi'] else ""))
@@ -323,19 +386,24 @@ def main():
             "",
             "These therapies are tracked by name across all PubMed abstracts (not just titles).",
             "",
-            "| Therapy | Papers (30d) | Status |",
-            "|---------|-------------|--------|",
+            f"| Therapy | Matched ({LOOKBACK_DAYS}d) | Read | Status |",
+            "|---------|--------------:|-----:|--------|",
         ]
         for therapy, res in sorted(therapy_hits.items(), key=lambda x: -x[1]["total_count"]):
             count = res["total_count"]
+            read = len(res["papers"])
             status = "ACTIVE" if count > 5 else "LOW" if count > 0 else "NONE"
-            lines.append(f"| {therapy} | {count} | {status} |")
+            lines.append(f"| {therapy} | {count} | {read} | {status} |")
         lines.append("")
         for therapy, res in therapy_hits.items():
             if res["papers"]:
+                shown = min(THERAPY_LIST_N, len(res["papers"]))
                 lines.append(f"### {therapy}")
                 lines.append("")
-                for p in res["papers"][:3]:
+                lines.append(f"*Showing {shown} of {len(res['papers'])} retrieved; "
+                             f"{res['total_count']} matched the query.*")
+                lines.append("")
+                for p in res["papers"][:THERAPY_LIST_N]:
                     lines.append(f"- **{p['title']}**")
                     lines.append(f"  {p['journal']} ({p['date']}) | {p['authors']}")
                     lines.append(f"  [PubMed]({p['url']})" + (f" | [DOI](https://doi.org/{p['doi']})" if p['doi'] else ""))
@@ -351,6 +419,10 @@ def main():
             "",
             "These papers span multiple research domains -- potentially high-value for synthesis.",
             "",
+            f"*Detectable only within the retrieved sample. A paper matching two "
+            f"domains but ranked below the top {DOMAIN_RETMAX} in both cannot appear here, "
+            f"so this list is a floor, not a count.*",
+            "",
         ]
         for pmid, p in sorted(cross_domain.items(), key=lambda x: -len(x[1]["domains"])):
             domains_str = ", ".join(p["domains"])
@@ -361,7 +433,9 @@ def main():
 
     lines += [
         "---",
-        f"*Generated by baseline_pubmed_alerts.py -- {TODAY}*",
+        f"*Generated by baseline_pubmed_alerts.py -- {TODAY}. "
+        f"Sample of {sampled}/{matched} matched papers "
+        f"({pct:.1f}%); caps {DOMAIN_RETMAX}/domain, {THERAPY_RETMAX}/therapy.*",
     ]
 
     md_path = os.path.join(RESULTS_DIR, "pubmed_recent_summary.md")
@@ -372,7 +446,8 @@ def main():
     print(f"\n{'='*60}")
     print("COMPLETE")
     print(f"{'='*60}")
-    print(f"  Unique papers: {len(all_papers)}")
+    print(f"  Papers matched:   {matched}")
+    print(f"  Papers retrieved: {sampled}  ({pct:.1f}% of matched)")
     print(f"  Cross-domain:  {len(cross_domain)}")
     print(f"  Domains with HIGH activity:")
     for d, r in sorted(domain_results.items(), key=lambda x: -x[1]["total_count"])[:5]:

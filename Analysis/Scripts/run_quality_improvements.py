@@ -28,6 +28,32 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = {
     'dashboard': ('rebuild_clinical_trial_dashboard.py', 'Rebuilding Clinical Trial Dashboard (Tufte style)'),
     'research': ('rebuild_research_dashboard.py', 'Rebuilding Research Dashboard (Tufte style)'),
+    # Added 2026-09-05, and it MUST sit immediately before 'gaps', which renders
+    # literature_gap_report.md from the JSON this stage writes.
+    #
+    # THE DEFECT THIS CLOSES IS WORSE THAN THE ONE IT LOOKS LIKE. On 2026-09-04
+    # the stale publication monitor was found and this file was cleared in the
+    # same breath - "literature_gap_report.md, which regenerates (2026-09-03) and
+    # is therefore fine". Measured 2026-09-05, that clearance was wrong:
+    #
+    #     literature_gap_report.md   rendered 2026-09-04  <- fresh, and published
+    #     literature_gap_data.json   written  2026-07-17  <- 50 days old
+    #
+    # improve_gap_analysis.py re-rendered the report from frozen JSON every day
+    # and stamped each copy "**Generated:** <today>". pubmed_recent_summary.md at
+    # least declared its true age; this one laundered 50-day-old data behind a
+    # fresh date. Checking whether a report REGENERATES answers a different
+    # question from whether its DATA is current, and only the second one matters
+    # to a reader.
+    #
+    # Not wired in before because the sweep is 465 sequential PubMed queries at
+    # NCBI's 3 req/s anonymous limit - ~6 min, past the 300s stage timeout. The
+    # script was already checkpointed for exactly this; --budget 240 makes it a
+    # bounded stage that resumes, so a full sweep completes across two runs and
+    # each run exits 0. Set NCBI_API_KEY to finish in one.
+    'gapdata': ('gap_analysis_daily.py',
+                'Refreshing literature gap PubMed counts (resumable; bounded slice)',
+                ('--budget', '240')),
     'gaps': ('improve_gap_analysis.py', 'Improving Literature Gap Analysis (interpretive classifications)'),
     'synthesis': ('build_gap_synthesis.py', 'Building Gap Synthesis Dashboard (scientific method framework)'),
     'equity': ('build_equity_map.py', 'Building Beta Cell Therapy Equity Analysis'),
@@ -297,11 +323,57 @@ SCRIPTS = {
     # (33 stale, 2 missing, 0 in sync) while this runner reported all-green,
     # because rebuild_website.py only ever wrote docs/index.html.
     'syncdocs': ('sync_docs_dashboards.py', 'Publishing rebuilt dashboards to docs/ (GitHub Pages)'),
+    # Added 2026-09-05, and it must precede syncreports so the file that gets
+    # published is this run's, not the last one that happened to be generated
+    # by hand.
+    #
+    # WHY IT WAS NEVER HERE, MEASURED RATHER THAN GUESSED. The 2026-09-04 run
+    # asked why the daily pipeline does not regenerate pubmed_recent_summary.md
+    # and left the question open. The answer is that there is no reason: timed
+    # 2026-09-05, a full sweep of 16 domain queries and 8 therapy queries against
+    # live PubMed E-utilities completes in 35.6s, against this runner's 300s
+    # per-stage timeout. It was not excluded for cost, for flakiness or for
+    # network policy. It was simply never added, and nothing existed that could
+    # notice - which is the whole finding, and is why 'reportfreshness' below
+    # exists rather than this line alone.
+    #
+    # The hub card called this a "Rolling 30-day PubMed snapshot" with status
+    # "Available" while the file underneath declared Generated: 2026-07-17, a
+    # 49-day-old rolling window. 2026-09-04 made the age VISIBLE by adding a
+    # provenance banner in sync_docs_reports.py. Disclosure is not repair; this
+    # is the repair.
+    'pubmedmonitor': ('baseline_pubmed_alerts.py',
+                      'Refreshing the rolling PubMed publication monitor (live E-utilities sweep)'),
     # Added 2026-09-04. syncdocs copies *.html only, so the two MARKDOWN reports
     # the hub advertises as "Available" had never been published at all - their
     # hrefs resolved to docs/Analysis/Results/..., which has never existed.
     'syncreports': ('sync_docs_reports.py',
                     'Publishing the markdown reports the hub advertises to docs/Reports/'),
+    # POST-PUBLISH ASSERTION, added 2026-09-05. Generalises the stage above
+    # instead of trusting it.
+    #
+    # Wiring one generator in fixes one file. The defect class is that a report
+    # can DECLARE its own freshness ("Lookback period: 30 days") and be older
+    # than that declaration, with every gate in this pipeline silent because
+    # every gate here asks whether a CITATION is true and none asks whether a
+    # PAGE is current. pubmed_recent_summary.md was 49 days into a 30-day
+    # window and 47 green stages said nothing.
+    #
+    # The rule is self-referential on purpose, so it needs no maintained list:
+    # a published report's declared age must not exceed the window it claims to
+    # cover. Scope is derived from docs/index.html at run time, the same rule
+    # sync_docs_reports.py uses, so a report added to the hub is gated the day
+    # it is added.
+    'reportfreshness': ('audit_report_freshness.py',
+                        'Asserting published reports are no older than the window they advertise'),
+    # Pins the gate above, on the same reasoning as mdcitegate. It passed 2/2 on
+    # its first run, which is equally consistent with "the repo is clean" and
+    # "the gate is a no-op", because the run that first executed it had already
+    # repaired both defects it was built for. This replays the pre-repair text:
+    # the 49-day rolling window AND the fresh-stamp-over-50-day-old-data case
+    # that 2026-09-04 inspected and cleared. Offline; touches no repo file.
+    'freshnessgate': ('test_report_freshness_gate.py',
+                      'Regression fixture: freshness gate sensitivity AND specificity'),
     # POST-PUBLISH ASSERTION. Must run dead last - it reads docs/, which only
     # exists in its final form after syncdocs. Added 2026-08-20 after an
     # adjudicated EXTRACTION_ARTIFACT (insulin_glargine -> T2D) reached the
@@ -323,7 +395,15 @@ SCRIPTS = {
                  'Asserting every link the published site advertises resolves under docs/'),
 }
 
-def run_script(name, desc):
+def run_script(name, desc, script_args=()):
+    """Run one stage.
+
+    script_args added 2026-09-05 for gap_analysis_daily.py, the first stage that
+    cannot finish inside the 300s timeout and does not need to. It checkpoints
+    every 15 queries, so --budget lets it do a bounded slice, exit 0, and resume
+    on the next run. Every other stage passes no args and behaves exactly as
+    before.
+    """
     path = os.path.join(SCRIPT_DIR, name)
     print(f"\n{'='*60}")
     print(f"  {desc}")
@@ -332,7 +412,7 @@ def run_script(name, desc):
 
     try:
         result = subprocess.run(
-            [sys.executable, path],
+            [sys.executable, path, *script_args],
             capture_output=True, text=True, timeout=300
         )
         elapsed = time.time() - start
@@ -428,8 +508,10 @@ def main():
 
     results = {}
     for key in targets:
-        name, desc = SCRIPTS[key]
-        results[key] = run_script(name, desc)
+        entry = SCRIPTS[key]
+        name, desc = entry[0], entry[1]
+        script_args = entry[2] if len(entry) > 2 else ()
+        results[key] = run_script(name, desc, script_args)
 
     print(f"\n{'='*60}")
     print("  SUMMARY")

@@ -1,8 +1,8 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-09-04 08:22
+**Generated:** 2026-09-05 03:24
 **Source:** PubMed E-utilities API (esearch.fcgi)
-**Date range:** 2020/01/01 to 2026/07/17
+**Date range:** 2020/01/01 to 2026/09/05
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
@@ -32,13 +32,21 @@ These domain pairs have low co-publication rates **and** plausible scientific re
 
 | Rank | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Rationale |
 |------|----------|----------|-----------|------------|-----------|
-| 1 | Treg / CAR-T | Neuropathy | 100.0 | 0 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |
-| 2 | Beta Cell Regen | Health Equity | 100.0 | 0 | Regenerative therapies must address who has access to them. Equity analysis of emerging cell therapies is absent. |
-| 3 | Treg / CAR-T | Health Equity | 100.0 | 0 | Advanced immunotherapies risk widening health disparities. No equity analysis of CAR-Treg/TCR-Treg access exists. |
-| 4 | Glucokinase | Health Equity | 100.0 | 0 | If glucokinase activators succeed, global access will be critical. No equity analysis exists for this drug class. |
+| 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | Regenerative therapies must address who has access to them. Equity analysis of emerging cell therapies is absent. |
+| 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | Insulin resistance in islet transplant recipients affects graft survival, but this interaction is barely studied. |
+| 3 | Islet Transplant | Drug Repurposing | 100.0 | 0 | Existing immunosuppressants could be repurposed for islet protection. Computational drug screening has not been applied here. |
+| 4 | Islet Transplant | Health Equity | 100.0 | 0 | Islet transplant is available only at select centers. Access equity research is absent. |
 | 5 | Gene Therapy | LADA | 100.0 | 0 | LADA's autoimmune mechanism makes it a candidate for gene therapy approaches, but no crossover work exists. |
-| 6 | Drug Repurposing | Health Equity | 100.0 | 0 | Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research. |
-| 7 | Insulin Resistance | Islet Transplant | 91.9 | 1 | Insulin resistance in islet transplant recipients affects graft survival, but this interaction is barely studied. |
+| 6 | Treg / CAR-T | Neuropathy | 100.0 | 0 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |
+| 7 | Glucokinase | Drug Repurposing | 100.0 | 0 | Glucokinase activators are a novel drug class; systematic screening for existing drugs with GK activity is unexplored. |
+| 8 | Glucokinase | Health Equity | 100.0 | 0 | If glucokinase activators succeed, global access will be critical. No equity analysis exists for this drug class. |
+| 9 | Glucokinase | LADA | 100.0 | 0 | Glucokinase's role in LADA is unstudied despite its relevance to residual beta cell function. |
+| 10 | Personalized Nutr | LADA | 100.0 | 0 | LADA patients receive generic T2D dietary advice. Personalized nutrition based on autoimmune status is unexplored. |
+| 11 | Drug Repurposing | Health Equity | 100.0 | 0 | Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research. |
+| 12 | Drug Repurposing | LADA | 100.0 | 0 | LADA is treated with T2D drugs that may be suboptimal. Systematic repurposing screens for LADA-specific therapies don't exist. |
+| 13 | Health Equity | LADA | 100.0 | 0 | LADA is massively underdiagnosed, especially in minority populations. Equity-focused screening research is absent. |
+| 14 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | Nutritional interventions that support beta cell recovery are plausible but unstudied at the intersection. |
+| 15 | Treg / CAR-T | Health Equity | 99.9 | 1 | Advanced immunotherapies risk widening health disparities. No equity analysis of CAR-Treg/TCR-Treg access exists. |
 
 ---
 
@@ -48,12 +56,14 @@ These domain pairs have low co-publication because they use fundamentally differ
 
 | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Note |
 |----------|----------|-----------|------------|------|
-| GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
-| Drug Repurposing | CGM Technology | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 | Islet Transplant | GWAS / Polygenic | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Islet Transplant | Personalized Nutr | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| GWAS / Polygenic | CGM Technology | 100.0 | 3 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Treg / CAR-T | CGM Technology | 100.0 | 1 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 | Personalized Nutr | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
-| GWAS / Polygenic | CGM Technology | 96.7 | 3 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
-| Treg / CAR-T | CGM Technology | 93.8 | 1 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Drug Repurposing | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Drug Repurposing | CGM Technology | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
 
 ---
 
@@ -63,43 +73,33 @@ These domain pairs show high gap scores but have not been classified as either m
 
 | Domain 1 | Domain 2 | Gap Score | Joint Pubs |
 |----------|----------|-----------|------------|
-| Insulin Resistance | Closed Loop / AP | 96.9 | 3 |
-| Neuropathy | Gestational DM | 96.7 | 4 |
-| Nephropathy DKD | Gestational DM | 95.5 | 24 |
-| SGLT2 Inhibitors | Gestational DM | 94.7 | 15 |
-| Insulin Resistance | Health Equity | 93.0 | 7 |
-| Retinopathy | Gestational DM | 92.5 | 48 |
-| Beta Cell Regen | Retinopathy | 91.9 | 5 |
-| SGLT2 Inhibitors | Personalized Nutr | 91.8 | 1 |
-| Drug Repurposing | Gestational DM | 91.4 | 2 |
-| Epigenetics | LADA | 90.9 | 1 |
-| Insulin Resistance | Retinopathy | 90.3 | 82 |
-| Insulin Resistance | CGM Technology | 90.2 | 33 |
-| Islet Transplant | Gestational DM | 89.4 | 1 |
-| Gene Therapy | Gestational DM | 87.4 | 11 |
-| Metabolomics | Health Equity | 87.1 | 8 |
-| Proteomics | Closed Loop / AP | 86.9 | 3 |
-| Autoimmunity T1D | Health Equity | 86.8 | 3 |
-| GLP-1 Agonists | Gestational DM | 86.6 | 67 |
-| Nephropathy DKD | Closed Loop / AP | 86.6 | 9 |
-| Glucokinase | Neuropathy | 85.2 | 1 |
-| Beta Cell Regen | CV Complications | 85.1 | 14 |
-| Retinopathy | Closed Loop / AP | 85.0 | 12 |
-| Autoimmunity T1D | SGLT2 Inhibitors | 84.7 | 13 |
-| Microbiome Gut | Health Equity | 84.5 | 8 |
-| Islet Transplant | Microbiome Gut | 84.4 | 1 |
-| Epigenetics | Health Equity | 84.0 | 6 |
-| Autoimmunity T1D | Gestational DM | 83.3 | 29 |
-| Epigenetics | Closed Loop / AP | 83.3 | 6 |
-| Glucokinase | Retinopathy | 83.3 | 6 |
-| Metabolomics | Closed Loop / AP | 83.2 | 10 |
-| Proteomics | CGM Technology | 82.7 | 14 |
-| Autoimmunity T1D | Retinopathy | 82.3 | 34 |
-| AI / ML Predict | LADA | 82.0 | 3 |
-| Microbiome Gut | Closed Loop / AP | 81.7 | 9 |
-| Neuropathy | Health Equity | 80.9 | 3 |
-| Islet Transplant | Retinopathy | 80.8 | 2 |
-| Personalized Nutr | Neuropathy | 80.8 | 1 |
+| Treg / CAR-T | Glucokinase | 100.0 | 0 |
+| Beta Cell Regen | Retinopathy | 99.9 | 5 |
+| Beta Cell Regen | Neuropathy | 99.9 | 3 |
+| Insulin Resistance | Closed Loop / AP | 99.9 | 4 |
+| Insulin Resistance | Health Equity | 99.9 | 8 |
+| Autoimmunity T1D | Personalized Nutr | 99.9 | 2 |
+| Autoimmunity T1D | Health Equity | 99.9 | 3 |
+| Islet Transplant | SGLT2 Inhibitors | 99.9 | 2 |
+| Islet Transplant | Microbiome Gut | 99.9 | 1 |
+| Islet Transplant | Multi-Omics | 99.9 | 1 |
+| Islet Transplant | Retinopathy | 99.9 | 2 |
+| Islet Transplant | Nephropathy DKD | 99.9 | 2 |
+| Islet Transplant | Neuropathy | 99.9 | 1 |
+| Islet Transplant | Gestational DM | 99.9 | 1 |
+| Epigenetics | LADA | 99.9 | 2 |
+| Treg / CAR-T | SGLT2 Inhibitors | 99.9 | 4 |
+| Treg / CAR-T | Personalized Nutr | 99.9 | 1 |
+| SGLT2 Inhibitors | Personalized Nutr | 99.9 | 2 |
+| SGLT2 Inhibitors | Gestational DM | 99.9 | 16 |
+| Glucokinase | Personalized Nutr | 99.9 | 1 |
+| Glucokinase | Neuropathy | 99.9 | 1 |
+| Personalized Nutr | Neuropathy | 99.9 | 1 |
+| Proteomics | Closed Loop / AP | 99.9 | 4 |
+| Metabolomics | LADA | 99.9 | 4 |
+| Multi-Omics | LADA | 99.9 | 1 |
+| Drug Repurposing | Gestational DM | 99.9 | 2 |
+| Neuropathy | Health Equity | 99.9 | 3 |
 
 ---
 
@@ -107,36 +107,36 @@ These domain pairs show high gap scores but have not been classified as either m
 
 | Domain | Publications | Relative Activity |
 |--------|-------------|-------------------|
-| Prevention / DPP | 80,135 | ████████████████████ |
-| CV Complications | 25,757 | ██████░░░░░░░░░░░░░░ |
-| Insulin Resistance | 20,020 | ████░░░░░░░░░░░░░░░░ |
-| Retinopathy | 16,837 | ████░░░░░░░░░░░░░░░░ |
-| Gestational DM | 15,223 | ███░░░░░░░░░░░░░░░░░ |
-| Nephropathy DKD | 14,061 | ███░░░░░░░░░░░░░░░░░ |
-| GLP-1 Agonists | 13,136 | ███░░░░░░░░░░░░░░░░░ |
-| Metabolomics | 12,499 | ███░░░░░░░░░░░░░░░░░ |
-| AI / ML Predict | 11,450 | ██░░░░░░░░░░░░░░░░░░ |
-| Microbiome Gut | 10,346 | ██░░░░░░░░░░░░░░░░░░ |
-| Youth Diabetes | 8,022 | ██░░░░░░░░░░░░░░░░░░ |
-| Epigenetics | 7,554 | █░░░░░░░░░░░░░░░░░░░ |
-| SGLT2 Inhibitors | 7,410 | █░░░░░░░░░░░░░░░░░░░ |
-| CGM Technology | 6,729 | █░░░░░░░░░░░░░░░░░░░ |
-| GWAS / Polygenic | 5,335 | █░░░░░░░░░░░░░░░░░░░ |
-| Proteomics | 4,823 | █░░░░░░░░░░░░░░░░░░░ |
-| Autoimmunity T1D | 4,574 | █░░░░░░░░░░░░░░░░░░░ |
-| Remission T2D | 4,289 | █░░░░░░░░░░░░░░░░░░░ |
-| Neuropathy | 3,160 | ░░░░░░░░░░░░░░░░░░░░ |
-| Gene Therapy | 2,296 | ░░░░░░░░░░░░░░░░░░░░ |
-| Health Equity | 1,990 | ░░░░░░░░░░░░░░░░░░░░ |
-| Closed Loop / AP | 1,906 | ░░░░░░░░░░░░░░░░░░░░ |
-| Multi-Omics | 1,694 | ░░░░░░░░░░░░░░░░░░░░ |
-| Beta Cell Regen | 1,463 | ░░░░░░░░░░░░░░░░░░░░ |
-| Treg / CAR-T | 953 | ░░░░░░░░░░░░░░░░░░░░ |
-| Glucokinase | 854 | ░░░░░░░░░░░░░░░░░░░░ |
-| Personalized Nutr | 661 | ░░░░░░░░░░░░░░░░░░░░ |
-| Drug Repurposing | 609 | ░░░░░░░░░░░░░░░░░░░░ |
-| LADA | 582 | ░░░░░░░░░░░░░░░░░░░░ |
-| Islet Transplant | 248 | ░░░░░░░░░░░░░░░░░░░░ |
+| Prevention / DPP | 81,977 | ████████████████████ |
+| CV Complications | 26,413 | ██████░░░░░░░░░░░░░░ |
+| Insulin Resistance | 20,604 | █████░░░░░░░░░░░░░░░ |
+| Retinopathy | 17,242 | ████░░░░░░░░░░░░░░░░ |
+| Gestational DM | 15,611 | ███░░░░░░░░░░░░░░░░░ |
+| Nephropathy DKD | 14,458 | ███░░░░░░░░░░░░░░░░░ |
+| GLP-1 Agonists | 13,735 | ███░░░░░░░░░░░░░░░░░ |
+| Metabolomics | 12,830 | ███░░░░░░░░░░░░░░░░░ |
+| AI / ML Predict | 11,940 | ██░░░░░░░░░░░░░░░░░░ |
+| Microbiome Gut | 10,643 | ██░░░░░░░░░░░░░░░░░░ |
+| Youth Diabetes | 8,172 | █░░░░░░░░░░░░░░░░░░░ |
+| Epigenetics | 7,768 | █░░░░░░░░░░░░░░░░░░░ |
+| SGLT2 Inhibitors | 7,678 | █░░░░░░░░░░░░░░░░░░░ |
+| CGM Technology | 6,990 | █░░░░░░░░░░░░░░░░░░░ |
+| GWAS / Polygenic | 5,458 | █░░░░░░░░░░░░░░░░░░░ |
+| Proteomics | 4,980 | █░░░░░░░░░░░░░░░░░░░ |
+| Autoimmunity T1D | 4,699 | █░░░░░░░░░░░░░░░░░░░ |
+| Remission T2D | 4,407 | █░░░░░░░░░░░░░░░░░░░ |
+| Neuropathy | 3,220 | ░░░░░░░░░░░░░░░░░░░░ |
+| Gene Therapy | 2,358 | ░░░░░░░░░░░░░░░░░░░░ |
+| Health Equity | 2,061 | ░░░░░░░░░░░░░░░░░░░░ |
+| Closed Loop / AP | 1,958 | ░░░░░░░░░░░░░░░░░░░░ |
+| Multi-Omics | 1,852 | ░░░░░░░░░░░░░░░░░░░░ |
+| Beta Cell Regen | 1,497 | ░░░░░░░░░░░░░░░░░░░░ |
+| Treg / CAR-T | 983 | ░░░░░░░░░░░░░░░░░░░░ |
+| Glucokinase | 860 | ░░░░░░░░░░░░░░░░░░░░ |
+| Personalized Nutr | 693 | ░░░░░░░░░░░░░░░░░░░░ |
+| Drug Repurposing | 621 | ░░░░░░░░░░░░░░░░░░░░ |
+| LADA | 602 | ░░░░░░░░░░░░░░░░░░░░ |
+| Islet Transplant | 253 | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---
 

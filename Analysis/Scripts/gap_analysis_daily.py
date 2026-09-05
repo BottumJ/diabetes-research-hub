@@ -57,6 +57,30 @@ API_KEY = os.environ.get("NCBI_API_KEY", "").strip()
 RATE_LIMIT = 0.11 if API_KEY else 0.35  # seconds between requests
 SAVE_EVERY = 15  # checkpoint to disk every N completed queries
 
+# ── Time budget (added 2026-09-05) ──
+# This script was written for an unattended run on the user's own machine with
+# no time cap, which is why it was never a pipeline stage. The consequence,
+# measured 2026-09-05: literature_gap_data.json was last written 2026-07-17,
+# while improve_gap_analysis.py re-rendered literature_gap_report.md from it
+# every single day and stamped each copy "**Generated:** <today>". The hub then
+# published that fresh stamp over 50-day-old data. The 2026-09-04 run inspected
+# this file, saw it regenerating daily, and recorded "therefore fine" - the
+# rendering date was fresh and the DATA date was not, and nothing distinguished
+# them.
+#
+# The script already checkpoints every 15 queries, so it does not need an
+# unlimited process - it needs permission to stop. --budget lets it run as a
+# bounded stage that makes measurable progress and exits 0, resuming next run.
+# Exit 0 on an unfinished budget is deliberate: a partial sweep is a correct
+# outcome here, and audit_report_freshness.py is what fails if the resulting
+# data goes stale, so the freshness claim is asserted in exactly one place.
+BUDGET_SECONDS = None
+for _i, _a in enumerate(sys.argv):
+    if _a == "--budget" and _i + 1 < len(sys.argv):
+        BUDGET_SECONDS = float(sys.argv[_i + 1])
+    elif _a.startswith("--budget="):
+        BUDGET_SECONDS = float(_a.split("=", 1)[1])
+
 # ── Research Domains & Keywords ──
 # Identical to project1_literature_gap_analysis.py so outputs stay consistent.
 DOMAINS = {
@@ -128,11 +152,49 @@ def query_pubmed_count(query, retries=3):
 
 
 # ── Checkpoint helpers ──
+# A checkpoint is only ever valid for the day it was written.
+#
+# FOUND 2026-09-05, ON THE FIRST DAY THE RESUME PATH WAS USED IN ANGER. The run
+# that completed a full 465-query sweep at 03:16 left .gap_checkpoint.json on
+# disk holding all 465 answers, despite the os.remove() at the end of
+# run_gap_analysis() - the removal is wrapped in `except OSError: pass` and this
+# repo lives on a cloud-synced mount where a delete can silently fail.
+#
+# That is not a tidiness problem. A COMPLETE checkpoint that outlives its run is
+# a permanent freeze: every later run loads 465 cached answers, issues zero
+# PubMed queries, and writes literature_gap_report.md stamped with today's date
+# over counts that never change again. It is precisely the laundering defect
+# closed elsewhere in this same commit - a fresh timestamp over frozen data -
+# re-entering through the resume mechanism that was added to fix it.
+#
+# Expiry is therefore enforced on READ, not on cleanup. Correctness must not
+# depend on a delete succeeding, because the delete is exactly what failed.
+CHECKPOINT_VALID_DAYS = 1
+
+
 def load_checkpoint():
     if os.path.exists(CHECKPOINT):
         try:
             with open(CHECKPOINT) as f:
                 d = json.load(f)
+            stamp = (d.get("updated") or "")[:10]
+            age = None
+            if stamp:
+                try:
+                    age = (datetime.now().date()
+                           - datetime.strptime(stamp, "%Y-%m-%d").date()).days
+                except ValueError:
+                    age = None
+            if age is None or age >= CHECKPOINT_VALID_DAYS:
+                log(f"  Checkpoint dated {stamp or 'UNKNOWN'} is stale "
+                    f"({'unknown age' if age is None else str(age) + 'd'}); "
+                    f"discarding and re-querying. A resumable cache that does "
+                    f"not expire is a frozen dataset with a fresh date stamp.")
+                try:
+                    os.remove(CHECKPOINT)
+                except OSError:
+                    pass
+                return {}, {}
             return d.get("individual", {}), d.get("pairs", {})
         except Exception as e:
             log(f"  [WARN] Could not read checkpoint ({e}); starting fresh.")
@@ -176,6 +238,12 @@ def run_gap_analysis():
         since_save += 1
         if since_save >= SAVE_EVERY:
             save_checkpoint(individual, pairs); since_save = 0
+        if BUDGET_SECONDS and (time.time() - start) > BUDGET_SECONDS:
+            save_checkpoint(individual, pairs)
+            done = len(individual) + len(pairs)
+            log(f"[BUDGET] Stopped at {done}/{total} queries after "
+                f"{time.time()-start:.0f}s. Checkpoint saved; next run resumes.")
+            return 0
         time.sleep(RATE_LIMIT)
 
     # Step 2: pairwise counts
@@ -192,6 +260,14 @@ def run_gap_analysis():
             rate = (done - done0) / max(time.time() - start, 1e-6)
             eta = (total - done) / rate if rate > 0 else 0
             log(f"  pairs {len(pairs)}/{len(all_pairs)}  |  {rate:.1f} q/s  |  ETA {eta/60:.1f} min")
+        if BUDGET_SECONDS and (time.time() - start) > BUDGET_SECONDS:
+            save_checkpoint(individual, pairs)
+            done = len(individual) + len(pairs)
+            log(f"[BUDGET] Stopped at {done}/{total} queries "
+                f"({100.0*done/total:.1f}%) after {time.time()-start:.0f}s. "
+                f"Checkpoint saved; next run resumes. Outputs NOT rewritten "
+                f"this run - a partial sweep must not overwrite a complete one.")
+            return 0
         time.sleep(RATE_LIMIT)
 
     save_checkpoint(individual, pairs)

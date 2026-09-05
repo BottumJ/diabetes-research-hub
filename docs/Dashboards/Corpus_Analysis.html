@@ -326,6 +326,32 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>
@@ -400,6 +426,8 @@
   </div>
 </nav>
 
+
+
     <div class="navbar">
         <a href="../index.html">Diabetes Research Dashboard</a>
         <span class="navbar-divider">|</span>
@@ -429,7 +457,7 @@
                 <p>Use the concept frequency chart to identify major research themes. The co-occurrence heatmap shows which topics cluster together in the same papers. The gap coverage analysis reveals which high-signal intersections our framework doesn't yet address, pointing to future research directions.</p>
 
                 <h4>What This Cannot Tell You</h4>
-                <p>This analysis is based on 291 papers—a focused selection, not a comprehensive literature census. Absence of a term in our corpus doesn't mean absence of research; it may reflect our collection strategy. MeSH term coverage depends on PubMed indexing and varies by journal and year.</p>
+                <p>This analysis is based on 297 papers—a focused selection, not a comprehensive literature census. Absence of a term in our corpus doesn't mean absence of research; it may reflect our collection strategy. MeSH term coverage depends on PubMed indexing and varies by journal and year.</p>
             </div>
         </div>
 
@@ -438,15 +466,15 @@
             <h2>Corpus Overview</h2>
             <div class="stats-box">
                 <div class="stat">
-                    <div class="stat-value">291</div>
+                    <div class="stat-value">297</div>
                     <div class="stat-label">Total Papers</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">290</div>
+                    <div class="stat-value">296</div>
                     <div class="stat-label">Abstracts</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">136</div>
+                    <div class="stat-value">138</div>
                     <div class="stat-label">Full Texts</div>
                 </div>
                 <div class="stat">
@@ -465,151 +493,151 @@
                 <div class="bar-item">
                     <div class="bar-label">T2D</div>
                     <div class="bar" style="width: 100.0%"></div>
-                    <div class="bar-value">108</div>
+                    <div class="bar-value">111</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">T1D</div>
-                    <div class="bar" style="width: 64.81481481481481%"></div>
-                    <div class="bar-value">70</div>
+                    <div class="bar" style="width: 63.96396396396396%"></div>
+                    <div class="bar-value">71</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">HbA1c</div>
-                    <div class="bar" style="width: 51.85185185185185%"></div>
-                    <div class="bar-value">56</div>
+                    <div class="bar" style="width: 52.25225225225225%"></div>
+                    <div class="bar-value">58</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">inflammation</div>
-                    <div class="bar" style="width: 49.074074074074076%"></div>
+                    <div class="bar" style="width: 51.35135135135135%"></div>
+                    <div class="bar-value">57</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">autoimmunity</div>
+                    <div class="bar" style="width: 47.74774774774775%"></div>
                     <div class="bar-value">53</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">cardiovascular</div>
-                    <div class="bar" style="width: 48.148148148148145%"></div>
+                    <div class="bar" style="width: 46.846846846846844%"></div>
                     <div class="bar-value">52</div>
                 </div>
                 <div class="bar-item">
-                    <div class="bar-label">autoimmunity</div>
-                    <div class="bar" style="width: 46.2962962962963%"></div>
-                    <div class="bar-value">50</div>
-                </div>
-                <div class="bar-item">
                     <div class="bar-label">C_peptide</div>
-                    <div class="bar" style="width: 33.33333333333333%"></div>
+                    <div class="bar" style="width: 32.432432432432435%"></div>
                     <div class="bar-value">36</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">nephropathy</div>
-                    <div class="bar" style="width: 19.444444444444446%"></div>
-                    <div class="bar-value">21</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">GLP1</div>
-                    <div class="bar" style="width: 18.51851851851852%"></div>
-                    <div class="bar-value">20</div>
+                    <div class="bar" style="width: 19.81981981981982%"></div>
+                    <div class="bar-value">22</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">immunotherapy</div>
-                    <div class="bar" style="width: 17.59259259259259%"></div>
-                    <div class="bar-value">19</div>
+                    <div class="bar" style="width: 18.01801801801802%"></div>
+                    <div class="bar-value">20</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">GLP1</div>
+                    <div class="bar" style="width: 18.01801801801802%"></div>
+                    <div class="bar-value">20</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">GKA</div>
-                    <div class="bar" style="width: 16.666666666666664%"></div>
+                    <div class="bar" style="width: 16.216216216216218%"></div>
                     <div class="bar-value">18</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">retinopathy</div>
-                    <div class="bar" style="width: 14.814814814814813%"></div>
+                    <div class="bar" style="width: 14.414414414414415%"></div>
                     <div class="bar-value">16</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">metformin</div>
-                    <div class="bar" style="width: 14.814814814814813%"></div>
+                    <div class="bar" style="width: 14.414414414414415%"></div>
+                    <div class="bar-value">16</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">beta_cell</div>
+                    <div class="bar" style="width: 14.414414414414415%"></div>
                     <div class="bar-value">16</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">SGLT2</div>
-                    <div class="bar" style="width: 14.814814814814813%"></div>
+                    <div class="bar" style="width: 14.414414414414415%"></div>
                     <div class="bar-value">16</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">islet_transplant</div>
-                    <div class="bar" style="width: 13.88888888888889%"></div>
+                    <div class="bar" style="width: 13.513513513513514%"></div>
                     <div class="bar-value">15</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">LADA</div>
-                    <div class="bar" style="width: 13.88888888888889%"></div>
-                    <div class="bar-value">15</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">beta_cell</div>
-                    <div class="bar" style="width: 13.88888888888889%"></div>
+                    <div class="bar" style="width: 13.513513513513514%"></div>
                     <div class="bar-value">15</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Treg</div>
-                    <div class="bar" style="width: 12.037037037037036%"></div>
-                    <div class="bar-value">13</div>
+                    <div class="bar" style="width: 12.612612612612612%"></div>
+                    <div class="bar-value">14</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">CAR-T</div>
-                    <div class="bar" style="width: 11.11111111111111%"></div>
-                    <div class="bar-value">12</div>
+                    <div class="bar" style="width: 12.612612612612612%"></div>
+                    <div class="bar-value">14</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">biomarker</div>
+                    <div class="bar" style="width: 9.00900900900901%"></div>
+                    <div class="bar-value">10</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">calcineurin</div>
-                    <div class="bar" style="width: 8.333333333333332%"></div>
+                    <div class="bar" style="width: 8.108108108108109%"></div>
                     <div class="bar-value">9</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">neuropathy</div>
-                    <div class="bar" style="width: 8.333333333333332%"></div>
-                    <div class="bar-value">9</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">biomarker</div>
-                    <div class="bar" style="width: 8.333333333333332%"></div>
+                    <div class="bar" style="width: 8.108108108108109%"></div>
                     <div class="bar-value">9</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">NLRP3</div>
-                    <div class="bar" style="width: 7.4074074074074066%"></div>
+                    <div class="bar" style="width: 7.207207207207207%"></div>
                     <div class="bar-value">8</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">oxidative_stress</div>
-                    <div class="bar" style="width: 5.555555555555555%"></div>
+                    <div class="bar" style="width: 5.405405405405405%"></div>
                     <div class="bar-value">6</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">microbiome</div>
-                    <div class="bar" style="width: 5.555555555555555%"></div>
+                    <div class="bar" style="width: 5.405405405405405%"></div>
                     <div class="bar-value">6</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">DPP4</div>
-                    <div class="bar" style="width: 4.62962962962963%"></div>
+                    <div class="bar" style="width: 4.504504504504505%"></div>
                     <div class="bar-value">5</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">JAK_inhibitor</div>
-                    <div class="bar" style="width: 4.62962962962963%"></div>
+                    <div class="bar" style="width: 4.504504504504505%"></div>
                     <div class="bar-value">5</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">gestational</div>
-                    <div class="bar" style="width: 3.7037037037037033%"></div>
+                    <div class="bar" style="width: 3.6036036036036037%"></div>
                     <div class="bar-value">4</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">epigenetics</div>
-                    <div class="bar" style="width: 3.7037037037037033%"></div>
+                    <div class="bar" style="width: 3.6036036036036037%"></div>
                     <div class="bar-value">4</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">cost_effectiveness</div>
-                    <div class="bar" style="width: 3.7037037037037033%"></div>
+                    <div class="bar" style="width: 3.6036036036036037%"></div>
                     <div class="bar-value">4</div>
                 </div>
             </div>
@@ -627,91 +655,109 @@
                         <th>T1D</th>
                         <th>HbA1c</th>
                         <th>inflammation</th>
-                        <th>cardiovascular</th>
                         <th>autoimmunity</th>
+                        <th>cardiovascular</th>
                         <th>C_peptide</th>
                         <th>nephropathy</th>
-                        <th>GLP1</th>
                         <th>immunotherapy</th>
+                        <th>GLP1</th>
                         <th>GKA</th>
                         <th>retinopathy</th>
                         <th>metformin</th>
+                        <th>beta_cell</th>
                         <th>SGLT2</th>
-                        <th>islet_transplant</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="heatmap-label">T2D</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">108</td>
-                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">33</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">111</td>
                         <td class="heatmap-cell" style="background-color: rgb(216, 172, 135); color: #ffffff;">13</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">35</td>
-                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
-                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
-                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
                         <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
+                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">35</td>
+                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
+                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
                         <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
                         <td class="heatmap-cell" style="background-color: rgb(225, 191, 163); color: #ffffff;">10</td>
                         <td class="heatmap-cell" style="background-color: rgb(216, 172, 135); color: #ffffff;">13</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">T1D</td>
-                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">70</td>
+                        <td class="heatmap-cell" style="background-color: rgb(216, 172, 135); color: #ffffff;">13</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">71</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">20</td>
-                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
+                        <td class="heatmap-cell" style="background-color: rgb(225, 191, 163); color: #ffffff;">10</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">25</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">24</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">23</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">HbA1c</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">33</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">35</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">20</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">56</td>
-                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">58</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
+                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">15</td>
                         <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
-                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">inflammation</td>
-                        <td class="heatmap-cell" style="background-color: rgb(216, 172, 135); color: #ffffff;">13</td>
-                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
-                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">53</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">19</td>
                         <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
+                        <td class="heatmap-cell" style="background-color: rgb(225, 191, 163); color: #ffffff;">10</td>
+                        <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">57</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">17</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">19</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
-                        <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
+                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                    </tr>
+                    <tr>
+                        <td class="heatmap-label">autoimmunity</td>
+                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">25</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">17</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">53</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">cardiovascular</td>
@@ -719,35 +765,17 @@
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">19</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">52</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">52</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
-                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td class="heatmap-label">autoimmunity</td>
-                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">24</td>
-                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
-                        <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
-                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">50</td>
-                        <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">C_peptide</td>
@@ -755,34 +783,52 @@
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">23</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">15</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(213, 166, 126); color: #ffffff;">14</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">36</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">nephropathy</td>
-                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(219, 179, 144); color: #ffffff;">12</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
                         <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
-                        <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">21</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">22</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                    </tr>
+                    <tr>
+                        <td class="heatmap-label">immunotherapy</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">20</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                     </tr>
                     <tr>
@@ -791,35 +837,17 @@
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">20</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                    </tr>
-                    <tr>
-                        <td class="heatmap-label">immunotherapy</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(222, 185, 153); color: #ffffff;">11</td>
-                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">19</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">GKA</td>
@@ -831,13 +859,13 @@
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">18</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">retinopathy</td>
@@ -845,12 +873,12 @@
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(228, 198, 172); color: #ffffff;">9</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">16</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
@@ -863,17 +891,35 @@
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(240, 223, 209); color: #1a1a1a;">5</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">16</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                    </tr>
+                    <tr>
+                        <td class="heatmap-label">beta_cell</td>
+                        <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
+                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">16</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                     </tr>
                     <tr>
                         <td class="heatmap-label">SGLT2</td>
@@ -881,35 +927,17 @@
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
-                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
+                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(246, 236, 227); color: #1a1a1a;">3</td>
+                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(237, 217, 199); color: #1a1a1a;">6</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell heatmap-cell-empty">—</td>
                         <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
+                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
                         <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">16</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td class="heatmap-label">islet_transplant</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(231, 204, 181); color: #ffffff;">8</td>
-                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(243, 229, 218); color: #1a1a1a;">4</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(252, 248, 245); color: #1a1a1a;">1</td>
-                        <td class="heatmap-cell" style="background-color: rgb(234, 210, 190); color: #1a1a1a;">7</td>
-                        <td class="heatmap-cell" style="background-color: rgb(249, 242, 236); color: #1a1a1a;">2</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell heatmap-cell-empty">—</td>
-                        <td class="heatmap-cell" style="background-color: rgb(211, 160, 117); color: #ffffff;">15</td>
                     </tr>
                 </tbody>
             </table>
@@ -929,24 +957,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="tag">T2D</span> × <span class="tag">cardiovascular</span></td>
-                        <td>35</td>
-                        <td>0.280</td>
-                    </tr>
-                    <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">T1D</span></td>
                         <td>23</td>
-                        <td>0.277</td>
+                        <td>0.274</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">T2D</span> × <span class="tag">cardiovascular</span></td>
+                        <td>35</td>
+                        <td>0.273</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">HbA1c</span> × <span class="tag">T2D</span></td>
+                        <td>35</td>
+                        <td>0.261</td>
                     </tr>
                     <tr>
                         <td><span class="tag">immunotherapy</span> × <span class="tag">islet_transplant</span></td>
                         <td>7</td>
-                        <td>0.259</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">HbA1c</span> × <span class="tag">T2D</span></td>
-                        <td>33</td>
-                        <td>0.252</td>
+                        <td>0.250</td>
                     </tr>
                     <tr>
                         <td><span class="tag">DPP4</span> × <span class="tag">GLP1</span></td>
@@ -961,12 +989,7 @@
                     <tr>
                         <td><span class="tag">calcineurin</span> × <span class="tag">immunotherapy</span></td>
                         <td>5</td>
-                        <td>0.217</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">nephropathy</span> × <span class="tag">neuropathy</span></td>
-                        <td>5</td>
-                        <td>0.200</td>
+                        <td>0.208</td>
                     </tr>
                     <tr>
                         <td><span class="tag">GLP1</span> × <span class="tag">SGLT2</span></td>
@@ -974,19 +997,9 @@
                         <td>0.200</td>
                     </tr>
                     <tr>
-                        <td><span class="tag">C_peptide</span> × <span class="tag">HbA1c</span></td>
-                        <td>15</td>
-                        <td>0.195</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">C_peptide</span> × <span class="tag">autoimmunity</span></td>
-                        <td>14</td>
-                        <td>0.194</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">nephropathy</span> × <span class="tag">retinopathy</span></td>
-                        <td>6</td>
-                        <td>0.194</td>
+                        <td><span class="tag">nephropathy</span> × <span class="tag">neuropathy</span></td>
+                        <td>5</td>
+                        <td>0.192</td>
                     </tr>
                     <tr>
                         <td><span class="tag">neuropathy</span> × <span class="tag">retinopathy</span></td>
@@ -994,14 +1007,34 @@
                         <td>0.190</td>
                     </tr>
                     <tr>
+                        <td><span class="tag">C_peptide</span> × <span class="tag">HbA1c</span></td>
+                        <td>15</td>
+                        <td>0.190</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">nephropathy</span> × <span class="tag">retinopathy</span></td>
+                        <td>6</td>
+                        <td>0.188</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">C_peptide</span> × <span class="tag">autoimmunity</span></td>
+                        <td>14</td>
+                        <td>0.187</td>
+                    </tr>
+                    <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">T1D</span></td>
                         <td>20</td>
-                        <td>0.189</td>
+                        <td>0.183</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">autoimmunity</span> × <span class="tag">inflammation</span></td>
+                        <td>17</td>
+                        <td>0.183</td>
                     </tr>
                     <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">beta_cell</span></td>
                         <td>8</td>
-                        <td>0.186</td>
+                        <td>0.182</td>
                     </tr>
                     <tr>
                         <td><span class="tag">MODY</span> × <span class="tag">gestational</span></td>
@@ -1022,11 +1055,6 @@
                         <td><span class="tag">C_peptide</span> × <span class="tag">LADA</span></td>
                         <td>7</td>
                         <td>0.159</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">autoimmunity</span> × <span class="tag">inflammation</span></td>
-                        <td>14</td>
-                        <td>0.157</td>
                     </tr>
                 </tbody>
             </table>
@@ -1051,61 +1079,61 @@
                     <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">T1D</span></td>
                         <td>20</td>
-                        <td>0.189</td>
+                        <td>0.183</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">HbA1c</span></td>
                         <td>15</td>
-                        <td>0.195</td>
+                        <td>0.190</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">autoimmunity</span></td>
                         <td>14</td>
-                        <td>0.194</td>
+                        <td>0.187</td>
                         <td>Beta cell preservation as immunological marker</td>
                     </tr>
                     <tr>
                         <td><span class="tag">GLP1</span> × <span class="tag">T2D</span></td>
                         <td>14</td>
-                        <td>0.123</td>
+                        <td>0.120</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">T2D</span> × <span class="tag">metformin</span></td>
                         <td>13</td>
-                        <td>0.117</td>
+                        <td>0.114</td>
+                        <td>Emerging research intersection</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">T2D</span> × <span class="tag">nephropathy</span></td>
+                        <td>12</td>
+                        <td>0.099</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">GKA</span> × <span class="tag">T2D</span></td>
                         <td>12</td>
-                        <td>0.105</td>
-                        <td>Emerging research intersection</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">T2D</span> × <span class="tag">nephropathy</span></td>
-                        <td>11</td>
-                        <td>0.093</td>
+                        <td>0.103</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">SGLT2</span> × <span class="tag">T2D</span></td>
                         <td>11</td>
-                        <td>0.097</td>
+                        <td>0.095</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">T2D</span> × <span class="tag">retinopathy</span></td>
                         <td>10</td>
-                        <td>0.088</td>
+                        <td>0.085</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">T2D</span></td>
                         <td>9</td>
-                        <td>0.067</td>
+                        <td>0.065</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1115,28 +1143,34 @@
                         <td>Systemic vascular disease in diabetes</td>
                     </tr>
                     <tr>
+                        <td><span class="tag">immunotherapy</span> × <span class="tag">inflammation</span></td>
+                        <td>8</td>
+                        <td>0.116</td>
+                        <td>Emerging research intersection</td>
+                    </tr>
+                    <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">LADA</span></td>
                         <td>7</td>
                         <td>0.159</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
-                        <td><span class="tag">immunotherapy</span> × <span class="tag">inflammation</span></td>
-                        <td>7</td>
-                        <td>0.108</td>
-                        <td>Emerging research intersection</td>
-                    </tr>
-                    <tr>
                         <td><span class="tag">LADA</span> × <span class="tag">T1D</span></td>
                         <td>7</td>
-                        <td>0.090</td>
+                        <td>0.089</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">nephropathy</span> × <span class="tag">retinopathy</span></td>
                         <td>6</td>
-                        <td>0.194</td>
+                        <td>0.188</td>
                         <td>Unified complications framework</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">CAR-T</span> × <span class="tag">inflammation</span></td>
+                        <td>6</td>
+                        <td>0.092</td>
+                        <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">GLP1</span> × <span class="tag">SGLT2</span></td>
@@ -1145,21 +1179,27 @@
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
+                        <td><span class="tag">CAR-T</span> × <span class="tag">autoimmunity</span></td>
+                        <td>6</td>
+                        <td>0.098</td>
+                        <td>Emerging research intersection</td>
+                    </tr>
+                    <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">inflammation</span></td>
                         <td>5</td>
-                        <td>0.060</td>
+                        <td>0.057</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">metformin</span></td>
                         <td>5</td>
-                        <td>0.075</td>
+                        <td>0.072</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">nephropathy</span> × <span class="tag">neuropathy</span></td>
                         <td>5</td>
-                        <td>0.200</td>
+                        <td>0.192</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1171,25 +1211,25 @@
                     <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">retinopathy</span></td>
                         <td>5</td>
-                        <td>0.075</td>
+                        <td>0.072</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">islet_transplant</span></td>
                         <td>4</td>
-                        <td>0.060</td>
+                        <td>0.058</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">NLRP3</span> × <span class="tag">T2D</span></td>
                         <td>4</td>
-                        <td>0.036</td>
+                        <td>0.035</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">epigenetics</span> × <span class="tag">inflammation</span></td>
                         <td>4</td>
-                        <td>0.075</td>
+                        <td>0.070</td>
                         <td>Epigenetic regulation of immune response</td>
                     </tr>
                     <tr>
@@ -1201,7 +1241,13 @@
                     <tr>
                         <td><span class="tag">T2D</span> × <span class="tag">neuropathy</span></td>
                         <td>4</td>
-                        <td>0.035</td>
+                        <td>0.034</td>
+                        <td>Emerging research intersection</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag">inflammation</span> × <span class="tag">oxidative_stress</span></td>
+                        <td>4</td>
+                        <td>0.068</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1211,21 +1257,9 @@
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
-                        <td><span class="tag">inflammation</span> × <span class="tag">oxidative_stress</span></td>
+                        <td><span class="tag">autoimmunity</span> × <span class="tag">immunotherapy</span></td>
                         <td>4</td>
-                        <td>0.073</td>
-                        <td>Emerging research intersection</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">CAR-T</span> × <span class="tag">inflammation</span></td>
-                        <td>4</td>
-                        <td>0.066</td>
-                        <td>Emerging research intersection</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">CAR-T</span> × <span class="tag">autoimmunity</span></td>
-                        <td>4</td>
-                        <td>0.069</td>
+                        <td>0.058</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1235,39 +1269,39 @@
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
+                        <td><span class="tag">T1D</span> × <span class="tag">nephropathy</span></td>
+                        <td>3</td>
+                        <td>0.033</td>
+                        <td>Emerging research intersection</td>
+                    </tr>
+                    <tr>
                         <td><span class="tag">calcineurin</span> × <span class="tag">nephropathy</span></td>
                         <td>3</td>
-                        <td>0.111</td>
+                        <td>0.107</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">HbA1c</span> × <span class="tag">immunotherapy</span></td>
                         <td>3</td>
-                        <td>0.042</td>
+                        <td>0.040</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">autoimmunity</span> × <span class="tag">cardiovascular</span></td>
                         <td>3</td>
-                        <td>0.030</td>
+                        <td>0.029</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">inflammation</span> × <span class="tag">retinopathy</span></td>
                         <td>3</td>
-                        <td>0.045</td>
+                        <td>0.043</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
                         <td><span class="tag">Treg</span> × <span class="tag">immunotherapy</span></td>
                         <td>3</td>
-                        <td>0.103</td>
-                        <td>Emerging research intersection</td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag">autoimmunity</span> × <span class="tag">immunotherapy</span></td>
-                        <td>3</td>
-                        <td>0.045</td>
+                        <td>0.097</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1297,7 +1331,7 @@
                     <tr>
                         <td><span class="tag">C_peptide</span> × <span class="tag">biomarker</span></td>
                         <td>3</td>
-                        <td>0.071</td>
+                        <td>0.070</td>
                         <td>Emerging research intersection</td>
                     </tr>
                     <tr>
@@ -1498,13 +1532,13 @@
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">2025</div>
-                    <div class="bar" style="width: 87.5%"></div>
-                    <div class="bar-value">21</div>
+                    <div class="bar" style="width: 91.66666666666666%"></div>
+                    <div class="bar-value">22</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">2026</div>
-                    <div class="bar" style="width: 62.5%"></div>
-                    <div class="bar-value">15</div>
+                    <div class="bar" style="width: 83.33333333333334%"></div>
+                    <div class="bar-value">20</div>
                 </div>
             </div>
         </div>
@@ -1517,151 +1551,151 @@
                 <div class="bar-item">
                     <div class="bar-label">Humans</div>
                     <div class="bar" style="width: 100.0%"></div>
-                    <div class="bar-value">252</div>
+                    <div class="bar-value">257</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Male</div>
-                    <div class="bar" style="width: 38.095238095238095%"></div>
-                    <div class="bar-value">96</div>
+                    <div class="bar" style="width: 38.52140077821012%"></div>
+                    <div class="bar-value">99</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Female</div>
-                    <div class="bar" style="width: 38.095238095238095%"></div>
-                    <div class="bar-value">96</div>
+                    <div class="bar" style="width: 38.52140077821012%"></div>
+                    <div class="bar-value">99</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Diabetes Mellitus, Type 2</div>
-                    <div class="bar" style="width: 37.698412698412696%"></div>
-                    <div class="bar-value">95</div>
+                    <div class="bar" style="width: 38.13229571984436%"></div>
+                    <div class="bar-value">98</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Adult</div>
-                    <div class="bar" style="width: 29.761904761904763%"></div>
-                    <div class="bar-value">75</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">Diabetes Mellitus, Type 1</div>
-                    <div class="bar" style="width: 28.57142857142857%"></div>
-                    <div class="bar-value">72</div>
+                    <div class="bar" style="width: 29.961089494163424%"></div>
+                    <div class="bar-value">77</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Middle Aged</div>
-                    <div class="bar" style="width: 27.77777777777778%"></div>
-                    <div class="bar-value">70</div>
+                    <div class="bar" style="width: 28.404669260700388%"></div>
+                    <div class="bar-value">73</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Diabetes Mellitus, Type 1</div>
+                    <div class="bar" style="width: 28.01556420233463%"></div>
+                    <div class="bar-value">72</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Animals</div>
-                    <div class="bar" style="width: 26.984126984126984%"></div>
-                    <div class="bar-value">68</div>
+                    <div class="bar" style="width: 27.237354085603112%"></div>
+                    <div class="bar-value">70</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Hypoglycemic Agents</div>
-                    <div class="bar" style="width: 22.22222222222222%"></div>
-                    <div class="bar-value">56</div>
+                    <div class="bar" style="width: 22.17898832684825%"></div>
+                    <div class="bar-value">57</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Blood Glucose</div>
-                    <div class="bar" style="width: 21.03174603174603%"></div>
-                    <div class="bar-value">53</div>
+                    <div class="bar" style="width: 21.011673151750973%"></div>
+                    <div class="bar-value">54</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Aged</div>
-                    <div class="bar" style="width: 19.444444444444446%"></div>
-                    <div class="bar-value">49</div>
+                    <div class="bar" style="width: 19.45525291828794%"></div>
+                    <div class="bar-value">50</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Insulin</div>
-                    <div class="bar" style="width: 18.650793650793652%"></div>
+                    <div class="bar" style="width: 18.28793774319066%"></div>
                     <div class="bar-value">47</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Glycated Hemoglobin</div>
-                    <div class="bar" style="width: 14.285714285714285%"></div>
-                    <div class="bar-value">36</div>
+                    <div class="bar" style="width: 14.785992217898833%"></div>
+                    <div class="bar-value">38</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Double-Blind Method</div>
-                    <div class="bar" style="width: 13.88888888888889%"></div>
+                    <div class="bar" style="width: 13.618677042801556%"></div>
                     <div class="bar-value">35</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">C-Peptide</div>
-                    <div class="bar" style="width: 11.11111111111111%"></div>
-                    <div class="bar-value">28</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">Adolescent</div>
-                    <div class="bar" style="width: 11.11111111111111%"></div>
+                    <div class="bar" style="width: 10.894941634241246%"></div>
                     <div class="bar-value">28</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Mice</div>
-                    <div class="bar" style="width: 10.714285714285714%"></div>
-                    <div class="bar-value">27</div>
+                    <div class="bar" style="width: 10.894941634241246%"></div>
+                    <div class="bar-value">28</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Adolescent</div>
+                    <div class="bar" style="width: 10.894941634241246%"></div>
+                    <div class="bar-value">28</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Treatment Outcome</div>
-                    <div class="bar" style="width: 10.317460317460316%"></div>
-                    <div class="bar-value">26</div>
+                    <div class="bar" style="width: 10.505836575875486%"></div>
+                    <div class="bar-value">27</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Insulin-Secreting Cells</div>
-                    <div class="bar" style="width: 9.920634920634921%"></div>
+                    <div class="bar" style="width: 9.72762645914397%"></div>
                     <div class="bar-value">25</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Risk Factors</div>
-                    <div class="bar" style="width: 9.523809523809524%"></div>
+                    <div class="bar" style="width: 9.33852140077821%"></div>
                     <div class="bar-value">24</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Autoantibodies</div>
-                    <div class="bar" style="width: 9.126984126984127%"></div>
+                    <div class="bar" style="width: 8.949416342412452%"></div>
                     <div class="bar-value">23</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Cardiovascular Diseases</div>
-                    <div class="bar" style="width: 9.126984126984127%"></div>
+                    <div class="bar" style="width: 8.949416342412452%"></div>
                     <div class="bar-value">23</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Diabetes Mellitus</div>
-                    <div class="bar" style="width: 8.333333333333332%"></div>
-                    <div class="bar-value">21</div>
+                    <div class="bar" style="width: 8.560311284046692%"></div>
+                    <div class="bar-value">22</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Signal Transduction</div>
-                    <div class="bar" style="width: 7.936507936507936%"></div>
+                    <div class="bar" style="width: 7.782101167315175%"></div>
                     <div class="bar-value">20</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Child</div>
-                    <div class="bar" style="width: 7.5396825396825395%"></div>
+                    <div class="bar" style="width: 7.392996108949417%"></div>
                     <div class="bar-value">19</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Glutamate Decarboxylase</div>
-                    <div class="bar" style="width: 7.142857142857142%"></div>
+                    <div class="bar" style="width: 7.003891050583658%"></div>
+                    <div class="bar-value">18</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Young Adult</div>
+                    <div class="bar" style="width: 7.003891050583658%"></div>
                     <div class="bar-value">18</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Glucose</div>
-                    <div class="bar" style="width: 6.746031746031746%"></div>
+                    <div class="bar" style="width: 6.614785992217899%"></div>
                     <div class="bar-value">17</div>
                 </div>
                 <div class="bar-item">
-                    <div class="bar-label">Young Adult</div>
-                    <div class="bar" style="width: 6.746031746031746%"></div>
+                    <div class="bar-label">United States</div>
+                    <div class="bar" style="width: 6.614785992217899%"></div>
                     <div class="bar-value">17</div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label">Islets of Langerhans</div>
-                    <div class="bar" style="width: 6.349206349206349%"></div>
-                    <div class="bar-value">16</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar-label">United States</div>
-                    <div class="bar" style="width: 6.349206349206349%"></div>
+                    <div class="bar" style="width: 6.22568093385214%"></div>
                     <div class="bar-value">16</div>
                 </div>
             </div>

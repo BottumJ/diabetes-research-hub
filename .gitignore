@@ -24,3 +24,12 @@ venv/
 # Large data files that should be regenerated, not committed
 # (keep the scripts, not the outputs — anyone can re-run)
 Analysis/Results/*_snapshot_*.json
+
+# Resumable-sweep scratch (added 2026-09-05). .gap_checkpoint.json is machine-local
+# progress for gap_analysis_daily.py. Committing it would ship a COMPLETE set of
+# 465 cached PubMed answers to every clone, and any clone that loaded it would
+# emit a report stamped with its own run date over counts it never fetched. The
+# read-side expiry in load_checkpoint() already defuses that; not committing it
+# means the situation does not arise.
+Analysis/Results/.gap_checkpoint.json
+Analysis/Results/.gap_checkpoint.json.*
