@@ -311,6 +311,26 @@ SCRIPTS = {
     # discordance figures that build_statistical_analysis.py prints above its
     # Bayesian ranking. Run it after that builder and the page publishes last
     # run's numbers beside this run's ranking.
+    # Added 2026-09-06, immediately after pathstore because it audits the store
+    # pathstore resolves FROM.
+    #
+    # A path's verdict lives under `rating` (37 records), `status` (51) or both
+    # (32). path_store.status_of() reads all three names defensively, so every
+    # consumer routed through it is correct today - but the correctness is
+    # conventional, not structural, and three stored records contradicted
+    # themselves. The worst was validated_paths['GLP1_RA -> neuroprotection'],
+    # carrying status PARTIALLY_VALIDATED beside rating VALIDATED: the
+    # 2026-08-20 downgrade - the one that caught ELAD (PMID 41326666) being
+    # cited as validation when it MISSED its primary endpoint, P = 0.14 - wrote
+    # `status` and left `rating` at the withdrawn verdict. Every PMID in that
+    # record is real and correctly transcribed, so no citation gate would ever
+    # object; one direct rec.get('rating') republishes a retraction.
+    #
+    # path_store.dedupe_state() does canonicalise both keys, but only inside
+    # its duplicate-spelling loop (`if len(raw_keys) < 2: continue`), so a
+    # single-spelling record with two disagreeing keys is never reached.
+    'verdictkeys': ('audit_verdict_key_agreement.py',
+                    'Asserting no stored path record asserts two verdicts about itself'),
     'posterioragree': ('audit_posterior_design_agreement.py',
                        'Measuring posterior-vs-study-design discordance on the Bayesian ranking'),
     'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
@@ -393,6 +413,69 @@ SCRIPTS = {
     # what makes a depth-relative link wrong at a different depth.
     'linkgate': ('audit_published_links.py',
                  'Asserting every link the published site advertises resolves under docs/'),
+    # POST-BUILD ASSERTION, added 2026-09-06. Must run after the builders and
+    # after syncdocs, because it reads rendered output, not source.
+    #
+    # An absence claim - "zero publications", "has never been tested", "no
+    # study has measured" - is the only claim class in this repo produced by
+    # finding NOTHING, so it has no citation for the fourteen citation gates to
+    # check. They are silent on precisely the claims that are easiest to get
+    # wrong, because an empty result set is a fact about a QUERY and gets
+    # written down as a fact about the world.
+    #
+    # Generalises the 2026-09-05 Gap #3 finding (2020-bounded sweeps could
+    # never see the pre-2020 papers that falsified an "unmeasured" claim).
+    # Re-running the repo's absence claims all-time on 2026-09-06 found the
+    # same defect twice more: "Treg-based therapy has never been tested for
+    # diabetic neuropathy" is falsified by PMID 42698953, published two days
+    # before the check, and "generic drugs have never been systematically
+    # evaluated for repurposing" is weakened by PMID 37399599. A third,
+    # "computational drug screening has not been applied [to islet
+    # transplant]", turned out TRUE beside a pair_count of 0 that is FALSE -
+    # right conclusion, wrong evidence, indistinguishable from the outside.
+    #
+    # The gate cannot check truth offline. It checks that each claim declares
+    # the scope of the search behind it, which is the property all four cases
+    # were missing and the one that lets a reader know what would falsify it.
+    'absencescope': ('audit_absence_claim_scope.py',
+                     'Asserting every published absence claim declares the search that produced it'),
+    # DEAD LAST, added 2026-09-06, and it is the gate every stage above needs
+    # in order to mean what it says.
+    #
+    # syncdocs, syncreports, reportfreshness, suppressiongate and linkgate all
+    # validate docs/ IN THE WORKING TREE. docs/ is the Pages root, so that is
+    # the directory this agent BUILDS; the directory a reader LOADS is
+    # origin/main:docs/. Measured 2026-09-06: main is 101 commits ahead,
+    # origin/main tip is 2026-04-20 (138 days), and 38 of the 39 files under
+    # docs/ are stale or absent for a reader - 4 return 404, 34 are old copies,
+    # 1 is right. On 2026-09-05 this runner reported "1400/1400 published links
+    # resolve" and "both reports fresh at 0 days" with 71 stages green. Every
+    # one of those statements is true about the working tree and false about
+    # the site.
+    #
+    # The push failure was recorded in ELEVEN run summaries from 2026-05-24 on
+    # and changed nothing, because noticing lived in prose and prose is not
+    # wired to anything. This line is the wiring: the runner's SUMMARY block
+    # cannot print all-OK while the site is behind, so the condition has to be
+    # cleared rather than re-observed.
+    #
+    # It will be RED until a human pushes. That is intended. It is also why the
+    # fixture below is not optional.
+    'publishgate': ('audit_publish_reachability.py',
+                    'Asserting the published SITE matches what this pipeline audits (reads origin)'),
+    # Pins the gate above, same reasoning as mdcitegate and freshnessgate, with
+    # one addition specific to this one: publishgate is red on arrival and will
+    # stay red, and an alarm never observed to switch off is indistinguishable
+    # from an alarm that is stuck - which is precisely how eleven prior notices
+    # decayed into background noise. This fixture builds throwaway repos and
+    # proves the gate PASSES when a site is level and clean (specificity), as
+    # well as failing on behind / diverged / dirty / unreachable (sensitivity).
+    # It earned its place on its first execution: it caught `cwd=ROOT` bound as
+    # a default argument in the gate, which made all five cases silently audit
+    # THIS repository instead of the fixture clone. Offline; touches no repo
+    # file.
+    'publishgatetest': ('test_publish_reachability_gate.py',
+                        'Regression fixture: publish gate sensitivity AND specificity'),
 }
 
 def run_script(name, desc, script_args=()):

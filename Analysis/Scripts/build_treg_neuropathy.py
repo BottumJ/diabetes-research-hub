@@ -944,8 +944,9 @@ def build_dashboard():
             <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
                 <li>Evidence for neuroinflammation in diabetic neuropathy is solid</li>
                 <li>Evidence for Treg efficacy in autoimmunity and neuroinflammation is solid</li>
-                <li>Evidence connecting Tregs + diabetic neuropathy = zero</li>
-                <li>Yet the logic is compelling: if neuroinflammation drives neuropathy, and Tregs suppress neuroinflammation, why hasn't this been tested?</li>
+                <li>Evidence connecting Tregs + diabetic neuropathy is thin but <strong>not zero</strong>: an all-time PubMed search of (regulatory T cell* OR Treg*) AND (diabetic neuropathy OR diabetic peripheral neuropathy) returns 7 records (re-run 2026-09-06), of which two are preclinical interventions acting <em>through</em> Tregs &mdash; <a href="https://pubmed.ncbi.nlm.nih.gov/42698953/">PMID 42698953</a> (IL-2 nanoplatform, DPN mouse model, FoxP3-knockdown confirms Treg dependence) and <a href="https://pubmed.ncbi.nlm.nih.gov/39084449/">PMID 39084449</a> (polysaccharide that alleviates diabetic peripheral neuropathic pain via increased Tregs). The remainder are Mendelian-randomisation or review papers.</li>
+                <li>What is actually absent is <strong>clinical</strong> evidence: no human trial of Treg-directed therapy with a diabetic-neuropathy endpoint. That is the defensible gap, and it is narrower than "untested".</li>
+                <li>The logic remains compelling: if neuroinflammation drives neuropathy, and Tregs suppress neuroinflammation, why has this not reached a trial?</li>
             </ul>
 
             <p>This gap is a <strong>high-value research opportunity.</strong> Validating the Treg-neuropathy connection could open an entirely new therapeutic avenue for an unmet need affecting 50% of diabetes patients.</p>
@@ -960,7 +961,20 @@ def build_dashboard():
             <h3>Scientific Method Framework</h3>
             <div class="methodology">
                 <h4>Observation</h4>
-                <p>Diabetic neuropathy affects 30-50% of diabetes patients (estimates vary by diagnostic criteria); zero disease-modifying treatments exist (only symptom management); neuroinflammation is an established driver of nerve damage; Tregs suppress neuroinflammation; yet Treg-based therapy has never been tested for diabetic neuropathy.</p>
+                <p>Diabetic neuropathy affects 30-50% of diabetes patients (estimates vary by diagnostic criteria); no disease-modifying treatment is approved (only symptom management); neuroinflammation is an established driver of nerve damage; Tregs suppress neuroinflammation; yet Treg-directed therapy has <strong>not been tested in humans</strong> for diabetic neuropathy.</p>
+                <!-- CORRECTED 2026-09-06. This sentence read "...has never been tested
+                     for diabetic neuropathy." An all-time PubMed re-run of the
+                     intersection (7 records) falsifies it as written: PMID 42698953
+                     (Biomater Res, 2026-09-04 - two days before this correction) is an
+                     IL-2 nanoplatform that selectively expands Tregs in a DPN mouse
+                     model, with FoxP3 knockdown confirming the effect is Treg-dependent,
+                     and PMID 39084449 (2024) alleviates diabetic peripheral neuropathic
+                     pain via increased Tregs. Both are preclinical, so the CLINICAL gap
+                     stands; the unqualified "never been tested" did not.
+                     Same defect class as Gap #3 (2026-09-05): an absence claim stated at
+                     a wider scope than the search that produced it. See
+                     audit_absence_claim_scope.py. -->
+                <p class="source-note">Scope check: all-time PubMed, re-run 2026-09-06. Preclinical Treg-directed interventions in diabetic neuropathy exist (PMID 42698953, PMID 39084449); no human trial does.</p>
             </div>
 
             <div class="methodology">

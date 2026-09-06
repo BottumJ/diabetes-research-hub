@@ -43,7 +43,18 @@ METHODOLOGICALLY_DISTINCT = {
 MEANINGFUL_OPPORTUNITY = {
     ('Beta Cell Regen', 'Health Equity'): "Regenerative therapies must address who has access to them. Equity analysis of emerging cell therapies is absent.",
     ('Gene Therapy', 'LADA'): "LADA's autoimmune mechanism makes it a candidate for gene therapy approaches, but no crossover work exists.",
-    ('Islet Transplant', 'Drug Repurposing'): "Existing immunosuppressants could be repurposed for islet protection. Computational drug screening has not been applied here.",
+    # Reworded 2026-09-06. The pair_count of 0 beside this cell is wrong: an
+    # all-time PubMed search for (drug repurposing OR virtual screening OR
+    # computational screen* OR in silico) AND islet transplant* returns 7
+    # records. On reading titles and pubtypes none is a drug screen for islet
+    # protection - they are immunoisolation coatings, a bioartificial pancreas,
+    # an MSC revascularisation study, a methylation atlas, an in-silico amylin
+    # structure comparison, an islet-survival study and an alpha-1-antitrypsin
+    # dosing protocol. So the SENTENCE was right and its COUNT was wrong, which
+    # is the harder half of the 2026-09-05 Gap #3 finding: a bounded or narrow
+    # query can produce the correct conclusion for an evidence-free reason, and
+    # nothing downstream can tell that apart from a verified claim.
+    ('Islet Transplant', 'Drug Repurposing'): "Existing immunosuppressants could be repurposed for islet protection. An all-time PubMed search of this intersection (re-run 2026-09-06, unbounded by date) returns 7 records, none of which is a computational drug screen for islet protection: the nearest work is bioengineering (immunoisolation, bioartificial pancreas) or single-molecule in-silico structure work.",
     ('Drug Repurposing', 'Health Equity'): "Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research.",
     ('Drug Repurposing', 'LADA'): "LADA is treated with T2D drugs that may be suboptimal. Systematic repurposing screens for LADA-specific therapies don't exist.",
     ('Health Equity', 'LADA'): "LADA is massively underdiagnosed, especially in minority populations. Equity-focused screening research is absent.",

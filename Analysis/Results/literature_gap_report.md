@@ -1,6 +1,6 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-09-05 03:24
+**Generated:** 2026-09-06 03:22
 **Source:** PubMed E-utilities API (esearch.fcgi)
 **Date range:** 2020/01/01 to 2026/09/05
 **Domains analyzed:** 30
@@ -34,7 +34,7 @@ These domain pairs have low co-publication rates **and** plausible scientific re
 |------|----------|----------|-----------|------------|-----------|
 | 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | Regenerative therapies must address who has access to them. Equity analysis of emerging cell therapies is absent. |
 | 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | Insulin resistance in islet transplant recipients affects graft survival, but this interaction is barely studied. |
-| 3 | Islet Transplant | Drug Repurposing | 100.0 | 0 | Existing immunosuppressants could be repurposed for islet protection. Computational drug screening has not been applied here. |
+| 3 | Islet Transplant | Drug Repurposing | 100.0 | 0 | Existing immunosuppressants could be repurposed for islet protection. An all-time PubMed search of this intersection (re-run 2026-09-06, unbounded by date) returns 7 records, none of which is a computational drug screen for islet protection: the nearest work is bioengineering (immunoisolation, bioartificial pancreas) or single-molecule in-silico structure work. |
 | 4 | Islet Transplant | Health Equity | 100.0 | 0 | Islet transplant is available only at select centers. Access equity research is absent. |
 | 5 | Gene Therapy | LADA | 100.0 | 0 | LADA's autoimmune mechanism makes it a candidate for gene therapy approaches, but no crossover work exists. |
 | 6 | Treg / CAR-T | Neuropathy | 100.0 | 0 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |

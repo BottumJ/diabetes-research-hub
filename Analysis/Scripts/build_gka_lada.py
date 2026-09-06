@@ -407,8 +407,11 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="expandable-content">
                     <ul>
-                        <li><strong>Zero publications</strong> connecting GKAs to LADA specifically.
-                            The literature gap is complete.</li>
+                        <li><strong>Zero publications</strong> connecting GKAs to LADA specifically &mdash;
+                            all-time PubMed title/abstract search, unbounded by date, re-run 2026-09-06:
+                            (glucokinase activator* OR dorzagliatin) AND (LADA OR &quot;latent autoimmune
+                            diabetes&quot;) returns 0 records. The literature gap is complete, and the
+                            date-unbounded re-run is what makes that sayable rather than assumed.</li>
                         <li><strong>Historical GKA failures:</strong> Most compounds failed in type 2 diabetes
                             (the simpler indication). MK-0941 discontinued due to hepatic steatosis;
                             piragliatin abandoned due to hypoglycemia; AZD1656 lost efficacy. Only

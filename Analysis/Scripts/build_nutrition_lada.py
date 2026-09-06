@@ -404,7 +404,7 @@ html_content = """<!DOCTYPE html>
             <p class="context-label">How to Use This</p>
             <p>For LADA researchers: documents the absence of LADA-specific nutritional evidence and identifies the most promising directions based on extrapolation from T1D and T2D data. For dietitians: provides the evidence basis (and its limits) for nutritional counseling in confirmed LADA patients.</p>
             <p class="context-label">What This Cannot Tell You</p>
-            <p>BRONZE tier. Almost no published studies examine nutrition specifically in LADA. Evidence is extrapolated from T1D (autoimmune component) and T2D (metabolic component). Recommendations are hypothesis-generating, not evidence-based.</p>
+            <p>BRONZE tier. Few published studies examine nutrition specifically in LADA: an all-time PubMed search for (nutrition OR diet OR dietary) AND (LADA OR &quot;latent autoimmune diabetes&quot;), re-run 2026-09-06 and unbounded by date, returns 45 records &mdash; a real but small literature, not an empty one, and it has not been screened here for design or for whether nutrition is the intervention rather than a covariate. Evidence below is extrapolated from T1D (autoimmune component) and T2D (metabolic component). Recommendations are hypothesis-generating, not evidence-based.</p>
         </div>
 
         <div class="tabs">

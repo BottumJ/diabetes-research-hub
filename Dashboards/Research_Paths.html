@@ -231,124 +231,19 @@
             .container { margin: 0; }
             .path-card { page-break-inside: avoid; margin: 15px 0; }
         }
-    
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-</style>
+    </style>
 </head>
 <body>
-<!-- DRH-NAV-BAR -->
-<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
-  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
-  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Research_Dashboard.html">Research Dashboard</a>
-      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
-      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
-      <a href="Paper_Library.html">Paper Library</a>
-      <a href="Methodology.html">Methodology</a>
-      <a href="Acronym_Database.html">Acronym Database</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Gap_Synthesis.html">Gap Synthesis</a>
-      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
-      <a href="Gap_Evidence.html">Gap Evidence</a>
-      <a href="Extracted_Evidence.html">Extracted Evidence</a>
-      <a href="Corpus_Analysis.html">Corpus Analysis</a>
-      <a href="Research_Paths.html" class="drh-current">Research Paths</a>
-      <a href="Statistical_Analysis.html">Statistical Analysis</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
-      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
-      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
-      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
-      <a href="GKA_Landscape.html">GKA Landscape</a>
-      <a href="GKA_LADA.html">GKA LADA</a>
-      <a href="GKA_Pricing.html">GKA Pricing</a>
-      <a href="Immunomod_LADA.html">Immunomod LADA</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Health_Equity.html">Health Equity</a>
-      <a href="Equity_Map.html">Equity Map</a>
-      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
-      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
-      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="LADA_Natural_History.html">LADA Natural History</a>
-      <a href="LADA_Prevalence.html">LADA Prevalence</a>
-      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
-      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
-      <a href="Nutrition_LADA.html">Nutrition LADA</a>
-      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
-      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="PMID_Verification.html">PMID Verification</a>
-    </div>
-  </div>
-</nav>
-
-
-
 <div class="container">
     <header>
         <h1>Validated Research Paths</h1>
         <p class="subtitle">Evidence-Backed Mechanisms in Diabetes Research</p>
-        <p class="byline">Dashboard generated September 05, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
+        <p class="byline">Dashboard generated September 06, 2026 | GA4 Tag: G-JGMD5VRYPH</p>
     </header>
 
     <div class="context-block">
         <h4>What This Dashboard Answers</h4>
-        <p>17 research paths are shown, extracted from 232 de-duplicated data points across 53 full-text papers. 29 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
+        <p>17 research paths are shown, extracted from 232 de-duplicated data points across 53 full-text papers. 30 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
     </div>
 
     <div class="context-block">
@@ -367,7 +262,7 @@
             <div class="stat-label">Paths Identified</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">29</div>
+            <div class="stat-number">30</div>
             <div class="stat-label">Validated</div>
         </div>
         <div class="stat-box">
@@ -397,10 +292,10 @@
     <h2>Validated Research Paths</h2>
     <p>The following 10 paths have been confirmed by independent published evidence:</p>
 
-    <div class="tabs" role="tablist">
-        <button role="tab" class="tab-button active" onclick="switchTab(event, 'all-validated')">All Validated (10)</button>
-        <button role="tab" class="tab-button" onclick="switchTab(event, 'high-confidence')">High Confidence</button>
-        <button role="tab" class="tab-button" onclick="switchTab(event, 'network')">Connection Network</button>
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchTab(event, 'all-validated')">All Validated (10)</button>
+        <button class="tab-button" onclick="switchTab(event, 'high-confidence')">High Confidence</button>
+        <button class="tab-button" onclick="switchTab(event, 'network')">Connection Network</button>
     </div>
 
     <div id="all-validated" class="tab-content active">
@@ -435,8 +330,8 @@
             all &mdash; 66% of 2026 papers and 46% of 2025 papers, against about 31% of papers published
             before 2018. The badge is therefore most reliable on the oldest evidence and least reliable
             on the newest, which is the opposite of what a reader would assume. Two concrete cases found
-            the same day: <a href="https://pubmed.ncbi.nlm.nih.gov/36643381/" target="_blank" rel="noopener" title="View on PubMed">PMID 36643381</a> is a trial protocol whose title says so and whose PubMed record
-            does not, and <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a> is a JAMA randomised trial (CLVer, n=88) that PubMed has not
+            the same day: PMID 36643381 is a trial protocol whose title says so and whose PubMed record
+            does not, and PMID 36826844 is a JAMA randomised trial (CLVer, n=88) that PubMed has not
             tagged as one. See pubtype_title_disagreement.json.</p>
         </div>
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
@@ -526,7 +421,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>DAPA-CKD landmark trial (NEJM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/32970396/" target="_blank" rel="noopener" title="View on PubMed">PMID:32970396</a>): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
+                <p>DAPA-CKD landmark trial (NEJM 2020, PMID:32970396): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
             </div>
 
             <div class="path-section">
@@ -823,7 +718,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (<a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener" title="View on PubMed">PMID: 39613428</a>)</p>
+                <p>Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (PMID: 39613428)</p>
             </div>
 
             <div class="path-section">
@@ -936,7 +831,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
+                <p>Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, PMID 29988125, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, PMID 36826844, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
             </div>
 
             <div class="path-section">
@@ -993,7 +888,7 @@
 
             <div class="path-section">
                 <span class="section-label">Validation Source</span>
-                <p>β-hydroxybutyrate inhibits NLRP3 assembly by blocking K+ efflux and ASC oligomerization (Youm et al. Nat Med 2015 - <a href="https://pubmed.ncbi.nlm.nih.gov/25686106/" target="_blank" rel="noopener" title="View on PubMed">PMID 25686106</a>). SGLT2i elevate serum BHB and reduce NLRP3-IL-1β in human macrophages (Kim et al. Nat Commun 2020 - <a href="https://pubmed.ncbi.nlm.nih.gov/32358544/" target="_blank" rel="noopener" title="View on PubMed">PMID 32358544</a>; 30-day RCT vs sulfonylurea in T2D+CVD patients). Endogenic anti-inflammatory effect confirmed in stress models (Yamanashi 2017 Sci Rep - <a href="https://pubmed.ncbi.nlm.nih.gov/28794421/" target="_blank" rel="noopener" title="View on PubMed">PMID 28794421</a>). Mechanism connects to existing SGLT2i->DKD path via NLRP3 suppression.</p>
+                <p>β-hydroxybutyrate inhibits NLRP3 assembly by blocking K+ efflux and ASC oligomerization (Youm et al. Nat Med 2015 - PMID 25686106). SGLT2i elevate serum BHB and reduce NLRP3-IL-1β in human macrophages (Kim et al. Nat Commun 2020 - PMID 32358544; 30-day RCT vs sulfonylurea in T2D+CVD patients). Endogenic anti-inflammatory effect confirmed in stress models (Yamanashi 2017 Sci Rep - PMID 28794421). Mechanism connects to existing SGLT2i->DKD path via NLRP3 suppression.</p>
             </div>
 
             <div class="path-section">
@@ -1052,7 +947,7 @@
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">dapagliflozin_nephropathy<span class="tier-badge" style="border-color: #2d5016; color: #2d5016;" title="at least one citing paper reports primary data">PRIMARY</span></div>
             <p class="tier-why">Evidence design &mdash; primary: at least one citing paper reports primary data</p>
-            <p><strong>Validation Source:</strong> DAPA-CKD landmark trial (NEJM 2020, <a href="https://pubmed.ncbi.nlm.nih.gov/32970396/" target="_blank" rel="noopener" title="View on PubMed">PMID:32970396</a>): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
+            <p><strong>Validation Source:</strong> DAPA-CKD landmark trial (NEJM 2020, PMID:32970396): dapagliflozin reduced composite renal endpoint (50% eGFR decline, ESRD, renal/CV death) by 39% (HR 0.61). Systematic reviews confirm class-wide renal protection independent of diabetes status</p>
             <p><strong>Caveats:</strong> Mechanism likely via reduced intraglomerular pressure from natriuresis; benefits maintained with progressive CKD</p>
             <p><strong>Data Points from Corpus:</strong> 3</p>
         </div>
@@ -1087,7 +982,7 @@
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">verapamil_T1D<span class="tier-badge" style="border-color: #8b0000; color: #8b0000;" title="every citing paper is a protocol/editorial/comment - no measured outcome exists under this path">NO RESULTS</span></div>
             <p class="tier-why">Evidence design &mdash; no results: every citing paper is a protocol/editorial/comment - no measured outcome exists under this path</p>
-            <p><strong>Validation Source:</strong> Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (<a href="https://pubmed.ncbi.nlm.nih.gov/39613428/" target="_blank" rel="noopener" title="View on PubMed">PMID: 39613428</a>)</p>
+            <p><strong>Validation Source:</strong> Multiple RCTs demonstrate verapamil preserves beta-cell function in newly diagnosed T1D. Pediatric RCT showed partial preservation of stimulated C-peptide at 52 weeks. Ver-A-T1D adult trial protocol demonstrates sustained safety and efficacy (PMID: 39613428)</p>
             <p><strong>Caveats:</strong> Effect is modest beta-cell preservation, not reversal; most benefit in early disease; mechanism involves TXNIP reduction in beta cells</p>
             <p><strong>Data Points from Corpus:</strong> 7</p>
         </div>
@@ -1101,7 +996,7 @@
         <div class="path-card" style="background-color: #f0f8e8; border-color: #2d5016;">
             <div class="path-name">verapamil_TXNIP_beta_cell_preservation<span class="tier-badge" style="border-color: #555555; color: #555555;" title="not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read">UNGRADED</span></div>
             <p class="tier-why">Evidence design &mdash; ungraded: not present in research_paths.json when the evidence-design grader last ran, so its publication types were never read</p>
-            <p><strong>Validation Source:</strong> Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, <a href="https://pubmed.ncbi.nlm.nih.gov/29988125/" target="_blank" rel="noopener" title="View on PubMed">PMID 29988125</a>, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, <a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" rel="noopener" title="View on PubMed">PMID 36826844</a>, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
+            <p><strong>Validation Source:</strong> Two independent RCTs in T1D confirm sustained C-peptide preservation: Ovalle 2018 (Nat Med, PMID 29988125, NCT02372253, n=24 adult completers) and CLVer 2023 (JAMA, PMID 36826844, n=88 pediatric ages 7-17) both showed preserved MMTT-stimulated C-peptide at 12 months vs placebo. Mechanism (TXNIP suppression -> reduced beta cell apoptosis) consistent with preclinical literature.</p>
             <p><strong>Caveats:</strong> Both trials are short-term (12 months). Durability beyond 1 year not yet established. Multicenter Ver-A-T1D protocol (PMC11605811) still enrolling.</p>
             <p><strong>Data Points from Corpus:</strong> 0</p>
         </div>
@@ -1111,7 +1006,7 @@
         <h3>Research Path Network</h3>
         <p>Paths that share external PMIDs or mechanistic connections:</p>
 
-        <table role="table">
+        <table>
             <thead>
                 <tr>
                     <th>Path Name</th>
@@ -1167,7 +1062,7 @@
     <h2>Research Path Gap Mapping</h2>
     <p>How validated research paths support the 15 research gaps. Gaps with more validated paths have stronger evidence backing:</p>
 
-    <table role="table">
+    <table>
         <thead>
             <tr>
                 <th>Gap ID</th>

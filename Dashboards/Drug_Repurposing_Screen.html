@@ -377,32 +377,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
 </head>
 <body>
@@ -470,8 +444,6 @@
   </div>
 </nav>
 
-
-
     <nav>
         <a href="../docs/index.html">Home</a>
         <a href="#executive-summary">Executive Summary</a>
@@ -483,7 +455,7 @@
     <p><em>Pressure-tested screen of 34 generic drugs with diabetes-relevant mechanisms for equity interventions in low-resource settings</em></p>
     <div class="context-block">
         <h3>What This Dashboard Answers</h3>
-        <p>Most diabetes drug development targets novel molecules with decade-long timelines and high-income-country pricing. Meanwhile, dozens of cheap, globally available generic drugs have mechanisms relevant to diabetes pathophysiology — anti-inflammatory, beta cell protective, immunomodulatory — that have never been systematically evaluated for repurposing. This screen asks: which existing generics have the strongest mechanistic, safety, and equity case for diabetes intervention, and which could be deployed in low-resource settings where novel therapies will not arrive for years?</p>
+        <p>Most diabetes drug development targets novel molecules with decade-long timelines and high-income-country pricing. Meanwhile, dozens of cheap, globally available generic drugs have mechanisms relevant to diabetes pathophysiology — anti-inflammatory, beta cell protective, immunomodulatory — that have not been systematically evaluated for repurposing <em>with cost and access as selection criteria</em>. The unqualified version of this sentence &mdash; &quot;never been systematically evaluated&quot; &mdash; was corrected 2026-09-06: an all-time PubMed search for repurposing AND (generic OR off-patent OR low-cost) AND (diabetes OR beta cell), unbounded by date, returns 15 records, and <a href="https://pubmed.ncbi.nlm.nih.gov/37399599/">PMID 37399599</a> (EBioMedicine, 2023) is a genetically supported drug-repurposing pipeline for diabetes built on electronic health records. Systematic repurposing screens for diabetes exist; what this screen adds is the equity and deployability filter, not the idea. This screen asks: which existing generics have the strongest mechanistic, safety, and equity case for diabetes intervention, and which could be deployed in low-resource settings where novel therapies will not arrive for years?</p>
 
         <div class="context-label">How to Use This</div>
         <p>For researchers: the ranked table identifies which drugs warrant pilot studies in specific diabetes contexts (LADA, islet transplant, T2D inflammation). For funders: the equity score highlights drugs with the best cost-to-impact ratio in LMICs. For policymakers: the WHO Essential Medicines flags show which drugs are already in global supply chains and could be repurposed without new procurement infrastructure. This is a prioritization tool for deciding where to invest limited research dollars, not a clinical recommendation.</p>

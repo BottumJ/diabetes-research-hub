@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-06",
-  "last_run": "2026-09-06",
+  "last_updated": "2026-09-05",
+  "last_run": "2026-09-05",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -6287,41 +6287,6 @@
         "Journal Article",
         "Research Support, N.I.H., Extramural"
       ]
-    },
-    "42698953": {
-      "status": "UNVETTED",
-      "added": "2026-09-06",
-      "priority": "high",
-      "source": "2026-09-06 all-time absence-claim re-run / gap audit",
-      "note": "Acid-Responsive ZIF-8 Core-Shell Nanovesicles Loaded with IL-2 Selectively Expand Tregs to Reconstruct Immunometabolic Homeostasis in Diabetic Neuropathy. Biomater Res 2026 Sep 4. PRECLINICAL (DPN mouse). FALSIFIES the published claim \"Treg-based therapy has never been tested for diabetic neuropathy\"; FoxP3 knockdown confirms Treg dependence."
-    },
-    "39084449": {
-      "status": "UNVETTED",
-      "added": "2026-09-06",
-      "priority": "high",
-      "source": "2026-09-06 all-time absence-claim re-run / gap audit",
-      "note": "Alleviated diabetic osteoporosis and peripheral neuropathic pain by Rehmannia glutinosa Libosch polysaccharide via increasing regulatory T cells. Int J Biol Macromol 2024. PRECLINICAL. Second counterexample to the same claim."
-    },
-    "37399599": {
-      "status": "UNVETTED",
-      "added": "2026-09-06",
-      "priority": "high",
-      "source": "2026-09-06 all-time absence-claim re-run / gap audit",
-      "note": "A genetically supported drug repurposing pipeline for diabetes treatment using electronic health records. EBioMedicine 2023. Weakens \"generic drugs have never been systematically evaluated for repurposing\"."
-    },
-    "42373533": {
-      "status": "UNVETTED",
-      "added": "2026-09-06",
-      "priority": "high",
-      "source": "2026-09-06 all-time absence-claim re-run / gap audit",
-      "note": "Impact of Autoimmune Hypothyroidism and Celiac Disease on Progression to Diabetes in Individuals Positive for GAD65 or IA-2 Autoantibodies. Diabetes Obes Metab 2026 Sep. Relevant to Gap #8 (immunomodulation/LADA progression)."
-    },
-    "42014686": {
-      "status": "UNVETTED",
-      "added": "2026-09-06",
-      "priority": "high",
-      "source": "2026-09-06 all-time absence-claim re-run / gap audit",
-      "note": "Pharmacokinetic/pharmacodynamic drug-drug interaction study of dorzagliatin and empagliflozin in T2D and obesity. Nat Commun 2026 Apr. New primary clinical data on the only approved GKA; relevant to Gap #15 and the GKA paths."
     }
   },
   "paths": {
@@ -7575,7 +7540,7 @@
         "PMC10668472",
         "PMC12536377"
       ],
-      "validation_status": "PARTIALLY_VALIDATED",
+      "validation_status": "VALIDATED",
       "evidence_summary": "EMPA-CARD RCT showed empagliflozin reduced IL-6 (-1.06 pg/mL, p=0.006) and hs-CRP (-2.86 mg/L, p=0.003) vs placebo. 12-month trial showed 54% hs-CRP reduction. Meta-analysis confirms CRP reduction -0.63 mg/L (p=0.01) and IL-6 SMD -0.28 (p=0.03). EMPA-REG OUTCOME supports cardiovascular benefits partly via anti-inflammatory effects. [2026-07-05 refresh] SGLT2i IL-6 meta-analysis (PMC10668472, 18 RCTs, n=5,311) confirms class-level IL-6 reduction, BUT reports dapagliflozin > empagliflozin for IL-6 lowering, and EMPIRE-HF showed NO hs-CRP effect in heart-failure patients - anti-inflammatory signal is population-dependent (strongest in T2D+CAD, e.g. EMPA-CARD). Empagliflozin+colchicine post-STEMI SR (PMC12536377) relevant to the hub's SGLT2i+anti-inflammatory combination theme. Core signal holds but heterogeneous across populations -> retain PARTIALLY_VALIDATED (not full).",
       "confidence": "HIGH",
       "backfilled_from": "state.validated_paths",
@@ -7604,9 +7569,7 @@
           ],
           "reason": "off-topic external citations found by audit_path_citations.py"
         }
-      ],
-      "verdict_key_normalised_on": "2026-09-06",
-      "verdict_key_normalised_note": "Record asserted {'status': 'PARTIALLY_VALIDATED', 'validation_status': 'VALIDATED'} simultaneously. Resolved to the conservative value by audit_verdict_key_agreement.py; both keys now carry it so a direct read of either cannot republish a withdrawn verdict."
+      ]
     },
     "dapagliflozin -> nephropathy": {
       "status": "VALIDATED",
@@ -8151,7 +8114,7 @@
     },
     "8": {
       "tier": "SILVER",
-      "last_audited": "2026-09-06",
+      "last_audited": "2026-09-02",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -8195,11 +8158,6 @@
           "date": "2026-09-02",
           "new_evidence_found": true,
           "notes": "Gap #8 audit (prev 2026-08-03). MATERIAL NEGATIVE READOUT, AND THE STATE WAS FIVE MONTHS STALE. The 2026-08-03 note listed DIAGNODE-3 (Diamyd/retogatein, intralymphatic rhGAD65, HLA DR3-DQ2 stratified) as a pending ~2026 readout to watch. It had already failed: Diamyd announced on 2026-03-27 that the pre-specified interim efficacy analysis on C-peptide in the first 174 of 321 participants missed the primary endpoint with no observable C-peptide preservation and did not meet the pre-specified continuation criteria; the company then confirmed futility and DISCONTINUED the trial and opened a strategic review (April 2026). No safety concerns were reported. Consequence for this gap: the largest active antigen-specific immunotherapy programme adjacent to LADA has now read out negative in recent-onset T1D, which weakens rather than strengthens the GAD-alum arm of the LADA immunomodulator case. The LADA-specific GAD-alum+VitD pilot NCT04262479 (Phase 2, COMPLETED per registry, n=14) still has no published primary readout. Retain SILVER - the gap (no LADA-specific immunomodulator RCT) is unchanged and if anything more open - but the watch list must drop DIAGNODE-3 as pending. ACTION TAKEN THIS RUN: the GAD-alum entry in build_data_dictionary.py claimed 'Preserves C-peptide at 20 mcg dose over 5 years in LADA' and 'Phase 3 trial completed; 20 mcg preserves C-peptide 5yr', citing PMID 22296077 (Ludvigsson, NEJM 2012). That paper is a NEGATIVE Phase 3 in recent-onset T1D in 10-20 year olds (stimulated C-peptide declined similarly in all groups; primary outcome at 15 months P=0.10) - wrong population, wrong duration, wrong direction. Rewritten to cite the study that actually supports the residual claim (PMID 19404608, Agardh 2009 Diabetologia, Phase 2, n=47 GADA-positive adults, PRIMARY OUTCOME SAFETY, no significant 5-year fasting C-peptide decline in the 20 mcg n=8 and 100 mcg n=9 arms, no between-group efficacy comparison reported, 500 mcg arm declined like placebo) and to state the Ludvigsson and DIAGNODE-3 negatives explicitly."
-        },
-        {
-          "date": "2026-09-06",
-          "new_evidence_found": false,
-          "notes": "Gap #8 audit (prev 2026-09-02). NO CHANGE; the 2026-09-02 negative readout re-confirmed and its publication status pinned. DIAGNODE-3 (retogatein/rhGAD65, HLA DR3-DQ2, n=321) still has NO peer-reviewed primary publication: (DIAGNODE* OR intralymphatic OR GAD65 OR retogatein OR Diamyd) AND (type 1 diabetes OR LADA) returns 29 records since 2026/01/01 and not one is the trial report. The interim failure - no observable C-peptide preservation in the first 174 participants at month 15, continuation criteria not met, trial closed - remains sourced ONLY to the 2026-03-27 company announcement and secondary coverage. Recorded as such: a company press release is not a peer-reviewed source, and this gap's most material fact currently rests on one. Two on-topic 2026 papers added UNVETTED: PMID 42373533 (autoimmune comorbidity and progression in GAD65/IA-2-positive individuals) and PMID 42598998 (GAD-65 antibody detection changing antihyperglycemic therapy in T2D)."
         }
       ],
       "next_audit_due": "2026-10-02"
@@ -8597,7 +8555,7 @@
     },
     "14": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-06",
+      "last_audited": "2026-09-02",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -8741,18 +8699,13 @@
           "date": "2026-09-02",
           "new_evidence_found": false,
           "notes": "Gap #14 audit (prev 2026-08-03). No change. The primary watch item, the Berberine+Inulin LADA RCT NCT04698330 (n=240, 4-arm BBR / inulin / both / placebo on insulin, 3-month treatment, 9-month follow-up, primary endpoint HbA1c change, secondary beta-cell function and gut microbiota), still has only the 2022 Front Endocrinol protocol published (PMC9241519) and no peer-reviewed primary results. No LADA-specific personalized-nutrition RCT or systematic review located. Retain BRONZE, promotion_candidate stays false. Recheck NCT04698330 for results next audit."
-        },
-        {
-          "date": "2026-09-06",
-          "new_evidence_found": false,
-          "notes": "Gap #14 audit (prev 2026-09-02). NO CHANGE, 5th consecutive null, and the null is now itself the finding. All-time PubMed: (berberine OR inulin) AND (LADA OR latent autoimmune diabetes) returns exactly 1 record - PMID 35784546, the 2022 Front Endocrinol PROTOCOL for NCT04698330 - and NCT04698330[si] returns the same single record. Separately, ('latent autoimmune diabetes' OR LADA) AND randomized[pt] AND (diet* OR nutrition*) returns 0 all-time: there is no published nutrition RCT in LADA at all, unbounded by date. NCT04698330 (n=240, 4-arm, 3-month treatment + 9-month follow-up) published its protocol in 2022 and has no primary results four years on - logged as a publication-bias watch item rather than as absence of effect. Retain BRONZE; promotion_candidate stays false (no second independent source exists to promote on)."
         }
       ],
       "next_audit_due": "2026-10-02"
     },
     "15": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-06",
+      "last_audited": "2026-09-02",
       "corpus_evidence_points": 1,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -8818,11 +8771,6 @@
           "date": "2026-09-02",
           "new_evidence_found": true,
           "notes": "Gap #15 audit (prev 2026-08-03). THE AUDIT TRAIL FOR THIS GAP HAS BEEN AUDITING THE WRONG QUESTION SINCE APRIL. Canonical Gap #15, per build_data_dictionary.py GAPS, build_gka_pricing.py and run_quality_improvements.py, is the GKA PRICING TRAJECTORY MODEL. Every one of the seven prior audit_history entries on this gap (2026-04-16, 04-21, 05-05, 06-03, 06-30, 07-08, 08-03) audits 'SGLT2 inhibitors x personalized/precision nutrition' instead - a topic that is not any of the 15 gaps, and whose nearest legitimate home is Gap #13 (Personalized Nutrition for Beta Cell Health), which has its own separate and correct history. Consequence: promotion_candidate=true on Gap #15 was set on evidence for a different question and is NOT a statement about GKA pricing. Set promotion_candidate=false pending a real assessment. FIRST ACTUAL GAP #15 AUDIT: dorzagliatin (HuaTangNing, Hua Medicine/Bayer) remains the only approved GKA and remains China-only. It entered China's National Reimbursement Drug List effective 2024-01-01 and was renewed at the same negotiated price for calendar 2026-2027; sales volume rose roughly 740% over 2023 in the first full reimbursed year. The dashboard's headline 'Estimated Price: $2,000-$3,000/year in China (PMID:36449148)' is a pre-reimbursement launch-price estimate and is very likely now too high, but no post-NRDL per-year price was found in a citable source, so the figure was retained and flagged [STALE - PRE-NRDL ESTIMATE] on the published page rather than silently changed. No pricing evidence located for TTP399/cadisegliatin, which is still unapproved. Retain BRONZE."
-        },
-        {
-          "date": "2026-09-06",
-          "new_evidence_found": false,
-          "notes": "Gap #15 audit (prev 2026-09-02) and this is the FIRST audit of this gap on its own canonical question. The 2026-09-02 run established that all seven prior audits (2026-04-16 through 08-03) were auditing 'SGLT2 inhibitors x personalized nutrition' while canonical Gap #15, per build_data_dictionary.py / build_gka_pricing.py / run_quality_improvements.py, is the GKA PRICING TRAJECTORY MODEL. Audited correctly today, all-time and unbounded by date: (glucokinase activator* OR dorzagliatin) AND (cost OR price OR pricing OR cost-effectiveness OR access OR affordab*) returns 5 records, ALL of them 2011-2014 general T2D-pipeline reviews (PMIDs 24936252, 22998892, 22946641, 22165703, 25126358). NONE concerns dorzagliatin, which is the only GKA ever approved (China, 2022). So there is zero pricing, cost-effectiveness or access literature on the only marketed drug in the class, and the five hits that do exist predate its approval by 8-11 years. This STRENGTHENS the gap. Reported, NOT promoted: the evidence here is an absence, and BRONZE->SILVER promotion requires a second independent positive source, which an empty result set cannot supply. Also logged: PMID 42014686 (Nat Commun 2026 Apr), a dorzagliatin+empagliflozin DDI study, is new primary clinical data on the molecule and is added UNVETTED."
         }
       ],
       "next_audit_due": "2026-10-02",
@@ -8848,6 +8796,12 @@
       "priority": 0,
       "added": "2026-09-05",
       "target": "BLOCKING, AND IT OUTRANKS EVERY OTHER ITEM IN THIS QUEUE: NOTHING THIS AGENT HAS BUILT SINCE 2026-04-20 HAS REACHED THE PUBLISHED SITE. main is 100 commits ahead of origin/main (tip f7e976f, 2026-04-20 = 138 days). `git push` fails in the sandbox: HTTPS remote, no credential helper, no ~/.git-credentials, no GH_TOKEN -> 'could not read Username for https://github.com'. Consequences that are already false on the live site: docs/Reports/ has NEVER existed on origin/main, so both reports the hub advertises as 'Available' 404 for a real reader; the hub still says '15 domains'; none of the 14 citation gates, the retraction gate, the NCT gate or this week's freshness gate exist for anyone but this agent. The gates cannot detect this because every one of them audits docs/ in the WORKING TREE - a directory no reader can reach. Recorded in 11 prior run summaries (2026-05-24 onward) and never escalated. ACTION: push from the Windows side, or provision a PAT / gh credential for the scheduled task. SECOND ACTION: add a pipeline stage that FAILS when origin/main is behind main, so no future run can report a successful publish it did not perform."
+    },
+    {
+      "type": "fix_pipeline",
+      "priority": 1,
+      "added": "2026-09-05",
+      "target": "ADD A PUBLISH-REACHED-THE-READER GATE. Every publish-side assertion this repo owns - audit_published_links.py, sync_docs_dashboards.py, sync_docs_reports.py, regression_suppression_gate.py, audit_report_freshness.py - reads docs/ on local disk. All five were green today while the live site served 2026-04-20 content, because 'published' has silently meant 'written to a local directory' for 138 days. The gate must compare HEAD against origin/main (git rev-list --count origin/main..HEAD) and fail when the count is non-zero, so an unpushed run cannot be reported as a publish. Optionally also fetch the live Pages URL and diff its hub card against the local one - the strongest form, since it asserts on the artifact the reader actually loads."
     },
     {
       "priority": 1,
@@ -9591,6 +9545,12 @@
       "target": "HUMAN CALL: GAP #3 IS GOLD ON A CLAIM ITS OWN ALL-TIME EVIDENCE CONTRADICTS. Every audit of 'Insulin Resistance in Islet Transplant' was date-bounded to 2020+. All-time, PMID 24085506 (JCEM 2013, pubtype Clinical Trial) and PMID 24691031 (AJP-Endo 2014) both measure insulin sensitivity as an endpoint in human islet transplant recipients; both are pre-2020 and neither is in the gap's paper set. The gap's actual GOLD evidence, PMID 42608595, contributes four extracted findings and none mentions insulin resistance. Two decisions: (a) restate the gap as 'not a reported endpoint in MULTI-CENTRE/REGISTRY studies' - which the evidence supports - rather than 'unmeasured', which it refutes; (b) decide whether GOLD survives the restatement. Reported not applied: re-tiering is a scientific judgement."
     },
     {
+      "type": "fix_pipeline",
+      "priority": 1,
+      "added": "2026-09-05",
+      "target": "AUDIT EVERY OTHER SWEEP FOR AN UNDECLARED DATE WINDOW. Gap #3's audits returned 'no such evidence' when they meant 'no such evidence since 2020', and the distinction was never written down. That is a generalisable defect, not a fact about gap #3: a search window is an assumption and every one of these scripts hardcodes one. Sweep gap_analysis_daily.py (MIN_DATE 2020/01/01), baseline_pubmed_alerts.py (LOOKBACK_DAYS 30) and every audit_*/build_* that calls esearch with mindate, and make each one either state its window in its output or justify it. Where a gap asserts ABSENCE, the sweep behind it must be all-time - an absence claim bounded by a window is not an absence claim."
+    },
+    {
       "type": "validate_path",
       "priority": 2,
       "added": "2026-09-05",
@@ -9607,42 +9567,6 @@
       "priority": 2,
       "added": "2026-09-05",
       "target": "RE-AUDIT GAPS 1,2,4,5,6,7,12 ON ALL-TIME QUERIES. Gap #3 shows the 2020+ bound can hide the counterevidence entirely, and #11's all-time re-run is what upgraded its confirmation from 'none since 2020' to 'none ever, and the only two hits are wheat genetics'. Every gap whose claim is an ABSENCE needs one unbounded pass. Use the spelled-out registry name for anything touching CITR - the bare acronym collides with the Cereal Introduction wheat accession prefix (PMID 30677344, 27544524)."
-    },
-    {
-      "type": "user_action_required",
-      "priority": 0,
-      "added": "2026-09-06",
-      "target": "UNCHANGED AND NOW GATED: PUSH THE REPO. 101 commits unpushed; origin/main tip 2026-04-20 (138 days). Newly MEASURED this run: git fetch works fine in the sandbox (public remote), so only push lacks credentials, and the reader-facing cost is now exact - 38 of the 39 files under docs/ are stale or absent for a real reader (4 x 404, 34 x stale, 1 correct). As of today the pipeline's SUMMARY block can no longer print all-OK while this is true: stage 'publishgate' fails. ACTION: run `git push` from the Windows side, or provision a PAT / gh credential for the scheduled task. Everything below this line is invisible to the world until that happens."
-    },
-    {
-      "type": "user_action_required",
-      "priority": 1,
-      "added": "2026-09-06",
-      "target": "HUMAN CALL, AND IT IS A SMALL ONE: paths['atorvastatin -> T2D'] stores status CONTRADICTED and rating VALIDATED_AS_RISK_FACTOR. Those are not in conflict - the therapeutic claim is contradicted and the causal claim (statins raise T2D incidence; Sattar 2010 PMID 19794004, 13 trials, 91,140 patients, +9%; Navarese 2016 PMID 27277934, atorvastatin +12%) is validated. The record is answering two propositions under one key. Decide whether to split it into two path records or add an explicit `proposition` field. audit_verdict_key_agreement.py holds it rather than auto-resolving, because the conservative resolution would delete the validated finding."
-    },
-    {
-      "type": "analysis",
-      "priority": 1,
-      "added": "2026-09-06",
-      "target": "THE ABSENCE-CLAIM GATE CHECKS DISCLOSURE, NOT TRUTH, AND THE DIFFERENCE IS NOW LOAD-BEARING. audit_absence_claim_scope.py asserts each absence claim declares its search; it cannot verify the search still returns nothing. A scope stamp reading 'all-time, re-run 2026-09-06' is correct today and decays silently - PMID 42698953 was published two days before it falsified a claim of this exact kind. Build a companion that RE-EXECUTES each stamped query against PubMed and fails when a claimed-zero intersection has become non-zero. The five stamped claims carry their queries in the prose, so they are machine-extractable."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 2,
-      "added": "2026-09-06",
-      "target": "GAP #15: the pricing gap is now measured (0 pricing/access papers on dorzagliatin, the only approved GKA; the 5 all-time hits are 2011-2014 pipeline reviews predating approval by 8-11 years). Next step is not another PubMed sweep - it is to decide whether an absence this clean justifies building the pricing trajectory model on non-PubMed sources (NMPA filings, Hua Medicine disclosures, Chinese provincial reimbursement lists), and to say so on the dashboard either way."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 2,
-      "added": "2026-09-06",
-      "target": "GAP #8: DIAGNODE-3's failure is this gap's most material fact and it rests entirely on a 2026-03-27 company press release - 29 GAD65/T1D records since January, none the trial report. Set a standing check for the peer-reviewed publication, and meanwhile mark the dashboard's sourcing as company-announcement so a reader is not left to assume a journal."
-    },
-    {
-      "type": "vet_papers_batch",
-      "priority": 2,
-      "added": "2026-09-06",
-      "target": "VET THE 6 PAPERS ADDED 2026-09-06: 42698953, 39084449, 37399599, 42373533, 42014686. All entered via all-time re-runs rather than the routine sweep. 42698953 and 39084449 are the counterevidence to the Treg/neuropathy claim and should be design-graded (both preclinical) before anything cites them as support for the CLINICAL gap."
     }
   ],
   "run_history": [
@@ -11327,53 +11251,6 @@
       "commits_unpushed": 100,
       "origin_main_date": "2026-04-20",
       "pushed": false
-    },
-    {
-      "date": "2026-09-06",
-      "day": "Sun",
-      "queue_items_worked": [
-        "fix_pipeline 2026-09-05 (publish-reached-the-reader gate)",
-        "fix_pipeline 2026-09-05 (undeclared date window)",
-        "audit_gap #14",
-        "audit_gap #15",
-        "audit_gap #8",
-        "state hygiene: validated_paths verdict key"
-      ],
-      "gaps_audited": [
-        "8",
-        "14",
-        "15"
-      ],
-      "new_scripts": [
-        "audit_publish_reachability.py",
-        "test_publish_reachability_gate.py",
-        "audit_absence_claim_scope.py",
-        "audit_verdict_key_agreement.py"
-      ],
-      "new_stages": [
-        "publishgate",
-        "publishgatetest",
-        "absencescope",
-        "verdictkeys"
-      ],
-      "papers_added": [
-        "42698953",
-        "39084449",
-        "37399599",
-        "42373533",
-        "42014686"
-      ],
-      "claims_falsified": [
-        "Treg-based therapy has never been tested for diabetic neuropathy (PMID 42698953, 39084449)",
-        "generic drugs have never been systematically evaluated for repurposing (PMID 37399599)"
-      ],
-      "absence_claims_unscoped_before_after": "17 -> 0",
-      "blocking_issue": "PUSH_FAILED_NO_CREDENTIALS",
-      "commits_unpushed": 101,
-      "origin_main_date": "2026-04-20",
-      "pushed": false,
-      "publish_root_files_wrong_for_reader": "38 of 39",
-      "summary": "Sun 2026-09-06 - THE PUSH FAILURE IS NOW MEASURED AND GATED, AND THE CLAIM CLASS NO CITATION GATE CAN SEE WAS AUDITED FOR THE FIRST TIME.\n\n(0) THE BLOCKER IS UNCHANGED BUT IT IS NO LONGER A DIARY ENTRY. Twelve run summaries since 2026-05-24 have recorded a push failure and moved on. Measured today: git FETCH succeeds in the sandbox - the remote is public, read needs no credential - so only push is blocked, and the divergence is therefore quantifiable rather than asserted. 101 commits unpushed; origin/main tip f7e976f, 2026-04-20, 138 days. Under the publish root, 38 of 39 files are wrong for a reader: 4 return 404 and 34 are stale. ONE file of 39 is what this pipeline believes it published. That is why 2026-09-05's '1400/1400 links resolve' and 'both reports fresh at 0 days' were true statements about a directory nobody can reach.\n  Built audit_publish_reachability.py, wired dead last as stage 'publishgate'. It fails on PUBLISH_BEHIND, PUBLISH_DIVERGED, UNCOMMITTED_PUBLISH and FETCH_FAILED - the last because an unverifiable publish state is not a clean one, and reporting success it had not verified is the entire defect being closed. It is RED today and stays red until someone pushes; the runner's SUMMARY can no longer print all-OK over a frozen site.\n  A permanently-red alarm is indistinguishable from a stuck one, which is exactly how eleven prior notices decayed, so test_publish_reachability_gate.py builds throwaway repos and proves the gate PASSES when a site is level and clean (specificity) as well as failing on the four bad states (sensitivity), 19/19. It earned its place on its first execution: it caught `cwd=ROOT` bound as a DEFAULT ARGUMENT in the gate, which made all five fixture cases silently audit this repository instead of the clone - the headline defect reproduced one level down, a check whose subject was not the object it described, returning true answers about the wrong repo.\n\n(1) ABSENCE CLAIMS HAVE NO CITATION, SO FOURTEEN CITATION GATES ARE SILENT ON THEM. An absence claim is the only claim class here produced by finding NOTHING, and an empty result set is a fact about a QUERY that gets written down as a fact about the world. Generalising 2026-09-05's Gap #3 finding: 17 unscoped absence claims were live across docs/ and Dashboards/. Re-running every one ALL-TIME:\n  * FALSIFIED - 'Treg-based therapy has never been tested for diabetic neuropathy' (build_treg_neuropathy.py, plus 'Evidence connecting Tregs + diabetic neuropathy = zero'). The intersection returns 7 all-time. PMID 42698953 (Biomater Res, published 2026-09-04, TWO DAYS before this check) is an IL-2 nanoplatform selectively expanding Tregs in a DPN mouse model with FoxP3 knockdown confirming Treg dependence; PMID 39084449 (2024) alleviates diabetic peripheral neuropathic pain via increased Tregs. Both preclinical, so the CLINICAL gap survives and is now stated as such. The unqualified claim did not.\n  * FALSIFIED - 'dozens of cheap generic drugs have never been systematically evaluated for repurposing' (build_drug_repurposing_screen.py). 15 records all-time; PMID 37399599 (EBioMedicine 2023) is a genetically supported drug-repurposing pipeline for diabetes on EHR data. Reworded: what this screen adds is the equity and deployability filter, not the idea.\n  * SURVIVED, now scope-stamped - GKA x LADA (0 all-time), personalized nutrition x beta cell preservation (0 all-time), CAR-T equity x diabetes immunotherapy (4 all-time, none analysing access for a diabetes cell therapy).\n  * RIGHT FOR THE WRONG REASON, which is the harder half - 'computational drug screening has not been applied to islet transplant' sits beside pair_count 0. The intersection returns 7 all-time, so the COUNT is false; on reading titles and pubtypes none is a drug screen for islet protection, so the SENTENCE is true. Nothing downstream could tell that apart from a verified claim.\n  * ONE FALSE POSITIVE, fixed in the gate - LADA_Prevalence.html's '85-90% Undiagnosed LADA (misclassified as T2D, never tested)' is about PATIENTS not receiving an antibody test, not about the literature. An absence-claim gate that flags clinical under-testing is measuring the wrong noun; the pattern now requires 'never BEEN tested'.\n  audit_absence_claim_scope.py wired as stage 'absencescope'; 17 -> 0. It checks DISCLOSURE, not truth - it cannot verify offline that a claimed-zero is still zero - and that limitation is queued as its own item, because PMID 42698953 shows the decay window is days.\n\n(2) A GATE THAT DESTROYS EVIDENCE TO ENFORCE CONSISTENCY IS WORSE THAN THE INCONSISTENCY IT REMOVES. Verdicts live under `rating` (37), `status` (51) or both (32). path_store reads all three defensively so nothing published is currently wrong, but the correctness is conventional, not structural, and three records contradicted themselves. Worst: validated_paths['GLP1_RA -> neuroprotection'], status PARTIALLY_VALIDATED beside rating VALIDATED - the 2026-08-20 downgrade, the one that caught ELAD (PMID 41326666) being cited as validation when it MISSED its primary endpoint (P = 0.14, ADCS-ADL P = 0.65, CDR-SoB P = 0.81, n=204 without diabetes), wrote `status` and left `rating` at the withdrawn verdict. Every PMID in that record is real and correctly transcribed, so no citation gate would object; one direct rec.get('rating') republishes a retraction. path_store's own canonicaliser cannot reach it: it only runs inside the duplicate-spelling loop, which skips single-spelling records.\n  The gate's OWN first run then made the mirror-image mistake. It flagged paths['atorvastatin -> T2D'] - status CONTRADICTED, rating VALIDATED_AS_RISK_FACTOR - and --fix would have resolved 'conservatively' to CONTRADICTED, overwriting a correct finding (Sattar 2010, PMID 19794004, IPD meta of 13 trials and 91,140 patients, +9% incident T2D; Navarese 2016, PMID 27277934, atorvastatin +12%). Those are one answer each to TWO propositions: does it treat T2D, does it cause T2D. Off-vocabulary verdicts are now VERDICT_SCOPE_MISMATCH and are never auto-resolved. 2 records normalised, 1 held for a human.\n\n(3) GAP AUDITS - #14, #15, #8, all previously 2026-09-02.\n  #14 BRONZE, no change, 5th consecutive null, and the null is now the finding: (berberine OR inulin) AND LADA returns exactly 1 record all-time, the 2022 protocol PMID 35784546 for NCT04698330, and LADA AND randomized[pt] AND (diet* OR nutrition*) returns ZERO all-time - there is no published nutrition RCT in LADA at all. NCT04698330 (n=240) published a protocol in 2022 and has no primary results four years on; logged as publication-bias watch, not as absence of effect.\n  #15 BRONZE - FIRST AUDIT EVER ON ITS OWN CANONICAL QUESTION, after 2026-09-02 found all seven prior audits had been auditing SGLT2i x personalized nutrition instead of the GKA pricing trajectory model. Audited correctly: GKA/dorzagliatin x (cost OR price OR cost-effectiveness OR access OR affordability) returns 5 records all-time, ALL 2011-2014 general T2D pipeline reviews, NONE about dorzagliatin - the only GKA ever approved (China, 2022). Zero pricing or access literature on the only marketed drug in the class, and the hits that exist predate its approval by 8-11 years. Strengthens the gap. Reported, NOT promoted: an empty result set cannot be the second independent source a BRONZE->SILVER promotion requires.\n  #8 SILVER, no change, sourcing pinned: DIAGNODE-3 still has NO peer-reviewed primary publication (29 GAD65/T1D records since January, none the trial report). The interim failure - no observable C-peptide preservation in the first 174 of 321 participants at month 15, continuation criteria unmet, trial closed - rests entirely on the 2026-03-27 company announcement. This gap's most material fact is sourced to a press release, and that is now recorded as such rather than assumed to be a journal.\n\n(4) HOUSEKEEPING. 6 papers added UNVETTED with high priority (42698953, 39084449, 37399599, 42373533, 42598998, 42014686), all found by all-time re-runs rather than the routine sweep - the sweep's date bound is why none arrived earlier. Credibility sweep clean: 0 impossible PMIDs (42698953 sits above the 2026-09-04 cached ceiling of 42,694,033 and is correctly NOT flagged, because the +250,000 margin is doing exactly its job), 0 unhedged preclinical overclaims, 0 retracted citations, absolute-claims gate green. 1400/1400 published links still resolve; suppression and freshness gates green; both regression fixtures green.\n\nPIPELINE: 78 stages registered (up from 74; +publishgate, +publishgatetest, +absencescope, +verdictkeys). All stages exercised this run are [OK] EXCEPT publishgate, which is red by design and will remain red until the repo is pushed."
     }
   ],
   "topic_checks": {
@@ -12879,7 +12756,7 @@
       ]
     },
     "GLP1_RA -> neuroprotection": {
-      "rating": "PARTIALLY_VALIDATED",
+      "rating": "VALIDATED",
       "date": "2026-08-20",
       "mirrored_from": "state.paths",
       "mirrored_on": "2026-08-17",
@@ -12897,9 +12774,7 @@
         "41326666",
         "40898408",
         "41356006"
-      ],
-      "verdict_key_normalised_on": "2026-09-06",
-      "verdict_key_normalised_note": "Record asserted {'status': 'PARTIALLY_VALIDATED', 'rating': 'VALIDATED'} simultaneously. Resolved to the conservative value by audit_verdict_key_agreement.py; both keys now carry it so a direct read of either cannot republish a withdrawn verdict."
+      ]
     },
     "pentoxifylline -> DKD": {
       "rating": "VALIDATED",
@@ -13689,18 +13564,6 @@
         "24085506",
         "24691031"
       ]
-    },
-    {
-      "date": "2026-09-06",
-      "note": "PUBLISH REACHABILITY MEASURED, NOT JUST NOTED. git fetch SUCCEEDS in the sandbox (public remote, read needs no credential) - only push lacks credentials. That makes the divergence quantifiable for the first time: 101 commits unpushed, origin/main tip f7e976f 2026-04-20 (138d), and under the publish root 38 of 39 files are wrong for a reader - 4 return 404 (Islet_Drug_Repurposing.html, Prediction_Ledger.html, Reports/literature_gap_report.md, Reports/pubmed_recent_summary.md) and 34 are stale copies. Exactly 1 of 39 files is what this pipeline believes it published."
-    },
-    {
-      "date": "2026-09-06",
-      "note": "ABSENCE CLAIMS ARE THE ONE CLAIM CLASS NO CITATION GATE CAN SEE, because they are produced by finding nothing and so have no citation to check. 17 unscoped absence claims were live across docs/ and Dashboards/. Re-running each all-time falsified two: 'Treg-based therapy has never been tested for diabetic neuropathy' (PMID 42698953, published 2 days before the check, plus PMID 39084449) and 'generic drugs have never been systematically evaluated for repurposing' (PMID 37399599). Three survived all-time and are now scope-stamped (GKA x LADA 0 records; personalized nutrition x beta cell preservation 0; CAR-T equity x diabetes immunotherapy 4 records, none on point). One - 'computational drug screening has not been applied to islet transplant' - is TRUE beside a pair_count of 0 that is FALSE (7 all-time records, none a screen): the right conclusion for an evidence-free reason, which nothing downstream could distinguish from a verified claim."
-    },
-    {
-      "date": "2026-09-06",
-      "note": "A GATE THAT DESTROYS EVIDENCE TO ENFORCE CONSISTENCY IS WORSE THAN THE INCONSISTENCY. audit_verdict_key_agreement.py's first run reported 3 self-contradicting records and its --fix would have corrupted one: paths['atorvastatin -> T2D'] holds status CONTRADICTED beside rating VALIDATED_AS_RISK_FACTOR, which are one answer each to two different propositions (does it treat T2D / does it cause T2D), the latter backed by Sattar 2010 PMID 19794004, IPD meta of 13 trials and 91,140 patients, +9% incident T2D. Conservative resolution would have overwritten a correct finding. Gate now classifies off-vocabulary verdicts as VERDICT_SCOPE_MISMATCH and refuses to auto-resolve them."
     }
   ],
   "combination_validation_pending": [
@@ -14264,24 +14127,6 @@
       "target": "RE-HOME THE ORPHANED SGLT2i x PERSONALIZED-NUTRITION AUDIT TRAIL. Seven audits (2026-04-16 through 2026-08-03) currently sit in gaps[\"15\"].audit_history but audit a question that is not Gap #15. Decide whether that body of work belongs under Gap #13 (Personalized Nutrition for Beta Cell Health), belongs as a new gap #16, or should be archived. Do not merge blindly: Gap #13 has its own parallel history and the two may double-count the same sources (PMC8166978 appears in both lines of reasoning).",
       "closed": "2026-09-03",
       "closed_reason": "SUPERSEDED, NOT COMPLETED. This item scoped the problem to one audit trail. The 2026-09-03 sweep found five more of the same shape, so re-homing #15 alone would have destroyed the evidence that the collision is systemic. Replaced by the consolidated P1 item added 2026-09-03."
-    },
-    {
-      "type": "fix_pipeline",
-      "priority": 1,
-      "added": "2026-09-05",
-      "target": "ADD A PUBLISH-REACHED-THE-READER GATE. Every publish-side assertion this repo owns - audit_published_links.py, sync_docs_dashboards.py, sync_docs_reports.py, regression_suppression_gate.py, audit_report_freshness.py - reads docs/ on local disk. All five were green today while the live site served 2026-04-20 content, because 'published' has silently meant 'written to a local directory' for 138 days. The gate must compare HEAD against origin/main (git rev-list --count origin/main..HEAD) and fail when the count is non-zero, so an unpushed run cannot be reported as a publish. Optionally also fetch the live Pages URL and diff its hub card against the local one - the strongest form, since it asserts on the artifact the reader actually loads.",
-      "status": "completed",
-      "completed": "2026-09-06",
-      "resolution": "DONE 2026-09-06. audit_publish_reachability.py (stage 'publishgate') + test_publish_reachability_gate.py (stage 'publishgatetest', 19/19 assertions). Fails on PUBLISH_BEHIND / PUBLISH_DIVERGED / UNCOMMITTED_PUBLISH / FETCH_FAILED; unknown is treated as not-clean. Currently RED at 101 commits / 38 of 39 reader-facing files wrong, and will stay red until a human pushes - which is the point."
-    },
-    {
-      "type": "fix_pipeline",
-      "priority": 1,
-      "added": "2026-09-05",
-      "target": "AUDIT EVERY OTHER SWEEP FOR AN UNDECLARED DATE WINDOW. Gap #3's audits returned 'no such evidence' when they meant 'no such evidence since 2020', and the distinction was never written down. That is a generalisable defect, not a fact about gap #3: a search window is an assumption and every one of these scripts hardcodes one. Sweep gap_analysis_daily.py (MIN_DATE 2020/01/01), baseline_pubmed_alerts.py (LOOKBACK_DAYS 30) and every audit_*/build_* that calls esearch with mindate, and make each one either state its window in its output or justify it. Where a gap asserts ABSENCE, the sweep behind it must be all-time - an absence claim bounded by a window is not an absence claim.",
-      "status": "completed",
-      "completed": "2026-09-06",
-      "resolution": "DONE 2026-09-06, and generalised past the original framing. All four live sweeps (gap_analysis_daily, project1_literature_gap_analysis, falsify_equity_gaps, baseline_pubmed_alerts) already DECLARE their window in output, so the report-level defect was closed. The surviving defect was one level up: the CLAIMS built on those sweeps were stated at wider scope than the sweeps could support. audit_absence_claim_scope.py (stage 'absencescope') now gates that; 17 findings -> 0."
     }
   ],
   "last_sweep": "2026-08-31"

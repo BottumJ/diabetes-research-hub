@@ -370,32 +370,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -466,8 +440,6 @@
   </div>
 </nav>
 
-
-
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -522,7 +494,7 @@
         <!-- Overview Tab -->
         <div id="overview" class="tab-content active">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search gaps by domain or title..." aria-label="Search gaps by domain or title..." aria-label="Search gaps by domain or title..." aria-label="Search gaps by domain or title..." onkeyup="filterTable()">
+                <input type="text" id="searchInput" placeholder="Search gaps by domain or title..." aria-label="Search gaps by domain or title..." onkeyup="filterTable()">
             </div>
             <table role="table" id="gapTable">
                 <thead>
@@ -903,7 +875,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (<a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> (PMID requires verification), <a href="https://pubmed.ncbi.nlm.nih.gov/41567805/" target="_blank" rel="noopener" title="View on PubMed">PMID:41567805</a> (PMID requires verification)). Oncology has begun addressing CAR-T access disparities (geographic, racial, insurance). Zero publications apply this thinking to diabetes immunotherapy.</div>
+                        <div class="section-content">CAR-T therapy in oncology costs $373K-$475K per treatment. CAR-Treg for T1D is in early stages (<a href="https://pubmed.ncbi.nlm.nih.gov/41468096/" target="_blank" rel="noopener" title="View on PubMed">PMID:41468096</a> (PMID requires verification), <a href="https://pubmed.ncbi.nlm.nih.gov/41567805/" target="_blank" rel="noopener" title="View on PubMed">PMID:41567805</a> (PMID requires verification)). Oncology has begun addressing CAR-T access disparities (geographic, racial, insurance). Zero publications apply this thinking to diabetes immunotherapy: an all-time PubMed search (cell therapy/CAR-T AND disparity/equity/access AND T1D/islet/diabetes immunotherapy, re-run 2026-09-06, unbounded by date) returns 4 records, and on reading titles and publication types none analyses access or equity for a diabetes cell therapy - they are a bioengineering call to action, a CKD review, a cord-blood review and a 2007 embryonic-stem-cell review.</div>
                     </div>
 
                     <div class="section">
@@ -1824,7 +1796,7 @@
 
                     <div class="section">
                         <div class="section-title">BACKGROUND RESEARCH</div>
-                        <div class="section-content">Standard dietary advice for T2D (carb counting, weight management) does not account for autoimmune beta cell destruction in LADA. Personalized nutrition shows glycemic response varies dramatically by individual (Weizmann Institute work). LADA patients have unique metabolic profiles (higher GAD, declining C-peptide) that should inform nutritional strategy. Zero publications combine these fields.</div>
+                        <div class="section-content">Standard dietary advice for T2D (carb counting, weight management) does not account for autoimmune beta cell destruction in LADA. Personalized nutrition shows glycemic response varies dramatically by individual (Weizmann Institute work). LADA patients have unique metabolic profiles (higher GAD, declining C-peptide) that should inform nutritional strategy. The narrow convergence is empty: an all-time PubMed search for "personalized nutrition" AND "beta cell preservation" (re-run 2026-09-06, unbounded by date) returns 0 records. The broad intersection is not - (nutrition OR diet OR dietary) AND (LADA OR latent autoimmune diabetes) returns 45 all-time - so the defensible claim is that PERSONALIZED nutrition has not been connected to LADA, not that nutrition and LADA are unstudied together.</div>
                     </div>
 
                     <div class="section">

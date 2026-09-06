@@ -369,7 +369,7 @@ html_content = """<!DOCTYPE html>
 
                 <p>The personalized nutrition space has exploded in the last 5 years. Companies like ZOE, DayTwo, and Viome use nutrigenomics, microbiome testing, and continuous glucose monitoring to tailor nutrition to individual metabolic responses. But they optimize for glucose control and weight loss—not beta cell preservation.</p>
 
-                <p class="muted">Zero publications contain both terms "personalized nutrition" AND "beta cell preservation." The convergence is a research orphan.</p>
+                <p class="muted">Zero publications contain both terms &quot;personalized nutrition&quot; AND &quot;beta cell preservation&quot; &mdash; all-time PubMed title/abstract search, re-run 2026-09-06 (0 records, unbounded by date). The convergence is a research orphan.</p>
             </div>
         </div>
 

@@ -1,0 +1,28 @@
+{
+  "audit": "verdict_key_agreement",
+  "run_date": "2026-09-06",
+  "records_examined": 134,
+  "verdict_key_shapes": {
+    "status+validation_status": 14,
+    "status": 51,
+    "rating+status": 32,
+    "rating": 37
+  },
+  "findings": [
+    {
+      "kind": "VERDICT_SCOPE_MISMATCH",
+      "store": "paths",
+      "path": "atorvastatin -> T2D",
+      "verdicts": {
+        "status": "CONTRADICTED",
+        "rating": "VALIDATED_AS_RISK_FACTOR"
+      },
+      "off_vocabulary": {
+        "rating": "VALIDATED_AS_RISK_FACTOR"
+      },
+      "conservative_resolution": null,
+      "note": "A verdict value outside the standard vocabulary is a verdict about a different proposition, not a competing answer to the same one. Not auto-resolvable; needs a human to say which proposition the record is about."
+    }
+  ],
+  "fixed": []
+}
