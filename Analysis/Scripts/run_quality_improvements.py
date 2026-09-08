@@ -439,6 +439,26 @@ SCRIPTS = {
     # were missing and the one that lets a reader know what would falsify it.
     'absencescope': ('audit_absence_claim_scope.py',
                      'Asserting every published absence claim declares the search that produced it'),
+    # Added 2026-09-07. absencescope above asks whether a claim DECLARES its
+    # search. This asks the prior question: does the gap's stored evidence
+    # mention the gap's own subject at all?
+    #
+    # Canonical Gap #11 was GOLD on two papers - a 2008 CITR update and a
+    # graft-function cohort - neither of which contains the words equity, race,
+    # ethnicity or access anywhere. Every gap here is an intersection (X domain
+    # x Y lens), and #11's evidence covered X fully and Y not once. Nothing
+    # failed because nothing had asked. First run, 2026-09-07: 9 of 15 gaps
+    # fail, so #11 was the tip, not the case.
+    #
+    # KNOWN SOFT SPOT, stated so no one over-reads a failure: the gate detects
+    # the presence of a WORD, not of an ANALYSIS. Gaps #4 and #7 fail on
+    # "repurposing" while citing anakinra, etanercept, rapamycin and
+    # dorzagliatin - drugs that ARE repurposed but whose papers never use the
+    # term. Those are arguably labelling gaps, not evidence gaps, and need a
+    # human call. Gaps #1, #11 and #13 are the hard failures: their evidence is
+    # about a different subject entirely.
+    'gapsubject': ('audit_gap_subject_coverage.py',
+                   "Asserting each gap's stored evidence mentions both axes of the gap's own question"),
     # DEAD LAST, added 2026-09-06, and it is the gate every stage above needs
     # in order to mean what it says.
     #

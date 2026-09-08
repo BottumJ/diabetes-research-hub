@@ -1,8 +1,8 @@
 # Literature Gap Analysis — Interpreted Report
 
-**Generated:** 2026-09-06 03:22
+**Generated:** 2026-09-08 03:17
 **Source:** PubMed E-utilities API (esearch.fcgi)
-**Date range:** 2020/01/01 to 2026/09/05
+**Date range:** 2020/01/01 to 2026/09/08
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
@@ -37,15 +37,15 @@ These domain pairs have low co-publication rates **and** plausible scientific re
 | 3 | Islet Transplant | Drug Repurposing | 100.0 | 0 | Existing immunosuppressants could be repurposed for islet protection. An all-time PubMed search of this intersection (re-run 2026-09-06, unbounded by date) returns 7 records, none of which is a computational drug screen for islet protection: the nearest work is bioengineering (immunoisolation, bioartificial pancreas) or single-molecule in-silico structure work. |
 | 4 | Islet Transplant | Health Equity | 100.0 | 0 | Islet transplant is available only at select centers. Access equity research is absent. |
 | 5 | Gene Therapy | LADA | 100.0 | 0 | LADA's autoimmune mechanism makes it a candidate for gene therapy approaches, but no crossover work exists. |
-| 6 | Treg / CAR-T | Neuropathy | 100.0 | 0 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |
-| 7 | Glucokinase | Drug Repurposing | 100.0 | 0 | Glucokinase activators are a novel drug class; systematic screening for existing drugs with GK activity is unexplored. |
-| 8 | Glucokinase | Health Equity | 100.0 | 0 | If glucokinase activators succeed, global access will be critical. No equity analysis exists for this drug class. |
-| 9 | Glucokinase | LADA | 100.0 | 0 | Glucokinase's role in LADA is unstudied despite its relevance to residual beta cell function. |
-| 10 | Personalized Nutr | LADA | 100.0 | 0 | LADA patients receive generic T2D dietary advice. Personalized nutrition based on autoimmune status is unexplored. |
-| 11 | Drug Repurposing | Health Equity | 100.0 | 0 | Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research. |
-| 12 | Drug Repurposing | LADA | 100.0 | 0 | LADA is treated with T2D drugs that may be suboptimal. Systematic repurposing screens for LADA-specific therapies don't exist. |
-| 13 | Health Equity | LADA | 100.0 | 0 | LADA is massively underdiagnosed, especially in minority populations. Equity-focused screening research is absent. |
-| 14 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | Nutritional interventions that support beta cell recovery are plausible but unstudied at the intersection. |
+| 6 | Glucokinase | Drug Repurposing | 100.0 | 0 | Glucokinase activators are a novel drug class; systematic screening for existing drugs with GK activity is unexplored. |
+| 7 | Glucokinase | Health Equity | 100.0 | 0 | If glucokinase activators succeed, global access will be critical. No equity analysis exists for this drug class. |
+| 8 | Glucokinase | LADA | 100.0 | 0 | Glucokinase's role in LADA is unstudied despite its relevance to residual beta cell function. |
+| 9 | Personalized Nutr | LADA | 100.0 | 0 | LADA patients receive generic T2D dietary advice. Personalized nutrition based on autoimmune status is unexplored. |
+| 10 | Drug Repurposing | Health Equity | 100.0 | 0 | Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research. |
+| 11 | Drug Repurposing | LADA | 100.0 | 0 | LADA is treated with T2D drugs that may be suboptimal. Systematic repurposing screens for LADA-specific therapies don't exist. |
+| 12 | Health Equity | LADA | 100.0 | 0 | LADA is massively underdiagnosed, especially in minority populations. Equity-focused screening research is absent. |
+| 13 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | Nutritional interventions that support beta cell recovery are plausible but unstudied at the intersection. |
+| 14 | Treg / CAR-T | Neuropathy | 99.9 | 1 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |
 | 15 | Treg / CAR-T | Health Equity | 99.9 | 1 | Advanced immunotherapies risk widening health disparities. No equity analysis of CAR-Treg/TCR-Treg access exists. |
 
 ---
@@ -107,35 +107,35 @@ These domain pairs show high gap scores but have not been classified as either m
 
 | Domain | Publications | Relative Activity |
 |--------|-------------|-------------------|
-| Prevention / DPP | 81,977 | ████████████████████ |
-| CV Complications | 26,413 | ██████░░░░░░░░░░░░░░ |
-| Insulin Resistance | 20,604 | █████░░░░░░░░░░░░░░░ |
-| Retinopathy | 17,242 | ████░░░░░░░░░░░░░░░░ |
-| Gestational DM | 15,611 | ███░░░░░░░░░░░░░░░░░ |
-| Nephropathy DKD | 14,458 | ███░░░░░░░░░░░░░░░░░ |
-| GLP-1 Agonists | 13,735 | ███░░░░░░░░░░░░░░░░░ |
-| Metabolomics | 12,830 | ███░░░░░░░░░░░░░░░░░ |
-| AI / ML Predict | 11,940 | ██░░░░░░░░░░░░░░░░░░ |
-| Microbiome Gut | 10,643 | ██░░░░░░░░░░░░░░░░░░ |
-| Youth Diabetes | 8,172 | █░░░░░░░░░░░░░░░░░░░ |
-| Epigenetics | 7,768 | █░░░░░░░░░░░░░░░░░░░ |
-| SGLT2 Inhibitors | 7,678 | █░░░░░░░░░░░░░░░░░░░ |
-| CGM Technology | 6,990 | █░░░░░░░░░░░░░░░░░░░ |
-| GWAS / Polygenic | 5,458 | █░░░░░░░░░░░░░░░░░░░ |
-| Proteomics | 4,980 | █░░░░░░░░░░░░░░░░░░░ |
-| Autoimmunity T1D | 4,699 | █░░░░░░░░░░░░░░░░░░░ |
-| Remission T2D | 4,407 | █░░░░░░░░░░░░░░░░░░░ |
-| Neuropathy | 3,220 | ░░░░░░░░░░░░░░░░░░░░ |
-| Gene Therapy | 2,358 | ░░░░░░░░░░░░░░░░░░░░ |
+| Prevention / DPP | 82,027 | ████████████████████ |
+| CV Complications | 26,442 | ██████░░░░░░░░░░░░░░ |
+| Insulin Resistance | 20,620 | █████░░░░░░░░░░░░░░░ |
+| Retinopathy | 17,251 | ████░░░░░░░░░░░░░░░░ |
+| Gestational DM | 15,622 | ███░░░░░░░░░░░░░░░░░ |
+| Nephropathy DKD | 14,466 | ███░░░░░░░░░░░░░░░░░ |
+| GLP-1 Agonists | 13,750 | ███░░░░░░░░░░░░░░░░░ |
+| Metabolomics | 12,837 | ███░░░░░░░░░░░░░░░░░ |
+| AI / ML Predict | 11,954 | ██░░░░░░░░░░░░░░░░░░ |
+| Microbiome Gut | 10,646 | ██░░░░░░░░░░░░░░░░░░ |
+| Youth Diabetes | 8,180 | █░░░░░░░░░░░░░░░░░░░ |
+| Epigenetics | 7,772 | █░░░░░░░░░░░░░░░░░░░ |
+| SGLT2 Inhibitors | 7,685 | █░░░░░░░░░░░░░░░░░░░ |
+| CGM Technology | 6,997 | █░░░░░░░░░░░░░░░░░░░ |
+| GWAS / Polygenic | 5,459 | █░░░░░░░░░░░░░░░░░░░ |
+| Proteomics | 4,981 | █░░░░░░░░░░░░░░░░░░░ |
+| Autoimmunity T1D | 4,702 | █░░░░░░░░░░░░░░░░░░░ |
+| Remission T2D | 4,412 | █░░░░░░░░░░░░░░░░░░░ |
+| Neuropathy | 3,224 | ░░░░░░░░░░░░░░░░░░░░ |
+| Gene Therapy | 2,360 | ░░░░░░░░░░░░░░░░░░░░ |
 | Health Equity | 2,061 | ░░░░░░░░░░░░░░░░░░░░ |
-| Closed Loop / AP | 1,958 | ░░░░░░░░░░░░░░░░░░░░ |
-| Multi-Omics | 1,852 | ░░░░░░░░░░░░░░░░░░░░ |
-| Beta Cell Regen | 1,497 | ░░░░░░░░░░░░░░░░░░░░ |
-| Treg / CAR-T | 983 | ░░░░░░░░░░░░░░░░░░░░ |
+| Closed Loop / AP | 1,959 | ░░░░░░░░░░░░░░░░░░░░ |
+| Multi-Omics | 1,857 | ░░░░░░░░░░░░░░░░░░░░ |
+| Beta Cell Regen | 1,498 | ░░░░░░░░░░░░░░░░░░░░ |
+| Treg / CAR-T | 985 | ░░░░░░░░░░░░░░░░░░░░ |
 | Glucokinase | 860 | ░░░░░░░░░░░░░░░░░░░░ |
 | Personalized Nutr | 693 | ░░░░░░░░░░░░░░░░░░░░ |
 | Drug Repurposing | 621 | ░░░░░░░░░░░░░░░░░░░░ |
-| LADA | 602 | ░░░░░░░░░░░░░░░░░░░░ |
+| LADA | 603 | ░░░░░░░░░░░░░░░░░░░░ |
 | Islet Transplant | 253 | ░░░░░░░░░░░░░░░░░░░░ |
 
 ---

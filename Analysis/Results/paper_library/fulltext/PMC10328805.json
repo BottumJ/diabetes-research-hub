@@ -1,0 +1,639 @@
+{
+  "pmcid": "PMC10328805",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "A genetically supported drug repurposing pipeline for diabetes treatment using electronic health records"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Summary"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Background"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "The identification of new uses for existing drug therapies has the potential to identify treatments for comorbid conditions that have the added benefit of glycemic control while also providing a rapid, low-cost approach to drug (re)discovery."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Methods"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "We developed and tested a genetically-informed drug-repurposing pipeline for diabetes management. This approach mapped genetically-predicted gene expression signals from the largest genome-wide association study for type 2 diabetes mellitus to drug targets using publicly available databases to identify drug–gene pairs. These drug–gene pairs were then validated using a two-step approach: 1) a self-controlled case-series (SCCS) using electronic health records from a discovery and replication population, and 2) Mendelian randomization (MR)."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Findings"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "After filtering on sample size, 20 candidate drug–gene pairs were validated and various medications demonstrated evidence of glycemic regulation including two anti-hypertensive classes: angiotensin-converting enzyme inhibitors as well as calcium channel blockers (CCBs). The CCBs demonstrated the strongest evidence of glycemic reduction in both validation approaches (SCCS HbA1c and glucose reduction: −0.11%, p = 0.01 and −0.85 mg/dL, p = 0.02, respectively; MR: OR = 0.84, 95% CI = 0.81, 0.87, p = 5.0 x 10–25)."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Interpretation"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Our results support CCBs as a strong candidate medication for blood glucose reduction in addition to cardiovascular disease reduction. Further, these results support the adaptation of this approach for use in future drug-repurposing efforts for other conditions."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Funding"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": ",  Integrative Epidemiology Unit at the , , , and  (VA) Informatics and Computing Infrastructure and VA Cooperative Studies Program."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Research in context"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Evidence before this study"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Medications with genetic support are significantly more likely to make it through clinical trials. Drug-repurposing is a relatively quick and inexpensive means for identification of new pharmacologic interventions for various diseases."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Added value of this study"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "This study demonstrates a successful implementation of a genetically-supported drug-repurposing pipeline for diabetes treatment. Further, this approach can be readily adapted and applied to other diseases and as such it has the potential to identify/prioritize drug repurposing targets for these conditions."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Implications of all the available evidence"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Our results identified two anti-hypertensive medication classes, calcium channel blockers and angiotensin-converting enzyme inhibitors, as genetically supported drug-repurposing targets that demonstrated glycemic measurement reduction in real-world clinical populations. Further, these results suggest patients with diabetes or pre-diabetes could benefit from preferential use of these medication classes when they present with comorbid hypertension or other cardiovascular conditions."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Introduction"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "An estimated 463 million individuals globally have a diabetes diagnosis and by 2045 this number is expected to reach 700 million. These rising case numbers are primarily due to type 2 diabetes (T2D) cases, the most prevalent form of the disease. Major comorbidities of T2D include heart disease, peripheral artery disease, stroke, eye disease, kidney disease, and neuropathy."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Early stages of glycemic dysregulation can be effectively managed with behavioral modifications and metformin monotherapy. However, as T2D progresses, the concurrent use of multiple medications acting on distinct pathophysiologic pathways is often needed to control blood glucose levels and reduce development of complications as T2D progresses. Regardless, a high proportion of patients with T2D demonstrate poor or inadequate glycemic control."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "The reason for poor glycemic control is multifactorial. These may include poor medication adherence due to undesired side-effects and costs, reduced treatment efficacy, and ineffective management of secondary metabolic and glucoregulatory dysfunction. Efforts to improve glycemic control include outreach to improve understanding of disease and development of new medications that target glucoregulatory dysfunctions to slow disease progression. T2D and comorbidities are also often treated separately, which may lead to increased morbidity and mortality due to polypharmacy."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Drug repurposing provides an efficient, cost-effective means to increase therapeutic options by identifying medications that are currently approved for other indications for treatment of a disease. An example of this is acetylsalicylic acid, marketed as the analgesic Aspirin in 1899, which was subsequently discovered to both inhibit platelet aggregation and lower glucose. The advance of high-throughput technologies, such as genomics and transcriptomics, supports the development of new computational approaches for drug repurposing and identification of possible adverse drug events. These techniques leverage the highly druggable nature of human disease genes which may be implicated in diseases other than those indicated for derived medications."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Serendipitous discoveries, usually a consequence of clinical observations of patients being treated for other conditions, have historically driven drug repurposing. Findings from real-world observations, however, are subject to biases, such as confounding by indication, reverse causality, and selective data missingness. Mendelian randomization (MR) may overcome some of the limitations of observational epidemiology. Here we propose a computational drug repurposing approach that identifies potential therapeutic candidates for T2D by 1) applying computational methods to genome-wide association study (GWAS) results, 2) evaluating these candidates through a observational self-controlled case series conducted in the electronic health records (EHR) using serendipitous clinical observations in the Department of Veterans Affairs (VA) Corporate Data Warehouse and Vanderbilt University Medical Center's synthetic derivative (VUMC SD), and 3) proxying the candidate's drug exposure as predicted expression of the therapeutic gene target using S-PrediXcan in a MR analysis."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Gene-based medication discovery"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Study design. Steps 1–4 describe the process of identifying drug targets based on genetic evidence using a previously published genome-wide association study for Type 2 Diabetes Mellitus. Following identification of potential medications based on drug-gene pairing the results are validated using two approaches, self-controlled case series and mendelian randomization (MR). The general design of these two approaches are described briefly."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "As described previously, we used summary statistics from the largest multi-ethnic GWAS of T2D, which included over 1.4 million participants, to estimate genetically-predicted gene expression (GPGE) of individual genes and performed a transcriptome-wide association study (TWAS) using s-PrediXcan. The results and associated methods have been described previously, however; we will briefly introduce the prior work. The T2D GWAS included 228,499 cases and 1,178,783 controls. The meta-analysis included summary statistics from 42 individual studies from across the globe including patients with African American, European, Hispanic, and South and East Asian ancestry. The imputation of GPGE was based on version 7 predictors for 52 tissues including 48 from GTEx, two kidney tissues (glomerulus and tubule), and two tissues from an alpha and beta islet cell reference and signals were refined using colocalization analyses. This analysis identified 695 significant genes (Reference 30, Supplemental Table S15). Next these genes were mapped to multiple drug targets (Reference 30, Supplemental Table S17, filtered on PP.H4. abf ≥ 0.8, for unique gene names) using publicly available databases: ChEMBL, Drug Gene Interaction Database (DGIdb), and National Cancer Institute Drug Dictionary. For this step we used these publicly available well-curated databases to identify genes that had a known association with a drug in at least one of these databases. Genes that were identified as having a known drug target by one of these databases were considered mapped to a drug and were included as a drug–gene pair for further evaluation. Further refinement included pairing the direction of GPGE and T2D risk with drug effects. The direction of effect for the GPGE association is based on the original s-PrediXcan analysis where effects are written with regard to a single standard deviation increase in the GPGE for the identified gene. This may result in an increase or decrease in T2D risk. For example, genes with increased GPGE that were associated with a decrease in T2D risk would need to map to a drug that acts as an activator or agonist of the associated protein or pathway. Conversely, drugs that act as an antagonist, inhibitor or blocker would correspond with a gene for which increasing GPGE associated with an increase in T2D risk. This process is visualized in Fig. 1, steps 1–4. Drug-gene pairs with correlated functions that were not identified previously for use in diabetes management were then included as experimental medications for the subsequent analyses to evaluate their potential for repurposing including a self-controlled case series and MR studies."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Self-controlled case series data sources"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Two separate EHR systems were identified as data sources for the self-controlled case series. The discovery population included clinical, prescription, and laboratory data from the Corporate Data Warehouse (CDW) of the Veterans Health Administration (VHA), a national US data repository that provides access to the EHRs of all individuals who received care in the VHA. All study variables were extracted from the CDW in April 2020 by an experienced programmer on Microsoft SQL Server via the VA Informatics and Computing Infrastructure (VINCI) computing environment."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The replication site data were collected from the VUMC SD, a de-identified copy of the electronic medical record with Health Insurance Portability and Accountability Act of 1996 (HIPAA) identifiers removed. The SD contains clinical data on approximately 3.2 million individuals and includes basic demographics; text from clinical care notes; laboratory values; inpatient and outpatient medication data; International Classification of Disease (ICD) and Current Procedural Terminology (CPT) codes; and other diagnostic reports. Drug exposures were identified using previously described electronic-prescribing tools and MedEx. The utility of these methods for medication extraction from the EHR have been shown previously. All valid medication exposures required one of the following indications to be documented: route, frequency, dose, or duration. All study variables were extracted from the SD by an experienced programmer in January 2020."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Self-controlled case series study design"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Examples of the medication exposure time period for the self-controlled case series for determination of patient inclusion or exclusion. Patient A demonstrates a patient that would be included in the study based on study design. Specifically, this patient was prescribed a medication belonging to the experimental group and had a subsequent mention of the medication in their records in the following 6 months. They had no documented exposure to a medication belonging to one of the other medication groups in the period preceding t0. They also had glucose and hemoglobin A1c (HbA1c) measures collected in the six months before medication exposure and during the response periods. Conversely, patients B and C were excluded from this study. Patient B represents patients that were excluded from the study because they had a medication exposure from another medication group prior to t0. Patient C is an example of a patient that would be excluded due to insufficient data. In this example, Patient C had no glucose and HbA1c measurements in the six-month exposure period. Likewise, patients without a glucose or HbA1c in the six months before t0 would also be excluded from the study due to insufficient laboratory exposure."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We utilized a self-controlled case series study design within the discovery and replication populations to evaluate the effects of initial medication use on hemoglobin A1c (HbA1c) and glucose. The design varied slightly between the two sites to accommodate variations in data availability and population. These variances are discussed below. The general design of this study is displayed in Fig. 2."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Medications evaluated in this series were grouped in to three sets: 1) experimental, the gene-based medication set described previously; 2) diabetes/control (−), medications that are prescribed for the treatment of T2DM; and 3) control (+), medications belonging to classes that had previously described increasing effects on glucose or HbA1c or were implicated in a previous MR study. The complete list of medications and their corresponding set are available in Supplemental Tables S1a and b. To ensure the effects on glucose or HbA1c were due to a specific medication, each individual medication series included patients that were prescribed the specific medication when the drug was initially prescribed, t0, but excluded patients prescribed a medication in one of the other groups ever before, simultaneously at t0, or in the six-month follow-up period."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Further, in the discovery set the VA patients were only included in a medication series if they received at least one subsequent refill of the given medication within 180 days of t0, and had at least 90 days of cumulative exposure. Because records of a patient's prescription fill is less readily available in the VUMC SD, e.g. many patients will fill their prescriptions at a non-VUMC pharmacy so records of prescription pick-ups are absent in their record, this study required included subject EHRs in VUMC SD to have at least two mentions of the medication within 180 days of the initial drug mention, t0, to proxy prescription refill."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Finally, all patients included in the medication series were required to have both a baseline and follow-up HbA1c and glucose measured to evaluate response. HbA1c and glucose measures were restricted to outpatient measures and non-physiologic measures were excluded, e.g. HbA1c less than 3% or greater than 18% and glucose less than 5 mg/dL or greater than 2750 mg/dL. In the replication population we also excluded all laboratory measures that were collected within 9 months of a pregnancy ICD code or laboratory test (Supplemental Table S2). Because the discovery cohort is >90% male this exclusion was not applied."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The change in laboratory measure was defined as absolute change. The absolute change was calculated by taking the difference between the follow-up measure and the baseline measure. Baseline HbA1c was defined as the most recent measure in the six months prior to drug initiation. Follow-up HbA1c measure was defined as the first measure after 30 days and within the six months following drug initiation (Fig. 2). For glucose, we used the mean of all measures in the six months prior to drug initiation as the baseline value and the mean of all measures in the six months after drug initiation as the follow-up value."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Statistical analysis"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We assessed patient characteristics at drug initiation by comparing demographics, smoking status, body mass index, glycemic status, and Charlson Comorbidity Index categories across the three drug groups for both study populations. Using a self-controlled case series design, we performed pairwise t-test to determine statistically significant the changes in laboratory measures at the individual level. Drugs with a sample size less than 30 in the discovery population were not analysed to increase precision and reliability. We used SAS 9.2 (Cary, NC) for all data preparation and analysis in the discovery population and Rv3.2 for the replication population. We also performed a random-effects meta-analysis to estimate between-study and within medication class effect sizes for glucose and HbA1c change using STATA."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Mendelian randomization"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The MR analysis was structured around a subset of 12 genes identified as drug–gene pairs in Fig. 1, step 4. Two-sample MR was conducted by leveraging summary statistics from existing GWAS on ten different drug indications (angina, atrial fibrillation, bipolar disorder, coronary artery disease, congestive heart failure, epilepsy, glaucoma, pain, rheumatoid arthritis, systolic blood pressure) in tandem with summary statistics from the largest T2D GWAS to date. For the 12 genes, the MR analysis utilized only tissues with statistically significant GPGE (p < 0.05) as the instrument and was conducted via the “TwoSampleMR” R package."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "We replicated a previously published approach using S-PrediXcan summary statistics as the instrumental variable in an MR analysis to proxy therapeutic targets. Tissue-specific GPGE summary statistics for each trait and T2D were combined to calculate the IVW MR association as follows:where  represents GPGE per trait; and  and  represent T2D GPGE and standard error, for t number of statistically significant GPGE tissues, respectively. Corresponding odds ratios (ORs) and 95% confidence intervals (95% CI) were calculated using  and ."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The estimates (and 95% CIs) obtained from the MR analysis represent T2D risk per standard deviation change in gene expression. Furthermore, MR Egger regression was used to evaluate directional pleiotropy. Multivariable MR (MVMR) was conducted to estimate adjusted MR effects for indications that were correlated and shared therapeutic gene targets (e.g. ACE inhibitors are used to treat hypertension and congestive heart failure). We also conducted a negative control MR analysis to account for potential bias due to population stratification in our estimation of effects using a GWAS of natural hair color as the outcome."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Ethics"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The studies obtained ethical approval from the affiliated organizations, Department of Veterans Affairs and Vanderbilt University Medical Center. For the VA discovery population, patient clinical data were analyzed as part of the Leveraging Electronic Health Information to Advance Precision Medicine research protocol, which has been approved by institutional review boards and research committees at 3 VA Medical Centers (Salt Lake City, Palo Alto, and West Haven) with approved waivers of informed consent and HIPAA authorization. For the VUMC SD patient data is de-identified and do not meet the 45 CFR 46 definition for human subjects research. As such, the study received non-human subjects determination from the associated institutional review board."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Role of funders"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The datasets, VUMC SD and MVP VA, used in the self-controlled case series were created by funding obtained from the funders. Funders were not involved in the study design, data analyses, interpretation, or writing of the results."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Computational drug repurposing approach"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We used a multi-step computational approach to drug repurposing that leveraged large scale GWAS and EHR data to identify and test potential non-diabetes medications for use in hemoglobin (HbA1c) and glucose control (Fig. 1). Steps 1–4 describe the process of identifying drug–gene pairs for evaluation and validation. The evaluation stage takes a two-pronged approach to evaluate these drug–gene pairs: a) a self-controlled case series to evaluate the response of HbA1c and glucose to initial medication exposure and b) a Mendelian randomization study to proxy therapeutic effects of a subset of the identified gene–drug pairs."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Gene-based medication discovery (Fig. 1, steps 1–4)"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Briefly, genes were identified in a previous large-scale GWAS and TWAS of diabetes risk. Publicly available databases of drug gene targets, indications, and interactions were consulted to identify drug–gene pairs. Drugs were selected such that the drug targeted a gene that was associated with diabetes risk via GPGE, the drug was not used in diabetes management, and where the action of the drug would be predicted to mitigate increases in diabetes risk."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Summary statistics for 19.8 million single nucleotide polymorphisms were utilized in S-PrediXcan models for GPGE estimation across 52 tissues. We identified 695 unique genes that were associated with diabetes risk at a p-value threshold of 1.92 x 10−7 [logistic regression], including: 568 genes for which a relationship was not previously reported and 127 with a known relationship to diabetes. We further refined the list of target drug–gene pairs by comparing medication and gene effects. For example, if a drug was an activator or agonist of the associated pathway or enzyme activity, we expect that increasing GPGE of the corresponding gene would be associated with decreased diabetes risk, and vice-versa for inhibitors. We identified 283 drugs with repurposing potential for diabetes that targeted 54 genes, 7.7% of the unique genes reported from the TWAS."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Self-controlled case series"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To test for the impact of initial medication start on HbA1c and glucose using EHRs, we designed a self-controlled case series to evaluate the change in these laboratory measures in the six months following medication initiation (Fig. 2). We restricted medication starts to a single experimental medication, defined by a gene–drug pair identified previously, with no preceding prescription of control medications (established medications known to raise or lower HbA1c and glucose). These medications were classified as glucose-reducing or glucose-increasing control medications based on prior knowledge of their effects on HbA1c or glucose. Overall, 68 medications were identified as possible control medications (Supplemental Table S1a and b). Further, we repeated this self-controlled case series for the glucose-reducing or glucose-increasing medications using identical restrictions on medication exposure and initial start to evaluate design performance (Fig. 2). We performed the self-controlled case series independently in two large EHR systems, the Veteran's Administration (VA) and Vanderbilt University Medical Center Synthetic Derivative (VUMC SD), separately for HbA1c and glucose."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Hemoglobin A1c"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The VA discovery population for the HbA1c self-controlled case series included 124,357 patients: 40,780 (32.8%) in the T2D/glucose-reducing group, 25,170 (20.2%) in the glucose-increasing group, and 58,407 (47.0%) in the experimental group. The baseline characteristics of these patients are summarized in Supplemental Table S3a. The VUMC SD replication population was one-tenth the size of the VA population, including 15,365 patients: 4439 (28.9%) in the T2D/glucose-reducing group, 3912 (25.5%) in the glucose-increasing group, and 7014 (45.6%) in the experimental group. The baseline characteristics of these patients are summarized in Supplemental Table S3b."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "HbA1c paired t-test results from VA LEAPS with replication at Vanderbilt (N ≥ 30 at both sites)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "GROUP\tDRUG\tVA LEAPS overall\tVanderbilt overall\t \tn\tMean Δ\t95% C.I.\tp\tn\tMean Δ\t95% C.I.\tp\t \tLower\tUpper\tLower\tUpper\t \tGlucose decreasing\tGLYBURIDE\t7639\t−1.1525\t−1.1979\t−1.107\t<0.0001\t225\t−0.7408889\t−0.9785815\t−0.5031962\t<0.0001\t \tGlucose decreasing\tGLIPIZIDE\t7564\t−1.0307\t−1.0741\t−0.9873\t<0.0001\t429\t−0.6013986\t−0.7672611\t−0.4355361\t<0.0001\t \tGlucose decreasing\tMETFORMIN\t25,589\t−0.9612\t−0.983\t−0.9393\t<0.0001\t1732\t−0.776097\t−0.8561348\t−0.6960592\t<0.0001\t \tGlucose decreasing\tLIRAGLUTIDE\t112\t−0.8491\t−1.1336\t−0.5646\t<0.0001\t34\t−0.4264706\t−0.89595328\t0.04301211\t0.0736\t \tGlucose decreasing\tGLIMEPIRIDE\t109\t−0.8179\t−1.1233\t−0.5125\t<0.0001\t302\t−0.7006623\t−0.878078\t−0.5232465\t<0.0001\t \tGlucose decreasing\tINSULIN\t8614\t−0.7853\t−0.8265\t−0.7441\t<0.0001\t1558\t−0.7970475\t−0.8950016\t−0.6990934\t<0.0001\t \tGlucose decreasing\tPIOGLITAZONE\t498\t−0.4414\t−0.5679\t−0.3149\t<0.0001\t30\t−0.24\t−0.53962488\t0.05962488\t0.1122\t \tGlucose decreasing\tSITAGLIPTIN\t103\t−0.0777\t−0.2962\t0.1409\t0.4825\t35\t−0.4257143\t−0.9284599\t0.0770313\t0.0944\t \tExperimental\tLISINOPRIL\t17,374\t−0.0346\t−0.0455\t−0.0237\t<0.0001\t1145\t−0.2383406\t−0.3156355\t−0.1610457\t<0.0001\t \tExperimental\tBENAZEPRIL\t579\t−0.0813\t−0.1321\t−0.0306\t0.0017\t68\t−0.3191176\t−0.62066544\t−0.01756986\t0.0384\t \tExperimental\tPRAVASTATIN\t3944\t−0.0253\t−0.0447\t−0.00592\t0.0105\t284\t−0.251669\t−0.40619831\t−0.09713972\t0.0015\t \tExperimental\tVERAPAMIL\t522\t−0.0665\t−0.1231\t−0.0099\t0.0214\t81\t−0.2185185\t−0.4354824\t−0.00155464\t0.0484\t \tExperimental\tISOSORBIDE DINITRATE\t157\t0.1231\t0.0089\t0.2372\t0.0348\t177\t−0.01299435\t−0.1621161\t0.1361274\t0.8637\t \tExperimental\tENALAPRIL\t577\t−0.0426\t−0.0898\t0.00461\t0.0768\t123\t0.06910569\t−0.1325936\t0.270805\t0.4989\t \tExperimental\tROSUVASTATIN\t2149\t0.0277\t−0.00453\t0.0599\t0.0920\t285\t−0.08736842\t−0.20676963\t0.03203279\t0.1509\t \tExperimental\tISOSORBIDE\t357\t0.0604\t−0.0232\t0.1441\t0.1563\t171\t−0.01169591\t−0.1657714\t0.1423795\t0.8811\t \tExperimental\tASPIRIN\t3928\t−0.0174\t−0.0431\t0.00824\t0.1833\t1834\t−0.1676521\t−0.2182151\t−0.1170891\t<0.0001\t \tExperimental\tTOPIRAMATE\t739\t−0.0242\t−0.0612\t0.0128\t0.1992\t53\t−0.3113208\t−0.70960458\t0.08696307\t0.1228\t \tExperimental\tLOVASTATIN\t1844\t−0.0153\t−0.0436\t0.013\t0.2880\t172\t−0.2290698\t−0.38846987\t−0.06966967\t0.0051\t \tExperimental\tSILDENAFIL\t8563\t−0.00697\t−0.0215\t0.00759\t0.3479\t51\t−0.6882353\t−1.2261789\t−0.1502917\t0.0132\t \tExperimental\tOXCARBAZEPINE\t52\t0.0404\t−0.0603\t0.141\t0.4242\t39\t−0.2923077\t0.7680527\t0.1834373\t0.2212\t \tExperimental\tLAMOTRIGINE\t402\t0.0247\t−0.0386\t0.088\t0.4434\t46\t−0.273913\t−0.7942324\t0.2464063\t0.2947\t \tExperimental\tPRILOCAINE\t74\t0.0514\t−0.0881\t0.1908\t0.4655\t127\t0.0247244\t−0.1739227\t0.2148676\t0.8352\t \tExperimental\tLEVETIRACETAM\t193\t0.0254\t−0.0456\t0.0964\t0.4817\t75\t−0.02666667\t−0.3173848\t0.2640514\t0.8555\t \tExperimental\tLIDOCAINE\t331\t0.0173\t−0.0351\t0.0697\t0.5160\t567\t−0.1074074\t−0.19241439\t−0.02240043\t0.0134\t \tExperimental\tSIMVASTATIN\t21,353\t0.00255\t−0.00649\t0.0116\t0.5802\t561\t−0.142246\t−0.28449198\t−0.03422388\t0.0099\t \tExperimental\tATORVASTATIN\t2328\t0.00881\t−0.0294\t0.047\t0.6512\t619\t−0.1924071\t−0.2966929\t−0.0881213\t0.0003\t \tExperimental\tDICLOFENAC\t2012\t−0.00398\t−0.0307\t0.0228\t0.7703\t238\t−0.04453782\t−0.17240455\t0.08332892\t0.4933\t \tExperimental\tRAMIPRIL\t102\t0.0167\t−0.1017\t0.135\t0.7806\t96\t−0.146875\t−0.35919937\t0.06544937\t0.1729\t \tExperimental\tPREGABALIN\t322\t0.0027\t−0.0835\t0.0889\t0.9508\t36\t−0.05277778\t−0.4503729\t0.3448173\t0.7891\t \tGlucose increasing\tHYDROCHLOROTHIAZIDE\t6016\t0.1028\t0.085\t0.1205\t<0.0001\t664\t0.05406627\t−0.01880839\t0.12694092\t0.1457\t \tGlucose increasing\tPROPRANOLOL\t1088\t0.1415\t0.0921\t0.1909\t<0.0001\t94\t0.09893617\t−0.08261529\t0.28048763\t0.2820\t \tGlucose increasing\tPREDNISONE\t829\t0.2814\t0.2088\t0.3539\t<0.0001\t412\t0.008009709\t−0.1028593\t0.1188787\t0.8871\t \tGlucose increasing\tNORTRIPTYLINE\t499\t0.1074\t0.0428\t0.1721\t0.0012\t32\t0.046875\t−0.2186954\t0.3124454\t0.7213\t \tGlucose increasing\tMETOPROLOL\t3259\t0.0385\t0.014\t0.063\t0.0021\t520\t−0.02230769\t−0.13145947\t0.08684408\t0.6882\t \tGlucose increasing\tATENOLOL\t2873\t0.0401\t0.0136\t0.0666\t0.0030\t240\t0.1520833\t−0.006750816\t0.310917483\t0.0605\t \tGlucose increasing\tQUETIAPINE\t1248\t0.0493\t0.0148\t0.0839\t0.0052\t36\t0.02222222\t−0.2910418\t0.3354863\t0.8863\t \tGlucose increasing\tAMITRIPTYLINE\t1269\t0.0523\t0.00909\t0.0956\t0.0177\t141\t0.1815603\t0.02675168\t0.33636889\t0.0219\t \tGlucose increasing\tCITALOPRAM\t3754\t−0.0237\t−0.0447\t−0.00264\t0.0274\t339\t−0.007079646\t−0.1371858\t0.1230265\t0.9148\t \tGlucose increasing\tOLANZAPINE\t292\t0.104\t−0.00161\t0.2096\t0.0536\t54\t0.011111\t−0.1708453\t0.1930675\t0.9030\t \tGlucose increasing\tFLUOXETINE\t2318\t−0.0207\t−0.047\t0.00566\t0.1239\t176\t0.009659091\t−0.1351066\t0.1544248\t0.8954\t \tGlucose increasing\tPAROXETINE\t1000\t0.0381\t−0.0112\t0.0874\t0.1297\t55\t−0.009090909\t−0.2567106\t0.2385288\t0.9416\t \tGlucose increasing\tCARVEDILOL\t655\t0.0371\t−0.0271\t0.1014\t0.2565\t247\t0.1809717\t0.0079371\t0.3540062\t0.0405\t \tGlucose increasing\tCIPROFLOXACIN\t54\t−0.1167\t−0.3366\t0.1033\t0.2922\t182\t0.1961538\t0.01111352\t0.38119418\t0.0379\t \tGlucose increasing\tRISPERIDONE\t643\t0.0227\t−0.0293\t0.0747\t0.3914\t47\t−0.3808511\t−0.8242209\t0.0625188\t0.0905\t \tGlucose increasing\tEZETIMIBE\t194\t−0.0299\t−0.1196\t0.0598\t0.5117\t80\t0.1925\t−0.1369853\t0.5219853\t0.2484\t \tGlucose increasing\tSERTRALINE\t5519\t0.00351\t−0.014\t0.021\t0.6937\t151\t−0.1264901\t−0.29593777\t0.04295764\t0.1423\t \tGlucose increasing\tHYDROCORTISONE\t54\t0.0278\t−0.1555\t0.2111\t0.7624\t58\t0.2448276\t−0.1630528\t0.652708\t0.2343"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The paired t-test results for HbA1c change in both the discovery and replication populations are summarized in Table 1. Analyzed medications were required to have at least 30 prescriptions in both sites. All T2D/glucose-reducing medications demonstrated substantial reductions in HbA1c in the discovery population with similar results in the replication set. The greatest reduction in HbA1c in the VA population was glyburide and glipizide, second-generation oral sulfonylureas, with mean changes of −1.3% and −1.1%, respectively (p < 0.001 [paired t-test]). The control (+) medications had more inconsistent effects on HbA1c across the two sites. Of the 16 glucose-increasing medications, only amitriptyline had evidence to support an increase in HbA1c in both populations. Seven additional medications were associated with increases in the discovery population but not in the replication. We observed consistent direction of effects with these 7 medications in the replication population but the substantially lower sample sizes potentially reduced the power to detect effects."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Of the initial 283 experimental medications identified by drug–gene pairs, only 20 (7.1%) had sufficient data for inclusion in the HbA1c self-controlled case series. This set included four angiotensin-converting enzyme (ACE) inhibitors. Two demonstrated substantial reductions in HbA1c in the discovery and replication populations, and one, enalapril, had evidence for a reduction in the discovery but not the replication set. Ramipril did not consistently reduce HbA1c in either set. Lisinopril demonstrated the largest reduction (p < 0.001, mean change VA = −0.03% and VUMC = −0.24% [paired t-test]) in both populations. The calcium channel blocker verapamil also demonstrated reductions in HbA1c in both sets. Most statins had inconsistent effects. Pravastatin demonstrated a decrease in HbA1c in both populations."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We performed secondary analyses stratified by EHR-reported race in the discovery population to evaluate impacts on response due to population variation. Unfortunately, due to power concerns, these analyses could not be repeated for EHR-reported sex as the discovery population is >90% male and the replication site had too few instances across the majority of analyzed medications. These results are summarized in Supplemental Table S4. Consistent with the results from the total population analysis, lisinopril demonstrated a reduction in HbA1c across stratified groups, however, the mean reduction was slightly higher in patients with EHR-reported Black or Unknown race. It is important to note, that the four ACE inhibitors did not demonstrate a consistent trend as enalapril and verapamil both demonstrated greater reduction in the EHR-reported White than Black populations. We also observed a consistent inconsistency in response to statins."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Glucose"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The VA discovery population for the glucose self-controlled case series included 678,501 patients: 51,645 (7.6%) in the T2D/glucose-reducing group, 235,493 (34.7%) in the glucose-increasing group, and 391,363 (57.7%) in the experimental group. The baseline characteristics of these patients are summarized in Supplemental Table S5a. The VUMC SD replication population was about one-tenth of the size of the VA population, including 67,155 patients: 11,889 (17.7%) in the T2D/glucose-reducing group, 9371 (14.0%) in the glucose-increasing group, and 45,895 (68.3%) in the experimental group. The baseline characteristics of these patients are summarized in Supplemental Table S5b."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Glucose paired t-test results from VA LEAPS with replication at Vanderbilt (N ≥ 30 at both sites)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "GROUP\tDRUG\tVA LEAPS overall\tVanderbilt overall\t \tn\tMean Δ\t95% C.I.\tp\tn\tMean Δ\t95% C.I.\tp\t \tLower\tUpper\tLower\tUpper\t \tGlucose decreasing\tGLYBURIDE\t8345\t−43.1949\t−45.2227\t−41.1672\t<0.0001\t651\t−6.447095\t−15.00825\t2.11406\t1.3970E-01\t \tGlucose decreasing\tGLIPIZIDE\t7161\t−34.9926\t−37.0172\t−32.968\t<0.0001\t1117\t−9.768414\t−15.729241\t3.807587\t<0.0001\t \tGlucose decreasing\tMETFORMIN\t22,601\t−31.7508\t−32.7881\t−30.7135\t<0.0001\t4381\t−14.96459\t−17.66529\t−12.26389\t<0.0001\t \tGlucose decreasing\tINSULIN\t7786\t−28.6124\t−31.0302\t−26.1945\t<0.0001\t4575\t−5.448993\t−8.83992\t−2.058065\t0.0016\t \tGlucose decreasing\tPIOGLITAZONE\t404\t−14.5794\t−20.8713\t−8.2876\t<0.0001\t100\t−9.562057\t−26.886532\t7.762418\t0.2761\t \tGlucose decreasing\tLIRAGLUTIDE\t84\t−28.9598\t−46.5825\t−11.3372\t0.0016\t52\t−12.48878\t−37.15229\t12.17472\t0.3142\t \tGlucose decreasing\tGLIMEPIRIDE\t85\t−23.4793\t−39.7981\t−7.1605\t0.0053\t703\t−17.82565\t−25.971571\t−9.679738\t<0.0001\t \tGlucose decreasing\tSITAGLIPTIN\t85\t−9.3883\t−22.9627\t4.1862\t0.1727\t77\t−26.36202\t−42.86386\t−9.86019\t0.0021\t \tExperimental\tSIMVASTATIN\t136,659\t0.4508\t0.3568\t0.5448\t<0.0001\t3498\t0.734901\t−1.813262\t3.283064\t0.5718\t \tExperimental\tFOSINOPRIL\t12,212\t−0.8226\t−1.2394\t−0.4059\t0.0001\t73\t1.121298\t−12.3272\t14.5698\t0.8685\t \tExperimental\tROSUVASTATIN\t6573\t0.9923\t0.4779\t1.5066\t0.0002\t1411\t2.51068\t−1.169198\t6.190559\t0.1810\t \tExperimental\tLISINOPRIL\t97,335\t−0.2488\t−0.3842\t−0.1134\t0.0003\t6616\t1.067576\t−0.902239\t3.037391\t0.9020\t \tExperimental\tPRAVASTATIN\t14,954\t0.5336\t0.2456\t0.8215\t0.0003\t1660\t3.462117\t−0.7322978\t7.6565323\t0.1056\t \tExperimental\tVERAPAMIL\t4583\t−0.9979\t−1.6193\t−0.3764\t0.0017\t715\t−2.061128\t−6.49482\t2.372563\t0.3617\t \tExperimental\tTOPIRAMATE\t4032\t0.8667\t0.3142\t1.4193\t0.0021\t405\t1.433802\t−4.608238\t7.475842\t0.6411\t \tExperimental\tSILDENAFIL\t38,485\t0.3159\t0.0942\t0.5375\t0.0052\t461\t6.203665\t−1.884591\t14.29192\t0.1324\t \tExperimental\tATORVASTATIN\t5771\t0.8247\t0.1841\t1.4652\t0.0116\t2829\t−1.437549\t−4.506864\t1.631767\t0.3585\t \tExperimental\tASPIRIN\t29,834\t−0.297\t−0.5489\t−0.0452\t0.0208\t11,303\t−0.3833803\t−0.9497342\t1.7164947\t0.5730\t \tExperimental\tBENAZEPRIL\t2616\t−0.8457\t−1.7148\t0.0233\t0.0565\t368\t1.318718\t−5.138851\t7.776286\t0.6882\t \tExperimental\tOXCARBAZEPINE\t329\t2.2351\t−0.0953\t4.5654\t0.0601\t376\t−12.84378\t−22.936732\t−2.750834\t0.0128\t \tExperimental\tENALAPRIL\t2989\t−0.6762\t−1.4181\t0.0656\t0.0740\t922\t1.31505\t−2.504694\t5.134793\t0.4994\t \tExperimental\tLOVASTATIN\t14,595\t0.2771\t−0.0312\t0.5854\t0.0781\t770\t3.966773\t−1.025044\t8.958589\t0.1192\t \tExperimental\tPREGABALIN\t1220\t1.1228\t−0.1441\t2.3898\t0.0823\t400\t−4.517374\t−13.390553\t4.355804\t0.3175\t \tExperimental\tDABIGATRAN ETEXILATE\t831\t1.2539\t−0.4717\t2.9795\t0.1542\t52\t2.301677\t−9.122465\t13.725818\t0.6876\t \tExperimental\tLEVETIRACETAM\t1410\t0.6273\t−0.3889\t1.6435\t0.2261\t947\t−4.81774\t−10.3211268\t0.6856466\t0.0861\t \tExperimental\tDOFETILIDE\t165\t1.7798\t−1.2467\t4.8063\t0.2473\t52\t−3.194277\t−17.53305\t11.14449\t0.6566\t \tExperimental\tDIPYRIDAMOLE\t1326\t−0.7342\t−1.9806\t0.5121\t0.2480\t70\t5.131848\t−3.252576\t13.516272\t0.2262\t \tExperimental\tSALMON CALCITONIN\t723\t0.8165\t−0.615\t2.2481\t0.2632\t72\t−0.4615575\t−11.11558\t10.19246\t0.9314\t \tExperimental\tLAMOTRIGINE\t2340\t0.4208\t−0.343\t1.1845\t0.2801\t467\t2.711233\t−3.841852\t9.264317\t0.4166\t \tExperimental\tISOSORBIDE\t1259\t0.7299\t−0.8707\t2.3304\t0.3711\t1250\t0.5219031\t−3.957712\t5.001518\t0.8192\t \tExperimental\tPROPAFENONE\t296\t0.8757\t−1.3405\t3.092\t0.4374\t109\t−2.98408\t−11.335945\t5.367785\t0.4803\t \tExperimental\tSULINDAC\t2637\t0.255\t−0.4727\t0.9827\t0.4920\t64\t−0.8106771\t−19.34646\t17.7251\t0.9306\t \tExperimental\tPRILOCAINE\t308\t−0.8119\t−3.2941\t1.6703\t0.5203\t746\t1.971907\t−2.234013\t6.177827\t0.3577\t \tExperimental\tFLUVASTATIN\t1802\t0.2088\t−0.4771\t0.8946\t0.5506\t39\t1.08315\t−14.09033\t16.25663\t0.8859\t \tExperimental\tPENTOXIFYLLINE\t805\t−0.3254\t−1.9554\t1.3046\t0.6953\t105\t6.625918\t−12.57929\t25.83113\t0.4954\t \tExperimental\tDICLOFENAC\t10,685\t−0.0725\t−0.4498\t0.3048\t0.7065\t1328\t0.446702\t−3.445042\t4.338445\t0.8219\t \tExperimental\tRAMIPRIL\t526\t0.399\t−1.7078\t2.5057\t0.7100\t482\t−1.003529\t−6.855517\t4.848459686\t0.7363\t \tExperimental\tMICONAZOLE\t1803\t0.1451\t−0.8235\t1.1136\t0.7690\t80\t−6.841524\t−17.091672\t3.408624\t0.1878\t \tExperimental\tPHENYTOIN\t2682\t−0.0855\t−0.9099\t0.7389\t0.8388\t254\t2.698407\t−3.767747\t9.164561\t0.4119\t \tExperimental\tISOSORBIDE DINITRATE\t1469\t0.1244\t−1.1109\t1.3597\t0.8434\t1256\t−0.2453867\t−4.74463\t4.253856\t0.9148\t \tExperimental\tLIDOCAINE\t1841\t0.093\t−0.8702\t1.0561\t0.8499\t6143\t1.984721\t0.1399591\t3.8294838\t0.0350\t \tExperimental\tMINOXIDIL\t218\t−0.3757\t−4.649\t3.8975\t0.8626\t415\t−1.185078\t−9.736265\t7.36611\t0.7855\t \tExperimental\tPRIMIDONE\t882\t−0.1221\t−1.5594\t1.3151\t0.8676\t125\t−1.1066\t−11.644133\t9.430933\t0.8357\t \tGlucose increasing\tATENOLOL\t25,545\t0.5676\t0.3127\t0.8225\t<0.0001\t568\t1.460915\t−3.094773\t6.016604\t0.5290\t \tGlucose increasing\tPROPRANOLOL\t8806\t0.9974\t0.5079\t1.487\t<0.0001\t171\t1.122807\t−9.919777\t12.165391\t0.8412\t \tGlucose increasing\tRISPERIDONE\t5015\t1.2782\t0.6408\t1.9156\t<0.0001\t52\t−20.94231\t−55.2099\t13.32529\t0.2255\t \tGlucose increasing\tCARVEDILOL\t2540\t2.0708\t1.054\t3.0876\t<0.0001\t805\t4.463354\t−2.046625\t10.973333\t0.1787\t \tGlucose increasing\tHYDROCHLOROTHIAZIDE\t55,715\t2.1662\t2.0019\t2.3305\t<0.0001\t1731\t0.5670133\t−1.625194\t2.759221\t0.6120\t \tGlucose increasing\tPREDNISONE\t10,064\t3.3271\t2.8554\t3.7988\t<0.0001\t1058\t1.359641\t−2.993715\t5.712997\t0.5401\t \tGlucose increasing\tDEXAMETHASONE\t814\t11.0592\t8.9244\t13.1941\t<0.0001\t804\t4.72236\t1.306546\t8.138174\t0.0068\t \tGlucose increasing\tOLANZAPINE\t2855\t1.8426\t0.906\t2.7792\t0.0001\t58\t−4.568966\t−13.350344\t4.212413\t0.3019\t \tGlucose increasing\tAMITRIPTYLINE\t10,722\t0.7722\t0.3477\t1.1967\t0.0004\t204\t−2.529412\t−10.320404\t5.261581\t0.5228\t \tGlucose increasing\tMETOPROLOL\t20,349\t0.5649\t0.2479\t0.8819\t0.0005\t1726\t4.256833\t1.197392\t7.316273\t<0.0001\t \tGlucose increasing\tNORTRIPTYLINE\t3569\t0.9445\t0.2535\t1.6356\t0.0074\t56\t−7.928571\t−27.27985\t11.42271\t0.4151\t \tGlucose increasing\tMETHYLPREDNISOLONE\t329\t3.8446\t0.8012\t6.888\t0.0135\t35\t20.8881\t1.422146\t40.354045\t0.0005\t \tGlucose increasing\tHYDROCORTISONE\t674\t1.778\t0.3158\t3.2402\t0.0172\t97\t8.06701\t−0.3042293\t16.43825\t0.0588\t \tGlucose increasing\tQUETIAPINE\t7939\t0.5904\t0.0905\t1.0903\t0.0206\t30\t−13.93333\t−45.70653\t17.83987\t0.3772\t \tGlucose increasing\tNADOLOL\t383\t2.4766\t0.2753\t4.678\t0.0276\t59\t−9.339266\t−26.89005\t8.21152\t0.2912\t \tGlucose increasing\tBISOPROLOL\t130\t3.742\t−0.1533\t7.6373\t0.0596\t33\t−2.742424\t−20.8768\t15.39195\t0.7600\t \tGlucose increasing\tPAROXETINE\t7083\t0.5042\t−0.0618\t1.0702\t0.0808\t108\t1.62037\t−8.661824\t11.902565\t0.7553\t \tGlucose increasing\tLEVOFLOXACIN\t420\t−1.6014\t−3.4438\t0.241\t0.0883\t202\t2.534653\t−6.477816\t11.547123\t0.5798\t \tGlucose increasing\tDOXEPIN\t1881\t0.7812\t−0.3126\t1.8751\t0.1615\t36\t5.777778\t−14.16079\t25.71634\t0.5601\t \tGlucose increasing\tCIPROFLOXACIN\t800\t0.7613\t−0.8172\t2.3397\t0.3441\t142\t10.5979\t−7.865984\t29.061789\t0.2584\t \tGlucose increasing\tSERTRALINE\t32,238\t0.1053\t−0.1203\t0.3309\t0.3602\t248\t4.165323\t4.117053\t12.447698\t0.3229\t \tGlucose increasing\tEZETIMIBE\t954\t−0.52\t−1.7218\t0.6818\t0.3961\t145\t6.453448\t−3.820649\t16.727546\t0.2164\t \tGlucose increasing\tCITALOPRAM\t30,433\t−0.0787\t−0.3139\t0.1565\t0.5118\t389\t−3.589974\t−9.485146\t2.305198\t0.2319\t \tGlucose increasing\tFLUOXETINE\t15,757\t0.0989\t−0.2237\t0.4214\t0.5480\t207\t−1.070048\t−8.646338\t6.506242\t0.7809\t \tGlucose increasing\tSOTALOL\t723\t0.4891\t−1.1468\t2.1251\t0.5574\t55\t−2.490909\t−14.862197\t9.880378\t0.6880\t \tGlucose increasing\tMOXIFLOXACIN\t126\t−0.6569\t−4.3452\t3.0313\t0.7250\t140\t−0.2695035\t−9.122082\t8.583075\t0.9521"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The paired t-test results for glucose change in both the discovery and replication populations are summarized in Table 2. Consistent with the HbA1c results, glyburide and glipizide had the most substantial decrease in glucose (p < 0.001 [paired t-test]) in the discovery set. For the most part, all T2D/glucose-reducing medications demonstrated decreases in glucose. Some medications, such as sitagliptin, decreased glucose in the replication but not the discovery set (VA, p = 0.44 and VUMC, p = 0.002 [paired t-test for both]). These results suggest high variability in random glucose measurements may decrease statistical precision. The glucose-increasing medications demonstrated similar variability in results with dexamethasone exhibiting the only consistent increase in glucose across both populations (p < 0.001 [paired t-test])."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Consistency between glucose and HbA1c findings"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Compared with HbA1c, 35 (12.4%) of the 283 medications identified by drug–gene pairs were included in the glucose analysis. Only one of these medications, oxcarbazepine, an anti-epileptic, had evidence for an effect in both sets. However, the direction of glucose change was inconsistent with glucose increasing in the VA discovery population and decreasing in the VUMC replication. None of the ACE inhibitors demonstrated a consistent impact on glucose in either population. In line with the HbA1c results, verapamil was associated with a consistent decrease in glucose in the VA (−0.82 mg/dL, p = 0.03 [paired t-test]). In the VUMC population, the point estimate indicated that verapamil decreased glucose but the wide confidence interval included the null, potentially due to power limitations of this smaller sample set. There were also inconsistent results for statin medications. In the discovery set, rosuvastatin increased glucose but the remaining statins including simvastatin, atorvastatin, pravastatin, lovastatin, and Fluvastatin, decreased glucose."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Meta-analysis"
+    },
+    {
+      "section_type": "FIG",
+      "text": "Medication group meta-analysis results from the self-controlled case series for hemoglobin A1c. All medications included in the analysis series were grouped by medication class and meta-analyzed. A forest plot of these results for hemoglobin A1c from the self-controlled case series in the discovery and replication datasets is presented. Whether they belonged to the control, glucose-decreasing or glucose-increasing, or experimental group is noted on the left-hand side of the figure."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Medication group meta-analysis results from the self-controlled case series for glucose. All medications included in the analysis series were grouped by medication class and meta-analyzed. A forest plot of these results for glucose from the self-controlled case series in the discovery and replication datasets is presented. Whether they belonged to the control, glucose-decreasing or glucose-increasing, or experimental group is noted on the left-hand side of the figure."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We next performed a cross-site meta-analysis for both HbA1c and glucose in a self-controlled case series to estimate the combined effect for the given medications. The results of these analyses are available in Fig. 3, Fig. 4. There was evidence to support all T2D/glucose-reducing medications reducing HbA1c with effect sizes ranging from −0.33% for sitagliptin to −1.06% for glyburide (p < 0.001 for all [random effects meta-analysis]). For glucose, however, only half the T2D/control (−) medications were associated with a mean decrease in glucose. Four (26.7%) of the 15 glucose-increasing medications were associated with an increase in HbA1c as expected, with the most substantial increases being for propranolol and hydrochlorothiazide, respectively (0.12%, p = 1.0e−5; and 0.08%, p = 2.8 x 10−14 [random effects meta-analysis]). Both propranolol and hydrochlorothiazide also demonstrated increases in glucose. Interestingly, there was also some evidence that citalopram and fluoxetine decreased HbA1c (−0.02%, p = 0.04; and −0.03%, p = 0.01 [random effects meta-analysis]). However, evidence for their impact on glucose was limited. Corticosteroids had the most substantial impact on glucose. Dexamethasone and prednisone consistently increased glucose (7.87 mg/dL, p = 9.4 x 10−3; 1.32 mg/dL, p < 1.3 x 10−16 [random effects meta-analysis]). In the experimental group, only verapamil demonstrated a significant effect on HbA1c (−0.11%, p = 0.01 [paired t-test]). This effect was also observed in the glucose analysis (−0.85 mg/dL, p = 0.024). Three statins, simvastatin, rosuvastatin, and fluvastatin, had evidence for changes in glucose; however, the directions of effect varied among the medications."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "To characterize the effect of medication group on HbA1c and glucose, we also performed a drug-class grouped meta-analysis (Fig. 3, Fig. 4, respectively). As expected, all six of the T2D/glucose-reducing medication groups lowered HbA1c with the most substantial decrease belonging to biguanides (−0.88%, p < 1.6 x 10−13 [paired t-test]). We saw similar magnitudes of reductions in glucose for DPP4 inhibitors and insulin (p = 0.10 and p = 0.15, respectively [paired t-test]). Three of the glucose-increasing medication groups, diuretics, tricyclic antidepressants, and beta blockers, demonstrated increases in HbA1c and glucose; while corticosteroids only demonstrated an increase in glucose. Only one experimental medication class, calcium channel blockers, substantially reduced HbA1c and glucose (−0.11%, p = 0.01; and −0.85 mg/dL, p = 0.02, respectively [paired t-test]). The statin and anti-convulsant medication classes were associated with increases in glucose (0.72 mg/dL, p = 2.1 x 10−7; and 0.71 mg/dL, p = 5.9e−4, respectively [paired t-test])."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Mendelian randomization"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Summary of estimated mendelian randomization (MR) effects of drug-targeted genetically-predicted gene expression (GPGE) on indications (either continuous or dichotomous) with type 2 diabetes (T2D) risk."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Gene target\tIndication-specific GPGE\tT2D MR\t \tSpecific drug or drug class\tDrug effect on gene expression\tNo. of\tNo. of\tBetab\tSE\tp value\tORc\t95% CI\tp value\tEgger\tMVMR\t95% CI\tp value\t \tSNPsa\tTissuesa\tp valued\tORe\t \t\tSystolic blood pressure\t\t\t\t\t\t\t\t \tACE\tACE inhibitors\tAntagonist\t108\t11\t−0.253\t0.223\t0.28\t0.82\t0.78–0.86\t3.3 x 10–17\t0.2\t0.86\t0.84–0.89\t4.8 x 10–6\t \tKCNJ11\tMinoxidil\tAgonist\t454\t13\t0.016\t0.13\t0.9\t0.84\t0.81–0.87\t5.0 x 10–25\t0.7\tn/a\tn/a\tn/a\t \tKCNJ11\tVerapamil\tAntagonist\t454\t13\t−0.016\t0.13\t0.9\t0.84\t0.81–0.87\t5.0 x 10–25\t0.7\tn/a\tn/a\tn/a\t \tTH\tMetyrosine\tAntagonist\t29\t2\t0.061\t0.323\t0.88\t0.79\t0.43–1.45\t0.45\tn/a\tn/a\tn/a\tn/a\t \tCACNA1A\tVerapamil\tAntagonist\t1\t1\t2.032\t0.847\t1.6 x 10–2\t0.64\t0.56–0.73\t2.1 x 10–10\tn/a\tn/a\tn/a\tn/a\t \tGCK\tSitaxentan\tAgonist\t66\t2\t0.321\t0.187\t0.34\t0.78\t0.71–0.87\t2.3 x 10–6\tn/a\tn/a\tn/a\tn/a\t \t\tAngina\t\t\t\t\t\t\t\t \tCACNA1A\tVerapamil\tAntagonist\t1\t1\t0.511\t0.2\t1.1 x 10-2\t0.17\t0.10–0.29\t2.1 x 10–10\tn/a\tn/a\tn/a\tn/a\t \t\tAtrial fibrillation\t\t\t\t\t\t\t\t \tHCN3\tHCN chan. Blockers\tAntagonist\t114\t5\t0.102\t0.035\t4.6 x 10-2\t0.75\t0.53–1.06\t0.11\t1.4 x 10–2\t0.92\t0.77–1.09\t0.43\t \tSCN3A\tNa + chan. Blockers\tAntagonist\t83\t3\t0.041\t0.01\t5.2 x 10-2\t0.26\t0.17–0.39\t4.7 x 10-11\t0.71\tn/a\tn/a\tn/a\t \t\tBipolar disorder\t\t\t\t\t\t\t\t \tSCN3A\tElpetrigine\tAntagonist\t46\t1\t0.15\t0.074\t4.3x10-2\t0.92\t0.69–1.22\t0.55\tn/a\tn/a\tn/a\tn/a\t \t\tRheumatoid arthritis\t\t\t\t\t\t\t\t \tMAPK3\tSulindac\tAntagonist\t95\t8\t−2.382\t0.555\t3.6 x 10–3\t1.01\t0.99–1.01\t0.08\t0.72\tn/a\tn/a\tn/a\t \t\tGlaucoma\t\t\t\t\t\t\t\t \tBCL2\tIsosorbide\tAntagonist\t46\t1\t0.148\t0.075\t4.9 x 10–2\t1.01\t0.85–1.20\t0.93\tn/a\tn/a\tn/a\tn/a\t \t\tCongestive heart failure\t\t\t\t\t\t\t\t \tACE\tACE inhibitors\tAntagonist\t28\t1\t0.184\t0.073\t1.1 x 10–2\t1.31\t1.02–1.68\t3.2 x 10–2\tn/a\tn/a\tn/a\tn/a\t \t\tPain\t\t\t\t\t\t\t\t \tIKBKE\tAmlexanox\tAntagonist\t242\t8\t−0.015\t0.003\t6.0 x 10–4\t1.22\t0.78–1.88\t0.38\t0.17\tn/a\tn/a\tn/a\t \tTAP2\tOlcegepant\tAntagonist\t259\t4\t−0.004\t0.006\t0.6\t0.08\t0.01–1.36\t0.08\t0.82\tn/a\tn/a\tn/a\t \tOPRL1\tOpiod analgesics\tAgonist\t244\t14\t0.012\t0.002\t1.0 x 10–5\t38.3\t18.1–81.2\t1.7 x 10–21\t1.6 x 10–3\tn/a\tn/a\tn/a\t \t\tCoronary artery disease\t\t\t\t\t\t\t\t \tHCN3\tIvabradine\tAntagonist\t140\t6\t−0.076\t0.028\t4.0 x 10–2\t1.43\t1.06–1.93\t2.0 x 10–2\t0.09\t1.26\t1.03–1.54\t4.9 x 10–2\t \t\tEpilepsy\t\t\t\t\t\t\t\t \tSCN3A\tAnticonvulsants\tAntagonist\t1\t1\t0.058\t0.028\t3.7 x 10–2\t0.6\t0.17–2.08\t0.42\tn/a\tn/a\tn/a\tn/a"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Number of statistically significant tissues (p value < 0.05) from each indication-specific GPGE model, and the number of SNPs that were used in the GPGE model."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Summarized Indication-specific GPGE effects using random-effects meta-analysis across the statistically significant tissues."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Inverse-variance weighted MR analysis for T2D risk using statistically significant tissues from the GPGE model as instruments."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Egger regression p value < 0.05 indicates the potential for directional pleiotropy."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Multivariable MR (MVMR) used to estimate associations with T2D risk adjusted for GPGE for other correlated indications/traits. Systolic blood pressure adjusted for congestive heart failure (ACE); atrial fibrillation adjusted for coronary artery disease (HCN3) or bipolar disorder and epilepsy (SCN3A), and coronary artery disease adjusted for atrial fibrillation (HCN3)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In Table 3, we report our T2D two-sample MR results using S-PrediXcan summary statistics for various indications with putative drug gene targets. In our MR analysis, the strongest evidence for T2D prevention were observed for drugs targeting genes involved in systolic blood pressure, angina, and atrial fibrillation. ACE inhibitors, as proxied by reduced ACE gene expression, were predicted to reduce systolic blood pressure by approximately 0.25 mmHg (p = 0.28 [IVW MR association]) per standard deviation decrease in ACE expression. Whereas for drugs targeting KCNJ11 expression (i.e., minoxidil and verapamil), the predicted change in systolic blood pressure was minimal per standard deviation change in KCNJ11 gene expression. A 16–18% T2D risk reduction was observed for ACE inhibitors (T2D OR = 0.82, 95% CI = 0.78, 0.86, p = 3.3 x 10−17 [IVW MR association]) and minoxidil/verapamil (T2D OR = 0.84, 95% CI = 0.81, 0.87, p = 5.0 x 10−25 [IVW MR association]) via changes in predicted systolic blood pressure. Reduced atrial fibrillation risk via decreased expression of HCN3 and SCN3A (via HCN channel blockers and sodium channel blockers, respectively) were associated with reduced T2D risk in the MR analysis; however, only sodium channel blockers were observed to reduce T2D risk (T2D OR = 0.25, 95% CI = 0.17, 0.39, p = 4.7 x 10−11 [IVW MR association]). Similarly, evidence for T2D risk reduction was also observed for angina risk reduction via verapamil as proxied by reduced CACNA1A expression (T2D OR = 0.17, 95% CI = 0.10, 0.29, p = 2.1 x 10−10 [IVW MR association]). However, after accounting for potential pleiotropy via changes in correlated indications, only ACE inhibitors demonstrated consistent evidence for a reduction in T2D risk (T2D MVMR OR = 0.86, 95% CI = 0.84, 0.89, p = 4.8 x 10−06 [IVW MR association]). The negative control MR (Supplemental Table S7) indicated no bias due to population stratification in the original GWAS studies used for the aforementioned MR analyses proxy long-term effects."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Discussion"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Our study has demonstrated an approach for genetics-informed drug repurposing for diabetes by leveraging the power of genomics data, drug annotation databases, EHRs, and contemporary statistical methods for causal inference. A strength of this approach is the rapid and cost-efficient ability to prioritize candidate drugs for clinical trials on the basis of pre-clinical experiments using patient studies and MR."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "We demonstrated that calcium-channel blockers are a good target for repurposing for T2D, supported by evidence across all arms of the investigation. This medication demonstrated substantially lower reductions in glycemic indices than the traditional diabetes medications. Our results may be of particular importance to patients with pre-diabetes and hypertension where preferential use of CCBs for blood pressure control may have an additive impact on glycemic control compared with other antihypertensive therapies. We also observed reductions in glycemic indices with another anti-hypertensive medication group, ACE inhibitors. About half of the experimental ACE inhibitors demonstrated significant decreases in both glucose and HbA1c, however, the relative effect sizes varied across sites and depended on the medication type suggesting ACE inhibitor effectiveness to lower glycemic indices depends on type, dose, and possibly the population in which it was used. These findings are similar to clinical trials of ACE inhibitors that have also demonstrated inconsistent results."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "The results of this study demonstrate the feasibility and strength of our approach for computational drug repurposing discovery. While many of the potential repurposing medications for glucose reduction have been explored in other trials, we believe these results demonstrate the feasibility of this approach for other disease conditions. Further, because these results derive from two real world clinical populations, they are likely to be robust. These results suggest medications that could be used preferentially to treat concomitant disease while providing potential additional benefit to patients at risk for diabetes or with inadequately controlled diabetes."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "This study also demonstrates the importance of careful consideration of study design when performing secondary studies in EHR data sources across sites. We will discuss these considerations in greater detail below. Ascertainment and utilization of pharmacy data in EHRs is a complicated process and it is important to acknowledge limitations in the interpretation of response to prescription start, as medication prescription does not always lead to use. There is also the possibility that a patient is taking other prescription or nonprescription medications that are not reflected in their electronic chart. Another important medication-related limitation is that, unlike the discovery population, the replication population does not have prescription fill data and relied on prescription mention. While we believe the impacts of this limitation are relatively small, as the number of included subjects for most medications in the replication set reflected the ten-fold decrease in sample size we would expect, there were higher prescriptions of prilocaine and lidocaine. The higher prescription of these medications in the replication population may be due to real changes in medication use. It is also possible the increase may reflect an inaccurate capture of prescription, e.g. patients had a second mention of these medications in their record during the six month follow-up period but they were in fact not continuing to take the medication, which would be mitigated by pharmacy fill data. Other potential limitations include the requirement that there be a continuous measurement that can be compared over time, and the relatively short timeframe under observation. An emulated target trial might be a better design for long-term prescriptions in which we may be able to assume that treatment assignment remains consistent throughout the time period under study, or where there are no continuous labs to observe that are related to disease state. This potential non-differential exposure misclassification for binary exposures (i.e., treatment vs. non-treatment) will bias results towards the null. However, by additionally incorporating MR in our approach, we hoped to account for this by proxying various medication using GPGE in order to estimate unbiased effects of potential drug-repurposing candidate medications for reducing T2D risk."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Despite these limitations, the self-controlled case series design has many advantages as it allows each individual patient to act as their own control. It is also important to consider that therapeutic response may vary based on patient demographics and health, so effects may be isolated to particular segments of the population. By utilizing a national health care system in the discovery cohort, VA, and a regional healthcare system, VUMC, we had the ability to test response across various environmental regions and demographics. Conveniently, when available this study design allows for further refinement to address specific portions of the study population relating to environment exposures or demographics. The ability to rapidly evaluate acute changes in glycemic indices from two large-scale EHRs provides a real-world impact of the genetically identified medications on patients."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "We demonstrate one such refinement analysis with results stratified by EHR-reported race is presented. In this test case we see that the results are largely similar across levels of this variable. Future studies can further develop the experimental strategy to evaluate specific potential confounders and effect modifiers. Data curated for self-controlled case series might also be used for dose–response studies, where dosing is sufficiently variable. Due to inherent limitations in EHRs including data sparsity and unaccounted confounding the current design uses the self-controlled case series to identify acute changes in glycemic indices and Mendelian Randomization to proxy long-term effects of the intervention. Further, the medications identified in the SCCS have established side-effect and they are use in routine medical care therefore the potential for repurposing for diabetes control is strengthened by these established burden considerations. Our approach could be coupled with well-curated clinical cohorts that overcome limitations of EHR systems to allow researchers to consider these long-term effects in a more homogeneous population. Using our design with these cohorts researchers could consider both the short-term effect on the response variables, glycemic indices, as well as the long-term effects such as adverse events and all-cause mortality."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "The additional support for a causal effect of the identified drugs provided by the MR analyses provides both epidemiological rigor and evidence of a biological mechanism at work in the phenomenon of the glucose-lowering effect of CCBs."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In conclusion, we present a computational approach to drug repurposing that has the potential to be used for other conditions and with other data resources. We demonstrated this approach with a SCCS design in two large EHR systems and with MR using extant results from large-scale GWAS. We identified CCBs as a candidate treatment for high glucose and observed some evidence for ACE inhibitors as well. This strategy can be implemented for other outcomes with access to sufficient quantities of EHR data and informatics expertise."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Contributors"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "M.M.S., K.M.L., J.K., N.K.K., J.H.B., V.M.W, D.R.M, K.R.H., P.D.R, S.L.C., J.L, J.A.L., M.V, and T.L.E. were involved in discussions of study design and provided expert consult for relevant areas. M.M.S., K.M.L, J.K, J.A.L., and N.K.K. were responsible for data access, verification, validation, acquisition, analysis, and presentation of results. M.M.S., K.M.L, J.K, and J.H.B. was responsible for statistical analyses. M.M.S., M.V, T.L.E were responsible for initial manuscript creation. M.M.S., K.M.L., J.K., N.K.K., J.H.B., V.M.W, D.R.M, K.R.H., P.D.R, S.L.C., J.L, J.A.L., M.V, and T.L.E. were involved in the critical review of the manuscript and provided approval of the final manuscript. M.V. and T.L.E. oversaw all project details. The corresponding author attests that all listed authors meet authorship criteria and that no others meeting the criteria have been omitted. All authors read and approved the final manuscript."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Data sharing statement"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Summary level statistical results will be made available upon reasonable request to corresponding authors. Individual level data can be made available following institutional agreements."
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Declaration of interests"
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "J.H.B. declares previous funding from the National Institutes of Health-National Eye Institute. P.D.R. declares a previous institutional grant from Dexcom, Inc for retrospective analysis of VA EHR data on glucose monitoring. J.A.L. has received research grants from Alnylam Pharmaceuticals, Inc, Astellas Pharma, Inc, AstraZeneca Pharmaceuticals LP, Biodesix, Celgene Corporation, Cerner Enviza, GlaxoSmithKline PLC, Janssen Pharmaceuticals, Inc., Kantar Health, Myriad Genetic Laboratories, Inc., Novartis International AG, Parexel International Corporation through the University of Utah or Western Institute for Veteran Research outside the submitted work."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Global and regional diabetes prevalence estimates for 2019 and projections for 2030 and 2045: results from the international diabetes federation diabetes atlas, 9th edition"
+    },
+    {
+      "section_type": "REF",
+      "text": "Standards of medical care in diabetes-2020 abridged for primary care providers"
+    },
+    {
+      "section_type": "REF",
+      "text": "Biochemistry and molecular cell biology of diabetic complications"
+    },
+    {
+      "section_type": "REF",
+      "text": "National, regional, and global trends in fasting plasma glucose and diabetes prevalence since 1980: systematic analysis of health examination surveys and epidemiological studies with 370 country-years and 2.7 million participants"
+    },
+    {
+      "section_type": "REF",
+      "text": "2019 update to: management of hyperglycaemia in type 2 diabetes, 2018. A consensus report by the American Diabetes Association (ADA) and the European association for the Study of Diabetes (EASD)"
+    },
+    {
+      "section_type": "REF",
+      "text": "Management of hyperglycaemia in type 2 diabetes, 2018. A consensus report by the American diabetes association (ADA) and the European association for the study of diabetes (EASD)"
+    },
+    {
+      "section_type": "REF",
+      "text": "Management of hyperglycaemia in type 2 diabetes, 2015: a patient-centred approach. Update to a position statement of the American Diabetes Association and the European Association for the Study of Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Medical management of hyperglycaemia in type 2 diabetes mellitus: a consensus algorithm for the initiation and adjustment of therapy: a consensus statement from the American Diabetes Association and the European Association for the Study of Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Achieving good glycemic control: initiation of new antihyperglycemic therapies in patients with type 2 diabetes from the Kaiser Permanente Northern California Diabetes Registry"
+    },
+    {
+      "section_type": "REF",
+      "text": "Medication beliefs, treatment complexity, and non-adherence to different drug classes in patients with type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Poor medication adherence in type 2 diabetes: recognizing the scope of the problem and its key contributors"
+    },
+    {
+      "section_type": "REF",
+      "text": "Gender-based differences in glycaemic control and hypoglycaemia prevalence in patients with type 2 diabetes: results from patient-level pooled data of six randomized controlled trials"
+    },
+    {
+      "section_type": "REF",
+      "text": "Efficacy and safety of semaglutide for type 2 diabetes by race and ethnicity: a post hoc analysis of the sustain trials"
+    },
+    {
+      "section_type": "REF",
+      "text": "Thyroid disorders and diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Evaluation and management of adult hypoglycemic disorders: an endocrine society clinical practice guideline"
+    },
+    {
+      "section_type": "REF",
+      "text": "The discovery and development of liraglutide and semaglutide"
+    },
+    {
+      "section_type": "REF",
+      "text": "Canagliflozin and cardiovascular and renal events in type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Drug therapy of the metabolic syndrome: minimizing the emerging crisis in polypharmacy"
+    },
+    {
+      "section_type": "REF",
+      "text": "Drug repositioning: identifying and developing new uses for existing drugs"
+    },
+    {
+      "section_type": "REF",
+      "text": "The first 3500 years of aspirin history from its roots - a concise summary"
+    },
+    {
+      "section_type": "REF",
+      "text": "The effects of salsalate on glycemic control in patients with type 2 diabetes: a randomized trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Drug repurposing: progress, challenges and recommendations"
+    },
+    {
+      "section_type": "REF",
+      "text": "The druggable genome and support for target identification and validation in drug development"
+    },
+    {
+      "section_type": "REF",
+      "text": "Human monogenic disorders - a source of novel drug targets"
+    },
+    {
+      "section_type": "REF",
+      "text": "Use of genome-wide association studies for drug repositioning"
+    },
+    {
+      "section_type": "REF",
+      "text": "Can medical genetics and evolutionary biology inspire drug target identification?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Psychopharmacology: from serendipitous discoveries to rationale design, but what next?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mendelian randomization: a novel approach for the prediction of adverse drug events and drug repurposing opportunities"
+    },
+    {
+      "section_type": "REF",
+      "text": "Discovery of 318 new risk loci for type 2 diabetes and related vascular outcomes among 1.4 million participants in a multi-ancestry meta-analysis"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetic-variation-driven gene-expression changes highlight genes with important functions for kidney disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Integration of ATAC-seq and RNA-seq identifies human alpha cell and beta cell signature genes"
+    },
+    {
+      "section_type": "REF",
+      "text": "ChEMBL: a large-scale bioactivity database for drug discovery"
+    },
+    {
+      "section_type": "REF",
+      "text": "DGIdb: mining the druggable genome"
+    },
+    {
+      "section_type": "REF",
+      "text": "National Cancer Institute Drug Dictionary"
+    },
+    {
+      "section_type": "REF",
+      "text": "Development of a large-scale de-identified DNA biobank to enable personalized medicine"
+    },
+    {
+      "section_type": "REF",
+      "text": "MedEx: a medication information extraction system for clinical narratives"
+    },
+    {
+      "section_type": "REF",
+      "text": "Retrospective cohort study to characterise the blood pressure response to spironolactone in patients with apparent therapy-resistant hypertension using electronic medical record data"
+    },
+    {
+      "section_type": "REF",
+      "text": "Facilitating pharmacogenetic studies using electronic health records and natural-language processing: a case study of warfarin"
+    },
+    {
+      "section_type": "REF",
+      "text": "Using Mendelian randomisation to identify opportunities for type 2 diabetes prevention by repurposing medications used for lipid management"
+    },
+    {
+      "section_type": "REF",
+      "text": "Association analyses based on false discovery rate implicate new loci for coronary artery disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Biobank-driven genomic discovery yields new insight into atrial fibrillation biology"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genome-wide association study of 40,000 individuals identifies two novel loci associated with bipolar disorder"
+    },
+    {
+      "section_type": "REF",
+      "text": "A comprehensive 1,000 Genomes-based genome-wide association meta-analysis of coronary artery disease"
+    },
+    {
+      "section_type": "REF",
+      "text": "Phenotypic refinement of heart failure in a national biobank facilitates genetic discovery"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genome-wide mega-analysis identifies 16 loci and highlights diverse biological mechanisms in the common epilepsies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genome-wide association study of multisite chronic pain in UK Biobank"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genetics of rheumatoid arthritis contributes to biology and drug discovery"
+    },
+    {
+      "section_type": "REF",
+      "text": "Trans-ethnic association study of blood pressure determinants in over 750,000 individuals"
+    },
+    {
+      "section_type": "REF",
+      "text": "The MR-Base platform supports systematic causal inference across the human phenome"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression"
+    },
+    {
+      "section_type": "REF",
+      "text": "Multivariable Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects"
+    },
+    {
+      "section_type": "REF",
+      "text": "Genome-wide association meta-analysis of individuals of European ancestry identifies new loci explaining a substantial fraction of hair color variation and heritability"
+    },
+    {
+      "section_type": "REF",
+      "text": "The use of negative control outcomes in Mendelian randomization to detect potential population stratification"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary data"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary data related to this article can be found at https://doi.org/10.1016/j.ebiom.2023.104674."
+    }
+  ],
+  "fetched_at": "2026-09-06T09:09:51.804135",
+  "pmid": 37399599
+}

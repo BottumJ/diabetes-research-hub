@@ -82,7 +82,7 @@ SWEEP_QUERIES = [
                   'AND (outcome*[tiab] OR graft survival[tiab] OR insulin independence[tiab]) '
                   'AND humans[mh]'),
         'priority': 1,
-        'rationale': 'Gap #3 (GOLD) and Gap #11 (GOLD) depend on current outcome data.',
+        'rationale': 'Gap #3 (GOLD) and Gap #11 (SILVER, demoted 2026-09-08) depend on current outcome data.',
     },
     {
         'key': 'nlrp3_dkd',

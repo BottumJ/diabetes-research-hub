@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-05",
+  "generated": "2026-09-08",
   "readable_floor": 0.5,
   "counts": {
-    "UNGRADEABLE": 3,
-    "PRIMARY_THIN": 4,
+    "UNGRADEABLE": 4,
+    "PRIMARY_THIN": 3,
     "PRIMARY": 5,
     "NO_EVIDENCE": 3
   },
@@ -20,21 +20,21 @@
       "name": "Health Equity in Diabetes",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY_THIN",
-      "note": "published GOLD while 1 of 6 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
+      "note": "published GOLD while 2 of 7 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
     },
     {
       "gap_id": "5",
       "name": "Treg in Diabetic Neuropathy",
       "published_tier": "SILVER",
-      "design_tier": "PRIMARY_THIN",
-      "note": "published SILVER while 2 of 7 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
+      "design_tier": "UNGRADEABLE",
+      "note": "published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong"
     },
     {
       "gap_id": "6",
       "name": "CAR-T Access Barriers",
-      "published_tier": "GOLD",
+      "published_tier": "SILVER",
       "design_tier": "PRIMARY_THIN",
-      "note": "published GOLD while 1 of 8 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
+      "note": "published SILVER while 1 of 8 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
     },
     {
       "gap_id": "7",
@@ -478,17 +478,17 @@
       "name": "Health Equity in Diabetes",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY_THIN",
-      "why": "only 1 of 6 design-readable papers (17%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
-      "papers_total": 11,
-      "papers_primary": 1,
-      "papers_design_readable": 6,
+      "why": "only 2 of 7 design-readable papers (29%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
+      "papers_total": 13,
+      "papers_primary": 2,
+      "papers_design_readable": 7,
       "design_mix": {
         "NARRATIVE": 3,
-        "UNKNOWN": 5,
+        "UNKNOWN": 6,
         "SYNTHESIS": 2,
-        "PRIMARY": 1
+        "PRIMARY": 2
       },
-      "total_findings": 32,
+      "total_findings": 36,
       "papers": [
         {
           "pmid": "40366501",
@@ -621,6 +621,27 @@
             "Review"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "41587834",
+          "kind": "PRIMARY",
+          "title": "Incentives and Equity: A Randomized Controlled Trial to Improve Glycemic Control in Socioeconomically Disadvantaged Patients With Diabetes.",
+          "journal": "Annals of family medicine",
+          "year": "2026",
+          "pubtypes": [
+            "Journal Article",
+            "Randomized Controlled Trial"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "42478360",
+          "kind": "UNKNOWN",
+          "title": "Effects of a \"Food Is Medicine\" Intervention on Glucose Control Among Medicaid-Insured Patients With Type 2 Diabetes: A Randomized Controlled Trial.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
         }
       ]
     },
@@ -628,17 +649,30 @@
       "name": "Insulin Resistance in Islet Transplant",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY",
-      "why": "10 of 14 design-readable papers (71%) report primary data",
-      "papers_total": 21,
-      "papers_primary": 10,
-      "papers_design_readable": 14,
+      "why": "12 of 16 design-readable papers (75%) report primary data",
+      "papers_total": 23,
+      "papers_primary": 12,
+      "papers_design_readable": 16,
       "design_mix": {
+        "PRIMARY": 12,
         "UNKNOWN": 7,
-        "PRIMARY": 10,
         "NARRATIVE": 4
       },
-      "total_findings": 78,
+      "total_findings": 87,
       "papers": [
+        {
+          "pmid": "24085506",
+          "kind": "PRIMARY",
+          "title": "Improvement in insulin sensitivity after human islet transplantation for type 1 diabetes.",
+          "journal": "The Journal of clinical endocrinology and metabolism",
+          "year": "2013",
+          "pubtypes": [
+            "Clinical Trial",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
+          ],
+          "in_cache": true
+        },
         {
           "pmid": "42608595",
           "kind": "UNKNOWN",
@@ -767,6 +801,19 @@
             "Journal Article",
             "Research Support, N.I.H., Extramural",
             "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "24691031",
+          "kind": "PRIMARY",
+          "title": "Insulin sensitivity index in type 1 diabetes and following human islet transplantation: comparison of the minimal model to euglycemic clamp measures.",
+          "journal": "American journal of physiology. Endocrinology and metabolism",
+          "year": "2014",
+          "pubtypes": [
+            "Comparative Study",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
           ],
           "in_cache": true
         },
@@ -923,16 +970,16 @@
       "name": "Drug Repurposing for Islet Transplant",
       "published_tier": "SILVER",
       "design_tier": "PRIMARY",
-      "why": "6 of 9 design-readable papers (67%) report primary data",
-      "papers_total": 14,
-      "papers_primary": 6,
-      "papers_design_readable": 9,
+      "why": "8 of 11 design-readable papers (73%) report primary data",
+      "papers_total": 16,
+      "papers_primary": 8,
+      "papers_design_readable": 11,
       "design_mix": {
         "UNKNOWN": 5,
-        "PRIMARY": 6,
+        "PRIMARY": 8,
         "NARRATIVE": 3
       },
-      "total_findings": 47,
+      "total_findings": 56,
       "papers": [
         {
           "pmid": "23061757",
@@ -998,6 +1045,19 @@
           "in_cache": true
         },
         {
+          "pmid": "24085506",
+          "kind": "PRIMARY",
+          "title": "Improvement in insulin sensitivity after human islet transplantation for type 1 diabetes.",
+          "journal": "The Journal of clinical endocrinology and metabolism",
+          "year": "2013",
+          "pubtypes": [
+            "Clinical Trial",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "37359825",
           "kind": "UNKNOWN",
           "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence in Pa",
@@ -1043,6 +1103,19 @@
           "year": "2012",
           "pubtypes": [
             "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "24691031",
+          "kind": "PRIMARY",
+          "title": "Insulin sensitivity index in type 1 diabetes and following human islet transplantation: comparison of the minimal model to euglycemic clamp measures.",
+          "journal": "American journal of physiology. Endocrinology and metabolism",
+          "year": "2014",
+          "pubtypes": [
+            "Comparative Study",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
           ],
           "in_cache": true
         },
@@ -1119,18 +1192,29 @@
     "5": {
       "name": "Treg in Diabetic Neuropathy",
       "published_tier": "SILVER",
-      "design_tier": "PRIMARY_THIN",
-      "why": "only 2 of 7 design-readable papers (29%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
-      "papers_total": 14,
+      "design_tier": "UNGRADEABLE",
+      "why": "only 7 of 17 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 17,
       "papers_primary": 2,
       "papers_design_readable": 7,
       "design_mix": {
-        "UNKNOWN": 7,
+        "UNKNOWN": 10,
         "NARRATIVE": 5,
         "PRIMARY": 2
       },
-      "total_findings": 50,
+      "total_findings": 63,
       "papers": [
+        {
+          "pmid": "39084449",
+          "kind": "UNKNOWN",
+          "title": "Alleviated diabetic osteoporosis and peripheral neuropathic pain by Rehmannia glutinosa Libosch polysaccharide via increasing regulatory T cells.",
+          "journal": "International journal of biological macromolecules",
+          "year": "2024",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
         {
           "pmid": "21864487",
           "kind": "UNKNOWN",
@@ -1169,6 +1253,17 @@
           "in_cache": true
         },
         {
+          "pmid": "42698953",
+          "kind": "UNKNOWN",
+          "title": "Acid-Responsive Zeolitic Imidazolate Framework-8 Core-Shell Nanovesicles Loaded with Interleukin-2 Nanoplatforms Selectively Expand Regulatory T Cells",
+          "journal": "Biomaterials research",
+          "year": "2026",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "19132915",
           "kind": "NARRATIVE",
           "title": "IL-17 and Th17 Cells.",
@@ -1180,6 +1275,15 @@
             "Review"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "41958676",
+          "kind": "UNKNOWN",
+          "title": "Role of Treg cells in diabetes mellitus and association with traditional Chinese medicine: a literature review.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
         },
         {
           "pmid": "19169263",
@@ -1306,19 +1410,19 @@
     },
     "6": {
       "name": "CAR-T Access Barriers",
-      "published_tier": "GOLD",
+      "published_tier": "SILVER",
       "design_tier": "PRIMARY_THIN",
       "why": "only 1 of 8 design-readable papers (12%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
-      "papers_total": 13,
+      "papers_total": 15,
       "papers_primary": 1,
       "papers_design_readable": 8,
       "design_mix": {
-        "UNKNOWN": 5,
+        "UNKNOWN": 7,
         "NARRATIVE": 6,
         "PRIMARY": 1,
         "NO_RESULTS": 1
       },
-      "total_findings": 35,
+      "total_findings": 38,
       "papers": [
         {
           "pmid": "36109639",
@@ -1433,6 +1537,15 @@
           "in_cache": true
         },
         {
+          "pmid": "42486100",
+          "kind": "UNKNOWN",
+          "title": "Safety and efficacy of low-dose, cord blood-derived CD19 CAR-NK cells with 4-1BB co-stimulation in refractory systemic lupus erythematosus.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
+        },
+        {
           "pmid": "41468096",
           "kind": "UNKNOWN",
           "title": "Antigen-Specific Chimeric Antigen Receptor-T Regulatory Cells Home to Human Islets, Suppress Cytotoxic T Lymphocytes and Reverse Type 1 Diabetes.",
@@ -1465,6 +1578,15 @@
             "Research Support, Non-U.S. Gov't"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "42561661",
+          "kind": "UNKNOWN",
+          "title": "CAR-T cell therapy for autoimmune diseases: from immune suppression to immune resetting.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
         },
         {
           "pmid": "40291594",
@@ -2133,7 +2255,7 @@
     },
     "11": {
       "name": "Islet Transplant Registry Equity",
-      "published_tier": "GOLD",
+      "published_tier": "SILVER",
       "design_tier": "PRIMARY",
       "why": "1 of 1 design-readable papers (100%) report primary data",
       "papers_total": 2,
@@ -2177,15 +2299,15 @@
       "name": "Generic Drug x Diabetes Mechanism Catalog",
       "published_tier": "SILVER",
       "design_tier": "UNGRADEABLE",
-      "why": "only 3 of 7 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 7,
+      "why": "only 3 of 8 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 8,
       "papers_primary": 0,
       "papers_design_readable": 3,
       "design_mix": {
-        "UNKNOWN": 4,
+        "UNKNOWN": 5,
         "NARRATIVE": 3
       },
-      "total_findings": 22,
+      "total_findings": 24,
       "papers": [
         {
           "pmid": "30899369",
@@ -2244,6 +2366,17 @@
           "pubtypes": [
             "Journal Article",
             "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "37399599",
+          "kind": "UNKNOWN",
+          "title": "A genetically supported drug repurposing pipeline for diabetes treatment using electronic health records.",
+          "journal": "EBioMedicine",
+          "year": "2023",
+          "pubtypes": [
+            "Journal Article"
           ],
           "in_cache": true
         },

@@ -449,7 +449,7 @@ html_content = f"""<!DOCTYPE html>
             <div class="context-label">How to Use This</div>
             <p>For transplant programs: benchmarks their patient demographics against registry-wide patterns. For policymakers: provides evidence for expanding transplant access criteria and funding. For equity researchers: quantifies the gap between transplant candidacy and actual access.</p>
             <div class="context-label">What This Cannot Tell You</div>
-            <p>GOLD tier (3+ independent sources), but registry data has inherent selection bias — it captures who was transplanted, not who was eligible but denied. Geographic coverage is limited to registries that publish demographic data. Insurance and socioeconomic access barriers are estimated, not directly measured.</p>
+            <p>SILVER tier. Registry data has inherent selection bias — it captures who was transplanted, not who was eligible but denied. Geographic coverage is limited to registries that publish demographic data. Insurance and socioeconomic access barriers are estimated, not directly measured. <strong>Most importantly: as of 2026-09-08 a bounded PubMed search for (&ldquo;Collaborative Islet Transplant Registry&rdquo; OR islet transplant registry) AND (disparity OR equity OR racial OR ethnic OR socioeconomic OR access) returns 0 records.</strong> No peer-reviewed analysis of equity in islet transplant registry data has been published. That absence is the gap; it also means the demographic figures below rest on registry reports rather than on a peer-reviewed equity study.</p>
         </div>
 
         <div class="tabs">
@@ -596,7 +596,7 @@ html_content = f"""<!DOCTYPE html>
                     <div class="bar">
                         <div class="bar-label">Recipients: White</div>
                         <div class="bar-track">
-                            <div class="bar-fill" style="width: 85%;">85% <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank" style="color:#ffffff;font-size:0.7em;">PMID:19104422</a></div>
+                            <div class="bar-fill" style="width: 85%;">85% <span style="color:#ffffff;font-size:0.7em;">[UNSOURCED]</span></div>
                         </div>
                     </div>
                     <div class="bar red">
@@ -631,7 +631,14 @@ html_content = f"""<!DOCTYPE html>
                     </div>
                 </div>
 
-                <div class="source">Source: CITR demographic data; CDC/ADA T1D epidemiology</div>
+                <div class="source" style="border-left:3px solid #8b2500;padding-left:10px;">
+                  <strong>UNSOURCED &mdash; corrected 2026-09-08.</strong> Every figure in this racial/ethnic block (85% / 62% / 5% / 18% / 5% / 20%) is carried without a verifiable citation.
+                  The &ldquo;85% White recipients&rdquo; bar previously linked to PMID 19104422 (Alejandro et al., <em>Transplantation</em> 2008;86(12):1783-8). That paper's abstract reports
+                  n=325 recipients, 649 infusions and 712 donors, and reports <em>no</em> racial or ethnic breakdown &mdash; it does not support the number it was attached to, so the link has been removed.
+                  The comparator T1D-population figures never carried a citation at all.
+                  Do not cite these bars. A citable replacement requires the recipient-characteristics table of a CITR Allograft Report
+                  (<a href="https://www.citregistry.org/" target="_blank">citregistry.org</a>, non-peer-reviewed) read directly and transcribed with its denominator and reporting year.
+                </div>
             </div>
 
             <h3>Clinical and Socioeconomic Characteristics</h3>
@@ -779,8 +786,14 @@ html_content = f"""<!DOCTYPE html>
             <h2>Evidence Catalog</h2>
 
             <div class="evidence-item">
-                <div class="evidence-title">CITR Annual Reports (2000-2024)</div>
-                <div class="evidence-desc">Comprehensive data on 1,477 transplant recipients. Primary source for U.S. islet transplant outcomes, demographics, and centers. Published biennially in American Journal of Transplantation. Barton et al. An update on results of the International Islet Transplant Registry. <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank">PMID:19104422</a></div>
+                <div class="evidence-title">CITR Allograft Reports (registry publication, NOT peer-reviewed)</div>
+                <div class="evidence-desc">The 12th CITR Allograft Report (2025) covers 1,477 recipients of allogeneic islet transplantation, 1999&ndash;2023, across 40 centres. It is a registry PDF published by the CITR Coordinating Center at <a href="https://www.citregistry.org/" target="_blank">citregistry.org</a> &mdash; it has no PMID and has not been peer reviewed. Treat it as a primary data source of registry-report grade, below peer-reviewed literature.</div>
+            </div>
+
+            <div class="evidence-item">
+                <div class="evidence-title">2008 Update from the Collaborative Islet Transplant Registry</div>
+                <div class="evidence-desc">Alejandro R, Barton FB, Hering BJ, Wease S. <em>Transplantation</em> 2008 Dec 27;86(12):1783-8. As of April 2008: 325 adult recipients, 649 islet infusions, 712 donors. At 3 years post-first-infusion 23% of islet-alone recipients were insulin independent. Reports efficacy and safety outcomes; reports no recipient race or ethnicity breakdown. <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank">PMID:19104422</a>
+                <br><span style="color:#8b2500;"><strong>Correction 2026-09-08:</strong> this entry previously described PMID 19104422 as covering 1,477 recipients and as &ldquo;Barton et al. An update on results of the International Islet Transplant Registry,&rdquo; published biennially in the <em>American Journal of Transplantation</em>. All four of those details were wrong &mdash; wrong author, wrong title, wrong journal, wrong denominator. The 1,477 figure belongs to the CITR Allograft Report above.</span></div>
             </div>
 
             <div class="evidence-item">
