@@ -58,10 +58,17 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
+# NOTE (fixed on first execution, 2026-09-16): `RC=$?` after a pipeline captures
+# the status of the LAST element - here `grep`, which exits 1 when it filters out
+# every line, i.e. exactly when the commit was clean. The script's own first run
+# committed successfully and then reported "COMMIT FAILED". Read git's status
+# directly instead of the pipeline's.
 git -c user.name="Diabetes Research Agent" \
     -c user.email="justin.bottum@gmail.com" \
-    commit -q -m "$MSG" 2>&1 | grep -v "unable to unlink"
+    commit -q -m "$MSG" > /tmp/_sgc_out 2>&1
 RC=$?
+grep -v "unable to unlink" /tmp/_sgc_out | head -20
+rm -f /tmp/_sgc_out
 
 rm -f "$ALT"
 
