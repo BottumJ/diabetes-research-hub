@@ -895,16 +895,36 @@ html_content += """            </div>
     <div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
       <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
         <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Corpus Methodology &amp; References</h3>
+        <!-- WITHDRAWN 2026-09-10, during the PMID:32175717 sweep. ALL FIVE citations in this
+             block were false. None is a text-mining, bibliometric or systematic-review methods
+             paper; every one is a clinical or health-economics paper from this corpus, attached
+             to a method it has nothing to do with:
+               29710129 = Hernandez et al., "Total Costs of Chimeric Antigen Receptor T-Cell
+                          Immunotherapy", JAMA Oncol 2018 - cited for "co-occurrence analysis
+                          methodology adapted from biomedical text mining approaches".
+               34763823 = Herman & Kuo, "100 years of Insulin: Why is Insulin So Expensive",
+                          Endocrinol Metab Clin North Am 2021 - cited for "systematic review
+                          principles".
+               37909353 = "Economic Costs of Diabetes in the U.S. in 2022", Diabetes Care 2024 -
+                          same.
+               32175717 = Khan MAB et al., J Epidemiol Glob Health 2020 - a GBD analysis of T2D
+                          prevalence, and not a systematic review - same.
+               37105208 = "Association between primary graft function and 5-year outcomes of islet
+                          allogeneic transplantation...", Lancet Diabetes Endocrinol 2023, a CITR
+                          cohort study - cited for "term frequency and network analysis".
+             The same three cost papers decorate the identical block in build_statistical_analysis.py
+             and build_repurposing_dashboard_v2.py, both withdrawn on the same date. The pattern is
+             not a bad PMID; it is methodology sections being filled with whatever PMIDs were to
+             hand. Replaced with a plain description of what the pipeline actually does. -->
         <p style="font-size:12px;color:#636363;line-height:1.7;">
           Corpus assembled from PubMed and PubMed Central using domain-specific search queries across 35 diabetes research areas.
-          Co-occurrence analysis methodology adapted from biomedical text mining approaches
-          (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>).
-          Gap identification informed by systematic review principles
-          (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
-           <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>;
-           <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
-          Term frequency and network analysis used to identify underexplored research intersections
-          (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a>).
+          Co-occurrence, term-frequency and network analysis are performed by this repository's own
+          scripts over that corpus; no external methodological source is used, and the outputs are
+          descriptive rather than inferential.
+          <strong>Withdrawn 2026-09-10:</strong> this section previously cited five papers as its
+          methodological basis. On audit all five were clinical or health-economics papers from the
+          corpus itself, unrelated to the methods they were attached to, and none had informed the
+          pipeline. They were removed rather than replaced.
         </p>
       </div>
     </div>

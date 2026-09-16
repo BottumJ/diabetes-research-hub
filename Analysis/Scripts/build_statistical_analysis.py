@@ -1060,16 +1060,39 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
 <div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Statistical Methodology References</h3>
+    <!-- WITHDRAWN 2026-09-10. This block was audited while sweeping PMID:32175717 and FOUR OF ITS
+         FIVE CITATIONS WERE FALSE. Every false one is a health-economics or cost paper being cited
+         as statistical methodology - they are unrelated to the methods they were attached to:
+           - "DerSimonian-Laird estimators (PMID:29710129)" -> 29710129 is Hernandez et al.,
+             "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy", JAMA Oncol 2018.
+             A CAR-T cost analysis. It is not a meta-analysis methods paper.
+           - "HbA1c reduction effect sizes pooled from multi-center trials (PMID:34763823;
+             PMID:37909353)" -> 34763823 is Herman & Kuo, "100 years of Insulin: Why is Insulin So
+             Expensive", Endocrinol Metab Clin North Am 2021, a review of insulin PRICING;
+             37909353 is "Economic Costs of Diabetes in the U.S. in 2022", Diabetes Care 2024.
+             Neither pools HbA1c effect sizes; neither reports HbA1c outcomes at all.
+           - "Bayesian pathway synthesis priors informed by systematic review evidence
+             (PMID:32175717)" -> 32175717 is Khan MAB et al., J Epidemiol Glob Health 2020, a
+             Global Burden of Disease analysis of T2D prevalence. It is not a systematic review
+             and it did not inform any prior on this page; statistical_analysis.py sets the prior
+             from data_point_count and PMID count, which is recorded in the 2026-08-29 queue item.
+         The fifth (PMID:23248199, ACTION LADA) is topically real and is retained below.
+         The block is replaced rather than re-cited because the honest statement is that this
+         page's methods are not drawn from external methodological sources. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Random-effects meta-analysis methodology following DerSimonian-Laird estimators
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>).
-      HbA1c reduction effect sizes pooled from multi-center trials
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>).
-      Bayesian pathway synthesis priors informed by systematic review evidence
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
-      Monte Carlo sensitivity analysis parameters derived from LADA screening model
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">PMID 23248199</a> &mdash; ACTION LADA study).
+      <strong>Withdrawn 2026-09-10.</strong> This section previously listed four external papers as
+      the methodological basis for the statistics on this page. On audit, all four were
+      health-economics or cost-of-illness papers with no connection to the methods they were
+      attached to, and none of them informed any calculation here. They have been removed rather
+      than replaced, because the accurate statement is that the pooling and the Bayesian prior on
+      this page are computed by <code>statistical_analysis.py</code> from this repository's own
+      corpus counts &mdash; specifically from data-point counts and PMID counts per path &mdash; and
+      not from any external methodological source. The prior's known limitation (it does not encode
+      study design; 62.3% of comparable ordered pairs are discordant with design, measured
+      2026-08-29) is disclosed above the ranking on this page.
+      The one retained citation is
+      <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">PMID 23248199</a>
+      (ACTION LADA), which supplies the LADA prevalence input to the screening model.
     </p>
   </div>
 </div>

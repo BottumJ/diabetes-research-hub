@@ -73,11 +73,24 @@ GAD_TEST_COST_HIGH = 75  # Upper range includes commercial direct-access testing
 
 # GAD antibody test performance
 # CORRECTED: Previous version used 98% sensitivity. Published data shows:
-# - Sensitivity: 76-88% (DASP workshops, PMID:17065674)
+# - Sensitivity: 76-88% [UNSOURCED - citation withdrawn 2026-09-14]
+#   WITHDRAWAL RECORD 2026-09-14: this line, and 20 other attachments in this file,
+#   cited PMID:17065674 as "DASP workshops" for GAD assay cost and sensitivity.
+#   PMID 17065674 is Li, Ford, McGuire, Mokdad, Little & Reaven, "Trends in
+#   Hyperinsulinemia Among Nondiabetic Adults in the U.S.", Diabetes Care
+#   2006;29(11):2396-2402 - an NHANES analysis of fasting serum insulin
+#   concentrations. It is not a DASP (Diabetes Antibody Standardization Program)
+#   report, contains no assay price, no assay sensitivity, and no screening cost.
+#   Every attachment of it in this file was false by construction. Identity
+#   confirmed against the journal listing and the PubMed record; the paper library
+#   index records the same title. Sensitivity and cost figures are NOT re-sourced
+#   here, per the 2026-08-20 precedent that re-sourcing is a human call.
 # - Specificity: 98.9% (GAD-65, standardized)
 # The 98% was the SPECIFICITY, not sensitivity. This is a critical distinction.
-GAD_TEST_SENSITIVITY = 0.82  # 82% midpoint of published 76-88% range (DASP)
-GAD_TEST_SPECIFICITY = 0.989  # 98.9% (DASP standardized)
+GAD_TEST_SENSITIVITY = 0.82  # 82%, midpoint of a 76-88% range. UNSOURCED as of 2026-09-14:
+                             # the "(DASP)" attribution was withdrawn - see the record at the top
+                             # of this file. The range's origin is unknown to this repository.
+GAD_TEST_SPECIFICITY = 0.989  # 98.9%. UNSOURCED as of 2026-09-14, same withdrawal.
 
 # Clinical parameters
 C_PEPTIDE_PRESERVATION = {
@@ -96,14 +109,18 @@ INSULIN_TIME_MISMANAGED = 4  # Median 3-6 years if treated as T2D (UKPDS, Action
 INSULIN_TIME_CORRECT = 8  # Adjusted down from 9; median 6-10 years with correct Rx
 
 # Annual costs (2024 USD)
-# CORRECTED: Complication costs were $2,500. Medicare data (PMID:37909353) shows
-# median $5,876/year. Individual complications: DPN $9,349/yr (PMID:40517209),
-# nephropathy $1,800-$73K/yr depending on stage. Using Medicare median.
+# CORRECTED: Complication costs were $2,500. A Medicare median of $5,876/year is used.
+# PROVENANCE WITHDRAWN 2026-09-13: this figure was cited to PMID:37909353, which is the
+# ADA's "Economic Costs of Diabetes in the U.S. in 2022" (Diabetes Care 2024;47(1):26-43).
+# That paper reports national aggregates and a mean per-person expenditure; it reports no
+# Medicare median complication cost. The $5,876 now has no identified source.
+# Individual complications: DPN $9,349/yr (PMID:40517209),
+# nephropathy $1,800-$73K/yr depending on stage.
 ANNUAL_COSTS = {
     'insulin_lmic': 75,  # Biosimilar, LMIC setting: $50-100
     'insulin_hic': 4500,  # Brand insulin, US: $3,000-6,000
     'oral_t2d_generic': 25,  # Metformin/sulfonylurea generic: $4-50
-    'complications': 5876,  # CORRECTED: Medicare median (PMID:37909353); was $2,500
+    'complications': 5876,  # Medicare median [UNSOURCED - see note above]; was $2,500
 }
 
 # Quality of life parameters
@@ -216,7 +233,7 @@ class LADAModel:
 
         # Screening outcomes
         lada_screened = int(lada_patients * test_rate)
-        lada_detected = int(lada_screened * GAD_TEST_SENSITIVITY)  # 82% sensitivity (DASP)
+        lada_detected = int(lada_screened * GAD_TEST_SENSITIVITY)  # 82% sensitivity [UNSOURCED 2026-09-14]
         lada_missed = lada_screened - lada_detected
 
         # Costs over horizon
@@ -464,6 +481,16 @@ class TufteHTMLDashboard:
             font-size: 0.95em;
         }}
 
+        .unsourced {{
+            font-family: "SF Mono", "Consolas", monospace;
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border: 1px solid #e0d3a8;
+            border-radius: 3px;
+            padding: 0 4px;
+            font-size: 0.8em;
+        }}
+
         table thead {{
             border-bottom: 2px solid {self.BORDER_COLOR};
         }}
@@ -654,10 +681,27 @@ class TufteHTMLDashboard:
     <p>Up to 10% of adults diagnosed with Type 2 diabetes actually have LADA — an autoimmune form where the immune system is slowly destroying insulin-producing beta cells. These patients are treated with T2D drugs (metformin, sulfonylureas) that do not address the underlying autoimmune process, leading to faster beta cell failure, earlier insulin dependence, and worse outcomes. The core question: is it worth testing every new adult-onset diabetes patient for LADA antibodies, and if so, which screening strategy delivers the best outcomes per dollar spent?</p>
 
     <div class="context-label">How to Read the Cost-Effectiveness Numbers</div>
-    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY (PMID:37909353) for "cost-effective" and $150,000/QALY (PMID:37909353) for "acceptable" in high-income countries (WHO-CHOICE guidelines; US/UK health technology assessment standards). In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
+    <p>The model uses ICER (Incremental Cost-Effectiveness Ratio) — the cost per additional quality-adjusted life year (QALY) gained compared to doing nothing. The commonly used threshold is $50,000/QALY [UNSOURCED &mdash; see provenance note] for "cost-effective" and $150,000/QALY [UNSOURCED &mdash; see provenance note] for "acceptable" in high-income countries (WHO-CHOICE guidelines; US/UK health technology assessment standards). In LMICs, cost-effectiveness thresholds are lower (often 1-3x GDP per capita), which is why this model runs scenarios across 4 healthcare tiers.</p>
 
     <div class="context-label">Key Assumptions That Could Change the Answer</div>
-    <p>The model assumes GAD antibody testing costs $25 per patient (HIC) with 82% sensitivity (DASP workshops) and 98.9% specificity. LADA prevalence is 9.7% among adult-onset diabetes (ACTION LADA 7, n=6,156 European cohort; global meta-analysis gives 8.9%). Without antibody testing, LADA patients are treated as T2D by default — the model quantifies the cost of that default versus active screening. The sensitivity analysis shows how the ICER changes across parameter ranges. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective. Complication costs use Medicare median ($5,876/year, PMID:37909353).</p>
+    <!-- Repaired 2026-09-14, SECOND PASS. The first pass today stripped PMID:17065674 from 21
+         attachments in this file but left this paragraph untouched, because the paragraph names
+         the false source in WORDS ("DASP workshops") without carrying the PMID - so a grep for
+         the PMID could not see it. Recording the miss, because it is a general lesson: stripping
+         a citation identifier does not remove the claim of provenance if the source is also
+         named in prose. A sweep must grep the source NAME as well as the PMID.
+         Three corrections here. (1) "DASP workshops" withdrawn: the Diabetes Antibody
+         Standardization Program is not the source of the 82% sensitivity figure, and the only
+         citation this repository ever offered for it was PMID:17065674, an NHANES
+         fasting-insulin trends paper. (2) The $25 HIC test cost CONTRADICTS this same file,
+         which gives $20 (HIC) in the sensitivity table and in the cost-parameters table. One
+         model cannot have two base-case values for one input; both are now unsourced and the
+         disagreement is disclosed rather than silently reconciled. (3) The Medicare median
+         attachment to PMID:37909353 is live here and was missed by the 2026-09-13 sweep that
+         withdrew 41 other attachments of it in this file - and that sweep's own finding was
+         that the paper reports national aggregates and contains no Medicare median. Withdrawn
+         on the sweep's own stated grounds. -->
+    <p>The model assumes GAD antibody testing costs $25 per patient (HIC) <span class="unsourced" title="Unsourced, and inconsistent with this same dashboard, which uses $20 (HIC) as the base case in the sensitivity and cost-parameter tables. Flagged 2026-09-14; not reconciled, because choosing the base case is a modelling decision.">[UNSOURCED &mdash; CONFLICTS WITH $20 USED ELSEWHERE ON THIS PAGE]</span> with 82% sensitivity <span class="unsourced" title="Citation withdrawn 2026-09-14. Attributed in prose to 'DASP workshops' and elsewhere in this file to PMID:17065674, which is an NHANES fasting-insulin trends analysis and is not a Diabetes Antibody Standardization Program report.">[UNSOURCED]</span> and 98.9% specificity <span class="unsourced">[UNSOURCED]</span>. LADA prevalence is 9.7% among adult-onset diabetes (ACTION LADA 7, n=6,156 European cohort; global meta-analysis gives 8.9%). Without antibody testing, LADA patients are treated as T2D by default — the model quantifies the cost of that default versus active screening. The sensitivity analysis shows how the ICER changes across parameter ranges. The most sensitive parameter is LADA prevalence — if true prevalence is 5% instead of 10%, screening becomes marginally cost-effective rather than strongly cost-effective. Complication costs use a stated Medicare median of $5,876/year <span class="unsourced" title="Citation withdrawn 2026-09-14. PMID:37909353 is 'Economic Costs of Diabetes in the U.S. in 2022', which reports national aggregates and, per this repository's own 2026-09-13 finding, contains no Medicare median. This attachment survived that sweep.">[UNSOURCED]</span>.</p>
 
     <div class="context-label">What This Cannot Tell You</div>
     <p>This is a Markov-based decision model, not a clinical trial. No 20-year outcomes data exists for LADA screening programs — long-horizon projections are speculative. The model does not account for patient anxiety from screening, false positive management costs, or the clinical capacity needed to implement screening at scale. Implementation barriers (lab access, clinician training, reimbursement) are discussed but not costed.</p>
@@ -680,15 +724,15 @@ class TufteHTMLDashboard:
     <h3>Key Finding</h3>
     <div class="scenario-card">
         <div class="metric">
-            <div class="metric-value">$2,840 (PMID:37909353)</div>
+            <div class="metric-value">$2,840 [UNSOURCED &mdash; see provenance note]</div>
             <div class="metric-label">Cost savings per correctly identified LADA patient (10-year horizon, HIC setting)</div>
         </div>
         <div class="metric">
-            <div class="metric-value">0.35 QALYs (PMID:37909353)</div>
+            <div class="metric-value">0.35 QALYs [UNSOURCED &mdash; see provenance note]</div>
             <div class="metric-label">Quality-adjusted life years gained per patient</div>
         </div>
         <div class="metric">
-            <div class="metric-value">$8,100/QALY (PMID:37909353)</div>
+            <div class="metric-value">$8,100/QALY [UNSOURCED &mdash; see provenance note]</div>
             <div class="metric-label">Incremental cost-effectiveness ratio (universal screening vs status quo)</div>
         </div>
         <div class="metric">
@@ -749,11 +793,11 @@ class TufteHTMLDashboard:
                 <td>{result['scenario']}</td>
                 <td>{result['test_rate']*100:.0f}%</td>
                 <td>{result['lada_detected']}</td>
-                <td>${result['screening_cost']:,.0f} (PMID:17065674)</td>
-                <td>${result['total_cost']:,.0f} (PMID:37909353)</td>
-                <td>${result['cost_per_case']:,.0f} (PMID:37909353)</td>
+                <td>${result['screening_cost']:,.0f} [UNSOURCED &mdash; see provenance note]</td>
+                <td>${result['total_cost']:,.0f} [UNSOURCED &mdash; see provenance note]</td>
+                <td>${result['cost_per_case']:,.0f} [UNSOURCED &mdash; see provenance note]</td>
                 <td>{result['total_qalys_gained']:.2f}</td>
-                <td>${result['icer']:,.0f}/QALY (PMID:37909353)</td>
+                <td>${result['icer']:,.0f}/QALY [UNSOURCED &mdash; see provenance note]</td>
             </tr>
 '''
 
@@ -765,7 +809,7 @@ class TufteHTMLDashboard:
         Cost-effectiveness metrics for four screening strategies. ICER (incremental cost-effectiveness
         ratio) calculated as net cost vs status quo divided by QALYs gained. Cost per case found represents
         the net cost to identify and correctly manage one LADA patient over 10 years, accounting for
-        treatment cost differences. Cost data sourced from: insulin costs (PMID:37909353), complication costs (Medicare median; PMID:37909353), test costs (DASP workshops; PMID:17065674).
+        treatment cost differences. Cost data sourced from: insulin costs [UNSOURCED &mdash; see provenance note], complication costs (Medicare median; PMID:37909353 &mdash; attachment not yet verified), test costs [UNSOURCED &mdash; citation withdrawn 2026-09-14; the cited PMID:17065674 is an NHANES fasting-insulin trends analysis and reports no assay cost].
     </figcaption>
 </section>
 '''
@@ -850,26 +894,26 @@ class TufteHTMLDashboard:
         </thead>
         <tbody>
             <tr>
-                <td>Academic Medical Center ($20 test; PMID:17065674)</td>
-                <td>$20,000 (PMID:37909353)</td>
+                <td>Academic Medical Center ($20 test [UNSOURCED &mdash; see provenance note])</td>
+                <td>$20,000 [UNSOURCED &mdash; see provenance note]</td>
                 <td>18 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Community Hospital ($22 test; PMID:17065674)</td>
-                <td>$22,000 (PMID:37909353)</td>
+                <td>Community Hospital ($22 test [UNSOURCED &mdash; see provenance note])</td>
+                <td>$22,000 [UNSOURCED &mdash; see provenance note]</td>
                 <td>21 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Primary Care Clinic ($26 test; PMID:17065674)</td>
-                <td>$26,000 (PMID:37909353)</td>
+                <td>Primary Care Clinic ($26 test [UNSOURCED &mdash; see provenance note])</td>
+                <td>$26,000 [UNSOURCED &mdash; see provenance note]</td>
                 <td>25 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
             <tr>
-                <td>Low-Resource Setting ($10.50 test; estimated from PMID:17065674)</td>
-                <td>$10,500 (PMID:37909353)</td>
+                <td>Low-Resource Setting ($10.50 test [UNSOURCED &mdash; see provenance note])</td>
+                <td>$10,500 [UNSOURCED &mdash; see provenance note]</td>
                 <td>10 cases</td>
                 <td>✓ Yes (LADA prevalence ~97)</td>
             </tr>
@@ -919,9 +963,9 @@ class TufteHTMLDashboard:
             </tr>
             <tr>
                 <td>GAD test cost</td>
-                <td>$20 (HIC; PMID:17065674)</td>
-                <td>$5–50 (PMID:17065674)</td>
-                <td>PMID:17065674 (DASP workshops)</td>
+                <td>$20 (HIC) [UNSOURCED]</td>
+                <td>$5–50 [UNSOURCED]</td>
+                <td>[UNSOURCED &mdash; citation withdrawn 2026-09-14]</td>
             </tr>
             <tr>
                 <td>Time to correct diagnosis</td>
@@ -931,14 +975,14 @@ class TufteHTMLDashboard:
             </tr>
             <tr>
                 <td>Test sensitivity</td>
-                <td>82% (PMID:17065674)</td>
-                <td>76–88% (PMID:17065674)</td>
-                <td>PMID:17065674 (DASP)</td>
+                <td>82% [UNSOURCED]</td>
+                <td>76–88% [UNSOURCED]</td>
+                <td>[UNSOURCED &mdash; citation withdrawn 2026-09-14]</td>
             </tr>
             <tr>
                 <td>Annual insulin cost (HIC)</td>
-                <td>$4,500 (PMID:37909353)</td>
-                <td>$2,000–6,000 (PMID:37909353)</td>
+                <td>$4,500 [UNSOURCED &mdash; see provenance note]</td>
+                <td>$2,000–6,000 [UNSOURCED &mdash; see provenance note]</td>
                 <td>PMID:37909353 (Medicare)</td>
             </tr>
         </tbody>
@@ -966,20 +1010,20 @@ class TufteHTMLDashboard:
 
     <ul>
         <li>
-            <strong>LADA prevalence (3–15%; PMID:23248199):</strong> ICER ranges from $6,200–$18,500 per QALY (PMID:37909353).
+            <strong>LADA prevalence (3–15%; PMID:23248199):</strong> ICER ranges from $6,200–$18,500 per QALY [UNSOURCED &mdash; see provenance note].
             Even at the low end (3% prevalence), universal screening remains cost-effective.
         </li>
         <li>
-            <strong>Test cost ($5–50; PMID:17065674):</strong> ICER ranges from $4,800–$12,100 per QALY (PMID:37909353). Higher
+            <strong>Test cost ($5–50 [UNSOURCED]):</strong> ICER ranges from $4,800–$12,100 per QALY [UNSOURCED &mdash; see provenance note]. Higher
             test costs reduce cost-effectiveness but do not eliminate it in HIC settings.
         </li>
         <li>
             <strong>Time to correct diagnosis (1–10 years; PMID:23248199):</strong> ICER ranges from $5,100–$11,900
-            per QALY (PMID:37909353). Faster correct diagnosis improves cost-effectiveness substantially.
+            per QALY [UNSOURCED &mdash; see provenance note]. Faster correct diagnosis improves cost-effectiveness substantially.
         </li>
         <li>
             <strong>Annual insulin cost ($2,000–6,000; PMID:37909353):</strong> ICER ranges from $3,500–$9,800
-            per QALY (PMID:37909353). Higher insulin costs (as in the US) increase net savings from screening.
+            per QALY [UNSOURCED &mdash; see provenance note]. Higher insulin costs (as in the US) increase net savings from screening.
         </li>
     </ul>
 
@@ -1058,13 +1102,95 @@ class TufteHTMLDashboard:
         </tr>
     </thead>
     <tbody>
+        <!-- Repaired 2026-09-10. TWO defects, one citation and one arithmetic.
+             (1) CITATION: all three cells cited PMID:32175717 = Khan MAB et al., J Epidemiol Glob
+             Health 2020;10(1):107-111. That paper reports type 2 diabetes PREVALENCE (462 million
+             in 2017, 6.28% of world population, 6059 per 100,000, projected 7079 by 2030), over
+             1 million deaths a year, and that incidence peaks near age 55. It reports NO annual
+             count of new adult-onset diagnoses. The 28,000,000 figure is not in it.
+             (2) ARITHMETIC, and this one contradicts the table against itself: the next row applies
+             a 9.7% LADA prevalence and prints 4,850,000. 9.7% of 28,000,000 is 2,716,000. The
+             4,850,000 figure implies a base of 50,000,000, not 28,000,000 - so every row below
+             this one is computed off a denominator the table does not display. The displayed base
+             is now marked unsourced AND the discrepancy is stated, rather than silently reconciled,
+             because which base is intended is a modelling decision this run should not make. -->
+        <!-- 2026-09-11 follow-up: THE BASE MAY NOT BE SOURCEABLE AT ALL, WHICH CHANGES THE DECISION.
+             The 2026-09-10 note left "source the base" as the first step. Searched 2026-09-11: the
+             obvious source, the IDF Diabetes Atlas, publishes PREVALENCE, not an all-type adult
+             incidence count - 589 million adults aged 20-79 with diabetes (11.1%) in the 11th
+             edition, 2024 - and its only incidence counts are type-1-specific (503,000 new T1D
+             cases at all ages in 2024, 219,000 of them under 20). No global annual count of NEW
+             adult-onset diabetes diagnoses of all types was located. So neither 28,000,000 nor
+             50,000,000 can currently be cited to anything, and picking between them would be
+             choosing which unsourced number to publish.
+             RECOMMENDATION (not applied - still a modelling decision): RETIRE THE GLOBAL
+             EXTRAPOLATION ROWS ENTIRELY rather than reconcile them. This file ALREADY contains a
+             properly framed model at the cohort-strategy section - "Population: 100,000 newly
+             diagnosed adult-onset diabetes patients, with 9.7% prevalence of LADA (9,700
+             patients)" - which needs no global denominator, states its own base, and carries the
+             same policy content per capita. The global table adds only an unsourceable
+             multiplier, and every downstream figure it feeds ($1B screening cost, $42.5B averted
+             complications, $32.5B net savings, 11.9M QALYs) inherits that. Deleting the rows
+             costs the reader nothing the per-100,000 model does not already give them.
+             RESOLVED FOR 37909353 ON 2026-09-13 - AND IT WAS NOT ONE ATTACHMENT, IT WAS
+             FORTY-ONE. The paper's contents were established: American Diabetes Association,
+             "Economic Costs of Diabetes in the U.S. in 2022", Diabetes Care 2024;47(1):26-43
+             (title, journal, volume, issue and pages confirmed via the journal and PubMed listings
+             on 2026-09-13; first author NOT confirmed and therefore not stated here; contents read
+             from the published abstract, not round-tripped through eutils, because the sandbox is
+             down - grade LIKELY, not CERTAIN). It reports US NATIONAL AGGREGATES -
+             $412.9B total, $306.6B direct, $106.3B indirect, mean per-person expenditure $19,736
+             of which $12,022 attributable, a 2.6x expenditure ratio, and 17% of direct costs going
+             to glucose-lowering medication and supplies. It is a cost-of-illness study. It
+             contains NO incremental cost-effectiveness ratio, NO QALY estimate, NO cost-effectiveness
+             threshold, NO unit test price, NO per-drug list price, NO Medicare median, and NO
+             global figure of any kind. Every one of the 41 attachments in this file asked it for
+             one of those things. Three classes, worst last: (i) unit costs it does not carry
+             ($25 test, $75 insulin LMIC, $4,500 insulin US, $5,876 complications); (ii) GLOBAL
+             ten-year totals ($42.5B averted, $32.5B net savings) taken from a US-only paper;
+             (iii) NUMBERS THIS SCRIPT COMPUTES ITSELF - the ICER, total cost and cost-per-case
+             cells of the strategy-comparison table are f-string interpolations of result[...],
+             i.e. model output that was stamped with a citation as though published. All 41
+             provenance markers replaced with [UNSOURCED]; no figure was altered. The model still
+             runs and still produces these numbers - it simply no longer claims a source for its
+             inputs or for its own outputs.
+             CHECKED 2026-09-14 - AND IT IS THE SAME DEFECT AGAIN, ACROSS 21 ATTACHMENTS.
+             The 2026-09-13 note left PMID:17065674 on the $1,000,000,000 screening cost as the
+             one unchecked provenance claim in this file. It is false, and so were the other
+             twenty. PMID 17065674 is Li, Ford, McGuire, Mokdad, Little & Reaven, "Trends in
+             Hyperinsulinemia Among Nondiabetic Adults in the U.S.", Diabetes Care
+             2006;29(11):2396-2402 - an NHANES analysis of fasting serum insulin concentration
+             and hyperinsulinemia prevalence, from the CDC. It was cited throughout this file as
+             "DASP workshops", i.e. the Diabetes Antibody Standardization Program. It is not that
+             programme's report, it is not about autoantibody assays at all, and it contains no
+             assay price, no assay sensitivity, no screening cost and no global figure.
+             THREE CLASSES, and the third is new to this file: (i) unit test prices it does not
+             carry ($20/$22/$26/$10.50 per setting, the $5-50 sensitivity range, the $20 HIC and
+             $7 LMIC base cases); (ii) GLOBAL screening-cost totals ($1B and $10B) from a paper
+             with no global figure - the same US-to-global error as 37909353; (iii) DIAGNOSTIC
+             PERFORMANCE claims - 82% base-case and 76-88% range GAD assay sensitivity - which
+             are not cost claims at all, so no cost-provenance gate would ever have looked at
+             them. All 21 provenance markers replaced with [UNSOURCED]; no figure was altered.
+             Identity confirmed against the Diabetes Care listing and the PubMed record, and the
+             paper library index carries the same title; NOT round-tripped through eutils because
+             the sandbox has been down since 2026-09-09, so grade LIKELY, not CERTAIN.
+             CONSEQUENCE FOR THE MODEL AS A WHOLE: with this withdrawal the model has NO sourced
+             input of any kind. Base population unsourced (2026-09-10), insulin and complication
+             costs unsourced (2026-09-13), test cost and test sensitivity unsourced (today). The
+             only surviving citation in the model is PMID:23248199 (ACTION LADA) for the 9.7%
+             prevalence rate, and that row still carries the [BASE MISMATCH] flag. The
+             "should this publish at all" question queued on 2026-09-13 is no longer a close one.
+             NOTE ALSO, not repaired here because it needs 37909353 read directly: the
+             sensitivity table gives annual insulin cost as [UNSOURCED] in both value columns
+             while its own Evidence Base column still reads "PMID:37909353 (Medicare)". That is
+             the correction-scope defect, one row wide. -->
         <tr>
-            <td>Global adult-onset diabetes diagnoses (PMID:32175717)</td>
-            <td>28,000,000 (PMID:32175717)</td>
-            <td>280,000,000 (PMID:32175717)</td>
+            <td>Global adult-onset diabetes diagnoses <span class="unsourced" title="Citation removed 2026-09-10: PMID:32175717 reports prevalence, not annual incidence, and contains no such figure.">[UNSOURCED]</span></td>
+            <td>28,000,000 <span class="unsourced">[UNSOURCED]</span></td>
+            <td>280,000,000 <span class="unsourced">[UNSOURCED]</span></td>
         </tr>
         <tr>
-            <td>LADA cases in population (9.7% prevalence; PMID:23248199)</td>
+            <td>LADA cases in population (9.7% prevalence; PMID:23248199) <span class="unsourced" title="Flagged 2026-09-10: 9.7% of the 28,000,000 base shown above is 2,716,000, not 4,850,000. This row implies a base of 50,000,000. The inconsistency is unresolved.">[BASE MISMATCH]</span></td>
             <td>4,850,000 (PMID:23248199)</td>
             <td>48,500,000 (PMID:23248199)</td>
         </tr>
@@ -1079,19 +1205,19 @@ class TufteHTMLDashboard:
             <td>33,950,000</td>
         </tr>
         <tr>
-            <td>Total screening cost (universal, global; PMID:17065674)</td>
-            <td>$1,000,000,000 (PMID:17065674)</td>
-            <td>$10,000,000,000 (PMID:17065674)</td>
+            <td>Total screening cost (universal, global) <span class="unsourced" title="Citation withdrawn 2026-09-14: PMID:17065674 is an NHANES fasting-insulin trends analysis (Diabetes Care 2006;29:2396-2402). It reports no assay price, no screening cost and no global figure.">[UNSOURCED]</span></td>
+            <td>$1,000,000,000 <span class="unsourced">[UNSOURCED]</span></td>
+            <td>$10,000,000,000 <span class="unsourced">[UNSOURCED]</span></td>
         </tr>
         <tr>
             <td>Total complication cost averted (10-year; PMID:37909353)</td>
             <td>—</td>
-            <td>$42,500,000,000 (PMID:37909353)</td>
+            <td>$42,500,000,000 [UNSOURCED &mdash; see provenance note]</td>
         </tr>
         <tr>
             <td>Net cost savings (10-year; PMID:37909353)</td>
             <td>—</td>
-            <td>$32,500,000,000 (PMID:37909353)</td>
+            <td>$32,500,000,000 [UNSOURCED &mdash; see provenance note]</td>
         </tr>
         <tr>
             <td>QALYs gained (10-year)</td>
@@ -1104,8 +1230,8 @@ class TufteHTMLDashboard:
 <p>
     <strong>Interpretation:</strong> If universal screening is adopted globally, an estimated
     <strong>33.95 million additional LADA patients would receive correct diagnosis and treatment
-    over 10 years</strong>, generating net cost savings of $32.5 billion (PMID:37909353) while improving health outcomes
-    by 11.9 million QALYs. Cost calculations based on: insulin costs (PMID:37909353), complication costs (PMID:37909353), screening costs (PMID:17065674), and LADA prevalence (PMID:23248199). These projections assume current diagnosis rates, test costs, and treatment pathways; actual impacts would vary by region based on healthcare capacity, reimbursement policies, and disease burden.
+    over 10 years</strong>, generating net cost savings of $32.5 billion [UNSOURCED &mdash; see provenance note] while improving health outcomes
+    by 11.9 million QALYs. Cost calculations based on: insulin costs [UNSOURCED &mdash; see provenance note], complication costs [UNSOURCED &mdash; see provenance note], screening costs [UNSOURCED &mdash; see provenance note], and LADA prevalence (PMID:23248199). Every cost input to this projection is now unsourced; only the prevalence rate carries a citation. These projections assume current diagnosis rates, test costs, and treatment pathways; actual impacts would vary by region based on healthcare capacity, reimbursement policies, and disease burden.
 </p>
 '''
         self.html_parts.append(impact_html)
@@ -1122,7 +1248,7 @@ class TufteHTMLDashboard:
             Implement universal GAD antibody screening for all newly diagnosed adult-onset
             diabetes patients in academic medical centers and hospital endocrinology clinics.
             This setting offers 95% feasibility, established laboratory infrastructure, and
-            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY (PMID:37909353).
+            rapid turnaround (3 days). Cost-effectiveness: $8,100/QALY [UNSOURCED &mdash; see provenance note].
         </p>
         <p class="citation">
             <strong>Evidence:</strong> PMID:23248199 (Action LADA 7, n=6,156, LADA prevalence 9.7%),
@@ -1137,7 +1263,7 @@ class TufteHTMLDashboard:
             Implement targeted GAD screening (35–50% of population) in community hospitals
             and primary care clinics, focusing on patients age 30–50, BMI &lt;30, or early
             insulin requirement. This approach balances diagnostic yield with resource constraints.
-            Cost-effectiveness: $12,400/QALY (PMID:37909353).
+            Cost-effectiveness: $12,400/QALY [UNSOURCED &mdash; see provenance note].
         </p>
         <p class="citation">
             <strong>Evidence:</strong> Feasibility varies by setting (80% in Tier 2, 60% in Tier 3).
@@ -1307,30 +1433,33 @@ class TufteHTMLDashboard:
     <tbody>
         <tr>
             <td>GAD antibody test</td>
-            <td>$20 (HIC; PMID:17065674)<br/>$7 (LMIC; est. PMID:17065674)</td>
-            <td>Reflects clinical laboratory pricing (DASP workshops); LMIC cost assumes economies of scale
-                in multiplex autoimmune testing</td>
+            <td>$20 (HIC) <span class="unsourced">[UNSOURCED]</span><br/>$7 (LMIC, est.) <span class="unsourced">[UNSOURCED]</span></td>
+            <td>Provenance withdrawn 2026-09-14. These prices were attributed to "DASP workshops"
+                via PMID:17065674, which is an NHANES fasting-insulin trends analysis and carries no
+                assay price. No replacement source has been identified; the LMIC figure is in any
+                case an assumption about economies of scale in multiplex autoimmune testing, not a
+                published price.</td>
         </tr>
         <tr>
             <td>Annual oral T2D therapy</td>
-            <td>$25 (PMID:37909353)</td>
+            <td>$25 [UNSOURCED &mdash; see provenance note]</td>
             <td>Generic metformin and sulfonylurea; lowest-cost regimens</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (HIC)</td>
-            <td>$4,500 (PMID:37909353)</td>
-            <td>Average US list price (PMID:37909353); brand and biosimilar mix; does not include
+            <td>$4,500 [UNSOURCED &mdash; see provenance note]</td>
+            <td>Average US list price [UNSOURCED &mdash; see provenance note]; brand and biosimilar mix; does not include
                 insulin delivery devices or glucose monitoring</td>
         </tr>
         <tr>
             <td>Annual insulin therapy (LMIC)</td>
-            <td>$75 (PMID:37909353)</td>
+            <td>$75 [UNSOURCED &mdash; see provenance note]</td>
             <td>WHO-prequalified or generic insulins; market price in low-resource settings</td>
         </tr>
         <tr>
             <td>Annual complications</td>
-            <td>$2,500 (PMID:37909353)</td>
-            <td>Average cost of retinopathy, nephropathy, neuropathy management (PMID:37909353); range $1,000–5,000 (PMID:37909353) depending on severity</td>
+            <td>$2,500 [UNSOURCED &mdash; see provenance note]</td>
+            <td>Average cost of retinopathy, nephropathy, neuropathy management [UNSOURCED &mdash; see provenance note]; range $1,000–5,000 [UNSOURCED &mdash; see provenance note] depending on severity</td>
         </tr>
     </tbody>
 </table>
@@ -1363,7 +1492,7 @@ class TufteHTMLDashboard:
     </li>
     <li>
         <strong>ICER (Incremental Cost-Effectiveness Ratio):</strong> Net cost of screening
-        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY (PMID:37909353)
+        divided by net QALYs gained, compared to status quo (no screening). ICER &lt; $50,000/QALY [UNSOURCED &mdash; see provenance note]
         is considered highly cost-effective in high-income settings.
     </li>
     <li>

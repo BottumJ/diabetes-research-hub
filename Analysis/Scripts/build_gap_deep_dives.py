@@ -479,7 +479,7 @@ GAPS_DATA = {
             "dependencies": "Dorzagliatin regulatory approval in non-China markets, GCKR biomarker standardization"
         },
         "validation_evidence": "SILVER tier: Dorzagliatin Phase 3 efficacy proven, AZD1656 mechanism well-characterized, GCKR genetic modifiers identified",
-        "expanded_clinical_context": "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K (PMID:34763823), SGLT2i $4.5K (PMID:38639547)).",
+        "expanded_clinical_context": "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no GLP-1 price], SGLT2i $4.5K (PMID:38639547)).",
         "mechanism_detail": "GKA mechanism: glucokinase (hexokinase IV) acts as glucose sensor in beta cells (Km 10mM, saturable kinetics). Normal response: 5mM glucose -> 2-5% Vmax activity -> low ATP -> no insulin. 15mM glucose -> 90% Vmax -> high ATP -> mTORC1 activation -> FOXO1 inactivation -> GCN5 recruitment -> GLUT2 transcription. GKA shifts curve left (lower Km) and increases Vmax by 1.5-2.5x fold. Dorzagliatin: increases Vmax 1.8x, lowers Km from 10mM to 6.5mM, glucose-dependent mechanism (no hypoglycemia at rest). AZD1656 tachyphylaxis: GCKR encodes regulatory protein that inhibits GCK (allosteric inhibitor). Loss-of-function GCKR: GCK constitutively active even without GKA -> drug adds no benefit -> adaptive feedback suppression. TTP399 advantage: longer half-life (48-72hr vs 8-12hr dorzagliatin) = once-daily dosing feasible."
     },
     "8": {
@@ -937,7 +937,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 0,
         "key_refs": [],
-        "key_finding": "Dorzagliatin China NRDL Jan 2024 [UNSOURCED - see note]; GLP-1 pricing $10.8-15.6K/yr (PMID:34763823); semaglutide patent expires China March 2026, US 2032; biologics limit generic competition",
+        "key_finding": "Dorzagliatin China NRDL Jan 2024 [UNSOURCED - see note]; GLP-1 pricing $10.8-15.6K/yr [UNSOURCED]; semaglutide patent expires China March 2026, US 2032; biologics limit generic competition",
         "status": "Market Analysis",
         "data_profile": {
             "gap_score": 0.58,
@@ -951,10 +951,10 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr (PMID:34763823); semaglutide generic approved China Dec 2024, US patent expires 2032. SGLT2i needs 68-78% reduction for cost-effectiveness (PMID:38639547).",
+            "summary": "Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr [UNSOURCED]; semaglutide generic approved China Dec 2024, US patent expires 2032. SGLT2i needs 68-78% reduction for cost-effectiveness (PMID:38639547).",
             "details": [
                 "Dorzagliatin: China NRDL listed Jan 2024 [UNSOURCED - the source cited here was published in 2022 and predates the Jan 2024 listing]; pricing not publicly disclosed",
-                "GLP-1 RA pricing: $10.8K-$15.6K/yr (PMID:34763823); liraglutide generic approved Dec 2024 (Hikma)",
+                "GLP-1 RA pricing: $10.8K-$15.6K/yr [UNSOURCED - citations removed 2026-09-13 from all eight attachments of PMID:34763823 in this file; that paper is Herman & Kuo, a review of INSULIN pricing, and reports no GLP-1 receptor agonist price. This note first read "all seven ... in this gap record" and was corrected the same day: an eighth attachment sat in a DIFFERENT gap record (the GKA cost-effectiveness line), which is the 2026-09-09 correction-scope defect appearing within a single data file rather than across a page]; liraglutide generic approved Dec 2024 (Hikma)",
                 "Semaglutide: China patent expires March 2026, US 2032",
                 "SGLT2i: $4.5K-$5.6K/yr (PMID:38639547); needs 68-78% reduction for cost-effectiveness ($1,431/yr target) (PMID:38639547)",
                 "WHO EML 2025: added GLP-1 RAs; SGLT2i since 2021; insulin since 1977"
@@ -991,7 +991,7 @@ GAPS_DATA = {
         },
         "validation_evidence": "BRONZE tier: GLP-1 pricing data available, semaglutide patent timelines known, dorzagliatin China approval milestone achieved",
         "expanded_clinical_context": "Dorzagliatin China pricing mystery: NRDL (National Reimbursement Drug List) listed Jan 2024 [UNSOURCED] with undisclosed price. Estimates: CNY 20-40/tablet (USD 3-6) at manufacturing cost vs USD 50-100 wholesale to hospital pharmacies (parallel import models expected). Semaglutide patent expiration China: March 2026 (3.5yrs earlier than US 2032), enabling biosimilar development in Chinese manufacturers (Zhangjiang High-Tech, Sinopharm expected to launch generics Q3 2026). Liraglutide generic: Hikma Pharmaceuticals (Jordanian) approved USA Dec 2024, launched at $3-5/day (vs Novo $10-15/day) [UNSOURCED - the source cited here was a 2021 insulin pricing review and predates the Dec 2024 approval], insurance coverage variable. GLP-1 WHO EML 2025: semaglutide, tirzepatide, liraglutide, dulaglutide added, expected to accelerate procurement in 80+ WHO member states with negotiated pricing. SGLT2i cost-effectiveness threshold: USD $1,431/year required for 50K ICER threshold (vs current $4,500-5,600) (PMID:38639547). Dorzagliatin target: USD $1,800-2,200/year for high-income markets, CNY 50-80/month for China (estimated). GKA competitive landscape: TTP399 (Vierda) Phase 2, licensing likely required for non-US/China markets. Market forecast: GLP-1 RAs capture 60-70% diabetes drug market share by 2030 ($120-150B annual sales) if pricing remains <$5-10K/year globally.",
-        "mechanism_detail": "Patent expiration cascade effects: (1) semaglutide China 2026 -> biosimilar availability 2026-2027, price drop 80-90% within 12mo, (2) liraglutide USA 2026 -> generic ANDA approvals 2025-2026, 5-7 approved generics by 2027, price floor ~20% of branded (Hikma precedent) (PMID:34763823), (3) dulaglutide 2031 -> slow biosimilar penetration (biologic manufacturing complex), (4) tirzepatide 2039 -> extended patent protection via pediatric exclusivity extensions. Manufacturing barriers for biologics: GLP-1 RAs require mammalian cell expression (CHO cells, Sf9 insect cells) + complex purification, vs small-molecule GKA (chemical synthesis, generic-friendly). Biosimilar licensing: 1.5-2.5yr development timeline, $50-100M regulatory costs (PMID:29710129), vs 5-7yr small-molecule generic development. Cost trajectory: GLP-1 biologics unlikely to drop below $2-3K/year even post-patent due to manufacturing complexity. GKA small-molecule advantage: dorzagliatin/TTP399 expected to reach $500-1500/year if approved in Western markets (cost-competitive advantage vs GLP-1). Health economics projection: if GKA cost <$1.5K/year, expected to capture 20-30% T2D market by 2035 as first-line monotherapy option (PMID:38639547)."
+        "mechanism_detail": "Patent expiration cascade effects: (1) semaglutide China 2026 -> biosimilar availability 2026-2027, price drop 80-90% within 12mo, (2) liraglutide USA 2026 -> generic ANDA approvals 2025-2026, 5-7 approved generics by 2027, price floor ~20% of branded (Hikma precedent) [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a 2021 insulin-pricing review and cannot report a Dec 2024 Hikma liraglutide generic price floor. The same claim is already marked UNSOURCED for the same reason in the expanded_clinical_context field of this same gap record], (3) dulaglutide 2031 -> slow biosimilar penetration (biologic manufacturing complex), (4) tirzepatide 2039 -> extended patent protection via pediatric exclusivity extensions. Manufacturing barriers for biologics: GLP-1 RAs require mammalian cell expression (CHO cells, Sf9 insect cells) + complex purification, vs small-molecule GKA (chemical synthesis, generic-friendly). Biosimilar licensing: 1.5-2.5yr development timeline, $50-100M regulatory costs [UNSOURCED - citation removed 2026-09-13: PMID:29710129 is Hernandez, Prasad & Gellad, 'Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy', JAMA Oncol 2018;4(7):994-996 - a three-page research letter reporting that total CAR-T cost is at least $750,000 with $400,000-450,000 of that non-drug. It reports no biosimilar regulatory development cost], vs 5-7yr small-molecule generic development. Cost trajectory: GLP-1 biologics unlikely to drop below $2-3K/year even post-patent due to manufacturing complexity. GKA small-molecule advantage: dorzagliatin/TTP399 expected to reach $500-1500/year if approved in Western markets (cost-competitive advantage vs GLP-1). Health economics projection: if GKA cost <$1.5K/year, expected to capture 20-30% T2D market by 2035 as first-line monotherapy option (PMID:38639547)."
 
     }
 }
@@ -1647,28 +1647,28 @@ def generate_html():
                 <tbody>
                     <tr>
                         <td>Semaglutide (Ozempic/Wegovy)</td>
-                        <td>$10.8-15.6K/yr (PMID:34763823)</td>
+                        <td>$10.8-15.6K/yr [UNSOURCED]</td>
                         <td>2032</td>
                         <td>March 2026</td>
                         <td>Generic approved China Dec 2024</td>
                     </tr>
                     <tr>
                         <td>Liraglutide (Victoza)</td>
-                        <td>$10.0K/yr (PMID:34763823)</td>
+                        <td>$10.0K/yr [UNSOURCED]</td>
                         <td>2026</td>
                         <td>2026</td>
                         <td>Generic approved Dec 2024 (Hikma)</td>
                     </tr>
                     <tr>
                         <td>Dulaglutide (Trulicity)</td>
-                        <td>$11.2K/yr (PMID:34763823)</td>
+                        <td>$11.2K/yr [UNSOURCED]</td>
                         <td>2031</td>
                         <td>2031</td>
                         <td>Patent pending expiration</td>
                     </tr>
                     <tr>
                         <td>Tirzepatide (Zepbound)</td>
-                        <td>$13.4K/yr (PMID:34763823)</td>
+                        <td>$13.4K/yr [UNSOURCED]</td>
                         <td>2039</td>
                         <td>2039</td>
                         <td>No patent expiration near-term</td>

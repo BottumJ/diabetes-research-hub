@@ -59,6 +59,20 @@ SELF_REFERENTIAL = {
     'audit_absolute_claims.py',
 }
 
+# ADDED 2026-09-16. The per-run verification scripts, verify_YYYY_MM_DD_repairs.py,
+# are the same class as the four names above: each one embeds the overclaim
+# phrases as its own SEARCH PATTERNS, so scanning them re-detects the detector.
+# On 2026-09-16 all five "unhedged preclinical overclaims" in the whole
+# repository were of this kind - the sweep's entire FAIL was its own reflection.
+#
+# WHY THIS IS WORTH FIXING RATHER THAN IGNORING: a gate that reports red every
+# run for a reason nobody acts on stops being read. That is how eleven
+# consecutive push notices decayed into background noise in this repo, and it
+# is the documented failure mode the publishgate fixture exists to prevent.
+# Matched by pattern, not by enumerating filenames, so tomorrow's verify script
+# is covered the day it is written.
+SELF_REFERENTIAL_RE = re.compile(r"^verify_\d{4}_\d{2}_\d{2}_repairs\.py$")
+
 SCAN_EXTENSIONS = ('.py', '.html', '.md')
 
 # Preclinical overclaim. Each pattern needs a finite verb or an unhedged
@@ -90,7 +104,7 @@ def scannable_files():
         for name in files:
             if not name.endswith(SCAN_EXTENSIONS):
                 continue
-            if name in SELF_REFERENTIAL:
+            if name in SELF_REFERENTIAL or SELF_REFERENTIAL_RE.match(name):
                 continue
             yield os.path.join(root, name)
 

@@ -283,7 +283,14 @@ CANDIDATES = {
         "class": "Plant alkaloid, AMPK activator",
         "primary_indication": "Traditional Chinese medicine, oral infection, diarrhea",
         "mechanism_diabetes": "AMPK activation, mitochondrial function modulation, improved insulin sensitivity",
-        "evidence": "PMID:18397984 (Yin et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin comparison trial. Subsequent meta-analyses (PMID:25498346) suggest glucose-lowering effects, but head-to-head non-inferiority to metformin is not established. AMPK activation confirmed in preclinical models",
+        # Corrected 2026-09-15 (author-surname audit). PMID 18397984 is Zhang Y et al.,
+        # "Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid
+        # berberine", J Clin Endocrinol Metab 2008 - a real berberine RCT, so the PMID
+        # supports the CLAIM, but the author attribution "Yin et al" is false. Yin's
+        # berberine trial is a different paper; a candidate identifier was checked
+        # (18191047) and REJECTED - it is Alemzadeh R et al. on hypovitaminosis D.
+        # The surname is therefore dropped rather than guessed; the PMID stands.
+        "evidence": "PMID:18397984 (Zhang et al 2008) demonstrated HbA1c reduction in T2D but was NOT a direct metformin comparison trial. Subsequent meta-analyses (PMID:25498346) suggest glucose-lowering effects, but head-to-head non-inferiority to metformin is not established. AMPK activation confirmed in preclinical models",
         "generic_cost": 0.15,
         "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
@@ -378,7 +385,15 @@ CANDIDATES = {
         "class": "Aldehyde dehydrogenase inhibitor",
         "primary_indication": "Alcohol use disorder",
         "mechanism_diabetes": "Gasdermin D inhibition, inflammasome suppression via copper chelation; NLRP3 effect is indirect through gasdermin D cleavage inhibition",
-        "evidence": "PRECLINICAL: Hu et al (Nature 2020, PMID:32943753) demonstrated gasdermin D inhibition. Inflammasome suppression via copper-dependent mechanism shown in cell and animal models only. No human diabetes data. Repurposing cancer trial data provides safety context but not diabetes efficacy",
+        # WITHDRAWN 2026-09-15 (author-surname audit). PMID 32943753 is Agrawal S,
+        # He JC, Tharaux PL, "Nuclear receptors in podocyte biology and glomerular
+        # disease", Nat Rev Nephrol 2021 - wrong authors, wrong journal, wrong year
+        # and wrong subject; it says nothing about gasdermin D. Verified via NCBI
+        # esummary 2026-09-15. NO replacement PMID is asserted: a candidate was NOT
+        # located, and this repo does not guess identifiers. The gasdermin D claim
+        # is left standing WITHOUT a citation and is therefore UNSOURCED pending a
+        # located primary source.
+        "evidence": "PRECLINICAL [UNSOURCED - citation withdrawn 2026-09-15, replacement not yet located]: gasdermin D inhibition reported. Inflammasome suppression via copper-dependent mechanism shown in cell and animal models only. No human diabetes data. Repurposing cancer trial data provides safety context but not diabetes efficacy",
         "generic_cost": 0.30,
         "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": False,
@@ -644,7 +659,16 @@ CANDIDATES = {
         "class": "COX inhibitor, NF-kB inhibitor (at high doses)",
         "primary_indication": "Pain, inflammation, cardiovascular prophylaxis",
         "mechanism_diabetes": "High-dose (>3g/day) NF-kB inhibition, improved insulin sensitivity; low-dose: COX-1 antiplatelet only",
-        "evidence": "Hundal et al (J Clin Invest 2002, PMID:12122111) demonstrated that high-dose salsalate (prodrug) improves insulin sensitivity via NF-kB inhibition. TINSAL-T2D trial (Goldfine, Ann Intern Med 2013, PMID:23817699) confirmed glucose-lowering with salsalate in T2D. Standard low-dose aspirin does NOT have this effect. GI toxicity at high doses is limiting",
+        # Corrected 2026-09-15 (author-surname audit). TWO defects, not one:
+        #   (1) PMID 12122111 is Chaisson ML et al., "Hepatocyte-specific inhibition
+        #       of NF-kappaB leads to apoptosis after TNF treatment, but not after
+        #       partial hepatectomy", J Clin Invest 2002 - a mouse liver study, not
+        #       a diabetes trial. The Hundal paper asserted here is PMID 12021247
+        #       (J Clin Invest 2002;109:1321-6), verified via NCBI esummary.
+        #   (2) Hundal 2002 studied high-dose ASPIRIN, not salsalate. Salsalate is
+        #       evidenced separately in this same sentence by TINSAL-T2D, so the
+        #       drug name is corrected rather than the claim being dropped.
+        "evidence": "Hundal et al (J Clin Invest 2002, PMID:12021247) demonstrated that high-dose aspirin improves insulin sensitivity via NF-kB inhibition. TINSAL-T2D trial (Goldfine, Ann Intern Med 2013, PMID:23817699) confirmed glucose-lowering with salsalate in T2D. Standard low-dose aspirin does NOT have this effect. GI toxicity at high doses is limiting",
         "generic_cost": 0.02,
         "cost_source": "UNSOURCED - see cost_provenance_repair_20260829.json; previously mis-attributed to PMID:29710129, a CAR-T cost analysis",
         "who_essential": True,

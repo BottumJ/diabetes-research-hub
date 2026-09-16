@@ -469,7 +469,7 @@ html_content = f"""<!DOCTYPE html>
                 <div class="stat-box">
                     <div class="stat-label">CITR RECIPIENTS (through 2023)</div>
                     <div class="stat-value">1,477</div>
-                    <div class="stat-desc">Total islet transplant recipients with documented outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/19104422/" target="_blank">PMID:19104422</a></div>
+                    <div class="stat-desc">Allograft recipients registered 1999&ndash;2023 across 40 centres (1,134 islet-transplant-alone plus 343 islet-after-kidney / simultaneous / kidney-after-islet). Source: CITR 12th Allograft Report, June 30 2025 &mdash; a registry PDF with no PMID, not peer reviewed. <em>Corrected 2026-09-09: this figure previously cited PMID:19104422, which reports 325 recipients as of April 2008 and cannot be the source of 1,477.</em></div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">TOTAL INFUSIONS</div>
@@ -592,52 +592,28 @@ html_content = f"""<!DOCTYPE html>
                 </div>
 
                 <div style="margin-bottom: 25px;">
-                    <div style="font-weight: 600; margin-bottom: 12px;">Racial/Ethnic Composition</div>
-                    <div class="bar">
-                        <div class="bar-label">Recipients: White</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 85%;">85% <span style="color:#ffffff;font-size:0.7em;">[UNSOURCED]</span></div>
-                        </div>
-                    </div>
-                    <div class="bar red">
-                        <div class="bar-label">T1D population: White</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 62%;">62%</div>
-                        </div>
-                    </div>
-                    <div class="bar">
-                        <div class="bar-label">Recipients: Black</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 5%;">5%</div>
-                        </div>
-                    </div>
-                    <div class="bar red">
-                        <div class="bar-label">T1D population: Black</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 18%;">18%</div>
-                        </div>
-                    </div>
-                    <div class="bar">
-                        <div class="bar-label">Recipients: Hispanic</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 5%;">5%</div>
-                        </div>
-                    </div>
-                    <div class="bar red">
-                        <div class="bar-label">T1D population: Hispanic</div>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width: 20%;">20%</div>
-                        </div>
-                    </div>
+                    <div style="font-weight: 600; margin-bottom: 12px;">Racial/Ethnic Composition &mdash; WITHDRAWN</div>
                 </div>
 
                 <div class="source" style="border-left:3px solid #8b2500;padding-left:10px;">
-                  <strong>UNSOURCED &mdash; corrected 2026-09-08.</strong> Every figure in this racial/ethnic block (85% / 62% / 5% / 18% / 5% / 20%) is carried without a verifiable citation.
-                  The &ldquo;85% White recipients&rdquo; bar previously linked to PMID 19104422 (Alejandro et al., <em>Transplantation</em> 2008;86(12):1783-8). That paper's abstract reports
-                  n=325 recipients, 649 infusions and 712 donors, and reports <em>no</em> racial or ethnic breakdown &mdash; it does not support the number it was attached to, so the link has been removed.
-                  The comparator T1D-population figures never carried a citation at all.
-                  Do not cite these bars. A citable replacement requires the recipient-characteristics table of a CITR Allograft Report
-                  (<a href="https://www.citregistry.org/" target="_blank">citregistry.org</a>, non-peer-reviewed) read directly and transcribed with its denominator and reporting year.
+                  <strong>WITHDRAWN 2026-09-09. Six bars were removed from this position, not merely relabelled.</strong>
+                  They read: Recipients White 85%, T1D population White 62%, Recipients Black 5%, T1D population Black 18%, Recipients Hispanic 5%, T1D population Hispanic 20%.
+                  They are recorded here so the reader can see what was withdrawn.
+                  <br><br>
+                  <strong>Why they were removed rather than re-sourced.</strong> On 2026-09-08 these figures were marked UNSOURCED after the &ldquo;85% White recipients&rdquo; bar was found linked to
+                  PMID 19104422 (Alejandro et al., <em>Transplantation</em> 2008;86(12):1783-8), a paper reporting n=325 recipients and <em>no</em> racial or ethnic breakdown. The comparator
+                  T1D-population figures had never carried a citation at all. The named replacement candidate was the recipient-characteristics table of a CITR Allograft Report.
+                  That report was read directly on 2026-09-09
+                  (<a href="https://www.citregistry.org/system/files/CITR%2012th%20Allograft%20Report_2025_Final.pdf" target="_blank">12th Allograft Report, June 30 2025, datafile closure March 26 2025</a>).
+                  <strong>It does not break out recipient race or ethnicity.</strong> Its Islet Transplant Recipient Characteristics section reports age at transplant, wait time, diabetes duration
+                  and glycaemic control, and nothing on race. The only race or ethnicity figures in the report describe <em>donors</em>, not recipients:
+                  about 18% of infusions derived from Hispanic donors, and about 10% from non-white donors. Substituting donor ethnicity for recipient race would be a category error,
+                  so no substitution was made.
+                  <br><br>
+                  <strong>Confidence and what would change it.</strong> This finding rests on the extracted text of the report PDF; table contents can be lost in extraction, and Chapter 2 was not
+                  opened page by page. If a recipient-race table exists in Chapter 2, these bars can be restored &mdash; transcribed with the report's own denominator (1,477 allograft recipients,
+                  1999&ndash;2023, 40 centres), labelled registry-grade and non-peer-reviewed. Until someone confirms that table exists, this hub asserts no recipient-race distribution for islet transplantation.
+                  Any comparator T1D-population figures restored alongside them need a separate CDC or SEARCH-for-Diabetes citation matched on age band and year.
                 </div>
             </div>
 

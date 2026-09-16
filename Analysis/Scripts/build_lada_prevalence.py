@@ -327,6 +327,16 @@ html_content = """<!DOCTYPE html>
             margin-top: 0.5rem;
         }
 
+        .unsourced {
+            font-family: "SF Mono", Menlo, Consolas, monospace;
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border: 1px solid #e0d3a8;
+            border-radius: 3px;
+            padding: 0 4px;
+            font-size: 0.8em;
+        }
+
         .impact-card {
             background-color: #ffffff;
             border: 1px solid #e0ddd5;
@@ -772,7 +782,7 @@ html_content = """<!DOCTYPE html>
                     <span class="expand-toggle">+</span>
                 </div>
                 <div class="expand-content">
-                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US, PMID:32175717), retinal interventions, amputation prevention.</p>
+                    <p>A misdiagnosed LADA patient on suboptimal therapy develops microvascular complications earlier and with greater severity than one identified and treated appropriately. Complications include diabetic retinopathy (leading cause of blindness in working-age adults), diabetic nephropathy (leading cause of ESRD requiring dialysis or transplant), diabetic neuropathy, and foot ulcers. Each complication generates enormous direct healthcare costs: dialysis (~$120,000 per patient annually in the US <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717 = Khan MAB et al., J Epidemiol Glob Health 2020, a Global Burden of Disease analysis of type 2 diabetes prevalence containing no cost data of any kind. A candidate replacement exists in this corpus - PMID:37909353, Economic Costs of Diabetes in the U.S. in 2022, Diabetes Care 2024 - but it was NOT substituted, because whether it reports a per-patient annual dialysis cost has not been checked and substituting an unverified source would repeat the defect being fixed.">[UNSOURCED]</span>), retinal interventions, amputation prevention.</p>
                 </div>
             </div>
 

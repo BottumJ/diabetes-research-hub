@@ -409,7 +409,7 @@ html_content = f"""<!DOCTYPE html>
                 <strong class="highlight-neutral">Conservative estimate:</strong> $500M global market by 2030 (Dorzagliatin China-only scenario) (PMID:36449148)
             </p>
             <p>
-                <strong class="highlight-positive">Optimistic estimate:</strong> Up to $2B if T1D indication succeeds with TTP399 (1.4M US T1D patients) (PMID:32175717)
+                <strong class="highlight-positive">Optimistic estimate:</strong> Up to $2B if T1D indication succeeds with TTP399 (1.4M US T1D patients) <span class="unsourced">[UNSOURCED &mdash; see citation note]</span>
             </p>
 
             <h3>Historical Context: Failed GKA Programs</h3>
@@ -459,7 +459,7 @@ html_content = f"""<!DOCTYPE html>
             <div class="scenario scenario-a">
                 <div class="scenario-title">Scenario A: Niche T2D (Conservative)</div>
                 <p>Dorzagliatin China-only, TTP399 fails or delayed, GKA class remains small.</p>
-                <p><strong>Projected Revenue:</strong> <span class="highlight-neutral">&lt;$500M by 2030</span> (modeled estimate — Khan et al. 2020, PMID:32175717)</p>
+                <p><strong>Projected Revenue:</strong> <span class="highlight-neutral">&lt;$500M by 2030</span> (modeled estimate <span class="unsourced">[UNSOURCED &mdash; see citation note]</span>)</p>
                 <p><strong>Pricing:</strong> <span class="highlight-neutral">$2,000-$3,000/year</span> (PMID:36449148)</p>
                 <p><strong>Impact:</strong> Limited access. Competitor to DPP-4 inhibitors (going generic). Marginal revenue in T2D add-on therapy.</p>
             </div>
@@ -468,8 +468,8 @@ html_content = f"""<!DOCTYPE html>
                 <div class="scenario-title">Scenario B: T1D Breakthrough (Optimistic)</div>
                 <p>TTP399 succeeds, FDA approval achieved, new unmet need in T1D management.</p>
                 <p><strong>Target Population:</strong> 1.4M US T1D patients (potential addressable market)</p>
-                <p><strong>Pricing:</strong> <span class="highlight-positive">$8,000-$15,000/year</span> (comparable to GLP-1 agonist launch pricing) (PMID:34763823)</p>
-                <p><strong>Revenue Ceiling:</strong> <span class="highlight-positive">$5-10B</span> if adoption reaches 20-30% of eligible T1D patients (modeled estimate — PMID:32175717)</p>
+                <p><strong>Pricing:</strong> <span class="highlight-positive">$8,000-$15,000/year</span> (comparable to GLP-1 agonist launch pricing) <span class="unsourced">[UNSOURCED &mdash; see citation note]</span></p>
+                <p><strong>Revenue Ceiling:</strong> <span class="highlight-positive">$5-10B</span> if adoption reaches 20-30% of eligible T1D patients (modeled estimate <span class="unsourced">[UNSOURCED &mdash; see citation note]</span>)</p>
                 <p><strong>Impact:</strong> Transformative for T1D management; justifies premium pricing for novel mechanism.</p>
             </div>
 
@@ -478,7 +478,7 @@ html_content = f"""<!DOCTYPE html>
                 <p>Dorzagliatin expands internationally + TTP399 T1D approval + next-generation GKAs enter market.</p>
                 <p><strong>Market Segmentation:</strong> T2D + T1D + early-stage MODY</p>
                 <p><strong>Pricing:</strong> <span class="highlight-neutral">$3,000-$8,000/year</span>, declining with competition (PMID:36449148)</p>
-                <p><strong>Projected Revenue:</strong> <span class="highlight-neutral">$3-8B by 2035</span> (modeled estimate — PMID:32175717, PMID:38639547)</p>
+                <p><strong>Projected Revenue:</strong> <span class="highlight-neutral">$3-8B by 2035</span> (modeled estimate <span class="unsourced">[UNSOURCED &mdash; see citation note]</span>)</p>
                 <p><strong>Impact:</strong> Sustainable competitive landscape; pricing pressure from multiple players.</p>
             </div>
 
@@ -492,17 +492,18 @@ html_content = f"""<!DOCTYPE html>
                 <div class="bar bar-c">
                     <div class="bar-fill" style="height: 150px;"></div>
                     <div class="bar-label">Scenario C<br>(Expansion)</div>
-                    <div class="bar-value">$3-8B (PMID:38639547)</div>
+                    <div class="bar-value">$3-8B [UNSOURCED]</div>
                 </div>
                 <div class="bar bar-b">
                     <div class="bar-fill" style="height: 200px;"></div>
                     <div class="bar-label">Scenario B<br>(Breakthrough)</div>
-                    <div class="bar-value">$5-10B (PMID:32175717)</div>
+                    <div class="bar-value">$5-10B [UNSOURCED]</div>
                 </div>
             </div>
 
             <div class="source">
-                Sources: Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717) — T2D global burden; Syed, Drugs 2022 (PMID:36449148) — dorzagliatin approval; Schousboe et al. Ann Intern Med 2024 (PMID:38639547) — diabetes drug cost-effectiveness. Note: Market size projections are illustrative estimates based on patient populations and comparable drug class pricing; they are not peer-reviewed forecasts.
+                Sources: Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717) — T2D global burden ONLY; Syed, Drugs 2022 (PMID:36449148) — dorzagliatin approval; Schousboe et al. Ann Intern Med 2024 (PMID:38639547) — diabetes drug cost-effectiveness. Note: Market size projections are illustrative estimates based on patient populations and comparable drug class pricing; they are not peer-reviewed forecasts.
+                <br><br><strong>Citation note (correction, 2026-09-09):</strong> every revenue figure on this tab previously carried PMID:32175717. Khan et al. 2020 is a five-page Global Burden of Disease analysis of type 2 diabetes prevalence; it contains no revenue forecast, no drug pricing, no cost data and no type 1 diabetes data, so it could not have produced any of these numbers. The PMIDs have been removed and the figures marked [UNSOURCED]. The numbers themselves have NOT been deleted — they are the authors' own illustrative model, and the honest label for a modelled figure with no external source is "unsourced", not a borrowed citation. PMID:38639547 was likewise removed from the $3-8B/2035 figure: a cost-effectiveness analysis does not forecast class revenue. To restore any of these figures, state the model's inputs and assumptions explicitly, or cite a market-research source and label it as non-peer-reviewed.
             </div>
         </div>
 
@@ -520,31 +521,31 @@ html_content = f"""<!DOCTYPE html>
                 <tr>
                     <td>Metformin</td>
                     <td>Generic metformin</td>
-                    <td>$50-$100 (PMID:32175717)</td>
+                    <td>$50-$100 [UNSOURCED]</td>
                     <td>Gold standard first-line T2D; excellent cost-benefit</td>
                 </tr>
                 <tr>
                     <td>Sulfonylureas</td>
                     <td>Glyburide, glipizide</td>
-                    <td>$50-$200 (PMID:32175717)</td>
+                    <td>$50-$200 [UNSOURCED]</td>
                     <td>Very cheap but significant hypoglycemia risk</td>
                 </tr>
                 <tr>
                     <td>DPP-4 Inhibitors</td>
                     <td>Sitagliptin, saxagliptin</td>
-                    <td>$3,000-$5,000 (PMID:34763823)</td>
+                    <td>$3,000-$5,000 <span class="unsourced">[UNSOURCED]</span></td>
                     <td>Branded now; generics expected 2026-2028</td>
                 </tr>
                 <tr>
                     <td>SGLT2 Inhibitors</td>
                     <td>Empagliflozin, dapagliflozin</td>
-                    <td>$5,000-$8,000 (PMID:34763823)</td>
+                    <td>$5,000-$8,000 <span class="unsourced">[UNSOURCED]</span></td>
                     <td>CV/renal benefits; patent cliff 2025-2028</td>
                 </tr>
                 <tr>
                     <td>GLP-1 Agonists</td>
                     <td>Semaglutide, liraglutide</td>
-                    <td>$10,000-$15,000 (PMID:34763823)</td>
+                    <td>$10,000-$15,000 <span class="unsourced">[UNSOURCED]</span></td>
                     <td>Blockbuster class; weight loss benefit in diabetes</td>
                 </tr>
                 <tr>
@@ -556,7 +557,7 @@ html_content = f"""<!DOCTYPE html>
                 <tr>
                     <td>Insulin (Biosimilar)</td>
                     <td>Semglee, others</td>
-                    <td>$100-$300 (PMID:34763823)</td>
+                    <td>$100-$300 <span class="unsourced">[UNSOURCED &mdash; PMID:34763823 is on-topic (insulin pricing) but the specific biosimilar figure was not located in it; pending lookup]</span></td>
                     <td>Available in international markets at 10% US cost</td>
                 </tr>
                 <tr>
@@ -578,20 +579,20 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="metric">
                 <strong>T1D Adjunctive (Scenario B)</strong><br>
-                Price: $8,000-$15,000/year (comparable to GLP-1 agonists) (PMID:34763823)<br>
+                Price: $8,000-$15,000/year (comparable to GLP-1 agonists) <span class="unsourced">[UNSOURCED]</span><br>
                 Competition: Minimal; unmet need in T1D glucose control<br>
                 Advantage: Premium justified by novel mechanism and high unmet need; insulin-sparing effect
             </div>
 
             <h3>Key Insights</h3>
             <p>
-                <strong>If priced below GLP-1 agonists ($10-15K) but above generics ($100-$500),</strong> GKAs would occupy a middle tier competitive for T2D add-on therapy. (PMID:34763823)
+                <strong>If priced below GLP-1 agonists ($10-15K) but above generics ($100-$500),</strong> GKAs would occupy a middle tier competitive for T2D add-on therapy. <span class="unsourced">[UNSOURCED &mdash; both bracket prices are non-insulin and are not in PMID:34763823]</span>
             </p>
             <p>
-                <strong>If T1D indication approved,</strong> premium pricing of $8-15K/year is justified by unmet need and comparison to existing T1D costs (insulin $3-10K/year + continuous glucose monitoring + additional therapies). (PMID:34763823)
+                <strong>If T1D indication approved,</strong> premium pricing of $8-15K/year <span class="unsourced">[UNSOURCED]</span> is justified by unmet need and comparison to existing T1D costs (insulin $3-10K/year, PMID:34763823, which is the only clause on this line that citation supports; CGM and additional-therapy costs are <span class="unsourced">[UNSOURCED]</span>).
             </p>
             <p>
-                <strong>Global access is limited by pricing:</strong> LMICs cannot afford $2-8K/year; market will remain concentrated in high-income countries until patent cliff. (PMID:32175717)
+                <strong>Global access is limited by pricing:</strong> LMICs cannot afford $2-8K/year; market will remain concentrated in high-income countries until patent cliff. [UNSOURCED &mdash; PMID:32175717 documents rising T2D prevalence in lower-income countries but reports no pricing or affordability data]
             </p>
 
             <div class="source">
@@ -614,7 +615,7 @@ html_content = f"""<!DOCTYPE html>
                     <p><strong>Patent Expiration:</strong> ~2035-2038 (Chinese patents)</p>
                     <p><strong>Expected Generic Entry:</strong> 2038-2040</p>
                     <p><strong>Rationale:</strong> Chinese pharmaceutical patents have 20-year terms from filing. Dorzagliatin filed in China ~2014-2016; approval 2022.</p>
-                    <p><strong>Generic Price Estimate:</strong> $300-$600/year (PMID:34763823)</p>
+                    <p><strong>Generic Price Estimate:</strong> $300-$600/year <span class="unsourced">[UNSOURCED &mdash; a 2021 insulin-pricing review cannot estimate a 2038-2040 dorzagliatin generic price]</span></p>
                 </div>
             </div>
 
@@ -627,7 +628,7 @@ html_content = f"""<!DOCTYPE html>
                     <p><strong>Patent Protection:</strong> If approved 2027-2028, patent until ~2040-2042</p>
                     <p><strong>Expected Generic Entry:</strong> 2042-2045</p>
                     <p><strong>Rationale:</strong> US patent filing ~2020; 20-year patent term + potential 5-year exclusivity (orphan or rare pediatric designation in T1D)</p>
-                    <p><strong>Generic Price Estimate:</strong> $400-$800/year (PMID:34763823)</p>
+                    <p><strong>Generic Price Estimate:</strong> $400-$800/year <span class="unsourced">[UNSOURCED &mdash; a 2021 insulin-pricing review cannot estimate a 2042-2045 TTP399 generic price]</span></p>
                 </div>
             </div>
 
@@ -646,7 +647,7 @@ html_content = f"""<!DOCTYPE html>
                 <tr>
                     <td>FDA Approval</td>
                     <td>2014</td>
-                    <td>Branded pricing $5,000-$8,000/year (PMID:34763823)</td>
+                    <td>Branded pricing $5,000-$8,000/year <span class="unsourced" title="Citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no empagliflozin launch price. The correction of 2026-08-27 removed this same attribution from the row two lines below and left this one.">[UNSOURCED]</span></td>
                 </tr>
                 <tr>
                     <td>Patent Challenge (ANDA)</td>
@@ -674,7 +675,7 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="metric">
                 <strong>Expected Price Reduction: 80-90%</strong><br>
-                Generic GKAs could cost $200-$500/year by 2042-2045 (from $2,000-$8,000 branded) (PMID:34763823)
+                Generic GKAs could cost $200-$500/year by 2042-2045 (from $2,000-$8,000 branded) <span class="unsourced">[UNSOURCED &mdash; temporally impossible: a 2021 paper cannot report a 2042-2045 price, and it is a review of insulin, not GKAs]</span>
             </div>
 
             <h3>Global Access Implications</h3>
@@ -686,7 +687,7 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="expand-content">
                     <p><strong>Access:</strong> Limited to high-income countries (US, Europe, Japan, China)</p>
-                    <p><strong>Cost barrier:</strong> $2,000-$15,000/year unaffordable for 80% of global T2D population (PMID:32175717)</p>
+                    <p><strong>Cost barrier:</strong> $2,000-$15,000/year unaffordable for 80% of global T2D population [UNSOURCED &mdash; the 80% figure has no identified source]</p>
                     <p><strong>LMIC strategy:</strong> May license manufacturing from Hua Medicine (Dorzagliatin) but at high royalty costs</p>
                 </div>
             </div>
@@ -698,7 +699,7 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="expand-content">
                     <p><strong>Access:</strong> Generic GKAs become viable for middle-income countries</p>
-                    <p><strong>Cost:</strong> $200-$500/year; affordable for public health systems in India, SE Asia, Latin America (PMID:34763823)</p>
+                    <p><strong>Cost:</strong> $200-$500/year; affordable for public health systems in India, SE Asia, Latin America <span class="unsourced">[UNSOURCED &mdash; temporally impossible and off-topic; see note above]</span></p>
                     <p><strong>WHO EML Consideration:</strong> Generic GKAs eligible for WHO Essential Medicines List post-2042 if safety/efficacy confirmed</p>
                 </div>
             </div>
@@ -797,7 +798,7 @@ html_content = f"""<!DOCTYPE html>
                     <p><strong>Generic Pricing (2024+):</strong> $200-$400/year <span class="unsourced">[UNSOURCED]</span></p>
                     <p style="font-size:0.85em;color:#8a6d3b;">Citations removed 2026-08-27: these SGLT2i figures were attributed to PMID:34763823, which is Herman &amp; Kuo, "100 years of Insulin: Why is Insulin So Expensive", Endocrinol Metab Clin North Am 2021 — a review of <em>insulin</em> pricing that contains no SGLT2i launch or generic prices, and which predates the 2024+ figures it was cited for. The numbers are retained as unsourced pending a primary pricing source.</p>
                     <p><strong>Lessons for GKA:</strong> Rapid price decline post-patent cliff; branded tier maintains 50-100% premium for 2-3 years after generic entry</p>
-                    <p><strong>Data source:</strong> Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823); CMS drug pricing databases; IQVIA IMS Health reports</p>
+                    <p><strong>Data source:</strong> <span class="unsourced">[NO PRIMARY SOURCE IDENTIFIED]</span> &mdash; corrected 2026-09-13. This line previously read "Herman, Endocrinol Metab Clin North Am 2021 (PMID:34763823); CMS drug pricing databases; IQVIA IMS Health reports", re-asserting for the block as a whole the exact provenance the note directly above withdrew from its individual figures on 2026-08-27. No CMS or IQVIA extract exists in this repository.</p>
                 </div>
             </div>
 
@@ -808,7 +809,7 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="expand-content">
                     <p><strong>Reference:</strong> Ozempic (T2D) and Victoza (diabetes + weight loss)</p>
-                    <p><strong>Launch Pricing (2009-2012):</strong> $10,000-$15,000/year (US) (PMID:34763823)</p>
+                    <p><strong>Launch Pricing (2009-2012):</strong> $10,000-$15,000/year (US) <span class="unsourced">[UNSOURCED &mdash; PMID:34763823 is an insulin-pricing review and reports no semaglutide or liraglutide launch price]</span></p>
                     <p><strong>Current Pricing (2024):</strong> $10,000-$20,000/year (weight loss boom) (PMID:38639547)</p>
                     <p><strong>Relevance to GKA T1D pricing:</strong> Premium pricing justified by unmet need, insulin-sparing benefit, novel mechanism</p>
                     <p><strong>Data source:</strong> Schousboe et al. Ann Intern Med 2024 (PMID:38639547); FDA NDA approvals; pharmacy benefit manager reports</p>
@@ -819,17 +820,17 @@ html_content = f"""<!DOCTYPE html>
 
             <div class="expandable">
                 <div class="expand-header">
-                    <strong>IDF Cost-of-Diabetes Estimates</strong>
+                    <strong>Population and Cost Denominators</strong>
                     <span class="expand-icon"></span>
                 </div>
                 <div class="expand-content">
-                    <p><strong>Source:</strong> Khan et al. J Epidemiol Glob Health 2020 (PMID:32175717); IDF Diabetes Atlas 2023</p>
-                    <p><strong>T2D population (global):</strong> ~537 million (2023 estimate)</p>
-                    <p><strong>T1D population (global):</strong> ~9.4 million</p>
-                    <p><strong>US T1D population:</strong> ~1.4 million</p>
-                    <p><strong>T1D care cost (US):</strong> $14,000-$20,000/year per patient (PMID:32175717)</p>
-                    <p><strong>T1D indirect costs:</strong> Productivity loss, complications (neuropathy, nephropathy, retinopathy)</p>
-                    <p><strong>Relevance:</strong> GKA T1D pricing of $8-15K/year adds 40-75% to existing T1D care cost; offset by insulin-sparing and complication reduction (PMID:34763823)</p>
+                    <p><em>Corrected 2026-09-09. This block previously read "IDF Cost-of-Diabetes Estimates" and attributed the T2D population, both T1D populations and a US T1D care cost to PMID:32175717. That paper (Khan MAB et al., "Epidemiology of Type 2 Diabetes &mdash; Global Burden of Disease and Forecasted Trends", J Epidemiol Glob Health 2020;10(1):107-111) is a five-page GBD analysis of TYPE 2 diabetes only. It reports no cost data of any kind and no type 1 data of any kind. Its figures are restated correctly below; the rest are marked unsourced rather than deleted so the reader can see what was being claimed.</em></p>
+                    <p><strong>T2D population (global), per PMID:32175717:</strong> 462 million in 2017, i.e. 6.28% of world population; prevalence 6059 per 100,000, projected to 7079 per 100,000 by 2030. NOTE the previously published figure here was "~537 million (2023 estimate)", which is an IDF Diabetes Atlas number, not Khan's, and was never separately cited.</p>
+                    <p><strong>T1D population (global):</strong> ~9.4 million &mdash; [UNSOURCED] (commonly attributed to IDF Diabetes Atlas; no edition or page verified here)</p>
+                    <p><strong>US T1D population:</strong> ~1.4 million &mdash; [UNSOURCED]</p>
+                    <p><strong>T1D care cost (US):</strong> $14,000-$20,000/year per patient &mdash; [UNSOURCED]</p>
+                    <p><strong>T1D indirect costs:</strong> Productivity loss, complications (neuropathy, nephropathy, retinopathy) &mdash; qualitative, uncosted</p>
+                    <p><strong>Relevance:</strong> the "adds 40-75% to existing T1D care cost" arithmetic depends on the unsourced $14-20K denominator above and cannot be relied on until that denominator is sourced.</p>
                 </div>
             </div>
 
@@ -857,14 +858,14 @@ html_content = f"""<!DOCTYPE html>
                     <td>China regulatory approval Sept 2022; pricing $2-3K/yr (PMID:36449148)</td>
                 </tr>
                 <tr>
-                    <td>IDF Epidemiology</td>
+                    <td>T2D Epidemiology (GBD)</td>
                     <td>Khan MAB et al. J Epidemiol Glob Health 2020;10(1):107-111 (PMID:32175717)</td>
-                    <td>T1D (1.4M US), T2D (537M global); care costs (PMID:32175717)</td>
+                    <td>T2D prevalence only: 462M in 2017 (6.28% of world population), projected 7079/100,000 by 2030. Contains no cost data and no type 1 data. Corrected 2026-09-09; this cell previously read "T1D (1.4M US), T2D (537M global); care costs", none of which is in the paper.</td>
                 </tr>
                 <tr>
                     <td>SGLT2i Pricing</td>
-                    <td>CMS/IQVIA/PubMed (PMID:34763823)</td>
-                    <td>$5-8K launch, $200-400 generic; 5-year window (PMID:34763823)</td>
+                    <td><span class="unsourced">[NO SOURCE]</span></td>
+                    <td>$5-8K launch, $200-400 generic; 5-year window &mdash; <span class="unsourced">[UNSOURCED]</span>. Corrected 2026-09-13: this row attributed these figures to "CMS/IQVIA/PubMed (PMID:34763823)". They are the same two figures the 2026-08-27 repair marked UNSOURCED in the SGLT2i case-study block, so the repository's own provenance table was still certifying as sourced what the page body had already withdrawn.</td>
                 </tr>
             </table>
 

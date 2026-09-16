@@ -170,6 +170,19 @@ tr:hover { background: var(--accent-light); }
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -239,6 +252,7 @@ tr:hover { background: var(--accent-light); }
     </div>
   </div>
 </nav>
+
 
 
 <div class="header">
@@ -325,7 +339,7 @@ tr:hover { background: var(--accent-light); }
 
   <!-- PIPELINE -->
   <div id="pipeline" class="tab-content">
-    <input type="text" class="search-bar" placeholder="Search therapies, organizations, mechanisms..." aria-label="Search therapies, organizations, mechanisms..." oninput="filterPipelineTable()">
+    <input type="text" class="search-bar" placeholder="Search therapies, organizations, mechanisms..." aria-label="Search therapies, organizations, mechanisms..." aria-label="Search therapies, organizations, mechanisms..." oninput="filterPipelineTable()">
     <div class="filter-row">
       <button class="filter-btn active" onclick="setPipelineFilter('all')">All (55)</button>
       <button class="filter-btn" onclick="setPipelineFilter('T1D')">T1D</button>
@@ -401,7 +415,7 @@ tr:hover { background: var(--accent-light); }
   <!-- PAPERS -->
   <div id="papers" class="tab-content">
     <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px;">25 high-impact papers across all research domains</p>
-    <input type="text" class="search-bar" placeholder="Search papers by title, topic, journal..." aria-label="Search papers by title, topic, journal..." oninput="filterPapersTable()">
+    <input type="text" class="search-bar" placeholder="Search papers by title, topic, journal..." aria-label="Search papers by title, topic, journal..." aria-label="Search papers by title, topic, journal..." oninput="filterPapersTable()">
     <div class="table-container">
       <table role="table" id="papersTable">
         <thead>
@@ -675,15 +689,40 @@ filterPapersTable();
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Platform References</h3>
+    <!-- WITHDRAWN 2026-09-10, during the <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a> sweep, and this was the most serious of
+         the four withdrawn methodology blocks because it sits on the hub's main dashboard and
+         because two of its claims lent outside authority to the project's OWN framework.
+         ALL FIVE citations were false:
+           37105208 was labelled in the visible text as "IDF Atlas 10th ed." It is not. <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID
+             37105208</a> is "Association between primary graft function and 5-year outcomes of islet
+             allogeneic transplantation in type 1 diabetes: a retrospective, multicentre,
+             observational cohort study in 1210 patients from the Collaborative Islet Transplant
+             Registry", Lancet Diabetes Endocrinol 2023. This is an explicit misidentification, not
+             a vague attachment: the page named a source the PMID is not. The IDF Diabetes Atlas is
+             a registry publication and is not indexed under that PMID.
+           29710129 (CAR-T total costs, JAMA Oncol 2018), 34763823 (insulin pricing review,
+             Endocrinol Metab Clin North Am 2021) and 37909353 (Economic Costs of Diabetes in the
+             U.S. in 2022, Diabetes Care 2024) were cited for "WHO classification of diabetes
+             research areas and systematic mapping reviews". None is a WHO classification and none
+             is a mapping review; all three are cost papers.
+           32175717 (Khan MAB et al., GBD analysis of T2D prevalence, J Epidemiol Glob Health 2020)
+             was cited for "validation methodology follows triple-source framework aligned with
+             Oxford CEBM evidence levels". The paper says nothing about evidence grading. The
+             triple-source framework is this repository's own construct, defined in
+             RESEARCH_DOCTRINE.md - and that definition is itself under an open queue item
+             (2026-08-31) for counting three documents about one study as three sources. Citing an
+             unrelated paper beside it made a house rule look externally validated. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Research landscape mapped using PubMed, ClinicalTrials.gov, and IDF Diabetes Atlas data
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a> &mdash; IDF Atlas 10th ed.).
-      Domain taxonomy informed by WHO classification of diabetes research areas and systematic mapping reviews
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>).
-      Validation methodology follows triple-source framework aligned with Oxford CEBM evidence levels
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+      Research landscape mapped using PubMed and ClinicalTrials.gov. The domain taxonomy and the
+      tiering framework used across this hub are this project's own constructs, defined in
+      <code>RESEARCH_DOCTRINE.md</code>; they are not adopted from an external standard and are not
+      externally validated.
+      <strong>Withdrawn 2026-09-10:</strong> this section previously cited five papers here,
+      including one presented as the IDF Diabetes Atlas and one presented as the basis of the
+      validation framework. All five were misattributed &mdash; the "IDF Atlas" PMID is in fact a
+      Collaborative Islet Transplant Registry cohort study, and the remaining four are diabetes
+      cost and prevalence papers unrelated to taxonomy or evidence grading. They were removed
+      rather than replaced.
     </p>
   </div>
 </div>

@@ -415,6 +415,16 @@ html_content = '''<!DOCTYPE html>
             font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
         }
 
+        .unsourced {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border: 1px solid #e0d3a8;
+            border-radius: 3px;
+            padding: 0 4px;
+            font-size: 0.85em;
+            font-family: "SF Mono", Monaco, Consolas, "Courier New", monospace;
+        }
+
         @media (max-width: 768px) {
             .tabs {
                 padding: 0;
@@ -1045,12 +1055,17 @@ html_content = '''<!DOCTYPE html>
         <h3>Current Pricing Landscape</h3>
         <div class="comparison">
             <div class="comparison-box">
+                <!-- Repaired 2026-09-10. Cited to PMID:32175717 = Khan MAB et al., J Epidemiol
+                     Glob Health 2020;10(1):107-111, a Global Burden of Disease analysis of type 2
+                     diabetes prevalence. It contains no price data of any kind. This is the same
+                     false attachment removed from build_gka_pricing.py on 2026-09-09, where the
+                     identical "metformin annual cost $50-100" claim carried the identical PMID. -->
                 <h4>Generic Metformin</h4>
-                <p>~$50/year (PMID:32175717) | Market: Commodity pricing | Setting: Global</p>
+                <p>~$50/year <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, a T2D prevalence paper with no price data.">[UNSOURCED]</span> | Market: Commodity pricing | Setting: Global</p>
             </div>
             <div class="comparison-box">
                 <h4>Generic DPP-4i (Sitagliptin)</h4>
-                <p>~$300-400/year (PMID:34763823) | Market: Moderate competition | Setting: Global</p>
+                <p>~$300-400/year <span class="unsourced" title="Citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no sitagliptin price. Note also that line 1137 of this same file gave generic sitagliptin as $100-150/year on the identical citation; one source cannot support two different prices for one drug.">[UNSOURCED &mdash; and contradicted below]</span> | Market: Moderate competition | Setting: Global</p>
             </div>
         </div>
 
@@ -1061,7 +1076,7 @@ html_content = '''<!DOCTYPE html>
             </div>
             <div class="comparison-box">
                 <h4>GLP-1 Agonists (Branded)</h4>
-                <p>$10,000-15,000/year (PMID:34763823) | Market: Specialty | Setting: US (uninsured); $200-500 with copay (PMID:34763823) | Projected LMIC generic pricing: $200-500/year (no published data available)</p>
+                <p>$10,000-15,000/year <span class="unsourced">[UNSOURCED]</span> | Market: Specialty | Setting: US (uninsured); $200-500 with copay <span class="unsourced">[UNSOURCED]</span> | Projected LMIC generic pricing: $200-500/year (no published data available) &mdash; <em>citations removed 2026-09-13: PMID:34763823 is an insulin-pricing review and carries no GLP-1 list price or copay figure.</em></p>
             </div>
         </div>
 
@@ -1079,8 +1094,8 @@ html_content = '''<!DOCTYPE html>
         <h3>Trajectory to Generic Status</h3>
         <p>Once dorzagliatin patents expire in key markets:</p>
         <ul>
-            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs) (PMID:29710129)</li>
-            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available) (PMID:34763823)</li>
+            <li><strong>Manufacturing cost:</strong> Generic GKA synthesis estimated at $50-150/kg (small molecule; estimated; no published cost-of-goods data for GKAs) <span class="unsourced" title="Citation removed 2026-09-13: PMID:29710129 is Hernandez, Prasad &amp; Gellad, 'Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy', JAMA Oncol 2018;4(7):994-996. A CAR-T cost-of-care research letter reports no small-molecule cost of goods.">[UNSOURCED]</span></li>
+            <li><strong>Retail price (LMICs):</strong> Projected $200-500/year in generic markets (India, Bangladesh, Kenya, etc.; projected; no published LMIC pricing data available) <span class="unsourced" title="Citation removed 2026-09-13: the sentence states no published data exists and then cites PMID:34763823, an insulin-pricing review, for the figure.">[UNSOURCED]</span></li>
             <li><strong>Comparison:</strong> 3-5x more expensive than metformin, but far cheaper than GLP-1 agonists</li>
         </ul>
 
@@ -1095,10 +1110,10 @@ html_content = '''<!DOCTYPE html>
                 <ul>
                     <li><strong>Metformin:</strong> Cheap, but insufficient in advanced disease</li>
                     <li><strong>Sulfonylureas:</strong> Cheap, but hypoglycemia risk; beta cell exhaustion</li>
-                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year) (PMID:34763823)</li>
+                    <li><strong>GLP-1 agonists:</strong> Unaffordable for most LMIC patients ($10,000+ per year) <span class="unsourced">[UNSOURCED]</span></li>
                 </ul>
 
-                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) (PMID:34763823) oral drug with:</p>
+                <p><strong>GKA opportunity:</strong> Affordable ($200-500/year generic) <span class="unsourced">[UNSOURCED]</span> oral drug with:</p>
                 <ul>
                     <li>Dual mechanism (insulin secretion + hepatic glucose uptake)</li>
                     <li>Good glycemic control without weight gain</li>
@@ -1119,7 +1134,8 @@ html_content = '''<!DOCTYPE html>
 
         <h3>Competitive Pricing Model</h3>
         <div class="data-point">
-            Generic Dorzagliatin (projected India): $200-300/year (PMID:34763823) | Generic Sitagliptin (current): $100-150/year (PMID:34763823) | Branded Dorzagliatin (China): $2,500/year (PMID:36449148) | Branded GLP-1 RA (US): $12,000/year (PMID:34763823)
+            Generic Dorzagliatin (projected India): $200-300/year <span class="unsourced">[UNSOURCED]</span> | Generic Sitagliptin (current): $100-150/year <span class="unsourced" title="Also contradicts this file's own earlier figure of ~$300-400/year for the same drug on the same citation.">[UNSOURCED &mdash; contradicts figure above]</span> | Branded Dorzagliatin (China): $2,500/year (PMID:36449148) | Branded GLP-1 RA (US): $12,000/year <span class="unsourced">[UNSOURCED]</span>
+            <br><em style="font-size:0.85em;color:#8a6d3b;">Citations removed 2026-09-13: three of these four prices were attributed to PMID:34763823, a review of insulin pricing that reports no dorzagliatin, sitagliptin or GLP-1 price.</em>
         </div>
 
         <h3>Connection to Gap #15: GKA Pricing Trajectory Model (BRONZE)</h3>

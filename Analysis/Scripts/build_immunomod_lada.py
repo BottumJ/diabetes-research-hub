@@ -27,7 +27,12 @@ LADA_VS_T1D = {
             "name": "Autoantibody Profile",
             "lada": "GADA+ only (65-90%)",
             "t1d": "Multi-antibody (GADA+IA2A+ZnT8A+IAA)",
-            "source": "UKPDS (PMID:18073361)"
+            # WITHDRAWN 2026-09-15 (author-surname audit). PMID 18073361 is Willi C
+            # et al., "Active smoking and the risk of type 2 diabetes", JAMA 2007.
+            # It is not UKPDS and reports no autoantibody data. The "GADA+ only
+            # (65-90%)" figure is left UNSOURCED rather than re-pointed, because no
+            # replacement identifier was located and this repo does not guess.
+            "source": "UNSOURCED - citation withdrawn 2026-09-15 (PMID:18073361 was not UKPDS)"
         },
         {
             "name": "T-cell Autoreactivity",
@@ -324,9 +329,24 @@ PRIORITY_SCORES = [
 ]
 
 EVIDENCE_CATALOG = [
-    ("PMID:18073361", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"),
+    # WITHDRAWN 2026-09-15 (author-surname audit). PMID 18073361 is Willi C et al.,
+    # "Active smoking and the risk of type 2 diabetes: a systematic review and
+    # meta-analysis", JAMA 2007. It is not by Latner, it is not UKPDS, and it does
+    # not report GADA prevalence or LADA progression - all three assertions on this
+    # row were false. Verified via NCBI esummary 2026-09-15. Row removed rather than
+    # re-pointed: no replacement identifier was located.
+    # ("PMID:18073361", "Latner et al. / UKPDS", "GADA prevalence and progression characteristics in LADA"),
     ("PMID:23248199", "ACTION LADA Study", "Epidemiology and progression rates in LADA"),
-    ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
+    # WITHDRAWN 2026-09-16 (author-surname audit, NCBI esummary). This row read
+    # ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention..."). PMID
+    # 29885104 is Huh JH, Lee M, Park SY et al., "Glycated Albumin Is a More
+    # Useful Glycation Index than HbA1c for Reflecting Renal Tubulopathy in
+    # Subjects with Early Diabetic Kidney Disease", Diabetes Metab J 2018 - not
+    # a vitamin D paper, not a prevention paper, and not by Insel. Author,
+    # subject and implication were all false. No replacement identifier is
+    # asserted: no Insel vitamin-D/T1D-prevention paper was confirmed on title
+    # AND journal, and this repo does not guess a substitute.
+    # ("PMID:29885104", "Insel et al.", "Vitamin D and T1D prevention; implications for LADA"),
     ("PMID:19940299", "TrialNet", "Rituximab in new-onset T1D; slowed C-peptide decline"),
     # Repaired 2026-08-28. This entry read PMID:20570966, which is
     # "Fucosyltransferase 2 (FUT2) non-secretor status is associated with
@@ -338,8 +358,26 @@ EVIDENCE_CATALOG = [
     ("PMID:21719096", "Orban T et al., Lancet 2011",
      "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial"),
     ("PMID:27727279", "Todd et al.", "Low-dose IL-2 (DIABIL-2) Treg expansion in T1D"),
-    ("PMID:24997559", "Sanda et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
-    ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10); delayed T1D onset"),
+    # Surname corrected 2026-09-16 (author-surname audit, NCBI esummary). This
+    # row read "Sanda et al."; PMID 24997559 is Griffin KJ, Thompson PA,
+    # Gottschalk M et al., Lancet Diabetes Endocrinol 2014. The IDENTIFIER and
+    # the SUBJECT were correct - it is the REPAIR-T1D sitagliptin/lansoprazole
+    # trial - so only the attribution changed.
+    ("PMID:24997559", "Griffin et al.", "REPAIR-T1D: DPP-4i and PPI combination therapy"),
+    # Re-pointed 2026-09-16 (author-surname audit, NCBI esummary). This row read
+    # ("PMID:29291885", "Herold et al.", "Teplizumab Phase 3 (TN-10)..."). PMID
+    # 29291885 is Zanelli SA & Rogol AD, "Short children born small for
+    # gestational age outcomes in the era of growth hormone therapy", Growth
+    # Horm IGF Res 2018 - a different subject entirely. The intended paper is
+    # PMID 31180194, Herold KC et al., "An Anti-CD3 Antibody, Teplizumab, in
+    # Relatives at Risk for Type 1 Diabetes", N Engl J Med 2019;381:603-613,
+    # confirmed on first author, title and journal.
+    # SECOND ERROR ON THE SAME ROW, corrected here: TN-10 is a PHASE 2 trial
+    # (n=76), not Phase 3. PubMed publication type is "Clinical Trial, Phase
+    # II" and the abstract's METHODS says "a phase 2, randomized,
+    # placebo-controlled, double-blind trial". The Phase 3 teplizumab trial is
+    # PROTECT, a different study in new-onset disease.
+    ("PMID:31180194", "Herold et al.", "Teplizumab Phase 2 (TN-10), n=76; delayed T1D onset in at-risk relatives"),
 ]
 
 # ============================================================================
@@ -829,7 +867,10 @@ html_content = """<!DOCTYPE html>
                         <td><strong>Autoantibody Profile</strong></td>
                         <td>GADA+ only (65-90%)</td>
                         <td>Multi-antibody (GADA+IA2A+ZnT8A+IAA)</td>
-                        <td><span class="source">UKPDS (PMID:18073361)</span></td>
+                        <!-- Corrected 2026-09-15: 18073361 is Willi C et al., JAMA 2007
+                             (smoking and T2D risk), not UKPDS. See note at the dimensions
+                             table above. Identifier withdrawn, not re-pointed. -->
+                        <td><span class="source">UNSOURCED (citation withdrawn 2026-09-15)</span></td>
                     </tr>
                     <tr>
                         <td><strong>T-cell Autoreactivity</strong></td>

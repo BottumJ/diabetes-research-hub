@@ -496,6 +496,38 @@ SCRIPTS = {
     # file.
     'publishgatetest': ('test_publish_reachability_gate.py',
                         'Regression fixture: publish gate sensitivity AND specificity'),
+    # Added 2026-09-16, and it is a REPORTING stage, not a failing gate. Read
+    # the PAIRING RULE comment in the script before changing anything here.
+    #
+    # WHY REPORT-ONLY. Measured as the 2026-09-14 queue item specified it - a
+    # symmetric ~80-char window - this gate produced 103 mismatches that were
+    # almost entirely FALSE, because a symmetric window reaches backwards into
+    # the previous citation in a semicolon-separated run and tests every
+    # surname against its predecessor's PMID. Six false-positive classes have
+    # now been found and fixed (reverse straddle, PubMed initials, slash-joined
+    # runs, entity/diacritic folding, comma-separated reference lists, and
+    # malformed library records). The survivors it still prints include
+    # archived run reports and NON_FIRST_AUTHOR cases that are not defects, so
+    # failing the build on them would train the pipeline's red to be ignored.
+    #
+    # WHY THE FLAGS. --html scans generated .html for <a> elements whose PMID
+    # sits in an attribute (onclick/data-/href) with the surname in the anchor
+    # text. That class is invisible to prose pairing and it is where the
+    # Shapiro/10919952 defect survived a full sweep - it is also, per
+    # occurrence, the citation a reader is most likely to click.
+    # --resolve-unknown looks up PMIDs absent from the local paper library
+    # against NCBI esummary (cached to .surname_resolve_cache.json). That
+    # bucket was not neutral: a PMID is missing from the library exactly when
+    # it was added recently and by hand, which is also when it is most likely
+    # to be wrong. PMID 37359825 hid there for two days as "Voglova et al."
+    # (it is Wisel et al.) after a verification pass confirmed its CONTENTS and
+    # inherited the surname. Network failure inside the resolver is caught and
+    # leaves the PMID in the UNKNOWN bucket, so this stage cannot fail on a
+    # blip; it exits 0 in --measure mode regardless.
+    'surnames': ('audit_prose_author_surnames.py',
+                 'Auditing author-surname attributions (REPORT ONLY; prose + '
+                 'HTML anchors + NCBI resolution of unknowns)',
+                 ('--measure', '--html', '--resolve-unknown')),
 }
 
 def run_script(name, desc, script_args=()):

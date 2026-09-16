@@ -504,16 +504,34 @@ function sortTable(tableId, colIdx) {{
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Key References</h3>
+    <!-- REPAIRED 2026-09-10, during the PMID:32175717 sweep. FOUR of the five citations in this
+         block were false; the fifth was correct and is retained.
+           FALSE - 30899369, cited for "drug repurposing methodology based on mechanism-target
+             mapping and network pharmacology", is "Metformin induces the M2 macrophage
+             polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3
+             inflammasome signalling pathway", Am J Transl Res 2019. A bench study, not a method.
+           FALSE - 29710129 and 32175717, cited for "islet transplant immunosuppression protocols
+             and IBMIR mechanisms", are respectively a CAR-T cost analysis (JAMA Oncol 2018) and a
+             GBD analysis of T2D prevalence (J Epidemiol Glob Health 2020). Neither concerns islet
+             transplantation or IBMIR at all. Note the correct source for that sentence was already
+             sitting in the same block: 37359825 is an islet/pancreas transplant immunosuppression
+             paper. The claim has been re-pointed to it.
+           FALSE - 36449148, cited as the STRING database reference, is Syed, "Dorzagliatin: First
+             Approval", Drugs 2022. STRING has a real citation; this is not it, so the claim is
+             withdrawn rather than re-pointed, since no STRING reference was ever established here.
+           CORRECT - 37359825, "A Multi-Modal Approach to Islet and Pancreas Transplantation With
+             Calcineurin-Sparing Immunosuppression...", Transpl Int 2023. Retained.
+         Same defect and same three filler PMIDs as the withdrawn methodology blocks in
+         build_corpus_analysis.py and build_statistical_analysis.py. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Drug repurposing methodology based on mechanism-target mapping and network pharmacology approaches
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank">PMID 30899369</a>).
-      Islet transplant immunosuppression protocols and IBMIR mechanisms reviewed in
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
-      Protein-protein interaction network data from STRING database
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank">PMID 36449148</a>).
-      Combination therapy rationale informed by calcineurin-sparing approaches
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID 37359825</a>).
+      Islet transplant immunosuppression, including calcineurin-sparing regimens, is described in
+      <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID 37359825</a>
+      (Transpl Int 2023), which is also the basis for the combination-therapy rationale on this page.
+      <strong>Withdrawn 2026-09-10:</strong> this section previously also claimed a network-pharmacology
+      methodology source, a STRING protein-interaction database reference, and two further sources for
+      islet immunosuppression and IBMIR. All four PMIDs were misattributed &mdash; they pointed to a
+      metformin bench study, a dorzagliatin approval note, a CAR-T cost analysis and a diabetes
+      prevalence analysis respectively. They have been removed. No STRING data is used on this page.
     </p>
   </div>
 </div>

@@ -361,6 +361,17 @@ html_content = """<!DOCTYPE html>
             font-weight: 600;
         }
 
+        .unsourced {
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border: 1px solid #e0d3a8;
+            border-radius: 3px;
+            padding: 0 4px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
         .footer {
             text-align: center;
             padding: 2rem;
@@ -510,17 +521,40 @@ html_content = """<!DOCTYPE html>
                         <div class="metric-value">50M+</div>
                     </div>
                     <div class="metric-card">
+                        <!-- Repaired 2026-09-14. This card read "$80B+ (PMID:29710129)". The
+                             citation was withdrawn, the figure retained and its derivation now
+                             stated. PMID 29710129 (Hernandez, Prasad & Gellad, JAMA Oncol
+                             2018;4(7):994-996) is an oncology cost analysis: it supplies the UNIT
+                             price ($475,000 tisagenlecleucel / $373,000 axicabtagene ciloleucel)
+                             and the mean total expected cost ($510,963 / $402,647), and its own
+                             budget-impact figures are $259 million for 600 eligible
+                             tisagenlecleucel patients and $3 billion for 7,500 eligible
+                             axicabtagene patients. It contains no diabetes figure of any kind.
+                             So the $80B+ is a PRODUCT computed here - roughly 10% of the 1.6M US
+                             T1D population at that unit cost - not a published aggregate, and
+                             stamping the source of one input onto the output made model arithmetic
+                             look like a finding. Same defect class as the computed-value citations
+                             in build_lada_diagnostic_model.py. The unit price remains correctly
+                             cited to 29710129 elsewhere on this page. -->
                         <div class="metric-label">Cost to Treat 10% at Oncology Price</div>
-                        <div class="metric-value">$80B+ <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span></div>
+                        <div class="metric-value">$80B+ <span class="unsourced" title="Derived here, not published: approximately 10% of the 1.6M US T1D population at the CAR-T unit cost reported in PMID:29710129. That paper contains no diabetes figure; its own budget-impact estimates are $259M and $3B for oncology populations.">[DERIVED]</span></div>
                     </div>
                     <div class="metric-card">
+                        <!-- Repaired 2026-09-10. This value was cited to PMID:32175717 = Khan MAB
+                             et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of
+                             Disease analysis of TYPE 2 diabetes PREVALENCE. It contains no cost
+                             data and no type 1 data, so it cannot support a T1D lifetime insulin
+                             cost. The PMID was also absent from this block's own source-note below,
+                             so nothing else in the block ever claimed it. Figure retained as
+                             unsourced; it is the denominator of "The Math" comparison directly
+                             beneath, which is therefore also unsourced on one side. -->
                         <div class="metric-label">Lifetime Insulin Cost (T1D)</div>
-                        <div class="metric-value">$300-500K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">[PMID:32175717]</a></span></div>
+                        <div class="metric-value">$300-500K <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, a type 2 diabetes prevalence paper containing no cost data and no type 1 data.">[UNSOURCED]</span></div>
                     </div>
                 </div>
 
                 <div class="comparison-box">
-                    <strong>The Math:</strong> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</strong>. At current oncology pricing ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span>), cell therapy is economically impossible at diabetes scale.
+                    <strong>The Math:</strong> <em>(Caveat added 2026-09-10: the lifetime-insulin figure this comparison is measured against is now unsourced &mdash; see the card above. The CAR-T side of the comparison is sourced; the insulin side is not.)</em> A one-time CAR-T cure for diabetes could theoretically be cost-effective compared to a lifetime of insulin, but only if the price drops to <strong>&lt;$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/31157579/" target="_blank">[PMID:31157579]</a></span> per treatment</strong>. At current oncology pricing ($373-475K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">[PMID:29710129]</a></span>), cell therapy is economically impossible at diabetes scale.
                 </div>
 
                 <div class="source-note">

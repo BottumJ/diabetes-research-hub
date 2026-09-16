@@ -78,8 +78,16 @@ DRUGS = [
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
         'key_pmids': '22336824, 24970885',
-        'key_reference': 'Shan et al. 2012 Cochrane; PREDIAN trial eGFR protection',
-        'detail': 'Proteinuria reduction; eGFR decline 2.1 vs 6.5 mL/min advantage',
+        'key_reference': 'PREDIAN trial (PMID:24970885) eGFR protection; Shan et al. 2012 Cochrane (PMID:22336824) is a CAVEAT, not support - see detail',
+        'detail': 'Proteinuria reduction; eGFR decline 2.1 vs 6.5 mL/min advantage (PREDIAN, n=169). '
+                  'CITATION DIRECTION CORRECTED 2026-09-13: the MODERATE grade was presented as resting on '
+                  'the Cochrane review PMID:22336824, which in fact concludes that "evidence to support the use '
+                  'of pentoxifylline for DKD was insufficient to develop recommendations for its use", most '
+                  'included studies being small, poorly reported and methodologically flawed. The citation was '
+                  'correctly identified but pointed the opposite way to the claim it was supporting. The grade '
+                  'has NOT been changed unattended (2026-08-20 precedent) and now rests on PREDIAN alone, with '
+                  'the Cochrane review shown as the countervailing evidence it is. Whether one open-label trial '
+                  'of 169 patients sustains MODERATE is a human call.',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
     {
@@ -281,7 +289,10 @@ TOP_CANDIDATES = [
         'rank': 1,
         'name': 'Verapamil',
         'title': 'The strongest case for beta cell protection in a generic drug',
-        'body': 'TXNIP mechanism well-characterized. Phase 2 positive. Phase 3 needed. Cost: $50/year [PMID:34763823]. Could be deployed in any country. Only 30% decline in C-peptide vs 49% placebo in new T1D onset. This is the most cost-effective and mechanistically sound generic drug candidate.'
+        # Repaired 2026-09-12. This read "Cost: $50/year [PMID:34763823]". PMID 34763823 is
+        # Herman & Kuo, an INSULIN pricing review; it holds no verapamil price. Same defect as
+        # the fenofibrate and pentoxifylline entries repaired 2026-09-10, different filler PMID.
+        'body': 'TXNIP mechanism well-characterized. Phase 2 positive. Phase 3 needed. Cost: $50/year [UNSOURCED]. Could be deployed in any country. Only 30% decline in C-peptide vs 49% placebo in new T1D onset. This is the most cost-effective and mechanistically sound generic drug candidate.'
     },
     {
         'rank': 2,
@@ -293,7 +304,11 @@ TOP_CANDIDATES = [
         'rank': 3,
         'name': 'Fenofibrate',
         'title': 'Repurposing for retinopathy is already happening',
-        'body': 'FIELD trial showed 30% reduction in laser therapy. Cost: $20/year [PMID:32175717]. Could prevent blindness in LMICs where laser treatment is unavailable. Most directly actionable for preventing vision loss.'
+        # Repaired 2026-09-10. This read "Cost: $20/year [PMID:32175717]". PMID 32175717 is
+        # Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of Disease
+        # analysis of type 2 diabetes PREVALENCE. It contains no cost or price data of any kind,
+        # so it cannot support a fenofibrate annual price. Figure retained, citation removed.
+        'body': 'FIELD trial showed 30% reduction in laser therapy. Cost: $20/year [UNSOURCED]. Could prevent blindness in LMICs where laser treatment is unavailable. Most directly actionable for preventing vision loss.'
     },
     {
         'rank': 4,
@@ -305,7 +320,9 @@ TOP_CANDIDATES = [
         'rank': 5,
         'name': 'Pentoxifylline',
         'title': 'Multiple small trials show proteinuria reduction in diabetic nephropathy',
-        'body': 'Mechanism (TNF-alpha) well-understood. Cost: $60/year [PMID:32175717]. Needs large RCT but existing data is promising for renal protection. Could prevent progression to dialysis.'
+        # Repaired 2026-09-10. This read "Cost: $60/year [PMID:32175717]". Same defect as the
+        # fenofibrate entry above: PMID 32175717 is a T2D prevalence paper with no cost data.
+        'body': 'Mechanism (TNF-alpha) well-understood. Cost: $60/year [UNSOURCED]. Needs large RCT but existing data is promising for renal protection. Could prevent progression to dialysis.'
     }
 ]
 
@@ -660,6 +677,16 @@ html_content = '''<!DOCTYPE html>
             font-family: "SF Mono", "Consolas", monospace;
         }
 
+        .unsourced {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border: 1px solid #e0d3a8;
+            border-radius: 3px;
+            padding: 0 4px;
+            font-size: 0.85em;
+            font-family: "SF Mono", "Consolas", monospace;
+        }
+
         .case-study {
             background-color: #ffffff;
             border-left: 4px solid #2d7d46;
@@ -765,15 +792,17 @@ html_content = '''<!DOCTYPE html>
             <h2>Why Generic Drug Repurposing Matters</h2>
 
             <h3>The Economics of Drug Development</h3>
-            <!-- Source: PMID:34763823 PMID:32175717 -->
+            <!-- Source: PMID:34763823. Repaired 2026-09-10: PMID:32175717 was also listed here
+                 and has been removed - it is a T2D prevalence paper and supplies none of the
+                 development-cost or timeline figures in this block. -->
             <div class="data-viz">
                 <div class="bar">
                     <div class="bar-label">New drug development</div>
-                    <div class="bar-fill" style="width: 100%;">$2.6B, 10-15 years <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></div>
+                    <div class="bar-fill" style="width: 100%;">$2.6B, 10-15 years <span style="color:#ffd; font-weight:600;">[UNSOURCED]</span></div>
                 </div>
                 <div class="bar">
                     <div class="bar-label">Drug repurposing</div>
-                    <div class="bar-fill" style="width: 12%;">$300M, 3-5 years <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></div>
+                    <div class="bar-fill" style="width: 12%;">$300M, 3-5 years <span style="color:#ffd; font-weight:600;">[UNSOURCED]</span></div>
                 </div>
                 <div class="bar">
                     <div class="bar-label">Generic drugs</div>
@@ -781,30 +810,32 @@ html_content = '''<!DOCTYPE html>
                 </div>
             </div>
 
-            <p><strong>New drug development:</strong> Average cost $2.6B <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>, timeline 10-15 years. High failure rates and regulatory burden.</p>
+            <p><strong>New drug development:</strong> Average cost $2.6B <span style="color:#b00; font-weight:600;">[UNSOURCED]</span>, timeline 10-15 years. High failure rates and regulatory burden. <em>Repaired 2026-09-12: this figure was attributed to PMID:34763823, an insulin-pricing review that contains no drug-development cost estimate. The $2.6B figure is widely associated with the Tufts CSDD / DiMasi analyses, which are not held in this corpus; it is marked unsourced rather than re-attributed from memory.</em></p>
 
-            <p><strong>Drug repurposing:</strong> Average cost $300M <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>, timeline 3-5 years. Safety already established from existing clinical use. Dramatically faster path to deployment.</p>
+            <p><strong>Drug repurposing:</strong> Average cost $300M <span style="color:#b00; font-weight:600;">[UNSOURCED]</span>, timeline 3-5 years. Safety already established from existing clinical use. Dramatically faster path to deployment. <em>Repaired 2026-09-12: same false attachment to PMID:34763823 as the line above.</em></p>
 
             <p><strong>Generic drugs:</strong> Off-patent, manufactured globally, cost cents to dollars per day. Infrastructure exists in every country.</p>
 
             <h3>The Diabetes Affordability Crisis</h3>
-            <!-- Source: PMID:34763823 -->
+            <!-- Repaired 2026-09-12: this block was labelled "Source: PMID:34763823". It is not.
+                 All figures below are now marked [UNSOURCED]; see the note under the paragraph. -->
             <div style="margin: 20px 0;">
                 <div class="stat-box">
                     <span class="stat-number">80%</span>
                     <span class="stat-label">diabetes patients in LMICs</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">$10K-$15K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></span>
+                    <span class="stat-number">$10K-$15K <span style="color:#b00;">[UNSOURCED]</span></span>
                     <span class="stat-label">GLP-1 agonists annually</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">$5K-$8K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">(PMID:34763823)</a></span></span>
+                    <span class="stat-number">$5K-$8K <span style="color:#b00;">[UNSOURCED]</span></span>
                     <span class="stat-label">SGLT2i annually</span>
                 </div>
             </div>
 
-            <p>Most novel therapies are unaffordable in low- and middle-income countries where 80% of diabetes patients live. GLP-1 agonists cost $10,000-$15,000 per year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>. SGLT2 inhibitors cost $5,000-$8,000 per year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>. Branded diabetes drugs are often unavailable in resource-limited settings.</p>
+            <p>Most novel therapies are unaffordable in low- and middle-income countries where 80% of diabetes patients live. GLP-1 agonists cost $10,000-$15,000 per year <span style="color:#b00; font-weight:600;">[UNSOURCED]</span>. SGLT2 inhibitors cost $5,000-$8,000 per year <span style="color:#b00; font-weight:600;">[UNSOURCED]</span>. Branded diabetes drugs are often unavailable in resource-limited settings. The 80% LMIC share is also unsourced.</p>
+            <p style="font-size:0.85em; color:#8a6d3b; border-left:4px solid #b00; padding-left:10px;"><em>Repaired 2026-09-12: all five figures in this block were attributed to PMID:34763823 (Herman &amp; Kuo, <em>100 Years of Insulin: Why Is Insulin So Expensive</em>, 2021). That paper is a review of insulin pricing and contains no GLP-1 or SGLT2 inhibitor prices and no LMIC population share. This is the paper named in the 2026-08-27 queue item as carrying 91 distinct claims across this repository; these were seven of them.</em></p>
 
             <p><strong>The opportunity:</strong> If existing generic drugs have proven diabetes mechanisms, they could be deployed immediately at scale, reaching over 400 million patients with limited alternatives.</p>
 
@@ -829,7 +860,7 @@ html_content = '''<!DOCTYPE html>
                     <tr>
                         <th>Drug</th>
                         <th>Original Indication</th>
-                        <th>Cost/Year</th>
+                        <th>Cost/Year <span style="color:#b00; font-weight:600;">[UNSOURCED]</span></th>
                         <th>Diabetes Mechanism</th>
                         <th>Evidence</th>
                         <th>Key Ref</th>
@@ -839,7 +870,23 @@ html_content = '''<!DOCTYPE html>
                 </tbody>
             </table>
 
-            <p style="margin-top: 20px; font-size: 0.9em; color: #636363; font-style: italic;">Drug costs derived from WHO model pricing and generic manufacturing data <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>.</p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #8a6d3b; border-left: 4px solid #b00; padding-left: 10px;">
+                <strong>REPAIRED 2026-09-12 &mdash; every price in the Cost/Year column is unsourced.</strong>
+                This note previously read: "Drug costs derived from WHO model pricing and generic manufacturing data
+                (PMID:34763823)". Both halves were false. PMID 34763823 is Herman &amp; Kuo, <em>100 Years of Insulin:
+                Why Is Insulin So Expensive</em> (Endocrinol Metab Clin North Am 2021) &mdash; a review of INSULIN
+                pricing, which holds no prices for colchicine, doxycycline, allopurinol, pentoxifylline or any other
+                generic in this table. And no WHO model-pricing extract is held anywhere in this repository, as
+                established when the same claim was withdrawn from build_drug_repurposing_screen.py on 2026-08-29.
+                The twenty prices are unchanged and are order-of-magnitude estimates of unknown origin.
+                <br><br>
+                <em>Why this survived the 2026-09-10 sweep of this same file:</em> that sweep marked the two prices
+                that appear in the recommendation cards below (&#36;20/yr and &#36;60/yr) as [UNSOURCED] but left the
+                <code>cost_per_year</code> field feeding this table untouched. The page therefore showed the same
+                figure as unsourced in one place and as WHO-sourced in another, for two days. This is the defect
+                recorded in the queue on 2026-09-09: repairs scoped to the passage that triggered them rather than to
+                every occurrence in the file.
+            </p>
         </div>
 
         <!-- TAB 3: Evidence Heat Map -->
@@ -893,21 +940,34 @@ html_content = '''<!DOCTYPE html>
             </div>
 
             <h3>Addressable Population</h3>
-            <p>If a generic drug costs $30/year <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span> and is available in 150 countries (covering ~4 billion population), the addressable population is vastly larger than branded alternatives available in <50 countries.</p>
+            <p>If a generic drug costs $30/year <span style="color:#b00; font-weight:600;">[UNSOURCED &mdash; repaired 2026-09-12, was attributed to PMID:34763823, an insulin-pricing review]</span> and is available in 150 countries (covering ~4 billion population), the addressable population is vastly larger than branded alternatives available in <50 countries.</p>
 
             <p><strong>Conservative estimate:</strong> Verapamil, Hydroxychloroquine, Losartan, and Atorvastatin together could reach 400M+ diabetes patients currently treated with metformin and sulfonylureas alone in LMICs.</p>
 
             <h3>Case Study: India</h3>
             <div class="case-study">
                 <div class="case-study-title">Rapid Deployment in India</div>
-                <p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exists for all 20 drugs in this catalog. Three of the top 5 candidates (Verapamil, Hydroxychloroquine, Losartan) are already on the India EML and manufactured by 10+ companies at prices below $1/month <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID:34763823</a></span>.</p>
+                <p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exists for all 20 drugs in this catalog. Three of the top 5 candidates (Verapamil, Hydroxychloroquine, Losartan) are already on the India EML and manufactured by 10+ companies at prices below $1/month <span style="color:#b00; font-weight:600;">[UNSOURCED &mdash; repaired 2026-09-12, was attributed to PMID:34763823, an insulin-pricing review that holds no India EML pricing]</span>.</p>
                 <p>Establishing diabetes indication through local RCT would require 18-24 months and could result in deployment to 350M+ diabetes patients within 36 months of indication approval.</p>
             </div>
 
             <h3>The Economic Case</h3>
-            <p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span> in direct and indirect costs per patient per year in any economy. Fenofibrate costs $20/year and prevents retinopathy progression in 30% of patients (FIELD trial) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span>. Cost per year of vision protection: <$100.</p>
+            <!-- Repaired 2026-09-10. Both paragraphs previously hung FOUR separate claims off
+                 PMID:32175717 (Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111) -
+                 the $10K-$30K blindness cost, the FIELD retinopathy result, the $30K-$50K dialysis
+                 cost, and the RENAAL creatinine result. That paper is a Global Burden of Disease
+                 analysis of type 2 diabetes PREVALENCE: 462 million people in 2017, 6.28% of world
+                 population, 6059 per 100,000 rising to a projected 7079 by 2030. It reports no
+                 costs and no trial outcomes, so none of the four are supportable from it.
+                 The two COST figures are now marked [UNSOURCED] pending a real health-economics
+                 source. The two TRIAL figures were re-sourced to the trials themselves, and both
+                 were RESTATED because the original wording converted a relative risk reduction
+                 into a proportion of patients benefiting - a materially larger claim. -->
+            <p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, a T2D prevalence paper containing no cost data.">[UNSOURCED]</span> in direct and indirect costs per patient per year in any economy. Fenofibrate costs $20/year <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, which contains no price data.">[UNSOURCED]</span>, and in the FIELD trial reduced the proportion of patients needing retinopathy laser treatment from 5.2% to 3.6% over 5 years (a 31% relative reduction, 1.6 percentage points absolute, NNT about 63; n=9795, p=0.0003) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/16310551/" target="_blank">PMID:16310551</a></span>.</p>
 
-            <p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span> per patient per year. Losartan costs $15/year and prevents doubling of creatinine in 25% of patients (RENAAL trial) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID:32175717</a></span>. Cost per year of renal protection: <$150.</p>
+            <p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, a T2D prevalence paper containing no cost data.">[UNSOURCED]</span> per patient per year. Losartan costs $15/year <span class="unsourced" title="Citation removed 2026-09-10: previously attributed to PMID:32175717, which contains no price data.">[UNSOURCED]</span>, and in the RENAAL trial reduced the RISK of doubling of serum creatinine by 25% (n=1513, mean 3.4 years, p=0.006) <span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/11565518/" target="_blank">PMID:11565518</a></span> &mdash; a relative risk reduction, not 25% of patients.</p>
+
+            <p style="font-size:0.85em;color:#8a6d3b;">The two "cost per year of protection" ratios previously printed here (&lt;$100 for vision, &lt;$150 for renal) were withdrawn on 2026-09-10: both divided an unsourced drug price by an unsourced complication cost, so neither numerator nor denominator had a source.</p>
         </div>
 
         <!-- TAB 6: Evidence References -->
@@ -936,12 +996,14 @@ html_content = '''<!DOCTYPE html>
         <p>Generic Drug x Diabetes Mechanism Catalog | Gap #12 SILVER Validated | Evidence-based repurposing for global diabetes access</p>
     </div>
 
-    <!-- Drug costs sourced from PMID:34763823 PMID:32175717 -->
+    <!-- Drug costs: PMID:32175717 removed 2026-09-10 (T2D prevalence paper, no cost data). See
+         the standing caveat that PMID:34763823 is itself an INSULIN pricing review and is being
+         asked to carry non-insulin generic prices; that is queue item 2026-08-27. -->
     <script>
-        // Cost data sourced from PMID:34763823, PMID:32175717
-        const drugsData = ''' + json.dumps(DRUGS) + '''; // PMID:34763823 PMID:32175717
+        // Cost data: PMID:34763823 only. PMID:32175717 removed 2026-09-10.
+        const drugsData = ''' + json.dumps(DRUGS) + '''; // PMID:34763823
         const applicationsList = ''' + json.dumps(APPLICATIONS) + ''';
-        const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + '''; // PMID:34763823 PMID:32175717
+        const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + '''; // PMID:34763823
 
         function switchTab(tabName) {
             const contents = document.querySelectorAll('.tab-content');

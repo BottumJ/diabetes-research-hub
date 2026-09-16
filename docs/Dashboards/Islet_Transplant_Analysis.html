@@ -457,7 +457,7 @@
             <h1>Islet Transplant Outcomes Analysis</h1>
             <div class="subtitle">Computational Model - Gap #3: Insulin Resistance x Islet Transplant</div>
             <div class="subtitle">The Tacrolimus Paradox & Next-Generation Protocols</div>
-            <div class="tagline">Diabetes Research Hub | Generated 2026-09-06 09:12</div>
+            <div class="tagline">Diabetes Research Hub | Generated 2026-09-16 03:16</div>
         </header>
 
         <div class="context-block">
@@ -599,6 +599,23 @@
     
             </div>
 
+            <!-- Added 2026-09-16. Does NOT resolve the chart-vs-text conflict recorded
+                 in GRAFT_DATA at the top of this file - that is a modelling decision and
+                 stays a human call. It stops the page presenting two unlabelled answers
+                 to one question: the plotted belatacept curve ends at 55% at year 10
+                 while the prose and the Evidence Catalog both report 70%, and until now
+                 nothing visible told a reader those are different quantities. -->
+            <p class="source" style="margin-top:0.4rem;">
+                Reading this chart: the belatacept curve is a <strong>modelled
+                trajectory</strong> and ends at 55% at year 10. It is not the same
+                quantity as the 70% reported elsewhere on this page, which is an
+                <strong>observed</strong> figure &mdash; 7 of 10 consecutive patients at
+                10 years in Wisel et al., <em>Transplant International</em> 2023
+                (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>). The Edmonton curve is registry data (1,477 recipients).
+                A modelled curve, a ten-patient series and a 1,477-recipient registry
+                should not be read off the same axis as if they measured the same thing.
+            </p>
+
             <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #8b2500;"></div>
@@ -636,19 +653,72 @@
                 <div class="metric-value">8%</div>
                 <div class="metric-label">At 20 years</div>
             </div>
-            <p class="source">Source: Shapiro et al., <a href="https://pubmed.ncbi.nlm.nih.gov/10919952/" target="_blank" rel="noopener" title="View on PubMed">PMID:10919952</a> (New England Journal of Medicine 2000); CITR Annual Reports (1,477 recipients, 2,947 infusions, median graft survival 5.9 years)</p>
+            <!-- Corrected 2026-09-15 (author-surname audit): the PMID was 10919952,
+                 which is Zeisel SH, "Is there a metabolic basis for dietary
+                 supplementation?", Am J Clin Nutr 2000 - a nutrition review with no
+                 connection to islet transplantation. The Shapiro Edmonton Protocol
+                 paper asserted here is <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID 10911004</a> (N Engl J Med 2000;343:230-8),
+                 verified against NCBI esummary on 2026-09-15. PMID replaced. -->
+            <p class="source">Source: Shapiro et al., <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID:10911004</a> (New England Journal of Medicine 2000); CITR Annual Reports (1,477 recipients, 2,947 infusions, median graft survival 5.9 years)</p>
 
             <h3>Belatacept/Efalizumab (Costimulation Blockade)</h3>
-            <p>Selective blockade of CD28-B7 costimulation avoids the direct beta-cell toxicity of calcineurin inhibitors. Results from the Hering et al. 2023 study and multicenter experiences demonstrate sustained superior outcomes.</p>
+            <!-- CITATION WITHDRAWN 2026-09-14, AND THESE ARE CLINICAL EFFICACY FIGURES, NOT COSTS.
+                 This block cited "Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023)" for 70% insulin
+                 independence at 10 years and 60% at 13.3 years under belatacept/efalizumab.
+                 Three separate errors, and the third is the serious one.
+                 (1) WRONG AUTHOR AND JOURNAL. <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID 37105208</a> is Chetboun et al. (CITR
+                 Investigators), Lancet Diabetes Endocrinol 2023;11(6):391-401 - not Hering, and
+                 not "Lancet". Confirmed against the journal listing and the Mayo Clinic
+                 publication record.
+                 (2) WRONG SUBJECT. It is a retrospective multicentre registry cohort of 1210
+                 CITR patients testing the association between primary graft function at 28 days
+                 and subsequent outcomes. It is not a study of belatacept, of efalizumab, or of
+                 costimulation blockade at all, and it reports no regimen-stratified insulin
+                 independence rate.
+                 (3) WRONG TIME HORIZON, WHICH NEEDS NO LOOKUP TO SEE. That paper's stated
+                 endpoint is the cumulative FIVE-YEAR incidence of unfavourable outcomes. A
+                 five-year study cannot report a 10-year or a 13.3-year rate. This is the temporal
+                 test developed for the 34763823 sweep, and it is the cheapest check available.
+                 RE-SOURCED LATER THE SAME DAY, AND THIS CORRECTS AN ERROR IN THE PARAGRAPH
+                 ABOVE. The first version of this note concluded "the figures are not re-sourced
+                 and should be treated as suspect" and "no replacement source has been
+                 identified". That was wrong, and it was wrong because the sweep stopped at the
+                 PMID it was auditing instead of asking where the numbers actually came from.
+                 THE FIGURES ARE REAL AND CORRECTLY REPORTED. The source is Wisel et al.,
+                 "A Multi-Modal Approach to Islet and Pancreas Transplantation With
+                 Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence
+                 in Patients With Type I Diabetes", Transplant International 2023, <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID 37359825</a>,
+                 doi 10.3389/ti.2023.11367 - which was ALREADY CITED CORRECTLY in this file's own
+                 Evidence Catalog table, roughly 700 lines below, and which no sweep had opened.
+                 So this was never a fabricated number; it was a correct number with the wrong
+                 paper stapled to it, while the right paper sat elsewhere on the same page.
+                 WHAT THE PAPER ACTUALLY REPORTS, and it is the denominator that matters:
+                 TEN consecutive non-uremic type 1 diabetes patients, five on belatacept and
+                 five on efalizumab. "70% at 10 years" is SEVEN PATIENTS - four efalizumab,
+                 three belatacept. "60% at 13.3 years" is SIX PATIENTS, at a mean follow-up of
+                 13.3 +/- 1.1 years. Three of the seven had a pancreas-after-islet transplant,
+                 i.e. they received a whole pancreas, which materially qualifies any read of
+                 this as an islet-transplant outcome.
+                 THE REAL DEFECT WAS THEREFORE THE COMPARISON, NOT THE CITATION. This page sets
+                 70% against the 20%-at-10-years figure it publishes sixty lines above, which
+                 comes from CITR Annual Reports covering 1,477 recipients. A seven-patient
+                 subgroup of a ten-patient case series is not commensurable with a 1,477-patient
+                 registry, and presenting the two as a regimen comparison overstates what the
+                 evidence supports regardless of which PMID is attached. The figures are retained
+                 with their correct source and their denominator now stated in the visible text.
+                 NOTE ALSO, unreconciled: GRAFT_DATA at the top of this file plots 55% at year 10
+                 for belatacept, so the chart and the prose on this page disagree. Flagged, not
+                 changed, because which is intended is a modelling decision. -->
+            <p>Selective blockade of CD28-B7 costimulation avoids the direct beta-cell toxicity of calcineurin inhibitors, and has been proposed as a way to escape the tacrolimus paradox described below. The long-term results below come from a <strong>single series of ten consecutive patients</strong> (five belatacept, five efalizumab) and are reported as percentages of that ten. They are not directly comparable with the registry figures shown above, which cover 1,477 recipients.</p>
             <div class="metric">
                 <div class="metric-value">70%</div>
-                <div class="metric-label">Insulin independence at 10 years</div>
+                <div class="metric-label">Insulin independence at 10 years <span class="caveat" title="Seven of ten patients - four efalizumab, three belatacept. Three of the seven received a pancreas-after-islet transplant. Source corrected 2026-09-14: this figure was previously attributed to <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a>, a CITR registry study with a five-year endpoint that does not report it.">(7 of 10 patients)</span></div>
             </div>
             <div class="metric">
                 <div class="metric-value">60%</div>
-                <div class="metric-label">At 13.3 years</div>
+                <div class="metric-label">At 13.3 years <span class="caveat" title="Six of ten patients, at a mean follow-up of 13.3 +/- 1.1 years. Includes one patient insulin independent 9 years after discontinuing all immunosuppression for adverse events, which the authors describe as suggesting operational tolerance.">(6 of 10 patients, mean follow-up 13.3 &plusmn; 1.1 yr)</span></div>
             </div>
-            <p class="source">Source: Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023); Long-term follow-up data from specialized centers</p>
+            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>), a consecutive series of 10 non-uremic T1D patients on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em> &mdash; previously attributed to "Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a 1,210-patient CITR registry study of primary graft function with a five-year endpoint that reports none of these figures. <strong>Read the denominator before comparing with the registry rates above.</strong></p>
 
             <h3>LANTIDRA (Donislecel)</h3>
             <p>The first FDA-approved allogeneic pancreatic islet product (June 2023). Phase 3 trial results show strong initial outcomes, though long-term follow-up remains limited.</p>
@@ -824,7 +894,7 @@
                 <div class="metric-label">Estimated insulin independence at 10 years (modeled trajectory)</div>
             </div>
             <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up. <em>Note: Trajectory shown is modeled based on limited published data points; actual graft survival curves show more variability than linear projections.</em></p>
-            <p class="source">Source: Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023); Long-term multicenter follow-up</p>
+            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the "~70%" above is a modeled trajectory anchored on seven patients, and the Edmonton 20% it is compared against comes from a 1,477-recipient registry.</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -1098,7 +1168,7 @@
         <div id="next-generation" class="tab-content">
             <h2>Next-Generation Therapies: The Future of Islet Transplantation</h2>
 
-            <p>Allogeneic islet transplantation with current protocols offers durable insulin independence in only 20-30% of recipients at 10 years. Next-generation approaches seek to extend graft lifespan through cellular engineering, encapsulation, immunologic innovation, and stem cell biology.</p>
+            <p>Allogeneic islet transplantation with current protocols offers durable insulin independence in only 20-30% of recipients at 10 years <span class="unsourced" title="Flagged 2026-09-14. This is a fourth distinct 10-year figure on this dashboard, alongside 20% (Edmonton/CITR, sourced), 70% (Wisel n=10, sourced) and the 55% endpoint of the plotted belatacept curve. It carries no citation and its cohort is unstated - 20-30% is a plausible reading of the CITR registry but this page's own registry figure is 20%. Not reconciled: which cohort is meant is a human call.">[UNSOURCED &mdash; one of four 10-year figures on this page]</span>. Next-generation approaches seek to extend graft lifespan through cellular engineering, encapsulation, immunologic innovation, and stem cell biology.</p>
 
             <h3>VX-880 (Zimislecel): Stem Cell-Derived Allogeneic Islets</h3>
 
@@ -1316,16 +1386,37 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 10919952'); return false;">Shapiro et al., NEJM</a></td>
+                        <!-- Corrected 2026-09-15 (author-surname audit), second instance.
+                             Same defect as line ~579: 10919952 is Zeisel SH, Am J Clin Nutr
+                             2000, not Shapiro's NEJM 2000 Edmonton Protocol paper, which is
+                             <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID 10911004</a>. This instance hid from the surname audit because
+                             the identifier sits inside a JS onclick handler rather than in
+                             prose, which is a reach gap now recorded in the work queue. -->
+                        <td><a href="#" onclick="alert('PMID: 10911004'); return false;">Shapiro et al., NEJM</a></td>
                         <td>2000</td>
                         <td>Edmonton Protocol: First sustained insulin independence</td>
                         <td>Landmark trial (n=7)</td>
                     </tr>
                     <tr>
-                        <td><a href="#" onclick="alert('PMID: 37359825'); return false;">Voglova et al., Transpl Int</a></td>
+                    <!-- Corrected 2026-09-16 (author-surname verification against NCBI esummary).
+                         <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID 37359825</a> was attributed to "Voglova et al." in five places in this
+                         file. It is Wisel SA, Posselt AM, Szot GL, ... Stock PG, Transpl Int
+                         2023;36:11367. "Voglova" is not an author on it; Voglova's islet papers
+                         are PMIDs 33599904 and 28632818, which are different work. The FIGURES
+                         were verified correct against the abstract - 10 consecutive non-uremic
+                         T1D patients, 5 belatacept / 5 efalizumab, 70% (7/10, four EFA + three
+                         BELA) insulin independent at 10 years, 60% (6/10) at mean 13.3 +/- 1.1
+                         years, 3 of the 7 with pancreas-after-islet. Only the surname was wrong.
+                         HOW IT HID: the 2026-09-15 surname gate reports "unknown" rather than a
+                         flag when a PMID is absent from the paper library, and 37359825 is not
+                         in the library. The 2026-09-14 run verified this paper's CONTENTS and
+                         then inherited the surname from the prose it was checking, recording it
+                         in agent_state.json as "Not a defect - the CORRECT source", which would
+                         have made every later sweep skip it. -->
+                        <td><a href="#" onclick="alert('PMID: 37359825'); return false;">Wisel et al., Transpl Int</a></td>
                         <td>2023</td>
-                        <td>Belatacept: 70% at 10 years vs 20% Edmonton</td>
-                        <td>Multicenter follow-up</td>
+                        <td>Calcineurin-sparing regimen: 7 of 10 patients (70%) insulin independent at 10 years; 6 of 10 (60%) at mean 13.3 &plusmn; 1.1 years</td>
+                        <td>Consecutive case series, n=10 (5 belatacept, 5 efalizumab); 3 of the 7 had pancreas-after-islet transplant</td>
                     </tr>
                     <tr>
                         <td>CITR Annual Reports</td>
@@ -1441,7 +1532,7 @@
 
         <div class="footer">
             <p>Islet Transplant Analysis Dashboard</p>
-            <p>Generated: 2026-09-06 09:12</p>
+            <p>Generated: 2026-09-16 03:16</p>
             <p>This computational model is designed for educational and research purposes. Clinical decision-making should incorporate current guidelines, individual patient factors, and consultation with transplant specialists.</p>
             <p>Diabetes Research Hub | All data sourced from peer-reviewed literature and clinical trials</p>
         </div>

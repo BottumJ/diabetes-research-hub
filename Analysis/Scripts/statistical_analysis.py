@@ -296,7 +296,9 @@ def monte_carlo_lada_model(n_simulations=10000):
     
     for _ in range(n_simulations):
         # Sample parameters from distributions
-        gad_sensitivity = random.gauss(0.82, 0.03)  # 82% ± 3% (DASP range 76-88%)
+        gad_sensitivity = random.gauss(0.82, 0.03)  # 82% +/- 3%, nominal 76-88% range.
+        # UNSOURCED as of 2026-09-14: the "(DASP)" attribution for this range was withdrawn
+        # across build_lada_diagnostic_model.py. This Monte Carlo prior inherits that problem.
         gad_sensitivity = max(0.70, min(0.95, gad_sensitivity))
         
         gad_specificity = random.gauss(0.989, 0.005)

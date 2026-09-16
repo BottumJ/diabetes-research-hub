@@ -573,7 +573,13 @@ html_content = """<!DOCTYPE html>
                 <p><strong>Context:</strong> Some LADA patients have concurrent celiac disease or non-celiac gluten sensitivity. Whether gluten activates autoimmunity in LADA specifically is unknown.</p>
 
                 <ul>
-                    <li><strong>Type 1 diabetes:</strong> Celiac disease co-occurs in 3-5% of T1D patients. Possible shared genetics (HLA-DQ2/DQ8). Antvorskov et al. show dietary gluten and development of type 1 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/24838679/" target="_blank">PMID:24838679</a></li>
+                    <li><strong>Type 1 diabetes:</strong> Celiac disease co-occurs in 3-5% of T1D patients. Possible shared genetics (HLA-DQ2/DQ8). Antvorskov et al. show dietary gluten and development of type 1 diabetes. <a href="https://pubmed.ncbi.nlm.nih.gov/24871322/" target="_blank">PMID:24871322</a></li>
+                    <!-- Corrected 2026-09-15 (author-surname audit): the PMID was 24838679,
+                         which is Galderisi A, "Autoantibodies and type 1 diabetes: are we
+                         still in the cave of an ancient myth?", Diabetologia 2014 - a
+                         single-author Comment, not the gluten review. The Antvorskov review
+                         asserted here is PMID 24871322 (Diabetologia 2014;57:1770-80),
+                         title verified against NCBI esummary on 2026-09-15. PMID replaced. -->
                     <li><strong>LADA evidence:</strong> No specific studies. But HLA genes overlap between LADA and celiac disease. LADA patients with family history of celiac disease or gastrointestinal symptoms should be tested.</li>
                     <li><strong>Practical recommendation:</strong> Screen for celiac serology (TTG-IgA) in newly diagnosed LADA. If positive, strict gluten elimination. If negative and no GI symptoms, gluten restriction is not evidence-based but may be considered if anti-inflammatory diet shows insufficient benefit.</li>
                 </ul>

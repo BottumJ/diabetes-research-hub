@@ -240,14 +240,40 @@ tbody tr:hover {{ background: #f5f4ef; }}
 <div style="max-width:1300px;margin:2rem auto;padding:0 40px;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;margin-bottom:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Key References &amp; Methodology</h3>
+    <!-- BLOCK WITHDRAWN 2026-09-14. ALL FOUR CITATIONS WERE FALSE; NONE WAS RETAINED BECAUSE
+         NONE WAS CORRECT. This is the boilerplate-authority template described in the
+         2026-09-10 and 2026-09-11 state items, found again in a file that was NOT on either
+         item's audit list - so the instruction to "look for the rest of it" is still unfinished
+         and should not be closed on the named-file list alone.
+         WHAT WAS HERE, AND WHY EACH IS WRONG.
+         (i) PMID 29710129 was labelled "Zarin et al., N Engl J Med 2011, on ClinicalTrials.gov
+         as a data resource". It is Hernandez, Prasad & Gellad, "Total Costs of Chimeric Antigen
+         Receptor T-Cell Immunotherapy", JAMA Oncol 2018;4(7):994-996 - a CAR-T cost-of-care
+         research letter. Wrong author, wrong journal, wrong decade, wrong subject. This is a
+         misidentification BY NAME in reader-facing text, the same class as the 37105208 case
+         below and the 36449148/STRING case recorded on 2026-09-10.
+         (ii) PMID 37909353 and PMID 34763823 were jointly labelled "systematic reviews of the
+         global trial pipeline". 37909353 is "Economic Costs of Diabetes in the U.S. in 2022", a
+         US cost-of-illness study; 34763823 is Herman & Kuo, "100 Years of Insulin: Why Is
+         Insulin So Expensive", Endocrinol Metab Clin North Am 2021, a pricing review. Neither
+         is a systematic review and neither concerns a trial pipeline. Both are members of the
+         same small set of health-economics papers the 2026-09-10 item identified as this
+         repository's all-purpose filler.
+         (iii) PMID 37105208 was labelled "IDF Atlas 10th ed." It is a CITR islet
+         graft-function cohort study, Lancet Diabetes Endocrinol 2023. THIS EXACT
+         MISIDENTIFICATION, with this exact label, was found and repaired on the main Research
+         Dashboard on 2026-09-10 - so it is a recurrence in a second file, not a new error, and
+         a grep for the string "IDF Atlas" alongside a PMID would have caught both. That test is
+         cheap, needs no lookup, and is recommended as a gate.
+         The method prose is retained because it is accurate on its own terms and asserts
+         nothing about any paper: ClinicalTrials.gov is the data source, and the categorisation
+         does follow WHO ICTRP field conventions. It simply has no citation, and now says so. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Clinical trial data sourced from ClinicalTrials.gov, the primary registry for clinical studies worldwide
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a> &mdash; Zarin et al., <i>N Engl J Med</i> 2011, on ClinicalTrials.gov as a data resource).
-      Diabetes trial landscape analysis informed by systematic reviews of the global trial pipeline
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>).
-      Trial categorization methodology aligned with WHO ICTRP standards and IDF Diabetes Atlas epidemiological framework
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a> &mdash; IDF Atlas 10th ed.).
+      Clinical trial data are sourced from ClinicalTrials.gov (REST API v2), the primary registry
+      for clinical studies worldwide. Trial categorization follows WHO ICTRP field conventions.
+      <em>Citations withdrawn 2026-09-14: this block previously carried four PMIDs and all four
+      described papers other than the ones named. This methodology is described from the data
+      source itself and is not supported by a literature citation.</em>
     </p>
   </div>
 </div>

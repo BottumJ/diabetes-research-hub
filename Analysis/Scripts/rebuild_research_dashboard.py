@@ -818,15 +818,40 @@ filterPapersTable();
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Platform References</h3>
+    <!-- WITHDRAWN 2026-09-10, during the PMID:32175717 sweep, and this was the most serious of
+         the four withdrawn methodology blocks because it sits on the hub's main dashboard and
+         because two of its claims lent outside authority to the project's OWN framework.
+         ALL FIVE citations were false:
+           37105208 was labelled in the visible text as "IDF Atlas 10th ed." It is not. PMID
+             37105208 is "Association between primary graft function and 5-year outcomes of islet
+             allogeneic transplantation in type 1 diabetes: a retrospective, multicentre,
+             observational cohort study in 1210 patients from the Collaborative Islet Transplant
+             Registry", Lancet Diabetes Endocrinol 2023. This is an explicit misidentification, not
+             a vague attachment: the page named a source the PMID is not. The IDF Diabetes Atlas is
+             a registry publication and is not indexed under that PMID.
+           29710129 (CAR-T total costs, JAMA Oncol 2018), 34763823 (insulin pricing review,
+             Endocrinol Metab Clin North Am 2021) and 37909353 (Economic Costs of Diabetes in the
+             U.S. in 2022, Diabetes Care 2024) were cited for "WHO classification of diabetes
+             research areas and systematic mapping reviews". None is a WHO classification and none
+             is a mapping review; all three are cost papers.
+           32175717 (Khan MAB et al., GBD analysis of T2D prevalence, J Epidemiol Glob Health 2020)
+             was cited for "validation methodology follows triple-source framework aligned with
+             Oxford CEBM evidence levels". The paper says nothing about evidence grading. The
+             triple-source framework is this repository's own construct, defined in
+             RESEARCH_DOCTRINE.md - and that definition is itself under an open queue item
+             (2026-08-31) for counting three documents about one study as three sources. Citing an
+             unrelated paper beside it made a house rule look externally validated. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Research landscape mapped using PubMed, ClinicalTrials.gov, and IDF Diabetes Atlas data
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">PMID 37105208</a> &mdash; IDF Atlas 10th ed.).
-      Domain taxonomy informed by WHO classification of diabetes research areas and systematic mapping reviews
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank">PMID 34763823</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank">PMID 37909353</a>).
-      Validation methodology follows triple-source framework aligned with Oxford CEBM evidence levels
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
+      Research landscape mapped using PubMed and ClinicalTrials.gov. The domain taxonomy and the
+      tiering framework used across this hub are this project's own constructs, defined in
+      <code>RESEARCH_DOCTRINE.md</code>; they are not adopted from an external standard and are not
+      externally validated.
+      <strong>Withdrawn 2026-09-10:</strong> this section previously cited five papers here,
+      including one presented as the IDF Diabetes Atlas and one presented as the basis of the
+      validation framework. All five were misattributed &mdash; the "IDF Atlas" PMID is in fact a
+      Collaborative Islet Transplant Registry cohort study, and the remaining four are diabetes
+      cost and prevalence papers unrelated to taxonomy or evidence grading. They were removed
+      rather than replaced.
     </p>
   </div>
 </div>

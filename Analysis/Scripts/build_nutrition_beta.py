@@ -353,7 +353,16 @@ html_content = """<!DOCTYPE html>
                     <li><strong>Zinc:</strong> Essential cofactor for insulin crystallization and storage. The ZnT8 transporter is absolutely critical for packaging insulin into secretory granules. Zinc deficiency impairs insulin production. <a href="https://pubmed.ncbi.nlm.nih.gov/25287711/" target="_blank">PMID:25287711</a></li>
                     <li><strong>Omega-3 Fatty Acids (EPA/DHA):</strong> Anti-inflammatory and membrane-protective. Support mitochondrial function in beta cells and reduce islet inflammation. <a href="https://pubmed.ncbi.nlm.nih.gov/28375156/" target="_blank">PMID:28375156</a></li>
                     <li><strong>Vitamin D:</strong> Vitamin D receptors are present on beta cells. Immune modulation reduces autoimmune attack (relevant for LADA/T1D). Also supports calcium signaling required for insulin secretion. <a href="https://pubmed.ncbi.nlm.nih.gov/31173679/" target="_blank">PMID:31173679</a></li>
-                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels. <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></li>
+                    <!-- Corrected 2026-09-15 (author-surname audit). PMID was 17596481
+                         = Metzger BE et al., gestational diabetes workshop guideline,
+                         Diabetes Care 2007. Repointed to 17519436 = Balk EM et al.,
+                         chromium systematic review, Diabetes Care 2007;30:2154-63.
+                         CAVEAT RECORDED IN THE QUEUE: Balk is a CLINICAL systematic
+                         review (and its finding was equivocal); it does not test the
+                         cellular-signalling mechanism this sentence asserts. The
+                         mechanistic wording is therefore flagged as exceeding its
+                         source, pending a mechanistic citation. -->
+                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels. <span class="caveat">[mechanism not established by the cited clinical review]</span> <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></li>
                     <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D. <a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank">PMID:26322160</a></li>
                 </ul>
 
@@ -419,7 +428,8 @@ html_content = """<!DOCTYPE html>
                             <td><span class="evidence-badge evidence-moderate">MODERATE</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Chromium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></td>
+                            <!-- Corrected 2026-09-15: 17596481 -> 17519436, see note above. -->
+                            <td><strong>Chromium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></td>
                             <td>Enhances insulin receptor signaling downstream. Meta-analysis shows HbA1c improvement in some trials. Mechanism less clear than zinc/magnesium.</td>
                             <td>Broccoli, barley, oats, tomatoes</td>
                             <td>25-35 mcg/day (RDA)</td>
@@ -673,7 +683,14 @@ html_content = """<!DOCTYPE html>
 
                 <div class="reference">
                     <div class="reference-title">Chromium and Insulin Signaling</div>
-                    <div class="reference-meta">Balk et al. Effect of chromium supplementation on glucose metabolism. Diabetes Care. <a href="https://pubmed.ncbi.nlm.nih.gov/17596481/" target="_blank">PMID:17596481</a></div>
+                    <!-- Corrected 2026-09-15 (author-surname audit): the PMID was 17596481,
+                         which is Metzger BE et al., "Summary and recommendations of the
+                         Fifth International Workshop-Conference on Gestational Diabetes
+                         Mellitus", Diabetes Care 2007 - a gestational diabetes guideline,
+                         not a chromium study. The Balk chromium systematic review asserted
+                         here is PMID 17519436 (Diabetes Care 2007;30:2154-63), title
+                         verified against NCBI esummary on 2026-09-15. PMID replaced. -->
+                    <div class="reference-meta">Balk et al. Effect of chromium supplementation on glucose metabolism. Diabetes Care. <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></div>
                     <p>Chromium enhances insulin receptor tyrosine kinase activity. Meta-analyses show modest HbA1c benefits in T2D (0.4-0.6% reduction). Mechanism less understood than zinc/magnesium. Some genetic variation in chromium response likely but not yet characterized.</p>
                 </div>
 
