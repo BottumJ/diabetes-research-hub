@@ -971,17 +971,32 @@ html_content = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <h3>Secondary Trial: DAWN (Combination with SGLT2 Inhibitor)</h3>
+        <!-- CORRECTED 2026-09-17 (trial-phase audit). This block previously
+             read "Secondary Trial: DAWN (Combination with SGLT2 Inhibitor) /
+             Dorzagliatin + Empagliflozin / DAWN trial tested the combination
+             of dorzagliatin with empagliflozin (SGLT2 inhibitor)" with a
+             result of "Additive HbA1c reduction with favorable safety
+             profile", and carried NO citation at all.
+             DAWN is not an SGLT2i combination trial. DAWN is dorzagliatin
+             ADD-ON TO METFORMIN, n=767, Yang W et al., Nat Med
+             2022;28(5):974-981 (PMID:35551292). Empagliflozin does not appear
+             in it. Two other files in this repository - build_gka_pricing.py
+             and build_gka_lada.py - already described DAWN correctly, so the
+             site published two incompatible definitions of the same trial.
+             The uncited "additive HbA1c reduction" result described a trial
+             that was never run and is withdrawn, not replaced. -->
+        <h3>Secondary Trial: DAWN (Add-On to Metformin)</h3>
         <div class="section">
             <div class="section-header">
-                <h4>Dorzagliatin + Empagliflozin</h4>
+                <h4>Dorzagliatin + Metformin</h4>
                 <span class="expand-icon">+</span>
             </div>
             <div class="section-content">
-                <p>DAWN trial tested the combination of dorzagliatin with empagliflozin (SGLT2 inhibitor):</p>
+                <p>DAWN was a randomised, double-blind, placebo-controlled phase 3 trial of dorzagliatin added to metformin 1,500&nbsp;mg/day (n&nbsp;=&nbsp;767), 24 weeks double-blind followed by 28 weeks open-label (PMID:35551292):</p>
                 <ul>
-                    <li><strong>Rationale:</strong> Complementary mechanisms: GKA (hepatic glucose uptake + insulin secretion) + SGLT2i (renal glucose excretion)</li>
-                    <li><strong>Result:</strong> Additive HbA1c reduction with favorable safety profile</li>
+                    <li><strong>Rationale:</strong> Complementary mechanisms &mdash; GKA restores glucose sensing; metformin reduces hepatic glucose output</li>
+                    <li><strong>Result:</strong> Placebo-adjusted HbA1c reduction of &minus;0.66% at 24 weeks (PMID:35551292)</li>
+                    <li><strong>Note:</strong> This is a smaller effect than the &minus;1.07% reported for dorzagliatin monotherapy in drug-naive patients in SEED (PMID:35551294); the two figures are not comparable, since one is placebo-adjusted add-on and the other is monotherapy in an untreated population</li>
                 </ul>
             </div>
         </div>

@@ -527,7 +527,7 @@ html_content = f"""<!DOCTYPE html>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">PROCEDURE COST RANGE</div>
-                    <div class="stat-value">$100K-$300K (PMID:21323736)</div>
+                    <div class="stat-value">$100K-$300K <span class="unsourced" title="PMID:21323736 (Beckwith 2012) reports a 20-year cumulative cost of $519,000 and a $240,000 break-even procedure cost; it reports no $100K-$300K per-procedure range. Citation withdrawn 2026-09-17.">[UNSOURCED]</span></div>
                     <div class="stat-desc">Per transplant including immunosuppression and monitoring</div>
                 </div>
                 <div class="stat-box">

@@ -951,7 +951,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="source-note">
-                    Source: Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry outcomes, cost $519K cumulative; islet transplant cost-effectiveness $71K/QALY
+                    Source: Beckwith et al. Clin Transplant 2012 (PMID:21323736) — Markov-model cost-effectiveness analysis (NOT a CITR registry report, corrected 2026-09-17): 20-year cumulative cost $519,000 for islet transplantation vs $663,000 for insulin therapy; $47,800/QALY vs $71,000/QALY
                 </div>
             </div>
         </div>
@@ -1402,7 +1402,7 @@ html_content = """<!DOCTYPE html>
 
                     <div class="reference-item">
                         <strong>Comparative Therapies (Infrastructure):</strong><br>
-                        Beckwith et al. Clin Transplant 2012 (PMID:21323736) — CITR registry, islet transplant cost-effectiveness<br>
+                        Beckwith et al. Clin Transplant 2012 (PMID:21323736) — Markov-model cost-effectiveness analysis of islet transplantation (not a registry report, corrected 2026-09-17)<br>
                         Mackensen et al. Nat Med 2022 (PMID:36109639) — CD19 CAR-T in SLE, drug-free remission<br>
                         Schett et al. Lancet 2023 (PMID:37748491) — CAR-T autoimmune disease remission
                     </div>

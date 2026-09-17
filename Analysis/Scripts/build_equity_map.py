@@ -696,7 +696,7 @@ def generate_html(trial_data, snapshot_date):
                 <h2 class="section-title">C. Supply Chain Requirements</h2>
                 <div class="findings">
                     <ul>
-                        <li><strong>Manufacturing:</strong> cGMP stem cell differentiation facilities ($50-100M to build, PMID:21323736)</li>
+                        <li><strong>Manufacturing:</strong> cGMP stem cell differentiation facilities ($50-100M to build) [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]</li>
                         <li><strong>Delivery:</strong> Hepatic portal vein infusion requires interventional radiology</li>
                         <li><strong>Post-transplant:</strong> Lifelong immunosuppression monitoring (except encapsulated approaches)</li>
                         <li><strong>Regulatory:</strong> FDA BLA pathway (US), EMA ATMP (EU), each country needs regulatory approval</li>
@@ -876,7 +876,7 @@ def generate_html(trial_data, snapshot_date):
                     <p>Compiled from company filings (SEC 10-K/10-Q for US companies), press releases, and clinical trial registrations. Therapy stages and mechanisms as of March 2026. HQ and manufacturing locations verified via company websites and recent announcements.</p>
 
                     <h3>Cost Estimates</h3>
-                    <p>Manufacturing cost estimates ($50-100M) based on literature review of cGMP cell therapy manufacturing. Initial therapy pricing (~$500K) estimated by analogy to CAR-T therapies (Yescarta/Kymriah market prices 2025). Source: PMID:21323736, Frontiers Cell Dev Biol 2025.</p>
+                    <p>Manufacturing cost estimates ($50-100M) based on literature review of cGMP cell therapy manufacturing. Initial therapy pricing (~$500K) estimated by analogy to CAR-T therapies (Yescarta/Kymriah market prices 2025). Source: [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.] The "Frontiers Cell Dev Biol 2025" half of this source line names no identifier and is not verifiable as written.</p>
 
                     <h3>Mismatch Index Calculation</h3>
                     <p>Simple ratio: Diabetes Burden (millions) / (Trial Sites + 0.1). This is NOT a validated epidemiological metric. The +0.1 term prevents division by zero for countries with zero trial sites. Used here as exploratory visualization of supply-demand alignment.</p>

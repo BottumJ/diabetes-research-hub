@@ -378,7 +378,7 @@ GAPS_DATA = {
                 "Racial disparity: Black patients <50% as likely as White to receive CAR-T",
                 "Income disparity: 50% gap between lowest/highest income brackets",
                 "Geographic: Substantial access improvement possible if travel distance reduced; specific numbers require validation in pilot programs",
-                "Cost: US $170-220K per CAR-T (PMID:21323736); estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature",
+                "Cost: US $170-220K per CAR-T [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]; estimated costs for point-of-care manufacturing expected to decline substantially as platforms mature",
                 "Manufacturing wait: 4-6 weeks; specialized GMP centers in 15 US cities"
             ]
         },
@@ -413,7 +413,7 @@ GAPS_DATA = {
             "dependencies": "POC platform GMP validation, regulatory harmonization, healthcare system infrastructure investment"
         },
         "validation_evidence": "SILVER tier: CAR-Treg clinical data available, manufacturing disparities well-documented, POC platforms exist in other domains (CAR-T, CAR-NK)",
-        "expanded_clinical_context": "CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta) (PMID:21323736). Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.",
+        "expanded_clinical_context": "CAR-T access disparities documented in oncology: racial and geographic barriers well-established in published literature. Cost: US $300-500K per commercial CAR-T dose (Kymriah, Yescarta) [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]. Manufacturing centralization creates geographic bottlenecks: limited certified centers, multi-week manufacturing cycles. Point-of-care manufacturing platforms (e.g., Miltenyi CliniMACS Prodigy, Lonza Cocoon) exist but are not yet deployed for diabetes applications. Decentralization could theoretically reduce geographic barriers, but regulatory and training requirements remain substantial. NOTE: Specific access improvement percentages and cost figures for CAR-Treg in diabetes are not yet available — the field is too early. Oncology CAR-T disparities data may not directly translate to autoimmune applications.",
         "mechanism_detail": "Manufacturing delay mechanism: T cell collection (leukapheresis, 1d) -> cryopreservation (2d queue wait) -> CAR gene engineering (retroviral transduction, 8-10d culture) -> expansion (14-21d) -> formulation/quality control (3-5d) -> cryopreservation/shipping (3-4d). Queue effects: during surge periods (multiple requests), queue time extends 14-21d, total manufacturing 10-12 weeks. POC advantage: eliminates queue and shipping delays via decentralized, automated platforms. Miltenyi CliniMACS: closed-bag system (reduced contamination risk), automated transduction + expansion. Regulatory pathway for POC-CAR manufacturing is evolving; FDA guidance expected but specific timelines are uncertain."
     },
     "7": {
@@ -425,7 +425,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 5,
         "key_refs": ["PMID:38783768", "(PMID requires verification)", "PMID:33622669"],
-        "key_finding": "Dorzagliatin reported 65.2% T2D remission in SEED extension (China-only, not yet replicated internationally); AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
+        "key_finding": "Dorzagliatin reported a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a post-trial cohort of SEED completers (n=69, China-only, not yet replicated internationally; the same paper reports 52.0% by the ADA definition); AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
         "status": "In Development",
         "data_profile": {
             "gap_score": 0.80,
@@ -433,15 +433,15 @@ GAPS_DATA = {
             "domain_counts": {"Glucokinase": 816, "Drug Repurposing": 555},
             "trial_counts": {"Phase 3": 3, "Phase 2": 2},
             "key_references": [
-                "PMID:38783768 - Dorzagliatin Phase 3 efficacy and remission rates",
+                "PMID:38783768 - Jiang Y et al., J Diabetes 2024, REVIEW of dorzagliatin development (not a phase 3 report; the phase 3 trials are PMID:35551294 SEED and PMID:35551292 DAWN)",
                 "(PMID requires verification) - AZD1656 GCKR genetic variants and tachyphylaxis",
                 "PMID:33622669 - TTP399 T1D hypoglycemia reduction"
             ]
         },
         "evidence_synthesis": {
-            "summary": "Dorzagliatin shows 65.2% T2D remission. AZD1656 efficacy depends on GCKR genotype (tachyphylaxis in mutant carriers at 3-4mo). Multiple GKA failures due to hypoglycemia or tachyphylaxis.",
+            "summary": "Dorzagliatin reached a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a follow-on cohort of SEED completers (n=69), not in a phase 3 trial. AZD1656 efficacy depends on GCKR genotype (tachyphylaxis in mutant carriers at 3-4mo). Multiple GKA failures due to hypoglycemia or tachyphylaxis.",
             "details": [
-                "Dorzagliatin: HbA1c -1.07%, TIR 83.7%, 65.2% remission (PMID:38783768)",
+                "Dorzagliatin: HbA1c -1.07% vs placebo -0.50%, phase 3 SEED monotherapy n=463 (PMID:35551294); TIR 83.7% in the SEED CGM substudy n=16 (PMID:38783768, review); 65.2% KM drug-free remission probability at 52wk, cohort follow-on n=69 (PMID:37385967)",
                 "AZD1656: loss of effect at 3-4 months (GCKR genetic variants, (PMID requires verification))",
                 "TTP399: HbA1c -0.7%, 40% hypoglycemia reduction in T1D (PMID:33622669)",
                 "Failed GKAs: Piragliatin (hypoglycemia), MK-0941 (hypoglycemia + lipids), PF-04937319 (tachyphylaxis)",
@@ -460,14 +460,14 @@ GAPS_DATA = {
             "Pharmacogenomic analysis: stratify responders by GCKR genotype and metabolic phenotype"
         ],
         "key_literature": [
-            "PMID:38783768 - Dorzagliatin Phase 3 remission rates",
+            "PMID:38783768 - Jiang Y et al., J Diabetes 2024, REVIEW (remission data originate in PMID:37385967, a cohort follow-on of SEED)",
             "(PMID requires verification) - AZD1656 genetic modifiers of efficacy",
             "PMID:33622669 - TTP399 T1D hypoglycemia benefit",
             "Diabetes 2025 (PMID:40272935) - GKA mechanism and GCKR feedback (dorzagliatin closed-form binding)",
             "Glucose-dependent therapy safety (PMID requires verification)"
         ],
         "clinical_pipeline": [
-            "Dorzagliatin: Phase 3 completed, China NRDL listed Jan 2024, 65.2% remission",
+            "Dorzagliatin: phase 3 SEED and DAWN completed, China NRDL listed Jan 2024; 65.2% remission is a post-trial cohort figure (n=69), not a phase 3 endpoint",
             "AZD1656: Phase 3 (tachyphylaxis barrier identified), 885 patients across 23 RCTs",
             "TTP399: Phase 2 T1D, T2D programs underway",
             "MK-0941, PF-04937319: Discontinued due to safety/efficacy concerns"
@@ -479,7 +479,32 @@ GAPS_DATA = {
             "dependencies": "Dorzagliatin regulatory approval in non-China markets, GCKR biomarker standardization"
         },
         "validation_evidence": "SILVER tier: Dorzagliatin Phase 3 efficacy proven, AZD1656 mechanism well-characterized, GCKR genetic modifiers identified",
-        "expanded_clinical_context": "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, time-in-range (TIR) 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no GLP-1 price], SGLT2i $4.5K (PMID:38639547)).",
+        # Corrected 2026-09-17 (trial-phase audit). The string this replaced
+        # read: "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, TIR
+        # 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148)".
+        # It fused THREE separate studies under one trial name that does not
+        # exist, on a citation that is not a trial report:
+        #   * "DAWN-1" is not a trial. The two dorzagliatin phase 3 trials are
+        #     SEED (drug-naive monotherapy, n=463, Zhu D et al., Nat Med
+        #     2022;28:965-973, PMID 35551294) and DAWN (add-on to metformin,
+        #     n=767, Yang W et al., Nat Med 2022;28:974-981, PMID 35551292).
+        #     n=360 matches neither.
+        #   * HbA1c -1.07% is SEED's monotherapy figure, not DAWN's. DAWN's
+        #     placebo-adjusted reduction was -0.66%.
+        #   * 65.2% is a Kaplan-Meier remission PROBABILITY at week 52 in the
+        #     drug-free follow-on cohort of SEED completers (Zeng J et al.,
+        #     Diabetes Obes Metab 2023;25:2878-2887, PMID 37385967, n=69) -
+        #     a prospective cohort study, NOT a phase 3 result. "off
+        #     metformin" is wrong twice over: SEED is drug-naive, and the
+        #     cohort was off ALL antidiabetic medication. The same paper
+        #     reports 52.0% by the ADA definition, so 65.2% is the more
+        #     favourable of two definitions it publishes; both are stated.
+        #   * TIR 83.7% is from the SEED CGM substudy of 16 subjects over 46
+        #     weeks, reported in the Jiang 2024 review. n=16 is now visible.
+        #   * PMID 36449148 is Syed YY, "Dorzagliatin: First Approval",
+        #     Drugs 2022 - a drug-approval profile, pubtype Review. It
+        #     supports the regulatory status and nothing else here.
+        "expanded_clinical_context": "Dorzagliatin phase 3 SEED (drug-naive monotherapy, n=463): HbA1c -1.07% vs -0.50% placebo at 24 weeks (PMID:35551294). Phase 3 DAWN (add-on to metformin, n=767): placebo-adjusted HbA1c -0.66% at 24 weeks (PMID:35551292). Drug-free remission is a follow-on cohort of SEED completers, not a phase 3 endpoint: Kaplan-Meier remission probability 65.2% (95% CI 52.0-75.6) at week 52, or 52.0% by the ADA definition, n=69 (PMID:37385967). Time-in-range 83.7% is from the SEED CGM substudy, n=16 over 46 weeks (PMID:38783768, a review). Approval status: China NMPA Sept 2022 (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no GLP-1 price], SGLT2i $4.5K (PMID:38639547)).",
         "mechanism_detail": "GKA mechanism: glucokinase (hexokinase IV) acts as glucose sensor in beta cells (Km 10mM, saturable kinetics). Normal response: 5mM glucose -> 2-5% Vmax activity -> low ATP -> no insulin. 15mM glucose -> 90% Vmax -> high ATP -> mTORC1 activation -> FOXO1 inactivation -> GCN5 recruitment -> GLUT2 transcription. GKA shifts curve left (lower Km) and increases Vmax by 1.5-2.5x fold. Dorzagliatin: increases Vmax 1.8x, lowers Km from 10mM to 6.5mM, glucose-dependent mechanism (no hypoglycemia at rest). AZD1656 tachyphylaxis: GCKR encodes regulatory protein that inhibits GCK (allosteric inhibitor). Loss-of-function GCKR: GCK constitutively active even without GKA -> drug adds no benefit -> adaptive feedback suppression. TTP399 advantage: longer half-life (48-72hr vs 8-12hr dorzagliatin) = once-daily dosing feasible."
     },
     "8": {
@@ -686,10 +711,10 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "CITR registry: 1,477 recipients across 40 centers (HIC only), 66% female, median age 42.2yr. Cost $100-139K (PMID:21323736). Zero centers in major burden countries.",
+            "summary": "CITR registry: 1,477 recipients across 40 centers (HIC only), 66% female, median age 42.2yr. Cost $100-139K [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]. Zero centers in major burden countries.",
             "details": [
                 "CITR demographics: 66%+ female, median age 42.2yr, 65% white, 20% Asian, 8% Hispanic, 7% Black",
-                "Cost: US $100K-$139K per procedure (PMID:21323736); pancreas transplant $300K-$408K (PMID:21323736)",
+                "Cost: US $100K-$139K per procedure [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]; pancreas transplant $300K-$408K [UNSOURCED - same withdrawal]",
                 "Wait time: median 1.62 years (Swiss cohort)",
                 "Coverage: LANTIDRA now covered by most US insurers as of 2025",
                 "Geographic: Zero CITR centers in India, Bangladesh, Mexico, Sub-Saharan Africa"
@@ -725,7 +750,7 @@ GAPS_DATA = {
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, surgical training programs"
         },
         "validation_evidence": "SILVER tier: CITR registry with 1,477 patients demonstrates infrastructure gaps, LANTIDRA approval expands options, equity gaps quantified",
-        "expanded_clinical_context": "CITR Registry demographics: 1,477 islet transplant recipients (1999-2023), median age 42.2yr, 66% female (female advantage in transplant survival), 65% white, 20% Asian, 8% Hispanic, 7% Black. Centers concentrated: 40 total, 70% in US/Western Europe (HICs). Cost barriers: US $100-139K per procedure (PMID:21323736) (>1M privately insured, ~200K Medicaid eligible based on income thresholds). Wait time: median 1.62 years (Swiss cohort, n=108), range 0.5-5.2yr. LANTIDRA FDA approval June 2023 transformed landscape: insurance coverage now standard (United, Aetna, Cigna, Medicare approved by March 2025). Equity barriers: (1) Geographic (rural regions have zero transplant centers, median travel 150-300 miles), (2) Financial (copay $5-20K per patient barriers for uninsured) (PMID:21323736), (3) Racial (referral bias in primary care for minority patients), (4) Language/cultural (low enrollment rates among non-English speakers). Expansion potential: India (Manipal Institute, Apollo Hospital have transplant programs), Brazil (3 public centers in Sao Paulo, Rio), China (Shanghai Ninth Hospital) could establish islet programs with technology transfer.",
+        "expanded_clinical_context": "CITR Registry demographics: 1,477 islet transplant recipients (1999-2023), median age 42.2yr, 66% female (female advantage in transplant survival), 65% white, 20% Asian, 8% Hispanic, 7% Black. Centers concentrated: 40 total, 70% in US/Western Europe (HICs). Cost barriers: US $100-139K per procedure [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 reports only $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even. It reports no per-procedure price and no copay figure.] (>1M privately insured, ~200K Medicaid eligible based on income thresholds). Wait time: median 1.62 years (Swiss cohort, n=108), range 0.5-5.2yr. LANTIDRA FDA approval June 2023 transformed landscape: insurance coverage now standard (United, Aetna, Cigna, Medicare approved by March 2025). Equity barriers: (1) Geographic (rural regions have zero transplant centers, median travel 150-300 miles), (2) Financial (copay $5-20K per patient barriers for uninsured) [UNSOURCED - same withdrawal], (3) Racial (referral bias in primary care for minority patients), (4) Language/cultural (low enrollment rates among non-English speakers). Expansion potential: India (Manipal Institute, Apollo Hospital have transplant programs), Brazil (3 public centers in Sao Paulo, Rio), China (Shanghai Ninth Hospital) could establish islet programs with technology transfer.",
         "mechanism_detail": "Islet transplant procedure (percutaneous transhepatic approach): intraportal injection of 300,000-500,000 islet equivalents via interventional radiology (native pancreas left in situ). Peri-engraftment factors: (1) warm ischemia during preparation (must minimize), (2) instant blood-mediated inflammatory reaction (IBMIR) in first 2-4 hrs (innate immunity triggers coagulation cascade), (3) non-specific cytokine release, (4) early rejection (6-12mo) vs chronic rejection (5-10yr). Immunosuppression: tacrolimus 3-5 ng/mL (vs 10-15 for pancreas transplant), mycophenolate 1-1.5g BID, maintenance steroid (lower doses than pancreas). LANTIDRA advantage: standardized 300,000 IEQ dose, quality-controlled cryopreservation, reduces operator variability. Expected outcomes: 67% insulin independence 1yr, 50% at 5yr, 30-40% at 10yr (improved vs Edmonton Protocol due to refined immunosuppression + improved IEQ selection)."
     },
     "12": {
@@ -954,7 +979,7 @@ GAPS_DATA = {
             "summary": "Dorzagliatin China listing Jan 2024 [UNSOURCED]; GLP-1 biologics $10.8-15.6K/yr [UNSOURCED]; semaglutide generic approved China Dec 2024, US patent expires 2032. SGLT2i needs 68-78% reduction for cost-effectiveness (PMID:38639547).",
             "details": [
                 "Dorzagliatin: China NRDL listed Jan 2024 [UNSOURCED - the source cited here was published in 2022 and predates the Jan 2024 listing]; pricing not publicly disclosed",
-                "GLP-1 RA pricing: $10.8K-$15.6K/yr [UNSOURCED - citations removed 2026-09-13 from all eight attachments of PMID:34763823 in this file; that paper is Herman & Kuo, a review of INSULIN pricing, and reports no GLP-1 receptor agonist price. This note first read "all seven ... in this gap record" and was corrected the same day: an eighth attachment sat in a DIFFERENT gap record (the GKA cost-effectiveness line), which is the 2026-09-09 correction-scope defect appearing within a single data file rather than across a page]; liraglutide generic approved Dec 2024 (Hikma)",
+                "GLP-1 RA pricing: $10.8K-$15.6K/yr [UNSOURCED - citations removed 2026-09-13 from all eight attachments of PMID:34763823 in this file; that paper is Herman & Kuo, a review of INSULIN pricing, and reports no GLP-1 receptor agonist price. This note first read \"all seven ... in this gap record\" and was corrected the same day: an eighth attachment sat in a DIFFERENT gap record (the GKA cost-effectiveness line), which is the 2026-09-09 correction-scope defect appearing within a single data file rather than across a page]; liraglutide generic approved Dec 2024 (Hikma)",
                 "Semaglutide: China patent expires March 2026, US 2032",
                 "SGLT2i: $4.5K-$5.6K/yr (PMID:38639547); needs 68-78% reduction for cost-effectiveness ($1,431/yr target) (PMID:38639547)",
                 "WHO EML 2025: added GLP-1 RAs; SGLT2i since 2021; insulin since 1977"
@@ -1527,7 +1552,7 @@ def generate_html():
                     <tr>
                         <td>Dorzagliatin</td>
                         <td>Approved (China)</td>
-                        <td>HbA1c -1.07%, 65.2% T2D remission</td>
+                        <td>HbA1c -1.07% (SEED phase 3, n=463); 65.2% drug-free remission at 52wk (post-trial cohort, n=69)</td>
                         <td>Safe across 800+ patients</td>
                         <td>China NRDL listed Jan 2024</td>
                     </tr>

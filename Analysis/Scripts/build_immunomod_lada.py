@@ -80,7 +80,22 @@ DRUG_CANDIDATES = [
     {
         "name": "Teplizumab (anti-CD3)",
         "mechanism": "T-cell response modification; Tzield FDA-approved for T1D delay",
-        "t1d_evidence": "Phase 3 TN-10 trial (PMID:29291885); FDA approved 2023",
+        # Corrected 2026-09-17 (trial-phase audit). This row survived the
+        # 2026-09-16 repair of the SAME defect in the SAME file: that run fixed
+        # the reference tuple ~280 lines below and left this one live for a
+        # day. It is the 2026-09-09 general defect - a repair scoped to the
+        # passage that triggered it rather than to every occurrence of the
+        # offending PMID in the file - recurring on the repair itself.
+        # THREE errors were live here:
+        #   (i)  PMID 29291885 is Zanelli SA & Rogol AD, "Short children born
+        #        small for gestational age...", Growth Horm IGF Res 2018.
+        #        TN-10 is PMID 31180194, Herold KC et al., N Engl J Med
+        #        2019;381:603-613.
+        #   (ii) TN-10 is PHASE 2, n=76. PubMed pubtype "Clinical Trial,
+        #        Phase II"; the abstract's METHODS opens "a phase 2,
+        #        randomized, placebo-controlled, double-blind trial".
+        #   (iii) Tzield was FDA-approved 17 November 2022, not 2023.
+        "t1d_evidence": "Phase 2 TN-10 trial (PMID:31180194); FDA approved Nov 2022",
         "lada_evidence": "No LADA-specific trials; excluded from T1D trials",
         "rationale": "Proven T1D delay extends 1-2 years. LADA's already-long window could be further extended with earlier intervention.",
         "window": "Early phase (0-2 years)"

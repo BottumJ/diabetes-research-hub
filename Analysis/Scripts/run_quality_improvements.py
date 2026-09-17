@@ -26,6 +26,19 @@ import time
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SCRIPTS = {
+    # MUST BE FIRST. Added 2026-09-17, after build_gap_deep_dives.py was found
+    # syntactically invalid AT HEAD: an unescaped quoted phrase inside a
+    # correction note, committed 2026-09-16 by the very run whose report said
+    # the rebuild had cleared that dashboard's stale rows. It had not, because
+    # the file could not execute at all, so Gap_Deep_Dives.html was frozen at
+    # its last good build while the source kept being edited.
+    #
+    # Every other gate here checks the CONTENT of an assertion. None checked
+    # that the file making it can run, so the most complete failure available
+    # -- a builder producing no output whatever -- was the one thing nothing
+    # could see. Running it first means a broken builder is reported before
+    # twenty minutes of downstream stages rebuild around it.
+    'compile': ('audit_builders_compile.py', 'Checking that every builder parses'),
     'dashboard': ('rebuild_clinical_trial_dashboard.py', 'Rebuilding Clinical Trial Dashboard (Tufte style)'),
     'research': ('rebuild_research_dashboard.py', 'Rebuilding Research Dashboard (Tufte style)'),
     # Added 2026-09-05, and it MUST sit immediately before 'gaps', which renders
