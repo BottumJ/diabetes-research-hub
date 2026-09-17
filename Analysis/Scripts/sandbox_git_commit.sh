@@ -92,6 +92,13 @@ if [ "$RC" -eq 0 ]; then
     # both of which this mount permits. Failure here is not fatal: the
     # commit already succeeded, and a stale index is a reporting hazard, not
     # a data loss, so it warns and carries on.
+    # MUST unset first. GIT_INDEX_FILE is still exported to $ALT at this
+    # point, so without this the read-tree below silently rewrites the
+    # throwaway index instead of the real one, reports success, and leaves
+    # .git/index exactly as stale as it found it. That is what happened on
+    # the first execution of this block, 2026-09-17: "resynced to HEAD"
+    # printed while `git status` still showed 35 staged deletions.
+    unset GIT_INDEX_FILE
     if git read-tree HEAD 2>/dev/null; then
         git update-index --refresh -q >/dev/null 2>&1 || true
         echo "  .git/index resynced to HEAD (status is truthful again)"
