@@ -7,7 +7,7 @@ cd 'C:\Users\justi\OneDrive\Diabetes_Research'
 git push
 ```
 
-**109 commits unpushed. `origin/main` is still at 2026-04-20.** The sandbox can commit
+**111 commits unpushed. `origin/main` is still at 2026-04-20.** The sandbox can commit
 but cannot authenticate — HTTPS remote, no credential helper, no `GH_TOKEN`. A PAT
 provisioned for the scheduled task retires this permanently.
 
@@ -30,6 +30,18 @@ this mount). Status is now truthful: **11 changes, 0 staged deletions.** The two
 branches in `refs/heads` left by five months of lock-renaming were also moved out.
 
 Nothing was lost. `git push` was never the dangerous command; `git commit` was.
+
+**And then it came back, which is the part that mattered.** Committing re-armed the trap:
+`sandbox_git_commit.sh` commits through an index held off the mount, so `.git/index` is
+never updated and goes stale again the moment the commit lands. Fixing this morning's
+instance by hand fixed nothing. The script now resyncs `.git/index` from the new HEAD as
+its last step.
+
+That fix also failed on its first run, silently: `GIT_INDEX_FILE` was still exported, so
+`read-tree` rewrote the throwaway index and printed "resynced to HEAD" while `git status`
+still showed 35 staged deletions. Caught only by checking the repository afterwards rather
+than believing the script. Final state, measured: **0 staged deletions, 0 uncommitted
+changes.**
 
 ---
 
