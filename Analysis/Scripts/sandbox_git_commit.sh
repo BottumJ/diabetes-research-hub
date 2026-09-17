@@ -73,6 +73,39 @@ rm -f /tmp/_sgc_out
 rm -f "$ALT"
 
 if [ "$RC" -eq 0 ]; then
+    # ------------------------------------------------------------------
+    # RESYNC THE ON-MOUNT INDEX. Added 2026-09-17, and it is not cosmetic.
+    #
+    # Everything above deliberately commits through an index held OUTSIDE
+    # the mount, which is what makes committing possible here at all. The
+    # side effect is that `.git/index` is never updated, so after every
+    # commit it still describes whatever HEAD was when it was last written.
+    #
+    # On 2026-09-17 that stale index -- left by the 2026-09-16 run, the
+    # first to use this script -- made `git status` report 87 files staged
+    # including deletions of files PRESENT ON DISK, with `git diff --cached`
+    # totalling 39,594 deletions. A plain `git commit` in that state would
+    # have carried them out. The trap is re-armed by every successful run of
+    # this script, so fixing an instance of it by hand fixes nothing.
+    #
+    # Rebuilding the index from the new HEAD uses only create and rename,
+    # both of which this mount permits. Failure here is not fatal: the
+    # commit already succeeded, and a stale index is a reporting hazard, not
+    # a data loss, so it warns and carries on.
+    if git read-tree HEAD 2>/dev/null; then
+        git update-index --refresh -q >/dev/null 2>&1 || true
+        echo "  .git/index resynced to HEAD (status is truthful again)"
+    else
+        NEWIDX=".git/index.resync.$STAMP"
+        if GIT_INDEX_FILE="$NEWIDX" git read-tree HEAD 2>/dev/null; then
+            GIT_INDEX_FILE="$NEWIDX" git update-index --refresh -q >/dev/null 2>&1 || true
+            python3 -c "import os,sys; os.replace(sys.argv[1], '.git/index')" "$NEWIDX" \
+                && echo "  .git/index resynced to HEAD via rename" \
+                || echo "  ! index resync FAILED - 'git status' will over-report until fixed"
+        else
+            echo "  ! index resync FAILED - 'git status' will over-report until fixed"
+        fi
+    fi
     echo "  committed: $(git log --oneline -1)"
     echo "  unpushed commits: $(git rev-list --count origin/main..HEAD 2>/dev/null || echo '?')"
     echo "  NOT PUSHED - no credential in the sandbox. Run 'git push' from Windows."
