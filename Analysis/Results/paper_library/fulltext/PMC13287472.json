@@ -1,0 +1,951 @@
+{
+  "pmcid": "PMC13287472",
+  "sections": [
+    {
+      "section_type": "TITLE",
+      "text": "A pharmacokinetic and pharmacodynamic drug-drug interaction study of dorzagliatin and empagliflozin in patients with type 2 diabetes and obesity: an open-label phase I trial"
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Combination therapy of glucokinase activators and sodium-glucose cotransporter-2 inhibitors may exhibit potent glucose-lowering effects and improvement of β-cell function and insulin sensitivity in patients with type 2 diabetes mellitus, given their complementary mechanisms of action. However, the safety, pharmacokinetic interactions and pharmacodynamic effects of such combinations remain unexplored. To address this gap, we conduct an open-label, sequential phase I trial (ClinicalTrials.gov, NCT03790787) evaluating the dorzagliatin and the sodium-glucose cotransporter-2 inhibitor empagliflozin in patients with type 2 diabetes mellitus and obesity in the US. After strict screening against the inclusion/exclusion criteria, 16 participants are deemed eligible. Participants receive sequential treatments—empagliflozin alone, empagliflozin plus dorzagliatin, and dorzagliatin alone—five days for each regimen, followed by a comprehensive assessment of pharmacokinetic profiles and safety. The primary outcomes included GMR for Cmax and AUC0-24h of empagliflozin and dorzagliatin of pharmacokinetic parameters and the incidence of adverse events, abnormal vital signs, abnormal clinical laboratory findings, and 12-lead electrocardiogram abnormalities of safety profile. A total of 27 adverse events occurs in 9 participants (56.3%), the majority of which are mild, with the exception of one case of moderate constipation. No clinically significant findings or changes attributable to study drug treatment were found in clinical chemistry, hematology and urinary analyses, and observed in vital signs, 12-lead electrocardiogram and physical examination. The geomean ratio and their associated 90% confidence intervals for both maximum plasma concentration (empagliflozin: 98.43% (84.07%, 115.25%); dorzagliatin: 103.94% (90.45%, 119.44%)) and area under the concentration-time curve from 0 to 24 h (empagliflozin: 97.53% (94.35%, 100.82%); dorzagliatin: 99.65% (95.25%, 104.25%)) of empagliflozin and dorzagliatin fall entirely within the conventional bioequivalence range of 80.00% to 125.00%. No pharmacokinetic drug-drug interaction is observed, and the treatment exhibits a favorable safety profile with good overall tolerability."
+    },
+    {
+      "section_type": "ABSTRACT",
+      "text": "Dorzagliatin and empagliflozin combination therapy may improve β-cell function and insulin sensitivity in patients with type 2 diabetes and obesity. Here, the authors show that combination therapy exhibits a favorable safety profile with no PK interaction."
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Introduction"
+    },
+    {
+      "section_type": "INTRO",
+      "text": "Global diabetes prevalence is projected to rise dramatically, with modeling studies estimating more than 1.31 billion cases by 2050, approximately 96% of which will be type 2 diabetes mellitus (T2DM). Despite the availability of ten distinct classes of glucose-lowering drugs, only 60% of diagnosed patients achieve glycemic targets, reflecting the urgent requirement for mechanistically complementary combination strategies. Current American Diabetes Association (ADA) guidelines advocate combination therapy targeting multiple pathological pathways when monotherapy fails to achieve glycemic control in T2DM. By extending beyond its role in improving glycemic control over monotherapy, this strategy more effectively attenuates the natural progression of T2DM. Glucokinase activators (GKAs) represent a novel class of glucose-lowering drugs with a unique dual mechanism: they enhance glucose-stimulated insulin secretion (GSIS) via pancreatic β-cell sensitization while simultaneously promoting the release of endogenous glucagon-like peptide-1 (GLP-1). Dorzagliatin, the first-in-class glucokinase activator (GKA) approved and currently marketed in China as HuaTangNing®, has demonstrated significant improvements in β-cell function (BCF) and induced diabetes remission in 52% of Chinese patients with T2DM during prospective follow-up. Sodium-glucose cotransporter-2 inhibitors (SGLT2is) exert the glucose-lowering effects primarily via selective inhibition of glucose reabsorption in the renal proximal tubules and are preferentially recommended for T2DM patients with concomitant cardiovascular or renal disease. Given their complementary mechanisms of action, the GKA and sodium-glucose cotransporter-2 inhibitor (SGLT2i) combination was anticipated to provide synergistic benefits: enhanced glycemic control, improved BCF and insulin sensitivity (IS), reduced complication risk, and increased long-term T2DM remission rates, which was urgent to be uncovered. Moreover, the pharmacokinetics (PK) interactions and pharmacodynamics (PD), along with the safety profile of this specific drug combination, have not been systematically elucidated. Increase of insulin resistance (IR) and decline in BCF are the core pathological changes underlying the progression of diabetes. Among existing assessment methods, the oral minimal model (OMM) stands as the unique model-based approach capable of accurately quantitatively evaluating phase-specific BCF and overall IS with high efficiency. It has been widely applied in both drug development and clinical practice based on a mixed-meal or an oral glucose tolerance test (MTT/OGTT) as practical alternatives to the hyperinsulinemic-euglycemic clamp. However, this method just estimates these parameters individually, it requires complex clinical procedure with rich data (9 blood sampling time points per person) and leads to time-consuming clinical procedures and computational estimation. In order to systematically address the potential activity of dorzagliatin-empagliflozin combination effect on glucose-lowering and BCF/IS, we will firstly conduct a clinical trial evaluating the combination therapy of dorzagliatin and empagliflozin in patients with T2DM to characterize the PK, PD, and safety profile of dorzagliatin-empagliflozin combination therapy in T2DM patients, then we will mechanistically evaluate BCF and IS using newly developed population OMM method with NONMEM package. The combination therapy demonstrated superior glycemic control compared with either monotherapy, particularly against empagliflozin, as demonstrated by enhanced glucose-lowering efficacy, increased C-peptide secretion, and significant improvements in BCF and IS."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Results"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Study status and study population"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Demographics characteristics of study participants"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Participant\t \tN = 16\t\t \tGender, n (%)\t\t \t Male\t6 (37.5)\t \t Female\t10 (62.5)\t \tRace, n (%)\t\t \t White\t11 (68.8)\t \t Black/African American\t5 (31.3)\t \tEthnicity, n (%)\t\t \t Hispanic or Latino\t12 (75.0)\t \t Not Hispanic or Latino\t4 (25.0)\t \tAge (years)\t55.56 (9.27)\t \tBMIa (kg/m2)\t31.09 (4.09)\t \tHbA1cb (%)\t8.331 (0.758)\t \tFBGc (mg/dL)\t160.4 (22.5)"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Values are presented as mean (SD) or n (%)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "aBody mass index."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "bHemoglobin A1c."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "cFasting blood glucose."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The clinical trial has been completed. The demographic characteristics of the study participants are presented in Table 1. The 16 enrolled participants were assigned to a sequence of three drug treatments. Fifteen participants (93.8%) completed the study and received all planned study medication doses, and one participant discontinued after morning dose of empagliflozin 25 mg on Day 5 due to adverse event of syncope. All outcomes, except for safety evaluations and demographic data, were derived from the 15 participants who completed the trial."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Primary outcomes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Safety and tolerability"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Overall Summary of AEsa. (Safety Population)"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Clinical trial\t \t\tEmpagliflozin (Nb=16) nb (%)\tEmpagliflozin+ Dorzagliatin(N = 15) n (%)\tDorzagliatin (N = 15) n (%)\t \tAny AEc\t2 (12.5%)\t6 (40.0%)\t3 (20%)\t \tAny TEAEd\t2 (12.5%)\t6 (40.0%)\t3 (20%)\t \tSevere TEAE\t0\t0\t0\t \tAny SAEe\t0\t0\t0\t \tAE leading to discontinuation\t1 (6.3%)\t0\t0\t \tHypoglycemia\t0\t4 (26.7%)\t1 (6.7%)"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "aAEs was considered treatment-emergent if not present prior to initiation of the treatment with study drug on day 1or already present but worsened in either severity or frequency following exposure to the treatment."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "bNumber of participants."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "cAdverse event."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "dTreatment emergent adverse event."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "eSerious adverse event."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "We systematically assessed the safety and tolerability profile by reviewing all individual participant data. A total of 27 adverse events (AEs) were reported in 9 participants (56.3%) during the study. The majority of AEs were assessed as mild in intensity, except for one participant with constipation that was moderate in intensity. There were 3 AEs reported in 3 participants (18.8%) during the empagliflozin run-in period including 2 AEs of mild constipation and 1 AE of mild genital pruritus. One AE of mild constipation in 1 participant was assessed as possibly related to empagliflozin and the other AE of mild constipation in 1 participant was assessed as unlikely related to empagliflozin. The AE of mild genital pruritus was assessed as unlikely related to empagliflozin. A total of 24 treatment-emergent AEs (TEAEs) were reported in 9 (56.3%) participants. The most common TEAEs involved metabolism and nutrition disorders (5 of 16 participants, 31.3%), gastrointestinal disorders (4 of 16 participants, 25.0%), eye disorders (2 of 16 participants, 12.5%), and nervous system disorders (2 of 16 participants, 12.5%). Individual TEAEs reported in more than 1 subject included hypoglycemic in 4 participants (25.0%), vision blurred in 2 participants (12.5%), and constipation in 2 participants (12.5%). One participant was early discontinued from the study due to the adverse event of mild syncope after the morning dose of empagliflozin alone on Day 5. Ten TEAEs, except hypoglycemia events, in 3 participants (18.75%) were considered possibly related to study drug treatment. They included AEs of constipation, vision blurred, chest pain and hyperkalemia in 1 participant possibly related to both dorzagliatin and empagliflozin, and constipation in 1 participant, dizziness in 2 participants, vomiting and syncope in 1 participant possibly related to empagliflozin treatment alone. Two participants reported hypoglycemia with blood glucose <54 mg/dL on Day 10 when receiving empagliflozin and dorzagliatin, and were assessed possibly related and related to empagliflozin and dorzagliatin treatment. All hypoglycemic events resolved without sequelae among participants who ingested apple juice or received no treatment. During this study, no deaths or serious AEs were reported, and no additional interventions were required throughout the trial period. Compared with either empagliflozin or dorzagliatin monotherapy, combination therapy was associated with a mild increase in the frequency and severity of AEs (Table 2). Overall, multiple doses of dorzagliatin alone (75 mg BID, twice a day) or in combination with empagliflozin (25 mg QD, once a day) were shown to be safe and well-tolerated."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "PK interaction"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "PK parameters and GMR for empagliflozin and dorzagliatin"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "Geometric mean\t \t\tEmpagliflozinalone\tEmpagliflozin+Dorzagliatin\tDorzagliatinalone\tGMRa(90% CIb)\t \tEmpagliflozin\t\t\t\t\t \tCmax (ng/mL)\t393\t387\t/\t98.43(84.07–115.25)\t \tAUC0–24 h(ng·h/mL)\t3102\t3026\t/\t97.53(94.35–100.82)\t \tDorzagliatin\t\t\t\t\t \tCmaxc(ng/mL)\t/\t889\t855\t103.94(90.45–119.44)\t \tAUC0–24 hd(ng·h/mL)\t/\t6469\t6492\t99.65(95.25–104.25)"
+    },
+    {
+      "section_type": "TABLE",
+      "text": "aAdjusted geometric mean ratios (combination/monotherapy ratio)."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "bConfidence interval."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "cMaximum plasma concentration."
+    },
+    {
+      "section_type": "TABLE",
+      "text": "dArea under the concentration-time curve from 0 to 24 h."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "For empagliflozin, the PK parameters (Cmax and AUC0-24 h) remained consistent whether administered as monotherapy or in combination with dorzagliatin. The geomean ratio (GMR) for empagliflozin (combination/monotherapy) were 98.43% (90% CI, 84.07%, 115.25%) for Cmax, and 97.53% (90% CI, 94.35%, 100.82%) for AUC0-24 h (Table 3). Similarly, dorzagliatin exposure, as reflected by Cmax and AUC0-24 h, was comparable between monotherapy and combination therapy with empagliflozin. The corresponding GMR for dorzagliatin were 103.94% (90% CI, 90.45%, 119.44%) for Cmax, and 99.65% (90% CI, 95.25%, 104.25%) for AUC0-24 h (Table 3).The GMR and their associated 90% confidence intervals (CI) for both Cmax and AUC0-24 h of empagliflozin and dorzagliatin fell entirely within the conventional bioequivalence range of 80.00% to 125.00%. These results indicate that coadministration of empagliflozin and dorzagliatin does not significantly alter the PK profile of either agent."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Secondary outcomes"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The combination treatment demonstrated a significantly enhanced glucose-lowering effect compared with monotherapy with either empagliflozin (p < 0.0001, |Cohen’s d | =2.28) or dorzagliatin (p = 0.017, |Cohen’s d | =1.13) (Fig. 1a). The iAUC0-4 h of glucose during the OGTT was 465.10 ± 161.28 mg·h/dL with empagliflozin monotherapy, 290.30 ± 98.87 mg·h/dL with empagliflozin plus dorzagliatin combination therapy, and 381.00 ± 104.25 mg·h/dL with dorzagliatin monotherapy (Fig. 1a). The combination treatment showed a statistically significant increase in C-peptide secretion compared with empagliflozin (p = 0.030, |Cohen’s d | =1.10) under glucose-stimulated conditions. Although an upward trend was observed relative to dorzagliatin monotherapy, this difference did not reach statistical significance (p = 0.19, |Cohen’s d | =0.714) (Fig. 1b). The iAUC0-4 h of C-peptide during the OGTT was 11.47 ± 4.22 ng·h/mL with empagliflozin monotherapy, 14.95 ± 8.25 ng·h/mL with empagliflozin plus dorzagliatin combination therapy, and 12.42 ± 6.16 ng·h/mL with dorzagliatin monotherapy (Fig. 1b)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The combination therapy did not lead to a significant increase in insulin secretion compared with empagliflozin monotherapy. (p = 0.18, |Cohen’s d | =0.72). Compared with dorzagliatin monotherapy, the combination therapy showed no statistically significant difference in insulin secretion (p = 0.52), with a small-to-medium effect size (|Cohen’s d | =0.44), as depicted in Fig. 1c. The iAUC0-4 h of insulin during the OGTT was 96.05 ± 35.64 μIU·h/mL with empagliflozin monotherapy, 118.39 ± 62.90 μIU·h/mL with empagliflozin plus dorzagliatin combination therapy, and 103.43 ± 46.14 μIU·h/mL with dorzagliatin monotherapy (Fig. 1c)."
+    },
+    {
+      "section_type": "FIG",
+      "text": "iAUC0–4 h of serum glucose, C-peptide, insulin and ISSI-2."
+    },
+    {
+      "section_type": "FIG",
+      "text": "a iAUC0-4 h of glucose (empagliflozin + dorzagliatin (290.30 ± 98.87) (n = 14) vs. empagliflozin (465.10 ± 161.28) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (290.30 ± 98.87) (n = 14) vs. dorzagliatin (381.00 ± 104.25) (n = 14), p = 0.017. linear mixed-effects model). b iAUC0-4 h of C-peptide (empagliflozin + dorzagliatin (14.95 ± 8.25) (n = 13) vs. empagliflozin (11.47 ± 4.22) (n = 14), p = 0.030. empagliflozin + dorzagliatin (14.95 ± 8.25) (n = 13) vs. dorzagliatin (12.42 ± 6.16) (n = 14), p = 0.19. linear mixed-effects model). c iAUC0-4 h of insulin (empagliflozin + dorzagliatin (118.39 ± 62.90) (n = 14) vs. empagliflozin (96.05 ± 35.64) (n = 14), p = 0.18. empagliflozin + dorzagliatin (118.39 ± 62.90) (n = 14) vs. dorzagliatin (103.43 ± 46.14) (n = 14), p = 0.52. linear mixed-effects model). d ISSI-2. (empagliflozin + dorzagliatin (170.87 ± 78.13) (n = 13) vs. empagliflozin (119.48 ± 44.97) (n = 14), p < 0.001. empagliflozin + dorzagliatin (170.87 ± 78.13) (n = 13) vs. dorzagliatin (113.12 ± 42.09) (n = 14), p < 0.001. linear mixed-effects model). In all subfigures, p-values were derived from two-sided Dunnett’s test, the yellow box indicates the empagliflozin monotherapy group, the blue box indicates the combination therapy group (empagliflozin + dorzagliatin), and the purple box indicates the dorzagliatin monotherapy group. Boxplots are defined as: center line = median, + = mean, box limits = upper and lower quartiles, whiskers = 1.5 × interquartile range. Source data are available in the Source Data file. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001 compared with combination treatment. ns, not significant. P values were omitted from the figure where effect sizes were deemed insufficient to support statistical significance (Cohen’s d < 0.70). iAUC0-4h, 0-4 h incremental area under the curve. ISSI-2, insulin secretion-sensitivity index-2."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "As a widely adopted metric for assessing BCF, the insulin secretion-sensitivity index-2 (ISSI-2) was significantly elevated during combination therapy compared with either empagliflozin (p < 0.001, |Cohen’s d | =1.75) or dorzagliatin (p < 0.001, |Cohen’s d | =1.79) with values of 170.87 ± 78.13 for empagliflozin + dorzagliatin, 119.48 ± 44.97 for empagliflozin monotherapy, and 113.12 ± 42.09 for dorzagliatin monotherapy, respectively (Fig. 1d)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Exploratory outcomes (estimation of mechanistic glucose and insulin metabolism parameters)"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "IS evaluation results of the population OMM"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Model validation"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "OGTT data from three treatment groups were utilized to develop a population oral glucose minimal model sharing a common structural framework. Potential covariates were systematically screened. However, none of the initially considered variables met the predefined criteria for inclusion. Consequently, the final model was constructed without incorporating any covariates. The estimated parameter values are provided in Supplementary Appendix A, Table S1. Notably, the coefficients of variation (CV) derived from the 15 individual patient datasets were relatively high, indicating substantial inter-individual variability. Model evaluation results were presented in Supplementary Appendix A, including: (1) goodness-of-fit (GOF) plots (Fig. S1); (2) bootstrap validation results (Table S1); (3) visual predictive checks (VPC, Fig. S3); (4) individual fittings (Fig. S5). The model was deemed acceptable based on standard modeling evaluation criteria."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "IS calculation"
+    },
+    {
+      "section_type": "FIG",
+      "text": "IS parameter."
+    },
+    {
+      "section_type": "FIG",
+      "text": "empagliflozin + dorzagliatin (6.37 ± 2.41) (n = 15) vs. empagliflozin (3.85 ± 1.85) (n = 14), p < 0.0001. empagliflozin + dorzagliatin (6.37 ± 2.41) (n = 14) vs. dorzagliatin (5.75 ± 0.92) (n = 14), p = 0.42. linear mixed-effects model. P-values were derived from two-sided Dunnett’s test. The yellow box indicates the empagliflozin monotherapy group, the blue box indicates the combination therapy group (empagliflozin + dorzagliatin), and the purple box indicates the dorzagliatin monotherapy group. Boxplots are defined as: center line = median, + = mean, box limits = upper and lower quartiles, whiskers = 1.5×interquartile range, points = outliers. Source data are available in the Source Data file. ****p < 0.0001 compared with combination treatment. P-values were omitted from the figure where effect sizes were deemed insufficient to support statistical significance (Cohen’s d < 0.7). IS, insulin sensitivity."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Based on individually estimated IS index derived from the model, statistical results were summarized in Fig. 2. The analysis demonstrated that combination therapy with empagliflozin and dorzagliatin significantly improved IS compared with empagliflozin monotherapy. Specifically, a mean difference of 2.52 was observed between the combination treatment and empagliflozin alone (empagliflozin + dorzagliatin (6.37 ± 2.41) vs. empagliflozin (3.85 ± 1.85), p < 0.0001, |Cohen’s d | =1.87). However, the comparison between the combination of empagliflozin and dorzagliatin and dorzagliatin monotherapy did not achieve sufficient statistical power to detect a significant difference (empagliflozin + dorzagliatin (6.37 ± 2.41) vs. dorzagliatin (5.75 ± 0.92), p = 0.42, |Cohen’s d | =0.17)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "BCF evaluation results of the population OMM"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Model validation"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "OGTT data from three treatment groups were utilized to develop a population oral C-peptide minimal model sharing a common structural framework. Potential covariates were systematically screened. However, none of the initially considered variables met the predefined criteria for inclusion. The estimated parameter values are provided in Supplementary Appendix A Table S2. Notably, the CV derived from the 15 individual patient datasets were relatively high, indicating substantial inter-individual variability. Model evaluation results were presented in Supplementary Appendix A, including: (1) GOF (Fig. S2); (2) Bootstrap test (Table S2); (3) VPC (Fig. S4); (4) Individual fitting figures (Fig. S6). The model was deemed acceptable based on standard modeling evaluation criteria."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "BCF parameters calculation"
+    },
+    {
+      "section_type": "FIG",
+      "text": "BCF parameters."
+    },
+    {
+      "section_type": "FIG",
+      "text": "a φb, basal BCF (10−9min−1) (empagliflozin + dorzagliatin (5.50 ± 2.21) (n = 14) vs. empagliflozin (4.91 ± 1.39) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (5.50 ± 2.21) (n = 14) vs. dorzagliatin (5.95 ± 2.17) (n = 14), p = 0.95. Generalized linear mixed-effects model). b φd, amount of dynamic-phase secreted insulin per unit increasement of glucose concentration (10−9) (empagliflozin + dorzagliatin (316.14 ± 290.26) (n = 14) vs. empagliflozin (84.96 ± 72.75) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (316.14 ± 290.26) (n = 14) vs. dorzagliatin (256.28 ± 299.05) (n = 14), p = 0.47. generalized linear mixed-effects model). c φs, static component over basal average static-phase secretion per unit over basal average glucose concentration (10−9 min−1) (empagliflozin + dorzagliatin (21.98 ± 15.76) (n = 14) vs. empagliflozin (10.98 ± 6.41) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (21.98 ± 15.76) (n = 14) vs. dorzagliatin (13.62 ± 8.00) (n = 14), p < 0.001. linear mixed-effects model). d φtot, overall responsivity from φd and φs (10−9min−1) (empagliflozin + dorzagliatin (23.81 ± 16.00) (n = 14) vs. empagliflozin (11.44 ± 6.30) (n = 15), p < 0.0001. (empagliflozin + dorzagliatin (23.81 ± 16.00) (n = 14) vs. dorzagliatin (14.93 ± 8.99) (n = 14), p < 0.001. linear mixed-effects model). In all subfigures, p-values were derived from two-sided Dunnett’s test, the yellow box indicates the empagliflozin monotherapy group, the blue box indicates the combination therapy group (empagliflozin + dorzagliatin), and the purple box indicates the dorzagliatin monotherapy group. Boxplots are defined as: center line = median, + = mean, box limits = upper and lower quartiles, whiskers = 1.5× interquartile range, points = outliers. Source data are available in the Source Data file. ***p < 0.001, ****p < 0.0001 compared with combination treatment. ns, not significant. P-values were omitted from the figure where effect sizes were deemed insufficient to support statistical significance (Cohen’s d < 0.7). BCF, β-cell function."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Based on the individual pancreatic BCF parameters (φb, φd, φs, φtot) estimated from the model, the statistical results are shown in Fig. 3. The combination therapy resulted in a statistically significant improvement in basal BCF (φb) relative to empagliflozin monotherapy (empagliflozin + dorzagliatin (5.50 ± 2.21) vs. empagliflozin (4.91 ± 1.39), p < 0.0001, |Cohen’s d | =2.29). In contrast, the comparison with dorzagliatin showed neither statistical significance nor clinically meaningful effect size (empagliflozin + dorzagliatin (5.50 ± 2.21) vs. dorzagliatin (5.95 ± 2.17), p = 0.95, |Cohen’s d | =0.16). (Fig. 3a). For the dynamic-phase BCF (φd), the combination of empagliflozin and dorzagliatin showed a significantly greater improvement compared with empagliflozin monotherapy (empagliflozin + dorzagliatin (316.14 ± 290.26) vs. empagliflozin (84.96 ± 72.75), p < 0.0001, |Cohen’s d | =9.08). The improvement with dorzagliatin monotherapy was intermediate between the combination therapy and empagliflozin monotherapy, but the difference was not statistically significant (empagliflozin + dorzagliatin (316.14 ± 290.26) vs. dorzagliatin (256.28 ± 299.05), p = 0.47, |Cohen’s d | =2.21) (Fig. 3b). For the static-phase BCF (φs), the combination of empagliflozin and dorzagliatin showed a significantly greater improvement compared with both empagliflozin monotherapy (empagliflozin + dorzagliatin (21.98 ± 15.76) vs. empagliflozin (10.98 ± 6.41), p < 0.0001, |Cohen’s d | =2.43) and dorzagliatin monotherapy (empagliflozin + dorzagliatin (21.98 ± 15.76) vs. dorzagliatin (13.62 ± 8.00), p < 0.001, |Cohen’s d | =1.58) (Fig. 3c). For the total BCF (φtot), the combination of empagliflozin and dorzagliatin also showed a significantly greater improvement compared with both empagliflozin monotherapy (empagliflozin + dorzagliatin (23.81 ± 16.00) vs. empagliflozin (11.44 ± 6.30), p < 0.0001, |Cohen’s d | =2.51) and dorzagliatin monotherapy (empagliflozin + dorzagliatin (23.81 ± 16.00) vs. dorzagliatin (14.93 ± 8.99), p < 0.001, |Cohen’s d | =1.57) (Fig. 3d)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "DI Index evaluation using population OGTT modeling method"
+    },
+    {
+      "section_type": "FIG",
+      "text": "DI index."
+    },
+    {
+      "section_type": "FIG",
+      "text": "a Dynamic phase DI=φd*IS (10−13 dL/kg/min per μU/mL) (empagliflozin + dorzagliatin (2401.55 ± 3282.08) (n = 14) vs. empagliflozin (369.63 ± 523.39) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (2401.55 ± 3282.08) (n = 14) vs. dorzagliatin (1333.99 ± 1400.09) (n = 14), p = 0.42. generalized linear mixed-effects model). b static-phase DI=φs*IS (10−13 dL/kg/min2 per μU/mL) (empagliflozin + dorzagliatin (134.85 ± 102.90) (n = 14) vs. empagliflozin (46.01 ± 40.66) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (134.85 ± 102.90) (n = 14) vs. dorzagliatin (76.65 ± 43.09) (n = 14), p = 0.005. linear mixed-effects model). c total DI=φtot*IS (10-13 dL/kg/min2 per μU/mL) (empagliflozin + dorzagliatin (148.66 ± 112.52) (n = 14) vs. empagliflozin (48.11 ± 40.87) (n = 15), p < 0.0001. empagliflozin + dorzagliatin (148.66 ± 112.52) (n = 14) vs. dorzagliatin (83.42 ± 46.34) (n = 14), p = 0.006. linear mixed-effects model). In all subfigures, p-values were derived from two-sided Dunnett’s test, the yellow box indicates the empagliflozin monotherapy group, the blue box indicates the combination therapy group (empagliflozin + dorzagliatin), and the purple box indicates the dorzagliatin monotherapy group. Boxplots are defined as: center line = median, + = mean, box limits = upper and lower quartiles, whiskers = 1.5× interquartile range, points = outliers. Source data are available in the Source Data file. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001 compared with combination treatment or empagliflozin. ns not significant, DI disposal index, IS insulin sensitivity."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Based on the IS and three parameters of BCF (φd, φs, φtot), dynamic-phase disposition index (DI), static-phase DI, and total DI were calculated. The results were shown in Fig. 4. The results indicated that the combination of empagliflozin and dorzagliatin significantly improved the dynamic-phase disposal capacity of glucose compared with empagliflozin monotherapy (empagliflozin + dorzagliatin (2401.55 ± 3282.08) vs. empagliflozin (369.63 ± 523.39), p < 0.0001, |Cohen’s d | =16.8) or dorzagliatin monotherapy (empagliflozin + dorzagliatin (2401.55 ± 3282.08) vs. dorzagliatin (1333.99 ± 1400.09), p = 0.42, |Cohen’s d | =3.01). (Fig. 4a). The combination of empagliflozin and dorzagliatin also significantly enhanced the static-phase disposal capacity of glucose compared with both empagliflozin monotherapy and dorzagliatin monotherapy (empagliflozin + dorzagliatin (134.85 ± 102.90) vs. empagliflozin (46.01 ± 40.66), p < 0.0001, |Cohen’s d | =3.21; empagliflozin + dorzagliatin (134.85 ± 102.90) vs. dorzagliatin (76.65 ± 43.09), p = 0.005, |Cohen’s d | =1.31) (Fig. 4b). Total disposal capacity result of the monotherapy compared with combination group was similar to the static-phase DI. Combination therapy group revealed statistically significant differences compared with both empagliflozin monotherapy and dorzagliatin monotherapy (empagliflozin + dorzagliatin (148.66 ± 112.52) vs. empagliflozin (48.11 ± 40.87), p < 0.0001, |Cohen’s d | =3.26; empagliflozin + dorzagliatin (148.66 ± 112.52) vs. dorzagliatin (83.42 ± 46.34), p = 0.006, |Cohen’s d | =1.30) (Fig. 4c)."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "Pearson correlation coefficient of parameters"
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "The Pearson correlation coefficient (r) was calculated to assess the agreement between parameter estimates derived from population modeling (NONMEM) and individualized modeling (SAAM-II). Correlations were interpreted as follows based on established criteria: ≥0.8 indicates a very strong correlation, while 0.6 ≤ r < 0.8 reflects a moderate correlation."
+    },
+    {
+      "section_type": "FIG",
+      "text": "The correlation of parameters between population model and individual model."
+    },
+    {
+      "section_type": "FIG",
+      "text": "a Correlation of IS (n = 43, r = 0.81, p < 0.0001). b Correlation of φb (n = 43, r = 0.85, p < 0.0001). c Correlation of φd (n = 43, r = 0.65, p < 0.0001). d Correlation of φs (n = 43, r = 0.94, p < 0.0001). e Correlation of φtot (n = 43, r = 0.93, p < 0.0001). In all subfigures, p-values were derived from two-sided t-test. Solid black lines represent linear regression lines (mean). Dashed black lines represent error bars (standard deviation). The blue shaded band depicts the 95% confidence interval of the regression line. *r* denotes the Pearson correlation coefficient. IS insulin sensitivity."
+    },
+    {
+      "section_type": "RESULTS",
+      "text": "In this study, the correlation for IS between the two approaches was r = 0.81 (p < 0.0001; Fig. 5a). For BCF parameters, correlations were as follows: φb (r = 0.85), φd (r = 0.65), φs (r = 0.94), and φtot (r = 0.93) (all p < 0.0001; Fig. 5b-e). All parameters demonstrated strong concordance between methods except for φd (moderate correlation)."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Discussion"
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Dorzagliatin and empagliflozin exert their glucose-lowering effects through distinct yet complementary mechanisms and demonstrated favorable compatibility in the present study, as evidenced by the absence of PK interactions and an excellent tolerability profile. These results provide a robust pharmacological foundation for developing a fixed-dose combination therapy, which may enable synergistic improvements in glycemic control, BCF, and IS without necessitating dose adjustments."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In T2DM patients, impaired first-phase insulin secretion represents a well-characterized pathophysiological abnormality. This defect contributes directly to postprandial hyperglycemia and is associated with an increased risk of long-term diabetic complications. As a GKA, dorzagliatin enhances the enzyme’s sensitivity to glucose fluctuations, effectively restoring the physiological glucose threshold for insulin release. Given that the rate of intracellular glucose metabolism is a key determinant of GSIS, dorzagliatin potentiates this fundamental pathway and facilitates the recovery of early-phase insulin response. In contrast, empagliflozin lacks direct regulatory effects on pancreatic β-cells and does not modulate the signaling pathways responsible for first-phase insulin secretion. Therefore, within the combination therapy, the observed enhancement in the dynamic insulin secretory phase—as indicated by improved dynamic BCF index (φd)—can be primarily attributed to the glucose-sensitizing action of dorzagliatin, which specifically restores glucose-stimulated first-phase insulin release (Fig. 3b)."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "The combination therapy produced a significantly greater improvement in static-phase BCF (φs) compared with either empagliflozin or dorzagliatin monotherapy (Fig. 3c). In the postprandial state, elevated circulating glucose levels persist for several hours and account for 60–70% of total insulin secretion. The regulation of this sustained, amplifying phase of GSIS involves synergistic interactions among multiple signaling pathways. Empagliflozin contributes to this process by promoting urinary glucose excretion, which mitigates glucotoxicity and lipotoxicity, thereby helping to preserve functional β-cell mass—a mechanism that has gained broad recognition. Dorzagliatin, on the other hand, has been demonstrated to stimulate GLP-1 secretion. Previous studies indicate that dorzagliatin monotherapy elicits higher circulating levels of total GLP-1 compared with sitagliptin monotherapy. Notably, the same study revealed that the combination of dorzagliatin and sitagliptin increased active GLP-1 levels by 38% relative to sitagliptin monotherapy. Dorzagliatin exerts its glucose-lowering effects by sensing elevated blood glucose levels. Consequently, its direct action in promoting GLP-1-regulated pathways occurs primarily in the postprandial state. These effects are believed to be potential mechanisms for the enhancement of the amplifying phase of GSIS ability. In this study, the marked improvement in the static-phase BCF (φs) following combination therapy, as compared to monotherapy, indicates a considerable synergistic effect of both drugs on enhancing sustained insulin secretion."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Given that the amplifying phase accounts for a substantially greater proportion of total insulin release than the trigger phase, the overall pancreatic function index closely mirrors the pattern of amplifying-phase secretion capacity. Consequently, a significant difference was observed between the combination therapy and either monotherapy (Fig. 3d). The index φtot was corroborated by the ISSI-2, as calculated using a previously simplified formula."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "The combination therapy produced a statistically significant improvement in basal BCF (φb) compared with empagliflozin monotherapy (Fig. 3a). While empagliflozin contributes to the improvement of BCF under reduced blood glucose conditions, it concurrently stimulates fasting glucagon secretion from pancreatic α-cells. Additionally, glucokinase as a glucose sensor, primarily regulates the level of insulin release in response to glucose stimulation, with little response in fasting insulin secretion especially in short-term drug administration. Based on their distinct mechanisms of action as monotherapies, improving basal islet function is not a direct pharmacological effect of either drug. Consequently, the enhancement of basal BCF likely depends on the comprehensive restoration of systemic islet homeostasis. In this study, the marked increase in φb observed in the combination therapy group indicates that short-term co-administration can significantly enhance basal BCF. This improvement suggests that the combination therapy may provide superior control of fasting blood glucose in clinical practice. However, the precise molecular mechanisms underlying this synergistic effect warrant further investigation."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Dorzagliatin has demonstrated potential in restoring impaired BCF in patients with T2DM; however, its direct effect on IR remains limited based on its mechanism of action, although reductions in homeostatic model assessment for insulin resistance (HOMA-IR) have been observed in clinical trials. Empagliflozin contributes to the amelioration of insulin resistance by alleviating glucotoxicity and lipotoxicity, as well as by enhancing IS in peripheral tissues—particularly the liver and skeletal muscle.In the present study, dorzagliatin significantly improved IS compared with empagliflozin monotherapy (p < 0.001). This effect may be attributed to the complementary action of dorzagliatin on glucagon regulation: Dorzagliatin has been shown to reduce glucagon secretion, thereby counterbalancing the empagliflozin-induced rise in glucagon that accompanies urinary glucose excretion. The combination therapy may further ameliorate glucotoxicity, thereby enhancing IS. The DI serves as an integrated measure of glucose disposal capacity with combination assessments of pancreatic BCF and peripheral IS. It is calculated as the product of BCF (in a given secretory phase) and IS. Since IS remains constant across secretory phases, changes in DI primarily reflect alterations in BCF. Consistent with this physiological principle, the results of this study demonstrate that changes in DI following combination therapy align closely with phase-specific improvements in BCF. The combination therapy demonstrated a significant improvement in glycemic disposal capacity compared with either empagliflozin or dorzagliatin monotherapy."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Dorzagliatin monotherapy has achieved a diabetes remission rate of 52%, with analyses demonstrating strong positive correlations (r > 0.80) between remission duration and key functional indices, including BCF, IS, and DI. These results support the promising strategy of developing optimized dorzagliatin-based combination therapies to further improve rates of diabetes remission. In the present short-term combination study, significant improvements in IS, and different phase BCF, different phase DI were observed compared with monotherapy, indicating the potential for enhanced long-term disease management. Further long-term trials are warranted to determine whether the combination can further increase the remission rate and to elucidate which specific phase of BCF recovery most strongly predicts sustained remission."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In comparison with the individual OMM method, the population OMM approach demonstrated strong correlation (r > 0.8) across most parameter estimates, with the exception of φd (r = 0.64). Furthermore, the population OMM significantly reduced computational time by at least 10-fold and achieved a higher rate of successful model convergence. Although its application is supported by well-established physiological principles, OMM method lacks formal validation under conditions of SGLT2i-induced glycosuria. We acknowledge this as a study limitation and propose future studies incorporating targeted analyses in populations with pronounced SGLT2i-induced glycosuria would be valuable to further confirm the robustness of the model predictions under these conditions."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "Since the primary objectives of this clinical trial were to investigate the PK drug-drug interactions (DDI) and safety, with the secondary objective being the evaluation of the PD interaction, the sample size calculation and dosing duration were determined based on the respective PK profiles of dorzagliatin and empagliflozin. The relatively small sample size and short treatment duration may raise concerns regarding the reliability of the PD outcomes. However, effect size analysis indicated that only the comparisons for insulin iAUC0–4 h, IS, and φb showed relatively low credibility (|Cohen’s d | <0.7), while the results for other parameters were highly reliable. Therefore, these limitations do not affect the overall conclusions of this study. Compared with the long-term medication requirements in the clinical management of diabetes, the present study is limited by its relatively short duration for evaluating therapeutic efficacy. Long-term treatment outcomes in individual patients are influenced by multiple factors, including disease progression, environmental variables, and lifestyle habits. While this study provides foundational evidence regarding the efficacy of the combination therapy, the long-term benefits of this regimen remain to be further investigated in extended clinical trials."
+    },
+    {
+      "section_type": "DISCUSS",
+      "text": "In summary, this clinical study demonstrated that the combination of empagliflozin and dorzagliatin was well-tolerated and exhibited no PK interactions in patients with T2DM and obesity. The combination therapy elicited a more potent glucose-lowering effect compared with either monotherapy. Analyses based on the population model indicated that the combined regimen improved IS, along with basal-, dynamic-, static-phase and overall BCF, as well as the DI, across various magnitudes. These short-term improvements in BCF and IS provide a rationale for evaluating long-term combination strategies. Building upon the observed improvements in BCF and IS, the combination of a GKA and an SGLT2i demonstrates strong potential for enhancing the management of T2DM. This multifunctional therapeutic strategy offers a distinct and promising advantage over monotherapy approaches."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Clinical trial administration"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "This is a phase 1, non-randomized, open-label (unblinded), sequential clinical study. This study was designed to evaluate the safety and PK, PD profiles of dorzagliatin and empagliflozin as monotherapies and in combination in patients with T2DM and obesity. It was registered on ClinicalTrials.gov (NCT03790787). Additionally, PD parameters were mainly evaluated by population OMM. This study protocol was reviewed and approved prior to initiation by Integ Review Ethics Review Board (Austin, USA), an independent, FDA-registered central Institutional Review Board (IRB). Integ Review IRB provides ethical approval covering all participating study sites, including those located in New Jersey. In accordance with U.S. regulations (21 CFR Parts 50 and 56), approval by a duly constituted central IRB is sufficient and does not require separate local IRB approvals at each study center unless mandated by institutional policy. All study activities at the clinical sites in New Jersey were conducted under the approved protocol and in compliance with applicable federal and state regulations. All registered outcome measures -both primary and secondary-were systematically aligned with the master protocol to ensure full terminological and methodological consistency in endpoint definitions, evaluation criteria, and analysis timelines. Written informed consent was obtained from all participants before study commencement. The study was conducted in compliance with the Declaration of Helsinki, the International Conference on Harmonization Good Clinical Practice (ICH-GCP) guidelines, and US Food and Drug Administration regulations. The Research complies with all relevant ethical regulations."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Sample size"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "At least 15 evaluable participants in the sequence will be required to achieve a power of at least 0.8 for the GMR between two treatments (empagliflozin + dorzagliatin vs. dorzagliatin alone or empagliflozin + dorzagliatin vs. empagliflozin alone) for Cmax or AUC0-24h, with the equivalence bounds of 0.8 to 1.25, assuming a true GMR of 1 and an intra-subject variability (CV) of 20.2%, in an equivalence test using two one-sided tests at a significance level of 0.05. The intra-subject variability for empagliflozin Cmax and AUC0-24h is reported to be 20.2% and 7.8%, respectively. The intra-subject variability for dorzagliatin Cmax and AUC0-24h is estimated to be 14.0% and 6.2%, respectively. Therefore, to ensure a satisfactory DDI assessment, and assuming a drop-out rate of 15%, we plan to enroll 18 eligible participants by aiming to obtain 15 evaluable participants for DDI assessment."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Key eligibility criteria"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Subject Inclusion Criteria"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "To participate in the study, subjects must meet all the following eligibility criteria:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "1. Subjects diagnosed with T2DM at least 3 months prior to screening and are currently taking a stable dose of either of the following therapies with no change in the dose for at least 4 weeks prior to screening:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "a. ≥1000 mg per day of metformin"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "b. a DPP-4 inhibitor"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "c. an SGLT2 inhibitor"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "d. metformin plus a DPP-4 inhibitor"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "e. metformin plus an SGLT2 inhibitor"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "2. Subjects must agree to change their current therapy to 25 mg empagliflozin QD for at least 14 days prior to dosing on Day 1;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "3. In stable general health as determined by the Investigator at screening evaluation performed no more than 28 days prior to dosing on Day 1;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "4. Male and/or female subjects between the ages of 30 and 65 years, inclusive;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "5. Were capable of giving informed consent and complying with study procedures;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "6. Body Mass Index (BMI) of 19–38 kg/m2, inclusive, at screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "7. Fasting C-peptide test result >0.3 nmol/L (>0.90 ng/mL);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "8. HbA1c ≥ 7% and ≤10.5%; subjects who do not meet these criteria at screening may have their HbA1c level re-evaluated one time at least 28 days after initial screening evaluation with Sponsor approval. If the subject is approved by the Sponsor, all screening evaluations must be repeated. Subjects who are re-evaluated will retain their original Screening ID number."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "9. Females must be using one of the following birth control methods: a non-hormonal. Intrauterine device (IUD) in place for at least 3 months; barrier method (condom, diaphragm) with spermicide for at least 14 days prior to dosing on Day 1 and throughout the study; surgical sterilization of the partner (vasectomy for 6 months minimum; OR are surgically sterile OR postmenopausal, as defined below:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "a. Surgically sterile for at least 3 months prior to screening by one of the following. Means:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "• Bilateral tubal ligation"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "• Salpingectomy (with or without oophorectomy)"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "• Surgical hysterectomy"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "• Bilateral oophorectomy (with or without hysterectomy)"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "b. Postmenopausal, defined as following:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "• Last menstrual period greater than 12 months prior to screening, confirmed by FSH and estradiol levels at screening."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "10. Nonsmoker, defined as not having smoked or used any form of tobacco for more than 6 months prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "11. Willing and able to adhere to study restrictions and to be confined at the clinical research center."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Subject exclusion criteria"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Subjects will be excluded from study entry if any of the following exclusion criteria are present:"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "1. Fasting blood glucose at screening or Day −1 ≤ 110 or ≥270 mg/dL (one repeat fasting blood glucose test at screening is allowed);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "2. Type 1 diabetes mellitus, or latent autoimmune diabetes in adults; diabetic neuropathy, retinopathy or nephropathy;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "3. Reported incidence of severe hypoglycemia, defined by denoting severe cognitive"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "impairment requiring external assistance for recovery, within 3 months prior to screening and/or within 3 months prior to dosing on Day 1;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "4. Known contraindications to empagliflozin;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "5. Clinically significant gastrointestinal disorder (e.g., gastroparesis, constipation, diarrhea, colitis, gastrointestinal tract obstruction, hiatal hernia with reflux esophagitis, or cholestasis);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "6. History or symptoms of clinically significant cardiovascular disease, particularly coronary artery disease, arrhythmias, atrial tachycardia, or congestive heart disease within one year prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "7. History of more than three urinary tract infections and/or more than three genital fungal infections in the last 12 months. If one or more genital fungal infections in the last 12 months required systemic treatment to resolve, Investigator will determine eligibility based on treatment required;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "8. Reported history of clinically significant central nervous system disease including: transient ischemic attack, stroke, seizure disorder, depression, or behavioral disturbances within one year prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "9. Reported history of liver disease (e.g., hepatitis, cirrhosis within one year of screening and/or liver enzymes [alanine aminotransferase (ALT), aspartate aminotransferase (AST), gamma glutamyltransferase (GGT), total bilirubin (TBiL)] >2 times the upper limit of normal [ULN]);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "10. Reported history of clinically significant renal disease;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "11. Estimated glomerular filtration rate (eGFR) ≤ 60 mL/min/1.73 m2;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "12. Acute or chronic metabolic acidosis, including diabetic ketoacidosis;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "13. Known or suspected malignancy;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "14. Any reported hypersensitivity (anaphylaxis and angioedema) or intolerance to empagliflozin;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "15. Antidiabetic treatment with insulin, sulfonylureas, thiazolidinediones or GLP-1 agonist within 3 months prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "16. Systolic blood pressure <90 or >160 mmHg or diastolic blood pressure <60 or >100 mmHg at screening (may be repeated once);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "17. A hospital admission or major surgery within 90 days prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "18. Uncontrolled hypertriglyceridemia >500 mg/dL;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "19. Positive blood screen for human immunodeficiency virus (HIV), hepatitis B surface antigen (HBsAg), or hepatitis C antibody;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "20. Positive pregnancy test result;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "21. Female is breast-feeding or planning to become pregnant;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "22. Treated with any investigational drugs within 6 weeks prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "23. Reported history of prescription drug abuse, or illicit drug use within 6 months prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "24. Reported history of alcohol abuse according to medical history within 6 months prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "25. A positive screen for alcohol or drugs of abuse;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "26. Reported history of donation or blood collection of more than 1 unit (~450 mL) of blood (or blood products) or acute loss of blood during the 90 days prior to screening;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "27. Use of herbal products (including St John’s Wort, herbal teas, garlic extracts) within 14 days prior to dosing. No drugs known to be CYP3A4 inhibitors or inducers are allowed. Use of other prescription and/or over-the-counter (OTC) medications within 14 days must be discussed and approved by the Sponsor and the study Principal Investigator prior to entry into the study;"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "28. An unwillingness of male participants to use appropriate contraceptive measures if engaging in sexual intercourse with a female partner of childbearing potential. Appropriate measures include use of a condom and spermicide and, for female partners, use of an IUD, diaphragm with spermicide, oral contraceptives, injectable progesterone, progesterone subdermal implants, or a tubal ligation. Sexual intercourse with pregnant or lactating women is prohibited."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Study design"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "This phase I, non-randomized, open-label (unblinded), single-sequence, multiple-dose trial was conducted at two clinical sites (Frontage Clinical Services, Inc., Secaucus, NJ, and BIOTRIAL INC., Newark, NJ). Prior to enrollment, all participants were required to switch their existing glucose-lowering regimen to empagliflozin 25 mg once daily for a minimum of 14 days. Throughout the 12-day run-in period, AEs were recorded for all participants. Eligible individuals were subsequently admitted to the clinical research center on Day -2 and remained hospitalized for 18 consecutive nights until discharge on Day 17, following the completion of all study procedures. The gender of the participants was assigned without considering the influence factor of gender. The low sample size (10 females and 6 males) in this study did not allow for meaningful conclusions to be drawn, and that the study was not suitable for gender categorization. A total of 16 participants were enrolled, with a mean age of 55.56 ± 9.27 years. The first participant was enrolled on March 21, 2019, and the last participant was enrolled on February 6, 2020. All eligible participants were sequentially assigned to three treatment regimens: empagliflozin 25 mg QD for 5 days (Days 1–5), followed by empagliflozin 25 mg QD plus dorzagliatin 75 mg BID for 5 days (Days 6–10), and subsequently dorzagliatin 75 mg BID alone for 5 days (Days 11–15). On Days 5, 10, and 15, blood samples for PK analysis were collected over a 24-h period following the morning dose. All medications were administered 60 min prior to meals. On the PK sampling days (Days 5, 10, and 15), an OGTT was performed, during which participants ingested a 75-g glucose solution 30 ( ± 5) min after study drug administration instead of a standard breakfast. Throughout the entire treatment period, the use of illicit drugs, alcohol, tobacco-containing products, and food or beverages containing caffeine was prohibited. Additionally, the administration of any drugs known to affect CYP3A4 activity, herbal products, prescription medications (other than the study drugs), or OTC products was not permitted."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Study outcomes"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The study outcomes were pre-defined as follows. The primary pharmacokinetic outcomes included GMR for Cmax and AUC0-24h of empagliflozin and dorzagliatin, which were central to the hypothesis testing and formed the basis for the sample size calculation. The primary safety outcomes included the incidence of adverse events, abnormal vital signs, abnormal clinical laboratory findings, and 12-lead electrocardiogram abnormalities. The secondary outcomes comprising iAUC0-4h of glucose, insulin and C-peptide, were assessed to evaluate the PD responses. Detailed analyses of the other secondary endpoints, such as plasma glucagon and urinary glucose excretion, will be presented in a subsequent dedicated manuscript, ensuring comprehensive and rigorous evaluation. Furthermore, exploratory analyses of ISSI-II, IS, φb, φd, φs, φtot, dynamic-phase DI, static-phase DI, and total DI were conducted to provide supportive evidence on additional aspects of PD evaluation."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Sample collection of PK and PD"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "On Days 5, 10 and 15, blood samples for plasma PK analysis were collected at the following time points: pre-dose, and 0.25, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 10, 12, 18, 24 h after dosing using an indwelling catheter or direct venipuncture. A total of 42 blood samples (approximately 6 mL each) were collected from each subject into K2EDTA tubes for determination of dorzagliatin and empagliflozin concentration and PK assessments. Contents of tube were mixed thoroughly with gentle inversion at least 8 times to mix the anti-coagulant and stored on wet ice for no more than 30 min before centrifugation at approximately 4 °C ~2000 × g for 10 min. The harvested plasma was split into two approximately equal aliquots and stored in appropriate size cryovial tubes. Plasma samples were stored at −70 ( ± 10) °C within approximately 60 min of harvesting pending shipment to the bioanalytical laboratory for analysis. On these same days, an OGTT was performed, where participants ingested a 75 g glucose solution after administration of the study drug. For the OGTT, blood samples were obtained immediately before glucose intake (pre-dose), and at 0.5, 1, 1.5, 2, 2.5, 3, and 4 h thereafter to measure serum concentrations of glucose, C-peptide, and insulin. A total of 24 blood samples of approximately 5 mL each for measurement of serum glucose, insulin, and C-peptide. Ultimately, a total of 412 samples were analyzed and reported for dorzagliatin and empagliflozin concentrations in human plasma. 360, 356, and 355 samples were analyzed and reported for glucose, insulin, and C-peptide concentrations in human serum, respectively."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Analytical methods"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The PK samples were analyzed using validated, specific and sensitive methods of liquid chromatography-tandem mass spectrometry (LC-MS/MS) for concentrations of dorzagliatin and empagliflozin. (Frontage Laboratories, Inc., Pennsylvania, USA). The LC-MS/MS system was equipped with a Sciex API 4000 mass spectrometry coupled with Shimadzu HPLC pump and autosampler. The computer application program Analyst® (version 1.4.2 and/or higher) was used to acquire and process mass spectrometry data labeled with participant identification numbers for this study. Watson LIMS (version 7.3 and/or higher) handled the sample management, data management, and calculation of the sample concentrations. A total of 412 samples were analyzed and reported for dorzagliatin concentrations in human plasma by a validated LC-MS/MS method at Frontage Laboratories, Inc., Pennsylvania, USA. Dorzagliatin and the internal standard [13C4]-dorzagliatin were extracted by protein precipitation from human plasma. Reversed-phase HPLC separation was achieved with a Phenomenex, Gemini C18 column (50 × 2.0 mm, 5.0 micron). MS/MS detection was set at mass transitions of m/z 463.2 → 278.1 for dorzagliatin and m/z 469.3 → 284.1 for the IS in positive mode. The concentrations were calculated by using peak area ratios and linear regression with 1/x2 weighting to generate the best-fit concentration-response relationship. The lower limit of quantitation (LLOQ) of dorzagliatin in plasma was 1 ng/mL with linearity to 1200 ng/mL; the intra-run accuracy of this assay was between −6.0 and −1.3%, and the precision was ≤8.5%. empagliflozin had no obvious interference to dorzagliatin in human plasma. The stability of dorzagliatin in human plasma was validated to cover the period from sample collection to sample analysis. It was proved that the LC-MS/MS method demonstrated acceptable accuracy, precision, and stability for dorzagliatin."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "A total of 412 samples were analyzed and reported for Empagliflozin concentrations in human plasma by a validated LC-MS/MS method at Frontage Laboratories, Inc., Pennsylvania, USA. Empagliflozin and the internal standard empagliflozin-d4 was extracted from plasma by liquid-liquid extraction followed by evaporation, reconstitution and final extract analyses by LC-MS/MS. MS/MS detection was set at mass transitions of m/z 449.2 → 371.2 for empagliflozin and m/z 453.3 → 375.1 for the internal standard. Reversed-phase HPLC separation was achieved with a Phenomenex, Synergi Polar-RP column (50 × 2.0 mm, 4 micron). The concentrations were calculated by using peak area ratios and linear regression with 1/x2 weighting to generate the best-fit concentration-response relationship."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The LLOQ of empagliflozin was 0.5 ng/mL, with linearity to 500 ng/mL; the intra-run accuracy of this assay was between −8.0 and 4.0%, and the precision was ≤7.3%. Dorzagliatin had no obvious interference to empagliflozin in human plasma. The stability of empagliflozin in human plasma was validated to cover the period from sample collection to sample analysis. It was proven that the LC-MS/MS methods demonstrated acceptable accuracy, precision, and stability under different conditions for empagliflozin."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Serum glucose levels were measured by the hexokinase enzymatic method, while serum C-peptide and insulin levels were determined through separate chemiluminescence assay (Bio Reference Laboratories, Inc., New Jersey, USA)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Safety assessment"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Safety assessments were performed consistently during the study, including clinical laboratory analyses, vital sign (blood pressure, pulse rate, respiratory rate and oral temperature) measurements, physical examinations, 12-lead electrocardiograms and AEs. All AEs, with a particular focus on TEAEs, were documented and categorized according to the Medical Dictionary for Regulatory Activities (MedDRA). The investigators assessed their association with the drug therapy."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "PK assessment"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The PK characteristics were calculated using non-compartmental analysis by WinNonlin (Version 8.1) (Certara, Princeton, NJ, USA) employing the linear trapezoidal rule. The effect of empagliflozin on the exposure of dorzagliatin was determined by comparison of PK parameters Cmax and AUC0–24h for dorzagliatin on Day 10 (combination of dorzagliatin and empagliflozin) vs Day 15 (dorzagliatin alone). The effect of dorzagliatin on the exposure of empagliflozin was determined by comparison of PK parameters Cmax and AUC0–24h for empagliflozin on Day 10 (combination of dorzagliatin and empagliflozin) vs Day 5 (empagliflozin alone)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "PD assessment"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "PD parameters were calculated by serum glucose, insulin, and C-peptide concentrations, using the 0–4 h incremental area under the curve (iAUC0–4 h). The product of BCF and IS, designated as ISSI-2, was computed employing the Eq. (1):"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "with the data requisite for this calculation sourced from OGTT."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Estimation of the mechanistic glucose and insulin metabolism parameters using population and individual OMM method"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Population oral glucose minimal model"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The population oral glucose minimal model is developed based on the reference minimal model. This model utilizes time-course glucose and insulin concentration data obtained from OGTT to characterize the dynamic processes of exogenous glucose absorption endogenous glucose production, distribution volume, and elimination (including insulin-independent elimination and insulin-mediated elimination)."
+    },
+    {
+      "section_type": "FIG",
+      "text": "Population OMM structures."
+    },
+    {
+      "section_type": "FIG",
+      "text": "a Population oral glucose minimal model structures. AGlu represents the mass of glucose in the central compartment corrected for body weight (mg·kg−1); Ra_Glu(t) represents the rate of exogenous glucose absorption in the intestine corrected for body weight at time t (mg·kg−1·min−1); Kin_Glu is the rate of endogenous glucose production (mg·kg−1·min−1); Kout_Glu is the intrinsic elimination rate constant of glucose in the non-insulin-dependent central compartment (min−1); AGlu_b is the baseline mass of glucose in the central compartment corrected for body weight (mg·kg−1); Xins(t) is the insulin-dependent central compartment glucose elimination rate constant at time t (min−1); Kin_Xins is the rate constant of insulin-induced glucose lowering effect (min−2 per μU·mL-1); Cins(t) is the real-time concentration of insulin in plasma at time t (μU·mL-1); Cins_b is the baseline concentration of insulin in plasma (μU·mL−1); Kout_Xins is the rate constant of insulin-induced glucose lowering effect (min-1). b population oral C-peptides minimal model structures. β is the second-phase insulin secretion index, which is the proportionality coefficient of C-peptide synthesis dependent on glucose deviation from the C-peptide secretion threshold (pmol·L−1 per mg·dL−1); G(t) represents the serum glucose concentration at time t (mg·dL-1); Gb is the baseline serum glucose concentration (mg·dL-1); SRb is the basal elimination rate of C-peptide (reflecting the basal secretion rate) (pmol·L−1·min−1); Kt_cp is the rate constant for insulin secretion time delay (min−1); Y represents the rate of C-peptide synthesis compartment, reflecting the rate of active insulin synthesis (pmol·L-1·min-1); CP1 denotes the concentration of C-peptide in the central compartment (pmol·L−1); Kd_GSIS is the dynamic insulin secretion index, which is the proportionality coefficient of C-peptide secretion to glucose rate of change (pmol·L−1 per mg·dL-1); dG(t))/d(t) represents the rate of change in serum glucose concentration (mg·dL−1·min−1); Ke_cp is the elimination rate constant of C-peptide in the central compartment (min−1); K12 is the distribution rate constant of C-peptide from the central compartment to the peripheral compartment (min−1); K21 is the distribution rate constant of C-peptide from the peripheral compartment to the central compartment (min−1); CP2 represents the concentration of C-peptide in the peripheral compartment (pmol·L−1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Following glucose administration, pancreatic insulin secretion is stimulated to facilitate glucose disposal. In T2DM, the glucose-lowering efficacy of insulin is impaired. In this model, Kin_Xins is defined as the rate constant for the generation of insulin’s glucose-lowering effect, while Kout_Xins represents the elimination rate constant of this effect. Theoretically, the efficacy of glucose lowering is positively correlated with the ratio of these two parameters (Kin_Xins/Kout_Xins), with higher values indicating more potent insulin sensitivety. The model structure was shown in Fig. 6a. Specifically, the model formulations were given by the Eq. (2) ~ (5). The raw model code (Population oral glucose minimal model code) was provided in Supplementary Appendix B."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "AGlu(t) represents the mass of glucose in the central compartment corrected for body weight (mg·kg-1) at time t; Ra_Glu(t) represents the rate of exogenous glucose absorption in the intestine corrected for body weight at time t (mg·kg-1·min-1); Kin_Glu is the rate of endogenous glucose production (mg·kg−1·min−1); Kout_Glu is the intrinsic elimination rate constant of glucose in the non-insulin-dependent central compartment (min-1); Xins(t) is the insulin-dependent central compartment glucose elimination rate constant at time t (min-1); AGlu_b is the baseline mass of glucose in the central compartment corrected for body weight (mg·kg-1); CGlu(t) represents the concentration of serum glucose in the central compartment at time t (mg·dL−1); VG, defined as the body weight-corrected distribution volume of glucose in the central compartment (dL·kg⁻1), adopts a default value of 1.45 dL·kg⁻1, consistent with that used in SAAM-II."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Kin_Xins is the rate constant of insulin-induced glucose lowering effect (min-2 per μU·mL−1); Cins(t) is the real-time concentration of insulin in plasma at time t (μU·mL-1); Cins_b is the baseline concentration of insulin in plasma (μU·mL-1); Kout_Xins is the rate constant of insulin-induced glucose lowering effect (min-1);"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "K1_ra_Glu is the zero-order absorption rate (mg·min−1); K2_ra_Glu is the first-order elimination rate constant (min-1); BW is body weight (kg); Tabs represents the time for zero-order absorption (min); FGlu is the apparent fraction of glucose absorption; FVG is the product of the apparent fraction of glucose absorption and the distribution volume (kg·dL−1); Dose_Glu is the oral mass of glucose (mg)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "IS is the insulin sensitivity (10−4 dL/kg/min per μU/mL)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Population oral C-peptide minimal model"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "The population oral C-peptide minimal model is adapted from the reference minimal model. This model leverages time-course glucose and C-peptide concentration data obtained from OGTT to characterize C-peptide kinetics (secretion distribution, and elimination). Glucose-dependent regulation of C-peptide secretion mediated by the rate of glucose change which represent dynamic stimulation and the absolute glucose concentration which reflect sustained stimulation. The model is formalized through a system of differential equations that capture: C-peptide secretion driven by the rate of glucose change; C-peptide secretion proportional to the absolute glucose elevation; distribution of C-peptide in the central compartment and distribution of C-peptide in the peripheral compartment. Kd_GSIS is the coefficient quantifying the strength of secretion function induced by rapid glucose changes. β is a parameter representing the amplitude of the secretion function triggered by absolute glucose elevation. The model structure was shown in Fig. 6b. Specifically, the model formulations were given by the Eq. (6) – (15). The raw model code (Population oral C-peptide minimal model code) was provided in Supplementary Appendix B."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "CP1(t) denotes the concentration of C-peptide in the central compartment at time t (pmol·L-1); Ke_cp is the elimination rate constant of C-peptide in the central compartment (min-1); K12 is the distribution rate constant of C-peptide from the central compartment to the peripheral compartment (min-1); K21 is the distribution rate constant of C-peptide from the peripheral compartment to the central compartment (min-1); CP2(t) represents the concentration of C-peptide in the peripheral compartment at time t (pmol·L-1); ISR(t) is the rate of C-peptide secretion above the baseline (pmol·L-1·min-1); CP1(0) denotes the concentration of C-peptide in the central compartment at time 0 (pmol·L-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Y(t) represents the rate of C-peptide synthesis, reflecting the rate of active insulin synthesis (pmol·L-1·min-1); Kd_GSIS is the dynamic insulin secretion index, which is the proportionality coefficient of C-peptide secretion to glucose rate of change (pmol·L-1 per mg·dL-1); dG(t))/d(t) represents the rate of change in serum glucose concentration (mg·dL-1·min-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Kt_cp is the rate constant for insulin secretion time delay (min-1); β is the second-phase insulin secretion index, which is the proportionality coefficient of C-peptide synthesis dependent on glucose deviation from the C-peptide secretion threshold (pmol·L-1 per mg·dL-1); G(t) represents the serum glucose concentration at time t (mg·dL-1); Gb is the baseline serum glucose concentration (mg·dL-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "SRb is the basal elimination rate of C-peptide (reflecting the basal secretion rate) (pmol·L-1·min-1); CPb is the baseline concentration of C-peptide (pmol·L-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "φb is the C-peptide secretion rate dependent on basal serum glucose concentration (10-9 min-1)；18.016 is a factor used to convert glucose concentration units."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "φs is the second-phase insulin secretion index, a factor of 18.016 is used to convert glucose concentration units (10-9 min-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "φd is derived from Kt_GSIS by applying a glucose concentration conversion factor for unit normalization, it retains the same physiological significance as Kt_GSIS and is expressed in units of 10-9."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "φtot is the total C-peptide secretion rate during glucose stimulation, including the first and second phases, reflecting the total BCF (10-9 min-1); ΔG is the peak increment in serum glucose which was calculated as the difference between maximum and the fasting serum glucose level at time 0 (mg·dL-1)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "In comparison of individual OMM method by Cobelli professor, population OMM method we newly proposed in this article achieved a higher success rate in estimation with a shorter time using nonlinear effect model engaged in NONMEM package (version 7.2.0). Specifically, in the population oral glucose minimal model, estimation function of glucose absorption parameter Ra was replaced by a new function. Other equations and parameters are the same as individual OMM equations. The formula of the population oral C-peptide minimal model is also established referring to the four main equations in the OMM. In this model, C-peptide kinetics is used to reflect a more accurate insulin secretion rate (ISR). The evaluation of BCF is divided into four parts: basal, dynamic-phase, static-phase, and total BCF (φb, φd, φs, φtot). In the population oral glucose minimal model and the population oral C-peptide minimal model, individual inter-individual variability (IIV) of each parameter is described using an exponential model. Residuals are described using a combined error model of additive and proportional types as Eq. (16), (17)."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Pij represents the value of the i-th parameter for the j-th individual, θi is the typical value of the population parameter, ηij represents the inter-individual and intra-individual variability of the i-th parameter for the j-th individual, following a normal distribution with mean 0 and variance ω2, Yobs and Ypred represent the observed and predicted concentration values, respectively, ε1 denotes the proportional-type residual, following a normal distribution with mean 0 and variance σ2, ε2 denotes the additive-type residual, following a normal distribution with mean 0 and variance σ2."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Both VPC and bootstrap methods were used to internally verify the accuracy of the estimated parameters. A valid model is indicated by a VPC plot which the observed values are predominantly distributed within the 95% confidence intervals for the simulated 5th, 50th, and 95th percentiles. All parameter estimates should fall within the parameter range obtained from bootstrap. GOF and individual/population fitting plots were used to intuitively evaluate the fitting accuracy. To evaluate its reliability, the OMM method was also implemented in SAAM-II (version 2.3.2) to calculate individual parameters. The agreement between the parameters estimated by the population and individual methods was confirmed by a strong correlation (high r value) that was statistically significant (p < 0.05). Based on the parameters (IS and dynamic-phase, static-phase, and total BCF) which were calculated by population OMM, dispose index (DI) can be got to glucose dispose ability by Eq. (18):"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Statistical analysis"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "A mixed model for the sequential design was used for analyzing the PK parameters Cmax and AUC0-24h based on natural log-transformed values, with treatment as fixed effect and participants as random effect. A point estimate and the corresponding 90% CI for the difference between least squares means of the two treatments was calculated. The point estimate and the corresponding 90% CI was then back-transformed (natural exponentiated) to obtain a point estimate and the 90% CI for the GMR in the original scale. All PD parameters were calculated from repeatedly measured clinical outcomes. A mixed-effects modeling approach was therefore preferred for analysis, as it accounts for and separates mixed-effects variations, thereby yielding estimates of the fixed effects. The analytical procedure began with testing the normality of all parameters; non-normally distributed data were log-transformed and reassessed for normality. For data that were normally distributed either in raw or log-transformed form, a linear mixed-effects model was applied, followed by validation of residual homogeneity of variance. Data that remained non-normal after transformation or failed the homogeneity test were analyzed using a generalized linear mixed-effects model. For all parameters, post-hoc analyses were performed to obtain p-values for between-group comparisons, and effect sizes (|Cohen’s d | ) were calculated. The inflation of type I error rate attributable to multiple comparisons was mitigated by applying appropriate statistical corrections: the Holm method for p-values derived from mixed-effects models and the Dunnett method for all post-hoc pairwise comparisons.PK parameters (Cmax and AUC0-24h) were analyzed using SAS (version 9.4), while iAUC0-4 h of glucose, insulin and C-peptide, ISSI-2, φ, IS, and DI were evaluated using R (version 4.5.1). The R code used for the statistical analyses is available in Supplementary Appendix C."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Parameters derived from the OMM and the population OMM were compared via linear regression analysis performed in GraphPad Prism (version 9.0) to determine the correlation coefficient (r) and the associated p-value for significance."
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Reporting summary"
+    },
+    {
+      "section_type": "METHODS",
+      "text": "Further information on research design is available in the Nature Portfolio Reporting Summary linked to this article."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary information"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "These authors contributed equally: Huan Liu, Yuanhui Zhang."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Supplementary information"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "The online version contains supplementary material available at 10.1038/s41467-026-71798-x."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Author contributions"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "D.Y.L. and L.C. conceived and designed research; L.C. conceived concept and design to the clinical research; H.L. wrote and revised the article and prepared all figures and tables; D.Y.L., L.C., Y.H.Z., L.G.F., J.Y.Z., and Y.S. provided ideas and revised the manuscript; H.L., Y.H.Z., and M.H.J. established and improved population model and individual model; J.Y.Z. and G.J.T. contributed to patient recruitment and study conduction; L.G.F., X.L., and H.L. conducted data statistics and analysis; Y.Z. contributed to medical monitoring; Y.S. contributed to data interpretation."
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Peer review"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Peer review information"
+    },
+    {
+      "section_type": "AUTH_CONT",
+      "text": "Nature Communications thanks Miriam Longo, Mintu Nath, and the other, anonymous, reviewer(s) for their contribution to the peer review of this work. A peer review file is available."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Data availability"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "For ethical and legal considerations pertaining to patient confidentiality, individual participant data relevant to the results presented in this article, will only be available upon request and after deidentification to protect patient identities. These data will be shared with researchers who provide a proposal that has received approval from an independent review committee. Shared data are to be used exclusively for the aims specified in the approved proposal, such as individual participant data meta-analysis, and will be retained indefinitely. Requests should be directed to the corresponding author via email (liudongyang@vip.sina.com or lichen@huamedicine.com). The study protocol is available on ClinicalTrials.gov (NCT03790787). Source data are provided with this paper."
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "Code availability"
+    },
+    {
+      "section_type": "SUPPL",
+      "text": "In this study, the population model was used to estimate the parameters, and the population model needs to construct the model code for parameter estimation. The source code was provided in https://github.com/lh925."
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "Competing interests"
+    },
+    {
+      "section_type": "COMP_INT",
+      "text": "The authors L.C., L.G.F., J.Y.Z., Y.S., Y.Z., and X.L. are employees of Hua Medicine. The remaining authors declare that they have no competing financial or nonfinancial interests."
+    },
+    {
+      "section_type": "REF",
+      "text": "References"
+    },
+    {
+      "section_type": "REF",
+      "text": "Collaborators GBDD. Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021. Lancet402, 203–234 (2023)."
+    },
+    {
+      "section_type": "REF",
+      "text": "Potential health and economic impact associated with achieving risk factor control in Chinese adults with diabetes: a microsimulation modelling study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Professional Practice C. 9. Pharmacologic approaches to glycemic treatment: standards of care in diabetes-2024"
+    },
+    {
+      "section_type": "REF",
+      "text": "Initiating therapy in patients newly diagnosed with type 2 diabetes: Combination therapy vs a stepwise approach"
+    },
+    {
+      "section_type": "REF",
+      "text": "ESC Guidelines for the management of cardiovascular disease in patients with diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Improvement of early-phase insulin secretion is an independent factor for achieving glycaemic control: a pooled analysis of SEED and DAWN study"
+    },
+    {
+      "section_type": "REF",
+      "text": "A phase I open-label clinical trial to study drug-drug interactions of Dorzagliatin and Sitagliptin in patients with type 2 diabetes and obesity"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dorzagliatin: First Approval"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dorzagliatin (HMS5552), a novel dual-acting glucokinase activator, improves glycaemic control and pancreatic beta-cell function in patients with type 2 diabetes: A 28-day treatment study using biomarker-guided patient selection"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dorzagliatin monotherapy in Chinese patients with type 2 diabetes: a dose-ranging, randomised, double-blind, placebo-controlled, phase 2 study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dorzagliatin in drug-naive patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial"
+    },
+    {
+      "section_type": "REF",
+      "text": "Diabetes remission in drug-naive patients with type 2 diabetes after dorzagliatin treatment: a prospective cohort study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Empagliflozin: a review of its use in patients with type 2 diabetes mellitus"
+    },
+    {
+      "section_type": "REF",
+      "text": "Progression of insulin resistance: a link between risk factors and the incidence of diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Beta Cell dysfunction during progression of metabolic syndrome to type 2 diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "Beta-cell failure in type 2 diabetes: mechanisms, markers, and clinical implications"
+    },
+    {
+      "section_type": "REF",
+      "text": "Assessment of insulin secretion and insulin resistance in human"
+    },
+    {
+      "section_type": "REF",
+      "text": "The oral glucose minimal model: estimation of insulin sensitivity from a meal test"
+    },
+    {
+      "section_type": "REF",
+      "text": "Improved postprandial glucose metabolism in type 2 diabetes by the dual glucagon-like peptide-1/glucagon receptor agonist SAR425899 in comparison with liraglutide"
+    },
+    {
+      "section_type": "REF",
+      "text": "U.S. Department of Health and Human Services FDA, Center for Drug Evaluation and Research (CDER). Statistical approaches to establishing bioequivalence guidance for industry. https://www.fda.gov/media/163638/download. (2022)."
+    },
+    {
+      "section_type": "REF",
+      "text": "User’s guide to correlation coefficients"
+    },
+    {
+      "section_type": "REF",
+      "text": "Empagliflozin: A Review in Type 2 Diabetes"
+    },
+    {
+      "section_type": "REF",
+      "text": "First-phase insulin secretion: can its evaluation direct therapeutic approaches?"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dorzagliatin (HMS5552), a novel dual-acting glucokinase activator, improves glycaemic control and pancreatic β-cell function in patients with type 2 diabetes: A 28-day treatment study using biomarker-guided patient selection"
+    },
+    {
+      "section_type": "REF",
+      "text": "Mechanisms controlling pancreatic islet cell function in insulin secretion"
+    },
+    {
+      "section_type": "REF",
+      "text": "Empagliflozin therapy and insulin resistance-associated disorders: effects and promises beyond a diabetic state"
+    },
+    {
+      "section_type": "REF",
+      "text": "Metabolic effects of SGLT-2 inhibitors beyond increased glucosuria: A review of the clinical evidence"
+    },
+    {
+      "section_type": "REF",
+      "text": "zSafety, tolerability, pharmacokinetics, and pharmacodynamics of novel glucokinase activator HMS5552: results from a first-in-human single ascending dose study"
+    },
+    {
+      "section_type": "REF",
+      "text": "Efficacy and safety of dorzagliatin, a novel glucokinase activators, in the treatment of T2DM: A meta-analysis of randomized controlled trials"
+    },
+    {
+      "section_type": "REF",
+      "text": "Insulin resistance and insulin sensitizing agents"
+    },
+    {
+      "section_type": "REF",
+      "text": "Improvement of skeletal muscle insulin sensitivity by 1 week of SGLT2 inhibitor use"
+    },
+    {
+      "section_type": "REF",
+      "text": "Dapagliflozin improves muscle insulin sensitivity but enhances endogenous glucose production"
+    },
+    {
+      "section_type": "REF",
+      "text": "Oral glucose tolerance test minimal model indexes of beta-cell function and insulin sensitivity"
+    },
+    {
+      "section_type": "REF",
+      "text": "The oral minimal model method"
+    },
+    {
+      "section_type": "REF",
+      "text": "Professional Practice C. 2. Diagnosis and classification of diabetes: standards of care in diabetes-2024"
+    },
+    {
+      "section_type": "REF",
+      "text": "Beta-cell function declines within the first year postpartum in women with recent glucose intolerance in pregnancy"
+    },
+    {
+      "section_type": "REF",
+      "text": "The bootstrap: a technique for data-driven statistics using computer-intensive analyses to explore experimental data"
+    },
+    {
+      "section_type": "REF",
+      "text": "Development of visual predictive checks accounting for multimodal parameter distributions in mixture models"
+    }
+  ],
+  "fetched_at": "2026-09-18T04:27:51.397596",
+  "pmid": 42014686
+}

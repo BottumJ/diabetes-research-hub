@@ -389,6 +389,53 @@ def harvest(source, filename):
             if key in seen:
                 continue
             seen.add(key)
+            # Every OTHER PMID inside the UNCUT window, either side. Carried
+            # forward so the verdict step can tell a real misattribution from
+            # a window-cutting artifact.
+            #
+            # 2026-09-18. Both live failures that day were this artifact, and
+            # both had the disproof sitting in the gate's own probe output:
+            #
+            #   build_health_equity.py:1281
+            #     "...Lancet Diabetes Endocrinol 2022;10(10):741-760.
+            #      (A published correction exists: PMID 36215990.)"
+            #     asserted against 36215990; PROBE: resolves to PMID 36113507
+            #     - which is the entry's own PMID, five lines above.
+            #
+            #   verify_2026_09_13_repairs.py:37
+            #     "PMID 29710129 - ... JAMA Oncol 2018;4(7):994-996. ...
+            #      PMID 22336824 - Shan et al., Cochrane 2012."
+            #     asserted against 22336824; PROBE: resolves to PMID 29710129
+            #     - the preceding paragraph's subject.
+            #
+            # In both, the repository is CORRECT and the pairing is wrong. The
+            # left-window cut at the previous marker is right for the common
+            # case but cannot see that the coordinate it kept is owned by a
+            # PMID on the far side of that cut. Probing already answers the
+            # ownership question; the gate simply was not consulting its own
+            # answer. THIS DOES NOT MASK A REAL DEFECT: the exemption applies
+            # only when the coordinate demonstrably belongs to another PMID
+            # that is present in the same block, and that PMID's own
+            # coordinate assertion is still harvested and checked on its own.
+            # OWNERSHIP_RADIUS is deliberately much wider than WINDOW. WINDOW
+            # answers "which coordinate did the author attach to this PMID",
+            # where being tight prevents invented pairings. This answers a
+            # different question - "is the paper that actually owns this
+            # coordinate cited nearby" - and there being tight only causes
+            # misses: on 2026-09-18 the owning PMID sat 250 chars away, past a
+            # <br> and a title, and a +/-200 scan could not see it.
+            #
+            # Widening is safe here because the radius is not the evidence.
+            # The evidence is the PROBE, which independently resolved the
+            # coordinate to a specific PMID against PubMed. The radius only
+            # asks whether that PMID is in the neighbourhood. A fabricated
+            # coordinate resolves to a paper that is NOT cited nearby, so it
+            # is untouched by this.
+            OWNERSHIP_RADIUS = 800
+            neigh = strip_html(source[max(0, m.start() - OWNERSHIP_RADIUS):
+                                      m.end() + OWNERSHIP_RADIUS])
+            block_pmids = sorted({(mm.group(1) or mm.group(2))
+                                  for mm in RE_REF.finditer(neigh)} - {pmid})
             out.append({
                 'file': filename,
                 'line': source.count('\n', 0, m.start()) + 1,
@@ -398,6 +445,7 @@ def harvest(source, filename):
                     'volume': volume, 'issue': issue or '', 'page': page,
                 },
                 'record': text[-160:] if side == 'left' else text[:160],
+                'block_pmids': block_pmids,
             })
             break
     return out
@@ -427,7 +475,12 @@ def main():
 
     control_cache = {}
     buckets = {'OK': [], 'COORD_MISMATCH': [],
-               'POINTS_ELSEWHERE': [], 'NONRESOLVING': [], 'UNRESOLVED': []}
+               'POINTS_ELSEWHERE': [], 'NONRESOLVING': [], 'UNRESOLVED': [],
+               # 2026-09-18: the coordinate is real and belongs to a DIFFERENT
+               # PMID that is present in the same block. The repository named
+               # it correctly; the window cut paired it with the wrong marker.
+               # Reported, never failed. See the note in harvest().
+               'AMBIGUOUS_PAIRING': []}
 
     for ref in refs:
         meta = cache.get(ref['pmid']) or {}
@@ -461,8 +514,19 @@ def main():
             ref['probe'] = 'no PubMed record at %s %s:%s' % (
                 a['journal'], a['volume'], a['page'])
         else:
-            ref['verdict'] = 'POINTS_ELSEWHERE'
-            ref['probe'] = 'coordinate resolves to PMID %s' % ','.join(found)
+            owners_in_block = [p for p in found
+                               if p in (ref.get('block_pmids') or [])]
+            if owners_in_block:
+                ref['verdict'] = 'AMBIGUOUS_PAIRING'
+                ref['probe'] = (
+                    'coordinate resolves to PMID %s, which is also cited in '
+                    'this block - the coordinate belongs to that PMID and the '
+                    'pairing is a window artifact, not a misattribution'
+                    % ','.join(owners_in_block))
+            else:
+                ref['verdict'] = 'POINTS_ELSEWHERE'
+                ref['probe'] = ('coordinate resolves to PMID %s'
+                                % ','.join(found))
         buckets[ref['verdict']].append(ref)
 
     report = {
@@ -474,12 +538,14 @@ def main():
         'points_elsewhere': buckets['POINTS_ELSEWHERE'],
         'coord_mismatch': buckets['COORD_MISMATCH'],
         'unresolved': buckets['UNRESOLVED'],
+        'ambiguous_pairing': buckets['AMBIGUOUS_PAIRING'],
         'ok': buckets['OK'],
     }
     with open(REPORT, 'w', encoding='utf-8') as fh:
         json.dump(report, fh, indent=1, ensure_ascii=False)
 
-    for label in ('NONRESOLVING', 'POINTS_ELSEWHERE', 'COORD_MISMATCH', 'UNRESOLVED'):
+    for label in ('NONRESOLVING', 'POINTS_ELSEWHERE', 'COORD_MISMATCH',
+                  'UNRESOLVED', 'AMBIGUOUS_PAIRING'):
         rows = buckets[label]
         if not rows:
             continue

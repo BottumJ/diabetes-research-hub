@@ -1,13 +1,14 @@
 {
- "generated": "2026-09-06",
+ "generated": "2026-09-18",
  "window_chars": 200,
- "coordinates_checked": 125,
+ "coordinates_checked": 151,
  "counts": {
-  "OK": 119,
+  "OK": 143,
   "COORD_MISMATCH": 1,
   "POINTS_ELSEWHERE": 2,
   "NONRESOLVING": 3,
-  "UNRESOLVED": 0
+  "UNRESOLVED": 0,
+  "AMBIGUOUS_PAIRING": 2
  },
  "nonresolving": [
   {
@@ -22,6 +23,7 @@
     "page": "1416"
    },
    "record": "tles \" \"scores the NARRATIVE, and the narrative is the true part.\" ), \"canonical_example\": ( \"build_gka_lada.py published 'Diabetes. 2009 Jul;58(7):1416-28. \" \"",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Rev Drug Discov",
@@ -50,6 +52,10 @@
     "page": "4297"
    },
    "record": ").\"), (\"build_gka_lada.py\", \"23835325\", \"published as 'Diabetes. 2013 Dec;62(12):4297-303 ... (LADA review)'\", \"Ilonen J et al., Diabetes 2013;62(10):3636-40, a",
+   "block_pmids": [
+    "2873396",
+    "9357409"
+   ],
    "actual": {
     "issue": "7",
     "journal": "J Clin Endocrinol Metab",
@@ -78,6 +84,10 @@
     "page": "456"
    },
    "record": " RETRACTED ' 'ginsenoside paper', 'Mehta A, Beatus T, Smith R, et al. \"Islet transplantation outcomes in ' 'Type 1 diabetes.\" Diabetes Care. 2024;47(3):456-468.",
+   "block_pmids": [
+    "38639547",
+    "40573322"
+   ],
    "actual": {
     "issue": "",
     "journal": "Oxid Med Cell Longev",
@@ -108,6 +118,10 @@
     "page": "823"
    },
    "record": "24;73(6):823-833.\"), (\"build_drug_repurposing_screen.py\", \"1611143\", \"published as 'Feutren et al, Lancet 1986'\", \"The Feutren Lancet 1986 cyclosporine trial is",
+   "block_pmids": [
+    "32307525",
+    "9357409"
+   ],
    "actual": {
     "issue": "8499",
     "journal": "Lancet",
@@ -136,6 +150,7 @@
     "page": "377"
    },
    "record": "ews Endocrinology \" \"2023;19(7):379-380'\", \"Speake C & Herold KC, Nat Rev Endocrinol 2023;19(7):377-378. The asserted \" \"page 379 resolves to a DIFFERENT paper,",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Nat Rev Endocrinol",
@@ -166,6 +181,10 @@
     "page": "1897"
    },
    "record": "ndependent end-to-end check of docs/*.html found a \" \"real defect the same minute: build_gka_landscape.py asserted 'Diabetes \" \"Care. 2002;25(10):1897-1902' for",
+   "block_pmids": [
+    "32175717",
+    "38783768"
+   ],
    "actual": {
     "issue": "",
     "journal": "Front Physiol",
@@ -184,6 +203,71 @@
   }
  ],
  "unresolved": [],
+ "ambiguous_pairing": [
+  {
+   "file": "build_health_equity.py",
+   "line": 1281,
+   "pmid": "36215990",
+   "asserted": {
+    "journal": "Lancet Diabetes Endocrinol",
+    "year": "2022",
+    "volume": "10",
+    "issue": "10",
+    "page": "741"
+   },
+   "record": "crinol 2022;10(10):741-760. Modelled estimates of T1D prevalence, incidence, mortality and life expectancy across 201 countries. (A published correction exists:",
+   "block_pmids": [
+    "36113507"
+   ],
+   "actual": {
+    "issue": "11",
+    "journal": "Lancet Diabetes Endocrinol",
+    "pages": "e11",
+    "title": "Correction to Lancet Diabetes Endocrinol 2022; 10: 741-60.",
+    "volume": "10",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": false,
+    "year": true
+   },
+   "verdict": "AMBIGUOUS_PAIRING",
+   "probe": "coordinate resolves to PMID 36113507, which is also cited in this block - the coordinate belongs to that PMID and the pairing is a window artifact, not a misattribution"
+  },
+  {
+   "file": "verify_2026_09_13_repairs.py",
+   "line": 37,
+   "pmid": "22336824",
+   "asserted": {
+    "journal": "JAMA Oncol",
+    "year": "2018",
+    "volume": "4",
+    "issue": "7",
+    "page": "994"
+   },
+   "record": "ad, \"Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy\", JAMA Oncol 2018;4(7):994-996. TEST: any attachment to a non-CAR-T cost is false. 2 removed.",
+   "block_pmids": [
+    "29710129",
+    "37909353"
+   ],
+   "actual": {
+    "issue": "2",
+    "journal": "Cochrane Database Syst Rev",
+    "pages": "CD006800",
+    "title": "Pentoxifylline for diabetic kidney disease.",
+    "volume": "2012",
+    "year": "2012"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "AMBIGUOUS_PAIRING",
+   "probe": "coordinate resolves to PMID 29710129, which is also cited in this block - the coordinate belongs to that PMID and the pairing is a window artifact, not a misattribution"
+  }
+ ],
  "ok": [
   {
    "file": "_run_2026_08_20.py",
@@ -197,6 +281,7 @@
     "page": "353"
    },
    "record": "(Nat Med 2026;32(1):353-361). ELAD MISSED ITS PRIMARY ENDPOINT: no difference in cerebral glucose metabolism (diff -0.17, 95% CI -0.39 to 0.06, P = 0.14). ADCS-",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Nat Med",
@@ -224,6 +309,10 @@
     "page": "107335"
    },
    "record": "- SGLT2 inhibitors improve insulin resistance and beta-cell function in ' 'type 2 diabetes: a meta-analysis. World J Diabetes 2025 Jul 15;16(7):107335. ' '24 RC",
+   "block_pmids": [
+    "32712220",
+    "35180212"
+   ],
    "actual": {
     "issue": "7",
     "journal": "World J Diabetes",
@@ -251,6 +340,7 @@
     "page": "399"
    },
    "record": "is Nat Rev Drug Discov \" \"2009;8(5):399-416. Diabetes vol 58 issue 7 exists and holds 34 \" \"articles; page 1416 is not among them.\" ), \"found_by\": \"audit_citati",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Rev Drug Discov",
@@ -278,6 +368,7 @@
     "page": "965"
    },
    "record": " pubtype Comment. A News & Views \" \"commentary was being published as a phase 3 trial result. The real SEED \" \"trial is Zhu D et al. Nat Med 2022;28(5):965-973,",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Med",
@@ -305,6 +396,10 @@
     "page": "1288"
    },
    "record": " was removed and the withdrawal \" \"is stated on the card. The qualitative claims are now sourced to UKPDS 25 \" \"(Turner R et al., Lancet 1997;350(9087):1288-93,",
+   "block_pmids": [
+    "2873396",
+    "32307525"
+   ],
    "actual": {
     "issue": "9087",
     "journal": "Lancet",
@@ -332,6 +427,10 @@
     "page": "1745"
    },
    "record": "t drug development of dorzagliatin', J Diabetes \" \"2024;16(6):e13563 - a REVIEW. Regulatory-status claim re-sourced to Syed \" \"YY, Drugs 2022;82(18):1745-1750 (",
+   "block_pmids": [
+    "34763823",
+    "35551294"
+   ],
    "actual": {
     "issue": "18",
     "journal": "Drugs",
@@ -359,6 +458,11 @@
     "page": "23"
    },
    "record": "(Beckwith J \" \"et al., Clin Transplant 2012;26(1):23-33) is retained ONLY as the islet \" \"transplantation cost anchor it actually provides; the 2035 extrapolati",
+   "block_pmids": [
+    "34763823",
+    "36449148",
+    "8366922"
+   ],
    "actual": {
     "issue": "1",
     "journal": "Clin Transplant",
@@ -386,6 +490,7 @@
     "page": "347"
    },
    "record": "ct of Verapamil on Blood Glucose in Type 1 and Type 2 ' 'Diabetes Mellitus: A Systematic Review and Meta-Analysis\", Cardiovasc Drugs ' 'Ther 2026;40(1):347-359.",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Cardiovasc Drugs Ther",
@@ -413,6 +518,7 @@
     "page": "1763798"
    },
    "record": "' '(Front Immunol 2026;17:1763798), a narrative review of Treg in diabetes ' 'and traditional Chinese medicine whose abstract enumerates nephropathy '",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Front Immunol",
@@ -440,6 +546,9 @@
     "page": "1539645"
    },
    "record": "(Front Immunol 2025;16:1539645) as a ' 'Connectivity Map repurposing screen identifying rosiglitazone, synergistic ' 'with rapamycin, \"prolonging graft survival",
+   "block_pmids": [
+    "27821710"
+   ],
    "actual": {
     "issue": "",
     "journal": "Front Immunol",
@@ -467,6 +576,9 @@
     "page": "624"
    },
    "record": "(Circulation 2026 Aug 18;154(7):624-635; ' 'NCT05407376): medically tailored groceries vs usual care in 460 Medicaid-insured ' 'adults with T2D (85.2% Hispanic,",
+   "block_pmids": [
+    "41587834"
+   ],
    "actual": {
     "issue": "7",
     "journal": "Circulation",
@@ -474,6 +586,34 @@
     "title": "Effects of a \"Food Is Medicine\" Intervention on Glucose Control Among Medicaid-Insured Patients With Type 2 Diabetes: A Randomized Controlled Trial.",
     "volume": "154",
     "year": "2026"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "_run_2026_09_08.py",
+   "line": 235,
+   "pmid": "19104422",
+   "asserted": {
+    "journal": "Transplantation",
+    "year": "2008",
+    "volume": "86",
+    "issue": "12",
+    "page": "1783"
+   },
+   "record": "is ' 'Alejandro R, Barton FB, Hering BJ, Wease S, \"2008 Update from the Collaborative ' 'Islet Transplant Registry\", Transplantation 2008 Dec 27;86(12):1783-8, ",
+   "block_pmids": [],
+   "actual": {
+    "issue": "12",
+    "journal": "Transplantation",
+    "pages": "1783-8",
+    "title": "2008 Update from the Collaborative Islet Transplant Registry.",
+    "volume": "86",
+    "year": "2008"
    },
    "checks": {
     "volume": true,
@@ -494,6 +634,7 @@
     "page": "960"
    },
    "record": "coordinate belong to the CITATION, not to the # claim, and must never be read as evidence of a temporal impossibility: # \"Diabetes Care. 2021 Apr;44(4):960-968.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Diabetes Care",
@@ -501,6 +642,62 @@
     "title": "The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study of TTP399, a Hepatoselective Glucokinase Activator, for Adjunctive Treatment of Type 1 Diabetes.",
     "volume": "44",
     "year": "2021"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_cart_access.py",
+   "line": 526,
+   "pmid": "29710129",
+   "asserted": {
+    "journal": "JAMA Oncol",
+    "year": "2018",
+    "volume": "4",
+    "issue": "7",
+    "page": "994"
+   },
+   "record": "(Hernandez, Prasad & Gellad, JAMA Oncol 2018;4(7):994-996) is an oncology cost analysis: it supplies the UNIT price ($475,000 tisagenlecleuce",
+   "block_pmids": [],
+   "actual": {
+    "issue": "7",
+    "journal": "JAMA Oncol",
+    "pages": "994-996",
+    "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
+    "volume": "4",
+    "year": "2018"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_cart_access.py",
+   "line": 543,
+   "pmid": "32175717",
+   "asserted": {
+    "journal": "J Epidemiol Glob Health",
+    "year": "2020",
+    "volume": "10",
+    "issue": "1",
+    "page": "107"
+   },
+   "record": "= Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of Disease analysis of TYPE 2 diabetes PREVALENCE. It contains",
+   "block_pmids": [],
+   "actual": {
+    "issue": "1",
+    "journal": "J Epidemiol Glob Health",
+    "pages": "107-111",
+    "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
+    "volume": "10",
+    "year": "2020"
    },
    "checks": {
     "volume": true,
@@ -521,6 +718,7 @@
     "page": "528"
    },
    "record": "': [1, 2, 3, 4, 13], 'source': 'Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Endocr Rev",
@@ -548,6 +746,7 @@
     "page": "84"
    },
    "record": ", 'Beta Cell', 'Somatostatin'], 'gap_relevance': [1, 2], 'source': 'Gromada J et al. Alpha cells of the endocrine pancreas. Endocrine Reviews 2007;28(1):84-116.",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Endocr Rev",
@@ -575,6 +774,7 @@
     "page": "1087"
    },
    "record": "ova M et al. Assessment of human pancreatic islet architecture and composition by laser scanning confocal microscopy. J Histochem Cytochem 2005;53(9):1087-1097.",
+   "block_pmids": [],
    "actual": {
     "issue": "9",
     "journal": "J Histochem Cytochem",
@@ -602,6 +802,7 @@
     "page": "1351"
    },
    "record": ", 'PI3K/Akt'], 'gap_relevance': [1, 2, 13], 'source': 'De Meyts P. Insulin and its receptor: structure, function and evolution. BioEssays 2004;26(12):1351-1362.",
+   "block_pmids": [],
    "actual": {
     "issue": "12",
     "journal": "Bioessays",
@@ -629,6 +830,7 @@
     "page": "803"
    },
    "record": "ulin'], 'gap_relevance': [1, 2, 3, 13], 'source': 'Jones AG, Hattersley AT. The clinical utility of C-peptide measurement. Diabetic Medicine 2013;30(7):803-817.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Diabet Med",
@@ -656,6 +858,7 @@
     "page": "148"
    },
    "record": "of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans. Front Physiol 2019;10:148.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Front Physiol",
@@ -683,6 +886,7 @@
     "page": "3047"
    },
    "record": "sus proinsulin-to-insulin ratio in the prediction of incident diabetes: the Insulin Resistance Atherosclerosis Study (IRAS). Diabetologia 2011;54(12):3047-3054.",
+   "block_pmids": [],
    "actual": {
     "issue": "12",
     "journal": "Diabetologia",
@@ -710,6 +914,9 @@
     "page": "513"
    },
    "record": "enesis', 'GLP-1'], 'gap_relevance': [1, 2], 'source': 'Sandoval DA, D\\'Alessio DA. Physiology of proglucagon peptides. Physiological Reviews 2015;95(2):513-548.",
+   "block_pmids": [
+    "30303773"
+   ],
    "actual": {
     "issue": "2",
     "journal": "Physiol Rev",
@@ -737,6 +944,9 @@
     "page": "403"
    },
    "record": "f Langerhans'], 'gap_relevance': [1], 'source': 'Huising MO et al. The Difference delta-Cells Make in Glucose Control. Physiology (Bethesda) 2018;33(6):403-411.",
+   "block_pmids": [
+    "25834231"
+   ],
    "actual": {
     "issue": "6",
     "journal": "Physiology (Bethesda)",
@@ -764,6 +974,7 @@
     "page": "259"
    },
    "record": "p_relevance': [1, 13], 'source': 'Gao T et al. Pdx1 maintains beta cell identity and function by repressing an alpha cell program. Cell Metab 2014;19(2):259-71.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "Cell Metab",
@@ -791,6 +1002,7 @@
     "page": "364"
    },
    "record": ", 'Insulin'], 'gap_relevance': [1, 13], 'source': 'Hang Y, Stein R. MafA and MafB activity in pancreatic beta cells. Trends Endocrinol Metab 2011;22(9):364-373.",
+   "block_pmids": [],
    "actual": {
     "issue": "9",
     "journal": "Trends Endocrinol Metab",
@@ -818,6 +1030,7 @@
     "page": "445"
    },
    "record": "], 'gap_relevance': [2, 3, 5, 6, 7, 8], 'source': 'Zhu J et al. Differentiation of effector CD4 T cell populations. Annual Review of Immunology 2010;28:445-489.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Immunol",
@@ -845,6 +1058,7 @@
     "page": "161"
    },
    "record": "ell destruction'], 'gap_relevance': [2, 3, 7, 9], 'source': 'Zhang N, Bevan MJ. CD8(+) T cells: foot soldiers of the immune system. Immunity 2011;35(2):161-168.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "Immunity",
@@ -872,6 +1086,7 @@
     "page": "541"
    },
    "record": "Cell'], 'gap_relevance': [2, 3, 5, 6, 7, 8, 9], 'source': 'Sakaguchi S et al. Regulatory T cells and human disease. Annual Review of Immunology 2020;38:541-566.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Immunol",
@@ -899,6 +1114,7 @@
     "page": "330"
    },
    "record": "elevance': [2, 3, 5, 6, 7, 8], 'source': 'Fontenot JD et al. Foxp3 programs development and function of regulatory T cells. Nature Immunology 2003;4(4):330-336.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Nat Immunol",
@@ -926,6 +1142,7 @@
     "page": "1361"
    },
    "record": "Cell', 'Gene therapy'], 'gap_relevance': [3, 5, 6, 7, 8], 'source': 'June CH et al. CAR T cell immunotherapy for human cancer. Science 2018;359(6382):1361-1365.",
+   "block_pmids": [],
    "actual": {
     "issue": "6382",
     "journal": "Science",
@@ -953,6 +1170,7 @@
     "page": "1570"
    },
    "record": "', 'Dendritic Cell'], 'gap_relevance': [2, 3, 5, 7], 'source': 'LeBien TW, Tedder TF. B lymphocytes: how they develop and function. Blood 2008;112(5):1570-1580.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Blood",
@@ -980,6 +1198,7 @@
     "page": "245"
    },
    "record": "gulatory T Cell'], 'gap_relevance': [2, 3, 5], 'source': 'Banchereau J, Steinman RM. Dendritic cells and the control of immunity. Nature 1998;392(6673):245-252.",
+   "block_pmids": [],
    "actual": {
     "issue": "6673",
     "journal": "Nature",
@@ -1007,6 +1226,7 @@
     "page": "44"
    },
    "record": "C class I'], 'gap_relevance': [2, 3], 'source': 'Vivier E et al. Innate or adaptive immunity? The example of natural killer cells. Science 2011;331(6013):44-49.",
+   "block_pmids": [],
    "actual": {
     "issue": "6013",
     "journal": "Science",
@@ -1034,6 +1254,7 @@
     "page": "723"
    },
    "record": "ance': [2, 3, 4, 6, 7], 'source': 'Murray PJ, Wynn TA. Protective and pathogenic functions of macrophage subsets. Nature Reviews Immunology 2011;11(11):723-737.",
+   "block_pmids": [],
    "actual": {
     "issue": "11",
     "journal": "Nat Rev Immunol",
@@ -1061,6 +1282,9 @@
     "page": "2473"
    },
    "record": "ance': [1, 2, 3], 'source': 'Ziegler AG et al. Seroconversion to multiple islet autoantibodies and risk of progression to diabetes. JAMA 2013;309(23):2473-2479.",
+   "block_pmids": [
+    "1697648"
+   ],
    "actual": {
     "issue": "23",
     "journal": "JAMA",
@@ -1088,6 +1312,9 @@
     "page": "151"
    },
    "record": "gap_relevance': [1, 2, 3, 5], 'source': 'Baekkeskov S et al. Identification of the 64K autoantigen in insulin-dependent diabetes. Nature 1990;347(6289):151-156.",
+   "block_pmids": [
+    "23780460"
+   ],
    "actual": {
     "issue": "6289",
     "journal": "Nature",
@@ -1115,6 +1342,9 @@
     "page": "505"
    },
    "record": "n MS et al. Molecular cloning and identification of a receptor-type protein tyrosine phosphatase, IA-2, from human insulinoma. DNA Cell Biol 1994;13(5):505-514.",
+   "block_pmids": [
+    "17942684"
+   ],
    "actual": {
     "issue": "5",
     "journal": "DNA Cell Biol",
@@ -1142,6 +1372,9 @@
     "page": "17040"
    },
    "record": "'], 'gap_relevance': [1, 2, 3], 'source': 'Wenzlau JM et al. The zinc transporter ZnT8 is a major autoantigen in type 1 diabetes. PNAS 2007;104(43):17040-17045.",
+   "block_pmids": [
+    "8024693"
+   ],
    "actual": {
     "issue": "43",
     "journal": "Proc Natl Acad Sci U S A",
@@ -1169,6 +1402,9 @@
     "page": "145"
    },
    "record": "ce': [2, 3, 5, 6], 'source': 'Mosmann TR, Coffman RL. TH1 and TH2 cells: different patterns of lymphokine secretion. Annual Review of Immunology 1989;7:145-173.",
+   "block_pmids": [
+    "19132915"
+   ],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Immunol",
@@ -1196,6 +1432,9 @@
     "page": "485"
    },
    "record": "', 'IL-17', 'SGLT2 Inhibitor'], 'gap_relevance': [2, 3, 5, 6, 7, 9], 'source': 'Korn T et al. IL-17 and Th17 cells. Annual Review of Immunology 2009;27:485-517.",
+   "block_pmids": [
+    "2523712"
+   ],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Immunol",
@@ -1223,6 +1462,7 @@
     "page": "225"
    },
    "record": " 'gap_relevance': [2, 3, 5], 'source': 'Paul WE, Zhu J. How are TH2-type immune responses initiated and amplified? Nature Reviews Immunology 2010;10(4):225-235.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Nat Rev Immunol",
@@ -1250,6 +1490,7 @@
     "page": "106"
    },
    "record": "', 'Beta Cell death'], 'gap_relevance': [2, 3, 4, 6, 7], 'source': 'Dinarello CA. Interleukin-1 in disease. New England Journal of Medicine 1993;328(2):106-115.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "N Engl J Med",
@@ -1277,6 +1518,7 @@
     "page": "49"
    },
    "record": "2], 'source': 'Kalliolias GD, Ivashkiv LB. TNF biology, pathogenic mechanisms and emerging therapeutic strategies. Nature Reviews Rheumatology 2016;12(1):49-62.",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Nat Rev Rheumatol",
@@ -1304,6 +1546,9 @@
     "page": "170"
    },
    "record": "evance': [2, 3, 5, 6, 7, 9], 'source': 'Saraiva M, O\\'Garra A. The regulation of IL-10 production by immune cells. Nature Reviews Immunology 2010;10(3):170-181.",
+   "block_pmids": [
+    "18662538"
+   ],
    "actual": {
     "issue": "3",
     "journal": "Nat Rev Immunol",
@@ -1331,6 +1576,10 @@
     "page": "215"
    },
    "record": "ns': ['Regulatory T Cell', 'Fibrosis', 'SMAD pathway'], 'gap_relevance': [2, 3, 5, 6, 7, 9], 'source': 'Massague J. TGFbeta in cancer. Cell 2008;134(2):215-230.",
+   "block_pmids": [
+    "19575028",
+    "20154735"
+   ],
    "actual": {
     "issue": "2",
     "journal": "Cell",
@@ -1358,6 +1607,9 @@
     "page": "556"
    },
    "record": ", 'gap_relevance': [2, 3, 5, 6, 7, 9], 'source': 'Gaffen SL. Structure and signalling in the IL-17 receptor family. Nature Reviews Immunology 2009;9(8):556-567.",
+   "block_pmids": [
+    "18662538"
+   ],
    "actual": {
     "issue": "8",
     "journal": "Nat Rev Immunol",
@@ -1385,6 +1637,7 @@
     "page": "163"
    },
    "record": " [2, 3, 5, 6], 'source': 'Schroder K et al. Interferon-gamma: an overview of signals, mechanisms and functions. Journal of Leukocyte Biology 2004;75(2):163-189.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "J Leukoc Biol",
@@ -1412,6 +1665,7 @@
     "page": "37"
    },
    "record": ", 'DPN'], 'gap_relevance': [4, 6, 7, 9], 'source': 'Zhang Q et al. 30 Years of NF-kB: a blossoming of relevance to human pathobiology. Cell 2017;168(1-2):37-57.",
+   "block_pmids": [],
    "actual": {
     "issue": "1-2",
     "journal": "Cell",
@@ -1439,6 +1693,7 @@
     "page": "50"
    },
    "record": " 7, 9], 'source': 'Cargnello M, Roux PP. Activation and function of the MAPKs and their substrates. Microbiology and Molecular Biology Reviews 2011;75(1):50-83.",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Microbiol Mol Biol Rev",
@@ -1466,6 +1721,7 @@
     "page": "477"
    },
    "record": " 9, 12], 'source': 'Swanson KV et al. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nature Reviews Immunology 2019;19(8):477-489.",
+   "block_pmids": [],
    "actual": {
     "issue": "8",
     "journal": "Nat Rev Immunol",
@@ -1493,6 +1749,7 @@
     "page": "31"
    },
    "record": "etabolic health'], 'gap_relevance': [4, 6, 7, 11, 12], 'source': 'Hardie DG et al. AMPK: a nutrient and energy sensor. Annual Review of Nutrition 2014;34:31-55.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Nutr",
@@ -1520,6 +1777,7 @@
     "page": "960"
    },
    "record": "', 'Transplant'], 'gap_relevance': [3, 5, 6, 8], 'source': 'Saxton RA, Sabatini DM. mTOR Signaling in Growth, Metabolism, and Disease. Cell 2017;168(6):960-976.",
+   "block_pmids": [],
    "actual": {
     "issue": "6",
     "journal": "Cell",
@@ -1547,6 +1805,7 @@
     "page": "381"
    },
    "record": "eptor', 'Glucose uptake'], 'gap_relevance': [1, 4, 11, 12], 'source': 'Manning BD, Toker A. AKT/PKB signaling: navigating the network. Cell 2017;169(3):381-405.",
+   "block_pmids": [],
    "actual": {
     "issue": "3",
     "journal": "Cell",
@@ -1574,6 +1833,7 @@
     "page": "311"
    },
    "record": "3, 5, 6, 8], 'source': 'O\\'Shea JJ et al. The JAK-STAT pathway: impact on human disease and therapeutic intervention. Annual Review of Medicine 2015;66:311-328.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Annu Rev Med",
@@ -1601,6 +1861,7 @@
     "page": "1483"
    },
    "record": " 'Insulin secretion'], 'gap_relevance': [3, 5, 8, 11], 'source': 'Rusnak F, Mertz P. Calcineurin: form and function. Physiological Reviews 2000;80(4):1483-1521.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Physiol Rev",
@@ -1628,6 +1889,7 @@
     "page": "472"
    },
    "record": " 'gap_relevance': [3, 5, 8], 'source': 'Macian F. NFAT proteins: key regulators of T-cell development and function. Nature Reviews Immunology 2005;5(6):472-484.",
+   "block_pmids": [],
    "actual": {
     "issue": "6",
     "journal": "Nat Rev Immunol",
@@ -1655,6 +1917,7 @@
     "page": "412"
    },
    "record": "g Insulin', 'Beta cell function'], 'gap_relevance': [1, 4, 11, 12], 'source': 'Matthews DR et al. Homeostasis model assessment. Diabetologia 1985;28(7):412-419.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Diabetologia",
@@ -1682,6 +1945,7 @@
     "page": "209"
    },
    "record": "k'], 'gap_relevance': [4, 6, 12, 15], 'source': 'Ridker PM. C-reactive protein: eighty years from discovery to emergence. Clinical Chemistry 2009;55(2):209-215.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "Clin Chem",
@@ -1709,6 +1973,7 @@
     "page": "1593"
    },
    "record": "ycemic control'], 'gap_relevance': [11, 12, 15], 'source': 'Battelino T et al. Clinical targets for CGM data interpretation. Diabetes Care 2019;42(8):1593-1603.",
+   "block_pmids": [],
    "actual": {
     "issue": "8",
     "journal": "Diabetes Care",
@@ -1736,6 +2001,7 @@
     "page": "1537"
    },
    "record": "mmation', 'Obesity'], 'gap_relevance': [4, 11, 12], 'source': 'Scherer PE. Adipose tissue: from lipid storage to endocrine organ. Diabetes 2006;55(6):1537-1545.",
+   "block_pmids": [],
    "actual": {
     "issue": "6",
     "journal": "Diabetes",
@@ -1763,6 +2029,9 @@
     "page": "754"
    },
    "record": "Insulin resistance'], 'gap_relevance': [4, 12], 'source': 'Friedman JM. Leptin and the endocrine control of energy balance. Nature Metabolism 2019;1(8):754-764.",
+   "block_pmids": [
+    "28776086"
+   ],
    "actual": {
     "issue": "8",
     "journal": "Nat Metab",
@@ -1790,6 +2059,7 @@
     "page": "1577"
    },
    "record": "sistance', 'Macrophage'], 'gap_relevance': [4, 6, 7, 11, 12], 'source': 'Rena G et al. The mechanisms of action of metformin. Diabetologia 2017;60(9):1577-1585.",
+   "block_pmids": [],
    "actual": {
     "issue": "9",
     "journal": "Diabetologia",
@@ -1817,6 +2087,7 @@
     "page": "740"
    },
    "record": ", 6, 7, 10, 11, 12, 15], 'source': 'Drucker DJ. Mechanisms of action and therapeutic application of GLP-1 receptor agonists. Cell Metabolism 2018;27(4):740-756.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Cell Metab",
@@ -1844,6 +2115,7 @@
     "page": "215"
    },
    "record": "elevance': [4, 6, 7, 9, 10, 12], 'source': 'Vallon V, Thomson SC. Targeting renal glucose reabsorption to treat hyperglycaemia. Diabetologia 2017;60(2):215-225.",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "Diabetologia",
@@ -1871,6 +2143,7 @@
     "page": "642"
    },
    "record": "ce': [4, 11, 12], 'source': 'Deacon CF. Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes. Nature Reviews Endocrinology 2020;16(11):642-653.",
+   "block_pmids": [],
    "actual": {
     "issue": "11",
     "journal": "Nat Rev Endocrinol",
@@ -1898,6 +2171,7 @@
     "page": "1106"
    },
    "record": ", 'Visceral fat'], 'gap_relevance': [2, 4, 5, 7, 11, 12], 'source': 'Yki-Jarvinen H. Thiazolidinediones. New England Journal of Medicine 2004;351(11):1106-1118.",
+   "block_pmids": [],
    "actual": {
     "issue": "11",
     "journal": "N Engl J Med",
@@ -1925,6 +2199,7 @@
     "page": "2562"
    },
    "record": " 8, 11], 'source': 'Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575.",
+   "block_pmids": [],
    "actual": {
     "issue": "25",
     "journal": "N Engl J Med",
@@ -1952,6 +2227,7 @@
     "page": "373"
    },
    "record": "utophagy', 'Transplant tolerance'], 'gap_relevance': [3, 5, 6, 8], 'source': 'Li J et al. Rapamycin: one drug, many effects. Cell Metabolism 2014;19(3):373-379.",
+   "block_pmids": [],
    "actual": {
     "issue": "3",
     "journal": "Cell Metab",
@@ -1979,6 +2255,7 @@
     "page": "770"
    },
    "record": ", 'gap_relevance': [3, 5, 6, 8], 'source': 'Vincenti F et al. Costimulation blockade with belatacept in renal transplantation. N Engl J Med 2005;353(8):770-781.",
+   "block_pmids": [],
    "actual": {
     "issue": "8",
     "journal": "N Engl J Med",
@@ -2006,6 +2283,7 @@
     "page": "652"
    },
    "record": "levance': [2, 3, 5, 6, 8], 'source': 'Taylor PC et al. Baricitinib versus placebo for rheumatoid arthritis. New England Journal of Medicine 2017;376(7):652-662.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "N Engl J Med",
@@ -2033,6 +2311,7 @@
     "page": "1363"
    },
    "record": "Lernmark A. GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset autoimmune diabetes. Diabetologia 2009;52(7):1363-1368.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Diabetologia",
@@ -2060,6 +2339,7 @@
     "page": "333"
    },
    "record": "_relevance': [2, 3, 5, 6, 7], 'source': 'Brown N, Panksepp J. Low-dose naltrexone for disease prevention and quality of life. Med Hypotheses 2009;72(3):333-337.",
+   "block_pmids": [],
    "actual": {
     "issue": "3",
     "journal": "Med Hypotheses",
@@ -2087,6 +2367,7 @@
     "page": "69"
    },
    "record": "a Cell', 'Insulin', 'Autoimmunity'], 'gap_relevance': [1, 2, 3, 5, 6, 7, 8, 13, 14], 'source': 'Atkinson MA et al. Type 1 diabetes. Lancet 2014;383(9911):69-82.",
+   "block_pmids": [],
    "actual": {
     "issue": "9911",
     "journal": "Lancet",
@@ -2114,6 +2395,7 @@
     "page": "15019"
    },
    "record": "syndrome'], 'gap_relevance': [1, 4, 6, 11, 12, 13, 14, 15], 'source': 'DeFronzo RA et al. Type 2 diabetes mellitus. Nature Reviews Disease Primers 2015;1:15019.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Nat Rev Dis Primers",
@@ -2141,6 +2423,7 @@
     "page": "2037"
    },
    "record": "ccine'], 'gap_relevance': [1, 2, 3, 5, 6, 7, 8, 13, 14], 'source': 'Buzzetti R et al. Management of LADA: a consensus statement. Diabetes 2020;69(10):2037-2044.",
+   "block_pmids": [],
    "actual": {
     "issue": "10",
     "journal": "Diabetes",
@@ -2168,6 +2451,7 @@
     "page": "47"
    },
    "record": "bolic risk'], 'gap_relevance': [1, 4, 11, 12, 13, 14], 'source': 'McIntyre HD et al. Gestational diabetes mellitus. Nature Reviews Disease Primers 2019;5(1):47.",
+   "block_pmids": [],
    "actual": {
     "issue": "1",
     "journal": "Nat Rev Dis Primers",
@@ -2195,6 +2479,7 @@
     "page": "769"
    },
    "record": "ta Cell', 'Glucokinase'], 'gap_relevance': [1, 13], 'source': 'Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Diabetologia",
@@ -2222,6 +2507,7 @@
     "page": "2279"
    },
    "record": "formin'], 'gap_relevance': [4, 11, 12, 14], 'source': 'Tabak AG et al. Prediabetes: a high-risk state for diabetes development. Lancet 2012;379(9833):2279-2290.",
+   "block_pmids": [],
    "actual": {
     "issue": "9833",
     "journal": "Lancet",
@@ -2249,6 +2535,7 @@
     "page": "230"
    },
    "record": "'], 'gap_relevance': [3, 5, 8, 13], 'source': 'Shapiro AMJ et al. Islet transplantation in type 1 diabetes. New England Journal of Medicine 2000;343(4):230-238.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "N Engl J Med",
@@ -2276,6 +2563,7 @@
     "page": "1477"
    },
    "record": ": [3, 8, 13], 'source': 'Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Am J Transplant",
@@ -2303,6 +2591,9 @@
     "page": "1007"
    },
    "record": "'Insulin pump', 'Automation'], 'gap_relevance': [11, 15], 'source': 'Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015.",
+   "block_pmids": [
+    "22315720"
+   ],
    "actual": {
     "issue": "5",
     "journal": "Diabetologia",
@@ -2330,6 +2621,7 @@
     "page": "572"
    },
    "record": " 11, 12], 'source': 'Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587.",
+   "block_pmids": [],
    "actual": {
     "issue": "10",
     "journal": "Nat Rev Endocrinol",
@@ -2357,6 +2649,9 @@
     "page": "41"
    },
    "record": " ['Glucagon', 'Liver', 'Hypoglycemia'], 'gap_relevance': [1, 11], 'source': 'Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41.",
+   "block_pmids": [
+    "28731034"
+   ],
    "actual": {
     "issue": "1",
     "journal": "Nat Rev Dis Primers",
@@ -2384,6 +2679,7 @@
     "page": "11369"
    },
    "record": "'Glucose uptake'], 'gap_relevance': [4, 11, 12], 'source': 'Klip A et al. Thirty sweet years of GLUT4. Journal of Biological Chemistry 2019;294(30):11369-11381.",
+   "block_pmids": [],
    "actual": {
     "issue": "30",
     "journal": "J Biol Chem",
@@ -2411,6 +2707,7 @@
     "page": "1615"
    },
    "record": "OS', 'Complications'], 'gap_relevance': [4, 6, 7, 11, 12, 15], 'source': 'Brownlee M. The pathobiology of diabetic complications. Diabetes 2005;54(6):1615-1625.",
+   "block_pmids": [],
    "actual": {
     "issue": "6",
     "journal": "Diabetes",
@@ -2438,6 +2735,7 @@
     "page": "2032"
    },
    "record": "p_relevance': [4, 6, 10, 12], 'source': 'Alicic RZ et al. Diabetic kidney disease. Clinical Journal of the American Society of Nephrology 2017;12(12):2032-2045.",
+   "block_pmids": [],
    "actual": {
     "issue": "12",
     "journal": "Clin J Am Soc Nephrol",
@@ -2465,6 +2763,7 @@
     "page": "16012"
    },
    "record": "ia', 'VEGF', 'Microvascular disease'], 'gap_relevance': [4, 6, 12], 'source': 'Wong TY et al. Diabetic retinopathy. Nature Reviews Disease Primers 2016;2:16012.",
+   "block_pmids": [],
    "actual": {
     "issue": "",
     "journal": "Nat Rev Dis Primers",
@@ -2492,6 +2791,7 @@
     "page": "1644"
    },
    "record": "tibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12. Diabetologia 2018;61(7):1644-1649.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Diabetologia",
@@ -2519,6 +2819,7 @@
     "page": "1318"
    },
    "record": "], 'source': 'Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330.",
+   "block_pmids": [],
    "actual": {
     "issue": "13",
     "journal": "N Engl J Med",
@@ -2546,6 +2847,7 @@
     "page": "381"
    },
    "record": "'], 'gap_relevance': [1, 2, 8, 10], 'source': 'Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-386.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "Nat Genet",
@@ -2573,6 +2875,7 @@
     "page": "560"
    },
    "record": "ion Medicine'], 'gap_relevance': [1, 2, 8, 10], 'source': 'Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Genet",
@@ -2600,6 +2903,7 @@
     "page": "1707"
    },
    "record": "ce': 'Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717.",
+   "block_pmids": [],
    "actual": {
     "issue": "18",
     "journal": "N Engl J Med",
@@ -2627,6 +2931,7 @@
     "page": "371"
    },
    "record": " [2, 6, 10, 11], 'source': 'Beck RW et al. Effect of continuous glucose monitoring on glycemic control in adults with type 1 diabetes. JAMA 2017;317(4):371-378.",
+   "block_pmids": [],
    "actual": {
     "issue": "4",
     "journal": "JAMA",
@@ -2654,6 +2959,7 @@
     "page": "603"
    },
    "record": "8], 'source': 'Herold KC et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. New England Journal of Medicine 2019;381(7):603-613.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "N Engl J Med",
@@ -2681,6 +2987,7 @@
     "page": "377"
    },
    "record": "'CD3'], 'gap_relevance': [1, 2, 6, 8], 'source': 'Speake C, Herold KC. Approval of teplizumab: implications for patients. Nat Rev Endocrinol 2023;19(7):377-378.",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "Nat Rev Endocrinol",
@@ -2708,6 +3015,7 @@
     "page": "2117"
    },
    "record": "2], 'source': 'Zinman B et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes. New England Journal of Medicine 2015;373(22):2117-2128.",
+   "block_pmids": [],
    "actual": {
     "issue": "22",
     "journal": "N Engl J Med",
@@ -2735,6 +3043,7 @@
     "page": "965"
    },
    "record": " al. Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial. Nature Medicine 2022;28(5):965-973.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Med",
@@ -2762,6 +3071,7 @@
     "page": "100466"
    },
    "record": "tide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466.",
+   "block_pmids": [],
    "actual": {
     "issue": "12",
     "journal": "Cell Rep Med",
@@ -2789,6 +3099,7 @@
     "page": "2811"
    },
    "record": "orouhi NG. Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base for South Asians. Diabetes Care 2022;45(12):2811-2813.",
+   "block_pmids": [],
    "actual": {
     "issue": "12",
     "journal": "Diabetes Care",
@@ -2806,7 +3117,7 @@
   },
   {
    "file": "build_drug_repurposing_screen.py",
-   "line": 628,
+   "line": 643,
    "pmid": "2873396",
    "asserted": {
     "journal": "Lancet",
@@ -2816,6 +3127,10 @@
     "page": "119"
    },
    "record": "ion, beta cell preservation in autoimmune diabetes\", \"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24,",
+   "block_pmids": [
+    "1611143",
+    "29710129"
+   ],
    "actual": {
     "issue": "8499",
     "journal": "Lancet",
@@ -2833,7 +3148,7 @@
   },
   {
    "file": "build_drug_repurposing_screen.py",
-   "line": 628,
+   "line": 643,
    "pmid": "1611143",
    "asserted": {
     "journal": "J Diabetes Complications",
@@ -2843,6 +3158,10 @@
     "page": "77"
    },
    "record": "; Skyler & Rabinovitch, J Diabetes Complications 1992;6(2):77-88,",
+   "block_pmids": [
+    "2873396",
+    "29710129"
+   ],
    "actual": {
     "issue": "2",
     "journal": "J Diabetes Complications",
@@ -2850,6 +3169,192 @@
     "title": "Cyclosporine in recent onset type I diabetes mellitus. Effects on islet beta cell function. Miami Cyclosporine Diabetes Study Group.",
     "volume": "6",
     "year": "1992"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_drug_repurposing_screen.py",
+   "line": 666,
+   "pmid": "12021247",
+   "asserted": {
+    "journal": "J Clin Invest",
+    "year": "2002",
+    "volume": "109",
+    "issue": "",
+    "page": "1321"
+   },
+   "record": "# (J Clin Invest 2002;109:1321-6), verified via NCBI esummary. # (2) Hundal 2002 studied high-dose ASPIRIN, not salsalate. Salsalate is # evidenced separately i",
+   "block_pmids": [
+    "12122111",
+    "23817699"
+   ],
+   "actual": {
+    "issue": "10",
+    "journal": "J Clin Invest",
+    "pages": "1321-6",
+    "title": "Mechanism by which high-dose aspirin improves glucose metabolism in type 2 diabetes.",
+    "volume": "109",
+    "year": "2002"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gap_deep_dives.py",
+   "line": 489,
+   "pmid": "35551294",
+   "asserted": {
+    "journal": "",
+    "year": "2022",
+    "volume": "28",
+    "issue": "",
+    "page": "965"
+   },
+   "record": "ial report: # * \"DAWN-1\" is not a trial. The two dorzagliatin phase 3 trials are # SEED (drug-naive monotherapy, n=463, Zhu D et al., Nat Med # 2022;28:965-973,",
+   "block_pmids": [
+    "35551292",
+    "36449148",
+    "37385967"
+   ],
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Med",
+    "pages": "965-973",
+    "title": "Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
+    "volume": "28",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gap_deep_dives.py",
+   "line": 490,
+   "pmid": "35551292",
+   "asserted": {
+    "journal": "Nat Med",
+    "year": "2022",
+    "volume": "28",
+    "issue": "",
+    "page": "974"
+   },
+   "record": ") and DAWN (add-on to metformin, # n=767, Yang W et al., Nat Med 2022;28:974-981,",
+   "block_pmids": [
+    "35551294",
+    "36449148",
+    "37385967"
+   ],
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Med",
+    "pages": "974-981",
+    "title": "Dorzagliatin add-on therapy to metformin in patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
+    "volume": "28",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gap_deep_dives.py",
+   "line": 496,
+   "pmid": "37385967",
+   "asserted": {
+    "journal": "Diabetes Obes Metab",
+    "year": "2023",
+    "volume": "25",
+    "issue": "",
+    "page": "2878"
+   },
+   "record": " a Kaplan-Meier remission PROBABILITY at week 52 in the # drug-free follow-on cohort of SEED completers (Zeng J et al., # Diabetes Obes Metab 2023;25:2878-2887,",
+   "block_pmids": [
+    "35551292",
+    "35551294",
+    "36449148"
+   ],
+   "actual": {
+    "issue": "10",
+    "journal": "Diabetes Obes Metab",
+    "pages": "2878-2887",
+    "title": "Diabetes remission in drug-naïve patients with type 2 diabetes after dorzagliatin treatment: A prospective cohort study.",
+    "volume": "25",
+    "year": "2023"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gap_deep_dives.py",
+   "line": 1019,
+   "pmid": "29710129",
+   "asserted": {
+    "journal": "JAMA Oncol",
+    "year": "2018",
+    "volume": "4",
+    "issue": "7",
+    "page": "994"
+   },
+   "record": "is Hernandez, Prasad & Gellad, 'Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy', JAMA Oncol 2018;4(7):994-996 - a three-page research letter repo",
+   "block_pmids": [
+    "34763823",
+    "38639547"
+   ],
+   "actual": {
+    "issue": "7",
+    "journal": "JAMA Oncol",
+    "pages": "994-996",
+    "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
+    "volume": "4",
+    "year": "2018"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_generic_drug_catalog.py",
+   "line": 307,
+   "pmid": "32175717",
+   "asserted": {
+    "journal": "J Epidemiol Glob Health",
+    "year": "2020",
+    "volume": "10",
+    "issue": "1",
+    "page": "107"
+   },
+   "record": "is # Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of Disease # analysis of type 2 diabetes PREVALENCE. It contains no cost or pr",
+   "block_pmids": [],
+   "actual": {
+    "issue": "1",
+    "journal": "J Epidemiol Glob Health",
+    "pages": "107-111",
+    "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
+    "volume": "10",
+    "year": "2020"
    },
    "checks": {
     "volume": true,
@@ -2870,6 +3375,10 @@
     "page": "960"
    },
    "record": "e for LADA consideration. Klein KR et al. The SimpliciT1 Study. Diabetes Care. 2021 Apr;44(4):960-968.",
+   "block_pmids": [
+    "35551292",
+    "35551294"
+   ],
    "actual": {
     "issue": "4",
     "journal": "Diabetes Care",
@@ -2897,6 +3406,11 @@
     "page": "965"
    },
    "record": ". Efficacy in T2D is underwhelming given side effect profile. Zhu D et al. Nat Med 2022;28(5):965-973 (",
+   "block_pmids": [
+    "33622669",
+    "35551292",
+    "36449148"
+   ],
    "actual": {
     "issue": "5",
     "journal": "Nat Med",
@@ -2924,6 +3438,11 @@
     "page": "974"
    },
    "record": ") — SEED trial, drug-naive monotherapy; Yang W et al. Nat Med 2022;28(5):974-981 (",
+   "block_pmids": [
+    "33622669",
+    "35551294",
+    "36449148"
+   ],
    "actual": {
     "issue": "5",
     "journal": "Nat Med",
@@ -2951,6 +3470,10 @@
     "page": "1745"
    },
    "record": ") — DAWN trial, add-on to metformin; Syed YY, Drugs 2022;82(18):1745-1750 (",
+   "block_pmids": [
+    "35551292",
+    "35551294"
+   ],
    "actual": {
     "issue": "18",
     "journal": "Drugs",
@@ -2978,6 +3501,9 @@
     "page": "1175198"
    },
    "record": "trade-off even in T2D. Yang W et al. Front Endocrinol (Lausanne) 2023;14:1175198 (",
+   "block_pmids": [
+    "24056026"
+   ],
    "actual": {
     "issue": "",
     "journal": "Front Endocrinol (Lausanne)",
@@ -3005,6 +3531,9 @@
     "page": "137"
    },
    "record": ") — systematic review and meta-analysis of GKA efficacy and safety; Oh YS et al. Eur J Pharm Sci 2014;51:137-45 (",
+   "block_pmids": [
+    "37223016"
+   ],
    "actual": {
     "issue": "",
     "journal": "Eur J Pharm Sci",
@@ -3032,6 +3561,7 @@
     "page": "399"
    },
    "record": "hy activation increases insulin secretion. Matschinsky FM. Nat Rev Drug Discov. 2009 May;8(5):399-416.",
+   "block_pmids": [],
    "actual": {
     "issue": "5",
     "journal": "Nat Rev Drug Discov",
@@ -3059,6 +3589,9 @@
     "page": "1288"
    },
    "record": "to islet-cell cytoplasm and glutamic acid decarboxylase for prediction of insulin requirement in type 2 diabetes. Lancet. 1997 Nov 1;350(9087):1288-93.",
+   "block_pmids": [
+    "32307525"
+   ],
    "actual": {
     "issue": "9087",
     "journal": "Lancet",
@@ -3086,6 +3619,12 @@
     "page": "2037"
    },
    "record": "es not address this in LADA. Buzzetti R et al. Diabetes 2020;69(10):2037-2047 (",
+   "block_pmids": [
+    "23835325",
+    "30041834",
+    "32307525",
+    "38349844"
+   ],
    "actual": {
     "issue": "10",
     "journal": "Diabetes",
@@ -3113,6 +3652,12 @@
     "page": "638"
    },
    "record": ") — International Expert Panel LADA consensus statement; Mishra R et al. Trends Endocrinol Metab 2018;29(9):638-650 (",
+   "block_pmids": [
+    "23835325",
+    "32307525",
+    "32847960",
+    "38349844"
+   ],
    "actual": {
     "issue": "9",
     "journal": "Trends Endocrinol Metab",
@@ -3140,6 +3685,12 @@
     "page": "823"
    },
    "record": ") — biphasic beta cell decline in LADA; Latres E et al. Diabetes 2024;73(6):823-833 (",
+   "block_pmids": [
+    "23835325",
+    "30041834",
+    "32307525",
+    "32847960"
+   ],
    "actual": {
     "issue": "6",
     "journal": "Diabetes",
@@ -3167,6 +3718,12 @@
     "page": "3636"
    },
    "record": ") — C-peptide as a validated surrogate endpoint; Ilonen J et al. Diabetes 2013;62(10):3636-40 (",
+   "block_pmids": [
+    "30041834",
+    "32307525",
+    "32847960",
+    "38349844"
+   ],
    "actual": {
     "issue": "10",
     "journal": "Diabetes",
@@ -3184,7 +3741,35 @@
   },
   {
    "file": "build_gka_landscape.py",
-   "line": 1037,
+   "line": 982,
+   "pmid": "35551292",
+   "asserted": {
+    "journal": "Nat Med",
+    "year": "2022",
+    "volume": "28",
+    "issue": "5",
+    "page": "974"
+   },
+   "record": "arried NO citation at all. DAWN is not an SGLT2i combination trial. DAWN is dorzagliatin ADD-ON TO METFORMIN, n=767, Yang W et al., Nat Med 2022;28(5):974-981 (",
+   "block_pmids": [],
+   "actual": {
+    "issue": "5",
+    "journal": "Nat Med",
+    "pages": "974-981",
+    "title": "Dorzagliatin add-on therapy to metformin in patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
+    "volume": "28",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gka_landscape.py",
+   "line": 1062,
    "pmid": "36449148",
    "asserted": {
     "journal": "Drugs",
@@ -3194,6 +3779,9 @@
     "page": "1745"
    },
    "record": "(Syed YY. Dorzagliatin: First Approval. Drugs. 2022;82(18):1745-1750) &mdash; regulatory status",
+   "block_pmids": [
+    "32175717"
+   ],
    "actual": {
     "issue": "18",
     "journal": "Drugs",
@@ -3211,7 +3799,37 @@
   },
   {
    "file": "build_gka_landscape.py",
-   "line": 1150,
+   "line": 1073,
+   "pmid": "32175717",
+   "asserted": {
+    "journal": "J Epidemiol Glob Health",
+    "year": "2020",
+    "volume": "10",
+    "issue": "1",
+    "page": "107"
+   },
+   "record": "= Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of Disease analysis of type 2 diabetes prevalence. It contains no price data o",
+   "block_pmids": [
+    "36449148"
+   ],
+   "actual": {
+    "issue": "1",
+    "journal": "J Epidemiol Glob Health",
+    "pages": "107-111",
+    "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
+    "volume": "10",
+    "year": "2020"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_gka_landscape.py",
+   "line": 1181,
    "pmid": "35551294",
    "asserted": {
     "journal": "J Diabetes",
@@ -3221,6 +3839,11 @@
     "page": "965"
    },
    "record": "new glucokinase activator.\" J Diabetes. 2024;16(6):e13563. REVIEW, not a trial. The SEED phase 3 monotherapy trial is Zhu D et al. Nat Med. 2022;28(5):965-973 (",
+   "block_pmids": [
+    "30949058",
+    "33622669",
+    "38783768"
+   ],
    "actual": {
     "issue": "5",
     "journal": "Nat Med",
@@ -3238,7 +3861,7 @@
   },
   {
    "file": "build_gka_pricing.py",
-   "line": 861,
+   "line": 862,
    "pmid": "32175717",
    "asserted": {
     "journal": "J Epidemiol Glob Health",
@@ -3247,7 +3870,12 @@
     "issue": "1",
     "page": "107"
    },
-   "record": ") IDF Epidemiology Khan MAB et al. J Epidemiol Glob Health 2020;10(1):107-111 (",
+   "record": ") T2D Epidemiology (GBD) Khan MAB et al. J Epidemiol Glob Health 2020;10(1):107-111 (",
+   "block_pmids": [
+    "33622669",
+    "34763823",
+    "36449148"
+   ],
    "actual": {
     "issue": "1",
     "journal": "J Epidemiol Glob Health",
@@ -3255,6 +3883,268 @@
     "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
     "volume": "10",
     "year": "2020"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_immunomod_lada.py",
+   "line": 92,
+   "pmid": "31180194",
+   "asserted": {
+    "journal": "",
+    "year": "2019",
+    "volume": "381",
+    "issue": "",
+    "page": "603"
+   },
+   "record": ", Herold KC et al., N Engl J Med # 2019;381:603-613. # (ii) TN-10 is PHASE 2, n=76. PubMed pubtype \"Clinical Trial, # Phase II\"; the abstract's METHODS opens \"a",
+   "block_pmids": [
+    "29291885"
+   ],
+   "actual": {
+    "issue": "7",
+    "journal": "N Engl J Med",
+    "pages": "603-613",
+    "title": "An Anti-CD3 Antibody, Teplizumab, in Relatives at Risk for Type 1 Diabetes.",
+    "volume": "381",
+    "year": "2019"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_islet_equity.py",
+   "line": 604,
+   "pmid": "19104422",
+   "asserted": {
+    "journal": "Transplantation",
+    "year": "2008",
+    "volume": "86",
+    "issue": "12",
+    "page": "1783"
+   },
+   "record": "(Alejandro et al., Transplantation 2008;86(12):1783-8), a paper reporting n=325 recipients and no racial or ethnic breakdown. The comparator T1D-population figu",
+   "block_pmids": [],
+   "actual": {
+    "issue": "12",
+    "journal": "Transplantation",
+    "pages": "1783-8",
+    "title": "2008 Update from the Collaborative Islet Transplant Registry.",
+    "volume": "86",
+    "year": "2008"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_islet_outcomes.py",
+   "line": 600,
+   "pmid": "10911004",
+   "asserted": {
+    "journal": "N Engl J Med",
+    "year": "2000",
+    "volume": "343",
+    "issue": "",
+    "page": "230"
+   },
+   "record": "(N Engl J Med 2000;343:230-8), verified against NCBI esummary on 2026-09-15. PMID replaced. --> Source: Shapiro et al., ",
+   "block_pmids": [
+    "37105208"
+   ],
+   "actual": {
+    "issue": "4",
+    "journal": "N Engl J Med",
+    "pages": "230-8",
+    "title": "Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen.",
+    "volume": "343",
+    "year": "2000"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_islet_outcomes.py",
+   "line": 609,
+   "pmid": "37105208",
+   "asserted": {
+    "journal": "Lancet Diabetes Endocrinol",
+    "year": "2023",
+    "volume": "11",
+    "issue": "6",
+    "page": "391"
+   },
+   "record": "is Chetboun et al. (CITR Investigators), Lancet Diabetes Endocrinol 2023;11(6):391-401 - not Hering, and not \"Lancet\". Confirmed against the journal listing and",
+   "block_pmids": [
+    "10911004"
+   ],
+   "actual": {
+    "issue": "6",
+    "journal": "Lancet Diabetes Endocrinol",
+    "pages": "391-401",
+    "title": "Association between primary graft function and 5-year outcomes of islet allogeneic transplantation in type 1 diabetes: a retrospective, multicentre, observational cohort study in 1210 patients from the Collaborative Islet Transplant Registry.",
+    "volume": "11",
+    "year": "2023"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_islet_outcomes.py",
+   "line": 1342,
+   "pmid": "37359825",
+   "asserted": {
+    "journal": "Transpl Int",
+    "year": "2023",
+    "volume": "36",
+    "issue": "",
+    "page": "11367"
+   },
+   "record": "was attributed to \"Voglova et al.\" in five places in this file. It is Wisel SA, Posselt AM, Szot GL, ... Stock PG, Transpl Int 2023;36:11367. \"Voglov",
+   "block_pmids": [
+    "10911004"
+   ],
+   "actual": {
+    "issue": "",
+    "journal": "Transpl Int",
+    "pages": "11367",
+    "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence in Patients With Type I Diabetes.",
+    "volume": "36",
+    "year": "2023"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_lada_diagnostic_model.py",
+   "line": 79,
+   "pmid": "17065674",
+   "asserted": {
+    "journal": "",
+    "year": "2006",
+    "volume": "29",
+    "issue": "11",
+    "page": "2396"
+   },
+   "record": "is Li, Ford, McGuire, Mokdad, Little & Reaven, \"Trends in # Hyperinsulinemia Among Nondiabetic Adults in the U.S.\", Diabetes Care # 2006;29(11):2396-2402 - an N",
+   "block_pmids": [],
+   "actual": {
+    "issue": "11",
+    "journal": "Diabetes Care",
+    "pages": "2396-402",
+    "title": "Trends in hyperinsulinemia among nondiabetic adults in the U.S.",
+    "volume": "29",
+    "year": "2006"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_lada_diagnostic_model.py",
+   "line": 113,
+   "pmid": "37909353",
+   "asserted": {
+    "journal": "Diabetes Care",
+    "year": "2024",
+    "volume": "47",
+    "issue": "1",
+    "page": "26"
+   },
+   "record": ", which is the # ADA's \"Economic Costs of Diabetes in the U.S. in 2022\" (Diabetes Care 2024;47(1):26-43). # That paper reports national aggregates and a mean pe",
+   "block_pmids": [
+    "40517209"
+   ],
+   "actual": {
+    "issue": "1",
+    "journal": "Diabetes Care",
+    "pages": "26-43",
+    "title": "Economic Costs of Diabetes in the U.S. in 2022.",
+    "volume": "47",
+    "year": "2024"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_lada_diagnostic_model.py",
+   "line": 1106,
+   "pmid": "32175717",
+   "asserted": {
+    "journal": "J Epidemiol Glob Health",
+    "year": "2020",
+    "volume": "10",
+    "issue": "1",
+    "page": "107"
+   },
+   "record": "= Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111. That paper reports type 2 diabetes PREVALENCE (462 million in 2017, 6.28% of world population, 60",
+   "block_pmids": [],
+   "actual": {
+    "issue": "1",
+    "journal": "J Epidemiol Glob Health",
+    "pages": "107-111",
+    "title": "Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.",
+    "volume": "10",
+    "year": "2020"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_nutrition_beta.py",
+   "line": 691,
+   "pmid": "17519436",
+   "asserted": {
+    "journal": "Diabetes Care",
+    "year": "2007",
+    "volume": "30",
+    "issue": "",
+    "page": "2154"
+   },
+   "record": "(Diabetes Care 2007;30:2154-63), title verified against NCBI esummary on 2026-09-15. PMID replaced. --> Balk et al. Effect of",
+   "block_pmids": [],
+   "actual": {
+    "issue": "8",
+    "journal": "Diabetes Care",
+    "pages": "2154-63",
+    "title": "Effect of chromium supplementation on glucose metabolism and lipids: a systematic review of randomized controlled trials.",
+    "volume": "30",
+    "year": "2007"
    },
    "checks": {
     "volume": true,
@@ -3275,6 +4165,10 @@
     "page": "674"
    },
    "record": ", Buzzetti R, Zampetti S, Maddaloni # E, \"Adult-onset autoimmune diabetes: current knowledge and implications for # management\", Nat Rev Endocrinol 2017;13(11):",
+   "block_pmids": [
+    "12345678",
+    "28397826"
+   ],
    "actual": {
     "issue": "11",
     "journal": "Nat Rev Endocrinol",
@@ -3282,6 +4176,62 @@
     "title": "Adult-onset autoimmune diabetes: current knowledge and implications for management.",
     "volume": "13",
     "year": "2017"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_nutrition_lada.py",
+   "line": 581,
+   "pmid": "24871322",
+   "asserted": {
+    "journal": "Diabetologia",
+    "year": "2014",
+    "volume": "57",
+    "issue": "",
+    "page": "1770"
+   },
+   "record": "(Diabetologia 2014;57:1770-80), title verified against NCBI esummary on 2026-09-15. PMID replaced. --> LADA evidence: No specific stu",
+   "block_pmids": [],
+   "actual": {
+    "issue": "9",
+    "journal": "Diabetologia",
+    "pages": "1770-80",
+    "title": "Dietary gluten and the development of type 1 diabetes.",
+    "volume": "57",
+    "year": "2014"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_nutrition_lada.py",
+   "line": 817,
+   "pmid": "25940230",
+   "asserted": {
+    "journal": "Prog Cardiovasc Dis",
+    "year": "2015",
+    "volume": "58",
+    "issue": "1",
+    "page": "50"
+   },
+   "record": "Investigators. &ldquo;Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.&rdquo; Prog Cardiovasc Dis 2015;58(1):50&ndash;60. <a href=\"https://",
+   "block_pmids": [],
+   "actual": {
+    "issue": "1",
+    "journal": "Prog Cardiovasc Dis",
+    "pages": "50-60",
+    "title": "Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.",
+    "volume": "58",
+    "year": "2015"
    },
    "checks": {
     "volume": true,
@@ -3302,6 +4252,7 @@
     "page": "85"
    },
    "record": "# -- CORRECTED 2026-08-15: this is Dutta et al., J Postgrad Med 2022;68(2):85-92, # \"Efficacy and safety of hydroxychloroquine for managing glycemia in type-2 #",
+   "block_pmids": [],
    "actual": {
     "issue": "2",
     "journal": "J Postgrad Med",
@@ -3329,6 +4280,9 @@
     "page": "23"
    },
    "record": "ION, not a sourced figure]. Anchored on the per-patient cost of clinical islet transplantation reported by Beckwith J et al., Clin Transplant 2012;26(1):23-33 (",
+   "block_pmids": [
+    "34763823"
+   ],
    "actual": {
     "issue": "1",
     "journal": "Clin Transplant",
@@ -3356,6 +4310,7 @@
     "page": "994"
    },
    "record": "is Hernandez I, Prasad V, Gellad WF, \"Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy\", JAMA Oncology 2018;4(7):994-996. It is a cost analysis of ",
+   "block_pmids": [],
    "actual": {
     "issue": "7",
     "journal": "JAMA Oncol",
@@ -3383,6 +4338,10 @@
     "page": "1477"
    },
    "record": ", 'Markmann JF, Rickels MR, et al. \"Phase 3 trial of human islet-after-kidney ' 'transplantation in type 1 diabetes.\" Am J Transplant. 2021;21(4):1477-1492. ' '",
+   "block_pmids": [
+    "37385967",
+    "38578067"
+   ],
    "actual": {
     "issue": "4",
     "journal": "Am J Transplant",
@@ -3390,6 +4349,69 @@
     "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
     "volume": "21",
     "year": "2021"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "verify_2026_09_13_repairs.py",
+   "line": 24,
+   "pmid": "37909353",
+   "asserted": {
+    "journal": "Diabetes Care",
+    "year": "2024",
+    "volume": "47",
+    "issue": "1",
+    "page": "26"
+   },
+   "record": "- \"Economic Costs of Diabetes in the U.S. in 2022\", Diabetes Care 2024;47(1):26-43. A US cost-of-illness study reporting national aggregates ($412.9B total, $30",
+   "block_pmids": [
+    "22336824",
+    "29710129",
+    "34763823"
+   ],
+   "actual": {
+    "issue": "1",
+    "journal": "Diabetes Care",
+    "pages": "26-43",
+    "title": "Economic Costs of Diabetes in the U.S. in 2022.",
+    "volume": "47",
+    "year": "2024"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "verify_2026_09_13_repairs.py",
+   "line": 33,
+   "pmid": "29710129",
+   "asserted": {
+    "journal": "JAMA Oncol",
+    "year": "2018",
+    "volume": "4",
+    "issue": "7",
+    "page": "994"
+   },
+   "record": "- Hernandez, Prasad & Gellad, \"Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy\", JAMA Oncol 2018;4(7):994-996. TEST: any attachment to a non-CAR-T",
+   "block_pmids": [
+    "22336824",
+    "37909353"
+   ],
+   "actual": {
+    "issue": "7",
+    "journal": "JAMA Oncol",
+    "pages": "994-996",
+    "title": "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.",
+    "volume": "4",
+    "year": "2018"
    },
    "checks": {
     "volume": true,

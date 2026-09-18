@@ -1,0 +1,77 @@
+{
+  "audit": "computed_value_citations",
+  "run_date": "2026-09-18",
+  "files_scanned": 84,
+  "counts": {
+    "computed_unique": 1,
+    "computed_raw": 2,
+    "bare_name": 4,
+    "excluded_correction_prose": 1
+  },
+  "computed": [
+    {
+      "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
+      "line": 588,
+      "severity": "COMPUTED",
+      "pmids": [
+        "41921761"
+      ],
+      "expression": "len(df)",
+      "snippet": "# Multi-Omic Microbiome ML Pipeline \u2014 Phase 2: Feature Engineering Report\n**Generated:** {...}\n**Phase:** 2 of 5 (Feature Engineering)\n**Target:** AUC \u2265 0.88 (extending PMID 41921761's AUC > 0.83)\n\n---\n\n## Executive Summ"
+    }
+  ],
+  "bare_name": [
+    {
+      "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
+      "line": 588,
+      "severity": "BARE_NAME",
+      "pmids": [
+        "41921761"
+      ],
+      "expression": "date",
+      "snippet": "# Multi-Omic Microbiome ML Pipeline \u2014 Phase 2: Feature Engineering Report\n**Generated:** {...}\n**Phase:** 2 of 5 (Feature Engineering)\n**Target:** AUC \u2265 0.88 (extending PMID 41921761's AUC > 0.83)\n\n---\n\n## Executive Summ"
+    },
+    {
+      "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
+      "line": 588,
+      "severity": "BARE_NAME",
+      "pmids": [
+        "41921761"
+      ],
+      "expression": "n_features",
+      "snippet": "# Multi-Omic Microbiome ML Pipeline \u2014 Phase 2: Feature Engineering Report\n**Generated:** {...}\n**Phase:** 2 of 5 (Feature Engineering)\n**Target:** AUC \u2265 0.88 (extending PMID 41921761's AUC > 0.83)\n\n---\n\n## Executive Summ"
+    },
+    {
+      "file": "Analysis/Scripts/project_microbiome_ml_phase3_models.py",
+      "line": 481,
+      "severity": "BARE_NAME",
+      "pmids": [
+        "41921761"
+      ],
+      "expression": "date",
+      "snippet": "# Multi-Omic Microbiome ML Pipeline \u2014 Phase 3: Model Development Report\n**Generated:** {...}\n**Phase:** 3 of 5 (Model Development)\n**Baseline Target:** AUC > 0.83 (replicating PMID 41921761)\n**Multi-Omic Target:** AUC \u2265 "
+    },
+    {
+      "file": "Analysis/Scripts/project_microbiome_ml_phase3_models.py",
+      "line": 481,
+      "severity": "BARE_NAME",
+      "pmids": [
+        "41921761"
+      ],
+      "expression": "baseline_auc",
+      "snippet": "performance figure for this approach.\n\nPhase 3 trained and evaluated 5 binary classification models and 1 multi-class subtype classifier on a SIMULATED multi-omic dataset (1,200 synthetic samples \u00d7 71 features). **The be"
+    }
+  ],
+  "excluded": [
+    {
+      "file": "Analysis/Scripts/build_drug_repurposing_screen.py",
+      "line": 1187,
+      "severity": "EXCLUDED_CORRECTION",
+      "pmids": [
+        "29710129"
+      ],
+      "expression": "len([d for d in CANDIDATES.values() if d['generic_cost'] < 1.0])",
+      "snippet": "reen evaluates {...} generic drugs across five dimensions (mechanism relevance 25%, safety profile 20%, generic availability 20%, evidence strength 20%, equity score 15%) to identify existing agents w"
+    }
+  ]
+}

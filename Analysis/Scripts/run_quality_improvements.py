@@ -541,6 +541,30 @@ SCRIPTS = {
                  'Auditing author-surname attributions (REPORT ONLY; prose + '
                  'HTML anchors + NCBI resolution of unknowns)',
                  ('--measure', '--html', '--resolve-unknown')),
+
+    # 2026-09-18. The defect: a PMID printed inside the same f-string as an
+    # interpolation of a value the script COMPUTED. Found live 2026-09-13 in
+    # build_lada_diagnostic_model.py, where a modelled total cost, cost per
+    # case and ICER each carried (PMID:37909353). Every other citation gate
+    # here asks whether a PMID matches the TEXT near it; none asks whether the
+    # NUMBER near it was produced at runtime.
+    #
+    # MEASURED BEFORE WIRING, per standing instruction. First measurement
+    # flagged 13 - all false, because the first implementation asked only
+    # whether a PMID appeared anywhere in the same f-string, and a whole-page
+    # f-string holds the entire document. Adding a 180-character proximity
+    # window between the PMID and the interpolation took it to 4; excluding
+    # verify_/check_/reconcile_ diagnostics, which print counts ABOUT PMIDs,
+    # took it to 1. That 1 is a synthetic-data report whose PMID sources the
+    # effect sizes, not the sample count - documented, not repaired.
+    #
+    # Stays in --measure this run: the original live positive was repaired
+    # before the gate existed, so the gate's proof is the fixture at
+    # _tmp_gate_known_positive.py rather than a live catch. Promote to --gate
+    # once a run has seen it fire and clear on real work.
+    'computedcite': ('audit_computed_value_citations.py',
+                     'Auditing citations attached to locally computed values '
+                     '(REPORT ONLY)'),
 }
 
 def run_script(name, desc, script_args=()):

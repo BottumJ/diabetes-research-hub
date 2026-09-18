@@ -567,6 +567,55 @@ def main():
     args = ap.parse_args()
 
     res = audit(scan_html=args.html, resolve_unknown=args.resolve_unknown)
+
+    # ------------------------------------------------------------------
+    # SURFACE SPLIT, added 2026-09-18.
+    #
+    # On 2026-09-18 the gate's two LIVE hits were repaired and the four that
+    # remained were all in FROZEN ARCHIVE: dated ACTION_REQUIRED_*.md and
+    # iterate_run_report_*.md files, and a _close_run_*.py, in which the
+    # "mismatch" is this repository quoting a defect it had just fixed. One of
+    # them is literally a fenced HTML block showing the bad anchor.
+    #
+    # Those files are history and MUST NOT be rewritten - editing a dated run
+    # report to make a gate go green is the failure this repo audits for.
+    # But left in the MISMATCH bucket they guarantee the count never reaches
+    # zero, and a gate that can never go green is a gate that gets ignored.
+    #
+    # The fix is a SPLIT, not an exclusion. Every finding is still printed and
+    # still written to the JSON. Only the headline MISMATCH count - and the
+    # --gate exit code - are scoped to the live publishing surface. This
+    # deliberately avoids adding loose strings to CORRECTION_MARKERS, which
+    # the note at the top of that tuple warns against: a marker silences a
+    # class of finding everywhere, a surface split silences nothing.
+    # ------------------------------------------------------------------
+    ARCHIVE_PAT = re.compile(
+        r"(ACTION_REQUIRED_\d{4}-\d{2}-\d{2}\.md"
+        r"|iterate_run_report_\d{4}-\d{2}-\d{2}\.md"
+        r"|DECISION_BRIEF_\d{4}-\d{2}-\d{2}\.md"
+        r"|Platform_Audit_\d{4}-\d{2}-\d{2}\.md"
+        r"|/_close_run_|/_run_|\\\\_close_run_|\\\\_run_"
+        r"|^_close_run_|^_run_)"
+    )
+
+    def _is_archival(path_str):
+        name = str(path_str).replace("\\", "/")
+        return bool(ARCHIVE_PAT.search(name) or
+                    ARCHIVE_PAT.search(name.rsplit("/", 1)[-1]))
+
+    all_flagged = res.get("flagged", [])
+    archival = [r for r in all_flagged if _is_archival(r["file"])]
+    live = [r for r in all_flagged if not _is_archival(r["file"])]
+    for r in archival:
+        r["surface"] = "ARCHIVAL"
+    for r in live:
+        r["surface"] = "LIVE"
+
+    res["flagged"] = live
+    res["flagged_archival"] = archival
+    res["counts"]["flagged"] = len(live)
+    res["counts"]["flagged_archival"] = len(archival)
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(res, indent=2), encoding="utf-8")
 
@@ -577,7 +626,9 @@ def main():
     print(f"  library PMIDs carrying an authors[] array : {res['library_pmids_with_authors']}")
     print(f"  surname+PMID attributions checked         : {c['matched_ok'] + c['flagged']}")
     print(f"    matched first author                    : {c['matched_ok']}")
-    print(f"    MISMATCH                                : {c['flagged']}")
+    print(f"    MISMATCH (live publishing surface)      : {c['flagged']}")
+    print(f"    in frozen archive (reported, not fixed) : "
+          f"{c['flagged_archival']}")
     print(f"  not checkable (PMID not in library)       : {c['unknown_pmid']}")
     print(f"  excluded as this repo's correction prose  : {c['excluded_as_correction_prose']}")
     if res.get("html_anchor_scan"):
@@ -590,9 +641,21 @@ def main():
     print()
 
     if res["flagged"]:
-        print("  MISMATCHES")
+        print("  MISMATCHES - LIVE")
         print("  " + "-" * 58)
         for r in res["flagged"]:
+            print(f"  [{r.get('severity')}] {r['file']}:{r['line']}")
+            print(f"      asserts : {r['asserted_surname']} et al.  (PMID {r['pmid']})")
+            print(f"      library : {r['library_first_author']} et al., "
+                  f"{r['library_journal']} {r['library_year']}")
+            print()
+
+    if res.get("flagged_archival"):
+        print("  IN FROZEN ARCHIVE - reported for the record, NOT to be edited")
+        print("  (a dated run report is history; rewriting one to clear a gate")
+        print("   is the exact failure this repository audits for)")
+        print("  " + "-" * 58)
+        for r in res["flagged_archival"]:
             print(f"  [{r.get('severity')}] {r['file']}:{r['line']}")
             print(f"      asserts : {r['asserted_surname']} et al.  (PMID {r['pmid']})")
             print(f"      library : {r['library_first_author']} et al., "

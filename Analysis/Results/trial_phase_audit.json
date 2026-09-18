@@ -2,12 +2,12 @@
  "generated": "2026-09-17",
  "gate": "trial_phase",
  "counts": {
-  "pairs_checked": 39,
-  "correct": 29,
+  "pairs_checked": 28,
+  "correct": 16,
   "flagged": 0,
-  "unknown": 10,
-  "ambiguous_not_checked": 11,
-  "excluded_correction_prose": 13
+  "unknown": 12,
+  "ambiguous_not_checked": 5,
+  "excluded_correction_prose": 11
  },
  "flagged": [],
  "unknown": [
@@ -21,6 +21,19 @@
     "Journal Article"
    ],
    "true_title": "Measuring the global burden of diabetes: implications for health policy, practice, and research.",
+   "reason": "PubMed states no phase for this paper: no phase publication type and no design sentence in the abstract"
+  },
+  {
+   "file": "ACTION_REQUIRED_2026-09-17.md",
+   "line": 88,
+   "context": "`build_immunomod_lada.py:83` still read `\"Phase 3 TN-10 trial (PMID:29291885)\"`. The",
+   "pmid": "29291885",
+   "asserted_phase": "3",
+   "pubtype": [
+    "Journal Article",
+    "Review"
+   ],
+   "true_title": "Short children born small for gestational age outcomes in the era of growth hormone therapy.",
    "reason": "PubMed states no phase for this paper: no phase publication type and no design sentence in the abstract"
   },
   {
@@ -88,6 +101,19 @@
     "Randomized Controlled Trial"
    ],
    "true_title": "Effects of Dorzagliatin, a Glucokinase Activator, on \u03b1- and \u03b2-Cell Function in Individuals With Impaired and N",
+   "reason": "PubMed states no phase for this paper: no phase publication type and no design sentence in the abstract"
+  },
+  {
+   "file": "Analysis/Results/iterate_run_report_2026-09-17.md",
+   "line": 88,
+   "context": "`build_immunomod_lada.py:83` still read `\"Phase 3 TN-10 trial (PMID:29291885)\"`. The",
+   "pmid": "29291885",
+   "asserted_phase": "3",
+   "pubtype": [
+    "Journal Article",
+    "Review"
+   ],
+   "true_title": "Short children born small for gestational age outcomes in the era of growth hormone therapy.",
    "reason": "PubMed states no phase for this paper: no phase publication type and no design sentence in the abstract"
   },
   {
@@ -211,94 +237,6 @@
     "3"
    ],
    "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "Dashboards/Gap_Deep_Dives.html",
-   "line": 1599,
-   "context": "the phase 3 trials are PMID:35551294 SEED and PMID:35551292 DAWN)",
-   "pmids": [
-    "35551292",
-    "35551294"
-   ],
-   "asserted": [
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "Dashboards/Gap_Deep_Dives.html",
-   "line": 1737,
-   "context": "<p>Dorzagliatin phase 3 SEED (drug-naive monotherapy, n=463): HbA1c -1.07% vs -0.50% placebo at 24 weeks (PMID:35551294). Phase 3 DAWN (add-on to metformin, n=767): placebo-adjusted HbA1c -0.66% at 24 weeks (PMID:35551292). Drug-free remiss",
-   "pmids": [
-    "35551292",
-    "35551294",
-    "36449148",
-    "37385967",
-    "38783768"
-   ],
-   "asserted": [
-    "3",
-    "3",
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "Dashboards/Immunomod_LADA.html",
-   "line": 640,
-   "context": "its structured review found no single cause, no material protocol violations, and no new safety concerns. Sponsor-reported contributing hypotheses (all explicitly hypothesis-generating, NOT established): intralymphatic administration burden",
-   "pmids": [
-    "34021020",
-    "35665810"
-   ],
-   "asserted": [
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "docs/Dashboards/Gap_Deep_Dives.html",
-   "line": 1599,
-   "context": "the phase 3 trials are PMID:35551294 SEED and PMID:35551292 DAWN)",
-   "pmids": [
-    "35551292",
-    "35551294"
-   ],
-   "asserted": [
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "docs/Dashboards/Gap_Deep_Dives.html",
-   "line": 1737,
-   "context": "<p>Dorzagliatin phase 3 SEED (drug-naive monotherapy, n=463): HbA1c -1.07% vs -0.50% placebo at 24 weeks (PMID:35551294). Phase 3 DAWN (add-on to metformin, n=767): placebo-adjusted HbA1c -0.66% at 24 weeks (PMID:35551292). Drug-free remiss",
-   "pmids": [
-    "35551292",
-    "35551294",
-    "36449148",
-    "37385967",
-    "38783768"
-   ],
-   "asserted": [
-    "3",
-    "3",
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
-  },
-  {
-   "file": "docs/Dashboards/Immunomod_LADA.html",
-   "line": 640,
-   "context": "its structured review found no single cause, no material protocol violations, and no new safety concerns. Sponsor-reported contributing hypotheses (all explicitly hypothesis-generating, NOT established): intralymphatic administration burden",
-   "pmids": [
-    "34021020",
-    "35665810"
-   ],
-   "asserted": [
-    "3"
-   ],
-   "reason": "more than one PMID in the citation unit; which one the phase label belongs to is not decidable without judgement"
   }
  ],
  "excluded": [
@@ -374,18 +312,6 @@
    "file": "Analysis/Results/monitor_report_2026-09-02.md",
    "line": 284,
    "context": "10. **PMID 42627334** (Diabetes Care, baricitinib \u03b2-cell function 1 year after withdrawal) against Lilly's two recruiting Phase 3 baricitinib trials NCT07222332 and NCT07222137. Trial and literature converging on one agent in one window.",
-   "reason": "repository correction prose"
-  },
-  {
-   "file": "Dashboards/Drug_Repurposing_Screen.html",
-   "line": 1824,
-   "context": "<p>Drug efficacy and safety data derived from peer-reviewed literature, clinical trial registries (ClinicalTrials.gov), WHO guidelines, and established pharmacoepidemiologic databases. All cited PMIDs represent verifiable landmark publicati",
-   "reason": "repository correction prose"
-  },
-  {
-   "file": "docs/Dashboards/Drug_Repurposing_Screen.html",
-   "line": 1824,
-   "context": "<p>Drug efficacy and safety data derived from peer-reviewed literature, clinical trial registries (ClinicalTrials.gov), WHO guidelines, and established pharmacoepidemiologic databases. All cited PMIDs represent verifiable landmark publicati",
    "reason": "repository correction prose"
   }
  ],
@@ -547,136 +473,6 @@
    "asserted_phase": "3",
    "true_phase": [
     3
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/CART_Access_Barriers.html",
-   "line": 720,
-   "pmid": "36288281",
-   "asserted_phase": "1",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/CART_Access_Barriers.html",
-   "line": 1361,
-   "pmid": "36288281",
-   "asserted_phase": "1",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/Gap_Deep_Dives.html",
-   "line": 1615,
-   "pmid": "35551294",
-   "asserted_phase": "3",
-   "true_phase": [
-    3
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/Immunomod_LADA.html",
-   "line": 640,
-   "pmid": "31180194",
-   "asserted_phase": "2",
-   "true_phase": [
-    2
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/Islet_Transplant_Equity.html",
-   "line": 765,
-   "pmid": "32627352",
-   "asserted_phase": "3",
-   "true_phase": [
-    3
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/Medical_Data_Dictionary.html",
-   "line": 4470,
-   "pmid": "40544428",
-   "asserted_phase": "1/2",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "Dashboards/Research_Dashboard.html",
-   "line": 350,
-   "pmid": "40544428",
-   "asserted_phase": "1",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/CART_Access_Barriers.html",
-   "line": 720,
-   "pmid": "36288281",
-   "asserted_phase": "1",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/CART_Access_Barriers.html",
-   "line": 1361,
-   "pmid": "36288281",
-   "asserted_phase": "1",
-   "true_phase": [
-    1
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/Gap_Deep_Dives.html",
-   "line": 1615,
-   "pmid": "35551294",
-   "asserted_phase": "3",
-   "true_phase": [
-    3
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/Immunomod_LADA.html",
-   "line": 640,
-   "pmid": "31180194",
-   "asserted_phase": "2",
-   "true_phase": [
-    2
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/Islet_Transplant_Equity.html",
-   "line": 879,
-   "pmid": "32627352",
-   "asserted_phase": "3",
-   "true_phase": [
-    3
-   ],
-   "phase_source": "pubtype"
-  },
-  {
-   "file": "docs/Dashboards/Medical_Data_Dictionary.html",
-   "line": 4561,
-   "pmid": "40544428",
-   "asserted_phase": "1/2",
-   "true_phase": [
-    1
    ],
    "phase_source": "pubtype"
   }

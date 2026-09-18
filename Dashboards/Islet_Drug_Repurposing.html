@@ -63,32 +63,6 @@ tr:hover { background: #161b22; }
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
 </head>
 <body>
@@ -157,8 +131,6 @@ tr:hover { background: #161b22; }
 </nav>
 
 
-
-
 <div class="header">
   <h1>Islet Transplant &times; Drug Repurposing</h1>
   <div class="subtitle">
@@ -168,7 +140,7 @@ tr:hover { background: #161b22; }
     <span class="badge badge-silver">Evidence: SILVER</span>
     <span class="badge badge-phase">Phase 3 Complete</span>
     <span class="badge badge-combo">30 Combinations Predicted</span>
-    &nbsp; Generated: 2026-09-06 09:17
+    &nbsp; Generated: 2026-09-18 04:31
   </div>
 </div>
 
@@ -232,7 +204,7 @@ tr:hover { background: #161b22; }
           <option value="0">Unranked</option>
         </select>
         <label>Search:</label>
-        <input type="text" id="drugSearch" oninput="filterCandidates()" placeholder="Drug name..." aria-label="Drug name..." aria-label="Drug name..." aria-label="Drug name...">
+        <input type="text" id="drugSearch" oninput="filterCandidates()" placeholder="Drug name..." aria-label="Drug name...">
       </div>
       <table role="table" id="candidateTable">
         <thead>
@@ -1513,7 +1485,7 @@ tr:hover { background: #161b22; }
 
   <div class="footer">
     Diabetes Research Hub &mdash; Islet Transplant &times; Drug Repurposing Pipeline<br>
-    Research Doctrine v1.1 | Generated 2026-09-06 | Phases 1-4 Complete
+    Research Doctrine v1.1 | Generated 2026-09-18 | Phases 1-4 Complete
   </div>
 
 </div>
@@ -1564,16 +1536,34 @@ function sortTable(tableId, colIdx) {
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Key References</h3>
+    <!-- REPAIRED 2026-09-10, during the <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a> sweep. FOUR of the five citations in this
+         block were false; the fifth was correct and is retained.
+           FALSE - 30899369, cited for "drug repurposing methodology based on mechanism-target
+             mapping and network pharmacology", is "Metformin induces the M2 macrophage
+             polarization to accelerate the wound healing via regulating AMPK/mTOR/NLRP3
+             inflammasome signalling pathway", Am J Transl Res 2019. A bench study, not a method.
+           FALSE - 29710129 and 32175717, cited for "islet transplant immunosuppression protocols
+             and IBMIR mechanisms", are respectively a CAR-T cost analysis (JAMA Oncol 2018) and a
+             GBD analysis of T2D prevalence (J Epidemiol Glob Health 2020). Neither concerns islet
+             transplantation or IBMIR at all. Note the correct source for that sentence was already
+             sitting in the same block: 37359825 is an islet/pancreas transplant immunosuppression
+             paper. The claim has been re-pointed to it.
+           FALSE - 36449148, cited as the STRING database reference, is Syed, "Dorzagliatin: First
+             Approval", Drugs 2022. STRING has a real citation; this is not it, so the claim is
+             withdrawn rather than re-pointed, since no STRING reference was ever established here.
+           CORRECT - 37359825, "A Multi-Modal Approach to Islet and Pancreas Transplantation With
+             Calcineurin-Sparing Immunosuppression...", Transpl Int 2023. Retained.
+         Same defect and same three filler PMIDs as the withdrawn methodology blocks in
+         build_corpus_analysis.py and build_statistical_analysis.py. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
-      Drug repurposing methodology based on mechanism-target mapping and network pharmacology approaches
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/30899369/" target="_blank">PMID 30899369</a>).
-      Islet transplant immunosuppression protocols and IBMIR mechanisms reviewed in
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank">PMID 29710129</a>;
-       <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank">PMID 32175717</a>).
-      Protein-protein interaction network data from STRING database
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/36449148/" target="_blank">PMID 36449148</a>).
-      Combination therapy rationale informed by calcineurin-sparing approaches
-      (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID 37359825</a>).
+      Islet transplant immunosuppression, including calcineurin-sparing regimens, is described in
+      <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID 37359825</a>
+      (Transpl Int 2023), which is also the basis for the combination-therapy rationale on this page.
+      <strong>Withdrawn 2026-09-10:</strong> this section previously also claimed a network-pharmacology
+      methodology source, a STRING protein-interaction database reference, and two further sources for
+      islet immunosuppression and IBMIR. All four PMIDs were misattributed &mdash; they pointed to a
+      metformin bench study, a dorzagliatin approval note, a CAR-T cost analysis and a diabetes
+      prevalence analysis respectively. They have been removed. No STRING data is used on this page.
     </p>
   </div>
 </div>

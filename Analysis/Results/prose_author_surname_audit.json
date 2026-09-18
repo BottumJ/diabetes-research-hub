@@ -3,115 +3,45 @@
   "html_anchor_scan": true,
   "html_anchor_attributions": 6,
   "unknown_resolution": {
-    "attempted": 16,
-    "resolved": 16,
+    "attempted": 14,
+    "resolved": 14,
     "still_unknown": 0,
-    "distinct_pmids": 14
+    "distinct_pmids": 12
   },
   "window_chars": 160,
-  "library_pmids_with_authors": 351,
+  "library_pmids_with_authors": 374,
   "counts": {
-    "matched_ok": 167,
-    "flagged": 8,
+    "matched_ok": 168,
+    "flagged": 1,
     "unknown_pmid": 0,
-    "excluded_as_correction_prose": 21
+    "excluded_as_correction_prose": 32,
+    "flagged_archival": 6
   },
   "flagged": [
     {
-      "file": "Analysis/Results/iterate_run_report_2026-05-09.md",
-      "line": 10,
-      "asserted_surname": "Rigby",
-      "pmid": "33207093",
-      "context": "). The trial is **T1GER**, not T1DAL. Primary: Quattrin et al, NEJM 2020;383:2007-2017 (PMID 33207093). 2-yr follow-up: Rigby et al, Diabetes Care 2023 Mar 1;46(3):561-569 (PMID 36576974). NCT02846545. 3. **P4 \u2014 audit_ga",
-      "reason": "pmid not in local paper library",
-      "library_first_author": "Quattrin",
-      "library_journal": "N Engl J Med",
-      "library_year": "2020",
-      "resolved_via": "ncbi_esummary",
-      "severity": "NON_FIRST_AUTHOR"
-    },
-    {
-      "file": "Analysis/Results/iterate_run_report_2026-05-12.md",
-      "line": 16,
-      "asserted_surname": "Herrington",
-      "pmid": "36331190",
-      "context": "Path | New status | Key evidence | | --- | --- | --- | | `empagliflozin -> nephropathy` | **VALIDATED** | EMPA-KIDNEY (Herrington et al. NEJM 2023, **PMID 36331190**), n=6,609 CKD pts, kidney-progression/CV-death HR 0.72",
-      "reason": "pmid not in local paper library",
-      "library_first_author": "The",
-      "library_journal": "N Engl J Med",
-      "library_year": "2023",
-      "resolved_via": "ncbi_esummary",
-      "severity": "NON_FIRST_AUTHOR"
-    },
-    {
       "file": "Analysis/Scripts/build_nutrition_lada.py",
-      "line": 817,
-      "asserted_surname": "Salas-Salvado",
-      "pmid": "25940230",
-      "context": "PREDIMED Trial: Mediterranean Diet and Type 2 Diabetes Prevention</div> <div class=\"reference-meta\">Salas-Salvado et al. PREDIMED. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25940230/\" target=\"_blank\">PMID:25940230</a></di",
-      "library_first_author": "Mart&#xed;nez-Gonz&#xe1;lez",
-      "library_journal": "Prog Cardiovasc Dis",
-      "library_year": "2015",
-      "severity": "NON_FIRST_AUTHOR"
-    },
-    {
-      "file": "Analysis/Scripts/build_nutrition_lada.py",
-      "line": 895,
-      "asserted_surname": "Casas",
-      "pmid": "34021020",
-      "context": "<div class=\"reference-title\">GAD-Alum Immunotherapy in LADA</div> <div class=\"reference-meta\">Casas/Ludvigsson et al. Diabetes Care, 2021 (DIAGNODE-2). <a href=\"https://pubmed.ncbi.nlm.nih.gov/34021020/\" target=\"_blank\">",
-      "library_first_author": "Ludvigsson",
-      "library_journal": "Diabetes Care",
-      "library_year": "2021",
-      "severity": "NON_FIRST_AUTHOR"
-    },
-    {
-      "file": "ACTION_REQUIRED_2026-09-15.md",
-      "line": 91,
-      "asserted_surname": "Shapiro",
-      "pmid": "10919952",
-      "context": "red twice. The prose instance was caught by the new gate. The second was: ```html <a onclick=\"alert('PMID: 10919952')\">Shapiro et al., NEJM</a> ``` An identifier inside a JavaScript string, with the surname in the anchor",
-      "library_first_author": "Zeisel",
-      "library_journal": "Am J Clin Nutr",
-      "library_year": "2000",
-      "severity": "NOT_AN_AUTHOR"
-    },
-    {
-      "file": "Analysis/Results/iterate_run_report_2026-06-09.md",
-      "line": 22,
-      "asserted_surname": "Griffin",
-      "pmid": "28776086",
-      "context": "35% fewer HF hospitalizations in T2D with established ASCVD. | | metformin \u2192 cardiovascular | **PARTIALLY_VALIDATED** | Griffin et al., Diabetologia 2017 (PMID 28776086): 13-RCT meta-analysis; point estimates favored met",
-      "library_first_author": "Rena",
-      "library_journal": "Diabetologia",
-      "library_year": "2017",
-      "severity": "NOT_AN_AUTHOR"
-    },
-    {
-      "file": "Analysis/Results/iterate_run_report_2026-06-14.md",
-      "line": 10,
-      "asserted_surname": "Griffin",
-      "pmid": "28776086",
-      "context": "Y_VALIDATED**. A fresh literature check (June 2026) found no new placebo-controlled, CV-endpoint RCT that overturns the Griffin et al. 2017 RCT meta-analysis (PMID 28776086), in which all-cause mortality, CV death, and M",
-      "library_first_author": "Rena",
-      "library_journal": "Diabetologia",
-      "library_year": "2017",
-      "severity": "NOT_AN_AUTHOR"
-    },
-    {
-      "file": "Analysis/Scripts/_close_run_2026_08_28.py",
-      "line": 25,
-      "asserted_surname": "Orban",
-      "pmid": "20570966",
-      "context": "MISCITATIONS, \" \"FOUND BY ENFORCING WHAT WAS ALREADY DECIDED. Immunod_LADA.html published \" \"PMID 20570966 as 'Orban et al., Abatacept Phase 2 in T1D'; it is FUT2 non-\" \"secretor status and Crohn's disease, Hum Mol Genet",
-      "library_first_author": "McGovern",
-      "library_journal": "Hum Mol Genet",
-      "library_year": "2010",
-      "severity": "NOT_AN_AUTHOR"
+      "line": 896,
+      "asserted_surname": "Ludvigsson",
+      "pmid": "1884311",
+      "context": "ebo), the treatment effect ratio was 1.557 (95% CI 1.126&ndash;2.153), P = 0.0078. Earlier subcutaneous GAD-alum trial: Ludvigsson et al., NEJM 2008, n = 70, also recent-onset T1D, primary endpoint likewise not met (<a h",
+      "reason": "pmid not in local paper library",
+      "library_first_author": "Godon",
+      "library_journal": "Can J Public Health",
+      "library_year": "1991",
+      "resolved_via": "ncbi_esummary",
+      "severity": "NOT_AN_AUTHOR",
+      "surface": "LIVE"
     }
   ],
   "unknown": [],
   "excluded": [
+    {
+      "file": "ACTION_REQUIRED_2026-09-17.md",
+      "line": 135,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "hat does not exist and was **withdrawn, not replaced**. ### 4. A fifth load-bearing concentration **PMID 21323736** \u2014 Beckwith J et al., *Clin Transplant* 2012 \u2014 is a Markov-model cost-effectiveness analysis of **cadaver"
+    },
     {
       "file": "Analysis/Results/iterate_run_report_2026-05-05.md",
       "line": 39,
@@ -120,11 +50,39 @@
       "context": "3 NEJM colorectal-cancer trial) was wrongly cited for teplizumab in two places. - **Fix:** Replaced with PMID 31180194 (Herold KC et al., NEJM 2019, TN-10 trial) in: - `Analysis/Scripts/add_citations.py` line 63 - `Resea"
     },
     {
+      "file": "Analysis/Results/iterate_run_report_2026-09-17.md",
+      "line": 135,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "hat does not exist and was **withdrawn, not replaced**. ### 4. A fifth load-bearing concentration **PMID 21323736** \u2014 Beckwith J et al., *Clin Transplant* 2012 \u2014 is a Markov-model cost-effectiveness analysis of **cadaver"
+    },
+    {
       "file": "Analysis/Scripts/build_cart_access.py",
       "line": 543,
       "asserted_surname": "Khan",
       "pmid": "32175717",
       "context": "<div class=\"metric-card\"> <!-- Repaired 2026-09-10. This value was cited to PMID:32175717 = Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111, a Global Burden of Disease analysis of TYPE 2 diabetes PREVALENCE. "
+    },
+    {
+      "file": "Analysis/Scripts/build_cart_access.py",
+      "line": 954,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "tralization and training. </div> <div class=\"source-note\"> Source: Beckwith et al. Clin Transplant 2012 (PMID:21323736) \u2014 Markov-model cost-effectiveness analysis (NOT a CITR registry report, corrected 2026-09-17): 20-ye"
+    },
+    {
+      "file": "Analysis/Scripts/build_cart_access.py",
+      "line": 1405,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "nce-item\"> <strong>Comparative Therapies (Infrastructure):</strong><br> Beckwith et al. Clin Transplant 2012 (PMID:21323736) \u2014 Markov-model cost-effectiveness analysis of islet transplantation (not a registry report, cor"
+    },
+    {
+      "file": "Analysis/Scripts/build_cart_access.py",
+      "line": 1406,
+      "asserted_surname": "Mackensen",
+      "pmid": "36109639",
+      "context": "fectiveness analysis of islet transplantation (not a registry report, corrected 2026-09-17)<br> Mackensen et al. Nat Med 2022 (PMID:36109639) \u2014 CD19 CAR-T in SLE, drug-free remission<br> Schett et al. Lancet 2023 (PMID:3"
     },
     {
       "file": "Analysis/Scripts/build_drug_repurposing_screen.py",
@@ -141,6 +99,48 @@
       "context": "et only\", # Corrected 2026-09-15 (author-surname audit). TWO defects, not one: # (1) PMID 12122111 is Chaisson ML et al., \"Hepatocyte-specific inhibition # of NF-kappaB leads to apoptosis after TNF treatment, but not aft"
     },
     {
+      "file": "Analysis/Scripts/build_equity_map.py",
+      "line": 699,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "P stem cell differentiation facilities ($50-100M to build) [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC isl"
+    },
+    {
+      "file": "Analysis/Scripts/build_equity_map.py",
+      "line": 879,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "T therapies (Yescarta/Kymriah market prices 2025). Source: [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC isl"
+    },
+    {
+      "file": "Analysis/Scripts/build_gap_deep_dives.py",
+      "line": 381,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "t programs\", \"Cost: US $170-220K per CAR-T [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantati"
+    },
+    {
+      "file": "Analysis/Scripts/build_gap_deep_dives.py",
+      "line": 416,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "US $300-500K per commercial CAR-T dose (Kymriah, Yescarta) [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC isl"
+    },
+    {
+      "file": "Analysis/Scripts/build_gap_deep_dives.py",
+      "line": 714,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "(HIC only), 66% female, median age 42.2yr. Cost $100-139K [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC isle"
+    },
+    {
+      "file": "Analysis/Scripts/build_gap_deep_dives.py",
+      "line": 717,
+      "asserted_surname": "Beckwith",
+      "pmid": "21323736",
+      "context": "lack\", \"Cost: US $100K-$139K per procedure [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantati"
+    },
+    {
       "file": "Analysis/Scripts/build_gka_pricing.py",
       "line": 505,
       "asserted_surname": "Khan",
@@ -149,21 +149,21 @@
     },
     {
       "file": "Analysis/Scripts/build_immunomod_lada.py",
-      "line": 332,
+      "line": 347,
       "asserted_surname": "Willi",
       "pmid": "18073361",
       "context": "imited LADA evidence\" } ] EVIDENCE_CATALOG = [ # WITHDRAWN 2026-09-15 (author-surname audit). PMID 18073361 is Willi C et al., # \"Active smoking and the risk of type 2 diabetes: a systematic review and # meta-analysis\", "
     },
     {
       "file": "Analysis/Scripts/build_immunomod_lada.py",
-      "line": 341,
+      "line": 356,
       "asserted_surname": "Insel",
       "pmid": "29885104",
       "context": "tes in LADA\"), # WITHDRAWN 2026-09-16 (author-surname audit, NCBI esummary). This row read # (\"PMID:29885104\", \"Insel et al.\", \"Vitamin D and T1D prevention...\"). PMID # 29885104 is Huh JH, Lee M, Park SY et al., \"Glycat"
     },
     {
       "file": "Analysis/Scripts/build_immunomod_lada.py",
-      "line": 368,
+      "line": 383,
       "asserted_surname": "Herold",
       "pmid": "29291885",
       "context": "on therapy\"), # Re-pointed 2026-09-16 (author-surname audit, NCBI esummary). This row read # (\"PMID:29291885\", \"Herold et al.\", \"Teplizumab Phase 3 (TN-10)...\"). PMID # 29291885 is Zanelli SA & Rogol AD, \"Short children "
@@ -177,35 +177,35 @@
     },
     {
       "file": "Analysis/Scripts/build_islet_outcomes.py",
-      "line": 589,
+      "line": 606,
       "asserted_surname": "Hering",
       "pmid": "37105208",
       "context": "- CITATION WITHDRAWN 2026-09-14, AND THESE ARE CLINICAL EFFICACY FIGURES, NOT COSTS. This block cited \"Hering et al., PMID:37105208 (Lancet 2023)\" for 70% insulin independence at 10 years and 60% at 13.3 years under bela"
     },
     {
       "file": "Analysis/Scripts/build_islet_outcomes.py",
-      "line": 592,
+      "line": 609,
       "asserted_surname": "Chetboun",
       "pmid": "37105208",
       "context": "hree separate errors, and the third is the serious one. (1) WRONG AUTHOR AND JOURNAL. PMID 37105208 is Chetboun et al. (CITR Investigators), Lancet Diabetes Endocrinol 2023;11(6):391-401 - not Hering, and not \"Lancet\". C"
     },
     {
       "file": "Analysis/Scripts/build_islet_outcomes.py",
-      "line": 644,
+      "line": 661,
       "asserted_surname": "Hering",
       "pmid": "37105208",
       "context": "tients on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em> &mdash; previously attributed to \"Hering et al., PMID:37105208 (Lancet 2023)\", which is Chetboun et al. in Lancet Diabetes Endocrinol,"
     },
     {
       "file": "Analysis/Scripts/build_islet_outcomes.py",
-      "line": 820,
+      "line": 837,
       "asserted_surname": "Hering",
       "pmid": "37105208",
       "context": "t at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to \"Hering et al., PMID:37105208 (Lancet 2023)\", which is Chetboun et al. in Lancet Diabetes Endocrinol,"
     },
     {
       "file": "Analysis/Scripts/build_islet_outcomes.py",
-      "line": 1325,
+      "line": 1342,
       "asserted_surname": "Voglova",
       "pmid": "37359825",
       "context": "26-09-16 (author-surname verification against NCBI esummary). PMID 37359825 was attributed to \"Voglova et al.\" in five places in this file. It is Wisel SA, Posselt AM, Szot GL, ... Stock PG, Transpl Int 2023;36:11367."
@@ -233,14 +233,14 @@
     },
     {
       "file": "Analysis/Scripts/run_quality_improvements.py",
-      "line": 137,
+      "line": 150,
       "asserted_surname": "Ramos",
       "pmid": "37889505",
       "context": "erted as fact in narrative # fields, including `teplizumab -> autoimmune` still reading # \"PROTECT phase 3 (Ramos et al. NEJM 2023, PMID 37889505 ...)\" # where 37889505 is the probiotic-breads paper. The purge cleaned th"
     },
     {
       "file": "Analysis/Scripts/run_quality_improvements.py",
-      "line": 522,
+      "line": 535,
       "asserted_surname": "Voglova",
       "pmid": "37359825",
       "context": "recently and by hand, which is also when it is most likely # to be wrong. PMID 37359825 hid there for two days as \"Voglova et al.\" # (it is Wisel et al.) after a verification pass confirmed its CONTENTS and # inherited t"
@@ -258,6 +258,84 @@
       "asserted_surname": "Mehta",
       "pmid": "38234567",
       "context": "emistry \u2026 Halide Perovskite Thin Films for Photovoltaics*, ACS Cent Sci 2022 | | Correct-citation-**format** exemplar | Mehta et al., islet transplantation, Diabetes Care 2024 \u00b7 PMID 38234567 | **RETRACTED**: *Ginsenosid"
+    }
+  ],
+  "flagged_archival": [
+    {
+      "file": "Analysis/Results/iterate_run_report_2026-05-09.md",
+      "line": 10,
+      "asserted_surname": "Rigby",
+      "pmid": "33207093",
+      "context": "). The trial is **T1GER**, not T1DAL. Primary: Quattrin et al, NEJM 2020;383:2007-2017 (PMID 33207093). 2-yr follow-up: Rigby et al, Diabetes Care 2023 Mar 1;46(3):561-569 (PMID 36576974). NCT02846545. 3. **P4 \u2014 audit_ga",
+      "reason": "pmid not in local paper library",
+      "library_first_author": "Quattrin",
+      "library_journal": "N Engl J Med",
+      "library_year": "2020",
+      "resolved_via": "ncbi_esummary",
+      "severity": "NON_FIRST_AUTHOR",
+      "surface": "ARCHIVAL"
+    },
+    {
+      "file": "Analysis/Results/iterate_run_report_2026-05-12.md",
+      "line": 16,
+      "asserted_surname": "Herrington",
+      "pmid": "36331190",
+      "context": "Path | New status | Key evidence | | --- | --- | --- | | `empagliflozin -> nephropathy` | **VALIDATED** | EMPA-KIDNEY (Herrington et al. NEJM 2023, **PMID 36331190**), n=6,609 CKD pts, kidney-progression/CV-death HR 0.72",
+      "reason": "pmid not in local paper library",
+      "library_first_author": "The",
+      "library_journal": "N Engl J Med",
+      "library_year": "2023",
+      "resolved_via": "ncbi_esummary",
+      "severity": "NON_FIRST_AUTHOR",
+      "surface": "ARCHIVAL"
+    },
+    {
+      "file": "ACTION_REQUIRED_2026-09-15.md",
+      "line": 91,
+      "asserted_surname": "Shapiro",
+      "pmid": "10919952",
+      "context": "red twice. The prose instance was caught by the new gate. The second was: ```html <a onclick=\"alert('PMID: 10919952')\">Shapiro et al., NEJM</a> ``` An identifier inside a JavaScript string, with the surname in the anchor",
+      "library_first_author": "Zeisel",
+      "library_journal": "Am J Clin Nutr",
+      "library_year": "2000",
+      "severity": "NOT_AN_AUTHOR",
+      "surface": "ARCHIVAL"
+    },
+    {
+      "file": "Analysis/Results/iterate_run_report_2026-06-09.md",
+      "line": 22,
+      "asserted_surname": "Griffin",
+      "pmid": "28776086",
+      "context": "35% fewer HF hospitalizations in T2D with established ASCVD. | | metformin \u2192 cardiovascular | **PARTIALLY_VALIDATED** | Griffin et al., Diabetologia 2017 (PMID 28776086): 13-RCT meta-analysis; point estimates favored met",
+      "library_first_author": "Rena",
+      "library_journal": "Diabetologia",
+      "library_year": "2017",
+      "severity": "NOT_AN_AUTHOR",
+      "surface": "ARCHIVAL"
+    },
+    {
+      "file": "Analysis/Results/iterate_run_report_2026-06-14.md",
+      "line": 10,
+      "asserted_surname": "Griffin",
+      "pmid": "28776086",
+      "context": "Y_VALIDATED**. A fresh literature check (June 2026) found no new placebo-controlled, CV-endpoint RCT that overturns the Griffin et al. 2017 RCT meta-analysis (PMID 28776086), in which all-cause mortality, CV death, and M",
+      "library_first_author": "Rena",
+      "library_journal": "Diabetologia",
+      "library_year": "2017",
+      "severity": "NOT_AN_AUTHOR",
+      "surface": "ARCHIVAL"
+    },
+    {
+      "file": "Analysis/Scripts/_close_run_2026_08_28.py",
+      "line": 25,
+      "asserted_surname": "Orban",
+      "pmid": "20570966",
+      "context": "MISCITATIONS, \" \"FOUND BY ENFORCING WHAT WAS ALREADY DECIDED. Immunod_LADA.html published \" \"PMID 20570966 as 'Orban et al., Abatacept Phase 2 in T1D'; it is FUT2 non-\" \"secretor status and Crohn's disease, Hum Mol Genet",
+      "library_first_author": "McGovern",
+      "library_journal": "Hum Mol Genet",
+      "library_year": "2010",
+      "severity": "NOT_AN_AUTHOR",
+      "surface": "ARCHIVAL"
     }
   ]
 }
