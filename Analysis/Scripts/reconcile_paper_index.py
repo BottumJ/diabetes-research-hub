@@ -166,8 +166,34 @@ def reconcile(dry_run=False):
             # Persist immediately. The `if not orphans` early return below does
             # not write the index, so an eviction with nothing else to do would
             # otherwise be silently discarded and the entries would survive.
-            index.setdefault('metadata', {})['not_corpus_evicted_on'] = \
+            meta = index.setdefault('metadata', {})
+            meta['not_corpus_evicted_on'] = \
                 datetime.now().strftime('%Y-%m-%d')
+            # LEDGER + COUNT REPAIR, added 2026-09-19.
+            # This eviction ran on 2026-09-19 and removed PMIDs 25940230
+            # (PREDIMED) and 34021020 (DIAGNODE-2) - the two papers the
+            # 2026-09-18 run had just corrected and FLAGGED - while
+            # metadata.total_indexed stayed at 347 against a papers dict of
+            # 345. Nothing reported it; audit_index_field_invariants.py (new
+            # the same day) failed on the arithmetic, which is the only reason
+            # it was found. An eviction is a corpus decision and must leave a
+            # record naming what was removed and under which adjudication code,
+            # not just a date.
+            ledger = meta.setdefault('not_corpus_evictions', [])
+            today = datetime.now().strftime('%Y-%m-%d')
+            for p in sorted(stale):
+                reason = not_corpus.get(p) or {}
+                ledger.append({
+                    'pmid': p,
+                    'date': today,
+                    'code': (reason or {}).get('code', 'UNRECORDED'),
+                    'why': (reason or {}).get('why', ''),
+                    'title': (reason or {}).get('title', ''),
+                })
+            # total_indexed is a summary of `papers`; a mutation that does not
+            # update it publishes a count the file itself contradicts.
+            if 'total_indexed' in meta:
+                meta['total_indexed'] = len(index.get('papers', {}))
             with open(INDEX, 'w', encoding='utf-8') as f:
                 json.dump(index, f, indent=2, ensure_ascii=False)
     if not orphans:

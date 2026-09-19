@@ -1,11 +1,11 @@
 {
- "generated": "2026-09-18",
+ "generated": "2026-09-19",
  "window_chars": 200,
- "coordinates_checked": 151,
+ "coordinates_checked": 155,
  "counts": {
   "OK": 143,
-  "COORD_MISMATCH": 1,
-  "POINTS_ELSEWHERE": 2,
+  "COORD_MISMATCH": 3,
+  "POINTS_ELSEWHERE": 4,
   "NONRESOLVING": 3,
   "UNRESOLVED": 0,
   "AMBIGUOUS_PAIRING": 2
@@ -107,6 +107,68 @@
  ],
  "points_elsewhere": [
   {
+   "file": "_close_run_2026_09_18.py",
+   "line": 272,
+   "pmid": "2873396",
+   "asserted": {
+    "journal": "Diabetes",
+    "year": "2024",
+    "volume": "73",
+    "issue": "6",
+    "page": "823"
+   },
+   "record": "asserted at \" \"Diabetes 2024;73(6):823 (resolves to 38349844) and ",
+   "block_pmids": [
+    "37221401"
+   ],
+   "actual": {
+    "issue": "8499",
+    "journal": "Lancet",
+    "pages": "119-24",
+    "title": "Cyclosporin increases the rate and length of remissions in insulin-dependent diabetes of recent onset. Results of a multicentre double-blind trial.",
+    "volume": "2",
+    "year": "1986"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "POINTS_ELSEWHERE",
+   "probe": "coordinate resolves to PMID 38349844"
+  },
+  {
+   "file": "_close_run_2026_09_18.py",
+   "line": 273,
+   "pmid": "37221401",
+   "asserted": {
+    "journal": "Diabetes",
+    "year": "2024",
+    "volume": "73",
+    "issue": "6",
+    "page": "823"
+   },
+   "record": " asserted at \" \"Diabetes 2024;73(6):823 (resolves to 38349844) and",
+   "block_pmids": [
+    "2873396"
+   ],
+   "actual": {
+    "issue": "7",
+    "journal": "Nat Rev Endocrinol",
+    "pages": "379",
+    "title": "Gut microbiota influences effectiveness of anti-diabetic drug.",
+    "volume": "19",
+    "year": "2023"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": true
+   },
+   "verdict": "POINTS_ELSEWHERE",
+   "probe": "coordinate resolves to PMID 38349844"
+  },
+  {
    "file": "_run_2026_08_27.py",
    "line": 190,
    "pmid": "2873396",
@@ -169,6 +231,71 @@
   }
  ],
  "coord_mismatch": [
+  {
+   "file": "_close_run_2026_09_18.py",
+   "line": 112,
+   "pmid": "36215990",
+   "asserted": {
+    "journal": "Diabetes Endocrinol",
+    "year": "2022",
+    "volume": "10",
+    "issue": "10",
+    "page": "741"
+   },
+   "record": "asserted at Lancet \" \"Diabetes Endocrinol 2022;10(10):741) and verify_2026_09_13_repairs.py\" \":37 (",
+   "block_pmids": [
+    "19404608",
+    "22336824",
+    "36113507"
+   ],
+   "actual": {
+    "issue": "11",
+    "journal": "Lancet Diabetes Endocrinol",
+    "pages": "e11",
+    "title": "Correction to Lancet Diabetes Endocrinol 2022; 10: 741-60.",
+    "volume": "10",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": false,
+    "year": true
+   },
+   "verdict": "COORD_MISMATCH",
+   "probe": "journal token not indexed - could not conclude"
+  },
+  {
+   "file": "_close_run_2026_09_18.py",
+   "line": 114,
+   "pmid": "22336824",
+   "asserted": {
+    "journal": "Diabetes Endocrinol",
+    "year": "2022",
+    "volume": "10",
+    "issue": "10",
+    "page": "741"
+   },
+   "record": " asserted at Lancet \" \"Diabetes Endocrinol 2022;10(10):741) and verify_2026_09_13_repairs.py\" \":37 (",
+   "block_pmids": [
+    "36113507",
+    "36215990"
+   ],
+   "actual": {
+    "issue": "2",
+    "journal": "Cochrane Database Syst Rev",
+    "pages": "CD006800",
+    "title": "Pentoxifylline for diabetic kidney disease.",
+    "volume": "2012",
+    "year": "2012"
+   },
+   "checks": {
+    "volume": false,
+    "page": false,
+    "year": false
+   },
+   "verdict": "COORD_MISMATCH",
+   "probe": "journal token not indexed - could not conclude"
+  },
   {
    "file": "_run_2026_08_27.py",
    "line": 357,
@@ -3337,7 +3464,7 @@
   },
   {
    "file": "build_generic_drug_catalog.py",
-   "line": 307,
+   "line": 355,
    "pmid": "32175717",
    "asserted": {
     "journal": "J Epidemiol Glob Health",

@@ -1,0 +1,450 @@
+============================================================
+  DIABETES RESEARCH HUB — QUALITY IMPROVEMENTS
+============================================================
+  Running 13 improvement(s): syncreports, reportfreshness, freshnessgate, suppressiongate, linkgate, absencescope, gapsubject, publishgate, publishgatetest, surnames, computedcite, catalogentity, indexinvariants
+
+============================================================
+  Publishing the markdown reports the hub advertises to docs/Reports/
+============================================================
+  Publish advertised reports -> docs/Reports/
+    hub        : docs/index.html
+    advertised : 2 report(s)
+    stale=0  missing=0  in-sync=2  source-absent=0
+  
+  [OK] Already in sync; nothing to publish.
+  Completed in 0.0s
+
+============================================================
+  Asserting published reports are no older than the window they advertise
+============================================================
+  ====================================================================
+    PUBLISHED REPORT FRESHNESS AUDIT
+  ====================================================================
+    Hub advertises 2 markdown report(s); today is 2026-09-19.
+    Freshness is the age of a report's OLDEST INPUT, not of its render.
+  
+    [OK] literature_gap_report.md
+           rendered 2026-09-19 (0d ago) | data literature_gap_data.json 2026-09-19 (0d ago) | window 45d (date range)
+    [OK] pubmed_recent_summary.md
+           rendered 2026-09-18 (1d ago) | data pubmed_recent_latest.json 2026-09-18 (1d ago) | window 30d (lookback period)
+  
+    2 report(s) checked, 0 failing.
+    Written: /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/report_freshness_audit.json
+    PASS.
+  Completed in 0.0s
+
+============================================================
+  Regression fixture: freshness gate sensitivity AND specificity
+============================================================
+  ====================================================================
+    REGRESSION FIXTURE: report-freshness gate
+  ====================================================================
+    A gate that has only ever seen clean input is untested.
+  
+    [OK] A self-contradicting 30-day window generated 49d ago
+          gate says: FAIL
+            -> SELF-CONTRADICTING: declares a 30-day lookback period but was generated 2026-08-01, 49 days ago.
+            -> DATA OLDER THAN DECLARED WINDOW: pubmed_recent_latest.json written 2026-08-01, 49 days ago, against a 30-day lookback period.
+    [OK] B fresh render over 50-day-old data (cleared as "fine" 2026-09-04)
+          gate says: FAIL
+            -> COVERAGE STALE: declares data through 2026-07-31, 50 days ago (ceiling 45).
+            -> STALE DATA BEHIND A FRESH STAMP: rendered 2026-09-19 from literature_gap_data.json written 2026-07-31 - a 50-day lag (tolerance 7). The report advertises a currency its input does not have.
+            -> DATA OLDER THAN DECLARED WINDOW: literature_gap_data.json written 2026-07-31, 50 days ago, against a 45-day date range.
+    [OK] C genuinely fresh report (control - must pass)
+          gate says: PASS
+    [OK] D undated report, 55d old (must not escape the ceiling)
+          gate says: FAIL
+            -> SELF-CONTRADICTING: declares a 45-day default ceiling but was generated 2026-07-26, 55 days ago.
+  
+    PASS - gate is sensitive to both real 2026-09 defects and
+    specific enough to clear a genuinely fresh report.
+  Completed in 0.0s
+
+============================================================
+  Asserting no adjudicated-artifact path is live on the published site
+============================================================
+  Suppression-gate regression test
+    canonical store  : /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/canonical_paths.json
+    suppressed edges : 3 (GAD65 -> T1D, rituximab -> nephropathy, rituximab -> nephropathy (DIABETIC))
+    files scanned    : 35
+    path entries seen: 27
+  
+  [OK] No adjudicated-artifact path appears on the published site under any key spelling.
+  Completed in 0.3s
+
+============================================================
+  Asserting every link the published site advertises resolves under docs/
+============================================================
+  ==========================================================================
+  PUBLISHED LINK AUDIT - does every advertised link resolve under docs/?
+  ==========================================================================
+  36 page(s) scanned, 1400 relative link(s) resolve, 0 finding(s).
+    -> Analysis/Results/published_links_audit.json
+  
+  [OK] every advertised relative link resolves under the publish root.
+  Completed in 0.3s
+
+============================================================
+  Asserting every published absence claim declares the search that produced it
+============================================================
+  ============================================================
+    ABSENCE-CLAIM SCOPE GATE
+  ============================================================
+    Files scanned: 78
+    Report: Analysis/Results/absence_claim_scope_audit.json
+  
+    [OK] every absence claim declares the search that produced it.
+  Completed in 0.7s
+
+============================================================
+  Asserting each gap's stored evidence mentions both axes of the gap's own question
+============================================================
+  GAP SUBJECT COVERAGE AUDIT
+  ==============================================================================
+  GAP  NAME                                   TIER     PAP      X      Y   BOTH
+  ------------------------------------------------------------------------------
+  1    Gene Therapy for LADA                  SILVER    44      0     16      0
+  2    Health Equity in Diabetes              GOLD      15     14     15     14
+  3    Insulin Resistance in Islet Transplant GOLD      28     25      2      2
+  4    Drug Repurposing for Islet Transplant  SILVER    21     19      1      0
+  5    Treg in Diabetic Neuropathy            SILVER    19      5     16      2
+  6    CAR-T Access Barriers                  GOLD      16     16      7      7
+  7    GKA Drug Repurposing                   SILVER    22     22      0      0
+  8    Immunomodulatory Drugs for LADA        SILVER    38     18     16      1
+  9    GKA in LADA                            EXPLOR     0      0      0      0
+  10   LADA Prevalence by Healthcare Setting  SILVER     3      3      2      2
+  11   Islet Transplant Registry Equity       GOLD       6      5      1      0
+  12   Generic Drug x Diabetes Mechanism Cata SILVER     9      3      9      3
+  13   Personalized Nutrition for Beta Cells  BRONZE     3      0      0      0
+  14   Personalized Nutrition for LADA        BRONZE     0      0      0      0
+  15   GKA Pricing Trajectory                 BRONZE     0      0      0      0
+  ------------------------------------------------------------------------------
+  
+  7 FINDING(S):
+  
+    [MEDIUM] Gap #1 (SILVER) Gene Therapy for LADA
+        44 evidence paper(s). 0 touch "gene therapy" and 16 touch "LADA", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.
+        REMEDY: State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.
+  
+    [MEDIUM] Gap #4 (SILVER) Drug Repurposing for Islet Transplant
+        21 evidence paper(s). 19 touch "islet transplant" and 1 touch "repurposing", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.
+        REMEDY: State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.
+  
+    [HIGH] Gap #7 (SILVER) GKA Drug Repurposing
+        22 evidence paper(s), NONE mentioning the "repurposing" axis. The stored evidence is on-topic for "glucokinase activator" only. This gap is an intersection and its evidence covers one side of it.
+        REMEDY: Re-found on a dated null search, or record that the gap has never been tested. Do not publish the current citation list as support.
+  
+    [MEDIUM] Gap #11 (GOLD) Islet Transplant Registry Equity
+        6 evidence paper(s). 5 touch "islet transplant registry" and 1 touch "equity", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.
+        REMEDY: State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.
+  
+    [HIGH] Gap #13 (BRONZE) Personalized Nutrition for Beta Cells
+        3 evidence paper(s), NONE mentioning the "personalized nutrition" axis. The stored evidence is on-topic for "beta cell" only. This gap is an intersection and its evidence covers one side of it.
+        REMEDY: Re-found on a dated null search, or record that the gap has never been tested. Do not publish the current citation list as support.
+  
+    [HIGH] Gap #14 (BRONZE) Personalized Nutrition for LADA
+        Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.
+        REMEDY: Demote to EXPLORATORY or attach evidence.
+  
+    [HIGH] Gap #15 (BRONZE) GKA Pricing Trajectory
+        Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.
+        REMEDY: Demote to EXPLORATORY or attach evidence.
+  
+  [FAIL] gap_subject_coverage -> /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/gap_subject_coverage_audit.json
+  ERROR (exit code 1)
+
+============================================================
+  Asserting the published SITE matches what this pipeline audits (reads origin)
+============================================================
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-04-20 (151 days old)
+    commits on main not on the site: 113
+    reader-facing: 38/39 files under docs/ wrong (4 x 404, 34 x stale)
+  
+    Report: Analysis/Results/publish_reachability_audit.json
+  
+    [FAIL] 2 finding(s):
+  
+     PUBLISH_BEHIND
+       113 commits unpushed; origin/main tip is 2026-04-20 (151 days old); 38 of 39 files under docs/ are wrong for a reader (4 return 404, 34 are stale)
+       -> every other publish-side assertion in this pipeline describes the working tree, not the site
+       ACTION: push from a host that holds credentials, or provision a PAT / gh credential for the scheduled task
+  
+     UNCOMMITTED_PUBLISH
+       18 file(s) under docs/ are modified or untracked: ocs/Dashboards/Corpus_Analysis.html, docs/Dashboards/Drug_Repurposing_Islet.html, docs/Dashboards/Drug_Repurposing_Screen.html, docs/Dashboards/Extracted_Evidence.html, docs/Dashboards/Gap_Deep_Dives.html ...
+       -> these would not reach the site even if the push succeeded
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ERROR (exit code 1)
+
+============================================================
+  Regression fixture: publish gate sensitivity AND specificity
+============================================================
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-19 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ../publish_reachability_audit.json
+  
+    [OK] origin/main is level with main and docs/ is clean.
+         What this pipeline audits is what a reader loads.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-19 (0 days old)
+    commits on main not on the site: 1
+    reader-facing: 3/4 files under docs/ wrong (1 x 404, 2 x stale)
+  
+    Report: ../publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     PUBLISH_BEHIND
+       1 commits unpushed; origin/main tip is 2026-09-19 (0 days old); 3 of 4 files under docs/ are wrong for a reader (1 return 404, 2 are stale)
+       -> every other publish-side assertion in this pipeline describes the working tree, not the site
+       ACTION: push from a host that holds credentials, or provision a PAT / gh credential for the scheduled task
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-19 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ../publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     PUBLISH_DIVERGED
+       1 commits exist on origin/main that main does not have
+       -> a push would be rejected, or would need a merge no gate has reviewed
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-19 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ../publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     UNCOMMITTED_PUBLISH
+       1 file(s) under docs/ are modified or untracked: ocs/page0.html
+       -> these would not reach the site even if the push succeeded
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+  
+    Report: ../publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     FETCH_FAILED
+       could not read origin/main: fatal: '/tmp/tmpdjouvkap/remote.git' does not appear to be a git repository
+  fatal: Could not read from remote repository.
+  
+  Please make sure you have the correct access rights
+  and the repository exists
+       -> publish state is UNKNOWN; no publish-side gate in this pipeline can be trusted this run
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  
+  ============================================================
+    PUBLISH REACHABILITY GATE - REGRESSION FIXTURE
+  ============================================================
+    [PASS] case1 level+clean exits 0
+    [PASS] case1 no findings
+    [PASS] case1 counts level
+    [PASS] case2 exits 1
+    [PASS] case2 flags PUBLISH_BEHIND
+    [PASS] case2 counts the unpushed commit
+    [PASS] case2 sees 1 file a reader 404s
+    [PASS] case2 sees 2 stale files
+    [PASS] case2 reports 4 local files, 3 remote
+    [PASS] case2 reports 1 of 4 correct for a reader
+    [PASS] case3 exits 1
+    [PASS] case3 flags PUBLISH_DIVERGED
+    [PASS] case3 does NOT flag PUBLISH_BEHIND
+    [PASS] case4 exits 1
+    [PASS] case4 flags UNCOMMITTED_PUBLISH
+    [PASS] case4 lists the dirty file
+    [PASS] case5 exits 1 (unknown is not clean)
+    [PASS] case5 flags FETCH_FAILED
+    [PASS] case5 records fetch_ok False
+  
+    [OK] 19/19 assertions.
+         Sensitivity: fails on behind, diverged, dirty and unreachable.
+         Specificity: PASSES when the site is level and clean - so the
+         red state in this repo is information, not a stuck alarm.
+  Completed in 3.1s
+
+============================================================
+  Auditing author-surname attributions (REPORT ONLY; prose + HTML anchors + NCBI resolution of unknowns)
+============================================================
+  ==============================================================
+    PROSE AUTHOR SURNAME AUDIT
+  ==============================================================
+    library PMIDs carrying an authors[] array : 374
+    surname+PMID attributions checked         : 170
+      matched first author                    : 169
+      MISMATCH (live publishing surface)      : 1
+      in frozen archive (reported, not fixed) : 6
+    not checkable (PMID not in library)       : 0
+    excluded as this repo's correction prose  : 32
+    html <a> citations scanned (markup reach)  : 6
+    unknown PMIDs resolved via NCBI            : 14 of 14 (0 unresolvable)
+  
+    MISMATCHES - LIVE
+    ----------------------------------------------------------
+    [NOT_AN_AUTHOR] Analysis/Scripts/build_nutrition_lada.py:896
+        asserts : Ludvigsson et al.  (PMID 1884311)
+        library : Godon et al., Can J Public Health 1991
+  
+    IN FROZEN ARCHIVE - reported for the record, NOT to be edited
+    (a dated run report is history; rewriting one to clear a gate
+     is the exact failure this repository audits for)
+    ----------------------------------------------------------
+    [NON_FIRST_AUTHOR] Analysis/Results/iterate_run_report_2026-05-09.md:10
+        asserts : Rigby et al.  (PMID 33207093)
+        library : Quattrin et al., N Engl J Med 2020
+  
+    [NON_FIRST_AUTHOR] Analysis/Results/iterate_run_report_2026-05-12.md:16
+        asserts : Herrington et al.  (PMID 36331190)
+        library : The et al., N Engl J Med 2023
+  
+    [NOT_AN_AUTHOR] ACTION_REQUIRED_2026-09-15.md:91
+        asserts : Shapiro et al.  (PMID 10919952)
+        library : Zeisel et al., Am J Clin Nutr 2000
+  
+    [NOT_AN_AUTHOR] Analysis/Results/iterate_run_report_2026-06-09.md:22
+        asserts : Griffin et al.  (PMID 28776086)
+        library : Rena et al., Diabetologia 2017
+  
+    [NOT_AN_AUTHOR] Analysis/Results/iterate_run_report_2026-06-14.md:10
+        asserts : Griffin et al.  (PMID 28776086)
+        library : Rena et al., Diabetologia 2017
+  
+    [NOT_AN_AUTHOR] Analysis/Scripts/_close_run_2026_08_28.py:25
+        asserts : Orban et al.  (PMID 20570966)
+        library : McGovern et al., Hum Mol Genet 2010
+  
+    Output: /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/prose_author_surname_audit.json
+    [MEASURE] reporting only; not gating
+  Completed in 8.4s
+
+============================================================
+  Auditing citations attached to locally computed values (REPORT ONLY)
+============================================================
+  ==============================================================
+    COMPUTED-VALUE CITATION AUDIT
+  ==============================================================
+    builder files scanned                     : 85
+    f-strings carrying a PMID + interpolation : 6
+      COMPUTED  (citation on a runtime value) : 1
+      BARE_NAME (review; may be transcribed)  : 4
+    excluded as this repo's correction prose  : 1
+  
+    COMPUTED -- a PMID is attached to a value this script computes
+    ----------------------------------------------------------
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:588
+        PMID(s)    : 41921761
+        expression : len(df)
+        line       : # Multi-Omic Microbiome ML Pipeline — Phase 2: Feature Engineering Report
+  **Generated:** {...}
+  **Phase:** 2 of 5 (Feature Engineering)
+  **Target:** AUC
+  
+    BARE_NAME -- review only, not flagged
+    ----------------------------------------------------------
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:588  {date}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:588  {n_features}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase3_models.py:481  {date}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase3_models.py:481  {baseline_auc}  PMID 41921761
+  
+    Output: /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/computed_value_citation_audit.json
+    [MEASURE] reporting only; not gating
+  Completed in 0.5s
+
+============================================================
+  Gating on catalog rows whose cited paper never mentions the drug the row is about
+============================================================
+  ==============================================================
+    CATALOG ENTITY <-> CITATION AGREEMENT
+  ==============================================================
+    Paper library: 345 indexed PMIDs
+    Builders with parseable catalog records: 1
+    AGREE       19
+    ABSENT      0   <- defect class
+    UNCHECKABLE 11  (cited but never ingested)
+    WAIVED      0
+  
+    UNCHECKABLE -- cited by a catalog, absent from the library
+    ----------------------------------------------------------
+    build_generic_drug_catalog.py Alpha-lipoic acid: 26651260
+    build_generic_drug_catalog.py Berberine: 16873688
+    build_generic_drug_catalog.py Colchicine: 27241260
+    build_generic_drug_catalog.py Dapsone: 36125533
+    build_generic_drug_catalog.py Doxycycline: 21782948
+    build_generic_drug_catalog.py Hydroxychloroquine: 25669071
+    build_generic_drug_catalog.py Methotrexate: 28303409
+    build_generic_drug_catalog.py Nicotinamide: 8805029
+    build_generic_drug_catalog.py Pioglitazone: 19402055
+    build_generic_drug_catalog.py Verapamil: 36060506
+    build_generic_drug_catalog.py Vitamin D: 25205139
+  
+    Output: /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/catalog_entity_agreement_audit.json
+    [OK] no unexplained entity/citation disagreement
+  Completed in 1.3s
+
+============================================================
+  Gating on paper-index summary counts that disagree with the records they summarise
+============================================================
+  ==============================================================
+    PAPER INDEX FIELD INVARIANTS
+  ==============================================================
+    papers indexed            : 345
+    metadata.pmc_available    : 174
+    metadata.fulltext_fetched : 150
+    records with pmcid        : 133
+    records with has_fulltext : 132
+    records with has_abstract : 341
+    fulltext files on disk    : 150
+  
+    [BREAK] I4: metadata.total_indexed=347 != len(papers)=345
+    [NOTE]  I3: 150 full texts on disk, 132 records flagged; difference of 18 is full text held for papers the index does not list (ingestion gap)
+  
+    Output: /sessions/friendly-zen-hamilton/mnt/Diabetes_Research/Analysis/Results/index_field_invariants.json
+    [FAIL] index summary counts disagree with its own records
+  ERROR (exit code 1)
+
+============================================================
+  SUMMARY
+============================================================
+  [OK] Publishing the markdown reports the hub advertises to docs/Reports/
+  [OK] Asserting published reports are no older than the window they advertise
+  [OK] Regression fixture: freshness gate sensitivity AND specificity
+  [OK] Asserting no adjudicated-artifact path is live on the published site
+  [OK] Asserting every link the published site advertises resolves under docs/
+  [OK] Asserting every published absence claim declares the search that produced it
+  [FAILED] Asserting each gap's stored evidence mentions both axes of the gap's own question
+  [FAILED] Asserting the published SITE matches what this pipeline audits (reads origin)
+  [OK] Regression fixture: publish gate sensitivity AND specificity
+  [OK] Auditing author-surname attributions (REPORT ONLY; prose + HTML anchors + NCBI resolution of unknowns)
+  [OK] Auditing citations attached to locally computed values (REPORT ONLY)
+  [OK] Gating on catalog rows whose cited paper never mentions the drug the row is about
+  [FAILED] Gating on paper-index summary counts that disagree with the records they summarise
+
+  3 script(s) failed. Check output above.

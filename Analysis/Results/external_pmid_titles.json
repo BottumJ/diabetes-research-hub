@@ -1,0 +1,18 @@
+{
+  "_purpose": "Titles for PMIDs that are CITED by a builder but are NOT in Analysis/Results/paper_library. Without this file every such citation is UNCHECKABLE to audit_catalog_entity_agreement.py, which is how the 2026-09-19 minocycline defect stayed invisible to every gate in the repository while being externally verifiable in one lookup. Each entry MUST carry how and when the title was established. No entry may be added from model memory.",
+  "_rules": [
+    "verified_via must name a retrievable source, not 'known' or 'memory'.",
+    "This file is a title cache ONLY. It is not evidence that the paper supports anything.",
+    "An entry here does not substitute for ingestion; it lets a gate run in the meantime. Ingestion remains the remedy."
+  ],
+  "papers": {
+    "25714673": {
+      "title": "Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in type 1 diabetic mice",
+      "year": 2015,
+      "pmcid": "PMC4398829",
+      "verified_via": "PubMed record surfaced by web search 2026-09-19 (pubmed.ncbi.nlm.nih.gov/25714673/, mirrored at pmc.ncbi.nlm.nih.gov/articles/PMC4398829/); title read from both listings",
+      "verified_on": "2026-09-19",
+      "note": "Cited by build_generic_drug_catalog.py as 'Hu et al. 2015 diabetic neuropathy' supporting the MINOCYCLINE entry. The paper is a mouse neuroinflammation study; it is not a minocycline study and not a clinical neuropathy trial. Already FLAGGED in agent_state papers."
+    }
+  }
+}

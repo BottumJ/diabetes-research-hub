@@ -217,9 +217,34 @@ DRUGS = [
         'mechanism': 'Mineralocorticoid receptor antagonist, anti-inflammatory',
         'evidence_level': 'MODERATE',
         'evidence_color': '#8b6914',
-        'key_pmids': '33264825',
-        'key_reference': 'FIDELIO-DKD (Bakris et al. 2020)',
-        'detail': 'Anti-inflammatory, relevant for diabetic kidney disease',
+        # WRONG DRUG - CITATION WITHDRAWN 2026-09-19 by audit_catalog_entity_agreement.py
+        # (its first live catch). This read: key_pmids '33264825',
+        # key_reference 'FIDELIO-DKD (Bakris et al. 2020)'. PMID 33264825 is
+        # "Effect of Finerenone on Chronic Kidney Disease Outcomes in Type 2
+        # Diabetes" - a trial of FINERENONE, which is a different molecule
+        # (nonsteroidal MRA), is branded and on-patent (Kerendia, Bayer), and
+        # therefore does not even qualify for a catalog of off-patent generics.
+        # Spironolactone is not mentioned in it. So this row's entire evidence
+        # base was a trial of a drug the catalog is not about. No gate caught it
+        # for as long as the row has existed, because the PMID, title, author and
+        # year all agreed with the reference text - only the SUBJECT disagreed.
+        # The MODERATE grade is NOT changed here (2026-08-20 precedent: grading is
+        # a human call), but it now carries a visible [EVIDENCE WITHDRAWN] marker
+        # so the page cannot assert support it does not hold.
+        # Real spironolactone-in-DKD RCT evidence does exist and should replace
+        # this, once a PMID is verified rather than recalled. Candidates surfaced
+        # 2026-09-19 and queued, NOT inserted: a low-dose (12.5 mg/day) open-label
+        # multicentre RCT in T2D with albuminuria, J Clin Endocrinol Metab
+        # 2023;108(9):2203 (positive on UACR), and PRIORITY, Lancet Diabetes
+        # Endocrinol 2020 (NULL for preventing microalbuminuria). Both must be
+        # ingested and identity-checked before citing.
+        'key_pmids': '',
+        'key_reference': '[EVIDENCE WITHDRAWN 2026-09-19] The only citation here '
+                         '(PMID:33264825, FIDELIO-DKD) is a finerenone trial, not a '
+                         'spironolactone trial. This row currently has NO cited '
+                         'evidence; the MODERATE grade is unsupported pending review.',
+        'detail': '[EVIDENCE WITHDRAWN 2026-09-19 - see key reference] '
+                  'Anti-inflammatory, relevant for diabetic kidney disease',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
     {
@@ -241,9 +266,32 @@ DRUGS = [
         'mechanism': 'Neuroprotective, anti-inflammatory',
         'evidence_level': 'WEAK',
         'evidence_color': '#e0ddd5',
-        'key_pmids': '25714673, 24497205',
-        'key_reference': 'Hu et al. 2015 diabetic neuropathy; MIND study T2D',
-        'detail': 'MIND trial showed neuropathy improvement; microglial inhibition',
+        # WRONG PAPER - CITATION WITHDRAWN 2026-09-19. This read
+        # key_pmids '25714673, 24497205' with key_reference
+        # 'Hu et al. 2015 diabetic neuropathy; MIND study T2D'.
+        # PMID 25714673 is "Loss of survival factors and activation of
+        # inflammatory cascades in brain sympathetic centers in type 1 diabetic
+        # mice" (2015, PMC4398829) - a mouse neuroinflammation study. It does not
+        # involve minocycline and is not a clinical neuropathy trial. It was
+        # already FLAGGED in agent_state, and no gate could reach it because the
+        # paper is cited by this catalog yet has never been ingested into the
+        # paper library. That blind spot is now closed by
+        # Analysis/Results/external_pmid_titles.json.
+        # 24497205 is RETAINED but is itself UNCHECKABLE here - also never
+        # ingested. The real MIND study appears to be Syngle et al., Neurol Sci
+        # 2014 ("Minocycline improves peripheral and autonomic neuropathy in type
+        # 2 diabetes: MIND study"); whether 24497205 IS that paper was not
+        # established on 2026-09-19 and must not be assumed. Until it is, the
+        # detail line below does not assert what the trial showed.
+        'key_pmids': '24497205',
+        'key_reference': '[PARTIALLY WITHDRAWN 2026-09-19] PMID:25714673 removed - it is '
+                         'a mouse brain-inflammation study, not a minocycline neuropathy '
+                         'paper. PMID:24497205 retained but UNVERIFIED (not in the paper '
+                         'library; its identity has not been confirmed).',
+        'detail': '[CLAIM SUSPENDED 2026-09-19] Previously read "MIND trial showed '
+                  'neuropathy improvement; microglial inhibition". The trial result is '
+                  'not restated here because the citation that carried it was the wrong '
+                  'paper and the remaining PMID is unverified.',
         'applications': ['Neuropathy', 'Anti-inflammatory']
     },
     {
@@ -1005,6 +1053,20 @@ html_content = '''<!DOCTYPE html>
         const applicationsList = ''' + json.dumps(APPLICATIONS) + ''';
         const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + '''; // PMID:34763823
 
+        // Added 2026-09-19 with the Spironolactone withdrawal. The previous
+        // inline .split(', ').map(...) rendered an empty key_pmids string as a
+        // live link to https://pubmed.ncbi.nlm.nih.gov// labelled "PMID:", so
+        // withdrawing a citation would have published a dead link that still
+        // looked like a citation. Withdrawal must read as withdrawal.
+        function renderPmids(raw) {
+            const ids = (raw || '').split(',').map(p => p.trim()).filter(p => /^\\d{6,8}$/.test(p));
+            if (!ids.length) {
+                return '<span style="color:#b00; font-weight:600;">[NO CITED EVIDENCE]</span>';
+            }
+            return ids.map(p => '<a href="https://pubmed.ncbi.nlm.nih.gov/' + p +
+                   '/" target="_blank">PMID:' + p + '</a>').join(', ');
+        }
+
         function switchTab(tabName) {
             const contents = document.querySelectorAll('.tab-content');
             const buttons = document.querySelectorAll('.tab-button');
@@ -1029,7 +1091,7 @@ html_content = '''<!DOCTYPE html>
                     <td>${drug.cost_per_year}</td>
                     <td>${drug.mechanism}</td>
                     <td><span class="${evidenceClass}">${drug.evidence_level}</span></td>
-                    <td><span class="pmid">${drug.key_pmids.split(', ').map(p => '<a href="https://pubmed.ncbi.nlm.nih.gov/' + p.trim() + '/" target="_blank">PMID:' + p.trim() + '</a>').join(', ')}</span></td>
+                    <td><span class="pmid">${renderPmids(drug.key_pmids)}</span></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -1117,7 +1179,7 @@ html_content = '''<!DOCTYPE html>
                     <p><strong>Diabetes mechanism:</strong> ${drug.mechanism}</p>
                     <p><strong>Evidence level:</strong> ${drug.evidence_level}</p>
                     <p><strong>Key reference:</strong> ${drug.key_reference}</p>
-                    <p><strong>PMID:</strong> <span class="pmid">${drug.key_pmids.split(', ').map(p => '<a href="https://pubmed.ncbi.nlm.nih.gov/' + p.trim() + '/" target="_blank">PMID:' + p.trim() + '</a>').join(', ')}</span></p>
+                    <p><strong>PMID:</strong> <span class="pmid">${renderPmids(drug.key_pmids)}</span></p>
                     <p><strong>Clinical detail:</strong> ${drug.detail}</p>
                     <p><strong>Applications:</strong> ${drug.applications.join(', ')}</p>
                 `;

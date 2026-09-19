@@ -5,14 +5,59 @@
     "abstracts_fetched": 321,
     "pmc_available": 174,
     "fulltext_fetched": 150,
-    "total_indexed": 347,
+    "total_indexed": 345,
     "orphans_reconciled": 25,
     "orphans_reconciled_on": "2026-09-18",
     "orphan_status_counts": {
       "OFF_TOPIC_PRESUMED": 9,
       "UNSCREENED_ORPHAN": 16
     },
-    "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see."
+    "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see.",
+    "pmcid_repair": {
+      "date": "2026-09-19",
+      "by": "repair_index_pmcid_map.py",
+      "cause": "convert_pmids_to_pmcids() keyed its map by int while build_index() looked up by str; fixed at source the same day",
+      "records_pmcid_filled": 133,
+      "records_fulltext_flagged": 133,
+      "source_of_truth": "paper_library/fulltext/*.json (pmid + pmcid inside each file)"
+    },
+    "not_corpus_evicted_on": "2026-09-19",
+    "not_corpus_evictions": [
+      {
+        "pmid": "25940230",
+        "date": "2026-09-19",
+        "code": "FLAGGED_UNCLASSIFIED",
+        "why": "FLAGGED in agent_state.json with no class recorded",
+        "title": "Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.",
+        "backfilled_on": "2026-09-19"
+      },
+      {
+        "pmid": "34021020",
+        "date": "2026-09-19",
+        "code": "FLAGGED_UNCLASSIFIED",
+        "why": "FLAGGED in agent_state.json with no class recorded",
+        "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+        "backfilled_on": "2026-09-19"
+      },
+      {
+        "pmid": "37026004",
+        "date": "unrecorded (evicted before 2026-09-19; no ledger existed)",
+        "code": "FLAGGED_UNCLASSIFIED",
+        "why": "FLAGGED in agent_state.json with no class recorded",
+        "title": "Matching for HLA-DR excluding diabetogenic HLA-DR3 and HLA-DR4 predicts insulin independence after pancreatic islet transplantation.",
+        "backfilled_on": "2026-09-19"
+      },
+      {
+        "pmid": "42674789",
+        "date": "unrecorded (evicted before 2026-09-19; no ledger existed)",
+        "code": "FLAGGED_UNCLASSIFIED",
+        "why": "FLAGGED in agent_state.json with no class recorded",
+        "title": "Retrospective population-based cohorts for assessing the performance of algorithmic diabetes classification and for quantifying the true burden of type 1, type 2 and LADA phenotypes in Quebec: a study protocol.",
+        "backfilled_on": "2026-09-19"
+      }
+    ],
+    "total_indexed_repaired_on": "2026-09-19",
+    "total_indexed_repair_note": "Was 347 against a papers dict of 345. The gap was created by not_corpus evictions that never updated the summary count; caught by audit_index_field_invariants.py on the day it was written."
   },
   "papers": {
     "10415738": {
@@ -2505,8 +2550,8 @@
       "year": "2009",
       "doi": "10.1038/nri2586",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC2821718",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -2540,8 +2585,8 @@
       "year": "2009",
       "doi": "10.1038/nm.2002",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3115752",
       "dashboard_locations": [
         {
           "file": "build_treg_neuropathy.py",
@@ -2592,8 +2637,8 @@
       "year": "2009",
       "doi": "10.2337/dc09-0738",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC2752935",
       "dashboard_locations": [
         {
           "file": "audit_verdict_key_agreement.py",
@@ -2628,8 +2673,8 @@
       "year": "2009",
       "doi": "10.1083/jcb.200903124",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC2762099",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -2698,8 +2743,8 @@
       "year": "2009",
       "doi": "10.1056/NEJMoa0904452",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6410357",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -2796,8 +2841,8 @@
       "year": "2010",
       "doi": "10.1146/annurev-immunol-030409-101212",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3502616",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -2835,8 +2880,8 @@
       "year": "2010",
       "doi": "10.1056/NEJMoa1001286",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4123215",
       "dashboard_locations": [
         {
           "file": "build_treg_neuropathy.py",
@@ -2884,8 +2929,8 @@
       "year": "2010",
       "doi": "10.1038/nri2735",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3496776",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3010,8 +3055,8 @@
       "year": "2011",
       "doi": "10.1126/science.1198687",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3089969",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3184,8 +3229,8 @@
       "year": "2011",
       "doi": "10.2337/dc11-s236",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3632186",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3217,8 +3262,8 @@
       "year": "2011",
       "doi": "10.1016/S0140-6736(11)60886-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3462593",
       "dashboard_locations": [
         {
           "file": "build_immunomod_lada.py",
@@ -3273,8 +3318,8 @@
       "year": "2011",
       "doi": "10.1016/j.tem.2011.05.003",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3189696",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3311,8 +3356,8 @@
       "year": "2011",
       "doi": "10.2337/dc11-0503",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3161301",
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
@@ -3398,8 +3443,8 @@
       "year": "2011",
       "doi": "10.1016/j.immuni.2011.07.010",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3303224",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3522,8 +3567,8 @@
       "year": "2011",
       "doi": "10.1038/nri3073",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3422549",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3735,8 +3780,8 @@
       "year": "2012",
       "doi": "10.1016/S0140-6736(12)60283-9",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3891203",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3778,8 +3823,8 @@
       "year": "2012",
       "doi": "10.1016/j.cell.2012.07.029",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3445031",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -3827,8 +3872,8 @@
       "year": "2012",
       "doi": "10.1111/ctr.12011",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4082563",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_islet.py",
@@ -3892,8 +3937,8 @@
       "year": "2013",
       "doi": "10.2337/dc12-0931",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3609504",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -4084,8 +4129,8 @@
       "year": "2013",
       "doi": "10.1111/dme.12159",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3748788",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4122,8 +4167,8 @@
       "year": "2013",
       "doi": "10.1016/j.cmet.2013.03.009",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3640261",
       "dashboard_locations": [
         {
           "file": "build_treg_neuropathy.py",
@@ -4243,8 +4288,8 @@
       "year": "2013",
       "doi": "10.1001/jama.2013.6285",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4878912",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4294,8 +4339,8 @@
       "year": "2013",
       "doi": "10.7326/0003-4819-159-1-201307020-00003",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4128629",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -4340,8 +4385,8 @@
       "year": "2013",
       "doi": "10.2337/db13-0300",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3781470",
       "dashboard_locations": [
         {
           "file": "build_gka_lada.py",
@@ -4391,8 +4436,8 @@
       "year": "2014",
       "doi": "10.1016/S0140-6736(13)60591-7",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4380133",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4549,8 +4594,8 @@
       "year": "2014",
       "doi": "10.1016/j.cmet.2013.12.002",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3950964",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4587,8 +4632,8 @@
       "year": "2014",
       "doi": "10.1016/j.cmet.2014.01.001",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3972801",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4750,8 +4795,8 @@
       "year": "2014",
       "doi": "10.1146/annurev-nutr-071812-161148",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5693323",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -4792,8 +4837,8 @@
       "year": "2014",
       "doi": "10.1007/s00125-014-3265-1",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4119241",
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
@@ -4937,8 +4982,8 @@
       "year": "2014",
       "doi": "10.1016/j.cct.2014.08.004",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6936726",
       "dashboard_locations": [
         {
           "file": "build_trial_equity_mapper.py",
@@ -5229,8 +5274,8 @@
       "year": "2015",
       "doi": "10.1146/annurev-med-051113-024537",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5634336",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -5269,8 +5314,8 @@
       "year": "2015",
       "doi": "10.1038/ng.3245",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4380767",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -5382,65 +5427,6 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1825
-    },
-    "25940230": {
-      "pmid": "25940230",
-      "title": "Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.",
-      "journal": "Prog Cardiovasc Dis",
-      "year": "2015",
-      "doi": "10.1016/j.pcad.2015.04.003",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_nutrition_lada.py",
-          "line": 485,
-          "context": "<li><strong>PREDIMED Trial:</strong> Among the 3,541 PREDIMED participants who were free of diabetes at baseline, 273 de"
-        },
-        {
-          "file": "build_nutrition_lada.py",
-          "line": 817,
-          "context": "<div class=\"reference-meta\">Mart&iacute;nez-Gonz&aacute;lez MA, Salas-Salvad&oacute; J, Estruch R, Corella D, Fit&oacute"
-        }
-      ],
-      "mesh_terms": [
-        "Cardiovascular Diseases",
-        "Diet, Mediterranean",
-        "Evidence-Based Medicine",
-        "Gene-Environment Interaction",
-        "Genetic Predisposition to Disease",
-        "Health Status",
-        "Humans",
-        "Myocardial Infarction",
-        "Phenotype",
-        "Primary Prevention",
-        "Prognosis",
-        "Protective Factors",
-        "Randomized Controlled Trials as Topic",
-        "Risk Assessment",
-        "Risk Factors",
-        "Risk Reduction Behavior",
-        "Stroke",
-        "Time Factors"
-      ],
-      "keywords": [
-        "Atrial fibrillation",
-        "Dietary intervention",
-        "Mediterranean diet",
-        "Peripheral artery disease",
-        "Primary prevention",
-        "Randomized trials",
-        "Stroke",
-        "Type-2 diabetes"
-      ],
-      "pub_types": [
-        "Journal Article",
-        "Research Support, Non-U.S. Gov't",
-        "Review"
-      ],
-      "cited_pmids_in_hub": [],
-      "abstract_length": 1652
     },
     "26106223": {
       "pmid": "26106223",
@@ -5591,8 +5577,8 @@
       "year": "2015",
       "doi": "10.2337/dc15-1419",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5321245",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -5698,8 +5684,8 @@
       "year": "2016",
       "doi": "10.1038/nrrheum.2015.169",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC4809675",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -5770,8 +5756,8 @@
       "year": "2016",
       "doi": "10.1007/s11892-016-0727-5",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5127166",
       "dashboard_locations": [
         {
           "file": "build_treg_neuropathy.py",
@@ -5954,8 +5940,8 @@
       "year": "2016",
       "doi": "10.1371/journal.pmed.1002139",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5058548",
       "dashboard_locations": [
         {
           "file": "build_immunomod_lada.py",
@@ -6009,8 +5995,8 @@
       "year": "2016",
       "doi": "10.1124/jpet.116.236067",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5118642",
       "dashboard_locations": [
         {
           "file": "build_gap_synthesis.py",
@@ -6041,8 +6027,8 @@
       "year": "2017",
       "doi": "10.1007/s00125-016-4157-3",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5884445",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6176,8 +6162,8 @@
       "year": "2017",
       "doi": "10.1016/j.cell.2016.12.012",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5268070",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6319,8 +6305,8 @@
       "year": "2017",
       "doi": "10.1016/j.cell.2017.02.004",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5394987",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6365,8 +6351,8 @@
       "year": "2017",
       "doi": "10.1007/s00125-017-4226-2",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5907633",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6469,8 +6455,8 @@
       "year": "2017",
       "doi": "10.1016/j.cell.2017.04.001",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5546324",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6556,8 +6542,8 @@
       "year": "2017",
       "doi": "10.1038/nrendo.2017.80",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5777172",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6650,8 +6636,8 @@
       "year": "2017",
       "doi": "10.1007/s00125-017-4342-z",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5552828",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6782,8 +6768,8 @@
       "year": "2018",
       "doi": "10.1016/j.healthplace.2018.01.004",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7737672",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -6981,8 +6967,8 @@
       "year": "2018",
       "doi": "10.1007/s00125-018-4605-3",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6445455",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -7544,8 +7530,8 @@
       "year": "2018",
       "doi": "10.1016/j.cmet.2018.04.010",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC5990470",
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
@@ -7650,8 +7636,8 @@
       "year": "2018",
       "doi": "10.1038/s41591-018-0089-4",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6092963",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -7767,8 +7753,8 @@
       "year": "2019",
       "doi": "10.1056/NEJMoa1809798",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6587584",
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
@@ -8007,8 +7993,8 @@
       "year": "2019",
       "doi": "10.3389/fphys.2019.00148",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6435959",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -8057,8 +8043,8 @@
       "year": "2019",
       "doi": "10.1038/s41577-019-0165-0",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7807242",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -8228,8 +8214,8 @@
       "year": "2019",
       "doi": "10.1056/NEJMoa1900906",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6993875",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -8343,8 +8329,8 @@
       "year": "2019",
       "doi": "10.2337/dci19-0028",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6973648",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -8389,8 +8375,8 @@
       "year": "2019",
       "doi": "10.1056/NEJMoa1902226",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6776880",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -8461,8 +8447,8 @@
       "year": "2019",
       "doi": "10.7150/ijbs.29680",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6535781",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -8577,8 +8563,8 @@
       "year": "2019",
       "doi": "10.1038/s41591-019-0495-2",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6699990",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -8657,8 +8643,8 @@
       "year": "2018",
       "doi": "10.1038/s41746-018-0040-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6550188",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -8689,8 +8675,8 @@
       "year": "2019",
       "doi": "10.1056/NEJMoa1907863",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7076915",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -8836,8 +8822,8 @@
       "year": "2020",
       "doi": "10.2991/jegh.k.191028.001",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7310804",
       "dashboard_locations": [
         {
           "file": "build_cart_access.py",
@@ -9234,8 +9220,8 @@
       "year": "2021",
       "doi": "10.1111/ajt.16174",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9074710",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -9384,8 +9370,8 @@
       "year": "2020",
       "doi": "10.1007/s00125-020-05227-z",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7476912",
       "dashboard_locations": [
         {
           "file": "build_lada_model.py",
@@ -9436,8 +9422,8 @@
       "year": "2020",
       "doi": "10.2337/dbi20-0017",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7809717",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -9534,8 +9520,8 @@
       "year": "2020",
       "doi": "10.1093/ndt/gfaa234",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7538235",
       "dashboard_locations": [
         {
           "file": "audit_baseline_citations.py",
@@ -9622,8 +9608,8 @@
       "year": "2019",
       "doi": "10.1080/23808993.2019.1634471",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7500484",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -9654,8 +9640,8 @@
       "year": "2020",
       "doi": "10.2337/dci20-0053",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7783927",
       "dashboard_locations": [
         {
           "file": "build_health_equity.py",
@@ -9801,8 +9787,8 @@
       "year": "2021",
       "doi": "10.1007/s00125-021-05391-w",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8012332",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -9847,8 +9833,8 @@
       "year": "2021",
       "doi": "10.1016/j.molmet.2021.101193",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7973249",
       "dashboard_locations": [
         {
           "file": "audit_trial_phase.py",
@@ -9900,8 +9886,8 @@
       "year": "2021",
       "doi": "10.2337/dc20-2684",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7985421",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -9986,51 +9972,6 @@
       ],
       "abstract_length": 1558
     },
-    "34021020": {
-      "pmid": "34021020",
-      "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
-      "journal": "Diabetes Care",
-      "year": "2021",
-      "doi": "10.2337/dc21-0318",
-      "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
-      "dashboard_locations": [
-        {
-          "file": "build_immunomod_lada.py",
-          "line": 74,
-          "context": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (321 randomized, 57 sites; interim on 174 evaluable at 15 months, HLA DR3-DQ2 enrich"
-        },
-        {
-          "file": "build_nutrition_lada.py",
-          "line": 895,
-          "context": "<div class=\"reference-meta\">Ludvigsson J et al. &ldquo;Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplem"
-        }
-      ],
-      "mesh_terms": [
-        "C-Peptide",
-        "Diabetes Mellitus, Type 1",
-        "Dietary Supplements",
-        "Double-Blind Method",
-        "Glutamate Decarboxylase",
-        "Humans",
-        "Vitamin D"
-      ],
-      "keywords": [],
-      "pub_types": [
-        "Clinical Trial, Phase II",
-        "Journal Article",
-        "Multicenter Study",
-        "Randomized Controlled Trial",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "cited_pmids_in_hub": [
-        "19940299",
-        "18843118",
-        "32754804"
-      ],
-      "abstract_length": 1842
-    },
     "34180979": {
       "pmid": "34180979",
       "title": "The β Cell in Diabetes: Integrating Biomarkers With Functional Measures.",
@@ -10095,8 +10036,8 @@
       "year": "2021",
       "doi": "10.1016/j.cell.2021.06.019",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9020749",
       "dashboard_locations": [
         {
           "file": "build_nutrition_lada.py",
@@ -10194,8 +10135,8 @@
       "year": "2021",
       "doi": "10.2337/cd21-0028",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8329009",
       "dashboard_locations": [
         {
           "file": "build_health_equity.py",
@@ -10225,8 +10166,8 @@
       "year": "2021",
       "doi": "10.1016/j.ecl.2021.09.001",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8597930",
       "dashboard_locations": [
         {
           "file": "audit_citation_load_bearing.py",
@@ -10513,8 +10454,8 @@
       "year": "2021",
       "doi": "10.1016/j.xcrm.2021.100466",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8714853",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -10560,8 +10501,8 @@
       "year": "2022",
       "doi": "10.1371/journal.pone.0258054",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8856523",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -10613,8 +10554,8 @@
       "year": "2022",
       "doi": "10.3390/biomedicines10020287",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC8869296",
       "dashboard_locations": [
         {
           "file": "build_cart_access.py",
@@ -10661,8 +10602,8 @@
       "year": "2022",
       "doi": "10.4103/jpgm.JPGM_301_21",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9196294",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -10709,8 +10650,8 @@
       "year": "2022",
       "doi": "10.1038/s41591-022-01803-5",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9117147",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -10920,8 +10861,8 @@
       "year": "2022",
       "doi": "10.1038/s41588-022-01058-3",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9179018",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -10954,8 +10895,8 @@
       "year": "2022",
       "doi": "10.3390/ijms23095104",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9105075",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -10998,8 +10939,8 @@
       "year": "2022",
       "doi": "10.1210/clinem/dgac343",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9721339",
       "dashboard_locations": [
         {
           "file": "build_immunomod_lada.py",
@@ -11094,8 +11035,8 @@
       "year": "2022",
       "doi": "10.3390/jcm11143977",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9321768",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_08.py",
@@ -11121,8 +11062,8 @@
       "year": "2022",
       "doi": "10.1021/acscentsci.2c00385",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9336153",
       "dashboard_locations": [
         {
           "file": "audit_markdown_citations.py",
@@ -11193,8 +11134,8 @@
       "year": "2022",
       "doi": "10.1186/s12916-022-02501-2",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9479279",
       "dashboard_locations": [
         {
           "file": "build_trial_equity_mapper.py",
@@ -11521,8 +11462,8 @@
       "year": "2022",
       "doi": "10.1038/s41588-022-01233-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9729111",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -11591,8 +11532,8 @@
       "year": "2022",
       "doi": "10.1159/000527411",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC9834642",
       "dashboard_locations": [
         {
           "file": "audit_pubtype_title_disagreement.py",
@@ -11736,8 +11677,8 @@
       "year": "2023",
       "doi": "10.1016/S2213-8587(23)00082-7",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10388704",
       "dashboard_locations": [
         {
           "file": "audit_gap_subject_coverage.py",
@@ -11830,8 +11771,8 @@
       "year": "2023",
       "doi": "10.4239/wjd.v14.i4.424",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10130900",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -12056,8 +11997,8 @@
       "year": "2023",
       "doi": "10.3389/fendo.2023.1175198",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10200948",
       "dashboard_locations": [
         {
           "file": "build_gka_lada.py",
@@ -12111,8 +12052,8 @@
       "year": "2023",
       "doi": "10.7150/thno.80435",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10283058",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -12258,8 +12199,8 @@
       "year": "2023",
       "doi": "10.1016/S0140-6736(23)01301-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10364581",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -12335,8 +12276,8 @@
       "year": "2023",
       "doi": "10.3389/ti.2023.11367",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10285771",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -12603,8 +12544,8 @@
       "year": "2023",
       "doi": "10.1016/j.ebiom.2023.104674",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10328805",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -12695,8 +12636,8 @@
       "year": "2023",
       "doi": "10.4103/ijem.ijem_122_23",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10424102",
       "dashboard_locations": [
         {
           "file": "verify_2026_09_10_repairs.py",
@@ -13102,8 +13043,8 @@
       "year": "2024",
       "doi": "10.1155/2024/9847476",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC10791299",
       "dashboard_locations": [
         {
           "file": "test_markdown_citation_gate.py",
@@ -13316,8 +13257,8 @@
       "year": "2024",
       "doi": "10.1111/1753-0407.13563",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11116947",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -13493,8 +13434,8 @@
       "year": "2024",
       "doi": "10.1590/2175-8239-JBN-2023-0187en",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11539899",
       "dashboard_locations": [
         {
           "file": "reconcile_paper_index.py",
@@ -13533,8 +13474,8 @@
       "year": "2024",
       "doi": "10.3389/fpubh.2024.1412874",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11545964",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -13577,8 +13518,8 @@
       "year": "2024",
       "doi": "10.1136/bmjopen-2024-091597",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11605811",
       "dashboard_locations": [
         {
           "file": "audit_path_count_staleness.py",
@@ -13680,8 +13621,8 @@
       "year": "2024",
       "doi": "10.2147/DMSO.S474280",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11612564",
       "dashboard_locations": [
         {
           "file": "build_gka_pricing.py",
@@ -13721,8 +13662,8 @@
       "year": "2024",
       "doi": "10.3389/fendo.2024.1485464",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11615876",
       "dashboard_locations": [
         {
           "file": "build_nutrition_beta.py",
@@ -13828,8 +13769,8 @@
       "year": "2025",
       "doi": "10.1136/bmj-2024-081820",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11752448",
       "dashboard_locations": [
         {
           "file": "rebuild_research_dashboard.py",
@@ -13880,8 +13821,8 @@
       "year": "2025",
       "doi": "10.3389/fimmu.2025.1539645",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11794815",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_04.py",
@@ -13978,8 +13919,8 @@
       "year": "2025",
       "doi": "10.1038/s41467-025-56695-z",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC11876343",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -14128,8 +14069,8 @@
       "year": "2025",
       "doi": "10.2337/db25-0066",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12278794",
       "dashboard_locations": [
         {
           "file": "build_gap_deep_dives.py",
@@ -14174,8 +14115,8 @@
       "year": "2025",
       "doi": "10.1007/s11892-025-01587-1",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12078402",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -14215,8 +14156,8 @@
       "year": "2025",
       "doi": "10.1111/dom.16488",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12169077",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -14390,8 +14331,8 @@
       "year": "2025",
       "doi": "10.3390/ph18060927",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12196043",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -14428,8 +14369,8 @@
       "year": "2025",
       "doi": "10.1186/s12916-025-04201-z",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12211534",
       "dashboard_locations": [
         {
           "file": "_close_run_2026_08_28.py",
@@ -14485,8 +14426,8 @@
       "year": "2025",
       "doi": "10.3390/jcm14134606",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12250023",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -14518,8 +14459,8 @@
       "year": "2025",
       "doi": "10.1007/s00125-025-06490-8",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12423256",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_islet.py",
@@ -14604,8 +14545,8 @@
       "year": "2025",
       "doi": "10.4239/wjd.v16.i7.107335",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12278081",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -14732,8 +14673,8 @@
       "year": "2025",
       "doi": "10.2337/db24-1130",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12585157",
       "dashboard_locations": [
         {
           "file": "audit_trial_phase.py",
@@ -14784,8 +14725,8 @@
       "year": "2025",
       "doi": "10.1002/alz.70639",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12404899",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -14828,8 +14769,8 @@
       "year": "2025",
       "doi": "10.2337/dc25-0562",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12635883",
       "dashboard_locations": [
         {
           "file": "build_nutrition_beta.py",
@@ -14865,8 +14806,8 @@
       "year": "2026",
       "doi": "10.1038/s41591-025-04106-7",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12823385",
       "dashboard_locations": [
         {
           "file": "audit_verdict_key_agreement.py",
@@ -14934,8 +14875,8 @@
       "year": "2025",
       "doi": "10.3389/fendo.2025.1708565",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12675206",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -15013,8 +14954,8 @@
       "year": "2025",
       "doi": "10.3389/fendo.2025.1740102",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12815805",
       "dashboard_locations": [
         {
           "file": "build_gap_synthesis.py",
@@ -15156,8 +15097,8 @@
       "year": "2026",
       "doi": "10.3390/cells15050484",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12984146",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -15203,8 +15144,8 @@
       "year": "2026",
       "doi": "10.1177/14791641261418934",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13033078",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_20.py",
@@ -15364,8 +15305,8 @@
       "year": "2026",
       "doi": "10.3389/fimmu.2026.1763798",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13057554",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_04.py",
@@ -15440,8 +15381,8 @@
       "year": "2026",
       "doi": "10.1007/s00125-026-06721-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13236778",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_31.py",
@@ -15472,8 +15413,8 @@
       "year": "2026",
       "doi": "10.1111/dom.70783",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13243956",
       "dashboard_locations": [
         {
           "file": "audit_trial_phase.py",
@@ -15525,8 +15466,8 @@
       "year": "2026",
       "doi": "10.1038/s41467-026-71798-x",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13287472",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_07.py",
@@ -15577,8 +15518,8 @@
       "year": "2026",
       "doi": "10.1186/s12865-026-00823-x",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13134314",
       "dashboard_locations": [
         {
           "file": "audit_trial_phase.py",
@@ -15649,8 +15590,8 @@
       "year": "2026",
       "doi": "10.2337/dc26-0632",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13385935",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_31.py",
@@ -16022,8 +15963,8 @@
       "year": "2026",
       "doi": "10.3389/fimmu.2026.1909238",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC13534801",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_07.py",
@@ -16728,8 +16669,8 @@
       "year": "2011",
       "doi": "10.2337/db10-1663",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC3292316",
       "dashboard_locations": [],
       "mesh_terms": [
         "Animals",
@@ -16969,8 +16910,8 @@
       "year": "2018",
       "doi": "10.4093/dmj.2017.0091",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6015965",
       "dashboard_locations": [],
       "mesh_terms": [],
       "keywords": [
@@ -17000,8 +16941,8 @@
       "year": "2018",
       "doi": "10.2337/dci18-0033",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC6245208",
       "dashboard_locations": [],
       "mesh_terms": [
         "Adult",
@@ -17042,8 +16983,8 @@
       "year": "2020",
       "doi": "10.1038/s41467-020-15983-6",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC7195385",
       "dashboard_locations": [],
       "mesh_terms": [
         "Aged",
@@ -17344,8 +17285,8 @@
       "year": "2025",
       "doi": "10.1016/j.omton.2025.200980",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12022644",
       "dashboard_locations": [],
       "mesh_terms": [],
       "keywords": [
@@ -17374,8 +17315,8 @@
       "year": "2025",
       "doi": "10.7759/cureus.90776",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12451038",
       "dashboard_locations": [],
       "mesh_terms": [],
       "keywords": [
@@ -17411,8 +17352,8 @@
       "year": "2026",
       "doi": "10.1007/s40123-026-01322-3",
       "has_abstract": true,
-      "has_fulltext": false,
-      "pmcid": "",
+      "has_fulltext": true,
+      "pmcid": "PMC12901800",
       "dashboard_locations": [],
       "mesh_terms": [],
       "keywords": [

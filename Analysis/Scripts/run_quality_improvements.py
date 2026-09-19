@@ -565,6 +565,42 @@ SCRIPTS = {
     'computedcite': ('audit_computed_value_citations.py',
                      'Auditing citations attached to locally computed values '
                      '(REPORT ONLY)'),
+    # Added 2026-09-19. Every other citation gate in this pipeline scores a PMID
+    # against the PROSE beside it. Both defects found today passed all of them
+    # because prose and PMID agreed with each other and only the SUBJECT OF THE
+    # RECORD disagreed:
+    #   build_generic_drug_catalog.py Spironolactone <- PMID 33264825, which is
+    #   FIDELIO-DKD, a FINERENONE trial (branded, on-patent - it does not even
+    #   meet this catalog's off-patent inclusion rule). The row's reference text
+    #   said "FIDELIO-DKD (Bakris et al. 2020)", which is exactly what the PMID
+    #   is, so title, author, journal and year gates were all correctly green.
+    #   build_generic_drug_catalog.py Minocycline <- PMID 25714673, a mouse
+    #   brain-inflammation study with no minocycline in it.
+    # Ships in --gate on its first day, against this repository's usual
+    # measure-first convention, because it fired on two live defects and went
+    # green on the repair inside one run (ABSENT 2 -> 0). Its proof is live
+    # catches, not a fixture.
+    # NOTE the 11 UNCHECKABLE citations it also reports: PMIDs this catalog
+    # publishes that have never been ingested, so nothing here has ever held
+    # text to check them against. Those are a backlog, not a pass.
+    'catalogentity': ('audit_catalog_entity_agreement.py',
+                      'Gating on catalog rows whose cited paper never mentions '
+                      'the drug the row is about',
+                      ('--gate',)),
+    # Added 2026-09-19. Every other gate here checks the CONTENT of an
+    # assertion. This one checks whether a data file agrees with ITSELF.
+    # The bug that forced it: index.json said pmc_available=174 and
+    # fulltext_fetched=150 while 0 of 347 records carried has_fulltext and 1
+    # carried a pmcid, for 33+ days, because a map was keyed by int and read by
+    # str. 150 full texts were on disk the whole time. The published Paper
+    # Library rendered "PMC Available: 174" over 347 rows that all read
+    # "Abstract" or "Metadata only", and nothing failed.
+    # Ships in --gate: proven in both directions the day it was written (fires
+    # on the pre-repair index, clean on the repaired one).
+    'indexinvariants': ('audit_index_field_invariants.py',
+                        'Gating on paper-index summary counts that disagree '
+                        'with the records they summarise',
+                        ('--gate',)),
 }
 
 def run_script(name, desc, script_args=()):

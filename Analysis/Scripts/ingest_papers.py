@@ -265,7 +265,26 @@ def convert_pmids_to_pmcids(pmids):
                 pmid = record.get('pmid', '')
                 pmcid = record.get('pmcid', '')
                 if pmid and pmcid:
-                    pmcid_map[pmid] = pmcid
+                    # str() ADDED 2026-09-19 - this was the whole bug.
+                    # The NCBI ID converter returns pmid as a JSON NUMBER, so
+                    # this map was keyed by int while build_index looks it up
+                    # with a str pmid. Every per-paper lookup missed, for at
+                    # least 33 days (the 2026-08-17 index has the same shape):
+                    #   metadata.pmc_available = len(pmcid_map) = 174   CORRECT
+                    #   every paper record's 'pmcid'                    ''
+                    #   every paper record's 'has_fulltext'             False
+                    # fetch_all_fulltext() iterates this map directly, so the
+                    # DOWNLOADS always worked - 150 full texts are on disk. Only
+                    # the index lookup failed, which is why the repository held
+                    # 150 full texts while its index said it held none.
+                    # Downstream: the Paper Library dashboard showed "PMC
+                    # Available: 174" above 347 rows that all read "Abstract" or
+                    # "Metadata only"; its Full Text filter matched nothing; and
+                    # the PMCID->PMID dedup miss of 2026-09-03 (PMC12211534
+                    # carried 4 days as a novel find while already in corpus as
+                    # PMID 40598585, whose full text was on disk as
+                    # PMC12211534.json) has the same single cause.
+                    pmcid_map[str(pmid)] = pmcid
         except (json.JSONDecodeError, KeyError):
             pass
 
@@ -436,7 +455,10 @@ def build_index(verified_pmids, abstract_data, pmcid_map, fulltext_pmcids):
             'doi': verified_pmids[pmid]['doi'],
             'has_abstract': False,
             'has_fulltext': False,
-            'pmcid': pmcid_map.get(pmid, ''),
+            # str(pmid) defensively: the map is keyed by str since 2026-09-19,
+            # but a silent type mismatch here cost 33+ days of empty pmcid
+            # fields, so both ends now coerce.
+            'pmcid': pmcid_map.get(str(pmid), ''),
             'dashboard_locations': verified_pmids[pmid].get('locations', []),
         }
 
@@ -466,7 +488,7 @@ def build_index(verified_pmids, abstract_data, pmcid_map, fulltext_pmcids):
                 pass
 
         # Check if full text exists
-        pmcid = pmcid_map.get(pmid, '')
+        pmcid = pmcid_map.get(str(pmid), '')
         if pmcid:
             ft_path = os.path.join(fulltext_dir, f'{pmcid}.json')
             if os.path.exists(ft_path):
