@@ -10334,6 +10334,12 @@
       "priority": 2,
       "added": "2026-09-19",
       "target": "GIVE THE OTHER 19 FLAGGED PAPERS A MEMBERSHIP CLASS BEFORE THEY DISAPPEAR TOO. 23 papers are FLAGGED in agent_state; 4 have already been evicted as FLAGGED_UNCLASSIFIED. Every remaining flag without a membership_class is a paper one reconcile run away from leaving the corpus. Classify them explicitly, or implement option (a) above."
+    },
+    {
+      "type": "fix_pipeline",
+      "priority": 2,
+      "added": "2026-09-19",
+      "target": "PUT THE LOCK RENAME AT THE TOP OF THE RUN AND STOP CARRYING GIT_INDEX_FILE. Proven 2026-09-19: renaming .git/HEAD.lock and .git/index.lock (unlink is forbidden on the OneDrive mount, rename is not) lets ordinary git add + git commit work with the default index. Fold two mv lines into RUN_PIPELINE_AND_PUSH.ps1 and the run preamble, drop the GIT_INDEX_FILE workaround, and sweep the 203 accumulated lock-debris files in .git. Then retire the priority-0 SANDBOX FAILURE queue items, which describe a blocker that is now understood - every one of them except the PUSH item, which is a credentials problem and unaffected."
     }
   ],
   "run_history": [
@@ -12450,7 +12456,10 @@
         "41780000"
       ],
       "queue_items_resolved": 1,
-      "queue_items_added": 8
+      "queue_items_added": 8,
+      "pushed": false,
+      "push_blocker": "git push: no credential helper in sandbox (\"could not read Username for https://github.com\"). Commit itself succeeded: 9b6b6a3, 114 ahead.",
+      "commit": "9b6b6a3"
     }
   ],
   "topic_checks": {
@@ -14878,6 +14887,14 @@
         "metadata.total_indexed repaired 347 -> 345; the invariant gate now passes."
       ],
       "NOT_applied": "The adjudication semantics were NOT changed. Whether FLAGGED with no class should mean EXCLUDED is a corpus-membership decision, not a bug fix, and reversing it unattended would silently re-admit four papers - including one flagged as a protocol and one whose flag has never been read. Queued for a human call."
+    },
+    {
+      "date": "2026-09-19",
+      "finding": "THE GIT BLOCK WAS NEVER A MOUNT LIMITATION ON WRITING. IT WAS TWO STALE LOCK FILES, AND RENAMING THEM MAKES ORDINARY git commit WORK.",
+      "detail": "The 2026-09-16 workaround (GIT_INDEX_FILE outside the mount) treats the symptom. What actually blocked today was .git/HEAD.lock (left 2026-09-18) and .git/index.lock (left 2026-09-17). unlink is forbidden on this OneDrive mount but RENAME is not, so `mv .git/HEAD.lock .git/HEAD.lock.stale` and the same for index.lock cleared both, after which a plain `git add -A` + `git commit` with the DEFAULT index succeeded: commit 9b6b6a3, 127 files, porcelain 0. GIT_INDEX_FILE was not needed and in fact masked the real blocker - with it set, `git add` succeeded and `git commit` still failed, because the lock git could not take was HEAD.lock, not the index.",
+      "evidence_of_how_long": ".git now holds 203 renamed lock files dating back to 2026-04-10 - HEAD.lock.gone2, index.lock.delete-me, index.lock.evicted4, and so on. Every run since April has fought this and left debris. The recurring \"SANDBOX FAILURE\" queue items at priority 0 describe this.",
+      "applied": "Both locks renamed at the start and the fresh ones left by today's commit renamed again at the end, so tomorrow starts clean.",
+      "still_blocked": "PUSH. `git push` fails with \"could not read Username for https://github.com: No such device or address\" - no credential helper in the sandbox. That is a credentials problem, NOT the lock problem, and it is the one thing here that genuinely needs a human. 114 commits unpushed; origin/main still 2026-04-20."
     }
   ],
   "combination_validation_pending": [
@@ -15024,7 +15041,7 @@
     "2026-09-18_a_gate_with_no_live_positive": "THE COMPUTED-VALUE GATE WAS BUILT AFTER ITS ONLY LIVE POSITIVE HAD ALREADY BEEN REPAIRED, WHICH MEANS A CLEAN RUN PROVES NOTHING. The 2026-09-13 defect (build_lada_diagnostic_model.py:763-766, a PMID inside the same f-string as an interpolated computed cost) was fixed before audit_computed_value_citations.py existed. A gate that has only ever returned zero is indistinguishable from a gate that does not work. Rather than trust the zero, the original defect was reproduced verbatim in _tmp_gate_known_positive.py, which the audit's own SKIP_PREFIXES excludes from normal runs and which is reachable only by calling scan_file() on it directly. Both lines are reported COMPUTED, confirmed 2026-09-18. EVERY GATE ADDED HERE FROM NOW ON SHOULD SHIP WITH A FIXTURE IT MUST CATCH, not just a live count it happens to clear.",
     "2026-09-18_measure_first_earned_its_keep_again": "THE COMPUTED-VALUE GATE'S FIRST MEASUREMENT WAS 13 HITS AND ALL 13 WERE FALSE. The first implementation asked only whether a PMID appeared anywhere in the same f-string - but the builders here write the ENTIRE page as one f-string, so {COLORS['bg']} at the top was flagged against a PMID four thousand characters below. Adding a 180-character proximity window took it to 4. Excluding verify_/check_/reconcile_ scripts, which print counts ABOUT PMIDs (f\"{len(live_bad)} LIVE link(s) to PMID 34763823 remain\") and are the opposite of the defect, took it to 1. Had this shipped as a gate on the first measurement it would have failed the pipeline on 13 non-defects and been switched off within a day. Standing instruction confirmed for the fourth time: MEASURE AND REPORT THE HIT COUNT BEFORE WIRING A GATE IN.",
     "2026-09-18_a_gate_that_can_never_go_green": "The surname gate's four remaining mismatches after today's repairs were ALL in frozen archive - dated ACTION_REQUIRED and iterate_run_report markdown, and a _close_run script - where the 'mismatch' is this repository quoting a defect it had just fixed. One is literally a fenced HTML block showing the bad anchor. Those files are history and must not be rewritten; editing a dated run report to clear a gate is the failure this repo audits for. But left in the MISMATCH bucket they guarantee the count never reaches zero, and a gate that can never go green is a gate that gets ignored. Resolved with a SURFACE SPLIT, not an exclusion: every finding is still printed and still written to the JSON; only the headline count and the --gate exit code are scoped to the live publishing surface. Deliberately NOT done: adding loose strings to CORRECTION_MARKERS. The note at the top of that tuple warns against exactly that, because a marker silences a class of finding everywhere, whereas a surface split silences nothing.",
-    "2026-09-19": "A citation gate that only compares a PMID to the words next to it cannot see a wrong-SUBJECT citation, because the words next to it were written from the same wrong paper. Both 2026-09-19 defects were internally consistent and externally false. The check that works asks a question neither the prose nor the PMID can answer alone: does the cited paper mention the thing this record is ABOUT. Second lesson, from the index bug: a summary count and the records it summarises are two independent assertions about the same fact, and this repository had never compared any pair of them. A lookup that silently misses produces well-formed empty fields and a confident metadata line, which is indistinguishable from success unless something checks the file against itself. Third lesson, from the eviction: a gate written for one bug caught a different and worse one within an hour, because arithmetic does not care what you were looking for. The cheapest checks in this repository have consistently been the ones that compare a file to itself."
+    "2026-09-19": "A citation gate that only compares a PMID to the words next to it cannot see a wrong-SUBJECT citation, because the words next to it were written from the same wrong paper. Both 2026-09-19 defects were internally consistent and externally false. The check that works asks a question neither the prose nor the PMID can answer alone: does the cited paper mention the thing this record is ABOUT. Second lesson, from the index bug: a summary count and the records it summarises are two independent assertions about the same fact, and this repository had never compared any pair of them. A lookup that silently misses produces well-formed empty fields and a confident metadata line, which is indistinguishable from success unless something checks the file against itself. Third lesson, from the eviction: a gate written for one bug caught a different and worse one within an hour, because arithmetic does not care what you were looking for. The cheapest checks in this repository have consistently been the ones that compare a file to itself. Fourth: a workaround that makes the first command succeed can hide which command was actually failing. Three runs treated this as an index-lock problem because GIT_INDEX_FILE made `git add` work; the lock git could not take was HEAD.lock."
   },
   "last_path_validation_batch": "2026-08-28",
   "watch_items_pending_pmid": [

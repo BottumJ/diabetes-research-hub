@@ -80,9 +80,29 @@ identity verified against the live PubMed record. Three constraints that must ho
 - A newly approved comparator changes what counts as an unmet need for the NLRP3 /
   diabetic-kidney paths.
 
-### 1d. Push. 114 commits unpushed; `origin/main` still at 2026-04-20 (152 days).
+### 1d. Push — and it is now the *only* thing that needs you for git
 
-Unchanged from the last five reports. `publishgate` fails on purpose until this is done.
+114 commits unpushed; `origin/main` still at 2026-04-20 (152 days). `publishgate` fails on
+purpose until this is done.
+
+**The commit half is solved, and it was never a write limitation.** Today's commit (`9b6b6a3`,
+127 files, porcelain 0) went through with a plain `git add -A && git commit` using the
+*default* index. What had been blocking was two **stale lock files** — `.git/HEAD.lock` (left
+2026-09-18) and `.git/index.lock` (left 2026-09-17). `unlink` is forbidden on this OneDrive
+mount but **rename is not**, so `mv .git/HEAD.lock .git/HEAD.lock.stale` clears it.
+
+The 2026-09-16 `GIT_INDEX_FILE` workaround was treating the wrong lock, and actively hid the
+real one: with it set, `git add` succeeded and `git commit` still failed, because the lock git
+could not take was `HEAD.lock`. Three runs diagnosed this as an index problem for that reason.
+
+`.git` now holds **203 renamed lock files** going back to 2026-04-10 (`HEAD.lock.gone2`,
+`index.lock.delete-me`, `index.lock.evicted4`…). Every run since April has fought this and
+left debris. Queued: fold the two `mv` lines into the run preamble, drop `GIT_INDEX_FILE`,
+sweep the debris, and retire the priority-0 "SANDBOX FAILURE" queue items — all but this one.
+
+**What still needs you:** `git push` fails with *"could not read Username for
+https://github.com: No such device or address"*. No credential helper in the sandbox. That is
+credentials, not locks, and no amount of agent work reaches it.
 
 ---
 
