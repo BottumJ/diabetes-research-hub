@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "papers_processed": 59,
-    "total_extractions": 264,
+    "papers_processed": 60,
+    "total_extractions": 267,
     "extraction_types": {
-      "dose_response": 198,
+      "dose_response": 200,
       "odds_ratio": 29,
       "survival_graft": 3,
-      "remission": 16,
+      "remission": 17,
       "hba1c_change": 6,
       "hazard_ratio": 7,
       "autoantibody": 2,
@@ -34,8 +34,8 @@
       "enabled": true,
       "added": "2026-08-19",
       "rule": "collapse identical normalized matched_text within (pmid, data_type); repeat count preserved in the \"occurrences\" field",
-      "restatements_collapsed": 72,
-      "papers_affected": 18
+      "restatements_collapsed": 73,
+      "papers_affected": 19
     }
   },
   "dedupe_log": [
@@ -156,6 +156,13 @@
       "data_type": "dose_response",
       "raw": 2,
       "unique": 1,
+      "collapsed": 1
+    },
+    {
+      "pmid": "34021020",
+      "data_type": "dose_response",
+      "raw": 3,
+      "unique": 2,
       "collapsed": 1
     },
     {
@@ -4009,6 +4016,48 @@
         ]
       },
       {
+        "pmid": "34021020",
+        "pmcid": "PMC8323180",
+        "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+        "year": "2021",
+        "journal": "Diabetes Care",
+        "matched_text": "4 μg GAD",
+        "values": [
+          "4",
+          "μg",
+          "GAD"
+        ],
+        "context": "ting serum C-peptide >0.12 nmol/L were recruited. Participants were randomized to receive either three intralymphatic injections (1 month apart) with 4 μg GAD-alum and oral vitamin D (2,000 IE daily for 120 days) or placebo. The primary outcome was the change in stimulated serum C-peptide (mean area under t",
+        "occurrences": 2,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
+        "pmid": "34021020",
+        "pmcid": "PMC8323180",
+        "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+        "year": "2021",
+        "journal": "Diabetes Care",
+        "matched_text": "4 μg Diamyd",
+        "values": [
+          "4",
+          "μg",
+          "Diamyd"
+        ],
+        "context": "chedule of administration. Matching placebo used for GAD-alum was aluminum only. Study Treatments and Procedures Three intralymphatic injections with 4 μg Diamyd on days 30, 60, and 90 and 2,000 IE oral vitamin D daily for 4 months (from day 1 through 120) if the vitamin D serum level was <100 nmol/L (40 ng/mL",
+        "occurrences": 1,
+        "gap_relevance": [
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      {
         "pmid": "35028608",
         "pmcid": "PMC8714853",
         "title": "Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.",
@@ -5468,6 +5517,24 @@
           8,
           9
         ]
+      },
+      {
+        "pmid": "34021020",
+        "pmcid": "PMC8323180",
+        "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+        "year": "2021",
+        "journal": "Diabetes Care",
+        "matched_text": "remission (IDAA1c ≤9; 78.6%",
+        "values": [
+          "78.6"
+        ],
+        "context": "C-peptide decline continued more rapidly up to 15 months in the placebo group than in the actively treated group. A higher proportion of actively treated patients with HLA DR3-DQ2 remained in partial remission (IDAA1c ≤9; 78.6% in active [CI 59.0–91.7] and 40.0% in placebo [CI 16.3–67.7]; P = 0.0310) and maintained a stimulated maximum C-peptide >0.2 nmol/L (96.6% in active [CI 82.2–99.9] and 70.6% in placebo [CI 44.0–89.7]",
+        "occurrences": 1,
+        "gap_relevance": [
+          7,
+          8,
+          9
+        ]
       }
     ],
     "hba1c_change": [
@@ -6314,6 +6381,17 @@
         "dose_response"
       ],
       "total_extractions": 1
+    },
+    "34021020": {
+      "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+      "year": "2021",
+      "journal": "Diabetes Care",
+      "pmcid": "PMC8323180",
+      "extraction_types": [
+        "dose_response",
+        "remission"
+      ],
+      "total_extractions": 3
     },
     "35028608": {
       "title": "Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.",
@@ -7625,6 +7703,20 @@
           "year": "2021",
           "value": "800 mg TTP399",
           "context": "ndomly assigned 85 participants receiving multiple daily injections of insulin or CSII. In both parts 1 and 2, participants were randomly assigned to 800 mg TTP399 or matched placebo (fully blinded) and treated for 12 weeks. The primary end point was change in HbA1c from baseline to week 12. RESULTS"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg GAD",
+          "context": "ting serum C-peptide >0.12 nmol/L were recruited. Participants were randomized to receive either three intralymphatic injections (1 month apart) with 4 μg GAD-alum and oral vitamin D (2,000 IE daily for 120 days) or placebo. The primary outcome was the change in stimulated serum C-peptide (mean area"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg Diamyd",
+          "context": "chedule of administration. Matching placebo used for GAD-alum was aluminum only. Study Treatments and Procedures Three intralymphatic injections with 4 μg Diamyd on days 30, 60, and 90 and 2,000 IE oral vitamin D daily for 4 months (from day 1 through 120) if the vitamin D serum level was <100 nmol/"
         },
         {
           "pmid": "35028608",
@@ -9063,6 +9155,20 @@
           "context": "ndomly assigned 85 participants receiving multiple daily injections of insulin or CSII. In both parts 1 and 2, participants were randomly assigned to 800 mg TTP399 or matched placebo (fully blinded) and treated for 12 weeks. The primary end point was change in HbA1c from baseline to week 12. RESULTS"
         },
         {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg GAD",
+          "context": "ting serum C-peptide >0.12 nmol/L were recruited. Participants were randomized to receive either three intralymphatic injections (1 month apart) with 4 μg GAD-alum and oral vitamin D (2,000 IE daily for 120 days) or placebo. The primary outcome was the change in stimulated serum C-peptide (mean area"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg Diamyd",
+          "context": "chedule of administration. Matching placebo used for GAD-alum was aluminum only. Study Treatments and Procedures Three intralymphatic injections with 4 μg Diamyd on days 30, 60, and 90 and 2,000 IE oral vitamin D daily for 4 months (from day 1 through 120) if the vitamin D serum level was <100 nmol/"
+        },
+        {
           "pmid": "35028608",
           "title": "Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.",
           "year": "2021",
@@ -9357,6 +9463,13 @@
           "year": "2018",
           "value": "remission (46%",
           "context": "3,450–3,570 kJ/day] formula diet for 3–5 months) followed by gradual reintroduction of food and intensive counseling resulted in 9-kg placebo-adjusted weight loss at 1 year and high rates of diabetes remission (46% vs. 4%; odds ratio [OR] 19.7 [95% CI 7.8, 49.8]) compared with best usual practice. I"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "remission (IDAA1c ≤9; 78.6%",
+          "context": "C-peptide decline continued more rapidly up to 15 months in the placebo group than in the actively treated group. A higher proportion of actively treated patients with HLA DR3-DQ2 remained in partial remission (IDAA1c ≤9; 78.6% in active [CI 59.0–91.7] and 40.0% in placebo [CI 16.3–67.7]; P = 0.0310"
         }
       ],
       "hba1c_change": [
@@ -10611,6 +10724,20 @@
           "context": "ndomly assigned 85 participants receiving multiple daily injections of insulin or CSII. In both parts 1 and 2, participants were randomly assigned to 800 mg TTP399 or matched placebo (fully blinded) and treated for 12 weeks. The primary end point was change in HbA1c from baseline to week 12. RESULTS"
         },
         {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg GAD",
+          "context": "ting serum C-peptide >0.12 nmol/L were recruited. Participants were randomized to receive either three intralymphatic injections (1 month apart) with 4 μg GAD-alum and oral vitamin D (2,000 IE daily for 120 days) or placebo. The primary outcome was the change in stimulated serum C-peptide (mean area"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg Diamyd",
+          "context": "chedule of administration. Matching placebo used for GAD-alum was aluminum only. Study Treatments and Procedures Three intralymphatic injections with 4 μg Diamyd on days 30, 60, and 90 and 2,000 IE oral vitamin D daily for 4 months (from day 1 through 120) if the vitamin D serum level was <100 nmol/"
+        },
+        {
           "pmid": "35028608",
           "title": "Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device.",
           "year": "2021",
@@ -10905,6 +11032,13 @@
           "year": "2018",
           "value": "remission (46%",
           "context": "3,450–3,570 kJ/day] formula diet for 3–5 months) followed by gradual reintroduction of food and intensive counseling resulted in 9-kg placebo-adjusted weight loss at 1 year and high rates of diabetes remission (46% vs. 4%; odds ratio [OR] 19.7 [95% CI 7.8, 49.8]) compared with best usual practice. I"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "remission (IDAA1c ≤9; 78.6%",
+          "context": "C-peptide decline continued more rapidly up to 15 months in the placebo group than in the actively treated group. A higher proportion of actively treated patients with HLA DR3-DQ2 remained in partial remission (IDAA1c ≤9; 78.6% in active [CI 59.0–91.7] and 40.0% in placebo [CI 16.3–67.7]; P = 0.0310"
         }
       ],
       "hba1c_change": [
@@ -12196,6 +12330,20 @@
           "year": "2021",
           "value": "800 mg TTP399",
           "context": "ndomly assigned 85 participants receiving multiple daily injections of insulin or CSII. In both parts 1 and 2, participants were randomly assigned to 800 mg TTP399 or matched placebo (fully blinded) and treated for 12 weeks. The primary end point was change in HbA1c from baseline to week 12. RESULTS"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg GAD",
+          "context": "ting serum C-peptide >0.12 nmol/L were recruited. Participants were randomized to receive either three intralymphatic injections (1 month apart) with 4 μg GAD-alum and oral vitamin D (2,000 IE daily for 120 days) or placebo. The primary outcome was the change in stimulated serum C-peptide (mean area"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "4 μg Diamyd",
+          "context": "chedule of administration. Matching placebo used for GAD-alum was aluminum only. Study Treatments and Procedures Three intralymphatic injections with 4 μg Diamyd on days 30, 60, and 90 and 2,000 IE oral vitamin D daily for 4 months (from day 1 through 120) if the vitamin D serum level was <100 nmol/"
         },
         {
           "pmid": "35028608",
@@ -13629,6 +13777,13 @@
           "year": "2018",
           "value": "remission (46%",
           "context": "3,450–3,570 kJ/day] formula diet for 3–5 months) followed by gradual reintroduction of food and intensive counseling resulted in 9-kg placebo-adjusted weight loss at 1 year and high rates of diabetes remission (46% vs. 4%; odds ratio [OR] 19.7 [95% CI 7.8, 49.8]) compared with best usual practice. I"
+        },
+        {
+          "pmid": "34021020",
+          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+          "year": "2021",
+          "value": "remission (IDAA1c ≤9; 78.6%",
+          "context": "C-peptide decline continued more rapidly up to 15 months in the placebo group than in the actively treated group. A higher proportion of actively treated patients with HLA DR3-DQ2 remained in partial remission (IDAA1c ≤9; 78.6% in active [CI 59.0–91.7] and 40.0% in placebo [CI 16.3–67.7]; P = 0.0310"
         }
       ],
       "hba1c_change": [

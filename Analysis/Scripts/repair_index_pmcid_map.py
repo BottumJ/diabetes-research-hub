@@ -112,10 +112,47 @@ def main():
     print(f"  metadata claims pmc_available={index.get('metadata', {}).get('pmc_available')}, "
           f"fulltext_fetched={index.get('metadata', {}).get('fulltext_fetched')}")
     if unmatched:
-        print(f"  [NOTE] {len(unmatched)} full text(s) whose PMID is not in the "
-              f"index at all: {[u['pmid'] for u in unmatched][:8]}")
-        print("         Those are full texts held for papers the index does not "
-              "list. Ingestion question, not a field-repair question.")
+        # SPLIT BY MEMBERSHIP, added 2026-09-20.
+        #
+        # This used to print one undifferentiated count and call it "an
+        # ingestion question". It is two questions, and only one of them is
+        # work. A full text held for an OFF_TOPIC or RETRACTED paper is
+        # ABSENT ON PURPOSE - the index is right and the file on disk is the
+        # leftover. A full text held for a paper with no disqualifier is a
+        # paper this repository can read and does not list, which is the
+        # defect the 2026-09-19 run named.
+        #
+        # This is also why the script imports corpus_membership rather than
+        # taking an exemption from audit_unguarded_pmid_readers.py. It does
+        # not FILTER anything - it only annotates records that already exist -
+        # but it does REPORT on PMIDs, and a report that cannot tell a
+        # deliberate exclusion from an accidental one sends someone to
+        # re-ingest papers that were thrown out for cause.
+        import corpus_membership
+        corpus_membership.reload()
+        deliberate, accidental = [], []
+        for u in unmatched:
+            r = corpus_membership.reason(str(u["pmid"]))
+            (deliberate if r else accidental).append(
+                dict(u, code=(r or {}).get("code")))
+        print(f"  [NOTE] {len(unmatched)} full text(s) whose PMID is not in "
+              f"the index at all. Split by corpus_membership:")
+        if deliberate:
+            by = {}
+            for u in deliberate:
+                by.setdefault(u["code"], []).append(str(u["pmid"]))
+            print(f"         {len(deliberate)} excluded ON PURPOSE - the index "
+                  f"is correct, the file on disk is residue:")
+            for code, pmids in sorted(by.items()):
+                print(f"           {code:<12} {', '.join(sorted(pmids))}")
+        if accidental:
+            print(f"         {len(accidental)} carry NO disqualifier - this "
+                  f"repository holds their full text and does not list them:")
+            print(f"           {', '.join(sorted(str(u['pmid']) for u in accidental))}")
+            print("         That second list is the ingestion backlog. The "
+                  "first list is not work.")
+        unmatched = [dict(u, membership=(u.get("code") or "NONE"))
+                     for u in deliberate + accidental]
 
     if apply:
         shutil.copy2(INDEX, INDEX + f".bak_{date.today()}")

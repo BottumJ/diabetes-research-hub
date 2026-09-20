@@ -19,24 +19,51 @@ research_paths_file = os.path.join(base_dir, 'Analysis', 'Results', 'research_pa
 validated_paths_file = os.path.join(base_dir, 'Analysis', 'Results', 'validated_research_paths.json')
 output_file = os.path.join(base_dir, 'Dashboards', 'Research_Paths.html')
 
-# Gap metadata (15 gaps)
-GAPS_METADATA = {
-    "1": {"title": "Gene Therapy for LADA", "tier": "SILVER"},
-    "2": {"title": "Health Equity in Beta Cell Therapies", "tier": "GOLD"},
-    "3": {"title": "LADA Phenotyping in Clinical Trials", "tier": "SILVER"},
-    "4": {"title": "GLP-1/SGLT2i + Beta Cell Synergy", "tier": "BRONZE"},
-    "5": {"title": "Islet Transplant Immunosuppression Optimization", "tier": "SILVER"},
-    "6": {"title": "CAR-T Diabetes Safety Signals", "tier": "BRONZE"},
-    "7": {"title": "Cardiovascular-Inflammation Intersection", "tier": "GOLD"},
-    "8": {"title": "Drug Repurposing for Beta Cell Protection", "tier": "SILVER"},
-    "9": {"title": "Autoimmune Beta Cell Epitopes in LADA", "tier": "SILVER"},
-    "10": {"title": "Remission Sustainability Beyond 2 Years", "tier": "BRONZE"},
-    "11": {"title": "Immunomodulation in Type 2 Diabetes", "tier": "BRONZE"},
-    "12": {"title": "GLP-1 Effects on Beta Cell Function", "tier": "GOLD"},
-    "13": {"title": "LADA Progression Markers", "tier": "SILVER"},
-    "14": {"title": "Islet Allotransplant Rejection Prediction", "tier": "BRONZE"},
-    "15": {"title": "Combination Therapy Synergies", "tier": "BRONZE"},
-}
+# Gap metadata - READ FROM THE CANONICAL STORE, NEVER TYPED HERE (2026-09-20)
+# ---------------------------------------------------------------------------
+# This file carried a byte-identical twin of the stale registry found in
+# build_extracted_evidence.py the same day: the same 15 superseded gap titles
+# ("Remission Sustainability Beyond 2 Years", "Immunomodulation in Type 2
+# Diabetes", "Combination Therapy Synergies") and the same 9 wrong tiers,
+# against a canonical store that names none of them.
+#
+# The second copy is the reason this is worth reading twice. Correcting the
+# first one by hand would have left this one wrong and produced exactly the
+# symptom that makes copies dangerous: two pages, both rebuilt from green
+# stages, disagreeing about what Gap #11 is. It was found only because
+# audit_gap_numbering.py was taught the dict-literal form on 2026-09-20 -
+# before that change the audit read four stores and reported the numbering
+# sound; after it, 69 hardcoded tier sites across 15 gaps.
+#
+# So: read the store. Do not correct the copy.
+gap_evidence_file = os.path.join(base_dir, 'Analysis', 'Results',
+                                 'gap_evidence.json')
+
+
+def load_gaps_metadata():
+    """Titles and tiers from gap_evidence.json, the store the gap audits read.
+
+    Raises rather than falling back to a literal. A silent default is what
+    let the stale copy render for months under green stages.
+    """
+    with open(gap_evidence_file, encoding='utf-8') as fh:
+        gaps = json.load(fh)['gaps']
+    out = {}
+    for gap_id, rec in gaps.items():
+        title = rec.get('name') or rec.get('title')
+        tier = rec.get('tier')
+        if not title or not tier:
+            raise ValueError(
+                'gap_evidence.json gap %s is missing title or tier; refusing '
+                'to render a gap heading this repository cannot source'
+                % gap_id)
+        out[str(gap_id)] = {'title': title, 'tier': tier}
+    if not out:
+        raise ValueError('gap_evidence.json contains no gaps')
+    return out
+
+
+GAPS_METADATA = load_gaps_metadata()
 
 # Status colors for Tufte style
 STATUS_COLORS = {

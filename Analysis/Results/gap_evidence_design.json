@@ -1,26 +1,19 @@
 {
-  "generated": "2026-09-19",
+  "generated": "2026-09-20",
   "readable_floor": 0.5,
   "counts": {
-    "UNGRADEABLE": 5,
+    "PRIMARY": 5,
     "PRIMARY_THIN": 3,
-    "PRIMARY": 4,
+    "UNGRADEABLE": 4,
     "NO_EVIDENCE": 3
   },
   "flags": [
-    {
-      "gap_id": "1",
-      "name": "Gene Therapy for LADA",
-      "published_tier": "SILVER",
-      "design_tier": "UNGRADEABLE",
-      "note": "published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong"
-    },
     {
       "gap_id": "2",
       "name": "Health Equity in Diabetes",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY_THIN",
-      "note": "published GOLD while 2 of 7 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
+      "note": "published GOLD while 2 of 8 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature"
     },
     {
       "gap_id": "5",
@@ -69,18 +62,19 @@
     "1": {
       "name": "Gene Therapy for LADA",
       "published_tier": "SILVER",
-      "design_tier": "UNGRADEABLE",
-      "why": "only 13 of 32 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 32,
-      "papers_primary": 9,
-      "papers_design_readable": 13,
+      "design_tier": "PRIMARY",
+      "why": "14 of 24 design-readable papers (58%) report primary data",
+      "papers_total": 44,
+      "papers_primary": 14,
+      "papers_design_readable": 24,
       "design_mix": {
-        "PRIMARY": 9,
-        "UNKNOWN": 19,
-        "NARRATIVE": 3,
-        "SYNTHESIS": 1
+        "PRIMARY": 14,
+        "UNKNOWN": 20,
+        "NARRATIVE": 8,
+        "SYNTHESIS": 1,
+        "NO_RESULTS": 1
       },
-      "total_findings": 115,
+      "total_findings": 171,
       "papers": [
         {
           "pmid": "24598244",
@@ -397,21 +391,6 @@
           "in_cache": true
         },
         {
-          "pmid": "34021020",
-          "kind": "PRIMARY",
-          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Control",
-          "journal": "Diabetes care",
-          "year": "2021",
-          "pubtypes": [
-            "Clinical Trial, Phase II",
-            "Journal Article",
-            "Multicenter Study",
-            "Randomized Controlled Trial",
-            "Research Support, Non-U.S. Gov't"
-          ],
-          "in_cache": true
-        },
-        {
           "pmid": "35665810",
           "kind": "PRIMARY",
           "title": "Intralymphatic GAD-Alum (Diamyd®) Improves Glycemic Control in Type 1 Diabetes With HLA DR3-DQ2.",
@@ -489,6 +468,174 @@
             "Comparative Study"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "19940299",
+          "kind": "PRIMARY",
+          "title": "Rituximab, B-lymphocyte depletion, and preservation of beta-cell function.",
+          "journal": "The New England journal of medicine",
+          "year": "2009",
+          "pubtypes": [
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "21719096",
+          "kind": "PRIMARY",
+          "title": "Co-stimulation modulation with abatacept in patients with recent-onset type 1 diabetes: a randomised, double-blind, placebo-controlled trial.",
+          "journal": "Lancet (London, England)",
+          "year": "2011",
+          "pubtypes": [
+            "Clinical Trial, Phase II",
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "23413806",
+          "kind": "NARRATIVE",
+          "title": "The clinical utility of C-peptide measurement in the care of patients with diabetes.",
+          "journal": "Diabetic medicine : a journal of the British Diabetic Association",
+          "year": "2013",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "23890997",
+          "kind": "NARRATIVE",
+          "title": "Type 1 diabetes.",
+          "journal": "Lancet (London, England)",
+          "year": "2014",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "24871322",
+          "kind": "NARRATIVE",
+          "title": "Dietary gluten and the development of type 1 diabetes.",
+          "journal": "Diabetologia",
+          "year": "2014",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "26656660",
+          "kind": "NARRATIVE",
+          "title": "TNF biology, pathogenic mechanisms and emerging therapeutic strategies.",
+          "journal": "Nature reviews. Rheumatology",
+          "year": "2016",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "27727279",
+          "kind": "PRIMARY",
+          "title": "Regulatory T Cell Responses in Participants with Type 1 Diabetes after a Single Dose of Interleukin-2: A Non-Randomised, Open Label, Adaptive Dose-Fin",
+          "journal": "PLoS medicine",
+          "year": "2016",
+          "pubtypes": [
+            "Journal Article",
+            "Randomized Controlled Trial"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "29988125",
+          "kind": "PRIMARY",
+          "title": "Verapamil and beta cell function in adults with recent-onset type 1 diabetes.",
+          "journal": "Nature medicine",
+          "year": "2018",
+          "pubtypes": [
+            "Journal Article",
+            "Randomized Controlled Trial",
+            "Research Support, N.I.H., Extramural"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "32627352",
+          "kind": "PRIMARY",
+          "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
+          "journal": "American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",
+          "year": "2021",
+          "pubtypes": [
+            "Clinical Trial, Phase III",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "39613428",
+          "kind": "NO_RESULTS",
+          "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): proto",
+          "journal": "BMJ open",
+          "year": "2024",
+          "pubtypes": [
+            "Clinical Trial Protocol",
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "41567805",
+          "kind": "NARRATIVE",
+          "title": "Regulatory T cell dysfunction and immunotherapeutic breakthroughs in type 1 diabetes.",
+          "journal": "Frontiers in endocrinology",
+          "year": "2025",
+          "pubtypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "41827917",
+          "kind": "PRIMARY",
+          "title": "Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic Diabetes.",
+          "journal": "Cells",
+          "year": "2026",
+          "pubtypes": [
+            "Journal Article",
+            "Multicenter Study"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "42034968",
+          "kind": "UNKNOWN",
+          "title": "Efficiency of bone marrow-derived cells in the treatment of experimental autoimmune type 1 diabetes: immunomodulatory and anti-apoptotic properties.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
         }
       ]
     },
@@ -496,17 +643,18 @@
       "name": "Health Equity in Diabetes",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY_THIN",
-      "why": "only 2 of 7 design-readable papers (29%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
-      "papers_total": 14,
+      "why": "only 2 of 8 design-readable papers (25%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
+      "papers_total": 15,
       "papers_primary": 2,
-      "papers_design_readable": 7,
+      "papers_design_readable": 8,
       "design_mix": {
         "NARRATIVE": 3,
         "UNKNOWN": 7,
         "SYNTHESIS": 2,
-        "PRIMARY": 2
+        "PRIMARY": 2,
+        "NO_RESULTS": 1
       },
-      "total_findings": 37,
+      "total_findings": 53,
       "papers": [
         {
           "pmid": "40366501",
@@ -642,6 +790,18 @@
           "in_cache": true
         },
         {
+          "pmid": "33139407",
+          "kind": "NO_RESULTS",
+          "title": "Social Determinants of Health and Diabetes: A Scientific Review.",
+          "journal": "Diabetes care",
+          "year": "2020",
+          "pubtypes": [
+            "Letter",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "39525461",
           "kind": "NARRATIVE",
           "title": "The diabetes cardiovascular outcomes trials and racial and ethnic minority enrollment: impact, barriers, and potential solutions.",
@@ -680,16 +840,16 @@
       "name": "Insulin Resistance in Islet Transplant",
       "published_tier": "GOLD",
       "design_tier": "PRIMARY",
-      "why": "12 of 17 design-readable papers (71%) report primary data",
-      "papers_total": 26,
+      "why": "12 of 19 design-readable papers (63%) report primary data",
+      "papers_total": 28,
       "papers_primary": 12,
-      "papers_design_readable": 17,
+      "papers_design_readable": 19,
       "design_mix": {
         "PRIMARY": 12,
         "UNKNOWN": 9,
-        "NARRATIVE": 5
+        "NARRATIVE": 7
       },
-      "total_findings": 95,
+      "total_findings": 114,
       "papers": [
         {
           "pmid": "24085506",
@@ -1019,6 +1179,32 @@
           "in_cache": true
         },
         {
+          "pmid": "23413806",
+          "kind": "NARRATIVE",
+          "title": "The clinical utility of C-peptide measurement in the care of patients with diabetes.",
+          "journal": "Diabetic medicine : a journal of the British Diabetic Association",
+          "year": "2013",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "28731034",
+          "kind": "NARRATIVE",
+          "title": "Regulation of hepatic glucose metabolism in health and disease.",
+          "journal": "Nature reviews. Endocrinology",
+          "year": "2017",
+          "pubtypes": [
+            "Comparative Study",
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "35887740",
           "kind": "UNKNOWN",
           "title": "Clinical Islet Transplantation Covered by Health Insurance in Japan.",
@@ -1034,15 +1220,15 @@
       "published_tier": "SILVER",
       "design_tier": "PRIMARY",
       "why": "8 of 12 design-readable papers (67%) report primary data",
-      "papers_total": 19,
+      "papers_total": 21,
       "papers_primary": 8,
       "papers_design_readable": 12,
       "design_mix": {
-        "UNKNOWN": 7,
+        "UNKNOWN": 9,
         "PRIMARY": 8,
         "NARRATIVE": 4
       },
-      "total_findings": 64,
+      "total_findings": 89,
       "papers": [
         {
           "pmid": "23061757",
@@ -1221,6 +1407,17 @@
           "in_cache": true
         },
         {
+          "pmid": "37399599",
+          "kind": "UNKNOWN",
+          "title": "A genetically supported drug repurposing pipeline for diabetes treatment using electronic health records.",
+          "journal": "EBioMedicine",
+          "year": "2023",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "32627352",
           "kind": "PRIMARY",
           "title": "Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.",
@@ -1274,6 +1471,17 @@
           "in_cache": true
         },
         {
+          "pmid": "27821710",
+          "kind": "UNKNOWN",
+          "title": "Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route of administration.",
+          "journal": "The Journal of pharmacology and experimental therapeutics",
+          "year": "2016",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "35887740",
           "kind": "UNKNOWN",
           "title": "Clinical Islet Transplantation Covered by Health Insurance in Japan.",
@@ -1288,16 +1496,16 @@
       "name": "Treg in Diabetic Neuropathy",
       "published_tier": "SILVER",
       "design_tier": "UNGRADEABLE",
-      "why": "only 7 of 18 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 18,
+      "why": "only 8 of 19 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 19,
       "papers_primary": 2,
-      "papers_design_readable": 7,
+      "papers_design_readable": 8,
       "design_mix": {
         "UNKNOWN": 11,
-        "NARRATIVE": 5,
+        "NARRATIVE": 6,
         "PRIMARY": 2
       },
-      "total_findings": 64,
+      "total_findings": 80,
       "papers": [
         {
           "pmid": "39084449",
@@ -1489,6 +1697,20 @@
           "in_cache": true
         },
         {
+          "pmid": "26897744",
+          "kind": "NARRATIVE",
+          "title": "Inflammation as a Therapeutic Target for Diabetic Neuropathies.",
+          "journal": "Current diabetes reports",
+          "year": "2016",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "42608595",
           "kind": "UNKNOWN",
           "title": "A multi-centre study of belatacept and sirolimus for islet transplantation.",
@@ -1526,7 +1748,7 @@
         "PRIMARY": 1,
         "NO_RESULTS": 1
       },
-      "total_findings": 43,
+      "total_findings": 48,
       "papers": [
         {
           "pmid": "36109639",
@@ -1722,16 +1944,16 @@
       "published_tier": "SILVER",
       "design_tier": "PRIMARY_THIN",
       "why": "only 4 of 14 design-readable papers (29%) report primary data - the rest are reviews or syntheses, so this gap rests on a small number of measured studies and a larger commentary literature",
-      "papers_total": 21,
+      "papers_total": 22,
       "papers_primary": 4,
       "papers_design_readable": 14,
       "design_mix": {
         "NARRATIVE": 9,
-        "UNKNOWN": 7,
+        "UNKNOWN": 8,
         "PRIMARY": 4,
         "SYNTHESIS": 1
       },
-      "total_findings": 87,
+      "total_findings": 101,
       "papers": [
         {
           "pmid": "38783768",
@@ -1879,6 +2101,18 @@
           "in_cache": true
         },
         {
+          "pmid": "21525462",
+          "kind": "UNKNOWN",
+          "title": "Glucokinase activators for diabetes therapy: May 2010 status report.",
+          "journal": "Diabetes care",
+          "year": "2011",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
+          ],
+          "in_cache": true
+        },
+        {
           "pmid": "2189759",
           "kind": "NARRATIVE",
           "title": "Glucokinase as glucose sensor and metabolic signal generator in pancreatic beta-cells and hepatocytes.",
@@ -1997,17 +2231,18 @@
       "name": "Immunomodulatory Drugs for LADA",
       "published_tier": "SILVER",
       "design_tier": "PRIMARY",
-      "why": "11 of 16 design-readable papers (69%) report primary data",
-      "papers_total": 29,
+      "why": "11 of 20 design-readable papers (55%) report primary data",
+      "papers_total": 38,
       "papers_primary": 11,
-      "papers_design_readable": 16,
+      "papers_design_readable": 20,
       "design_mix": {
         "PRIMARY": 11,
-        "UNKNOWN": 13,
+        "UNKNOWN": 18,
         "SYNTHESIS": 2,
-        "NARRATIVE": 3
+        "NARRATIVE": 6,
+        "NO_RESULTS": 1
       },
-      "total_findings": 110,
+      "total_findings": 158,
       "papers": [
         {
           "pmid": "19940299",
@@ -2147,6 +2382,17 @@
           "pubtypes": [
             "Journal Article",
             "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "40650745",
+          "kind": "UNKNOWN",
+          "title": "Verapamil and low-dose anti-mouse thymocyte globulin combination therapy stably reverses recent-onset type 1 diabetes in NOD mice by acting on the bet",
+          "journal": "Diabetologia",
+          "year": "2025",
+          "pubtypes": [
+            "Journal Article"
           ],
           "in_cache": true
         },
@@ -2310,21 +2556,6 @@
           "in_cache": true
         },
         {
-          "pmid": "34021020",
-          "kind": "PRIMARY",
-          "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Control",
-          "journal": "Diabetes care",
-          "year": "2021",
-          "pubtypes": [
-            "Clinical Trial, Phase II",
-            "Journal Article",
-            "Multicenter Study",
-            "Randomized Controlled Trial",
-            "Research Support, Non-U.S. Gov't"
-          ],
-          "in_cache": true
-        },
-        {
           "pmid": "34318969",
           "kind": "UNKNOWN",
           "title": "Low C-peptide together with a high glutamic acid decarboxylase autoantibody level predicts progression to insulin dependence in latent autoimmune diab",
@@ -2381,6 +2612,110 @@
             "Research Support, Non-U.S. Gov't"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "23890997",
+          "kind": "NARRATIVE",
+          "title": "Type 1 diabetes.",
+          "journal": "Lancet (London, England)",
+          "year": "2014",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "26404926",
+          "kind": "NARRATIVE",
+          "title": "Staging presymptomatic type 1 diabetes: a scientific statement of JDRF, the Endocrine Society, and the American Diabetes Association.",
+          "journal": "Diabetes care",
+          "year": "2015",
+          "pubtypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "27727279",
+          "kind": "PRIMARY",
+          "title": "Regulatory T Cell Responses in Participants with Type 1 Diabetes after a Single Dose of Interleukin-2: A Non-Randomised, Open Label, Adaptive Dose-Fin",
+          "journal": "PLoS medicine",
+          "year": "2016",
+          "pubtypes": [
+            "Journal Article",
+            "Randomized Controlled Trial"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "37359825",
+          "kind": "UNKNOWN",
+          "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independence in Pa",
+          "journal": "Transplant international : official journal of the European Society for Organ Transplantation",
+          "year": "2023",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "39613428",
+          "kind": "NO_RESULTS",
+          "title": "Investigating the effect of verapamil on preservation of beta-cell function in adults with newly diagnosed type 1 diabetes mellitus (Ver-A-T1D): proto",
+          "journal": "BMJ open",
+          "year": "2024",
+          "pubtypes": [
+            "Clinical Trial Protocol",
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "39911401",
+          "kind": "UNKNOWN",
+          "title": "Targeting TCMR-associated cytokine genes for drug screening identifies PPAR&#x3b3; agonists as novel immunomodulatory agents in transplantation.",
+          "journal": "",
+          "year": "",
+          "pubtypes": [],
+          "in_cache": false
+        },
+        {
+          "pmid": "40464081",
+          "kind": "UNKNOWN",
+          "title": "The health economics of insulin therapy: How do we address the rising demands, costs, inequalities and barriers to achieving optimal outcomes.",
+          "journal": "Diabetes, obesity & metabolism",
+          "year": "2025",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "41567805",
+          "kind": "NARRATIVE",
+          "title": "Regulatory T cell dysfunction and immunotherapeutic breakthroughs in type 1 diabetes.",
+          "journal": "Frontiers in endocrinology",
+          "year": "2025",
+          "pubtypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "42283716",
+          "kind": "UNKNOWN",
+          "title": "Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Participants Suggests Benign Side Effect Profile.",
+          "journal": "Diabetes care",
+          "year": "2026",
+          "pubtypes": [
+            "Journal Article"
+          ],
+          "in_cache": true
         }
       ]
     },
@@ -2400,15 +2735,27 @@
       "name": "LADA Prevalence by Healthcare Setting",
       "published_tier": "SILVER",
       "design_tier": "UNGRADEABLE",
-      "why": "only 0 of 1 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 1,
+      "why": "only 0 of 3 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 3,
       "papers_primary": 0,
       "papers_design_readable": 0,
       "design_mix": {
-        "UNKNOWN": 1
+        "UNKNOWN": 3
       },
-      "total_findings": 1,
+      "total_findings": 10,
       "papers": [
+        {
+          "pmid": "23248199",
+          "kind": "UNKNOWN",
+          "title": "Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LADA 7.",
+          "journal": "Diabetes care",
+          "year": "2013",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
         {
           "pmid": "29619531",
           "kind": "UNKNOWN",
@@ -2420,6 +2767,20 @@
             "Research Support, Non-U.S. Gov't"
           ],
           "in_cache": true
+        },
+        {
+          "pmid": "32847960",
+          "kind": "UNKNOWN",
+          "title": "Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel.",
+          "journal": "Diabetes",
+          "year": "2020",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't",
+            "Consensus Statement"
+          ],
+          "in_cache": true
         }
       ]
     },
@@ -2427,15 +2788,16 @@
       "name": "Islet Transplant Registry Equity",
       "published_tier": "GOLD",
       "design_tier": "UNGRADEABLE",
-      "why": "only 1 of 4 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 4,
+      "why": "only 2 of 6 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 6,
       "papers_primary": 1,
-      "papers_design_readable": 1,
+      "papers_design_readable": 2,
       "design_mix": {
-        "UNKNOWN": 3,
-        "PRIMARY": 1
+        "UNKNOWN": 4,
+        "PRIMARY": 1,
+        "NARRATIVE": 1
       },
-      "total_findings": 9,
+      "total_findings": 21,
       "papers": [
         {
           "pmid": "19104422",
@@ -2482,6 +2844,31 @@
           "year": "",
           "pubtypes": [],
           "in_cache": false
+        },
+        {
+          "pmid": "23061757",
+          "kind": "UNKNOWN",
+          "title": "Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept for clinical islet cell transplantation.",
+          "journal": "Clinical transplantation",
+          "year": "2012",
+          "pubtypes": [
+            "Journal Article",
+            "Research Support, N.I.H., Extramural",
+            "Research Support, Non-U.S. Gov't"
+          ],
+          "in_cache": true
+        },
+        {
+          "pmid": "42688599",
+          "kind": "NARRATIVE",
+          "title": "Impact of preformed donor-specific anti-HLA antibodies on pancreatic islet transplantation outcomes: do they matter as they do in solid organ transpla",
+          "journal": "Frontiers in immunology",
+          "year": "2026",
+          "pubtypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
         }
       ]
     },
@@ -2489,16 +2876,28 @@
       "name": "Generic Drug x Diabetes Mechanism Catalog",
       "published_tier": "SILVER",
       "design_tier": "UNGRADEABLE",
-      "why": "only 3 of 8 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
-      "papers_total": 8,
+      "why": "only 4 of 9 papers carry a design-bearing PubMed type - too little to grade, and absence of a tag is not evidence of absence of design",
+      "papers_total": 9,
       "papers_primary": 0,
-      "papers_design_readable": 3,
+      "papers_design_readable": 4,
       "design_mix": {
-        "UNKNOWN": 5,
-        "NARRATIVE": 3
+        "NARRATIVE": 4,
+        "UNKNOWN": 5
       },
-      "total_findings": 24,
+      "total_findings": 38,
       "papers": [
+        {
+          "pmid": "28283069",
+          "kind": "NARRATIVE",
+          "title": "mTOR Signaling in Growth, Metabolism, and Disease.",
+          "journal": "Cell",
+          "year": "2017",
+          "pubtypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "in_cache": true
+        },
         {
           "pmid": "30899369",
           "kind": "UNKNOWN",

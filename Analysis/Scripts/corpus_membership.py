@@ -77,12 +77,40 @@ nearly filed under PROVENANCE.
   RETRACTED                  no       no     exclude AND record the withdrawal
   OFF_TOPIC                  no       no     repair or withdraw the citation
   BACKGROUND                YES       no     keep the citation, drop the count
+  CORPUS                    YES      YES     keep both; carry the caveat text
   (unlisted)                YES      YES     ordinary corpus paper
 
 BACKGROUND is the class that a single boolean was destroying. PMID 18662538
 (Massague, "TGFbeta in Cancer", Cell 2008) is the definitional source for the
 TGF-beta entry in the Medical Data Dictionary. The citation is true. It
 supplies no diabetes finding. Both facts have to survive.
+
+CORPUS IS THE CLASS ADDED 2026-09-20, AND WHY
+---------------------------------------------
+status == 'FLAGGED' was carrying a THIRD meaning that neither boolean nor the
+four disqualifiers could express: "real corpus paper, real evidence, and a
+specific framing constraint attaches to it." Every gate in this repo writes
+its findings back as status=FLAGGED, so CORRECTING a paper is what removed it
+from the corpus. Measured 2026-09-20, not hypothesised - four papers were out
+of paper_library/index.json, and the ledger recorded the reason verbatim as
+"FLAGGED in agent_state.json with no class recorded":
+
+  25940230  PREDIMED overview, Prog Cardiovasc Dis 2015. Flagged 2026-09-18
+            because the published 30% was the CVD number and the diabetes
+            number is HR 0.60 in one arm. The paper is fine; the prose was not.
+  34021020  DIAGNODE-2, Diabetes Care 2021. Flagged 2026-09-18 because the
+            page called a TYPE 1 trial a LADA trial. Phase IIb RCT, n=109.
+  37026004  CITR HLA-DR registry analysis, Front Immunol 2023. Its own vetting
+            record reads "Flagged, not rejected - the finding stands, the
+            framing did not", and state calls it LOAD-BEARING for Gap #11.
+
+All three were simultaneously cited on live pages under docs/ while this
+module answered citable() == False for them. Nothing reported the
+contradiction, because citable() had ZERO call sites anywhere in the repo.
+
+So CORPUS says, explicitly and in one field, what those three records already
+said in prose: no disqualifier applies. The caveat lives in
+membership_class_why and travels with the paper instead of deleting it.
 
 WHAT THIS MODULE DOES NOT DO
 ----------------------------
@@ -106,6 +134,11 @@ RETRACTED = 'RETRACTED'
 PROVENANCE = 'PROVENANCE'
 OFF_TOPIC = 'OFF_TOPIC'
 BACKGROUND = 'BACKGROUND'
+
+# Not a disqualifier at all: a FLAGGED paper whose flag is a repair record or
+# a framing caveat. Listed here so it can be STATED rather than inferred from
+# the absence of a field. See the CORPUS section of the module docstring.
+CORPUS = 'CORPUS'
 
 # Codes that also forbid CITING the paper, not merely counting it.
 NOT_CITABLE = (RETRACTED, PROVENANCE, OFF_TOPIC)
@@ -160,6 +193,12 @@ def _build():
         why = ((rec or {}).get('membership_class_why')
                or (rec or {}).get('flag_reason') or '')
 
+        if cls == CORPUS:
+            # Adjudicated as carrying NO disqualifier. It must not appear in
+            # `reasons` at all, or every consumer that asks "is this excluded"
+            # gets a yes from the mere presence of a key.
+            continue
+
         if pmid in reasons:
             # Both registries know about it. Keep whichever is more serious;
             # RETRACTED must never be downgraded to a topic judgement.
@@ -213,6 +252,30 @@ def uncitable_pmids():
 def excluded_by(code):
     """PMIDs excluded under one specific disqualifier."""
     return {p for p, r in _reasons().items() if r['code'] == code}
+
+
+def evictable_pmids():
+    """PMIDs that may be DELETED from paper_library/index.json.
+
+    THE INVARIANT, added 2026-09-20: eviction requires an AFFIRMATIVE
+    adjudication code. The absence of one is never grounds to remove a record.
+
+    Exclusion and eviction are not the same act and were being treated as one.
+    Excluding a paper from evidence is reversible - the record survives, the
+    count changes, and the decision can be re-read and reversed tomorrow.
+    Evicting it from the index destroys the row, so the next reconcile has
+    nothing to reverse and the paper simply ceases to exist for every
+    downstream consumer.
+
+    That asymmetry is why FLAGGED_UNCLASSIFIED is deliberately absent from
+    this set even though it IS in excluded_pmids(). On 2026-09-19 four papers
+    were evicted with the ledger reason recorded verbatim as "FLAGGED in
+    agent_state.json with no class recorded" - a MISSING FIELD, cited as the
+    justification for deleting three primary human studies, one of which state
+    itself calls load-bearing for Gap #11. A blank field is a question, and a
+    question must never be answered by destroying the thing it is about.
+    """
+    return {p for p, r in _reasons().items() if r['code'] != UNCLASSIFIED}
 
 
 def counts_as_evidence(pmid):

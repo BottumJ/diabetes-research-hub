@@ -148,6 +148,15 @@ def source_tiers(scripts_dir):
     if not os.path.isdir(scripts_dir):
         return hits
     pat = re.compile(r'Gap #(\d+)\s*\((GOLD|SILVER|BRONZE|EXPLORATORY)\b')
+    # A gap registry written as a dict entry, in either key order:
+    #   "11": {"title": "...", "tier": "BRONZE"}
+    #   "11": {"tier": "BRONZE", "title": "..."}
+    STRUCT_PAT = re.compile(
+        r'["\'](?P<gap>\d{1,2})["\']\s*:\s*\{[^{}]*?'
+        r'(?:["\']title["\']\s*:\s*["\'](?P<title>[^"\']+)["\'][^{}]*?'
+        r'["\']tier["\']\s*:\s*["\'](?P<tier>GOLD|SILVER|BRONZE|EXPLORATORY)["\']'
+        r'|["\']tier["\']\s*:\s*["\'](?P<tier2>GOLD|SILVER|BRONZE|EXPLORATORY)["\']'
+        r'[^{}]*?["\']title["\']\s*:\s*["\'](?P<title2>[^"\']+)["\'])')
     for fname in sorted(os.listdir(scripts_dir)):
         if not fname.endswith('.py') or fname == os.path.basename(__file__):
             continue
@@ -161,6 +170,35 @@ def source_tiers(scripts_dir):
             line = body.count('\n', 0, m.start()) + 1
             hits.setdefault(m.group(1), []).append(
                 {'file': fname, 'line': line, 'tier': m.group(2)})
+
+        # STRUCTURED REGISTRIES, added 2026-09-20.
+        #
+        # The prose pattern above finds a tier MENTIONED in a sentence. It
+        # cannot see a tier stored in a dict literal, and that is where the
+        # worst copy was hiding. build_extracted_evidence.py carried
+        #
+        #     "11": {"title": "Immunomodulation in Type 2 Diabetes",
+        #            "tier": "BRONZE"},
+        #
+        # for all 15 gaps - 14 wrong titles and 9 wrong tiers against the
+        # canonical store - and published every one of them. This audit
+        # reported on four stores that day and called the numbering sound,
+        # because a dict is not a sentence.
+        #
+        # Titles are captured as well as tiers: the title was the more
+        # misleading half. A wrong tier overstates confidence in a real
+        # question; a wrong title files real evidence under a question this
+        # repository does not ask, which no tier check can detect.
+        for m in STRUCT_PAT.finditer(body):
+            line = body.count('\n', 0, m.start()) + 1
+            # Either alternation branch may have matched, so take whichever
+            # group is populated rather than assuming key order.
+            tier = m.group('tier') or m.group('tier2')
+            title = m.group('title') or m.group('title2')
+            hits.setdefault(m.group('gap'), []).append({
+                'file': fname, 'line': line, 'tier': tier,
+                'title': title, 'form': 'dict_literal',
+            })
     return hits
 
 

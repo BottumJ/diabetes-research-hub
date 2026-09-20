@@ -91,19 +91,37 @@ def screen_topic(record, abstract_record):
 
 
 def load_flagged_pmids():
-    """PMIDs an earlier run already judged off-topic, so the screen agrees with
-    decisions already on the record instead of re-litigating them."""
-    path = os.path.join(RESULTS, 'agent_state.json')
-    if not os.path.exists(path):
-        return {}
-    try:
-        with open(path, encoding='utf-8') as f:
-            state = json.load(f)
-    except (OSError, ValueError):
-        return {}
-    return {p: v.get('issues_found', [])
-            for p, v in state.get('papers', {}).items()
-            if v.get('status') == 'FLAGGED'}
+    """PMIDs an earlier run already judged OFF-TOPIC, so the screen agrees with
+    decisions already on the record instead of re-litigating them.
+
+    ASKS corpus_membership, DOES NOT RE-READ status (fixed 2026-09-20)
+    ---------------------------------------------------------------------
+    This function used to return every paper with status == 'FLAGGED' and the
+    caller stamped each one corpus_status='OFF_TOPIC'. That made it the SIXTH
+    divergent membership loader - the exact defect corpus_membership.py was
+    written on 2026-08-28 to remove, reappearing inside the one file that
+    already imports corpus_membership for the eviction path. The file was
+    asking the module one membership question and hand-rolling the other.
+
+    Measured the same day, on the three papers re-admitted after their
+    classification: DIAGNODE-2 (PMID 34021020, a Phase IIb double-blind RCT in
+    Diabetes Care), PREDIMED (25940230) and the CITR HLA-DR registry analysis
+    (37026004) were all folded into the index as OFF_TOPIC, each with a reason
+    string quoting its own 2026-09-18 REPAIR NOTE as the evidence that it is
+    off topic. status == 'FLAGGED' is how this repo records that it CORRECTED
+    a paper's prose; reading it as a topic verdict inverts the meaning.
+
+    Only the OFF_TOPIC class is a topic verdict. RETRACTED and PROVENANCE are
+    disqualifiers of other kinds and are handled by the eviction path;
+    BACKGROUND and CORPUS are not disqualifying at all.
+    """
+    import corpus_membership
+    corpus_membership.reload()
+    out = {}
+    for pmid in corpus_membership.excluded_by(corpus_membership.OFF_TOPIC):
+        r = corpus_membership.reason(pmid) or {}
+        out[pmid] = [r.get('why') or 'adjudicated OFF_TOPIC']
+    return out
 
 
 def provenance_for(pmid):
@@ -157,7 +175,24 @@ def reconcile(dry_run=False):
                   % (len(blocked), ', '.join(sorted(blocked))))
         orphans = [p for p in orphans if p not in not_corpus]
         # Also evict any that a previous run already admitted.
-        stale = [p for p in list(index.get('papers', {})) if p in not_corpus]
+        #
+        # EVICTION REQUIRES AN AFFIRMATIVE CODE (2026-09-20). Previously this
+        # read `p in not_corpus`, which is true for FLAGGED_UNCLASSIFIED - a
+        # code that means "nobody has said", not "somebody said no". Four
+        # papers were deleted from the index on that basis and the ledger
+        # recorded the missing field itself as the reason. corpus_membership
+        # .evictable_pmids() excludes UNCLASSIFIED for exactly this reason;
+        # such papers stay in the index, stay out of the evidence count, and
+        # are reported by audit_flagged_membership_class.py until adjudicated.
+        import corpus_membership
+        evictable = corpus_membership.evictable_pmids()
+        stale = [p for p in list(index.get('papers', {})) if p in evictable]
+        held = [p for p in list(index.get('papers', {}))
+                if p in not_corpus and p not in evictable]
+        if held:
+            print('  [not_corpus] HELD %d unadjudicated FLAGGED paper(s) in '
+                  'the index rather than evicting on a missing field: %s'
+                  % (len(held), ', '.join(sorted(held))))
         for p in stale:
             del index['papers'][p]
         if stale and not dry_run:

@@ -17,24 +17,69 @@ base_dir = os.path.join(script_dir, '..', '..')
 corpus_data_file = os.path.join(base_dir, 'Analysis', 'Results', 'extracted_corpus_data.json')
 output_file = os.path.join(base_dir, 'Dashboards', 'Extracted_Evidence.html')
 
-# Gap metadata (15 gaps)
-GAPS_METADATA = {
-    "1": {"title": "Gene Therapy for LADA", "tier": "SILVER"},
-    "2": {"title": "Health Equity in Beta Cell Therapies", "tier": "GOLD"},
-    "3": {"title": "LADA Phenotyping in Clinical Trials", "tier": "SILVER"},
-    "4": {"title": "GLP-1/SGLT2i + Beta Cell Synergy", "tier": "BRONZE"},
-    "5": {"title": "Islet Transplant Immunosuppression Optimization", "tier": "SILVER"},
-    "6": {"title": "CAR-T Diabetes Safety Signals", "tier": "BRONZE"},
-    "7": {"title": "Cardiovascular-Inflammation Intersection", "tier": "GOLD"},
-    "8": {"title": "Drug Repurposing for Beta Cell Protection", "tier": "SILVER"},
-    "9": {"title": "Autoimmune Beta Cell Epitopes in LADA", "tier": "SILVER"},
-    "10": {"title": "Remission Sustainability Beyond 2 Years", "tier": "BRONZE"},
-    "11": {"title": "Immunomodulation in Type 2 Diabetes", "tier": "BRONZE"},
-    "12": {"title": "GLP-1 Effects on Beta Cell Function", "tier": "GOLD"},
-    "13": {"title": "LADA Progression Markers", "tier": "SILVER"},
-    "14": {"title": "Islet Allotransplant Rejection Prediction", "tier": "BRONZE"},
-    "15": {"title": "Combination Therapy Synergies", "tier": "BRONZE"},
-}
+# Gap metadata - READ FROM THE CANONICAL STORE, NEVER TYPED HERE (2026-09-20)
+# ---------------------------------------------------------------------------
+# This file used to carry its own hard-coded copy of all 15 gap titles and
+# tiers. Measured 2026-09-20 against gap_evidence.json: 14 of the 15 TITLES
+# and 9 of the 15 TIERS disagreed with the canonical store. Only Gap #1
+# matched on both.
+#
+# It was not a near-miss or a rename drift. The dict held an ENTIRELY
+# DIFFERENT set of research questions - "Remission Sustainability Beyond 2
+# Years", "Cardiovascular-Inflammation Intersection", "Islet Allotransplant
+# Rejection Prediction" - none of which this hub studies. It is a frozen
+# snapshot of a superseded numbering scheme, unchanged since at least
+# 2026-08-20, and the builder kept rendering it.
+#
+# WHAT A READER SAW. Extracted_Evidence.html published, as one heading:
+#
+#     Gap 11: Immunomodulation in Type 2 Diabetes    BRONZE    39 points
+#
+# under which sat real extracted odds ratios for dorzagliatin, MK-0941,
+# TPP399 and PB-201 - glucokinase activator data, correctly extracted and
+# correctly cited. Canonical Gap #11 is "Islet Transplant Registry Equity",
+# tier GOLD. So the numbers were right, the citations were right, and the
+# question they were filed under did not exist. Zero canonical gap names
+# appeared anywhere on the page.
+#
+# WHY NO GATE SAW IT. audit_gap_numbering.py reads the PROSE form
+# `Gap #N (TIER)` with a regex (audit_gap_numbering.py:150). A registry in a
+# dict literal is not that form, so the file was invisible to the one audit
+# whose entire job is gap-numbering agreement - while that audit reported
+# confidently on the four stores it does read.
+#
+# The remedy is not to correct the 15 entries. A corrected copy drifts again
+# the next time a gap is renamed, and nothing would report it. The builder
+# now READS the store, so there is no second place for the answer to live.
+gap_evidence_file = os.path.join(base_dir, 'Analysis', 'Results',
+                                 'gap_evidence.json')
+
+
+def load_gaps_metadata():
+    """Titles and tiers from gap_evidence.json, the store the gap audits read.
+
+    Fails loudly rather than falling back to a literal. A silent default here
+    is how the stale copy survived seven months: the page rendered, every
+    stage went green, and the only signal was a heading nobody cross-read.
+    """
+    with open(gap_evidence_file, encoding='utf-8') as fh:
+        gaps = json.load(fh)['gaps']
+    out = {}
+    for gap_id, rec in gaps.items():
+        title = rec.get('name') or rec.get('title')
+        tier = rec.get('tier')
+        if not title or not tier:
+            raise ValueError(
+                'gap_evidence.json gap %s has no %s; refusing to render a gap '
+                'heading this repository cannot source'
+                % (gap_id, 'name/title' if not title else 'tier'))
+        out[str(gap_id)] = {'title': title, 'tier': tier}
+    if not out:
+        raise ValueError('gap_evidence.json contains no gaps')
+    return out
+
+
+GAPS_METADATA = load_gaps_metadata()
 
 def truncate(text, length=300):
     """Truncate text to specified length."""

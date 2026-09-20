@@ -1,63 +1,26 @@
 {
   "metadata": {
-    "generated_at": "2026-09-18T04:27:56.059641",
-    "total_pmids": 322,
-    "abstracts_fetched": 321,
-    "pmc_available": 174,
-    "fulltext_fetched": 150,
-    "total_indexed": 345,
+    "generated_at": "2026-09-20T03:17:06.473620",
+    "total_pmids": 326,
+    "abstracts_fetched": 325,
+    "pmc_available": 175,
+    "fulltext_fetched": 151,
+    "total_indexed": 351,
     "orphans_reconciled": 25,
-    "orphans_reconciled_on": "2026-09-18",
+    "orphans_reconciled_on": "2026-09-20",
     "orphan_status_counts": {
       "OFF_TOPIC_PRESUMED": 9,
       "UNSCREENED_ORPHAN": 16
     },
     "reconciliation_note": "Papers carrying index_provenance=reconcile_paper_index.py are present in the corpus directory but cited by no dashboard script, so verify_pmids.py never saw them and the citation audit gate was blind to them. They are now indexed and auditable, but are NOT counted in total_pmids until their corpus_status is resolved to IN_CORPUS by review. total_pmids = cited corpus; total_indexed = everything the audit gate can see.",
     "pmcid_repair": {
-      "date": "2026-09-19",
+      "date": "2026-09-20",
       "by": "repair_index_pmcid_map.py",
       "cause": "convert_pmids_to_pmcids() keyed its map by int while build_index() looked up by str; fixed at source the same day",
-      "records_pmcid_filled": 133,
-      "records_fulltext_flagged": 133,
+      "records_pmcid_filled": 7,
+      "records_fulltext_flagged": 7,
       "source_of_truth": "paper_library/fulltext/*.json (pmid + pmcid inside each file)"
-    },
-    "not_corpus_evicted_on": "2026-09-19",
-    "not_corpus_evictions": [
-      {
-        "pmid": "25940230",
-        "date": "2026-09-19",
-        "code": "FLAGGED_UNCLASSIFIED",
-        "why": "FLAGGED in agent_state.json with no class recorded",
-        "title": "Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.",
-        "backfilled_on": "2026-09-19"
-      },
-      {
-        "pmid": "34021020",
-        "date": "2026-09-19",
-        "code": "FLAGGED_UNCLASSIFIED",
-        "why": "FLAGGED in agent_state.json with no class recorded",
-        "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
-        "backfilled_on": "2026-09-19"
-      },
-      {
-        "pmid": "37026004",
-        "date": "unrecorded (evicted before 2026-09-19; no ledger existed)",
-        "code": "FLAGGED_UNCLASSIFIED",
-        "why": "FLAGGED in agent_state.json with no class recorded",
-        "title": "Matching for HLA-DR excluding diabetogenic HLA-DR3 and HLA-DR4 predicts insulin independence after pancreatic islet transplantation.",
-        "backfilled_on": "2026-09-19"
-      },
-      {
-        "pmid": "42674789",
-        "date": "unrecorded (evicted before 2026-09-19; no ledger existed)",
-        "code": "FLAGGED_UNCLASSIFIED",
-        "why": "FLAGGED in agent_state.json with no class recorded",
-        "title": "Retrospective population-based cohorts for assessing the performance of algorithmic diabetes classification and for quantifying the true burden of type 1, type 2 and LADA phenotypes in Quebec: a study protocol.",
-        "backfilled_on": "2026-09-19"
-      }
-    ],
-    "total_indexed_repaired_on": "2026-09-19",
-    "total_indexed_repair_note": "Was 347 against a papers dict of 345. The gap was created by not_corpus evictions that never updated the summary count; caught by audit_index_field_invariants.py on the day it was written."
+    }
   },
   "papers": {
     "10415738": {
@@ -311,7 +274,7 @@
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 968,
+          "line": 1016,
           "context": "<p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class=\"unsourced\" title=\"Citation removed 2026-09-1"
         }
       ],
@@ -355,7 +318,7 @@
       "doi": "10.1056/NEJMoa012512",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC1370926",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -405,7 +368,7 @@
       "doi": "10.1172/JCI14955",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC150979",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -1167,12 +1130,12 @@
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 256,
+          "line": 304,
           "context": "'key_pmids': '16310551',"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 966,
+          "line": 1014,
           "context": "<p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class=\"unsourced\" title=\"Citation removed 2026-09-"
         }
       ],
@@ -1646,7 +1609,7 @@
       "doi": "10.1073/pnas.0705894104",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC2040407",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -1903,7 +1866,7 @@
       "doi": "10.1016/j.metabol.2008.01.013",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC2410097",
       "dashboard_locations": [
         {
           "file": "build_nutrition_beta.py",
@@ -1946,7 +1909,7 @@
       "doi": "10.1056/NEJMoa0802743",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4551392",
       "dashboard_locations": [
         {
           "file": "build_health_equity.py",
@@ -2036,7 +1999,7 @@
       "doi": "10.1182/blood-2008-02-078071",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC2518873",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -2512,6 +2475,16 @@
           "file": "build_nutrition_lada.py",
           "line": 896,
           "context": "<p>DIAGNODE-2 enrolled <strong>109 patients aged 12&ndash;24 with recent-onset type 1 diabetes</strong> (duration 7&ndas"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 97,
+          "context": "\"(PMID 19404608), n=47 adult-onset autoimmune diabetes, primary \""
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 329,
+          "context": "\"Agardh 2009 (PMID 19404608, n=47, safety primary). Caught and \""
         }
       ],
       "mesh_terms": [
@@ -2576,7 +2549,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 759
+      "abstract_length": 759,
+      "fulltext_sections": 206,
+      "fulltext_chars": 60510
     },
     "19633656": {
       "pmid": "19633656",
@@ -2628,7 +2603,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1083
+      "abstract_length": 1083,
+      "fulltext_sections": 120,
+      "fulltext_chars": 52584
     },
     "19794004": {
       "pmid": "19794004",
@@ -2664,7 +2641,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 2082
+      "abstract_length": 2082,
+      "fulltext_sections": 61,
+      "fulltext_chars": 24122
     },
     "19805629": {
       "pmid": "19805629",
@@ -2734,7 +2713,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1449
+      "abstract_length": 1449,
+      "fulltext_sections": 107,
+      "fulltext_chars": 31726
     },
     "19940299": {
       "pmid": "19940299",
@@ -2800,7 +2781,9 @@
         "8366922",
         "18843118"
       ],
-      "abstract_length": 2067
+      "abstract_length": 2067,
+      "fulltext_sections": 101,
+      "fulltext_chars": 33143
     },
     "20154735": {
       "pmid": "20154735",
@@ -2871,7 +2854,9 @@
         "12612578",
         "15928679"
       ],
-      "abstract_length": 804
+      "abstract_length": 804,
+      "fulltext_sections": 514,
+      "fulltext_chars": 137781
     },
     "20228401": {
       "pmid": "20228401",
@@ -2920,7 +2905,9 @@
       "cited_pmids_in_hub": [
         "18539917"
       ],
-      "abstract_length": 1953
+      "abstract_length": 1953,
+      "fulltext_sections": 90,
+      "fulltext_chars": 35143
     },
     "20336151": {
       "pmid": "20336151",
@@ -2954,7 +2941,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 668
+      "abstract_length": 668,
+      "fulltext_sections": 215,
+      "fulltext_chars": 63777
     },
     "20500789": {
       "pmid": "20500789",
@@ -3005,11 +2994,11 @@
       "doi": "10.2215/CJN.01580210",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC2924417",
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 268,
+          "line": 316,
           "context": "'key_pmids': '20538833',"
         }
       ],
@@ -3084,7 +3073,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 822
+      "abstract_length": 822,
+      "fulltext_sections": 33,
+      "fulltext_chars": 30932
     },
     "21323736": {
       "pmid": "21323736",
@@ -3192,7 +3183,7 @@
       "doi": "10.1128/MMBR.00031-10",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC3063353",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3253,7 +3244,9 @@
         "19373249",
         "17261637"
       ],
-      "abstract_length": 0
+      "abstract_length": 0,
+      "fulltext_sections": 77,
+      "fulltext_chars": 29448
     },
     "21719096": {
       "pmid": "21719096",
@@ -3309,7 +3302,9 @@
         "16120857",
         "8366922"
       ],
-      "abstract_length": 2503
+      "abstract_length": 2503,
+      "fulltext_sections": 103,
+      "fulltext_chars": 34466
     },
     "21719305": {
       "pmid": "21719305",
@@ -3347,7 +3342,9 @@
       "cited_pmids_in_hub": [
         "10911004"
       ],
-      "abstract_length": 750
+      "abstract_length": 750,
+      "fulltext_sections": 200,
+      "fulltext_chars": 51979
     },
     "21775755": {
       "pmid": "21775755",
@@ -3384,7 +3381,9 @@
         "Randomized Controlled Trial"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1814
+      "abstract_length": 1814,
+      "fulltext_sections": 89,
+      "fulltext_chars": 31078
     },
     "21864487": {
       "pmid": "21864487",
@@ -3477,7 +3476,9 @@
       "cited_pmids_in_hub": [
         "20154735"
       ],
-      "abstract_length": 938
+      "abstract_length": 938,
+      "fulltext_sections": 126,
+      "fulltext_chars": 42821
     },
     "2189759": {
       "pmid": "2189759",
@@ -3598,7 +3599,9 @@
       "cited_pmids_in_hub": [
         "20154735"
       ],
-      "abstract_length": 912
+      "abstract_length": 912,
+      "fulltext_sections": 306,
+      "fulltext_chars": 80933
     },
     "22109896": {
       "pmid": "22109896",
@@ -3643,7 +3646,7 @@
       "doi": "10.1101/cshperspect.a007732",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC3253030",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -3686,7 +3689,7 @@
       "doi": "10.1002/14651858.CD006800.pub2",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC11831249",
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
@@ -3707,6 +3710,11 @@
           "file": "verify_2026_09_13_repairs.py",
           "line": 37,
           "context": "PMID 22336824 - Shan et al., \"Pentoxifylline for diabetic kidney disease\","
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 114,
+          "context": "\":37 (PMID 22336824 asserted at JAMA Oncol 2018;4(7):994). Both were \""
         }
       ],
       "mesh_terms": [
@@ -3814,7 +3822,9 @@
       "cited_pmids_in_hub": [
         "11832527"
       ],
-      "abstract_length": 1212
+      "abstract_length": 1212,
+      "fulltext_sections": 270,
+      "fulltext_chars": 54731
     },
     "22980982": {
       "pmid": "22980982",
@@ -3863,7 +3873,9 @@
       "cited_pmids_in_hub": [
         "21719305"
       ],
-      "abstract_length": 1189
+      "abstract_length": 1189,
+      "fulltext_sections": 167,
+      "fulltext_chars": 44966
     },
     "23061757": {
       "pmid": "23061757",
@@ -3928,7 +3940,9 @@
         "10911004",
         "17005949"
       ],
-      "abstract_length": 1412
+      "abstract_length": 1412,
+      "fulltext_sections": 155,
+      "fulltext_chars": 40003
     },
     "23248199": {
       "pmid": "23248199",
@@ -4120,7 +4134,9 @@
         "9357409",
         "17942684"
       ],
-      "abstract_length": 1808
+      "abstract_length": 1808,
+      "fulltext_sections": 66,
+      "fulltext_chars": 25649
     },
     "23413806": {
       "pmid": "23413806",
@@ -4158,7 +4174,9 @@
       "cited_pmids_in_hub": [
         "17005949"
       ],
-      "abstract_length": 1690
+      "abstract_length": 1690,
+      "fulltext_sections": 239,
+      "fulltext_chars": 61549
     },
     "23562078": {
       "pmid": "23562078",
@@ -4212,7 +4230,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1110
+      "abstract_length": 1110,
+      "fulltext_sections": 136,
+      "fulltext_chars": 50304
     },
     "23738527": {
       "pmid": "23738527",
@@ -4330,7 +4350,9 @@
       "cited_pmids_in_hub": [
         "15043959"
       ],
-      "abstract_length": 2344
+      "abstract_length": 2344,
+      "fulltext_sections": 95,
+      "fulltext_chars": 32739
     },
     "23817699": {
       "pmid": "23817699",
@@ -4376,7 +4398,9 @@
       "cited_pmids_in_hub": [
         "17429083"
       ],
-      "abstract_length": 1910
+      "abstract_length": 1910,
+      "fulltext_sections": 166,
+      "fulltext_chars": 43361
     },
     "23835325": {
       "pmid": "23835325",
@@ -4427,7 +4451,9 @@
       "cited_pmids_in_hub": [
         "17942684"
       ],
-      "abstract_length": 1272
+      "abstract_length": 1272,
+      "fulltext_sections": 51,
+      "fulltext_chars": 18781
     },
     "23890997": {
       "pmid": "23890997",
@@ -4466,7 +4492,9 @@
         "21719096",
         "10911004"
       ],
-      "abstract_length": 886
+      "abstract_length": 886,
+      "fulltext_sections": 232,
+      "fulltext_chars": 62036
     },
     "24056026": {
       "pmid": "24056026",
@@ -4551,7 +4579,7 @@
       "doi": "10.1210/jc.2013-1764",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC3816271",
       "dashboard_locations": [
         {
           "file": "audit_absence_claim_scope.py",
@@ -4586,6 +4614,56 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 2173
+    },
+    "24497205": {
+      "pmid": "24497205",
+      "title": "Minocycline improves peripheral and autonomic neuropathy in type 2 diabetes: MIND study.",
+      "journal": "Neurol Sci",
+      "year": "2014",
+      "doi": "10.1007/s10072-014-1647-2",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "build_generic_drug_catalog.py",
+          "line": 286,
+          "context": "'key_pmids': '24497205',"
+        },
+        {
+          "file": "build_generic_drug_catalog.py",
+          "line": 289,
+          "context": "'paper. PMID:24497205 retained but UNVERIFIED (not in the paper '"
+        }
+      ],
+      "mesh_terms": [
+        "Autonomic Nervous System Diseases",
+        "Diabetes Mellitus, Type 2",
+        "Disability Evaluation",
+        "Female",
+        "Glycated Hemoglobin",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Minocycline",
+        "Multivariate Analysis",
+        "Peripheral Nervous System Diseases",
+        "Pilot Projects",
+        "Prospective Studies",
+        "Surveys and Questionnaires",
+        "Visual Analog Scale"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "9742976",
+        "8366922"
+      ],
+      "abstract_length": 1733
     },
     "24506867": {
       "pmid": "24506867",
@@ -4623,7 +4701,9 @@
       "cited_pmids_in_hub": [
         "22980982"
       ],
-      "abstract_length": 1107
+      "abstract_length": 1107,
+      "fulltext_sections": 136,
+      "fulltext_chars": 48703
     },
     "24508508": {
       "pmid": "24508508",
@@ -4661,7 +4741,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 580
+      "abstract_length": 580,
+      "fulltext_sections": 74,
+      "fulltext_chars": 32626
     },
     "24598244": {
       "pmid": "24598244",
@@ -4751,7 +4833,7 @@
       "doi": "10.1152/ajpendo.00667.2013",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4025062",
       "dashboard_locations": [
         {
           "file": "audit_absence_claim_scope.py",
@@ -4828,7 +4910,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1069
+      "abstract_length": 1069,
+      "fulltext_sections": 295,
+      "fulltext_chars": 71821
     },
     "24871322": {
       "pmid": "24871322",
@@ -4868,7 +4952,9 @@
       "cited_pmids_in_hub": [
         "12202461"
       ],
-      "abstract_length": 1627
+      "abstract_length": 1627,
+      "fulltext_sections": 190,
+      "fulltext_chars": 47686
     },
     "24970885": {
       "pmid": "24970885",
@@ -4878,7 +4964,7 @@
       "doi": "10.1681/ASN.2014010012",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4279740",
       "dashboard_locations": [
         {
           "file": "build_generic_drug_catalog.py",
@@ -4929,7 +5015,7 @@
       "doi": "10.1016/S2213-8587(14)70115-9",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4283272",
       "dashboard_locations": [
         {
           "file": "build_immunomod_lada.py",
@@ -5013,7 +5099,9 @@
         "22349456",
         "22349456"
       ],
-      "abstract_length": 1716
+      "abstract_length": 1716,
+      "fulltext_sections": 116,
+      "fulltext_chars": 57744
     },
     "25190079": {
       "pmid": "25190079",
@@ -5023,7 +5111,7 @@
       "doi": "10.1101/cshperspect.a016295",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4176007",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -5305,7 +5393,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 785
+      "abstract_length": 785,
+      "fulltext_sections": 147,
+      "fulltext_chars": 50322
     },
     "25751624": {
       "pmid": "25751624",
@@ -5347,7 +5437,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1040
+      "abstract_length": 1040,
+      "fulltext_sections": 139,
+      "fulltext_chars": 54959
     },
     "25772230": {
       "pmid": "25772230",
@@ -5428,6 +5520,70 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 1825
     },
+    "25940230": {
+      "pmid": "25940230",
+      "title": "Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.",
+      "journal": "Prog Cardiovasc Dis",
+      "year": "2015",
+      "doi": "10.1016/j.pcad.2015.04.003",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "build_nutrition_lada.py",
+          "line": 485,
+          "context": "<li><strong>PREDIMED Trial:</strong> Among the 3,541 PREDIMED participants who were free of diabetes at baseline, 273 de"
+        },
+        {
+          "file": "build_nutrition_lada.py",
+          "line": 817,
+          "context": "<div class=\"reference-meta\">Mart&iacute;nez-Gonz&aacute;lez MA, Salas-Salvad&oacute; J, Estruch R, Corella D, Fit&oacute"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 309,
+          "context": "\"WERE MUCH LARGER THAN A SURNAME. (1) PMID 25940230 in \""
+        }
+      ],
+      "mesh_terms": [
+        "Cardiovascular Diseases",
+        "Diet, Mediterranean",
+        "Evidence-Based Medicine",
+        "Gene-Environment Interaction",
+        "Genetic Predisposition to Disease",
+        "Health Status",
+        "Humans",
+        "Myocardial Infarction",
+        "Phenotype",
+        "Primary Prevention",
+        "Prognosis",
+        "Protective Factors",
+        "Randomized Controlled Trials as Topic",
+        "Risk Assessment",
+        "Risk Factors",
+        "Risk Reduction Behavior",
+        "Stroke",
+        "Time Factors"
+      ],
+      "keywords": [
+        "Atrial fibrillation",
+        "Dietary intervention",
+        "Mediterranean diet",
+        "Peripheral artery disease",
+        "Primary prevention",
+        "Randomized trials",
+        "Stroke",
+        "Type-2 diabetes"
+      ],
+      "pub_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1652
+    },
     "26106223": {
       "pmid": "26106223",
       "title": "Recognition and Management of Individuals With Hyperglycemia Because of a Heterozygous Glucokinase Mutation.",
@@ -5475,7 +5631,7 @@
       "doi": "10.4239/wjd.v6.i10.1152",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4549665",
       "dashboard_locations": [
         {
           "file": "build_nutrition_beta.py",
@@ -5528,7 +5684,7 @@
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 232,
+          "line": 257,
           "context": "'key_pmids': '26378978',"
         },
         {
@@ -5610,7 +5766,9 @@
         "23780460",
         "15043959"
       ],
-      "abstract_length": 1035
+      "abstract_length": 1035,
+      "fulltext_sections": 201,
+      "fulltext_chars": 50414
     },
     "26590418": {
       "pmid": "26590418",
@@ -5709,7 +5867,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1181
+      "abstract_length": 1181,
+      "fulltext_sections": 265,
+      "fulltext_chars": 69607
     },
     "26784127": {
       "pmid": "26784127",
@@ -5719,7 +5879,7 @@
       "doi": "10.1089/dia.2015.0417",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC4717493",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -5796,7 +5956,9 @@
       "cited_pmids_in_hub": [
         "23817699"
       ],
-      "abstract_length": 1077
+      "abstract_length": 1077,
+      "fulltext_sections": 166,
+      "fulltext_chars": 41716
     },
     "27159554": {
       "pmid": "27159554",
@@ -5986,7 +6148,9 @@
         "21719096",
         "8366922"
       ],
-      "abstract_length": 3710
+      "abstract_length": 3710,
+      "fulltext_sections": 248,
+      "fulltext_chars": 85071
     },
     "27821710": {
       "pmid": "27821710",
@@ -6018,7 +6182,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1753
+      "abstract_length": 1753,
+      "fulltext_sections": 142,
+      "fulltext_chars": 43514
     },
     "27878313": {
       "pmid": "27878313",
@@ -6069,7 +6235,9 @@
         "18539917",
         "26378978"
       ],
-      "abstract_length": 2551
+      "abstract_length": 2551,
+      "fulltext_sections": 171,
+      "fulltext_chars": 49209
     },
     "28010783": {
       "pmid": "28010783",
@@ -6200,7 +6368,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 452
+      "abstract_length": 452,
+      "fulltext_sections": 269,
+      "fulltext_chars": 96527
     },
     "28118453": {
       "pmid": "28118453",
@@ -6342,7 +6512,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 742
+      "abstract_length": 742,
+      "fulltext_sections": 283,
+      "fulltext_chars": 66288
     },
     "28314945": {
       "pmid": "28314945",
@@ -6389,7 +6561,9 @@
         "26106223",
         "26590418"
       ],
-      "abstract_length": 1661
+      "abstract_length": 1661,
+      "fulltext_sections": 132,
+      "fulltext_chars": 34708
     },
     "28375156": {
       "pmid": "28375156",
@@ -6399,7 +6573,7 @@
       "doi": "10.1172/JCI87388",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC5409789",
       "dashboard_locations": [
         {
           "file": "build_nutrition_beta.py",
@@ -6484,7 +6658,9 @@
       "cited_pmids_in_hub": [
         "28283069"
       ],
-      "abstract_length": 1262
+      "abstract_length": 1262,
+      "fulltext_sections": 397,
+      "fulltext_chars": 113643
     },
     "28522654": {
       "pmid": "28522654",
@@ -6494,7 +6670,7 @@
       "doi": "10.2215/CJN.11491116",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC5718284",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -6577,7 +6753,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1234
+      "abstract_length": 1234,
+      "fulltext_sections": 278,
+      "fulltext_chars": 91368
     },
     "2873396": {
       "pmid": "2873396",
@@ -6593,6 +6771,11 @@
           "file": "build_drug_repurposing_screen.py",
           "line": 643,
           "context": "\"evidence\": \"RCT-proven beta cell preservation in new-onset T1D (Feutren et al, Lancet 1986;2(8499):119-24, PMID:2873396"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 272,
+          "context": "\"both audit-trail so they do not fail: PMID 2873396 asserted at \""
         },
         {
           "file": "_run_2026_08_27.py",
@@ -6672,7 +6855,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1212
+      "abstract_length": 1212,
+      "fulltext_sections": 134,
+      "fulltext_chars": 34861
     },
     "28885622": {
       "pmid": "28885622",
@@ -6801,7 +6986,9 @@
         "Research Support, N.I.H., Extramural"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 868
+      "abstract_length": 868,
+      "fulltext_sections": 116,
+      "fulltext_chars": 40058
     },
     "29567707": {
       "pmid": "29567707",
@@ -7014,7 +7201,9 @@
         "23248199",
         "24598244"
       ],
-      "abstract_length": 1894
+      "abstract_length": 1894,
+      "fulltext_sections": 91,
+      "fulltext_chars": 19502
     },
     "29623672": {
       "pmid": "29623672",
@@ -7057,7 +7246,7 @@
       "doi": "10.1001/jamaoncol.2018.0977",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC6145722",
       "dashboard_locations": [
         {
           "file": "audit_citation_semantic_support.py",
@@ -7576,7 +7765,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 996
+      "abstract_length": 996,
+      "fulltext_sections": 182,
+      "fulltext_chars": 55507
     },
     "29909913": {
       "pmid": "29909913",
@@ -7669,7 +7860,9 @@
       "cited_pmids_in_hub": [
         "19940299"
       ],
-      "abstract_length": 1280
+      "abstract_length": 1280,
+      "fulltext_sections": 74,
+      "fulltext_chars": 28975
     },
     "30041834": {
       "pmid": "30041834",
@@ -7715,7 +7908,7 @@
       "doi": "10.1152/physiol.00029.2018",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC6347098",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -7795,7 +7988,9 @@
         "Research Support, N.I.H., Extramural"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 2172
+      "abstract_length": 2172,
+      "fulltext_sections": 96,
+      "fulltext_chars": 34667
     },
     "30586620": {
       "pmid": "30586620",
@@ -7854,7 +8049,7 @@
       "doi": "10.1089/dia.2018.0384",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC7061293",
       "dashboard_locations": [
         {
           "file": "build_islet_equity.py",
@@ -7909,7 +8104,7 @@
       "doi": "",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC6413292",
       "dashboard_locations": [
         {
           "file": "build_drug_repurposing_screen.py",
@@ -8034,7 +8229,9 @@
         "2189759",
         "19373249"
       ],
-      "abstract_length": 1889
+      "abstract_length": 1889,
+      "fulltext_sections": 190,
+      "fulltext_chars": 70863
     },
     "31036962": {
       "pmid": "31036962",
@@ -8072,7 +8269,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 854
+      "abstract_length": 854,
+      "fulltext_sections": 277,
+      "fulltext_chars": 72502
     },
     "31157579": {
       "pmid": "31157579",
@@ -8274,7 +8473,9 @@
       "cited_pmids_in_hub": [
         "11832527"
       ],
-      "abstract_length": 1953
+      "abstract_length": 1953,
+      "fulltext_sections": 103,
+      "fulltext_chars": 35443
     },
     "31175156": {
       "pmid": "31175156",
@@ -8284,7 +8485,7 @@
       "doi": "10.1074/jbc.REV119.008351",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC6663870",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -8366,7 +8567,9 @@
         "8366922",
         "9742976"
       ],
-      "abstract_length": 1088
+      "abstract_length": 1088,
+      "fulltext_sections": 165,
+      "fulltext_chars": 43938
     },
     "31180194": {
       "pmid": "31180194",
@@ -8438,7 +8641,9 @@
       "cited_pmids_in_hub": [
         "26404926"
       ],
-      "abstract_length": 2144
+      "abstract_length": 2144,
+      "fulltext_sections": 104,
+      "fulltext_chars": 32488
     },
     "31182921": {
       "pmid": "31182921",
@@ -8500,7 +8705,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1601
+      "abstract_length": 1601,
+      "fulltext_sections": 130,
+      "fulltext_chars": 27798
     },
     "31197153": {
       "pmid": "31197153",
@@ -8594,7 +8801,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 2292
+      "abstract_length": 2292,
+      "fulltext_sections": 132,
+      "fulltext_chars": 60066
     },
     "31296866": {
       "pmid": "31296866",
@@ -8666,7 +8875,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1724
+      "abstract_length": 1724,
+      "fulltext_sections": 158,
+      "fulltext_chars": 47852
     },
     "31618560": {
       "pmid": "31618560",
@@ -8720,7 +8931,9 @@
         "30657336",
         "8366922"
       ],
-      "abstract_length": 2529
+      "abstract_length": 2529,
+      "fulltext_sections": 103,
+      "fulltext_chars": 36965
     },
     "31733140": {
       "pmid": "31733140",
@@ -8842,42 +9055,42 @@
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 795,
+          "line": 843,
           "context": "<!-- Source: PMID:34763823. Repaired 2026-09-10: PMID:32175717 was also listed here"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 956,
+          "line": 1004,
           "context": "PMID:32175717 (Khan MAB et al., J Epidemiol Glob Health 2020;10(1):107-111) -"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 966,
+          "line": 1014,
           "context": "<p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class=\"unsourced\" title=\"Citation removed 2026-09-"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 966,
+          "line": 1014,
           "context": "<p>Averted blindness (diabetic retinopathy) is worth ~$10K-$30K <span class=\"unsourced\" title=\"Citation removed 2026-09-"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 968,
+          "line": 1016,
           "context": "<p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class=\"unsourced\" title=\"Citation removed 2026-09-1"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 968,
+          "line": 1016,
           "context": "<p>Averted dialysis (diabetic nephropathy) is worth ~$30K-$50K <span class=\"unsourced\" title=\"Citation removed 2026-09-1"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 999,
+          "line": 1047,
           "context": "<!-- Drug costs: PMID:32175717 removed 2026-09-10 (T2D prevalence paper, no cost data). See"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 1003,
+          "line": 1051,
           "context": "// Cost data: PMID:34763823 only. PMID:32175717 removed 2026-09-10."
         },
         {
@@ -9036,7 +9249,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1430
+      "abstract_length": 1430,
+      "fulltext_sections": 56,
+      "fulltext_chars": 16824
     },
     "32307525": {
       "pmid": "32307525",
@@ -9274,7 +9489,9 @@
       "cited_pmids_in_hub": [
         "8366922"
       ],
-      "abstract_length": 1463
+      "abstract_length": 1463,
+      "fulltext_sections": 206,
+      "fulltext_chars": 55031
     },
     "32694767": {
       "pmid": "32694767",
@@ -9413,7 +9630,9 @@
       "cited_pmids_in_hub": [
         "18843118"
       ],
-      "abstract_length": 1206
+      "abstract_length": 1206,
+      "fulltext_sections": 57,
+      "fulltext_chars": 14125
     },
     "32847960": {
       "pmid": "32847960",
@@ -9511,7 +9730,9 @@
         "19404608",
         "32307525"
       ],
-      "abstract_length": 2030
+      "abstract_length": 2030,
+      "fulltext_sections": 208,
+      "fulltext_chars": 47102
     },
     "32862232": {
       "pmid": "32862232",
@@ -9569,7 +9790,9 @@
       "cited_pmids_in_hub": [
         "26378978"
       ],
-      "abstract_length": 2280
+      "abstract_length": 2280,
+      "fulltext_sections": 121,
+      "fulltext_chars": 41127
     },
     "32929230": {
       "pmid": "32929230",
@@ -9631,7 +9854,9 @@
       "cited_pmids_in_hub": [
         "12612578"
       ],
-      "abstract_length": 1583
+      "abstract_length": 1583,
+      "fulltext_sections": 214,
+      "fulltext_chars": 59454
     },
     "33139407": {
       "pmid": "33139407",
@@ -9676,7 +9901,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 0
+      "abstract_length": 0,
+      "fulltext_sections": 393,
+      "fulltext_chars": 111927
     },
     "33155826": {
       "pmid": "33155826",
@@ -9686,7 +9913,7 @@
       "doi": "10.1089/dia.2020.0338",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC7994432",
       "dashboard_locations": [
         {
           "file": "build_health_equity.py",
@@ -9749,9 +9976,24 @@
       "pmcid": "",
       "dashboard_locations": [
         {
+          "file": "audit_catalog_entity_agreement.py",
+          "line": 10,
+          "context": "1. The Spironolactone entry's only citation was PMID 33264825 --"
+        },
+        {
           "file": "build_generic_drug_catalog.py",
-          "line": 220,
-          "context": "'key_pmids': '33264825',"
+          "line": 243,
+          "context": "'(PMID:33264825, FIDELIO-DKD) is a finerenone trial, not a '"
+        },
+        {
+          "file": "_close_run_2026_09_19.py",
+          "line": 46,
+          "context": "'build_generic_drug_catalog.py Spironolactone cited only PMID 33264825 = '"
+        },
+        {
+          "file": "_close_run_2026_09_19.py",
+          "line": 148,
+          "context": "'FINERENONE trial (FIDELIO-DKD, PMID 33264825) and was withdrawn '"
         }
       ],
       "mesh_terms": [
@@ -9824,7 +10066,9 @@
       "cited_pmids_in_hub": [
         "31618560"
       ],
-      "abstract_length": 924
+      "abstract_length": 924,
+      "fulltext_sections": 122,
+      "fulltext_chars": 32725
     },
     "33610858": {
       "pmid": "33610858",
@@ -9877,7 +10121,9 @@
         "19373249",
         "30949058"
       ],
-      "abstract_length": 2837
+      "abstract_length": 2837,
+      "fulltext_sections": 114,
+      "fulltext_chars": 37116
     },
     "33622669": {
       "pmid": "33622669",
@@ -9970,7 +10216,66 @@
         "30949058",
         "25324018"
       ],
-      "abstract_length": 1558
+      "abstract_length": 1558,
+      "fulltext_sections": 108,
+      "fulltext_chars": 39536
+    },
+    "34021020": {
+      "pmid": "34021020",
+      "title": "Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 Diabetes: A Double-Blind, Randomized, Placebo-Controlled Phase IIb Trial.",
+      "journal": "Diabetes Care",
+      "year": "2021",
+      "doi": "10.2337/dc21-0318",
+      "has_abstract": true,
+      "has_fulltext": true,
+      "pmcid": "PMC8323180",
+      "dashboard_locations": [
+        {
+          "file": "build_immunomod_lada.py",
+          "line": 74,
+          "context": "\"t1d_evidence\": \"DIAGNODE-3 Phase 3 (321 randomized, 57 sites; interim on 174 evaluable at 15 months, HLA DR3-DQ2 enrich"
+        },
+        {
+          "file": "build_nutrition_lada.py",
+          "line": 895,
+          "context": "<div class=\"reference-meta\">Ludvigsson J et al. &ldquo;Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplem"
+        },
+        {
+          "file": "reconcile_paper_index.py",
+          "line": 107,
+          "context": "classification: DIAGNODE-2 (PMID 34021020, a Phase IIb double-blind RCT in"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 318,
+          "context": "\"belonging to a different trial. (2) PMID 34021020 in the same \""
+        }
+      ],
+      "mesh_terms": [
+        "C-Peptide",
+        "Diabetes Mellitus, Type 1",
+        "Dietary Supplements",
+        "Double-Blind Method",
+        "Glutamate Decarboxylase",
+        "Humans",
+        "Vitamin D"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Clinical Trial, Phase II",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "19940299",
+        "18843118",
+        "32754804"
+      ],
+      "abstract_length": 1842,
+      "fulltext_sections": 114,
+      "fulltext_chars": 34389
     },
     "34180979": {
       "pmid": "34180979",
@@ -9980,7 +10285,7 @@
       "doi": "10.1210/endrev/bnab021",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC9115372",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -10083,7 +10388,9 @@
         "25190079",
         "26590418"
       ],
-      "abstract_length": 1209
+      "abstract_length": 1209,
+      "fulltext_sections": 245,
+      "fulltext_chars": 92979
     },
     "34318969": {
       "pmid": "34318969",
@@ -10157,7 +10464,9 @@
       "cited_pmids_in_hub": [
         "28118453"
       ],
-      "abstract_length": 842
+      "abstract_length": 842,
+      "fulltext_sections": 71,
+      "fulltext_chars": 20894
     },
     "34763823": {
       "pmid": "34763823",
@@ -10196,67 +10505,67 @@
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 795,
+          "line": 843,
           "context": "<!-- Source: PMID:34763823. Repaired 2026-09-10: PMID:32175717 was also listed here"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 813,
+          "line": 861,
           "context": "<p><strong>New drug development:</strong> Average cost $2.6B <span style=\"color:#b00; font-weight:600;\">[UNSOURCED]</spa"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 815,
+          "line": 863,
           "context": "<p><strong>Drug repurposing:</strong> Average cost $300M <span style=\"color:#b00; font-weight:600;\">[UNSOURCED]</span>, "
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 820,
+          "line": 868,
           "context": "<!-- Repaired 2026-09-12: this block was labelled \"Source: PMID:34763823\". It is not."
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 838,
+          "line": 886,
           "context": "<p style=\"font-size:0.85em; color:#8a6d3b; border-left:4px solid #b00; padding-left:10px;\"><em>Repaired 2026-09-12: all "
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 876,
+          "line": 924,
           "context": "(PMID:34763823)\". Both halves were false. PMID 34763823 is Herman &amp; Kuo, <em>100 Years of Insulin:"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 876,
+          "line": 924,
           "context": "(PMID:34763823)\". Both halves were false. PMID 34763823 is Herman &amp; Kuo, <em>100 Years of Insulin:"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 943,
+          "line": 991,
           "context": "<p>If a generic drug costs $30/year <span style=\"color:#b00; font-weight:600;\">[UNSOURCED &mdash; repaired 2026-09-12, w"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 950,
+          "line": 998,
           "context": "<p>India manufactures 50% of the world's generic drugs. Manufacturing, regulatory, and distribution infrastructure exist"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 1000,
+          "line": 1048,
           "context": "the standing caveat that PMID:34763823 is itself an INSULIN pricing review and is being"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 1003,
+          "line": 1051,
           "context": "// Cost data: PMID:34763823 only. PMID:32175717 removed 2026-09-10."
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 1004,
+          "line": 1052,
           "context": "const drugsData = ''' + json.dumps(DRUGS) + '''; // PMID:34763823"
         },
         {
           "file": "build_generic_drug_catalog.py",
-          "line": 1006,
+          "line": 1054,
           "context": "const topCandidates = ''' + json.dumps(TOP_CANDIDATES) + '''; // PMID:34763823"
         },
         {
@@ -10400,6 +10709,11 @@
           "context": "PMID 34763823 - Herman & Kuo, \"100 Years of Insulin: Why Is Insulin So"
         },
         {
+          "file": "_close_run_2026_09_18.py",
+          "line": 158,
+          "context": "\"(f\\\"{len(live_bad)} LIVE link(s) to PMID 34763823 remain\\\") and are \""
+        },
+        {
           "file": "_run_2026_08_27.py",
           "line": 85,
           "context": "\"PMID 34763823 (Herman WH & Kuo S, '100 years of Insulin: Why is \""
@@ -10445,7 +10759,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 737
+      "abstract_length": 737,
+      "fulltext_sections": 115,
+      "fulltext_chars": 39112
     },
     "35028608": {
       "pmid": "35028608",
@@ -10492,7 +10808,9 @@
       "cited_pmids_in_hub": [
         "10911004"
       ],
-      "abstract_length": 1080
+      "abstract_length": 1080,
+      "fulltext_sections": 143,
+      "fulltext_chars": 49916
     },
     "35180212": {
       "pmid": "35180212",
@@ -10545,7 +10863,9 @@
         "9742976",
         "32712220"
       ],
-      "abstract_length": 2108
+      "abstract_length": 2108,
+      "fulltext_sections": 146,
+      "fulltext_chars": 40485
     },
     "35203496": {
       "pmid": "35203496",
@@ -10593,7 +10913,9 @@
       "cited_pmids_in_hub": [
         "30657336"
       ],
-      "abstract_length": 1292
+      "abstract_length": 1292,
+      "fulltext_sections": 265,
+      "fulltext_chars": 64736
     },
     "35466661": {
       "pmid": "35466661",
@@ -10641,7 +10963,9 @@
         "Systematic Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1734
+      "abstract_length": 1734,
+      "fulltext_sections": 117,
+      "fulltext_chars": 43221
     },
     "35551292": {
       "pmid": "35551292",
@@ -10725,7 +11049,9 @@
         "19373249",
         "35551294"
       ],
-      "abstract_length": 1697
+      "abstract_length": 1697,
+      "fulltext_sections": 132,
+      "fulltext_chars": 55525
     },
     "35551293": {
       "pmid": "35551293",
@@ -10886,7 +11212,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1206
+      "abstract_length": 1206,
+      "fulltext_sections": 360,
+      "fulltext_chars": 149748
     },
     "35563495": {
       "pmid": "35563495",
@@ -10930,7 +11258,9 @@
         "9742976",
         "32712220"
       ],
-      "abstract_length": 1146
+      "abstract_length": 1146,
+      "fulltext_sections": 129,
+      "fulltext_chars": 34274
     },
     "35665810": {
       "pmid": "35665810",
@@ -10985,7 +11315,62 @@
         "34021020",
         "32754804"
       ],
-      "abstract_length": 1906
+      "abstract_length": 1906,
+      "fulltext_sections": 103,
+      "fulltext_chars": 28773
+    },
+    "35784546": {
+      "pmid": "35784546",
+      "title": "Effects of Berberine Plus Inulin on Diabetes Care in Patients With Latent Autoimmune Diabetes in Adults: Protocol for a Randomized Controlled Trial.",
+      "journal": "Front Endocrinol (Lausanne)",
+      "year": "2022",
+      "doi": "10.3389/fendo.2022.876657",
+      "has_abstract": true,
+      "has_fulltext": true,
+      "pmcid": "PMC9241519",
+      "dashboard_locations": [
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 257,
+          "context": "\"record - PMID 35784546, a PROTOCOL for NCT04698330, which reports no \""
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Berberine",
+        "Diabetes Mellitus, Type 1",
+        "Glucose Intolerance",
+        "Humans",
+        "Insulin",
+        "Inulin",
+        "Latent Autoimmune Diabetes in Adults",
+        "Prospective Studies",
+        "Quality of Life",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [
+        "LADA (latent autoimmune diabetes in adults)",
+        "berberine",
+        "diabetes care",
+        "glycemic control",
+        "inulin",
+        "randomized controlled trial"
+      ],
+      "pub_types": [
+        "Clinical Trial Protocol",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [
+        "23248199",
+        "30041834",
+        "28885622",
+        "32847960",
+        "18442638"
+      ],
+      "abstract_length": 2258,
+      "fulltext_sections": 104,
+      "fulltext_chars": 32966
     },
     "35845323": {
       "pmid": "35845323",
@@ -10995,7 +11380,7 @@
       "doi": "10.34067/KID.0008392021",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC9255874",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_07.py",
@@ -11053,7 +11438,9 @@
         "10911004",
         "17005949"
       ],
-      "abstract_length": 148
+      "abstract_length": 148,
+      "fulltext_sections": 42,
+      "fulltext_chars": 8567
     },
     "35912345": {
       "pmid": "35912345",
@@ -11077,7 +11464,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1085
+      "abstract_length": 1085,
+      "fulltext_sections": 90,
+      "fulltext_chars": 33367
     },
     "36109639": {
       "pmid": "36109639",
@@ -11162,7 +11551,9 @@
         "Research Support, Non-U.S. Gov't"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1964
+      "abstract_length": 1964,
+      "fulltext_sections": 155,
+      "fulltext_chars": 34736
     },
     "36113507": {
       "pmid": "36113507",
@@ -11183,6 +11574,11 @@
           "file": "build_health_equity.py",
           "line": 1279,
           "context": "<span class=\"pmid-link\">PMID:36113507</span>"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 118,
+          "context": "\"'coordinate resolves to PMID 36113507' - while the gate failed \""
         }
       ],
       "mesh_terms": [
@@ -11217,6 +11613,11 @@
           "file": "build_health_equity.py",
           "line": 1281,
           "context": "Gregory GA, et al. (IDF Diabetes Atlas Type 1 Diabetes in Adults Special Interest Group). <em>Global incidence, prevalen"
+        },
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 112,
+          "context": "\"build_health_equity.py:1281 (PMID 36215990 asserted at Lancet \""
         }
       ],
       "mesh_terms": [],
@@ -11485,7 +11886,9 @@
         "Research Support, N.I.H., Extramural"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1231
+      "abstract_length": 1231,
+      "fulltext_sections": 238,
+      "fulltext_chars": 89895
     },
     "36566139": {
       "pmid": "36566139",
@@ -11580,7 +11983,9 @@
       "cited_pmids_in_hub": [
         "31733140"
       ],
-      "abstract_length": 1487
+      "abstract_length": 1487,
+      "fulltext_sections": 97,
+      "fulltext_chars": 36087
     },
     "36826844": {
       "pmid": "36826844",
@@ -11590,7 +11995,7 @@
       "doi": "10.1001/jama.2023.2064",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC9960020",
       "dashboard_locations": [
         {
           "file": "audit_pubtype_title_disagreement.py",
@@ -11669,6 +12074,67 @@
       ],
       "cited_pmids_in_hub": [],
       "abstract_length": 1344
+    },
+    "37026004": {
+      "pmid": "37026004",
+      "title": "Matching for HLA-DR excluding diabetogenic HLA-DR3 and HLA-DR4 predicts insulin independence after pancreatic islet transplantation.",
+      "journal": "Front Immunol",
+      "year": "2023",
+      "doi": "10.3389/fimmu.2023.1110544",
+      "has_abstract": true,
+      "has_fulltext": true,
+      "pmcid": "PMC10070978",
+      "dashboard_locations": [
+        {
+          "file": "_close_run_2026_09_19b.py",
+          "line": 111,
+          "context": "'PMID 37026004 which state itself calls load-bearing for Gap #11 - and the two '"
+        },
+        {
+          "file": "_run_2026_09_07.py",
+          "line": 428,
+          "context": "'evidence': 'PMID 37026004 (CITR analysis, Front Immunol 2023)',"
+        },
+        {
+          "file": "_run_2026_09_07.py",
+          "line": 538,
+          "context": "'READ PMID 37026004 IN FULL AND ANSWER ONE QUESTION: does the CITR HLA-DR matching '"
+        },
+        {
+          "file": "_run_2026_09_08.py",
+          "line": 413,
+          "context": "'THIRD FINDING: PMID 37026004, adopted yesterday as load-bearing for the Gap #11 '"
+        }
+      ],
+      "mesh_terms": [
+        "Humans",
+        "Diabetes Mellitus, Type 1",
+        "HLA-DR3 Antigen",
+        "HLA-DR4 Antigen",
+        "Insulin",
+        "Islets of Langerhans Transplantation",
+        "Retrospective Studies",
+        "Histocompatibility Testing"
+      ],
+      "keywords": [
+        "HLA",
+        "HLA-DR3",
+        "HLA-DR4",
+        "Human leukocyte antigen",
+        "insulin",
+        "insulin independence",
+        "islet transplantation",
+        "type 1 diabetes"
+      ],
+      "pub_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 1719,
+      "fulltext_sections": 118,
+      "fulltext_chars": 34046
     },
     "37105208": {
       "pmid": "37105208",
@@ -11762,7 +12228,9 @@
         "Research Support, N.I.H., Extramural"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 3326
+      "abstract_length": 3326,
+      "fulltext_sections": 133,
+      "fulltext_chars": 53765
     },
     "37122431": {
       "pmid": "37122431",
@@ -11798,7 +12266,9 @@
         "8366922",
         "27159554"
       ],
-      "abstract_length": 1284
+      "abstract_length": 1284,
+      "fulltext_sections": 147,
+      "fulltext_chars": 36934
     },
     "37148899": {
       "pmid": "37148899",
@@ -11923,7 +12393,7 @@
       "doi": "10.1370/afm.2962",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC10202509",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -11975,6 +12445,11 @@
       "has_fulltext": false,
       "pmcid": "",
       "dashboard_locations": [
+        {
+          "file": "_close_run_2026_09_18.py",
+          "line": 273,
+          "context": "\"Diabetes 2024;73(6):823 (resolves to 38349844) and PMID 37221401 \""
+        },
         {
           "file": "_run_2026_08_27.py",
           "line": 207,
@@ -12043,7 +12518,9 @@
         "35551292",
         "33622669"
       ],
-      "abstract_length": 1809
+      "abstract_length": 1809,
+      "fulltext_sections": 108,
+      "fulltext_chars": 35712
     },
     "37351171": {
       "pmid": "37351171",
@@ -12086,7 +12563,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1859
+      "abstract_length": 1859,
+      "fulltext_sections": 117,
+      "fulltext_chars": 53529
     },
     "37354562": {
       "pmid": "37354562",
@@ -12096,7 +12575,7 @@
       "doi": "10.1001/jama.2023.11313",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC10354685",
       "dashboard_locations": [
         {
           "file": "add_citations.py",
@@ -12148,7 +12627,7 @@
       "doi": "10.1016/S2213-8587(23)00129-8",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC11070656",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -12232,7 +12711,9 @@
         "33139407",
         "11832527"
       ],
-      "abstract_length": 4653
+      "abstract_length": 4653,
+      "fulltext_sections": 201,
+      "fulltext_chars": 100443
     },
     "37356449": {
       "pmid": "37356449",
@@ -12346,7 +12827,9 @@
         "10911004",
         "16120857"
       ],
-      "abstract_length": 1577
+      "abstract_length": 1577,
+      "fulltext_sections": 95,
+      "fulltext_chars": 37521
     },
     "37366315": {
       "pmid": "37366315",
@@ -12577,7 +13060,9 @@
       "cited_pmids_in_hub": [
         "26378978"
       ],
-      "abstract_length": 1919
+      "abstract_length": 1919,
+      "fulltext_sections": 158,
+      "fulltext_chars": 65707
     },
     "37428296": {
       "pmid": "37428296",
@@ -12675,7 +13160,9 @@
         "29988125",
         "36826844"
       ],
-      "abstract_length": 1833
+      "abstract_length": 1833,
+      "fulltext_sections": 72,
+      "fulltext_chars": 27559
     },
     "37715820": {
       "pmid": "37715820",
@@ -12685,7 +13172,7 @@
       "doi": "10.1007/s00125-023-05997-2",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC10942722",
       "dashboard_locations": [
         {
           "file": "build_health_equity.py",
@@ -12999,7 +13486,7 @@
       "doi": "10.2337/dc24-S002",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC10725812",
       "dashboard_locations": [
         {
           "file": "build_data_dictionary.py",
@@ -13058,7 +13545,9 @@
         "Retraction Notice"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 55
+      "abstract_length": 55,
+      "fulltext_sections": 7,
+      "fulltext_chars": 1226
     },
     "38349844": {
       "pmid": "38349844",
@@ -13334,7 +13823,9 @@
         "37385967",
         "37356446"
       ],
-      "abstract_length": 1845
+      "abstract_length": 1845,
+      "fulltext_sections": 175,
+      "fulltext_chars": 42783
     },
     "3899825": {
       "pmid": "3899825",
@@ -13465,7 +13956,9 @@
         "11565518",
         "26378978"
       ],
-      "abstract_length": 1917
+      "abstract_length": 1917,
+      "fulltext_sections": 263,
+      "fulltext_chars": 94020
     },
     "39525461": {
       "pmid": "39525461",
@@ -13509,7 +14002,9 @@
         "28010783",
         "25131812"
       ],
-      "abstract_length": 1979
+      "abstract_length": 1979,
+      "fulltext_sections": 168,
+      "fulltext_chars": 55090
     },
     "39613428": {
       "pmid": "39613428",
@@ -13521,6 +14016,11 @@
       "has_fulltext": true,
       "pmcid": "PMC11605811",
       "dashboard_locations": [
+        {
+          "file": "adjudicate_flagged_membership_20260920.py",
+          "line": 95,
+          "context": "'Quebec algorithmic-classification cohorts, BMJ Open 2026;16(8):e109209. STUDY PROTOCOL - NO RESULTS. Its intake record "
+        },
         {
           "file": "audit_path_count_staleness.py",
           "line": 8,
@@ -13612,7 +14112,9 @@
         "29988125",
         "36826844"
       ],
-      "abstract_length": 2184
+      "abstract_length": 2184,
+      "fulltext_sections": 336,
+      "fulltext_chars": 94500
     },
     "39629068": {
       "pmid": "39629068",
@@ -13653,7 +14155,9 @@
         "35551292",
         "37223016"
       ],
-      "abstract_length": 2382
+      "abstract_length": 2382,
+      "fulltext_sections": 119,
+      "fulltext_chars": 44476
     },
     "39634180": {
       "pmid": "39634180",
@@ -13700,7 +14204,9 @@
       "cited_pmids_in_hub": [
         "26590418"
       ],
-      "abstract_length": 2370
+      "abstract_length": 2370,
+      "fulltext_sections": 273,
+      "fulltext_chars": 78733
     },
     "39651984": {
       "pmid": "39651984",
@@ -13710,7 +14216,7 @@
       "doi": "10.2337/dc25-SREV",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC11635056",
       "dashboard_locations": [
         {
           "file": "build_gap_synthesis.py",
@@ -13735,7 +14241,7 @@
       "doi": "10.29011/2577-2228.100460",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC11654833",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -13812,7 +14318,9 @@
       "cited_pmids_in_hub": [
         "3899825"
       ],
-      "abstract_length": 1772
+      "abstract_length": 1772,
+      "fulltext_sections": 105,
+      "fulltext_chars": 32795
     },
     "39911401": {
       "pmid": "39911401",
@@ -13870,7 +14378,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1809
+      "abstract_length": 1809,
+      "fulltext_sections": 148,
+      "fulltext_chars": 55568
     },
     "39951130": {
       "pmid": "39951130",
@@ -13880,7 +14390,7 @@
       "doi": "10.2337/dc24-1915",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC12034893",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_08.py",
@@ -13954,7 +14464,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1075
+      "abstract_length": 1075,
+      "fulltext_sections": 227,
+      "fulltext_chars": 83571
     },
     "40111679": {
       "pmid": "40111679",
@@ -14106,7 +14618,9 @@
         "35551292",
         "2189759"
       ],
-      "abstract_length": 2173
+      "abstract_length": 2173,
+      "fulltext_sections": 129,
+      "fulltext_chars": 39813
     },
     "40366501": {
       "pmid": "40366501",
@@ -14147,7 +14661,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1582
+      "abstract_length": 1582,
+      "fulltext_sections": 116,
+      "fulltext_chars": 30663
     },
     "40464081": {
       "pmid": "40464081",
@@ -14190,7 +14706,9 @@
         "37356446",
         "37861217"
       ],
-      "abstract_length": 4159
+      "abstract_length": 4159,
+      "fulltext_sections": 161,
+      "fulltext_chars": 55042
     },
     "40544428": {
       "pmid": "40544428",
@@ -14360,7 +14878,9 @@
         "35551292",
         "35551294"
       ],
-      "abstract_length": 1982
+      "abstract_length": 1982,
+      "fulltext_sections": 187,
+      "fulltext_chars": 51165
     },
     "40598585": {
       "pmid": "40598585",
@@ -14373,9 +14893,19 @@
       "pmcid": "PMC12211534",
       "dashboard_locations": [
         {
+          "file": "repair_index_pmcid_map.py",
+          "line": 30,
+          "context": "already in corpus as PMID 40598585 -- whose full text was sitting on disk as"
+        },
+        {
           "file": "_close_run_2026_08_28.py",
           "line": 71,
           "context": "\"verapamil from the 11 winners in PMID 40598585 (BMC Med 2025 network MA) is \""
+        },
+        {
+          "file": "_close_run_2026_09_19.py",
+          "line": 98,
+          "context": "'corpus as PMID 40598585 - whose full text was on disk as PMC12211534.json.',"
         },
         {
           "file": "_run_2026_08_28.py",
@@ -14417,7 +14947,9 @@
       "keywords": [],
       "pub_types": [],
       "cited_pmids_in_hub": [],
-      "abstract_length": 2166
+      "abstract_length": 2166,
+      "fulltext_sections": 229,
+      "fulltext_chars": 90096
     },
     "40648980": {
       "pmid": "40648980",
@@ -14450,7 +14982,9 @@
         "31733140",
         "31036962"
       ],
-      "abstract_length": 1508
+      "abstract_length": 1508,
+      "fulltext_sections": 201,
+      "fulltext_chars": 56233
     },
     "40650745": {
       "pmid": "40650745",
@@ -14501,7 +15035,9 @@
         "29988125",
         "36826844"
       ],
-      "abstract_length": 2101
+      "abstract_length": 2101,
+      "fulltext_sections": 153,
+      "fulltext_chars": 46174
     },
     "40690616": {
       "pmid": "40690616",
@@ -14575,7 +15111,9 @@
         "3899825",
         "35180212"
       ],
-      "abstract_length": 2245
+      "abstract_length": 2245,
+      "fulltext_sections": 150,
+      "fulltext_chars": 54370
     },
     "40737658": {
       "pmid": "40737658",
@@ -14639,7 +15177,7 @@
       "doi": "10.1080/29944694.2024.2444002",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC12345416",
       "dashboard_locations": [
         {
           "file": "build_equity_map.py",
@@ -14716,7 +15254,9 @@
         "35551294",
         "35551292"
       ],
-      "abstract_length": 2327
+      "abstract_length": 2327,
+      "fulltext_sections": 126,
+      "fulltext_chars": 47225
     },
     "40898408": {
       "pmid": "40898408",
@@ -14760,7 +15300,9 @@
         "Research Support, N.I.H., Extramural"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1618
+      "abstract_length": 1618,
+      "fulltext_sections": 119,
+      "fulltext_chars": 37554
     },
     "40982327": {
       "pmid": "40982327",
@@ -14797,7 +15339,9 @@
         "Meta-Analysis"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1799
+      "abstract_length": 1799,
+      "fulltext_sections": 131,
+      "fulltext_chars": 46137
     },
     "41326666": {
       "pmid": "41326666",
@@ -14866,7 +15410,9 @@
         "Multicenter Study"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1785
+      "abstract_length": 1785,
+      "fulltext_sections": 208,
+      "fulltext_chars": 62768
     },
     "41356006": {
       "pmid": "41356006",
@@ -14906,7 +15452,9 @@
       "cited_pmids_in_hub": [
         "29617641"
       ],
-      "abstract_length": 1564
+      "abstract_length": 1564,
+      "fulltext_sections": 85,
+      "fulltext_chars": 24548
     },
     "41468096": {
       "pmid": "41468096",
@@ -14987,7 +15535,9 @@
         "19633656",
         "40544428"
       ],
-      "abstract_length": 1564
+      "abstract_length": 1564,
+      "fulltext_sections": 346,
+      "fulltext_chars": 122588
     },
     "41587834": {
       "pmid": "41587834",
@@ -14997,7 +15547,7 @@
       "doi": "10.1370/afm.240556",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC12834592",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_04.py",
@@ -15090,6 +15640,62 @@
       "cited_pmids_in_hub": [],
       "abstract_length": 4218
     },
+    "41780000": {
+      "pmid": "41780000",
+      "title": "Finerenone in Type 1 Diabetes and Chronic Kidney Disease.",
+      "journal": "N Engl J Med",
+      "year": "2026",
+      "doi": "10.1056/NEJMoa2512854",
+      "has_abstract": true,
+      "has_fulltext": false,
+      "pmcid": "",
+      "dashboard_locations": [
+        {
+          "file": "_close_run_2026_09_19.py",
+          "line": 184,
+          "context": "'target': ('VET PMID 41780000 (FINE-ONE) AND DECIDE WHERE FINERENONE BELONGS. FDA '"
+        },
+        {
+          "file": "_close_run_2026_09_19.py",
+          "line": 232,
+          "context": "'data, not fixtures. Also ingested FINE-ONE (PMID 41780000, identity '"
+        }
+      ],
+      "mesh_terms": [
+        "Adult",
+        "Aged",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Albuminuria",
+        "Angiotensin-Converting Enzyme Inhibitors",
+        "Creatinine",
+        "Diabetes Mellitus, Type 1",
+        "Diabetic Nephropathies",
+        "Double-Blind Method",
+        "Glomerular Filtration Rate",
+        "Hyperkalemia",
+        "Mineralocorticoid Receptor Antagonists",
+        "Naphthyridines",
+        "Renal Insufficiency, Chronic",
+        "Drug Therapy, Combination",
+        "Treatment Outcome",
+        "Prospective Studies",
+        "Potassium",
+        "Follow-Up Studies",
+        "Administration, Oral"
+      ],
+      "keywords": [],
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Multicenter Study"
+      ],
+      "cited_pmids_in_hub": [],
+      "abstract_length": 2355
+    },
     "41827917": {
       "pmid": "41827917",
       "title": "Clinical Characterization of Atypical Diabetes: Insights from the GENEPEDIAB Study into the Spectrum Between Type 1 and Monogenic Diabetes.",
@@ -15135,7 +15741,9 @@
       "cited_pmids_in_hub": [
         "38078589"
       ],
-      "abstract_length": 1537
+      "abstract_length": 1537,
+      "fulltext_sections": 151,
+      "fulltext_chars": 67230
     },
     "41889274": {
       "pmid": "41889274",
@@ -15192,7 +15800,9 @@
         "Systematic Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 1521
+      "abstract_length": 1521,
+      "fulltext_sections": 88,
+      "fulltext_chars": 17753
     },
     "41921761": {
       "pmid": "41921761",
@@ -15339,7 +15949,9 @@
         "Review"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 899
+      "abstract_length": 899,
+      "fulltext_sections": 216,
+      "fulltext_chars": 73045
     },
     "41984238": {
       "pmid": "41984238",
@@ -15404,7 +16016,9 @@
       "keywords": [],
       "pub_types": [],
       "cited_pmids_in_hub": [],
-      "abstract_length": 0
+      "abstract_length": 0,
+      "fulltext_sections": 249,
+      "fulltext_chars": 80277
     },
     "41994902": {
       "pmid": "41994902",
@@ -15457,7 +16071,9 @@
       "cited_pmids_in_hub": [
         "41765029"
       ],
-      "abstract_length": 1689
+      "abstract_length": 1689,
+      "fulltext_sections": 79,
+      "fulltext_chars": 24511
     },
     "42014686": {
       "pmid": "42014686",
@@ -15509,7 +16125,9 @@
         "35551294",
         "37385967"
       ],
-      "abstract_length": 2253
+      "abstract_length": 2253,
+      "fulltext_sections": 236,
+      "fulltext_chars": 78952
     },
     "42034968": {
       "pmid": "42034968",
@@ -15552,7 +16170,9 @@
         "Journal Article"
       ],
       "cited_pmids_in_hub": [],
-      "abstract_length": 2323
+      "abstract_length": 2323,
+      "fulltext_sections": 175,
+      "fulltext_chars": 61511
     },
     "42108533": {
       "pmid": "42108533",
@@ -15618,7 +16238,9 @@
         "19940299",
         "21719096"
       ],
-      "abstract_length": 1122
+      "abstract_length": 1122,
+      "fulltext_sections": 59,
+      "fulltext_chars": 20786
     },
     "42373533": {
       "pmid": "42373533",
@@ -15628,7 +16250,7 @@
       "doi": "10.1111/dom.71044",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC13449009",
       "dashboard_locations": [
         {
           "file": "_run_2026_09_08.py",
@@ -15817,7 +16439,7 @@
       "doi": "10.1007/s00125-026-06813-3",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC13541912",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_25.py",
@@ -15922,7 +16544,7 @@
       "doi": "10.1186/s40360-025-01002-1",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC13508260",
       "dashboard_locations": [
         {
           "file": "_run_2026_08_31.py",
@@ -16004,7 +16626,9 @@
         "32627352",
         "40544428"
       ],
-      "abstract_length": 2461
+      "abstract_length": 2461,
+      "fulltext_sections": 151,
+      "fulltext_chars": 57147
     },
     "42696794": {
       "pmid": "42696794",
@@ -16051,7 +16675,7 @@
       "doi": "10.34133/bmr.0407",
       "has_abstract": true,
       "has_fulltext": false,
-      "pmcid": "",
+      "pmcid": "PMC13542432",
       "dashboard_locations": [
         {
           "file": "audit_absence_claim_scope.py",
@@ -16525,7 +17149,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -16569,7 +17193,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -16615,7 +17239,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16653,7 +17277,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16695,7 +17319,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (glucose); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16735,7 +17359,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (beta-cell, diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16771,7 +17395,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -16820,7 +17444,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -16852,7 +17476,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, pancrea); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16898,7 +17522,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -16925,7 +17549,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glycem, hba1c); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -16966,7 +17590,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, hyperglyc); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17011,7 +17635,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, insulin, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17051,7 +17675,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -17082,7 +17706,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -17125,7 +17749,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, inflammasome, nlrp3, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17170,7 +17794,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17218,7 +17842,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17273,7 +17897,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -17303,7 +17927,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "OFF_TOPIC_PRESUMED",
       "corpus_status_reason": "No diabetes/islet/beta-cell vocabulary in title, MeSH, keywords or abstract opening. Presumed miscitation intake.",
       "topic_hits": []
@@ -17336,7 +17960,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: corpus extraction; research path evidence; agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glycem, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17370,7 +17994,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, retinopath); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17393,7 +18017,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (autoimmun, diabet, lada); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17417,7 +18041,7 @@
       "pub_types": [],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, glucose, glycem, sglt2); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17466,7 +18090,7 @@
       ],
       "index_provenance": "reconcile_paper_index.py",
       "index_provenance_note": "Not cited in any .py dashboard script, so verify_pmids.py never saw it and ingest_papers.py never indexed it. Abstract was already on disk. Entered corpus via: agent state / PubMed sweep",
-      "index_reconciled_on": "2026-09-18",
+      "index_reconciled_on": "2026-09-20",
       "corpus_status": "UNSCREENED_ORPHAN",
       "corpus_status_reason": "Topic vocabulary present (diabet, insulin); needs human relevance review before counting as corpus.",
       "topic_hits": [
@@ -17557,6 +18181,10 @@
         "19940299",
         "21719096",
         "10911004"
+      ],
+      "24497205": [
+        "9742976",
+        "8366922"
       ],
       "24506867": [
         "22980982"
@@ -17761,6 +18389,13 @@
         "31177185",
         "34021020",
         "32754804"
+      ],
+      "35784546": [
+        "23248199",
+        "30041834",
+        "28885622",
+        "32847960",
+        "18442638"
       ],
       "35887740": [
         "10911004",
@@ -18104,9 +18739,11 @@
         "34021020",
         "35028608",
         "35665810",
+        "35784546",
         "36113507",
         "36826844",
         "37016949",
+        "37026004",
         "37105208",
         "37202589",
         "37223016",
@@ -18123,6 +18760,7 @@
         "40544428",
         "40650745",
         "41567805",
+        "41780000",
         "41827917",
         "42034968",
         "42283716",
@@ -18157,6 +18795,7 @@
         "22980982",
         "23413806",
         "23817699",
+        "24497205",
         "24970885",
         "25230243",
         "25287711",
@@ -18249,6 +18888,7 @@
         "36449148",
         "37351171",
         "39412512",
+        "41780000",
         "8366922"
       ],
       "Diabetic Retinopathy": [
@@ -18297,6 +18937,7 @@
         "23817699",
         "23835325",
         "24085506",
+        "24497205",
         "24598244",
         "24691031",
         "24970885",
@@ -18354,6 +18995,7 @@
         "41326666",
         "41587834",
         "41765029",
+        "41780000",
         "41827917",
         "41889274",
         "41994902",
@@ -18437,6 +19079,7 @@
         "33550442",
         "34318969",
         "35028608",
+        "35784546",
         "36113507",
         "36449148",
         "37148899",
@@ -18454,6 +19097,7 @@
         "40737658",
         "40896829",
         "41765029",
+        "41780000",
         "41889274",
         "41994902",
         "42014686",
@@ -18579,7 +19223,8 @@
         "2873396",
         "35551292",
         "35551294",
-        "40650745"
+        "40650745",
+        "41780000"
       ],
       "Glucose Tolerance Test": [
         "10911004",
@@ -18600,6 +19245,7 @@
         "22683128",
         "23817699",
         "24085506",
+        "24497205",
         "25230243",
         "28118453",
         "29590046",
@@ -18716,6 +19362,7 @@
         "23835325",
         "23890997",
         "24085506",
+        "24497205",
         "24508508",
         "24598244",
         "24691031",
@@ -18816,6 +19463,7 @@
         "35551307",
         "35563495",
         "35665810",
+        "35784546",
         "35845323",
         "36109639",
         "36109742",
@@ -18827,6 +19475,7 @@
         "36566139",
         "36826844",
         "37016949",
+        "37026004",
         "37105208",
         "37148899",
         "37156252",
@@ -18880,6 +19529,7 @@
         "41567805",
         "41587834",
         "41765029",
+        "41780000",
         "41827917",
         "41889274",
         "41958676",
@@ -18957,6 +19607,8 @@
         "34318969",
         "34763823",
         "35028608",
+        "35784546",
+        "37026004",
         "37105208",
         "37359825",
         "37861217",
@@ -18983,6 +19635,7 @@
         "24085506",
         "24691031",
         "32627352",
+        "37026004",
         "37105208",
         "37359825",
         "39951130",
@@ -19021,6 +19674,7 @@
         "23248199",
         "23817699",
         "24085506",
+        "24497205",
         "24598244",
         "24691031",
         "24970885",
@@ -19063,6 +19717,7 @@
         "41326666",
         "41587834",
         "41765029",
+        "41780000",
         "41889274",
         "41994902",
         "42014686",
@@ -19265,6 +19920,7 @@
         "41326666",
         "41587834",
         "41765029",
+        "41780000",
         "41889274",
         "42014686",
         "42373533",
@@ -19304,7 +19960,8 @@
       "Creatinine": [
         "11565518",
         "20228401",
-        "33264825"
+        "33264825",
+        "41780000"
       ],
       "Disease Progression": [
         "11565518",
@@ -19359,7 +20016,8 @@
         "39843169",
         "40544435",
         "40896829",
-        "41326666"
+        "41326666",
+        "41780000"
       ],
       "Female": [
         "11565518",
@@ -19398,6 +20056,7 @@
         "23817699",
         "23835325",
         "24085506",
+        "24497205",
         "24598244",
         "24691031",
         "24970885",
@@ -19455,6 +20114,7 @@
         "41326666",
         "41587834",
         "41765029",
+        "41780000",
         "41827917",
         "41889274",
         "41994902",
@@ -19780,6 +20440,7 @@
         "40111679",
         "41326666",
         "41765029",
+        "41780000",
         "41889274",
         "42486100",
         "42688599",
@@ -20034,7 +20695,8 @@
         "24970885",
         "28522654",
         "32862232",
-        "33264825"
+        "33264825",
+        "41780000"
       ],
       "Graft Rejection": [
         "16120857",
@@ -20075,11 +20737,14 @@
         "21959959",
         "23780460",
         "23835325",
+        "24497205",
         "24970885",
         "26404926",
         "32307525",
         "32627352",
+        "35784546",
         "37385967",
+        "41780000",
         "7955993",
         "9742976"
       ],
@@ -20137,6 +20802,7 @@
         "23835325",
         "30415610",
         "40544428",
+        "41780000",
         "42283716",
         "8366922",
         "9357409"
@@ -20251,6 +20917,7 @@
         "27277934",
         "32312859",
         "32754804",
+        "35784546",
         "36109742",
         "39613428",
         "40111679",
@@ -20324,7 +20991,8 @@
       "Berberine": [
         "18397984",
         "18442638",
-        "25498346"
+        "25498346",
+        "35784546"
       ],
       "Hypoglycemia": [
         "18539917",
@@ -20396,7 +21064,8 @@
         "19041189",
         "26897744",
         "31197153",
-        "32627352"
+        "32627352",
+        "35784546"
       ],
       "Predictive Value of Tests": [
         "19095723",
@@ -20489,6 +21158,7 @@
         "35180212",
         "40544435",
         "41765029",
+        "41780000",
         "41994902"
       ],
       "Alum Compounds": [
@@ -20660,6 +21330,11 @@
         "37399599",
         "40032831"
       ],
+      "Albuminuria": [
+        "22336824",
+        "33264825",
+        "41780000"
+      ],
       "Anti-Inflammatory Agents, Non-Steroidal": [
         "22336824",
         "23817699",
@@ -20674,6 +21349,11 @@
         "22349456",
         "25131812",
         "28010783"
+      ],
+      "Pilot Projects": [
+        "22349456",
+        "24497205",
+        "31263284"
       ],
       "Global Health": [
         "22683128",
@@ -20737,6 +21417,7 @@
       "Glucose Intolerance": [
         "24598244",
         "33610858",
+        "35784546",
         "37428296",
         "40896829"
       ],
@@ -20886,6 +21567,7 @@
         "32307525",
         "32847960",
         "34318969",
+        "35784546",
         "37428296",
         "40737658"
       ],
@@ -20954,7 +21636,13 @@
       "HLA-DR3 Antigen": [
         "31180194",
         "32754804",
-        "35665810"
+        "35665810",
+        "37026004"
+      ],
+      "HLA-DR4 Antigen": [
+        "31180194",
+        "32754804",
+        "37026004"
       ],
       "Global Burden of Disease": [
         "32175717",
@@ -20964,7 +21652,8 @@
       "Renal Insufficiency, Chronic": [
         "32312859",
         "32862232",
-        "33264825"
+        "33264825",
+        "41780000"
       ],
       "Glycemic Control": [
         "35665810",
@@ -20980,6 +21669,7 @@
         "42486100"
       ],
       "Retrospective Studies": [
+        "37026004",
         "37105208",
         "37217319",
         "42373533"

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-19",
-  "last_run": "2026-09-19",
+  "last_updated": "2026-09-20",
+  "last_run": "2026-09-20",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -1618,7 +1618,11 @@
       "claims_checked_date": "2026-08-15T03:11:15.609834",
       "vetting_notes": "Mediterranean diet PREDIMED; Prog Cardiovasc Dis 2015; PMID verified in library. || Re-vetted 2026-08-12: no claim drift. Metadata (title/journal/year) unchanged and internally consistent; PMID within valid range. Foundational/peripheral citation, no fulltext claims-scan in sandbox.",
       "claims_checked_method": "eutils_esummary_bulk_roundtrip_2026-08-15 (title+journal+year matched live PubMed)",
-      "journal": "Prog Cardiovasc Dis"
+      "journal": "Prog Cardiovasc Dis",
+      "membership_class": "CORPUS",
+      "membership_class_why": "PREDIMED overview, Prog Cardiovasc Dis 2015;58(1):50-60. FLAGGED 2026-09-18 as a PROSE repair, not a membership judgement: the published 30% was the CVD hazard (HR 0.70, 288 events), while the incident-diabetes result is HR 0.60 (0.43-0.85) for MedDiet+EVOO and a non-significant HR 0.82 (0.61-1.10) for MedDiet+nuts, in 3,541 non-diabetic participants. Real, on topic, correctly cited since the repair. Downstream use must carry the arm and the CI; it must not carry the 30%.",
+      "membership_class_date": "2026-09-20",
+      "membership_class_source": "adjudicate_flagged_membership_20260920.py - transcribed from the paper's own vetting record; PMID re-verified live via NCBI esummary on 2026-09-20"
     },
     "26106223": {
       "status": "VETTED",
@@ -5381,7 +5385,11 @@
       "last_checked": "2026-09-18",
       "issues_found": [
         "2026-09-18 REPAIRED IN PLACE. A POPULATION MISATTRIBUTION, WHICH IS THE DEFECT CLASS THIS REPOSITORY HAS FOUND MOST OFTEN. build_nutrition_lada.py headed this entry 'GAD-Alum Immunotherapy in LADA'. 34021020 is DIAGNODE-2, which enrolled 109 patients aged 12-24 with recent-onset TYPE 1 DIABETES (duration 7-193 days). LADA is adult-onset. Two further errors on the same entry: the paper was attributed to 'Casas/Ludvigsson' when Ludvigsson J is first author, and the result was described as 'dose-dependent C-peptide preservation' when the trial tested a SINGLE dose (4 ug x 3) and the subgroup effect was by HLA DR3-DQ2 GENOTYPE, not by dose. Re-sourced with the real numbers: primary endpoint NOT met in the full analysis set (TER 1.091, 95% CI 0.845-1.408, P=0.50); DR3-DQ2 subgroup TER 1.557 (1.126-2.153), P=0.0078 on n=29 vs 17. ALSO ADDED, because another file in this repo already knew it and this one did not: the confirmatory DIAGNODE-3 Phase 3 was closed for futility in 2026. The page was publishing a promising subgroup signal with no mention that its replication had failed. And the correction's own first draft was wrong - it claimed no GAD-alum trial in this corpus enrolled a LADA population. build_data_dictionary.py names Agardh et al., Diabetologia 2009 (PMID 19404608), n=47 adult-onset autoimmune diabetes, primary outcome SAFETY. Corrected before publishing to match the data dictionary's wording: no adequately powered LADA-specific EFFICACY trial has reported."
-      ]
+      ],
+      "membership_class": "CORPUS",
+      "membership_class_why": "DIAGNODE-2, Diabetes Care 2021. FLAGGED 2026-09-18 for a POPULATION MISATTRIBUTION in the prose - a type 1 trial (n=109, age 12-24, duration 7-193 days) published under a LADA heading - plus a wrong first author and a \"dose-dependent\" claim about a single-dose trial. Phase IIb double-blind placebo-controlled RCT; the design is a corpus strength, not a disqualifier. Downstream use must carry that the primary endpoint was NOT met in the full analysis set (TER 1.091, 95% CI 0.845-1.408, P=0.50) and that the DR3-DQ2 effect (TER 1.557, 1.126-2.153, P=0.0078) is a genotype subgroup of 29 vs 17.",
+      "membership_class_date": "2026-09-20",
+      "membership_class_source": "adjudicate_flagged_membership_20260920.py - transcribed from the paper's own vetting record; PMID re-verified live via NCBI esummary on 2026-09-20"
     },
     "34918381": {
       "status": "VETTED",
@@ -6439,7 +6447,11 @@
       "issues_found": [
         "STUDY PROTOCOL, NO RESULTS. BMJ Open 2026;16(8):e109209 (2026 Aug 31), PMC13536008. Verified live; pubtype is bare \"Journal Article\" so the pubtype field does NOT mark it as a protocol - the title does (\"a study protocol\"). This is the same failure mode that put PMID 39613428 (Ver-A-T1D protocol) under the #2 and #3 research paths. Flagged pre-emptively so no LADA prevalence or algorithmic-classification RESULT can ever be sourced to it. Re-check for the results publication after the Quebec cohorts report."
       ],
-      "vetting_note_2026-09-08": "Retrospective population-based Quebec cohorts for algorithmic diabetes classification and T1D/T2D/LADA phenotype burden. Relevant to Gap #10 (LADA Prevalence by Healthcare Setting) when it reports - not before."
+      "vetting_note_2026-09-08": "Retrospective population-based Quebec cohorts for algorithmic diabetes classification and T1D/T2D/LADA phenotype burden. Relevant to Gap #10 (LADA Prevalence by Healthcare Setting) when it reports - not before.",
+      "membership_class": "BACKGROUND",
+      "membership_class_why": "Quebec algorithmic-classification cohorts, BMJ Open 2026;16(8):e109209. STUDY PROTOCOL - NO RESULTS. Its intake record already sets the rule: \"reports NO findings and must not contribute evidence weight to any path or gap\", flagged pre-emptively because this corpus was burned once by ranking research paths on a protocol (PMID 39613428, Ver-A-T1D). BACKGROUND is that rule stated in the field rather than in prose: citable as a watch item for Gap #10, contributes no evidence. Re-classify to CORPUS only when the results publication appears.",
+      "membership_class_date": "2026-09-20",
+      "membership_class_source": "adjudicate_flagged_membership_20260920.py - transcribed from the paper's own vetting record; PMID re-verified live via NCBI esummary on 2026-09-20"
     },
     "42694315": {
       "status": "VETTED",
@@ -6513,7 +6525,11 @@
       "issues_found": [
         "HEADLINE NUMBER RESTS ON n=11, AND THE STATE RECORD DID NOT SAY SO. Front Immunol 2023;14:1110544, PMC10070978 - verified live, real paper, CITR authorship (Ballou/Barton/Payne/Muller), pubtype includes NIH Extramural support. The claim recorded on 2026-09-07 was \"HLA-DR matching predicts islet transplant insulin independence\", which the paper does support. But the denominators, read from the abstract on 2026-09-08, are: the study screens 965 recipients and 2327 donors, then analyses 87 single-infusion recipients split into group A (HLA-DR mismatched, n=52), group B (1-2 HLA-DR matches EXCLUDING DR3/DR4, n=11) and group C (matched for DR3 or DR4, n=24). The 78% vs 24% vs 35% five-year insulin-independence contrast therefore turns on ELEVEN patients in group B. It is a retrospective registry subgroup analysis; the authors write \"suggests\", not \"shows\". Any downstream use MUST carry n=11 and must not be phrased causally. Flagged, not rejected - the finding stands, the framing did not."
       ],
-      "vetting_note_2026-09-08": "Load-bearing for the Gap #11 HLA-DR hypothesis recorded 2026-09-07. Retained with the denominator attached."
+      "vetting_note_2026-09-08": "Load-bearing for the Gap #11 HLA-DR hypothesis recorded 2026-09-07. Retained with the denominator attached.",
+      "membership_class": "CORPUS",
+      "membership_class_why": "CITR HLA-DR registry analysis, Front Immunol 2023;14:1110544. Its own vetting record reads \"Flagged, not rejected - the finding stands, the framing did not\", and state calls it LOAD-BEARING for the Gap #11 hypothesis. The flag records a DENOMINATOR that must travel with the claim: 965 recipients and 2327 donors screened, 87 single-infusion recipients analysed, and the 78%/24%/35% five-year insulin-independence contrast turns on group B, n=11. Retrospective registry subgroup; the authors write \"suggests\". Any downstream use must carry n=11 and must not be phrased causally.",
+      "membership_class_date": "2026-09-20",
+      "membership_class_source": "adjudicate_flagged_membership_20260920.py - transcribed from the paper's own vetting record; PMID re-verified live via NCBI esummary on 2026-09-20"
     },
     "39951130": {
       "priority": "medium",
@@ -10219,7 +10235,10 @@
       "priority": 2,
       "type": "vet_papers_batch",
       "added": "2026-09-07",
-      "target": "READ PMID 37026004 IN FULL AND ANSWER ONE QUESTION: does the CITR HLA-DR matching analysis report recipient race or ethnicity at all? That fact alone decides whether the Gap #11 equity hypothesis recorded today is testable from published data or requires a CITR data request. Also vet the other 6 papers ingested today (42688599, 42674789, 42694315, 42686659, 42688475, 39951130)."
+      "target": "READ PMID 37026004 IN FULL AND ANSWER ONE QUESTION: does the CITR HLA-DR matching analysis report recipient race or ethnicity at all? That fact alone decides whether the Gap #11 equity hypothesis recorded today is testable from published data or requires a CITR data request. Also vet the other 6 papers ingested today (42688599, 42674789, 42694315, 42686659, 42688475, 39951130).",
+      "status": "closed",
+      "closed_on": "2026-09-20",
+      "resolution": "ANSWERED 2026-09-20: NO. PMC10070978, 39,486 chars including the complete baseline and potential-confounder tables, contains zero occurrences of race, ethnicity, Hispanic, Black, African American, Caucasian or demographic. The CITR HLA-DR analysis does not report recipient race or ethnicity at all. Per the item's own framing, that settles it: the Gap #11 equity hypothesis is NOT testable from published data and requires a CITR data request. Follow-up filed at priority 1. SECONDARY FINDING, recorded because it bears on how the paper may be cited at all: group B (n=11) is better matched at HLA-A (73% vs 48%) and HLA-B (45% vs 17%) than group A, and neither variable appears in the paper's 19-row confounder table. The authors' own group D vs E comparison (>=3 vs <3 average A,B,DR matches, insulin independence p=0.8) argues against general matching explaining the result, which is a real defence - but maintenance immunosuppression with mTOR+CNI differs 90% vs 14% at p=0.2, and a 6.4-fold difference reported non-significant on n=11 is a power artifact, not evidence of comparability. Any use must carry n=11 and must not be causal."
     },
     {
       "priority": 3,
@@ -10303,7 +10322,10 @@
       "type": "fix_pipeline",
       "priority": 1,
       "added": "2026-09-19",
-      "target": "INDEX THE 17 PAPERS WHOSE FULL TEXT IS ALREADY ON DISK. The 2026-09-19 pmcid repair found 17 fulltext/*.json files whose PMID appears nowhere in index.json - the repository holds their full text and does not list the paper. Includes 37026004 (FLAGGED, load-bearing for the Gap #11 hypothesis), 38918878, 39428507, 41827829, 37467726, 37544201, 30078372, 22723585. audit_index_field_invariants.py reports this as I3-NOTE (not a failure) because it is an ingestion question. Resolve by running ingest/reconcile now that the pmcid map is correct, then confirm I3 closes."
+      "target": "INDEX THE 17 PAPERS WHOSE FULL TEXT IS ALREADY ON DISK. The 2026-09-19 pmcid repair found 17 fulltext/*.json files whose PMID appears nowhere in index.json - the repository holds their full text and does not list the paper. Includes 37026004 (FLAGGED, load-bearing for the Gap #11 hypothesis), 38918878, 39428507, 41827829, 37467726, 37544201, 30078372, 22723585. audit_index_field_invariants.py reports this as I3-NOTE (not a failure) because it is an ingestion question. Resolve by running ingest/reconcile now that the pmcid map is correct, then confirm I3 closes.",
+      "status": "closed",
+      "closed_on": "2026-09-20",
+      "resolution": "RESOLVED 2026-09-20 BY MEASUREMENT, NOT BY INGESTION. The 17 were an undifferentiated count. repair_index_pmcid_map.py now splits them through corpus_membership: 16 are excluded on purpose (8 PROVENANCE, 5 OFF_TOPIC, 1 RETRACTED, 2 BACKGROUND) - for those the index is correct and the file on disk is residue. 37026004 was the only genuine item, and classifying it restored it. Ingestion backlog: zero. The BACKGROUND pair is carried forward as a separate design question."
     },
     {
       "type": "analysis",
@@ -10333,13 +10355,46 @@
       "type": "fix_pipeline",
       "priority": 2,
       "added": "2026-09-19",
-      "target": "GIVE THE OTHER 19 FLAGGED PAPERS A MEMBERSHIP CLASS BEFORE THEY DISAPPEAR TOO. 23 papers are FLAGGED in agent_state; 4 have already been evicted as FLAGGED_UNCLASSIFIED. Every remaining flag without a membership_class is a paper one reconcile run away from leaving the corpus. Classify them explicitly, or implement option (a) above."
+      "target": "GIVE THE OTHER 19 FLAGGED PAPERS A MEMBERSHIP CLASS BEFORE THEY DISAPPEAR TOO. 23 papers are FLAGGED in agent_state; 4 have already been evicted as FLAGGED_UNCLASSIFIED. Every remaining flag without a membership_class is a paper one reconcile run away from leaving the corpus. Classify them explicitly, or implement option (a) above.",
+      "status": "closed",
+      "closed_on": "2026-09-20",
+      "resolution": "RESOLVED 2026-09-20. Measured: the other 19 already carried a class from the 2026-08-28 adjudication; the 4 unclassified were the whole set and all 4 are now classified (3 CORPUS, 1 BACKGROUND). corpus_membership.unclassified() is empty and audit_flagged_membership_class.py now fails the build if it is not. The underlying risk the item named - \"one reconcile run away from leaving the corpus\" - is separately closed by evictable_pmids(), which refuses to evict on a missing field."
     },
     {
       "type": "fix_pipeline",
       "priority": 2,
       "added": "2026-09-19",
       "target": "PUT THE LOCK RENAME AT THE TOP OF THE RUN AND STOP CARRYING GIT_INDEX_FILE. Proven 2026-09-19: renaming .git/HEAD.lock and .git/index.lock (unlink is forbidden on the OneDrive mount, rename is not) lets ordinary git add + git commit work with the default index. Fold two mv lines into RUN_PIPELINE_AND_PUSH.ps1 and the run preamble, drop the GIT_INDEX_FILE workaround, and sweep the 203 accumulated lock-debris files in .git. Then retire the priority-0 SANDBOX FAILURE queue items, which describe a blocker that is now understood - every one of them except the PUSH item, which is a credentials problem and unaffected."
+    },
+    {
+      "priority": 1,
+      "type": "audit_gap",
+      "added": "2026-09-20",
+      "target": "GAP #11 NEEDS A CITR DATA REQUEST OR A RESTATED CLAIM - THE PUBLISHED LITERATURE CANNOT SETTLE IT AND THAT IS NOW MEASURED, NOT SUSPECTED. Read PMC10070978 (PMID 37026004) in full 2026-09-20: 39,486 chars, complete Table 3 baseline and the full potential-confounder table, and ZERO occurrences of race / ethnicity / Hispanic / Black / African American / Caucasian / demographic. It reports % Female, age, BMI, donor gender and cause of death. audit_gap_subject_coverage.py rates this gap [MEDIUM] \"6 papers touch the registry axis, 1 touches equity, none touches both\" and offers two remedies: state that the intersection rests on inference, or find a paper at the intersection. The second remedy is now known to be unavailable from this paper. TWO REAL OPTIONS: (a) request recipient race/ethnicity from the CITR data coordinating centre, which is a human action with a form to fill in; (b) restate Gap #11 as what the evidence supports - that the registry does not PUBLISH recipient race, which is itself an equity finding and a stronger one than an inferred disparity. Option (b) needs no data request and is defensible today. Do not publish the inferred version while (a) is pending."
+    },
+    {
+      "priority": 1,
+      "type": "fix_pipeline",
+      "added": "2026-09-20",
+      "target": "SWEEP THE OTHER DICT-LITERAL REGISTRIES NOW THAT THE AUDIT CAN SEE THEM. audit_gap_numbering.py learned the dict form today and the count went from 4 stores to 69 hardcoded tier sites across 15 gaps. Two of those sites were seven-month-stale registries publishing 14 wrong gap titles each, and the SECOND one was found only by the audit change - reading the first by hand would have left it. That is the generalisation worth making: a hand-corrected copy is the same defect one edit later. Work the 69 down by making each site READ the store, in descending order of whether the site renders to docs/. build_gap_deep_dives.py and rebuild_website.py are next; they agree with canonical today, which is exactly when a copy is cheapest to remove. ALSO: the same question should be asked of every other registry this repo hardcodes - drug lists, trial phases, tier definitions - by grepping for dict literals keyed on an id that also exists in a Results/*.json store."
+    },
+    {
+      "priority": 2,
+      "type": "fix_pipeline",
+      "added": "2026-09-20",
+      "target": "DECIDE WHETHER BACKGROUND PAPERS BELONG IN paper_library/index.json. Raised by, but deliberately NOT settled by, the 2026-09-20 membership work. reconcile_paper_index.py refuses index admission to everything in corpus_membership.excluded_pmids(), which includes the 8 BACKGROUND papers - yet corpus_membership.py's own docstring quotes the 2026-04-20 note on PMID 25714673 verbatim: \"Keep in paper_library but exclude from mechanism-evidence extraction.\" The module and the consumer disagree about what BACKGROUND means, and the module is the one with the written rule. MEASURED 2026-09-20: 2 of the 16 unindexed full texts on disk (18662538 Massague TGF-beta, 39428507 CAR-Treg/MS) are BACKGROUND papers the repo can read and does not list. This was left alone today ON PURPOSE and the distinction matters: the four evictions reversed today were justified by a BLANK FIELD, which is a bug with one correct answer. BACKGROUND exclusion is justified by an affirmative adjudication - debatable design, not a bug - and changing it moves corpus counts. Decide it deliberately, then make the module and the consumer agree."
+    },
+    {
+      "priority": 2,
+      "type": "audit_gap",
+      "added": "2026-09-20",
+      "target": "GAP #14 AND #15 TIER: THE GATE HAS NOW ASKED SIX TIMES. Unchanged and still overdue - audit_gap_subject_coverage.py rates both [HIGH] \"Tier BRONZE with ZERO evidence papers\". NEW TODAY, and it makes the edit bigger than it looked: the tier is written in 69 places, not the 24 previously counted, because the dict-literal form was invisible until audit_gap_numbering.py was extended. Do NOT hand-edit 69 sites. Demote in the canonical store (gap_evidence.json + agent_state) and convert the renderers to read it, which is the same work item as the dict-literal sweep above. Sequence them together."
+    },
+    {
+      "priority": 3,
+      "type": "note",
+      "added": "2026-09-20",
+      "target": "TASK-FILE STEP 4 IS STILL GENERATING FALSE WORK, AND TODAY GIVES THE NUMBER. The scheduled task file instructs a sweep for \"PMIDs above 42000000 (fabricated)\". Measured live 2026-09-20: the real PubMed ceiling is 42,763,307 and pmid_ceiling.py flags above 43,013,307. The highest PMID anywhere in this repo is 42,698,953 - a real paper, 698,953 above the task file's line and 314,354 below the correct one. Anyone following the task file literally would open a fabrication investigation into a genuine 2026 citation. The repo fixed this on 2026-08-25/31; the task file has carried the stale rule since. One-line edit, ninth day of asking."
     }
   ],
   "run_history": [
@@ -12460,6 +12515,20 @@
       "pushed": false,
       "push_blocker": "git push: no credential helper in sandbox (\"could not read Username for https://github.com\"). Commit itself succeeded: 9b6b6a3, 114 ahead.",
       "commit": "9b6b6a3"
+    },
+    {
+      "date": "2026-09-20",
+      "day": "Sunday",
+      "papers_checked": 4,
+      "papers_classified": 4,
+      "papers_readmitted": 3,
+      "fulltext_read": 1,
+      "gates_added": 1,
+      "gates_extended": 2,
+      "builders_fixed": 2,
+      "issues_found": 5,
+      "changes_pushed": false,
+      "summary": "A BLANK FIELD DELETED THREE PRIMARY STUDIES, AND A SEVEN-MONTH-STALE GAP REGISTRY PUBLISHED FOURTEEN RESEARCH QUESTIONS THIS HUB DOES NOT STUDY. Both were invisible to 80+ green stages for the same reason, and it is a reason worth naming precisely: this repository's gates check the CONTENT of an assertion, and both defects were defects of FORM. (1) corpus_membership.py says in its own source that a FLAGGED paper with no membership_class 'is a bug, not a default', and that an audit fails on it. No such audit existed - unclassified() had no caller for 23 days - so the module used the missing field AS a default, and on 2026-09-19 a reconcile run deleted the four papers from the index with the ledger reason recorded verbatim as 'FLAGGED in agent_state.json with no class recorded'. Three were real primary studies: DIAGNODE-2 (Diabetes Care Phase IIb RCT), PREDIMED, and the CITR HLA-DR analysis that state itself calls load-bearing for Gap #11. All three were simultaneously cited on live pages while corpus_membership answered citable()==False for them, because citable() ALSO had zero call sites. Classified all four from their own vetting records, added the CORPUS class so a repair note stops being a disqualifier, and made eviction require an affirmative code - exclusion is reversible, eviction destroys the row. (2) build_extracted_evidence.py and build_research_paths.py each carried a byte-identical hard-coded gap registry in which 14 of 15 TITLES and 9 of 15 TIERS disagreed with the canonical store. Not drift - a different set of research questions. Extracted_Evidence.html published 'Gap 11: Immunomodulation in Type 2 Diabetes, BRONZE, 39 points' over correctly extracted, correctly cited glucokinase-activator odds ratios; canonical Gap #11 is Islet Transplant Registry Equity, GOLD. Zero canonical gap names appeared on the page. audit_gap_numbering.py could not see it because it reads the prose form 'Gap #N (TIER)' and a dict literal is not a sentence - it reported on four stores and called the numbering sound. Taught it the dict form: it went from 4 stores to 69 hardcoded tier sites across 15 gaps, and the second stale copy was found only by that change. Both builders now read the store; neither carries an answer. (3) ANSWERED THE 13-DAY-OLD GAP #11 QUESTION FROM FULL TEXT, NOT ABSTRACT. PMC10070978 was on disk the whole time. In 39,486 characters including the complete baseline and potential-confounder tables, PMID 37026004 contains ZERO occurrences of race, ethnicity, Hispanic, Black, African American, Caucasian or demographic. It reports sex, age, BMI and donor cause of death. So the Gap #11 equity intersection is not merely unevidenced in this corpus - the load-bearing paper CANNOT evidence it, because it never collected the variable. That requires a CITR data request, not another PubMed sweep. Closed 'INDEX THE 17 PAPERS WHOSE FULL TEXT IS ON DISK' with a measurement rather than work: 16 of 17 are excluded on purpose (14 uncitable, 2 BACKGROUND); 37026004 was the only real item and classification fixed it. The backlog is zero."
     }
   ],
   "topic_checks": {
@@ -15041,7 +15110,8 @@
     "2026-09-18_a_gate_with_no_live_positive": "THE COMPUTED-VALUE GATE WAS BUILT AFTER ITS ONLY LIVE POSITIVE HAD ALREADY BEEN REPAIRED, WHICH MEANS A CLEAN RUN PROVES NOTHING. The 2026-09-13 defect (build_lada_diagnostic_model.py:763-766, a PMID inside the same f-string as an interpolated computed cost) was fixed before audit_computed_value_citations.py existed. A gate that has only ever returned zero is indistinguishable from a gate that does not work. Rather than trust the zero, the original defect was reproduced verbatim in _tmp_gate_known_positive.py, which the audit's own SKIP_PREFIXES excludes from normal runs and which is reachable only by calling scan_file() on it directly. Both lines are reported COMPUTED, confirmed 2026-09-18. EVERY GATE ADDED HERE FROM NOW ON SHOULD SHIP WITH A FIXTURE IT MUST CATCH, not just a live count it happens to clear.",
     "2026-09-18_measure_first_earned_its_keep_again": "THE COMPUTED-VALUE GATE'S FIRST MEASUREMENT WAS 13 HITS AND ALL 13 WERE FALSE. The first implementation asked only whether a PMID appeared anywhere in the same f-string - but the builders here write the ENTIRE page as one f-string, so {COLORS['bg']} at the top was flagged against a PMID four thousand characters below. Adding a 180-character proximity window took it to 4. Excluding verify_/check_/reconcile_ scripts, which print counts ABOUT PMIDs (f\"{len(live_bad)} LIVE link(s) to PMID 34763823 remain\") and are the opposite of the defect, took it to 1. Had this shipped as a gate on the first measurement it would have failed the pipeline on 13 non-defects and been switched off within a day. Standing instruction confirmed for the fourth time: MEASURE AND REPORT THE HIT COUNT BEFORE WIRING A GATE IN.",
     "2026-09-18_a_gate_that_can_never_go_green": "The surname gate's four remaining mismatches after today's repairs were ALL in frozen archive - dated ACTION_REQUIRED and iterate_run_report markdown, and a _close_run script - where the 'mismatch' is this repository quoting a defect it had just fixed. One is literally a fenced HTML block showing the bad anchor. Those files are history and must not be rewritten; editing a dated run report to clear a gate is the failure this repo audits for. But left in the MISMATCH bucket they guarantee the count never reaches zero, and a gate that can never go green is a gate that gets ignored. Resolved with a SURFACE SPLIT, not an exclusion: every finding is still printed and still written to the JSON; only the headline count and the --gate exit code are scoped to the live publishing surface. Deliberately NOT done: adding loose strings to CORRECTION_MARKERS. The note at the top of that tuple warns against exactly that, because a marker silences a class of finding everywhere, whereas a surface split silences nothing.",
-    "2026-09-19": "A citation gate that only compares a PMID to the words next to it cannot see a wrong-SUBJECT citation, because the words next to it were written from the same wrong paper. Both 2026-09-19 defects were internally consistent and externally false. The check that works asks a question neither the prose nor the PMID can answer alone: does the cited paper mention the thing this record is ABOUT. Second lesson, from the index bug: a summary count and the records it summarises are two independent assertions about the same fact, and this repository had never compared any pair of them. A lookup that silently misses produces well-formed empty fields and a confident metadata line, which is indistinguishable from success unless something checks the file against itself. Third lesson, from the eviction: a gate written for one bug caught a different and worse one within an hour, because arithmetic does not care what you were looking for. The cheapest checks in this repository have consistently been the ones that compare a file to itself. Fourth: a workaround that makes the first command succeed can hide which command was actually failing. Three runs treated this as an index-lock problem because GIT_INDEX_FILE made `git add` work; the lock git could not take was HEAD.lock."
+    "2026-09-19": "A citation gate that only compares a PMID to the words next to it cannot see a wrong-SUBJECT citation, because the words next to it were written from the same wrong paper. Both 2026-09-19 defects were internally consistent and externally false. The check that works asks a question neither the prose nor the PMID can answer alone: does the cited paper mention the thing this record is ABOUT. Second lesson, from the index bug: a summary count and the records it summarises are two independent assertions about the same fact, and this repository had never compared any pair of them. A lookup that silently misses produces well-formed empty fields and a confident metadata line, which is indistinguishable from success unless something checks the file against itself. Third lesson, from the eviction: a gate written for one bug caught a different and worse one within an hour, because arithmetic does not care what you were looking for. The cheapest checks in this repository have consistently been the ones that compare a file to itself. Fourth: a workaround that makes the first command succeed can hide which command was actually failing. Three runs treated this as an index-lock problem because GIT_INDEX_FILE made `git add` work; the lock git could not take was HEAD.lock.",
+    "2026-09-20": "A GATE THAT NAMES ITS OWN MISSING ENFORCEMENT IS NOT ENFORCED. corpus_membership.py contained, in its own source, both the rule (\"a FLAGGED paper with no membership_class is a bug, not a default\") and the remedy (\"an audit fails on this\") - and the audit did not exist. The docstring read as if it did, which is worse than silence: it made every reader of that module, human and agent, believe the check was running. Two of the three defects found today were of this form. THE TEST TO APPLY: for every invariant a module DESCRIBES, grep for a caller of the function that checks it. A documented invariant with zero call sites is a comment. citable() had zero call sites while the site cited four papers it answered False for. SECOND, NARROWER RULE, and it generalises past membership: EXCLUSION AND DELETION MUST NOT SHARE A PREDICATE. Excluding a record is reversible and its reason can be re-read tomorrow; deleting it leaves nothing to reverse. So deletion must require an affirmative adjudication and must never be triggered by the ABSENCE of one. The 2026-09-19 eviction ledger recorded a blank field as the justification for removing three primary human studies, and it was internally consistent while doing so."
   },
   "last_path_validation_batch": "2026-08-28",
   "watch_items_pending_pmid": [

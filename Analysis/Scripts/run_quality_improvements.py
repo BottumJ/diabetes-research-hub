@@ -224,6 +224,26 @@ SCRIPTS = {
     # rebuild_website.py, validate_citations.py) that no leak had surfaced.
     'membershipgate': ('audit_unguarded_pmid_readers.py',
                        'Gating on PMID readers that bypass corpus_membership'),
+    # Added 2026-09-20. membershipgate asks whether every reader CONSULTS
+    # corpus_membership. It cannot ask whether the module has an answer to
+    # give, or whether anyone acts on the answer - and both were failing.
+    #
+    #   (1) corpus_membership.unclassified() is documented as "should always
+    #       be empty; an audit fails on this". No such audit existed. The set
+    #       had been non-empty for 23 days, and on 2026-09-19 a reconcile run
+    #       deleted all four papers from the index citing the missing field
+    #       itself as the reason - among them a Diabetes Care Phase IIb RCT
+    #       and the paper state calls load-bearing for Gap #11.
+    #   (2) corpus_membership.citable() had ZERO call sites repo-wide, so the
+    #       module could answer citable()==False for a PMID that four builders
+    #       cited and eight published pages carried, and nothing compared the
+    #       two. This stage is that comparison.
+    #
+    # Both checks proved in both directions before wiring: see
+    # probe_flagged_membership_gate.py for the known-positive fixture.
+    'flaggedclass': ('audit_flagged_membership_class.py',
+                     'Gating on FLAGGED papers with no membership class, and '
+                     'on uncitable PMIDs cited in live prose'),
     # Added 2026-08-28. Grades what KIND of study each live path rests on,
     # from PubMed publication type rather than from this repo's own regexes.
     # First run: the four highest-ranked paths by data-point count all rest
