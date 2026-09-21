@@ -777,12 +777,21 @@ TERMS = {
         'source': 'Li J et al. Rapamycin: one drug, many effects. Cell Metabolism 2014;19(3):373-379. PMID:24508508'
     },
     'Belatacept': {
-        'plain': 'A costimulation blocker used in islet transplant. Prevents T cell activation without blocking calcineurin (avoiding tacrolimus-induced diabetes). 70% graft survival at 10 years.',
+        # CORRECTED 2026-09-21. Both this field and 'disease' below ended in a
+        # 10-year graft-survival percentage that the cited source does not
+        # contain. The citation is PMID:16120857, Vincenti et al., NEJM 2005 --
+        # fetched live this run. It is a RENAL transplant trial; its comparator
+        # is CYCLOSPORINE, not tacrolimus; its endpoints are acute rejection at
+        # SIX MONTHS and GFR at TWELVE MONTHS. It reports no ten-year data, no
+        # graft-survival percentage, and no 70 or 50. Three builders carried
+        # this same invented number with three different tacrolimus comparators
+        # (32, 50, and none), which is itself the tell.
+        'plain': 'A costimulation blocker used in transplant. Prevents T cell activation without blocking calcineurin (avoiding tacrolimus-induced diabetes). FDA-approved in kidney transplant; investigational in islet transplant, where no long-term graft-survival rate is established.',
         'medical': 'CTLA-4-Ig fusion protein. Blocks CD80/CD86-CD28 costimulation. Calcineurin-sparing alternative to tacrolimus for transplant.',
         'systems': ['immune'],
         'indicators': ['T cell costimulation', 'Graft function'],
         'normal_range': 'Induction then monthly infusions',
-        'disease': 'Kidney transplant (FDA approved); islet transplant (investigational); 70% graft survival at 10yr vs 50% with tacrolimus-based',
+        'disease': 'Kidney transplant (FDA approved); islet transplant (investigational). What the cited trial actually shows (PMID:16120857, NEJM 2005, renal): non-inferior to CYCLOSPORINE for acute rejection at 6 months (7%/6% vs 8%), higher GFR at 12 months (66.3/62.1 vs 53.5 mL/min/1.73m2), less chronic allograft nephropathy (29%/20% vs 44%). No 10-year endpoint, and no tacrolimus comparator.',
         'connections': ['Costimulation blockade', 'T cell suppression', 'Transplant tolerance'],
         'gap_relevance': [3, 5, 6, 8],
         'source': 'Vincenti F et al. Costimulation blockade with belatacept in renal transplantation. N Engl J Med 2005;353(8):770-781. PMID:16120857'

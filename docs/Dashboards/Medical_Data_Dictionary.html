@@ -255,103 +255,12 @@
         .context-block h3 { font-family: Georgia, serif; font-size: 1.1rem; color: #2c5f8a; margin: 0 0 0.75rem 0; font-weight: normal; }
         .context-block p { margin: 0.5rem 0; font-size: 0.95rem; color: #333; }
         .context-block .context-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 1rem; margin-bottom: 0.25rem; }
-    
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-</style>
+    </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
-<!-- DRH-NAV-BAR -->
-<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
-  <a class="drh-home" href="../index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
-  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Research_Dashboard.html">Research Dashboard</a>
-      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
-      <a href="Medical_Data_Dictionary.html" class="drh-current">Data Dictionary</a>
-      <a href="Paper_Library.html">Paper Library</a>
-      <a href="Methodology.html">Methodology</a>
-      <a href="Acronym_Database.html">Acronym Database</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Gap_Synthesis.html">Gap Synthesis</a>
-      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
-      <a href="Gap_Evidence.html">Gap Evidence</a>
-      <a href="Extracted_Evidence.html">Extracted Evidence</a>
-      <a href="Corpus_Analysis.html">Corpus Analysis</a>
-      <a href="Research_Paths.html">Research Paths</a>
-      <a href="Statistical_Analysis.html">Statistical Analysis</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
-      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
-      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
-      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
-      <a href="GKA_Landscape.html">GKA Landscape</a>
-      <a href="GKA_LADA.html">GKA LADA</a>
-      <a href="GKA_Pricing.html">GKA Pricing</a>
-      <a href="Immunomod_LADA.html">Immunomod LADA</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="Health_Equity.html">Health Equity</a>
-      <a href="Equity_Map.html">Equity Map</a>
-      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
-      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
-      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="LADA_Natural_History.html">LADA Natural History</a>
-      <a href="LADA_Prevalence.html">LADA Prevalence</a>
-      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
-      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
-      <a href="Nutrition_LADA.html">Nutrition LADA</a>
-      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
-      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
-    </div>
-  </div>  <div class="drh-group">
-    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
-    <div class="drh-dropdown" role="menu">
-      <a href="PMID_Verification.html">PMID Verification</a>
-    </div>
-  </div>
-</nav>
-
-
 <div class="container">
     <h1>Medical Data Dictionary</h1>
     <p class="description">Comprehensive reference for diabetes research terms, pathways, and connections to research gaps. All definitions in plain English first, then medical literature standard definitions.</p>
@@ -365,11 +274,11 @@
       <p>Definitions reflect consensus usage as of March 2026 and may not capture emerging terminology. Some terms have different meanings in different clinical contexts — the definitions here are diabetes-focused. Normal ranges cited are general population values and may vary by age, sex, and ethnicity.</p>
     </div>
 
-    <div class="tabs" role="tablist">
-        <button role="tab" class="tab-button active" onclick="switchTab('systems')">Body Systems Map</button>
-        <button role="tab" class="tab-button" onclick="switchTab('dictionary')">Term Dictionary</button>
-        <button role="tab" class="tab-button" onclick="switchTab('pathways')">Pathway Maps</button>
-        <button role="tab" class="tab-button" onclick="switchTab('gaps')">Gap Connections</button>
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('systems')">Body Systems Map</button>
+        <button class="tab-button" onclick="switchTab('dictionary')">Term Dictionary</button>
+        <button class="tab-button" onclick="switchTab('pathways')">Pathway Maps</button>
+        <button class="tab-button" onclick="switchTab('gaps')">Gap Connections</button>
     </div>
 
 
@@ -569,7 +478,7 @@
         <h2>Medical Term Dictionary</h2>
         <p class="description">Search and filter terms. Click any term to expand and see connections to body systems, gaps, and related concepts.</p>
         <div class="search-filter">
-            <input type="text" class="search-box" id="searchInput" placeholder="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." aria-label="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." aria-label="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." onkeyup="filterDictionary()">
+            <input type="text" class="search-box" id="searchInput" placeholder="Search terms (e.g., 'Beta Cell', 'insulin', 'T1D')..." onkeyup="filterDictionary()">
             <select class="filter-select" id="systemFilter" onchange="filterDictionary()">
                 <option value="">All Systems</option>
                 <option value="pancreas">Pancreas & Beta Cells</option>
@@ -634,7 +543,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Hardie DG et al. AMPK: a nutrient and energy sensor. Annual Review of Nutrition 2014;34:31-55. <a href="https://pubmed.ncbi.nlm.nih.gov/24850385/" target="_blank" rel="noopener" title="View on PubMed">PMID:24850385</a></div>
+                    <div class="detail-value">Hardie DG et al. AMPK: a nutrient and energy sensor. Annual Review of Nutrition 2014;34:31-55. PMID:24850385</div>
                 </div>
             </div>
         </div>
@@ -670,7 +579,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Scherer PE. Adipose tissue: from lipid storage to endocrine organ. Diabetes 2006;55(6):1537-1545. <a href="https://pubmed.ncbi.nlm.nih.gov/16731815/" target="_blank" rel="noopener" title="View on PubMed">PMID:16731815</a></div>
+                    <div class="detail-value">Scherer PE. Adipose tissue: from lipid storage to endocrine organ. Diabetes 2006;55(6):1537-1545. PMID:16731815</div>
                 </div>
             </div>
         </div>
@@ -742,7 +651,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Gromada J et al. Alpha cells of the endocrine pancreas. Endocrine Reviews 2007;28(1):84-116. <a href="https://pubmed.ncbi.nlm.nih.gov/17261637/" target="_blank" rel="noopener" title="View on PubMed">PMID:17261637</a></div>
+                    <div class="detail-value">Gromada J et al. Alpha cells of the endocrine pancreas. Endocrine Reviews 2007;28(1):84-116. PMID:17261637</div>
                 </div>
             </div>
         </div>
@@ -778,7 +687,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Ziegler AG et al. Seroconversion to multiple islet autoantibodies and risk of progression to diabetes. JAMA 2013;309(23):2473-2479. <a href="https://pubmed.ncbi.nlm.nih.gov/23780460/" target="_blank" rel="noopener" title="View on PubMed">PMID:23780460</a></div>
+                    <div class="detail-value">Ziegler AG et al. Seroconversion to multiple islet autoantibodies and risk of progression to diabetes. JAMA 2013;309(23):2473-2479. PMID:23780460</div>
                 </div>
             </div>
         </div>
@@ -850,7 +759,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">LeBien TW, Tedder TF. B lymphocytes: how they develop and function. Blood 2008;112(5):1570-1580. <a href="https://pubmed.ncbi.nlm.nih.gov/18725575/" target="_blank" rel="noopener" title="View on PubMed">PMID:18725575</a></div>
+                    <div class="detail-value">LeBien TW, Tedder TF. B lymphocytes: how they develop and function. Blood 2008;112(5):1570-1580. PMID:18725575</div>
                 </div>
             </div>
         </div>
@@ -886,13 +795,13 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Taylor PC et al. Baricitinib versus placebo for rheumatoid arthritis. New England Journal of Medicine 2017;376(7):652-662. <a href="https://pubmed.ncbi.nlm.nih.gov/28199814/" target="_blank" rel="noopener" title="View on PubMed">PMID:28199814</a></div>
+                    <div class="detail-value">Taylor PC et al. Baricitinib versus placebo for rheumatoid arthritis. New England Journal of Medicine 2017;376(7):652-662. PMID:28199814</div>
                 </div>
             </div>
         </div>
         <div class="term-card" data-term="belatacept" data-systems="immune" data-gaps="3,5,6,8">
             <div class="term-title">Belatacept</div>
-            <div class="term-plain">A costimulation blocker used in islet transplant. Prevents T cell activation without blocking calcineurin (avoiding tacrolimus-induced diabetes). 70% graft survival at 10 years.</div>
+            <div class="term-plain">A costimulation blocker used in transplant. Prevents T cell activation without blocking calcineurin (avoiding tacrolimus-induced diabetes). FDA-approved in kidney transplant; investigational in islet transplant, where no long-term graft-survival rate is established.</div>
             <div class="term-medical">CTLA-4-Ig fusion protein. Blocks CD80/CD86-CD28 costimulation. Calcineurin-sparing alternative to tacrolimus for transplant.</div>
             <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
             <div class="term-details">
@@ -910,7 +819,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">In Diabetes:</div>
-                    <div class="detail-value">Kidney transplant (FDA approved); islet transplant (investigational); 70% graft survival at 10yr vs 50% with tacrolimus-based</div>
+                    <div class="detail-value">Kidney transplant (FDA approved); islet transplant (investigational). What the cited trial actually shows (PMID:16120857, NEJM 2005, renal): non-inferior to CYCLOSPORINE for acute rejection at 6 months (7%/6% vs 8%), higher GFR at 12 months (66.3/62.1 vs 53.5 mL/min/1.73m2), less chronic allograft nephropathy (29%/20% vs 44%). No 10-year endpoint, and no tacrolimus comparator.</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Connected To:</div>
@@ -922,7 +831,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Vincenti F et al. Costimulation blockade with belatacept in renal transplantation. N Engl J Med 2005;353(8):770-781. <a href="https://pubmed.ncbi.nlm.nih.gov/16120857/" target="_blank" rel="noopener" title="View on PubMed">PMID:16120857</a></div>
+                    <div class="detail-value">Vincenti F et al. Costimulation blockade with belatacept in renal transplantation. N Engl J Med 2005;353(8):770-781. PMID:16120857</div>
                 </div>
             </div>
         </div>
@@ -958,7 +867,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. <a href="https://pubmed.ncbi.nlm.nih.gov/34180979/" target="_blank" rel="noopener" title="View on PubMed">PMID:34180979</a></div>
+                    <div class="detail-value">Kahn SE et al. The beta cell in diabetes: integrating biomarkers with functional measures. Endocrine Reviews 2021;42(5):528-583. PMID:34180979</div>
                 </div>
             </div>
         </div>
@@ -994,7 +903,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Jones AG, Hattersley AT. The clinical utility of C-peptide measurement. Diabetic Medicine 2013;30(7):803-817. <a href="https://pubmed.ncbi.nlm.nih.gov/23413806/" target="_blank" rel="noopener" title="View on PubMed">PMID:23413806</a></div>
+                    <div class="detail-value">Jones AG, Hattersley AT. The clinical utility of C-peptide measurement. Diabetic Medicine 2013;30(7):803-817. PMID:23413806</div>
                 </div>
             </div>
         </div>
@@ -1030,7 +939,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">June CH et al. CAR T cell immunotherapy for human cancer. Science 2018;359(6382):1361-1365. <a href="https://pubmed.ncbi.nlm.nih.gov/29567707/" target="_blank" rel="noopener" title="View on PubMed">PMID:29567707</a></div>
+                    <div class="detail-value">June CH et al. CAR T cell immunotherapy for human cancer. Science 2018;359(6382):1361-1365. PMID:29567707</div>
                 </div>
             </div>
         </div>
@@ -1066,7 +975,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Zhu J et al. Differentiation of effector CD4 T cell populations. Annual Review of Immunology 2010;28:445-489. <a href="https://pubmed.ncbi.nlm.nih.gov/20192806/" target="_blank" rel="noopener" title="View on PubMed">PMID:20192806</a></div>
+                    <div class="detail-value">Zhu J et al. Differentiation of effector CD4 T cell populations. Annual Review of Immunology 2010;28:445-489. PMID:20192806</div>
                 </div>
             </div>
         </div>
@@ -1102,7 +1011,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Zhang N, Bevan MJ. CD8(+) T cells: foot soldiers of the immune system. Immunity 2011;35(2):161-168. <a href="https://pubmed.ncbi.nlm.nih.gov/21867926/" target="_blank" rel="noopener" title="View on PubMed">PMID:21867926</a></div>
+                    <div class="detail-value">Zhang N, Bevan MJ. CD8(+) T cells: foot soldiers of the immune system. Immunity 2011;35(2):161-168. PMID:21867926</div>
                 </div>
             </div>
         </div>
@@ -1138,7 +1047,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Rodbard D. Continuous glucose monitoring: a review. Diabetes Technology & Therapeutics 2016;18(Suppl 2):S3-S13. <a href="https://pubmed.ncbi.nlm.nih.gov/26784127/" target="_blank" rel="noopener" title="View on PubMed">PMID:26784127</a></div>
+                    <div class="detail-value">Rodbard D. Continuous glucose monitoring: a review. Diabetes Technology & Therapeutics 2016;18(Suppl 2):S3-S13. PMID:26784127</div>
                 </div>
             </div>
         </div>
@@ -1174,7 +1083,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Ridker PM. C-reactive protein: eighty years from discovery to emergence. Clinical Chemistry 2009;55(2):209-215. <a href="https://pubmed.ncbi.nlm.nih.gov/19095723/" target="_blank" rel="noopener" title="View on PubMed">PMID:19095723</a></div>
+                    <div class="detail-value">Ridker PM. C-reactive protein: eighty years from discovery to emergence. Clinical Chemistry 2009;55(2):209-215. PMID:19095723</div>
                 </div>
             </div>
         </div>
@@ -1210,7 +1119,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Rusnak F, Mertz P. Calcineurin: form and function. Physiological Reviews 2000;80(4):1483-1521. <a href="https://pubmed.ncbi.nlm.nih.gov/11015619/" target="_blank" rel="noopener" title="View on PubMed">PMID:11015619</a></div>
+                    <div class="detail-value">Rusnak F, Mertz P. Calcineurin: form and function. Physiological Reviews 2000;80(4):1483-1521. PMID:11015619</div>
                 </div>
             </div>
         </div>
@@ -1246,7 +1155,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. <a href="https://pubmed.ncbi.nlm.nih.gov/33550442/" target="_blank" rel="noopener" title="View on PubMed">PMID:33550442</a></div>
+                    <div class="detail-value">Boughton CK, Hovorka R. New closed-loop insulin systems. Diabetologia 2021;64(5):1007-1015. PMID:33550442</div>
                 </div>
             </div>
         </div>
@@ -1282,7 +1191,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Beck RW et al. Effect of continuous glucose monitoring on glycemic control in adults with type 1 diabetes. JAMA 2017;317(4):371-378. <a href="https://pubmed.ncbi.nlm.nih.gov/28118453/" target="_blank" rel="noopener" title="View on PubMed">PMID:28118453</a></div>
+                    <div class="detail-value">Beck RW et al. Effect of continuous glucose monitoring on glycemic control in adults with type 1 diabetes. JAMA 2017;317(4):371-378. PMID:28118453</div>
                 </div>
             </div>
         </div>
@@ -1354,7 +1263,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Deacon CF. Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes. Nature Reviews Endocrinology 2020;16(11):642-653. <a href="https://pubmed.ncbi.nlm.nih.gov/32929230/" target="_blank" rel="noopener" title="View on PubMed">PMID:32929230</a></div>
+                    <div class="detail-value">Deacon CF. Dipeptidyl peptidase 4 inhibitors in the treatment of type 2 diabetes. Nature Reviews Endocrinology 2020;16(11):642-653. PMID:32929230</div>
                 </div>
             </div>
         </div>
@@ -1390,7 +1299,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Banchereau J, Steinman RM. Dendritic cells and the control of immunity. Nature 1998;392(6673):245-252. <a href="https://pubmed.ncbi.nlm.nih.gov/9521319/" target="_blank" rel="noopener" title="View on PubMed">PMID:9521319</a></div>
+                    <div class="detail-value">Banchereau J, Steinman RM. Dendritic cells and the control of immunity. Nature 1998;392(6673):245-252. PMID:9521319</div>
                 </div>
             </div>
         </div>
@@ -1426,7 +1335,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Alicic RZ et al. Diabetic kidney disease. Clinical Journal of the American Society of Nephrology 2017;12(12):2032-2045. <a href="https://pubmed.ncbi.nlm.nih.gov/28522654/" target="_blank" rel="noopener" title="View on PubMed">PMID:28522654</a></div>
+                    <div class="detail-value">Alicic RZ et al. Diabetic kidney disease. Clinical Journal of the American Society of Nephrology 2017;12(12):2032-2045. PMID:28522654</div>
                 </div>
             </div>
         </div>
@@ -1462,7 +1371,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank" rel="noopener" title="View on PubMed">PMID:32627352</a></div>
+                    <div class="detail-value">Markmann JF et al. Phase 3 trial of human islet-after-kidney transplantation. American Journal of Transplantation 2021;21(4):1477-1492. PMID:32627352</div>
                 </div>
             </div>
         </div>
@@ -1498,7 +1407,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Fontenot JD et al. Foxp3 programs development and function of regulatory T cells. Nature Immunology 2003;4(4):330-336. <a href="https://pubmed.ncbi.nlm.nih.gov/12612578/" target="_blank" rel="noopener" title="View on PubMed">PMID:12612578</a></div>
+                    <div class="detail-value">Fontenot JD et al. Foxp3 programs development and function of regulatory T cells. Nature Immunology 2003;4(4):330-336. PMID:12612578</div>
                 </div>
             </div>
         </div>
@@ -1534,7 +1443,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (<a href="https://pubmed.ncbi.nlm.nih.gov/38078589/" target="_blank" rel="noopener" title="View on PubMed">PMID:38078589</a>). DOI:10.2337/dc24-S002</div>
+                    <div class="detail-value">ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (PMID:38078589). DOI:10.2337/dc24-S002</div>
                 </div>
             </div>
         </div>
@@ -1570,7 +1479,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Agardh CD, Lynch KF, Palmer M, Link K, Lernmark A. GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset autoimmune diabetes. Diabetologia 2009;52(7):1363-1368. <a href="https://pubmed.ncbi.nlm.nih.gov/19404608/" target="_blank" rel="noopener" title="View on PubMed">PMID:19404608</a></div>
+                    <div class="detail-value">Agardh CD, Lynch KF, Palmer M, Link K, Lernmark A. GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset autoimmune diabetes. Diabetologia 2009;52(7):1363-1368. PMID:19404608</div>
                 </div>
             </div>
         </div>
@@ -1606,7 +1515,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Baekkeskov S et al. Identification of the 64K autoantigen in insulin-dependent diabetes. Nature 1990;347(6289):151-156. <a href="https://pubmed.ncbi.nlm.nih.gov/1697648/" target="_blank" rel="noopener" title="View on PubMed">PMID:1697648</a></div>
+                    <div class="detail-value">Baekkeskov S et al. Identification of the 64K autoantigen in insulin-dependent diabetes. Nature 1990;347(6289):151-156. PMID:1697648</div>
                 </div>
             </div>
         </div>
@@ -1678,7 +1587,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of GLP-1 receptor agonists. Cell Metabolism 2018;27(4):740-756. <a href="https://pubmed.ncbi.nlm.nih.gov/29617641/" target="_blank" rel="noopener" title="View on PubMed">PMID:29617641</a></div>
+                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of GLP-1 receptor agonists. Cell Metabolism 2018;27(4):740-756. PMID:29617641</div>
                 </div>
             </div>
         </div>
@@ -1714,7 +1623,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of glucagon-like peptide-1. Cell Metabolism 2018;27(4):740-756. <a href="https://pubmed.ncbi.nlm.nih.gov/29617641/" target="_blank" rel="noopener" title="View on PubMed">PMID:29617641</a></div>
+                    <div class="detail-value">Drucker DJ. Mechanisms of action and therapeutic application of glucagon-like peptide-1. Cell Metabolism 2018;27(4):740-756. PMID:29617641</div>
                 </div>
             </div>
         </div>
@@ -1750,7 +1659,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Klip A et al. Thirty sweet years of GLUT4. Journal of Biological Chemistry 2019;294(30):11369-11381. <a href="https://pubmed.ncbi.nlm.nih.gov/31175156/" target="_blank" rel="noopener" title="View on PubMed">PMID:31175156</a></div>
+                    <div class="detail-value">Klip A et al. Thirty sweet years of GLUT4. Journal of Biological Chemistry 2019;294(30):11369-11381. PMID:31175156</div>
                 </div>
             </div>
         </div>
@@ -1786,7 +1695,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-386. <a href="https://pubmed.ncbi.nlm.nih.gov/25751624/" target="_blank" rel="noopener" title="View on PubMed">PMID:25751624</a></div>
+                    <div class="detail-value">Onengut-Gumuscu S et al. Fine mapping of type 1 diabetes susceptibility loci. Nature Genetics 2015;47(4):381-386. PMID:25751624</div>
                 </div>
             </div>
         </div>
@@ -1822,7 +1731,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572. <a href="https://pubmed.ncbi.nlm.nih.gov/35551307/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551307</a></div>
+                    <div class="detail-value">Mahajan A et al. Multi-ancestry genetic study of type 2 diabetes. Nature Genetics 2022;54(5):560-572. PMID:35551307</div>
                 </div>
             </div>
         </div>
@@ -1858,7 +1767,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">McIntyre HD et al. Gestational diabetes mellitus. Nature Reviews Disease Primers 2019;5(1):47. <a href="https://pubmed.ncbi.nlm.nih.gov/31296866/" target="_blank" rel="noopener" title="View on PubMed">PMID:31296866</a></div>
+                    <div class="detail-value">McIntyre HD et al. Gestational diabetes mellitus. Nature Reviews Disease Primers 2019;5(1):47. PMID:31296866</div>
                 </div>
             </div>
         </div>
@@ -1894,7 +1803,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Sandoval DA, D'Alessio DA. Physiology of proglucagon peptides. Physiological Reviews 2015;95(2):513-548. <a href="https://pubmed.ncbi.nlm.nih.gov/25834231/" target="_blank" rel="noopener" title="View on PubMed">PMID:25834231</a></div>
+                    <div class="detail-value">Sandoval DA, D'Alessio DA. Physiology of proglucagon peptides. Physiological Reviews 2015;95(2):513-548. PMID:25834231</div>
                 </div>
             </div>
         </div>
@@ -1930,7 +1839,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Matschinsky FM, Wilson DF. The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans. Front Physiol 2019;10:148. <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank" rel="noopener" title="View on PubMed">PMID:30949058</a></div>
+                    <div class="detail-value">Matschinsky FM, Wilson DF. The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstrating the Presence of the Enzyme in Islets of Langerhans. Front Physiol 2019;10:148. PMID:30949058</div>
                 </div>
             </div>
         </div>
@@ -1966,7 +1875,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Matschinsky FM et al. Glucokinase activators for diabetes therapy. Diabetes Care 2011;34(Suppl 2):S236-S243. <a href="https://pubmed.ncbi.nlm.nih.gov/21525462/" target="_blank" rel="noopener" title="View on PubMed">PMID:21525462</a></div>
+                    <div class="detail-value">Matschinsky FM et al. Glucokinase activators for diabetes therapy. Diabetes Care 2011;34(Suppl 2):S236-S243. PMID:21525462</div>
                 </div>
             </div>
         </div>
@@ -2002,7 +1911,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Zhu D et al. Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial. Nature Medicine 2022;28(5):965-973. <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551294</a></div>
+                    <div class="detail-value">Zhu D et al. Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial. Nature Medicine 2022;28(5):965-973. PMID:35551294</div>
                 </div>
             </div>
         </div>
@@ -2038,7 +1947,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. <a href="https://pubmed.ncbi.nlm.nih.gov/28731034/" target="_blank" rel="noopener" title="View on PubMed">PMID:28731034</a></div>
+                    <div class="detail-value">Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. PMID:28731034</div>
                 </div>
             </div>
         </div>
@@ -2074,7 +1983,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Hawa MI et al. Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12. Diabetologia 2018;61(7):1644-1649. <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank" rel="noopener" title="View on PubMed">PMID:29619531</a></div>
+                    <div class="detail-value">Hawa MI et al. Autoantibodies to N-terminally truncated GAD improve clinical phenotyping of individuals with adult-onset diabetes: Action LADA 12. Diabetologia 2018;61(7):1644-1649. PMID:29619531</div>
                 </div>
             </div>
         </div>
@@ -2110,7 +2019,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Brownlee M. The pathobiology of diabetic complications. Diabetes 2005;54(6):1615-1625. <a href="https://pubmed.ncbi.nlm.nih.gov/15919781/" target="_blank" rel="noopener" title="View on PubMed">PMID:15919781</a></div>
+                    <div class="detail-value">Brownlee M. The pathobiology of diabetic complications. Diabetes 2005;54(6):1615-1625. PMID:15919781</div>
                 </div>
             </div>
         </div>
@@ -2146,7 +2055,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener" title="View on PubMed">PMID:31197153</a></div>
+                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. PMID:31197153</div>
                 </div>
             </div>
         </div>
@@ -2182,7 +2091,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. <a href="https://pubmed.ncbi.nlm.nih.gov/22315720/" target="_blank" rel="noopener" title="View on PubMed">PMID:22315720</a></div>
+                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. PMID:22315720</div>
                 </div>
             </div>
         </div>
@@ -2218,7 +2127,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. <a href="https://pubmed.ncbi.nlm.nih.gov/22315720/" target="_blank" rel="noopener" title="View on PubMed">PMID:22315720</a></div>
+                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. PMID:22315720</div>
                 </div>
             </div>
         </div>
@@ -2254,7 +2163,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. <a href="https://pubmed.ncbi.nlm.nih.gov/22315720/" target="_blank" rel="noopener" title="View on PubMed">PMID:22315720</a></div>
+                    <div class="detail-value">Noble JA, Erlich HA. Genetics of type 1 diabetes. Cold Spring Harbor Perspectives in Medicine 2012;2(1):a007732. PMID:22315720</div>
                 </div>
             </div>
         </div>
@@ -2290,7 +2199,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Matthews DR et al. Homeostasis model assessment. Diabetologia 1985;28(7):412-419. <a href="https://pubmed.ncbi.nlm.nih.gov/3899825/" target="_blank" rel="noopener" title="View on PubMed">PMID:3899825</a></div>
+                    <div class="detail-value">Matthews DR et al. Homeostasis model assessment. Diabetologia 1985;28(7):412-419. PMID:3899825</div>
                 </div>
             </div>
         </div>
@@ -2326,7 +2235,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (<a href="https://pubmed.ncbi.nlm.nih.gov/38078589/" target="_blank" rel="noopener" title="View on PubMed">PMID:38078589</a>). DOI:10.2337/dc24-S002</div>
+                    <div class="detail-value">ElSayed et al. Diabetes Care 2024;47(Suppl 1):S20-S42 (PMID:38078589). DOI:10.2337/dc24-S002</div>
                 </div>
             </div>
         </div>
@@ -2362,7 +2271,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Lan MS et al. Molecular cloning and identification of a receptor-type protein tyrosine phosphatase, IA-2, from human insulinoma. DNA Cell Biol 1994;13(5):505-514. <a href="https://pubmed.ncbi.nlm.nih.gov/8024693/" target="_blank" rel="noopener" title="View on PubMed">PMID:8024693</a></div>
+                    <div class="detail-value">Lan MS et al. Molecular cloning and identification of a receptor-type protein tyrosine phosphatase, IA-2, from human insulinoma. DNA Cell Biol 1994;13(5):505-514. PMID:8024693</div>
                 </div>
             </div>
         </div>
@@ -2398,7 +2307,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Schroder K et al. Interferon-gamma: an overview of signals, mechanisms and functions. Journal of Leukocyte Biology 2004;75(2):163-189. <a href="https://pubmed.ncbi.nlm.nih.gov/14525967/" target="_blank" rel="noopener" title="View on PubMed">PMID:14525967</a></div>
+                    <div class="detail-value">Schroder K et al. Interferon-gamma: an overview of signals, mechanisms and functions. Journal of Leukocyte Biology 2004;75(2):163-189. PMID:14525967</div>
                 </div>
             </div>
         </div>
@@ -2434,7 +2343,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Saraiva M, O'Garra A. The regulation of IL-10 production by immune cells. Nature Reviews Immunology 2010;10(3):170-181. <a href="https://pubmed.ncbi.nlm.nih.gov/20154735/" target="_blank" rel="noopener" title="View on PubMed">PMID:20154735</a></div>
+                    <div class="detail-value">Saraiva M, O'Garra A. The regulation of IL-10 production by immune cells. Nature Reviews Immunology 2010;10(3):170-181. PMID:20154735</div>
                 </div>
             </div>
         </div>
@@ -2470,7 +2379,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Gaffen SL. Structure and signalling in the IL-17 receptor family. Nature Reviews Immunology 2009;9(8):556-567. <a href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank" rel="noopener" title="View on PubMed">PMID:19575028</a></div>
+                    <div class="detail-value">Gaffen SL. Structure and signalling in the IL-17 receptor family. Nature Reviews Immunology 2009;9(8):556-567. PMID:19575028</div>
                 </div>
             </div>
         </div>
@@ -2506,7 +2415,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Dinarello CA. Interleukin-1 in disease. New England Journal of Medicine 1993;328(2):106-115. <a href="https://pubmed.ncbi.nlm.nih.gov/8439348/" target="_blank" rel="noopener" title="View on PubMed">PMID:8439348</a></div>
+                    <div class="detail-value">Dinarello CA. Interleukin-1 in disease. New England Journal of Medicine 1993;328(2):106-115. PMID:8439348</div>
                 </div>
             </div>
         </div>
@@ -2542,7 +2451,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Tanaka T et al. IL-6 in inflammation, immunity, and disease. Cold Spring Harbor Perspectives in Biology 2014;6(10):a016295. <a href="https://pubmed.ncbi.nlm.nih.gov/25190079/" target="_blank" rel="noopener" title="View on PubMed">PMID:25190079</a></div>
+                    <div class="detail-value">Tanaka T et al. IL-6 in inflammation, immunity, and disease. Cold Spring Harbor Perspectives in Biology 2014;6(10):a016295. PMID:25190079</div>
                 </div>
             </div>
         </div>
@@ -2578,7 +2487,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330. <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" target="_blank" rel="noopener" title="View on PubMed">PMID:17005949</a></div>
+                    <div class="detail-value">Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330. PMID:17005949</div>
                 </div>
             </div>
         </div>
@@ -2650,7 +2559,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">De Meyts P. Insulin and its receptor: structure, function and evolution. BioEssays 2004;26(12):1351-1362. <a href="https://pubmed.ncbi.nlm.nih.gov/15551269/" target="_blank" rel="noopener" title="View on PubMed">PMID:15551269</a></div>
+                    <div class="detail-value">De Meyts P. Insulin and its receptor: structure, function and evolution. BioEssays 2004;26(12):1351-1362. PMID:15551269</div>
                 </div>
             </div>
         </div>
@@ -2674,7 +2583,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">In Diabetes:</div>
-                    <div class="detail-value">Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year, <a href="https://pubmed.ncbi.nlm.nih.gov/31618560/" target="_blank" rel="noopener" title="View on PubMed">PMID:31618560</a>) and insurance coverage; significant equity gaps in pump access by race and income</div>
+                    <div class="detail-value">Gold standard for T1D management; AID systems improve TIR by 10-15% vs MDI; access limited by cost ($6,000-8,000/year, PMID:31618560) and insurance coverage; significant equity gaps in pump access by race and income</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Connected To:</div>
@@ -2686,7 +2595,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717. <a href="https://pubmed.ncbi.nlm.nih.gov/31618560/" target="_blank" rel="noopener" title="View on PubMed">PMID:31618560</a></div>
+                    <div class="detail-value">Brown SA et al. Six-month randomized, multicenter trial of closed-loop control in type 1 diabetes. New England Journal of Medicine 2019;381(18):1707-1717. PMID:31618560</div>
                 </div>
             </div>
         </div>
@@ -2722,7 +2631,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">De Meyts P. The Insulin Receptor and Its Signal Transduction Network. In: Endotext [Internet]. South Dartmouth (MA): MDText.com; updated 2016 Apr 27. <a href="https://pubmed.ncbi.nlm.nih.gov/27512793/" target="_blank" rel="noopener" title="View on PubMed">PMID:27512793</a></div>
+                    <div class="detail-value">De Meyts P. The Insulin Receptor and Its Signal Transduction Network. In: Endotext [Internet]. South Dartmouth (MA): MDText.com; updated 2016 Apr 27. PMID:27512793</div>
                 </div>
             </div>
         </div>
@@ -2758,7 +2667,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. <a href="https://pubmed.ncbi.nlm.nih.gov/28731034/" target="_blank" rel="noopener" title="View on PubMed">PMID:28731034</a></div>
+                    <div class="detail-value">Petersen MC, Vatner DF, Shulman GI. Regulation of hepatic glucose metabolism in health and disease. Nat Rev Endocrinol 2017;13(10):572-587. PMID:28731034</div>
                 </div>
             </div>
         </div>
@@ -2794,7 +2703,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Shapiro AMJ et al. Islet transplantation in type 1 diabetes. New England Journal of Medicine 2000;343(4):230-238. <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID:10911004</a></div>
+                    <div class="detail-value">Shapiro AMJ et al. Islet transplantation in type 1 diabetes. New England Journal of Medicine 2000;343(4):230-238. PMID:10911004</div>
                 </div>
             </div>
         </div>
@@ -2830,7 +2739,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Shapiro AMJ et al. Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen. New England Journal of Medicine 2000;343(4):230-238. <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank" rel="noopener" title="View on PubMed">PMID:10911004</a></div>
+                    <div class="detail-value">Shapiro AMJ et al. Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen. New England Journal of Medicine 2000;343(4):230-238. PMID:10911004</div>
                 </div>
             </div>
         </div>
@@ -2866,7 +2775,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Brissova M et al. Assessment of human pancreatic islet architecture and composition by laser scanning confocal microscopy. J Histochem Cytochem 2005;53(9):1087-1097. <a href="https://pubmed.ncbi.nlm.nih.gov/15923354/" target="_blank" rel="noopener" title="View on PubMed">PMID:15923354</a></div>
+                    <div class="detail-value">Brissova M et al. Assessment of human pancreatic islet architecture and composition by laser scanning confocal microscopy. J Histochem Cytochem 2005;53(9):1087-1097. PMID:15923354</div>
                 </div>
             </div>
         </div>
@@ -2902,7 +2811,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">O'Shea JJ et al. The JAK-STAT pathway: impact on human disease and therapeutic intervention. Annual Review of Medicine 2015;66:311-328. <a href="https://pubmed.ncbi.nlm.nih.gov/25587654/" target="_blank" rel="noopener" title="View on PubMed">PMID:25587654</a></div>
+                    <div class="detail-value">O'Shea JJ et al. The JAK-STAT pathway: impact on human disease and therapeutic intervention. Annual Review of Medicine 2015;66:311-328. PMID:25587654</div>
                 </div>
             </div>
         </div>
@@ -2938,7 +2847,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Buzzetti R et al. Management of LADA: a consensus statement. Diabetes 2020;69(10):2037-2044. <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a></div>
+                    <div class="detail-value">Buzzetti R et al. Management of LADA: a consensus statement. Diabetes 2020;69(10):2037-2044. PMID:32847960</div>
                 </div>
             </div>
         </div>
@@ -2974,7 +2883,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Buzzetti R et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel. Diabetes 2020;69(10):2037-2047. <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank" rel="noopener" title="View on PubMed">PMID:32847960</a></div>
+                    <div class="detail-value">Buzzetti R et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel. Diabetes 2020;69(10):2037-2047. PMID:32847960</div>
                 </div>
             </div>
         </div>
@@ -3010,7 +2919,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Friedman JM. Leptin and the endocrine control of energy balance. Nature Metabolism 2019;1(8):754-764. <a href="https://pubmed.ncbi.nlm.nih.gov/32694767/" target="_blank" rel="noopener" title="View on PubMed">PMID:32694767</a></div>
+                    <div class="detail-value">Friedman JM. Leptin and the endocrine control of energy balance. Nature Metabolism 2019;1(8):754-764. PMID:32694767</div>
                 </div>
             </div>
         </div>
@@ -3046,7 +2955,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Brown N, Panksepp J. Low-dose naltrexone for disease prevention and quality of life. Med Hypotheses 2009;72(3):333-337. <a href="https://pubmed.ncbi.nlm.nih.gov/19041189/" target="_blank" rel="noopener" title="View on PubMed">PMID:19041189</a></div>
+                    <div class="detail-value">Brown N, Panksepp J. Low-dose naltrexone for disease prevention and quality of life. Med Hypotheses 2009;72(3):333-337. PMID:19041189</div>
                 </div>
             </div>
         </div>
@@ -3082,7 +2991,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Hang Y, Stein R. MafA and MafB activity in pancreatic beta cells. Trends Endocrinol Metab 2011;22(9):364-373. <a href="https://pubmed.ncbi.nlm.nih.gov/21719305/" target="_blank" rel="noopener" title="View on PubMed">PMID:21719305</a></div>
+                    <div class="detail-value">Hang Y, Stein R. MafA and MafB activity in pancreatic beta cells. Trends Endocrinol Metab 2011;22(9):364-373. PMID:21719305</div>
                 </div>
             </div>
         </div>
@@ -3118,7 +3027,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Cargnello M, Roux PP. Activation and function of the MAPKs and their substrates. Microbiology and Molecular Biology Reviews 2011;75(1):50-83. <a href="https://pubmed.ncbi.nlm.nih.gov/21372320/" target="_blank" rel="noopener" title="View on PubMed">PMID:21372320</a></div>
+                    <div class="detail-value">Cargnello M, Roux PP. Activation and function of the MAPKs and their substrates. Microbiology and Molecular Biology Reviews 2011;75(1):50-83. PMID:21372320</div>
                 </div>
             </div>
         </div>
@@ -3154,7 +3063,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. <a href="https://pubmed.ncbi.nlm.nih.gov/28314945/" target="_blank" rel="noopener" title="View on PubMed">PMID:28314945</a></div>
+                    <div class="detail-value">Hattersley AT, Patel KA. Precision diabetes: learning from MODY. Diabetologia 2017;60(5):769-778. PMID:28314945</div>
                 </div>
             </div>
         </div>
@@ -3190,7 +3099,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Murray PJ, Wynn TA. Protective and pathogenic functions of macrophage subsets. Nature Reviews Immunology 2011;11(11):723-737. <a href="https://pubmed.ncbi.nlm.nih.gov/21997792/" target="_blank" rel="noopener" title="View on PubMed">PMID:21997792</a></div>
+                    <div class="detail-value">Murray PJ, Wynn TA. Protective and pathogenic functions of macrophage subsets. Nature Reviews Immunology 2011;11(11):723-737. PMID:21997792</div>
                 </div>
             </div>
         </div>
@@ -3232,7 +3141,7 @@
         </div>
         <div class="term-card" data-term="metformin" data-systems="liver,immune,vascular" data-gaps="4,6,7,11,12">
             <div class="term-title">Metformin</div>
-            <div class="term-plain">First-line diabetes drug. Activates AMPK (energy sensor), reduces liver glucose production, improves insulin sensitivity. Cheap ($4/month generic, <a href="https://pubmed.ncbi.nlm.nih.gov/28776086/" target="_blank" rel="noopener" title="View on PubMed">PMID:28776086</a>).</div>
+            <div class="term-plain">First-line diabetes drug. Activates AMPK (energy sensor), reduces liver glucose production, improves insulin sensitivity. Cheap ($4/month generic, PMID:28776086).</div>
             <div class="term-medical">Biguanide. Primary target: AMPK activation. Mechanisms: (1) AMPK->reduced hepatic glucose output; (2) NLRP3 inhibition->reduced IL-1beta; (3) M2 macrophage promotion; (4) gut microbiome shift.</div>
             <button onclick="toggleTermDetails(this)" style="padding: 6px 10px; border: none; background: #f0f0f0; cursor: pointer; font-size: 0.8em; margin-top: 8px;">Details</button>
             <div class="term-details">
@@ -3262,7 +3171,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Rena G et al. The mechanisms of action of metformin. Diabetologia 2017;60(9):1577-1585. <a href="https://pubmed.ncbi.nlm.nih.gov/28776086/" target="_blank" rel="noopener" title="View on PubMed">PMID:28776086</a></div>
+                    <div class="detail-value">Rena G et al. The mechanisms of action of metformin. Diabetologia 2017;60(9):1577-1585. PMID:28776086</div>
                 </div>
             </div>
         </div>
@@ -3298,7 +3207,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Herold KC et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. New England Journal of Medicine 2019;381(7):603-613. <a href="https://pubmed.ncbi.nlm.nih.gov/31180194/" target="_blank" rel="noopener" title="View on PubMed">PMID:31180194</a></div>
+                    <div class="detail-value">Herold KC et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. New England Journal of Medicine 2019;381(7):603-613. PMID:31180194</div>
                 </div>
             </div>
         </div>
@@ -3334,7 +3243,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener" title="View on PubMed">PMID:31197153</a></div>
+                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. PMID:31197153</div>
                 </div>
             </div>
         </div>
@@ -3370,7 +3279,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Zhang Q et al. 30 Years of NF-kB: a blossoming of relevance to human pathobiology. Cell 2017;168(1-2):37-57. <a href="https://pubmed.ncbi.nlm.nih.gov/28086098/" target="_blank" rel="noopener" title="View on PubMed">PMID:28086098</a></div>
+                    <div class="detail-value">Zhang Q et al. 30 Years of NF-kB: a blossoming of relevance to human pathobiology. Cell 2017;168(1-2):37-57. PMID:28086098</div>
                 </div>
             </div>
         </div>
@@ -3406,7 +3315,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Macian F. NFAT proteins: key regulators of T-cell development and function. Nature Reviews Immunology 2005;5(6):472-484. <a href="https://pubmed.ncbi.nlm.nih.gov/15928679/" target="_blank" rel="noopener" title="View on PubMed">PMID:15928679</a></div>
+                    <div class="detail-value">Macian F. NFAT proteins: key regulators of T-cell development and function. Nature Reviews Immunology 2005;5(6):472-484. PMID:15928679</div>
                 </div>
             </div>
         </div>
@@ -3442,7 +3351,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Vivier E et al. Innate or adaptive immunity? The example of natural killer cells. Science 2011;331(6013):44-49. <a href="https://pubmed.ncbi.nlm.nih.gov/21212348/" target="_blank" rel="noopener" title="View on PubMed">PMID:21212348</a></div>
+                    <div class="detail-value">Vivier E et al. Innate or adaptive immunity? The example of natural killer cells. Science 2011;331(6013):44-49. PMID:21212348</div>
                 </div>
             </div>
         </div>
@@ -3478,7 +3387,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Swanson KV et al. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nature Reviews Immunology 2019;19(8):477-489. <a href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank" rel="noopener" title="View on PubMed">PMID:31036962</a></div>
+                    <div class="detail-value">Swanson KV et al. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nature Reviews Immunology 2019;19(8):477-489. PMID:31036962</div>
                 </div>
             </div>
         </div>
@@ -3514,7 +3423,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Gao T et al. Pdx1 maintains beta cell identity and function by repressing an alpha cell program. Cell Metab 2014;19(2):259-71. <a href="https://pubmed.ncbi.nlm.nih.gov/24506867/" target="_blank" rel="noopener" title="View on PubMed">PMID:24506867</a></div>
+                    <div class="detail-value">Gao T et al. Pdx1 maintains beta cell identity and function by repressing an alpha cell program. Cell Metab 2014;19(2):259-71. PMID:24506867</div>
                 </div>
             </div>
         </div>
@@ -3550,7 +3459,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Manning BD, Toker A. AKT/PKB signaling: navigating the network. Cell 2017;169(3):381-405. <a href="https://pubmed.ncbi.nlm.nih.gov/28431241/" target="_blank" rel="noopener" title="View on PubMed">PMID:28431241</a></div>
+                    <div class="detail-value">Manning BD, Toker A. AKT/PKB signaling: navigating the network. Cell 2017;169(3):381-405. PMID:28431241</div>
                 </div>
             </div>
         </div>
@@ -3622,7 +3531,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener" title="View on PubMed">PMID:31197153</a></div>
+                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. PMID:31197153</div>
                 </div>
             </div>
         </div>
@@ -3658,7 +3567,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Forouhi NG. Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base for South Asians. Diabetes Care 2022;45(12):2811-2813. <a href="https://pubmed.ncbi.nlm.nih.gov/36455116/" target="_blank" rel="noopener" title="View on PubMed">PMID:36455116</a></div>
+                    <div class="detail-value">Forouhi NG. Nutrition and Type 2 Diabetes: Computational Optimization Modeling to Expand the Evidence Base for South Asians. Diabetes Care 2022;45(12):2811-2813. PMID:36455116</div>
                 </div>
             </div>
         </div>
@@ -3694,7 +3603,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Tabak AG et al. Prediabetes: a high-risk state for diabetes development. Lancet 2012;379(9833):2279-2290. <a href="https://pubmed.ncbi.nlm.nih.gov/22683128/" target="_blank" rel="noopener" title="View on PubMed">PMID:22683128</a></div>
+                    <div class="detail-value">Tabak AG et al. Prediabetes: a high-risk state for diabetes development. Lancet 2012;379(9833):2279-2290. PMID:22683128</div>
                 </div>
             </div>
         </div>
@@ -3730,7 +3639,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Loopstra-Masters RC et al. Proinsulin-to-C-peptide ratio versus proinsulin-to-insulin ratio in the prediction of incident diabetes: the Insulin Resistance Atherosclerosis Study (IRAS). Diabetologia 2011;54(12):3047-3054. <a href="https://pubmed.ncbi.nlm.nih.gov/21959959/" target="_blank" rel="noopener" title="View on PubMed">PMID:21959959</a></div>
+                    <div class="detail-value">Loopstra-Masters RC et al. Proinsulin-to-C-peptide ratio versus proinsulin-to-insulin ratio in the prediction of incident diabetes: the Insulin Resistance Atherosclerosis Study (IRAS). Diabetologia 2011;54(12):3047-3054. PMID:21959959</div>
                 </div>
             </div>
         </div>
@@ -3766,7 +3675,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Brownlee M. The pathobiology of diabetic complications. Diabetes 2005;54(6):1615-1625. <a href="https://pubmed.ncbi.nlm.nih.gov/15919781/" target="_blank" rel="noopener" title="View on PubMed">PMID:15919781</a></div>
+                    <div class="detail-value">Brownlee M. The pathobiology of diabetic complications. Diabetes 2005;54(6):1615-1625. PMID:15919781</div>
                 </div>
             </div>
         </div>
@@ -3802,7 +3711,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Li J et al. Rapamycin: one drug, many effects. Cell Metabolism 2014;19(3):373-379. <a href="https://pubmed.ncbi.nlm.nih.gov/24508508/" target="_blank" rel="noopener" title="View on PubMed">PMID:24508508</a></div>
+                    <div class="detail-value">Li J et al. Rapamycin: one drug, many effects. Cell Metabolism 2014;19(3):373-379. PMID:24508508</div>
                 </div>
             </div>
         </div>
@@ -3838,7 +3747,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Sakaguchi S et al. Regulatory T cells and human disease. Annual Review of Immunology 2020;38:541-566. <a href="https://pubmed.ncbi.nlm.nih.gov/32017635/" target="_blank" rel="noopener" title="View on PubMed">PMID:32017635</a></div>
+                    <div class="detail-value">Sakaguchi S et al. Regulatory T cells and human disease. Annual Review of Immunology 2020;38:541-566. PMID:32017635</div>
                 </div>
             </div>
         </div>
@@ -3874,7 +3783,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Wong TY et al. Diabetic retinopathy. Nature Reviews Disease Primers 2016;2:16012. <a href="https://pubmed.ncbi.nlm.nih.gov/27159554/" target="_blank" rel="noopener" title="View on PubMed">PMID:27159554</a></div>
+                    <div class="detail-value">Wong TY et al. Diabetic retinopathy. Nature Reviews Disease Primers 2016;2:16012. PMID:27159554</div>
                 </div>
             </div>
         </div>
@@ -3910,7 +3819,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Zinman B et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes. New England Journal of Medicine 2015;373(22):2117-2128. <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" target="_blank" rel="noopener" title="View on PubMed">PMID:26378978</a></div>
+                    <div class="detail-value">Zinman B et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes. New England Journal of Medicine 2015;373(22):2117-2128. PMID:26378978</div>
                 </div>
             </div>
         </div>
@@ -3946,7 +3855,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. <a href="https://pubmed.ncbi.nlm.nih.gov/31197153/" target="_blank" rel="noopener" title="View on PubMed">PMID:31197153</a></div>
+                    <div class="detail-value">Feldman EL et al. Diabetic neuropathy. Nature Reviews Disease Primers 2019;5(1):41. PMID:31197153</div>
                 </div>
             </div>
         </div>
@@ -3982,7 +3891,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Huising MO et al. The Difference delta-Cells Make in Glucose Control. Physiology (Bethesda) 2018;33(6):403-411. <a href="https://pubmed.ncbi.nlm.nih.gov/30303773/" target="_blank" rel="noopener" title="View on PubMed">PMID:30303773</a></div>
+                    <div class="detail-value">Huising MO et al. The Difference delta-Cells Make in Glucose Control. Physiology (Bethesda) 2018;33(6):403-411. PMID:30303773</div>
                 </div>
             </div>
         </div>
@@ -4018,7 +3927,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466. <a href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank" rel="noopener" title="View on PubMed">PMID:35028608</a></div>
+                    <div class="detail-value">Shapiro AMJ et al. Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived pancreatic endoderm cells in an encapsulation device. Cell Reports Medicine 2021;2(12):100466. PMID:35028608</div>
                 </div>
             </div>
         </div>
@@ -4090,7 +3999,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Massague J. TGFbeta in cancer. Cell 2008;134(2):215-230. <a href="https://pubmed.ncbi.nlm.nih.gov/18662538/" target="_blank" rel="noopener" title="View on PubMed">PMID:18662538</a></div>
+                    <div class="detail-value">Massague J. TGFbeta in cancer. Cell 2008;134(2):215-230. PMID:18662538</div>
                 </div>
             </div>
         </div>
@@ -4126,7 +4035,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Kalliolias GD, Ivashkiv LB. TNF biology, pathogenic mechanisms and emerging therapeutic strategies. Nature Reviews Rheumatology 2016;12(1):49-62. <a href="https://pubmed.ncbi.nlm.nih.gov/26656660/" target="_blank" rel="noopener" title="View on PubMed">PMID:26656660</a></div>
+                    <div class="detail-value">Kalliolias GD, Ivashkiv LB. TNF biology, pathogenic mechanisms and emerging therapeutic strategies. Nature Reviews Rheumatology 2016;12(1):49-62. PMID:26656660</div>
                 </div>
             </div>
         </div>
@@ -4162,7 +4071,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575. <a href="https://pubmed.ncbi.nlm.nih.gov/18094377/" target="_blank" rel="noopener" title="View on PubMed">PMID:18094377</a></div>
+                    <div class="detail-value">Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575. PMID:18094377</div>
                 </div>
             </div>
         </div>
@@ -4186,7 +4095,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">In Diabetes:</div>
-                    <div class="detail-value">Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course (<a href="https://pubmed.ncbi.nlm.nih.gov/37202589/" target="_blank" rel="noopener" title="View on PubMed">PMID:37202589</a>); access limited to specialized centers</div>
+                    <div class="detail-value">Delays Stage 3 T1D onset by median 2 years (TrialNet TN-10); 50% of treated subjects T1D-free at 3 years vs 22% placebo; cost ~$194,000 per course (PMID:37202589); access limited to specialized centers</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Connected To:</div>
@@ -4198,7 +4107,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Speake C, Herold KC. Approval of teplizumab: implications for patients. Nat Rev Endocrinol 2023;19(7):377-378. <a href="https://pubmed.ncbi.nlm.nih.gov/37202589/" target="_blank" rel="noopener" title="View on PubMed">PMID:37202589</a></div>
+                    <div class="detail-value">Speake C, Herold KC. Approval of teplizumab: implications for patients. Nat Rev Endocrinol 2023;19(7):377-378. PMID:37202589</div>
                 </div>
             </div>
         </div>
@@ -4234,7 +4143,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Mosmann TR, Coffman RL. TH1 and TH2 cells: different patterns of lymphokine secretion. Annual Review of Immunology 1989;7:145-173. <a href="https://pubmed.ncbi.nlm.nih.gov/2523712/" target="_blank" rel="noopener" title="View on PubMed">PMID:2523712</a></div>
+                    <div class="detail-value">Mosmann TR, Coffman RL. TH1 and TH2 cells: different patterns of lymphokine secretion. Annual Review of Immunology 1989;7:145-173. PMID:2523712</div>
                 </div>
             </div>
         </div>
@@ -4270,7 +4179,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Korn T et al. IL-17 and Th17 cells. Annual Review of Immunology 2009;27:485-517. <a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank" rel="noopener" title="View on PubMed">PMID:19132915</a></div>
+                    <div class="detail-value">Korn T et al. IL-17 and Th17 cells. Annual Review of Immunology 2009;27:485-517. PMID:19132915</div>
                 </div>
             </div>
         </div>
@@ -4306,7 +4215,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Paul WE, Zhu J. How are TH2-type immune responses initiated and amplified? Nature Reviews Immunology 2010;10(4):225-235. <a href="https://pubmed.ncbi.nlm.nih.gov/20336151/" target="_blank" rel="noopener" title="View on PubMed">PMID:20336151</a></div>
+                    <div class="detail-value">Paul WE, Zhu J. How are TH2-type immune responses initiated and amplified? Nature Reviews Immunology 2010;10(4):225-235. PMID:20336151</div>
                 </div>
             </div>
         </div>
@@ -4342,7 +4251,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Yki-Jarvinen H. Thiazolidinediones. New England Journal of Medicine 2004;351(11):1106-1118. <a href="https://pubmed.ncbi.nlm.nih.gov/15356308/" target="_blank" rel="noopener" title="View on PubMed">PMID:15356308</a></div>
+                    <div class="detail-value">Yki-Jarvinen H. Thiazolidinediones. New England Journal of Medicine 2004;351(11):1106-1118. PMID:15356308</div>
                 </div>
             </div>
         </div>
@@ -4378,7 +4287,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Battelino T et al. Clinical targets for CGM data interpretation. Diabetes Care 2019;42(8):1593-1603. <a href="https://pubmed.ncbi.nlm.nih.gov/31177185/" target="_blank" rel="noopener" title="View on PubMed">PMID:31177185</a></div>
+                    <div class="detail-value">Battelino T et al. Clinical targets for CGM data interpretation. Diabetes Care 2019;42(8):1593-1603. PMID:31177185</div>
                 </div>
             </div>
         </div>
@@ -4450,7 +4359,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Atkinson MA et al. Type 1 diabetes. Lancet 2014;383(9911):69-82. <a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank" rel="noopener" title="View on PubMed">PMID:23890997</a></div>
+                    <div class="detail-value">Atkinson MA et al. Type 1 diabetes. Lancet 2014;383(9911):69-82. PMID:23890997</div>
                 </div>
             </div>
         </div>
@@ -4486,7 +4395,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">DeFronzo RA et al. Type 2 diabetes mellitus. Nature Reviews Disease Primers 2015;1:15019. <a href="https://pubmed.ncbi.nlm.nih.gov/27189025/" target="_blank" rel="noopener" title="View on PubMed">PMID:27189025</a></div>
+                    <div class="detail-value">DeFronzo RA et al. Type 2 diabetes mellitus. Nature Reviews Disease Primers 2015;1:15019. PMID:27189025</div>
                 </div>
             </div>
         </div>
@@ -4558,7 +4467,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Vertex Pharmaceuticals. VX-880 Phase 1/2 interim results. New England Journal of Medicine 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank" rel="noopener" title="View on PubMed">PMID:40544428</a></div>
+                    <div class="detail-value">Vertex Pharmaceuticals. VX-880 Phase 1/2 interim results. New England Journal of Medicine 2024. PMID:40544428</div>
                 </div>
             </div>
         </div>
@@ -4630,7 +4539,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Wenzlau JM et al. The zinc transporter ZnT8 is a major autoantigen in type 1 diabetes. PNAS 2007;104(43):17040-17045. <a href="https://pubmed.ncbi.nlm.nih.gov/17942684/" target="_blank" rel="noopener" title="View on PubMed">PMID:17942684</a></div>
+                    <div class="detail-value">Wenzlau JM et al. The zinc transporter ZnT8 is a major autoantigen in type 1 diabetes. PNAS 2007;104(43):17040-17045. PMID:17942684</div>
                 </div>
             </div>
         </div>
@@ -4702,7 +4611,7 @@
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">Source:</div>
-                    <div class="detail-value">Saxton RA, Sabatini DM. mTOR Signaling in Growth, Metabolism, and Disease. Cell 2017;168(6):960-976. <a href="https://pubmed.ncbi.nlm.nih.gov/28283069/" target="_blank" rel="noopener" title="View on PubMed">PMID:28283069</a></div>
+                    <div class="detail-value">Saxton RA, Sabatini DM. mTOR Signaling in Growth, Metabolism, and Disease. Cell 2017;168(6):960-976. PMID:28283069</div>
                 </div>
             </div>
         </div>

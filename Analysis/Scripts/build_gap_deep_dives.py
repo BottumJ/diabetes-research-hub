@@ -179,7 +179,25 @@ GAPS_DATA = {
                 "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr, 32% at 5yr, 8% at 20yr",
                 "Tacrolimus IR mechanism: FKBP-12/calcineurin/NFAT pathway",
                 "HOMA-IR: 7.5+/-2.3 in failure group vs 3.5+/-0.5 in success (2.1-fold difference)",
-                "Calcineurin-sparing alternatives: Belatacept 70% at 10yr, Efalizumab 60% at 13.3yr",
+                # CORRECTED 2026-09-21. This line previously read "Calcineurin-sparing
+                # alternatives: Belatacept 70% at 10yr, Efalizumab 60% at 13.3yr", which
+                # invented two drug-specific arms that its source does not report. Wisel
+                # et al., Transpl Int 2023 (PMID:37359825) is ONE consecutive series of
+                # TEN patients, 5 belatacept / 5 efalizumab. Verbatim from the abstract:
+                # "70% of patients (four EFA, three BELA) maintained insulin independence
+                # at 10 years"; "60% remain insulin independent at mean follow-up of
+                # 13.3 +/- 1.1 years". 70% and 60% are the SAME TEN PATIENTS at TWO
+                # TIMEPOINTS, not two drugs. The old line read a timepoint difference as
+                # a drug difference, and assigned belatacept the better number when
+                # efalizumab in fact contributed MORE of the seven responders (4 vs 3).
+                # There is no belatacept-alone rate and no efalizumab-alone rate in this
+                # paper. See build_islet_outcomes.py, which already carried the correct
+                # pooled reading while this file carried the invented one.
+                "Calcineurin-sparing regimen (belatacept or efalizumab, pooled): 7 of 10 "
+                "patients insulin independent at 10 years, 6 of 10 at mean 13.3 +/- 1.1 "
+                "years -- one 10-patient series (5 BELA / 5 EFA), not two drug arms; "
+                "3 of the 7 reached that endpoint via pancreas-after-islet transplant, "
+                "which is calcineurin-DEPENDENT (PMID:37359825)",
                 "Donislecel (LANTIDRA): FDA-approved June 2023, 67% insulin independence at 1yr"
             ]
         },
@@ -199,13 +217,25 @@ GAPS_DATA = {
             "PMID:40544428 - Long-term islet transplant outcomes",
             "Am J Transplant 2024 - Edmonton Protocol 20-year follow-up",
             "Am J Transplant 2022 - Calcineurin-sparing regimens",
-            "(PMID requires verification) - Belatacept comparative efficacy"
+            # CORRECTED 2026-09-21: this placeholder promised a comparative-efficacy
+            # study for belatacept in islet transplant. No such study is cited anywhere
+            # in this repository, and the paper the hub actually relies on
+            # (PMID:37359825) is a single-arm consecutive series with NO comparator.
+            # Naming the real source, and its design, beats promising a better one.
+            "PMID:37359825 - Wisel et al., Transpl Int 2023: calcineurin-sparing islet "
+            "protocol, n=10 consecutive, single-centre, NO control arm (not comparative)"
         ],
         "clinical_pipeline": [
             "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr (reference standard)",
             "LANTIDRA (donislecel): FDA-approved June 2023, 67% insulin independence at 1yr",
-            "Belatacept-based: 70% insulin independence at 10yr (alternative to tacrolimus)",
-            "Efalizumab-based: 60% insulin independence at 13.3yr (LFA-1 blockade)"
+            # CORRECTED 2026-09-21, same defect as evidence_synthesis above: these two
+            # lines split one pooled 10-patient series into per-drug arms that do not
+            # exist, and are additionally the same cohort at two different timepoints.
+            "Calcineurin-sparing islet protocol (belatacept n=5 / efalizumab n=5, "
+            "pooled): 7/10 insulin independent at 10 years, 6/10 at mean 13.3 years "
+            "(PMID:37359825). Single-centre consecutive series, no control arm, no "
+            "per-drug rate reported; 3 of the 7 received a pancreas-after-islet "
+            "transplant and are therefore back on a calcineurin inhibitor"
         ],
         "status_next_steps": {
             "phase": "Phase 3 (LANTIDRA approved)",
@@ -213,7 +243,7 @@ GAPS_DATA = {
             "data_needed": "Tacrolimus levels, HOMA-IR, genetic background, long-term outcomes >5yr",
             "dependencies": "LANTIDRA adoption post-approval, immunosuppressant pharmacogenomic data"
         },
-        "validation_evidence": "GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (PMID:32627352, Am J Transplant Phase 3). Validated graft survival: 6/10 insulin-independent at 10 years (PMID:37359825, Transpl Int 2023).",
+        "validation_evidence": "GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (PMID:32627352, Am J Transplant Phase 3). Validated graft survival: 7/10 insulin-independent at 10 years, 6/10 at mean 13.3 +/- 1.1 years (PMID:37359825, Transpl Int 2023, n=10 consecutive series). CORRECTED 2026-09-21: this field previously read '6/10 ... at 10 years', which pairs the 13.3-year numerator with the 10-year endpoint -- so THIS FILE stated two different 10-year values for the same paper (70% in evidence_synthesis, 6/10 here) and no gate compared them.",
         "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
         "mechanism_detail": "Tacrolimus-FKBP12 complex inhibits calcineurin phosphatase, preventing NFAT dephosphorylation. Chronically: (1) suppresses insulin receptor substrate (IRS1/IRS2) expression in hepatocytes and myocytes, (2) increases mTORC1 signaling (feedback loss), (3) induces ER stress in beta cells via calcineurin inhibition of IRE1-alpha. HOMA-IR rise kinetics: 24hr (peak effect), sustained at 3-4mo (feedback adaptation), slight decline after 12mo (beta cell exhaustion). Calcineurin-sparing regimens use belatacept (selective costimulation blockade of CD80/CD86 without calcineurin inhibition) or efalizumab (LFA-1 blockade, no metabolic consequences). Patient selection: baseline HOMA-IR >3.5 predicts tacrolimus failure; consider belatacept-based regimen preemptively."
     },
@@ -245,7 +275,27 @@ GAPS_DATA = {
                 "Baricitinib (JAK inhibitor): showed diabetes reversal in mouse models (preclinical)",
                 "PLG-dAg nanoparticles + rapamycin: 60% tolerance efficacy in preclinical models",
                 "Rituximab: long-term NHP allograft survival (PMID:17965721)",
-                "CTLA-4 Ig (belatacept): 70% graft survival at 10yr vs 32% with tacrolimus",
+                # CORRECTED 2026-09-21 (second pass, found by adversarial re-check of the
+                # first pass -- the first pass repaired this file's OTHER belatacept claims
+                # and missed this one). It read:
+                #   "CTLA-4 Ig (belatacept): 70 percent graft survival at 10yr vs 32 percent
+                #    with tacrolimus"
+                # Three separate inventions in one line. (a) No such 10-year belatacept
+                # graft-survival figure exists in this corpus. (b) GRAFT SURVIVAL is not
+                # INSULIN INDEPENDENCE -- the 70 percent the hub actually holds is a
+                # 7-of-10 insulin-independence rate (PMID:37359825), a different outcome.
+                # (c) The "32 percent with tacrolimus" comparator is the Edmonton FIVE-YEAR
+                # insulin-independence rate lifted from line 179 of this same file and
+                # relabelled as a ten-year graft-survival rate for a different drug.
+                # Uncited throughout. See also build_data_dictionary.py, which carried the
+                # same fabrication with a 50 percent comparator, and build_gap_synthesis.py,
+                # which carried it with none: three files, three different comparators, one
+                # number that no source supports.
+                "Belatacept (CTLA-4 Ig) in islet transplant: NO long-term graft-survival "
+                "rate is established. The only long-term outcome this hub holds is insulin "
+                "independence -- a different endpoint -- in 7 of 10 patients at 10 years on "
+                "a pooled belatacept/efalizumab protocol (PMID:37359825, n=10, no "
+                "comparator arm)",
                 "NCT04786262 active for baricitinib in islet protection"
             ]
         },

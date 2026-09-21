@@ -621,6 +621,29 @@ SCRIPTS = {
                         'Gating on paper-index summary counts that disagree '
                         'with the records they summarise',
                         ('--gate',)),
+    # Added 2026-09-21. Every gate above scores ONE assertion against ONE
+    # source. None compares two of this repository's own assertions against
+    # EACH OTHER, and a contradiction is not a property of any single claim --
+    # so no number of per-claim gates can see one. build_gap_deep_dives.py
+    # stated 70%-at-10-years and 6/10-at-10-years for PMID 37359825, 34 lines
+    # apart, and every gate above passed both.
+    #
+    # READ THE SECOND NUMBER, NOT THE FIRST. This stage reports conflicts (0
+    # today) AND a ratchet on endpoint-values published with no citation in the
+    # same statement. That count is 35. Only 3 clinical endpoint-values in the
+    # whole builder corpus carry an identifier beside them. The belatacept
+    # figure that motivated this gate was not mis-cited -- it was never cited,
+    # and that is the condition that let it be wrong for months.
+    # The ratchet may fall and must never rise: a new uncited clinical
+    # percentage fails the build the day it is added. The conflict half is
+    # near-dormant by construction and becomes load-bearing only as the
+    # ratchet drives the backlog down.
+    # Proven in both directions the day it was written, and its FIRST design
+    # was discarded after its first measurement manufactured a false conflict
+    # from proximity -- see the module docstring.
+    'endpointagreement': ('audit_endpoint_value_agreement.py',
+                          'Gating on endpoint values that contradict each '
+                          'other or carry no citation at all'),
 }
 
 def run_script(name, desc, script_args=()):

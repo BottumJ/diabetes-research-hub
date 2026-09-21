@@ -107,7 +107,7 @@ GAPS_DATA = [
         'expected_outcomes': 'Could establish IR as a treatable comorbidity in transplant candidates',
         'status': 'Background Research',
         'validation': 'GOLD',
-        'validation_summary': 'Edmonton Protocol 20-year data confirms tacrolimus-induced IR (HOMA-IR 7.5 vs 3.5 in failure vs success). Donislecel FDA-approved. Belatacept shows 70% graft survival at 10yr.',
+        'validation_summary': 'Edmonton Protocol 20-year data confirms tacrolimus-induced IR (HOMA-IR 7.5 vs 3.5 in failure vs success). Donislecel FDA-approved. CORRECTED 2026-09-21: this summary previously ended "Belatacept shows 70 percent graft survival at 10yr", an uncited figure no source in this corpus supports; it conflated insulin independence with graft survival and appeared in three builders with three different comparators. Belatacept is calcineurin-sparing and FDA-approved in renal transplant (PMID:16120857, 6- and 12-month endpoints vs cyclosporine); its long-term islet graft survival is not established.',
         'sources': [
             'AHRQ Evidence Report',
             'Published clinical trials',
