@@ -36,17 +36,49 @@ GRAFT_DATA = {
         'color': COLORS['red'],
         'data': {0: 100, 1: 61, 2: 50, 3: 42, 4: 36, 5: 32, 6: 28, 7: 25, 8: 23, 9: 21, 10: 20, 15: 12, 20: 8}
     },
-    'Belatacept (Costimulation Blockade)': {
+    # WITHDRAWN AND REPLACED 2026-09-22. What stood here was an eleven-point
+    # annual curve {0:100, 1:92, 2:87, 3:81, 4:76, 5:71, 6:67, 7:64, 8:60,
+    # 9:58, 10:55} labelled "Belatacept (Costimulation Blockade)", captioned in
+    # its own source comment as a "Modeled trajectory", and plotted in the same
+    # style, weight and colour family as the Edmonton registry curve (n=1,477).
+    #
+    # The flag carried since 2026-09-14 said the problem was a 15-point
+    # disagreement between the curve's 55% endpoint and the 70% in the prose.
+    # Re-read against the abstract this run, the disagreement is the smallest
+    # of four problems and fixing it alone would have made the other three
+    # worse:
+    #
+    #   1. THERE IS NO BELATACEPT SERIES TO PLOT. Wisel et al., Transpl Int
+    #      2023 (PMID 37359825) is ten consecutive patients, belatacept n=5 and
+    #      efalizumab n=5. Its 70% at 10 years is seven of those ten -- "four
+    #      EFA, three BELA", in the abstract's own words. No per-drug rate is
+    #      reported at any timepoint. Labelling any curve "Belatacept" is the
+    #      same invention the 2026-09-21 run removed from the prose of four
+    #      builders; it survived there because it was numbers in a dict rather
+    #      than a sentence.
+    #   2. THE ENDPOINT IS NOT AN ISLET-TRANSPLANT OUTCOME. Of the seven who
+    #      were insulin independent at 10 years, "four [received] a single
+    #      islet infusion and three [underwent] PAI transplant" -- pancreas
+    #      after islet. Three of seven got a whole pancreas. Plotting that
+    #      against the Edmonton islet curve compares two different operations.
+    #   3. NINE OF THE ELEVEN POINTS ARE NOT IN THE PAPER. Years 1-9 were
+    #      interpolation rendered as annual follow-up, with a printed
+    #      percentage label over every marker.
+    #   4. Only then, the 55-vs-70 contradiction.
+    #
+    # Raising 55 to 70 would have left an invented annual curve terminating on
+    # a real number, which reads as better sourced than what it replaced. The
+    # repair is to plot only what the paper reports -- two timepoints, no
+    # connecting line, because nothing was measured between them.
+    'Wisel et al. 2023 (n=10; BELA 5 / EFA 5, incl. 3 PAI)': {
         'color': COLORS['green'],
-        # Modeled trajectory based on limited published data points; actual graft survival
-        # curves show more variability.
-        # FLAGGED 2026-09-14, NOT CHANGED: this curve ends at 55% at year 10, but the prose and
-        # the Evidence Catalog on this same page both report 70% at 10 years, from Wisel et al.
-        # Transpl Int 2023 (PMID:37359825) - 7 of 10 patients. So the chart and the text disagree
-        # by 15 points on the headline number of this block. Reconciling them is a modelling
-        # decision (the curve may be deliberately smoothed or conservative), so it is queued as a
-        # human call rather than edited here. Whichever is intended, they should not both publish.
-        'data': {0: 100, 1: 92, 2: 87, 3: 81, 4: 76, 5: 71, 6: 67, 7: 64, 8: 60, 9: 58, 10: 55}
+        'style': 'points',
+        # PMID 37359825, abstract verbatim: "70% of patients (four EFA, three
+        # BELA) maintained insulin independence at 10 years post-islet
+        # transplant" and "60% remain insulin independent at mean follow-up of
+        # 13.3 +/- 1.1 years".
+        'data': {10: 70, 13.3: 60},
+        'source': 'PMID 37359825',
     },
     'VX-880 (Stem Cell)': {
         'color': COLORS['accent'],
@@ -70,29 +102,46 @@ def generate_svg_chart():
     for protocol, info in GRAFT_DATA.items():
         color = info['color']
         data = info['data']
+        # style 'points' added 2026-09-22 with the Wisel series. A connecting
+        # line asserts that the quantity took the plotted values BETWEEN the
+        # markers, which for a two-timepoint report is an assertion the source
+        # does not make. Drawing it is how the withdrawn belatacept curve
+        # turned two published numbers into eleven. Series that report only
+        # specific timepoints render as markers alone.
+        style = info.get('style', 'line')
 
-        # Generate SVG path
-        points = []
-        for year in years:
-            if year in data:
-                # Scale: 100 years width, 0-100% height
-                x = (year / max_year) * 100
-                y = 100 - data[year]  # Invert for SVG coords
-                points.append(f"{x:.1f},{y:.1f}")
+        if style == 'line':
+            points = []
+            for year in years:
+                if year in data:
+                    # Scale: 100 years width, 0-100% height
+                    x = (year / max_year) * 100
+                    y = 100 - data[year]  # Invert for SVG coords
+                    points.append(f"{x:.1f},{y:.1f}")
 
-        if points:
-            path_d = 'M ' + ' L '.join(points)
-            protocols_html += f'''
+            if points:
+                path_d = 'M ' + ' L '.join(points)
+                protocols_html += f'''
             <path d="{path_d}" stroke="{color}" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>
             '''
 
-            # Add data point markers
-            for year in data.keys():
+        if data:
+            # Add data point markers. Point-only series get a hollow marker so
+            # the difference from a measured curve is visible in the chart
+            # itself, not only in the legend.
+            for year in sorted(data.keys()):
                 if year <= 20:
                     x = (year / max_year) * 100
                     y = 100 - data[year]
+                    if style == 'points':
+                        marker = (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.8" '
+                                  f'fill="{COLORS["bg"]}" stroke="{color}" '
+                                  f'stroke-width="0.8" vector-effect="non-scaling-stroke"/>')
+                    else:
+                        marker = (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.5" '
+                                  f'fill="{color}" opacity="0.8"/>')
                     protocols_html += f'''
-            <circle cx="{x:.1f}" cy="{y:.1f}" r="1.5" fill="{color}" opacity="0.8"/>
+            {marker}
             <text x="{x:.1f}" y="{y - 3:.1f}" font-size="9" text-anchor="middle" fill="{COLORS['text']}" opacity="0.6">{data[year]}%</text>
                     '''
 
@@ -539,21 +588,26 @@ def generate_html():
                 {svg_chart}
             </div>
 
-            <!-- Added 2026-09-16. Does NOT resolve the chart-vs-text conflict recorded
-                 in GRAFT_DATA at the top of this file - that is a modelling decision and
-                 stays a human call. It stops the page presenting two unlabelled answers
-                 to one question: the plotted belatacept curve ends at 55% at year 10
-                 while the prose and the Evidence Catalog both report 70%, and until now
-                 nothing visible told a reader those are different quantities. -->
+            <!-- Rewritten 2026-09-22, when the modelled curve this paragraph was
+                 explaining was withdrawn. The 2026-09-16 version disclosed the
+                 conflict ("the belatacept curve is a modelled trajectory ... ends at
+                 55%") and left the curve on the chart. Disclosure was the wrong
+                 remedy: the curve asserted a per-drug survival series the source does
+                 not contain, at nine timepoints the source does not report. It is
+                 gone. See GRAFT_DATA for the four findings that removed it. -->
             <p class="source" style="margin-top:0.4rem;">
-                Reading this chart: the belatacept curve is a <strong>modelled
-                trajectory</strong> and ends at 55% at year 10. It is not the same
-                quantity as the 70% reported elsewhere on this page, which is an
-                <strong>observed</strong> figure &mdash; 7 of 10 consecutive patients at
-                10 years in Wisel et al., <em>Transplant International</em> 2023
-                (PMID:37359825). The Edmonton curve is registry data (1,477 recipients).
-                A modelled curve, a ten-patient series and a 1,477-recipient registry
-                should not be read off the same axis as if they measured the same thing.
+                Reading this chart: the three series measure <strong>different things at
+                different scales</strong> and are plotted together only because they share
+                an axis. Edmonton is registry data (1,477 recipients). VX-880 and LANTIDRA
+                are early-phase cohorts with one year of follow-up. The Wisel points are
+                <strong>two reported timepoints from ten consecutive patients</strong>
+                &mdash; 70% (7 of 10) at 10 years and 60% at mean follow-up 13.3 years (PMID:37359825),
+                Wisel et al., <em>Transplant International</em> 2023.
+                They are drawn as <strong>hollow markers with no connecting line</strong>
+                because nothing was measured between them; three of the seven had received
+                a pancreas-after-islet transplant by then, so that 70% is the outcome of a
+                multi-modal programme rather than of islet transplant alone, and it is not
+                comparable with the Edmonton curve beside it.
             </p>
 
             <div class="legend">
@@ -563,7 +617,7 @@ def generate_html():
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: {COLORS['green']};"></div>
-                    <span>Belatacept (Costimulation Blockade)</span>
+                    <span>Wisel et al. 2023 &mdash; reported timepoints only (n=10)</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: {COLORS['accent']};"></div>
@@ -646,9 +700,11 @@ def generate_html():
                  registry, and presenting the two as a regimen comparison overstates what the
                  evidence supports regardless of which PMID is attached. The figures are retained
                  with their correct source and their denominator now stated in the visible text.
-                 NOTE ALSO, unreconciled: GRAFT_DATA at the top of this file plots 55% at year 10
-                 for belatacept, so the chart and the prose on this page disagree. Flagged, not
-                 changed, because which is intended is a modelling decision. -->
+                 RESOLVED 2026-09-22: the "NOTE ALSO, unreconciled" that stood here -- GRAFT_DATA
+                 plotting 55% at year 10 against this block's 70% -- is closed, because the curve
+                 that produced the 55% was withdrawn rather than adjusted. It was a modelled
+                 eleven-point series for a drug the source reports no separate rate for. The chart
+                 now plots the paper's two reported timepoints as markers. -->
             <p>Selective blockade of CD28-B7 costimulation avoids the direct beta-cell toxicity of calcineurin inhibitors, and has been proposed as a way to escape the tacrolimus paradox described below. The long-term results below come from a <strong>single series of ten consecutive patients</strong> (five belatacept, five efalizumab) and are reported as percentages of that ten. They are not directly comparable with the registry figures shown above, which cover 1,477 recipients.</p>
             <div class="metric">
                 <div class="metric-value">70%</div>
@@ -673,7 +729,7 @@ def generate_html():
             <p class="source">Source: LANTIDRA Phase 3 Trial Data; FDA approval briefing document June 2023</p>
 
             <h3>VX-880 (Stem Cell-Derived Islets)</h3>
-            <p>An investigational allogeneic product derived from human pluripotent stem cells (Vertex VX-880 / zimislecel), studied in type 1 diabetes with impaired awareness of hypoglycemia and severe hypoglycemia. Early Phase 2 data from 5 evaluable patients show elevated C-peptide and insulin independence in most participants out to day 365; the sample is small and follow-up is short, so durability beyond 1-2 years and the confirmed efficacy/safety profile remain to be established in the ongoing Phase 1/2/3 FORWARD study (NCT04786262).</p>
+            <p>An investigational allogeneic product derived from human pluripotent stem cells (Vertex VX-880 / zimislecel), studied in type 1 diabetes with impaired awareness of hypoglycemia and severe hypoglycemia. Early Phase 2 data from 5 evaluable patients show elevated C-peptide and insulin independence in most participants out to day 365; the sample is small and follow-up is short, so durability beyond 1-2 years and the confirmed efficacy/safety profile remain to be established in the ongoing FORWARD study (NCT04786262), which ClinicalTrials.gov registers as <strong>Phase 3</strong> with an estimated enrollment of 57 as of 2026-09-22. <em>Label corrected 2026-09-22: this sentence read "Phase 1/2/3", conflating the phases a trial has passed through with the phase it is registered at.</em></p>
             <div class="metric">
                 <div class="metric-value">83%</div>
                 <div class="metric-label">Insulin independence at day 365</div>
@@ -683,7 +739,7 @@ def generate_html():
                 <div class="metric-label">Mean C-peptide (pmol/L) at day 365</div>
             </div>
             <p class="reference"><strong>Note:</strong> VX-880 still requires immunosuppression (tacrolimus + mycophenolate mofetil). However, the dramatically elevated C-peptide suggests superior beta-cell mass or function compared to traditional allogeneic islet transplantation.</p>
-            <p class="source">Source: Vertex Pharmaceuticals Phase 2 Data (2024); Ongoing Phase 1/2/3 FORWARD study (NCT04786262). Corrected 2026-09-02: NCT05794503 previously cited here resolves on ClinicalTrials.gov to an unrelated anaesthesia study.</p>
+            <p class="source">Source: Vertex Pharmaceuticals Phase 2 Data (2024); Ongoing FORWARD study (NCT04786262), registered Phase 3 as of 2026-09-22. Corrected 2026-09-02: NCT05794503 previously cited here resolves on ClinicalTrials.gov to an unrelated anaesthesia study.</p>
         </div>
 
         <!-- TAB 2: TACROLIMUS PARADOX -->
@@ -829,12 +885,24 @@ def generate_html():
                 <p style="font-size: 13px;">Unlike tacrolimus, belatacept does NOT inhibit calcineurin. It does not impair GSIS or peripheral insulin signaling. Beta cells can function normally.</p>
             </div>
 
+            <!-- Rewritten 2026-09-22. This block published a FIFTH 10-year figure,
+                 "~70% ... (modeled trajectory)", under a BELATACEPT heading, and
+                 asserted beside it that "Belatacept recipients maintain superior graft
+                 function throughout follow-up".
+                 Both were wrong in the same way and neither was a rounding problem.
+                 PMID 37359825 reports one rate for one mixed cohort: 70% is 7 of 10,
+                 and the abstract states the split as "four EFA, three BELA". Efalizumab
+                 contributed MORE of the responders than belatacept did, so a claim of
+                 belatacept superiority is not merely unsupported by the source -- the
+                 source's only per-drug number points the other way. There is no
+                 follow-up series for either drug to be superior "throughout".
+                 The metric is restated as the cohort figure it is. -->
             <div class="metric">
-                <div class="metric-value">~70%</div>
-                <div class="metric-label">Estimated insulin independence at 10 years (modeled trajectory)</div>
+                <div class="metric-value">70%</div>
+                <div class="metric-label">Insulin independence at 10 years, whole cohort <span class="caveat" title="7 of 10 patients: four on efalizumab, three on belatacept. PMID 37359825 reports no separate rate for either drug at any timepoint. Three of the seven had received a pancreas-after-islet transplant.">(7 of 10; not belatacept-specific)</span></div>
             </div>
-            <p>Compare to Edmonton Protocol (tacrolimus): 20% insulin independence at 10 years. Belatacept recipients maintain superior graft function throughout follow-up. <em>Note: Trajectory shown is modeled based on limited published data points; actual graft survival curves show more variability than linear projections.</em></p>
-            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (PMID:37359825) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., PMID:37105208 (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the "~70%" above is a modeled trajectory anchored on seven patients, and the Edmonton 20% it is compared against comes from a 1,477-recipient registry.</p>
+            <p>The Edmonton Protocol (tacrolimus) figure of 20% insulin independence at 10 years (CITR Annual Reports; see the registry curve above) comes from a 1,477-recipient registry; the 70% above is seven patients in a single centre's consecutive series, three of whom had by then received a whole pancreas. <strong>The two are not a regimen comparison.</strong> This page makes no claim that belatacept outperforms efalizumab: its only source reporting both assigns four of seven responders to efalizumab and three to belatacept.</p>
+            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (PMID:37359825) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., PMID:37105208 (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the 70% above is seven patients, and the Edmonton 20% it is set beside comes from a 1,477-recipient registry.</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -1108,7 +1176,22 @@ def generate_html():
         <div id="next-generation" class="tab-content">
             <h2>Next-Generation Therapies: The Future of Islet Transplantation</h2>
 
-            <p>Allogeneic islet transplantation with current protocols offers durable insulin independence in only 20-30% of recipients at 10 years <span class="unsourced" title="Flagged 2026-09-14. This is a fourth distinct 10-year figure on this dashboard, alongside 20% (Edmonton/CITR, sourced), 70% (Wisel n=10, sourced) and the 55% endpoint of the plotted belatacept curve. It carries no citation and its cohort is unstated - 20-30% is a plausible reading of the CITR registry but this page's own registry figure is 20%. Not reconciled: which cohort is meant is a human call.">[UNSOURCED &mdash; one of four 10-year figures on this page]</span>. Next-generation approaches seek to extend graft lifespan through cellular engineering, encapsulation, immunologic innovation, and stem cell biology.</p>
+            <!-- SOURCED 2026-09-22. What stood here was "20-30% of recipients at 10
+                 years", carried unsourced and flagged since 2026-09-14 as the fourth
+                 distinct 10-year figure on this page. Resolved by going to the
+                 literature rather than by picking one of the page's own numbers.
+                 Vantyghem MC et al., Diabetes Care 2019;42(11):2042-2049 (PMID
+                 31615852) is the prospective 10-year cohort: Kaplan-Meier 28% (95% CI
+                 13-45) at 10 years, n=28, islet-alone and islet-after-kidney pooled,
+                 Edmonton protocol. Identity, journal, volume, pages and FIRST AUTHOR
+                 verified live against PubMed esummary this run -- the first search
+                 result attributed it to "Lablanche", who is not an author of it, which
+                 is the attribution error class this repo has now made four times.
+                 WHY THE OLD RANGE WAS WRONG IN A WAY A READER COULD NOT SEE: it had no
+                 cohort, no citation and no interval, and its lower bound of 20%
+                 excluded the published confidence floor of 13%. A bare range reads as
+                 a consensus; it was a point estimate with its uncertainty removed. -->
+            <p>Allogeneic islet transplantation with current protocols offers durable insulin independence to a minority of recipients at 10 years. The prospective cohort with the longest follow-up reports <strong>28% (95% CI 13&ndash;45)</strong> insulin independent with A1C &le;6.5% at 10 years by Kaplan-Meier estimate &mdash; 28 patients, islet-alone and islet-after-kidney pooled, on the Edmonton protocol (<a href="https://pubmed.ncbi.nlm.nih.gov/31615852/" target="_blank">Vantyghem et al., <em>Diabetes Care</em> 2019;42(11):2042&ndash;2049, PMID 31615852</a>). Note the width of that interval and the size of the cohort: this figure is compatible with anything from 13% to 45%, and the registry curve above sits at 20%. Graft <em>function</em> is far more durable than insulin independence &mdash; the same cohort reports it persisting in 78% (57&ndash;89) at 10 years. Next-generation approaches seek to extend graft lifespan through cellular engineering, encapsulation, immunologic innovation, and stem cell biology.</p>
 
             <h3>VX-880 (Zimislecel): Stem Cell-Derived Allogeneic Islets</h3>
 
@@ -1116,7 +1199,7 @@ def generate_html():
                 <div class="protocol-name">VX-880 Profile</div>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Developer:</strong> Vertex Pharmaceuticals / CRISPR Therapeutics</p>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Source:</strong> Human pluripotent stem cells (hPSCs) differentiated to insulin-producing beta-like cells</p>
-                <p style="font-size: 13px; margin: 8px 0;"><strong>Status:</strong> Phase 1/2/3 clinical trial NCT04786262 (FORWARD). A separate study, NCT06832410, tests VX-880 in a different population &mdash; type 1 diabetes with a kidney transplant &mdash; and is not the registration behind the figures on this page.</p>
+                <p style="font-size: 13px; margin: 8px 0;"><strong>Status:</strong> FORWARD (NCT04786262), registered <strong>Phase 3</strong> on ClinicalTrials.gov as of 2026-09-22; the page previously said &ldquo;Phase 1/2/3&rdquo;. A separate study, NCT06832410, tests VX-880 in a different population &mdash; type 1 diabetes with a kidney transplant &mdash; and is not the registration behind the figures on this page.</p>
                 <p style="font-size: 13px; margin: 8px 0;"><strong>Immunosuppression Required:</strong> Yes (tacrolimus + MMF)</p>
             </div>
 

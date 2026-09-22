@@ -501,6 +501,17 @@ def main():
     else:
         print('    [OK] every VALIDATED / PARTIALLY_VALIDATED path has evidence in at least one store.')
 
+    # 2026-09-22. This block called itself a GATE and printed [FAIL], and until
+    # today it could not fail. main() returned None and line 518 called it as a
+    # bare statement, so the process exited 0 whatever `unbacked` contained,
+    # and run_quality_improvements.run_script() -- which consults the exit code
+    # and nothing else -- recorded the stage OK. A path asserting VALIDATED
+    # with no evidence in either store would have printed in red and shipped.
+    #
+    # Same defect class as audit_endpoint_value_agreement.py on 2026-09-21.
+    # audit_gate_exit_codes.py (new today) is what found this one and is what
+    # stops the class recurring; the fix below is the instance.
+
     sync = sync_validated_research_paths()
     if sync:
         print(f"\n  validated_research_paths.json paths_validated: {sync['old']} -> {sync['new']}")
@@ -511,8 +522,13 @@ def main():
         print(f"    [{item['data_point_count']:>4} dp] {item['display_key']}: {'; '.join(item['reasons'])}")
 
     print(f"\n  Written: {CANONICAL_FILE}")
+    if unbacked:
+        print('  [FAIL] path_store: unbacked-status gate is RED (see above)')
+        return 1
     print('  [OK] path_store')
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    import sys as _sys
+    _sys.exit(main())

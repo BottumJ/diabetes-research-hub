@@ -187,15 +187,39 @@ DRUG_CANDIDATES = [
 ]
 
 CLINICAL_TRIALS = [
+    # WRONG TRIAL, and the RESULTS line was the load-bearing part.
+    # Withdrawn 2026-09-22 against ClinicalTrials.gov. This record asserted:
+    #     phase           "Phase 2/3"                        registry: PHASE 1
+    #     indication      "Islet Transplant"                 registry: Type 1 Diabetes
+    #     primary_outcome "Islet graft survival and function preservation"
+    #     results         "Improved graft function; reduced early islet loss"
+    #     pi              "Shapiro (Edmonton)"
+    # NCT01319331 is "The Effects of Alpha-1 Antitrypsin (AAT) on the
+    # Progression of Type 1 Diabetes" - 12 participants (ACTUAL), phase 1,
+    # completed, conditions Diabetes / Type 1 Diabetes. It is a progression
+    # study, not an islet-transplant study, and it reports no graft outcome
+    # because no graft was transplanted.
+    # The drug and the broad area are right, which is why nine gates passed it:
+    # the citation is on-topic, resolves, is not retracted, and carries a real
+    # trial. What it does not do is support the sentence attached to it. A
+    # stated RESULT is the most consequential thing on this dashboard, so the
+    # result is withdrawn rather than re-phrased.
+    # No substitute identifier is asserted (house rule, 2026-08-29): an AAT
+    # islet-transplant registration may exist, but locating it is research and
+    # guessing one would recreate exactly this defect.
     {
-        "nct": "NCT01319331",
+        "nct": "UNSOURCED - identifier withdrawn 2026-09-22: NCT01319331 registers a "
+               "12-patient phase 1 study of AAT on the PROGRESSION of type 1 diabetes, "
+               "not an AAT islet-transplant trial. No verified substitute was located.",
         "drug": "Alpha-1 Antitrypsin (AAT)",
-        "phase": "Phase 2/3",
-        "status": "Completed",
+        "phase": "UNSOURCED",
+        "status": "UNSOURCED",
         "indication": "Islet Transplant",
-        "primary_outcome": "Islet graft survival and function preservation",
-        "results": "Improved graft function; reduced early islet loss",
-        "pi": "Shapiro (Edmonton)"
+        "primary_outcome": "UNSOURCED - withdrawn with the identifier",
+        "results": "UNSOURCED - withdrawn 2026-09-22. The previous text "
+                   "(\"Improved graft function; reduced early islet loss\") was "
+                   "attributed to a trial that transplanted no islets.",
+        "pi": "UNSOURCED - withdrawn with the identifier"
     },
     {
         "nct": "UNSOURCED - identifier withdrawn 2026-09-02: NCT02232165 registers a study of mean arterial blood pressure treatment in acute spinal cord injury, not an etanercept islet-transplant trial. No verified substitute was located.",

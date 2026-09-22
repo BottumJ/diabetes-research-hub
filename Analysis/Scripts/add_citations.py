@@ -42,7 +42,9 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 ### Stem Cell–Derived Islet Therapies
 
-**Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262 — FORWARD, Phase 1/2/3] **Validation: BRONZE** (one trial programme; Phase 3 data not yet peer-reviewed)
+**Vertex Zimislecel (VX-880):** In the Phase 1/2 portion of the FORWARD study, 10 of 12 full-dose patients achieved insulin independence at 1 year. Phase 3 has enrolled approximately 50 participants, with regulatory submission anticipated in 2026. [NCT:NCT04786262 — FORWARD, registered Phase 3 as of 2026-09-22] **Validation: BRONZE** (one trial programme; Phase 3 data not yet peer-reviewed)
+
+> **Phase label corrected 2026-09-22.** The bracket read "Phase 1/2/3"; ClinicalTrials.gov lists NCT04786262 as PHASE3, estimated enrollment 57. The prose above is unchanged and remains accurate — the 10-of-12 result did come from the phase 1/2 portion — but a registry label states the trial's current registration, not which portion produced a given number, and the two were being conflated. Found only after the NCT gate was changed to check every mention of an identifier rather than the first; this line had never been examined.
 
 > **CORRECTED 2026-09-02 — wrong product, and the tier depended on it.** This entry also cited NCT05791201, which registers **VX-264**, Vertex's device-encapsulated islet product studied without immunosuppression — a different programme, not a second report of VX-880/zimislecel. The SILVER tier rested on "two independent trial reports"; with the second identifier removed there is one, so the tier moves to BRONZE.
 

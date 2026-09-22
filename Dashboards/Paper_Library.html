@@ -152,19 +152,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -235,7 +222,6 @@
   </div>
 </nav>
 
-
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -291,15 +277,15 @@
     <!-- Validation Bar -->
     <h2>Citation Validation</h2>
     <div class="validation-bar">
-        <div class="bar-confirmed" style="width:40.5%;" title="CONFIRMED: 132"></div>
-        <div class="bar-plausible" style="width:25.2%;" title="PLAUSIBLE: 82"></div>
+        <div class="bar-confirmed" style="width:39.9%;" title="CONFIRMED: 130"></div>
+        <div class="bar-plausible" style="width:25.8%;" title="PLAUSIBLE: 84"></div>
         <div class="bar-weak" style="width:34.0%;" title="WEAK: 111"></div>
         <div class="bar-mismatch" style="width:0.0%;" title="MISMATCH: 0"></div>
         <div class="bar-nodata" style="width:0.3%;" title="NO DATA: 1"></div>
     </div>
     <div class="legend">
-        <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">132</span></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">82</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">130</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">84</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#8b7355;"></span> Weak <span class="count-badge">111</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#a33b2c;"></span> Mismatch <span class="count-badge">0</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#999999;"></span> No Data <span class="count-badge">1</span></div>
@@ -318,7 +304,7 @@
         <div class="filters">
             <div>
                 <div class="filter-label">Search</div>
-                <input type="text" id="searchInput" placeholder="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." oninput="filterTable()">
+                <input type="text" id="searchInput" placeholder="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." oninput="filterTable()">
             </div>
             <div>
                 <div class="filter-label">Score</div>
@@ -406,7 +392,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">add_citations, _run_2026_08_31</td>
+            <td class="loc-col">_run_2026_08_31, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="42608595">
@@ -566,7 +552,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">project_microbiome_ml_phase1_data, project_microbiome_ml_phase2_features, project_microbiome_ml_phase3_models</td>
+            <td class="loc-col">project_microbiome_ml_phase1_data, project_microbiome_ml_phase3_models, project_microbiome_ml_phase2_features</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2026" data-pmid="41889274">
@@ -646,7 +632,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">audit_verdict_key_agreement, _run_2026_08_20, _close_run_2026_08_20</td>
+            <td class="loc-col">audit_verdict_key_agreement, _close_run_2026_08_20, _run_2026_08_20</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="40111679">
@@ -696,7 +682,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_08_22, build_nutrition_beta</td>
+            <td class="loc-col">build_nutrition_beta, _close_run_2026_08_22</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40898408">
@@ -736,7 +722,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_synthesis, build_gap_deep_dives</td>
+            <td class="loc-col">build_gap_deep_dives, build_gap_synthesis</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40697602">
@@ -786,7 +772,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_09_19, repair_index_pmcid_map, _run_2026_08_28 +2</td>
+            <td class="loc-col">_close_run_2026_08_28, _run_2026_09_07, repair_index_pmcid_map +2</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="40573322">
@@ -796,7 +782,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">add_citations, test_markdown_citation_gate</td>
+            <td class="loc-col">test_markdown_citation_gate, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40544435">
@@ -809,14 +795,14 @@
             <td class="loc-col">add_citations</td>
         </tr>
 
-        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40544428">
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="40544428">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank" rel="noopener">40544428</a></td>
             <td class="title-col">Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.</td>
             <td class="journal-col">N Engl J Med</td>
             <td class="year-col">2025</td>
-            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">rebuild_research_dashboard, build_gap_deep_dives, build_data_dictionary</td>
+            <td class="loc-col">build_gap_deep_dives, rebuild_research_dashboard, build_data_dictionary</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="40464081">
@@ -866,7 +852,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">audit_citation_semantic_support, build_cart_access</td>
+            <td class="loc-col">build_cart_access, audit_citation_semantic_support</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40032831">
@@ -966,7 +952,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">fix_path_citations_2026_08_20, mark_dose_label_paths_2026_08_20, _run_2026_09_08 +6</td>
+            <td class="loc-col">mark_dose_label_paths_2026_08_20, _close_run_2026_08_22, _close_run_2026_08_28 +6</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="39525461">
@@ -986,7 +972,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_08_21, reconcile_paper_index</td>
+            <td class="loc-col">reconcile_paper_index, _close_run_2026_08_21</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2024" data-pmid="39173844">
@@ -1016,7 +1002,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_08_27, build_gka_landscape, build_gka_pricing +1</td>
+            <td class="loc-col">build_gka_landscape, build_gka_pricing, build_gap_deep_dives +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="38639547">
@@ -1026,7 +1012,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_pricing, test_markdown_citation_gate, audit_markdown_citations +1</td>
+            <td class="loc-col">audit_markdown_citations, build_gka_pricing, build_gap_deep_dives +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="38578067">
@@ -1036,7 +1022,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">add_citations, test_markdown_citation_gate</td>
+            <td class="loc-col">test_markdown_citation_gate, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="38349844">
@@ -1076,7 +1062,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">rebuild_clinical_trial_dashboard, build_statistical_analysis, verify_2026_09_13_repairs +4</td>
+            <td class="loc-col">build_statistical_analysis, _tmp_gate_known_positive, audit_computed_value_citations +4</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2024" data-pmid="37845117">
@@ -1136,7 +1122,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">verify_2026_09_10_repairs, verify_2026_09_11_repairs</td>
+            <td class="loc-col">verify_2026_09_11_repairs, verify_2026_09_10_repairs</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37428296">
@@ -1166,7 +1152,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">test_markdown_citation_gate, build_gap_deep_dives</td>
+            <td class="loc-col">build_gap_deep_dives, test_markdown_citation_gate</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37385277">
@@ -1196,7 +1182,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">add_citations, test_markdown_citation_gate</td>
+            <td class="loc-col">test_markdown_citation_gate, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37359825">
@@ -1206,7 +1192,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_repurposing_dashboard_v2, build_islet_outcomes, build_gap_deep_dives</td>
+            <td class="loc-col">build_repurposing_dashboard_v2, build_gap_deep_dives, build_islet_outcomes</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37356449">
@@ -1246,7 +1232,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">add_citations, audit_trial_phase</td>
+            <td class="loc-col">audit_trial_phase, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37351171">
@@ -1266,7 +1252,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_pricing</td>
+            <td class="loc-col">build_gka_pricing, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37221401">
@@ -1276,7 +1262,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_08_27, _close_run_2026_09_18</td>
+            <td class="loc-col">_close_run_2026_09_18, _run_2026_08_27</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37217319">
@@ -1336,7 +1322,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_08, rebuild_clinical_trial_dashboard, audit_gap_subject_coverage +3</td>
+            <td class="loc-col">audit_gap_subject_coverage, build_islet_outcomes, _run_2026_09_07 +3</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2023" data-pmid="37026004">
@@ -1346,7 +1332,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_07, _run_2026_09_08, _close_run_2026_09_19b</td>
+            <td class="loc-col">_close_run_2026_09_19b, _run_2026_09_08, _run_2026_09_07</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37016949">
@@ -1366,7 +1352,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">audit_pubtype_title_disagreement, build_drug_repurposing_screen, build_research_paths</td>
+            <td class="loc-col">audit_pubtype_title_disagreement, build_research_paths, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="36643381">
@@ -1376,7 +1362,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">audit_pubtype_title_disagreement, _close_run_2026_08_22, build_research_paths +1</td>
+            <td class="loc-col">audit_pubtype_title_disagreement, build_research_paths, _run_2026_08_20 +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="36566139">
@@ -1416,7 +1402,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_landscape, audit_markdown_citations, build_gap_deep_dives +4</td>
+            <td class="loc-col">audit_markdown_citations, build_gka_landscape, build_gap_deep_dives +4</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="36288281">
@@ -1436,7 +1422,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, _close_run_2026_09_18</td>
+            <td class="loc-col">_close_run_2026_09_18, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="36113507">
@@ -1446,7 +1432,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, _close_run_2026_09_18</td>
+            <td class="loc-col">_close_run_2026_09_18, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2022" data-pmid="36109742">
@@ -1546,7 +1532,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, build_gka_lada +3</td>
+            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, build_gka_pricing +3</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="35551293">
@@ -1566,7 +1552,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gka_pricing +1</td>
+            <td class="loc-col">build_gka_landscape, build_gka_pricing, build_gap_deep_dives +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="35466661">
@@ -1626,7 +1612,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, rebuild_clinical_trial_dashboard +11</td>
+            <td class="loc-col">build_gka_landscape, rebuild_clinical_trial_dashboard, audit_citation_load_bearing +11</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2021" data-pmid="34421203">
@@ -1676,7 +1662,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_nutrition_lada, build_immunomod_lada, _close_run_2026_09_18 +1</td>
+            <td class="loc-col">reconcile_paper_index, build_nutrition_lada, _close_run_2026_09_18 +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="33622669">
@@ -1686,7 +1672,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gka_pricing +1</td>
+            <td class="loc-col">build_gka_landscape, build_gka_pricing, build_gap_deep_dives +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2021" data-pmid="33610858">
@@ -1726,7 +1712,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_islet_equity, build_health_equity</td>
+            <td class="loc-col">build_health_equity, build_islet_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2021" data-pmid="32943753">
@@ -1746,7 +1732,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_islet_equity, test_markdown_citation_gate, build_gap_deep_dives +1</td>
+            <td class="loc-col">build_gap_deep_dives, build_data_dictionary, build_islet_equity +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2020" data-pmid="33264825">
@@ -1756,7 +1742,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_generic_drug_catalog, audit_catalog_entity_agreement, _close_run_2026_09_19</td>
+            <td class="loc-col">build_generic_drug_catalog, _close_run_2026_09_19, audit_catalog_entity_agreement</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2020" data-pmid="33139407">
@@ -1796,7 +1782,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gap_synthesis, build_gka_lada, build_lada_diagnostic_model +1</td>
+            <td class="loc-col">build_data_dictionary, build_gap_synthesis, build_lada_diagnostic_model +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32754804">
@@ -1856,7 +1842,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada, build_lada_model, _run_2026_08_27</td>
+            <td class="loc-col">build_lada_model, _run_2026_08_27, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="32175717">
@@ -1866,7 +1852,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">verify_2026_09_10_repairs, _run_2026_08_27, build_gka_landscape +12</td>
+            <td class="loc-col">build_gka_landscape, build_gka_pricing, build_health_equity +12</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32017635">
@@ -1966,7 +1952,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">add_citations, build_immunomod_lada, audit_trial_phase +1</td>
+            <td class="loc-col">audit_trial_phase, build_data_dictionary, build_immunomod_lada +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31177185">
@@ -1996,7 +1982,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen, build_nutrition_beta</td>
+            <td class="loc-col">build_generic_drug_catalog, build_nutrition_beta, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31157579">
@@ -2026,7 +2012,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_landscape, _run_2026_08_27, build_data_dictionary</td>
+            <td class="loc-col">build_gka_landscape, build_data_dictionary, _run_2026_08_27</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30899369">
@@ -2036,7 +2022,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_gap_deep_dives</td>
+            <td class="loc-col">build_gap_deep_dives, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="30657336">
@@ -2156,7 +2142,7 @@
             <td class="year-col">2018</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_gka_landscape, repair_cost_provenance_20260829, build_gap_deep_dives +7</td>
+            <td class="loc-col">audit_prose_citation_titles, build_gka_landscape, repair_cost_provenance_20260829 +7</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29623672">
@@ -2466,7 +2452,7 @@
             <td class="year-col">2015</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_nutrition_beta, build_gap_deep_dives</td>
+            <td class="loc-col">build_gap_deep_dives, build_nutrition_beta</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2015" data-pmid="26404926">
@@ -2486,7 +2472,7 @@
             <td class="year-col">2015</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_generic_drug_catalog, build_health_equity, build_data_dictionary</td>
+            <td class="loc-col">build_generic_drug_catalog, build_data_dictionary, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="26322160">
@@ -2766,7 +2752,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_lada_diagnostic_model</td>
+            <td class="loc-col">build_lada_diagnostic_model, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23817699">
@@ -2826,7 +2812,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_immunomod_lada, build_gap_deep_dives, build_lada_model +3</td>
+            <td class="loc-col">build_gap_deep_dives, build_statistical_analysis, build_lada_prevalence +3</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2013" data-pmid="23223116">
@@ -2856,7 +2842,7 @@
             <td class="year-col">2012</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">add_citations, test_markdown_citation_gate</td>
+            <td class="loc-col">test_markdown_citation_gate, add_citations</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2012" data-pmid="22683128">
@@ -2886,7 +2872,7 @@
             <td class="year-col">2012</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_generic_drug_catalog, _close_run_2026_09_18, verify_2026_09_13_repairs</td>
+            <td class="loc-col">build_generic_drug_catalog, verify_2026_09_13_repairs, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="22315720">
@@ -2926,7 +2912,7 @@
             <td class="year-col">2012</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_islet_equity, build_gap_deep_dives, build_equity_map +4</td>
+            <td class="loc-col">build_gap_deep_dives, build_equity_map, build_trial_equity_mapper +4</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2011" data-pmid="21997792">
@@ -3106,7 +3092,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_immunomod_lada, build_gap_deep_dives, extract_corpus_data</td>
+            <td class="loc-col">extract_corpus_data, build_gap_deep_dives, build_immunomod_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2009" data-pmid="19805629">
@@ -3116,7 +3102,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_drug_repurposing_screen, repair_cost_provenance_20260829</td>
+            <td class="loc-col">repair_cost_provenance_20260829, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2009" data-pmid="19794004">
@@ -3156,7 +3142,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_nutrition_lada, _close_run_2026_09_18, build_data_dictionary</td>
+            <td class="loc-col">build_nutrition_lada, build_data_dictionary, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19373249">
@@ -3166,7 +3152,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_08_27, build_gka_lada, audit_citation_coordinates</td>
+            <td class="loc-col">_run_2026_08_27, audit_citation_coordinates, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19169263">
@@ -3236,7 +3222,7 @@
             <td class="year-col">2008</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_islet_equity, _run_2026_09_08, audit_gap_subject_coverage +3</td>
+            <td class="loc-col">_run_2026_09_08b, audit_gap_subject_coverage, _run_2026_09_07 +3</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2008" data-pmid="18843118">
@@ -3449,12 +3435,12 @@
             <td class="loc-col">build_generic_drug_catalog</td>
         </tr>
 
-        <tr class="paper-row" data-score="CONFIRMED" data-year="2005" data-pmid="16120857">
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2005" data-pmid="16120857">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/16120857/" target="_blank" rel="noopener">16120857</a></td>
             <td class="title-col">Costimulation blockade with belatacept in renal transplantation.</td>
             <td class="journal-col">N Engl J Med</td>
             <td class="year-col">2005</td>
-            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
             <td class="loc-col">build_data_dictionary</td>
         </tr>
@@ -3706,7 +3692,7 @@
             <td class="year-col">2000</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_islet_outcomes, build_data_dictionary</td>
+            <td class="loc-col">build_data_dictionary, build_islet_outcomes</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="1999" data-pmid="10415738">
@@ -3766,7 +3752,7 @@
             <td class="year-col">1997</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada, build_lada_model, _run_2026_08_27</td>
+            <td class="loc-col">build_lada_model, _run_2026_08_27, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="1994" data-pmid="8024693">
@@ -3806,7 +3792,7 @@
             <td class="year-col">1993</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_treg_neuropathy, _run_2026_09_08b, build_health_equity +1</td>
+            <td class="loc-col">build_treg_neuropathy, build_health_equity, _run_2026_09_08b +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="1992" data-pmid="1611143">
@@ -3856,7 +3842,7 @@
             <td class="year-col">1986</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, _run_2026_08_27, _close_run_2026_09_18</td>
+            <td class="loc-col">_close_run_2026_09_18, build_drug_repurposing_screen, _run_2026_08_27</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="1985" data-pmid="3899825">
@@ -3934,7 +3920,7 @@
         </div>
     </div>
 
-    <p class="timestamp">Generated 2026-09-20 03:19 | Data from PubMed/PMC via NCBI E-utilities</p>
+    <p class="timestamp">Generated 2026-09-22 03:41 | Data from PubMed/PMC via NCBI E-utilities</p>
 </div>
 
 <script>

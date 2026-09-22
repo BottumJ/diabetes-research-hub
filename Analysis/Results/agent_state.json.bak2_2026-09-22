@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-22",
-  "last_run": "2026-09-22",
+  "last_updated": "2026-09-21",
+  "last_run": "2026-09-21",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -9329,6 +9329,13 @@
       "status": "resolved_2026-09-18"
     },
     {
+      "type": "audit_gap",
+      "priority": 1,
+      "added": "2026-09-14",
+      "target": "RECONCILE THE BELATACEPT 10-YEAR NUMBER - THE PAGE NOW PUBLISHES 55% AND 70% FOR THE SAME THING. RESOLVED TODAY, contrary to this item's first draft: the 70%-at-10-years and 60%-at-13.3-years figures ARE correctly sourced, to Voglova et al., Transpl Int 2023 (PMID:37359825), 7 and 6 of 10 consecutive patients respectively. The earlier 'Hering et al., PMID:37105208' attribution was false and the run's first instinct - withdraw the numbers as unsupported - was ALSO wrong; the correct citation was sitting in the same file's Evidence Catalog the whole time. Both blocks are now re-sourced with the n=10 denominator stated in visible text. WHAT REMAINS FOR A HUMAN IS NARROWER AND PURELY INTERNAL. (i) GRAFT_DATA at the top of build_islet_outcomes.py plots the belatacept curve ending at 55% at year 10, while the prose and the Evidence Catalog on the same page both say 70%. Fifteen points apart, on the headline number of that block, chart versus text. Flagged in place, not changed, because the curve may be deliberately conservative or smoothed and choosing is a modelling decision. They should not both publish. (ii) A FOURTH value exists in the next-generation-therapies tab, '20-30% of recipients at 10 years', with no citation and no stated cohort - found by verification after the first pass missed it, and now marked [UNSOURCED] in place. Grep the string '20-30% of recipients' rather than trusting a line number; the round-2 insertions shifted this file by roughly thirty lines and any number recorded here will be stale. So this page carries FOUR answers to 'what is insulin independence at 10 years': 20% (Edmonton/CITR, sourced, n=1,477), 20-30% (uncited), 55% (the plotted belatacept curve), and 70% (Voglova, sourced, n=10). Three of the four are now labelled; none of them is reconciled with the others. (iii) THE PRESENTATION QUESTION, which survives the re-sourcing and is the one that actually matters: this page sets 7 patients against the CITR registry's 1,477 recipients and invites a regimen comparison. The denominators are now disclosed, but disclosure is not commensurability, and a reader scanning two adjacent metric cards will read 70 versus 20 and not the footnote. Consider whether the comparison should be framed as hypothesis-generating rather than as a result.",
+      "update_2026_09_16": "The surname in this item is WRONG and has been corrected repo-wide: PMID 37359825 is WISEL et al., not Voglova. The figures it carries are unaffected and re-verified. Sub-item (i), chart 55% vs text 70%, REMAINS a human modelling call - but a visible reading note now sits under the chart stating that the curve is modelled and the 70% is observed (7/10, Wisel), so a reader is no longer shown two unlabelled answers. Sub-item (ii), the uncited '20-30% of recipients', is still marked [UNSOURCED] in place."
+    },
+    {
       "type": "verify_citations",
       "priority": 2,
       "added": "2026-09-14",
@@ -10448,6 +10455,12 @@
       "resolution": "RESOLVED 2026-09-20 BY MEASUREMENT, NOT BY INGESTION. The 17 were an undifferentiated count. repair_index_pmcid_map.py now splits them through corpus_membership: 16 are excluded on purpose (8 PROVENANCE, 5 OFF_TOPIC, 1 RETRACTED, 2 BACKGROUND) - for those the index is correct and the file on disk is residue. 37026004 was the only genuine item, and classifying it restored it. Ingestion backlog: zero. The BACKGROUND pair is carried forward as a separate design question."
     },
     {
+      "type": "analysis",
+      "priority": 1,
+      "added": "2026-09-19",
+      "target": "VET PMID 41780000 (FINE-ONE) AND DECIDE WHERE FINERENONE BELONGS. FDA approved finerenone for CKD in TYPE 1 diabetes on 2026-09-16 - first new agent for that population in 30+ years - and the hub tracked nothing about it until 2026-09-19. Three specific jobs: (i) vet the paper; the primary endpoint is a 6-month UACR surrogate, not a hard outcome, and hyperkalaemia was more frequent, so guard against any hub text saying \"protects kidneys\"; (ii) finerenone is BRANDED and ON-PATENT, so it must NOT enter the generic/off-patent catalog - the row it wrongly propped up (Spironolactone) is the steroidal MRA that IS generic, and the distinction is now load-bearing; (iii) check whether the NLRP3 / diabetic-kidney paths and any MRA-adjacent gap need updating, since a new approved comparator changes what counts as an unmet need."
+    },
+    {
       "type": "fix_pipeline",
       "priority": 2,
       "added": "2026-09-19",
@@ -10517,6 +10530,12 @@
       "target": "DRIVE THE UNSOURCED-ENDPOINT RATCHET DOWN, STARTING WITH build_gap_deep_dives.py. audit_endpoint_value_agreement.py measured it this run: 46 endpoint-values live in builder source and only THREE carry a citation in the same statement. 35 carry none (post-correction count). 21 of them were in build_gap_deep_dives.py before today's repair. This is the condition that let 'Belatacept 70% at 10yr' be wrong for months -- it was never mis-cited, it was never cited. The ratchet now blocks NEW ones; it does nothing about the backlog. Work the largest file first and lower the baseline each run. NOTE the second-order effect: every value that gains a citation also enters the conflict check's reach, which is dormant today only because so little is attributed."
     },
     {
+      "type": "audit_gap",
+      "priority": 1,
+      "added": "2026-09-21",
+      "target": "RECONCILE THE REMAINING THREE 10-YEAR ISLET FIGURES. Today's repair fixed the per-drug invention and the 6/10-vs-70% contradiction, but Islet_Transplant_Analysis.html still publishes FOUR distinct 10-year insulin-independence figures: 20% (Edmonton/CITR, sourced, n=1477), 70% (Wisel, sourced, n=10), 55% (the plotted belatacept curve endpoint, flagged 2026-09-14 and NOT CHANGED since) and '20-30%' (unsourced, cohort unstated). The 55% curve is the sharpest problem: the page plots one trajectory and states another number in prose beside it. PMID 42739778 (ingested today, J Clin Med 2026 review of islet transplant outcomes) may carry a registry figure that settles which cohort '20-30%' means."
+    },
+    {
       "type": "fix_pipeline",
       "priority": 2,
       "added": "2026-09-21",
@@ -10537,32 +10556,8 @@
     {
       "type": "fix_pipeline",
       "priority": 1,
-      "added": "2026-09-22",
-      "target": "APPLY TODAY'S TWO STRUCTURAL LESSONS TO THE OTHER GATES, BECAUSE NEITHER WAS SPECIFIC TO THE GATE IT WAS FOUND IN. (a) ONE-SITE-PER-IDENTIFIER: audit_nct_identifiers.py checked `by_nct[nct][0]` and threw the rest away, hiding 4 defects behind clean first mentions. Any audit here that groups sites by identifier and then checks one representative has the same bug. Grep for `[0]` applied to a grouped-sites dict in audit_path_citations.py, audit_citation_identifiers.py, audit_prose_citation_titles.py and audit_citation_coordinates.py. MEASURE the site-vs-identifier counts in each report first: where sites > distinct ids, the difference is the number of assertions never examined. (b) PROSE-ONLY MATCHING: ENROLL_RE required the word \"patients\", so structured `'enrollment': 330` was invisible. Same question for every regex-driven gate -- does it read the dict-literal form of the claim it checks? This is the third time a dict-literal blind spot has been found (audit_gap_numbering 2026-09-20, this, and the GRAFT_DATA curve today, which was numbers in a dict that no prose gate could see)."
-    },
-    {
-      "type": "verify_citations",
-      "priority": 1,
-      "added": "2026-09-22",
-      "target": "RE-AUDIT THE REMAINING HAND-WRITTEN REGISTRY FIELDS THE WAY build_trial_equity_mapper.py WAS RE-AUDITED TODAY, AND EXPECT THE SAME HIT RATE. Eight of twelve records there disagreed with ClinicalTrials.gov and all twelve sat under a hand-written \"# --- VERIFIED ---\" banner. Those banners are now replaced with a dated, sourced line, but the same unverifiable-VERIFIED pattern still exists elsewhere: build_drug_repurposing_islet.py CLINICAL_TRIALS (one wrong-trial record found today, rest unchecked), build_gka_landscape.py, build_repurposing_dashboard_v2.py. A registry fact is not the kind of fact that stays checked -- four of today's six stale statuses changed AFTER the VERIFIED comment was written. Consider deriving these fields at build time from the nct cache instead of typing them."
-    },
-    {
-      "type": "fix_pipeline",
-      "priority": 2,
-      "added": "2026-09-22",
-      "target": "SHORTEN THE NCT REGISTRY CACHE FOR STATUS-BEARING FIELDS. fetch() in audit_nct_identifiers.py caches for 30 days. That is fine for a title and wrong for a recruitment status, which is the attribute most likely to change and the one a reader may act on. Measured today: the cache held a 21-day-old copy and it happened to be current, but nothing guarantees that. Either cache status separately with a short TTL, or record the cache age beside each finding so a green result carries its own staleness."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 2,
-      "added": "2026-09-22",
-      "target": "DECIDE WHERE FINERENONE BELONGS, NOW THAT FINE-ONE IS VETTED. PMID 41780000 is vetted CORPUS with an explicit ceiling: citable for albuminuria at 6 months in T1D CKD, NOT for kidney failure, eGFR slope, CV or mortality outcomes. Nothing in the hub cites it yet, which is the right state to decide from rather than to repair from. Two constraints that must travel with any row: finerenone is BRANDED and on-patent, so it does not belong in the generic-repurposing catalogue; and the trial's own eGFR result went the WRONG way (-5.6 vs -2.7), reversing on washout. Any card must state n=242, 6 months, surrogate endpoint, and hyperkalemia 10.1% vs 3.3%."
-    },
-    {
-      "type": "analysis",
-      "priority": 2,
-      "added": "2026-09-22",
-      "target": "SWEEP THE REPO FOR OTHER \"MODELLED TRAJECTORY\" SERIES PLOTTED AS DATA. Today removed one: an eleven-point annual belatacept curve in build_islet_outcomes.GRAFT_DATA, captioned \"Modeled trajectory\" in its own source comment and rendered in the same line weight and colour family as a 1,477-recipient registry curve. Nine of its eleven points were interpolation with a printed percentage label over every marker. NO GATE IN THIS REPO CAN SEE THIS CLASS: the numbers live in a dict, carry no citation to be checked, and the disclosure was in a comment a reader never sees. Grep for \"model\", \"projected\", \"estimated\", \"trajectory\", \"extrapolat\" near chart data structures in every builder. The renderer now supports style='points' for series that report only specific timepoints; use it rather than deleting a real two-point series."
+      "added": "2026-09-21",
+      "target": "AUDIT EVERY GATE IN run_quality_improvements.py FOR THE EXIT-CODE BUG FOUND IN audit_endpoint_value_agreement.py TODAY. It printed '[FAIL] ... 1 conflicts' and returned 0, so the runner -- which dispatches on the return code -- recorded [OK]. If any other audit script computes a FAIL verdict and then returns 0, its green line in every historical run report is worthless, and worse than worthless because it was counted as assurance. This is mechanically checkable in minutes: for each audit_*.py, confirm that a constructed failing input produces a NONZERO exit. Do not trust the printed verdict -- that is exactly what failed here. Check all of them, including the ones with fixtures."
     }
   ],
   "run_history": [
@@ -12715,28 +12710,6 @@
       "second_pass": "THE FIRST PASS OF THIS RUN CLAIMED TO HAVE FIXED THE BELATACEPT FABRICATION AND HAD FIXED ONE INSTANCE OF IT IN ONE FILE. An adversarial re-check of that claim -- run specifically to try to falsify it rather than confirm it -- found the same invented figure live in FOUR builders and in both published dashboard copies. build_gap_deep_dives.py line 278, twenty lines below a correction the first pass had just written, read 'CTLA-4 Ig (belatacept): 70% graft survival at 10yr vs 32% with tacrolimus'. build_data_dictionary.py carried it twice with a 50% comparator, cited to PMID:16120857. build_gap_synthesis.py carried it with no comparator and no citation. THREE FILES, THREE DIFFERENT TACROLIMUS COMPARATORS (32%, 50%, none) FOR ONE NUMBER, which is by itself sufficient evidence that the number was never read off a paper. PMID 16120857 was fetched live this run: Vincenti et al., NEJM 2005, a RENAL transplant trial whose comparator is CYCLOSPORINE, not tacrolimus, with endpoints of acute rejection at SIX MONTHS and GFR at TWELVE MONTHS. It contains no ten-year endpoint, no graft-survival percentage, no 70 and no 50. A fourth conflation runs through all of it: GRAFT SURVIVAL is not INSULIN INDEPENDENCE. The only long-term figure this hub legitimately holds is 7-of-10 insulin independence (PMID:37359825) -- a different outcome, a different population, and n=10. All four sites are now corrected and re-verified absent from source and from both published copies. THE LESSON IS ABOUT THE FIRST PASS'S METHOD, NOT ITS LUCK. It found the defect by reading one paper against one file, then verified its repair by grepping for THE STRINGS IT HAD JUST EDITED. That test can only ever confirm the edit; it cannot find a fifth copy, because a grep for text you wrote is a grep for your own memory. The search that worked was the one that started from the CLAIM ('belatacept, 70%, ten years') and swept the whole corpus for anything asserting it. Verify the claim, not the edit. THE NEW GATE WAS ALSO WRONG IN TWO WAYS, BOTH FOUND BY THE SAME RE-CHECK AND BOTH NOW FIXED. (1) IT COULD NOT FAIL A BUILD. main() computed status='FAIL' and then returned 0 unconditionally, while run_quality_improvements.py dispatches on the return code. Every claim the first pass made about this gate 'failing the build the day a new uncited percentage is added' was therefore false as shipped -- a gate that reports and calls itself a gate is worse than no gate, because the green line is now evidence of nothing while looking like evidence of something. (2) IT HAD REAL FALSE POSITIVES: it keys on (identifier, timepoint) and never parses WHAT IS MEASURED, so '61% at 5 years in adults' versus '32% at 5 years in children', and 'insulin independence 44% at 1 year' versus 'C-peptide positivity 90% at 1 year', both registered as contradictions. Both are correct writing. An outcome-word filter and an explicit closed list of cohort-partition words now suppress both classes, re-proven on fixtures. But a heuristic that works most of the time must not be allowed to fail a build -- that is the 2026-09-15 surname mistake and the 2026-09-18 coordinate mistake, and this repository has now made some version of it three times, twice in this single run. So the split is explicit: the RATCHET fails (purely mechanical -- an identifier is on the line or it is not), the CONFLICT check only reports and a human adjudicates. Ratchet moved 35 -> 31 as the corrections added citations.",
       "gate_defects_found_by_self_review": 2,
       "adversarial_recheck": "performed; falsified the first pass's central repair claim"
-    },
-    {
-      "date": "2026-09-22",
-      "day": "Tuesday",
-      "environment": "HEALTHY. Sandbox mount, Python, live PubMed and ClinicalTrials.gov all functional. git commit works from the sandbox; git push still has no credential.",
-      "queue_items_processed": 5,
-      "papers_vetted": 6,
-      "papers_unvetted_remaining": 0,
-      "gates_added": 2,
-      "gates_extended": 1,
-      "gate_false_positives_caught_before_shipping": 4,
-      "builders_fixed": 5,
-      "wrong_trial_citations_withdrawn": 3,
-      "registry_fields_repaired": 10,
-      "invented_chart_series_withdrawn": 1,
-      "figures_sourced": 1,
-      "changes_pushed": false,
-      "pipeline_red_stages": [
-        "publishgate (by design, needs a human push)",
-        "gapsubject (pre-existing human call, 9 of 15 gaps)"
-      ],
-      "summary": "A GATE THAT PRINTS [FAIL] AND EXITS 0 IS NOT A WEAK GATE, IT IS NOT A GATE -- AND THE SAME SENTENCE TURNS OUT TO DESCRIBE A GATE THAT CHECKS ONE MENTION OF AN IDENTIFIER AND DISCARDS THE REST. Both were found today, both had been green for their whole existence, and between them they were hiding twelve live defects.\n\n(1) run_quality_improvements.run_script() decides pass/fail on `result.returncode != 0` and nothing else. audit_gate_exit_codes.py (new) reads the runner's own SCRIPTS dict and asks, of each wired stage, whether its verdict can reach that line. One real defect: path_store.py carries a block captioned UNBACKED-STATUS GATE that prints '[FAIL] N path(s) assert a validated status with no evidence anywhere' out of a main() that returned None into a bare `main()` call. It had never been able to fail. Fixed and proven in both directions (clean tree exits 0; an injected unbacked path exits 1). The audit's own first draft produced TWO FALSE POSITIVES out of three findings -- it asked whether ANY function returns a non-zero literal, and caught rebuild_website.get_trial_count() returning 42 -- so the rule was narrowed to the entry point and both false-positive shapes are now pinned as fixtures (--selftest, wired as its own stage).\n\n(2) audit_nct_identifiers.py reported 30/30 OK while build_trial_equity_mapper.py held EIGHT records disagreeing with the live registry. Three independent reasons, each worth naming: (a) `site = by_nct[nct][0]` -- only the FIRST mention of each identifier was ever examined, so 31 of 61 sites had never been checked at all, and the skipped ones skew toward the builder dicts that assert the most; (b) enrollment was matched by a PROSE regex requiring the word 'patients', so `'enrollment': 330,` matched nothing; (c) recruitment STATUS was not an audited attribute anywhere in the repo. Six records published Active or Recruiting for trials ClinicalTrials.gov records as COMPLETED, the oldest finished in 2015 -- the one wrong attribute a reader might act on.\n\nNCT04262479 was not stale, it was the wrong trial. Labelled 'DIAGNODE-3 (GAD-Alum intralymphatic vaccine)', Diamyd Medical, US/SE/FI/DE, T1D, Phase 3, n=330 'per ClinicalTrials.gov'. The registry record is GADinLADA: Norwegian University of Science and Technology, Norway and Sweden, LADA, Phase 2, n=14 ACTUAL, completed 2022-05-05. Every field but 'Sweden' belonged to a different trial. THIS IS AN EQUITY MAPPER, so the countries field is the product: a 14-patient Norwegian/Swedish study was on the map as a 330-patient four-country US-led phase 3, an error in the direction that makes trial access look broader than it is.\n\nTwo more wrong-trial citations fell out once every mention was checked. NCT01319331 in build_drug_repurposing_islet.py carried indication 'Islet Transplant', outcome 'Islet graft survival', and the RESULT 'Improved graft function; reduced early islet loss' -- it is a 12-patient phase 1 study of AAT on the PROGRESSION of type 1 diabetes, which transplanted no islets. NCT04786262 in build_gap_deep_dives.py was cited for baricitinib; it is Vertex VX-880. Both withdrawn as UNSOURCED with no substitute invented (house rule, 2026-08-29).\n\nISLET CHART: the modelled belatacept curve is gone rather than adjusted. The flag carried since 2026-09-14 framed it as a 15-point disagreement between the curve's 55% endpoint and the prose's 70%. Re-read against the abstract, that is the smallest of four problems: PMID 37359825 reports NO per-drug rate at any timepoint (70% is 7 of 10, 'four EFA, three BELA'); three of those seven had received a whole pancreas (PAI), so it is not an islet-transplant outcome; and nine of the curve's eleven points appear nowhere in the paper. Raising 55 to 70 would have left an invented annual curve terminating on a real number, which reads as better sourced than what it replaced. The chart now plots the paper's two reported timepoints as hollow markers with no connecting line, because nothing was measured between them. A fifth 10-year figure ('~70% ... modeled trajectory') and the claim that 'belatacept recipients maintain superior graft function throughout follow-up' were withdrawn in the same pass -- the source's only per-drug number points the other way, four of seven responders being on efalizumab.\n\nThe unsourced '20-30% at 10 years', flagged since 2026-09-14, was sourced by going to the literature rather than by picking one of the page's own numbers: Vantyghem MC et al., Diabetes Care 2019;42(11):2042-2049 (PMID 31615852), 28% (95% CI 13-45) by Kaplan-Meier, n=28. The first search result attributed that paper to 'Lablanche', who is not an author of it; identity and first author were verified live before use. The old range had no cohort, no citation and no interval, and its lower bound of 20% excluded the published confidence floor of 13%.\n\nAll six remaining UNVETTED papers vetted; UNVETTED is now zero. All six resolved with exact identity agreement, so the value is in the over-reading notes: FINE-ONE (41780000) is n=242 over 6 MONTHS on a SURROGATE endpoint (UACR -25% vs placebo) with hyperkalemia 10.1% vs 3.3% and a STEEPER eGFR fall than placebo -- not a hard-outcome trial, whatever 'phase 3 supporting an FDA approval' suggests. The BCG review (42738899) is the Faustman lab reviewing its own trials and states the HbA1c effect occurs 'without any recovery of pancreatic function', so BCG must never be filed under beta-cell preservation. 42760903 entered on the query 'islet transplant outcomes' and is mouse islets ex vivo with no transplant; screened out."
     }
   ],
   "topic_checks": {
@@ -15330,8 +15303,7 @@
       "git_push": "STILL BROKEN, AND STILL THE ONLY REAL P0. `git push --dry-run origin main` -> 'fatal: could not read Username for https://github.com: No such device or address'. No credential helper, no ~/.git-credentials, no GH_TOKEN. 117 commits unpushed as of this run (was 101 on 2026-09-06). The gap is widening by roughly one commit a day.",
       "task_file_pmid_ceiling": "STILL STALE, AND IT COST THIS RUN A STEP. Step 4 of the scheduled-task file instructs a sweep for 'PMIDs above 42000000 (fabricated)'. The live ceiling is 42763307. Five of the papers ingested TODAY are above 42000000 and all five are real. An agent obeying the task file literally would have deleted them. The repo fixed this in August (pmid_ceiling.py); the task file still says otherwise."
     },
-    "verification_method_2026-09-21": "VERIFY THE CLAIM, NOT THE EDIT. A repair verified by grepping for the strings you just wrote is self-confirming: it proves the edit landed and is structurally incapable of finding another copy of the same falsehood elsewhere. On 2026-09-21 that method returned a clean result while the identical fabrication was live in three other builders and both published dashboard copies. The test that works starts from the ASSERTION -- drug, number, endpoint -- and sweeps the whole corpus for anything that states it, however worded. Corollary, learned the same day: a NEW GATE MUST BE TESTED FOR ITS EXIT CODE, not just its printed verdict. This one printed [FAIL] and returned 0 for its entire first life.",
-    "2026-09-22": "A green stage count is evidence about the stages, not about the repository, and today it was wrong in two independent ways at once: a gate whose verdict could not reach the runner, and a gate that examined one mention of each identifier and discarded the rest. Both produce the same artifact -- a confident [OK] beside an unexamined defect. The general rule this suggests, which the next run should test rather than assume: before trusting any gate's green, ask what it would take for that gate to be INCAPABLE of red, and check that the number of things it examined matches the number of things there are. Today those two questions were worth twelve live defects."
+    "verification_method_2026-09-21": "VERIFY THE CLAIM, NOT THE EDIT. A repair verified by grepping for the strings you just wrote is self-confirming: it proves the edit landed and is structurally incapable of finding another copy of the same falsehood elsewhere. On 2026-09-21 that method returned a clean result while the identical fabrication was live in three other builders and both published dashboard copies. The test that works starts from the ASSERTION -- drug, number, endpoint -- and sweeps the whole corpus for anything that states it, however worded. Corollary, learned the same day: a NEW GATE MUST BE TESTED FOR ITS EXIT CODE, not just its printed verdict. This one printed [FAIL] and returned 0 for its entire first life."
   },
   "last_path_validation_batch": "2026-08-28",
   "watch_items_pending_pmid": [
@@ -15857,35 +15829,6 @@
       "type": "fix_pipeline",
       "target": "A CITATION IS BEING ATTACHED TO THE MODEL'S OWN OUTPUT, AND NO EXISTING GATE CAN SEE IT. This is a NEW defect class, found today in build_lada_diagnostic_model.",
       "resolution": "audit_computed_value_citations.py built, measured (13 -> 4 -> 1 as the false-positive modes were removed), proven on a permanent fixture reproducing the original 2026-09-13 defect, and wired into run_quality_improvements.py as stage 'computedcite' in --measure mode. The single remaining hit is a synthetic-data report whose PMID sources the effect sizes, not the sample count."
-    },
-    {
-      "type": "audit_gap",
-      "priority": 1,
-      "added": "2026-09-14",
-      "target": "RECONCILE THE BELATACEPT 10-YEAR NUMBER - THE PAGE NOW PUBLISHES 55% AND 70% FOR THE SAME THING. RESOLVED TODAY, contrary to this item's first draft: the 70%-at-10-years and 60%-at-13.3-years figures ARE correctly sourced, to Voglova et al., Transpl Int 2023 (PMID:37359825), 7 and 6 of 10 consecutive patients respectively. The earlier 'Hering et al., PMID:37105208' attribution was false and the run's first instinct - withdraw the numbers as unsupported - was ALSO wrong; the correct citation was sitting in the same file's Evidence Catalog the whole time. Both blocks are now re-sourced with the n=10 denominator stated in visible text. WHAT REMAINS FOR A HUMAN IS NARROWER AND PURELY INTERNAL. (i) GRAFT_DATA at the top of build_islet_outcomes.py plots the belatacept curve ending at 55% at year 10, while the prose and the Evidence Catalog on the same page both say 70%. Fifteen points apart, on the headline number of that block, chart versus text. Flagged in place, not changed, because the curve may be deliberately conservative or smoothed and choosing is a modelling decision. They should not both publish. (ii) A FOURTH value exists in the next-generation-therapies tab, '20-30% of recipients at 10 years', with no citation and no stated cohort - found by verification after the first pass missed it, and now marked [UNSOURCED] in place. Grep the string '20-30% of recipients' rather than trusting a line number; the round-2 insertions shifted this file by roughly thirty lines and any number recorded here will be stale. So this page carries FOUR answers to 'what is insulin independence at 10 years': 20% (Edmonton/CITR, sourced, n=1,477), 20-30% (uncited), 55% (the plotted belatacept curve), and 70% (Voglova, sourced, n=10). Three of the four are now labelled; none of them is reconciled with the others. (iii) THE PRESENTATION QUESTION, which survives the re-sourcing and is the one that actually matters: this page sets 7 patients against the CITR registry's 1,477 recipients and invites a regimen comparison. The denominators are now disclosed, but disclosure is not commensurability, and a reader scanning two adjacent metric cards will read 70 versus 20 and not the footnote. Consider whether the comparison should be framed as hypothesis-generating rather than as a result.",
-      "update_2026_09_16": "The surname in this item is WRONG and has been corrected repo-wide: PMID 37359825 is WISEL et al., not Voglova. The figures it carries are unaffected and re-verified. Sub-item (i), chart 55% vs text 70%, REMAINS a human modelling call - but a visible reading note now sits under the chart stating that the curve is modelled and the 70% is observed (7/10, Wisel), so a reader is no longer shown two unlabelled answers. Sub-item (ii), the uncited '20-30% of recipients', is still marked [UNSOURCED] in place.",
-      "closed_on": "2026-09-22"
-    },
-    {
-      "type": "analysis",
-      "priority": 1,
-      "added": "2026-09-19",
-      "target": "VET PMID 41780000 (FINE-ONE) AND DECIDE WHERE FINERENONE BELONGS. FDA approved finerenone for CKD in TYPE 1 diabetes on 2026-09-16 - first new agent for that population in 30+ years - and the hub tracked nothing about it until 2026-09-19. Three specific jobs: (i) vet the paper; the primary endpoint is a 6-month UACR surrogate, not a hard outcome, and hyperkalaemia was more frequent, so guard against any hub text saying \"protects kidneys\"; (ii) finerenone is BRANDED and ON-PATENT, so it must NOT enter the generic/off-patent catalog - the row it wrongly propped up (Spironolactone) is the steroidal MRA that IS generic, and the distinction is now load-bearing; (iii) check whether the NLRP3 / diabetic-kidney paths and any MRA-adjacent gap need updating, since a new approved comparator changes what counts as an unmet need.",
-      "closed_on": "2026-09-22"
-    },
-    {
-      "type": "audit_gap",
-      "priority": 1,
-      "added": "2026-09-21",
-      "target": "RECONCILE THE REMAINING THREE 10-YEAR ISLET FIGURES. Today's repair fixed the per-drug invention and the 6/10-vs-70% contradiction, but Islet_Transplant_Analysis.html still publishes FOUR distinct 10-year insulin-independence figures: 20% (Edmonton/CITR, sourced, n=1477), 70% (Wisel, sourced, n=10), 55% (the plotted belatacept curve endpoint, flagged 2026-09-14 and NOT CHANGED since) and '20-30%' (unsourced, cohort unstated). The 55% curve is the sharpest problem: the page plots one trajectory and states another number in prose beside it. PMID 42739778 (ingested today, J Clin Med 2026 review of islet transplant outcomes) may carry a registry figure that settles which cohort '20-30%' means.",
-      "closed_on": "2026-09-22"
-    },
-    {
-      "type": "fix_pipeline",
-      "priority": 1,
-      "added": "2026-09-21",
-      "target": "AUDIT EVERY GATE IN run_quality_improvements.py FOR THE EXIT-CODE BUG FOUND IN audit_endpoint_value_agreement.py TODAY. It printed '[FAIL] ... 1 conflicts' and returned 0, so the runner -- which dispatches on the return code -- recorded [OK]. If any other audit script computes a FAIL verdict and then returns 0, its green line in every historical run report is worthless, and worse than worthless because it was counted as assurance. This is mechanically checkable in minutes: for each audit_*.py, confirm that a constructed failing input produces a NONZERO exit. Do not trust the printed verdict -- that is exactly what failed here. Check all of them, including the ones with fixtures.",
-      "closed_on": "2026-09-22"
     }
   ],
   "last_sweep": "2026-09-21",

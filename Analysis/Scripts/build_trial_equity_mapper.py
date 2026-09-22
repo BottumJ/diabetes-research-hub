@@ -614,43 +614,71 @@ TRIALS = [
     # programs). Reduced from 19 to 12 verified trials.
     # =========================================================================
 
-    # --- VERIFIED: Vertex VX-880 stem cell-derived islets ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: Vertex VX-880 stem cell-derived islets ---
     {
         'nct_id': 'NCT04786262',
         'name': 'VX-880 (Stem cell-derived islets)',
-        'phase': 'Phase 1/2',
+        'phase': 'Phase 3',
         'sponsor': 'Vertex Pharmaceuticals',
         'countries': ['United States', 'Canada'],
-        'status': 'Active',
-        'enrollment': 17,
+        'status': 'Recruiting',
+        'enrollment': 57,  # ESTIMATED per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Cell Therapy (stem cell-derived islets)',
         'target': 'T1D',
     },
-    # --- VERIFIED: Diamyd GAD-Alum vaccine, DIAGNODE-3 ---
+    # --- WRONG TRIAL, CORRECTED 2026-09-22 against ClinicalTrials.gov ---
+    #
+    # This record was headed "Diamyd GAD-Alum vaccine, DIAGNODE-3" and every
+    # field below except 'Sweden' described DIAGNODE-3. NCT04262479 is not
+    # DIAGNODE-3. The registry record is GADinLADA:
+    #
+    #            field          was                        registry says
+    #            -----------    ------------------------   -------------------
+    #            name           DIAGNODE-3                 GADinLADA
+    #            sponsor        Diamyd Medical             Norwegian Univ. of
+    #                                                      Science & Technology
+    #            countries      US, SE, FI, DE             Norway, Sweden
+    #            target         T1D                        LADA
+    #            phase          Phase 3                    Phase 2
+    #            enrollment     330 "per ClinicalTrials.   14 (ACTUAL)
+    #                           gov"
+    #            status         Active                     Completed 2022-05-05
+    #
+    # THIS IS AN EQUITY MAPPER, SO THE COUNTRIES FIELD IS THE PRODUCT. The
+    # dashboard was placing a 14-patient Norwegian/Swedish study on the map as
+    # a 330-patient, four-country, US-led phase 3 - an error in the direction
+    # that makes trial access look broader than it is, which is the one
+    # direction this dashboard exists to detect.
+    #
+    # The identifier is NOT swapped for DIAGNODE-3's. House rule since
+    # 2026-08-29: correct a citation to what the cited record says, or mark it;
+    # never substitute an invented replacement. As it happens the true record
+    # is more on-topic for this hub than the label was - GADinLADA is squarely
+    # Gap #1 and Gap #8 - it is simply much smaller and long finished.
     {
         'nct_id': 'NCT04262479',
-        'name': 'DIAGNODE-3 (GAD-Alum intralymphatic vaccine)',
-        'phase': 'Phase 3',
-        'sponsor': 'Diamyd Medical',
-        'countries': ['United States', 'Sweden', 'Finland', 'Germany'],
-        'status': 'Active',
-        'enrollment': 330,  # DIAGNODE-3 target enrollment per ClinicalTrials.gov
+        'name': 'GADinLADA (rhGAD65 in aluminium hydrogel + vitamin D, LADA)',
+        'phase': 'Phase 2',
+        'sponsor': 'Norwegian University of Science and Technology',
+        'countries': ['Norway', 'Sweden'],
+        'status': 'Completed',
+        'enrollment': 14,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Immunotherapy',
-        'target': 'T1D',
+        'target': 'LADA',
     },
-    # --- VERIFIED: Provention Bio / Sanofi teplizumab (PROTECT study) ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: Provention Bio / Sanofi teplizumab (PROTECT study) ---
     {
         'nct_id': 'NCT03875729',
         'name': 'Teplizumab PROTECT (anti-CD3 for recent-onset T1D)',
         'phase': 'Phase 3',
         'sponsor': 'Provention Bio (Sanofi)',
         'countries': ['United States', 'Canada', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Australia'],
-        'status': 'Active',
-        'enrollment': 300,
+        'status': 'Completed',
+        'enrollment': 328,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Monoclonal Antibody (anti-CD3)',
         'target': 'T1D',
     },
-    # --- VERIFIED against ClinicalTrials.gov 2026-09-02 ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: ---
     # CORRECTED 2026-09-02: the identifier previously here, NCT02974660, registers a
     # cardiology study of protamine sulfate during transcatheter aortic valve
     # implantation. CIT-07 is NCT00434811.
@@ -661,7 +689,7 @@ TRIALS = [
         'sponsor': 'NIAID',
         'countries': ['United States', 'Canada'],
         'status': 'Completed',
-        'enrollment': 125,
+        'enrollment': 48,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Islet Transplantation',
         'target': 'T1D',
     },
@@ -679,19 +707,19 @@ TRIALS = [
         'therapy_type': 'Islet Transplantation',
         'target': 'T1D',
     },
-    # --- VERIFIED: BCG vaccine for T1D, Faustman Lab ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: BCG vaccine for T1D, Faustman Lab ---
     {
         'nct_id': 'NCT02081326',
         'name': 'BCG Vaccine for Advanced T1D (Faustman Lab)',
         'phase': 'Phase 2',
         'sponsor': 'Massachusetts General Hospital',  # CORRECTED: was "University of Massachusetts"
         'countries': ['United States'],
-        'status': 'Active',
-        'enrollment': 150,
+        'status': 'Active, not recruiting',
+        'enrollment': 150,  # ESTIMATED per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Immunotherapy',
         'target': 'T1D',
     },
-    # --- VERIFIED against ClinicalTrials.gov 2026-09-02 ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: ---
     # CORRECTED 2026-09-02: NCT02691247 registers CLBS03 (autologous polyclonal
     # regulatory T cells, The Sanford Project: T-Rex Study) in adolescents with
     # recent-onset type 1 diabetes. It was listed here under a different sponsor's
@@ -702,48 +730,48 @@ TRIALS = [
         'phase': 'Phase 2',
         'sponsor': 'Caladrius Biosciences',
         'countries': ['United States'],
-        'status': 'Active',
-        'enrollment': 24,
+        'status': 'Completed',
+        'enrollment': 113,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Cell Therapy (regulatory T cells)',
         'target': 'T1D',
     },
-    # --- VERIFIED: Northwestern autologous HSCT ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: Northwestern autologous HSCT ---
     {
         'nct_id': 'NCT01341899',
         'name': 'Autologous HSCT for new-onset T1D',
         'phase': 'Phase 2',
         'sponsor': 'Northwestern University',
         'countries': ['United States'],
-        'status': 'Active',
-        'enrollment': 30,
+        'status': 'Completed',
+        'enrollment': 50,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Stem Cell (autologous HSCT)',
         'target': 'T1D',
     },
-    # --- VERIFIED: Rituximab for new-onset T1D (TrialNet) ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: Rituximab for new-onset T1D (TrialNet) ---
     {
         'nct_id': 'NCT00279305',
         'name': 'Rituximab in new onset type 1 diabetes (TrialNet TN05, anti-CD20)',
-        'phase': 'Phase 2/3',
+        'phase': 'Phase 2',
         'sponsor': 'NIDDK (Type 1 Diabetes TrialNet)',
         'countries': ['United States', 'Canada', 'United Kingdom', 'Australia'],
         'status': 'Completed',
-        'enrollment': 87,
+        'enrollment': 87,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Monoclonal Antibody (anti-CD20)',
         'target': 'T1D',
     },
-    # --- VERIFIED: Abatacept for T1D prevention (TrialNet) ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: Abatacept for T1D prevention (TrialNet) ---
     {
         'nct_id': 'NCT01773707',
         'name': 'Abatacept for T1D prevention (TrialNet TN-18)',
         'phase': 'Phase 2',
         'sponsor': 'NIDDK (Type 1 Diabetes TrialNet)',
         'countries': ['United States', 'Canada', 'Australia'],
-        'status': 'Active',
-        'enrollment': 206,
+        'status': 'Completed',
+        'enrollment': 212,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Immunotherapy (CTLA-4 Ig)',
         'target': 'T1D',
     },
-    # --- VERIFIED against ClinicalTrials.gov 2026-09-02: verapamil for new-onset T1D ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: verapamil for new-onset T1D ---
     # CORRECTED 2026-09-02: one entry here previously fused two different verapamil
     # trials under one name, and attributed to the result a design, a sponsor and an
     # enrollment figure that belong to neither. Both trials are real; both are now
@@ -770,7 +798,7 @@ TRIALS = [
         'therapy_type': 'Drug Repurposing',
         'target': 'T1D',
     },
-    # --- VERIFIED against ClinicalTrials.gov 2026-09-02: gene-edited SC-islets ---
+    # --- registry fields refreshed from ClinicalTrials.gov 2026-09-22: gene-edited SC-islets ---
     # CORRECTED 2026-09-02. NCT05210530 was listed here as Sana Biotechnology's
     # SC451. The registry record is VCTX210A, a CRISPR Therapeutics / ViaCyte
     # gene-edited SC-islet combination product - a different sponsor and a
@@ -782,8 +810,8 @@ TRIALS = [
         'phase': 'Phase 1',
         'sponsor': 'CRISPR Therapeutics / ViaCyte',
         'countries': ['United States'],
-        'status': 'Recruiting',
-        'enrollment': 20,
+        'status': 'Completed',
+        'enrollment': 7,  # ACTUAL per ClinicalTrials.gov 2026-09-22
         'therapy_type': 'Cell Therapy (gene-edited SC-islets)',
         'target': 'T1D',
     },

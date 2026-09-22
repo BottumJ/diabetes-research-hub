@@ -147,7 +147,7 @@ is what failed on 2026-09-03.
 | `NCT06976658` "allosteric GKA in monogenic diabetes from inactivating GCK mutations" | Verified | Drug is **dorzagliatin**. Phase 2, n=44, CUHK, recruiting, completes 2026-12-31. The *"inactivating GCK mutations"* restriction is **not in the registry fields** and was asserted without support. |
 | `NCT07360080` "PROTECT extension watch" | Verified | Real, but **observational**, Sanofi, n=1000, primary completion **2035-10-29**. Cannot inform any verdict this decade. Demoted from active watch. |
 
-**Dorzagliatin convergence:** NCT06976658, PMID 42014686 (Phase I DDI with empagliflozin)
+**Dorzagliatin convergence:** NCT06976658 (registered Phase 2, "Glucokinase Activator in Monogenic Diabetes"; corrected 2026-09-22 — this line previously let the "Phase I" descriptor below read as a label on the NCT), PMID 42014686 (Phase I DDI with empagliflozin)
 and the GKA paths under Gaps #7 and #15 are all the same molecule, tracked as separate
 threads. Reconcile before the GKA line is presented as independent evidence.
 

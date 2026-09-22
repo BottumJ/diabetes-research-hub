@@ -154,6 +154,22 @@ TOKEN_RE = re.compile(r'[A-Za-z][A-Za-z0-9\-]{3,}')
 NCT_RE = re.compile(r'NCT\d{8}')
 PHASE_RE = re.compile(r'\bphase[\s:]*([1-4](?:\s*/\s*[1-4])?|i{1,3}v?|early\s*1)\b', re.I)
 ENROLL_RE = re.compile(r'\b(\d{1,5})\s*(?:pts|patients|participants|subjects|enrolled)\b', re.I)
+# Structured-field forms of the same three assertions. See check_attributes().
+FIELD_ENROLL_RE = re.compile(r"""['"]enrollment['"]\s*:\s*(\d{1,6})""")
+
+FIELD_STATUS_RE = re.compile(r"""['"]status['"]\s*:\s*['"]([^'"]+)['"]""", re.I)
+# Registry states in which the trial is OVER. ACTIVE_NOT_RECRUITING is
+# deliberately NOT here: such a trial is still running, so calling it "Active"
+# is a fair paraphrase and failing it would be a false positive. Only the
+# open-asserted-but-closed direction is a defect.
+CLOSED_STATUSES = {
+    'COMPLETED', 'TERMINATED', 'WITHDRAWN', 'SUSPENDED', 'NO_LONGER_AVAILABLE',
+}
+# Words this repo uses to assert a trial IS open. 'active' is included
+# deliberately: on this hub's pages it sits beside 'Completed' in the same
+# column and is read as "you could still join this".
+OPEN_WORDS = {'active', 'recruiting', 'enrolling', 'open', 'ongoing',
+              'active, recruiting', 'not yet recruiting'}
 ACRONYM_RE = re.compile(r'\b([A-Z][A-Z0-9]{2,}(?:-[A-Z0-9]+)*)\b')
 
 PHASE_MAP = {
@@ -223,7 +239,19 @@ def enclosing_record(text, start, end):
     one record reads the phase and enrollment of its neighbour. Prefer the
     enclosing brace literal; fall back to the sentence, then the line.
     """
-    open_brace = text.rfind('{', max(0, start - 1200), start)
+    # A MENTION INSIDE A COMMENT IS NOT INSIDE THE RECORD ABOVE IT.
+    # Added 2026-09-22 after this function handed back a neighbouring trial's
+    # dict for an id mentioned in a `#` comment BETWEEN two records: the
+    # nearest preceding `{` belonged to the previous trial, the brace-count
+    # test passed, and the gate reported "text says 328" for a record whose own
+    # enrollment line reads 48. That is the same cross-record bleed the
+    # docstring above records as first-draft defect (1), returning by a
+    # different route - and it is the worst kind of false positive, because
+    # acting on it would replace a correct value with a wrong one.
+    line_start_here = text.rfind('\n', 0, start) + 1
+    in_comment = text[line_start_here:start].lstrip().startswith('#')
+
+    open_brace = -1 if in_comment else text.rfind('{', max(0, start - 1200), start)
     if open_brace != -1:
         close_brace = text.find('}', end, end + 1200)
         if close_brace != -1 and text.count('{', open_brace, start) == 1:
@@ -309,6 +337,24 @@ def check_attributes(site, rec):
     # read it as a phase claim.
     at = ctx.find(site['nct'])
     near = ctx[max(0, at - 100):at + 100] if at != -1 else ''
+    # ...but not across a FIELD boundary. Added 2026-09-22.
+    # A dict record is one "enclosing record" but several separate assertions,
+    # and the 100-char window spans them. build_immunomod_lada.py stores
+    #     "t1d_evidence":  "DIAGNODE-3 Phase 3 ... did NOT replicate in the
+    #                       confirmatory Phase 3."
+    #     "lada_evidence": "... small pilot data (NCT04262479, n=14) ..."
+    # Both true, both correctly written. The window reached back over the field
+    # boundary, picked up the DIAGNODE-3 phase, and reported it as a phase
+    # claim about NCT04262479 - failing a line whose author had got it right.
+    # Trimming at the nearest field delimiter keeps an assertion attached to
+    # the field that makes it.
+    if at != -1:
+        rel = min(at, 100)
+        left = max(near.rfind(d, 0, rel) for d in ('",', "',", '":', "':"))
+        right_cands = [p for p in (near.find(d, rel + len(site['nct']))
+                                   for d in ('",', "',")) if p != -1]
+        near = near[left + 2 if left != -1 else 0:
+                    min(right_cands) if right_cands else len(near)]
 
     m = PHASE_RE.search(near)
     if m and rec.get('phases'):
@@ -323,9 +369,30 @@ def check_attributes(site, rec):
                 'asserted': m.group(0), 'registry': rec['phases'],
             })
 
-    m = ENROLL_RE.search(near)
-    if m and rec.get('enrollment'):
+    # ------------------------------------------------------------------
+    # STRUCTURED-FIELD ASSERTIONS, added 2026-09-22.
+    #
+    # Until today every check here read PROSE: ENROLL_RE requires the number to
+    # be followed by "patients"/"participants"/"subjects"/"enrolled". This repo
+    # also asserts the same facts as DICT FIELDS -- `'enrollment': 330,` -- and
+    # against those the regex matches nothing, so the check did not fail, it
+    # never ran. Measured this run: build_trial_equity_mapper.py holds 12 trial
+    # records, five of which state an enrollment that disagrees with the live
+    # registry (one by 330 vs 14), and this gate reported 30/30 OK.
+    #
+    # Same shape as the dict-literal blind spot audit_gap_numbering.py found on
+    # 2026-09-20. A gate that reads only prose is not checking a repository
+    # that stores half its claims as data.
+    # NOTE on phase: no structured form is needed. The dict field reads
+    # `'phase': 'Phase 3'`, which PHASE_RE already matches on the prose path.
+    field_enroll = FIELD_ENROLL_RE.search(ctx)
+
+    asserted_n = None
+    if m := ENROLL_RE.search(near):
         asserted_n = int(m.group(1))
+    elif field_enroll:
+        asserted_n = int(field_enroll.group(1))
+    if asserted_n is not None and rec.get('enrollment'):
         reg_n = rec['enrollment']
         # A stated participant count is a factual claim. Allow 10% drift for
         # planned-vs-actual, flag anything wider.
@@ -333,6 +400,30 @@ def check_attributes(site, rec):
             issues.append({
                 'attribute': 'enrollment',
                 'asserted': asserted_n, 'registry': reg_n,
+            })
+
+    # ------------------------------------------------------------------
+    # RECRUITMENT STATUS, added 2026-09-22, and it was never an audited
+    # attribute anywhere in this repository.
+    #
+    # "Active" / "Recruiting" beside a trial the registry closed years ago is
+    # the one wrong attribute a reader may ACT on: it is the difference between
+    # a trial a patient could ask to join and one that finished before they
+    # read the page. Six of the twelve entries in build_trial_equity_mapper.py
+    # asserted Active or Recruiting for trials ClinicalTrials.gov records as
+    # COMPLETED, the oldest completed in 2014.
+    #
+    # Only the open-vs-closed DIRECTION is failed, not exact string equality.
+    # "Active" against ACTIVE_NOT_RECRUITING is a reasonable paraphrase; the
+    # defect is asserting a trial is open when the registry says it is closed.
+    fs = FIELD_STATUS_RE.search(ctx)
+    if fs and rec.get('status'):
+        asserted_s = fs.group(1).strip().lower()
+        reg_s = rec['status']
+        if asserted_s in OPEN_WORDS and reg_s in CLOSED_STATUSES:
+            issues.append({
+                'attribute': 'status',
+                'asserted': fs.group(1), 'registry': reg_s,
             })
 
     reg_acr = (rec.get('acronym') or '').upper()
@@ -429,6 +520,16 @@ def main():
             continue
 
         shared = tokens(site['context']) & registry_tokens(rec)
+        if len(shared) < 2 and len(by_nct[nct]) > 1:
+            # Topic is judged on the FIRST site only (see note on the attribute
+            # loop below for why attributes are not). Where an id is cited in
+            # several places, use the site with the strongest overlap so a bare
+            # mention in a doc cannot make a well-described citation look
+            # off-topic.
+            best = max(by_nct[nct],
+                       key=lambda s: len(tokens(s['context']) & registry_tokens(rec)))
+            site = best
+            shared = tokens(site['context']) & registry_tokens(rec)
         if len(shared) < 2:
             # A threshold of one is not a threshold: a chlorhexidine cesarean
             # trial passed as PETITE teplizumab on the shared word "prevention".
@@ -446,13 +547,40 @@ def main():
             })
             continue
 
-        attr = check_attributes(site, rec)
+        # EVERY SITE, added 2026-09-22. Until today this line read
+        #
+        #     attr = check_attributes(site, rec)
+        #
+        # with `site = by_nct[nct][0]` fixed above it, so exactly ONE mention of
+        # each identifier was examined and every other mention was discarded
+        # unread. Measured on the run that found it: 61 sites, 30 distinct ids
+        # -- so 31 mentions, more than half the narrative surface, had never
+        # been checked by this gate at any point in its existence.
+        #
+        # It is not a uniform loss. The mention most likely to be skipped is
+        # the one most likely to be wrong, because the skipped mentions are the
+        # SECOND AND LATER ones, and this repo's richest assertions live in the
+        # builder dict literals that tend to sort after a passing reference in
+        # a markdown doc. NCT04786262 is the case: twelve sites, first is
+        # RESEARCH_DOCTRINE.md asserting nothing, twelfth is
+        # build_trial_equity_mapper.py declaring "Phase 1/2" and n=17 for a
+        # trial the registry now lists as PHASE3 with 57. Both disagreements
+        # were computed correctly by check_attributes() and then thrown away.
+        attr, seen = [], set()
+        for s in by_nct[nct]:
+            for d in check_attributes(s, rec):
+                key = (d['attribute'], repr(d['asserted']))
+                if key in seen:
+                    continue
+                seen.add(key)
+                attr.append(dict(d, site='%s:%d' % (s['file'], s['line'])))
         if attr:
             counts['ATTRIBUTE_DISAGREEMENT'] += 1
             findings.append({
                 'nct': nct, 'verdict': 'ATTRIBUTE_DISAGREEMENT',
                 'registry_title': rec.get('title'),
                 'registry_acronym': rec.get('acronym'),
+                'registry_status': rec.get('status'),
                 'shared_terms': sorted(shared)[:12],
                 'disagreements': attr,
                 'sites': by_nct[nct],
@@ -489,7 +617,10 @@ def main():
             for d in f['disagreements']:
                 print(f'      {d["attribute"]}: text says {d["asserted"]!r}, '
                       f'registry says {d["registry"]!r}')
-        print(f'      cited in: {f["sites"][0]["file"]}:{f["sites"][0]["line"]}')
+                if d.get('site'):
+                    print(f'          at {d["site"]}')
+        else:
+            print(f'      cited in: {f["sites"][0]["file"]}:{f["sites"][0]["line"]}')
 
     print(f'\nReport: {os.path.relpath(REPORT, REPO)}')
     if findings:

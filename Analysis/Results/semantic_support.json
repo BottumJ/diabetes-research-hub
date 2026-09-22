@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-20",
+  "generated": "2026-09-22",
   "method": "IDF-weighted content-word overlap between the citing sentence and the cited title+abstract+MeSH+keywords; IDF computed over this corpus so corpus-wide vocabulary is nearly free",
   "gates": false,
-  "instances_scanned": 1007,
-  "instances_scored": 726,
+  "instances_scanned": 1026,
+  "instances_scored": 741,
   "unscoreable_vague_claim": 156,
   "excluded_coordinate_only": 15,
   "excluded_insufficient_paper_text": 108,
@@ -226,6 +226,17 @@
       "semantically_scoreable": false
     },
     {
+      "pmid": "37359825",
+      "distinct_claims": 23,
+      "source_words": 230,
+      "claims_per_100_source_words": 10.0,
+      "abstract_words": 209,
+      "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independ",
+      "journal": "Transpl Int",
+      "year": "2023",
+      "semantically_scoreable": true
+    },
+    {
       "pmid": "28010783",
       "distinct_claims": 1,
       "source_words": 10,
@@ -344,17 +355,6 @@
       "title": "Dorzagliatin in drug-na&#xef;ve patients with type 2 diabetes: a randomized, double-blind, placebo-controlled phase 3 trial.",
       "journal": "Nat Med",
       "year": "2022",
-      "semantically_scoreable": true
-    },
-    {
-      "pmid": "37359825",
-      "distinct_claims": 11,
-      "source_words": 230,
-      "claims_per_100_source_words": 4.8,
-      "abstract_words": 209,
-      "title": "A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppression Maintains Long-Term Insulin Independ",
-      "journal": "Transpl Int",
-      "year": "2023",
       "semantically_scoreable": true
     },
     {
@@ -492,6 +492,7 @@
   ],
   "pmids_without_local_abstract": [
     "27512793",
+    "31615852",
     "40517209"
   ],
   "min_claim_terms": 4,
@@ -513,8 +514,8 @@
         "filed",
         "stored",
         "provenance",
-        "encoded",
-        "today"
+        "distinction",
+        "encoded"
       ]
     },
     {
@@ -529,8 +530,8 @@
       "year": "2025",
       "shared_terms": [],
       "unsupported_terms": [
-        "facility",
         "decentralization",
+        "facility",
         "path",
         "centralized",
         "represents",
@@ -684,8 +685,8 @@
       "year": "2020",
       "shared_terms": [],
       "unsupported_terms": [
-        "ciloleucel",
         "axicabtagene",
+        "ciloleucel",
         "cost-effectiveness",
         "qaly",
         "threshold"
@@ -733,7 +734,7 @@
     {
       "pmid": "23061757",
       "file": "build_drug_repurposing_islet.py",
-      "line": 878,
+      "line": 902,
       "support": 0.0,
       "flag": "",
       "claim": "Mechanism: Blocks TNF-alpha, which amplifies IBMIR via NF-kappa-B signaling. Evidence:",
@@ -742,8 +743,8 @@
       "year": "2012",
       "shared_terms": [],
       "unsupported_terms": [
-        "amplifies",
         "nf-kappa-b",
+        "amplifies",
         "ibmir",
         "tnf-alpha",
         "blocks",
@@ -762,12 +763,12 @@
       "year": "2008",
       "shared_terms": [],
       "unsupported_terms": [
-        "guessed",
-        "hypovitaminosis",
-        "rejected",
-        "checked",
         "alemzadeh",
-        "surname"
+        "guessed",
+        "surname",
+        "checked",
+        "rejected",
+        "hypovitaminosis"
       ]
     },
     {
@@ -804,10 +805,10 @@
       "unsupported_terms": [
         "audit",
         "copper",
-        "chelation",
-        "author-surname",
+        "cleavage",
         "withdrawn",
-        "cleavage"
+        "author-surname",
+        "chelation"
       ]
     },
     {
@@ -822,12 +823,12 @@
       "year": "2002",
       "shared_terms": [],
       "unsupported_terms": [
-        "sentence",
         "claim",
         "tinsal-t",
         "name",
+        "sentence",
         "dropped",
-        "evidenced"
+        "late"
       ]
     },
     {
@@ -842,11 +843,11 @@
       "year": "2025",
       "shared_terms": [],
       "unsupported_terms": [
+        "germantown",
+        "boston",
         "cgmp",
         "bothell",
         "bordeaux",
-        "boston",
-        "germantown",
         "portsmouth"
       ]
     },
@@ -866,14 +867,14 @@
         "low-access",
         "gdp-ppp",
         "high-burden",
-        "economics",
-        "optimization"
+        "optimization",
+        "economics"
       ]
     },
     {
       "pmid": "32627352",
       "file": "build_gap_deep_dives.py",
-      "line": 216,
+      "line": 246,
       "support": 0.0,
       "flag": "",
       "claim": "with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (",
@@ -882,10 +883,10 @@
       "year": "2021",
       "shared_terms": [],
       "unsupported_terms": [
-        "corpus",
-        "lantidra",
         "well-characterized",
+        "corpus",
         "fda-approved",
+        "lantidra",
         "post-transplant",
         "march"
       ]
@@ -893,7 +894,7 @@
     {
       "pmid": "33622669",
       "file": "build_gap_deep_dives.py",
-      "line": 438,
+      "line": 501,
       "support": 0.0,
       "flag": "",
       "claim": "DAWN)\", \"(PMID requires verification) - AZD1656 GCKR genetic  \", \"",
@@ -912,7 +913,7 @@
     {
       "pmid": "33622669",
       "file": "build_gap_deep_dives.py",
-      "line": 465,
+      "line": 528,
       "support": 0.0,
       "flag": "",
       "claim": ", a cohort follow-on of SEED)\", \"(PMID requires verification) - AZD1656 genetic modifiers of efficacy\", \"",
@@ -921,9 +922,9 @@
       "year": "2021",
       "shared_terms": [],
       "unsupported_terms": [
-        "follow-on",
         "verification",
         "modifiers",
+        "follow-on",
         "seed",
         "requires",
         "cohort"
@@ -932,7 +933,7 @@
     {
       "pmid": "36449148",
       "file": "build_gap_deep_dives.py",
-      "line": 504,
+      "line": 567,
       "support": 0.0,
       "flag": "",
       "claim": "o definitions it publishes; both are stated. # * TIR 83.7% is from the SEED CGM substudy of 16 subjects over 46 # weeks, reported in the Jiang 2024 review. n=16 is now visible. # *",
@@ -941,10 +942,10 @@
       "year": "2022",
       "shared_terms": [],
       "unsupported_terms": [
-        "substudy",
-        "jiang",
-        "publishes",
         "visible",
+        "jiang",
+        "substudy",
+        "publishes",
         "stated",
         "definitions"
       ]
@@ -952,7 +953,7 @@
     {
       "pmid": "34763823",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.0,
       "flag": "",
       "claim": " weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13:",
@@ -972,7 +973,7 @@
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 518,
+      "line": 581,
       "support": 0.0,
       "flag": "",
       "claim": "ry Drugs for LADA\", \"tier\": \"SILVER\", \"score\": 0.79, \"cluster\": \"B\", \"domain_pubs\": {\"glp1\": 11732, \"lada\": 535}, \"joint_pubs\": 0, \"trial_count\": 11, \"key_refs\": [\"",
@@ -981,8 +982,8 @@
       "year": "2019",
       "shared_terms": [],
       "unsupported_terms": [
-        "pubs",
         "silver",
+        "pubs",
         "tier",
         "joint",
         "cluster",
@@ -1066,7 +1067,7 @@
     {
       "pmid": "23061757",
       "file": "build_drug_repurposing_islet.py",
-      "line": 878,
+      "line": 902,
       "support": 0.0
     },
     {
@@ -1108,79 +1109,79 @@
     {
       "pmid": "32627352",
       "file": "build_gap_deep_dives.py",
-      "line": 216,
+      "line": 246,
       "support": 0.0
     },
     {
       "pmid": "33622669",
       "file": "build_gap_deep_dives.py",
-      "line": 438,
+      "line": 501,
       "support": 0.0
     },
     {
       "pmid": "33622669",
       "file": "build_gap_deep_dives.py",
-      "line": 465,
+      "line": 528,
       "support": 0.0
     },
     {
       "pmid": "36449148",
       "file": "build_gap_deep_dives.py",
-      "line": 504,
+      "line": 567,
       "support": 0.0
     },
     {
       "pmid": "34763823",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 518,
+      "line": 581,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 527,
+      "line": 590,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 554,
+      "line": 617,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 765,
+      "line": 828,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 774,
+      "line": 837,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 872,
+      "line": 935,
       "support": 0.0
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 938,
+      "line": 1001,
       "support": 0.0
     },
     {
       "pmid": "24598244",
       "file": "build_gap_deep_dives.py",
-      "line": 1483,
+      "line": 1546,
       "support": 0.0
     },
     {
@@ -1496,27 +1497,21 @@
       "support": 0.0
     },
     {
-      "pmid": "37359825",
-      "file": "build_islet_outcomes.py",
-      "line": 45,
-      "support": 0.0
-    },
-    {
       "pmid": "37105208",
       "file": "build_islet_outcomes.py",
-      "line": 609,
+      "line": 663,
       "support": 0.0
     },
     {
       "pmid": "10911004",
       "file": "build_islet_outcomes.py",
-      "line": 1332,
+      "line": 1415,
       "support": 0.0
     },
     {
       "pmid": "37359825",
       "file": "build_islet_outcomes.py",
-      "line": 1342,
+      "line": 1425,
       "support": 0.0
     },
     {
@@ -1642,7 +1637,7 @@
     {
       "pmid": "36643381",
       "file": "build_research_paths.py",
-      "line": 913,
+      "line": 940,
       "support": 0.0
     },
     {
@@ -1702,7 +1697,7 @@
     {
       "pmid": "32312859",
       "file": "build_trial_equity_mapper.py",
-      "line": 1562,
+      "line": 1590,
       "support": 0.0
     },
     {
@@ -1846,49 +1841,49 @@
     {
       "pmid": "37889505",
       "file": "run_quality_improvements.py",
-      "line": 110,
+      "line": 135,
       "support": 0.0
     },
     {
       "pmid": "32862232",
       "file": "run_quality_improvements.py",
-      "line": 122,
+      "line": 147,
       "support": 0.0
     },
     {
       "pmid": "39613428",
       "file": "run_quality_improvements.py",
-      "line": 136,
+      "line": 161,
       "support": 0.0
     },
     {
       "pmid": "37889505",
       "file": "run_quality_improvements.py",
-      "line": 150,
+      "line": 175,
       "support": 0.0
     },
     {
       "pmid": "38918878",
       "file": "run_quality_improvements.py",
-      "line": 164,
+      "line": 189,
       "support": 0.0
     },
     {
       "pmid": "36826844",
       "file": "run_quality_improvements.py",
-      "line": 260,
+      "line": 285,
       "support": 0.0
     },
     {
       "pmid": "37359825",
       "file": "run_quality_improvements.py",
-      "line": 555,
+      "line": 580,
       "support": 0.0
     },
     {
       "pmid": "33264825",
       "file": "run_quality_improvements.py",
-      "line": 592,
+      "line": 617,
       "support": 0.0
     },
     {
@@ -2050,7 +2045,7 @@
     {
       "pmid": "35466661",
       "file": "build_research_paths.py",
-      "line": 209,
+      "line": 236,
       "support": 0.03
     },
     {
@@ -2062,7 +2057,7 @@
     {
       "pmid": "35466661",
       "file": "build_research_paths.py",
-      "line": 175,
+      "line": 202,
       "support": 0.031
     },
     {
@@ -2092,7 +2087,7 @@
     {
       "pmid": "36643381",
       "file": "run_quality_improvements.py",
-      "line": 259,
+      "line": 284,
       "support": 0.035
     },
     {
@@ -2128,7 +2123,7 @@
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 801,
+      "line": 864,
       "support": 0.038
     },
     {
@@ -2158,7 +2153,7 @@
     {
       "pmid": "37105208",
       "file": "build_islet_outcomes.py",
-      "line": 606,
+      "line": 660,
       "support": 0.04
     },
     {
@@ -2170,7 +2165,7 @@
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 849,
+      "line": 912,
       "support": 0.041
     },
     {
@@ -2212,7 +2207,7 @@
     {
       "pmid": "21323736",
       "file": "build_gap_deep_dives.py",
-      "line": 381,
+      "line": 444,
       "support": 0.047
     },
     {
@@ -2224,13 +2219,13 @@
     {
       "pmid": "31304320",
       "file": "add_citations.py",
-      "line": 169,
+      "line": 171,
       "support": 0.05
     },
     {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 228,
+      "line": 258,
       "support": 0.05
     },
     {
@@ -2294,15 +2289,21 @@
       "support": 0.055
     },
     {
+      "pmid": "37359825",
+      "file": "run_quality_improvements.py",
+      "line": 653,
+      "support": 0.056
+    },
+    {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 237,
+      "line": 267,
       "support": 0.057
     },
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 984,
+      "line": 1047,
       "support": 0.057
     },
     {
@@ -2320,7 +2321,7 @@
     {
       "pmid": "38783768",
       "file": "build_gap_deep_dives.py",
-      "line": 463,
+      "line": 526,
       "support": 0.064
     },
     {
@@ -2428,7 +2429,7 @@
     {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 282,
+      "line": 345,
       "support": 0.071
     },
     {
@@ -2452,7 +2453,7 @@
     {
       "pmid": "34763823",
       "file": "build_gap_deep_dives.py",
-      "line": 1019,
+      "line": 1082,
       "support": 0.073
     },
     {
@@ -2476,13 +2477,13 @@
     {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 264,
+      "line": 314,
       "support": 0.077
     },
     {
       "pmid": "36109742",
       "file": "build_trial_equity_mapper.py",
-      "line": 1561,
+      "line": 1589,
       "support": 0.077
     },
     {
@@ -2500,25 +2501,25 @@
     {
       "pmid": "23248199",
       "file": "build_gap_deep_dives.py",
-      "line": 643,
+      "line": 706,
       "support": 0.079
     },
     {
       "pmid": "42698953",
       "file": "run_quality_improvements.py",
-      "line": 463,
+      "line": 488,
       "support": 0.079
     },
     {
       "pmid": "25714673",
       "file": "run_quality_improvements.py",
-      "line": 597,
+      "line": 622,
       "support": 0.079
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 333,
+      "line": 396,
       "support": 0.08
     },
     {
@@ -2554,7 +2555,7 @@
     {
       "pmid": "10911004",
       "file": "build_islet_outcomes.py",
-      "line": 600,
+      "line": 654,
       "support": 0.085
     },
     {
@@ -2566,7 +2567,7 @@
     {
       "pmid": "34763823",
       "file": "build_gap_deep_dives.py",
-      "line": 982,
+      "line": 1045,
       "support": 0.086
     },
     {
@@ -2578,7 +2579,7 @@
     {
       "pmid": "33622669",
       "file": "build_gap_deep_dives.py",
-      "line": 446,
+      "line": 509,
       "support": 0.088
     },
     {
@@ -2648,6 +2649,12 @@
       "support": 0.095
     },
     {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 76,
+      "support": 0.095
+    },
+    {
       "pmid": "12345678",
       "file": "verify_pmids.py",
       "line": 196,
@@ -2662,19 +2669,19 @@
     {
       "pmid": "17429083",
       "file": "build_drug_repurposing_islet.py",
-      "line": 867,
+      "line": 891,
       "support": 0.097
     },
     {
       "pmid": "36826844",
       "file": "build_research_paths.py",
-      "line": 914,
+      "line": 941,
       "support": 0.099
     },
     {
       "pmid": "21323736",
       "file": "build_gap_deep_dives.py",
-      "line": 416,
+      "line": 479,
       "support": 0.1
     },
     {
@@ -2686,7 +2693,7 @@
     {
       "pmid": "35466661",
       "file": "build_research_paths.py",
-      "line": 193,
+      "line": 220,
       "support": 0.103
     },
     {
@@ -2698,7 +2705,7 @@
     {
       "pmid": "38055252",
       "file": "add_citations.py",
-      "line": 71,
+      "line": 73,
       "support": 0.105
     },
     {
@@ -2710,7 +2717,7 @@
     {
       "pmid": "37399599",
       "file": "run_quality_improvements.py",
-      "line": 465,
+      "line": 490,
       "support": 0.106
     },
     {
@@ -2722,7 +2729,7 @@
     {
       "pmid": "41326666",
       "file": "run_quality_improvements.py",
-      "line": 356,
+      "line": 381,
       "support": 0.107
     },
     {
@@ -2800,7 +2807,7 @@
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 1703,
+      "line": 1766,
       "support": 0.114
     },
     {
@@ -2812,19 +2819,19 @@
     {
       "pmid": "23890997",
       "file": "build_data_dictionary.py",
-      "line": 834,
+      "line": 843,
       "support": 0.115
     },
     {
       "pmid": "22315720",
       "file": "build_data_dictionary.py",
-      "line": 957,
+      "line": 966,
       "support": 0.115
     },
     {
       "pmid": "21323736",
       "file": "build_gap_deep_dives.py",
-      "line": 714,
+      "line": 777,
       "support": 0.115
     },
     {
@@ -2842,7 +2849,7 @@
     {
       "pmid": "21323736",
       "file": "build_gap_deep_dives.py",
-      "line": 753,
+      "line": 816,
       "support": 0.116
     },
     {
@@ -2854,7 +2861,7 @@
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 847,
+      "line": 910,
       "support": 0.117
     },
     {
@@ -2878,7 +2885,7 @@
     {
       "pmid": "23248199",
       "file": "build_gap_deep_dives.py",
-      "line": 670,
+      "line": 733,
       "support": 0.122
     },
     {
@@ -2890,13 +2897,13 @@
     {
       "pmid": "22315720",
       "file": "build_data_dictionary.py",
-      "line": 1237,
+      "line": 1246,
       "support": 0.123
     },
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 1019,
+      "line": 1082,
       "support": 0.123
     },
     {
@@ -2908,19 +2915,19 @@
     {
       "pmid": "31197153",
       "file": "build_data_dictionary.py",
-      "line": 1069,
+      "line": 1078,
       "support": 0.124
     },
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 979,
+      "line": 1042,
       "support": 0.124
     },
     {
       "pmid": "36449148",
       "file": "build_gap_deep_dives.py",
-      "line": 484,
+      "line": 547,
       "support": 0.125
     },
     {
@@ -2962,7 +2969,7 @@
     {
       "pmid": "23248199",
       "file": "build_gap_deep_dives.py",
-      "line": 634,
+      "line": 697,
       "support": 0.128
     },
     {
@@ -2992,7 +2999,7 @@
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 868,
+      "line": 931,
       "support": 0.131
     },
     {
@@ -3010,7 +3017,7 @@
     {
       "pmid": "31197153",
       "file": "build_data_dictionary.py",
-      "line": 992,
+      "line": 1001,
       "support": 0.133
     },
     {
@@ -3022,13 +3029,13 @@
     {
       "pmid": "35466661",
       "file": "build_gap_deep_dives.py",
-      "line": 572,
+      "line": 635,
       "support": 0.134
     },
     {
       "pmid": "37909353",
       "file": "run_quality_improvements.py",
-      "line": 568,
+      "line": 593,
       "support": 0.135
     },
     {
@@ -3052,7 +3059,7 @@
     {
       "pmid": "37351171",
       "file": "add_citations.py",
-      "line": 235,
+      "line": 237,
       "support": 0.138
     },
     {
@@ -3064,7 +3071,7 @@
     {
       "pmid": "17429083",
       "file": "build_drug_repurposing_islet.py",
-      "line": 1066,
+      "line": 1090,
       "support": 0.139
     },
     {
@@ -3082,7 +3089,7 @@
     {
       "pmid": "31197153",
       "file": "build_data_dictionary.py",
-      "line": 1058,
+      "line": 1067,
       "support": 0.141
     },
     {
@@ -3094,7 +3101,7 @@
     {
       "pmid": "37105208",
       "file": "build_islet_outcomes.py",
-      "line": 661,
+      "line": 717,
       "support": 0.141
     },
     {
@@ -3124,7 +3131,7 @@
     {
       "pmid": "38783768",
       "file": "build_gap_deep_dives.py",
-      "line": 427,
+      "line": 490,
       "support": 0.146
     },
     {
@@ -3172,7 +3179,7 @@
     {
       "pmid": "34763823",
       "file": "build_trial_equity_mapper.py",
-      "line": 1430,
+      "line": 1458,
       "support": 0.151
     },
     {
@@ -3184,7 +3191,7 @@
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 832,
+      "line": 895,
       "support": 0.152
     },
     {
@@ -3196,7 +3203,7 @@
     {
       "pmid": "37105208",
       "file": "build_islet_outcomes.py",
-      "line": 655,
+      "line": 711,
       "support": 0.152
     },
     {
@@ -3232,7 +3239,7 @@
     {
       "pmid": "34763823",
       "file": "build_trial_equity_mapper.py",
-      "line": 1429,
+      "line": 1457,
       "support": 0.156
     },
     {
@@ -3274,7 +3281,7 @@
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 1710,
+      "line": 1773,
       "support": 0.161
     },
     {
@@ -3294,6 +3301,12 @@
       "file": "build_lada_prevalence.py",
       "line": 465,
       "support": 0.162
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 286,
+      "support": 0.163
     },
     {
       "pmid": "34763823",
@@ -3328,13 +3341,13 @@
     {
       "pmid": "28522654",
       "file": "build_data_dictionary.py",
-      "line": 1080,
+      "line": 1089,
       "support": 0.169
     },
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 887,
+      "line": 950,
       "support": 0.169
     },
     {
@@ -3374,9 +3387,15 @@
       "support": 0.172
     },
     {
+      "pmid": "16120857",
+      "file": "build_data_dictionary.py",
+      "line": 782,
+      "support": 0.173
+    },
+    {
       "pmid": "37016949",
       "file": "add_citations.py",
-      "line": 184,
+      "line": 186,
       "support": 0.175
     },
     {
@@ -3400,19 +3419,19 @@
     {
       "pmid": "31197153",
       "file": "build_data_dictionary.py",
-      "line": 1047,
+      "line": 1056,
       "support": 0.18
     },
     {
       "pmid": "40544428",
       "file": "build_gap_deep_dives.py",
-      "line": 199,
+      "line": 217,
       "support": 0.181
     },
     {
       "pmid": "21323736",
       "file": "build_gap_deep_dives.py",
-      "line": 717,
+      "line": 780,
       "support": 0.182
     },
     {
@@ -3424,8 +3443,14 @@
     {
       "pmid": "21323736",
       "file": "build_trial_equity_mapper.py",
-      "line": 1429,
+      "line": 1457,
       "support": 0.184
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 223,
+      "support": 0.185
     },
     {
       "pmid": "41921761",
@@ -3454,7 +3479,7 @@
     {
       "pmid": "26590418",
       "file": "build_gap_deep_dives.py",
-      "line": 841,
+      "line": 904,
       "support": 0.189
     },
     {
@@ -3462,6 +3487,12 @@
       "file": "build_lada_diagnostic_model.py",
       "line": 10,
       "support": 0.189
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 225,
+      "support": 0.192
     },
     {
       "pmid": "36449148",
@@ -3490,13 +3521,13 @@
     {
       "pmid": "37351171",
       "file": "add_citations.py",
-      "line": 174,
+      "line": 176,
       "support": 0.201
     },
     {
       "pmid": "33550442",
       "file": "build_data_dictionary.py",
-      "line": 946,
+      "line": 955,
       "support": 0.201
     },
     {
@@ -3538,7 +3569,7 @@
     {
       "pmid": "22349456",
       "file": "build_trial_equity_mapper.py",
-      "line": 1565,
+      "line": 1593,
       "support": 0.206
     },
     {
@@ -3556,7 +3587,13 @@
     {
       "pmid": "35551294",
       "file": "build_gap_deep_dives.py",
-      "line": 444,
+      "line": 507,
+      "support": 0.21
+    },
+    {
+      "pmid": "16120857",
+      "file": "build_gap_synthesis.py",
+      "line": 110,
       "support": 0.21
     },
     {
@@ -3632,6 +3669,12 @@
       "support": 0.224
     },
     {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 893,
+      "support": 0.225
+    },
+    {
       "pmid": "19805629",
       "file": "repair_cost_provenance_20260829.py",
       "line": 159,
@@ -3640,7 +3683,7 @@
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 1018,
+      "line": 1081,
       "support": 0.226
     },
     {
@@ -3712,13 +3755,13 @@
     {
       "pmid": "19373249",
       "file": "run_quality_improvements.py",
-      "line": 183,
+      "line": 208,
       "support": 0.236
     },
     {
       "pmid": "41827917",
       "file": "add_citations.py",
-      "line": 135,
+      "line": 137,
       "support": 0.237
     },
     {
@@ -3772,7 +3815,7 @@
     {
       "pmid": "35551294",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.245
     },
     {
@@ -3814,7 +3857,7 @@
     {
       "pmid": "28731034",
       "file": "build_data_dictionary.py",
-      "line": 970,
+      "line": 979,
       "support": 0.251
     },
     {
@@ -3850,13 +3893,7 @@
     {
       "pmid": "38783768",
       "file": "build_gap_deep_dives.py",
-      "line": 436,
-      "support": 0.257
-    },
-    {
-      "pmid": "37359825",
-      "file": "build_islet_outcomes.py",
-      "line": 837,
+      "line": 499,
       "support": 0.257
     },
     {
@@ -3868,7 +3905,7 @@
     {
       "pmid": "37385967",
       "file": "build_gap_deep_dives.py",
-      "line": 463,
+      "line": 526,
       "support": 0.258
     },
     {
@@ -3904,13 +3941,13 @@
     {
       "pmid": "37122431",
       "file": "add_citations.py",
-      "line": 145,
+      "line": 147,
       "support": 0.264
     },
     {
       "pmid": "16306343",
       "file": "add_citations.py",
-      "line": 186,
+      "line": 188,
       "support": 0.268
     },
     {
@@ -3920,9 +3957,15 @@
       "support": 0.268
     },
     {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 185,
+      "support": 0.268
+    },
+    {
       "pmid": "11095109",
       "file": "build_drug_repurposing_islet.py",
-      "line": 884,
+      "line": 908,
       "support": 0.271
     },
     {
@@ -3952,7 +3995,7 @@
     {
       "pmid": "35551294",
       "file": "build_gap_deep_dives.py",
-      "line": 489,
+      "line": 552,
       "support": 0.279
     },
     {
@@ -3988,7 +4031,7 @@
     {
       "pmid": "31618560",
       "file": "build_data_dictionary.py",
-      "line": 1267,
+      "line": 1276,
       "support": 0.286
     },
     {
@@ -4000,7 +4043,7 @@
     {
       "pmid": "37105208",
       "file": "build_islet_outcomes.py",
-      "line": 837,
+      "line": 905,
       "support": 0.287
     },
     {
@@ -4018,13 +4061,7 @@
     {
       "pmid": "35551307",
       "file": "build_data_dictionary.py",
-      "line": 1259,
-      "support": 0.289
-    },
-    {
-      "pmid": "37359825",
-      "file": "build_islet_outcomes.py",
-      "line": 554,
+      "line": 1268,
       "support": 0.289
     },
     {
@@ -4054,7 +4091,7 @@
     {
       "pmid": "36474045",
       "file": "add_citations.py",
-      "line": 131,
+      "line": 133,
       "support": 0.293
     },
     {
@@ -4066,7 +4103,7 @@
     {
       "pmid": "22980982",
       "file": "add_citations.py",
-      "line": 119,
+      "line": 121,
       "support": 0.294
     },
     {
@@ -4088,6 +4125,12 @@
       "support": 0.296
     },
     {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 52,
+      "support": 0.298
+    },
+    {
       "pmid": "26322160",
       "file": "build_nutrition_beta.py",
       "line": 366,
@@ -4096,13 +4139,13 @@
     {
       "pmid": "26378978",
       "file": "build_data_dictionary.py",
-      "line": 1325,
+      "line": 1334,
       "support": 0.299
     },
     {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 283,
+      "line": 346,
       "support": 0.299
     },
     {
@@ -4130,9 +4173,15 @@
       "support": 0.304
     },
     {
+      "pmid": "16120857",
+      "file": "build_data_dictionary.py",
+      "line": 794,
+      "support": 0.306
+    },
+    {
       "pmid": "23061757",
       "file": "build_drug_repurposing_islet.py",
-      "line": 885,
+      "line": 909,
       "support": 0.306
     },
     {
@@ -4144,13 +4193,13 @@
     {
       "pmid": "31180194",
       "file": "add_citations.py",
-      "line": 67,
+      "line": 69,
       "support": 0.307
     },
     {
       "pmid": "36449148",
       "file": "add_citations.py",
-      "line": 107,
+      "line": 109,
       "support": 0.307
     },
     {
@@ -4174,7 +4223,7 @@
     {
       "pmid": "11832527",
       "file": "add_citations.py",
-      "line": 125,
+      "line": 127,
       "support": 0.313
     },
     {
@@ -4184,15 +4233,9 @@
       "support": 0.316
     },
     {
-      "pmid": "37359825",
-      "file": "build_gap_deep_dives.py",
-      "line": 216,
-      "support": 0.316
-    },
-    {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 984,
+      "line": 1047,
       "support": 0.317
     },
     {
@@ -4216,7 +4259,7 @@
     {
       "pmid": "37366315",
       "file": "add_citations.py",
-      "line": 93,
+      "line": 95,
       "support": 0.323
     },
     {
@@ -4228,7 +4271,7 @@
     {
       "pmid": "28199814",
       "file": "build_data_dictionary.py",
-      "line": 799,
+      "line": 808,
       "support": 0.323
     },
     {
@@ -4252,7 +4295,7 @@
     {
       "pmid": "19041189",
       "file": "build_data_dictionary.py",
-      "line": 821,
+      "line": 830,
       "support": 0.325
     },
     {
@@ -4264,7 +4307,7 @@
     {
       "pmid": "28314945",
       "file": "build_data_dictionary.py",
-      "line": 878,
+      "line": 887,
       "support": 0.327
     },
     {
@@ -4288,7 +4331,7 @@
     {
       "pmid": "28731034",
       "file": "build_data_dictionary.py",
-      "line": 981,
+      "line": 990,
       "support": 0.335
     },
     {
@@ -4336,7 +4379,7 @@
     {
       "pmid": "37356446",
       "file": "add_citations.py",
-      "line": 180,
+      "line": 182,
       "support": 0.345
     },
     {
@@ -4360,13 +4403,13 @@
     {
       "pmid": "31296866",
       "file": "build_data_dictionary.py",
-      "line": 867,
+      "line": 876,
       "support": 0.355
     },
     {
       "pmid": "25230243",
       "file": "add_citations.py",
-      "line": 172,
+      "line": 174,
       "support": 0.356
     },
     {
@@ -4378,7 +4421,7 @@
     {
       "pmid": "27159554",
       "file": "build_data_dictionary.py",
-      "line": 1091,
+      "line": 1100,
       "support": 0.359
     },
     {
@@ -4414,7 +4457,7 @@
     {
       "pmid": "17965721",
       "file": "build_gap_deep_dives.py",
-      "line": 247,
+      "line": 277,
       "support": 0.373
     },
     {
@@ -4450,7 +4493,7 @@
     {
       "pmid": "31263284",
       "file": "add_citations.py",
-      "line": 157,
+      "line": 159,
       "support": 0.377
     },
     {
@@ -4468,7 +4511,7 @@
     {
       "pmid": "25751624",
       "file": "build_data_dictionary.py",
-      "line": 1248,
+      "line": 1257,
       "support": 0.378
     },
     {
@@ -4480,8 +4523,14 @@
     {
       "pmid": "35551294",
       "file": "build_gap_deep_dives.py",
-      "line": 436,
+      "line": 499,
       "support": 0.379
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 246,
+      "support": 0.38
     },
     {
       "pmid": "24970885",
@@ -4534,7 +4583,7 @@
     {
       "pmid": "38783768",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.396
     },
     {
@@ -4592,6 +4641,12 @@
       "support": 0.404
     },
     {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 905,
+      "support": 0.405
+    },
+    {
       "pmid": "21867926",
       "file": "build_data_dictionary.py",
       "line": 243,
@@ -4618,19 +4673,19 @@
     {
       "pmid": "22683128",
       "file": "build_data_dictionary.py",
-      "line": 889,
+      "line": 898,
       "support": 0.412
     },
     {
       "pmid": "16120857",
       "file": "build_data_dictionary.py",
-      "line": 788,
+      "line": 797,
       "support": 0.414
     },
     {
       "pmid": "17005949",
       "file": "build_data_dictionary.py",
-      "line": 1226,
+      "line": 1235,
       "support": 0.415
     },
     {
@@ -4648,7 +4703,7 @@
     {
       "pmid": "10911004",
       "file": "build_data_dictionary.py",
-      "line": 902,
+      "line": 911,
       "support": 0.418
     },
     {
@@ -4678,13 +4733,13 @@
     {
       "pmid": "27189025",
       "file": "build_data_dictionary.py",
-      "line": 845,
+      "line": 854,
       "support": 0.43
     },
     {
       "pmid": "35551292",
       "file": "build_gap_deep_dives.py",
-      "line": 490,
+      "line": 553,
       "support": 0.43
     },
     {
@@ -4744,13 +4799,13 @@
     {
       "pmid": "31180194",
       "file": "build_data_dictionary.py",
-      "line": 1292,
+      "line": 1301,
       "support": 0.444
     },
     {
       "pmid": "37148899",
       "file": "add_citations.py",
-      "line": 111,
+      "line": 113,
       "support": 0.446
     },
     {
@@ -4763,6 +4818,12 @@
       "pmid": "31177185",
       "file": "build_data_dictionary.py",
       "line": 665,
+      "support": 0.45
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 297,
       "support": 0.45
     },
     {
@@ -4792,7 +4853,7 @@
     {
       "pmid": "19404608",
       "file": "build_data_dictionary.py",
-      "line": 810,
+      "line": 819,
       "support": 0.467
     },
     {
@@ -4810,7 +4871,7 @@
     {
       "pmid": "28118453",
       "file": "build_data_dictionary.py",
-      "line": 1281,
+      "line": 1290,
       "support": 0.473
     },
     {
@@ -4822,8 +4883,14 @@
     {
       "pmid": "31618560",
       "file": "build_data_dictionary.py",
-      "line": 1270,
+      "line": 1279,
       "support": 0.484
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 605,
+      "support": 0.485
     },
     {
       "pmid": "16731815",
@@ -4852,14 +4919,20 @@
     {
       "pmid": "31175156",
       "file": "build_data_dictionary.py",
-      "line": 1003,
+      "line": 1012,
       "support": 0.492
     },
     {
       "pmid": "32847960",
       "file": "build_data_dictionary.py",
-      "line": 856,
+      "line": 865,
       "support": 0.497
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 200,
+      "support": 0.498
     },
     {
       "pmid": "17942684",
@@ -4870,7 +4943,7 @@
     {
       "pmid": "32627352",
       "file": "build_data_dictionary.py",
-      "line": 913,
+      "line": 922,
       "support": 0.506
     },
     {
@@ -4882,13 +4955,13 @@
     {
       "pmid": "37385967",
       "file": "build_gap_deep_dives.py",
-      "line": 496,
+      "line": 559,
       "support": 0.509
     },
     {
       "pmid": "37359825",
       "file": "build_islet_outcomes.py",
-      "line": 661,
+      "line": 717,
       "support": 0.512
     },
     {
@@ -4900,7 +4973,7 @@
     {
       "pmid": "17359512",
       "file": "build_islet_outcomes.py",
-      "line": 723,
+      "line": 779,
       "support": 0.513
     },
     {
@@ -4936,7 +5009,7 @@
     {
       "pmid": "26784127",
       "file": "build_data_dictionary.py",
-      "line": 935,
+      "line": 944,
       "support": 0.542
     },
     {
@@ -4960,7 +5033,7 @@
     {
       "pmid": "41765029",
       "file": "add_citations.py",
-      "line": 95,
+      "line": 97,
       "support": 0.553
     },
     {
@@ -4972,19 +5045,25 @@
     {
       "pmid": "35551292",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.555
     },
     {
       "pmid": "37354562",
       "file": "add_citations.py",
-      "line": 111,
+      "line": 113,
       "support": 0.561
     },
     {
       "pmid": "10911004",
       "file": "build_data_dictionary.py",
-      "line": 1347,
+      "line": 1356,
+      "support": 0.566
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_gap_deep_dives.py",
+      "line": 236,
       "support": 0.566
     },
     {
@@ -4996,7 +5075,7 @@
     {
       "pmid": "29617641",
       "file": "build_data_dictionary.py",
-      "line": 1102,
+      "line": 1111,
       "support": 0.575
     },
     {
@@ -5032,7 +5111,7 @@
     {
       "pmid": "31182921",
       "file": "build_gap_deep_dives.py",
-      "line": 802,
+      "line": 865,
       "support": 0.59
     },
     {
@@ -5056,13 +5135,13 @@
     {
       "pmid": "40544435",
       "file": "add_citations.py",
-      "line": 95,
+      "line": 97,
       "support": 0.603
     },
     {
       "pmid": "37156252",
       "file": "add_citations.py",
-      "line": 111,
+      "line": 113,
       "support": 0.606
     },
     {
@@ -5080,19 +5159,19 @@
     {
       "pmid": "40032831",
       "file": "add_citations.py",
-      "line": 204,
+      "line": 206,
       "support": 0.613
     },
     {
       "pmid": "38639547",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.614
     },
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 538,
+      "line": 601,
       "support": 0.635
     },
     {
@@ -5110,19 +5189,19 @@
     {
       "pmid": "37385967",
       "file": "build_gap_deep_dives.py",
-      "line": 444,
+      "line": 507,
       "support": 0.67
     },
     {
       "pmid": "40544428",
       "file": "build_data_dictionary.py",
-      "line": 924,
+      "line": 933,
       "support": 0.677
     },
     {
       "pmid": "35551294",
       "file": "build_data_dictionary.py",
-      "line": 1336,
+      "line": 1345,
       "support": 0.68
     },
     {
@@ -5140,7 +5219,7 @@
     {
       "pmid": "30899369",
       "file": "build_gap_deep_dives.py",
-      "line": 1441,
+      "line": 1504,
       "support": 0.684
     },
     {
@@ -5170,31 +5249,31 @@
     {
       "pmid": "29617641",
       "file": "build_data_dictionary.py",
-      "line": 1314,
+      "line": 1323,
       "support": 0.698
     },
     {
       "pmid": "37385967",
       "file": "build_gap_deep_dives.py",
-      "line": 507,
+      "line": 570,
       "support": 0.716
     },
     {
       "pmid": "31304320",
       "file": "add_citations.py",
-      "line": 196,
+      "line": 198,
       "support": 0.717
     },
     {
       "pmid": "37369232",
       "file": "add_citations.py",
-      "line": 95,
+      "line": 97,
       "support": 0.72
     },
     {
       "pmid": "32862232",
       "file": "run_quality_improvements.py",
-      "line": 134,
+      "line": 159,
       "support": 0.724
     },
     {
@@ -5212,7 +5291,7 @@
     {
       "pmid": "37366315",
       "file": "add_citations.py",
-      "line": 91,
+      "line": 93,
       "support": 0.732
     },
     {
@@ -5236,8 +5315,14 @@
     {
       "pmid": "38578067",
       "file": "add_citations.py",
-      "line": 145,
+      "line": 147,
       "support": 0.748
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 902,
+      "support": 0.754
     },
     {
       "pmid": "36449148",
@@ -5248,7 +5333,7 @@
     {
       "pmid": "29619531",
       "file": "build_data_dictionary.py",
-      "line": 1215,
+      "line": 1224,
       "support": 0.76
     },
     {
@@ -5260,7 +5345,7 @@
     {
       "pmid": "32847960",
       "file": "build_data_dictionary.py",
-      "line": 1369,
+      "line": 1378,
       "support": 0.774
     },
     {
@@ -5272,13 +5357,13 @@
     {
       "pmid": "31182921",
       "file": "build_gap_deep_dives.py",
-      "line": 775,
+      "line": 838,
       "support": 0.785
     },
     {
       "pmid": "35028608",
       "file": "build_data_dictionary.py",
-      "line": 1358,
+      "line": 1367,
       "support": 0.823
     },
     {
@@ -5320,8 +5405,14 @@
     {
       "pmid": "37359825",
       "file": "build_islet_outcomes.py",
-      "line": 630,
+      "line": 684,
       "support": 0.903
+    },
+    {
+      "pmid": "37359825",
+      "file": "build_islet_outcomes.py",
+      "line": 81,
+      "support": 1.0
     },
     {
       "pmid": "23248199",

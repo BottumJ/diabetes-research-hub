@@ -39,6 +39,31 @@ SCRIPTS = {
     # could see. Running it first means a broken builder is reported before
     # twenty minutes of downstream stages rebuild around it.
     'compile': ('audit_builders_compile.py', 'Checking that every builder parses'),
+    # SECOND, added 2026-09-22, and it is the only stage here that audits THIS
+    # FILE rather than the repository's claims.
+    #
+    # run_script() below decides pass/fail on `result.returncode != 0` and on
+    # nothing else. So a gate that finds its defect, prints "[FAIL] 1 conflict",
+    # and then hands control back without a non-zero exit is not a weak gate --
+    # it is not a gate. The runner prints [OK] beside it and the defect ships.
+    # Found live on 2026-09-21 in audit_endpoint_value_agreement.py; found
+    # again today, by this stage's first run, in path_store.py, whose block
+    # captioned "UNBACKED-STATUS GATE" had printed [FAIL] into a void since it
+    # was written. Both repaired.
+    #
+    # WHY 'compile' DOES NOT COVER IT: compile asks whether a builder can RUN.
+    # This asks whether a gate's VERDICT can be heard. A file with this bug
+    # parses, executes, prints the right answer, and is still inert -- which is
+    # why every one of the 80+ green stages was consistent with it.
+    #
+    # Sensitivity and specificity are pinned inside the script (--selftest,
+    # wired as 'exitcodefixture' below) on five fixtures, two of which are the
+    # false positives this audit's own first draft produced.
+    'exitcodes': ('audit_gate_exit_codes.py',
+                  "Asserting each wired gate's verdict can reach the runner"),
+    'exitcodefixture': ('audit_gate_exit_codes.py',
+                        'Regression fixture: exit-code audit sensitivity AND specificity',
+                        ('--selftest',)),
     'dashboard': ('rebuild_clinical_trial_dashboard.py', 'Rebuilding Clinical Trial Dashboard (Tufte style)'),
     'research': ('rebuild_research_dashboard.py', 'Rebuilding Research Dashboard (Tufte style)'),
     # Added 2026-09-05, and it MUST sit immediately before 'gaps', which renders

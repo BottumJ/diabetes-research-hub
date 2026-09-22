@@ -318,7 +318,20 @@ GAPS_DATA = {
             "Costimulation blockade in islet transplant (peer-reviewed sources)"
         ],
         "clinical_pipeline": [
-            "Baricitinib: Phase 2 planned for islet protection (NCT04786262)",
+            # WRONG IDENTIFIER, withdrawn 2026-09-22. NCT04786262 is Vertex's
+            # VX-880 / zimislecel stem-cell-derived islet study - a different
+            # product, a different sponsor and a different mechanism. It is not
+            # baricitinib and it is not a JAK-inhibition islet-protection
+            # trial. Reported by the NCT gate as a phase disagreement
+            # ("Phase 2" vs registry PHASE3), which is true but is the smaller
+            # of the two errors: the identifier names the wrong drug entirely.
+            # Second time this exact pairing has been found. An earlier
+            # baricitinib citation, previously cited here and already removed,
+            # pointed at an oncology radioligand study - the wrong study in
+            # exactly the same way. No substitute asserted.
+            "Baricitinib: JAK inhibition for islet protection "
+            "[UNSOURCED - identifier withdrawn 2026-09-22; NCT04786262 registers "
+            "VX-880, not baricitinib]",
             "Rituximab: Long-term NHP data supports clinical translation",
             "CTLA-4 Ig (belatacept): Already in clinical use (Nulojix approved 2011)",
             "PLG-dAg adjuvant: Preclinical optimization ongoing"

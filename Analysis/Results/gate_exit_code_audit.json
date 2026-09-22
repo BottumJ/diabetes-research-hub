@@ -1,0 +1,2288 @@
+{
+  "generated": "2026-09-22",
+  "runner": "Analysis/Scripts/run_quality_improvements.py",
+  "stages_wired": 85,
+  "gates_classified": 40,
+  "gates_that_can_fail": 34,
+  "defects": [],
+  "records": [
+    {
+      "stage": "compile",
+      "script": "audit_builders_compile.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 108,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        108
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 108,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "exitcodes",
+      "script": "audit_gate_exit_codes.py",
+      "role": "gate",
+      "fail_markers": [
+        "[BLOCKING]",
+        "[BLOCK]",
+        "[DEFECT]",
+        "[FAIL]",
+        "[RED]",
+        "[VIOLATION]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 87,
+          "in_except": false,
+          "code": "expr"
+        },
+        {
+          "line": 87,
+          "in_except": false,
+          "code": "expr"
+        },
+        {
+          "line": 416,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        87,
+        87,
+        416
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 416,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "exitcodefixture",
+      "script": "audit_gate_exit_codes.py",
+      "role": "gate",
+      "fail_markers": [
+        "[BLOCKING]",
+        "[BLOCK]",
+        "[DEFECT]",
+        "[FAIL]",
+        "[RED]",
+        "[VIOLATION]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 87,
+          "in_except": false,
+          "code": "expr"
+        },
+        {
+          "line": 87,
+          "in_except": false,
+          "code": "expr"
+        },
+        {
+          "line": 416,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        87,
+        87,
+        416
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 416,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "dashboard",
+      "script": "rebuild_clinical_trial_dashboard.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 647,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "research",
+      "script": "rebuild_research_dashboard.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "print",
+          "line": 872,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 873,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 874,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 875,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 876,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 877,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 878,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 879,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 880,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gapdata",
+      "script": "gap_analysis_daily.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 516,
+          "in_except": true,
+          "code": "1"
+        },
+        {
+          "line": 519,
+          "in_except": true,
+          "code": "1"
+        }
+      ],
+      "nonzero_outside_except": [],
+      "zero_exits": [
+        513
+      ],
+      "entry_points": [
+        {
+          "func": "run_gap_analysis",
+          "line": 512,
+          "exit_wrapped": false
+        },
+        {
+          "func": "log",
+          "line": 515,
+          "exit_wrapped": false
+        },
+        {
+          "func": "log",
+          "line": 518,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gaps",
+      "script": "improve_gap_analysis.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 267,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "synthesis",
+      "script": "build_gap_synthesis.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1138,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "equity",
+      "script": "build_equity_map.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1025,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "deepdives",
+      "script": "build_gap_deep_dives.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 2152,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "acronyms",
+      "script": "build_acronym_db.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "dictionary",
+      "script": "build_data_dictionary.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 2138,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "lada",
+      "script": "build_lada_model.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1386,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "islet",
+      "script": "build_islet_outcomes.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1631,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "drugrepurpose",
+      "script": "build_drug_repurposing_islet.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1157,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "immunomod",
+      "script": "build_immunomod_lada.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "treg",
+      "script": "build_treg_neuropathy.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "build_dashboard",
+          "line": 1238,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "cartaccess",
+      "script": "build_cart_access.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gka",
+      "script": "build_gka_landscape.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "isletequity",
+      "script": "build_islet_equity.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "genericdrug",
+      "script": "build_generic_drug_catalog.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gkalada",
+      "script": "build_gka_lada.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "ladaprev",
+      "script": "build_lada_prevalence.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "nutribeta",
+      "script": "build_nutrition_beta.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "nutrilada",
+      "script": "build_nutrition_lada.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gkapricing",
+      "script": "build_gka_pricing.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "healthequity",
+      "script": "build_health_equity.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "methodology",
+      "script": "build_methodology.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "pmidverify",
+      "script": "verify_pmids.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 602,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        602
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 602,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "pmidtracker",
+      "script": "track_unfound_pmids.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 119,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        119
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 119,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "citations",
+      "script": "add_citations.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 276,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "ingest",
+      "script": "ingest_papers.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 606,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        606
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 606,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "orphans",
+      "script": "reconcile_paper_index.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 373,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "validate",
+      "script": "validate_citations.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 444,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        444
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 444,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "mismatchgate",
+      "script": "check_citation_mismatches.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 149,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        149
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 149,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "pathcitegate",
+      "script": "audit_path_citations.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 181,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        181
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 181,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "extractcorpus",
+      "script": "extract_corpus_data.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "print",
+          "line": 763,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 764,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 765,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 773,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 774,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 775,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 776,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 777,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 786,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 789,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 806,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 807,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 808,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 816,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 817,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 821,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 863,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 864,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 865,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 784,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 802,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 810,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 819,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "designcitegate",
+      "script": "audit_baseline_citations.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 262,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        262
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 262,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "identifiergate",
+      "script": "audit_citation_identifiers.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 364,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        364
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 364,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "retractiongate",
+      "script": "audit_retractions.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 296,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        296
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 296,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "coordinategate",
+      "script": "audit_citation_coordinates.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 590,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        590
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 590,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "absoluteclaims",
+      "script": "audit_absolute_claims.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 404,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        404
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 404,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "wildcardaudit",
+      "script": "audit_extractor_wildcards.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 329,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        329
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 329,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "membershipgate",
+      "script": "audit_unguarded_pmid_readers.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 194,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        194
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 194,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "flaggedclass",
+      "script": "audit_flagged_membership_class.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 280,
+          "in_except": false,
+          "code": "expr"
+        },
+        {
+          "line": 280,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        280,
+        280
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 280,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "pathdesign",
+      "script": "audit_path_evidence_design.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 205,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        205
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 205,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "pubtypegap",
+      "script": "audit_pubtype_title_disagreement.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 277,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        277
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 277,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gapdesign",
+      "script": "audit_gap_evidence_design.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 280,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        280
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 280,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "gapnumbering",
+      "script": "audit_gap_numbering.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 369,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        369
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 369,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "semanticsupport",
+      "script": "audit_citation_semantic_support.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 585,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        585
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 585,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "mdcitations",
+      "script": "audit_markdown_citations.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 563,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        563
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 563,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "mdcitegate",
+      "script": "test_markdown_citation_gate.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 176,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        176
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 176,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "nctgate",
+      "script": "audit_nct_identifiers.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 634,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        634
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 634,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "credibility",
+      "script": "audit_impossible_pmids.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 202,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        202
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 202,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "evidence",
+      "script": "extract_evidence.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 723,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        723
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 723,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "paperlibrary",
+      "script": "build_paper_library.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 568,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        568
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 568,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "drugscreen",
+      "script": "build_drug_repurposing_screen.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1789,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "ladadiagnostic",
+      "script": "build_lada_diagnostic_model.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 1725,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        1725
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1725,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "trialequity",
+      "script": "build_trial_equity_mapper.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 2040,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "corpus",
+      "script": "build_corpus_analysis.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "extracted",
+      "script": "build_extracted_evidence.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 72,
+          "in_except": false,
+          "code": "raise"
+        },
+        {
+          "line": 78,
+          "in_except": false,
+          "code": "raise"
+        }
+      ],
+      "nonzero_outside_except": [
+        72,
+        78
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 590,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "researchpaths",
+      "script": "build_research_paths.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 56,
+          "in_except": false,
+          "code": "raise"
+        },
+        {
+          "line": 62,
+          "in_except": false,
+          "code": "raise"
+        }
+      ],
+      "nonzero_outside_except": [
+        56,
+        62
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 1282,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "pathstore",
+      "script": "path_store.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 534,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        534
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 534,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "verdictkeys",
+      "script": "audit_verdict_key_agreement.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 256,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        256
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 256,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "posterioragree",
+      "script": "audit_posterior_design_agreement.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 209,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        209
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 209,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "statistics",
+      "script": "build_statistical_analysis.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "print",
+          "line": 1117,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 1125,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 1126,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "repurposev2",
+      "script": "build_repurposing_dashboard_v2.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "website",
+      "script": "rebuild_website.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 648,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "postprocess",
+      "script": "postprocess_dashboards.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 332,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "syncdocs",
+      "script": "sync_docs_dashboards.py",
+      "role": "builder",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 156,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        156
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 156,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "pubmedmonitor",
+      "script": "baseline_pubmed_alerts.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 457,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "syncreports",
+      "script": "sync_docs_reports.py",
+      "role": "builder",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 165,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        165
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 165,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "reportfreshness",
+      "script": "audit_report_freshness.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 290,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        290
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 290,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "freshnessgate",
+      "script": "test_report_freshness_gate.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 203,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        203
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 203,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "suppressiongate",
+      "script": "regression_suppression_gate.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 158,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        158
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 158,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "linkgate",
+      "script": "audit_published_links.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 145,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        145
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 145,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "absencescope",
+      "script": "audit_absence_claim_scope.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 231,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        231
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 231,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "gapsubject",
+      "script": "audit_gap_subject_coverage.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 262,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        262
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 262,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "publishgate",
+      "script": "audit_publish_reachability.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 310,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        310
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 310,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "publishgatetest",
+      "script": "test_publish_reachability_gate.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 62,
+          "in_except": false,
+          "code": "raise"
+        },
+        {
+          "line": 213,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        62,
+        213
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 213,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "surnames",
+      "script": "audit_prose_author_surnames.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 674,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        674
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 674,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "computedcite",
+      "script": "audit_computed_value_citations.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 289,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        289
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 289,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "catalogentity",
+      "script": "audit_catalog_entity_agreement.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 363,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        363
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 363,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "indexinvariants",
+      "script": "audit_index_field_invariants.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 146,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        146
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 146,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "endpointagreement",
+      "script": "audit_endpoint_value_agreement.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 386,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        386
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 386,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    }
+  ]
+}
