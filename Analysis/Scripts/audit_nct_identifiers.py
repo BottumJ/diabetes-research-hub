@@ -153,7 +153,10 @@ data results reported report ongoing anticipated validation bronze silver gold
 TOKEN_RE = re.compile(r'[A-Za-z][A-Za-z0-9\-]{3,}')
 NCT_RE = re.compile(r'NCT\d{8}')
 PHASE_RE = re.compile(r'\bphase[\s:]*([1-4](?:\s*/\s*[1-4])?|i{1,3}v?|early\s*1)\b', re.I)
-ENROLL_RE = re.compile(r'\b(\d{1,5})\s*(?:pts|patients|participants|subjects|enrolled)\b', re.I)
+# 2026-09-23: accept thousands separators. '2,376 enrolled' was read as 376
+# (\b matched after the comma) and reported as a registry disagreement on a
+# correct figure. Group 1 may now contain commas; callers strip them.
+ENROLL_RE = re.compile(r'(?<![\d,])(\d{1,3}(?:,\d{3})+|\d{1,6})\s*(?:pts|patients|participants|subjects|enrolled)\b', re.I)
 # Structured-field forms of the same three assertions. See check_attributes().
 FIELD_ENROLL_RE = re.compile(r"""['"]enrollment['"]\s*:\s*(\d{1,6})""")
 
@@ -389,7 +392,7 @@ def check_attributes(site, rec):
 
     asserted_n = None
     if m := ENROLL_RE.search(near):
-        asserted_n = int(m.group(1))
+        asserted_n = int(m.group(1).replace(',', ''))
     elif field_enroll:
         asserted_n = int(field_enroll.group(1))
     if asserted_n is not None and rec.get('enrollment'):

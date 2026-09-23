@@ -782,12 +782,30 @@ def main():
     print("=" * 60)
     print(f"  Running {len(targets)} improvement(s): {', '.join(targets)}")
 
+    # 2026-09-23 (queue item 2026-09-15 'gapdata cannot complete in this
+    # sandbox'). Two env knobs, both no-ops when unset so Windows runs are
+    # unchanged:
+    #   RQI_GAPDATA_BUDGET=<seconds>  overrides gapdata's --budget 240
+    #   RQI_SKIP=stage1,stage2        skips named stages, and SAYS SO in the
+    #                                 summary as [SKIPPED] - never as [OK], so a
+    #                                 skipped stage cannot be read as a pass.
+    skip = {s.strip() for s in os.environ.get('RQI_SKIP', '').split(',') if s.strip()}
+    gap_budget = os.environ.get('RQI_GAPDATA_BUDGET', '').strip()
+
     results = {}
+    skipped = []
     for key in targets:
+        if key in skip:
+            skipped.append(key)
+            continue
         entry = SCRIPTS[key]
         name, desc = entry[0], entry[1]
         script_args = entry[2] if len(entry) > 2 else ()
+        if key == 'gapdata' and gap_budget.isdigit():
+            script_args = ('--budget', gap_budget)
         results[key] = run_script(name, desc, script_args)
+    for key in skipped:
+        print(f"  [SKIPPED via RQI_SKIP] {SCRIPTS[key][1]}")
 
     print(f"\n{'='*60}")
     print("  SUMMARY")

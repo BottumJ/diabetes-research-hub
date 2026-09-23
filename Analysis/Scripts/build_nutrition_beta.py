@@ -362,7 +362,8 @@ html_content = """<!DOCTYPE html>
                          cellular-signalling mechanism this sentence asserts. The
                          mechanistic wording is therefore flagged as exceeding its
                          source, pending a mechanistic citation. -->
-                    <li><strong>Chromium:</strong> Enhances insulin receptor signaling at the cellular level, potentially reducing demand on beta cells to produce higher insulin levels. <span class="caveat">[mechanism not established by the cited clinical review]</span> <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></li>
+                    <!-- Rewritten 2026-09-23 to what the cited paper actually reports (abstract read via efetch). The prior mechanistic sentence (insulin-receptor signalling; reduced beta-cell demand) had no source; Balk is a clinical SR/MA of RCTs and tests no mechanism. No beta-cell endpoint is reported. -->
+                    <li><strong>Chromium:</strong> Glycaemic effect only, no beta-cell endpoint: a systematic review of 41 RCTs (almost half poor quality) found HbA1c &minus;0.6% (95% CI &minus;0.9 to &minus;0.2) and fasting glucose &minus;1.0 mmol/L in type 2 diabetes, no benefit without diabetes, and larger effects more often in poor-quality studies; the authors state definitive claims are not yet warranted. A cellular insulin-signalling mechanism has been proposed but is not established by this source. <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></li>
                     <li><strong>Magnesium:</strong> Required for >300 enzymatic reactions. Specifically critical for insulin secretion and glucose-stimulated ATP production. Deficiency is common in T2D. <a href="https://pubmed.ncbi.nlm.nih.gov/26322160/" target="_blank">PMID:26322160</a></li>
                 </ul>
 
@@ -430,7 +431,7 @@ html_content = """<!DOCTYPE html>
                         <tr>
                             <!-- Corrected 2026-09-15: 17596481 -> 17519436, see note above. -->
                             <td><strong>Chromium</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></td>
-                            <td>Enhances insulin receptor signaling downstream. Meta-analysis shows HbA1c improvement in some trials. Mechanism less clear than zinc/magnesium.</td>
+                            <td>SR/MA of 41 RCTs: HbA1c &minus;0.6% in T2D, none without diabetes; evidence limited by poor study quality. Mechanism not established; no beta-cell endpoint measured. <!-- 2026-09-23: unsourced "enhances insulin receptor signaling" removed --></td>
                             <td>Broccoli, barley, oats, tomatoes</td>
                             <td>25-35 mcg/day (RDA)</td>
                             <td><span class="evidence-badge evidence-weak">WEAK</span></td>
@@ -682,7 +683,7 @@ html_content = """<!DOCTYPE html>
                 </div>
 
                 <div class="reference">
-                    <div class="reference-title">Chromium and Insulin Signaling</div>
+                    <div class="reference-title">Chromium and Glycaemic Control</div>
                     <!-- Corrected 2026-09-15 (author-surname audit): the PMID was 17596481,
                          which is Metzger BE et al., "Summary and recommendations of the
                          Fifth International Workshop-Conference on Gestational Diabetes
@@ -691,7 +692,8 @@ html_content = """<!DOCTYPE html>
                          here is PMID 17519436 (Diabetes Care 2007;30:2154-63), title
                          verified against NCBI esummary on 2026-09-15. PMID replaced. -->
                     <div class="reference-meta">Balk et al. Effect of chromium supplementation on glucose metabolism. Diabetes Care. <a href="https://pubmed.ncbi.nlm.nih.gov/17519436/" target="_blank">PMID:17519436</a></div>
-                    <p>Chromium enhances insulin receptor tyrosine kinase activity. Meta-analyses show modest HbA1c benefits in T2D (0.4-0.6% reduction). Mechanism less understood than zinc/magnesium. Some genetic variation in chromium response likely but not yet characterized.</p>
+                    <!-- 2026-09-23: three unsourced assertions removed - receptor tyrosine kinase activity (Balk tests no mechanism), a "0.4-0.6%" range (Balk reports a single pooled -0.6%, CI -0.9 to -0.2), and genetic variation in response (no source). -->
+                    <p>Systematic review of randomised trials (Balk et al. 2007): in type 2 diabetes, HbA1c improved by 0.6% (95% CI 0.2&ndash;0.9) and fasting glucose by 1.0 mmol/L; no effect on lipids and no benefit in people without diabetes. Almost half the 41 trials were poor quality and larger effects clustered in those, so the authors decline definitive claims. The review does not examine mechanism or beta-cell function.</p>
                 </div>
 
                 <h3>Anti-Inflammatory Polyphenols</h3>

@@ -182,11 +182,19 @@ def fetch_abstracts_batch(pmids):
         for ab in author_blocks:
             last = re.search(r'<LastName>(.*?)</LastName>', ab)
             first = re.search(r'<ForeName>(.*?)</ForeName>', ab)
+            # 2026-09-23: corporate authors ("GBD 2021 Diabetes Collaborators",
+            # "American Diabetes Association Professional Practice Committee")
+            # carry <CollectiveName>, not <LastName>, and were silently
+            # DROPPED, leaving authors == [] on 3 load-bearing records
+            # (37356446, 38078589, 39651984; backfilled from esummary).
+            coll = re.search(r'<CollectiveName>(.*?)</CollectiveName>', ab, re.DOTALL)
             if last:
                 name = last.group(1)
                 if first:
                     name += ' ' + first.group(1)[0]  # last + first initial
                 authors.append(name)
+            elif coll:
+                authors.append(re.sub(r'<[^>]+>', '', coll.group(1)).strip())
 
         # Extract references cited by this paper
         ref_pmids = re.findall(r'<ArticleId IdType="pubmed">(\d+)</ArticleId>', article)

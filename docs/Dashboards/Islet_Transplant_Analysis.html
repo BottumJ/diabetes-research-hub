@@ -372,6 +372,19 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -442,6 +455,7 @@
   </div>
 </nav>
 
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -457,7 +471,7 @@
             <h1>Islet Transplant Outcomes Analysis</h1>
             <div class="subtitle">Computational Model - Gap #3: Insulin Resistance x Islet Transplant</div>
             <div class="subtitle">The Tacrolimus Paradox & Next-Generation Protocols</div>
-            <div class="tagline">Diabetes Research Hub | Generated 2026-09-22 03:40</div>
+            <div class="tagline">Diabetes Research Hub | Generated 2026-09-23 03:21</div>
         </header>
 
         <div class="context-block">
@@ -583,8 +597,8 @@
                 an axis. Edmonton is registry data (1,477 recipients). VX-880 and LANTIDRA
                 are early-phase cohorts with one year of follow-up. The Wisel points are
                 <strong>two reported timepoints from ten consecutive patients</strong>
-                &mdash; 70% (7 of 10) at 10 years and 60% at mean follow-up 13.3 years,
-                Wisel et al., <em>Transplant International</em> 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>).
+                &mdash; 70% (7 of 10) at 10 years and 60% at mean follow-up 13.3 years (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>),
+                Wisel et al., <em>Transplant International</em> 2023.
                 They are drawn as <strong>hollow markers with no connecting line</strong>
                 because nothing was measured between them; three of the seven had received
                 a pancreas-after-islet transplant by then, so that 70% is the outcome of a
@@ -883,7 +897,7 @@
                 <div class="metric-value">70%</div>
                 <div class="metric-label">Insulin independence at 10 years, whole cohort <span class="caveat" title="7 of 10 patients: four on efalizumab, three on belatacept. <a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID 37359825</a> reports no separate rate for either drug at any timepoint. Three of the seven had received a pancreas-after-islet transplant.">(7 of 10; not belatacept-specific)</span></div>
             </div>
-            <p>The Edmonton Protocol (tacrolimus) figure of 20% insulin independence at 10 years comes from a 1,477-recipient registry; the 70% above is seven patients in a single centre's consecutive series, three of whom had by then received a whole pancreas. <strong>The two are not a regimen comparison.</strong> This page makes no claim that belatacept outperforms efalizumab: its only source reporting both assigns four of seven responders to efalizumab and three to belatacept.</p>
+            <p>The Edmonton Protocol (tacrolimus) figure of 20% insulin independence at 10 years (CITR Annual Reports; see the registry curve above) comes from a 1,477-recipient registry; the 70% above is seven patients in a single centre's consecutive series, three of whom had by then received a whole pancreas. <strong>The two are not a regimen comparison.</strong> This page makes no claim that belatacept outperforms efalizumab: its only source reporting both assigns four of seven responders to efalizumab and three to belatacept.</p>
             <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" rel="noopener" title="View on PubMed">PMID:37105208</a> (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the 70% above is seven patients, and the Edmonton 20% it is set beside comes from a 1,477-recipient registry.</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
@@ -1537,7 +1551,7 @@
 
         <div class="footer">
             <p>Islet Transplant Analysis Dashboard</p>
-            <p>Generated: 2026-09-22 03:40</p>
+            <p>Generated: 2026-09-23 03:21</p>
             <p>This computational model is designed for educational and research purposes. Clinical decision-making should incorporate current guidelines, individual patient factors, and consultation with transplant specialists.</p>
             <p>Diabetes Research Hub | All data sourced from peer-reviewed literature and clinical trials</p>
         </div>

@@ -224,8 +224,8 @@ def resolve_pmids(pmids, cache):
             if not authors:
                 continue
             cache[uid] = {
-                "surname": authors[0].split()[0] if authors[0].split() else "",
-                "all_surnames": [a.split()[0] for a in authors if a.split()],
+                "surname": surname_of(authors[0]),
+                "all_surnames": [surname_of(a) for a in authors],
                 "journal": r.get("source", ""),
                 "year": (r.get("pubdate") or "")[:4],
                 "title": r.get("title", ""),
@@ -256,6 +256,44 @@ def scan_html_anchors(text, path_label, lib):
         yield surname, pm.group(1), " ".join(m.group(0).split())[:220]
 
 
+_INITIALS = re.compile(r"^[A-Z]{1,4}$")
+
+
+def author_list(raw):
+    """Coerce a library 'authors' field to a list of 'Surname Initials' strings.
+
+    2026-09-23: the 41986815 'B' defect was NOT a name-splitting bug. That one
+    record (hand-curated, 2026-04-17) stores authors as a single comma-joined
+    STRING; str[0] is its first character. It is the only str-typed record of
+    389 (376 list-of-str, 8 empty list, 4 missing). Coercing here removes the
+    class instead of guessing at it by length.
+    """
+    if isinstance(raw, str):
+        raw = [a for a in raw.split(",")]
+    return [html.unescape(str(a)).strip() for a in (raw or []) if str(a).strip()]
+
+
+def surname_of(author):
+    """'De Meyts P' -> 'De Meyts'; 'Chetboun M' -> 'Chetboun'; 'So M' -> 'So'.
+
+    The previous rule, split()[0], turned every multi-word surname into its
+    first particle ('De', 'Machado', 'Abdelfadil'). Drop only a trailing
+    PubMed initials token; keep everything before it.
+    """
+    toks = author.split()
+    if len(toks) > 1 and _INITIALS.match(toks[-1]):
+        toks = toks[:-1]
+    return " ".join(toks)
+
+
+def surname_variants(surname):
+    """Forms under which prose may legitimately cite this surname: the whole
+    thing, and each word of it (prose often writes 'Meyts' or 'Cigrovski')."""
+    toks = surname.split()
+    return {normalise(surname)} | ({normalise(t) for t in toks if len(t) > 1}
+                                   if len(toks) > 1 else set())
+
+
 def load_library():
     """pmid -> (first_author_surname, journal, year, title)"""
     lib = {}
@@ -266,15 +304,14 @@ def load_library():
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        authors = d.get("authors") or []
+        authors = author_list(d.get("authors"))
         if not authors:
             continue
         # PubMed author strings are "Surname Initials" e.g. "Chetboun M"
-        first = str(authors[0]).strip()
-        surname = first.split()[0] if first.split() else ""
+        surname = surname_of(authors[0])
         lib[str(d.get("pmid") or p.stem)] = {
             "surname": surname,
-            "all_surnames": [str(a).strip().split()[0] for a in authors if str(a).strip()],
+            "all_surnames": [surname_of(a) for a in authors],
             "journal": d.get("journal", ""),
             "year": d.get("year", ""),
             "title": d.get("title", ""),
@@ -428,7 +465,16 @@ def audit(scan_html=False, resolve_unknown=False):
             # (UNKNOWN, resolvable against NCBI) rather than as evidence of a
             # defect. The gate must never assert a mismatch on the strength of
             # a field it can see is malformed.
-            if entry and len(re.sub(r"[^A-Za-z]", "", entry["surname"])) < 3:
+            #
+            # 2026-09-23 CORRECTION TO THE ABOVE. The '< 3 letters' test was
+            # itself a defect: it quarantined four CORRECT citations whose
+            # first authors really do have two-letter surnames (So M, PMID
+            # 42627334 x3; Li X, PMID 32307525; both confirmed on esummary
+            # 2026-09-23), and would have hidden any WRONG two-letter-surname
+            # citation the same way. The 'B' record is now fixed at source
+            # and author_list() coerces the str-typed schema that caused it,
+            # so malformed now means only: fewer than two letters survive.
+            if entry and len(re.sub(r"[^A-Za-z]", "", entry["surname"])) < 2:
                 entry = None
                 rec["library_record_malformed"] = True
             if not entry:
@@ -438,9 +484,10 @@ def audit(scan_html=False, resolve_unknown=False):
             rec["library_first_author"] = entry["surname"]
             rec["library_journal"] = entry["journal"]
             rec["library_year"] = entry["year"]
-            if normalise(surname) == normalise(entry["surname"]):
+            if normalise(surname) in surname_variants(entry["surname"]):
                 ok.append(rec)
-            elif normalise(surname) in {normalise(s) for s in entry["all_surnames"]}:
+            elif any(normalise(surname) in surname_variants(s)
+                     for s in entry["all_surnames"]):
                 # Named author is on the paper but is not first author.
                 # "X et al." conventionally means X is first author, so this is
                 # reported but held at a lower severity than a stranger.
@@ -481,7 +528,7 @@ def audit(scan_html=False, resolve_unknown=False):
 
         for rec in anchor_recs:
             entry = lib.get(rec["pmid"])
-            if entry and len(re.sub(r"[^A-Za-z]", "", entry["surname"])) < 3:
+            if entry and len(re.sub(r"[^A-Za-z]", "", entry["surname"])) < 2:  # 2026-09-23: was < 3; see correction note above
                 entry = None
                 rec["library_record_malformed"] = True
             if not entry:
@@ -491,10 +538,10 @@ def audit(scan_html=False, resolve_unknown=False):
             rec["library_first_author"] = entry["surname"]
             rec["library_journal"] = entry["journal"]
             rec["library_year"] = entry["year"]
-            if normalise(rec["asserted_surname"]) == normalise(entry["surname"]):
+            if normalise(rec["asserted_surname"]) in surname_variants(entry["surname"]):
                 ok.append(rec)
-            elif normalise(rec["asserted_surname"]) in {
-                    normalise(x) for x in entry["all_surnames"]}:
+            elif any(normalise(rec["asserted_surname"]) in surname_variants(x)
+                     for x in entry["all_surnames"]):
                 rec["severity"] = "NON_FIRST_AUTHOR"
                 flagged.append(rec)
             else:
@@ -522,10 +569,10 @@ def audit(scan_html=False, resolve_unknown=False):
             rec["library_journal"] = entry["journal"]
             rec["library_year"] = entry["year"]
             rec["resolved_via"] = "ncbi_esummary"
-            if normalise(rec["asserted_surname"]) == normalise(entry["surname"]):
+            if normalise(rec["asserted_surname"]) in surname_variants(entry["surname"]):
                 ok.append(rec)
-            elif normalise(rec["asserted_surname"]) in {
-                    normalise(x) for x in entry["all_surnames"]}:
+            elif any(normalise(rec["asserted_surname"]) in surname_variants(x)
+                     for x in entry["all_surnames"]):
                 rec["severity"] = "NON_FIRST_AUTHOR"
                 flagged.append(rec)
             else:

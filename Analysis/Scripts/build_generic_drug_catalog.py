@@ -87,7 +87,12 @@ DRUGS = [
                   'correctly identified but pointed the opposite way to the claim it was supporting. The grade '
                   'has NOT been changed unattended (2026-08-20 precedent) and now rests on PREDIAN alone, with '
                   'the Cochrane review shown as the countervailing evidence it is. Whether one open-label trial '
-                  'of 169 patients sustains MODERATE is a human call.',
+                  'of 169 patients sustains MODERATE is a human call. '
+                  'ADDED 2026-09-23: a 2024 meta-analysis (Zhang et al., PMID:37987795; 18 RCTs, n=1280) reports the '
+                  'same direction on SURROGATES only (albuminuria, serum creatinine, eGFR change), and does not '
+                  'resolve the quality concerns the Cochrane review raised. The trial powered for hard endpoints is '
+                  'VA PTXRx, a pragmatic RCT of pentoxifylline in diabetic kidney disease (NCT03625648; 2,376 enrolled; active, not recruiting; primary completion estimated '
+                  '2028-01 per ClinicalTrials.gov, checked 2026-09-23) - not yet reported.',
         'applications': ['Nephropathy', 'Anti-inflammatory']
     },
     {
