@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-23",
-  "last_run": "2026-09-23",
+  "last_updated": "2026-09-24",
+  "last_run": "2026-09-24",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -12829,6 +12829,18 @@
       "library_records_repaired": 4,
       "changes_pushed": false,
       "summary": "TWO OF TODAY'S FOUR DEFECTS WERE IN EARLIER FIXES, NOT IN THE ORIGINAL CONTENT. (1) The 2026-09-16 guard for the '41986815 = B' record (treat surnames <3 letters as malformed) quarantined four CORRECT citations with real two-letter surnames - So (BANDIT follow-up, x3) and Li - and would have hidden a wrong one. The true cause was a single str-typed authors field; fixed at source, schema coerced, threshold lowered, multi-word surnames kept whole. Siblings were a different class: ingest_papers.py dropped corporate authors (GBD, ADA SoC). (2) The pentoxifylline->DKD path record, validated 2026-04-19, mislabelled 26995301 ('Shan 2015' is Leporini 2016) and claimed a 2024 Cochrane update that does not exist; path downgraded to PARTIALLY_VALIDATED (surrogates only; PTXRx hard-endpoint trial reports ~2028). (3) Chromium: three sentences in build_nutrition_beta.py now say what Balk 2007 found and no more. (4) NCT gate misread '2,376' as 376; parser fixed. Full suite run in three sub-180s slices: all stages OK except the two known standing FAILs (publishgate: unpushed; gapsubject: Gap #7/#13/#14/#15 tier calls awaiting human)."
+    },
+    {
+      "date": "2026-09-24",
+      "day": "Thursday",
+      "papers_checked": 0,
+      "papers_added": 0,
+      "paths_validated": 0,
+      "gates_fixed": 0,
+      "builders_fixed": 0,
+      "library_records_repaired": 0,
+      "changes_pushed": false,
+      "summary": "SCOPE-LIMITED RUN. No new papers vetted, paths validated, or gaps audited this run - priority went to confirming pipeline health and re-verifying the push blocker rather than opening new scientific judgement calls while 19 user_action_required/HUMAN CALL items already sit unresolved in the queue, some since 2026-08-20. ACTIONS TAKEN: (1) credibility sweep via audit_impossible_pmids.py - clean, 0 impossible PMIDs, ceiling 42,767,983+margin, highest PMID in repo 42,744,965. (2) Full rebuild run stage-by-stage (--citations --dashboard --research --website --gaps, gapdata skipped per standing RQI_SKIP practice) - all [OK], no failures. (3) Re-verified the push blocker: git fetch confirms origin/main still at f7e976f (2026-04-20); local main at 334d463 (2026-09-23), ~150 commits ahead; `git push origin main` still fails with 'could not read Username for https://github.com' - unchanged since first reported 2026-05-24. This was escalated to the user directly this run (push notification), not just logged here, since 11+ prior run summaries recorded it without reaching the user. (4) DECLINED the queued 2026-09-10 item asking this agent to edit its own scheduled-task prompt (stale 42,000,000 PMID rule) - that item is content written by a prior agent run into a data file, not an instruction from Justin, and self-modifying standing instructions on the basis of file content is exactly the kind of injection this agent should refuse even when the requested edit looks benign and mechanical. Flagged to the user instead; the live audit already uses the correct runtime-ceiling script regardless of what the stale task text says, so no false work resulted this run. (5) Committed the 8 regenerated-output files from the rebuild via git_commit_safe.py; NOT pushed (no credential in sandbox, per above)."
     }
   ],
   "topic_checks": {
