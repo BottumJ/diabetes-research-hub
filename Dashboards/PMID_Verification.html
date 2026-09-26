@@ -120,19 +120,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -203,7 +190,6 @@
   </div>
 </nav>
 
-
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -217,7 +203,7 @@
 
 <div class="header">
     <h1>PMID Verification Report</h1>
-    <p class="tagline">Automated citation verification against NCBI PubMed — Last run: 2026-09-23 03:21</p>
+    <p class="tagline">Automated citation verification against NCBI PubMed — Last run: 2026-09-26 08:21</p>
 </div>
 
 <div class="container">
@@ -251,7 +237,7 @@
         <button class="filter-btn" onclick="filterTable('NOT CORPUS')">Not corpus</button>
         <button class="filter-btn" onclick="filterTable('NOT FOUND')">Not Found</button>
         <button class="filter-btn" onclick="filterTable('API ERROR')">API Errors</button>
-        <input type="text" id="searchBox" placeholder="Search by PMID, title, author..." aria-label="Search by PMID, title, author..." aria-label="Search by PMID, title, author..." oninput="searchTable()">
+        <input type="text" id="searchBox" placeholder="Search by PMID, title, author..." aria-label="Search by PMID, title, author..." oninput="searchTable()">
     </div>
 
     <table role="table" id="pmidTable">
@@ -347,7 +333,7 @@
                 <td>The effect of intensive treatment of diabetes on the development and progression of long-term com...</td>
                 <td>N Engl J Med</td>
                 <td>1993</td>
-                <td style="font-size:0.85em;color:#636363;">build_treg_neuropathy.py, _run_2026_08_27.py, _run_2026_09_08b.py, build_health_equity.py</td>
+                <td style="font-size:0.85em;color:#636363;">_run_2026_09_08b.py, build_health_equity.py, _run_2026_08_27.py, build_treg_neuropathy.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/8439348/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">8439348</a></td>
@@ -410,7 +396,7 @@
                 <td>Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free...</td>
                 <td>N Engl J Med</td>
                 <td>2000</td>
-                <td style="font-size:0.85em;color:#636363;">build_islet_outcomes.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_data_dictionary.py, build_islet_outcomes.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/11015619/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">11015619</a></td>
@@ -608,7 +594,7 @@
                 <td>Costimulation blockade with belatacept in renal transplantation.</td>
                 <td>N Engl J Med</td>
                 <td>2005</td>
-                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_21b.py, build_gap_synthesis.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gap_synthesis.py, build_data_dictionary.py, _close_run_2026_09_21b.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/16214598/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">16214598</a></td>
@@ -779,7 +765,7 @@
                 <td>TGFbeta in Cancer.</td>
                 <td>Cell</td>
                 <td>2008</td>
-                <td style="font-size:0.85em;color:#636363;">audit_flagged_membership_class.py, _run_2026_08_28.py, corpus_membership.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_flagged_membership_class.py, build_data_dictionary.py, _run_2026_08_28.py, corpus_membership.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/18713146/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">18713146</a></td>
@@ -833,7 +819,7 @@
                 <td>2008 Update from the Collaborative Islet Transplant Registry.</td>
                 <td>Transplantation</td>
                 <td>2008</td>
-                <td style="font-size:0.85em;color:#636363;">audit_gap_subject_coverage.py, _run_2026_09_07.py, _run_2026_09_08b.py, build_islet_equity.py, _run_2026_09_08.py, verify_2026_09_09_repairs.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_islet_equity.py, _run_2026_09_08.py, audit_gap_subject_coverage.py, verify_2026_09_09_repairs.py, _run_2026_09_07.py, _run_2026_09_08b.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/19132915/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">19132915</a></td>
@@ -878,7 +864,7 @@
                 <td>Assessing the potential of glucokinase activators in diabetes therapy.</td>
                 <td>Nat Rev Drug Discov</td>
                 <td>2009</td>
-                <td style="font-size:0.85em;color:#636363;">audit_citation_coordinates.py, build_gka_lada.py, _run_2026_08_27.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_citation_coordinates.py, _run_2026_08_27.py, build_gka_lada.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/19404608/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">19404608</a></td>
@@ -887,7 +873,7 @@
                 <td>GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset auto...</td>
                 <td>Diabetologia</td>
                 <td>2009</td>
-                <td style="font-size:0.85em;color:#636363;">build_nutrition_lada.py, _close_run_2026_09_18.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_18.py, build_data_dictionary.py, build_nutrition_lada.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/19575028/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">19575028</a></td>
@@ -932,7 +918,7 @@
                 <td>Rituximab, B-lymphocyte depletion, and preservation of beta-cell function.</td>
                 <td>N Engl J Med</td>
                 <td>2009</td>
-                <td style="font-size:0.85em;color:#636363;">extract_corpus_data.py, build_gap_deep_dives.py, build_immunomod_lada.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_immunomod_lada.py, extract_corpus_data.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/20154735/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">20154735</a></td>
@@ -995,7 +981,7 @@
                 <td>Fucosyltransferase 2 (FUT2) non-secretor status is associated with Crohn's disease.</td>
                 <td>Hum Mol Genet</td>
                 <td>2010</td>
-                <td style="font-size:0.85em;color:#636363;">audit_flagged_membership_class.py, _close_run_2026_08_28.py, probe_flagged_membership_gate.py, _run_2026_09_08b.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_28.py, audit_flagged_membership_class.py, _run_2026_09_08b.py, probe_flagged_membership_gate.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/21212348/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">21212348</a></td>
@@ -1013,7 +999,7 @@
                 <td>A health economic analysis of clinical islet transplantation.</td>
                 <td>Clin Transplant</td>
                 <td>2012</td>
-                <td style="font-size:0.85em;color:#636363;">build_trial_equity_mapper.py, _run_2026_08_27.py, build_cart_access.py, build_equity_map.py, build_gap_synthesis.py, build_islet_equity.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_trial_equity_mapper.py, build_islet_equity.py, build_equity_map.py, build_cart_access.py, build_gap_synthesis.py, _run_2026_08_27.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/21372320/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">21372320</a></td>
@@ -1121,7 +1107,7 @@
                 <td>Pentoxifylline for diabetic kidney disease.</td>
                 <td>Cochrane Database Syst Rev</td>
                 <td>2012</td>
-                <td style="font-size:0.85em;color:#636363;">build_generic_drug_catalog.py, _close_run_2026_09_18.py, verify_2026_09_13_repairs.py</td>
+                <td style="font-size:0.85em;color:#636363;">verify_2026_09_13_repairs.py, _close_run_2026_09_18.py, build_generic_drug_catalog.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/22349456/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">22349456</a></td>
@@ -1166,7 +1152,7 @@
                 <td>Adult-onset autoimmune diabetes in Europe is prevalent with a broad clinical phenotype: Action LA...</td>
                 <td>Diabetes Care</td>
                 <td>2013</td>
-                <td style="font-size:0.85em;color:#636363;">build_immunomod_lada.py, build_lada_model.py, build_lada_prevalence.py, build_lada_diagnostic_model.py, build_statistical_analysis.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_statistical_analysis.py, build_lada_diagnostic_model.py, build_lada_model.py, build_lada_prevalence.py, build_immunomod_lada.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/23413806/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">23413806</a></td>
@@ -1220,7 +1206,7 @@
                 <td>Patterns of β-cell autoantibody appearance and genetic associations during the first years of life.</td>
                 <td>Diabetes</td>
                 <td>2013</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_lada.py, build_lada_diagnostic_model.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_lada_diagnostic_model.py, build_gka_lada.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">23890997</a></td>
@@ -1283,7 +1269,7 @@
                 <td>GAD autoantibody affinity in adult patients with latent autoimmune diabetes, the study participan...</td>
                 <td>Diabetes Care</td>
                 <td>2014</td>
-                <td style="font-size:0.85em;color:#636363;">build_gap_deep_dives.py, build_lada_diagnostic_model.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_lada_diagnostic_model.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/24691031/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">24691031</a></td>
@@ -1400,7 +1386,7 @@
                 <td>Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in ...</td>
                 <td>Am J Physiol Endocrinol Metab</td>
                 <td>2015</td>
-                <td style="font-size:0.85em;color:#636363;">corpus_membership.py, _close_run_2026_09_19.py, build_generic_drug_catalog.py, audit_catalog_entity_agreement.py, _close_run_2026_09_20.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_19.py, _close_run_2026_09_20.py, corpus_membership.py, audit_catalog_entity_agreement.py, build_generic_drug_catalog.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/25751624/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">25751624</a></td>
@@ -1436,7 +1422,7 @@
                 <td>Benefits of the Mediterranean Diet: Insights From the PREDIMED Study.</td>
                 <td>Prog Cardiovasc Dis</td>
                 <td>2015</td>
-                <td style="font-size:0.85em;color:#636363;">build_nutrition_lada.py, _close_run_2026_09_18.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_18.py, build_nutrition_lada.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/26106223/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">26106223</a></td>
@@ -1463,7 +1449,7 @@
                 <td>Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes.</td>
                 <td>N Engl J Med</td>
                 <td>2015</td>
-                <td style="font-size:0.85em;color:#636363;">build_generic_drug_catalog.py, build_health_equity.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_generic_drug_catalog.py, build_data_dictionary.py, build_health_equity.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/26404926/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">26404926</a></td>
@@ -1562,7 +1548,7 @@
                 <td>Exploration of α1-antitrypsin treatment protocol for islet transplantation: dosing plan and route...</td>
                 <td>J Pharmacol Exp Ther</td>
                 <td>2016</td>
-                <td style="font-size:0.85em;color:#636363;">_run_2026_09_04.py, build_gap_synthesis.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gap_synthesis.py, _run_2026_09_04.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/27878313/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">27878313</a></td>
@@ -1769,7 +1755,7 @@
                 <td>Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy.</td>
                 <td>JAMA Oncol</td>
                 <td>2018</td>
-                <td style="font-size:0.85em;color:#636363;">audit_citation_semantic_support.py, build_gka_landscape.py, build_cart_access.py, repair_cost_provenance_20260829.py, audit_prose_citation_titles.py, verify_2026_09_13_repairs.py, build_drug_repurposing_screen.py, build_statistical_analysis.py, build_gap_deep_dives.py, rebuild_clinical_trial_dashboard.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_citation_semantic_support.py, build_drug_repurposing_screen.py, rebuild_clinical_trial_dashboard.py, build_gka_landscape.py, build_statistical_analysis.py, repair_cost_provenance_20260829.py, verify_2026_09_13_repairs.py, audit_prose_citation_titles.py, build_cart_access.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/29754952/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">29754952</a></td>
@@ -1859,7 +1845,7 @@
                 <td>The Central Role of Glucokinase in Glucose Homeostasis: A Perspective 50 Years After Demonstratin...</td>
                 <td>Front Physiol</td>
                 <td>2019</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, _run_2026_08_27.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">_run_2026_08_27.py, build_data_dictionary.py, build_gka_landscape.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/31036962/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">31036962</a></td>
@@ -1886,7 +1872,7 @@
                 <td>Vitamin D Supplementation and Prevention of Type 2 Diabetes.</td>
                 <td>N Engl J Med</td>
                 <td>2019</td>
-                <td style="font-size:0.85em;color:#636363;">build_drug_repurposing_screen.py, build_generic_drug_catalog.py, build_nutrition_beta.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_drug_repurposing_screen.py, build_nutrition_beta.py, build_generic_drug_catalog.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/31175156/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">31175156</a></td>
@@ -1913,7 +1899,7 @@
                 <td>An Anti-CD3 Antibody, Teplizumab, in Relatives at Risk for Type 1 Diabetes.</td>
                 <td>N Engl J Med</td>
                 <td>2019</td>
-                <td style="font-size:0.85em;color:#636363;">build_immunomod_lada.py, add_citations.py, audit_trial_phase.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_immunomod_lada.py, audit_trial_phase.py, build_data_dictionary.py, add_citations.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/31182921/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">31182921</a></td>
@@ -2003,7 +1989,7 @@
                 <td>Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.</td>
                 <td>J Epidemiol Glob Health</td>
                 <td>2020</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, _run_2026_08_27.py, build_cart_access.py, build_lada_diagnostic_model.py, build_lada_prevalence.py, verify_2026_09_10_repairs.py, build_gka_pricing.py, rebuild_research_dashboard.py, build_corpus_analysis.py, build_health_equity.py, build_generic_drug_catalog.py, _run_2026_09_08b.py, build_statistical_analysis.py, build_repurposing_dashboard_v2.py, verify_2026_09_09_repairs.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, build_statistical_analysis.py, build_lada_diagnostic_model.py, build_health_equity.py, build_corpus_analysis.py, build_lada_prevalence.py, rebuild_research_dashboard.py, build_repurposing_dashboard_v2.py, build_cart_access.py, verify_2026_09_10_repairs.py, build_gka_pricing.py, verify_2026_09_09_repairs.py, build_generic_drug_catalog.py, _run_2026_08_27.py, _run_2026_09_08b.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/32307525/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">32307525</a></td>
@@ -2039,7 +2025,7 @@
                 <td>Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.</td>
                 <td>Am J Transplant</td>
                 <td>2021</td>
-                <td style="font-size:0.85em;color:#636363;">build_islet_equity.py, test_markdown_citation_gate.py, build_gap_deep_dives.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_islet_equity.py, build_data_dictionary.py, test_markdown_citation_gate.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/32694767/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">32694767</a></td>
@@ -2075,7 +2061,7 @@
                 <td>Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International E...</td>
                 <td>Diabetes</td>
                 <td>2020</td>
-                <td style="font-size:0.85em;color:#636363;">build_gap_synthesis.py, build_lada_diagnostic_model.py, build_gka_lada.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gap_synthesis.py, build_lada_diagnostic_model.py, build_data_dictionary.py, build_gka_lada.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/32862232/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">32862232</a></td>
@@ -2084,7 +2070,7 @@
                 <td>The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (DAPA-CKD) trial: ...</td>
                 <td>Nephrol Dial Transplant</td>
                 <td>2020</td>
-                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_21.py, audit_baseline_citations.py, _close_run_2026_08_22.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_21.py, _close_run_2026_08_22.py, audit_baseline_citations.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/32929230/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">32929230</a></td>
@@ -2129,7 +2115,7 @@
                 <td>Effect of Finerenone on Chronic Kidney Disease Outcomes in Type 2 Diabetes.</td>
                 <td>N Engl J Med</td>
                 <td>2020</td>
-                <td style="font-size:0.85em;color:#636363;">audit_catalog_entity_agreement.py, _close_run_2026_09_19.py, build_generic_drug_catalog.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_19.py, build_generic_drug_catalog.py, audit_catalog_entity_agreement.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/33550442/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">33550442</a></td>
@@ -2165,7 +2151,7 @@
                 <td>Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Supplementation in Recent-Onset Type 1 ...</td>
                 <td>Diabetes Care</td>
                 <td>2021</td>
-                <td style="font-size:0.85em;color:#636363;">build_nutrition_lada.py, reconcile_paper_index.py, _close_run_2026_09_18.py, build_immunomod_lada.py</td>
+                <td style="font-size:0.85em;color:#636363;">reconcile_paper_index.py, build_nutrition_lada.py, build_immunomod_lada.py, _close_run_2026_09_18.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/34180979/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">34180979</a></td>
@@ -2210,7 +2196,7 @@
                 <td>100 years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?</td>
                 <td>Endocrinol Metab Clin North Am</td>
                 <td>2021</td>
-                <td style="font-size:0.85em;color:#636363;">build_trial_equity_mapper.py, build_gka_landscape.py, _run_2026_08_27.py, audit_citation_load_bearing.py, build_gap_synthesis.py, build_gka_pricing.py, verify_2026_09_13_repairs.py, build_health_equity.py, build_generic_drug_catalog.py, _close_run_2026_09_18.py, build_statistical_analysis.py, verify_2026_09_12_repairs.py, build_gap_deep_dives.py, rebuild_clinical_trial_dashboard.py</td>
+                <td style="font-size:0.85em;color:#636363;">rebuild_clinical_trial_dashboard.py, build_trial_equity_mapper.py, build_gka_landscape.py, build_statistical_analysis.py, verify_2026_09_13_repairs.py, _close_run_2026_09_18.py, build_health_equity.py, audit_citation_load_bearing.py, build_gap_synthesis.py, verify_2026_09_12_repairs.py, build_gka_pricing.py, build_generic_drug_catalog.py, _run_2026_08_27.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/35028608/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">35028608</a></td>
@@ -2273,7 +2259,7 @@
                 <td>Dorzagliatin in drug-naïve patients with type 2 diabetes: a randomized, double-blind, placebo-con...</td>
                 <td>Nat Med</td>
                 <td>2022</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, _run_2026_08_27.py, build_gka_pricing.py, build_gka_lada.py, build_gap_deep_dives.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, build_data_dictionary.py, build_gka_lada.py, build_gka_pricing.py, _run_2026_08_27.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/35551307/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">35551307</a></td>
@@ -2390,7 +2376,7 @@
                 <td>Dorzagliatin: First Approval.</td>
                 <td>Drugs</td>
                 <td>2022</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, _run_2026_08_27.py, audit_markdown_citations.py, build_gka_pricing.py, add_citations.py, build_gka_lada.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gka_landscape.py, build_gka_pricing.py, add_citations.py, build_gka_lada.py, audit_markdown_citations.py, _run_2026_08_27.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/36455116/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">36455116</a></td>
@@ -2426,7 +2412,7 @@
                 <td>Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Level in Coronary Art...</td>
                 <td>Biomed Hub</td>
                 <td>2022</td>
-                <td style="font-size:0.85em;color:#636363;">_run_2026_08_20.py, build_research_paths.py, audit_pubtype_title_disagreement.py, _close_run_2026_08_22.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_22.py, build_research_paths.py, _run_2026_08_20.py, audit_pubtype_title_disagreement.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/36826844/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">36826844</a></td>
@@ -2453,7 +2439,7 @@
                 <td>Matching for HLA-DR excluding diabetogenic HLA-DR3 and HLA-DR4 predicts insulin independence afte...</td>
                 <td>Front Immunol</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_19b.py, _close_run_2026_09_20.py, _run_2026_09_07.py, _run_2026_09_08.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_20.py, _close_run_2026_09_19b.py, _run_2026_09_07.py, _run_2026_09_08.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37105208</a></td>
@@ -2462,7 +2448,7 @@
                 <td>Association between primary graft function and 5-year outcomes of islet allogeneic transplantatio...</td>
                 <td>Lancet Diabetes Endocrinol</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">audit_gap_subject_coverage.py, _run_2026_09_07.py, audit_prose_author_surnames.py, _run_2026_09_08.py, build_islet_outcomes.py, rebuild_clinical_trial_dashboard.py</td>
+                <td style="font-size:0.85em;color:#636363;">rebuild_clinical_trial_dashboard.py, audit_prose_author_surnames.py, _run_2026_09_08.py, build_islet_outcomes.py, audit_gap_subject_coverage.py, _run_2026_09_07.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37122431/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37122431</a></td>
@@ -2543,7 +2529,7 @@
                 <td>Once-Weekly Insulin Icodec vs Once-Daily Insulin Degludec in Adults With Insulin-Naive Type 2 Dia...</td>
                 <td>JAMA</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">add_citations.py, audit_trial_phase.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_trial_phase.py, add_citations.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37356445/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37356445</a></td>
@@ -2552,7 +2538,7 @@
                 <td>Disparities in diabetes prevalence and management by race and ethnicity in the USA: defining a pa...</td>
                 <td>Lancet Diabetes Endocrinol</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">build_equity_map.py, build_health_equity.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_health_equity.py, build_equity_map.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37356446/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37356446</a></td>
@@ -2579,7 +2565,7 @@
                 <td>A Multi-Modal Approach to Islet and Pancreas Transplantation With Calcineurin-Sparing Immunosuppr...</td>
                 <td>Transpl Int</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">audit_endpoint_value_agreement.py, _close_run_2026_09_21.py, _close_run_2026_09_22.py, build_islet_outcomes.py, _close_run_2026_09_21b.py, build_repurposing_dashboard_v2.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_21.py, _close_run_2026_09_22.py, audit_endpoint_value_agreement.py, build_repurposing_dashboard_v2.py, build_islet_outcomes.py, _close_run_2026_09_21b.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37366315/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37366315</a></td>
@@ -2642,7 +2628,7 @@
                 <td>Verapamil improves One-Year C-Peptide Levels in Recent Onset Type-1 Diabetes: A Meta-Analysis.</td>
                 <td>Indian J Endocrinol Metab</td>
                 <td>2023</td>
-                <td style="font-size:0.85em;color:#636363;">verify_2026_09_11_repairs.py, verify_2026_09_10_repairs.py</td>
+                <td style="font-size:0.85em;color:#636363;">verify_2026_09_10_repairs.py, verify_2026_09_11_repairs.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37715820/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37715820</a></td>
@@ -2678,7 +2664,7 @@
                 <td>Recent advances in probiotic breads; a market trend in the functional bakery products.</td>
                 <td>Crit Rev Food Sci Nutr</td>
                 <td>2024</td>
-                <td style="font-size:0.85em;color:#636363;">fix_path_citations_2026_08_20.py, audit_index_provenance.py, repair_prose_citations_20260823.py, _close_run_2026_08_20.py, ingest_papers.py</td>
+                <td style="font-size:0.85em;color:#636363;">fix_path_citations_2026_08_20.py, audit_index_provenance.py, ingest_papers.py, repair_prose_citations_20260823.py, _close_run_2026_08_20.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37909353</a></td>
@@ -2687,7 +2673,7 @@
                 <td>Economic Costs of Diabetes in the U.S. in 2022.</td>
                 <td>Diabetes Care</td>
                 <td>2024</td>
-                <td style="font-size:0.85em;color:#636363;">audit_computed_value_citations.py, _tmp_gate_known_positive.py, build_lada_prevalence.py, verify_2026_09_13_repairs.py, build_lada_diagnostic_model.py, build_statistical_analysis.py, rebuild_clinical_trial_dashboard.py</td>
+                <td style="font-size:0.85em;color:#636363;">rebuild_clinical_trial_dashboard.py, build_statistical_analysis.py, verify_2026_09_13_repairs.py, build_lada_diagnostic_model.py, build_lada_prevalence.py, audit_computed_value_citations.py, _tmp_gate_known_positive.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/37987795/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">37987795</a></td>
@@ -2750,7 +2736,7 @@
                 <td>Cost-Effectiveness of Newer Pharmacologic Treatments in Adults With Type 2 Diabetes: A Systematic...</td>
                 <td>Ann Intern Med</td>
                 <td>2024</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_pricing.py, test_markdown_citation_gate.py, audit_markdown_citations.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_markdown_citations.py, test_markdown_citation_gate.py, build_gka_pricing.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">38783768</a></td>
@@ -2759,7 +2745,7 @@
                 <td>Recent drug development of dorzagliatin, a new glucokinase activator, with the potential to treat...</td>
                 <td>J Diabetes</td>
                 <td>2024</td>
-                <td style="font-size:0.85em;color:#636363;">build_gka_pricing.py, build_gka_landscape.py, _run_2026_08_27.py, build_gap_deep_dives.py</td>
+                <td style="font-size:0.85em;color:#636363;">build_gka_pricing.py, _run_2026_08_27.py, build_gka_landscape.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/38918878/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">38918878</a></td>
@@ -2804,7 +2790,7 @@
                 <td>Investigating the effect of verapamil on preservation of beta-cell function in adults with newly ...</td>
                 <td>BMJ Open</td>
                 <td>2024</td>
-                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_28.py, _run_2026_09_07.py, fix_path_citations_2026_08_20.py, _close_run_2026_08_22.py, adjudicate_flagged_membership_20260920.py, _close_run_2026_08_20.py, _run_2026_09_08.py, audit_path_count_staleness.py, mark_dose_label_paths_2026_08_20.py</td>
+                <td style="font-size:0.85em;color:#636363;">adjudicate_flagged_membership_20260920.py, fix_path_citations_2026_08_20.py, _close_run_2026_08_22.py, audit_path_count_staleness.py, _close_run_2026_08_28.py, _run_2026_09_08.py, _close_run_2026_08_20.py, mark_dose_label_paths_2026_08_20.py, _run_2026_09_07.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/39629068/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">39629068</a></td>
@@ -2930,7 +2916,7 @@
                 <td>Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.</td>
                 <td>N Engl J Med</td>
                 <td>2025</td>
-                <td style="font-size:0.85em;color:#636363;">audit_endpoint_value_agreement.py, _close_run_2026_09_21.py, rebuild_research_dashboard.py, build_gap_deep_dives.py, build_data_dictionary.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_21.py, audit_endpoint_value_agreement.py, rebuild_research_dashboard.py, build_data_dictionary.py, build_gap_deep_dives.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">40544435</a></td>
@@ -2957,7 +2943,7 @@
                 <td>A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta...</td>
                 <td>BMC Med</td>
                 <td>2025</td>
-                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_28.py, _run_2026_09_07.py, repair_index_pmcid_map.py, _close_run_2026_09_19.py, _run_2026_08_28.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_09_19.py, repair_index_pmcid_map.py, _close_run_2026_08_28.py, _run_2026_08_28.py, _run_2026_09_07.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/40648980/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">40648980</a></td>
@@ -3047,7 +3033,7 @@
                 <td>Liraglutide in mild to moderate Alzheimer's disease: a phase 2b clinical trial.</td>
                 <td>Nat Med</td>
                 <td>2026</td>
-                <td style="font-size:0.85em;color:#636363;">_run_2026_08_20.py, _close_run_2026_08_20.py, audit_verdict_key_agreement.py</td>
+                <td style="font-size:0.85em;color:#636363;">_close_run_2026_08_20.py, _run_2026_08_20.py, audit_verdict_key_agreement.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/41356006/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">41356006</a></td>
@@ -3128,7 +3114,7 @@
                 <td>The oral-gut microbiome axis in diabetes mellitus: a systematic review and emerging clinical pers...</td>
                 <td>Diabetes Res Clin Pract</td>
                 <td>2026</td>
-                <td style="font-size:0.85em;color:#636363;">project_microbiome_ml_phase2_features.py, project_microbiome_ml_phase1_data.py, project_microbiome_ml_phase3_models.py</td>
+                <td style="font-size:0.85em;color:#636363;">project_microbiome_ml_phase3_models.py, project_microbiome_ml_phase1_data.py, project_microbiome_ml_phase2_features.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/41958676/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">41958676</a></td>
@@ -3254,7 +3240,7 @@
                 <td>β-Cell Function and Diabetes Outcomes 1 Year After Stopping Oral Baricitinib Immunotherapy for Ty...</td>
                 <td>Diabetes Care</td>
                 <td>2026</td>
-                <td style="font-size:0.85em;color:#636363;">add_citations.py, _run_2026_08_31.py</td>
+                <td style="font-size:0.85em;color:#636363;">_run_2026_08_31.py, add_citations.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/42642774/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">42642774</a></td>
@@ -3290,7 +3276,7 @@
                 <td>Acid-Responsive Zeolitic Imidazolate Framework-8 Core-Shell Nanovesicles Loaded with Interleukin-...</td>
                 <td>Biomater Res</td>
                 <td>2026</td>
-                <td style="font-size:0.85em;color:#636363;">build_treg_neuropathy.py, audit_absence_claim_scope.py</td>
+                <td style="font-size:0.85em;color:#636363;">audit_absence_claim_scope.py, build_treg_neuropathy.py</td>
             </tr>
             <tr>
                 <td><a href="https://pubmed.ncbi.nlm.nih.gov/42739778/" target="_blank" style="color:#2c5f8a;font-family:'SF Mono','Consolas',monospace;">42739778</a></td>
@@ -3333,7 +3319,7 @@
 </div>
 
 <div class="footer">
-    <p>PMID Verification Report | Diabetes Research Hub | Generated 2026-09-23 03:21</p>
+    <p>PMID Verification Report | Diabetes Research Hub | Generated 2026-09-26 08:21</p>
 </div>
 
 <script>

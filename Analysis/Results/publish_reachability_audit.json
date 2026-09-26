@@ -1,13 +1,13 @@
 {
   "audit": "publish_reachability",
-  "run_date": "2026-09-23",
+  "run_date": "2026-09-26",
   "publish_root": "docs",
   "remote_ref": "origin/main",
   "fetch_ok": true,
-  "commits_unpushed": 120,
+  "commits_unpushed": 123,
   "commits_only_on_remote": 0,
   "remote_tip_date": "2026-04-20",
-  "remote_tip_age_days": 155,
+  "remote_tip_age_days": 158,
   "publish_root_divergence": {
     "files_local": 39,
     "files_on_remote": 35,
@@ -58,7 +58,7 @@
     "files_correct_for_reader": 1
   },
   "uncommitted_publish_files": [
-    "docs/Dashboards/Acronym_Database.html",
+    "ocs/Dashboards/Acronym_Database.html",
     "docs/Dashboards/CART_Access_Barriers.html",
     "docs/Dashboards/Clinical_Trial_Dashboard.html",
     "docs/Dashboards/Corpus_Analysis.html",
@@ -72,7 +72,6 @@
     "docs/Dashboards/Gap_Deep_Dives.html",
     "docs/Dashboards/Gap_Evidence.html",
     "docs/Dashboards/Gap_Synthesis.html",
-    "docs/Dashboards/Generic_Drug_Catalog.html",
     "docs/Dashboards/Health_Equity.html",
     "docs/Dashboards/Immunomod_LADA.html",
     "docs/Dashboards/Islet_Drug_Repurposing.html",
@@ -83,7 +82,6 @@
     "docs/Dashboards/LADA_Prevalence.html",
     "docs/Dashboards/Medical_Data_Dictionary.html",
     "docs/Dashboards/Methodology.html",
-    "docs/Dashboards/Nutrition_Beta_Cells.html",
     "docs/Dashboards/Nutrition_LADA.html",
     "docs/Dashboards/PMID_Verification.html",
     "docs/Dashboards/Paper_Library.html",
@@ -100,13 +98,13 @@
   "findings": [
     {
       "kind": "PUBLISH_BEHIND",
-      "detail": "120 commits unpushed; origin/main tip is 2026-04-20 (155 days old); 38 of 39 files under docs/ are wrong for a reader (4 return 404, 34 are stale)",
+      "detail": "123 commits unpushed; origin/main tip is 2026-04-20 (158 days old); 38 of 39 files under docs/ are wrong for a reader (4 return 404, 34 are stale)",
       "consequence": "every other publish-side assertion in this pipeline describes the working tree, not the site",
       "action": "push from a host that holds credentials, or provision a PAT / gh credential for the scheduled task"
     },
     {
       "kind": "UNCOMMITTED_PUBLISH",
-      "detail": "38 file(s) under docs/ are modified or untracked: docs/Dashboards/Acronym_Database.html, docs/Dashboards/CART_Access_Barriers.html, docs/Dashboards/Clinical_Trial_Dashboard.html, docs/Dashboards/Corpus_Analysis.html, docs/Dashboards/Drug_Repurposing_Islet.html ...",
+      "detail": "36 file(s) under docs/ are modified or untracked: ocs/Dashboards/Acronym_Database.html, docs/Dashboards/CART_Access_Barriers.html, docs/Dashboards/Clinical_Trial_Dashboard.html, docs/Dashboards/Corpus_Analysis.html, docs/Dashboards/Drug_Repurposing_Islet.html ...",
       "consequence": "these would not reach the site even if the push succeeded"
     }
   ]
