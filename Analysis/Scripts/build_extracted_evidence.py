@@ -54,6 +54,31 @@ output_file = os.path.join(base_dir, 'Dashboards', 'Extracted_Evidence.html')
 gap_evidence_file = os.path.join(base_dir, 'Analysis', 'Results',
                                  'gap_evidence.json')
 
+# Per-axis coverage findings - READ, NOT RECOMPUTED HERE (2026-09-27).
+# audit_gap_subject_coverage.py already answers "does any single evidence
+# paper touch BOTH of this gap's two axes, or only one/neither" and writes
+# the answer to gap_subject_coverage_audit.json. A reader of this dashboard
+# sees a raw "N data points in the corpus" count with no way to tell those
+# N points from a paper that touches both axes vs. N points that are all on
+# one side of an intersection gap. Re-deriving that here would be a second,
+# driftable copy of the same regex logic; this file reads the one store
+# instead, same pattern as GAPS_METADATA above.
+gap_subject_coverage_file = os.path.join(base_dir, 'Analysis', 'Results',
+                                          'gap_subject_coverage_audit.json')
+
+
+def load_subject_coverage_findings():
+    """gap_id (int) -> finding dict, for gaps the audit flagged. Empty dict,
+    not an exception, if the audit has not been run yet - this is a caveat
+    enhancement, not a build-blocking dependency."""
+    try:
+        with open(gap_subject_coverage_file, encoding='utf-8') as fh:
+            audit = json.load(fh)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    return {f['gap_id']: f for f in audit.get('findings', [])}
+
+
 
 def load_gaps_metadata():
     """Titles and tiers from gap_evidence.json, the store the gap audits read.
@@ -322,9 +347,11 @@ def generate_html(data):
 '''
 
     # Add gap evidence sections
+    subject_coverage_findings = load_subject_coverage_findings()
     for gap_id in sorted(GAPS_METADATA.keys(), key=lambda x: int(x)):
         gap_meta = GAPS_METADATA[gap_id]
         gap_evidence_data = gap_evidence.get(int(gap_id), {})
+        coverage_finding = subject_coverage_findings.get(int(gap_id))
 
         total_gap_evidence = sum(len(items) for items in gap_evidence_data.values())
         strength, strength_label = get_evidence_strength(total_gap_evidence)
@@ -341,6 +368,12 @@ def generate_html(data):
 
                 <h4>Evidence Strength: {strength_label}</h4>
                 <p>This gap has <strong>{total_gap_evidence}</strong> data points in the corpus.</p>
+'''
+
+        if coverage_finding is not None:
+            html += f'''                <p class="coverage-caveat" style="border-left: 3px solid #b45309; padding: 0.5em 1em; background: #fef3c7; margin: 0.75em 0;">
+                    <strong>Caveat ({coverage_finding['severity']}):</strong> {coverage_finding['problem']} {coverage_finding['remedy']}
+                </p>
 '''
 
         if total_gap_evidence > 0:

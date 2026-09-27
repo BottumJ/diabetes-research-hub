@@ -110,8 +110,8 @@ SCRIPTS = {
     'gkalada': ('build_gka_lada.py', 'Building GKA in LADA Analysis (Gap #9 EXPLORATORY)'),
     'ladaprev': ('build_lada_prevalence.py', 'Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)'),
     'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 SILVER)'),
-    'nutrilada': ('build_nutrition_lada.py', 'Building Personalized Nutrition for LADA (Gap #14 BRONZE)'),
-    'gkapricing': ('build_gka_pricing.py', 'Building GKA Pricing Trajectory Model (Gap #15 BRONZE)'),
+    'nutrilada': ('build_nutrition_lada.py', 'Building Personalized Nutrition for LADA (Gap #14 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
+    'gkapricing': ('build_gka_pricing.py', 'Building GKA Pricing Trajectory Model (Gap #15 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
     'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 GOLD)'),
     'methodology': ('build_methodology.py', 'Building Methodology & Validation Framework'),
     'pmidverify': ('verify_pmids.py', 'Verifying PMIDs against PubMed API'),

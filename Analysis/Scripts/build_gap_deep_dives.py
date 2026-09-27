@@ -953,7 +953,9 @@ GAPS_DATA = {
     },
     "14": {
         "title": "Personalized Nutrition for LADA",
-        "tier": "BRONZE",
+        "tier": "EXPLORATORY",  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[] -
+        # zero evidence papers at all, not "single-source basis". Flagged by
+        # audit_gap_subject_coverage.py.
         "score": 0.62,
         "cluster": "B",
         "domain_pubs": {"personalized_nutrition": 579, "lada": 535},
@@ -1018,7 +1020,9 @@ GAPS_DATA = {
     },
     "15": {
         "title": "GKA Pricing Trajectory",
-        "tier": "BRONZE",
+        "tier": "EXPLORATORY",  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[] -
+        # zero evidence papers at all, not "single-source basis". Flagged by
+        # audit_gap_subject_coverage.py.
         "score": 0.58,
         "cluster": "A",
         "domain_pubs": {"glucokinase": 816, "health_equity": 1830},
@@ -1088,6 +1092,10 @@ def generate_html():
     """Generate comprehensive Gap Deep Dives HTML dashboard"""
     print("Generating Gap Deep Dives HTML dashboard...")
 
+    _tier_counts = {"GOLD": 0, "SILVER": 0, "BRONZE": 0, "EXPLORATORY": 0}
+    for _g in GAPS_DATA.values():
+        _tier_counts[_g["tier"]] = _tier_counts.get(_g["tier"], 0) + 1
+
     html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1123,6 +1131,7 @@ def generate_html():
         .tier-gold { background-color: #fef3c7; color: #92400e; }
         .tier-silver { background-color: #e5e7eb; color: #374151; }
         .tier-bronze { background-color: #fed7aa; color: #92400e; }
+        .tier-exploratory { background-color: #e0e7ff; color: #3730a3; }
         .tier-under-review { background-color: #fca5a5; color: #7f1d1d; }
         .gap-card { background: white; border-left: 4px solid #ccc; padding: 20px; margin: 20px 0; border: 1px solid #eee; }
         .gap-card.gold { border-left-color: #d4a574; }
@@ -1175,7 +1184,7 @@ def generate_html():
             <p>This platform tracks 15 specific research gaps in diabetes where published literature is thin, clinical trials are sparse, or equity barriers prevent progress. These gaps were identified by querying PubMed for 435 pairwise domain combinations and flagging intersections with zero or near-zero joint publications. Each gap represents a concrete question that existing research has not adequately addressed.</p>
 
             <div class="context-label">How Gaps Are Classified</div>
-            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (4 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (4 gaps): 2 independent sources. <strong>BRONZE</strong> (6 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (1 gap): biological plausibility is uncertain. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
+            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (''' + str(_tier_counts['GOLD']) + ''' gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (''' + str(_tier_counts['SILVER']) + ''' gaps): 2 independent sources. <strong>BRONZE</strong> (''' + str(_tier_counts['BRONZE']) + ''' gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (''' + str(_tier_counts['EXPLORATORY']) + ''' gaps): biological plausibility is uncertain, or no evidence paper has yet been found. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
 
             <div class="context-label">How to Read the Priority Matrix</div>
             <p>The Priority Matrix (Tab 1) ranks gaps by a composite score combining publication density, trial activity, clinical urgency, and feasibility. Higher scores indicate gaps where new research would have disproportionate impact. Cluster Analysis (Tab 2) groups related gaps to reveal cross-cutting themes. Individual Deep Dives (Tab 3) provide the evidence, mechanisms, and open questions for each gap. The Evidence Catalog (Tab 4) maps all supporting literature.</p>

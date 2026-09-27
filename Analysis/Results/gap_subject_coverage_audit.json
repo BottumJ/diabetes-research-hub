@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-26T08:23:24.012852",
+  "generated": "2026-09-27T08:25:04.227851",
   "gate": "gap_subject_coverage",
   "method": "Regex over stored title + journal + finding snippets in gap_evidence.json. No abstracts fetched. Misses are an UPPER bound: a paper whose abstract covers the axis but whose stored snippet does not will read as a miss.",
   "gaps_checked": 15,
-  "findings_count": 7,
+  "findings_count": 5,
   "findings": [
     {
       "gap_id": 1,
@@ -158,24 +158,6 @@
         "25498346",
         "35784546"
       ]
-    },
-    {
-      "gap_id": 14,
-      "name": "Personalized Nutrition for LADA",
-      "tier": "BRONZE",
-      "severity": "HIGH",
-      "problem": "Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.",
-      "remedy": "Demote to EXPLORATORY or attach evidence.",
-      "pmids": []
-    },
-    {
-      "gap_id": 15,
-      "name": "GKA Pricing Trajectory",
-      "tier": "BRONZE",
-      "severity": "HIGH",
-      "problem": "Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.",
-      "remedy": "Demote to EXPLORATORY or attach evidence.",
-      "pmids": []
     }
   ],
   "coverage_table": [
@@ -376,7 +358,7 @@
     {
       "gap_id": 14,
       "name": "Personalized Nutrition for LADA",
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "papers": 0,
       "x_axis": "LADA",
       "x_covered": 0,
@@ -388,7 +370,7 @@
     {
       "gap_id": 15,
       "name": "GKA Pricing Trajectory",
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "papers": 0,
       "x_axis": "glucokinase activator",
       "x_covered": 0,

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26",
+  "generated": "2026-09-27",
   "recent_audits_read": 3,
   "topic_floor": 0.5,
   "gaps": {
@@ -270,12 +270,12 @@
       "name": "Personalized Nutrition for LADA",
       "tiers": {
         "agent_state": "BRONZE",
-        "gap_evidence": "BRONZE",
+        "gap_evidence": "EXPLORATORY",
         "site": "BRONZE",
-        "build_gap_deep_dives.py:954": "BRONZE",
+        "build_gap_deep_dives.py:954": "EXPLORATORY",
         "rebuild_website.py:519": "BRONZE"
       },
-      "tier_agree": true,
+      "tier_agree": false,
       "topic_share": 1.0,
       "topic_agree": true,
       "topic_checkable": true,
@@ -290,15 +290,15 @@
       "name": "GKA Pricing Trajectory",
       "tiers": {
         "agent_state": "BRONZE",
-        "gap_evidence": "BRONZE",
+        "gap_evidence": "EXPLORATORY",
         "site": "BRONZE",
-        "build_gap_deep_dives.py:1019": "BRONZE",
+        "build_gap_deep_dives.py:1021": "EXPLORATORY",
         "build_gka_landscape.py:1157": "BRONZE",
         "build_gka_pricing.py:5": "BRONZE",
         "build_gka_pricing.py:364": "BRONZE",
         "rebuild_website.py:525": "BRONZE"
       },
-      "tier_agree": true,
+      "tier_agree": false,
       "topic_share": 1.0,
       "topic_agree": true,
       "topic_checkable": true,
@@ -364,6 +364,74 @@
           "file": "rebuild_website.py",
           "line": 485,
           "tier": "SILVER"
+        }
+      ]
+    },
+    {
+      "gap_id": "14",
+      "name": "Personalized Nutrition for LADA",
+      "tiers": {
+        "agent_state": "BRONZE",
+        "gap_evidence": "EXPLORATORY",
+        "site": "BRONZE",
+        "build_gap_deep_dives.py:954": "EXPLORATORY",
+        "rebuild_website.py:519": "BRONZE"
+      },
+      "hardcoded_copies": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 954,
+          "tier": "EXPLORATORY",
+          "title": "Personalized Nutrition for LADA",
+          "form": "dict_literal"
+        },
+        {
+          "file": "rebuild_website.py",
+          "line": 519,
+          "tier": "BRONZE"
+        }
+      ]
+    },
+    {
+      "gap_id": "15",
+      "name": "GKA Pricing Trajectory",
+      "tiers": {
+        "agent_state": "BRONZE",
+        "gap_evidence": "EXPLORATORY",
+        "site": "BRONZE",
+        "build_gap_deep_dives.py:1021": "EXPLORATORY",
+        "build_gka_landscape.py:1157": "BRONZE",
+        "build_gka_pricing.py:5": "BRONZE",
+        "build_gka_pricing.py:364": "BRONZE",
+        "rebuild_website.py:525": "BRONZE"
+      },
+      "hardcoded_copies": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 1021,
+          "tier": "EXPLORATORY",
+          "title": "GKA Pricing Trajectory",
+          "form": "dict_literal"
+        },
+        {
+          "file": "build_gka_landscape.py",
+          "line": 1157,
+          "tier": "BRONZE"
+        },
+        {
+          "file": "build_gka_pricing.py",
+          "line": 5,
+          "tier": "BRONZE"
+        },
+        {
+          "file": "build_gka_pricing.py",
+          "line": 364,
+          "tier": "BRONZE"
+        },
+        {
+          "file": "rebuild_website.py",
+          "line": 525,
+          "tier": "BRONZE"
         }
       ]
     }

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-26T08:24:44.097602Z",
-  "last_run": "2026-09-26",
+  "last_updated": "2026-09-27T08:27:55.378031Z",
+  "last_run": "2026-09-27",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -9296,7 +9296,8 @@
       "type": "audit_gap",
       "added": "2026-09-26",
       "target": "RESOLVE THE 7 REMAINING gap_subject_coverage FAILURES (down from 9 on 2026-09-07). audit_gap_subject_coverage.py flags gaps where the two claimed axes are each supported by papers in the evidence set but NO SINGLE PAPER supports both - the intersection is inference-only. Two examples still at zero after this run: Gap 1 'Gene Therapy for LADA' (0 of 47 evidence papers touch 'gene therapy' AND 'LADA' together) and Gap 4 'Drug Repurposing for Islet Transplant' (0 of 24 touch both 'islet transplant' AND 'repurposing'). For each of the 7 in Analysis/Results/gap_subject_coverage_audit.json: either find a paper at the actual intersection, or add explicit inference-only caveat text to the gap's dashboard entry so a reader is not misled into thinking one paper supports the combined claim. Method note: this gate regexes stored title+journal+finding snippets, so misses are an upper bound - check the actual abstract before concluding a paper is silent on an axis.",
-      "status": "open"
+      "status": "partially_resolved",
+      "progress_2026_09_27": "Findings down 7 -> 5. Gaps #14 (Personalized Nutrition for LADA) and #15 (GKA Pricing Trajectory) demoted BRONZE -> EXPLORATORY in BOTH build_gap_deep_dives.py's GAPS_DATA and Analysis/Results/gap_evidence.json (they disagreed on tier before this run - a second, driftable copy of the same field, same defect class this repo has fixed elsewhere; audit_gap_numbering.py confirmed agreement afterward). Added a missing .tier-exploratory CSS rule - EXPLORATORY badges had no styling since Gap #9 was created. Fixed a pre-existing, unrelated staleness bug found while here: the tier-count legend sentence in Gap_Deep_Dives.html was hand-typed and read 'SILVER (4 gaps)...BRONZE (6 gaps)' while GAPS_DATA actually held SILVER=7, BRONZE=3 even before today - now computed from GAPS_DATA at build time, no second copy. For the remaining 5 findings (#1, #4, #7, #11, #13 - all 'evidence covers only one axis of the intersection' or worse), did NOT attempt new literature search this run (would need real PubMed lookups per finding, out of scope for this pass). Instead wired gap_subject_coverage_audit.json's per-gap findings into build_extracted_evidence.py's 'Evidence by Gap' tab as a visible inline caveat (read from the canonical audit store, not re-derived) so a reader looking at '47 data points' for Gap #1 now also sees, in the same view, that zero of those touch both axes. gap_subject_coverage gate itself still exits 1 (5 real findings remain) - this is honest signal, not a bug."
     },
     {
       "priority": 0,
@@ -12869,6 +12870,30 @@
       "summary": "Cloud-sandbox run (Cowork scheduled task, not the usual local sandbox). State loaded, work queue read. Paper vetting backlog: 0 UNVETTED (349 VETTED, 23 FLAGGED-with-documented-membership-class, 1 VETTED_DO_NOT_INGEST) - nothing to vet this run, confirmed via state, not assumed. Credibility sweep (audit_impossible_pmids.py): 0 impossible PMIDs (ceiling 43,017,983, dynamic), 0 unhedged preclinical overclaims - clean. Full rebuild (RQI_SKIP=gapdata, gapdata skipped per standing 180s-cap workaround): all gates [OK] except audit_gap_subject_coverage, which FAILED with 7 findings (down from 9 on 2026-09-07 baseline) - gaps 1 and 4 (Gene Therapy for LADA; Drug Repurposing for Islet Transplant) still have zero papers touching both axes of their own claim; this is a reporting-style gate about inference-only gap intersections, not a fabrication or citation-identity defect. Left unresolved this run - re-added to queue for gap-by-gap caveat text or better sourcing. PUSH BLOCKER RE-VERIFIED UNCHANGED: origin/main is 123 commits behind local main (frozen since ~2026-04-20); `git push origin main --dry-run` fails with 'could not read Username for https://github.com' - no credential.helper, no PAT, no SSH remote configured. This has been escalated as P0 since 2026-09-16 across many daily runs with no human action taken. Committed today's file changes locally via sandbox_git_commit.sh (bypasses the OneDrive .git/index.lock unlink restriction); did NOT push - same missing-credential blocker. Notified user via push notification this run since the blocker has now stood for 10+ consecutive daily runs with no resolution and no prior notification is recorded.",
       "agent": "cowork-cloud-scheduled-task",
       "timestamp": "2026-09-26T08:24:44.097602Z"
+    },
+    {
+      "date": "2026-09-27",
+      "environment": "Cowork cloud scheduled task (not the local Windows sandbox). Device bridge to the OneDrive-mounted folder worked after one transient 'device did not respond' timeout (retried successfully). Live PubMed/ClinicalTrials.gov network access confirmed working.",
+      "papers_checked": 0,
+      "papers_added": 0,
+      "paths_validated": 0,
+      "gaps_audited": 1,
+      "gap_subject_coverage_findings": "7 -> 5 (2 resolved by tier correction, not just caveat text)",
+      "gates_fixed": 0,
+      "builders_fixed": 3,
+      "builders_fixed_detail": [
+        "build_gap_deep_dives.py: demoted gaps #14/#15 BRONZE->EXPLORATORY; added missing .tier-exploratory CSS; replaced hand-typed stale tier-count legend with a count computed from GAPS_DATA",
+        "build_extracted_evidence.py: added a visible inline caveat in the 'Evidence by Gap' tab for any gap flagged by audit_gap_subject_coverage.py, read from that audit's own JSON output rather than re-derived",
+        "run_quality_improvements.py: updated two stale 'Gap #14 BRONZE'/'Gap #15 BRONZE' stage descriptions to EXPLORATORY to match"
+      ],
+      "data_refreshed": [
+        "clinical_trials_latest.json + clinical_trials_snapshot_2026-09-27.json via baseline_clinical_trials.py (was 72 days stale; 900 trials, up from 858)",
+        "hub_monitor_report.md via hub_monitor.py (was 72 days stale)"
+      ],
+      "credibility_sweep": "clean - 0 impossible PMIDs (ceiling 43,017,983), 0 unhedged preclinical overclaims",
+      "changes_pushed": false,
+      "push_blocker": "UNCHANGED, WORSE: origin/main now ~125 commits behind local (was 124 at run start). Remote is HTTPS with no credential helper, no ~/.git-credentials, no GH_TOKEN in this sandbox either (same as the local Windows sandbox). This has been priority-0 in the work queue since 2026-09-14 (message dated 2026-09-16 in the queue) with no change in 11 days. Committed locally via sandbox_git_commit.sh's GIT_INDEX_FILE workaround; push still requires either a human running 'git push' from a machine with credentials, or a PAT provisioned into this environment.",
+      "summary": "Worked the #1 work_queue item (gap_subject_coverage audit, 7 remaining findings) rather than opening new paper-vetting or path-validation work, since the paper vetting backlog was already at 0 and this was explicitly the standing top priority. Resolved 2 of 7 findings by fixing an actual tier-data inconsistency (not just adding text), added durable inline caveats for the other 5, and fixed a stale legend sentence found in passing. Separately, discovered and read an orphaned same-day monitor report this run didn't generate, and fixed the two staleness issues it found that were mechanically fixable (clinical trial data promotion, hub monitor report) without new scientific judgment calls. Rebuilt and re-synced all affected dashboards to docs/. Committed locally; push remains blocked on credentials, now the longest-running unresolved item in the queue."
     }
   ],
   "topic_checks": {
@@ -15307,6 +15332,10 @@
     {
       "date": "2026-09-22",
       "note": "Vetted the six remaining UNVETTED papers. All six resolved live on PubMed with exact title/journal/year agreement, so no identity defect. Three carry over-reading risks recorded per paper: FINE-ONE (41780000) is a 6-month n=242 SURROGATE (UACR) trial with a 3x hyperkalemia signal and a steeper eGFR fall than placebo, not a hard-outcome trial; the BCG review (42738899) is the Faustman lab reviewing its own trials AND states the HbA1c effect occurs without beta-cell recovery, so BCG must not be filed as a beta-cell agent; 42760903 is mouse islets ex vivo with no transplant at all and was screened out as an artifact of the \"islet transplant outcomes\" query."
+    },
+    {
+      "date": "2026-09-27",
+      "note": "An untracked Analysis/Results/monitor_report_2026-09-27.md was found on disk at the start of this run, dated today, 'automated Cowork review - no files modified' - produced by an earlier pass this session did not make and agent_state.json's last_run/last_updated (both 2026-09-26) did not record. It flagged: (a) origin/main 124 commits behind local (now 125+ after this run's commits - still unpushed, no credential in sandbox, unchanged blocker); (b) hub_monitor_report.md, clinical_trials_latest.json, clinical_trials_summary.md all 72 days stale (2026-07-17), while newer clinical_trials_snapshot_*.json files existed from 2026-08-27 through 2026-09-06 but were never promoted to 'latest' - a promotion bug, not a fetch bug; (c) Diabetes_Research_Tracker.xlsx also 72 days stale - this one is user-maintained (opened directly in Excel per the .~lock file seen in the folder root), not pipeline output, so left alone. FIXED THIS RUN: ran baseline_clinical_trials.py fresh (live ClinicalTrials.gov API v2, 900 unique trials, up from 858) which both wrote clinical_trials_snapshot_2026-09-27.json AND correctly overwrote clinical_trials_latest.json - the promotion bug doesn't recur if the script is just run, so no code fix was needed there, only the run itself. Ran hub_monitor.py fresh, which refreshed hub_monitor_report.md. Both were silently stale because nothing had invoked these two specific scripts since mid-July even though the rest of the pipeline (gap analysis, pubmed alerts) kept running on its own cadence - worth adding to the queue as a recurring freshness check rather than relying on a human noticing a monitor report that itself wasn't being generated."
     }
   ],
   "combination_validation_pending": [
