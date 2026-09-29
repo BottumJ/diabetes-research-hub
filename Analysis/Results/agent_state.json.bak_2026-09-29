@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-29T08:30:01.720366",
-  "last_run": "2026-09-29",
+  "last_updated": "2026-09-28T08:20:33.804207",
+  "last_run": "2026-09-27",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -6729,28 +6729,6 @@
       "triage_note": "18 RCTs, n=1280; SURROGATE endpoints only (UAE, SCr, eGFR change, hsCRP). Includes Chinese-database trials; abstract gives no risk-of-bias summary. Must not by itself raise the pentoxifylline grade.",
       "vetted_date": "2026-09-25",
       "vetted_note": "Identity already esummary/efetch-verified 2026-09-23 with triage_note recorded (surrogate endpoints only, must not raise pentoxifylline grade); status field had not been flipped from UNVETTED. No new red flags on re-check."
-    },
-    "42587354": {
-      "status": "UNVETTED",
-      "pmid_verified": true,
-      "pmid_verified_method": "eutils_esummary_2026-09-29 (title/journal/year read live)",
-      "claims_checked": false,
-      "issues_found": [],
-      "title": "Community-Based Personalised Lifestyle Intervention Guided by Intermittent CGM in Adults With (T2D; title truncated) - Diabetes Obes Metab 2026",
-      "year": "2026",
-      "added": "2026-09-29",
-      "source": "gap #13 BRONZE audit web search 2026-09-29; T2D only, not LADA"
-    },
-    "42394009": {
-      "status": "UNVETTED",
-      "pmid_verified": true,
-      "pmid_verified_method": "eutils_esummary_2026-09-29 (title/journal/year read live)",
-      "claims_checked": false,
-      "issues_found": [],
-      "title": "Continuous Glucose Monitoring and Personalized Nutrition in Type 2 Diabetes - A Scoping Review. Stud Health Technol Inform 2026",
-      "year": "2026",
-      "added": "2026-09-29",
-      "source": "gap #13 BRONZE audit web search 2026-09-29; T2D only, not LADA"
     }
   },
   "paths": {
@@ -8957,7 +8935,7 @@
     },
     "13": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-29",
+      "last_audited": "2026-09-03",
       "corpus_evidence_points": 0,
       "credibility_issues": [
         {
@@ -9049,11 +9027,6 @@
           "new_evidence_found": true,
           "promotes_gap": false,
           "notes": "Monthly audit (prev 2026-08-04, 30d). THE COMPARATOR LITERATURE MATURED AND THE GAP GOT WIDER, NOT NARROWER. Search surfaced a systematic review + network meta-analysis of interventions preserving beta-cell function in new-onset T1D covering 60 trials / 4,597 patients / 32 intervention classes, reporting 11 interventions with significantly higher C-peptide than placebo at 12 months (MSC, azathioprine, interferon-alpha, autologous dendritic cells, golimumab, low-dose ATG, teplizumab variants, baricitinib, cyclosporin). PMC12211534 - PMID NOT VERIFIED THIS RUN, logged as a pending identifier, not cited. Its relevance here is as a NEGATIVE result for this gap: 32 intervention classes were mapped against a C-peptide endpoint and NOT ONE of them is a nutrition intervention. The drug side of the beta-cell-preservation question now has a network meta-analysis; the nutrition side still has no trial with a C-peptide or beta-cell primary endpoint at all. That asymmetry is evidence the gap is real, not evidence it is closing. Also searched precision-nutrition x C-peptide 2026 directly: nothing new since the 2026-08-04 finding that both 2025 SR&MAs address dietary patterns -> glycemic/weight outcomes, not personalized nutrition -> beta-cell preservation. REMAINS BRONZE. Promotion trigger unchanged: one trial with a personalized/precision-nutrition intervention and a C-peptide or beta-cell-function PRIMARY endpoint. Next audit ~2026-10-03."
-        },
-        {
-          "date": "2026-09-29",
-          "new_evidence_found": true,
-          "notes": "Two new 2026 T2D personalized-nutrition/CGM papers found: PMID 42587354 (DOM 2026 community CGM-guided lifestyle intervention) and 42394009 (scoping review). Added UNVETTED. Neither addresses beta-cell function or LADA (titles only read) - no SILVER promotion."
         }
       ],
       "current_opportunity_note": "Near-term: design CGM endpoints into upcoming CAR-Treg T1D FIH trials (Abata ABA-201, GAD65-CAR-Treg) to close this gap by 2027.",
@@ -9072,7 +9045,7 @@
     },
     "14": {
       "tier": "BRONZE",
-      "last_audited": "2026-09-29",
+      "last_audited": "2026-09-06",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
       "promotion_candidate": false,
@@ -9221,11 +9194,6 @@
           "date": "2026-09-06",
           "new_evidence_found": false,
           "notes": "Gap #14 audit (prev 2026-09-02). NO CHANGE, 5th consecutive null, and the null is now itself the finding. All-time PubMed: (berberine OR inulin) AND (LADA OR latent autoimmune diabetes) returns exactly 1 record - PMID 35784546, the 2022 Front Endocrinol PROTOCOL for NCT04698330 - and NCT04698330[si] returns the same single record. Separately, ('latent autoimmune diabetes' OR LADA) AND randomized[pt] AND (diet* OR nutrition*) returns 0 all-time: there is no published nutrition RCT in LADA at all, unbounded by date. NCT04698330 (n=240, 4-arm, 3-month treatment + 9-month follow-up) published its protocol in 2022 and has no primary results four years on - logged as a publication-bias watch item rather than as absence of effect. Retain BRONZE; promotion_candidate stays false (no second independent source exists to promote on)."
-        },
-        {
-          "date": "2026-09-29",
-          "new_evidence_found": false,
-          "notes": "Web search \"LADA diet nutrition intervention randomized trial 2026\" returned only reviews/consensus/case reports (Diabetes 2020 consensus, CCJM 2025, PMC reviews, case reports). Search returned titles only; abstracts not read. No LADA-specific nutrition RCT identified. Tier unchanged; remains zero-evidence BRONZE (gap_subject_coverage still flags demote-or-attach)."
         }
       ],
       "next_audit_due": "2026-10-02"
@@ -9323,12 +9291,6 @@
     }
   },
   "work_queue": [
-    {
-      "priority": 1,
-      "type": "vet_papers_batch",
-      "added": "2026-09-29",
-      "target": "Vet PMIDs 42587354 and 42394009 (UNVETTED; abstracts/full text not read). Then decide whether gap #13 evidence changes."
-    },
     {
       "priority": 1,
       "type": "audit_gap",
@@ -12949,18 +12911,6 @@
       "agent": "cowork-cloud-scheduled-task",
       "timestamp": "2026-09-28T08:20:33.804167+00:00",
       "summary": "Verified environment healthy end-to-end (device bridge, git read/local-commit, live web search). Credibility sweep clean. Paper-vetting backlog confirmed at 0. Worked the standing #1 queue item: ran the two dated null searches its HIGH-severity findings required, recorded them in gap_audits so they are not repeated, and confirmed (by reading source, not assuming) that yesterday's caveat wiring already covers them generically. Did not fabricate or force a citation at either unsupported intersection. Re-escalated the unchanged 12-day-old push-credential blocker via notification, since it is the only item in the queue no amount of further agent work can close."
-    },
-    {
-      "date": "2026-09-29",
-      "environment": "Cowork cloud scheduled task; device bridge worked. VM /sessions volume was 100% full, so logs went to /tmp; pipeline run in stage chunks (single call cannot hold 85 stages).",
-      "papers_checked": 0,
-      "papers_added": 2,
-      "paths_validated": 0,
-      "gaps_audited": 2,
-      "credibility_sweep": "clean - 0 impossible PMIDs, 0 unhedged preclinical overclaims",
-      "pipeline": "80+ of 85 stages [OK]. FAILED: reportfreshness (literature_gap_data.json 10d old; gapdata refresh is bounded/resumable and did not complete), absencescope, gapsubject (7 findings unchanged), publishgate (126 commits unpushed).",
-      "changes_pushed": false,
-      "push_blocker": "UNCHANGED: no credential; origin/main tip 2026-04-20"
     }
   ],
   "topic_checks": {
