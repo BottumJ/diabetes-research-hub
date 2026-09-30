@@ -117,7 +117,7 @@ them as independent would understate the variance. That is Phase 4.
 
 `prediction_ledger_report.md` had been stating "PRED-2026-004 RESOLVED TRUE,
 Brier 0.1225" since 2026-06-23 while the ledger itself held no resolution.
-Regenerated: 4 locked, 0 resolved.
+Regenerated: 4 locked, 0 resolved. The ledger dashboard was built only by refresh_hub.py, which the pipeline never calls, so the first push today published the two new locks as UNLOCKED. It is now a pipeline stage and the page was rebuilt and re-pushed.
 
 ## 6. Three things that only fail on Windows
 

@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-30",
   "runner": "Analysis/Scripts/run_quality_improvements.py",
-  "stages_wired": 86,
+  "stages_wired": 87,
   "gates_classified": 41,
   "gates_that_can_fail": 35,
   "defects": [],
@@ -1758,6 +1758,25 @@
       "nonzero_outside_except": [],
       "zero_exits": [],
       "entry_points": [],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
+      "stage": "predictionledger",
+      "script": "build_prediction_ledger.py",
+      "role": "builder",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "build",
+          "line": 306,
+          "exit_wrapped": false
+        }
+      ],
       "entry_returns_nonzero": [],
       "dropped_nonzero_returns": [],
       "verdict": "NO_VERDICT"

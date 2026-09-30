@@ -393,6 +393,12 @@ SCRIPTS = {
                        'Measuring posterior-vs-study-design discordance on the Bayesian ranking'),
     'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
     'repurposev2': ('build_repurposing_dashboard_v2.py', 'Building Islet Drug Repurposing Pipeline v2'),
+    # Added 2026-09-30. This page was only ever built by refresh_hub.py, which
+    # the pipeline does not call, so two predictions locked that day were
+    # published as UNLOCKED until the page was rebuilt by hand. The builder
+    # reads the ledger and never writes it.
+    'predictionledger': ('build_prediction_ledger.py',
+                         'Building Prediction Ledger Dashboard (reads the ledger, never writes it)'),
     'website': ('rebuild_website.py', 'Rebuilding GitHub Pages site (Tufte style)'),
     'postprocess': ('postprocess_dashboards.py', 'Post-processing dashboards (nav, PMID links, ARIA)'),
     # Publish step. MUST run last: postprocess_dashboards.py rewrites
