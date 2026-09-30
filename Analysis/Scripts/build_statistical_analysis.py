@@ -39,7 +39,6 @@ output_path = os.path.join(dashboards_dir, 'Statistical_Analysis.html')
 # ============================================================================
 
 meta_analysis = stats_data['meta_analysis']
-bayesian = stats_data['bayesian_synthesis']
 
 
 # ---------------------------------------------------------------------------
@@ -116,59 +115,60 @@ def design_for(path_name):
 
 
 # ---------------------------------------------------------------------------
-# HOLLOW-PATH SUPPRESSION (added 2026-08-21)
+# RESEARCH PATHS: RECONCILED STATUS TABLE (replaces the Bayesian ranking, 2026-09-30)
 # ---------------------------------------------------------------------------
-# The Bayesian synthesis scores each path partly on corpus evidence depth. When
-# the inflammatory_markers extraction patterns were fixed on 2026-08-21, 29 of
-# 47 paths dropped to ZERO live corpus data points - their "evidence" had been
-# regex artifacts (the 3 in NLRP3, the 1 in IL-1, section numbers, sample
-# sizes). statistical_analysis.json predates that fix, so this page was still
-# publishing:
-#     #1  oxidative_stress -> inflammation    posterior 72.7%  MODERATE
-#     #2  NLRP3_inflammasome -> inflammation  posterior 55.3%  WEAK
-# Both have zero surviving evidence. A posterior computed from artifact counts
-# is not a weak result, it is a meaningless one, and presenting it beside a
-# percentage implies a precision that does not exist.
-#
-# Suppression is applied HERE, at the publishing layer, because that is where
-# the numbers reach a reader. This is the fourth location this same
-# suppress-in-one-place-only defect has surfaced (2026-08-19 validated store,
-# 2026-08-21 validated summary counter, path dashboard, now here), so the
-# hollow set is loaded from research_paths.json rather than re-derived.
-def _hollow_path_names():
+# The "Bayesian evidence synthesis" that stood here was withdrawn by owner
+# decision on 2026-09-30. Root cause, measured that day:
+#   1. It never read validation. statistical_analysis.py looked paths up as
+#      "A -> B" in a store keyed "A_B"; all 48 paths scored NOT_VALIDATED
+#      from 2026-03-20 onward, so the "posterior" was a function of the
+#      data-point count alone.
+#   2. The counts were regex artefacts; 29 of 47 paths have no surviving
+#      evidence since the 2026-08-21 extraction fix.
+#   3. A recompute read data_point_count, renamed that same day, and scored
+#      every path 0.143.
+# Fixing 1-3 would still leave invented likelihood constants and a ranking
+# that mostly restates validation status. So nothing is scored. The table
+# below states each path's reconciled status (path_store.py ->
+# canonical_paths.json), its live evidence count and its study design, and
+# makes no claim about which path is more likely to matter.
+def _norm_path(k):
+    return re.sub(r'_+', '_', str(k).replace('->', '_').replace('\u2192', '_')
+                  .replace(' ', '_')).strip('_').lower()
+
+
+def load_path_table():
     try:
-        with open(os.path.join(results_dir, 'research_paths.json'), encoding='utf-8') as f:
-            data = json.load(f)
-    except Exception:
-        return set()
-    paths = data.get('paths', {})
-    items = paths.items() if isinstance(paths, dict) else enumerate(paths)
+        with open(os.path.join(results_dir, 'canonical_paths.json'), encoding='utf-8') as fh:
+            canon = json.load(fh)
+    except (OSError, ValueError):
+        return [], None
+    try:
+        with open(os.path.join(results_dir, 'research_paths.json'), encoding='utf-8') as fh:
+            live = {_norm_path(k): v for k, v in json.load(fh).get('paths', {}).items()}
+    except (OSError, ValueError):
+        live = {}
+    rows = []
+    for key, p in canon.get('paths', {}).items():
+        lp = live.get(_norm_path(key))
+        tier, why = design_for(p.get('display_key', key))
+        rows.append({
+            'path': (lambda d: d if '->' in d else d.replace('_', ' '))(p.get('display_key', key)),
+            'status': p.get('status', 'UNKNOWN'),
+            'as_of': p.get('effective_date', ''),
+            'divergent': bool(p.get('divergent')),
+            'in_corpus': lp is not None,
+            'live_upper_bound': (lp or {}).get('data_point_count_upper_bound'),
+            'corpus_papers': len((lp or {}).get('pmids', [])),
+            'design': tier, 'design_why': why,
+        })
+    order = {'VALIDATED': 0, 'PARTIALLY_VALIDATED': 1, 'HOLLOW': 3}
+    rows.sort(key=lambda r: (order.get(r['status'], 2), r['path'].lower()))
+    return rows, canon.get('generated')
 
-    def norm(k):
-        return ''.join(ch for ch in str(k).lower() if ch.isalnum())
 
-    return {
-        norm(name if isinstance(name, str) else (p.get('name') or ''))
-        for name, p in items
-        if isinstance(p, dict) and p.get('status') == 'HOLLOW'
-    }
+path_rows, path_store_generated = load_path_table()
 
-
-_hollow = _hollow_path_names()
-if _hollow:
-    def _norm(k):
-        return ''.join(ch for ch in str(k).lower() if ch.isalnum())
-
-    _before = len(bayesian.get('ranked', []))
-    bayesian['ranked'] = [
-        p for p in bayesian.get('ranked', [])
-        if _norm(p.get('path') or p.get('name') or '') not in _hollow
-    ]
-    _removed = _before - len(bayesian['ranked'])
-    bayesian['hollow_suppressed'] = _removed
-    print(f"[build_statistical_analysis] Suppressed {_removed} HOLLOW path(s) from the "
-          f"Bayesian ranking (zero live corpus evidence after the 2026-08-21 "
-          f"extraction-gate fix); {len(bayesian['ranked'])} remain.")
 monte_carlo_lada = stats_data.get('monte_carlo_lada', {})
 monte_carlo_drugs = stats_data.get('monte_carlo_drugs', {})
 
@@ -177,11 +177,6 @@ structured_pools = meta_analysis.get('structured_pools', {'pools': [], 'not_pool
 cpeptide = meta_analysis.get('cpeptide_pooled', {})
 inflammatory = meta_analysis.get('inflammatory_markers', {})
 
-# Bayesian: group by strength
-bayesian_by_strength = defaultdict(list)
-for path_entry in bayesian['ranked']:
-    strength = path_entry.get('strength', 'INSUFFICIENT')
-    bayesian_by_strength[strength].append(path_entry)
 
 # Monte Carlo LADA: extract ICER scenarios
 lada_scenarios = monte_carlo_lada.get('scenarios', {})
@@ -657,7 +652,7 @@ h3 {{
 
 <div class="page-header">
   <h1>Statistical Analysis Dashboard</h1>
-  <div class="subtitle">Meta-analytic pooling, Bayesian evidence synthesis, and Monte Carlo sensitivity analysis of the diabetes research landscape.</div>
+  <div class="subtitle">Pooled effects from verified records, the reconciled status of each mechanistic research path, and Monte Carlo sensitivity analysis.</div>
 </div>
 
 <div class="container">
@@ -668,16 +663,14 @@ h3 {{
 
 <div class="info-box context">
   <strong>What This Dashboard Answers</strong><br>
-  How robust are our findings? Which drug candidates survive sensitivity analysis? How confident should we be in each research path? What parameters drive the LADA cost-effectiveness model? This section synthesizes meta-analytic pooling, Bayesian posterior probabilities, and Monte Carlo simulations to answer these questions.
+  What do verified trial results show when pooled? What does this project currently record about each mechanistic research path? Which drug candidates survive sensitivity analysis? What parameters drive the LADA cost-effectiveness model?
 </div>
 
 <div class="key-findings">
   <h3>Key Findings</h3>
   <ul>
 {pool_key_findings}
-    <li><strong>{bayesian['ranked'][0].get('path', bayesian['ranked'][0].get('name', 'Top path'))}:</strong> Highest Bayesian posterior probability at {bayesian['ranked'][0]['posterior']*100:.1f}%, classified as {bayesian['ranked'][0]['strength']}</li>
-    <li><strong>Top research path strength distribution:</strong> {bayesian['strong_paths']} STRONG, {bayesian['moderate_paths']} MODERATE, {bayesian['weak_paths']} WEAK, {bayesian['insufficient_paths']} INSUFFICIENT (of {bayesian['total_paths']} total)</li>
-    <li><strong>Suppressed from this ranking:</strong> {bayesian.get('hollow_suppressed', 0)} path(s) had zero surviving corpus evidence after the 2026-08-21 extraction-gate fix and are excluded. Posteriors computed from regex artifacts are not weak evidence, they are no evidence. Strength-distribution counters above are inherited from the pre-fix synthesis and are being recomputed.</li>
+    <li><strong>Research paths:</strong> {sum(1 for r in path_rows if r['status'] == 'VALIDATED')} validated, {sum(1 for r in path_rows if r['status'] == 'PARTIALLY_VALIDATED')} partially validated, {sum(1 for r in path_rows if r['status'].startswith('CONTRADICTED'))} contradicted and {sum(1 for r in path_rows if r['status'] == 'HOLLOW')} with no surviving evidence, of {len(path_rows)}. The earlier probability ranking of these paths has been withdrawn; see below.</li>
   </ul>
 </div>
 
@@ -721,116 +714,52 @@ h3 {{
 
 </section>
 
-<!-- BAYESIAN SYNTHESIS -->
-<section id="bayesian">
-<h2>Bayesian Evidence Synthesis</h2>
+<!-- RESEARCH PATHS: RECONCILED STATUS -->
+<section id="research-paths">
+<h2>Research Paths: Reconciled Status</h2>
 
-<div class="info-box context">
-  <strong>How to Use This</strong><br>
-  Bayesian scores combine extracted corpus evidence with external validation (PubMed searches, systematic reviews). Posterior probability reflects confidence after observing the data. Color coding: STRONG (green) = high confidence, MODERATE (gold) = moderate confidence, WEAK (orange) = limited evidence, INSUFFICIENT (gray) = preliminary.
+<div class="info-box context" style="border-left: 4px solid #c0392b;">
+  <strong>Withdrawn 2026-09-30: the Bayesian ranking of these paths.</strong><br>
+  This section used to rank each path by a "posterior probability" that it was a real research direction.
+  That number never used the external validation it described: a key-format mismatch meant every path was
+  scored as unvalidated, so the probability was driven by how many numbers the text extractor had found for
+  the path. Most of those numbers were extraction artefacts, removed on 2026-08-21. The ranking has been
+  withdrawn rather than recomputed, because even a corrected version would rest on invented likelihood
+  values and would largely restate the validation status shown below.
 </div>
 
+<p style="font-size:13px;">Each row states what this project currently records about one path. The order
+groups paths by status and is otherwise alphabetical; <strong>it is not a ranking</strong>. Status is the
+reconciled value from <code>canonical_paths.json</code>;
+"live evidence" is an upper bound on the data points that survive the 2026-08-21 extraction fix; "design" is the
+weakest study type the path rests on, read from PubMed publication types. A dash means the path is recorded
+as validated by external review but was not among the paths built from this project's corpus. Paths adjudicated as contradicted are counted in the summary above and not listed.</p>
+
+<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead><tr><th>Path</th><th>Status</th><th>As of</th><th>Live evidence (upper bound)</th><th>Corpus papers</th><th>Design</th></tr></thead>
+  <tbody>
 '''
 
-    # Summary stats
-    html += f'''<div class="metric-row">
-  <div class="metric-label">Total Mechanistic Pathways</div>
-  <div class="metric-value">{bayesian['total_paths']}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">STRONG (posterior > 0.80)</div>
-  <div class="metric-value">{bayesian['strong_paths']}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">MODERATE (0.50-0.80)</div>
-  <div class="metric-value">{bayesian['moderate_paths']}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">WEAK (0.20-0.50)</div>
-  <div class="metric-value">{bayesian['weak_paths']}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">INSUFFICIENT (&lt;0.20)</div>
-  <div class="metric-value">{bayesian['insufficient_paths']}</div>
-</div>
-
-<h3>Top 15 Ranked Paths by Posterior Probability</h3>
-
+    # Paths adjudicated CONTRADICTED are not named on the published site
+    # (suppression gate, test_suppression_gate); they are counted above only.
+    for r in (r for r in path_rows if not r['status'].startswith('CONTRADICTED')):
+        live_txt = ('&mdash;' if not r['in_corpus'] else
+                    ('0 (none survives)' if not r['live_upper_bound'] else str(r['live_upper_bound'])))
+        papers_txt = str(r['corpus_papers']) if r['in_corpus'] else '&mdash;'
+        design_txt = (r['design'].replace('_', ' ').lower() if r['in_corpus'] and r['design'] != 'UNGRADED'
+                      else '&mdash;')
+        status_txt = r['status'].replace('_', ' ').lower()
+        if r['divergent']:
+            status_txt += ' <span title="Source stores disagreed; the most recent record was used, weaker claim on ties." style="color:#777;">*</span>'
+        html += f'''    <tr><td>{r['path']}</td><td>{status_txt}</td><td>{r['as_of']}</td><td>{live_txt}</td><td>{papers_txt}</td><td>{design_txt}</td></tr>
 '''
 
-    # ------------------------------------------------------------------
-    # Discordance disclosure (2026-08-29). Stated BEFORE the ranking, not
-    # in a footnote after it: a reader who has already absorbed the order
-    # has already taken the claim.
-    # ------------------------------------------------------------------
-    if _agreement.get('comparable_pairs'):
-        _disc = _agreement.get('discordant_pairs', 0)
-        _comp = _agreement.get('comparable_pairs', 0)
-        _rate = _agreement.get('discordance_rate', 0) * 100
-        _nrap = _agreement.get('no_results_above_primary', 0)
-        _worst = [d for d in _agreement.get('detail', [])
-                  if d['higher_tier'] == 'NO_RESULTS' and d['lower_tier'] == 'PRIMARY']
-        _example = ''
-        if _worst:
-            _w = _worst[0]
-            _example = (f"For example this page ranks <strong>{_w['higher_posterior']}</strong> "
-                        f"({_w['higher_posterior_value'] * 100:.1f}%, no measured outcome in any "
-                        f"citing paper) above <strong>{_w['lower_posterior']}</strong> "
-                        f"({_w['lower_posterior_value'] * 100:.1f}%, rests on primary data). ")
-        html += f'''<div class="info-box context" style="border-left: 4px solid #c0392b;">
-  <strong>Read this before the ranking: the posterior does not know what kind of study it came from.</strong><br>
-  The prior in this model is a function of data-point count and PMID count only. Neither it nor the
-  likelihood term reads publication type, so a path can rank highly because a protocol's dose table
-  yielded many scrapeable numbers. Measured on {_agreement.get('generated', 'this build')}:
-  <strong>{_disc} of {_comp} comparable ordered pairs ({_rate:.1f}%) are discordant</strong> &mdash; this page
-  scores the path higher while its evidence design is weaker. <strong>{_nrap}</strong> of those pairs rank a
-  NO RESULTS path above a path resting on primary data. {_example}
-  Each row below therefore carries its evidence-design tier, read from PubMed publication types rather
-  than from this repository's own text matching. <em>Where the tier and the percentage disagree, the tier
-  is the more reliable of the two.</em> Refitting the prior to encode study design is a modelling decision
-  and is open in the work queue; it has deliberately not been done unattended.
-</div>
+    html += '''  </tbody>
+</table>
+<p style="font-size:12px;color:#636363;">* Two or more of this project's records disagreed about this path's status;
+the most recent was used, with the weaker claim winning ties (<code>path_store.py</code>). Path store generated @@PATHGEN@@.</p>
 
-'''
-
-    # Show top 15 paths grouped by strength
-    for i, path_entry in enumerate(bayesian['ranked'][:15]):
-        strength = path_entry.get('strength', 'INSUFFICIENT')
-        posterior = path_entry['posterior']
-        path_name = path_entry['path']
-
-        tier, tier_why = design_for(path_name)
-        tier_color = TIER_COLORS.get(tier, '#777777')
-
-        # Cap the WORD, never the number. "WEAK evidence" asserts that
-        # evidence exists; under a NO_RESULTS path none does.
-        capped_to = TIER_STRENGTH_CAP.get(tier)
-        shown_strength = strength
-        cap_note = ''
-        if capped_to and strength != capped_to:
-            shown_strength = capped_to
-            cap_note = (f' <span style="color:#c0392b;">(capped from {strength}: '
-                        f'no measured outcome exists under this path)</span>')
-
-        strength_lower = shown_strength.lower()
-        color = strength_color(shown_strength)
-
-        html += f'''<div class="bayesian-path {strength_lower}">
-  <div class="path-name" style="color: {color};">{i+1}. {path_name}
-    <span style="display:inline-block; margin-left:8px; padding:2px 7px; font-size:10px;
-                 font-weight:600; letter-spacing:0.04em; border:1px solid {tier_color};
-                 color:{tier_color}; background:#fff; cursor:help;"
-          title="{tier_why.replace('"', '&quot;')}">{tier.replace('_', ' ')}</span>
-  </div>
-  <div class="path-metric">
-    <span>Posterior: <strong>{posterior*100:.1f}%</strong></span>
-    <span>Strength: <strong>{shown_strength}</strong>{cap_note}</span>
-  </div>
-</div>
-
-'''
-
-    html += '''</section>
+</section>
 
 <!-- MONTE CARLO: LADA -->
 <section id="monte-carlo-lada">
@@ -1014,15 +943,15 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
 
 <div class="info-box limitation">
   <strong>What This Cannot Tell You</strong><br>
-  These are statistical analyses of extracted/secondary data, not primary research. Meta-analytic pooling across heterogeneous studies has known limitations (high heterogeneity indicates results should be interpreted cautiously). Bayesian priors are model choices, not ground truth. Monte Carlo simulations depend on the accuracy and completeness of input parameters.
+  These are statistical analyses of extracted/secondary data, not primary research. Meta-analytic pooling across heterogeneous studies has known limitations (high heterogeneity indicates results should be interpreted cautiously). Monte Carlo simulations depend on the accuracy and completeness of input parameters.
 </div>
 
 <div class="methodology">
   <h4>Meta-Analytic Pooling</h4>
   <p>We formally combined effect sizes across independent studies using random-effects meta-analysis (DerSimonian-Laird estimator). The pooled effect represents the average treatment or outcome effect. The 95% confidence interval reflects uncertainty in the estimate. Heterogeneity (I²) quantifies the proportion of variance due to between-study differences vs. sampling error. I² > 75% indicates substantial heterogeneity.</p>
 
-  <h4>Bayesian Evidence Synthesis</h4>
-  <p>Mechanistic pathways extracted from the corpus were scored using Bayesian framework. Prior probability reflects baseline belief; posterior probability integrates corpus evidence (term frequency, co-occurrence) with external validation (PubMed searches, systematic reviews). Strength classification (STRONG/MODERATE/WEAK/INSUFFICIENT) is based on posterior probability thresholds: STRONG (>0.80), MODERATE (0.50-0.80), WEAK (0.20-0.50), INSUFFICIENT (<0.20).</p>
+  <h4>Research Path Status</h4>
+  <p>No score is computed. Each path's status is the reconciled record from this project's path stores (most recent record wins; the weaker claim wins ties). A probability ranking was published here until 2026-09-30 and was withdrawn; see the note in that section.</p>
 
   <h4>Monte Carlo: LADA Cost-Effectiveness Model</h4>
   <p>We performed 10,000 simulations, randomly sampling parameter values from their uncertainty distributions (normal, lognormal, or uniform as appropriate). Each iteration computed the ICER (Incremental Cost-Effectiveness Ratio). Results show the median ICER (50th percentile) and 90% confidence interval (5th to 95th percentiles). P(cost-effective) is the proportion of simulations with ICER < $50,000/QALY threshold.</p>
@@ -1062,12 +991,10 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
       the methodological basis for the statistics on this page. On audit, all four were
       health-economics or cost-of-illness papers with no connection to the methods they were
       attached to, and none of them informed any calculation here. They have been removed rather
-      than replaced, because the accurate statement is that the pooling and the Bayesian prior on
-      this page are computed by <code>statistical_analysis.py</code> from this repository's own
-      corpus counts &mdash; specifically from data-point counts and PMID counts per path &mdash; and
-      not from any external methodological source. The prior's known limitation (it does not encode
-      study design; 62.3% of comparable ordered pairs are discordant with design, measured
-      2026-08-29) is disclosed above the ranking on this page.
+      than replaced, because the accurate statement is that the calculations on this page are
+      computed by <code>statistical_analysis.py</code> from this repository's own records and not from
+      any external methodological source. (A path ranking that also appeared here was withdrawn on
+      2026-09-30.)
       The one retained citation is
       <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">PMID 23248199</a>
       (ACTION LADA), which supplies the LADA prevalence input to the screening model.
@@ -1078,13 +1005,14 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
 <div class="footer">
   Statistical Analysis Dashboard compiled {now}<br>
   Data source: {stats_path}<br>
-  Methods: Meta-analysis (random-effects), Bayesian evidence synthesis, Monte Carlo simulations<br>
+  Methods: Meta-analysis (random-effects, from verified records), Monte Carlo simulations<br>
   MIT License (code) | CC-BY 4.0 (analysis)
 </div>
 
 </body>
 </html>'''
 
+    html = html.replace('@@PATHGEN@@', (path_store_generated or 'unknown')[:10])
     return html
 
 # ============================================================================

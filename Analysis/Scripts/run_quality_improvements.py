@@ -389,8 +389,8 @@ SCRIPTS = {
     # single-spelling record with two disagreeing keys is never reached.
     'verdictkeys': ('audit_verdict_key_agreement.py',
                     'Asserting no stored path record asserts two verdicts about itself'),
-    'posterioragree': ('audit_posterior_design_agreement.py',
-                       'Measuring posterior-vs-study-design discordance on the Bayesian ranking'),
+    # 'posterioragree' retired 2026-09-30: it measured the Bayesian path ranking,
+    # which was withdrawn that day. The script is kept for its history.
     # Added 2026-09-30. statistical_analysis.py was never a pipeline stage, so
     # the page below was built from whatever statistical_analysis.json happened
     # to hold. --meta-only refreshes the pooled estimates from the verified
@@ -399,7 +399,7 @@ SCRIPTS = {
     'statsmeta': ('statistical_analysis.py',
                   'Pooling verified effect records (meta-analysis section only)',
                   ('--meta-only',)),
-    'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)'),
+    'statistics': ('build_statistical_analysis.py', 'Building Statistical Analysis Dashboard (pooling, path status table, Monte Carlo)'),
     'repurposev2': ('build_repurposing_dashboard_v2.py', 'Building Islet Drug Repurposing Pipeline v2'),
     # Added 2026-09-30. This page was only ever built by refresh_hub.py, which
     # the pipeline does not call, so two predictions locked that day were

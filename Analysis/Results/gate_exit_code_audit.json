@@ -1,8 +1,8 @@
 {
   "generated": "2026-09-30",
   "runner": "Analysis/Scripts/run_quality_improvements.py",
-  "stages_wired": 88,
-  "gates_classified": 42,
+  "stages_wired": 87,
+  "gates_classified": 41,
   "gates_that_can_fail": 36,
   "defects": [],
   "records": [
@@ -315,7 +315,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 2162,
+          "line": 2166,
           "exit_wrapped": false
         }
       ],
@@ -1698,33 +1698,6 @@
       "verdict": "OK"
     },
     {
-      "stage": "posterioragree",
-      "script": "audit_posterior_design_agreement.py",
-      "role": "gate",
-      "fail_markers": [],
-      "nonzero_exits": [
-        {
-          "line": 209,
-          "in_except": false,
-          "code": "expr"
-        }
-      ],
-      "nonzero_outside_except": [
-        209
-      ],
-      "zero_exits": [],
-      "entry_points": [
-        {
-          "func": "main",
-          "line": 209,
-          "exit_wrapped": true
-        }
-      ],
-      "entry_returns_nonzero": [],
-      "dropped_nonzero_returns": [],
-      "verdict": "NO_VERDICT"
-    },
-    {
       "stage": "statsmeta",
       "script": "statistical_analysis.py",
       "role": "gate",
@@ -1732,102 +1705,47 @@
       "nonzero_exits": [],
       "nonzero_outside_except": [],
       "zero_exits": [
-        591
+        598
       ],
       "entry_points": [
         {
           "func": "print",
-          "line": 558,
+          "line": 565,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 559,
+          "line": 566,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 560,
+          "line": 567,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 596,
+          "line": 603,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 606,
+          "line": 613,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 609,
+          "line": 616,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 610,
+          "line": 617,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 615,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 631,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 645,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 646,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 647,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 589,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 612,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 635,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 636,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 601,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 620,
-          "exit_wrapped": false
-        },
-        {
-          "func": "print",
-          "line": 621,
+          "line": 622,
           "exit_wrapped": false
         },
         {
@@ -1837,7 +1755,62 @@
         },
         {
           "func": "print",
-          "line": 603,
+          "line": 652,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 653,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 654,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 596,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 619,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 642,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 643,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 608,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 627,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 628,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 645,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 610,
           "exit_wrapped": false
         }
       ],
@@ -1856,17 +1829,17 @@
       "entry_points": [
         {
           "func": "print",
-          "line": 1095,
+          "line": 1021,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 1103,
+          "line": 1029,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 1104,
+          "line": 1030,
           "exit_wrapped": false
         }
       ],

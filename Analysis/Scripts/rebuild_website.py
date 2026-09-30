@@ -390,7 +390,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Statistical Analysis Dashboard</h3>
-    <p>Pooled HbA1c effects computed only from effect records verified against their PubMed abstracts (currently orforglipron vs placebo, two phase 3 trials), Bayesian evidence synthesis across mechanistic pathways, and Monte Carlo sensitivity for LADA screening and drug robustness across 5,000 simulations. An earlier pooled figure built from pattern-matched text was withdrawn on 2026-09-30.</p>
+    <p>Pooled HbA1c effects computed only from effect records verified against their PubMed abstracts (currently orforglipron vs placebo, two phase 3 trials), the reconciled status of each mechanistic research path, and Monte Carlo sensitivity for LADA screening and drug robustness across 5,000 simulations. An earlier pooled figure and a probability ranking of research paths, both built from pattern-matched text, were withdrawn on 2026-09-30.</p>
     <a href="Dashboards/Statistical_Analysis.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

@@ -237,8 +237,15 @@ def run_meta_analysis(extractions):
 
 def bayesian_path_scoring(paths_data, validated_data):
     """
+    WITHDRAWN FROM PUBLICATION 2026-09-30 (owner decision). Nothing reads this
+    output any more; the pipeline runs this module with --meta-only.
+    Defects, for the record: it looked paths up as "A -> B" in a store keyed
+    "A_B", so validation was never applied (every path NOT_VALIDATED since
+    2026-03-20); it reads data_point_count, renamed on 2026-08-21, so a rerun
+    scores every path 0.143; and its likelihood values are invented constants.
+
     Compute Bayesian posterior probability for each research path.
-    
+
     Prior: Based on data point count and number of PMIDs
     Likelihood: Based on validation status and external evidence
     Posterior: Updated probability that the path represents a real, actionable research direction
