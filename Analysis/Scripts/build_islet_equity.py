@@ -592,28 +592,28 @@ html_content = f"""<!DOCTYPE html>
                 </div>
 
                 <div style="margin-bottom: 25px;">
-                    <div style="font-weight: 600; margin-bottom: 12px;">Racial/Ethnic Composition &mdash; WITHDRAWN</div>
+                    <div style="font-weight: 600; margin-bottom: 12px;">Recipient Race and Ethnicity (registry-reported)</div>
+                    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+                      <thead><tr><th style="text-align:left;">Recorded race</th><th style="text-align:right;">Islet alone (n=1,134)</th><th style="text-align:right;">Islet after kidney (n=260)</th></tr></thead>
+                      <tbody>
+                        <tr><td>White</td><td style="text-align:right;">793 (69.9%)</td><td style="text-align:right;">191 (73.5%)</td></tr>
+                        <tr><td>Black or African American</td><td style="text-align:right;">7 (0.6%)</td><td style="text-align:right;">3 (1.2%)</td></tr>
+                        <tr><td>Asian</td><td style="text-align:right;">3 (0.3%)</td><td style="text-align:right;">0</td></tr>
+                        <tr><td>American Indian / Alaska Native</td><td style="text-align:right;">2 (0.2%)</td><td style="text-align:right;">0</td></tr>
+                        <tr><td>Multiple / Other</td><td style="text-align:right;">7 (0.6%)</td><td style="text-align:right;">1 (0.4%)</td></tr>
+                        <tr><td>Unknown or missing</td><td style="text-align:right;">322 (28.4%)</td><td style="text-align:right;">65 (25.0%)</td></tr>
+                        <tr><td><em>Hispanic or Latino (ethnicity)</em></td><td style="text-align:right;">7 (0.6%)</td><td style="text-align:right;">6 (2.3%)</td></tr>
+                        <tr><td><em>Ethnicity not reported or unknown</em></td><td style="text-align:right;">486 (42.9%)</td><td style="text-align:right;">75 (28.8%)</td></tr>
+                      </tbody>
+                    </table>
                 </div>
 
-                <div class="source" style="border-left:3px solid #8b2500;padding-left:10px;">
-                  <strong>WITHDRAWN 2026-09-09. Six bars were removed from this position, not merely relabelled.</strong>
-                  They read: Recipients White 85%, T1D population White 62%, Recipients Black 5%, T1D population Black 18%, Recipients Hispanic 5%, T1D population Hispanic 20%.
-                  They are recorded here so the reader can see what was withdrawn.
+                <div class="source" style="border-left:3px solid #2c5f8a;padding-left:10px;">
+                  <strong>Source:</strong> <a href="https://www.citregistry.org/system/files/CITR%2012th%20Allograft%20Report_2025_Final.pdf" target="_blank">CITR 12th Allograft Report (2025; datafile closure 2025-03-26), Exhibit 2-1</a>, chapter 2, pages 2-4 and 2-5. Registry report, not peer-reviewed.
                   <br><br>
-                  <strong>Why they were removed rather than re-sourced.</strong> On 2026-09-08 these figures were marked UNSOURCED after the &ldquo;85% White recipients&rdquo; bar was found linked to
-                  PMID 19104422 (Alejandro et al., <em>Transplantation</em> 2008;86(12):1783-8), a paper reporting n=325 recipients and <em>no</em> racial or ethnic breakdown. The comparator
-                  T1D-population figures had never carried a citation at all. The named replacement candidate was the recipient-characteristics table of a CITR Allograft Report.
-                  That report was read directly on 2026-09-09
-                  (<a href="https://www.citregistry.org/system/files/CITR%2012th%20Allograft%20Report_2025_Final.pdf" target="_blank">12th Allograft Report, June 30 2025, datafile closure March 26 2025</a>).
-                  <strong>It does not break out recipient race or ethnicity.</strong> Its Islet Transplant Recipient Characteristics section reports age at transplant, wait time, diabetes duration
-                  and glycaemic control, and nothing on race. The only race or ethnicity figures in the report describe <em>donors</em>, not recipients:
-                  about 18% of infusions derived from Hispanic donors, and about 10% from non-white donors. Substituting donor ethnicity for recipient race would be a category error,
-                  so no substitution was made.
+                  <strong>How to read it.</strong> Of islet-alone recipients whose race was recorded, 793 of 812 (98%) were White and 7 (0.9%) were Black. Race was not recorded for 28% of recipients and ethnicity for 43%, so these are the recorded shares, not the true ones. <strong>No comparison population is shown</strong>: the report gives no race distribution for people with type 1 diabetes who would be eligible for an islet transplant, and this hub has not yet sourced one. Until it does, this table shows who received transplants, not whether access was unequal.
                   <br><br>
-                  <strong>Confidence and what would change it.</strong> This finding rests on the extracted text of the report PDF; table contents can be lost in extraction, and Chapter 2 was not
-                  opened page by page. If a recipient-race table exists in Chapter 2, these bars can be restored &mdash; transcribed with the report's own denominator (1,477 allograft recipients,
-                  1999&ndash;2023, 40 centres), labelled registry-grade and non-peer-reviewed. Until someone confirms that table exists, this hub asserts no recipient-race distribution for islet transplantation.
-                  Any comparator T1D-population figures restored alongside them need a separate CDC or SEARCH-for-Diabetes citation matched on age band and year.
+                  <strong>Correction 2026-09-30.</strong> On 2026-09-09 this section said the report &ldquo;does not break out recipient race or ethnicity&rdquo;. It does, in Exhibit 2-1; the earlier check read extracted text without opening Chapter 2. The six bars withdrawn on 2026-09-09 (recipients 85% White, 5% Black, 5% Hispanic; unsourced T1D-population comparators) remain withdrawn: the registry's own figures differ from them.
                 </div>
             </div>
 
