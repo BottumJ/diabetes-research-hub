@@ -14,6 +14,7 @@ import math
 import os
 import random
 import re
+import sys
 from collections import defaultdict
 from statistics import mean, stdev, median
 
@@ -61,43 +62,125 @@ def inverse_variance_meta(effects, variances):
         'heterogeneity': 'LOW' if I_squared < 25 else 'MODERATE' if I_squared < 75 else 'HIGH',
     }
 
+def _pool(effects, ses):
+    """Fixed-effect and DerSimonian-Laird random-effects pooling.
+
+    Returns both because with few studies they answer different questions and
+    a reader is owed the one that is less flattering.
+    """
+    w = [1.0 / (se * se) for se in ses]
+    sw = sum(w)
+    fixed = sum(e * wi for e, wi in zip(effects, w)) / sw
+    fixed_se = math.sqrt(1.0 / sw)
+    k = len(effects)
+    Q = sum(wi * (e - fixed) ** 2 for e, wi in zip(effects, w))
+    df = k - 1
+    c = sw - sum(wi * wi for wi in w) / sw
+    tau2 = max(0.0, (Q - df) / c) if c > 0 and df > 0 else 0.0
+    wr = [1.0 / (se * se + tau2) for se in ses]
+    swr = sum(wr)
+    rand = sum(e * wi for e, wi in zip(effects, wr)) / swr
+    rand_se = math.sqrt(1.0 / swr)
+    i2 = max(0.0, (Q - df) / Q * 100.0) if Q > 0 and df > 0 else 0.0
+
+    def pack(est, se):
+        return {'estimate': round(est, 3), 'se': round(se, 4),
+                'ci_lower': round(est - 1.96 * se, 3),
+                'ci_upper': round(est + 1.96 * se, 3)}
+    return {'k': k, 'fixed': pack(fixed, fixed_se), 'random': pack(rand, rand_se),
+            'Q': round(Q, 3), 'I_squared': round(i2, 1), 'tau_squared': round(tau2, 5)}
+
+
+def pool_structured_effects():
+    """Pool verified effect records, one arm per trial per pool.
+
+    A pool is formed only from records that share a cluster, an intervention
+    (drug AND dose) and a comparator, and only when at least two DIFFERENT
+    trials contribute. Taking one arm per trial is what keeps the inputs
+    independent: three dose arms of one trial share a placebo group, and
+    pooling them together as three studies would count that group three times.
+    """
+    path = os.path.join(results_dir, 'structured_effects.json')
+    out = {'source': 'structured_effects.json', 'pools': [], 'not_pooled': []}
+    try:
+        with open(path, encoding='utf-8') as fh:
+            doc = json.load(fh)
+    except FileNotFoundError:
+        out['not_pooled'].append({'group': '(all)', 'reason': 'structured_effects.json not found'})
+        return out
+
+    groups = defaultdict(list)
+    for r in doc.get('records', []):
+        if not r.get('poolable'):
+            continue
+        groups[(r['cluster'], r['intervention'], r['comparator'])].append(r)
+
+    for (cluster, intervention, comparator), rows in sorted(groups.items()):
+        label = '%s vs %s' % (intervention, comparator)
+        trials = sorted({r['trial'] for r in rows})
+        if len(trials) < 2:
+            out['not_pooled'].append({
+                'group': label, 'trials': trials,
+                'studies': [{'trial': r['trial'], 'pmid': r['pmid'], 'effect': r['effect'],
+                             'ci_lower': r['ci_low'], 'ci_upper': r['ci_high'],
+                             'timepoint': r['timepoint']} for r in rows],
+                'reason': 'one trial only - a single result is reported, not pooled'})
+            continue
+        if len(trials) != len(rows):
+            out['not_pooled'].append({'group': label, 'trials': trials,
+                                      'reason': 'more than one record per trial; inputs not independent'})
+            continue
+        studies = []
+        for r in sorted(rows, key=lambda x: x['trial']):
+            se = r['se'] if r.get('se') is not None else (r['ci_high'] - r['ci_low']) / 3.92
+            studies.append({'trial': r['trial'], 'pmid': r['pmid'], 'nct_id': r['nct_id'],
+                            'effect': r['effect'], 'ci_lower': r['ci_low'],
+                            'ci_upper': r['ci_high'], 'se': round(se, 4),
+                            'timepoint': r['timepoint'], 'population': r['population'],
+                            'estimand': r['estimand']})
+        pool = _pool([x['effect'] for x in studies], [x['se'] for x in studies])
+        pool.update({
+            'label': label, 'cluster': cluster, 'outcome': rows[0]['outcome'],
+            'unit': rows[0]['unit'], 'studies': studies,
+            'evidence_level': 'SILVER',
+            'caveats': [
+                'k = %d trials. Between-trial variance cannot be estimated reliably from '
+                'so few; the random-effects interval is a floor on the uncertainty, not a measure of it.' % len(studies),
+                'The trials enrolled different populations (see each row). The pooled figure '
+                'is an average over them, not an estimate for either.',
+                'All trials were funded by the manufacturer.',
+                'Standard errors are derived from the published 95% confidence intervals.',
+                'Effects were read from abstracts; estimand is as stated there and is not '
+                'stated for every trial.',
+            ],
+        })
+        out['pools'].append(pool)
+    return out
+
+
 def run_meta_analysis(extractions):
     """Run meta-analyses on extractable outcome data."""
     results = {}
     
-    # --- HbA1c change meta-analysis ---
-    hba1c_effects = []
-    hba1c_variances = []
-    hba1c_studies = []
-    
-    for ext in extractions.get('hba1c_change', []):
-        text = ext.get('matched_text', '') + ' ' + ext.get('context', '')
-        # Look for HbA1c reduction values
-        reductions = re.findall(r'[-−]?\s*(\d+\.?\d*)\s*%', text)
-        if reductions:
-            val = float(reductions[0])
-            # HbA1c reductions are typically 0.2-2.0%
-            if 0.1 <= val <= 3.0:
-                hba1c_effects.append(-val)  # negative = reduction
-                # Estimate variance from sample size hints in context
-                n_match = re.search(r'(\d{2,4})\s*(?:patient|participant|subject)', text)
-                n = int(n_match.group(1)) if n_match else 100
-                se_est = 0.5 / math.sqrt(n)  # rough SE estimate
-                hba1c_variances.append(se_est**2)
-                hba1c_studies.append({
-                    'pmid': ext['pmid'],
-                    'effect': -val,
-                    'n_est': n,
-                })
-    
-    if len(hba1c_effects) >= 2:
-        meta = inverse_variance_meta(hba1c_effects, hba1c_variances)
-        if meta:
-            meta['studies'] = hba1c_studies
-            meta['outcome'] = 'HbA1c change (%)'
-            meta['interpretation'] = f"Pooled HbA1c reduction: {abs(meta['pooled_effect']):.2f}% (95% CI: {abs(meta['ci_upper']):.2f} to {abs(meta['ci_lower']):.2f})"
-            results['hba1c_pooled'] = meta
-    
+    # --- HbA1c: pooled ONLY from the verified substrate (2026-09-30) ---
+    #
+    # WITHDRAWN: the regex pool this replaced. It published "pooled HbA1c
+    # reduction 0.93% (95% CI 0.90 to 0.97) from 2 pooled studies". Read from
+    # its own output, those two "studies" were two percentages lifted from ONE
+    # paper (PMID 35466661), the variance was not extracted but invented as
+    # 0.5/sqrt(n) with n defaulting to 100 when no sample size sat nearby, and
+    # I-squared was 98.7%. It was not a meta-analysis and its interval was an
+    # artefact of the invented variance. SCIENCE_ARM_BUILD_CHARTER.md said in
+    # June that a pooled estimate built on this extractor would be "a
+    # confident, wrong forest plot"; it had been on the landing page since.
+    #
+    # The replacement pools nothing it cannot source. It reads
+    # structured_effects.json and uses only records that are schema-valid,
+    # span-verified against the live abstract and agreed by a second
+    # extraction (poolable == True). See structured_effects.py.
+    results['hba1c_pooled'] = None
+    results['structured_pools'] = pool_structured_effects()
+
     # --- Inflammatory marker meta-analysis ---
     # Group by marker type
     marker_groups = defaultdict(list)
@@ -126,59 +209,25 @@ def run_meta_analysis(extractions):
             'pmids': sorted(unique_pmids),
         }
     
-    # --- Survival/remission pooling ---
-    remission_rates = []
-    for ext in extractions.get('remission', []):
-        text = ext.get('matched_text', '') + ' ' + ext.get('context', '')
-        rates = re.findall(r'(\d+\.?\d*)\s*%', text)
-        for r in rates:
-            val = float(r)
-            if 5 <= val <= 95:  # Plausible remission rate
-                remission_rates.append({
-                    'rate': val,
-                    'pmid': ext['pmid'],
-                    'context': ext.get('context', '')[:100],
-                })
-    
-    if remission_rates:
-        rates_only = [r['rate'] for r in remission_rates]
-        results['remission_pooled'] = {
-            'n_estimates': len(remission_rates),
-            'mean_rate': round(mean(rates_only), 1),
-            'median_rate': round(median(rates_only), 1),
-            'range': [round(min(rates_only), 1), round(max(rates_only), 1)],
-            'sd': round(stdev(rates_only), 1) if len(rates_only) > 1 else 0,
-            'studies': remission_rates[:10],
-            'interpretation': f"Remission rates across {len(remission_rates)} extracted estimates range from {min(rates_only):.0f}% to {max(rates_only):.0f}% (median {median(rates_only):.0f}%)",
-            'caveat': 'Rates are from heterogeneous populations, interventions, and remission definitions. Direct comparison requires careful subgroup analysis.',
-        }
-    
-    # --- C-peptide pooling ---
-    cpeptide_values = []
-    for ext in extractions.get('c_peptide', []):
-        text = ext.get('matched_text', '') + ' ' + ext.get('context', '')
-        values = re.findall(r'(\d+\.?\d*)\s*(?:ng/m[Ll]|pmol/[Ll])', text)
-        for v in values:
-            val = float(v)
-            if 0.01 <= val <= 50:  # Plausible C-peptide range
-                cpeptide_values.append({
-                    'value': val,
-                    'pmid': ext['pmid'],
-                    'context': ext.get('context', '')[:100],
-                })
-    
-    if cpeptide_values:
-        vals_only = [c['value'] for c in cpeptide_values]
-        results['cpeptide_pooled'] = {
-            'n_values': len(cpeptide_values),
-            'mean': round(mean(vals_only), 2),
-            'median': round(median(vals_only), 2),
-            'range': [round(min(vals_only), 2), round(max(vals_only), 2)],
-            'studies': cpeptide_values[:10],
-            'interpretation': f"C-peptide values across {len(cpeptide_values)} extractions: median {median(vals_only):.1f} ng/mL (range {min(vals_only):.1f}-{max(vals_only):.1f})",
-            'caveat': 'Values span fasting, stimulated, pre- and post-treatment contexts. Not directly comparable without matching timepoints and stimulation protocols.',
-        }
-    
+    # --- Remission and C-peptide "pools": WITHDRAWN 2026-09-30 ---
+    #
+    # Both were summary statistics over regex captures, published as findings.
+    # The remission pool took every percentage between 5 and 95 near the word
+    # "remission"; its first two entries were "70% (v/v) Percoll solution" - a
+    # reagent concentration from a methods section - counted as a 70% and a 37%
+    # remission rate. The C-peptide pool was the value 0.1 twice, from one
+    # paper, in a sentence reporting NO detectable C-peptide: the assay floor.
+    # Neither can be repaired by a tighter pattern. A rate needs a numerator, a
+    # denominator, a definition and a timepoint, which is what
+    # structured_effects.json exists to hold. Until records for these outcomes
+    # exist there, nothing is reported.
+    withdrawn = ('Withdrawn 2026-09-30. The previous figures were summary '
+                 'statistics over regular-expression captures, not extracted '
+                 'study results, and included values that were not the outcome '
+                 'at all. No verified records exist yet for this outcome.')
+    results['remission_pooled'] = {'withdrawn': True, 'reason': withdrawn}
+    results['cpeptide_pooled'] = {'withdrawn': True, 'reason': withdrawn}
+
     return results
 
 
@@ -522,8 +571,27 @@ if __name__ == '__main__':
         with open(validated_path, encoding='utf-8') as f:
             validated_data = json.load(f)
     
+    # --meta-only (2026-09-30): recompute the meta_analysis section and leave
+    # the rest of statistical_analysis.json exactly as stored. This is the mode
+    # the pipeline runs. A full run also recomputes the Bayesian synthesis from
+    # today's research_paths.json, and that moves the published ranking a long
+    # way (39 -> 47 INSUFFICIENT, top posterior 0.727 -> 0.143 when measured on
+    # 2026-09-30). Which of those two rankings is right is a finding that needs
+    # a reader, not a side effect of refreshing a pooled estimate.
+    if '--meta-only' in sys.argv:
+        out_path = os.path.join(results_dir, 'statistical_analysis.json')
+        with open(out_path, encoding='utf-8') as f:
+            stored = json.load(f)
+        stored['meta_analysis'] = run_meta_analysis(corpus_data['extractions'])
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(stored, f, indent=2, ensure_ascii=False)
+        sp = stored['meta_analysis']['structured_pools']
+        print("  [OK] meta_analysis refreshed: %d pool(s), %d comparison(s) reported unpooled; "
+              "other sections untouched" % (len(sp['pools']), len(sp['not_pooled'])))
+        sys.exit(0)
+
     output = {}
-    
+
     # 1. Meta-analysis
     print("\n  Running meta-analytic pooling...")
     meta_results = run_meta_analysis(corpus_data['extractions'])

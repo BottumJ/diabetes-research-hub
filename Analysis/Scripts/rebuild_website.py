@@ -390,8 +390,14 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Statistical Analysis Dashboard</h3>
-    <p>Meta-analytic pooling (HbA1c reduction: -0.93%, 95% CI: -0.97 to -0.90), Bayesian evidence synthesis (48 pathways, oxidative stress → inflammation highest posterior), Monte Carlo sensitivity for LADA screening and drug robustness across 5,000 simulations.</p>
+    <p>Pooled HbA1c effects computed only from effect records verified against their PubMed abstracts (currently orforglipron vs placebo, two phase 3 trials), Bayesian evidence synthesis across mechanistic pathways, and Monte Carlo sensitivity for LADA screening and drug robustness across 5,000 simulations. An earlier pooled figure built from pattern-matched text was withdrawn on 2026-09-30.</p>
     <a href="Dashboards/Statistical_Analysis.html">Open dashboard &rarr;</a>
+  </div>
+  <div class="card">
+    <div class="status live">Available</div>
+    <h3>Prediction Ledger</h3>
+    <p>This project's own dated, probability-weighted predictions about trial readouts, locked before the result is known and scored with the Brier score when it arrives. Four predictions locked, none yet resolved.</p>
+    <a href="Dashboards/Prediction_Ledger.html">Open dashboard &rarr;</a>
   </div>
 </div>
 

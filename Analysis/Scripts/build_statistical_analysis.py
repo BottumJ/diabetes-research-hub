@@ -173,8 +173,7 @@ monte_carlo_lada = stats_data.get('monte_carlo_lada', {})
 monte_carlo_drugs = stats_data.get('monte_carlo_drugs', {})
 
 # Meta-analysis pooled effect
-hba1c_pooled = meta_analysis['hba1c_pooled']
-remission = meta_analysis['remission_pooled']
+structured_pools = meta_analysis.get('structured_pools', {'pools': [], 'not_pooled': []})
 cpeptide = meta_analysis.get('cpeptide_pooled', {})
 inflammatory = meta_analysis.get('inflammatory_markers', {})
 
@@ -202,6 +201,86 @@ def pct_bar(value, max_val=100, label='', width_pct=None):
         width_pct = min((value / max_val * 100) if max_val else 0, 100)
     style = f'width: {width_pct:.1f}%'
     return f'<div class="bar-bg"><div class="bar-fill" style="{style}"></div></div>'
+
+def _fmt(x, d=2):
+    return ('%.' + str(d) + 'f') % x
+
+
+def _bound(x):
+    """Two decimals, or three when the source printed three (-0.072)."""
+    return _fmt(x, 2) if abs(round(x, 2) - x) < 1e-9 else _fmt(x, 3)
+
+
+def render_pools(sp):
+    """HTML for the meta-analysis section, from verified records only."""
+    key = []
+    out = ['<!-- META-ANALYTIC POOLING -->', '<section id="meta-analysis">',
+           '<h2>Meta-Analytic Pooling</h2>',
+           '<div class="info-box context">',
+           '  <strong>What changed on 2026-09-30</strong><br>',
+           '  This section previously showed a pooled HbA1c reduction of 0.93% (95% CI 0.90 to 0.97), '
+           'a remission-rate distribution and a C-peptide summary. All three were computed from '
+           'regular-expression captures rather than extracted study results and have been withdrawn: '
+           'the HbA1c figure combined two percentages from a single paper using an assumed variance, '
+           'and the remission figures included a reagent concentration from a methods section. '
+           'What is shown now is pooled only from effect records that quote their source sentence, '
+           'were checked against the PubMed abstract, and were confirmed by a second independent extraction.',
+           '</div>']
+    if not sp.get('pools'):
+        out.append('<p>No outcome currently has verified results from two or more independent trials. '
+                   'Nothing is pooled.</p>')
+        key.append('    <li><strong>Pooled estimates:</strong> none. No outcome has verified results '
+                   'from two or more independent trials.</li>')
+    for p in sp.get('pools', []):
+        fx, rd = p['fixed'], p['random']
+        out.append('<h3>%s: %s</h3>' % (p['outcome'], p['label']))
+        out.append('<table class="robustness-table" style="width: 100%; margin-top: 16px;">')
+        out.append('  <thead><tr><th>Trial</th><th>Population</th><th>Difference (95%% CI), %s</th>'
+                   '<th>Timepoint</th><th>Source</th></tr></thead><tbody>' % p['unit'])
+        for st in p['studies']:
+            out.append('  <tr><td>%s</td><td>%s</td><td>%s (%s to %s)</td><td>%s</td>'
+                       '<td><a href="https://pubmed.ncbi.nlm.nih.gov/%s/" target="_blank">PMID:%s</a></td></tr>'
+                       % (st['trial'], st['population'], _fmt(st['effect']), _fmt(st['ci_lower']),
+                          _fmt(st['ci_upper']), st['timepoint'], st['pmid'], st['pmid']))
+        out.append('  <tr style="font-weight: 600;"><td>Pooled, random effects</td><td>%d trials</td>'
+                   '<td>%s (%s to %s)</td><td></td><td></td></tr>'
+                   % (p['k'], _fmt(rd['estimate']), _fmt(rd['ci_lower']), _fmt(rd['ci_upper'])))
+        out.append('  <tr><td>Pooled, fixed effect</td><td>%d trials</td><td>%s (%s to %s)</td><td></td><td></td></tr>'
+                   % (p['k'], _fmt(fx['estimate']), _fmt(fx['ci_lower']), _fmt(fx['ci_upper'])))
+        out.append('</tbody></table>')
+        out.append('<p style="font-size: 13px;">Heterogeneity: Q = %s, I&sup2; = %s%%. Evidence level: %s '
+                   '(single-analyst extraction, independently re-extracted).</p>'
+                   % (_fmt(p['Q']), _fmt(p['I_squared'], 1), p['evidence_level']))
+        out.append('<ul style="font-size: 13px;">')
+        for c in p['caveats']:
+            out.append('  <li>%s</li>' % c)
+        out.append('</ul>')
+        key.append('    <li><strong>%s, %s:</strong> %s %s (95%% CI %s to %s), random effects, %d trials. '
+                   'Read with the caveats in the section below.</li>'
+                   % (p['outcome'], p['label'], _fmt(rd['estimate']), p['unit'],
+                      _fmt(rd['ci_lower']), _fmt(rd['ci_upper']), p['k']))
+    single = [g for g in sp.get('not_pooled', []) if g.get('studies')]
+    if single:
+        out.append('<h3>Reported, not pooled</h3>')
+        out.append('<p style="font-size: 13px;">Comparisons with verified results from one trial only. '
+                   'Each row is that trial\'s own result.</p>')
+        out.append('<table class="robustness-table" style="width: 100%; margin-top: 16px;">')
+        out.append('  <thead><tr><th>Comparison</th><th>Trial</th><th>Difference (95% CI)</th>'
+                   '<th>Timepoint</th><th>Source</th></tr></thead><tbody>')
+        for g in single:
+            for st in g['studies']:
+                out.append('  <tr><td>%s</td><td>%s</td><td>%s (%s to %s)</td><td>%s</td>'
+                           '<td><a href="https://pubmed.ncbi.nlm.nih.gov/%s/" target="_blank">PMID:%s</a></td></tr>'
+                           % (g['group'], st['trial'], _fmt(st['effect']), _bound(st['ci_lower']),
+                              _bound(st['ci_upper']), st['timepoint'], st['pmid'], st['pmid']))
+        out.append('</tbody></table>')
+    out.append('<h3>Remission rates and C-peptide</h3>')
+    out.append('<p>Withdrawn. No verified records exist yet for these outcomes.</p>')
+    return '\n'.join(out), '\n'.join(key)
+
+
+pool_section, pool_key_findings = render_pools(structured_pools)
+
 
 def format_ci(lower, upper, decimals=2):
     """Format confidence interval."""
@@ -595,8 +674,7 @@ h3 {{
 <div class="key-findings">
   <h3>Key Findings</h3>
   <ul>
-    <li><strong>Pooled HbA1c reduction: {hba1c_pooled['pooled_effect']:.2f}%</strong> {format_ci(hba1c_pooled['ci_lower'], hba1c_pooled['ci_upper'], decimals=3)} from {hba1c_pooled['n_studies']} pooled studies. Heterogeneity: {hba1c_pooled['heterogeneity']} (I²={hba1c_pooled['I_squared']:.1f}%)</li>
-    <li><strong>Remission rate distribution:</strong> Mean {remission['mean_rate']:.0f}%, Median {remission['median_rate']:.0f}%, Range {remission['range'][0]:.0f}%-{remission['range'][1]:.0f}% (n={remission['n_estimates']} estimates)</li>
+{pool_key_findings}
     <li><strong>{bayesian['ranked'][0].get('path', bayesian['ranked'][0].get('name', 'Top path'))}:</strong> Highest Bayesian posterior probability at {bayesian['ranked'][0]['posterior']*100:.1f}%, classified as {bayesian['ranked'][0]['strength']}</li>
     <li><strong>Top research path strength distribution:</strong> {bayesian['strong_paths']} STRONG, {bayesian['moderate_paths']} MODERATE, {bayesian['weak_paths']} WEAK, {bayesian['insufficient_paths']} INSUFFICIENT (of {bayesian['total_paths']} total)</li>
     <li><strong>Suppressed from this ranking:</strong> {bayesian.get('hollow_suppressed', 0)} path(s) had zero surviving corpus evidence after the 2026-08-21 extraction-gate fix and are excluded. Posteriors computed from regex artifacts are not weak evidence, they are no evidence. Strength-distribution counters above are inherited from the pre-fix synthesis and are being recomputed.</li>
@@ -605,107 +683,7 @@ h3 {{
 
 </section>
 
-<!-- META-ANALYTIC POOLING -->
-<section id="meta-analysis">
-<h2>Meta-Analytic Pooling</h2>
-
-<div class="info-box context">
-  <strong>How to Use This</strong><br>
-  Forest plots display individual study effect sizes with 95% confidence intervals (horizontal lines), plus the pooled diamond estimate. Wider intervals indicate greater uncertainty. The pooled effect (bottom diamond) combines evidence formally across studies using random-effects meta-analysis.
-</div>
-
-<h3>HbA1c Reduction (Pooled)</h3>
-<div class="forest-plot">
-  <div class="forest-plot-row">
-    <div class="forest-study-label">Study / PMID</div>
-    <div style="text-align: center; font-weight: 600;">Effect Size with 95% CI</div>
-    <div class="forest-ci-label">Effect</div>
-  </div>
-'''
-
-    # Add individual studies to forest plot
-    for i, study in enumerate(hba1c_pooled['studies']):
-        pmid = study['pmid']
-        effect = study['effect']
-        # Estimate CI using SE
-        se_est = abs(hba1c_pooled['se']) * 1.96  # rough CI
-        ci_low = effect - se_est
-        ci_high = effect + se_est
-
-        # Normalize for visualization (range -2 to 0)
-        center_pct = 50 + (effect / 2.0 * 50)
-        ci_low_pct = 50 + (ci_low / 2.0 * 50)
-        ci_high_pct = 50 + (ci_high / 2.0 * 50)
-
-        html += f'''  <div class="forest-plot-row">
-    <div class="forest-study-label">PMID {pmid}</div>
-    <div class="forest-bar-container">
-      <div class="forest-ci" style="left: {max(ci_low_pct, 0):.1f}%; width: {max(ci_high_pct - ci_low_pct, 2):.1f}%;"></div>
-      <div class="forest-point" style="left: {center_pct:.1f}%;"></div>
-    </div>
-    <div class="forest-ci-label">{effect:.2f}%</div>
-  </div>
-'''
-
-    # Pooled effect diamond
-    center_pct = 50 + (hba1c_pooled['pooled_effect'] / 2.0 * 50)
-    ci_low_pct = 50 + (hba1c_pooled['ci_lower'] / 2.0 * 50)
-    ci_high_pct = 50 + (hba1c_pooled['ci_upper'] / 2.0 * 50)
-
-    html += f'''  <div class="forest-plot-row" style="font-weight: 600; border-bottom: 2px solid var(--border);">
-    <div class="forest-study-label">Pooled Effect</div>
-    <div class="forest-bar-container">
-      <div class="forest-ci" style="left: {max(ci_low_pct, 0):.1f}%; width: {max(ci_high_pct - ci_low_pct, 2):.1f}%; height: 3px;"></div>
-      <div class="forest-diamond" style="left: {center_pct:.1f}%;"></div>
-    </div>
-    <div class="forest-ci-label">{hba1c_pooled['pooled_effect']:.2f}%</div>
-  </div>
-</div>
-
-<div class="metric-row">
-  <div class="metric-label">Pooled Effect Size</div>
-  <div class="metric-value">{hba1c_pooled['pooled_effect']:.3f}% {format_ci(hba1c_pooled['ci_lower'], hba1c_pooled['ci_upper'], decimals=4)}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Number of Studies</div>
-  <div class="metric-value">{hba1c_pooled['n_studies']}</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Heterogeneity (I²)</div>
-  <div class="metric-value">{hba1c_pooled['I_squared']:.1f}%</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Interpretation</div>
-  <div class="metric-value" style="text-align: left;">{hba1c_pooled['interpretation']}</div>
-</div>
-
-<h3>Remission Rate Distribution</h3>
-'''
-
-    # Remission stats
-    html += f'''<div class="distribution-range">
-  <div class="range-card">
-    <div class="range-label">Mean</div>
-    <div class="range-value">{remission['mean_rate']:.0f}%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Median</div>
-    <div class="range-value">{remission['median_rate']:.0f}%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Std Dev</div>
-    <div class="range-value">{remission['sd']:.1f}%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Range</div>
-    <div class="range-value">{remission['range'][0]:.0f}-{remission['range'][1]:.0f}%</div>
-  </div>
-</div>
-
-<div class="metric-row">
-  <div class="metric-label">Number of Estimates</div>
-  <div class="metric-value">{remission['n_estimates']}</div>
-</div>
+{pool_section}
 
 <h3>Inflammatory Marker Extractions</h3>
 

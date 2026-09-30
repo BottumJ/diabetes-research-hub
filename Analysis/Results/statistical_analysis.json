@@ -1,151 +1,320 @@
 {
   "meta_analysis": {
-    "hba1c_pooled": {
-      "pooled_effect": -0.9345,
-      "se": 0.017,
-      "ci_lower": -0.9678,
-      "ci_upper": -0.9011,
-      "n_studies": 2,
-      "I_squared": 98.7,
-      "heterogeneity": "HIGH",
-      "studies": [
+    "hba1c_pooled": null,
+    "structured_pools": {
+      "source": "structured_effects.json",
+      "pools": [
         {
-          "pmid": "35466661",
-          "effect": -0.88,
-          "n_est": 763
+          "k": 2,
+          "fixed": {
+            "estimate": -1.071,
+            "se": 0.0936,
+            "ci_lower": -1.254,
+            "ci_upper": -0.887
+          },
+          "random": {
+            "estimate": -1.071,
+            "se": 0.0936,
+            "ci_lower": -1.254,
+            "ci_upper": -0.887
+          },
+          "Q": 0.011,
+          "I_squared": 0.0,
+          "tau_squared": 0.0,
+          "label": "orforglipron 12 mg vs placebo",
+          "cluster": "orforglipron_phase3_T2D_HbA1c_vs_placebo",
+          "outcome": "HbA1c change from baseline",
+          "unit": "percentage points",
+          "studies": [
+            {
+              "trial": "ACHIEVE-1",
+              "pmid": "40544435",
+              "nct_id": "NCT05971940",
+              "effect": -1.06,
+              "ci_lower": -1.33,
+              "ci_upper": -0.79,
+              "se": 0.1378,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes treated with diet and exercise only",
+              "estimand": "not stated in abstract"
+            },
+            {
+              "trial": "ACHIEVE-5",
+              "pmid": "42251769",
+              "nct_id": "NCT06109311",
+              "effect": -1.08,
+              "ci_lower": -1.33,
+              "ci_upper": -0.83,
+              "se": 0.1276,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor",
+              "estimand": "not stated in abstract"
+            }
+          ],
+          "evidence_level": "SILVER",
+          "caveats": [
+            "k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.",
+            "The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.",
+            "All trials were funded by the manufacturer.",
+            "Standard errors are derived from the published 95% confidence intervals.",
+            "Effects were read from abstracts; estimand is as stated there and is not stated for every trial."
+          ]
         },
         {
-          "pmid": "35466661",
-          "effect": -1.35,
-          "n_est": 100
+          "k": 2,
+          "fixed": {
+            "estimate": -0.802,
+            "se": 0.0905,
+            "ci_lower": -0.979,
+            "ci_upper": -0.624
+          },
+          "random": {
+            "estimate": -0.802,
+            "se": 0.0905,
+            "ci_lower": -0.979,
+            "ci_upper": -0.624
+          },
+          "Q": 0.075,
+          "I_squared": 0.0,
+          "tau_squared": 0.0,
+          "label": "orforglipron 3 mg vs placebo",
+          "cluster": "orforglipron_phase3_T2D_HbA1c_vs_placebo",
+          "outcome": "HbA1c change from baseline",
+          "unit": "percentage points",
+          "studies": [
+            {
+              "trial": "ACHIEVE-1",
+              "pmid": "40544435",
+              "nct_id": "NCT05971940",
+              "effect": -0.83,
+              "ci_lower": -1.1,
+              "ci_upper": -0.56,
+              "se": 0.1378,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes treated with diet and exercise only",
+              "estimand": "not stated in abstract"
+            },
+            {
+              "trial": "ACHIEVE-5",
+              "pmid": "42251769",
+              "nct_id": "NCT06109311",
+              "effect": -0.78,
+              "ci_lower": -1.02,
+              "ci_upper": -0.55,
+              "se": 0.1199,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor",
+              "estimand": "not stated in abstract"
+            }
+          ],
+          "evidence_level": "SILVER",
+          "caveats": [
+            "k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.",
+            "The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.",
+            "All trials were funded by the manufacturer.",
+            "Standard errors are derived from the published 95% confidence intervals.",
+            "Effects were read from abstracts; estimand is as stated there and is not stated for every trial."
+          ]
+        },
+        {
+          "k": 2,
+          "fixed": {
+            "estimate": -1.05,
+            "se": 0.0929,
+            "ci_lower": -1.232,
+            "ci_upper": -0.868
+          },
+          "random": {
+            "estimate": -1.05,
+            "se": 0.0929,
+            "ci_lower": -1.232,
+            "ci_upper": -0.868
+          },
+          "Q": 0.046,
+          "I_squared": 0.0,
+          "tau_squared": 0.0,
+          "label": "orforglipron 36 mg vs placebo",
+          "cluster": "orforglipron_phase3_T2D_HbA1c_vs_placebo",
+          "outcome": "HbA1c change from baseline",
+          "unit": "percentage points",
+          "studies": [
+            {
+              "trial": "ACHIEVE-1",
+              "pmid": "40544435",
+              "nct_id": "NCT05971940",
+              "effect": -1.07,
+              "ci_lower": -1.33,
+              "ci_upper": -0.81,
+              "se": 0.1327,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes treated with diet and exercise only",
+              "estimand": "not stated in abstract"
+            },
+            {
+              "trial": "ACHIEVE-5",
+              "pmid": "42251769",
+              "nct_id": "NCT06109311",
+              "effect": -1.03,
+              "ci_lower": -1.28,
+              "ci_upper": -0.77,
+              "se": 0.1301,
+              "timepoint": "week 40",
+              "population": "adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor",
+              "estimand": "not stated in abstract"
+            }
+          ],
+          "evidence_level": "SILVER",
+          "caveats": [
+            "k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.",
+            "The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.",
+            "All trials were funded by the manufacturer.",
+            "Standard errors are derived from the published 95% confidence intervals.",
+            "Effects were read from abstracts; estimand is as stated there and is not stated for every trial."
+          ]
         }
       ],
-      "outcome": "HbA1c change (%)",
-      "interpretation": "Pooled HbA1c reduction: 0.93% (95% CI: 0.90 to 0.97)"
+      "not_pooled": [
+        {
+          "group": "orforglipron 12 mg vs dapagliflozin 10 mg",
+          "trials": [
+            "ACHIEVE-2"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-2",
+              "pmid": "42259339",
+              "effect": -0.7,
+              "ci_lower": -0.9,
+              "ci_upper": -0.49,
+              "timepoint": "week 40"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 12 mg vs oral semaglutide 14 mg",
+          "trials": [
+            "ACHIEVE-3"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-3",
+              "pmid": "41765029",
+              "effect": -0.24,
+              "ci_lower": -0.41,
+              "ci_upper": -0.072,
+              "timepoint": "week 52"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 12 mg vs oral semaglutide 7 mg",
+          "trials": [
+            "ACHIEVE-3"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-3",
+              "pmid": "41765029",
+              "effect": -0.48,
+              "ci_lower": -0.65,
+              "ci_upper": -0.31,
+              "timepoint": "week 52"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 3 mg vs dapagliflozin 10 mg",
+          "trials": [
+            "ACHIEVE-2"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-2",
+              "pmid": "42259339",
+              "effect": -0.42,
+              "ci_lower": -0.62,
+              "ci_upper": -0.23,
+              "timepoint": "week 40"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 36 mg vs dapagliflozin 10 mg",
+          "trials": [
+            "ACHIEVE-2"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-2",
+              "pmid": "42259339",
+              "effect": -0.75,
+              "ci_lower": -0.96,
+              "ci_upper": -0.55,
+              "timepoint": "week 40"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 36 mg vs oral semaglutide 14 mg",
+          "trials": [
+            "ACHIEVE-3"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-3",
+              "pmid": "41765029",
+              "effect": -0.44,
+              "ci_lower": -0.62,
+              "ci_upper": -0.26,
+              "timepoint": "week 52"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        },
+        {
+          "group": "orforglipron 36 mg vs oral semaglutide 7 mg",
+          "trials": [
+            "ACHIEVE-3"
+          ],
+          "studies": [
+            {
+              "trial": "ACHIEVE-3",
+              "pmid": "41765029",
+              "effect": -0.68,
+              "ci_lower": -0.85,
+              "ci_upper": -0.5,
+              "timepoint": "week 52"
+            }
+          ],
+          "reason": "one trial only - a single result is reported, not pooled"
+        }
+      ]
     },
     "inflammatory_markers": {
-      "total_extractions": 94,
+      "total_extractions": 3,
       "by_marker": {
-        "TNF-alpha": {
-          "extraction_count": 14,
-          "unique_papers": 7,
-          "pmids": [
-            "21997792",
-            "26656660",
-            "26897744",
-            "28086098",
-            "31036962",
-            "37105208",
-            "39412512"
-          ]
-        },
         "IL-1": {
-          "extraction_count": 25,
-          "unique_papers": 5,
-          "pmids": [
-            "19575028",
-            "27821710",
-            "28086098",
-            "31036962",
-            "39412512"
-          ]
-        },
-        "NLRP3": {
-          "extraction_count": 44,
+          "extraction_count": 3,
           "unique_papers": 2,
           "pmids": [
-            "31036962",
-            "39412512"
+            "27821710",
+            "32358544"
           ]
         }
       }
     },
     "remission_pooled": {
-      "n_estimates": 68,
-      "mean_rate": 50.0,
-      "median_rate": 44.0,
-      "range": [
-        6.0,
-        95.0
-      ],
-      "sd": 29.9,
-      "studies": [
-        {
-          "rate": 70.0,
-          "pmid": "39428507",
-          "context": "entrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldri"
-        },
-        {
-          "rate": 37.0,
-          "pmid": "39428507",
-          "context": "entrifuged. The cell pellet was resuspended in 70% (v/v) Percoll solution (#GE17-0891-01, SigmaAldri"
-        },
-        {
-          "rate": 44.0,
-          "pmid": "39843169",
-          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
-        },
-        {
-          "rate": 44.0,
-          "pmid": "39843169",
-          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
-        },
-        {
-          "rate": 28.0,
-          "pmid": "39843169",
-          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
-        },
-        {
-          "rate": 95.0,
-          "pmid": "39843169",
-          "context": "etic drugs for at least 2 months); secondary outcomes: changes in body weight, waist circumference, "
-        },
-        {
-          "rate": 28.0,
-          "pmid": "39843169",
-          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
-        },
-        {
-          "rate": 95.0,
-          "pmid": "39843169",
-          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
-        },
-        {
-          "rate": 44.0,
-          "pmid": "39843169",
-          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
-        },
-        {
-          "rate": 28.0,
-          "pmid": "39843169",
-          "context": "y outcomes: changes in body weight, waist circumference, body fat, blood pressure, glucose homoeosta"
-        }
-      ],
-      "interpretation": "Remission rates across 68 extracted estimates range from 6% to 95% (median 44%)",
-      "caveat": "Rates are from heterogeneous populations, interventions, and remission definitions. Direct comparison requires careful subgroup analysis."
+      "withdrawn": true,
+      "reason": "Withdrawn 2026-09-30. The previous figures were summary statistics over regular-expression captures, not extracted study results, and included values that were not the outcome at all. No verified records exist yet for this outcome."
     },
     "cpeptide_pooled": {
-      "n_values": 2,
-      "mean": 0.1,
-      "median": 0.1,
-      "range": [
-        0.1,
-        0.1
-      ],
-      "studies": [
-        {
-          "value": 0.1,
-          "pmid": "35028608",
-          "context": "ed in the initial few months following implantation continued to reveal no detectable circulating C-"
-        },
-        {
-          "value": 0.1,
-          "pmid": "35028608",
-          "context": "ed in the initial few months following implantation continued to reveal no detectable circulating C-"
-        }
-      ],
-      "interpretation": "C-peptide values across 2 extractions: median 0.1 ng/mL (range 0.1-0.1)",
-      "caveat": "Values span fasting, stimulated, pre- and post-treatment contexts. Not directly comparable without matching timepoints and stimulation protocols."
+      "withdrawn": true,
+      "reason": "Withdrawn 2026-09-30. The previous figures were summary statistics over regular-expression captures, not extracted study results, and included values that were not the outcome at all. No verified records exist yet for this outcome."
     }
   },
   "bayesian_synthesis": {
