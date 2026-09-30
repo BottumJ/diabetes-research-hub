@@ -1,77 +1,23 @@
 {
-  "generated": "2026-09-29T08:27:53.001605",
+  "generated": "2026-09-30T00:59:23.235472",
   "gate": "gap_subject_coverage",
   "method": "Regex over stored title + journal + finding snippets in gap_evidence.json. No abstracts fetched. Misses are an UPPER bound: a paper whose abstract covers the axis but whose stored snippet does not will read as a miss.",
   "gaps_checked": 15,
-  "findings_count": 7,
+  "findings_count": 3,
+  "blocking_count": 1,
   "findings": [
-    {
-      "gap_id": 1,
-      "name": "Gene Therapy for LADA",
-      "tier": "SILVER",
-      "severity": "MEDIUM",
-      "problem": "47 evidence paper(s). 0 touch \"gene therapy\" and 17 touch \"LADA\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
-      "remedy": "State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.",
-      "pmids": [
-        "24598244",
-        "29619531",
-        "11484077",
-        "23248199",
-        "15266224",
-        "16306343",
-        "42373533",
-        "23835325",
-        "34318969",
-        "32307525",
-        "22296077",
-        "23780460",
-        "28885622",
-        "30041834",
-        "17942684",
-        "19404608",
-        "40737658",
-        "32847960",
-        "37428296",
-        "1697648",
-        "18843118",
-        "25751624",
-        "26404926",
-        "32754804",
-        "35784546",
-        "9357409",
-        "34021020",
-        "35665810",
-        "37026004",
-        "41468096",
-        "15043959",
-        "31180194",
-        "36109639",
-        "41935855",
-        "19940299",
-        "21719096",
-        "23413806",
-        "23890997",
-        "24871322",
-        "26656660",
-        "27727279",
-        "29988125",
-        "32627352",
-        "39613428",
-        "41567805",
-        "41827917",
-        "42034968"
-      ]
-    },
     {
       "gap_id": 4,
       "name": "Drug Repurposing for Islet Transplant",
       "tier": "SILVER",
-      "severity": "MEDIUM",
-      "problem": "24 evidence paper(s). 22 touch \"islet transplant\" and 1 touch \"repurposing\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
+      "severity": "ACKNOWLEDGED",
+      "problem": "25 evidence paper(s). 23 touch \"islet transplant\" and 1 touch \"repurposing\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
       "remedy": "State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.",
+      "finding_class": "no_paper_at_intersection",
       "pmids": [
         "23061757",
         "19104422",
+        "35588757",
         "10911004",
         "11095109",
         "18713146",
@@ -94,15 +40,22 @@
         "35028608",
         "27821710",
         "35887740"
-      ]
+      ],
+      "detected_severity": "MEDIUM",
+      "ruling": {
+        "date": "2026-09-30",
+        "decision": "Drug-level evidence counts as evidence for the repurposing question, labelled as such."
+      },
+      "reader_note": "The papers cited here are about the individual drugs (for example anakinra, etanercept, sirolimus) in islet transplantation. None of them frames its work as drug repurposing; that link is this hub's inference, not a finding of the cited papers."
     },
     {
       "gap_id": 7,
       "name": "GKA Drug Repurposing",
       "tier": "SILVER",
-      "severity": "HIGH",
+      "severity": "ACKNOWLEDGED",
       "problem": "22 evidence paper(s), NONE mentioning the \"repurposing\" axis. The stored evidence is on-topic for \"glucokinase activator\" only. This gap is an intersection and its evidence covers one side of it.",
       "remedy": "Re-found on a dated null search, or record that the gap has never been tested. Do not publish the current citation list as support.",
+      "finding_class": "lens_axis_absent",
       "pmids": [
         "38783768",
         "40272935",
@@ -126,15 +79,22 @@
         "30949058",
         "37385967",
         "28731034"
-      ]
+      ],
+      "detected_severity": "HIGH",
+      "ruling": {
+        "date": "2026-09-30",
+        "decision": "Drug-level evidence counts as evidence for the repurposing question, labelled as such."
+      },
+      "reader_note": "The papers cited here are about glucokinase activators themselves (chiefly dorzagliatin). None of them frames its work as drug repurposing; that link is this hub's inference, not a finding of the cited papers. A dated search on 2026-09-28 found no paper at the intersection."
     },
     {
       "gap_id": 11,
       "name": "Islet Transplant Registry Equity",
-      "tier": "GOLD",
+      "tier": "SILVER",
       "severity": "MEDIUM",
       "problem": "7 evidence paper(s). 6 touch \"islet transplant registry\" and 1 touch \"equity\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
       "remedy": "State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.",
+      "finding_class": "no_paper_at_intersection",
       "pmids": [
         "19104422",
         "39951130",
@@ -143,53 +103,23 @@
         "37026004",
         "23061757",
         "42688599"
-      ]
-    },
-    {
-      "gap_id": 13,
-      "name": "Personalized Nutrition for Beta Cells",
-      "tier": "BRONZE",
-      "severity": "HIGH",
-      "problem": "4 evidence paper(s), NONE mentioning the \"personalized nutrition\" axis. The stored evidence is on-topic for \"beta cell\" only. This gap is an intersection and its evidence covers one side of it.",
-      "remedy": "Re-found on a dated null search, or record that the gap has never been tested. Do not publish the current citation list as support.",
-      "pmids": [
-        "18397984",
-        "18442638",
-        "25498346",
-        "35784546"
-      ]
-    },
-    {
-      "gap_id": 14,
-      "name": "Personalized Nutrition for LADA",
-      "tier": "BRONZE",
-      "severity": "HIGH",
-      "problem": "Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.",
-      "remedy": "Demote to EXPLORATORY or attach evidence.",
-      "pmids": []
-    },
-    {
-      "gap_id": 15,
-      "name": "GKA Pricing Trajectory",
-      "tier": "BRONZE",
-      "severity": "HIGH",
-      "problem": "Tier BRONZE with ZERO evidence papers. A tier above EXPLORATORY asserts evidential standing this gap does not have.",
-      "remedy": "Demote to EXPLORATORY or attach evidence.",
-      "pmids": []
+      ],
+      "reader_note": "7 evidence paper(s). 6 touch \"islet transplant registry\" and 1 touch \"equity\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference."
     }
   ],
   "coverage_table": [
     {
       "gap_id": 1,
       "name": "Gene Therapy for LADA",
-      "tier": "SILVER",
+      "tier": "EXPLORATORY",
       "papers": 47,
       "x_axis": "gene therapy",
       "x_covered": 0,
       "y_axis": "LADA",
       "y_covered": 17,
       "both_axes_covered": 0,
-      "papers_covering_both": []
+      "papers_covering_both": [],
+      "status": "exploratory - no evidential standing claimed"
     },
     {
       "gap_id": 2,
@@ -222,9 +152,9 @@
       "gap_id": 3,
       "name": "Insulin Resistance in Islet Transplant",
       "tier": "GOLD",
-      "papers": 31,
+      "papers": 32,
       "x_axis": "islet transplant",
-      "x_covered": 28,
+      "x_covered": 29,
       "y_axis": "insulin resistance",
       "y_covered": 2,
       "both_axes_covered": 2,
@@ -237,9 +167,9 @@
       "gap_id": 4,
       "name": "Drug Repurposing for Islet Transplant",
       "tier": "SILVER",
-      "papers": 24,
+      "papers": 25,
       "x_axis": "islet transplant",
-      "x_covered": 22,
+      "x_covered": 23,
       "y_axis": "repurposing",
       "y_covered": 1,
       "both_axes_covered": 0,
@@ -263,7 +193,7 @@
     {
       "gap_id": 6,
       "name": "CAR-T Access Barriers",
-      "tier": "GOLD",
+      "tier": "SILVER",
       "papers": 16,
       "x_axis": "CAR-T",
       "x_covered": 16,
@@ -316,7 +246,8 @@
       "y_axis": "LADA",
       "y_covered": 0,
       "both_axes_covered": 0,
-      "papers_covering_both": []
+      "papers_covering_both": [],
+      "status": "exploratory - no evidential standing claimed"
     },
     {
       "gap_id": 10,
@@ -336,7 +267,7 @@
     {
       "gap_id": 11,
       "name": "Islet Transplant Registry Equity",
-      "tier": "GOLD",
+      "tier": "SILVER",
       "papers": 7,
       "x_axis": "islet transplant registry",
       "x_covered": 6,
@@ -364,38 +295,41 @@
     {
       "gap_id": 13,
       "name": "Personalized Nutrition for Beta Cells",
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "papers": 4,
       "x_axis": "beta cell",
       "x_covered": 1,
       "y_axis": "personalized nutrition",
       "y_covered": 0,
       "both_axes_covered": 0,
-      "papers_covering_both": []
+      "papers_covering_both": [],
+      "status": "exploratory - no evidential standing claimed"
     },
     {
       "gap_id": 14,
       "name": "Personalized Nutrition for LADA",
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "papers": 0,
       "x_axis": "LADA",
       "x_covered": 0,
       "y_axis": "personalized nutrition",
       "y_covered": 0,
       "both_axes_covered": 0,
-      "papers_covering_both": []
+      "papers_covering_both": [],
+      "status": "exploratory - no evidential standing claimed"
     },
     {
       "gap_id": 15,
       "name": "GKA Pricing Trajectory",
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "papers": 0,
       "x_axis": "glucokinase activator",
       "x_covered": 0,
       "y_axis": "pricing",
       "y_covered": 0,
       "both_axes_covered": 0,
-      "papers_covering_both": []
+      "papers_covering_both": [],
+      "status": "exploratory - no evidential standing claimed"
     }
   ]
 }

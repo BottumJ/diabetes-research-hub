@@ -112,6 +112,26 @@ def kinds(report):
     return sorted(f['kind'] for f in report.get('findings', []))
 
 
+def _force_rmtree(path):
+    """rmtree that also removes read-only files.
+
+    git writes its object files read-only. POSIX unlink ignores that;
+    Windows does not, so a bare shutil.rmtree raised PermissionError and
+    this fixture failed on the first local run (2026-09-30) for a reason
+    that had nothing to do with the gate under test.
+    """
+    import stat
+
+    def _retry(func, p, _exc):
+        os.chmod(p, stat.S_IWRITE)
+        func(p)
+
+    if sys.version_info >= (3, 12):
+        shutil.rmtree(path, onexc=_retry)
+    else:
+        shutil.rmtree(path, onerror=_retry)
+
+
 def main():
     failures = []
     results = []
@@ -185,7 +205,7 @@ def main():
     # --- CASE 5: unreachable remote -> FETCH_FAILED, not silence ----------
     with tempfile.TemporaryDirectory() as tmp:
         remote, _seed, clone = build_pair(tmp)
-        shutil.rmtree(remote)          # remote vanishes; fetch cannot succeed
+        _force_rmtree(remote)          # remote vanishes; fetch cannot succeed
         code, rep = run_gate(clone, tmp)
         check('case5 exits 1 (unknown is not clean)', code == 1, f'exit {code}')
         check('case5 flags FETCH_FAILED', 'FETCH_FAILED' in kinds(rep), str(kinds(rep)))

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 GKA Pricing Trajectory Model Dashboard
-Gap #15 (BRONZE): Interactive Tufte-style analysis of glucokinase activator pricing
+Gap #15 (EXPLORATORY): Interactive Tufte-style analysis of glucokinase activator pricing
 """
 
 import os
@@ -361,7 +361,7 @@ html_content = f"""<!DOCTYPE html>
     <div class="container">
         <header>
             <h1>GKA Pricing Trajectory Model</h1>
-            <p class="subtitle">Gap #15 (BRONZE): Modeling cost trajectory and market dynamics of glucokinase activators</p>
+            <p class="subtitle">Gap #15 (EXPLORATORY): Modeling cost trajectory and market dynamics of glucokinase activators</p>
         </header>
 
         <div class="context-block">
@@ -890,7 +890,7 @@ html_content = f"""<!DOCTYPE html>
             <p>
                 <strong>Dashboard Version:</strong> 1.0 | <strong>Generated:</strong> 2026-03-16<br>
                 <strong>Design:</strong> Tufte-style minimalist dashboard with interactive tabs and expandable sections<br>
-                <strong>Scope:</strong> BRONZE validation — Gap #15 (GKA Pricing Trajectory Model)
+                <strong>Scope:</strong> EXPLORATORY — Gap #15 (GKA Pricing Trajectory Model)
             </p>
             <p>
                 This dashboard synthesizes publicly available data on glucokinase activator development, pricing precedents from SGLT2i and GLP-1 agonist classes, and clinical trial timelines. Projections are based on comparable drug classes and regulatory timelines.

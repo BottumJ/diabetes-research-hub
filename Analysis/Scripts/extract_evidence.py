@@ -49,7 +49,7 @@ os.makedirs(output_dir, exist_ok=True)
 GAPS = {
     1: {
         'name': 'Gene Therapy for LADA',
-        'tier': 'SILVER',
+        'tier': 'EXPLORATORY',  # Owner ruling 2026-09-30: evidence is not about this gap's own question (DECISION_BRIEF_2026-09-07).
         'keywords': [
             'lada', 'latent autoimmune diabetes', 'gene therapy', 'gada',
             'gad65', 'gad antibod', 'autoimmune diabetes adult',
@@ -108,7 +108,7 @@ GAPS = {
     },
     6: {
         'name': 'CAR-T Access Barriers',
-        'tier': 'GOLD',
+        'tier': 'SILVER',  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
         'keywords': [
             'car-t', 'car t cell', 'chimeric antigen receptor',
             'car-treg', 'adoptive cell', 'cell therapy cost',
@@ -161,7 +161,7 @@ GAPS = {
     },
     11: {
         'name': 'Islet Transplant Registry Equity',
-        'tier': 'GOLD',
+        'tier': 'SILVER',  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
         'keywords': [
             'islet transplant registry', 'citr', 'transplant equity',
             'transplant access', 'organ allocation', 'transplant disparit',
@@ -184,7 +184,7 @@ GAPS = {
     },
     13: {
         'name': 'Personalized Nutrition for Beta Cells',
-        'tier': 'BRONZE',
+        'tier': 'EXPLORATORY',  # Owner ruling 2026-09-30: evidence is not about this gap's own question (DECISION_BRIEF_2026-09-07).
         'keywords': [
             'nutrition beta cell', 'diet beta cell', 'nutrient sensing',
             'zinc beta cell', 'magnesium diabetes', 'berberine',
@@ -196,7 +196,7 @@ GAPS = {
     },
     14: {
         'name': 'Personalized Nutrition for LADA',
-        'tier': 'BRONZE',
+        'tier': 'EXPLORATORY',  # Reconciled 2026-09-30 to the 2026-09-27 demotion in build_gap_deep_dives.py: zero evidence papers.
         'keywords': [
             'nutrition lada', 'diet autoimmune diabetes', 'mediterranean diet diabetes',
             'predimed diabetes', 'anti-inflammatory diet', 'gut microbiome autoimmun',
@@ -206,7 +206,7 @@ GAPS = {
     },
     15: {
         'name': 'GKA Pricing Trajectory',
-        'tier': 'BRONZE',
+        'tier': 'EXPLORATORY',  # Reconciled 2026-09-30 to the 2026-09-27 demotion in build_gap_deep_dives.py: zero evidence papers.
         'keywords': [
             'gka price', 'gka cost', 'glucokinase cost', 'dorzagliatin price',
             'diabetes drug pricing', 'drug access cost', 'diabetes pharmacoeconom',

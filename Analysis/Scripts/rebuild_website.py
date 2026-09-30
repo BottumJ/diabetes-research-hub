@@ -400,7 +400,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>LADA Natural History Model</h3>
-    <p>Computational model of C-peptide decline trajectories for LADA1 vs LADA2. Autoantibody risk stratification, intervention windows, and genetic markers. Gap #1 (SILVER).</p>
+    <p>Computational model of C-peptide decline trajectories for LADA1 vs LADA2. Autoantibody risk stratification, intervention windows, and genetic markers. Gap #1 (EXPLORATORY).</p>
     <a href="Dashboards/LADA_Natural_History.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
@@ -510,19 +510,19 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Nutrition for Beta Cells</h3>
-    <p>Nutrient-beta cell evidence map: zinc, omega-3, vitamin D, magnesium. Nutrigenomics and microbiome personalization gap. C-peptide preservation endpoints. Gap #13 (BRONZE).</p>
+    <p>Nutrient-beta cell evidence map: zinc, omega-3, vitamin D, magnesium. Nutrigenomics and microbiome personalization gap. C-peptide preservation endpoints. Gap #13 (EXPLORATORY).</p>
     <a href="Dashboards/Nutrition_Beta_Cells.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>Nutrition for LADA</h3>
-    <p>Why LADA needs its own nutrition strategy (not T1D, not T2D). Mediterranean anti-inflammatory base, gut barrier integrity, LAMENS trial design. Gap #14 (BRONZE).</p>
+    <p>Why LADA needs its own nutrition strategy (not T1D, not T2D). Mediterranean anti-inflammatory base, gut barrier integrity, LAMENS trial design. Gap #14 (EXPLORATORY).</p>
     <a href="Dashboards/Nutrition_LADA.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">
     <div class="status live">Available</div>
     <h3>GKA Pricing Trajectory</h3>
-    <p>Three pricing scenarios for glucokinase activators. Dorzagliatin (China), TTP399 T1D pipeline, patent cliff timeline, generic GKA projections 2038-2045. Gap #15 (BRONZE).</p>
+    <p>Three pricing scenarios for glucokinase activators. Dorzagliatin (China), TTP399 T1D pipeline, patent cliff timeline, generic GKA projections 2038-2045. Gap #15 (EXPLORATORY).</p>
     <a href="Dashboards/GKA_Pricing.html">Open dashboard &rarr;</a>
   </div>
 </div>

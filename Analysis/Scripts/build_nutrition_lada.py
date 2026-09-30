@@ -394,7 +394,7 @@ html_content = """<!DOCTYPE html>
     <div class="container">
         <header>
             <h1>Personalized Nutrition Strategy for LADA</h1>
-            <p class="subtitle">BRONZE-Validated Research Gap #14</p>
+            <p class="subtitle">Exploratory Research Gap #14</p>
             <span class="badge">GAPS-BASED RESEARCH</span>
         </header>
 

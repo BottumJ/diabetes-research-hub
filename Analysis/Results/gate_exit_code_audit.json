@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-29",
+  "generated": "2026-09-30",
   "runner": "Analysis/Scripts/run_quality_improvements.py",
-  "stages_wired": 85,
-  "gates_classified": 40,
-  "gates_that_can_fail": 34,
+  "stages_wired": 86,
+  "gates_classified": 41,
+  "gates_that_can_fail": 35,
   "defects": [],
   "records": [
     {
@@ -654,7 +654,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 276,
+          "line": 282,
           "exit_wrapped": false
         }
       ],
@@ -2041,19 +2041,19 @@
       ],
       "nonzero_exits": [
         {
-          "line": 262,
+          "line": 326,
           "in_except": false,
           "code": "expr"
         }
       ],
       "nonzero_outside_except": [
-        262
+        326
       ],
       "zero_exits": [],
       "entry_points": [
         {
           "func": "main",
-          "line": 262,
+          "line": 326,
           "exit_wrapped": true
         }
       ],
@@ -2108,20 +2108,20 @@
           "code": "raise"
         },
         {
-          "line": 213,
+          "line": 233,
           "in_except": false,
           "code": "expr"
         }
       ],
       "nonzero_outside_except": [
         62,
-        213
+        233
       ],
       "zero_exits": [],
       "entry_points": [
         {
           "func": "main",
-          "line": 213,
+          "line": 233,
           "exit_wrapped": true
         }
       ],
@@ -2275,6 +2275,35 @@
         {
           "func": "main",
           "line": 386,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
+      "stage": "structuredeffects",
+      "script": "structured_effects.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [
+        {
+          "line": 348,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        348
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 348,
           "exit_wrapped": true
         }
       ],

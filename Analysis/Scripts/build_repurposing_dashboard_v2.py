@@ -540,7 +540,10 @@ function sortTable(tableId, colIdx) {{
 </html>"""
 
 output_path = DASH_DIR / "Islet_Drug_Repurposing.html"
-with open(output_path, "w") as f:
+# encoding is explicit: on Windows the default is cp1252, which cannot
+# encode this page, and the stage died there on the first local run
+# (2026-09-30) after months of passing in the Linux sandbox.
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(html)
 
 print(f"Dashboard v2 saved to: {output_path}")

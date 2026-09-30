@@ -372,7 +372,7 @@ def generate_html(data):
 
         if coverage_finding is not None:
             html += f'''                <p class="coverage-caveat" style="border-left: 3px solid #b45309; padding: 0.5em 1em; background: #fef3c7; margin: 0.75em 0;">
-                    <strong>Caveat ({coverage_finding['severity']}):</strong> {coverage_finding['problem']} {coverage_finding['remedy']}
+                    <strong>Caveat:</strong> {coverage_finding.get('reader_note') or coverage_finding['problem']}
                 </p>
 '''
 

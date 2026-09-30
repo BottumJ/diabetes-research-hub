@@ -181,7 +181,7 @@ PAPERS_DATA = [
 # ═══════════════════════════════════════════════════════════════════════════
 
 TIMELINE_2025 = [
-    {"date":"2025","title":"Vertex Zimislecel Phase 3 enrolls 50 participants","desc":"First scalable stem cell therapy for T1D reaches pivotal trial. 10/12 full-dose patients insulin-independent at 1 year.","type":"milestone"},
+    {"date":"2025","title":"Vertex Zimislecel Phase 3 enrolls 50 participants","desc":"First scalable stem cell therapy for T1D reaches pivotal trial. 10/12 full-dose patients insulin-independent at 1 year (phase 1-2 interim analysis; PMID:40544428).","type":"milestone"},
     {"date":"Nov 2025","title":"Stanford preclinical: reversal of T1D in mice without immunosuppression","desc":"Preclinical (murine): hybrid immune system co-transplant reported reversal of hyperglycemia in 19/19 protected and 9/9 established-T1D mice. No human data yet; do not extrapolate.","type":"milestone"},
     {"date":"2025","title":"Sana engineered islets reported viable at 6 months in early-phase trial","desc":"Gene-edited (HIP) islet cells reported functioning without immunosuppression in early-phase data; durability and rejection profile beyond 6 months not yet established.","type":"milestone"},
     {"date":"2025","title":"Retatrutide: 28.7% weight loss in TRIUMPH-4","desc":"Eli Lilly's triple agonist (GLP-1/GIP/Glucagon) sets new efficacy benchmark for T2D.","type":"milestone"},

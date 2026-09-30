@@ -98,7 +98,7 @@ SCRIPTS = {
     'deepdives': ('build_gap_deep_dives.py', 'Building Gap Deep Dives (all 15 gaps)'),
     'acronyms': ('build_acronym_db.py', 'Building Acronym & Abbreviation Database'),
     'dictionary': ('build_data_dictionary.py', 'Building Medical Data Dictionary (117 terms, cited)'),
-    'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 SILVER)'),
+    'lada': ('build_lada_model.py', 'Building LADA Natural History Model (Gap #1 EXPLORATORY)'),
     'islet': ('build_islet_outcomes.py', 'Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)'),
     'drugrepurpose': ('build_drug_repurposing_islet.py', 'Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)'),  # Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.
     'immunomod': ('build_immunomod_lada.py', 'Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)'),
@@ -109,7 +109,7 @@ SCRIPTS = {
     'genericdrug': ('build_generic_drug_catalog.py', 'Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)'),
     'gkalada': ('build_gka_lada.py', 'Building GKA in LADA Analysis (Gap #9 EXPLORATORY)'),
     'ladaprev': ('build_lada_prevalence.py', 'Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)'),
-    'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 SILVER)'),
+    'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 EXPLORATORY)'),
     'nutrilada': ('build_nutrition_lada.py', 'Building Personalized Nutrition for LADA (Gap #14 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
     'gkapricing': ('build_gka_pricing.py', 'Building GKA Pricing Trajectory Model (Gap #15 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
     'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 GOLD)'),
@@ -669,6 +669,17 @@ SCRIPTS = {
     'endpointagreement': ('audit_endpoint_value_agreement.py',
                           'Gating on endpoint values that contradict each '
                           'other or carry no citation at all'),
+    # NEW 2026-09-30. Phase 1 of SCIENCE_ARM_BUILD_CHARTER.md. The regex
+    # extractor cannot tell an effect size from a nearby percentage, so the
+    # poolable substrate is written by an analyst and checked here: every
+    # record needs an effect and a variance, its quoted span must be verbatim
+    # in the live PubMed abstract, and its numbers must sit inside that span.
+    # Second-pass agreement is recorded by `compare` and is not re-run here:
+    # it needs a second extraction, which a pipeline stage cannot conjure.
+    'structuredeffects': ('structured_effects.py',
+                          'Verifying structured effect records against their '
+                          'quoted PubMed abstract spans',
+                          ('verify',)),
 }
 
 def run_script(name, desc, script_args=()):

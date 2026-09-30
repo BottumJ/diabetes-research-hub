@@ -23,7 +23,7 @@ output_file = os.path.join(project_root, 'Dashboards', 'Gap_Deep_Dives.html')
 GAPS_DATA = {
     "1": {
         "title": "Gene Therapy for LADA",
-        "tier": "SILVER",
+        "tier": "EXPLORATORY",  # Owner ruling 2026-09-30: evidence is not about this gap's own question (DECISION_BRIEF_2026-09-07).
         "score": 0.96,
         "cluster": "B",
         "domain_pubs": {"gene_therapy": 2106, "lada": 535},
@@ -148,7 +148,7 @@ GAPS_DATA = {
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, local manufacturing infrastructure"
         },
         "validation_evidence": "GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions | CORPUS VALIDATION (March 2026): Corpus analysis identified 19 cross-gap data points including hazard ratios and odds ratios from published equity studies.",
-        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year. However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets show improved outcomes vs allogeneic (reported better rejection rates with Edmonton Protocol).",
+        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year (10 of 12 full-dose participants, phase 1-2 interim analysis; PMID:40544428). However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets show improved outcomes vs allogeneic (reported better rejection rates with Edmonton Protocol).",
         "mechanism_detail": "VX-880 (zimislecel) uses GADA-selected iPSC line genetically matched to donor HLA background. Differentiation protocol: iPSC -> definitive endoderm (CHIR99021/ACTIVIN A, 5d) -> pancreatic bud (FGF2/BMP4, 7d) -> pancreatic progenitors (NOGGIN/LDN193189/FGF7, 13d) -> immature beta cells (T3/FORSKOLIN, 21d) -> mature beta cells (maturation culture, 10d). Final product: 73% INSULIN+ cells, 62% CD9- (mature phenotype), 4.2+/-0.9 pC/kg/min glucose stimulation (near-adult values). In the reported VX-880 cohort: a majority achieved pre-specified glucose targets at the initial readout (exact proportions vary by reporting timepoint — see sponsor and peer-reviewed disclosures). No clinically-apparent allograft rejection events were reported in the disclosed interim analyses, though the cohort is small and follow-up remains limited; immunosuppression target range was lower than historical Edmonton Protocol (tacrolimus ~3-5 ng/mL vs. ~10-15 ng/mL historically). Insulin-secretion kinetics were reported to recover over 6-12 months post-transplant. (All outcome claims require verification against peer-reviewed endpoints.)"
     },
     "3": {
@@ -176,7 +176,7 @@ GAPS_DATA = {
         "evidence_synthesis": {
             "summary": "Edmonton Protocol 20-year data: 61% insulin independence at 1yr declining to 8% at 20yr. Tacrolimus IR onset 24-hour, 40% incidence at 3mo.",
             "details": [
-                "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr, 32% at 5yr, 8% at 20yr",
+                "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr, 32% at 5yr, 8% at 20yr (Kaplan-Meier; PMID:35588757)",
                 "Tacrolimus IR mechanism: FKBP-12/calcineurin/NFAT pathway",
                 "HOMA-IR: 7.5+/-2.3 in failure group vs 3.5+/-0.5 in success (2.1-fold difference)",
                 # CORRECTED 2026-09-21. This line previously read "Calcineurin-sparing
@@ -198,7 +198,7 @@ GAPS_DATA = {
                 "years -- one 10-patient series (5 BELA / 5 EFA), not two drug arms; "
                 "3 of the 7 reached that endpoint via pancreas-after-islet transplant, "
                 "which is calcineurin-DEPENDENT (PMID:37359825)",
-                "Donislecel (LANTIDRA): FDA-approved June 2023, 67% insulin independence at 1yr"
+                "Donislecel (LANTIDRA): FDA-approved June 2023; 21 of 30 participants insulin-independent for a year or more in two single-arm studies (FDA approval announcement, 2023-06-28)"
             ]
         },
         "mechanistic_bridge": {
@@ -226,8 +226,8 @@ GAPS_DATA = {
             "protocol, n=10 consecutive, single-centre, NO control arm (not comparative)"
         ],
         "clinical_pipeline": [
-            "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr (reference standard)",
-            "LANTIDRA (donislecel): FDA-approved June 2023, 67% insulin independence at 1yr",
+            "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr (Kaplan-Meier; reference standard; PMID:35588757)",
+            "LANTIDRA (donislecel): FDA-approved June 2023; 21 of 30 participants insulin-independent for a year or more in two single-arm studies (FDA approval announcement, 2023-06-28)",
             # CORRECTED 2026-09-21, same defect as evidence_synthesis above: these two
             # lines split one pooled 10-patient series into per-drug arms that do not
             # exist, and are additionally the same cohort at two different timepoints.
@@ -244,7 +244,7 @@ GAPS_DATA = {
             "dependencies": "LANTIDRA adoption post-approval, immunosuppressant pharmacogenomic data"
         },
         "validation_evidence": "GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (PMID:32627352, Am J Transplant Phase 3). Validated graft survival: 7/10 insulin-independent at 10 years, 6/10 at mean 13.3 +/- 1.1 years (PMID:37359825, Transpl Int 2023, n=10 consecutive series). CORRECTED 2026-09-21: this field previously read '6/10 ... at 10 years', which pairs the 13.3-year numerator with the 10-year endpoint -- so THIS FILE stated two different 10-year values for the same paper (70% in evidence_synthesis, 6/10 here) and no gate compared them.",
-        "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023 was transformative: 67% insulin independence at 1yr (vs 61% Edmonton), improved graft survival trajectory. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
+        "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023: in two non-randomized single-arm studies, 21 of 30 participants did not need insulin for a year or more (FDA approval announcement, 2023-06-28); no head-to-head comparison with the Edmonton cohort exists. Coverage by United, Aetna, Cigna, Medicare as of 2025. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours). Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
         "mechanism_detail": "Tacrolimus-FKBP12 complex inhibits calcineurin phosphatase, preventing NFAT dephosphorylation. Chronically: (1) suppresses insulin receptor substrate (IRS1/IRS2) expression in hepatocytes and myocytes, (2) increases mTORC1 signaling (feedback loss), (3) induces ER stress in beta cells via calcineurin inhibition of IRE1-alpha. HOMA-IR rise kinetics: 24hr (peak effect), sustained at 3-4mo (feedback adaptation), slight decline after 12mo (beta cell exhaustion). Calcineurin-sparing regimens use belatacept (selective costimulation blockade of CD80/CD86 without calcineurin inhibition) or efalizumab (LFA-1 blockade, no metabolic consequences). Patient selection: baseline HOMA-IR >3.5 predicts tacrolimus failure; consider belatacept-based regimen preemptively."
     },
     "4": {
@@ -415,7 +415,7 @@ GAPS_DATA = {
     },
     "6": {
         "title": "CAR-T Access Barriers in Diabetes",
-        "tier": "GOLD",
+        "tier": "SILVER",  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
         "score": 0.82,
         "cluster": "A",
         "domain_pubs": {"health_equity": 1830, "treg": 861},
@@ -753,7 +753,7 @@ GAPS_DATA = {
     },
     "11": {
         "title": "Islet Transplant Equity",
-        "tier": "GOLD",
+        "tier": "SILVER",  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
         "score": 0.81,
         "cluster": "A",
         "domain_pubs": {"islet_transplant": 238, "health_equity": 1830},
@@ -814,7 +814,7 @@ GAPS_DATA = {
         },
         "validation_evidence": "SILVER tier: CITR registry with 1,477 patients demonstrates infrastructure gaps, LANTIDRA approval expands options, equity gaps quantified",
         "expanded_clinical_context": "CITR Registry demographics: 1,477 islet transplant recipients (1999-2023), median age 42.2yr, 66% female (female advantage in transplant survival), 65% white, 20% Asian, 8% Hispanic, 7% Black. Centers concentrated: 40 total, 70% in US/Western Europe (HICs). Cost barriers: US $100-139K per procedure [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 reports only $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even. It reports no per-procedure price and no copay figure.] (>1M privately insured, ~200K Medicaid eligible based on income thresholds). Wait time: median 1.62 years (Swiss cohort, n=108), range 0.5-5.2yr. LANTIDRA FDA approval June 2023 transformed landscape: insurance coverage now standard (United, Aetna, Cigna, Medicare approved by March 2025). Equity barriers: (1) Geographic (rural regions have zero transplant centers, median travel 150-300 miles), (2) Financial (copay $5-20K per patient barriers for uninsured) [UNSOURCED - same withdrawal], (3) Racial (referral bias in primary care for minority patients), (4) Language/cultural (low enrollment rates among non-English speakers). Expansion potential: India (Manipal Institute, Apollo Hospital have transplant programs), Brazil (3 public centers in Sao Paulo, Rio), China (Shanghai Ninth Hospital) could establish islet programs with technology transfer.",
-        "mechanism_detail": "Islet transplant procedure (percutaneous transhepatic approach): intraportal injection of 300,000-500,000 islet equivalents via interventional radiology (native pancreas left in situ). Peri-engraftment factors: (1) warm ischemia during preparation (must minimize), (2) instant blood-mediated inflammatory reaction (IBMIR) in first 2-4 hrs (innate immunity triggers coagulation cascade), (3) non-specific cytokine release, (4) early rejection (6-12mo) vs chronic rejection (5-10yr). Immunosuppression: tacrolimus 3-5 ng/mL (vs 10-15 for pancreas transplant), mycophenolate 1-1.5g BID, maintenance steroid (lower doses than pancreas). LANTIDRA advantage: standardized 300,000 IEQ dose, quality-controlled cryopreservation, reduces operator variability. Expected outcomes: 67% insulin independence 1yr, 50% at 5yr, 30-40% at 10yr (improved vs Edmonton Protocol due to refined immunosuppression + improved IEQ selection)."
+        "mechanism_detail": "Islet transplant procedure (percutaneous transhepatic approach): intraportal injection of 300,000-500,000 islet equivalents via interventional radiology (native pancreas left in situ). Peri-engraftment factors: (1) warm ischemia during preparation (must minimize), (2) instant blood-mediated inflammatory reaction (IBMIR) in first 2-4 hrs (innate immunity triggers coagulation cascade), (3) non-specific cytokine release, (4) early rejection (6-12mo) vs chronic rejection (5-10yr). Immunosuppression: tacrolimus 3-5 ng/mL (vs 10-15 for pancreas transplant), mycophenolate 1-1.5g BID, maintenance steroid (lower doses than pancreas). LANTIDRA advantage: standardized 300,000 IEQ dose, quality-controlled cryopreservation, reduces operator variability. Reported outcome: 21 of 30 participants in the two single-arm approval studies did not need insulin for a year or more, 10 of them for more than five years (FDA approval announcement, 2023-06-28). No 5- or 10-year insulin-independence rates accompanied the approval, and no comparison with the Edmonton cohort has been made."
     },
     "12": {
         "title": "Generic Drug x Diabetes Mechanism Catalog",
@@ -886,7 +886,7 @@ GAPS_DATA = {
     },
     "13": {
         "title": "Personalized Nutrition for Beta Cells",
-        "tier": "BRONZE",
+        "tier": "EXPLORATORY",  # Owner ruling 2026-09-30: evidence is not about this gap's own question (DECISION_BRIEF_2026-09-07).
         "score": 0.68,
         "cluster": "D",
         "domain_pubs": {"personalized_nutrition": 579, "beta_cell": 1375},

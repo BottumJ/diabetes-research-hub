@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-09-29T08:30:01.720366",
+  "last_updated": "2026-09-30T00:46:43.022612",
   "last_run": "2026-09-29",
   "papers": {
     "10415738": {
@@ -8129,7 +8129,7 @@
   },
   "gaps": {
     "1": {
-      "tier": "SILVER",
+      "tier": "EXPLORATORY",
       "last_audited": "2026-09-04",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
@@ -8196,6 +8196,14 @@
           "date": "2026-09-04",
           "new_evidence_found": false,
           "notes": "Bounded falsification test, cleanest result in the gap set: PubMed (gene therapy[tiab] OR CRISPR[tiab] OR gene editing[tiab]) AND (LADA[tiab] OR latent autoimmune diabetes[tiab]) returns ZERO records, all time. Consistent with the 2026-08-16 audit, which found only T1D-scoped CRISPR work (Lin et al., Diabetes Obes Metab 2026, doi 10.1111/dom.70800) where LADA appears as conceptual extension. REMAINS SILVER, not a promotion candidate: an empty query is evidence of absence in the indexed literature, not an independent secondary source evaluating feasibility in LADA."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "tier_before": "SILVER",
+          "tier_after": "EXPLORATORY",
+          "action": "DEMOTION",
+          "notes": "Owner ruling (DECISION_BRIEF_2026-09-07 Q1): demoted to EXPLORATORY. The evidence list is LADA epidemiology; no stored paper concerns gene therapy."
         }
       ],
       "last_audit_date": "2026-06-07",
@@ -8420,6 +8428,12 @@
           "date": "2026-09-04",
           "new_evidence_found": true,
           "notes": "FIRST ON-TOPIC AUDIT OF THIS GAP (same 0%-overlap finding as #5; the trail here discusses personalised nutrition for islet-transplant graft outcomes). BOUNDED QUERY: (drug repurpos*[tiab] OR repurposed drug*[tiab] OR drug screen*[tiab]) AND (islet transplant*[tiab] OR islet graft*[tiab]) returns 8 records, 7 of which are bioengineering/organoid reviews matching on \"drug screen\" as a use-case for islet models, NOT screens of drugs for graft outcomes. The one substantive hit is PMID 27821710 (J Pharmacol Exp Ther 2016), an alpha-1 antitrypsin dosing study - a single repurposed agent, not a screen. ADJACENT COUNTER-EVIDENCE, AND A TRAP AVOIDED: web search surfaced PMID 39911401 (Front Immunol 2025;16:1539645) as a Connectivity Map repurposing screen identifying rosiglitazone, synergistic with rapamycin, \"prolonging graft survival\" - which reads like closure. Read the paper: the expression data are kidney/heart/lung biopsies and the in vivo validation is a MOUSE SKIN transplant model. No islet anywhere. REMAINS SILVER, and the finding STRENGTHENS rather than weakens it: the method now demonstrably exists and has still not been pointed at islets."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "action": "OWNER_RULING",
+          "notes": "Owner ruling (DECISION_BRIEF_2026-09-07 Q2): drug-level evidence counts as evidence for the repurposing question, labelled as such. Tier unchanged. Recorded in gap_owner_rulings.json; the reader-facing note is printed by build_extracted_evidence.py."
         }
       ],
       "audit_trail_provenance": {
@@ -8595,6 +8609,12 @@
           "promotes_gap": false,
           "first_audit_under_canonical_question": true,
           "notes": "FIRST AUDIT THIS GAP HAS EVER RECEIVED UNDER ITS OWN QUESTION. The four prior entries under gaps[\"7\"] (2026-04-24 through 2026-08-05) audit polygenic risk score x closed-loop AID; canonical Gap #7 is the GKA Drug Repurposing Landscape. Those four are annotated, not moved. FINDINGS, all UNVERIFIED identifiers - browser access to ClinicalTrials.gov and NCBI was denied during this unattended run, so nothing below is cited anywhere and all of it is queued for verification. (a) NCT06976658 \"RESENSE\", an allosteric glucokinase activator in monogenic diabetes from inactivating GCK mutations, reported start 2025-04-30, estimated completion 2026-12-31. If real, this is the strongest signal the gap has: a GKA deployed in an indication outside T2D, which is precisely the repurposing question. (b) A 2025 perspective in Diabetes (reported 74(8):1339) titled \"Glucokinase Activators: A Humbling Lesson in Drug Development\" - a candidate authoritative source for the why-most-GKAs-failed section the dashboard already carries. (c) Dorzagliatin in GCK-MODY (increased absolute and incremental second-phase insulin secretion vs placebo) reconfirms the monogenic direction. NOTHING CHANGES TODAY: the design grader rates this gap PRIMARY_THIN (3 of 13 design-readable papers report primary data), and adding an unverified trial to a thin gap would make it worse, not better. REMAINS SILVER. Next audit ~2026-10-03, gated on verifying (a)."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "action": "OWNER_RULING",
+          "notes": "Owner ruling (DECISION_BRIEF_2026-09-07 Q2): drug-level evidence counts as evidence for the repurposing question, labelled as such. Tier unchanged. Recorded in gap_owner_rulings.json; the reader-facing note is printed by build_extracted_evidence.py."
         }
       ],
       "next_due": "2026-08-09",
@@ -8956,7 +8976,7 @@
       }
     },
     "13": {
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "last_audited": "2026-09-29",
       "corpus_evidence_points": 0,
       "credibility_issues": [
@@ -8966,7 +8986,7 @@
           "severity": "low"
         }
       ],
-      "promotion_candidate": true,
+      "promotion_candidate": false,
       "audit_history": [
         {
           "date": "2026-04-15",
@@ -9054,6 +9074,14 @@
           "date": "2026-09-29",
           "new_evidence_found": true,
           "notes": "Two new 2026 T2D personalized-nutrition/CGM papers found: PMID 42587354 (DOM 2026 community CGM-guided lifestyle intervention) and 42394009 (scoping review). Added UNVETTED. Neither addresses beta-cell function or LADA (titles only read) - no SILVER promotion."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "tier_before": "BRONZE",
+          "tier_after": "EXPLORATORY",
+          "action": "DEMOTION",
+          "notes": "Owner ruling (DECISION_BRIEF_2026-09-07 Q1): demoted to EXPLORATORY. The evidence list is berberine trials in type 2 diabetes; none concerns personalized nutrition or beta-cell preservation. The 2026-09-28 dated null search found nothing at the intersection."
         }
       ],
       "current_opportunity_note": "Near-term: design CGM endpoints into upcoming CAR-Treg T1D FIH trials (Abata ABA-201, GAD65-CAR-Treg) to close this gap by 2027.",
@@ -9071,7 +9099,7 @@
       }
     },
     "14": {
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "last_audited": "2026-09-29",
       "corpus_evidence_points": 0,
       "credibility_issues": [],
@@ -9226,12 +9254,20 @@
           "date": "2026-09-29",
           "new_evidence_found": false,
           "notes": "Web search \"LADA diet nutrition intervention randomized trial 2026\" returned only reviews/consensus/case reports (Diabetes 2020 consensus, CCJM 2025, PMC reviews, case reports). Search returned titles only; abstracts not read. No LADA-specific nutrition RCT identified. Tier unchanged; remains zero-evidence BRONZE (gap_subject_coverage still flags demote-or-attach)."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "tier_before": "BRONZE",
+          "tier_after": "EXPLORATORY",
+          "action": "DEMOTION",
+          "notes": "Reconciled to the 2026-09-27 demotion already made in build_gap_deep_dives.py (zero evidence papers). This store, gap_evidence.json and the site had been left at BRONZE."
         }
       ],
       "next_audit_due": "2026-10-02"
     },
     "15": {
-      "tier": "BRONZE",
+      "tier": "EXPLORATORY",
       "last_audited": "2026-09-06",
       "corpus_evidence_points": 1,
       "credibility_issues": [],
@@ -9303,6 +9339,14 @@
           "date": "2026-09-06",
           "new_evidence_found": false,
           "notes": "Gap #15 audit (prev 2026-09-02) and this is the FIRST audit of this gap on its own canonical question. The 2026-09-02 run established that all seven prior audits (2026-04-16 through 08-03) were auditing 'SGLT2 inhibitors x personalized nutrition' while canonical Gap #15, per build_data_dictionary.py / build_gka_pricing.py / run_quality_improvements.py, is the GKA PRICING TRAJECTORY MODEL. Audited correctly today, all-time and unbounded by date: (glucokinase activator* OR dorzagliatin) AND (cost OR price OR pricing OR cost-effectiveness OR access OR affordab*) returns 5 records, ALL of them 2011-2014 general T2D-pipeline reviews (PMIDs 24936252, 22998892, 22946641, 22165703, 25126358). NONE concerns dorzagliatin, which is the only GKA ever approved (China, 2022). So there is zero pricing, cost-effectiveness or access literature on the only marketed drug in the class, and the five hits that do exist predate its approval by 8-11 years. This STRENGTHENS the gap. Reported, NOT promoted: the evidence here is an absence, and BRONZE->SILVER promotion requires a second independent positive source, which an empty result set cannot supply. Also logged: PMID 42014686 (Nat Commun 2026 Apr), a dorzagliatin+empagliflozin DDI study, is new primary clinical data on the molecule and is added UNVETTED."
+        },
+        {
+          "date": "2026-09-30",
+          "new_evidence_found": false,
+          "tier_before": "BRONZE",
+          "tier_after": "EXPLORATORY",
+          "action": "DEMOTION",
+          "notes": "Reconciled to the 2026-09-27 demotion already made in build_gap_deep_dives.py (zero evidence papers). This store, gap_evidence.json and the site had been left at BRONZE."
         }
       ],
       "next_audit_due": "2026-10-02",
@@ -9342,7 +9386,9 @@
       "priority": 0,
       "type": "user_action_required",
       "added": "2026-09-16",
-      "target": "PUSH. THIS IS NOW THE ONLY THING A HUMAN IS NEEDED FOR, AND THE ASK IS SMALLER THAN IT HAS BEEN SINCE 2026-09-05. The commit block is GONE - this run committed from the sandbox by pointing GIT_INDEX_FILE outside the OneDrive mount, which sidesteps the unremovable .git/index.lock. You do NOT need to run Remove-Item on the lock, and you do NOT need PUSH_AND_VERIFY.ps1 to commit. What the sandbox still cannot do is authenticate: the remote is HTTPS with no credential helper, no ~/.git-credentials and no GH_TOKEN. ONE COMMAND FROM WINDOWS: cd 'C:\\\\Users\\\\justi\\\\OneDrive\\\\Diabetes_Research' ; git push . Or provision a PAT for the scheduled task and no human ever has to touch this again. UNTIL THIS HAPPENS origin/main is still at 2026-04-20 and every citation repaired since - including today's four - is invisible to a reader."
+      "target": "PUSH. THIS IS NOW THE ONLY THING A HUMAN IS NEEDED FOR, AND THE ASK IS SMALLER THAN IT HAS BEEN SINCE 2026-09-05. The commit block is GONE - this run committed from the sandbox by pointing GIT_INDEX_FILE outside the OneDrive mount, which sidesteps the unremovable .git/index.lock. You do NOT need to run Remove-Item on the lock, and you do NOT need PUSH_AND_VERIFY.ps1 to commit. What the sandbox still cannot do is authenticate: the remote is HTTPS with no credential helper, no ~/.git-credentials and no GH_TOKEN. ONE COMMAND FROM WINDOWS: cd 'C:\\\\Users\\\\justi\\\\OneDrive\\\\Diabetes_Research' ; git push . Or provision a PAT for the scheduled task and no human ever has to touch this again. UNTIL THIS HAPPENS origin/main is still at 2026-04-20 and every citation repaired since - including today's four - is invisible to a reader.",
+      "status": "closed_2026-09-30",
+      "resolution": "Pushed from the owner's Windows machine, whose credential manager holds a GitHub credential. origin/main moved f7e976f -> 1cb1d46 (127 commits). Live site verified: Last updated 2026-09-29, the belatacept graft-survival figure is gone from the three pages that carried it, and docs/Reports/ resolves."
     },
     {
       "priority": 1,

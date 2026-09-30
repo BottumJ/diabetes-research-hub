@@ -1154,7 +1154,7 @@ html_content = '''<!DOCTYPE html>
         </div>
 
         <h3>Connection to Gap #15: GKA Pricing Trajectory Model (BRONZE)</h3>
-        <p>Gap #15 (BRONZE, EXPLORATORY) will model:</p>
+        <p>Gap #15 (EXPLORATORY) will model:</p>
         <ul>
             <li>Patent expiration timelines for dorzagliatin, globalagliatin, and other GKAs</li>
             <li>Generic manufacturing cost curves</li>

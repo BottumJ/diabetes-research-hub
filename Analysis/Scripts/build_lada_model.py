@@ -622,7 +622,7 @@ def generate_html():
         <div class="title">LADA Natural History Model</div>
         <div class="subtitle">Computational Analysis of Gene Therapy Opportunity and Intervention Windows</div>
         <div style="margin-top: 1rem; color: {colors['muted']}; font-size: 0.9rem;">
-            Gap #1 SILVER Validated) — C-Peptide Decline Trajectories & Intervention Windows
+            Gap #1, EXPLORATORY) — C-Peptide Decline Trajectories & Intervention Windows
         </div>
     </div>
 

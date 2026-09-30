@@ -40,7 +40,24 @@ SCOPE LIMIT, STATED PLAINLY
     counted as a miss. Misses are therefore an UPPER bound on the problem;
     treat each one as a prompt to read the paper, not as a proven defect.
 
-Exit codes: 0 clean, 1 findings.
+OWNER RULINGS AND THE EXPLORATORY TIER (added 2026-09-30)
+    DECISION_BRIEF_2026-09-07 put four questions to the owner that this gate
+    could detect but had no standing to answer. They were answered on
+    2026-09-30 and the answers are recorded in gap_owner_rulings.json:
+
+      * A gap labelled EXPLORATORY asserts no evidential standing, so a
+        coverage shortfall under that label is reported in the table and is
+        not a finding. This is the same rule the zero-paper branch already
+        applied to Gap #9; it now applies to all three branches.
+      * A gap with a recorded ruling keeps its finding, at severity
+        ACKNOWLEDGED, and does not fail the build -- PROVIDED the ruling
+        carries a reader_note, which every builder showing the gap must
+        print. A ruling is not an exemption from saying so in public.
+
+    A ruling is keyed to the finding class it answered. If a ruled gap later
+    fails in a DIFFERENT way, the ruling does not cover it and the gate fails.
+
+Exit codes: 0 clean or acknowledged-only, 1 unacknowledged findings.
 """
 import json
 import os
@@ -53,6 +70,7 @@ BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
 RESULTS = os.path.join(BASE_DIR, 'Analysis', 'Results')
 EVIDENCE = os.path.join(RESULTS, 'gap_evidence.json')
 REPORT = os.path.join(RESULTS, 'gap_subject_coverage_audit.json')
+RULINGS = os.path.join(RESULTS, 'gap_owner_rulings.json')
 
 # Each gap decomposed into its two axes. The Y axis is deliberately the harder
 # one -- it is the lens that makes the intersection a research gap rather than
@@ -144,9 +162,20 @@ def hits(text, patterns):
     return sorted({p for p in patterns if re.search(p, text, re.IGNORECASE)})
 
 
+def load_rulings():
+    """gap_id (int) -> ruling. Missing file means no rulings, not an error."""
+    try:
+        with open(RULINGS, encoding='utf-8') as fh:
+            raw = json.load(fh).get('rulings', {})
+    except FileNotFoundError:
+        return {}
+    return {int(k): v for k, v in raw.items()}
+
+
 def main():
     with open(EVIDENCE, encoding='utf-8') as fh:
         gaps = json.load(fh)['gaps']
+    rulings = load_rulings()
 
     findings = []
     rows = []
@@ -186,6 +215,12 @@ def main():
         }
         rows.append(row)
 
+        # EXPLORATORY claims no evidential standing, so there is nothing for a
+        # coverage shortfall to contradict. Reported in the table, not a finding.
+        if gap.get('tier') == 'EXPLORATORY':
+            row['status'] = 'exploratory - no evidential standing claimed'
+            continue
+
         # The failure that matters: a tiered gap whose evidence never mentions
         # the lens. Zero papers on the Y axis means the gap's own question is
         # unrepresented in its own evidence.
@@ -199,6 +234,7 @@ def main():
                             % (n, y_label, x_label)),
                 'remedy': ('Re-found on a dated null search, or record that the gap has never '
                            'been tested. Do not publish the current citation list as support.'),
+                'finding_class': 'lens_axis_absent',
                 'pmids': [p.get('pmid') for p in papers],
             })
         elif n and not both_cover:
@@ -211,6 +247,7 @@ def main():
                             % (n, len(x_cover), x_label, len(y_cover), y_label)),
                 'remedy': ('State explicitly that the intersection rests on inference across '
                            'papers, or find a paper at the intersection.'),
+                'finding_class': 'no_paper_at_intersection',
                 'pmids': [p.get('pmid') for p in papers],
             })
         elif not n and gap.get('tier') not in ('EXPLORATORY', None):
@@ -220,8 +257,25 @@ def main():
                 'problem': ('Tier %s with ZERO evidence papers. A tier above EXPLORATORY asserts '
                             'evidential standing this gap does not have.' % gap.get('tier')),
                 'remedy': 'Demote to EXPLORATORY or attach evidence.',
+                'finding_class': 'tier_without_evidence',
                 'pmids': [],
             })
+
+    # Apply owner rulings. A ruling answers ONE finding class for ONE gap and
+    # must carry the sentence a reader will be shown.
+    for f in findings:
+        ruling = rulings.get(f['gap_id'])
+        if (ruling and ruling.get('reader_note')
+                and f['finding_class'] in ruling.get('covers', [])):
+            f['detected_severity'] = f['severity']
+            f['severity'] = 'ACKNOWLEDGED'
+            f['ruling'] = {k: ruling[k] for k in ('date', 'decision') if k in ruling}
+            f['reader_note'] = ruling['reader_note']
+        else:
+            # What a reader is told. The remedy is an instruction to a
+            # maintainer and must never be published as if it were a caveat.
+            f['reader_note'] = f['problem']
+    blocking = [f for f in findings if f['severity'] != 'ACKNOWLEDGED']
 
     report = {
         'generated': datetime.now().isoformat(),
@@ -231,6 +285,7 @@ def main():
                    'covers the axis but whose stored snippet does not will read as a miss.'),
         'gaps_checked': len(rows),
         'findings_count': len(findings),
+        'blocking_count': len(blocking),
         'findings': findings,
         'coverage_table': rows,
     }
@@ -251,10 +306,19 @@ def main():
         for f in findings:
             print('  [%s] Gap #%d (%s) %s' % (f['severity'], f['gap_id'], f['tier'], f['name']))
             print('      %s' % f['problem'])
-            print('      REMEDY: %s\n' % f['remedy'])
-        print('[FAIL] gap_subject_coverage -> %s' % REPORT)
+            if f['severity'] == 'ACKNOWLEDGED':
+                print('      RULED %s: %s\n' % (f['ruling'].get('date'), f['ruling'].get('decision')))
+            else:
+                print('      REMEDY: %s\n' % f['remedy'])
+    if blocking:
+        print('[FAIL] gap_subject_coverage: %d unacknowledged finding(s) -> %s'
+              % (len(blocking), REPORT))
         return 1
-    print('\n[OK] gap_subject_coverage: every gap\'s evidence mentions both of its axes.')
+    if findings:
+        print('[OK] gap_subject_coverage: %d finding(s), all under a recorded owner ruling.'
+              % len(findings))
+        return 0
+    print('\n[OK] gap_subject_coverage: every tiered gap\'s evidence mentions both of its axes.')
     return 0
 
 
