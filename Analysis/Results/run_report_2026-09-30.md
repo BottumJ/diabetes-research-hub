@@ -135,3 +135,34 @@ Regenerated: 4 locked, 0 resolved. The ledger dashboard was built only by refres
 - `open_findings.md` has not been re-emitted since 2026-09-12, which is the
   defect it was created to prevent.
 - EASD 2026 abstracts were not reviewed.
+
+## 8. Overnight additions (same date, owner asleep; committed locally, NOT pushed)
+
+- **The published "meta-analysis" was withdrawn.** "Pooled HbA1c reduction 0.93%
+  (95% CI 0.90 to 0.97), 2 studies" was two percentages from one paper
+  (PMID 35466661) with an invented variance and I-squared of 98.7%. The
+  remission "pool" counted "70% (v/v) Percoll solution" as a remission rate. The
+  C-peptide "pool" was the assay floor, twice. The section now pools only
+  `structured_effects.json` records, one arm per trial: orforglipron vs placebo,
+  two trials, -0.80 / -1.07 / -1.05 percentage points at 3 / 12 / 36 mg, with
+  the caveats printed beside them. Seven single-trial comparisons are shown
+  unpooled. `statsmeta` is a new pipeline stage.
+- **N-01 (new, open): the Bayesian path ranking on that page does not survive a
+  recompute.** Not changed. See `open_findings.md`.
+- Dead PubMed links removed at the builder (`.../BANDIT trial`, empty
+  `nih.gov//`); the Methodology page's example citation was a made-up ">90%
+  insulin independence" and is now a real one.
+- AZD1656 was listed as "Phase 3 ... Development ongoing". The registry shows
+  27 studies, none Phase 3, none active since September 2022. Corrected.
+- Claims with no locatable source are marked `[UNSOURCED]` on the page.
+  Uncited endpoint values: 14 -> 12.
+- Collectors: `has_results` was the constant False (now 356 of 907 true);
+  ledger trials are fetched by identifier; amylin class, efsitora and
+  finerenone are tracked.
+- `audit_gap_numbering.py` now fails on tier disagreement instead of printing it.
+- Added `CITATION.cff`, a pull request template, `CODE_OF_CONDUCT.md`, and a
+  landing-page card for the Prediction Ledger. README counts refreshed.
+- `open_findings.md` re-emitted with an update section.
+
+Last full run: 86 stages OK, 2 red - gap #11 (unruled) and the publish gate
+(these commits are not pushed).

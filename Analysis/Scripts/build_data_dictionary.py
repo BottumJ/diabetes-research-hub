@@ -760,7 +760,7 @@ TERMS = {
         'systems': ['immune', 'pancreas'],
         'indicators': ['Tacrolimus blood level'],
         'normal_range': 'Therapeutic level: 8-12 ng/mL initially, 5-7 ng/mL maintenance',
-        'disease': 'Islet/pancreas transplant; 40% develop tacrolimus-induced diabetes at 3 months; belatacept is calcineurin-sparing alternative',
+        'disease': 'Islet/pancreas transplant; 40% develop tacrolimus-induced diabetes at 3 months [UNSOURCED]; belatacept is calcineurin-sparing alternative',
         'connections': ['Calcineurin', 'NFAT', 'T cell suppression', 'Insulin resistance', 'Beta cell dysfunction'],
         'gap_relevance': [3, 5, 8, 11],
         'source': 'Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575. PMID:18094377'
@@ -1229,7 +1229,7 @@ TERMS = {
         'systems': ['immune'],
         'indicators': ['Trough drug levels', 'Lymphocyte count', 'Infection rate'],
         'normal_range': 'Tacrolimus target trough: 3-15 ng/mL (varies by protocol)',
-        'disease': 'Required after islet transplant (Edmonton Protocol); tacrolimus causes insulin resistance (40% incidence at 3 months); balancing graft protection vs metabolic toxicity is key challenge',
+        'disease': 'Required after islet transplant (Edmonton Protocol); tacrolimus causes insulin resistance (40% incidence at 3 months [UNSOURCED]); balancing graft protection vs metabolic toxicity is key challenge',
         'connections': ['Tacrolimus', 'Sirolimus', 'Belatacept', 'Islet Transplant', 'Transplant Tolerance'],
         'gap_relevance': [3, 4, 6, 11],
         'source': 'Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330. PMID:17005949'

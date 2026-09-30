@@ -7,6 +7,7 @@ Promoted to SILVER: 11 independent papers from multiple research groups (Shapiro
 """
 
 import os
+import re
 import json
 from datetime import datetime
 
@@ -336,6 +337,25 @@ MECHANISM_CHALLENGES = {
         "impact": "Reduce chronic graft dysfunction; extend insulin independence duration"
     }
 }
+
+def reference_cell(reference):
+    """Link a reference only when it IS a PMID.
+
+    Until 2026-09-30 every reference was wrapped in a PubMed link built from
+    its own text, so rows whose reference is a description ("BANDIT trial",
+    "Clinical data in T2D") published links to pubmed.ncbi.nlm.nih.gov/BANDIT
+    trial - a dead URL dressed as a citation.
+    """
+    m = re.fullmatch(r'\s*PMID:?\s*(\d{6,9})\s*', reference)
+    if m:
+        return ('<a href="https://pubmed.ncbi.nlm.nih.gov/%s/" class="pmid-link" '
+                'target="_blank">PMID:%s</a>' % (m.group(1), m.group(1)))
+    n = re.fullmatch(r'\s*(NCT\d{8})\s*', reference)
+    if n:
+        return ('<a href="https://clinicaltrials.gov/study/%s" target="_blank">%s</a>'
+                % (n.group(1), n.group(1)))
+    return '<span class="unsourced">%s (no PMID on file)</span>' % reference
+
 
 def compute_composite_score(drug):
     """Calculate composite drug score (1-5 scale average)"""
@@ -778,8 +798,7 @@ def generate_html():
                         <td>{drug['mechanism']}</td>
                         <td><span class="{evidence_class}">{drug['evidence_level']}</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/{drug['reference'].replace('PMID:', '')}"
-                               class="pmid-link" target="_blank">{drug['reference']}</a>
+                            {reference_cell(drug['reference'])}
                             <div class="source-note">{drug['notes']}</div>
                         </td>
                     </tr>
@@ -1062,8 +1081,7 @@ def generate_html():
         tier_class = f"evidence-{ref['evidence_tier'].lower()}"
         html += f"""                    <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/{ref['pmid']}"
-                               class="pmid-link" target="_blank">{ref['pmid']}</a>
+                            {reference_cell('PMID:' + str(ref['pmid'])) if ref['pmid'] else 'withdrawn'}
                         </td>
                         <td>{ref['title']}</td>
                         <td>{ref['authors']}</td>

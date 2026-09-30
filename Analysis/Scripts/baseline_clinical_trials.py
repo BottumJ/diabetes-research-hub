@@ -64,7 +64,7 @@ def fetch_trials(query_filter, max_pages=10):
             "fields": "NCTId,BriefTitle,OverallStatus,Phase,EnrollmentCount,"
                       "StartDate,CompletionDate,LeadSponsorName,InterventionName,"
                       "InterventionType,StudyFirstPostDate,ResultsFirstPostDate,"
-                      "Condition,StudyType",
+                      "Condition,StudyType,HasResults",
         }
         if next_token:
             params["pageToken"] = next_token
@@ -85,7 +85,6 @@ def fetch_trials(query_filter, max_pages=10):
                 sponsor = proto.get("sponsorCollaboratorsModule", {})
                 interventions = proto.get("armsInterventionsModule", {})
                 conditions = proto.get("conditionsModule", {})
-                results_sec = study.get("resultsSection")
 
                 # Extract intervention names
                 intv_list = interventions.get("interventions", [])
@@ -102,7 +101,7 @@ def fetch_trials(query_filter, max_pages=10):
                     "nct_id": ident.get("nctId", ""),
                     "title": ident.get("briefTitle", ""),
                     "status": status.get("overallStatus", ""),
-                    "phase": ", ".join(phases) if phases else "N/A",
+                    "phase": (", ".join(phases) if phases and phases != ["NA"] else "N/A"),
                     "enrollment": design.get("enrollmentInfo", {}).get("count", ""),
                     "start_date": status.get("startDateStruct", {}).get("date", ""),
                     "completion_date": status.get("completionDateStruct", {}).get("date", ""),
@@ -112,7 +111,7 @@ def fetch_trials(query_filter, max_pages=10):
                     "conditions": ", ".join(conditions.get("conditions", [])[:3]),
                     "first_posted": status.get("studyFirstPostDateStruct", {}).get("date", ""),
                     "results_posted": status.get("resultsFirstPostDateStruct", {}).get("date", ""),
-                    "has_results": results_sec is not None,
+                    "has_results": bool(study.get("hasResults")),
                 }
                 trials.append(trial)
 
@@ -145,6 +144,32 @@ def main():
         category_counts[q["label"]] = len(trials)
         for t in trials:
             all_trials[t["nct_id"]] = {**t, "category": q["label"]}
+
+    # Trials the prediction ledger has money on (added 2026-09-30, open
+    # findings D-11/D-17). Every query above is restricted to recruiting
+    # statuses or to completed-WITH-results, so a ledger trial that completes
+    # and has not yet posted drops out of every collector at exactly the moment
+    # it matters: NCT06534411 completed on 2026-06-02 and was then invisible to
+    # the resolver. These are fetched by identifier, whatever their status.
+    ledger_ids = []
+    try:
+        with open(os.path.join(RESULTS_DIR, "prediction_ledger.json"), encoding="utf-8") as f:
+            ledger_ids = sorted({p["nct_id"] for p in json.load(f).get("predictions", [])
+                                 if p.get("nct_id")})
+    except FileNotFoundError:
+        pass
+    missing = [n for n in ledger_ids if n not in all_trials]
+    if missing:
+        label = "Prediction Ledger Watch"
+        print(f"\n  Querying: {label} ({len(missing)} not covered by the queries above)...")
+        watched = fetch_trials("AREA[NCTId](" + " OR ".join(missing) + ")")
+        print(f"    Found: {len(watched)} trials")
+        category_counts[label] = len(watched)
+        for t in watched:
+            all_trials[t["nct_id"]] = {**t, "category": label}
+        for n in missing:
+            if n not in all_trials:
+                print(f"    [WARN] ledger trial {n} was not returned by the registry")
 
     print(f"\n  Total unique trials: {len(all_trials)}")
 

@@ -519,7 +519,7 @@ html_content = """<!DOCTYPE html>
                         <div class="metric-label">Black Americans vs White Americans</div>
                         <div class="metric-value">1.7x</div>
                         <div class="metric-context">Higher diabetes prevalence</div>
-                        <div class="source-note"><a href="https://pubmed.ncbi.nlm.nih.gov/" class="pmid-link">CDC NDSS</a></div>
+                        <div class="source-note">CDC National Diabetes Statistics Report (not a PubMed record)</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Hispanic/Latino Populations</div>
@@ -696,12 +696,12 @@ html_content = """<!DOCTYPE html>
                     DCCT 96.5% white: secondary analysis of DCCT, <em>Diabetes Care</em> 2024, doi
                     <a href="https://doi.org/10.2337/dc24-0299" class="pmid-link">10.2337/dc24-0299</a> (PMC11272962) &mdash;
                     <strong>not</strong> PMID 8366922, whose abstract reports no race data. |
-                    UKPDS ethnicity: <a href="https://pubmed.ncbi.nlm.nih.gov/7955993" class="pmid-link">PMID: 7955993</a>
+                    UKPDS ethnicity: <a href="https://pubmed.ncbi.nlm.nih.gov/7955993/" class="pmid-link">PMID: 7955993</a>
                     (UKPDS XII, the ethnicity paper) &mdash; <strong>not</strong> UKPDS 33 (PMID 9742976), which reports no ethnicity data. |
-                    ACCORD: <a href="https://pubmed.ncbi.nlm.nih.gov/37715820" class="pmid-link">PMID: 37715820</a>
+                    ACCORD: <a href="https://pubmed.ncbi.nlm.nih.gov/37715820/" class="pmid-link">PMID: 37715820</a>
                     (ACCORD secondary analysis, PMC10942722) &mdash; <strong>not</strong> PMID 18539917, whose abstract reports
                     only age, sex and prior-CV-event shares. |
-                    EMPA-REG Asian share: <a href="https://pubmed.ncbi.nlm.nih.gov/28025462" class="pmid-link">PMID: 28025462</a>
+                    EMPA-REG Asian share: <a href="https://pubmed.ncbi.nlm.nih.gov/28025462/" class="pmid-link">PMID: 28025462</a>
                     (Asian subgroup analysis) &mdash; <strong>not</strong> PMID 26378978, whose abstract reports no race data.
                 </div>
                 <div class="source-note" style="border-left:4px solid #b00; padding-left:10px;">
@@ -1140,7 +1140,7 @@ html_content = """<!DOCTYPE html>
                         <p style="color:#b00;"><strong>[WITHDRAWN AND REPLACED 2026-09-11]</strong> This section was headed &ldquo;ADA Health Equity Position Statement (2021)&rdquo; and stated that &ldquo;The American Diabetes Association published a comprehensive position statement on equity in diabetes care and research, calling for&rdquo; five specific actions: increased disparities research funding, workforce diversification, integration of social determinants into practice and research, community-engaged research models, and advocacy for systemic policy change. It cited PMID:33139407. <strong>That PMID is not a position statement.</strong> It is Hill-Briggs F, Adler NE, Berkowitz SA, Chin MH, Gary-Webb TL, Navas-Acien A, Thornton PL, Haire-Joshu D, <em>Social Determinants of Health and Diabetes: A Scientific Review</em>, Diabetes Care 2021;44(1):258-279 &mdash; a narrative review, which describes evidence rather than issuing calls to action. The five bullets are therefore withdrawn: they were attributed to a document that does not make them. They are recorded verbatim above so the reader can see what was removed.</p>
                         <p>What PMID:33139407 <em>does</em> contain, and what this dashboard may cite it for, is a synthesis of the evidence on five determinant domains of diabetes risk, control and complications: socioeconomic status (education, income, occupation), neighbourhood and physical environment, food environment, health care access and quality, and social context.</p>
                         <p style="color:#b00;"><strong>If a genuine ADA health-equity position statement is wanted here, it must be identified and added under its own PMID.</strong> Do not reuse 33139407 for it &mdash; that PMID was already doing double duty in the Evidence References tab, where it was listed twice describing two different papers.</p>
-                        <div class="source-note"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407" class="pmid-link">PMID: 33139407</a> &mdash; Hill-Briggs et al., Social Determinants of Health and Diabetes: A Scientific Review, Diabetes Care 2021;44(1):258-279 (narrative review, not a position statement)</div>
+                        <div class="source-note"><a href="https://pubmed.ncbi.nlm.nih.gov/33139407/" class="pmid-link">PMID: 33139407</a> &mdash; Hill-Briggs et al., Social Determinants of Health and Diabetes: A Scientific Review, Diabetes Care 2021;44(1):258-279 (narrative review, not a position statement)</div>
                     </div>
                 </div>
             </div>
@@ -1284,25 +1284,25 @@ html_content = """<!DOCTYPE html>
                     </div>
 
                     <div class="reference-item">
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/8366922" class="pmid-link">PMID: 8366922</a>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" class="pmid-link">PMID: 8366922</a>
                         <br>
                         DCCT (Diabetes Control and Complications Trial). Landmark type 1 diabetes trial (1983-1993), n=1,441, establishing glycemic control targets that guide modern T1D management. <em>Repaired 2026-09-12: this entry previously attributed "96% white participants" to this PMID. The paper is the primary outcomes report and its abstract contains no race data; the enrolment figure (96.5% white) comes from a later secondary analysis, doi 10.2337/dc24-0299.</em>
                     </div>
 
                     <div class="reference-item">
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/9742976" class="pmid-link">PMID: 9742976</a>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" class="pmid-link">PMID: 9742976</a>
                         <br>
                         UKPDS 33 (UK Prospective Diabetes Study). Major type 2 diabetes trial, n=3,867 newly diagnosed patients, showing intensive glucose control reduced microvascular but not macrovascular endpoints. <em>Repaired 2026-09-12: this entry previously attributed "81% white participants" to this PMID. UKPDS 33 reports no ethnicity data. The cohort's composition (82% White Caucasian, 10% Asian Indian, 8% Afro-Caribbean) is reported in UKPDS XII, PMID 7955993.</em>
                     </div>
 
                     <div class="reference-item">
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/18539917" class="pmid-link">PMID: 18539917</a>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" class="pmid-link">PMID: 18539917</a>
                         <br>
                         ACCORD Trial (Action to Control Cardiovascular Risk in Diabetes). Intensive glycemic control trial, n=10,251, mean age 62.2, 38% women; intensive therapy was stopped early for higher mortality (HR 1.22, 95% CI 1.01-1.46). <em>Repaired 2026-09-12, TWO separate errors. (1) The enrolment figures read "60% white, 25% Black, 12% Hispanic"; the published composition is 62.4% / 19.0% / 7.2% (plus 11.4% Other), reported in PMID 37715820, not here &mdash; this abstract contains no race data. (2) The clause "showing heterogeneous treatment effects by race in some outcomes" was a RESULTS claim that this paper does not make; it has been withdrawn rather than re-sourced, because no supporting analysis was identified.</em>
                     </div>
 
                     <div class="reference-item">
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/26378978" class="pmid-link">PMID: 26378978</a>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/26378978/" class="pmid-link">PMID: 26378978</a>
                         <br>
                         EMPA-REG OUTCOME Trial. SGLT2 inhibitor cardiovascular outcomes trial, n=7,020, median 3.1 years; empagliflozin reduced the primary composite outcome (10.5% vs 12.1%, HR 0.86). <em>Repaired 2026-09-12: this entry previously attributed "75% white participants" to this PMID and asserted that race subgroup analyses were "not consistently reported". Both are wrong. This abstract contains no race data; the white share is ~72%, and a dedicated Asian subgroup analysis WAS published (PMID 28025462), reporting 1,517 of 7,020 participants (21.6%) as Asian. Asian was the trial's largest minority group, which the previous text omitted entirely.</em>
                     </div>
@@ -1325,7 +1325,7 @@ html_content = """<!DOCTYPE html>
 
             <div class="section">
                 <h3>How to Use These References</h3>
-                <p>All citations include PubMed IDs (PMIDs). You can access the full article on <a href="https://pubmed.ncbi.nlm.nih.gov/" class="pmid-link">PubMed</a> by searching the PMID number. Many articles are freely available via PubMed Central (PMC).</p>
+                <p>All citations include PubMed IDs (PMIDs). You can access the full article on PubMed (pubmed.ncbi.nlm.nih.gov) by searching the PMID number. Many articles are freely available via PubMed Central (PMC).</p>
 
                 <p style="margin-top: 1.5rem;">These references support the key claims in this dashboard and provide deeper evidence for:</p>
                 <ul style="margin-left: 2rem; line-height: 1.8;">

@@ -369,6 +369,19 @@ h3 {
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -441,6 +454,7 @@ h3 {
 
 
 
+
 <div class="page-header">
   <h1>Statistical Analysis Dashboard</h1>
   <div class="subtitle">Meta-analytic pooling, Bayesian evidence synthesis, and Monte Carlo sensitivity analysis of the diabetes research landscape.</div>
@@ -460,8 +474,9 @@ h3 {
 <div class="key-findings">
   <h3>Key Findings</h3>
   <ul>
-    <li><strong>Pooled HbA1c reduction: -0.93%</strong> (-0.968 to -0.901) from 2 pooled studies. Heterogeneity: HIGH (I²=98.7%)</li>
-    <li><strong>Remission rate distribution:</strong> Mean 50%, Median 44%, Range 6%-95% (n=68 estimates)</li>
+    <li><strong>HbA1c change from baseline, orforglipron 12 mg vs placebo:</strong> -1.07 percentage points (95% CI -1.25 to -0.89), random effects, 2 trials. Read with the caveats in the section below.</li>
+    <li><strong>HbA1c change from baseline, orforglipron 3 mg vs placebo:</strong> -0.80 percentage points (95% CI -0.98 to -0.62), random effects, 2 trials. Read with the caveats in the section below.</li>
+    <li><strong>HbA1c change from baseline, orforglipron 36 mg vs placebo:</strong> -1.05 percentage points (95% CI -1.23 to -0.87), random effects, 2 trials. Read with the caveats in the section below.</li>
     <li><strong>metformin -> T2D:</strong> Highest Bayesian posterior probability at 55.3%, classified as WEAK</li>
     <li><strong>Top research path strength distribution:</strong> 0 STRONG, 1 MODERATE, 8 WEAK, 39 INSUFFICIENT (of 48 total)</li>
     <li><strong>Suppressed from this ranking:</strong> 29 path(s) had zero surviving corpus evidence after the 2026-08-21 extraction-gate fix and are excluded. Posteriors computed from regex artifacts are not weak evidence, they are no evidence. Strength-distribution counters above are inherited from the pre-fix synthesis and are being recomputed.</li>
@@ -473,92 +488,78 @@ h3 {
 <!-- META-ANALYTIC POOLING -->
 <section id="meta-analysis">
 <h2>Meta-Analytic Pooling</h2>
-
 <div class="info-box context">
-  <strong>How to Use This</strong><br>
-  Forest plots display individual study effect sizes with 95% confidence intervals (horizontal lines), plus the pooled diamond estimate. Wider intervals indicate greater uncertainty. The pooled effect (bottom diamond) combines evidence formally across studies using random-effects meta-analysis.
+  <strong>What changed on 2026-09-30</strong><br>
+  This section previously showed a pooled HbA1c reduction of 0.93% (95% CI 0.90 to 0.97), a remission-rate distribution and a C-peptide summary. All three were computed from regular-expression captures rather than extracted study results and have been withdrawn: the HbA1c figure combined two percentages from a single paper using an assumed variance, and the remission figures included a reagent concentration from a methods section. What is shown now is pooled only from effect records that quote their source sentence, were checked against the PubMed abstract, and were confirmed by a second independent extraction.
 </div>
-
-<h3>HbA1c Reduction (Pooled)</h3>
-<div class="forest-plot">
-  <div class="forest-plot-row">
-    <div class="forest-study-label">Study / PMID</div>
-    <div style="text-align: center; font-weight: 600;">Effect Size with 95% CI</div>
-    <div class="forest-ci-label">Effect</div>
-  </div>
-  <div class="forest-plot-row">
-    <div class="forest-study-label"><a href="https://pubmed.ncbi.nlm.nih.gov/35466661/" target="_blank" rel="noopener" title="View on PubMed">PMID 35466661</a></div>
-    <div class="forest-bar-container">
-      <div class="forest-ci" style="left: 27.2%; width: 2.0%;"></div>
-      <div class="forest-point" style="left: 28.0%;"></div>
-    </div>
-    <div class="forest-ci-label">-0.88%</div>
-  </div>
-  <div class="forest-plot-row">
-    <div class="forest-study-label"><a href="https://pubmed.ncbi.nlm.nih.gov/35466661/" target="_blank" rel="noopener" title="View on PubMed">PMID 35466661</a></div>
-    <div class="forest-bar-container">
-      <div class="forest-ci" style="left: 15.4%; width: 2.0%;"></div>
-      <div class="forest-point" style="left: 16.2%;"></div>
-    </div>
-    <div class="forest-ci-label">-1.35%</div>
-  </div>
-  <div class="forest-plot-row" style="font-weight: 600; border-bottom: 2px solid var(--border);">
-    <div class="forest-study-label">Pooled Effect</div>
-    <div class="forest-bar-container">
-      <div class="forest-ci" style="left: 25.8%; width: 2.0%; height: 3px;"></div>
-      <div class="forest-diamond" style="left: 26.6%;"></div>
-    </div>
-    <div class="forest-ci-label">-0.93%</div>
-  </div>
-</div>
-
-<div class="metric-row">
-  <div class="metric-label">Pooled Effect Size</div>
-  <div class="metric-value">-0.934% (-0.9678 to -0.9011)</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Number of Studies</div>
-  <div class="metric-value">2</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Heterogeneity (I²)</div>
-  <div class="metric-value">98.7%</div>
-</div>
-<div class="metric-row">
-  <div class="metric-label">Interpretation</div>
-  <div class="metric-value" style="text-align: left;">Pooled HbA1c reduction: 0.93% (95% CI: 0.90 to 0.97)</div>
-</div>
-
-<h3>Remission Rate Distribution</h3>
-<div class="distribution-range">
-  <div class="range-card">
-    <div class="range-label">Mean</div>
-    <div class="range-value">50%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Median</div>
-    <div class="range-value">44%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Std Dev</div>
-    <div class="range-value">29.9%</div>
-  </div>
-  <div class="range-card">
-    <div class="range-label">Range</div>
-    <div class="range-value">6-95%</div>
-  </div>
-</div>
-
-<div class="metric-row">
-  <div class="metric-label">Number of Estimates</div>
-  <div class="metric-value">68</div>
-</div>
+<h3>HbA1c change from baseline: orforglipron 12 mg vs placebo</h3>
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
+  <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-1.06 (-1.33 to -0.79)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
+  <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-1.08 (-1.33 to -0.83)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
+  <tr style="font-weight: 600;"><td>Pooled, random effects</td><td>2 trials</td><td>-1.07 (-1.25 to -0.89)</td><td></td><td></td></tr>
+  <tr><td>Pooled, fixed effect</td><td>2 trials</td><td>-1.07 (-1.25 to -0.89)</td><td></td><td></td></tr>
+</tbody></table>
+<p style="font-size: 13px;">Heterogeneity: Q = 0.01, I&sup2; = 0.0%. Evidence level: SILVER (single-analyst extraction, independently re-extracted).</p>
+<ul style="font-size: 13px;">
+  <li>k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.</li>
+  <li>The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.</li>
+  <li>All trials were funded by the manufacturer.</li>
+  <li>Standard errors are derived from the published 95% confidence intervals.</li>
+  <li>Effects were read from abstracts; estimand is as stated there and is not stated for every trial.</li>
+</ul>
+<h3>HbA1c change from baseline: orforglipron 3 mg vs placebo</h3>
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
+  <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-0.83 (-1.10 to -0.56)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
+  <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-0.78 (-1.02 to -0.55)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
+  <tr style="font-weight: 600;"><td>Pooled, random effects</td><td>2 trials</td><td>-0.80 (-0.98 to -0.62)</td><td></td><td></td></tr>
+  <tr><td>Pooled, fixed effect</td><td>2 trials</td><td>-0.80 (-0.98 to -0.62)</td><td></td><td></td></tr>
+</tbody></table>
+<p style="font-size: 13px;">Heterogeneity: Q = 0.07, I&sup2; = 0.0%. Evidence level: SILVER (single-analyst extraction, independently re-extracted).</p>
+<ul style="font-size: 13px;">
+  <li>k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.</li>
+  <li>The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.</li>
+  <li>All trials were funded by the manufacturer.</li>
+  <li>Standard errors are derived from the published 95% confidence intervals.</li>
+  <li>Effects were read from abstracts; estimand is as stated there and is not stated for every trial.</li>
+</ul>
+<h3>HbA1c change from baseline: orforglipron 36 mg vs placebo</h3>
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
+  <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-1.07 (-1.33 to -0.81)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
+  <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-1.03 (-1.28 to -0.77)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
+  <tr style="font-weight: 600;"><td>Pooled, random effects</td><td>2 trials</td><td>-1.05 (-1.23 to -0.87)</td><td></td><td></td></tr>
+  <tr><td>Pooled, fixed effect</td><td>2 trials</td><td>-1.05 (-1.23 to -0.87)</td><td></td><td></td></tr>
+</tbody></table>
+<p style="font-size: 13px;">Heterogeneity: Q = 0.05, I&sup2; = 0.0%. Evidence level: SILVER (single-analyst extraction, independently re-extracted).</p>
+<ul style="font-size: 13px;">
+  <li>k = 2 trials. Between-trial variance cannot be estimated reliably from so few; the random-effects interval is a floor on the uncertainty, not a measure of it.</li>
+  <li>The trials enrolled different populations (see each row). The pooled figure is an average over them, not an estimate for either.</li>
+  <li>All trials were funded by the manufacturer.</li>
+  <li>Standard errors are derived from the published 95% confidence intervals.</li>
+  <li>Effects were read from abstracts; estimand is as stated there and is not stated for every trial.</li>
+</ul>
+<h3>Reported, not pooled</h3>
+<p style="font-size: 13px;">Comparisons with verified results from one trial only. Each row is that trial's own result.</p>
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
+  <thead><tr><th>Comparison</th><th>Trial</th><th>Difference (95% CI)</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
+  <tr><td>orforglipron 12 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.70 (-0.90 to -0.49)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
+  <tr><td>orforglipron 12 mg vs oral semaglutide 14 mg</td><td>ACHIEVE-3</td><td>-0.24 (-0.41 to -0.072)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
+  <tr><td>orforglipron 12 mg vs oral semaglutide 7 mg</td><td>ACHIEVE-3</td><td>-0.48 (-0.65 to -0.31)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
+  <tr><td>orforglipron 3 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.42 (-0.62 to -0.23)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
+  <tr><td>orforglipron 36 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.75 (-0.96 to -0.55)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
+  <tr><td>orforglipron 36 mg vs oral semaglutide 14 mg</td><td>ACHIEVE-3</td><td>-0.44 (-0.62 to -0.26)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
+  <tr><td>orforglipron 36 mg vs oral semaglutide 7 mg</td><td>ACHIEVE-3</td><td>-0.68 (-0.85 to -0.50)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
+</tbody></table>
+<h3>Remission rates and C-peptide</h3>
+<p>Withdrawn. No verified records exist yet for these outcomes.</p>
 
 <h3>Inflammatory Marker Extractions</h3>
 
 <div class="metric-row">
   <div class="metric-label">Total Extractions</div>
-  <div class="metric-value">94</div>
+  <div class="metric-value">3</div>
 </div>
 
 <table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
@@ -572,22 +573,10 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <td>NLRP3</td>
-      <td>44</td>
-      <td>2</td>
-      <td><div class="bar-bg"><div class="bar-fill" style="width: 47%;"></div></div></td>
-    </tr>
-    <tr>
       <td>IL-1</td>
-      <td>25</td>
-      <td>5</td>
-      <td><div class="bar-bg"><div class="bar-fill" style="width: 27%;"></div></div></td>
-    </tr>
-    <tr>
-      <td>TNF-alpha</td>
-      <td>14</td>
-      <td>7</td>
-      <td><div class="bar-bg"><div class="bar-fill" style="width: 15%;"></div></div></td>
+      <td>3</td>
+      <td>2</td>
+      <td><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div></td>
     </tr>
   </tbody>
 </table>

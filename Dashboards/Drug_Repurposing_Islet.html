@@ -375,6 +375,19 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -446,6 +459,7 @@
 </nav>
 
 
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -505,8 +519,7 @@
                         <td>TNF-alpha blockade reduces IBMIR and early islet destruction</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/23061757"
-                               class="pmid-link" target="_blank">PMID:23061757</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" class="pmid-link" target="_blank">PMID:23061757</a>
                             <div class="source-note">TNF-alpha drives instant blood-mediated inflammatory reaction (IBMIR); estimates vary significantly by transplant protocol and center (typically 50-70% loss reported)</div>
                         </td>
                     </tr>
@@ -516,8 +529,7 @@
                         <td>TNF-alpha blockade reduces IBMIR and early islet destruction</td>
                         <td><span class="evidence-gold">GOLD</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/23061757"
-                               class="pmid-link" target="_blank">PMID:23061757</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/23061757/" class="pmid-link" target="_blank">PMID:23061757</a>
                             <div class="source-note">Used in early Edmonton Protocol modifications; most direct IBMIR mitigation strategy</div>
                         </td>
                     </tr>
@@ -527,8 +539,7 @@
                         <td>Blocks TXNIP, protects beta cells from apoptosis and ER stress</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/40650745"
-                               class="pmid-link" target="_blank">PMID:40650745</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/40650745/" class="pmid-link" target="_blank">PMID:40650745</a>
                             <div class="source-note">Blocks thioredoxin-interacting protein (TXNIP); clinical trial showed preserved C-peptide in new-onset T1D</div>
                         </td>
                     </tr>
@@ -538,8 +549,7 @@
                         <td>Beta cell protection, reduce insulin resistance, anti-inflammatory</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located"
-                               class="pmid-link" target="_blank">citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located</a>
+                            <span class="unsourced">citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located (no PMID on file)</span>
                             <div class="source-note">GLP-1RA improves islet graft function in rodent models; human case reports showing improved outcomes when added post-transplant</div>
                         </td>
                     </tr>
@@ -549,8 +559,7 @@
                         <td>Beta cell protection, reduce insulin resistance, anti-inflammatory</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located"
-                               class="pmid-link" target="_blank">citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located</a>
+                            <span class="unsourced">citation withdrawn 2026-08-24 - asserted PMID named a different paper and no verified source was located (no PMID on file)</span>
                             <div class="source-note">Extended half-life GLP-1 agonist; similar mechanism to liraglutide for graft protection</div>
                         </td>
                     </tr>
@@ -560,8 +569,7 @@
                         <td>IL-1beta blockade protects beta cells from apoptosis and IBMIR</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/17429083"
-                               class="pmid-link" target="_blank">PMID:17429083</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/17429083/" class="pmid-link" target="_blank">PMID:17429083</a>
                             <div class="source-note">IL-1beta drives beta cell apoptosis; clinical trials in T1D/T2D show beta cell preservation</div>
                         </td>
                     </tr>
@@ -571,8 +579,7 @@
                         <td>Serine protease inhibition, broad anti-inflammatory, neutrophil elastase blocking</td>
                         <td><span class="evidence-silver">SILVER</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/NCT01319331"
-                               class="pmid-link" target="_blank">NCT01319331</a>
+                            <a href="https://clinicaltrials.gov/study/NCT01319331" target="_blank">NCT01319331</a>
                             <div class="source-note">Clinical trials in islet transplant (Shapiro group); protects against IBMIR-mediated destruction</div>
                         </td>
                     </tr>
@@ -582,8 +589,7 @@
                         <td>Reduce glucose toxicity on grafts, cardioprotection</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/Mechanistic rationale (no islet transplant clinical data)"
-                               class="pmid-link" target="_blank">Mechanistic rationale (no islet transplant clinical data)</a>
+                            <span class="unsourced">Mechanistic rationale (no islet transplant clinical data) (no PMID on file)</span>
                             <div class="source-note">SGLT2 inhibitors reduce glycemic burden; emerging evidence in transplant setting</div>
                         </td>
                     </tr>
@@ -593,8 +599,7 @@
                         <td>Reduce glucose toxicity on grafts, cardioprotection</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/Mechanistic rationale (no islet transplant clinical data)"
-                               class="pmid-link" target="_blank">Mechanistic rationale (no islet transplant clinical data)</a>
+                            <span class="unsourced">Mechanistic rationale (no islet transplant clinical data) (no PMID on file)</span>
                             <div class="source-note">SGLT2 inhibitor with heart failure indication; potential graft metabolic offloading</div>
                         </td>
                     </tr>
@@ -604,8 +609,7 @@
                         <td>Reduce peripheral IR, AMPK activation, reduce metabolic demand on graft</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/Mechanistic extrapolation from RA/transplant literature"
-                               class="pmid-link" target="_blank">Mechanistic extrapolation from RA/transplant literature</a>
+                            <span class="unsourced">Mechanistic extrapolation from RA/transplant literature (no PMID on file)</span>
                             <div class="source-note">Oldest diabetes drug; if post-transplant HOMA-IR elevated (~3.8), could offload graft demand</div>
                         </td>
                     </tr>
@@ -615,8 +619,7 @@
                         <td>JAK inhibition reduces inflammatory cytokine signaling, protects beta cells from cytokine-mediated destruction</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/BANDIT trial"
-                               class="pmid-link" target="_blank">BANDIT trial</a>
+                            <span class="unsourced">BANDIT trial (no PMID on file)</span>
                             <div class="source-note">Recently trialed in T1D (BANDIT trial); could protect transplanted islets from cytokine-mediated destruction</div>
                         </td>
                     </tr>
@@ -626,8 +629,7 @@
                         <td>IL-6 blockade reduces post-transplant inflammation</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/Emerging transplant data"
-                               class="pmid-link" target="_blank">Emerging transplant data</a>
+                            <span class="unsourced">Emerging transplant data (no PMID on file)</span>
                             <div class="source-note">IL-6 drives inflammation post-transplant; emerging interest in transplant immunology</div>
                         </td>
                     </tr>
@@ -637,8 +639,7 @@
                         <td>Insulin sensitizer via PPARgamma agonism, reduces IR directly</td>
                         <td><span class="evidence-bronze">BRONZE</span></td>
                         <td>
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/Clinical data in T2D"
-                               class="pmid-link" target="_blank">Clinical data in T2D</a>
+                            <span class="unsourced">Clinical data in T2D (no PMID on file)</span>
                             <div class="source-note">Reduces IR directly but concerns: fluid retention, heart failure risk in transplant population</div>
                         </td>
                     </tr>
@@ -1093,8 +1094,7 @@
                 <tbody>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/"
-                               class="pmid-link" target="_blank"></a>
+                            withdrawn
                         </td>
                         <td>UNSOURCED - citation withdrawn 2026-08-24: GLP-1 receptor agonists enhance islet graft function in rodent transplant models (Markmann, Transplantation 2017)</td>
                         <td>not established</td>
@@ -1104,8 +1104,7 @@
                     </tr>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/"
-                               class="pmid-link" target="_blank"></a>
+                            withdrawn
                         </td>
                         <td>UNSOURCED - citation withdrawn 2026-08-24: Etanercept and instant blood-mediated inflammatory reaction in islet transplantation (Bennet, Transplantation 2005)</td>
                         <td>not established</td>
@@ -1115,8 +1114,7 @@
                     </tr>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/17429083"
-                               class="pmid-link" target="_blank">17429083</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/17429083/" class="pmid-link" target="_blank">PMID:17429083</a>
                         </td>
                         <td>Interleukin-1-receptor antagonist in type 2 diabetes mellitus.</td>
                         <td>Larsen CM, et al.</td>
@@ -1126,8 +1124,7 @@
                     </tr>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/22442301"
-                               class="pmid-link" target="_blank">22442301</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/22442301/" class="pmid-link" target="_blank">PMID:22442301</a>
                         </td>
                         <td>Preventing beta-cell loss and diabetes with calcium channel blockers.</td>
                         <td>Xu G, Chen J, Jing G, Shalev A</td>
@@ -1137,8 +1134,7 @@
                     </tr>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/"
-                               class="pmid-link" target="_blank"></a>
+                            withdrawn
                         </td>
                         <td>UNSOURCED - citation withdrawn 2026-08-24: Instant blood-mediated inflammatory reaction in islet transplantation: mechanisms and mitigation (Nilsson, Transplantation Reviews 2006)</td>
                         <td>not established</td>
@@ -1148,8 +1144,7 @@
                     </tr>
                     <tr>
                         <td style="font-family: 'Courier New', monospace;">
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/17005949"
-                               class="pmid-link" target="_blank">17005949</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/17005949/" class="pmid-link" target="_blank">PMID:17005949</a>
                         </td>
                         <td>International trial of the Edmonton protocol for islet transplantation.</td>
                         <td>Shapiro AM, et al.</td>
@@ -1198,7 +1193,7 @@
     <footer>
         <p>Gap #4 SILVER Validated | Interactive Tufte-style Dashboard</p>
         <p>Promoted to SILVER: 11 independent papers from multiple research groups confirm this gap exists.</p>
-        <p>Generated 2026-09-30 00:51:13 | Data embedded in script</p>
+        <p>Generated 2026-09-30 01:24:02 | Data embedded in script</p>
     </footer>
 
     <script>

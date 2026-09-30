@@ -1,8 +1,8 @@
 # PubMed Recent Publications Report
 **Generated:** 2026-09-30
 **Lookback period:** 30 days
-**Papers matched by these queries:** 1145
-**Papers actually retrieved and listed below:** 154 (13.4% of matched)
+**Papers matched by these queries:** 1206
+**Papers actually retrieved and listed below:** 167 (13.8% of matched)
 
 > **This report is a sample, not a census.** Each domain query returns at most 10 papers and each therapy query at most 5, sorted most-recent-first. The per-domain coverage column below shows what fraction of each domain was actually read. Low coverage is not low activity - it is the opposite.
 
@@ -27,6 +27,7 @@
 | T1D Immunotherapy | 21 | 10 | 48% | ACTIVE |
 | T1D Stem Cell Cure | 13 | 10 | 77% | ACTIVE |
 | LADA New Research | 12 | 10 | 83% | ACTIVE |
+| Amylin Agonists | 12 | 10 | 83% | ACTIVE |
 | Diabetes Epigenetics | 7 | 7 | 100% | LOW |
 | Diabetes Drug Repurpose | 3 | 3 | 100% | LOW |
 | GLP-1 Pharmacogenomics | 3 | 3 | 100% | LOW |
@@ -387,6 +388,30 @@
   Human reproduction open (2026) | Géraud-Aguilar E; Martínez-García MÁ; Insenser M
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42799253/) | [DOI](https://doi.org/10.1093/hropen/hoag080)
 
+### Amylin Agonists
+
+*Showing 5 of 10 retrieved; 12 matched the query.*
+
+- **Petrelintide, a human amylin analogue for the treatment of obesity (ZUPREME 1): a randomised, double-blind, placebo-controlled, phase 2 trial.**
+  The lancet. Diabetes & endocrinology (2026-Sep-29) | Garvey WT; Ard J; Connery L
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810355/) | [DOI](https://doi.org/10.1016/S2213-8587(26)00213-5)
+
+- **Petrelintide and the evolving role of amylin agonism in obesity.**
+  The lancet. Diabetes & endocrinology (2026-Sep-29) | Madsbad S; Holst JJ
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810353/) | [DOI](https://doi.org/10.1016/S2213-8587(26)00216-0)
+
+- **New Amylin-Based Agonists for the Treatment of Obesity and Type 2 Diabetes Mellitus.**
+  Diabetes therapy : research, treatment and education of diabetes and related disorders (2026-Sep-28) | Panou T; Gouveri E; Popovic DS
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803913/) | [DOI](https://doi.org/10.1007/s13300-026-01921-0)
+
+- **Future GLP-1 receptor co-agonists and their cardiac effects.**
+  Naunyn-Schmiedeberg's archives of pharmacology (2026-Sep-22) | Neumann J; Kirchefer U; Hofmann B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42768195/) | [DOI](https://doi.org/10.1007/s00210-026-05908-3)
+
+- **Efficacy and Safety of CagriSema for Metabolic Outcomes: Systematic Review and Pairwise Meta-Analysis of Randomized Controlled Trials.**
+  Diabetes, metabolic syndrome and obesity : targets and therapy (2026) | Shao C; Lin H; Yu J
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42763732/) | [DOI](https://doi.org/10.2147/DMSO.S616418)
+
 ### GLP-1 Pharmacogenomics
 
 *Showing 3 of 3 retrieved; 3 matched the query.*
@@ -412,11 +437,16 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 | Therapy | Matched (30d) | Read | Status |
 |---------|--------------:|-----:|--------|
 | dapagliflozin | 50 | 5 | ACTIVE |
+| finerenone | 33 | 5 | ACTIVE |
 | orforglipron | 12 | 5 | ACTIVE |
 | retatrutide | 12 | 5 | ACTIVE |
 | icodec | 8 | 5 | ACTIVE |
 | teplizumab | 7 | 5 | ACTIVE |
+| cagrilintide | 5 | 5 | LOW |
+| efsitora | 5 | 5 | LOW |
 | CagriSema | 4 | 4 | LOW |
+| amycretin | 3 | 3 | LOW |
+| petrelintide | 3 | 3 | LOW |
 | baricitinib | 2 | 2 | LOW |
 | zimislecel | 0 | 0 | NONE |
 
@@ -467,6 +497,86 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 - **Pharmacological management of obesity: Current landscape and emerging therapies.**
   Indian journal of pharmacology (2026-Sep-01) | Atal S; Agrawal C; Gupta R
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42683980/) | [DOI](https://doi.org/10.4103/ijp.ijp_37_26)
+
+### cagrilintide
+
+*Showing 3 of 5 retrieved; 5 matched the query.*
+
+- **New Amylin-Based Agonists for the Treatment of Obesity and Type 2 Diabetes Mellitus.**
+  Diabetes therapy : research, treatment and education of diabetes and related disorders (2026-Sep-28) | Panou T; Gouveri E; Popovic DS
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803913/) | [DOI](https://doi.org/10.1007/s13300-026-01921-0)
+
+- **Efficacy and Safety of CagriSema for Metabolic Outcomes: Systematic Review and Pairwise Meta-Analysis of Randomized Controlled Trials.**
+  Diabetes, metabolic syndrome and obesity : targets and therapy (2026) | Shao C; Lin H; Yu J
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42763732/) | [DOI](https://doi.org/10.2147/DMSO.S616418)
+
+- **Cagrilintide and retatrutide combination therapy enhances weight loss and metabolic outcomes in obese male rats.**
+  Nature metabolism (2026-Sep-15) | Petersen J; Merrild C; Holm SK
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42744908/) | [DOI](https://doi.org/10.1038/s42255-026-01603-y)
+
+### amycretin
+
+*Showing 3 of 3 retrieved; 3 matched the query.*
+
+- **New Amylin-Based Agonists for the Treatment of Obesity and Type 2 Diabetes Mellitus.**
+  Diabetes therapy : research, treatment and education of diabetes and related disorders (2026-Sep-28) | Panou T; Gouveri E; Popovic DS
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803913/) | [DOI](https://doi.org/10.1007/s13300-026-01921-0)
+
+- **Future GLP-1 receptor co-agonists and their cardiac effects.**
+  Naunyn-Schmiedeberg's archives of pharmacology (2026-Sep-22) | Neumann J; Kirchefer U; Hofmann B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42768195/) | [DOI](https://doi.org/10.1007/s00210-026-05908-3)
+
+- **Efficacy and Safety of Glucagon-like Peptide-1 Receptor Agonists and Co-agonists for Weight Loss Among Adults Without Diabetes : An Updated Systematic Review.**
+  Annals of internal medicine (2026-Sep-01) | Moiz A; Filion KB; Samuels AE
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42673585/) | [DOI](https://doi.org/10.7326/ANNALS-25-05519)
+
+### petrelintide
+
+*Showing 3 of 3 retrieved; 3 matched the query.*
+
+- **Petrelintide, a human amylin analogue for the treatment of obesity (ZUPREME 1): a randomised, double-blind, placebo-controlled, phase 2 trial.**
+  The lancet. Diabetes & endocrinology (2026-Sep-29) | Garvey WT; Ard J; Connery L
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810355/) | [DOI](https://doi.org/10.1016/S2213-8587(26)00213-5)
+
+- **Petrelintide and the evolving role of amylin agonism in obesity.**
+  The lancet. Diabetes & endocrinology (2026-Sep-29) | Madsbad S; Holst JJ
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810353/) | [DOI](https://doi.org/10.1016/S2213-8587(26)00216-0)
+
+- **Amylin Analogs: The Next Major Class of Weight Loss Therapy: A Review of Experimental Data and Early-Phase Clinical Trials.**
+  Diabetes, obesity & metabolism (2026-Sep) | Alhazmi A; le Roux CW
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42452898/) | [DOI](https://doi.org/10.1111/dom.71074)
+
+### efsitora
+
+*Showing 3 of 5 retrieved; 5 matched the query.*
+
+- **Use of Continuous Glucose Monitoring Indicators to Guide Dose Titration of Weekly Basal Insulin Efsitora Alfa in Insulin-Naive and Basal Insulin-Experienced Adults with Type 2 Diabetes: A Retrospective Analysis.**
+  Diabetes technology & therapeutics (2026-Sep-17) | Bergenstal RM; Davidson MB; Ahn D
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42751863/) | [DOI](https://doi.org/10.1177/15209156261485755)
+
+- **Insulin Efsitora Demonstrates Similar Efficacy and Safety Profiles to Insulin Icodec in Insulin-Experienced Individuals With Type 2 Diabetes Mellitus: Matching-Adjusted Indirect Comparisons of QWINT-3 Versus ONWARDS 2, and QWINT-4 Versus ONWARDS 4.**
+  Diabetes, obesity & metabolism (2026-Sep-01) | Bajaj HS; Fischer M; Davidson MB
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42680157/) | [DOI](https://doi.org/10.1111/dom.71272)
+
+- **Duration and characteristics of hypoglycemia with once-weekly insulin efsitora alfa versus once-daily basal insulins in adults with type 2 diabetes: Exploratory safety analysis of QWINT 2-4.**
+  Diabetes research and clinical practice (2026-Sep) | Bellini N; Bergenstal RM; Giménez M
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42586505/) | [DOI](https://doi.org/10.1016/j.diabres.2026.113490)
+
+### finerenone
+
+*Showing 3 of 5 retrieved; 33 matched the query.*
+
+- **Targeting the aldosterone-mineralocorticoid receptor pathway in cardiovascular-kidney-metabolic syndrome.**
+  Nature reviews. Nephrology (2026-Sep-28) | Sánchez-Bayuela T; Barrera-Chimal J; Jaisser F
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42806023/) | [DOI](https://doi.org/10.1038/s41581-026-01125-6)
+
+- **Safety profile of Finerenone: Pooled analysis of different types of arrhythmic events.**
+  Journal of cardiology (2026-Sep-28) | Bazoukis G; Clarke EV; Tse G
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42805553/) | [DOI](https://doi.org/10.1016/j.jjcc.2026.09.008)
+
+- **Effectiveness of Finerenone in Slowing Chronic Kidney Disease Progression After Hospitalization for Heart Failure: A FIDELITY Subgroup Analysis.**
+  European journal of heart failure (2026-Sep-28) | Shafi T; Anker SD; Pitt B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803273/) | [DOI](https://doi.org/10.1093/ejhf/xuag299)
 
 ### baricitinib
 
@@ -536,13 +646,29 @@ These papers span multiple research domains -- potentially high-value for synthe
 
 *Detectable only within the retrieved sample. A paper matching two domains but ranked below the top 10 in both cannot appear here, so this list is a floor, not a count.*
 
+- **New Amylin-Based Agonists for the Treatment of Obesity and Type 2 Diabetes Mellitus.**
+  Domains: T2D GLP-1 New, T2D Remission, Amylin Agonists, Key Therapy: CagriSema, Key Therapy: cagrilintide, Key Therapy: amycretin
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803913/)
+
+- **Efficacy and Safety of Glucagon-like Peptide-1 Receptor Agonists and Co-agonists for Weight Loss Among Adults Without Diabetes : An Updated Systematic Review.**
+  Domains: Amylin Agonists, Key Therapy: CagriSema, Key Therapy: cagrilintide, Key Therapy: amycretin
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42673585/)
+
 - **Gene-edited hypoimmune islets as a cure for type 1 diabetes: a review of the immunological challenges.**
   Domains: T1D Stem Cell Cure, T1D Immunotherapy, Key Therapy: teplizumab
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42626948/)
 
-- **New Amylin-Based Agonists for the Treatment of Obesity and Type 2 Diabetes Mellitus.**
-  Domains: T2D GLP-1 New, T2D Remission, Key Therapy: CagriSema
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803913/)
+- **Future GLP-1 receptor co-agonists and their cardiac effects.**
+  Domains: Amylin Agonists, Key Therapy: retatrutide, Key Therapy: amycretin
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42768195/)
+
+- **Efficacy and Safety of CagriSema for Metabolic Outcomes: Systematic Review and Pairwise Meta-Analysis of Randomized Controlled Trials.**
+  Domains: Amylin Agonists, Key Therapy: CagriSema, Key Therapy: cagrilintide
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42763732/)
+
+- **Cagrilintide and retatrutide combination therapy enhances weight loss and metabolic outcomes in obese male rats.**
+  Domains: Amylin Agonists, Key Therapy: retatrutide, Key Therapy: cagrilintide
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42744908/)
 
 - **Clinical Evolution, Outcomes, and Emerging Preservation Technologies in Pancreas and Islet Transplantation.**
   Domains: T1D Stem Cell Cure, T1D Immunotherapy
@@ -608,5 +734,29 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: Diabetes Epigenetics, Diabetes Complications New
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42774718/)
 
+- **Petrelintide, a human amylin analogue for the treatment of obesity (ZUPREME 1): a randomised, double-blind, placebo-controlled, phase 2 trial.**
+  Domains: Amylin Agonists, Key Therapy: petrelintide
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810355/)
+
+- **Petrelintide and the evolving role of amylin agonism in obesity.**
+  Domains: Amylin Agonists, Key Therapy: petrelintide
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810353/)
+
+- **Pharmacological management of obesity: Current landscape and emerging therapies.**
+  Domains: Amylin Agonists, Key Therapy: CagriSema
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42683980/)
+
+- **Amylin Analogs: The Next Major Class of Weight Loss Therapy: A Review of Experimental Data and Early-Phase Clinical Trials.**
+  Domains: Key Therapy: cagrilintide, Key Therapy: petrelintide
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42452898/)
+
+- **Insulin Efsitora Demonstrates Similar Efficacy and Safety Profiles to Insulin Icodec in Insulin-Experienced Individuals With Type 2 Diabetes Mellitus: Matching-Adjusted Indirect Comparisons of QWINT-3 Versus ONWARDS 2, and QWINT-4 Versus ONWARDS 4.**
+  Domains: Key Therapy: efsitora, Key Therapy: icodec
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42680157/)
+
+- **Once-weekly insulins: a paradigm shift in the management of type 2 diabetes?**
+  Domains: Key Therapy: efsitora, Key Therapy: icodec
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42568145/)
+
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-09-30. Sample of 154/1145 matched papers (13.4%); caps 10/domain, 5/therapy.*
+*Generated by baseline_pubmed_alerts.py -- 2026-09-30. Sample of 167/1206 matched papers (13.8%); caps 10/domain, 5/therapy.*

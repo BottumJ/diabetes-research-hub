@@ -57,6 +57,9 @@ ALERT_QUERIES = {
     "LADA New Research": '("latent autoimmune diabetes" OR LADA) AND (diagnosis OR treatment)',
     "Diabetes Multi-Omics": 'diabetes AND ("multi-omics" OR "multiomics") AND (integration OR analysis)',
     # Added 2026-04-17: GLP-1 pharmacogenomics domain (Stanford PAM variant discovery)
+    # Added 2026-09-30 (open finding D-13): the amylin class had no alert query
+    # and appeared in no therapy term, while four of its trials completed.
+    "Amylin Agonists": '(cagrilintide OR amycretin OR petrelintide OR CagriSema OR "amylin analog" OR "amylin analogue" OR "amylin receptor agonist") AND (diabetes OR obesity)',
     "GLP-1 Pharmacogenomics": 'diabetes AND ("GLP-1" OR "glucagon-like peptide") AND (pharmacogenomics OR "genetic variant" OR "drug response" OR PAM OR "peptidyl-glycine") AND (resistance OR response OR polymorphism)',
 }
 
@@ -68,6 +71,11 @@ KEY_THERAPY_TERMS = [
     "orforglipron",
     "retatrutide",
     "CagriSema",
+    "cagrilintide",   # added 2026-09-30 with the rest of the amylin class (D-13)
+    "amycretin",
+    "petrelintide",
+    "efsitora",       # weekly insulin; four phase 3 trials published
+    "finerenone",     # FINE-ONE: type 1 diabetes with CKD
     "baricitinib",
     "teplizumab",
     "icodec",        # Awiqli / insulin icodec

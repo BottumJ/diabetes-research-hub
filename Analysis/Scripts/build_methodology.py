@@ -981,8 +981,7 @@ html_content = '''<!DOCTYPE html>
             <div class="citation-guide">
                 <strong>Format 1: Inline hyperlinks</strong>
                 <p style="margin-top: 0.5rem;">
-                    Claims are linked directly to PubMed. Example: "Stem cell-derived islet transplants show &gt;90% insulin independence
-                    at 1 year <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PMID:XXXXXXX</a>."
+                    Claims are linked directly to PubMed. Example: "Ten of 12 participants who received a full dose of zimislecel were insulin-independent at day 365 <a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank">PMID:40544428</a>."
                     Clicking the PMID takes you to the abstract and full-text links.
                 </p>
             </div>

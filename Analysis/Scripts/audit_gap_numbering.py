@@ -362,6 +362,16 @@ def main():
         print('  REPORTED, NOT APPLIED. Re-homing an audit trail rewrites the')
         print('  audit record; which trail is authoritative is a human call.')
     print('  -> %s' % os.path.relpath(OUT, ROOT))
+    # Tier disagreement FAILS (2026-09-30). It is mechanical - two copies of
+    # one label either match or they do not - and reporting it without failing
+    # let four gaps publish two different tiers for weeks: #6 and #11 from
+    # 2026-09-08, #14 and #15 from 2026-09-27, each demoted in some copies and
+    # not in others while this stage printed the mismatch and returned 0.
+    # Topic defects stay report-only: which audit trail is authoritative is a
+    # judgement, and a heuristic must not force an edit.
+    if tier_defects:
+        print('  [FAIL] %d gap(s) publish more than one tier' % len(tier_defects))
+        return 1
     return 0
 
 

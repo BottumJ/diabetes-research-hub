@@ -1,9 +1,9 @@
 {
   "generated": "2026-09-30",
   "runner": "Analysis/Scripts/run_quality_improvements.py",
-  "stages_wired": 87,
-  "gates_classified": 41,
-  "gates_that_can_fail": 35,
+  "stages_wired": 88,
+  "gates_classified": 42,
+  "gates_that_can_fail": 36,
   "defects": [],
   "records": [
     {
@@ -315,7 +315,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 2161,
+          "line": 2162,
           "exit_wrapped": false
         }
       ],
@@ -404,7 +404,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 1157,
+          "line": 1175,
           "exit_wrapped": false
         }
       ],
@@ -1257,28 +1257,32 @@
       "stage": "gapnumbering",
       "script": "audit_gap_numbering.py",
       "role": "gate",
-      "fail_markers": [],
+      "fail_markers": [
+        "[FAIL]"
+      ],
       "nonzero_exits": [
         {
-          "line": 369,
+          "line": 379,
           "in_except": false,
           "code": "expr"
         }
       ],
       "nonzero_outside_except": [
-        369
+        379
       ],
       "zero_exits": [],
       "entry_points": [
         {
           "func": "main",
-          "line": 369,
+          "line": 379,
           "exit_wrapped": true
         }
       ],
-      "entry_returns_nonzero": [],
+      "entry_returns_nonzero": [
+        "main"
+      ],
       "dropped_nonzero_returns": [],
-      "verdict": "NO_VERDICT"
+      "verdict": "OK"
     },
     {
       "stage": "semanticsupport",
@@ -1721,6 +1725,127 @@
       "verdict": "NO_VERDICT"
     },
     {
+      "stage": "statsmeta",
+      "script": "statistical_analysis.py",
+      "role": "gate",
+      "fail_markers": [],
+      "nonzero_exits": [],
+      "nonzero_outside_except": [],
+      "zero_exits": [
+        591
+      ],
+      "entry_points": [
+        {
+          "func": "print",
+          "line": 558,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 559,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 560,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 596,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 606,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 609,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 610,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 615,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 631,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 645,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 646,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 647,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 589,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 612,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 635,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 636,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 601,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 620,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 621,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 638,
+          "exit_wrapped": false
+        },
+        {
+          "func": "print",
+          "line": 603,
+          "exit_wrapped": false
+        }
+      ],
+      "entry_returns_nonzero": [],
+      "dropped_nonzero_returns": [],
+      "verdict": "NO_VERDICT"
+    },
+    {
       "stage": "statistics",
       "script": "build_statistical_analysis.py",
       "role": "builder",
@@ -1731,17 +1856,17 @@
       "entry_points": [
         {
           "func": "print",
-          "line": 1117,
+          "line": 1095,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 1125,
+          "line": 1103,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 1126,
+          "line": 1104,
           "exit_wrapped": false
         }
       ],
@@ -1792,7 +1917,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 648,
+          "line": 654,
           "exit_wrapped": false
         }
       ],
@@ -1861,7 +1986,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 457,
+          "line": 465,
           "exit_wrapped": false
         }
       ],

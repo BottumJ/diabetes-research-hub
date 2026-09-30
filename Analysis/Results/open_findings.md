@@ -94,4 +94,43 @@ Condensed from the daily defect table. Age as of 2026-09-12.
 
 ---
 
+## Update 2026-09-30 (local session)
+
+This file was not re-emitted between 2026-09-12 and today, which is the defect
+it was created to prevent (M-08). Sections A–C above are unchanged and were
+**not re-verified** today; treat their ages as 18 days older than printed.
+
+### Closed today
+
+| ID | Finding | Resolution |
+|----|---------|------------|
+| D-16 | `origin/main` frozen | Pushed from the owner's machine; publish gate green. |
+| D-01 | `clinical_trials_latest.json` stale | Refreshed (907 trials). |
+| D-02 | `has_results` constant `False` | `HasResults` requested; `study.get("hasResults")` read. 356 of 907 now true. |
+| D-05 | `phase` two null encodings | Registry `["NA"]` normalised to `N/A`. |
+| D-13 | Amylin class uncovered | Alert query added; `cagrilintide`, `amycretin`, `petrelintide` tracked, plus `efsitora` and `finerenone`. |
+| D-19 | Sandbox mount failure | Ended 2026-09-15 per the 09-21 report. |
+
+### Narrowed, not closed
+
+| ID | Finding | State |
+|----|---------|-------|
+| D-11 / D-17 | Terminal statuses absent from collectors | Trials in the prediction ledger are now fetched by identifier whatever their status (NCT06534411, COMPLETED, no results, is visible again). The general hole — completed trials without results in the T2D Phase 2–3 lane — is unchanged. |
+| F-06 | CagriSema completion cluster | NCT06534411 visible via the ledger watch; NCT06323161 and NCT06797869 still are not. |
+
+### New
+
+| ID | Finding | Closes when |
+|----|---------|-------------|
+| N-01 | **The published Bayesian path ranking does not match a recompute.** `statistical_analysis.py` was never a pipeline stage. Re-running it today moves INSUFFICIENT 39 → 47 of 47 and the top posterior 0.727 → 0.143. The page shows the stored ranking and says its counters "are being recomputed". The recompute was **not** published; which ranking is right needs a reader. | Someone decides, and the losing one is removed. |
+| N-02 | Gap #11 (Islet Transplant Registry Equity): no stored paper touches both axes. Not ruled on. Gap-subject gate is red on it. | Owner ruling, as for #4/#7, or demotion. |
+| N-03 | 12 endpoint values still have no source; those not locatable are now marked `[UNSOURCED]` on the page (tacrolimus insulin resistance 40%/35%, GAD-alum 30–40% at 4 years, AZD1656 HbA1c, LANTIDRA cryopreservation/ischemia/coverage). | Each is sourced or deleted. |
+| N-04 | `build_islet_outcomes.py` attributes "20% at 10 years" to CITR annual reports and a 1,477-recipient registry. 20% at 10 years is the Edmonton single-centre estimate (n=255, PMID 35588757). **[Likely]** misattributed; CITR reports not read. | CITR report read. |
+| N-05 | Tier is hardcoded in 39+ places and read from the store in none. Reconciled by hand today; it will drift again. | Builders read one store. |
+| N-06 | FDA approvals of finerenone (T1D CKD) and efsitora are reported from press coverage only and marked `[UNSOURCED]` in the findings summary. Continues E-01. | One fda.gov or sponsor document fetched for each. |
+| N-07 | Windows task `DiabetesHub_GapAnalysis` points at a deleted script; unattended publishing has no path. | Owner runs `register_daily_task.ps1` and chooses how pushes happen. |
+| N-08 | AZD1656 row in the GKA table says "Phase 3 (tachyphylaxis) … Development ongoing" with no source. Not checked. | Checked against the registry. |
+
+---
+
 *Maintained by the Diabetes Research Hub monitor. Re-emit verbatim each run; append, never silently drop.*

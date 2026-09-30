@@ -343,12 +343,117 @@ h3 {
   .distribution-range { grid-template-columns: 1fr 1fr; }
   .robustness-table { font-size: 12px; }
 }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
 </head>
 <body>
+<!-- DRH-NAV-BAR -->
+<nav class="drh-nav" role="navigation" aria-label="Dashboard navigation">
+  <a class="drh-home" href="../docs/index.html" aria-label="Return to Diabetes Research Hub">&larr; Hub</a>
+  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Core Tools &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Research_Dashboard.html">Research Dashboard</a>
+      <a href="Clinical_Trial_Dashboard.html">Clinical Trials</a>
+      <a href="Medical_Data_Dictionary.html">Data Dictionary</a>
+      <a href="Paper_Library.html">Paper Library</a>
+      <a href="Methodology.html">Methodology</a>
+      <a href="Acronym_Database.html">Acronym Database</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Analysis &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Gap_Synthesis.html">Gap Synthesis</a>
+      <a href="Gap_Deep_Dives.html">Gap Deep Dives</a>
+      <a href="Gap_Evidence.html">Gap Evidence</a>
+      <a href="Extracted_Evidence.html">Extracted Evidence</a>
+      <a href="Corpus_Analysis.html">Corpus Analysis</a>
+      <a href="Research_Paths.html">Research Paths</a>
+      <a href="Statistical_Analysis.html" class="drh-current">Statistical Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Drug & Treatment &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Drug_Repurposing_Screen.html">Drug Repurposing Screen</a>
+      <a href="Drug_Repurposing_Islet.html">Drug Repurposing Islet</a>
+      <a href="Islet_Drug_Repurposing.html">Islet Drug Repurposing</a>
+      <a href="Generic_Drug_Catalog.html">Generic Drug Catalog</a>
+      <a href="GKA_Landscape.html">GKA Landscape</a>
+      <a href="GKA_LADA.html">GKA LADA</a>
+      <a href="GKA_Pricing.html">GKA Pricing</a>
+      <a href="Immunomod_LADA.html">Immunomod LADA</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Equity & Access &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="Health_Equity.html">Health Equity</a>
+      <a href="Equity_Map.html">Equity Map</a>
+      <a href="Trial_Equity_Mapper.html">Trial Equity Mapper</a>
+      <a href="CART_Access_Barriers.html">CART Access Barriers</a>
+      <a href="Islet_Transplant_Equity.html">Islet Transplant Equity</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">LADA & Nutrition &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="LADA_Natural_History.html">LADA Natural History</a>
+      <a href="LADA_Prevalence.html">LADA Prevalence</a>
+      <a href="LADA_Diagnostic_Model.html">LADA Diagnostic Model</a>
+      <a href="Nutrition_Beta_Cells.html">Nutrition Beta Cells</a>
+      <a href="Nutrition_LADA.html">Nutrition LADA</a>
+      <a href="Treg_Neuropathy.html">Treg Neuropathy</a>
+      <a href="Islet_Transplant_Analysis.html">Islet Transplant Analysis</a>
+    </div>
+  </div>  <div class="drh-group">
+    <button class="drh-group-label" aria-haspopup="true" aria-expanded="false">Verification &#9662;</button>
+    <div class="drh-dropdown" role="menu">
+      <a href="PMID_Verification.html">PMID Verification</a>
+    </div>
+  </div>
+</nav>
+
+
+
 
 <div class="page-header">
   <h1>Statistical Analysis Dashboard</h1>
@@ -388,7 +493,7 @@ h3 {
   This section previously showed a pooled HbA1c reduction of 0.93% (95% CI 0.90 to 0.97), a remission-rate distribution and a C-peptide summary. All three were computed from regular-expression captures rather than extracted study results and have been withdrawn: the HbA1c figure combined two percentages from a single paper using an assumed variance, and the remission figures included a reagent concentration from a methods section. What is shown now is pooled only from effect records that quote their source sentence, were checked against the PubMed abstract, and were confirmed by a second independent extraction.
 </div>
 <h3>HbA1c change from baseline: orforglipron 12 mg vs placebo</h3>
-<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
   <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
   <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-1.06 (-1.33 to -0.79)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
   <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-1.08 (-1.33 to -0.83)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
@@ -404,7 +509,7 @@ h3 {
   <li>Effects were read from abstracts; estimand is as stated there and is not stated for every trial.</li>
 </ul>
 <h3>HbA1c change from baseline: orforglipron 3 mg vs placebo</h3>
-<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
   <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
   <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-0.83 (-1.10 to -0.56)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
   <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-0.78 (-1.02 to -0.55)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
@@ -420,7 +525,7 @@ h3 {
   <li>Effects were read from abstracts; estimand is as stated there and is not stated for every trial.</li>
 </ul>
 <h3>HbA1c change from baseline: orforglipron 36 mg vs placebo</h3>
-<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
   <thead><tr><th>Trial</th><th>Population</th><th>Difference (95% CI), percentage points</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
   <tr><td>ACHIEVE-1</td><td>adults with type 2 diabetes treated with diet and exercise only</td><td>-1.07 (-1.33 to -0.81)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40544435/" target="_blank">PMID:40544435</a></td></tr>
   <tr><td>ACHIEVE-5</td><td>adults with type 2 diabetes on titrated insulin glargine, with or without metformin and/or SGLT2 inhibitor</td><td>-1.03 (-1.28 to -0.77)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42251769/" target="_blank">PMID:42251769</a></td></tr>
@@ -437,15 +542,15 @@ h3 {
 </ul>
 <h3>Reported, not pooled</h3>
 <p style="font-size: 13px;">Comparisons with verified results from one trial only. Each row is that trial's own result.</p>
-<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
   <thead><tr><th>Comparison</th><th>Trial</th><th>Difference (95% CI)</th><th>Timepoint</th><th>Source</th></tr></thead><tbody>
-  <tr><td>orforglipron 12 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.70 (-0.9 to -0.49)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
+  <tr><td>orforglipron 12 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.70 (-0.90 to -0.49)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
   <tr><td>orforglipron 12 mg vs oral semaglutide 14 mg</td><td>ACHIEVE-3</td><td>-0.24 (-0.41 to -0.072)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
   <tr><td>orforglipron 12 mg vs oral semaglutide 7 mg</td><td>ACHIEVE-3</td><td>-0.48 (-0.65 to -0.31)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
   <tr><td>orforglipron 3 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.42 (-0.62 to -0.23)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
   <tr><td>orforglipron 36 mg vs dapagliflozin 10 mg</td><td>ACHIEVE-2</td><td>-0.75 (-0.96 to -0.55)</td><td>week 40</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42259339/" target="_blank">PMID:42259339</a></td></tr>
   <tr><td>orforglipron 36 mg vs oral semaglutide 14 mg</td><td>ACHIEVE-3</td><td>-0.44 (-0.62 to -0.26)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
-  <tr><td>orforglipron 36 mg vs oral semaglutide 7 mg</td><td>ACHIEVE-3</td><td>-0.68 (-0.85 to -0.5)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
+  <tr><td>orforglipron 36 mg vs oral semaglutide 7 mg</td><td>ACHIEVE-3</td><td>-0.68 (-0.85 to -0.50)</td><td>week 52</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41765029/" target="_blank">PMID:41765029</a></td></tr>
 </tbody></table>
 <h3>Remission rates and C-peptide</h3>
 <p>Withdrawn. No verified records exist yet for these outcomes.</p>
@@ -457,7 +562,7 @@ h3 {
   <div class="metric-value">3</div>
 </div>
 
-<table class="robustness-table" style="width: 100%; margin-top: 16px;">
+<table role="table" class="robustness-table" style="width: 100%; margin-top: 16px;">
   <thead>
     <tr>
       <th>Marker</th>
@@ -875,7 +980,7 @@ Parameters varied in Monte Carlo simulations. Top parameters shown are those ext
 
 <h3>Top 10 Most Robust Drugs (by % time in top-5)</h3>
 
-<table class="robustness-table">
+<table role="table" class="robustness-table">
   <thead>
     <tr>
       <th>Rank</th>
@@ -1090,23 +1195,23 @@ Range shows 5th to 95th percentile of scores across 5,000 simulations. Wide rang
 <div style="max-width:980px;margin:2rem auto;padding:0 2rem;">
   <div style="border-top:1px solid #e0ddd5;padding-top:1rem;">
     <h3 style="font-family:Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:0.5rem;">Statistical Methodology References</h3>
-    <!-- WITHDRAWN 2026-09-10. This block was audited while sweeping PMID:32175717 and FOUR OF ITS
+    <!-- WITHDRAWN 2026-09-10. This block was audited while sweeping <a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a> and FOUR OF ITS
          FIVE CITATIONS WERE FALSE. Every false one is a health-economics or cost paper being cited
          as statistical methodology - they are unrelated to the methods they were attached to:
-           - "DerSimonian-Laird estimators (PMID:29710129)" -> 29710129 is Hernandez et al.,
+           - "DerSimonian-Laird estimators (<a href="https://pubmed.ncbi.nlm.nih.gov/29710129/" target="_blank" rel="noopener" title="View on PubMed">PMID:29710129</a>)" -> 29710129 is Hernandez et al.,
              "Total Costs of Chimeric Antigen Receptor T-Cell Immunotherapy", JAMA Oncol 2018.
              A CAR-T cost analysis. It is not a meta-analysis methods paper.
-           - "HbA1c reduction effect sizes pooled from multi-center trials (PMID:34763823;
-             PMID:37909353)" -> 34763823 is Herman & Kuo, "100 years of Insulin: Why is Insulin So
+           - "HbA1c reduction effect sizes pooled from multi-center trials (<a href="https://pubmed.ncbi.nlm.nih.gov/34763823/" target="_blank" rel="noopener" title="View on PubMed">PMID:34763823</a>;
+             <a href="https://pubmed.ncbi.nlm.nih.gov/37909353/" target="_blank" rel="noopener" title="View on PubMed">PMID:37909353</a>)" -> 34763823 is Herman & Kuo, "100 years of Insulin: Why is Insulin So
              Expensive", Endocrinol Metab Clin North Am 2021, a review of insulin PRICING;
              37909353 is "Economic Costs of Diabetes in the U.S. in 2022", Diabetes Care 2024.
              Neither pools HbA1c effect sizes; neither reports HbA1c outcomes at all.
            - "Bayesian pathway synthesis priors informed by systematic review evidence
-             (PMID:32175717)" -> 32175717 is Khan MAB et al., J Epidemiol Glob Health 2020, a
+             (<a href="https://pubmed.ncbi.nlm.nih.gov/32175717/" target="_blank" rel="noopener" title="View on PubMed">PMID:32175717</a>)" -> 32175717 is Khan MAB et al., J Epidemiol Glob Health 2020, a
              Global Burden of Disease analysis of T2D prevalence. It is not a systematic review
              and it did not inform any prior on this page; statistical_analysis.py sets the prior
              from data_point_count and PMID count, which is recorded in the 2026-08-29 queue item.
-         The fifth (PMID:23248199, ACTION LADA) is topically real and is retained below.
+         The fifth (<a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank" rel="noopener" title="View on PubMed">PMID:23248199</a>, ACTION LADA) is topically real and is retained below.
          The block is replaced rather than re-cited because the honest statement is that this
          page's methods are not drawn from external methodological sources. -->
     <p style="font-size:12px;color:#636363;line-height:1.7;">
