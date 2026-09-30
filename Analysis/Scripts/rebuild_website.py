@@ -488,7 +488,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Islet Transplant Registry Equity</h3>
-    <p>CITR demographic analysis: 85% White recipients vs 62% T1D population. Geographic, financial, and referral barriers to equitable islet transplant access. Gap #11 (SILVER).</p>
+    <p>Whether race, ethnicity, income or access shape who receives an islet transplant. No PubMed-indexed analysis of this was found in dated searches; registry reports have not yet been checked. Gap #11 (BRONZE).</p>
     <a href="Dashboards/Islet_Transplant_Equity.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

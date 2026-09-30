@@ -161,7 +161,7 @@ GAPS = {
     },
     11: {
         'name': 'Islet Transplant Registry Equity',
-        'tier': 'SILVER',  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
+        'tier': 'BRONZE',  # Owner ruling 2026-09-30: BRONZE under the absence-claim rule (RESEARCH_DOCTRINE Lesson 9). One source searched (PubMed); premise not yet sourced.
         'keywords': [
             'islet transplant registry', 'citr', 'transplant equity',
             'transplant access', 'organ allocation', 'transplant disparit',

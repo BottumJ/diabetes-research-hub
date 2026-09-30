@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Islet Transplant Registry Equity Analysis Dashboard
-Gap #11, SILVER): Demographic and geographic disparities
+Gap #11, BRONZE): Demographic and geographic disparities
 """
 
 import os
@@ -831,7 +831,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
 
         <div class="footer">
-            <p><strong>Gap #11, SILVER)</strong> | Islet Transplant Registry Equity Analysis</p>
+            <p><strong>Gap #11, BRONZE)</strong> | Islet Transplant Registry Equity Analysis</p>
             <p>Data compiled from CITR, UNOS/OPTN, FDA databases, and peer-reviewed literature through Q2 2024. Dashboard interactive; select tabs to explore sections.</p>
             <p>No emojis, gradients, or rounded corners per Tufte design principles. Designed for clarity, data visibility, and equitable representation of evidence.</p>
         </div>

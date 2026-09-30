@@ -648,8 +648,6 @@ html_content = '''<!DOCTYPE html>
                     <strong>Examples:</strong>
                     Gap #2 (Health equity in beta cell therapies) — ADA Standards, Helmsley Trust, JDRF, Frontiers review
                     | Gap #3 (Insulin resistance in islet transplant) — Edmonton Protocol 20-year data, Donislecel FDA approval, CITR registry
-                    | Gap #6 (CAR-T access barriers) — AJMC, Blood journal, ADA Standards, Helmsley Trust independently recognize disparity
-                    | Gap #11 (Islet transplant registry equity) — National Academies, Helmsley, ADA, PMC review, Frontiers analysis
                 </div>
             </div>
 
@@ -938,7 +936,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #11: Islet Transplant Registry Equity</div>
-                    <span class="gap-validation silver">SILVER</span>
+                    <span class="gap-validation bronze">BRONZE</span>
                     <p class="gap-description">Demographic and geographic profile of islet transplant recipients vs disease burden distribution.</p>
                 </div>
                 <div class="gap-card">

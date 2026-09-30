@@ -926,6 +926,32 @@ VERIFICATION STATUS: ⚠ UNVERIFIED (Being updated; estimated completion: 2026-0
 
 ---
 
+## Lesson 9: Absence Claims Are Tiered by Null Searches, Not by Citations (v1.2, 2026-09-30)
+
+**The problem:** A research gap is a claim that something has *not* been done. The GOLD/SILVER/BRONZE scale counts independent sources that *confirm* a finding, and it was being applied to gaps by counting the papers filed under them. Those papers are about one side of the gap and cannot show that the other side is missing. Gap #11 was rated GOLD, then SILVER, on papers that never mention equity.
+
+**The rule.** An absence claim has two parts, and both need support:
+
+1. **The absence** — dated, reproducible searches that return nothing relevant, recorded with the query string, the database, the date and the hit count.
+2. **The premise** — why the missing work would matter, evidenced like any positive claim.
+
+| Tier | Absence claim needs |
+|---|---|
+| **GOLD** | Empty searches in 3 independent sources (e.g. PubMed, Embase, the relevant registry's own reports) **and** a sourced premise |
+| **SILVER** | Empty searches in 2 independent sources **and** a sourced premise |
+| **BRONZE** | An empty search in 1 source |
+| **EXPLORATORY** | No documented search |
+
+**Independent** means different databases or publishers with different coverage. Repeating one database with one method on different days is one source, however many times it is run.
+
+**Scope in the wording:** a claim is only as wide as what was searched. After PubMed alone, publish "no PubMed-indexed analysis was found", not "no analysis exists".
+
+**Eligible, not excluded** (from DECISION_BRIEF_2026-09-07): before citing another study's silence, confirm the topic was eligible for that study and absent, not excluded by its design.
+
+**First application:** Gap #11 (Islet Transplant Registry Equity), BRONZE on 2026-09-30 — one source searched, premise unsourced.
+
+---
+
 ## Summary: v1.1 Updates to QA Checklist (Section F)
 
 These eight lessons have been integrated into updated QA procedures. Here are the additions to the QA Checklist:
@@ -968,4 +994,6 @@ These eight lessons have been integrated into updated QA procedures. Here are th
 | 1.0 | March 14, 2026 | Initial doctrine established. Core standards for ingest, validation, and research cycle. |
 | 1.1 | March 31, 2026 | Added Part IV: Verification Gate Lessons Learned. Eight operational refinements based on testing across 33 production dashboards. Enhanced PMID verification requirements, dynamic content scanning, citation specificity standards, quarantine workflow, source-level fix principle, financial claims sourcing, and validation tier operationalization. |
 
-*Last Updated: March 31, 2026*
+| 1.2 | September 30, 2026 | Added Lesson 9: research gaps are absence claims, tiered by independent null-search sources plus a sourced premise, not by the papers filed under them. Gap #11 set to BRONZE under it. |
+
+*Last Updated: September 30, 2026*

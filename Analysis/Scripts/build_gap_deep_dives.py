@@ -754,14 +754,14 @@ GAPS_DATA = {
     },
     "11": {
         "title": "Islet Transplant Equity",
-        "tier": "SILVER",  # Reconciled 2026-09-30 to the 2026-09-08 demotion already in agent_state and on the site.
+        "tier": "BRONZE",  # Owner ruling 2026-09-30: BRONZE under the absence-claim rule (RESEARCH_DOCTRINE Lesson 9). One source searched (PubMed); premise not yet sourced.
         "score": 0.81,
         "cluster": "A",
         "domain_pubs": {"islet_transplant": 238, "health_equity": 1830},
         "joint_pubs": 0,
         "trial_count": 1,
         "key_refs": [],
-        "key_finding": "CITR registry: 1,477 recipients, 66% female, 65% white, zero centers in India/Bangladesh/Mexico/Sub-Saharan Africa despite global burden",
+        "key_finding": "CITR registry: 1,477 recipients, 66% female, 65% white [UNSOURCED], zero centers in India/Bangladesh/Mexico/Sub-Saharan Africa despite global burden",
         "status": "Access Barrier",
         "data_profile": {
             "gap_score": 0.81,
@@ -777,7 +777,7 @@ GAPS_DATA = {
         "evidence_synthesis": {
             "summary": "CITR registry: 1,477 recipients across 40 centers (HIC only), 66% female, median age 42.2yr. Cost $100-139K [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]. Zero centers in major burden countries.",
             "details": [
-                "CITR demographics: 66%+ female, median age 42.2yr, 65% white, 20% Asian, 8% Hispanic, 7% Black",
+                "CITR demographics: 66%+ female, median age 42.2yr, 65% white, 20% Asian, 8% Hispanic, 7% Black [UNSOURCED - not yet checked against a CITR annual report]",
                 "Cost: US $100K-$139K per procedure [UNSOURCED - citation withdrawn 2026-09-17: PMID:21323736 is Beckwith J et al., Clin Transplant 2012, a Markov-model cost-effectiveness analysis of CADAVERIC islet transplantation. The only cost figures it reports are $663,000 (20-yr insulin), $519,000 (20-yr islet transplant), $71,000/QALY, $47,800/QALY and a $240,000 break-even procedure cost. It reports no CAR-T cost, no manufacturing cost and no pancreas-transplant cost.]; pancreas transplant $300K-$408K [UNSOURCED - same withdrawal]",
                 "Wait time: median 1.62 years (Swiss cohort)",
                 "Coverage: LANTIDRA now covered by most US insurers as of 2025",
