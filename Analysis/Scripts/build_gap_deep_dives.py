@@ -108,7 +108,7 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "88% of beta cell trials in HICs; 81% of disease burden in LMICs. iPSC manufacturing market projected to grow significantly (2024-2034), potentially driving economies of scale.",
+            "summary": "Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country; the most common countries are the United States (31), China (11) and France (8) (ClinicalTrials.gov query, 2026-10-01). The share of type 1 burden in low- and middle-income countries is not sourced here. [Corrected 2026-10-01: previously read \"88% of beta cell trials in HICs; 81% of disease burden in LMICs\", neither sourced.]",
             "details": [
                 "Vertex VX-880: 83% insulin independence, 100% HbA1c <7% in initial cohort (NEJM PMID:40544428); requires ongoing immunosuppression; long-term safety profile not yet established (small N, limited follow-up)",
                 "VX-264 discontinued March 2025 due to insufficient C-peptide response",
@@ -136,20 +136,20 @@ GAPS_DATA = {
             "Clinical trial access disparities (peer-reviewed analysis)"
         ],
         "clinical_pipeline": [
-            "VX-880 (zimislecel): FDA approved, 83% insulin independence",
+            "VX-880 (zimislecel): NOT approved. Phase 3 portion of FORWARD ongoing; sponsor expects regulatory submission in 2026. In the phase 1-2 portion, 10 of 12 full-dose participants were insulin independent at day 365 (PMID:40544428). [Corrected 2026-10-01: previously read \"FDA approved\".]",
             "VX-264 (encapsulated): DISCONTINUED March 2025",
             "Preclinical: Multiple iPSC lines in preclinical development",
             "India/Brazil/China regulatory pathways for cell therapy manufacturing active"
         ],
         "status_next_steps": {
-            "phase": "FDA Approved (VX-880); Phase 1-2 (second-gen)",
+            "phase": "Phase 3 (zimislecel, not yet approved); VX-264 discontinued 2025",
             "effort": "Very High - requires regulatory harmonization and manufacturing capacity building",
             "data_needed": "Regional trial feasibility studies, manufacturing cost data, health system capacity assessment",
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, local manufacturing infrastructure"
         },
         "validation_evidence": "GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions | CORPUS VALIDATION (March 2026): Corpus analysis identified 19 cross-gap data points including hazard ratios and odds ratios from published equity studies.",
-        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year (10 of 12 full-dose participants, phase 1-2 interim analysis; PMID:40544428). However, trial sites concentrated in 8 HICs (US, Canada, UK, Sweden, Belgium, Spain, Netherlands, Australia). Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M cases), Bangladesh (13.9M), Mexico (13.6M), Sub-Saharan Africa (33M) = 149M in LADA/T1D burden with zero trial access. Regulatory pathways exist: India (DCG approval pathway), Brazil (ANVISA), China (NMPA) all allow cell therapy manufacturing with tech-transfer. iPSC-derived islets show improved outcomes vs allogeneic (reported better rejection rates with Edmonton Protocol).",
-        "mechanism_detail": "VX-880 (zimislecel) uses GADA-selected iPSC line genetically matched to donor HLA background. Differentiation protocol: iPSC -> definitive endoderm (CHIR99021/ACTIVIN A, 5d) -> pancreatic bud (FGF2/BMP4, 7d) -> pancreatic progenitors (NOGGIN/LDN193189/FGF7, 13d) -> immature beta cells (T3/FORSKOLIN, 21d) -> mature beta cells (maturation culture, 10d). Final product: 73% INSULIN+ cells, 62% CD9- (mature phenotype), 4.2+/-0.9 pC/kg/min glucose stimulation (near-adult values). In the reported VX-880 cohort: a majority achieved pre-specified glucose targets at the initial readout (exact proportions vary by reporting timepoint — see sponsor and peer-reviewed disclosures). No clinically-apparent allograft rejection events were reported in the disclosed interim analyses, though the cohort is small and follow-up remains limited; immunosuppression target range was lower than historical Edmonton Protocol (tacrolimus ~3-5 ng/mL vs. ~10-15 ng/mL historically). Insulin-secretion kinetics were reported to recover over 6-12 months post-transplant. (All outcome claims require verification against peer-reviewed endpoints.)"
+        "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year (10 of 12 full-dose participants, phase 1-2 interim analysis; PMID:40544428). Its two registered trials list 36 sites in 10 countries, all high-income: United States 15, Canada 6, United Kingdom 4, Saudi Arabia 4, France 2, and one each in Germany, Italy, the Netherlands, Norway and Switzerland (ClinicalTrials.gov, NCT04786262 and NCT06832410, queried 2026-10-01). [Corrected 2026-10-01: previously listed Sweden, Belgium, Spain and Australia, which have no site, and omitted five that do.] Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M), Bangladesh (13.9M), Mexico (13.6M) and Sub-Saharan Africa (33M) are total adult diabetes counts, not type 1 or LADA counts [UNSOURCED - attributed elsewhere on this page to the IDF Diabetes Atlas 2024, not checked], and no zimislecel trial site is listed in them. Regulatory pathways for cell therapy exist in India (DCG), Brazil (ANVISA) and China (NMPA) [UNSOURCED]. [Corrected 2026-10-01: these counts were labelled 'LADA/T1D burden', and a claim that iPSC-derived islets outperform allogeneic islets on rejection had no source and was removed.]",
+        "mechanism_detail": "Zimislecel is an allogeneic, stem cell-derived, fully differentiated islet-cell product infused into the portal vein, given with glucocorticoid-free immunosuppression (PMID:40544428). [Corrected 2026-10-01: this previously described a GADA-selected iPSC line genetically matched to donor HLA, a day-by-day differentiation protocol and product potency figures (73% insulin-positive, 62% CD9-negative, 4.2 pC/kg/min). None had a source, and HLA matching is inconsistent with an allogeneic product that requires immunosuppression.] In the reported VX-880 cohort: a majority achieved pre-specified glucose targets at the initial readout (exact proportions vary by reporting timepoint — see sponsor and peer-reviewed disclosures). No clinically-apparent allograft rejection events were reported in the disclosed interim analyses, though the cohort is small and follow-up remains limited; immunosuppression target range was lower than historical Edmonton Protocol (tacrolimus ~3-5 ng/mL vs. ~10-15 ng/mL historically). Insulin-secretion kinetics were reported to recover over 6-12 months post-transplant. (All outcome claims require verification against peer-reviewed endpoints.)"
     },
     "3": {
         "title": "Insulin Resistance in Islet Transplant",
@@ -1984,7 +1984,7 @@ def generate_html():
                     </tr>
                     <tr>
                         <td>2: Health Equity</td>
-                        <td>Low (VX-880 FDA-approved)</td>
+                        <td>Low-Medium (zimislecel in phase 3; regulatory submission expected 2026)</td>
                         <td>High (regulatory harmonization needed globally)</td>
                         <td>Medium (reimbursement barriers)</td>
                         <td>Medium</td>

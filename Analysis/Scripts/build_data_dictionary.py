@@ -1357,7 +1357,7 @@ TERMS = {
     },
     'Stem Cell-Derived Beta Cells': {
         'plain': 'Beta cells grown in a laboratory from stem cells. These could provide an unlimited supply of insulin-producing cells for transplant, eliminating the need for organ donors.',
-        'medical': 'Pluripotent stem cell (iPSC/ESC)-derived insulin-producing cells generated via directed differentiation through definitive endoderm, pancreatic progenitor, and endocrine precursor stages. VX-880 (zimislecel): first ESC-derived islet product, FDA-approved, 83% insulin independence.',
+        'medical': 'Pluripotent stem cell (iPSC/ESC)-derived insulin-producing cells generated via directed differentiation through definitive endoderm, pancreatic progenitor, and endocrine precursor stages. VX-880 (zimislecel): stem cell-derived islet product, investigational (phase 3 portion ongoing); 10 of 12 full-dose phase 1-2 participants insulin independent at day 365 (PMID:40544428).',
         'systems': ['pancreas'],
         'indicators': ['C-peptide', 'Insulin independence', 'INSULIN+ cell percentage', 'Glucose-stimulated insulin secretion'],
         'normal_range': 'VX-880 product: 73% INSULIN+ cells; GSIS 4.2 pC/kg/min',
