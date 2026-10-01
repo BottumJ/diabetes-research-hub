@@ -412,7 +412,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Islet Transplant Outcomes</h3>
-    <p>Graft survival analysis by immunosuppression protocol. The tacrolimus paradox, calcineurin-sparing alternatives, IEQ/kg dose-response, and VX-880 next-generation data. Gap #3 (GOLD).</p>
+    <p>Graft survival analysis by immunosuppression protocol. What tacrolimus does to glucose metabolism, what has and has not been measured in islet recipients, calcineurin-sparing alternatives, and VX-880 data. Gap #3 (SILVER).</p>
     <a href="Dashboards/Islet_Transplant_Analysis.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

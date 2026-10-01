@@ -153,13 +153,13 @@ GAPS_DATA = {
     },
     "3": {
         "title": "Insulin Resistance in Islet Transplant",
-        "tier": "GOLD",
+        "tier": "SILVER",  # Owner ruling 2026-09-30: restated and set to SILVER under RESEARCH_DOCTRINE Lesson 9.
         "score": 0.92,
         "cluster": "C",
         "domain_pubs": {"insulin_resistance": 18518, "islet_transplant": 238},
         "joint_pubs": 1,
         "trial_count": 4,
-        "key_refs": ["Diabetes Care 2023", "PMID:40544428"],
+        "key_refs": ["PMID:24085506", "PMID:24691031", "PMID:19584681", "PMID:35588757"],
         "key_finding": "Tacrolimus impairs insulin secretion and sensitivity in rodent and in-vitro work via FKBP-12/calcineurin/NFAT, but no incidence of insulin resistance in human islet recipients has been located, and the one human clamp study located (12 recipients, low-dose tacrolimus plus sirolimus) found insulin sensitivity IMPROVED 6-7 months after transplant (PMID:24085506). [Corrected 2026-09-30: previously stated 40% incidence at 3 months and HOMA-IR 7.5 vs 3.5, neither sourced.]",
         "status": "In Optimization",
         "data_profile": {
@@ -169,8 +169,9 @@ GAPS_DATA = {
             "trial_counts": {"Edmonton": 255, "Donislecel": 120},
             "key_references": [
                 "Giri &amp; Goldman, Clinical Diabetes 2024 - Donislecel (LANTIDRA) FDA approval June 2023",
-                "PMID:40544428 - Islet transplant long-term outcomes",
-                "Am J Transplant 2024 - Edmonton Protocol 20-year analysis"
+                "PMID:24085506 - Rickels et al. 2013: clamp-measured insulin sensitivity improves after islet transplant (12 recipients)",
+                "PMID:19584681 - Leitao et al. 2009: type 2 phenotype associated with earlier graft failure (44 recipients; proxy, not measured insulin resistance)",
+                "PMID:35588757 - Marfil-Garza et al. 2022: Edmonton 20-year single-centre cohort"
             ]
         },
         "evidence_synthesis": {

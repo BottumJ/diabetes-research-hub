@@ -73,7 +73,7 @@ GAPS = {
     },
     3: {
         'name': 'Insulin Resistance in Islet Transplant',
-        'tier': 'GOLD',
+        'tier': 'SILVER',  # Owner ruling 2026-09-30: restated and set to SILVER under RESEARCH_DOCTRINE Lesson 9.
         'keywords': [
             'islet transplant', 'islet graft', 'edmonton protocol',
             'insulin resistance transplant', 'graft function',

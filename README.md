@@ -8,7 +8,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 ## What This Project Does
 
-**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 2 GOLD (3+ sources), 8 SILVER (2 sources), 5 EXPLORATORY (no evidence yet at the gap's own intersection).
+**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 1 GOLD (3+ sources), 9 SILVER (2 sources), 5 EXPLORATORY (no evidence yet at the gap's own intersection).
 
 **Clinical Trial Intelligence** — Pulls live snapshots from ClinicalTrials.gov API v2 across five categories (T1D cure, T1D immunotherapy, T2D novel therapies, diabetes devices, recently completed trials). Diffs snapshots over time to detect new trials, status changes, and freshly posted results.
 
@@ -115,8 +115,8 @@ This project uses a 4-tier evidence classification system:
 
 | Tier | Requirement | Count |
 |------|------------|-------|
-| **GOLD** | 3+ independent sources from different research groups | 2 gaps |
-| **SILVER** | 2 independent sources | 8 gaps |
+| **GOLD** | 3+ independent sources from different research groups | 1 gap |
+| **SILVER** | 2 independent sources | 9 gaps |
 | **BRONZE** | Computational analysis with single-source basis | 0 gaps |
 | **EXPLORATORY** | No evidence yet at the gap's own intersection, or biological plausibility uncertain | 5 gaps |
 
@@ -132,7 +132,7 @@ See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 
 |---|-----|------|
 | 1 | Gene Therapy for LADA | EXPLORATORY |
 | 2 | Health Equity in Beta Cell Therapies | GOLD |
-| 3 | Insulin Resistance in Islet Transplant | GOLD |
+| 3 | Insulin Resistance in Islet Transplant | SILVER |
 | 4 | Drug Repurposing for Islet Transplant | SILVER |
 | 5 | Treg in Diabetic Neuropathy | SILVER |
 | 6 | CAR-T Access Barriers in Diabetes | SILVER |

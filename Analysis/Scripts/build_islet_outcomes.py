@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Islet Transplant Outcomes Analysis Dashboard Generator
-Diabetes Research Hub - Gap #3: Insulin Resistance x Islet Transplant
+Diabetes Research Hub - Gap #3 (SILVER): Insulin Resistance x Islet Transplant
 """
 
 import os
@@ -753,7 +753,7 @@ def generate_html():
         <div id="tacrolimus-paradox" class="tab-content">
             <h2>The Tacrolimus Paradox: Immunosuppression's Metabolic Cost</h2>
 
-            <p>Tacrolimus revolutionized islet transplantation by enabling the first durable graft successes. Yet the same mechanism that prevents rejection—inhibition of calcineurin and T-cell activation—directly impairs glucose homeostasis. This creates a tragic paradox: the immunosuppressant that saves the graft may simultaneously exhaust it.</p>
+            <p>Tacrolimus revolutionized islet transplantation by enabling the first durable graft successes. Yet the same mechanism that prevents rejection—inhibition of calcineurin and T-cell activation—directly impairs glucose homeostasis. Whether that metabolic cost shortens graft life in islet recipients has not been tested in any human study found by an all-time PubMed search (re-run 2026-09-05), and the direct measurements that exist point the other way (below).</p>
 
             <h3>Molecular Mechanism of Immunosuppression</h3>
             <div class="protocol-box">
@@ -777,97 +777,26 @@ def generate_html():
                 <p style="font-size: 13px;">Calcineurin is essential for physiologic insulin secretion and insulin-stimulated glucose uptake in muscle and adipose tissue. Inhibition causes both central (beta-cell) and peripheral (muscle/fat) insulin resistance.</p>
             </div>
 
-            <h3>NODAT Risk: New-Onset Diabetes After Transplant</h3>
-            <div class="metric">
-                <div class="metric-value">2.5x</div>
-                <div class="metric-label">Relative risk with tacrolimus vs cyclosporine</div>
-            </div>
-            <p>Clinical trials demonstrate that tacrolimus recipients have significantly higher rates of new-onset diabetes, obesity, and metabolic syndrome compared to other immunosuppressive regimens.</p>
-            <p class="source">Source: Vincenti et al., PMID:17359512 (American Journal of Transplantation 2007)</p>
+            <!-- CORRECTED 2026-09-30 (Gap #3 restatement). This section published a
+                 "2.5x" relative risk of new-onset diabetes with tacrolimus, a HOMA-IR
+                 timeline (2.1 / 3.8 / 3.2 / 2.9 at 0 / 3 / 12 / 24 months), a trough-level
+                 risk table and the claim that tacrolimus-induced insulin resistance
+                 "explains" Edmonton graft decline. The cited trial reports 33.6% vs 26.0%
+                 (relative risk about 1.3) in KIDNEY recipients; the HOMA-IR series and the
+                 trough table had no source; and the one direct human measurement in islet
+                 recipients shows insulin sensitivity improving. All removed. -->
+            <h3>New-Onset Diabetes After Transplant: the evidence is from kidney recipients</h3>
+            <p>In the DIRECT trial of 682 kidney transplant recipients, new-onset diabetes or impaired fasting glucose by 6 months occurred in 33.6% on tacrolimus and 26.0% on cyclosporine (p=0.046). Islet recipients already have diabetes, so this endpoint does not transfer to them directly.</p>
+            <p class="source">Source: Vincenti et al., Am J Transplant 2007, PMID:17359512</p>
 
-            <h3>HOMA-IR Progression: Pre- and Post-Transplant</h3>
-            <p>Homeostasis Model Assessment for Insulin Resistance (FHOMA-IR = fasting insulin [mIU/L] x fasting glucose [mmol/L] / 22.5) reveals progressive worsening of systemic insulin sensitivity in islet recipients.</p>
+            <h3>What has actually been measured in islet recipients</h3>
+            <p>Insulin sensitivity measured by euglycemic clamp in 12 type 1 recipients before and 6&ndash;7 months after islet transplant, on low-dose tacrolimus plus sirolimus, <strong>improved</strong> (total, hepatic and peripheral), approaching values in people without diabetes. The likeliest explanation the authors give is better glucose control after transplant.</p>
+            <p class="source">Source: Rickels et al., J Clin Endocrinol Metab 2013, PMID:24085506; the same cohort's minimal-model comparison, PMID:24691031</p>
+            <p>In 44 recipients at one centre, the 5 with a "type 2 phenotype" (overweight plus a family history of type 2 diabetes) lost graft function sooner (mean estimated graft survival 25.7 vs 54.1 months). Insulin resistance itself was not measured; the authors call for trials that measure it.</p>
+            <p class="source">Source: Leitao et al., Transplantation 2009, PMID:19584681</p>
 
-            <div class="bar-chart">
-                <div class="bar-row">
-                    <div class="bar-label">Pre-transplant</div>
-                    <div class="bar" style="width: 52%; background-color: {COLORS['amber']};"><div class="bar-value">2.1</div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-label">3 months post</div>
-                    <div class="bar" style="width: 95%; background-color: {COLORS['red']};"><div class="bar-value">3.8</div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-label">12 months post</div>
-                    <div class="bar" style="width: 80%; background-color: {COLORS['red']};"><div class="bar-value">3.2</div></div>
-                </div>
-                <div class="bar-row">
-                    <div class="bar-label">24 months post</div>
-                    <div class="bar" style="width: 73%; background-color: {COLORS['amber']};"><div class="bar-value">2.9</div></div>
-                </div>
-            </div>
-
-            <p>HOMA-IR peaks at 3 months (1.8x baseline) and remains elevated at 12 months (1.5x baseline). Partial recovery by 24 months suggests some physiologic adaptation, but persistent dysfunction is common.</p>
-
-            <h3>Tacrolimus Trough Levels: The Impossible Balance</h3>
-
-            <div class="expandable" onclick="toggleExpandable(this)">
-                <div class="expandable-header">
-                    <span>Dose-Response Paradox: Higher Levels = Better Immunosuppression, Worse Metabolism</span>
-                    <span class="expandable-toggle">+</span>
-                </div>
-                <div class="expandable-content">
-                    <p>Tacrolimus pharmacokinetics create an inescapable dilemma:</p>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Trough Level</th>
-                                <th>Immune Control</th>
-                                <th>Rejection Risk</th>
-                                <th>IR/NODAT Risk</th>
-                                <th>Clinical Trade-off</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>&lt;5 ng/mL</td>
-                                <td>Suboptimal</td>
-                                <td style="color: {COLORS['red']};">High</td>
-                                <td>Low</td>
-                                <td>Graft loss common</td>
-                            </tr>
-                            <tr>
-                                <td>5-10 ng/mL</td>
-                                <td>Adequate</td>
-                                <td>Moderate</td>
-                                <td>Moderate</td>
-                                <td>Better balance</td>
-                            </tr>
-                            <tr>
-                                <td>&gt;10 ng/mL</td>
-                                <td>Excellent</td>
-                                <td style="color: {COLORS['green']};">Low</td>
-                                <td style="color: {COLORS['red']};">High</td>
-                                <td>Severe metabolic dysfunction</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p style="margin-top: 12px;">Clinicians face an impossible choice: allow higher tacrolimus levels to prevent rejection (at metabolic cost) or lower levels to reduce IR/NODAT (at immunologic cost). No trough level optimizes both.</p>
-                </div>
-            </div>
-
-            <h3>The Paradox Explained: Why This Matters</h3>
-            <p>The drug that prevents rejection also accelerates graft exhaustion through dual mechanisms:</p>
-            <ul style="margin-left: 20px; margin-top: 12px; margin-bottom: 12px;">
-                <li><span class="highlight">Beta-cell dysfunction:</span> Direct impairment of GSIS and reduced insulin secretion capacity</li>
-                <li><span class="highlight">Peripheral IR:</span> Impaired insulin signaling in muscle/adipose tissue, increasing systemic glucose demand</li>
-                <li><span class="highlight">Weight gain:</span> IR and tacrolimus-related appetite stimulation promote obesity, worsening glucose homeostasis</li>
-                <li><span class="highlight">Chronic stress:</span> Persistent hyperglycemia and increased insulin demand exhaust remaining beta cells</li>
-            </ul>
-
-            <p>This explains the steep decline in graft function after year 1-2 in Edmonton Protocol recipients: initial immunologic control (tacrolimus works) is gradually overwhelmed by metabolic exhaustion (beta cells fail from overwork in a tacrolimus-induced IR environment).</p>
+            <h3>Why this is a research gap</h3>
+            <p>Those are the only direct data found. The registry's outcome measures (insulin independence, C-peptide, HbA1c, fasting glucose, severe hypoglycaemia) do not include insulin sensitivity, and a 2026 multi-centre trial (PMID:42608595) did not measure it either. So the hypothesis that a subgroup develops insulin resistance on tacrolimus and loses grafts faster is plausible and has one small proxy signal, but an all-time PubMed search (re-run 2026-09-05) found no human study that measures insulin sensitivity against graft survival, and the registry does not track it. Calcineurin-sparing regimens (next tab) are a reason to test it, not evidence that it is true.</p>
         </div>
 
         <!-- TAB 3: CALCINEURIN-SPARING ALTERNATIVES -->
