@@ -1,6 +1,25 @@
 # Structured Effects - Standings
 
-_Generated 2026-09-30 by structured_effects.py_
+_Generated 2026-10-01 by structured_effects.py_
+
+## cagrisema_phase3_T2D_HbA1c_vs_active
+
+1 records, 1 poolable (schema-valid, span-verified, second-pass agreed).
+
+| Trial | PMID | Intervention | Comparator | Effect (95% CI) | Week | Level |
+|---|---|---|---|---|---|---|
+| REIMAGINE 2 | 42251859 | cagrilintide-semaglutide 2.4 mg each | semaglutide 2.4 mg | -0.16 (-0.27 to -0.05) | week 68 | SILVER |
+
+## cagrisema_phase3_T2D_HbA1c_vs_placebo
+
+4 records, 4 poolable (schema-valid, span-verified, second-pass agreed).
+
+| Trial | PMID | Intervention | Comparator | Effect (95% CI) | Week | Level |
+|---|---|---|---|---|---|---|
+| REIMAGINE 1 | 42251860 | cagrilintide-semaglutide 2.4 mg each | placebo | -1.7 (-2.0 to -1.3) | week 40 | SILVER |
+| REIMAGINE 1 | 42251860 | cagrilintide-semaglutide 1.0 mg each | placebo | -1.3 (-1.8 to -0.9) | week 40 | SILVER |
+| REIMAGINE 3 | 42251856 | cagrilintide-semaglutide 2.4 mg each | placebo | -1.68 (-1.95 to -1.41) | week 40 | SILVER |
+| REIMAGINE 3 | 42251856 | cagrilintide-semaglutide 1.0 mg each | placebo | -1.44 (-1.71 to -1.17) | week 40 | SILVER |
 
 ## orforglipron_phase3_T2D_HbA1c_vs_active
 
@@ -33,6 +52,7 @@ _Generated 2026-09-30 by structured_effects.py_
 
 - **ATTAIN-2** (PMID 41275875): Abstract states HbA1c improved but gives no HbA1c effect or interval; primary endpoint is bodyweight. Full text not read.
 - **ACHIEVE-J** (PMID 42607698): No comparator arm (three orforglipron doses); primary endpoint is safety; abstract reports no HbA1c effect.
+- **REIMAGINE 5** (PMID none): Not published; registry has no results. Sponsor topline (2026-09-23) gives arm means without a confidence interval, so no admissible record.
 
 ---
 _No pooled estimate is produced here. Records from one trial share a comparator arm and are correlated; pooling them as independent would understate the variance._

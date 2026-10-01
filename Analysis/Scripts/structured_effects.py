@@ -225,8 +225,8 @@ def cmd_verify(doc):
 
 def cmd_compare(doc, second_path):
     with open(second_path, "r", encoding="utf-8") as fh:
-        second = json.load(fh)
-    second = second.get("records", second)
+        second_doc = json.load(fh)
+    second = second_doc.get("records", second_doc) if isinstance(second_doc, dict) else second_doc
     # Matched on what the record IS, never on record_id: a second extractor
     # who is handed the first pass's ids has been handed the first pass.
     def key(r):
@@ -236,7 +236,14 @@ def cmd_compare(doc, second_path):
     for s in second:
         by_key.setdefault(key(s), []).append(s)
     disagreed = 0
+    # A second-pass file covers the papers it was given, not the whole ledger.
+    # Records from other papers keep the second_pass result they already have.
+    covered = {str(s.get("pmid")) for s in second}
+    covered |= {str(e.get("pmid")) for e in (second_doc.get("excluded", [])
+                                            if isinstance(second_doc, dict) else [])}
     for r in doc["records"]:
+        if str(r["pmid"]) not in covered:
+            continue
         hits = by_key.get(key(r), [])
         diffs = []
         if len(hits) != 1:
@@ -262,7 +269,7 @@ def cmd_compare(doc, second_path):
         if diffs:
             disagreed += 1
             print("  DISAGREE %s: %s" % (r["record_id"], "; ".join(diffs)))
-    first_keys = {key(r) for r in doc["records"]}
+    first_keys = {key(r) for r in doc["records"] if str(r["pmid"]) in covered}
     extra = [s for s in second if key(s) not in first_keys]
     for s in extra:
         print("  SECOND PASS ONLY (first pass has no such record): pmid %s | %s vs %s"
