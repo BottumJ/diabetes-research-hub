@@ -81,6 +81,19 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -151,11 +164,12 @@
   </div>
 </nav>
 
+
     <div class="container">
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-09-30 19:01:24</p>
+            <p class="subtitle">Generated: 2026-09-30 19:19:57</p>
         </header>
 
         <div class="context-block">
@@ -250,7 +264,7 @@
                         </td>
                         <td>1</td>
                         <td>4</td>
-                        <td>Tacrolimus-induced IR (40% at 3mo [UNSOURCED]) driven by FKBP-12/calcineurin/NFA...</td>
+                        <td>Tacrolimus impairs insulin secretion and sensitivity in rodent and in-vitro work...</td>
                         <td>In Optimization</td>
                     </tr>
 
@@ -507,7 +521,7 @@
 
                     <div style="margin-bottom: 15px;">
                         <div><strong>Insulin Resistance in Islet Transplant</strong> <span class="tier-badge tier-gold">GOLD</span> (Score: 0.92)</div>
-                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Tacrolimus-induced IR (40% at 3mo [UNSOURCED]) driven by FKBP-12/calcineurin/NFAT pathway; HOMA-IR 7.5 vs 3.5 in failure...</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Tacrolimus impairs insulin secretion and sensitivity in rodent and in-vitro work via FKBP-12/calcineurin/NFAT, but no in...</div>
                     </div>
 
                     <div style="margin-bottom: 15px;">
@@ -956,12 +970,12 @@
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> Edmonton Protocol 20-year data: 61% insulin independence at 1yr declining to 8% at 20yr (Kaplan-Meier, n=255; <a href="https://pubmed.ncbi.nlm.nih.gov/35588757/" target="_blank" rel="noopener" title="View on PubMed">PMID:35588757</a>). Tacrolimus IR onset 24-hour, 40% incidence at 3mo [UNSOURCED].</p>
+<p><strong>Summary:</strong> Edmonton Protocol 20-year data: 61% insulin independence at 1yr declining to 8% at 20yr (Kaplan-Meier, n=255; <a href="https://pubmed.ncbi.nlm.nih.gov/35588757/" target="_blank" rel="noopener" title="View on PubMed">PMID:35588757</a>). No human incidence figure for tacrolimus-associated insulin resistance after islet transplant has been located.</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>Edmonton Protocol: 255 patients, 61% insulin independence at 1yr, 32% at 5yr, 8% at 20yr (Kaplan-Meier; <a href="https://pubmed.ncbi.nlm.nih.gov/35588757/" target="_blank" rel="noopener" title="View on PubMed">PMID:35588757</a>)</li>
 <li>Tacrolimus IR mechanism: FKBP-12/calcineurin/NFAT pathway</li>
-<li>HOMA-IR: 7.5+/-2.3 in failure group vs 3.5+/-0.5 in success (2.1-fold difference)</li>
+<li>Insulin sensitivity by clamp: improved from before to 6-7 months after transplant in 12 recipients on tacrolimus plus sirolimus (<a href="https://pubmed.ncbi.nlm.nih.gov/24085506/" target="_blank" rel="noopener" title="View on PubMed">PMID:24085506</a>)</li>
 <li>Calcineurin-sparing regimen (belatacept or efalizumab, pooled): 7 of 10 patients insulin independent at 10 years, 6 of 10 at mean 13.3 +/- 1.1 years -- one 10-patient series (5 BELA / 5 EFA), not two drug arms; 3 of the 7 reached that endpoint via pancreas-after-islet transplant, which is calcineurin-DEPENDENT (<a href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank" rel="noopener" title="View on PubMed">PMID:37359825</a>)</li>
 <li>Donislecel (LANTIDRA): FDA-approved June 2023; 21 of 30 participants insulin-independent for a year or more in two single-arm studies (FDA approval announcement, 2023-06-28)</li>
 
@@ -1079,7 +1093,7 @@
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr [UNSOURCED]. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023: in two non-randomized single-arm studies, 21 of 30 participants did not need insulin for a year or more (FDA approval announcement, 2023-06-28); no head-to-head comparison with the Edmonton cohort exists. Coverage by United, Aetna, Cigna, Medicare as of 2025 [UNSOURCED]. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours) [UNSOURCED] - the FDA approval announcement of 2023-06-28 describes none of these. Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.</p>
+                        <p>Tacrolimus-associated insulin resistance after islet transplant is documented in rodents; in humans, the one human clamp study located (12 recipients, low-dose tacrolimus plus sirolimus) found insulin sensitivity IMPROVED 6-7 months after transplant (<a href="https://pubmed.ncbi.nlm.nih.gov/24085506/" target="_blank" rel="noopener" title="View on PubMed">PMID:24085506</a>). Whether a subgroup develops insulin resistance, and how often, is unmeasured - which is the question this gap poses. [Corrected 2026-09-30: previously stated 40% at 3 months, 35% at 1 year and HOMA-IR 3.5 vs 7.5, none sourced.] Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023: in two non-randomized single-arm studies, 21 of 30 participants did not need insulin for a year or more (FDA approval announcement, 2023-06-28); no head-to-head comparison with the Edmonton cohort exists. Coverage by United, Aetna, Cigna, Medicare as of 2025 [UNSOURCED]. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours) [UNSOURCED] - the FDA approval announcement of 2023-06-28 describes none of these. Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.</p>
                     </div>
                 </div>
 
@@ -3396,8 +3410,8 @@
                              AZD1656: 21 Phase 1 and 6 Phase 2, all completed, the last in
                              September 2022. No Phase 3 study is registered and none is active. -->
                         <td>Phase 2 completed; no Phase 3 registered</td>
-                        <td>HbA1c -0.8% at 3mo, loss at 4mo (GCKR carriers) [UNSOURCED]</td>
-                        <td>Well-tolerated, 23 RCTs, 885 pts [UNSOURCED]</td>
+                        <td>HbA1c -0.80% vs placebo at 4 months as add-on to metformin; not sustained in the 6-month extension (<a href="https://pubmed.ncbi.nlm.nih.gov/23464532/" target="_blank" rel="noopener" title="View on PubMed">PMID:23464532</a>)</td>
+                        <td>No difference from placebo in adverse events across 19 pooled RCTs (meta-analysis of 23 trials, <a href="https://pubmed.ncbi.nlm.nih.gov/40627284/" target="_blank" rel="noopener" title="View on PubMed">PMID:40627284</a>)</td>
                         <td>No active registered trial; 27 studies, all completed by Sept 2022 (ClinicalTrials.gov, checked 2026-09-30)</td>
                     </tr>
                     <tr>
@@ -3793,7 +3807,7 @@
                     </tr>
                     <tr>
                         <td>3: IR in Islet</td>
-                        <td>HOMA-IR (7.5 threshold)</td>
+                        <td>HOMA-IR (no validated threshold in islet recipients)</td>
                         <td>Tacrolimus levels, CYP3A4 genotype</td>
                         <td>Routine clinical</td>
                         <td>Validated (255-pt Edmonton cohort)</td>

@@ -54,6 +54,19 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
+
+/* ── DRH Navigation Bar ── */
+.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
+.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
+.drh-nav a.drh-home:hover { color:#1a4a6e; }
+.drh-nav .drh-group { position:relative; }
+.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
+.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
+.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
+.drh-nav .drh-group:hover .drh-dropdown { display:block; }
+.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
+.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
+.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JGMD5VRYPH');</script>
@@ -123,6 +136,7 @@
   </div>
 </nav>
 
+
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -151,15 +165,15 @@
             <div class="stat-label">Gaps with Evidence</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">159</div>
+            <div class="stat-value">161</div>
             <div class="stat-label">Unique Papers</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">239</div>
+            <div class="stat-value">242</div>
             <div class="stat-label">Paper-Gap Mappings</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">967</div>
+            <div class="stat-value">977</div>
             <div class="stat-label">Extracted Findings</div>
         </div>
     </div>
@@ -1143,7 +1157,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #7: GKA Drug Repurposing
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    22 papers | 101 findings
+                    24 papers | 107 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-7" style="display:none;">
@@ -1292,17 +1306,17 @@
 
             <div style="margin-bottom:16px;padding:12px;border:1px solid #e0ddd5;background:#ffffff;">
                 <div style="font-weight:600;margin-bottom:4px;">
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank" style="color:#2c5f8a;">Dorzagliatin in drug-nave patients with type 2 diabetes: a randomized, double-blind, placebo-control</a>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40627284/" target="_blank" style="color:#2c5f8a;">Safety profile of glucokinase activator AZD1656: systematic review and meta-analysis of 23 randomise</a> [Full Text]
                 </div>
                 <div style="font-size:0.82rem;color:#636363;margin-bottom:8px;">
-                    Zhu D, Li X | Nat Med 2022 | <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank" rel="noopener" title="View on PubMed">PMID:35551294</a> | Relevance: 10
+                    Elsayed M, Abdalla M | Inflammopharmacology 2025 | <a href="https://pubmed.ncbi.nlm.nih.gov/40627284/" target="_blank" rel="noopener" title="View on PubMed">PMID:40627284</a> | Relevance: 11
                 </div>
                 <ul style="margin:0;padding-left:18px;font-size:0.88rem;">
-                    <li style="margin-bottom:6px;line-height:1.4;">Dorzagliatin is a dual-acting, orally bioavailable glucokinase activator that enhances glucokinase activity in a glucose-dependent manner, improves glucose-stimulated insulin secretion and demonstrates effects on glycemic control in patients with T2D.</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> We report the findings of a randomized, double-blind, placebo-controlled phase 3 clinical trial to evaluate the efficacy and safety of dorzagliatin in patients with T2D.</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Safety was assessed throughout the trial. At week 24, the least-squares mean change in glycated hemoglobin from baseline (95% confidence interval) was -1.07% (-1.19%, -0.95%) in the dorzagliatin group and -0.50% (-0.68%, -0.32%) in the placebo group (estimated treatment difference, -0.57%; 95% confidence interval: -0.79%, -0.36%; P&amp;lt;0.001).</li>
-<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> In summary, dorzagliatin improved glycemic control in drug-nave patients with T2D and showed a good tolerability and safety profile.</li>
-<li style="margin-bottom:6px;line-height:1.4;">Eligible drug-nave patients with T2D (n=463) were randomly assigned to the dorzagliatin or placebo group at a ratio of 2:1 for 24 weeks of double-blind treatment, followed by 28 weeks of open-label treatment with dorzagliatin for all patients.</li>
+                    <li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> AZD1656 is a glucokinase activator (GKA) that shows proven efficacy in reducing blood glucose.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Abbreviations GKA Glucokinase activator OR Odds ratio RR Relative risk Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</li>
+<li style="margin-bottom:6px;line-height:1.4;"><span style="color:#2d6a2e;font-weight:600;font-size:0.75rem;">FINDING</span> Accessed: 16 February 2025 Dose-ranging study with the glucokinase activator AZD1656 in patients with type 2 diabetes mellitus on metformin Yang W, Han W, Xiaoling C, Chu L, Ruoyang J, Linong J (2023) Evaluation of efficacy and safety of glucokinase activators—a systematic review and meta-analysis.</li>
+<li style="margin-bottom:6px;line-height:1.4;">AZD1656 is a novel glucokinase activator (GKA) investigated for safety in multiple trials in healthy or diseased volunteers.</li>
+<li style="margin-bottom:6px;line-height:1.4;">Accessed: 16 February 2025 Glucokinase, the pancreatic glucose sensor, is not the gut glucose sensor Glucokinase activators AZD6370 and AZD1656 do not affect the central counterregulatory response to hypoglycaemia in healthy males Skrtic S (2010a) Investigate the effect of AZD1656 on the pharmacokinetics of digoxin in type 2 diabetes mellitus patients, discover AstraZeneca clinical trials and research studies.</li>
                 </ul>
             </div>
             </div>
@@ -1313,7 +1327,7 @@
                 <span style="color:#5a6a7a;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;">[SILVER]</span>
                 Gap #8: Immunomodulatory Drugs for LADA
                 <span style="font-size:0.85rem;color:#636363;font-weight:normal;margin-left:12px;">
-                    40 papers | 168 findings
+                    41 papers | 172 findings
                 </span>
             </h2>
             <div class="gap-content" id="gap-content-8" style="display:none;">
@@ -1911,7 +1925,7 @@
             </div>
         </div>
 
-    <p class="timestamp">Generated 2026-09-30 19:01 | Evidence extracted from PubMed abstracts and PMC Open Access full text</p>
+    <p class="timestamp">Generated 2026-09-30 19:24 | Evidence extracted from PubMed abstracts and PMC Open Access full text</p>
 </div>
 <script>
 function toggleGap(id) {

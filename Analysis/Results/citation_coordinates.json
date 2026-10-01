@@ -1,9 +1,9 @@
 {
  "generated": "2026-09-30",
  "window_chars": 200,
- "coordinates_checked": 155,
+ "coordinates_checked": 156,
  "counts": {
-  "OK": 143,
+  "OK": 144,
   "COORD_MISMATCH": 3,
   "POINTS_ELSEWHERE": 4,
   "NONRESOLVING": 3,
@@ -2326,7 +2326,9 @@
     "page": "2562"
    },
    "record": " 8, 11], 'source': 'Ekberg H et al. Reduced exposure to calcineurin inhibitors in renal transplantation. New England Journal of Medicine 2007;357(25):2562-2575.",
-   "block_pmids": [],
+   "block_pmids": [
+    "24085506"
+   ],
    "actual": {
     "issue": "25",
     "journal": "N Engl J Med",
@@ -2952,7 +2954,9 @@
     "page": "1318"
    },
    "record": "], 'source': 'Shapiro AMJ et al. International trial of the Edmonton protocol for islet transplantation. New England Journal of Medicine 2006;355(13):1318-1330.",
-   "block_pmids": [],
+   "block_pmids": [
+    "24085506"
+   ],
    "actual": {
     "issue": "13",
     "journal": "N Engl J Med",
@@ -4056,7 +4060,7 @@
   },
   {
    "file": "build_islet_outcomes.py",
-   "line": 654,
+   "line": 661,
    "pmid": "10911004",
    "asserted": {
     "journal": "N Engl J Med",
@@ -4065,8 +4069,9 @@
     "issue": "",
     "page": "230"
    },
-   "record": "(N Engl J Med 2000;343:230-8), verified against NCBI esummary on 2026-09-15. PMID replaced. --> Source: Shapiro et al., ",
+   "record": "(N Engl J Med 2000;343:230-8), verified against NCBI esummary on 2026-09-15. PMID replaced. --> Source: the protocol, Shapiro et al., N Engl J Med 2000;",
    "block_pmids": [
+    "35588757",
     "37105208"
    ],
    "actual": {
@@ -4087,6 +4092,37 @@
   {
    "file": "build_islet_outcomes.py",
    "line": 663,
+   "pmid": "35588757",
+   "asserted": {
+    "journal": "Lancet Diabetes Endocrinol",
+    "year": "2022",
+    "volume": "10",
+    "issue": "7",
+    "page": "519"
+   },
+   "record": "; the curve, Marfil-Garza et al., Lancet Diabetes Endocrinol 2022;10(7):519-532,",
+   "block_pmids": [
+    "10911004",
+    "37105208"
+   ],
+   "actual": {
+    "issue": "7",
+    "journal": "Lancet Diabetes Endocrinol",
+    "pages": "519-532",
+    "title": "Pancreatic islet transplantation in type 1 diabetes: 20-year experience from a single-centre cohort in Canada.",
+    "volume": "10",
+    "year": "2022"
+   },
+   "checks": {
+    "volume": true,
+    "page": true,
+    "year": true
+   },
+   "verdict": "OK"
+  },
+  {
+   "file": "build_islet_outcomes.py",
+   "line": 670,
    "pmid": "37105208",
    "asserted": {
     "journal": "Lancet Diabetes Endocrinol",
@@ -4097,7 +4133,8 @@
    },
    "record": "is Chetboun et al. (CITR Investigators), Lancet Diabetes Endocrinol 2023;11(6):391-401 - not Hering, and not \"Lancet\". Confirmed against the journal listing and",
    "block_pmids": [
-    "10911004"
+    "10911004",
+    "35588757"
    ],
    "actual": {
     "issue": "6",
@@ -4116,7 +4153,7 @@
   },
   {
    "file": "build_islet_outcomes.py",
-   "line": 1183,
+   "line": 1190,
    "pmid": "31615852",
    "asserted": {
     "journal": "Diabetes Care",
@@ -4144,7 +4181,7 @@
   },
   {
    "file": "build_islet_outcomes.py",
-   "line": 1425,
+   "line": 1432,
    "pmid": "37359825",
    "asserted": {
     "journal": "Transpl Int",

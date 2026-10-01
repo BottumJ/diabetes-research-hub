@@ -871,7 +871,7 @@ def generate_html():
                 <p><strong>GAD-alum Vaccine:</strong> HLA-DR3-DQ2+ responders show dose-dependent C-peptide preservation <span class="cite">(PMID:32754804)</span></p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
                     <li>Optimal responders: HLA-DR3-DQ2 positive, baseline C-peptide &gt;0.4 nmol/L</li>
-                    <li>Response rate: ~30-40% of treated patients show preserved C-peptide at 4 years [UNSOURCED] - this figure is not in the paper cited above, which reports treatment-effect ratios in recent-onset type 1 diabetes, not a 4-year response rate</li>
+                    <li>In LADA specifically: a 47-patient phase 2 trial in GAD-antibody-positive adults found fasting C-peptide did not decline over 5 years with 4, 20 or 100 &micro;g GAD-alum but fell with placebo and with 500 &micro;g (PMID:19404608). No responder rate was reported. [Corrected 2026-09-30: previously "~30-40% of treated patients show preserved C-peptide", a figure in neither paper.]</li>
                     <li>Best outcomes: Treatment initiation within 2 years of diagnosis</li>
                 </ul>
                 <p style="margin-top: 1rem;"><strong>DPP4i + Early Insulin:</strong> Sitagliptin combined with insulin therapy preserves C-peptide better than insulin monotherapy in early LADA.</p>

@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-09-30T14:39:59.784913",
+  "timestamp": "2026-09-30T19:22:04.788776",
   "summary": {
-    "WEAK": 112,
-    "PLAUSIBLE": 83,
+    "WEAK": 111,
+    "PLAUSIBLE": 85,
     "NO_CLAIM": 25,
-    "CONFIRMED": 139,
+    "CONFIRMED": 141,
     "NO_DATA": 1
   },
-  "total_papers": 360,
+  "total_papers": 363,
   "results": {
     "10415738": {
       "pmid": "10415738",
@@ -30,8 +30,8 @@
       "pmid": "10911004",
       "title": "Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen.",
       "score": "PLAUSIBLE",
-      "confidence": 0.256,
-      "details": "10/39 claim terms found in paper; 13 diabetes domain terms; 15 phrase matches",
+      "confidence": 0.25,
+      "details": "11/44 claim terms found in paper; 13 diabetes domain terms; 15 phrase matches",
       "claim_count": 6,
       "claims": [
         {
@@ -46,7 +46,7 @@
         },
         {
           "file": "build_islet_outcomes.py",
-          "line": 654,
+          "line": 661,
           "text": "paper asserted here is PMID 10911004 (N Engl J Med 2000;343:230-8),"
         }
       ],
@@ -663,12 +663,12 @@
       "claims": [
         {
           "file": "build_islet_outcomes.py",
-          "line": 779,
+          "line": 786,
           "text": "Source: Vincenti et al., PMID:17359512 (American Journal of Transplantation 2007)"
         },
         {
           "file": "build_islet_outcomes.py",
-          "line": 1471,
+          "line": 1478,
           "text": "Vincenti et al., Am J Transplant"
         }
       ],
@@ -984,7 +984,7 @@
         },
         {
           "file": "build_islet_equity.py",
-          "line": 771,
+          "line": 773,
           "text": "Alejandro R, Barton FB, Hering BJ, Wease S. Transplantation 2008 Dec 27;86(12):1783-"
         }
       ],
@@ -1083,9 +1083,9 @@
       "pmid": "19404608",
       "title": "GAD65 vaccination: 5 years of follow-up in a randomised dose-escalating study in adult-onset autoimmune diabetes.",
       "score": "CONFIRMED",
-      "confidence": 0.55,
-      "details": "18/40 claim terms found in paper; 11 diabetes domain terms; 9 phrase matches",
-      "claim_count": 4,
+      "confidence": 0.542,
+      "details": "23/52 claim terms found in paper; 11 diabetes domain terms; 12 phrase matches",
+      "claim_count": 5,
       "claims": [
         {
           "file": "build_data_dictionary.py",
@@ -1093,14 +1093,14 @@
           "text": "'source': 'Agardh CD, Lynch KF, Palmer M, Link K, Lernmark A. GAD65 vaccination: 5 years of follow-up in a randomised do"
         },
         {
+          "file": "build_lada_model.py",
+          "line": 874,
+          "text": "In LADA specifically: a 47-patient phase 2 trial in GAD-antibody-positive adults found fasting C-peptide did not dec"
+        },
+        {
           "file": "build_nutrition_lada.py",
           "line": 896,
           "text": "DIAGNODE-2 enrolled 109 patients aged 12&ndash;24 with recent-onset type 1 diabetes (duration 7&ndas"
-        },
-        {
-          "file": "_close_run_2026_09_18.py",
-          "line": 97,
-          "text": "\"(PMID 19404608), n=47 adult-onset autoimmune diabetes, primary \""
         }
       ],
       "has_abstract": true,
@@ -1793,6 +1793,23 @@
       "has_abstract": true,
       "has_fulltext": true
     },
+    "23464532": {
+      "pmid": "23464532",
+      "title": "Dose-ranging study with the glucokinase activator AZD1656 in patients with type 2 diabetes mellitus on metformin.",
+      "score": "CONFIRMED",
+      "confidence": 0.869,
+      "details": "10/13 claim terms found in paper; 10 diabetes domain terms; 3 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 1639,
+          "text": "HbA1c -0.80% vs placebo at 4 months as add-on to metformin; not sustained in the 6-month extension (PMID:23464532)</"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": false
+    },
     "23562078": {
       "pmid": "23562078",
       "title": "Impaired cholesterol efflux in senescent macrophages promotes age-related macular degeneration.",
@@ -1935,15 +1952,25 @@
     "24085506": {
       "pmid": "24085506",
       "title": "Improvement in insulin sensitivity after human islet transplantation for type 1 diabetes.",
-      "score": "WEAK",
-      "confidence": 0.0,
-      "details": "0/7 claim terms found in paper; 11 diabetes domain terms; 0 phrase matches",
-      "claim_count": 1,
+      "score": "CONFIRMED",
+      "confidence": 0.454,
+      "details": "17/48 claim terms found in paper; 11 diabetes domain terms; 11 phrase matches",
+      "claim_count": 6,
       "claims": [
         {
           "file": "audit_absence_claim_scope.py",
           "line": 19,
           "text": "Re-run all-time, PubMed returns PMID 24085506 (JCEM 2013) and PMID 24691031"
+        },
+        {
+          "file": "build_data_dictionary.py",
+          "line": 763,
+          "text": "'disease': 'Islet/pancreas transplant immunosuppression; tacrolimus is diabetogenic in solid-organ transplant, while in"
+        },
+        {
+          "file": "build_data_dictionary.py",
+          "line": 1232,
+          "text": "'disease': 'Required after islet transplant (Edmonton Protocol); tacrolimus causes insulin resistance in rodents, while"
         }
       ],
       "has_abstract": true,
@@ -3232,6 +3259,33 @@
       "has_abstract": true,
       "has_fulltext": false
     },
+    "30181166": {
+      "pmid": "30181166",
+      "title": "Prevalence of diagnosed type 1 and type 2 diabetes among US adults in 2016 and 2017: population based study.",
+      "score": "PLAUSIBLE",
+      "confidence": 0.269,
+      "details": "7/26 claim terms found in paper; 5 diabetes domain terms; 0 phrase matches",
+      "claim_count": 3,
+      "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 757,
+          "text": "\"tier\": \"SILVER\", # 2026-09-30: SILVER under RESEARCH_DOCTRINE Lesson 9. Absence: PubMed + CITR report/bibliography. Pr"
+        },
+        {
+          "file": "build_islet_equity.py",
+          "line": 614,
+          "text": "How to read it. Of islet-alone recipients whose race was recorded, 793 of 812 (98%) were White and 7 (0"
+        },
+        {
+          "file": "extract_evidence.py",
+          "line": 164,
+          "text": "'tier': 'SILVER', # 2026-09-30: SILVER under RESEARCH_DOCTRINE Lesson 9. Absence: PubMed + CITR report/bibliography. Pr"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": true
+    },
     "30291106": {
       "pmid": "30291106",
       "title": "Management of Hyperglycemia in Type 2 Diabetes, 2018. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD).",
@@ -3319,7 +3373,7 @@
         },
         {
           "file": "build_islet_equity.py",
-          "line": 807,
+          "line": 809,
           "text": "CMS coverage decision history for islet transplant. Foster et al. State of Type 1 Diabetes Ma"
         }
       ],
@@ -3632,7 +3686,7 @@
       "claims": [
         {
           "file": "build_islet_outcomes.py",
-          "line": 1194,
+          "line": 1201,
           "text": "Allogeneic islet transplantation with current protocols offers durable insulin independence to a minority of recipien"
         },
         {
@@ -4038,12 +4092,12 @@
         },
         {
           "file": "build_islet_equity.py",
-          "line": 641,
+          "line": 643,
           "text": "Black patients with T1D: Higher incidence of severe hypoglycemia, higher complications from long-sta"
         },
         {
           "file": "build_islet_equity.py",
-          "line": 792,
+          "line": 794,
           "text": "CDC, ADA publications document racial/ethnic disparities in T1D incidence, complications, and"
         }
       ],
@@ -4488,10 +4542,10 @@
     "35588757": {
       "pmid": "35588757",
       "title": "Pancreatic islet transplantation in type 1 diabetes: 20-year experience from a single-centre cohort in Canada.",
-      "score": "CONFIRMED",
-      "confidence": 0.533,
-      "details": "13/30 claim terms found in paper; 11 diabetes domain terms; 6 phrase matches",
-      "claim_count": 6,
+      "score": "PLAUSIBLE",
+      "confidence": 0.345,
+      "details": "19/55 claim terms found in paper; 11 diabetes domain terms; 9 phrase matches",
+      "claim_count": 9,
       "claims": [
         {
           "file": "build_data_dictionary.py",
@@ -6210,6 +6264,23 @@
           "file": "_close_run_2026_09_19.py",
           "line": 98,
           "text": "'corpus as PMID 40598585 - whose full text was on disk as PMC12211534.json.',"
+        }
+      ],
+      "has_abstract": true,
+      "has_fulltext": true
+    },
+    "40627284": {
+      "pmid": "40627284",
+      "title": "Safety profile of glucokinase activator AZD1656: systematic review and meta-analysis of 23 randomised trials in diabetic and healthy volunteers with relevance to immunomodulatory therapy.",
+      "score": "CONFIRMED",
+      "confidence": 0.767,
+      "details": "8/12 claim terms found in paper; 13 diabetes domain terms; 1 phrase matches",
+      "claim_count": 1,
+      "claims": [
+        {
+          "file": "build_gap_deep_dives.py",
+          "line": 1640,
+          "text": "No difference from placebo in adverse events across 19 pooled RCTs (meta-analysis of 23 trials, PMID:40627284)"
         }
       ],
       "has_abstract": true,

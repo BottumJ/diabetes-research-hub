@@ -1,8 +1,8 @@
 # PubMed Recent Publications Report
 **Generated:** 2026-09-30
 **Lookback period:** 30 days
-**Papers matched by these queries:** 1233
-**Papers actually retrieved and listed below:** 167 (13.5% of matched)
+**Papers matched by these queries:** 1238
+**Papers actually retrieved and listed below:** 169 (13.7% of matched)
 
 > **This report is a sample, not a census.** Each domain query returns at most 10 papers and each therapy query at most 5, sorted most-recent-first. The per-domain coverage column below shows what fraction of each domain was actually read. Low coverage is not low activity - it is the opposite.
 
@@ -14,12 +14,12 @@
 
 | Domain | Matched | Read | Coverage | Trend Signal |
 |--------|--------:|-----:|---------:|--------------|
-| Diabetes AI/ML | 211 | 10 | 5% | HIGH ACTIVITY |
+| Diabetes AI/ML | 212 | 10 | 5% | HIGH ACTIVITY |
 | T2D GLP-1 New | 207 | 10 | 5% | HIGH ACTIVITY |
 | Diabetes Microbiome | 145 | 10 | 7% | HIGH ACTIVITY |
 | Diabetes Biomarker | 123 | 10 | 8% | HIGH ACTIVITY |
 | Diabetes Health Equity | 75 | 10 | 13% | HIGH ACTIVITY |
-| Diabetes Multi-Omics | 69 | 10 | 14% | HIGH ACTIVITY |
+| Diabetes Multi-Omics | 70 | 10 | 14% | HIGH ACTIVITY |
 | Diabetes Gene Therapy | 63 | 10 | 16% | HIGH ACTIVITY |
 | T2D Remission | 56 | 10 | 18% | HIGH ACTIVITY |
 | Diabetes Complications New | 31 | 10 | 32% | ACTIVE |
@@ -134,7 +134,11 @@
 
 ### Diabetes AI/ML
 
-*Showing 5 of 10 retrieved; 211 matched the query.*
+*Showing 5 of 10 retrieved; 212 matched the query.*
+
+- **Ocular Factors Affecting AI Diagnosis in Diabetic Retinopathy Screening for Resource-Limited Regions: Cross-Sectional Study.**
+  Journal of medical Internet research (2026-Sep-30) | Xue Y; Hu X; Yuan S
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42814672/) | [DOI](https://doi.org/10.2196/85181)
 
 - **Improving Pediatric Glycemic Control with Smart Insulin Pens: The Current Trends and Future Prospects.**
   Current diabetes reviews (2026-Sep-25) | Hannan H; Mohammad F; Chahrour K
@@ -151,10 +155,6 @@
 - **Clinical Characteristics and Machine Learning-Based Severity Classification of **
   Infection and drug resistance (2026) | Lei X; Zhao L; Zhong Z
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42813064/) | [DOI](https://doi.org/10.2147/IDR.S622689)
-
-- **Artificial Intelligence for Clinical Decision-Making in Retinal Disorders: From Screening and Diagnosis to Treatment and Longitudinal Management.**
-  Progress in retinal and eye research (2026-Sep-29) | Jin K; Zhao K; Agrawal R
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810675/) | [DOI](https://doi.org/10.1016/j.preteyeres.2026.101533)
 
 ### Diabetes Biomarker
 
@@ -366,7 +366,11 @@
 
 ### Diabetes Multi-Omics
 
-*Showing 5 of 10 retrieved; 69 matched the query.*
+*Showing 5 of 10 retrieved; 70 matched the query.*
+
+- **SGLT2 inhibitors: mechanisms, physiology and pharmacology, and clinical applications.**
+  Molecular biomedicine (2026-Sep-30) | Zheng XT; Xie HY; Wang XH
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42814168/) | [DOI](https://doi.org/10.1186/s43556-026-00604-3)
 
 - **Artemether (an artemisinin derivative) suppresses hepatic gluconeogenesis in diabetic mice by activating miR-155-C/EBPβ axis.**
   Life sciences (2026-Sep-29) | Jia J; Shen L; Lin X
@@ -383,10 +387,6 @@
 - **Integrated proteomics and metabolomics for predicting cardiometabolic risk in pregnant women living with HIV: current evidence and future directions.**
   Expert review of molecular diagnostics (2026-Sep-28) | Eke AC; Eleje GU; Sani MU
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42803644/) | [DOI](https://doi.org/10.1080/14737159.2026.2741065)
-
-- **Multi-omics factor analysis v2 (MOFA+) reveals specific co-variation patterns in women with PMOS that are strongly influenced by obesity.**
-  Human reproduction open (2026) | Géraud-Aguilar E; Martínez-García MÁ; Insenser M
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42799253/) | [DOI](https://doi.org/10.1093/hropen/hoag080)
 
 ### Amylin Agonists
 
@@ -436,11 +436,11 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 | Therapy | Matched (30d) | Read | Status |
 |---------|--------------:|-----:|--------|
-| dapagliflozin | 50 | 5 | ACTIVE |
+| dapagliflozin | 51 | 5 | ACTIVE |
 | finerenone | 36 | 5 | ACTIVE |
+| retatrutide | 15 | 5 | ACTIVE |
 | orforglipron | 14 | 5 | ACTIVE |
-| retatrutide | 14 | 5 | ACTIVE |
-| icodec | 8 | 5 | ACTIVE |
+| icodec | 9 | 5 | ACTIVE |
 | teplizumab | 7 | 5 | ACTIVE |
 | cagrilintide | 6 | 5 | ACTIVE |
 | efsitora | 5 | 5 | LOW |
@@ -468,7 +468,11 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 ### retatrutide
 
-*Showing 3 of 5 retrieved; 14 matched the query.*
+*Showing 3 of 5 retrieved; 15 matched the query.*
+
+- **Retatrutide, a Triple Hormone Receptor Agonist, for Treatment of Obesity.**
+  The New England journal of medicine (2026-Sep-29) | Jastreboff AM; Kaplan LM; Davies MJ
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42814954/) | [DOI](https://doi.org/10.1056/NEJMoa2604169)
 
 - **Recent Studies on the Effectiveness and Safety of Anti-Obesity Medications: A Scoping Review.**
   Diabetes, metabolic syndrome and obesity : targets and therapy (2026) | Puspitasari IM; Putra DS; Deliyana AN
@@ -477,10 +481,6 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 - **Efficacy and Safety of Dual GLP-1/Glucagon Receptor Agonism in Overweight and Obesity: A Class-Specific Systematic Review and Meta-Analysis.**
   Diabetes, obesity & metabolism (2026-Sep-29) | Amjad MM; Khan MM; Sarwar F
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42811393/) | [DOI](https://doi.org/10.1111/dom.71400)
-
-- **Retatrutide in adults with obesity and type 2 diabetes (TRIUMPH-2): a double-blind, parallel-group, randomised, placebo-controlled, phase 3 trial.**
-  Lancet (London, England) (2026-Sep-29) | Bellido V; le Roux CW; Ekinci EI
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810372/) | [DOI](https://doi.org/10.1016/S0140-6736(26)01861-1)
 
 ### CagriSema
 
@@ -608,7 +608,11 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 
 ### icodec
 
-*Showing 3 of 5 retrieved; 8 matched the query.*
+*Showing 3 of 5 retrieved; 9 matched the query.*
+
+- **The Effect of Intrinsic Factors on the Pharmacokinetics of Once-Weekly Insulin Icodec in Type 1 and Type 2 Diabetes: A Population Pharmacokinetic Analysis of Phase II and Phase III trials.**
+  Clinical pharmacokinetics (2026-Sep-30) | Kristensen NR; Haridas MP; Philis-Tsimikas A
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42814374/) | [DOI](https://doi.org/10.1007/s40262-026-01710-9)
 
 - **Once-weekly insulin icodec (Awiqli) for type 2 diabetes.**
   The Medical letter on drugs and therapeutics (2026-Sep-28) | 
@@ -618,13 +622,13 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
   Cardiovascular diabetology. Endocrinology reports (2026-Sep-02) | Alper A; Fagin A; Karthikeyan A
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42681675/) | [DOI](https://doi.org/10.1186/s40842-026-00333-0)
 
-- **Insulin Efsitora Demonstrates Similar Efficacy and Safety Profiles to Insulin Icodec in Insulin-Experienced Individuals With Type 2 Diabetes Mellitus: Matching-Adjusted Indirect Comparisons of QWINT-3 Versus ONWARDS 2, and QWINT-4 Versus ONWARDS 4.**
-  Diabetes, obesity & metabolism (2026-Sep-01) | Bajaj HS; Fischer M; Davidson MB
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42680157/) | [DOI](https://doi.org/10.1111/dom.71272)
-
 ### dapagliflozin
 
-*Showing 3 of 5 retrieved; 50 matched the query.*
+*Showing 3 of 5 retrieved; 51 matched the query.*
+
+- **Comparative hepatic effectiveness of empagliflozin vs dapagliflozin among individuals with type 2 diabetes and metabolic dysfunction-associated steatotic liver disease.**
+  Diabetologia (2026-Sep-30) | Kim S; Ko HY; Hong B
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42814151/) | [DOI](https://doi.org/10.1007/s00125-026-06870-8)
 
 - **Dapagliflozin Alters Plasma Metabolome in Patients With Type 1 Diabetes During Ketosis.**
   Diabetes, obesity & metabolism (2026-Sep-28) | Yang R; Cho K; Petersen MC
@@ -633,10 +637,6 @@ These therapies are tracked by name across all PubMed abstracts (not just titles
 - **Effectiveness of Adding GLP-1 Receptor Agonists to SGLT2 Inhibitor Therapy in Chronic Kidney Disease: A Population Based Study.**
   Diabetes, obesity & metabolism (2026-Sep-27) | Salim H; Qureshi S; Gulsin GS
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42802242/) | [DOI](https://doi.org/10.1111/dom.71375)
-
-- **Dapagliflozin Attenuates NKCC2 Protein Expression and Alleviates Diabetic Kidney Disease in Salt Loaded-Hypertensive Diabetic Db/Db Mice.**
-  FASEB bioAdvances (2026-Oct) | Shahzad Z; Bala N; Illyas A
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42801001/) | [DOI](https://doi.org/10.1096/fba.2026-00209)
 
 ---
 
@@ -661,10 +661,6 @@ These papers span multiple research domains -- potentially high-value for synthe
 - **Gene-edited hypoimmune islets as a cure for type 1 diabetes: a review of the immunological challenges.**
   Domains: T1D Stem Cell Cure, T1D Immunotherapy, Key Therapy: teplizumab
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42626948/)
-
-- **Future GLP-1 receptor co-agonists and their cardiac effects.**
-  Domains: Amylin Agonists, Key Therapy: retatrutide, Key Therapy: amycretin
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42768195/)
 
 - **Efficacy and Safety of CagriSema for Metabolic Outcomes: Systematic Review and Pairwise Meta-Analysis of Randomized Controlled Trials.**
   Domains: Amylin Agonists, Key Therapy: CagriSema, Key Therapy: cagrilintide
@@ -742,6 +738,10 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: Amylin Agonists, Key Therapy: petrelintide
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42810353/)
 
+- **Future GLP-1 receptor co-agonists and their cardiac effects.**
+  Domains: Amylin Agonists, Key Therapy: amycretin
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42768195/)
+
 - **Cagrilintide and retatrutide combination therapy enhances weight loss and metabolic outcomes in obese male rats.**
   Domains: Amylin Agonists, Key Therapy: cagrilintide
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42744908/)
@@ -754,9 +754,5 @@ These papers span multiple research domains -- potentially high-value for synthe
   Domains: Key Therapy: efsitora, Key Therapy: icodec
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42680157/)
 
-- **Once-weekly insulins: a paradigm shift in the management of type 2 diabetes?**
-  Domains: Key Therapy: efsitora, Key Therapy: icodec
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42568145/)
-
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-09-30. Sample of 167/1233 matched papers (13.5%); caps 10/domain, 5/therapy.*
+*Generated by baseline_pubmed_alerts.py -- 2026-09-30. Sample of 169/1238 matched papers (13.7%); caps 10/domain, 5/therapy.*

@@ -166,3 +166,34 @@ Regenerated: 4 locked, 0 resolved. The ledger dashboard was built only by refres
 
 Last full run: 86 stages OK, 2 red - gap #11 (unruled) and the publish gate
 (these commits are not pushed).
+
+## 9. Afternoon and evening (owner present)
+
+- **FDA approvals verified from FDA's own letters** (`verify_fda_approval.py`).
+  Onswik: BLA 761408, 2026-09-23, type 2 diabetes only. Kerendia S-011:
+  2026-09-16, indication worded around the albuminuria surrogate.
+- **Doctrine Lesson 9: research gaps are absence claims**, tiered by independent
+  empty searches plus a sourced premise. Gap #11 went BRONZE, then SILVER the
+  same day once the registry's 2025 report and bibliography were searched and
+  a comparator was sourced (recipients 98% White of recorded race vs NHIS type 1
+  prevalence 0.6% White / 0.4% Black / 0.5% Hispanic, PMID 30181166). The
+  2026-09-09 claim that the registry report "does not break out recipient race"
+  was wrong; Exhibit 2-1 does.
+- **Bayesian path ranking withdrawn** (owner decision A). Root cause: validation
+  never joined (key format), counts were artefacts, a recompute read a renamed
+  field. Replaced by a table of reconciled path status.
+- **Uncited endpoint values 12 -> 0.**
+  - Tacrolimus "40% insulin resistance at 3 months / 35% at 1 year / HOMA-IR 7.5 vs
+    3.5" removed from five places: no source exists, and the one human clamp
+    study (PMID 24085506) found insulin sensitivity *improved* after islet
+    transplant. **This was Gap #3's published key finding, and Gap #3 is GOLD.**
+    Its tier has not been re-examined under Lesson 9 - see open findings.
+  - AZD1656: -0.80% HbA1c at 4 months on metformin, not sustained (PMID
+    23464532); the "GCKR carriers" qualifier came from a mouse study and is gone.
+  - GAD-alum in LADA: the "30-40% responders" figure replaced with what the
+    5-year trial reports (PMID 19404608).
+  - The Edmonton curve was labelled as 1,477-recipient CITR registry data. It is
+    the 255-recipient single-centre cohort (PMID 35588757); relabelled, and
+    reduced to the five timepoints the paper reports.
+  - The endpoint gate no longer counts HTML comments as published claims.
+

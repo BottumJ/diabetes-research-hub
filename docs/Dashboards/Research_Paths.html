@@ -257,19 +257,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
 </head>
 <body>
@@ -338,7 +325,6 @@
 </nav>
 
 
-
 <div class="container">
     <header>
         <h1>Validated Research Paths</h1>
@@ -348,7 +334,7 @@
 
     <div class="context-block">
         <h4>What This Dashboard Answers</h4>
-        <p>17 research paths are shown, extracted from 267 de-duplicated data points across 60 full-text papers. 30 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
+        <p>17 research paths are shown, extracted from 274 de-duplicated data points across 61 full-text papers. 30 were cross-validated against independent published evidence (PubMed, systematic reviews, meta-analyses). This dashboard shows which mechanistic pathways are supported by reproducible research evidence vs artifacts of corpus extraction.</p>
     </div>
 
     <div class="context-block">
@@ -1333,7 +1319,7 @@
         <h3>Research Path Extraction & Validation Pipeline</h3>
         <p><strong>Stage 1: Corpus Analysis</strong> 91 full-text papers on diabetes complications were automatically extracted. Regex-based information extraction identified 472 key claims linking mechanisms (inflammation, oxidative stress, specific protein pathways) to outcomes (T1D, T2D, complications).</p>
 
-        <p><strong>Stage 2: Path Clustering</strong> These 267 data points were grouped by mechanism-outcome relationships. Counts are computed at build time, not hardcoded. Identical matched text repeated within the same paper is collapsed to one data point (a dose restated 18 times is one dose, not 18 findings).</p>
+        <p><strong>Stage 2: Path Clustering</strong> These 274 data points were grouped by mechanism-outcome relationships. Counts are computed at build time, not hardcoded. Identical matched text repeated within the same paper is collapsed to one data point (a dose restated 18 times is one dose, not 18 findings).</p>
 
         <p><strong>Stage 3: Validation Selection</strong> The top 25 paths (by data point frequency and clinical relevance) were selected for external validation.</p>
 
@@ -1349,7 +1335,7 @@
     </div>
 
     <footer style="margin-top: 50px; padding-top: 25px; border-top: 1px solid #ddd; color: #999; font-size: 0.9em;">
-        <p>Dashboard built with Tufte-inspired design principles (minimal decoration, data-ink ratio focus). Data source: Diabetes Research Corpus (60 full-text papers). GA4 Analytics: G-JGMD5VRYPH.</p>
+        <p>Dashboard built with Tufte-inspired design principles (minimal decoration, data-ink ratio focus). Data source: Diabetes Research Corpus (61 full-text papers). GA4 Analytics: G-JGMD5VRYPH.</p>
     </footer>
 
 </div>

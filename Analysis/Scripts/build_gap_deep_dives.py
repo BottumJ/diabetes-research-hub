@@ -160,7 +160,7 @@ GAPS_DATA = {
         "joint_pubs": 1,
         "trial_count": 4,
         "key_refs": ["Diabetes Care 2023", "PMID:40544428"],
-        "key_finding": "Tacrolimus-induced IR (40% at 3mo [UNSOURCED]) driven by FKBP-12/calcineurin/NFAT pathway; HOMA-IR 7.5 vs 3.5 in failure vs success groups",
+        "key_finding": "Tacrolimus impairs insulin secretion and sensitivity in rodent and in-vitro work via FKBP-12/calcineurin/NFAT, but no incidence of insulin resistance in human islet recipients has been located, and the one human clamp study located (12 recipients, low-dose tacrolimus plus sirolimus) found insulin sensitivity IMPROVED 6-7 months after transplant (PMID:24085506). [Corrected 2026-09-30: previously stated 40% incidence at 3 months and HOMA-IR 7.5 vs 3.5, neither sourced.]",
         "status": "In Optimization",
         "data_profile": {
             "gap_score": 0.92,
@@ -175,11 +175,11 @@ GAPS_DATA = {
         },
         "evidence_synthesis": {
             "summary": ("Edmonton Protocol 20-year data: 61% insulin independence at 1yr declining to 8% at 20yr (Kaplan-Meier, n=255; PMID:35588757). "
-                        "Tacrolimus IR onset 24-hour, 40% incidence at 3mo [UNSOURCED]."),
+                        "No human incidence figure for tacrolimus-associated insulin resistance after islet transplant has been located."),
             "details": [
                 "Edmonton Protocol: 255 patients, 61% insulin independence at 1yr, 32% at 5yr, 8% at 20yr (Kaplan-Meier; PMID:35588757)",
                 "Tacrolimus IR mechanism: FKBP-12/calcineurin/NFAT pathway",
-                "HOMA-IR: 7.5+/-2.3 in failure group vs 3.5+/-0.5 in success (2.1-fold difference)",
+                "Insulin sensitivity by clamp: improved from before to 6-7 months after transplant in 12 recipients on tacrolimus plus sirolimus (PMID:24085506)",
                 # CORRECTED 2026-09-21. This line previously read "Calcineurin-sparing
                 # alternatives: Belatacept 70% at 10yr, Efalizumab 60% at 13.3yr", which
                 # invented two drug-specific arms that its source does not report. Wisel
@@ -245,7 +245,7 @@ GAPS_DATA = {
             "dependencies": "LANTIDRA adoption post-approval, immunosuppressant pharmacogenomic data"
         },
         "validation_evidence": "GOLD tier: 255-patient Edmonton cohort with 20-year follow-up, LANTIDRA FDA-approved with efficacy data, IR mechanism well-characterized | CORPUS VALIDATION (March 2026): Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (PMID:32627352, Am J Transplant Phase 3). Validated graft survival: 7/10 insulin-independent at 10 years, 6/10 at mean 13.3 +/- 1.1 years (PMID:37359825, Transpl Int 2023, n=10 consecutive series). CORRECTED 2026-09-21: this field previously read '6/10 ... at 10 years', which pairs the 13.3-year numerator with the 10-year endpoint -- so THIS FILE stated two different 10-year values for the same paper (70% in evidence_synthesis, 6/10 here) and no gate compared them.",
-        "expanded_clinical_context": "Tacrolimus-induced insulin resistance (TIIR) affects 40% of islet recipients at 3mo, 35% at 1yr [UNSOURCED]. HOMA-IR elevation from 3.5+/-0.5 (success group) to 7.5+/-2.3 (failure group) indicates 2.1-fold worsening. Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023: in two non-randomized single-arm studies, 21 of 30 participants did not need insulin for a year or more (FDA approval announcement, 2023-06-28); no head-to-head comparison with the Edmonton cohort exists. Coverage by United, Aetna, Cigna, Medicare as of 2025 [UNSOURCED]. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours) [UNSOURCED] - the FDA approval announcement of 2023-06-28 describes none of these. Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
+        "expanded_clinical_context": "Tacrolimus-associated insulin resistance after islet transplant is documented in rodents; in humans, the one human clamp study located (12 recipients, low-dose tacrolimus plus sirolimus) found insulin sensitivity IMPROVED 6-7 months after transplant (PMID:24085506). Whether a subgroup develops insulin resistance, and how often, is unmeasured - which is the question this gap poses. [Corrected 2026-09-30: previously stated 40% at 3 months, 35% at 1 year and HOMA-IR 3.5 vs 7.5, none sourced.] Donislecel (LANTIDRA) uses standardized, quality-controlled preparation addressing manufacturing variability in Edmonton Protocol (hand-prepared, variable potency). FDA approval June 2023: in two non-randomized single-arm studies, 21 of 30 participants did not need insulin for a year or more (FDA approval announcement, 2023-06-28); no head-to-head comparison with the Edmonton cohort exists. Coverage by United, Aetna, Cigna, Medicare as of 2025 [UNSOURCED]. LANTIDRA benefits: standardized 300,000 IEQ dose, CryoLife cryopreservation enabling selective thaw, reduced ischemia time (8.6 vs 22 hours) [UNSOURCED] - the FDA approval announcement of 2023-06-28 describes none of these. Belatacept alternative: CD86-Ig fusion protein (CTLA4-Ig) avoids calcineurin-mediated insulin resistance. Published renal transplant data show improved metabolic profiles vs tacrolimus; islet transplant-specific long-term outcomes data are limited.",
         "mechanism_detail": "Tacrolimus-FKBP12 complex inhibits calcineurin phosphatase, preventing NFAT dephosphorylation. Chronically: (1) suppresses insulin receptor substrate (IRS1/IRS2) expression in hepatocytes and myocytes, (2) increases mTORC1 signaling (feedback loss), (3) induces ER stress in beta cells via calcineurin inhibition of IRE1-alpha. HOMA-IR rise kinetics: 24hr (peak effect), sustained at 3-4mo (feedback adaptation), slight decline after 12mo (beta cell exhaustion). Calcineurin-sparing regimens use belatacept (selective costimulation blockade of CD80/CD86 without calcineurin inhibition) or efalizumab (LFA-1 blockade, no metabolic consequences). Patient selection: baseline HOMA-IR >3.5 predicts tacrolimus failure; consider belatacept-based regimen preemptively."
     },
     "4": {
@@ -1636,8 +1636,8 @@ def generate_html():
                              AZD1656: 21 Phase 1 and 6 Phase 2, all completed, the last in
                              September 2022. No Phase 3 study is registered and none is active. -->
                         <td>Phase 2 completed; no Phase 3 registered</td>
-                        <td>HbA1c -0.8% at 3mo, loss at 4mo (GCKR carriers) [UNSOURCED]</td>
-                        <td>Well-tolerated, 23 RCTs, 885 pts [UNSOURCED]</td>
+                        <td>HbA1c -0.80% vs placebo at 4 months as add-on to metformin; not sustained in the 6-month extension (PMID:23464532)</td>
+                        <td>No difference from placebo in adverse events across 19 pooled RCTs (meta-analysis of 23 trials, PMID:40627284)</td>
                         <td>No active registered trial; 27 studies, all completed by Sept 2022 (ClinicalTrials.gov, checked 2026-09-30)</td>
                     </tr>
                     <tr>
@@ -2033,7 +2033,7 @@ def generate_html():
                     </tr>
                     <tr>
                         <td>3: IR in Islet</td>
-                        <td>HOMA-IR (7.5 threshold)</td>
+                        <td>HOMA-IR (no validated threshold in islet recipients)</td>
                         <td>Tacrolimus levels, CYP3A4 genotype</td>
                         <td>Routine clinical</td>
                         <td>Validated (255-pt Edmonton cohort)</td>

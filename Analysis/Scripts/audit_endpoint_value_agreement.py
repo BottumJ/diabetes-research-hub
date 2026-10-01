@@ -233,7 +233,22 @@ def harvest(path):
         lines = fh.read().split("\n")
 
     attributed, unsourced = [], []
+    in_html_comment = False
     for n, line in enumerate(lines, 1):
+        # HTML comments inside builder templates are never rendered (added
+        # 2026-09-30: three lines of a correction note in build_islet_outcomes.py
+        # were counted as published uncited claims). Track open/close across
+        # lines; a line that is only partly inside a comment is still scanned.
+        opened = "<!--" in line
+        closed = "-->" in line
+        if in_html_comment and not closed:
+            continue
+        if in_html_comment and closed:
+            in_html_comment = False
+            continue
+        if opened and not closed:
+            in_html_comment = True
+            continue
         stripped = line.lstrip()
         if stripped.startswith("#"):
             continue                       # comment: correction prose, not a claim

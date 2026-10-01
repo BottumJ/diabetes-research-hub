@@ -165,19 +165,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -249,7 +236,6 @@
 </nav>
 
 
-
 <div style="background:#ffffff;border-bottom:1px solid #e0ddd5;padding:8px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
   <span style="color:#e0ddd5;">|</span>
   <a href="Research_Dashboard.html" style="color:#636363;text-decoration:none;">Research</a>
@@ -277,23 +263,23 @@
     <!-- Summary Statistics -->
     <div class="stats-grid">
         <div class="stat-card">
-            <div class="stat-value">335</div>
+            <div class="stat-value">338</div>
             <div class="stat-label">Total Papers</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">334</div>
+            <div class="stat-value">337</div>
             <div class="stat-label">Abstracts</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">176</div>
+            <div class="stat-value">178</div>
             <div class="stat-label">PMC Available</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">151</div>
+            <div class="stat-value">153</div>
             <div class="stat-label">Full Text</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">283</div>
+            <div class="stat-value">290</div>
             <div class="stat-label">Cross-Citations</div>
         </div>
         <div class="stat-card">
@@ -305,16 +291,16 @@
     <!-- Validation Bar -->
     <h2>Citation Validation</h2>
     <div class="validation-bar">
-        <div class="bar-confirmed" style="width:41.5%;" title="CONFIRMED: 139"></div>
-        <div class="bar-plausible" style="width:24.8%;" title="PLAUSIBLE: 83"></div>
-        <div class="bar-weak" style="width:33.4%;" title="WEAK: 112"></div>
+        <div class="bar-confirmed" style="width:41.7%;" title="CONFIRMED: 141"></div>
+        <div class="bar-plausible" style="width:25.1%;" title="PLAUSIBLE: 85"></div>
+        <div class="bar-weak" style="width:32.8%;" title="WEAK: 111"></div>
         <div class="bar-mismatch" style="width:0.0%;" title="MISMATCH: 0"></div>
         <div class="bar-nodata" style="width:0.3%;" title="NO DATA: 1"></div>
     </div>
     <div class="legend">
-        <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">139</span></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">83</span></div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#8b7355;"></span> Weak <span class="count-badge">112</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#2d6a2e;"></span> Confirmed <span class="count-badge">141</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#4a7c59;"></span> Plausible <span class="count-badge">85</span></div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#8b7355;"></span> Weak <span class="count-badge">111</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#a33b2c;"></span> Mismatch <span class="count-badge">0</span></div>
         <div class="legend-item"><span class="legend-swatch" style="background:#999999;"></span> No Data <span class="count-badge">1</span></div>
     </div>
@@ -332,7 +318,7 @@
         <div class="filters">
             <div>
                 <div class="filter-label">Search</div>
-                <input type="text" id="searchInput" placeholder="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." oninput="filterTable()">
+                <input type="text" id="searchInput" placeholder="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." aria-label="Search by title, PMID, journal..." oninput="filterTable()">
             </div>
             <div>
                 <div class="filter-label">Score</div>
@@ -355,7 +341,7 @@
                 </select>
             </div>
             <div style="margin-left:auto;font-size:0.85rem;color:#636363;">
-                Showing <span id="visibleCount">360</span> of 360 papers
+                Showing <span id="visibleCount">363</span> of 363 papers
             </div>
         </div>
         <div style="overflow-x:auto;">
@@ -400,7 +386,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_treg_neuropathy, audit_absence_claim_scope</td>
+            <td class="loc-col">audit_absence_claim_scope, build_treg_neuropathy</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="42696794">
@@ -440,7 +426,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_08_31, add_citations</td>
+            <td class="loc-col">add_citations, _run_2026_08_31</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="42608595">
@@ -600,7 +586,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">project_microbiome_ml_phase3_models, project_microbiome_ml_phase2_features, project_microbiome_ml_phase1_data</td>
+            <td class="loc-col">project_microbiome_ml_phase2_features, project_microbiome_ml_phase1_data, project_microbiome_ml_phase3_models</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2026" data-pmid="41889274">
@@ -630,7 +616,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_19, add_citations, _close_run_2026_09_22</td>
+            <td class="loc-col">add_citations, _close_run_2026_09_22, _close_run_2026_09_19</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2026" data-pmid="41765029">
@@ -680,7 +666,7 @@
             <td class="year-col">2026</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">audit_verdict_key_agreement, _run_2026_08_20, _close_run_2026_08_20</td>
+            <td class="loc-col">_close_run_2026_08_20, _run_2026_08_20, audit_verdict_key_agreement</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2026" data-pmid="40111679">
@@ -813,6 +799,16 @@
             <td class="loc-col">_run_2026_08_20</td>
         </tr>
 
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40627284">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40627284/" target="_blank" rel="noopener">40627284</a></td>
+            <td class="title-col">Safety profile of glucokinase activator AZD1656: systematic review and meta-analysis of 23 randomised trials in diabetic and healthy volunteers with relevance to immunomodulatory therapy.</td>
+            <td class="journal-col">Inflammopharmacology</td>
+            <td class="year-col">2025</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract | Full Text | PMC</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
         <tr class="paper-row" data-score="WEAK" data-year="2025" data-pmid="40598585">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/40598585/" target="_blank" rel="noopener">40598585</a></td>
             <td class="title-col">A systematic review and network meta-analysis of interventions to preserve insulin-secreting beta cell function in people newly diagnosed with type 1 diabetes: results from randomised controlled trials of immunomodulatory therapies.</td>
@@ -820,7 +816,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_07, repair_index_pmcid_map, _run_2026_08_28 +2</td>
+            <td class="loc-col">_close_run_2026_08_28, _run_2026_09_07, repair_index_pmcid_map +2</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="40573322">
@@ -880,7 +876,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">rebuild_research_dashboard, build_data_dictionary, build_gap_deep_dives +3</td>
+            <td class="loc-col">build_data_dictionary, _close_run_2026_09_21, build_methodology +3</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2025" data-pmid="40464081">
@@ -930,7 +926,7 @@
             <td class="year-col">2025</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_cart_access, audit_citation_semantic_support</td>
+            <td class="loc-col">audit_citation_semantic_support, build_cart_access</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2025" data-pmid="40032831">
@@ -1030,7 +1026,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_08, fix_path_citations_2026_08_20, adjudicate_flagged_membership_20260920 +6</td>
+            <td class="loc-col">adjudicate_flagged_membership_20260920, _close_run_2026_08_28, _run_2026_09_08 +6</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="39525461">
@@ -1050,7 +1046,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_08_21, reconcile_paper_index</td>
+            <td class="loc-col">reconcile_paper_index, _close_run_2026_08_21</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2024" data-pmid="39270686">
@@ -1090,7 +1086,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, build_gka_pricing +1</td>
+            <td class="loc-col">build_gka_pricing, build_gka_landscape, _run_2026_08_27 +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="38639547">
@@ -1100,7 +1096,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_pricing, build_gap_deep_dives, audit_markdown_citations +1</td>
+            <td class="loc-col">test_markdown_citation_gate, build_gka_pricing, audit_markdown_citations +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2024" data-pmid="38578067">
@@ -1160,7 +1156,7 @@
             <td class="year-col">2024</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">verify_2026_09_13_repairs, build_lada_diagnostic_model, _tmp_gate_known_positive +4</td>
+            <td class="loc-col">build_lada_prevalence, audit_computed_value_citations, build_lada_diagnostic_model +4</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2024" data-pmid="37845117">
@@ -1180,7 +1176,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_09_03, add_citations</td>
+            <td class="loc-col">add_citations, _run_2026_09_03</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2023" data-pmid="37861217">
@@ -1210,7 +1206,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_health_equity, verify_2026_09_12_repairs</td>
+            <td class="loc-col">verify_2026_09_12_repairs, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37583402">
@@ -1250,7 +1246,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, test_markdown_citation_gate</td>
+            <td class="loc-col">test_markdown_citation_gate, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37385277">
@@ -1290,7 +1286,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_repurposing_dashboard_v2, build_gap_deep_dives, _close_run_2026_09_22 +4</td>
+            <td class="loc-col">_close_run_2026_09_21, build_repurposing_dashboard_v2, _close_run_2026_09_22 +4</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37356449">
@@ -1320,7 +1316,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_health_equity, build_equity_map</td>
+            <td class="loc-col">build_equity_map, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37354562">
@@ -1330,7 +1326,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">audit_trial_phase, add_citations</td>
+            <td class="loc-col">add_citations, audit_trial_phase</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2023" data-pmid="37351171">
@@ -1350,7 +1346,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_pricing</td>
+            <td class="loc-col">build_gka_pricing, build_gka_lada</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37221401">
@@ -1360,7 +1356,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, _run_2026_08_27</td>
+            <td class="loc-col">_run_2026_08_27, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37217319">
@@ -1370,7 +1366,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_treg_neuropathy, build_equity_map</td>
+            <td class="loc-col">build_equity_map, build_treg_neuropathy</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37202589">
@@ -1420,7 +1416,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_08, _run_2026_09_07, audit_gap_subject_coverage +3</td>
+            <td class="loc-col">_run_2026_09_08, build_islet_outcomes, _run_2026_09_07 +3</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2023" data-pmid="37026004">
@@ -1430,7 +1426,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_run_2026_09_08, _run_2026_09_07, _close_run_2026_09_20 +1</td>
+            <td class="loc-col">_close_run_2026_09_19b, _run_2026_09_07, _close_run_2026_09_20 +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2023" data-pmid="37016949">
@@ -1450,7 +1446,7 @@
             <td class="year-col">2023</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_research_paths, build_drug_repurposing_screen, audit_pubtype_title_disagreement</td>
+            <td class="loc-col">audit_pubtype_title_disagreement, build_research_paths, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="36643381">
@@ -1460,7 +1456,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_research_paths, _close_run_2026_08_22, _run_2026_08_20 +1</td>
+            <td class="loc-col">_close_run_2026_08_22, _run_2026_08_20, audit_pubtype_title_disagreement +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="36566139">
@@ -1500,7 +1496,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, build_gka_pricing +4</td>
+            <td class="loc-col">build_gka_pricing, build_gka_landscape, build_gka_lada +4</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="36288281">
@@ -1520,7 +1516,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, build_health_equity</td>
+            <td class="loc-col">build_health_equity, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="36113507">
@@ -1530,7 +1526,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, build_health_equity</td>
+            <td class="loc-col">build_health_equity, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2022" data-pmid="36109742">
@@ -1603,14 +1599,14 @@
             <td class="loc-col">build_immunomod_lada</td>
         </tr>
 
-        <tr class="paper-row" data-score="CONFIRMED" data-year="2022" data-pmid="35588757">
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="35588757">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/35588757/" target="_blank" rel="noopener">35588757</a></td>
             <td class="title-col">Pancreatic islet transplantation in type 1 diabetes: 20-year experience from a single-centre cohort in Canada.</td>
             <td class="journal-col">Lancet Diabetes Endocrinol</td>
             <td class="year-col">2022</td>
-            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary, build_gap_deep_dives</td>
+            <td class="loc-col">build_islet_outcomes, build_data_dictionary, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2022" data-pmid="35563495">
@@ -1640,7 +1636,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_landscape, build_data_dictionary, build_gka_pricing +3</td>
+            <td class="loc-col">build_gka_pricing, build_data_dictionary, build_gka_landscape +3</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2022" data-pmid="35551293">
@@ -1660,7 +1656,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gap_deep_dives +1</td>
+            <td class="loc-col">build_gka_pricing, build_gka_landscape, build_gka_lada +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="35466661">
@@ -1670,7 +1666,7 @@
             <td class="year-col">2022</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gap_deep_dives, build_generic_drug_catalog, mark_dose_label_paths_2026_08_20</td>
+            <td class="loc-col">mark_dose_label_paths_2026_08_20, build_generic_drug_catalog, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2022" data-pmid="35203496">
@@ -1720,7 +1716,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">audit_citation_load_bearing, build_gka_landscape, build_gap_deep_dives +11</td>
+            <td class="loc-col">build_gka_pricing, build_statistical_analysis, verify_2026_09_12_repairs +11</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2021" data-pmid="34421203">
@@ -1770,7 +1766,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_09_18, build_nutrition_lada, build_immunomod_lada +1</td>
+            <td class="loc-col">build_immunomod_lada, reconcile_paper_index, build_nutrition_lada +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2021" data-pmid="33622669">
@@ -1780,7 +1776,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_lada, build_gka_landscape, build_gap_deep_dives +1</td>
+            <td class="loc-col">build_gka_pricing, build_gka_landscape, build_gka_lada +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2021" data-pmid="33610858">
@@ -1840,7 +1836,7 @@
             <td class="year-col">2021</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_data_dictionary, build_islet_equity, test_markdown_citation_gate +1</td>
+            <td class="loc-col">build_data_dictionary, test_markdown_citation_gate, build_gap_deep_dives +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2020" data-pmid="33264825">
@@ -1850,7 +1846,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_19, build_generic_drug_catalog, audit_catalog_entity_agreement</td>
+            <td class="loc-col">build_generic_drug_catalog, audit_catalog_entity_agreement, _close_run_2026_09_19</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2020" data-pmid="33139407">
@@ -1880,7 +1876,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">_close_run_2026_08_22, _close_run_2026_08_21, audit_baseline_citations</td>
+            <td class="loc-col">_close_run_2026_08_22, audit_baseline_citations, _close_run_2026_08_21</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32847960">
@@ -1890,7 +1886,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gap_synthesis, build_lada_diagnostic_model, build_data_dictionary +1</td>
+            <td class="loc-col">build_gka_lada, build_gap_synthesis, build_data_dictionary +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32754804">
@@ -1950,7 +1946,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada, build_lada_model, _run_2026_08_27</td>
+            <td class="loc-col">build_gka_lada, _run_2026_08_27, build_lada_model</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2020" data-pmid="32175717">
@@ -1960,7 +1956,7 @@
             <td class="year-col">2020</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gka_landscape, build_repurposing_dashboard_v2, rebuild_research_dashboard +12</td>
+            <td class="loc-col">build_corpus_analysis, build_gka_pricing, build_lada_prevalence +12</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2020" data-pmid="32017635">
@@ -2010,7 +2006,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">structured_effects, build_data_dictionary</td>
+            <td class="loc-col">build_data_dictionary, structured_effects</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31615852">
@@ -2020,7 +2016,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_islet_outcomes, _vet_run_2026_09_22, _close_run_2026_09_22</td>
+            <td class="loc-col">build_islet_outcomes, _close_run_2026_09_22, _vet_run_2026_09_22</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2019" data-pmid="31296866">
@@ -2070,7 +2066,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_data_dictionary, audit_trial_phase, add_citations +1</td>
+            <td class="loc-col">add_citations, build_immunomod_lada, build_data_dictionary +1</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2019" data-pmid="31177185">
@@ -2100,7 +2096,7 @@
             <td class="year-col">2019</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_nutrition_beta, build_drug_repurposing_screen, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_nutrition_beta, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2019" data-pmid="31157579">
@@ -2203,6 +2199,16 @@
             <td class="loc-col"></td>
         </tr>
 
+        <tr class="paper-row" data-score="PLAUSIBLE" data-year="2018" data-pmid="30181166">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30181166/" target="_blank" rel="noopener">30181166</a></td>
+            <td class="title-col">Prevalence of diagnosed type 1 and type 2 diabetes among US adults in 2016 and 2017: population based study.</td>
+            <td class="journal-col">BMJ</td>
+            <td class="year-col">2018</td>
+            <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
+            <td class="coverage-col">Abstract | Full Text | PMC</td>
+            <td class="loc-col">build_gap_deep_dives, build_islet_equity, extract_evidence</td>
+        </tr>
+
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="30041834">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/30041834/" target="_blank" rel="noopener">30041834</a></td>
             <td class="title-col">A Global Perspective of Latent Autoimmune Diabetes in Adults.</td>
@@ -2220,7 +2226,7 @@
             <td class="year-col">2018</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29909913">
@@ -2260,7 +2266,7 @@
             <td class="year-col">2018</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">build_gka_landscape, build_gap_deep_dives, verify_2026_09_13_repairs +7</td>
+            <td class="loc-col">audit_prose_citation_titles, audit_citation_semantic_support, verify_2026_09_13_repairs +7</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2018" data-pmid="29623672">
@@ -2460,7 +2466,7 @@
             <td class="year-col">2017</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, verify_2026_09_12_repairs</td>
+            <td class="loc-col">verify_2026_09_12_repairs, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2017" data-pmid="28010783">
@@ -2590,7 +2596,7 @@
             <td class="year-col">2015</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_data_dictionary, build_health_equity, build_generic_drug_catalog</td>
+            <td class="loc-col">build_health_equity, build_data_dictionary, build_generic_drug_catalog</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="26322160">
@@ -2620,7 +2626,7 @@
             <td class="year-col">2015</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, build_nutrition_lada</td>
+            <td class="loc-col">build_nutrition_lada, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2015" data-pmid="25834231">
@@ -2800,7 +2806,7 @@
             <td class="year-col">2014</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, build_lada_diagnostic_model</td>
+            <td class="loc-col">build_lada_diagnostic_model, build_gap_deep_dives</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2014" data-pmid="24508508">
@@ -2853,14 +2859,14 @@
             <td class="loc-col">build_data_dictionary</td>
         </tr>
 
-        <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="24085506">
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="24085506">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/24085506/" target="_blank" rel="noopener">24085506</a></td>
             <td class="title-col">Improvement in insulin sensitivity after human islet transplantation for type 1 diabetes.</td>
             <td class="journal-col">J Clin Endocrinol Metab</td>
             <td class="year-col">2013</td>
-            <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">audit_absence_claim_scope</td>
+            <td class="loc-col">build_data_dictionary, build_gap_deep_dives, audit_absence_claim_scope</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2013" data-pmid="23835325">
@@ -2913,6 +2919,16 @@
             <td class="loc-col">build_treg_neuropathy</td>
         </tr>
 
+        <tr class="paper-row" data-score="CONFIRMED" data-year="2013" data-pmid="23464532">
+            <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23464532/" target="_blank" rel="noopener">23464532</a></td>
+            <td class="title-col">Dose-ranging study with the glucokinase activator AZD1656 in patients with type 2 diabetes mellitus on metformin.</td>
+            <td class="journal-col">Diabetes Obes Metab</td>
+            <td class="year-col">2013</td>
+            <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
+            <td class="coverage-col">Abstract</td>
+            <td class="loc-col">build_gap_deep_dives</td>
+        </tr>
+
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2013" data-pmid="23413806">
             <td class="pmid-col"><a href="https://pubmed.ncbi.nlm.nih.gov/23413806/" target="_blank" rel="noopener">23413806</a></td>
             <td class="title-col">The clinical utility of C-peptide measurement in the care of patients with diabetes.</td>
@@ -2930,7 +2946,7 @@
             <td class="year-col">2013</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gap_deep_dives, build_lada_diagnostic_model, build_lada_prevalence +3</td>
+            <td class="loc-col">build_lada_prevalence, build_immunomod_lada, build_lada_diagnostic_model +3</td>
         </tr>
 
         <tr class="paper-row" data-score="NO_CLAIM" data-year="2013" data-pmid="23223116">
@@ -2990,7 +3006,7 @@
             <td class="year-col">2012</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | PMC</td>
-            <td class="loc-col">_close_run_2026_09_18, build_generic_drug_catalog, verify_2026_09_13_repairs</td>
+            <td class="loc-col">build_generic_drug_catalog, verify_2026_09_13_repairs, _close_run_2026_09_18</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2012" data-pmid="22315720">
@@ -3030,7 +3046,7 @@
             <td class="year-col">2012</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gap_deep_dives, _run_2026_08_27, build_cart_access +4</td>
+            <td class="loc-col">build_equity_map, build_islet_equity, build_cart_access +4</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2011" data-pmid="21997792">
@@ -3210,7 +3226,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_gap_deep_dives, extract_corpus_data, build_immunomod_lada</td>
+            <td class="loc-col">build_immunomod_lada, build_gap_deep_dives, extract_corpus_data</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2009" data-pmid="19805629">
@@ -3220,7 +3236,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract | Full Text | PMC</td>
-            <td class="loc-col">build_drug_repurposing_screen, repair_cost_provenance_20260829</td>
+            <td class="loc-col">repair_cost_provenance_20260829, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2009" data-pmid="19794004">
@@ -3260,7 +3276,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, build_data_dictionary, build_nutrition_lada</td>
+            <td class="loc-col">_close_run_2026_09_18, build_data_dictionary, build_nutrition_lada +1</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19373249">
@@ -3270,7 +3286,7 @@
             <td class="year-col">2009</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada, audit_citation_coordinates, _run_2026_08_27</td>
+            <td class="loc-col">audit_citation_coordinates, build_gka_lada, _run_2026_08_27</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="2009" data-pmid="19169263">
@@ -3340,7 +3356,7 @@
             <td class="year-col">2008</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_09_08, _run_2026_09_07, _run_2026_09_08b +3</td>
+            <td class="loc-col">_run_2026_09_08b, build_islet_equity, _run_2026_09_08 +3</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="2008" data-pmid="18843118">
@@ -3390,7 +3406,7 @@
             <td class="year-col">2008</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_drug_repurposing_screen, build_generic_drug_catalog</td>
+            <td class="loc-col">build_generic_drug_catalog, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="2007" data-pmid="18094377">
@@ -3870,7 +3886,7 @@
             <td class="year-col">1997</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_gka_lada, build_lada_model, _run_2026_08_27</td>
+            <td class="loc-col">build_gka_lada, _run_2026_08_27, build_lada_model</td>
         </tr>
 
         <tr class="paper-row" data-score="CONFIRMED" data-year="1994" data-pmid="8024693">
@@ -3890,7 +3906,7 @@
             <td class="year-col">1994</td>
             <td class="score-col" style="color:#2d6a2e;font-weight:600;">CONFIRMED</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">build_health_equity, verify_2026_09_12_repairs</td>
+            <td class="loc-col">verify_2026_09_12_repairs, build_health_equity</td>
         </tr>
 
         <tr class="paper-row" data-score="WEAK" data-year="1993" data-pmid="8439348">
@@ -3910,7 +3926,7 @@
             <td class="year-col">1993</td>
             <td class="score-col" style="color:#4a7c59;font-weight:600;">PLAUSIBLE</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_run_2026_09_08b, build_treg_neuropathy, build_health_equity +1</td>
+            <td class="loc-col">_run_2026_08_27, build_health_equity, _run_2026_09_08b +1</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="1992" data-pmid="1611143">
@@ -3960,7 +3976,7 @@
             <td class="year-col">1986</td>
             <td class="score-col" style="color:#8b7355;font-weight:600;">WEAK</td>
             <td class="coverage-col">Abstract</td>
-            <td class="loc-col">_close_run_2026_09_18, build_drug_repurposing_screen, _run_2026_08_27</td>
+            <td class="loc-col">_run_2026_08_27, _close_run_2026_09_18, build_drug_repurposing_screen</td>
         </tr>
 
         <tr class="paper-row" data-score="PLAUSIBLE" data-year="1985" data-pmid="3899825">
@@ -3986,20 +4002,20 @@
             <thead><tr><th>PMID</th><th>Title</th><th>Cites (in hub)</th></tr></thead>
             <tbody>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/34180979/" target="_blank">34180979</a></td><td>The β Cell in Diabetes: Integrating Biomarkers With Functional Measure</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28314945/" target="_blank">28314945</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">28885622</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27189025/" target="_blank">27189025</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/25751624/" target="_blank">25751624</a> +10 more</td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">38783768</a></td><td>Recent drug development of dorzagliatin, a new glucokinase activator, </td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank">33622669</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23464532/" target="_blank">23464532</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a> +3 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank">32847960</a></td><td>Management of Latent Autoimmune Diabetes in Adults: A Consensus Statem</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9357409/" target="_blank">9357409</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">23248199</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30041834/" target="_blank">30041834</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">28885622</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/29619531/" target="_blank">29619531</a> +2 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/38078589/" target="_blank">38078589</a></td><td>2. Diagnosis and Classification of Diabetes: Standards of Care in Diab</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11832527/" target="_blank">11832527</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23780460/" target="_blank">23780460</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/26404926/" target="_blank">26404926</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30041834/" target="_blank">30041834</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">28885622</a> +2 more</td></tr>
-<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">38783768</a></td><td>Recent drug development of dorzagliatin, a new glucokinase activator, </td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank">33622669</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a> +2 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/28522654/" target="_blank">28522654</a></td><td>Diabetic Kidney Disease: Challenges, Progress, and Possibilities.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18539917/" target="_blank">18539917</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/11565518/" target="_blank">11565518</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/20228401/" target="_blank">20228401</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/24970885/" target="_blank">24970885</a> +1 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/40272935/" target="_blank">40272935</a></td><td>Functional and Mechanistic Explanation for the Unique Clinical Success</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38783768/" target="_blank">38783768</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a> +1 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/42688599/" target="_blank">42688599</a></td><td>Impact of preformed donor-specific anti-HLA antibodies on pancreatic i</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank">36113507</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank">10911004</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37105208/" target="_blank">37105208</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35588757/" target="_blank">35588757</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">32627352</a> +1 more</td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/31177185/" target="_blank">31177185</a></td><td>Clinical Targets for Continuous Glucose Monitoring Data Interpretation</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28118453/" target="_blank">28118453</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30657336/" target="_blank">30657336</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/26784127/" target="_blank">26784127</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/9742976/" target="_blank">9742976</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a></td><td>Dorzagliatin add-on therapy to metformin in patients with type 2 diabe</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28776086/" target="_blank">28776086</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23464532/" target="_blank">23464532</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/35784546/" target="_blank">35784546</a></td><td>Effects of Berberine Plus Inulin on Diabetes Care in Patients With Lat</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">23248199</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30041834/" target="_blank">30041834</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">28885622</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/32847960/" target="_blank">32847960</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18442638/" target="_blank">18442638</a></td></tr>
+<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/37223016/" target="_blank">37223016</a></td><td>Evaluation of efficacy and safety of glucokinase activators-a systemat</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28731034/" target="_blank">28731034</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23464532/" target="_blank">23464532</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/33622669/" target="_blank">33622669</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/40896829/" target="_blank">40896829</a></td><td>Effects of Dorzagliatin, a Glucokinase Activator, on α- and β-Cell Fun</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/33610858/" target="_blank">33610858</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/37385967/" target="_blank">37385967</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/21719096/" target="_blank">21719096</a></td><td>Co-stimulation modulation with abatacept in patients with recent-onset</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/18843118/" target="_blank">18843118</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/16120857/" target="_blank">16120857</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank">23890997</a></td><td>Type 1 diabetes.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/15043959/" target="_blank">15043959</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/21719096/" target="_blank">21719096</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/10911004/" target="_blank">10911004</a></td></tr>
 <tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/27727279/" target="_blank">27727279</a></td><td>Regulatory T Cell Responses in Participants with Type 1 Diabetes after</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23890997/" target="_blank">23890997</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19940299/" target="_blank">19940299</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/21719096/" target="_blank">21719096</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/8366922/" target="_blank">8366922</a></td></tr>
-<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/28885622/" target="_blank">28885622</a></td><td>Adult-onset autoimmune diabetes: current knowledge and implications fo</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">23248199</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/9357409/" target="_blank">9357409</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/16306343/" target="_blank">16306343</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19404608/" target="_blank">19404608</a></td></tr>
-<tr><td><a href="https://pubmed.ncbi.nlm.nih.gov/35551292/" target="_blank">35551292</a></td><td>Dorzagliatin add-on therapy to metformin in patients with type 2 diabe</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28776086/" target="_blank">28776086</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/30949058/" target="_blank">30949058</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/19373249/" target="_blank">19373249</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/35551294/" target="_blank">35551294</a></td></tr>
             </tbody>
         </table>
         </div>
@@ -4013,32 +4029,32 @@
         <table role="table" class="small-table">
             <thead><tr><th>MeSH Term</th><th>Papers</th></tr></thead>
             <tbody>
-<tr><td>Diabetes Mellitus, Type 2</td><td>109</td></tr>
-<tr><td>Diabetes Mellitus, Type 1</td><td>81</td></tr>
-<tr><td>Blood Glucose</td><td>62</td></tr>
-<tr><td>Hypoglycemic Agents</td><td>61</td></tr>
+<tr><td>Diabetes Mellitus, Type 2</td><td>111</td></tr>
+<tr><td>Diabetes Mellitus, Type 1</td><td>82</td></tr>
+<tr><td>Blood Glucose</td><td>64</td></tr>
+<tr><td>Hypoglycemic Agents</td><td>63</td></tr>
 <tr><td>Insulin</td><td>54</td></tr>
-<tr><td>Glycated Hemoglobin</td><td>46</td></tr>
-<tr><td>Double-Blind Method</td><td>37</td></tr>
+<tr><td>Glycated Hemoglobin</td><td>47</td></tr>
+<tr><td>Double-Blind Method</td><td>38</td></tr>
 <tr><td>C-Peptide</td><td>28</td></tr>
 <tr><td>Insulin-Secreting Cells</td><td>27</td></tr>
 <tr><td>Mice</td><td>26</td></tr>
+<tr><td>Diabetes Mellitus</td><td>23</td></tr>
 <tr><td>Autoantibodies</td><td>22</td></tr>
 <tr><td>Cardiovascular Diseases</td><td>22</td></tr>
-<tr><td>Diabetes Mellitus</td><td>22</td></tr>
 <tr><td>Islets of Langerhans Transplantation</td><td>20</td></tr>
 <tr><td>Signal Transduction</td><td>20</td></tr>
+<tr><td>United States</td><td>18</td></tr>
+<tr><td>Randomized Controlled Trials as Topic</td><td>18</td></tr>
 <tr><td>Glutamate Decarboxylase</td><td>17</td></tr>
 <tr><td>Glucose</td><td>17</td></tr>
-<tr><td>United States</td><td>17</td></tr>
-<tr><td>Randomized Controlled Trials as Topic</td><td>17</td></tr>
-<tr><td>Islets of Langerhans</td><td>16</td></tr>
+<tr><td>Glucokinase</td><td>17</td></tr>
             </tbody>
         </table>
         </div>
     </div>
 
-    <p class="timestamp">Generated 2026-09-30 14:42 | Data from PubMed/PMC via NCBI E-utilities</p>
+    <p class="timestamp">Generated 2026-09-30 19:24 | Data from PubMed/PMC via NCBI E-utilities</p>
 </div>
 
 <script>

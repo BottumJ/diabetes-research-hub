@@ -32,15 +32,22 @@ COLORS = {
 
 # Graft survival data (year -> insulin independence %)
 GRAFT_DATA = {
+    # CORRECTED 2026-09-30. This curve is the Edmonton single-centre cohort
+    # (Marfil-Garza et al., Lancet Diabetes Endocrinol 2022, PMID 35588757:
+    # 255 recipients, Kaplan-Meier insulin independence 61% / 32% / 20% /
+    # 11% / 8% at 1 / 5 / 10 / 15 / 20 years), not CITR registry data, which is
+    # what the page said. Only the five reported timepoints are plotted; the
+    # yearly points between them were not in the source, and 15 years was 12
+    # here against 11 in the paper.
     'Edmonton Protocol': {
         'color': COLORS['red'],
-        'data': {0: 100, 1: 61, 2: 50, 3: 42, 4: 36, 5: 32, 6: 28, 7: 25, 8: 23, 9: 21, 10: 20, 15: 12, 20: 8}
+        'data': {0: 100, 1: 61, 5: 32, 10: 20, 15: 11, 20: 8}
     },
     # WITHDRAWN AND REPLACED 2026-09-22. What stood here was an eleven-point
     # annual curve {0:100, 1:92, 2:87, 3:81, 4:76, 5:71, 6:67, 7:64, 8:60,
     # 9:58, 10:55} labelled "Belatacept (Costimulation Blockade)", captioned in
     # its own source comment as a "Modeled trajectory", and plotted in the same
-    # style, weight and colour family as the Edmonton registry curve (n=1,477).
+    # style, weight and colour family as the Edmonton cohort curve (n=255; mislabelled n=1,477 until 2026-09-30).
     #
     # The flag carried since 2026-09-14 said the problem was a 15-point
     # disagreement between the curve's 55% endpoint and the 70% in the prose.
@@ -598,7 +605,7 @@ def generate_html():
             <p class="source" style="margin-top:0.4rem;">
                 Reading this chart: the three series measure <strong>different things at
                 different scales</strong> and are plotted together only because they share
-                an axis. Edmonton is registry data (1,477 recipients). VX-880 and LANTIDRA
+                an axis. Edmonton is one centre's cohort (255 recipients, Kaplan-Meier estimates at the five timepoints the paper reports). VX-880 and LANTIDRA
                 are early-phase cohorts with one year of follow-up. The Wisel points are
                 <strong>two reported timepoints from ten consecutive patients</strong>
                 &mdash; 70% (7 of 10) at 10 years and 60% at mean follow-up 13.3 years (PMID:37359825),
@@ -653,7 +660,7 @@ def generate_html():
                  connection to islet transplantation. The Shapiro Edmonton Protocol
                  paper asserted here is PMID 10911004 (N Engl J Med 2000;343:230-8),
                  verified against NCBI esummary on 2026-09-15. PMID replaced. -->
-            <p class="source">Source: Shapiro et al., PMID:10911004 (New England Journal of Medicine 2000); CITR Annual Reports (1,477 recipients, 2,947 infusions, median graft survival 5.9 years)</p>
+            <p class="source">Source: the protocol, Shapiro et al., N Engl J Med 2000;343:230-8, PMID:10911004; the curve, Marfil-Garza et al., Lancet Diabetes Endocrinol 2022;10(7):519-532, PMID:35588757 (Edmonton, 255 recipients 1999-2019, median graft survival 5.9 years).</p>
 
             <h3>Belatacept/Efalizumab (Costimulation Blockade)</h3>
             <!-- CITATION WITHDRAWN 2026-09-14, AND THESE ARE CLINICAL EFFICACY FIGURES, NOT COSTS.
@@ -901,8 +908,8 @@ def generate_html():
                 <div class="metric-value">70%</div>
                 <div class="metric-label">Insulin independence at 10 years, whole cohort <span class="caveat" title="7 of 10 patients: four on efalizumab, three on belatacept. PMID 37359825 reports no separate rate for either drug at any timepoint. Three of the seven had received a pancreas-after-islet transplant.">(7 of 10; not belatacept-specific)</span></div>
             </div>
-            <p>The Edmonton Protocol (tacrolimus) figure of 20% insulin independence at 10 years (CITR Annual Reports; see the registry curve above) comes from a 1,477-recipient registry; the 70% above is seven patients in a single centre's consecutive series, three of whom had by then received a whole pancreas. <strong>The two are not a regimen comparison.</strong> This page makes no claim that belatacept outperforms efalizumab: its only source reporting both assigns four of seven responders to efalizumab and three to belatacept.</p>
-            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (PMID:37359825) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., PMID:37105208 (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the 70% above is seven patients, and the Edmonton 20% it is set beside comes from a 1,477-recipient registry.</p>
+            <p>The Edmonton Protocol (tacrolimus) figure of 20% insulin independence at 10 years comes from one centre's 255-recipient cohort (PMID:35588757; the curve above); the 70% above is seven patients in a single centre's consecutive series, three of whom had by then received a whole pancreas. <strong>The two are not a regimen comparison.</strong> This page makes no claim that belatacept outperforms efalizumab: its only source reporting both assigns four of seven responders to efalizumab and three to belatacept.</p>
+            <p class="source">Source: Wisel et al., <em>Transplant International</em> 2023 (PMID:37359825) &mdash; 7 of 10 consecutive patients insulin independent at 10 years on calcineurin-sparing immunosuppression. <em>Source corrected 2026-09-14</em>, previously attributed to "Hering et al., PMID:37105208 (Lancet 2023)", which is Chetboun et al. in Lancet Diabetes Endocrinol, a CITR registry cohort with a five-year endpoint that reports no such rate. Note the denominator: the 70% above is seven patients, and the Edmonton 20% it is set beside comes from one centre's 255-recipient cohort (PMID:35588757).</p>
 
             <h3>Efalizumab (Anti-LFA-1): Adhesion Molecule Blockade</h3>
 
@@ -1444,7 +1451,7 @@ def generate_html():
                     <tr>
                         <td>CITR Annual Reports</td>
                         <td>2005-2024</td>
-                        <td>1,477 recipients, 2,947 infusions, 5.9yr median graft survival</td>
+                        <td>1,477 recipients, 2,947 infusions (12th Allograft Report, 2025)</td>
                         <td>Registry analysis</td>
                     </tr>
                     <tr>
