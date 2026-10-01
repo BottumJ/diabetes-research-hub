@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30T14:44:29.134549",
+  "generated": "2026-09-30T19:01:42.097759",
   "gate": "gap_subject_coverage",
   "method": "Regex over stored title + journal + finding snippets in gap_evidence.json. No abstracts fetched. Misses are an UPPER bound: a paper whose abstract covers the axis but whose stored snippet does not will read as a miss.",
   "gaps_checked": 15,
@@ -90,7 +90,7 @@
     {
       "gap_id": 11,
       "name": "Islet Transplant Registry Equity",
-      "tier": "BRONZE",
+      "tier": "SILVER",
       "severity": "ACKNOWLEDGED",
       "problem": "7 evidence paper(s). 6 touch \"islet transplant registry\" and 1 touch \"equity\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
       "remedy": "State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.",
@@ -109,7 +109,7 @@
         "date": "2026-09-30",
         "decision": "Absence claim, tiered on dated null searches rather than on the cited papers."
       },
-      "reader_note": "This gap is a claim that a study has NOT been done. Dated PubMed searches found no analysis of race, ethnicity, income or access in islet transplant registry data, and the registry's own 2025 report and publication list contain none either: the report tabulates recipient race but does not analyse it. The papers listed here are context on the registry and on transplant outcomes; none is about equity."
+      "reader_note": "This gap is a claim that a study has NOT been done. Searches of PubMed and of the registry's own 2025 report and publication list found no analysis of race, ethnicity, income or access among islet transplant recipients. The reason to ask: of recipients whose race was recorded, 98% were White, while national survey data show type 1 diabetes in Black and Hispanic US adults at rates close to White adults. The papers listed here are context on the registry and on transplant outcomes; none is about equity."
     }
   ],
   "coverage_table": [
@@ -272,7 +272,7 @@
     {
       "gap_id": 11,
       "name": "Islet Transplant Registry Equity",
-      "tier": "BRONZE",
+      "tier": "SILVER",
       "papers": 7,
       "x_axis": "islet transplant registry",
       "x_covered": 6,

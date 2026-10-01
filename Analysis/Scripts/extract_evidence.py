@@ -161,7 +161,7 @@ GAPS = {
     },
     11: {
         'name': 'Islet Transplant Registry Equity',
-        'tier': 'BRONZE',  # Owner ruling 2026-09-30: BRONZE under the absence-claim rule (RESEARCH_DOCTRINE Lesson 9). One source searched (PubMed); premise not yet sourced.
+        'tier': 'SILVER',  # 2026-09-30: SILVER under RESEARCH_DOCTRINE Lesson 9. Absence: PubMed + CITR report/bibliography. Premise: CITR Exhibit 2-1 vs NHIS prevalence (PMID:30181166). Same-day owner ruling was BRONZE pending exactly these two sources.
         'keywords': [
             'islet transplant registry', 'citr', 'transplant equity',
             'transplant access', 'organ allocation', 'transplant disparit',

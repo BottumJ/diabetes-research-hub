@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Islet Transplant Registry Equity Analysis Dashboard
-Gap #11, BRONZE): Demographic and geographic disparities
+Gap #11, SILVER): Demographic and geographic disparities
 """
 
 import os
@@ -611,7 +611,9 @@ html_content = f"""<!DOCTYPE html>
                 <div class="source" style="border-left:3px solid #2c5f8a;padding-left:10px;">
                   <strong>Source:</strong> <a href="https://www.citregistry.org/system/files/CITR%2012th%20Allograft%20Report_2025_Final.pdf" target="_blank">CITR 12th Allograft Report (2025; datafile closure 2025-03-26), Exhibit 2-1</a>, chapter 2, pages 2-4 and 2-5. Registry report, not peer-reviewed.
                   <br><br>
-                  <strong>How to read it.</strong> Of islet-alone recipients whose race was recorded, 793 of 812 (98%) were White and 7 (0.9%) were Black. Race was not recorded for 28% of recipients and ethnicity for 43%, so these are the recorded shares, not the true ones. <strong>No comparison population is shown</strong>: the report gives no race distribution for people with type 1 diabetes who would be eligible for an islet transplant, and this hub has not yet sourced one. Until it does, this table shows who received transplants, not whether access was unequal.
+                  <strong>How to read it.</strong> Of islet-alone recipients whose race was recorded, 793 of 812 (98%) were White and 7 (0.9%) were Black. Race was not recorded for 28% of recipients and ethnicity for 43%, so these are the recorded shares, not the true ones. <strong>Comparison population.</strong> The report gives none, so one is taken from a national survey: among US adults in 2016&ndash;2017, diagnosed type 1 diabetes was present in 0.6% of non-Hispanic White, 0.4% of non-Hispanic Black, 0.5% of Hispanic and 0.2% of non-Hispanic Asian adults (National Health Interview Survey; Xu et al., <em>BMJ</em> 2018, Table 2, <a href="https://pubmed.ncbi.nlm.nih.gov/30181166/" target="_blank">PMID:30181166</a>). Type 1 diabetes is therefore not rare in Black or Hispanic adults, yet they are 7 and 7 of the recipients whose race or ethnicity was recorded.
+                  <br><br>
+                  <strong>What this does and does not show.</strong> It is a reason to ask the question, not an answer to it. The comparison is imperfect in four stated ways: the registry includes Canadian, European and Australian centres while the survey is US-only; the survey is one period (2016&ndash;2017) while transplants span 1999&ndash;2025; type 1 diabetes in the survey is self-reported; and transplant candidates are a narrow subgroup (severe hypoglycaemia or unawareness) whose race distribution is unknown. Race is also unrecorded for 28% of recipients. Measuring whether access is unequal is exactly the analysis this gap says has not been done.
                   <br><br>
                   <strong>Correction 2026-09-30.</strong> On 2026-09-09 this section said the report &ldquo;does not break out recipient race or ethnicity&rdquo;. It does, in Exhibit 2-1; the earlier check read extracted text without opening Chapter 2. The six bars withdrawn on 2026-09-09 (recipients 85% White, 5% Black, 5% Hispanic; unsourced T1D-population comparators) remain withdrawn: the registry's own figures differ from them.
                 </div>
@@ -831,7 +833,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
 
         <div class="footer">
-            <p><strong>Gap #11, BRONZE)</strong> | Islet Transplant Registry Equity Analysis</p>
+            <p><strong>Gap #11, SILVER)</strong> | Islet Transplant Registry Equity Analysis</p>
             <p>Data compiled from CITR, UNOS/OPTN, FDA databases, and peer-reviewed literature through Q2 2024. Dashboard interactive; select tabs to explore sections.</p>
             <p>No emojis, gradients, or rounded corners per Tufte design principles. Designed for clarity, data visibility, and equitable representation of evidence.</p>
         </div>

@@ -8,7 +8,7 @@ This project systematically tracks, validates, and analyzes diabetes research ac
 
 ## What This Project Does
 
-**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 2 GOLD (3+ sources), 7 SILVER (2 sources), 1 BRONZE (1 source), 5 EXPLORATORY (no evidence yet at the gap's own intersection).
+**Literature Gap Analysis** — Queries PubMed to map publication density across all 30 research domain pairs, identifying under-researched intersections where new work could have outsized impact. 15 research gaps are tracked with tiered validation: 2 GOLD (3+ sources), 8 SILVER (2 sources), 5 EXPLORATORY (no evidence yet at the gap's own intersection).
 
 **Clinical Trial Intelligence** — Pulls live snapshots from ClinicalTrials.gov API v2 across five categories (T1D cure, T1D immunotherapy, T2D novel therapies, diabetes devices, recently completed trials). Diffs snapshots over time to detect new trials, status changes, and freshly posted results.
 
@@ -116,8 +116,8 @@ This project uses a 4-tier evidence classification system:
 | Tier | Requirement | Count |
 |------|------------|-------|
 | **GOLD** | 3+ independent sources from different research groups | 2 gaps |
-| **SILVER** | 2 independent sources | 7 gaps |
-| **BRONZE** | Computational analysis with single-source basis | 1 gap |
+| **SILVER** | 2 independent sources | 8 gaps |
+| **BRONZE** | Computational analysis with single-source basis | 0 gaps |
 | **EXPLORATORY** | No evidence yet at the gap's own intersection, or biological plausibility uncertain | 5 gaps |
 
 All claims in the Drug Repurposing Screen have been pressure-tested: WHO Essential Medicines flags verified against the 2023 EML, mechanism claims checked against cited PMIDs, negative trials explicitly labeled, preclinical-only evidence clearly distinguished from human RCT data.
@@ -140,7 +140,7 @@ See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 
 | 8 | Immunomodulatory Drugs for LADA | SILVER |
 | 9 | GKA in LADA | EXPLORATORY |
 | 10 | LADA Prevalence | SILVER |
-| 11 | Islet Transplant Equity | BRONZE |
+| 11 | Islet Transplant Equity | SILVER |
 | 12 | Generic Drug x Diabetes Mechanism Catalog | SILVER |
 | 13 | Personalized Nutrition for Beta Cells | EXPLORATORY |
 | 14 | Personalized Nutrition for LADA | EXPLORATORY |

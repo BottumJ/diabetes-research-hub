@@ -754,7 +754,7 @@ GAPS_DATA = {
     },
     "11": {
         "title": "Islet Transplant Equity",
-        "tier": "BRONZE",  # Owner ruling 2026-09-30: BRONZE under the absence-claim rule (RESEARCH_DOCTRINE Lesson 9). One source searched (PubMed); premise not yet sourced.
+        "tier": "SILVER",  # 2026-09-30: SILVER under RESEARCH_DOCTRINE Lesson 9. Absence: PubMed + CITR report/bibliography. Premise: CITR Exhibit 2-1 vs NHIS prevalence (PMID:30181166). Same-day owner ruling was BRONZE pending exactly these two sources.
         "score": 0.81,
         "cluster": "A",
         "domain_pubs": {"islet_transplant": 238, "health_equity": 1830},

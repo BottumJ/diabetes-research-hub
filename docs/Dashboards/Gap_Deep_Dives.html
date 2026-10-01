@@ -81,19 +81,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -164,12 +151,11 @@
   </div>
 </nav>
 
-
     <div class="container">
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-09-30 14:37:07</p>
+            <p class="subtitle">Generated: 2026-09-30 19:01:24</p>
         </header>
 
         <div class="context-block">
@@ -177,7 +163,7 @@
             <p>This platform tracks 15 specific research gaps in diabetes where published literature is thin, clinical trials are sparse, or equity barriers prevent progress. These gaps were identified by querying PubMed for 435 pairwise domain combinations and flagging intersections with zero or near-zero joint publications. Each gap represents a concrete question that existing research has not adequately addressed.</p>
 
             <div class="context-label">How Gaps Are Classified</div>
-            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (2 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (7 gaps): 2 independent sources. <strong>BRONZE</strong> (1 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (5 gaps): biological plausibility is uncertain, or no evidence paper has yet been found. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
+            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (2 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (8 gaps): 2 independent sources. <strong>BRONZE</strong> (0 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (5 gaps): biological plausibility is uncertain, or no evidence paper has yet been found. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
 
             <div class="context-label">How to Read the Priority Matrix</div>
             <p>The Priority Matrix (Tab 1) ranks gaps by a composite score combining publication density, trial activity, clinical urgency, and feasibility. Higher scores indicate gaps where new research would have disproportionate impact. Cluster Analysis (Tab 2) groups related gaps to reveal cross-cutting themes. Individual Deep Dives (Tab 3) provide the evidence, mechanisms, and open questions for each gap. The Evidence Catalog (Tab 4) maps all supporting literature.</p>
@@ -373,9 +359,9 @@
                         <td>Screening Opportunity</td>
                     </tr>
 
-                    <tr data-tier="BRONZE" data-score="0.81" data-title="Islet Transplant Equity" data-joint-pubs="0" data-trial-count="1">
+                    <tr data-tier="SILVER" data-score="0.81" data-title="Islet Transplant Equity" data-joint-pubs="0" data-trial-count="1">
                         <td><strong>Islet Transplant Equity</strong></td>
-                        <td><span class="tier-badge tier-bronze">BRONZE</span></td>
+                        <td><span class="tier-badge tier-silver">SILVER</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 81.0%"></div>
@@ -471,7 +457,7 @@
                     </div>
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>Islet Transplant Equity</strong> <span class="tier-badge tier-bronze">BRONZE</span> (Score: 0.81)</div>
+                        <div><strong>Islet Transplant Equity</strong> <span class="tier-badge tier-silver">SILVER</span> (Score: 0.81)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">CITR registry: of islet-alone recipients with race recorded, 793 of 812 (98%) White and 7 Black; race unrecorded for 28%...</div>
                     </div>
 
@@ -2368,10 +2354,10 @@
                 </div>
             </div>
 
-            <div class="gap-card bronze" id="gap11">
+            <div class="gap-card silver" id="gap11">
                 <div class="gap-header">
                     <div class="gap-title">Gap 11: Islet Transplant Equity</div>
-                    <span class="tier-badge tier-bronze">BRONZE</span>
+                    <span class="tier-badge tier-silver">SILVER</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.81</span>

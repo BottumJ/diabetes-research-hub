@@ -936,7 +936,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #11: Islet Transplant Registry Equity</div>
-                    <span class="gap-validation bronze">BRONZE</span>
+                    <span class="gap-validation silver">SILVER</span>
                     <p class="gap-description">Demographic and geographic profile of islet transplant recipients vs disease burden distribution.</p>
                 </div>
                 <div class="gap-card">

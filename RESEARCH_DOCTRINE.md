@@ -948,7 +948,7 @@ VERIFICATION STATUS: ⚠ UNVERIFIED (Being updated; estimated completion: 2026-0
 
 **Eligible, not excluded** (from DECISION_BRIEF_2026-09-07): before citing another study's silence, confirm the topic was eligible for that study and absent, not excluded by its design.
 
-**First application:** Gap #11 (Islet Transplant Registry Equity), BRONZE on 2026-09-30 — one source searched, premise unsourced.
+**First application:** Gap #11 (Islet Transplant Registry Equity). BRONZE on 2026-09-30 with one source searched and no sourced premise; promoted to SILVER the same day once the registry's own report and bibliography were searched (second independent source) and the premise was sourced (recipient race from the registry against national type 1 prevalence by race, PMID 30181166). GOLD would need a third independent source.
 
 ---
 
