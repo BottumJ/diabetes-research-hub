@@ -72,32 +72,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -173,8 +147,6 @@
   </div>
 </nav>
 
-
-
     <div class="container">
         <header>
             <h1>Extracted Evidence Dashboard</h1>
@@ -182,13 +154,13 @@
                  while the paragraph below it rendered the live figure (69) from the
                  same data file - the page contradicted itself. Any count that is not
                  read at build time is a future stale claim. Fixed 2026-08-20. -->
-            <p class="subtitle">Quantitative data extraction from 61 full-text diabetes research papers</p>
-            <p class="subtitle">Generated: 2026-09-30 23:57:48</p>
+            <p class="subtitle">Quantitative data extraction from 62 full-text diabetes research papers</p>
+            <p class="subtitle">Generated: 2026-10-01 00:58:50</p>
         </header>
 
         <div class="context-block">
             <h3>What This Dashboard Answers</h3>
-            <p>This dashboard visualizes quantitative data that we actually extracted from 61 full-text papers using regex patterns and NLP-assisted identification. It answers: What quantitative data can we actually extract from our corpus? Which research gaps have the strongest corpus-backed evidence?</p>
+            <p>This dashboard visualizes quantitative data that we actually extracted from 62 full-text papers using regex patterns and NLP-assisted identification. It answers: What quantitative data can we actually extract from our corpus? Which research gaps have the strongest corpus-backed evidence?</p>
 
             <div class="context-label">How to Use This</div>
             <p>Each data point links back to its source PMID with surrounding context. Click any PMID to verify the claim in the original paper. Use this dashboard to validate claims made in other research dashboards and to identify which gaps have direct quantitative support in the published literature.</p>
@@ -212,15 +184,15 @@
             <div class="stats-box">
                 <div class="stat-card">
                     <div class="stat-label">Total Data Points Extracted</div>
-                    <div class="stat-value">274</div>
+                    <div class="stat-value">280</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Papers Yielding Data</div>
-                    <div class="stat-value">61</div>
+                    <div class="stat-value">62</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Extraction Categories</div>
-                    <div class="stat-value">8</div>
+                    <div class="stat-value">9</div>
                 </div>
             </div>
 
@@ -236,7 +208,7 @@
                 <tbody>
                     <tr>
                         <td>Dose Response</td>
-                        <td>206</td>
+                        <td>211</td>
                         <td>Drug dosage and administration data</td>
                     </tr>
                     <tr>
@@ -274,6 +246,11 @@
                         <td>2</td>
                         <td>Quantitative clinical measurements and thresholds</td>
                     </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td>1</td>
+                        <td>Quantitative clinical measurements and thresholds</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -285,19 +262,28 @@
                 <div class="gap-title">
                     Gap 1: Gene Therapy for LADA
                     <span class="tier-badge tier-exploratory">EXPLORATORY</span>
-                    <span class="tier-badge evidence-weak">WEAK: 2 points</span>
+                    <span class="tier-badge evidence-weak">WEAK: 3 points</span>
                 </div>
 
                 <h4>Evidence Strength: Limited evidence found</h4>
-                <p>This gap has <strong>2</strong> data points in the corpus.</p>
+                <p>This gap has <strong>3</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Autoantibody</td>
                         <td style="text-align: right;">2 items</td>
                     </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">1 items</td>
+                    </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009, <em>Transplantation</em>)<br>
+                    <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
+                </div>
                 <div class="data-point">
                     <strong>Value:</strong> autoantibody positive), 65 (32.0%<br>
                     <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23248199/" target="_blank">PMID:23248199</a> (2013, <em>Diabetes Care</em>)<br>
@@ -364,16 +350,20 @@
                 <div class="gap-title">
                     Gap 3: Insulin Resistance in Islet Transplant
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-weak">WEAK: 3 points</span>
+                    <span class="tier-badge evidence-weak">WEAK: 4 points</span>
                 </div>
 
                 <h4>Evidence Strength: Limited evidence found</h4>
-                <p>This gap has <strong>3</strong> data points in the corpus.</p>
+                <p>This gap has <strong>4</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Survival Graft</td>
                         <td style="text-align: right;">3 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">1 items</td>
                     </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
@@ -392,16 +382,21 @@
                     <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32627352/" target="_blank">PMID:32627352</a> (2021, <em>Am J Transplant</em>)<br>
                     <div class="context-snippet">alysis Intention-to-treat analysis was used for primary and key secondary endpoints. Failures were imputed for missing outcomes. One-sided tests for whether the true rates are greater than the predetermined minimum rate for efficacy for the primary endpoint (27%), key secondary endpoints (50%), and…</div>
                 </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009, <em>Transplantation</em>)<br>
+                    <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
+                </div>
             </div>
             <div class="gap-section silver">
                 <div class="gap-title">
                     Gap 4: Drug Repurposing for Islet Transplant
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 212 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 217 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>212</strong> data points in the corpus.</p>
+                <p>This gap has <strong>217</strong> data points in the corpus.</p>
                 <p class="coverage-caveat" style="border-left: 3px solid #b45309; padding: 0.5em 1em; background: #fef3c7; margin: 0.75em 0;">
                     <strong>Caveat:</strong> The papers cited here are about the individual drugs (for example anakinra, etanercept, sirolimus) in islet transplantation. None of them frames its work as drug repurposing; that link is this hub's inference, not a finding of the cited papers.
                 </p>
@@ -409,7 +404,7 @@
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
-                        <td style="text-align: right;">206 items</td>
+                        <td style="text-align: right;">211 items</td>
                     </tr>
                     <tr>
                         <td>Survival Graft</td>
@@ -451,19 +446,28 @@
                 <div class="gap-title">
                     Gap 5: Treg in Diabetic Neuropathy
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-weak">WEAK: 3 points</span>
+                    <span class="tier-badge evidence-weak">WEAK: 4 points</span>
                 </div>
 
                 <h4>Evidence Strength: Limited evidence found</h4>
-                <p>This gap has <strong>3</strong> data points in the corpus.</p>
+                <p>This gap has <strong>4</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Inflammatory Markers</td>
                         <td style="text-align: right;">3 items</td>
                     </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">1 items</td>
+                    </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009, <em>Transplantation</em>)<br>
+                    <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
+                </div>
                 <div class="data-point">
                     <strong>Value:</strong> IL-1β/IFNγ, its levels further increased 4.6-fold<br>
                     <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27821710/" target="_blank">PMID:27821710</a> (2016, <em>J Pharmacol Exp Ther</em>)<br>
@@ -531,11 +535,11 @@
                 <div class="gap-title">
                     Gap 7: GKA Drug Repurposing
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 229 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 234 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>229</strong> data points in the corpus.</p>
+                <p>This gap has <strong>234</strong> data points in the corpus.</p>
                 <p class="coverage-caveat" style="border-left: 3px solid #b45309; padding: 0.5em 1em; background: #fef3c7; margin: 0.75em 0;">
                     <strong>Caveat:</strong> The papers cited here are about glucokinase activators themselves (chiefly dorzagliatin). None of them frames its work as drug repurposing; that link is this hub's inference, not a finding of the cited papers. A dated search on 2026-09-28 found no paper at the intersection.
                 </p>
@@ -543,7 +547,7 @@
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
-                        <td style="text-align: right;">206 items</td>
+                        <td style="text-align: right;">211 items</td>
                     </tr>
                     <tr>
                         <td>Remission</td>
@@ -585,16 +589,16 @@
                 <div class="gap-title">
                     Gap 8: Immunomodulatory Drugs for LADA
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 234 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 240 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>234</strong> data points in the corpus.</p>
+                <p>This gap has <strong>240</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
-                        <td style="text-align: right;">206 items</td>
+                        <td style="text-align: right;">211 items</td>
                     </tr>
                     <tr>
                         <td>Remission</td>
@@ -611,6 +615,10 @@
                     <tr>
                         <td>Autoantibody</td>
                         <td style="text-align: right;">2 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">1 items</td>
                     </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
@@ -691,11 +699,11 @@
                 <div class="gap-title">
                     Gap 10: LADA Prevalence by Healthcare Setting
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-moderate">MODERATE: 32 points</span>
+                    <span class="tier-badge evidence-moderate">MODERATE: 33 points</span>
                 </div>
 
                 <h4>Evidence Strength: Moderate evidence present</h4>
-                <p>This gap has <strong>32</strong> data points in the corpus.</p>
+                <p>This gap has <strong>33</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
@@ -705,6 +713,10 @@
                     <tr>
                         <td>Autoantibody</td>
                         <td style="text-align: right;">2 items</td>
+                    </tr>
+                    <tr>
+                        <td>C Peptide</td>
+                        <td style="text-align: right;">1 items</td>
                     </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
@@ -792,16 +804,16 @@
                 <div class="gap-title">
                     Gap 12: Generic Drug x Diabetes Mechanism Catalog
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 215 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 220 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>215</strong> data points in the corpus.</p>
+                <p>This gap has <strong>220</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Dose Response</td>
-                        <td style="text-align: right;">206 items</td>
+                        <td style="text-align: right;">211 items</td>
                     </tr>
                     <tr>
                         <td>Hba1C Change</td>
@@ -876,7 +888,15 @@
 
         <div id="cpeptide" class="tab-content">
             <h2>C-Peptide Evidence</h2>
-            <p>All 0 C-peptide extractions with full context. Critical for LADA/islet/immunomodulation gaps.</p>
+            <p>All 1 C-peptide extractions with full context. Critical for LADA/islet/immunomodulation gaps.</p>
+            <div class="data-point">
+                <strong>C-Peptide Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009)<br>
+                <strong>Journal:</strong> Transplantation<br>
+                <strong>Title:</strong> Type 2 diabetes mellitus phenotype and graft survival after islet transplantation.<br>
+                <strong>Relevant Gaps:</strong> 1, 3, 5, 8, 10<br>
+                <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
+            </div>
         </div>
 
         <div id="survival" class="tab-content">
@@ -1133,6 +1153,11 @@
                     <td>2, 4, 6, 7, 8, 10, 11, 12</td>
                 </tr>
                 <tr>
+                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a></td>
+                    <td>8</td>
+                    <td>1, 3, 4, 5, 7, 8, 10, 12</td>
+                </tr>
+                <tr>
                     <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37359825/" target="_blank">PMID:37359825</a></td>
                     <td>7</td>
                     <td>2, 3, 4, 7, 8, 11, 12</td>
@@ -1367,17 +1392,12 @@
                     <td>4</td>
                     <td>4, 7, 8, 12</td>
                 </tr>
-                <tr>
-                    <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/36643381/" target="_blank">PMID:36643381</a></td>
-                    <td>4</td>
-                    <td>4, 7, 8, 12</td>
-                </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="footer">
-            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-09-30</p>
+            <p>Extracted Evidence Dashboard | Diabetes Research Platform | Generated 2026-10-01</p>
         </div>
     </div>
 

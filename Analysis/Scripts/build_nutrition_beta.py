@@ -316,7 +316,7 @@ html_content = """<!DOCTYPE html>
     <div class="container">
         <header>
             <h1>Personalized Nutrition for Beta Cell Health</h1>
-            <p class="subtitle">SILVER-Validated Research Gap #13</p>
+            <p class="subtitle">EXPLORATORY Research Gap #13</p>
             <span class="badge">GAPS-BASED RESEARCH</span>
         </header>
 

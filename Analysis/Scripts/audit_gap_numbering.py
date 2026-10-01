@@ -158,7 +158,8 @@ def source_tiers(scripts_dir):
         r'|["\']tier["\']\s*:\s*["\'](?P<tier2>GOLD|SILVER|BRONZE|EXPLORATORY)["\']'
         r'[^{}]*?["\']title["\']\s*:\s*["\'](?P<title2>[^"\']+)["\'])')
     for fname in sorted(os.listdir(scripts_dir)):
-        if not fname.endswith('.py') or fname == os.path.basename(__file__):
+        if (not fname.endswith('.py') or fname == os.path.basename(__file__)
+                or fname in ('gap_tier_copies.py', 'set_gap_tier.py')):  # they quote tiers as examples
             continue
         try:
             with open(os.path.join(scripts_dir, fname), 'r',
@@ -320,8 +321,8 @@ def main():
               'and every hardcoded copy')
 
     n_copies = sum(len(v) for v in hardcoded.values())
-    print('  Tier is hardcoded in %d place(s) across %d gap(s); the store is '
-          'read in none of them.'
+    print('  Tier is typed in %d place(s) across %d gap(s) by these patterns; '
+          'gap_tiers.json is the reference they are checked against below.'
           % (n_copies, len(hardcoded)))
 
     if topic_defects:
@@ -369,8 +370,28 @@ def main():
     # not in others while this stage printed the mismatch and returned 0.
     # Topic defects stay report-only: which audit trail is authoritative is a
     # judgement, and a heuristic must not force an edit.
-    if tier_defects:
-        print('  [FAIL] %d gap(s) publish more than one tier' % len(tier_defects))
+    # The canonical store (added 2026-10-01). gap_tiers.json is THE tier;
+    # gap_tier_copies.py finds every typed copy in seven forms, including the
+    # ones this file's own patterns above cannot see (badges, "Gap #N, TIER",
+    # "TIER Research Gap #N", integer-keyed registries). Any copy that
+    # disagrees with the store fails the build; set_gap_tier.py --sync fixes it.
+    try:
+        import gap_tier_copies as _gtc
+        store_defects = _gtc.disagreements(HERE)
+    except FileNotFoundError:
+        store_defects = []
+        print('  [WARN] gap_tiers.json not found; store comparison skipped')
+    if store_defects:
+        print('  [FAIL] %d typed tier(s) disagree with gap_tiers.json '
+              '(fix: python set_gap_tier.py --sync):' % len(store_defects))
+        for c in store_defects:
+            print('    %s:%d  Gap #%s typed %s' % (c['file'], c['line'], c['gap'], c['tier']))
+    else:
+        print('  [OK] every typed tier copy agrees with gap_tiers.json')
+
+    if tier_defects or store_defects:
+        if tier_defects:
+            print('  [FAIL] %d gap(s) publish more than one tier' % len(tier_defects))
         return 1
     return 0
 
