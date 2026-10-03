@@ -1,0 +1,2827 @@
+﻿============================================================
+  DIABETES RESEARCH HUB — QUALITY IMPROVEMENTS
+============================================================
+  Running 88 improvement(s): compile, exitcodes, exitcodefixture, dashboard, research, gapdata, gaps, synthesis, equity, deepdives, acronyms, dictionary, lada, islet, drugrepurpose, immunomod, treg, cartaccess, gka, isletequity, genericdrug, gkalada, ladaprev, nutribeta, nutrilada, gkapricing, healthequity, methodology, pmidverify, pmidtracker, citations, ingest, orphans, validate, mismatchgate, pathcitegate, extractcorpus, designcitegate, identifiergate, retractiongate, coordinategate, absoluteclaims, wildcardaudit, membershipgate, flaggedclass, pathdesign, pubtypegap, gapdesign, gapnumbering, semanticsupport, mdcitations, mdcitegate, nctgate, credibility, evidence, paperlibrary, drugscreen, ladadiagnostic, trialequity, corpus, extracted, researchpaths, pathstore, verdictkeys, posterioragree, statsmeta, statistics, repurposev2, predictionledger, website, postprocess, syncdocs, pubmedmonitor, syncreports, reportfreshness, freshnessgate, suppressiongate, linkgate, absencescope, gapsubject, publishgate, publishgatetest, surnames, computedcite, catalogentity, indexinvariants, endpointagreement, structuredeffects
+
+============================================================
+  Checking that every builder parses
+============================================================
+  BUILDER COMPILE AUDIT
+    files checked : 166
+    DO NOT PARSE  : 0
+  
+    [OK] every script in Analysis/Scripts parses
+  Completed in 4.6s
+
+============================================================
+  Asserting each wired gate's verdict can reach the runner
+============================================================
+  ====================================================================
+    GATE EXIT-CODE AUDIT
+    Can each wired gate's verdict reach the runner?
+  ====================================================================
+  
+    stages wired      : 88
+    classified gates  : 42
+    gates that can FAIL: 36
+    defects           : 0
+  
+    [OK] every wired gate can return a non-zero exit on a finding
+    -> Analysis/Results/gate_exit_code_audit.json
+  Completed in 7.4s
+
+============================================================
+  Regression fixture: exit-code audit sensitivity AND specificity
+============================================================
+  SELFTEST (sensitivity and specificity)
+      A_dropped_return         expect dropped    [OK]
+      B_repaired               expect clean      [OK]
+      C_builder_helper_int     expect clean      [OK]
+      D_exit_only_on_crash     expect crash_only [OK]
+      E_no_exit_at_all         expect no_exit    [OK]
+      -> all fixtures behaved as specified
+  Completed in 2.9s
+
+============================================================
+  Rebuilding Clinical Trial Dashboard (Tufte style)
+============================================================
+  Loading clinical trial data...
+    907 trials loaded
+  Generating Tufte-style dashboard...
+    Dashboard written: C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Clinical_Trial_Dashboard.html (498 KB)
+  Done.
+  Completed in 2.6s
+
+============================================================
+  Rebuilding Research Dashboard (Tufte style)
+============================================================
+  Generated Research_Dashboard.html (64024 bytes)
+    Location: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Research_Dashboard.html
+    Data included:
+      - 57 pipeline entries
+      - 35 research domains
+      - 22 datasets
+      - 25 papers
+      - 25 timeline items
+    Style: Tufte-informed (cream bg, serif headers, monospace data, no gradients/rounded corners)
+  Completed in 2.6s
+
+============================================================
+  Refreshing literature gap PubMed counts (resumable; bounded slice)
+============================================================
+  01:19:30  ============================================================
+  01:19:30  PROJECT 1: Literature Gap Analysis (daily, resumable)
+  01:19:30  Date range : 2020/01/01 to 2026/09/30
+  01:19:30  API key    : no (3 req/sec)
+  01:19:30  Queries    : 30 domains + 435 pairs = 465
+  01:19:30  ============================================================
+  01:19:30  [1/3] Individual domain counts...
+  01:19:50  [2/3] Pairwise domain counts...
+  01:19:59    pairs 15/435  |  1.5 q/s  |  ETA 4.5 min
+  01:20:09    pairs 30/435  |  1.5 q/s  |  ETA 4.4 min
+  01:20:21    pairs 45/435  |  1.5 q/s  |  ETA 4.4 min
+  01:20:32    pairs 60/435  |  1.5 q/s  |  ETA 4.3 min
+  01:20:42    pairs 75/435  |  1.4 q/s  |  ETA 4.1 min
+  01:20:53    pairs 90/435  |  1.4 q/s  |  ETA 4.0 min
+  01:21:04    pairs 105/435  |  1.4 q/s  |  ETA 3.8 min
+  01:21:14    pairs 120/435  |  1.4 q/s  |  ETA 3.7 min
+  01:21:25    pairs 135/435  |  1.4 q/s  |  ETA 3.5 min
+  01:21:35    pairs 150/435  |  1.4 q/s  |  ETA 3.3 min
+  01:21:45    pairs 165/435  |  1.4 q/s  |  ETA 3.1 min
+  01:21:55    pairs 180/435  |  1.4 q/s  |  ETA 2.9 min
+  01:22:06    pairs 195/435  |  1.4 q/s  |  ETA 2.8 min
+  01:22:17    pairs 210/435  |  1.4 q/s  |  ETA 2.6 min
+  01:22:27    pairs 225/435  |  1.4 q/s  |  ETA 2.4 min
+  01:22:37    pairs 240/435  |  1.4 q/s  |  ETA 2.3 min
+  01:22:47    pairs 255/435  |  1.4 q/s  |  ETA 2.1 min
+  01:22:57    pairs 270/435  |  1.4 q/s  |  ETA 1.9 min
+  01:23:07    pairs 285/435  |  1.4 q/s  |  ETA 1.7 min
+  01:23:17    pairs 300/435  |  1.5 q/s  |  ETA 1.6 min
+  01:23:28    pairs 315/435  |  1.4 q/s  |  ETA 1.4 min
+  01:23:30  [BUDGET] Stopped at 348/465 queries (74.8%) after 240s. Checkpoint saved; next run resumes. Outputs NOT rewritten this run - a partial sweep must not overwrite a complete one.
+  Completed in 242.6s
+
+============================================================
+  Improving Literature Gap Analysis (interpretive classifications)
+============================================================
+  Loading gap analysis data...
+  Generating interpreted gap analysis report...
+    Report written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\literature_gap_report.md
+    Length: 10,676 characters
+  Done.
+  Completed in 3.4s
+
+============================================================
+  Building Gap Synthesis Dashboard (scientific method framework)
+============================================================
+  [1/4] Initializing gap synthesis dashboard builder...
+  Found bibliometric data at C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\literature_gap_data.json
+  Using hardcoded gap definitions (15 priority gaps identified)
+  [2/4] Processing 15 research gaps...
+  [3/4] Writing HTML dashboard to C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Gap_Synthesis.html...
+  [4/4] Complete!
+  
+  Dashboard generated successfully:
+    Location: C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Gap_Synthesis.html
+    Size: 122,376 bytes
+    Gaps: 15
+  
+  To view: Open C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Gap_Synthesis.html in your web browser
+  Completed in 2.2s
+
+============================================================
+  Building Beta Cell Therapy Equity Analysis
+============================================================
+  [1/3] Loading trial data from ClinicalTrials.gov API results...
+        Loaded 29 trials, 211 sites, 26 countries
+  [2/3] Generating interactive HTML dashboard...
+  [3/3] Writing dashboard to C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Equity_Map.html...
+  
+  Success! Dashboard created at C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Equity_Map.html
+  File size: 76.1 KB
+  
+  Dashboard includes:
+    - Supply side: 8 major manufacturers, trial site distribution
+    - Demand side: Top 30 countries by diabetes burden, regional summary
+    - Gap analysis: Mismatch index, key findings, recommendations
+    - Full methodology & data sources
+    - Tufte-style design (no gradients, no emojis, serif headers)
+    - Sortable tables, responsive layout
+  Completed in 3.1s
+
+============================================================
+  Building Gap Deep Dives (all 15 gaps)
+============================================================
+  Starting Gap Deep Dives Dashboard generation...
+  Generating Gap Deep Dives HTML dashboard...
+  Successfully generated: C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Gap_Deep_Dives.html
+  File size: 221428 bytes (216.2 KB)
+  HTML dashboard complete with:
+    - Priority Matrix (15 gaps, sortable)
+    - Cluster Analysis (4 clusters)
+    - Individual Deep Dives (15 gaps, expandable)
+    - Evidence Catalog (6 reference tables)
+  Completed in 5.2s
+
+============================================================
+  Building Acronym & Abbreviation Database
+============================================================
+  Successfully generated Acronym Database
+  Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Acronym_Database.html
+  Statistics: 147 acronyms across 10 categories
+  Completed in 3.9s
+
+============================================================
+  Building Medical Data Dictionary (117 terms, cited)
+============================================================
+  Medical Data Dictionary generated successfully.
+  Output file: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Medical_Data_Dictionary.html
+  HTML size: 344.6 KB
+  Total terms: 114
+  Body systems: 9
+  Pathways: 6
+  Research gaps: 15
+  Completed in 3.3s
+
+============================================================
+  Building LADA Natural History Model (Gap #1 EXPLORATORY)
+============================================================
+  Generating LADA Natural History Model dashboard...
+  LADA Natural History Model: 58,041 bytes
+  Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\LADA_Natural_History.html
+  Completed in 2.8s
+
+============================================================
+  Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)
+============================================================
+  Islet Transplant Analysis: 85,139 bytes
+  Completed in 3.6s
+
+============================================================
+  Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)
+============================================================
+  Drug Repurposing Islet: 56,826 bytes
+  Completed in 4.3s
+
+============================================================
+  Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)
+============================================================
+  Immunomod LADA: 47,286 bytes
+  Completed in 3.5s
+
+============================================================
+  Building Treg in Diabetic Neuropathy (Gap #5 SILVER)
+============================================================
+  Treg Neuropathy: 67,051 bytes
+  Completed in 3.3s
+
+============================================================
+  Building CAR-T Access Barriers Analysis (Gap #6 GOLD)
+============================================================
+  CAR-T Access: 82,058 bytes
+  Completed in 4.0s
+
+============================================================
+  Building GKA Drug Repurposing Landscape (Gap #7 SILVER)
+============================================================
+  GKA Landscape: 62,024 bytes
+  Completed in 3.3s
+
+============================================================
+  Building Islet Transplant Registry Equity (Gap #11 GOLD)
+============================================================
+  Islet Equity: 43,493 bytes
+  Completed in 3.1s
+
+============================================================
+  Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)
+============================================================
+  Generic Drug Catalog: 51,346 bytes
+  Completed in 5.0s
+
+============================================================
+  Building GKA in LADA Analysis (Gap #9 EXPLORATORY)
+============================================================
+  GKA LADA: 40,936 bytes
+  Completed in 2.7s
+
+============================================================
+  Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)
+============================================================
+  LADA Prevalence: 52,314 bytes
+  Completed in 2.8s
+
+============================================================
+  Building Personalized Nutrition for Beta Cells (Gap #13 EXPLORATORY)
+============================================================
+  Nutrition Beta Cells: 45,414 bytes
+  Completed in 3.0s
+
+============================================================
+  Building Personalized Nutrition for LADA (Gap #14 EXPLORATORY)
+============================================================
+  Nutrition LADA: 57,086 bytes
+  Completed in 3.3s
+
+============================================================
+  Building GKA Pricing Trajectory Model (Gap #15 EXPLORATORY)
+============================================================
+  GKA Pricing: 47,788 bytes
+  Completed in 4.0s
+
+============================================================
+  Building Health Equity Dashboard (Gap #2 GOLD)
+============================================================
+  Health Equity: 83,555 bytes
+  Completed in 2.4s
+
+============================================================
+  Building Methodology & Validation Framework
+============================================================
+  Methodology: 63,477 bytes
+  Completed in 3.4s
+
+============================================================
+  Verifying PMIDs against PubMed API
+============================================================
+  PMID Verification Tool
+  ============================================================
+    [1/4] Scanning build scripts for PMIDs...
+           Found 343 unique PMIDs across 96 files
+    [2/4] Querying NCBI PubMed API...
+           Verified: 343 | Not Found: 0 | API Errors: 0
+    [3/4] Generating verification report...
+    Adjudicated off-topic PMIDs loaded: 29
+    Excluded PMIDs loaded: 49 (BACKGROUND=8, OFF_TOPIC=11, PROVENANCE=29, RETRACTED=1)
+           HTML report: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\PMID_Verification.html
+    [4/4] Saving JSON results...
+           JSON results: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\pmid_verification.json
+  
+    RESULTS
+    --------------------------------------------------------
+    [PASS] PMID:1611143 | Skyler JS (1992) - Cyclosporine in recent onset type I diabetes mellitus. Effec
+    [PASS] PMID:1697648 | Baekkeskov S (1990) - Identification of the 64K autoantigen in insulin-dependent d
+    [PASS] PMID:2189759 | Matschinsky FM (1990) - Glucokinase as glucose sensor and metabolic signal generator
+    [PASS] PMID:2523712 | Mosmann TR (1989) - TH1 and TH2 cells: different patterns of lymphokine secretio
+    [PASS] PMID:2873396 | Feutren G (1986) - Cyclosporin increases the rate and length of remissions in i
+    [PASS] PMID:3899825 | Matthews DR (1985) - Homeostasis model assessment: insulin resistance and beta-ce
+    [PASS] PMID:7955993 | Unknown (1994) - UK Prospective Diabetes Study. XII: Differences between Asia
+    [PASS] PMID:8024693 | Lan MS (1994) - Molecular cloning and identification of a receptor-type prot
+    [PASS] PMID:8366922 | Diabetes Control and Complications Trial Research Group (1993) - The effect of intensive treatment of diabetes on the develop
+    [PASS] PMID:8439348 | Dinarello CA (1993) - The role of interleukin-1 in disease.
+    [PASS] PMID:9357409 | Turner R (1997) - UKPDS 25: autoantibodies to islet-cell cytoplasm and glutami
+    [PASS] PMID:9521319 | Banchereau J (1998) - Dendritic cells and the control of immunity.
+    [PASS] PMID:9742976 | Unknown (1998) - Intensive blood-glucose control with sulphonylureas or insul
+    [PASS] PMID:9867128 | Peterson CM (1998) - Dapsone at onset of diabetes lowers glycated hemoglobin and 
+    [PASS] PMID:10415738 | Ryan ME (1999) - MMP-mediated events in diabetes.
+    [PASS] PMID:10911004 | Shapiro AM (2000) - Islet transplantation in seven patients with type 1 diabetes
+    [PASS] PMID:11015619 | Rusnak F (2000) - Calcineurin: form and function.
+    [PASS] PMID:11095109 | Bennet W (2000) - Isolated human islets trigger an instant blood mediated infl
+    [PASS] PMID:11484077 | Lohmann T (2001) - Titre and combination of ICA and autoantibodies to glutamic 
+    [PASS] PMID:11565518 | Brenner BM (2001) - Effects of losartan on renal and cardiovascular outcomes in 
+    [PASS] PMID:11832527 | Knowler WC (2002) - Reduction in the incidence of type 2 diabetes with lifestyle
+    [PASS] PMID:12021247 | Hundal RS (2002) - Mechanism by which high-dose aspirin improves glucose metabo
+    [PASS] PMID:12202461 | Collin P (2002) - Endocrinological disorders and celiac disease.
+    [PASS] PMID:12345678 | Ministerial Meeting on Population of the Non-Aligned Movement (1993: Bali) (1994) - Denpasar Declaration on Population and Development.
+    [PASS] PMID:12612578 | Fontenot JD (2003) - Foxp3 programs the development and function of CD4+CD25+ reg
+    [PASS] PMID:14525967 | Schroder K (2004) - Interferon-gamma: an overview of signals, mechanisms and fun
+    [PASS] PMID:14706052 | Aronson D (2004) - Association between fasting glucose and C-reactive protein i
+    [PASS] PMID:15016488 | Jones MH (2004) - Two prognostically significant subtypes of high-grade lung n
+    [PASS] PMID:15043959 | Gale EA (2004) - European Nicotinamide Diabetes Intervention Trial (ENDIT): a
+    [PASS] PMID:15266224 | Bell DS (2004) - The role of C-peptide levels in screening for latent autoimm
+    [PASS] PMID:15325833 | Colhoun HM (2004) - Primary prevention of cardiovascular disease with atorvastat
+    [PASS] PMID:15356308 | Yki-J?rvinen H (2004) - Thiazolidinediones.
+    [PASS] PMID:15551269 | De Meyts P (2004) - Insulin and its receptor: structure, function and evolution.
+    [PASS] PMID:15793177 | Doolan A (2005) - Use of HLA typing in diagnosing celiac disease in patients w
+    [PASS] PMID:15919781 | Brownlee M (2005) - The pathobiology of diabetic complications: a unifying mecha
+    [PASS] PMID:15923354 | Brissova M (2005) - Assessment of human pancreatic islet architecture and compos
+    [PASS] PMID:15928679 | Macian F (2005) - NFAT proteins: key regulators of T-cell development and func
+    [PASS] PMID:16120857 | Vincenti F (2005) - Costimulation blockade with belatacept in renal transplantat
+    [PASS] PMID:16214598 | Dormandy JA (2005) - Secondary prevention of macrovascular events in patients wit
+    [PASS] PMID:16306343 | Stenstr?m G (2005) - Latent autoimmune diabetes in adults: definition, prevalence
+    [PASS] PMID:16310551 | Keech A (2005) - Effects of long-term fenofibrate therapy on cardiovascular e
+    [PASS] PMID:16731815 | Scherer PE (2006) - Adipose tissue: from lipid storage compartment to endocrine 
+    [PASS] PMID:16898223 | Merani S (2006) - Chemokines and their receptors in islet allograft rejection 
+    [PASS] PMID:17005949 | Shapiro AM (2006) - International trial of the Edmonton protocol for islet trans
+    [PASS] PMID:17065674 | Li C (2006) - Trends in hyperinsulinemia among nondiabetic adults in the U
+    [PASS] PMID:17261637 | Gromada J (2007) - Alpha-cells of the endocrine pancreas: 35 years of research 
+    [PASS] PMID:17359512 | Vincenti F (2007) - Results of an international, randomized trial comparing gluc
+    [PASS] PMID:17429083 | Larsen CM (2007) - Interleukin-1-receptor antagonist in type 2 diabetes mellitu
+    [PASS] PMID:17519436 | Balk EM (2007) - Effect of chromium supplementation on glucose metabolism and
+    [PASS] PMID:17942684 | Wenzlau JM (2007) - The cation efflux transporter ZnT8 (Slc30A8) is a major auto
+    [PASS] PMID:17965721 | Liu C (2007) - B lymphocyte-directed immunotherapy promotes long-term islet
+    [PASS] PMID:18073361 | Willi C (2007) - Active smoking and the risk of type 2 diabetes: a systematic
+    [PASS] PMID:18094377 | Ekberg H (2007) - Reduced exposure to calcineurin inhibitors in renal transpla
+    [PASS] PMID:18397984 | Zhang Y (2008) - Treatment of type 2 diabetes and dyslipidemia with the natur
+    [PASS] PMID:18442638 | Yin J (2008) - Efficacy of berberine in patients with type 2 diabetes melli
+    [PASS] PMID:18539917 | Action to Control Cardiovascular Risk in Diabetes Study Group (2008) - Effects of intensive glucose lowering in type 2 diabetes.
+    [PASS] PMID:18662538 | Massagu? J (2008) - TGFbeta in Cancer.
+    [PASS] PMID:18713146 | Berney T (2009) - Rapamycin in islet transplantation: friend or foe?
+    [PASS] PMID:18725575 | LeBien TW (2008) - B lymphocytes: how they develop and function.
+    [PASS] PMID:18843118 | Ludvigsson J (2008) - GAD treatment and insulin secretion in recent-onset type 1 d
+    [PASS] PMID:19041189 | Brown N (2009) - Low-dose naltrexone for disease prevention and quality of li
+    [PASS] PMID:19095723 | Ridker PM (2009) - C-reactive protein: eighty years from discovery to emergence
+    [PASS] PMID:19104422 | Alejandro R (2008) - 2008 Update from the Collaborative Islet Transplant Registry
+    [PASS] PMID:19132915 | Korn T (2009) - IL-17 and Th17 Cells.
+    [PASS] PMID:19133409 | Hartweg J (2009) - Potential impact of omega-3 treatment on cardiovascular dise
+    [PASS] PMID:19148081 | Unknown (2009) - Your inbox, Mr President.
+    [PASS] PMID:19169263 | Liesz A (2009) - Regulatory T cells are key cerebroprotective immunomodulator
+    [PASS] PMID:19373249 | Matschinsky FM (2009) - Assessing the potential of glucokinase activators in diabete
+    [PASS] PMID:19404608 | Agardh CD (2009) - GAD65 vaccination: 5 years of follow-up in a randomised dose
+    [PASS] PMID:19575028 | Gaffen SL (2009) - Structure and signalling in the IL-17 receptor family.
+    [PASS] PMID:19633656 | Feuerer M (2009) - Lean, but not obese, fat is enriched for a unique population
+    [PASS] PMID:19794004 | Rajpathak SN (2009) - Statin therapy and risk of developing type 2 diabetes: a met
+    [PASS] PMID:19805629 | Lamkanfi M (2009) - Glyburide inhibits the Cryopyrin/Nalp3 inflammasome.
+    [PASS] PMID:19940299 | Pescovitz MD (2009) - Rituximab, B-lymphocyte depletion, and preservation of beta-
+    [PASS] PMID:20154735 | Saraiva M (2010) - The regulation of IL-10 production by immune cells.
+    [PASS] PMID:20192806 | Zhu J (2010) - Differentiation of effector CD4 T cell populations (*).
+    [PASS] PMID:20228401 | ACCORD Study Group (2010) - Effects of intensive blood-pressure control in type 2 diabet
+    [PASS] PMID:20336151 | Paul WE (2010) - How are T(H)2-type immune responses initiated and amplified?
+    [PASS] PMID:20500789 | Wall R (2010) - Fatty acids from fish: the anti-inflammatory potential of lo
+    [PASS] PMID:20538833 | Goicoechea M (2010) - Effect of allopurinol in chronic kidney disease progression 
+    [PASS] PMID:20570966 | McGovern DP (2010) - Fucosyltransferase 2 (FUT2) non-secretor status is associate
+    [PASS] PMID:21212348 | Vivier E (2011) - Innate or adaptive immunity? The example of natural killer c
+    [PASS] PMID:21323736 | Beckwith J (2012) - A health economic analysis of clinical islet transplantation
+    [PASS] PMID:21372320 | Cargnello M (2011) - Activation and function of the MAPKs and their substrates, t
+    [PASS] PMID:21525462 | Matschinsky FM (2011) - Glucokinase activators for diabetes therapy: May 2010 status
+    [PASS] PMID:21719096 | Orban T (2011) - Co-stimulation modulation with abatacept in patients with re
+    [PASS] PMID:21719305 | Hang Y (2011) - MafA and MafB activity in pancreatic ? cells.
+    [PASS] PMID:21775755 | Ziegler D (2011) - Efficacy and safety of antioxidant treatment with ?-lipoic a
+    [PASS] PMID:21864487 | Ukena SN (2011) - Isolation strategies of regulatory T cells for clinical tria
+    [PASS] PMID:21867926 | Zhang N (2011) - CD8(+) T cells: foot soldiers of the immune system.
+    [PASS] PMID:21959959 | Loopstra-Masters RC (2011) - Proinsulin-to-C-peptide ratio versus proinsulin-to-insulin r
+    [PASS] PMID:21997792 | Murray PJ (2011) - Protective and pathogenic functions of macrophage subsets.
+    [PASS] PMID:22109896 | Fasano A (2012) - Leaky gut and autoimmune diseases.
+    [PASS] PMID:22315720 | Noble JA (2012) - Genetics of type 1 diabetes.
+    [PASS] PMID:22336824 | Shan D (2012) - Pentoxifylline for diabetic kidney disease.
+    [PASS] PMID:22349456 | Andreae SJ (2012) - Recruitment of a rural, southern, predominantly African-Amer
+    [PASS] PMID:22683128 | Tab?k AG (2012) - Prediabetes: a high-risk state for diabetes development.
+    [PASS] PMID:22980982 | Talchai C (2012) - Pancreatic ? cell dedifferentiation as a mechanism of diabet
+    [PASS] PMID:23061757 | Takita M (2012) - Safety and tolerability of the T-cell depletion protocol cou
+    [PASS] PMID:23248199 | Hawa MI (2013) - Adult-onset autoimmune diabetes in Europe is prevalent with 
+    [PASS] PMID:23413806 | Jones AG (2013) - The clinical utility of C-peptide measurement in the care of
+    [PASS] PMID:23562078 | Sene A (2013) - Impaired cholesterol efflux in senescent macrophages promote
+    [PASS] PMID:23738527 | Cheung CY (2013) - A method for accounting for maintenance costs in flux balanc
+    [PASS] PMID:23780460 | Ziegler AG (2013) - Seroconversion to multiple islet autoantibodies and risk of 
+    [PASS] PMID:23817699 | Goldfine AB (2013) - Salicylate (salsalate) in patients with type 2 diabetes: a r
+    [PASS] PMID:23835325 | Ilonen J (2013) - Patterns of ?-cell autoantibody appearance and genetic assoc
+    [PASS] PMID:23890997 | Atkinson MA (2014) - Type 1 diabetes.
+    [PASS] PMID:24056026 | Oh YS (2014) - Treatment with glucokinase activator, YH-GKA, increases cell
+    [PASS] PMID:24085506 | Rickels MR (2013) - Improvement in insulin sensitivity after human islet transpl
+    [PASS] PMID:24497205 | Syngle A (2014) - Minocycline improves peripheral and autonomic neuropathy in 
+    [PASS] PMID:24506867 | Gao T (2014) - Pdx1 maintains ? cell identity and function by repressing an
+    [PASS] PMID:24508508 | Li J (2014) - Rapamycin: one drug, many effects.
+    [PASS] PMID:24598244 | Krause S (2014) - GAD autoantibody affinity in adult patients with latent auto
+    [PASS] PMID:24691031 | Rickels MR (2014) - Insulin sensitivity index in type 1 diabetes and following h
+    [PASS] PMID:24850385 | Hardie DG (2014) - AMP-activated protein kinase: maintaining energy homeostasis
+    [PASS] PMID:24871322 | Antvorskov JC (2014) - Dietary gluten and the development of type 1 diabetes.
+    [PASS] PMID:24970885 | Navarro-Gonz?lez JF (2015) - Effect of pentoxifylline on renal function and urinary album
+    [PASS] PMID:24997559 | Griffin KJ (2014) - Combination therapy with sitagliptin and lansoprazole in pat
+    [PASS] PMID:25131812 | Heller C (2014) - Strategies addressing barriers to clinical trial enrollment 
+    [PASS] PMID:25190079 | Tanaka T (2014) - IL-6 in inflammation, immunity, and disease.
+    [PASS] PMID:25230243 | Preciado-Puga MC (2014) - Markers of the progression of complications in patients with
+    [PASS] PMID:25287711 | Rutter GA (2015) - SLC30A8 mutations in type 2 diabetes.
+    [PASS] PMID:25324018 | Hale C (2015) - Molecular targeting of the GK-GKRP pathway in diabetes.
+    [PASS] PMID:25498346 | Lan J (2015) - Meta-analysis of the effect and safety of berberine in the t
+    [PASS] PMID:25587654 | O'Shea JJ (2015) - The JAK-STAT pathway: impact on human disease and therapeuti
+    [PASS] PMID:25714673 | Hu P (2015) - Loss of survival factors and activation of inflammatory casc
+    [PASS] PMID:25751624 | Onengut-Gumuscu S (2015) - Fine mapping of type 1 diabetes susceptibility loci and evid
+    [PASS] PMID:25772230 | Ferdinand KC (2015) - Racial/ethnic disparities in prevalence and care of patients
+    [PASS] PMID:25834231 | Sandoval DA (2015) - Physiology of proglucagon peptides: role of glucagon and GLP
+    [PASS] PMID:25940230 | Mart?nez-Gonz?lez MA (2015) - Benefits of the Mediterranean Diet: Insights From the PREDIM
+    [PASS] PMID:26106223 | Chakera AJ (2015) - Recognition and Management of Individuals With Hyperglycemia
+    [PASS] PMID:26322160 | Barbagallo M (2015) - Magnesium and type 2 diabetes.
+    [PASS] PMID:26378978 | Zinman B (2015) - Empagliflozin, Cardiovascular Outcomes, and Mortality in Typ
+    [PASS] PMID:26404926 | Insel RA (2015) - Staging presymptomatic type 1 diabetes: a scientific stateme
+    [PASS] PMID:26590418 | Zeevi D (2015) - Personalized Nutrition by Prediction of Glycemic Responses.
+    [PASS] PMID:26656660 | Kalliolias GD (2016) - TNF biology, pathogenic mechanisms and emerging therapeutic 
+    [PASS] PMID:26784127 | Rodbard D (2016) - Continuous Glucose Monitoring: A Review of Successes, Challe
+    [PASS] PMID:26897744 | Pop-Busui R (2016) - Inflammation as a Therapeutic Target for Diabetic Neuropathi
+    [PASS] PMID:27159554 | Wong TY (2016) - Diabetic retinopathy.
+    [PASS] PMID:27189025 | DeFronzo RA (2015) - Type 2 diabetes mellitus.
+    [PASS] PMID:27277934 | Thakker D (2016) - Statin use and the risk of developing diabetes: a network me
+    [PASS] PMID:27512793 | Feingold KR (2000) - The Insulin Receptor and Its Signal Transduction Network.
+    [PASS] PMID:27727279 | Todd JA (2016) - Regulatory T Cell Responses in Participants with Type 1 Diab
+    [PASS] PMID:27821710 | Baranovski BM (2016) - Exploration of ?1-antitrypsin treatment protocol for islet t
+    [PASS] PMID:27878313 | Vallon V (2017) - Targeting renal glucose reabsorption to treat hyperglycaemia
+    [PASS] PMID:28010783 | Hoppe C (2017) - Minority underrepresentation in cardiovascular outcome trial
+    [PASS] PMID:28025462 | Kaku K (2017) - Empagliflozin and Cardiovascular Outcomes in Asian Patients 
+    [PASS] PMID:28086098 | Zhang Q (2017) - 30 Years of NF-?B: A Blossoming of Relevance to Human Pathob
+    [PASS] PMID:28118453 | Beck RW (2017) - Effect of Continuous Glucose Monitoring on Glycemic Control 
+    [PASS] PMID:28199814 | Taylor PC (2017) - Baricitinib versus Placebo or Adalimumab in Rheumatoid Arthr
+    [PASS] PMID:28283069 | Saxton RA (2017) - mTOR Signaling in Growth, Metabolism, and Disease.
+    [PASS] PMID:28314945 | Hattersley AT (2017) - Precision diabetes: learning from monogenic diabetes.
+    [PASS] PMID:28375156 | Bi X (2017) - ?-3 polyunsaturated fatty acids ameliorate type 1 diabetes a
+    [PASS] PMID:28397826 | Daniyan AF (2017) - Immunotherapy: Hiding in plain sight: immune escape in the e
+    [PASS] PMID:28431241 | Manning BD (2017) - AKT/PKB Signaling: Navigating the Network.
+    [PASS] PMID:28522654 | Alicic RZ (2017) - Diabetic Kidney Disease: Challenges, Progress, and Possibili
+    [PASS] PMID:28731034 | Petersen MC (2017) - Regulation of hepatic glucose metabolism in health and disea
+    [PASS] PMID:28776086 | Rena G (2017) - The mechanisms of action of metformin.
+    [PASS] PMID:28885622 | Buzzetti R (2017) - Adult-onset autoimmune diabetes: current knowledge and impli
+    [PASS] PMID:29291885 | Zanelli SA (2018) - Short children born small for gestational age outcomes in th
+    [PASS] PMID:29414425 | Liese AD (2018) - Neighborhood characteristics, food deserts, rurality, and ty
+    [PASS] PMID:29567707 | June CH (2018) - CAR T cell immunotherapy for human cancer.
+    [PASS] PMID:29590046 | Zhao L (2018) - Gut bacteria selectively promoted by dietary fibers alleviat
+    [PASS] PMID:29617641 | Drucker DJ (2018) - Mechanisms of Action and Therapeutic Application of Glucagon
+    [PASS] PMID:29619531 | Achenbach P (2018) - Autoantibodies to N-terminally truncated GAD improve clinica
+    [PASS] PMID:29623672 | Dludla PV (2018) - A Systematic Review on the Protective Effect of N-Acetyl Cys
+    [PASS] PMID:29710129 | Hernandez I (2018) - Total Costs of Chimeric Antigen Receptor T-Cell Immunotherap
+    [PASS] PMID:29754952 | Sutton EF (2018) - Early Time-Restricted Feeding Improves Insulin Sensitivity, 
+    [PASS] PMID:29909913 | Gee AP (2018) - GMP CAR-T cell production.
+    [PASS] PMID:29988125 | Ovalle F (2018) - Verapamil and beta cell function in adults with recent-onset
+    [PASS] PMID:30041834 | Mishra R (2018) - A Global Perspective of Latent Autoimmune Diabetes in Adults
+    [PASS] PMID:30303773 | Huising MO (2018) - The Difference ?-Cells Make in Glucose Control.
+    [PASS] PMID:30415610 | Ridker PM (2019) - Low-Dose Methotrexate for the Prevention of Atherosclerotic 
+    [PASS] PMID:30586620 | Frey N (2019) - Cytokine Release Syndrome with Chimeric Antigen Receptor T C
+    [PASS] PMID:30657336 | Foster NC (2019) - State of Type 1 Diabetes Management and Outcomes from the T1
+    [PASS] PMID:30899369 | Qing L (2019) - Metformin induces the M2 macrophage polarization to accelera
+    [PASS] PMID:30949058 | Matschinsky FM (2019) - The Central Role of Glucokinase in Glucose Homeostasis: A Pe
+    [PASS] PMID:31036962 | Swanson KV (2019) - The NLRP3 inflammasome: molecular activation and regulation 
+    [PASS] PMID:31157579 | Lin JK (2019) - Cost Effectiveness of Chimeric Antigen Receptor T-Cell Thera
+    [PASS] PMID:31173679 | Pittas AG (2019) - Vitamin D Supplementation and Prevention of Type 2 Diabetes.
+    [PASS] PMID:31175156 | Klip A (2019) - Thirty sweet years of GLUT4.
+    [PASS] PMID:31177185 | Battelino T (2019) - Clinical Targets for Continuous Glucose Monitoring Data Inte
+    [PASS] PMID:31180194 | Herold KC (2019) - An Anti-CD3 Antibody, Teplizumab, in Relatives at Risk for T
+    [PASS] PMID:31182921 | Yang F (2019) - Metformin Inhibits the NLRP3 Inflammasome via AMPK/mTOR-depe
+    [PASS] PMID:31197153 | Feldman EL (2019) - Diabetic neuropathy.
+    [PASS] PMID:31263284 | Depommier C (2019) - Supplementation with Akkermansia muciniphila in overweight a
+    [PASS] PMID:31296866 | McIntyre HD (2019) - Gestational diabetes mellitus.
+    [PASS] PMID:31304320 | Abr?moff MD (2018) - Pivotal trial of an autonomous AI-based diagnostic system fo
+    [PASS] PMID:31615852 | Vantyghem MC (2019) - Ten-Year Outcome of Islet Alone or Islet After Kidney Transp
+    [PASS] PMID:31618560 | Brown SA (2019) - Six-Month Randomized, Multicenter Trial of Closed-Loop Contr
+    [PASS] PMID:31733140 | Tardif JC (2019) - Efficacy and Safety of Low-Dose Colchicine after Myocardial 
+    [PASS] PMID:32017635 | Sakaguchi S (2020) - Regulatory T Cells and Human Disease.
+    [PASS] PMID:32175717 | Khan MAB (2020) - Epidemiology of Type 2 Diabetes - Global Burden of Disease a
+    [PASS] PMID:32307525 | Li X (2020) - Decline Pattern of Beta-cell Function in Adult-onset Latent 
+    [PASS] PMID:32312859 | Clemens KK (2020) - Sex Disparities in Cardiovascular Outcome Trials of Populati
+    [PASS] PMID:32535920 | Ran T (2020) - Cost of decentralized CAR T-cell production in an academic n
+    [PASS] PMID:32627352 | Markmann JF (2021) - Phase 3 trial of human islet-after-kidney transplantation in
+    [PASS] PMID:32694767 | Friedman JM (2019) - Leptin and the endocrine control of energy balance.
+    [PASS] PMID:32712220 | Wei R (2020) - Dapagliflozin promotes beta cell regeneration by inducing pa
+    [PASS] PMID:32754804 | Hannelius U (2020) - Efficacy of GAD-alum immunotherapy associated with HLA-DR3-D
+    [PASS] PMID:32847960 | Buzzetti R (2020) - Management of Latent Autoimmune Diabetes in Adults: A Consen
+    [PASS] PMID:32862232 | Wheeler DC (2020) - The dapagliflozin and prevention of adverse outcomes in chro
+    [PASS] PMID:32929230 | Deacon CF (2020) - Dipeptidyl peptidase 4 inhibitors in the treatment of type 2
+    [PASS] PMID:32953989 | Whiteside TL (2019) - Human regulatory T cells (Treg) and their response to cancer
+    [PASS] PMID:33139407 | Hill-Briggs F (2020) - Social Determinants of Health and Diabetes: A Scientific Rev
+    [PASS] PMID:33155826 | Agarwal S (2021) - Racial-Ethnic Disparities in Diabetes Technology use Among Y
+    [PASS] PMID:33264825 | Bakris GL (2020) - Effect of Finerenone on Chronic Kidney Disease Outcomes in T
+    [PASS] PMID:33550442 | Boughton CK (2021) - New closed-loop insulin systems.
+    [PASS] PMID:33610858 | Bahl V (2021) - Genetic activation of ?-cell glucokinase in mice causes enha
+    [PASS] PMID:33622669 | Klein KR (2021) - The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Co
+    [PASS] PMID:34021020 | Ludvigsson J (2021) - Intralymphatic Glutamic Acid Decarboxylase With Vitamin D Su
+    [PASS] PMID:34180979 | Kahn SE (2021) - The ? Cell in Diabetes: Integrating Biomarkers With Function
+    [PASS] PMID:34256014 | Wastyk HC (2021) - Gut-microbiota-targeted diets modulate human immune status.
+    [PASS] PMID:34318969 | S?rgjerd EP (2021) - Low C-peptide together with a high glutamic acid decarboxyla
+    [PASS] PMID:34421203 | Majidi S (2021) - Inequities in Health Outcomes in Children and Adults With Ty
+    [PASS] PMID:34763823 | Herman WH (2021) - 100?years of Insulin: Why is Insulin So Expensive and What C
+    [PASS] PMID:35028608 | Shapiro AMJ (2021) - Insulin expression and C-peptide in type 1 diabetes subjects
+    [PASS] PMID:35180212 | Shyr ZA (2022) - SGLT2 inhibitors therapy protects glucotoxicity-induced ?-ce
+    [PASS] PMID:35203496 | Arjomandnejad M (2022) - CAR-T Regulatory (CAR-Treg) Cells: Engineering and Applicati
+    [PASS] PMID:35466661 | Dutta D (2022) - Efficacy and safety of hydroxychloroquine for managing glyce
+    [PASS] PMID:35551292 | Yang W (2022) - Dorzagliatin add-on therapy to metformin in patients with ty
+    [PASS] PMID:35551293 | Klein KR (2022) - A new class of drug in the diabetes toolbox.
+    [PASS] PMID:35551294 | Zhu D (2022) - Dorzagliatin in drug-na?ve patients with type 2 diabetes: a 
+    [PASS] PMID:35551307 | Mahajan A (2022) - Multi-ancestry genetic study of type 2 diabetes highlights t
+    [PASS] PMID:35563495 | Nakamura A (2022) - Effects of Sodium-Glucose Co-Transporter-2 Inhibitors on Pan
+    [PASS] PMID:35588757 | Marfil-Garza BA (2022) - Pancreatic islet transplantation in type 1 diabetes: 20-year
+    [PASS] PMID:35665810 | Nowak C (2022) - Intralymphatic GAD-Alum (Diamyd?) Improves Glycemic Control 
+    [PASS] PMID:35784546 | Zhang R (2022) - Effects of Berberine Plus Inulin on Diabetes Care in Patient
+    [PASS] PMID:35845323 | Singh N (2022) - Exacerbation of Racial Disparities in Living Donor Kidney Tr
+    [PASS] PMID:35887740 | Noguchi H (2022) - Clinical Islet Transplantation Covered by Health Insurance i
+    [PASS] PMID:35912345 | Huang X (2022) - Solvent Gaming Chemistry to Control the Quality of Halide Pe
+    [PASS] PMID:36109639 | Mackensen A (2022) - Anti-CD19 CAR T cell therapy for refractory systemic lupus e
+    [PASS] PMID:36109742 | Zhang J (2022) - Twenty-year trends in racial and ethnic enrollment in large 
+    [PASS] PMID:36113507 | Gregory GA (2022) - Global incidence, prevalence, and mortality of type 1 diabet
+    [PASS] PMID:36215990 | Unknown (2022) - Correction to Lancet Diabetes Endocrinol 2022; 10: 741-60.
+    [PASS] PMID:36288281 | Ottaviano G (2022) - Phase 1 clinical trial of CRISPR-engineered CAR19 universal 
+    [PASS] PMID:36449148 | Syed YY (2022) - Dorzagliatin: First Approval.
+    [PASS] PMID:36455116 | Forouhi NG (2022) - Nutrition and Type 2 Diabetes: Computational Optimization Mo
+    [PASS] PMID:36474045 | Aragam KG (2022) - Discovery and systematic characterization of risk variants a
+    [PASS] PMID:36566139 | Yeung MY (2022) - Kidney Organ Allocation System: How to Be Fair.
+    [PASS] PMID:36643381 | Miwa Y (2022) - Effects of Low-Dose Colchicine on Serum High-Sensitivity C-R
+    [PASS] PMID:36826844 | Forlenza GP (2023) - Effect of Verapamil on Pancreatic Beta Cell Function in Newl
+    [PASS] PMID:37016949 | Dimentstein K (2023) - Involvement of Racially and Ethnically Minoritized Youths in
+    [PASS] PMID:37026004 | Ballou C (2023) - Matching for HLA-DR excluding diabetogenic HLA-DR3 and HLA-D
+    [PASS] PMID:37105208 | Chetboun M (2023) - Association between primary graft function and 5-year outcom
+    [PASS] PMID:37122431 | Cigrovski Berkovic M (2023) - Semaglutide-eye-catching results.
+    [PASS] PMID:37148899 | Philis-Tsimikas A (2023) - Switching to once-weekly insulin icodec versus once-daily in
+    [PASS] PMID:37156252 | Mathieu C (2023) - Switching to once-weekly insulin icodec versus once-daily in
+    [PASS] PMID:37202589 | Speake C (2023) - Approval of teplizumab: implications for patients.
+    [PASS] PMID:37217319 | Foss R (2023) - Disparities in Diabetes Care: Differences Between Rural and 
+    [PASS] PMID:37221401 | Greenhill C (2023) - Gut microbiota influences effectiveness of anti-diabetic dru
+    [PASS] PMID:37223016 | Yang W (2023) - Evaluation of efficacy and safety of glucokinase activators-
+    [PASS] PMID:37351171 | Jiang X (2023) - Integration of metabolomics and peptidomics reveals distinct
+    [PASS] PMID:37354562 | Lingvay I (2023) - Once-Weekly Insulin Icodec vs Once-Daily Insulin Degludec in
+    [PASS] PMID:37356445 | Hassan S (2023) - Disparities in diabetes prevalence and management by race an
+    [PASS] PMID:37356446 | GBD 2021 Diabetes Collaborators (2023) - Global, regional, and national burden of diabetes from 1990 
+    [PASS] PMID:37356449 | Watkins DA (2023) - Measuring the global burden of diabetes: implications for he
+    [PASS] PMID:37359825 | Wisel SA (2023) - A Multi-Modal Approach to Islet and Pancreas Transplantation
+    [PASS] PMID:37366315 | Jastreboff AM (2023) - Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A 
+    [PASS] PMID:37369232 | Frias JP (2023) - Efficacy and safety of oral orforglipron in patients with ty
+    [PASS] PMID:37385277 | Sherrill CH (2023) - The pursuit of optimal semaglutide dosing in type 2 diabetes
+    [PASS] PMID:37385967 | Zeng J (2023) - Diabetes remission in drug-na?ve patients with type 2 diabet
+    [PASS] PMID:37399599 | Shuey MM (2023) - A genetically supported drug repurposing pipeline for diabet
+    [PASS] PMID:37428296 | Ramu D (2023) - The worldwide prevalence of latent autoimmune diabetes of ad
+    [PASS] PMID:37583402 | Dutta D (2023) - Verapamil improves One-Year C-Peptide Levels in Recent Onset
+    [PASS] PMID:37715820 | Cromer SJ (2023) - Racial/ethnic and socioeconomic disparities in achievement o
+    [PASS] PMID:37748491 | Schett G (2023) - CAR T-cell therapy in autoimmune diseases.
+    [PASS] PMID:37861217 | Ramos EL (2023) - Teplizumab and ?-Cell Function in Newly Diagnosed Type 1 Dia
+    [PASS] PMID:37889505 | Sadeghi A (2024) - Recent advances in probiotic breads; a market trend in the f
+    [PASS] PMID:37909353 | Parker ED (2024) - Economic Costs of Diabetes in the U.S. in 2022.
+    [PASS] PMID:37987795 | Zhang M (2024) - The effect of a methylxanthine vasodilator: pentoxifylline o
+    [PASS] PMID:38055252 | Waibel M (2023) - Baricitinib and ?-Cell Function in Patients with New-Onset T
+    [PASS] PMID:38078589 | American Diabetes Association Professional Practice Committee (2024) - 2. Diagnosis and Classification of Diabetes: Standards of Ca
+    [PASS] PMID:38234567 | Longevity OMAC (2024) - Retracted: Ginsenoside Rg1 Ameliorates Acute Renal Ischemia/
+    [PASS] PMID:38349844 | Latres E (2024) - Evidence for C-Peptide as a Validated Surrogate to Predict C
+    [PASS] PMID:38578067 | Varughese GI (2024) - Existing and emerging GLP-1 receptor agonist therapy: Ramifi
+    [PASS] PMID:38639547 | Schousboe JT (2024) - Cost-Effectiveness of Newer Pharmacologic Treatments in Adul
+    [PASS] PMID:38783768 | Jiang Y (2024) - Recent drug development of dorzagliatin, a new glucokinase a
+    [PASS] PMID:38918878 | Guan J (2024) - Emerging insights into the role of IL-1 inhibitors and colch
+    [PASS] PMID:39084449 | Yue W (2024) - Alleviated diabetic osteoporosis and peripheral neuropathic 
+    [PASS] PMID:39270686 | Bergenstal RM (2024) - Once-weekly insulin efsitora alfa versus once-daily insulin 
+    [PASS] PMID:39412512 | Machado J?nior PAB (2024) - SGLT2 inhibitors and NLRP3 inflammasome: potential target in
+    [PASS] PMID:39525461 | Sinclair MR (2024) - The diabetes cardiovascular outcomes trials and racial and e
+    [PASS] PMID:39613428 | Wych J (2024) - Investigating the effect of verapamil on preservation of bet
+    [PASS] PMID:39629068 | Liang TT (2024) - Evaluating the Overall Safety of Glucokinase Activators in P
+    [PASS] PMID:39634180 | Shamanna P (2024) - Personalized nutrition in type 2 diabetes remission: applica
+    [PASS] PMID:39651984 | American Diabetes Association Professional Practice Committee (2025) - Summary of Revisions: Standards of Care in Diabetes-2025.
+    [PASS] PMID:39697180 | Yedjou CG (2024) - Health and Racial Disparities in Diabetes Mellitus Prevalenc
+    [PASS] PMID:39843169 | Liu Y (2025) - Dapagliflozin plus calorie restriction for remission of type
+    [PASS] PMID:39911401 | Hu L (2025) - Targeting TCMR-associated cytokine genes for drug screening 
+    [PASS] PMID:39951130 | Rickels MR (2025) - Islet Transplantation Versus Standard of Care for Type 1 Dia
+    [PASS] PMID:40032831 | Loesch DP (2025) - Identification of plasma proteomic markers underlying polyge
+    [PASS] PMID:40111679 | Tu S (2026) - Effect of Verapamil on Blood Glucose in Type 1 and Type 2 Di
+    [PASS] PMID:40249888 | Salazar-Riojas R (2025) - Decentralized Point-of-Care Manufacturing of CD19 Chimeric A
+    [PASS] PMID:40272935 | Roman J (2025) - Functional and Mechanistic Explanation for the Unique Clinic
+    [PASS] PMID:40366501 | Dickens LT (2025) - Disparities in Diabetes in Pregnancy and the Role of Social 
+    [PASS] PMID:40464081 | McEwan P (2025) - The health economics of insulin therapy: How do we address t
+    [PASS] PMID:40544428 | Reichman TW (2025) - Stem Cell-Derived, Fully Differentiated Islets for Type 1 Di
+    [PASS] PMID:40544435 | Rosenstock J (2025) - Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist,
+    [PASS] PMID:40548694 | Rosenstock J (2025) - Weekly Fixed-Dose Insulin Efsitora in Type 2 Diabetes withou
+    [PASS] PMID:40562047 | Philis-Tsimikas A (2025) - Once-weekly insulin efsitora alfa versus once-daily insulin 
+    [PASS] PMID:40562048 | Blevins T (2025) - Once-weekly insulin efsitora alfa versus once-daily insulin 
+    [PASS] PMID:40573322 | Jin G (2025) - In Vivo PK-PD and Drug-Drug Interaction Study of Dorzagliati
+    [PASS] PMID:40598585 | Beese SE (2025) - A systematic review and network meta-analysis of interventio
+    [PASS] PMID:40648980 | Karamitsos K (2025) - The Role of NLRP3 Inflammasome in Type 2 Diabetes Mellitus a
+    [PASS] PMID:40650745 | Degroote L (2025) - Verapamil and low-dose anti-mouse thymocyte globulin combina
+    [PASS] PMID:40690616 | Agius L (2025) - Glucokinase Activators. A Humbling Lesson in Drug Developmen
+    [PASS] PMID:40697602 | Chai SY (2025) - Sodium-glucose co-transporter 2 inhibitors improve insulin r
+    [PASS] PMID:40737658 | Elebaid A (2025) - UNVEILING LADA: PREVALENCE AND CHARACTERISTICS AMONG TYPE 2 
+    [PASS] PMID:40814306 | Underwood PC (2025) - Race and ethnic disparities in insulin pump and continuous g
+    [PASS] PMID:40896829 | Bai Z (2025) - Effects of Dorzagliatin, a Glucokinase Activator, on ?- and 
+    [PASS] PMID:40898408 | Zhang P (2025) - Real-world observations of GLP-1 receptor agonists and SGLT-
+    [PASS] PMID:40982327 | Sherifali DT (2025) - Type 2 Diabetes Remission: A Systematic Review and Meta-anal
+    [PASS] PMID:41326666 | Edison P (2026) - Liraglutide in mild to moderate Alzheimer's disease: a phase
+    [PASS] PMID:41356006 | Gandhi A (2025) - GLP-1 receptor agonists in Alzheimer's and Parkinson's disea
+    [PASS] PMID:41468096 | Imam S (2026) - Antigen-Specific Chimeric Antigen Receptor-T Regulatory Cell
+    [PASS] PMID:41567805 | Zhou KJ (2025) - Regulatory T cell dysfunction and immunotherapeutic breakthr
+    [PASS] PMID:41587834 | Prigozin A (2026) - Incentives and Equity: A Randomized Controlled Trial to Impr
+    [PASS] PMID:41765029 | Rosenstock J (2026) - Efficacy and safety of once-daily oral orforglipron compared
+    [PASS] PMID:41780000 | Heerspink HJL (2026) - Finerenone in Type 1 Diabetes and Chronic Kidney Disease.
+    [PASS] PMID:41827917 | Harvengt A (2026) - Clinical Characterization of Atypical Diabetes: Insights fro
+    [PASS] PMID:41889274 | Yasaratna NR (2026) - Effect of colchicine for secondary prevention of cardiovascu
+    [PASS] PMID:41921761 | Nee GW (2026) - The oral-gut microbiome axis in diabetes mellitus: a systema
+    [PASS] PMID:41958676 | Liu W (2026) - Role of Treg cells in diabetes mellitus and association with
+    [PASS] PMID:41984238 | Imran R (2026) - Methodological and statistical inconsistencies compromise th
+    [PASS] PMID:41986815 | Blencowe M (2026) - Multi-tissue multi-omics integration reveals tissue-specific
+    [PASS] PMID:41994902 | Ma X (2026) - Pharmacokinetic Bioequivalence of Orforglipron Tablets and C
+    [PASS] PMID:42014686 | Liu H (2026) - A pharmacokinetic and pharmacodynamic drug-drug interaction 
+    [PASS] PMID:42034968 | Nassef M (2026) - Efficiency of bone marrow-derived cells in the treatment of 
+    [PASS] PMID:42108533 | Pillai AA (2026) - Triple Hormone Receptor Agonism: The Role of Retatrutide in 
+    [PASS] PMID:42283716 | Jacobsen LM (2026) - Extended Follow-up of Type 1 Diabetes Immunotherapy Trial Pa
+    [PASS] PMID:42373533 | Nakhleh A (2026) - Impact of Autoimmune Hypothyroidism and Celiac Disease on Pr
+    [PASS] PMID:42478360 | Nau C (2026) - Effects of a "Food Is Medicine" Intervention on Glucose Cont
+    [PASS] PMID:42486100 | Zeng Z (2026) - Safety and efficacy of low-dose, cord blood-derived CD19 CAR
+    [PASS] PMID:42561661 | Zhang M (2026) - CAR-T cell therapy for autoimmune diseases: from immune supp
+    [PASS] PMID:42608595 | Rogers NM (2026) - A multi-centre study of belatacept and sirolimus for islet t
+    [PASS] PMID:42627334 | So M (2026) - ?-Cell Function and Diabetes Outcomes 1 Year After Stopping 
+    [PASS] PMID:42642774 | Rezagholizadeh F (2026) - The effect of CoQ10 supplementation on cardiovascular risk f
+    [PASS] PMID:42688599 | Tawhari I (2026) - Impact of preformed donor-specific anti-HLA antibodies on pa
+    [PASS] PMID:42696794 | Griebling D (2026) - Overcoming access barriers in European CAR-T therapy: the ro
+    [PASS] PMID:42698953 | Li Y (2026) - Acid-Responsive Zeolitic Imidazolate Framework-8 Core-Shell 
+    [PASS] PMID:42739778 | Bellini MI (2026) - Clinical Evolution, Outcomes, and Emerging Preservation Tech
+    [PASS] PMID:42744965 | Yang Y (2026) - Metformin exhibits a synergistic effect with pyrotinib by in
+  
+    PMID Verification: 230,735 bytes
+  Completed in 20.5s
+
+============================================================
+  Tracking unfound PMIDs (Verify-* markers)
+============================================================
+  Unfound PMID Tracker
+  ============================================================
+    All PMIDs resolved. No Verify-* markers remaining.
+    Tracking file: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\unfound_pmids.json
+  
+    Unfound PMID Tracker: 0 remaining
+  Completed in 6.4s
+
+============================================================
+  Adding source citations to Research Findings Summary
+============================================================
+  Generating cited Research Findings Summary...
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Research_Findings_Summary.md
+    Length: 29,502 characters
+    Note: 5 references marked 'No PMID/DOI' pending publication in PubMed.
+  Done.
+  Completed in 2.3s
+
+============================================================
+  Ingesting paper abstracts and full text from PubMed/PMC
+============================================================
+  Paper Ingestion Pipeline
+  ============================================================
+  
+    Stage 1: Loading verified PMIDs...
+    Found 343 verified PMIDs.
+  
+    Stage 2: Fetching abstracts via EFetch API...
+    Fetching abstracts for 1 new PMIDs (398 cached)...
+      Batch 1/1 (1 PMIDs)...
+      Warning: Could not fetch abstracts for 1 PMIDs: ['27512793']...
+    Abstracts available: 398/343
+  
+    Stage 3: Converting PMIDs to PMCIDs...
+    PMC papers found: 176/343
+  
+    Stage 4: Fetching full text from PMC Open Access...
+    Fetching full text for 45 PMC Open Access papers (151 cached)...
+      Rate limited (429), waiting 2s...
+      Progress: 10/45...
+      Rate limited (429), waiting 2s...
+      Rate limited (429), waiting 2s...
+      Progress: 20/45...
+      Rate limited (429), waiting 2s...
+      Rate limited (429), waiting 4s...
+      Rate limited (429), waiting 2s...
+      Rate limited (429), waiting 4s...
+      Progress: 30/45...
+      Rate limited (429), waiting 2s...
+      Rate limited (429), waiting 4s...
+      Progress: 40/45...
+      Progress: 45/45...
+      Rate limited (429), waiting 2s...
+      Rate limited (429), waiting 4s...
+    Full text available: 151/176 PMC papers
+  
+    Stage 5: Building master paper library index...
+    [not_corpus] excluding 8 adjudicated non-corpus PMID(s): 12345678, 18662538, 19148081, 20570966, 25714673, 28397826, 37889505, 38918878
+  
+  ============================================================
+    Paper Library Summary
+    ----------------------------------------
+    Total papers:          335
+    Abstracts fetched:     334
+    PMC available:         176
+    Full text fetched:     151
+    Cross-citations found: 283
+    Shared MeSH clusters:  236
+    Elapsed time:          64.1s
+    Library path:          C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\paper_library
+  
+    Paper Ingestion Pipeline: complete
+  Completed in 67.5s
+
+============================================================
+  Folding un-indexed corpus papers into the audit gate
+============================================================
+  [not_corpus] refusing to reconcile 39 adjudicated non-corpus PMID(s): 12345678, 18662538, 18794064, 19148081, 19237585, 19729482, 20519905, 20570966, 22723585, 23835333, 24105098, 25714673, 27505628, 28086769, 28397826, 28864502, 28916733, 29562193, 30078372, 30144957, 30578413, 30778000, 31220820, 31529065, 32243867, 33082274, 33989382, 34299352, 35437333, 35491968, 37133585, 37467726, 37544201, 37889505, 37932527, 38587236, 38918878, 39428507, 41827829
+  ================================================================
+    PAPER INDEX ORPHAN RECONCILIATION
+  ================================================================
+    Indexed before : 335
+    Orphans found  : 25
+    Indexed after  : 360
+  
+    Screen result:
+       16  UNSCREENED_ORPHAN
+        9  OFF_TOPIC_PRESUMED
+  
+    Papers folded into the audit gate:
+      [UNSCREENED_ORPHAN  ] 15919794  2005  Diabetes             A human-specific role of cell death-inducing DFFA (D
+      [UNSCREENED_ORPHAN  ] 17596481  2007  Diabetes Care        Summary and recommendations of the Fifth Internation
+      [UNSCREENED_ORPHAN  ] 21471512  2011  Diabetes             Fasting-induced protein phosphatase 1 regulatory sub
+      [UNSCREENED_ORPHAN  ] 22296077  2012  N Engl J Med         GAD65 antigen therapy in recently diagnosed type 1 d
+      [UNSCREENED_ORPHAN  ] 24838679  2014  Diabetologia         Autoantibodies and type 1 diabetes: are we still in 
+      [UNSCREENED_ORPHAN  ] 29885104  2018  Diabetes Metab J     Glycated Albumin Is a More Useful Glycation Index th
+      [UNSCREENED_ORPHAN  ] 30291106  2018  Diabetes Care        Management of Hyperglycemia in Type 2 Diabetes, 2018
+      [UNSCREENED_ORPHAN  ] 32358544  2020  Nat Commun           SGLT2 inhibition modulates NLRP3 inflammasome activi
+      [UNSCREENED_ORPHAN  ] 34918381  2022  FASEB J              SGLT2 inhibitor counteracts NLRP3 inflammasome via t
+      [UNSCREENED_ORPHAN  ] 37845117  2024  Eur J Intern Med     Residual cardiovascular risk: When should we treat i [REVIEW ARTICLE]
+      [UNSCREENED_ORPHAN  ] 39173844  2024  Biochem Pharmacol    Compromised chronic efficacy of a glucokinase activa
+      [UNSCREENED_ORPHAN  ] 40988828  2025  Cureus               Vitamin D Supplementation in Deficiency States and C [REVIEW ARTICLE]
+      [UNSCREENED_ORPHAN  ] 41618067  2026  Ophthalmol Ther      Artificial Intelligence-Based Medical Devices for Di [REVIEW ARTICLE]
+      [UNSCREENED_ORPHAN  ] 41935855  2026  Nutr Metab Cardiovas Subclinical carotid atherosclerosis in latent autoim
+      [UNSCREENED_ORPHAN  ] 41994768  2026  Cureus               Sodium-Glucose Cotransporter-2 Inhibitors Across the
+      [UNSCREENED_ORPHAN  ] 9828138  1998  Genomics             Genomic structure and promoter sequence of the insul
+      [OFF_TOPIC_PRESUMED ] 10919952  2000  Am J Clin Nutr       Is there a metabolic basis for dietary supplementati [REVIEW ARTICLE]
+      [OFF_TOPIC_PRESUMED ] 12122111  2002  J Clin Invest        Hepatocyte-specific inhibition of NF-kappaB leads to
+      [OFF_TOPIC_PRESUMED ] 23223116  2013  Anesth Analg         Status of anesthesiology resident research education
+      [OFF_TOPIC_PRESUMED ] 24636767  2014  Neurol Neurochir Pol Risk factors of stroke and -717A&gt;G (rs2794521) CR
+      [OFF_TOPIC_PRESUMED ] 28539434  2017  Physiol Rev          Estrogens in Male Physiology. [REVIEW ARTICLE]
+      [OFF_TOPIC_PRESUMED ] 32943753  2021  Nat Rev Nephrol      Nuclear receptors in podocyte biology and glomerular [REVIEW ARTICLE]
+      [OFF_TOPIC_PRESUMED ] 33515517  2021  Lancet Infect Dis    Underlying factors in paediatric invasive pneumococc
+      [OFF_TOPIC_PRESUMED ] 39869107  2025  Clin Transplant      Long Term Outcomes of Transplant Recipients Comparin
+      [OFF_TOPIC_PRESUMED ] 40291594  2025  Mol Ther Oncol       Cost-effective strategies for CAR-T cell therapy man [REVIEW ARTICLE]
+  
+    NOTE: orphans are indexed but excluded from the headline corpus count (total_pmids) until reviewed.
+  
+    [OK] reconcile_paper_index
+  Completed in 9.1s
+
+============================================================
+  Validating citations and building evidence network
+============================================================
+  Citation Validator & Cross-Referencer
+  ============================================================
+    Validating 360 papers...
+    Building evidence network...
+    Excluding 49 non-evidence PMIDs from evidence network.
+  
+    Citation Validation Summary
+    ----------------------------------------
+    CONFIRMED   : 139 ( 38.6%)
+    PLAUSIBLE   :  84 ( 23.3%)
+    WEAK        : 111 ( 30.8%)
+    NO_CLAIM    :  25 (  6.9%)
+    NO_DATA     :   1 (  0.3%)
+  
+    Evidence Network
+    ----------------------------------------
+    Papers:           360
+    Citation links:   283
+    Topic clusters:   30
+  
+    Validation report: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\citation_validation.json
+    Evidence network:  C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\evidence_network.json
+  
+    Citation Validator: complete
+  Completed in 7.6s
+
+============================================================
+  Gating on unresolved citation MISMATCHes
+============================================================
+  Citation mismatch gate
+    source      : C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\citation_validation.json
+    generated   : 2026-09-30T01:26:39.408274
+    PMIDs scored: 360
+    suppressed  : 1 (whitelisted false positives)
+    audit-trail : 0 (cited only by scripts that report the error: -)
+    unresolved  : 0
+  
+  [OK] No unresolved citation mismatches.
+  Completed in 2.7s
+
+============================================================
+  Gating on off-topic / unresolvable external citations on research paths
+============================================================
+  Path external-citation audit
+    paths screened from : C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\agent_state.json
+    distinct PMIDs cited: 153
+    resolved            : 153
+    reviewed exceptions : 3
+  
+  [OK] Every path citation resolves and is on-topic.
+  Completed in 4.0s
+
+============================================================
+  Extracting quantitative data points from the full-text corpus
+============================================================
+  ============================================================
+    CORPUS DATA EXTRACTION PIPELINE
+  ============================================================
+  Processing 151 full-text papers...
+    Excluding 49 FLAGGED off-topic PMIDs from extraction.
+    Skipped 16 FLAGGED off-topic full-text papers.
+  
+  ============================================================
+    EXTRACTION SUMMARY
+  ============================================================
+    Papers yielding data: 60
+  
+    dose_response              200 extractions from 49 papers
+    odds_ratio                  29 extractions from  5 papers
+    remission                   17 extractions from  7 papers
+    hazard_ratio                 7 extractions from  2 papers
+    hba1c_change                 6 extractions from  4 papers
+    survival_graft               3 extractions from  3 papers
+    inflammatory_markers         3 extractions from  2 papers
+    autoantibody                 2 extractions from  1 papers
+  
+    TOTAL: 267 data points extracted
+  
+    EVIDENCE BY GAP:
+      Gap  1 (Gene Therapy LADA): 2 data points [autoantibody(2)]
+      Gap  2 (Health Equity Beta Cell): 39 data points [odds_ratio(29), survival_graft(3), hazard_ratio(7)]
+      Gap  3 (Islet Transplant IR): 3 data points [survival_graft(3)]
+      Gap  4 (Drug Repurposing Islet): 206 data points [dose_response(200), survival_graft(3), inflammatory_markers(3)]
+      Gap  5 (Treg Neuropathy): 3 data points [inflammatory_markers(3)]
+      Gap  6 (CAR-T Access): 36 data points [odds_ratio(29), hazard_ratio(7)]
+      Gap  7 (GKA Repurposing): 223 data points [dose_response(200), remission(17), hba1c_change(6)]
+      Gap  8 (Immunomod LADA): 228 data points [dose_response(200), remission(17), hba1c_change(6), autoantibody(2), inflammatory_markers(3)]
+      Gap  9 (GKA LADA): 23 data points [remission(17), hba1c_change(6)]
+      Gap 10 (LADA Prevalence): 31 data points [odds_ratio(29), autoantibody(2)]
+      Gap 11 (Islet Equity): 39 data points [odds_ratio(29), survival_graft(3), hazard_ratio(7)]
+      Gap 12 (Generic Drug Catalog): 209 data points [dose_response(200), hba1c_change(6), inflammatory_markers(3)]
+  
+    TEXT DEDUPE (added 2026-08-19):
+      repeat restatements collapsed: 73
+      papers affected              : 19
+        PMID 31618560 dose_response: 23 -> 5
+        PMID 39613428 dose_response: 32 -> 15
+        PMID 35551292 dose_response: 20 -> 11
+        PMID 40598585 dose_response: 9 -> 5
+        PMID 36109742 odds_ratio: 14 -> 10
+        PMID 21775755 dose_response: 6 -> 3
+        PMID 31173679 dose_response: 6 -> 3
+        PMID 27821710 dose_response: 5 -> 3
+  
+    REJECTION GATE (added 2026-08-21):
+      matches rejected as non-measurements: 23
+        ATTRIBUTED_TO_OTHER_STUDY  7
+        PROJECTED_NOT_MEASURED     5
+        UNCLOSED_PAREN_FRAGMENT    4
+        DEFINITION_THRESHOLD       3
+        BOUND_NOT_MEASUREMENT      1
+        PER_UNIT_NOT_RATE          1
+        RELATIVE_CHANGE_NOT_RATE   1
+        THRESHOLD_NOT_RATE         1
+      translated/duplicate sections dropped: 60 across 19 papers
+  
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\extracted_corpus_data.json
+    File size: 878.9 KB
+  
+    Done.
+  Completed in 38.2s
+
+============================================================
+  Gating on design/baseline papers cited as outcome evidence
+============================================================
+  Design-paper-as-outcome-evidence audit
+    paths with citations : 58
+    distinct PMIDs cited : 153
+    design papers found  : 2
+      32862232  The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (DAPA-CKD) trial:
+      34400461  Pentoxifylline in diabetic kidney disease (VA PTXRx): protocol for a pragmatic randomised contro
+  
+  [WARN] 2 path(s) cite a design paper alongside other evidence.
+         Not an error - but the design paper is not what carries the result.
+    - dapagliflozin -> nephropathy
+        DESIGN  32862232 The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (
+        OUTCOME 32970396 Dapagliflozin in Patients with Chronic Kidney Disease.
+        OUTCOME 33338413 Effects of dapagliflozin on major adverse kidney and cardiovascular events in pa
+    - pentoxifylline -> DKD
+        DESIGN  34400461 Pentoxifylline in diabetic kidney disease (VA PTXRx): protocol for a pragmatic r
+        OUTCOME 18433957 The effect of pentoxifylline on proteinuria in diabetic kidney disease: a meta-a
+        OTHER   22336824 Pentoxifylline for diabetic kidney disease.
+        OUTCOME 24970885 Effect of pentoxifylline on renal function and urinary albumin excretion in pati
+        OUTCOME 26995301 Effect of pentoxifylline on renal outcomes in chronic kidney disease patients: A
+        OUTCOME 37987795 The effect of a methylxanthine vasodilator: pentoxifylline on the treatment of d
+  
+  [WARN] 3 CORPUS paper(s) are design/protocol papers, contributing 24 of 267 data points (9.0%).
+         A protocol paper reports planned doses, not results. Its extractions are
+         legitimate metadata but must not be counted as outcome evidence.
+    - 39613428 [15 pts, dose_response] Investigating the effect of verapamil on preservation of beta-cell function in a
+    - 36643381 [7 pts, dose_response] Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Leve
+    - 32862232 [2 pts, dose_response] The dapagliflozin and prevention of adverse outcomes in chronic kidney disease (
+  
+  [OK] wrote C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\baseline_citation_audit.json
+  Completed in 3.3s
+
+============================================================
+  Gating on citations in every field and identifier namespace
+============================================================
+  Harvested 449 identifiers across 134 path records: 69 PMC ids, 42 DOIs.
+  
+  ==========================================================================
+  PATH RECORDS: 134  ->  DISTINCT PATHS: 67
+  RATED PATHS WITH ZERO VERIFIED ON-TOPIC CITATIONS: 0
+  
+  OFF-TOPIC CITATIONS: 0
+  
+  UNINDEXED IDENTIFIERS (reported, not failed): 1
+    teplizumab -> T1D                          doi:10.2337/db25-840-P  [prose_or_refs]
+  
+  Report: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\citation_identifier_audit.json
+  [OK]
+  Completed in 7.0s
+
+============================================================
+  Gating on retracted papers cited as evidence
+============================================================
+  PMIDs to check for retraction: 403
+  
+  ==========================================================================
+  RETRACTED 1   ERRATUM/CONCERN 1   UNRESOLVED 0   CLEAN 401
+  
+  --- RETRACTED papers found in this repo ---
+    PMID 38918878  Emerging insights into the role of IL-1 inhibitors and colchicine for inflammati
+       Diabetology & metabolic syndrome 2024   pubtype=Journal Article,Retracted Publication,Review
+       acknowledged in exclusion registry: YES
+       LIVE EVIDENCE references: 0 (none)
+       audit-trail references (expected, not a defect): 12
+       other references, needing a human read: 7
+         Analysis\Results\hub_monitor_report.md
+         Analysis\Results\hub_monitor_state.json
+         Analysis\Results\pmcid_to_pmid.json
+         Analysis\Results\semantic_support.json
+         Analysis\Scripts\adjudicate_flagged_membership_20260828.py
+         Dashboards\PMID_Verification.html
+         docs\Dashboards\PMID_Verification.html
+  
+  --- ERRATUM / EXPRESSION OF CONCERN (reported, not failed) ---
+    PMID 36215990  Correction to Lancet Diabetes Endocrinol 2022; 10: 741-60.  [Published Erratum]
+  
+  Report: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\retraction_audit.json
+  1 retracted paper(s) present and correctly excluded; the remaining references are the record of that exclusion.
+  [OK]
+  Completed in 22.9s
+
+============================================================
+  Gating on invented journal/volume/page coordinates
+============================================================
+  Citation coordinates found: 156
+  
+  --- NONRESOLVING (3) ---
+    _run_2026_08_27.py:48  PMID 19373249
+       ASSERTED Diabetes 2009;58(7):1416
+       ACTUAL   Nat Rev Drug Discov 2009;8(5):399-416
+       PROBE    no PubMed record at Diabetes 58:1416
+    _run_2026_08_27.py:180  PMID 32307525
+       ASSERTED Diabetes 2013;62(12):4297
+       ACTUAL   J Clin Endocrinol Metab 2020;105(7):
+       PROBE    no PubMed record at Diabetes 62:4297
+    test_markdown_citation_gate.py:71  PMID 38234567
+       ASSERTED Diabetes Care 2024;47(3):456
+       ACTUAL   Oxid Med Cell Longev 2024;2024():9847476
+       PROBE    no PubMed record at Diabetes Care 47:456
+  
+  --- POINTS_ELSEWHERE (4) ---
+    _close_run_2026_09_18.py:272  PMID 2873396
+       ASSERTED Diabetes 2024;73(6):823
+       ACTUAL   Lancet 1986;2(8499):119-24
+       PROBE    coordinate resolves to PMID 38349844
+    _close_run_2026_09_18.py:273  PMID 37221401
+       ASSERTED Diabetes 2024;73(6):823
+       ACTUAL   Nat Rev Endocrinol 2023;19(7):379
+       PROBE    coordinate resolves to PMID 38349844
+    _run_2026_08_27.py:190  PMID 2873396
+       ASSERTED Diabetes 2024;73(6):823
+       ACTUAL   Lancet 1986;2(8499):119-24
+       PROBE    coordinate resolves to PMID 38349844
+    _run_2026_08_27.py:207  PMID 37221401
+       ASSERTED Nat Rev Endocrinol 2023;19(7):377
+       ACTUAL   Nat Rev Endocrinol 2023;19(7):379
+       PROBE    coordinate resolves to PMID 37202589
+  
+  --- COORD_MISMATCH (3) ---
+    _close_run_2026_09_18.py:112  PMID 36215990
+       ASSERTED Diabetes Endocrinol 2022;10(10):741
+       ACTUAL   Lancet Diabetes Endocrinol 2022;10(11):e11
+       PROBE    journal token not indexed - could not conclude
+    _close_run_2026_09_18.py:114  PMID 22336824
+       ASSERTED Diabetes Endocrinol 2022;10(10):741
+       ACTUAL   Cochrane Database Syst Rev 2012;2012(2):CD006800
+       PROBE    journal token not indexed - could not conclude
+    _run_2026_08_27.py:357  PMID 30949058
+       ASSERTED Care 2002;25(10):1897
+       ACTUAL   Front Physiol 2019;10():148
+       PROBE    journal token not indexed - could not conclude
+  
+  --- AMBIGUOUS_PAIRING (2) ---
+    build_health_equity.py:1281  PMID 36215990
+       ASSERTED Lancet Diabetes Endocrinol 2022;10(10):741
+       ACTUAL   Lancet Diabetes Endocrinol 2022;10(11):e11
+       PROBE    coordinate resolves to PMID 36113507, which is also cited in this block - the coordinate belongs to that PMID and the pairing is a window artifact, not a misattribution
+    verify_2026_09_13_repairs.py:37  PMID 22336824
+       ASSERTED JAMA Oncol 2018;4(7):994
+       ACTUAL   Cochrane Database Syst Rev 2012;2012(2):CD006800
+       PROBE    coordinate resolves to PMID 29710129, which is also cited in this block - the coordinate belongs to that PMID and the pairing is a window artifact, not a misattribution
+  
+  Report: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\citation_coordinates.json
+  Checked 156 coordinates: 144 OK, 10 suspect (0 live, 10 audit-trail)
+    Audit-trail records quoting a repaired defect (do not fail):
+      _run_2026_08_27.py:48  PMID 19373249
+      _run_2026_08_27.py:180  PMID 32307525
+      test_markdown_citation_gate.py:71  PMID 38234567
+      _close_run_2026_09_18.py:272  PMID 2873396
+      _close_run_2026_09_18.py:273  PMID 37221401
+      _run_2026_08_27.py:190  PMID 2873396
+      _run_2026_08_27.py:207  PMID 37221401
+      _close_run_2026_09_18.py:112  PMID 36215990
+      _close_run_2026_09_18.py:114  PMID 22336824
+      _run_2026_08_27.py:357  PMID 30949058
+  [OK] every bibliographic coordinate matches its PMID
+  Completed in 14.4s
+
+============================================================
+  Gating on absolute clinical claims not echoed by their cited abstract
+============================================================
+  Absolute claims attached to a clinical endpoint: 0
+  [OK] none found
+  Completed in 4.7s
+
+============================================================
+  Auditing extractors for unbounded-wildcard artifacts
+============================================================
+  ==========================================================================
+  STATIC SCAN - patterns with an unbounded wildcard gap
+  ==========================================================================
+    [OK] no unbounded wildcard gaps remain
+  
+  ==========================================================================
+  EMPIRICAL SCAN - artifact rate per extractor
+  ==========================================================================
+  data_type                 total  clean  artifact    rate
+  dose_response               200    200         0    0.0% [OK]  
+  odds_ratio                   29     29         0    0.0% [OK]  
+  survival_graft                3      3         0    0.0% [OK]  
+  remission                    17     17         0    0.0% [OK]  
+  hba1c_change                  6      6         0    0.0% [OK]  
+  hazard_ratio                  7      7         0    0.0% [OK]  
+  autoantibody                  2      2         0    0.0% [OK]  
+  inflammatory_markers          3      3         0    0.0% [OK]  
+  --------------------------------------------------------------------------
+  TOTAL                       267    267         0    0.0%
+  
+  Reason distribution:
+  
+  [OK] wrote C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\extractor_wildcard_audit.json
+  [OK] no unbounded wildcards and no provable artifacts.
+  Completed in 4.5s
+
+============================================================
+  Gating on PMID readers that bypass corpus_membership
+============================================================
+  PMID readers found: 28  (AUDIT=10, LIVE=9, ONESHOT=7, TOOL=2)
+  Control: detector fires on both known readers and sees their guard.
+  
+    LIVE      9 reader(s), 7 guarded
+    AUDIT    10 reader(s), 2 guarded
+    ONESHOT   7 reader(s), 0 guarded
+    TOOL      2 reader(s), 0 guarded
+  
+    Exempt by name, with reason:
+      agent_state.py                   owns agent_state.json; corpus_membership reads it, so importing it here would be circular
+      build_paper_library.py           the library dashboard must SHOW excluded papers with their status, not hide them
+  
+  [OK] every LIVE PMID reader goes through corpus_membership.
+  Completed in 4.9s
+
+============================================================
+  Gating on FLAGGED papers with no membership class, and on uncitable PMIDs cited in live prose
+============================================================
+  [OK] every FLAGGED paper carries a membership_class, and no uncitable PMID appears in builder source or under docs/.
+       (0 unclassified, 41 hard-uncitable PMIDs checked against 35 builders and 39 published files)
+  Completed in 5.1s
+
+============================================================
+  Grading research-path evidence by study design (PubMed pubtype)
+============================================================
+  Live paths: 18   distinct cited PMIDs: 15
+  
+    PATH                               PTS    TIER         CITED DESIGN
+    hydroxychloroquine -> T2D          32     SYNTHESIS_ONLY 35466661 Journal Article/Meta-Analysis
+    metformin -> T2D                   26     SYNTHESIS_ONLY 35466661 Journal Article/Meta-Analysis; 38783768 Journal Article/Revie
+    dapagliflozin -> T2D               7      PRIMARY      39412512 Journal Article/Review; 39843169 Journal Article/Multicenter 
+    verapamil -> T1D                   7      NO_RESULTS   39613428 Clinical Trial Protocol/Journal Article
+    verapamil -> beta_cell             6      NO_RESULTS   39613428 Clinical Trial Protocol/Journal Article
+    dapagliflozin -> nephropathy       3      PRIMARY      39412512 Journal Article/Review; 39843169 Journal Article/Multicenter 
+    oxidative_stress -> cardiovascular 3      PRIMARY      20228401 Journal Article/Multicenter Study; 36474045 Meta-Analysis/Jou
+    dorzagliatin -> T2D                2      NARRATIVE_ONLY 38783768 Journal Article/Review
+    rapamycin -> inflammation          2      PRIMARY      23061757 Journal Article/Research Support, N.I.H., Extramural; 3710520
+    semaglutide -> retinopathy         1      NARRATIVE_ONLY 37122431 Journal Article/Review
+    metformin -> nephropathy           1      PRIMARY      39843169 Journal Article/Multicenter Study
+    vitamin_d -> autoimmune            1      NARRATIVE_ONLY 40988828 Journal Article/Review
+    metformin -> cardiovascular        1      NARRATIVE_ONLY 22683128 Journal Article/Research Support, N.I.H., Extramural
+    tacrolimus -> inflammation         1      PRIMARY      23061757 Journal Article/Research Support, N.I.H., Extramural
+    calcineurin -> islet_transplant    1      PRIMARY      32627352 Clinical Trial, Phase III/Journal Article
+    belatacept -> T1D                  1      PRIMARY      37359825 Journal Article
+    belatacept -> islet_transplant     1      PRIMARY      37359825 Journal Article
+    Treg_expansion -> T1D              1      NARRATIVE_ONLY 41567805 Journal Article/Review
+  
+    NARRATIVE_ONLY=5, NO_RESULTS=2, PRIMARY=9, SYNTHESIS_ONLY=2
+  
+    9 path(s) rest on no primary data. These must not be ranked
+    alongside paths carrying measured human outcomes:
+      hydroxychloroquine -> T2D          SYNTHESIS_ONLY
+      metformin -> T2D                   SYNTHESIS_ONLY
+      verapamil -> T1D                   NO_RESULTS
+      verapamil -> beta_cell             NO_RESULTS
+      dorzagliatin -> T2D                NARRATIVE_ONLY
+      semaglutide -> retinopathy         NARRATIVE_ONLY
+      vitamin_d -> autoimmune            NARRATIVE_ONLY
+      metformin -> cardiovascular        NARRATIVE_ONLY
+      Treg_expansion -> T1D              NARRATIVE_ONLY
+  
+    [OK] wrote path_evidence_design.json
+  Completed in 4.3s
+
+============================================================
+  Checking PubMed pubtype against the verified title (design-blind coverage)
+============================================================
+  ==========================================================================
+  PUBTYPE vs VERIFIED-TITLE DISAGREEMENT
+  ==========================================================================
+  
+    PMIDs with cached pubtypes : 403
+    Disagreements found        : 7
+  
+    PROTOCOL_NOT_TAGGED  (2)
+      PMID 36643381    7 live extraction(s)  Biomedicine hub 2022
+          Effects of Low-Dose Colchicine on Serum High-Sensitivity C-Reactive Protein Level in Coronary Artery Disease Pat
+          PubMed pubtype: ['Journal Article']
+      PMID 42674789    0 live extraction(s)  BMJ open 2026
+          Retrospective population-based cohorts for assessing the performance of algorithmic diabetes classification and 
+          PubMed pubtype: ['Journal Article']
+  
+    RCT_NOT_TAGGED  (1)
+      PMID 36826844    0 live extraction(s)  JAMA 2023
+          Effect of Verapamil on Pancreatic Beta Cell Function in Newly Diagnosed Pediatric Type 1 Diabetes: A Randomized 
+          PubMed pubtype: ['Journal Article', "Research Support, Non-U.S. Gov't"]
+  
+    SYNTHESIS_NOT_TAGGED  (4)
+      PMID 40988828    5 live extraction(s)  Cureus 2025
+          Vitamin D Supplementation in Deficiency States and Combined Calcium-Vitamin D Therapy in Diabetes Prevention and
+          PubMed pubtype: ['Journal Article', 'Review']
+      PMID 40697602    4 live extraction(s)  World journal of diabetes 2025
+          Sodium-glucose co-transporter 2 inhibitors improve insulin resistance and Î²-cell function in type 2 diabetes: A 
+          PubMed pubtype: ['Journal Article']
+      PMID 40814306    0 live extraction(s)  Journal of health equity 2025
+          Race and ethnic disparities in insulin pump and continuous glucose monitor use between 2017 and 2024: a systemat
+          PubMed pubtype: ['Journal Article']
+      PMID 37583402    0 live extraction(s)  Indian journal of endocrinology and metabolism 2023
+          Verapamil improves One-Year C-Peptide Levels in Recent Onset Type-1 Diabetes: A Meta-Analysis.
+          PubMed pubtype: ['Journal Article']
+  
+    Untagged protocols are supplying 7 live extraction(s) that the design grader believes came from papers of unknown, possibly primary, design.
+  
+    1 untagged randomised trial(s) supply ZERO extractions. Measured evidence the corpus already holds is not reaching any path:
+      PMID 36826844  JAMA 2023  Effect of Verapamil on Pancreatic Beta Cell Function in Newly Diagnosed Pediatri
+  
+    DESIGN-BLIND COVERAGE (no design-bearing pubtype at all)
+      bucket        papers   blind     pct
+      pre-2018         174      53   30.5%
+      2018-2022         87      27   31.0%
+      2023              23      12   52.2%
+      2024              18       4   22.2%
+      2025              25      12   48.0%
+      2026              76      46   60.5%
+  
+      154 of 403 cached papers carry no design signal.
+      PubMed assigns design pubtypes on a lag, so the newest papers -
+      the ones the daily sweeps keep adding - are the least graded.
+      Evidence-design tiers are most trustworthy on the OLDEST corpus.
+  
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\pubtype_title_disagreement.json
+  
+  [OK] audit_pubtype_title_disagreement
+  Completed in 3.5s
+
+============================================================
+  Grading the 15 research gaps by evidence design (offline, from pubtype cache)
+============================================================
+  #   GAP                                      PUBLISHED BY DESIGN       PRIMARY   MIX
+    1   Gene Therapy for LADA                    EXPLORATORY PRIMARY         15/47     NARR:8 NO_R:1 PRIM:15 SYNT:1 UNKN:22
+    2   Health Equity in Diabetes                GOLD      PRIMARY_THIN    2/15      NARR:3 NO_R:1 PRIM:2 SYNT:2 UNKN:7
+    3   Insulin Resistance in Islet Transplant   GOLD      PRIMARY         13/32     NARR:8 PRIM:13 UNKN:11
+    4   Drug Repurposing for Islet Transplant    SILVER    PRIMARY         9/25      NARR:5 PRIM:9 UNKN:11
+    5   Treg in Diabetic Neuropathy              SILVER    UNGRADEABLE     2/19      NARR:6 PRIM:2 UNKN:11
+    6   CAR-T Access Barriers                    SILVER    PRIMARY_THIN    1/16      NARR:6 NO_R:1 PRIM:1 UNKN:8
+    7   GKA Drug Repurposing                     SILVER    PRIMARY_THIN    4/22      NARR:9 PRIM:4 SYNT:1 UNKN:8
+    8   Immunomodulatory Drugs for LADA          SILVER    PRIMARY         12/40     NARR:6 NO_R:1 PRIM:12 SYNT:2 UNKN:19
+    9   GKA in LADA                              EXPLORATORY NO_EVIDENCE     0/0       
+    10  LADA Prevalence by Healthcare Setting    SILVER    UNGRADEABLE     0/3       UNKN:3
+    11  Islet Transplant Registry Equity         SILVER    UNGRADEABLE     1/7       NARR:1 PRIM:1 UNKN:5
+    12  Generic Drug x Diabetes Mechanism Catalo SILVER    UNGRADEABLE     0/9       NARR:4 UNKN:5
+    13  Personalized Nutrition for Beta Cells    EXPLORATORY PRIMARY         2/4       PRIM:2 SYNT:1 UNKN:1
+    14  Personalized Nutrition for LADA          EXPLORATORY NO_EVIDENCE     0/0       
+    15  GKA Pricing Trajectory                   EXPLORATORY NO_EVIDENCE     0/0       
+  
+    NO_EVIDENCE=3, PRIMARY=5, PRIMARY_THIN=3, UNGRADEABLE=4
+  
+    7 gap(s) where the published tier is not supported by design:
+      #2   Health Equity in Diabetes              GOLD -> PRIMARY_THIN
+           published GOLD while 2 of 8 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature
+      #5   Treg in Diabetic Neuropathy            SILVER -> UNGRADEABLE
+           published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong
+      #6   CAR-T Access Barriers                  SILVER -> PRIMARY_THIN
+           published SILVER while 1 of 8 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature
+      #7   GKA Drug Repurposing                   SILVER -> PRIMARY_THIN
+           published SILVER while 4 of 14 design-readable papers report primary data - the tier rests on a small measured core inside a mostly narrative literature
+      #10  LADA Prevalence by Healthcare Setting  SILVER -> UNGRADEABLE
+           published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong
+      #11  Islet Transplant Registry Equity       SILVER -> UNGRADEABLE
+           published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong
+      #12  Generic Drug x Diabetes Mechanism Cata SILVER -> UNGRADEABLE
+           published SILVER and its design mix cannot be read - the tier is unverifiable, not necessarily wrong
+  
+    These are REPORTED, not applied. Re-tiering a published gap is
+    a scientific judgement and belongs to a human.
+  
+    [OK] wrote gap_evidence_design.json
+  Completed in 3.0s
+
+============================================================
+  Checking gap numbering + tier agreement across memory, evidence store and site
+============================================================
+  Gap numbering audit: 15 gaps checked
+    [OK] tier agreement across memory, evidence store, site and every hardcoded copy
+    Tier is hardcoded in 39 place(s) across 15 gap(s); the store is read in none of them.
+    [OK] every audit trail discusses the gap it is filed under
+    6 gap(s) carry a standing misfiled-trail annotation (history predates any recent correction): #4, #5, #7, #11, #12, #15
+      These do NOT clear by adding one on-topic audit. They clear
+      when the historical trail is re-homed or archived.
+    1 gap(s) this check cannot speak on (name shares every word with other gaps): #9
+    -> Analysis\Results\gap_numbering_audit.json
+  Completed in 3.2s
+
+============================================================
+  Scoring citation semantic support and claim density (reports worst N)
+============================================================
+  Abstracts loaded: 398   distinct corpus terms: 7850
+    Citation instances: 1045   scored: 764
+    Excluded: 15 bibliographic-coordinate-only, 156 claim too vague
+    PMIDs with no local abstract (not scored): 2
+  
+    WORST 25 BY SEMANTIC SUPPORT (low = citing sentence shares little
+    specific vocabulary with the paper it cites)
+  
+    0.00  25714673  adjudicate_flagged_membership_2026:28    Am J Physiol Endocrino 
+          CLAIM: ----------------------------- This is not a new taxonomy invented today. The note stored against
+          PAPER: Loss of survival factors and activation of inflammatory cascades in brain sympathetic centers in
+          UNSUPPORTED: filed, stored, provenance, invented, today, encoded
+    0.00  40249888  build_cart_access.py              :781   JCO Glob Oncol 
+          CLAIM: alized facility costs. This is currently experimental but represents a path to decentralization.
+          PAPER: Decentralized Point-of-Care Manufacturing of CD19 Chimeric Antigen Receptor T Cells in Mexico.
+          UNSUPPORTED: decentralization, facility, path, centralized, represents, currently
+    0.00  30586620  build_cart_access.py              :822   Biol Blood Marrow Tran 
+          CLAIM: ity Infectious disease consultation available
+          PAPER: Cytokine Release Syndrome with Chimeric Antigen Receptor T Cell Therapy.
+          UNSUPPORTED: consultation, infectious, available, disease
+    0.00  37748491  build_cart_access.py              :899   Lancet 
+          CLAIM: ble to administer it. The entire specialty would require   investment.
+          PAPER: CAR T-cell therapy in autoimmune diseases.
+          UNSUPPORTED: investment, entire, administer, specialty, require
+    0.00  21323736  build_cart_access.py              :954   Clin Transplant 
+          CLAIM: safety/side effect profile, or (2) active investment in  .
+          PAPER: A health economic analysis of clinical islet transplantation.
+          UNSUPPORTED: investment, side, active, profile, safety, effect
+    0.00  29909913  build_cart_access.py              :1117  Best Pract Res Clin Ha 
+          CLAIM: hows disease-modifying effect (C-peptide preservation)
+          PAPER: GMP CAR-T cell production.
+          UNSUPPORTED: hows, disease-modifying, preservation, c-peptide, effect
+    0.00  31157579  build_cart_access.py              :1296  J Clin Oncol 
+          CLAIM: The Target: To be economically viable for diabetes at scale, CAR-Treg must achieve: <!-- Source:
+          PAPER: Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractor
+          UNSUPPORTED: economically, viable, car-treg, scale, achieve, target
+    0.00  31157579  build_cart_access.py              :1317  J Clin Oncol 
+          CLAIM: (20-30% reduction), and scaled batch sizes (20% reduction) could theoretically achieve $40-50K [
+          PAPER: Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractor
+          UNSUPPORTED: batch, theoretically, scaled, sizes, point-of-care, systems
+    0.00  31157579  build_cart_access.py              :1349  J Clin Oncol 
+          CLAIM: Additional 20-30% from point-of-care automation Could realistically reach $50-75K [
+          PAPER: Cost Effectiveness of Chimeric Antigen Receptor T-Cell Therapy in Multiply Relapsed or Refractor
+          UNSUPPORTED: realistically, automation, reach, point-of-care, additional
+    0.00  32535920  build_cart_access.py              :1368  Int J Cancer 
+          CLAIM: ) â€” Cost-effectiveness of axicabtagene ciloleucel at $150K/QALY threshold   Int J
+          PAPER: Cost of decentralized CAR T-cell production in an academic nonprofit setting.
+          UNSUPPORTED: ciloleucel, axicabtagene, cost-effectiveness, qaly, threshold
+    0.00  36109639  build_cart_access.py              :1406  Nat Med 
+          CLAIM: st-effectiveness analysis of islet transplantation (not a registry report, corrected 2026-09-17)
+          PAPER: Anti-CD19 CAR T cell therapy for refractory systemic lupus erythematosus.
+          UNSUPPORTED: markov-model, corrected, cost-effectiveness, registry, transplantation, islet
+    0.00  32175717  build_corpus_analysis.py          :898   J Epidemiol Glob Healt 
+          CLAIM: Corpus Methodology &amp; References <!-- WITHDRAWN 2026-09-10, during the
+          PAPER: Epidemiology of Type 2 Diabetes - Global Burden of Disease and Forecasted Trends.
+          UNSUPPORTED: withdrawn, corpus, references, methodology, during
+    0.00  23061757  build_drug_repurposing_islet.py   :921   Clin Transplant 
+          CLAIM: Mechanism: Blocks TNF-alpha, which amplifies IBMIR via NF-kappa-B signaling. Evidence:
+          PAPER: Safety and tolerability of the T-cell depletion protocol coupled with anakinra and etanercept fo
+          UNSUPPORTED: nf-kappa-b, amplifies, ibmir, tnf-alpha, blocks, mechanism
+    0.00  18397984  build_drug_repurposing_screen.py  :293   J Clin Endocrinol Meta OUT_OF_CORPUS_VOCAB
+          CLAIM: inosis D. # The surname is therefore dropped rather than guessed; the PMID stands. "evidence": "
+          PAPER: Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine.
+          UNSUPPORTED: checked, stands, rejected, guessed, surname, alemzadeh
+    0.00  25498346  build_drug_repurposing_screen.py  :293   J Ethnopharmacol 
+          CLAIM: A1c reduction in T2D but was NOT a direct metformin comparison trial. Subsequent meta-analyses (
+          PAPER: Meta-analysis of the effect and safety of berberine in the treatment of type 2 diabetes mellitus
+          UNSUPPORTED: meta-analyses, subsequent, comparison, metformin, direct, demonstrated
+    0.00  32943753  build_drug_repurposing_screen.py  :388   Nat Rev Nephrol OUT_OF_CORPUS_VOCAB
+          CLAIM: ndirect through gasdermin D cleavage inhibition", # WITHDRAWN 2026-09-15 (author-surname audit).
+          PAPER: Nuclear receptors in podocyte biology and glomerular disease.
+          UNSUPPORTED: withdrawn, author-surname, copper, chelation, cleavage, audit
+    0.00  12021247  build_drug_repurposing_screen.py  :671   J Clin Invest 
+          CLAIM: NSAL-T2D, so the # drug name is corrected rather than the claim being dropped. "evidence": "  (J
+          PAPER: Mechanism by which high-dose aspirin improves glucose metabolism in type 2 diabetes.
+          UNSUPPORTED: name, sentence, tinsal-t, claim, dropped, evidenced
+    0.00  40464081  build_equity_map.py               :842   Diabetes Obes Metab OUT_OF_CORPUS_VOCAB
+          CLAIM: tsmouth NH, Bothell WA, Germantown MD, Bordeaux. Decentralized manufacturing is not yet planned.
+          PAPER: The health economics of insulin therapy: How do we address the rising demands, costs, inequaliti
+          UNSUPPORTED: boston, portsmouth, bordeaux, cgmp, germantown, bothell
+    0.00  40544428  build_gap_deep_dives.py           :132   N Engl J Med 
+          CLAIM: ew centers", "Health economics: cost-effectiveness by GDP-PPP quintile" ], "key_literature": [ "
+          PAPER: Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.
+          UNSUPPORTED: low-access, quintile, gdp-ppp, high-burden, optimization, economics
+    0.00  32627352  build_gap_deep_dives.py           :247   Am J Transplant 
+          CLAIM: : Corpus extraction confirmed C-peptide restoration data: 5.2 ng/mL at day 365 post-transplant (
+          PAPER: Phase 3 trial of human islet-after-kidney transplantation in type 1 diabetes.
+          UNSUPPORTED: well-characterized, lantidra, fda-approved, corpus, post-transplant, extraction
+    0.00  33622669  build_gap_deep_dives.py           :502   Diabetes Care 
+          CLAIM: DAWN)", "(PMID requires verification) - AZD1656 GCKR genetic  ", "
+          PAPER: The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study o
+          UNSUPPORTED: verification, dawn, gckr, requires, genetic
+    0.00  33622669  build_gap_deep_dives.py           :529   Diabetes Care 
+          CLAIM: t follow-on of SEED)", "(PMID requires verification) - AZD1656 genetic modifiers of efficacy", "
+          PAPER: The SimpliciT1 Study: A Randomized, Double-Blind, Placebo-Controlled Phase 1b/2 Adaptive Study o
+          UNSUPPORTED: verification, modifiers, follow-on, seed, requires, cohort
+    0.00  36449148  build_gap_deep_dives.py           :568   Drugs 
+          CLAIM: tudy of 16 subjects over 46 # weeks, reported in the Jiang 2024 review. n=16 is now visible. # *
+          PAPER: Dorzagliatin: First Approval.
+          UNSUPPORTED: visible, jiang, publishes, substudy, definitions, stated
+    0.00  34763823  build_gap_deep_dives.py           :571   Endocrinol Metab Clin  
+          CLAIM: 0/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13:
+          PAPER: 100&#xa0;years of Insulin: Why is Insulin So Expensive and What Can be Done to Control Its Cost?
+          UNSUPPORTED: unsourced, removed, advantage, cost-effectiveness, gain, episodes
+    0.00  30899369  build_gap_deep_dives.py           :582   Am J Transl Res 
+          CLAIM: "domain_pubs": {"glp1": 11732, "lada": 535}, "joint_pubs": 0, "trial_count": 11, "key_refs": ["
+          PAPER: Metformin induces the M2 macrophage polarization to accelerate the wound healing via regulating 
+          UNSUPPORTED: tier, silver, pubs, joint, cluster, count
+  
+    HIGHEST CLAIM DENSITY (distinct claims per 100 words of title+abstract).
+    Independent of the score above and immune to its length confound:
+    a paper cannot support more assertions than it contains text for.
+  
+    /100w  PMID      CLAIMS  WORDS   SEM?  PAPER
+    436.4  29710129  96      22      NO    Total Costs of Chimeric Antigen Receptor T-Cell Immu
+    100.0  15356308  1       1       NO    Thiazolidinediones.
+    66.7   33139407  6       9       NO    Social Determinants of Health and Diabetes: A Scient
+    37.8   34763823  51      135     y     100&#xa0;years of Insulin: Why is Insulin So Expensi
+    33.3   37202589  2       6       NO    Approval of teplizumab: implications for patients.
+    25.0   15919781  2       8       NO    The pathobiology of diabetic complications: a unifyi
+    25.0   19148081  1       4       NO    Your inbox, Mr President.
+    21.4   36449148  22      103     y     Dorzagliatin: First Approval.
+    18.2   37385277  2       11      NO    The pursuit of optimal semaglutide dosing in type 2 
+    16.7   8439348   1       6       NO    The role of interleukin-1 in disease.
+    15.4   37356449  2       13      NO    Measuring the global burden of diabetes: implication
+    15.1   32175717  37      245     y     Epidemiology of Type 2 Diabetes - Global Burden of D
+  
+    [OK] wrote semantic_support.json  (reports only, never gates)
+  Completed in 10.7s
+
+============================================================
+  Auditing markdown citations against PubMed (doctrine + summaries)
+============================================================
+  ==========================================================================
+  MARKDOWN CITATION AUDIT - do the .md documents cite what they claim?
+  ==========================================================================
+  47 distinct PMIDs across 68 citation sites in tracked markdown.
+  16 sites skipped as this project's own correction notes.
+  49 sites skipped in 11 DATED documents (records of a point in time, not live claims):
+      ACTION_REQUIRED_2026-09-15.md: 4
+      ACTION_REQUIRED_2026-09-16.md: 4
+      ACTION_REQUIRED_2026-09-17.md: 8
+      ACTION_REQUIRED_2026-09-18.md: 6
+      ACTION_REQUIRED_2026-09-19.md: 6
+      ACTION_REQUIRED_2026-09-20.md: 1
+      ACTION_REQUIRED_2026-09-21.md: 2
+      DECISION_BRIEF_2026-08-31.md: 9
+      DECISION_BRIEF_2026-09-05.md: 5
+      DECISION_BRIEF_2026-09-07.md: 4
+      Platform_Audit_2026-09-13.md: 0
+  Journal lexicon: 8 distinctive tokens.
+  
+  Classification: COORDINATE_ONLY=47, DESCRIPTIVE=15, TITLE_ASSERTED=6
+  Passed: 68   Flagged: 0
+  
+  Report: Analysis\Results\markdown_citation_audit.json
+  
+  [OK] markdown citations agree with PubMed
+  Completed in 6.5s
+
+============================================================
+  Regression fixture: markdown gate sensitivity AND specificity
+============================================================
+  ==========================================================================
+  REGRESSION FIXTURE - audit_markdown_citations.py
+  ==========================================================================
+  
+  MUST FLAG (verbatim defects present in the repo on 2026-08-31):
+    [PASS] Research_Findings_Summary beta-cell dedifferentiation: Cell 2012 cited as Diabetologia 2023
+           -> COORDINATE_MISMATCH years=[2023] real=2012
+    [PASS] Research_Findings_Summary retatrutide: NEJM 2023 cited as JAMA 2024
+           -> COORDINATE_MISMATCH names=['jama'] real='The New England journal of medicine'
+    [PASS] Research_Findings_Summary dorzagliatin: Pharmaceuticals 2025 cited as Nature Medicine 2022
+           -> COORDINATE_MISMATCH years=[2022] real=2025
+    [PASS] RESEARCH_DOCTRINE citation-format exemplar pointing at a RETRACTED ginsenoside paper
+           -> MISMATCH kind=TITLE_ASSERTED score=0.00
+  
+  MUST NOT FLAG (correct citations the first draft flagged anyway):
+    [PASS] descriptive prose naming no title and no year (first draft flagged this)
+           -> OK kind=DESCRIPTIVE
+    [PASS] descriptive prose with an incidental short quote (first draft flagged this)
+           -> OK kind=COORDINATE_ONLY years=[]
+    [PASS] correctly asserted title beside its identifier
+           -> OK kind=TITLE_ASSERTED score=1.00
+    [PASS] bold used for emphasis, not as a title (first draft read it as a title)
+           -> OK kind=COORDINATE_ONLY years=[2024]
+  
+  8/8 fixtures behave as specified.
+  [OK] gate sensitivity and specificity both pinned
+  Completed in 5.9s
+
+============================================================
+  Auditing trial-registry identifiers against ClinicalTrials.gov
+============================================================
+  NCT sites on narrative surface: 63  distinct: 32  correction-note skips: 57
+    OK: 32   NOT_FOUND: 0   TOPIC_MISMATCH: 0   WEAK_TOPIC_OVERLAP: 0   ATTRIBUTE_DISAGREEMENT: 0   UNREACHABLE: 0
+  
+  Report: Analysis\Results\nct_identifier_audit.json
+  
+  [OK] trial registry identifiers agree with ClinicalTrials.gov
+  Completed in 11.0s
+
+============================================================
+  Credibility sweep: runtime PMID ceiling + preclinical overclaim
+============================================================
+  ==========================================================================
+  CREDIBILITY SWEEP - impossible PMIDs and preclinical overclaim
+  ==========================================================================
+  PMID ceiling 42,805,932 (+250,000 margin) = flag above 43,055,932; source=cache measured=2026-09-29T08:18:31.520163
+  
+  Scanned 264 files, 364 distinct labelled PMIDs.
+  Impossible PMIDs (> 43,055,932): 0
+  Unhedged preclinical overclaims: 0
+  
+  Highest PMID anywhere in the repo: 42,744,965 (310,967 below the flag line)
+  Report: Analysis\Results\impossible_pmid_audit.json
+  
+  [OK] credibility sweep clean
+  Completed in 13.4s
+
+============================================================
+  Extracting evidence from papers for 15 research gaps
+============================================================
+  Evidence Extractor
+  ============================================================
+    Loading paper library...
+    [not_corpus] excluded 39 adjudicated non-corpus paper(s) from extraction: 12345678, 18662538, 18794064, 19148081, 19237585, 19729482, 20519905, 20570966, 22723585, 23835333, 24105098, 25714673, 27505628, 28086769, 28397826, 28864502, 28916733, 29562193, 30078372, 30144957, 30578413, 30778000, 31220820, 31529065, 32243867, 33082274, 33989382, 34299352, 35437333, 35491968, 37133585, 37467726, 37544201, 37889505, 37932527, 38587236, 38918878, 39428507, 41827829
+    360 papers, 359 abstracts loaded.
+    Extracting evidence across 15 research gaps...
+    Building evidence dashboard...
+  
+    Evidence Summary by Gap
+    --------------------------------------------------
+    # 1 [EXPLORATORY] Gene Therapy for LADA                47 papers, 186 findings
+    # 2 [GOLD       ] Health Equity in Diabetes            15 papers,  53 findings
+    # 3 [GOLD       ] Insulin Resistance in Islet Transpl  32 papers, 132 findings
+    # 4 [SILVER     ] Drug Repurposing for Islet Transpla  25 papers, 107 findings
+    # 5 [SILVER     ] Treg in Diabetic Neuropathy          19 papers,  80 findings
+    # 6 [SILVER     ] CAR-T Access Barriers                16 papers,  47 findings
+    # 7 [SILVER     ] GKA Drug Repurposing                 22 papers, 101 findings
+    # 8 [SILVER     ] Immunomodulatory Drugs for LADA      40 papers, 168 findings
+    # 9 [EXPLORATORY] GKA in LADA                           0 papers,   0 findings
+    #10 [SILVER     ] LADA Prevalence by Healthcare Setti   3 papers,  10 findings
+    #11 [SILVER     ] Islet Transplant Registry Equity      7 papers,  26 findings
+    #12 [SILVER     ] Generic Drug x Diabetes Mechanism C   9 papers,  37 findings
+    #13 [EXPLORATORY] Personalized Nutrition for Beta Cel   4 papers,  20 findings
+    #14 [EXPLORATORY] Personalized Nutrition for LADA       0 papers,   0 findings
+    #15 [EXPLORATORY] GKA Pricing Trajectory                0 papers,   0 findings
+  
+    Total: 159 unique papers, 967 findings
+    JSON:  C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Analysis\Results\gap_evidence.json
+    HTML:  C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Gap_Evidence.html (216.4 KB)
+  Completed in 9.1s
+
+============================================================
+  Building Paper Library Dashboard
+============================================================
+  Paper Library Dashboard
+  ============================================================
+    Paper Library: 272.2 KB (360 papers)
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Paper_Library.html
+  Completed in 2.7s
+
+============================================================
+  Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)
+============================================================
+  ======================================================================
+  DRUG REPURPOSING SCREEN GENERATION COMPLETE
+  ======================================================================
+  
+  Output file: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Drug_Repurposing_Screen.html
+  File size: 108.6 KB
+  
+  SCREENING SUMMARY:
+  ----------------------------------------------------------------------
+  Total drug candidates: 34
+  WHO Essential Medicines: 14 (41.2%)
+  Sub-$1.00/month: 27 (79.4%)
+  High-ranking (score â‰¥8.0): 10 (29.4%)
+  
+  TOP 5 CANDIDATES:
+  ----------------------------------------------------------------------
+  1. Metformin
+     Score: 10.0 | Cost: $0.05/mo | Category: Reference Standard
+  
+  2. Verapamil
+     Score: 8.8 | Cost: $0.15/mo | Category: Cardiovascular/Metabolic
+  
+  3. Losartan
+     Score: 8.75 | Cost: $0.08/mo | Category: Cardiovascular/Metabolic
+  
+  4. Nicotinamide
+     Score: 8.3 | Cost: $0.05/mo | Category: Metabolic/Micronutrient
+  
+  5. Acarbose
+     Score: 8.3 | Cost: $0.25/mo | Category: Metabolic
+  
+  PATHWAY COVERAGE:
+  ----------------------------------------------------------------------
+    AMPK Activation: 2 drugs
+    Beta Cell Preservation: 3 drugs
+    Cardiovascular Protection: 4 drugs
+    GLP-1 Enhancement: 1 drugs
+    Immune Suppression: 4 drugs
+    Islet Protection: 3 drugs
+    Microbiome Modulation: 1 drugs
+    NF-kB Inhibition: 1 drugs
+    NLRP3 Inflammasome: 4 drugs
+    Nrf2 Activation: 1 drugs
+    Oxidative Stress Reduction: 3 drugs
+    TLR4 Antagonism: 1 drugs
+    TNF-Alpha Inhibition: 1 drugs
+    Treg Expansion: 5 drugs
+    VDR Immunomodulation: 1 drugs
+  
+  COST STATISTICS:
+  ----------------------------------------------------------------------
+    Minimum: $0.01/month
+    Average: $2.99/month
+    Maximum: $50.00/month
+  
+  ======================================================================
+  Dashboard successfully generated and ready for deployment.
+  ======================================================================
+  Completed in 2.5s
+
+============================================================
+  Building LADA Diagnostic Cost-Effectiveness Model
+============================================================
+  [INFO] Starting LADA Diagnostic Model generation...
+  [INFO] Script directory: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts
+  [INFO] Base directory: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..
+  [INFO] Output directory: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards
+  [INFO] Output file: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\LADA_Diagnostic_Model.html
+  
+  [INFO] Running cost-effectiveness model (HIC setting)...
+  [INFO] Calculating 10-year scenarios...
+    No Screening (Status Quo): 0 cases detected, ICER $inf/QALY
+    Universal Screening: 7953 cases detected, ICER $56,063/QALY
+    Targeted Screening: 2783 cases detected, ICER $40,614/QALY
+    Two-Stage Screening: 3976 cases detected, ICER $47,745/QALY
+  
+  [INFO] Generating HTML document...
+  [INFO] Writing to C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\LADA_Diagnostic_Model.html...
+  
+  [SUCCESS] Dashboard generated successfully!
+  [INFO] Output file: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\LADA_Diagnostic_Model.html
+  [INFO] File size: 57,870 bytes (0.06 MB)
+  [INFO] Total HTML characters: 56,539
+  Completed in 5.3s
+
+============================================================
+  Building Clinical Trial Site Equity Mapper
+============================================================
+  Dashboard generated successfully: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Trial_Equity_Mapper.html
+  File size: 68.9 KB
+  Completed in 2.9s
+
+============================================================
+  Building Corpus Analysis Dashboard (co-occurrence network; counts printed by the builder)
+============================================================
+  Dashboard generated: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Corpus_Analysis.html
+  Concepts tracked: 36
+  Co-occurrence pairs (count >= 1): 242
+  Uncovered high-signal intersections: 50
+  Completed in 9.2s
+
+============================================================
+  Building Extracted Evidence Dashboard (counts printed by the builder)
+============================================================
+  Loading corpus data...
+  Processing 267 extractions...
+  Writing dashboard to C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Extracted_Evidence.html...
+  Success! Dashboard generated: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Extracted_Evidence.html
+  Papers processed: 60
+  Total data points: 267
+  Completed in 5.8s
+
+============================================================
+  Building Research Paths Dashboard (post-artifact-filter counts printed by the builder)
+============================================================
+  Loading research paths data...
+  [build_research_paths] Filtered 30 path(s): 29 HOLLOW (no live evidence), 1 dose-fragment/adjudicated artifacts
+      - NLRP3_inflammasome -> inflammation (HOLLOW - zero live corpus data points after the )
+      - oxidative_stress -> inflammation (HOLLOW - zero live corpus data points after the )
+      - dapagliflozin -> inflammation (HOLLOW - zero live corpus data points after the )
+      - NF_kB -> inflammation (HOLLOW - zero live corpus data points after the )
+      - empagliflozin -> inflammation (HOLLOW - zero live corpus data points after the )
+      - pioglitazone -> T2D (HOLLOW - zero live corpus data points after the )
+      - NLRP3_inflammasome -> nephropathy (HOLLOW - zero live corpus data points after the )
+      - dapagliflozin -> cardiovascular (HOLLOW - zero live corpus data points after the )
+  Loading validated paths data...
+  [build_research_paths] Suppressed 15 validated path(s) (adjudicated artifacts + HOLLOW)
+  [build_research_paths] Recomputed validation summary from surviving paths: {'VALIDATED': 10, 'PARTIALLY_VALIDATED': 2, 'UNVALIDATED': 0} (was {'VALIDATED': 22, 'PARTIALLY_VALIDATED': 5, 'UNVALIDATED': 1, 'CONTRADICTED': 0, 'last_added': '2026-04-27'})
+  Processing 17 paths (30 validated)...
+  Writing output to C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Research_Paths.html...
+  SUCCESS: Dashboard generated
+    Total paths: 17
+    Validated: 10
+    Partially Validated: 2
+    Unvalidated: 0
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Research_Paths.html
+  Completed in 3.4s
+
+============================================================
+  Resolving the canonical research-path store (merge rule: recency, conservative tie-break)
+============================================================
+  ================================================================
+    CANONICAL PATH STORE
+  ================================================================
+    Paths after key normalisation : 68
+    Divergent across stores       : 48
+    Status counts:
+        26  VALIDATED
+        20  HOLLOW
+        19  PARTIALLY_VALIDATED
+         2  CONTRADICTED
+         1  CONTRADICTED_FOR_DIABETIC_NEPHROPATHY
+  
+    DIVERGENCES RESOLVED THIS RUN:
+      NF_kB -> inflammation
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-18
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      NLRP3_inflammasome -> T2D
+        -> VALIDATED  (from state.paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-23
+           state.validated_paths            VALIDATED              2026-06-10
+           research_paths.json              HOLLOW                 2026-08-21
+      NLRP3_inflammasome -> inflammation
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-06-03
+           state.validated_paths            VALIDATED              2026-06-05
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      NLRP3_inflammasome -> nephropathy
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-18
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-18
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      Treg_expansion -> T1D
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-06-13
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      alpha_lipoic_acid -> diabetic_neuropathy
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-16)
+           state.paths                      VALIDATED              2026-04-19
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-16
+      atorvastatin -> T2D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      CONTRADICTED           2026-05-13
+           state.validated_paths            EXTRACTION_ARTIFACT    2026-08-15
+           research_paths.json              HOLLOW                 2026-08-21
+      belatacept -> T1D
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-06-28
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      belatacept -> islet_transplant
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-25
+           state.validated_paths            VALIDATED              2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      calcineurin -> islet_transplant
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      canagliflozin -> inflammation
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-05-12
+           state.validated_paths            VALIDATED              2026-06-11
+           research_paths.json              HOLLOW                 2026-08-21
+      dapagliflozin -> T2D
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      dapagliflozin -> cardiovascular
+        -> VALIDATED  (from state.validated_paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-23
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      dapagliflozin -> inflammation
+        -> VALIDATED  (from state.paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-23
+           state.validated_paths            VALIDATED              2026-08-18
+           validated_research_paths.json    PARTIALLY_VALIDATED    None
+           research_paths.json              HOLLOW                 2026-08-21
+      dapagliflozin -> nephropathy
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      dorzagliatin -> T2D
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              2026-07-31
+           research_paths.json              LIVE                   2026-08-21
+      empagliflozin -> T2D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-20
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      empagliflozin -> cardiovascular
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-20
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      empagliflozin -> inflammation
+        -> PARTIALLY_VALIDATED  (from state.paths, 2026-09-06)
+           state.paths                      PARTIALLY_VALIDATED    2026-09-06
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-18
+           validated_research_paths.json    PARTIALLY_VALIDATED    None
+           research_paths.json              HOLLOW                 2026-08-21
+      empagliflozin -> nephropathy
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-06-09
+           research_paths.json              HOLLOW                 2026-08-21
+      hydroxychloroquine -> T2D
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      hydroxychloroquine -> inflammation
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-06-20
+           state.validated_paths            VALIDATED              2026-08-15
+           validated_research_paths.json    PARTIALLY_VALIDATED    None
+           research_paths.json              HOLLOW                 2026-08-21
+      insulin_glargine -> T2D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      EXTRACTION_ARTIFACT    2026-08-19
+           state.validated_paths            EXTRACTION_ARTIFACT    2026-08-19
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      metformin -> T2D
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      metformin -> cardiovascular
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-23
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      metformin -> inflammation
+        -> VALIDATED  (from state.paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-23
+           state.validated_paths            VALIDATED              2026-08-19
+           research_paths.json              HOLLOW                 2026-08-21
+      metformin -> nephropathy
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-20
+           state.validated_paths            VALIDATED              2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      oxidative_stress -> T1D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      PARTIALLY_VALIDATED    2026-05-15
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-19
+           research_paths.json              HOLLOW                 2026-08-21
+      oxidative_stress -> T2D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-03-20
+           state.validated_paths            VALIDATED              2026-07-25
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      oxidative_stress -> autoimmune
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-03-20
+           state.validated_paths            VALIDATED              2026-08-17
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      oxidative_stress -> beta_cell
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-05-15
+           state.validated_paths            VALIDATED              2026-08-19
+           research_paths.json              HOLLOW                 2026-08-21
+      oxidative_stress -> cardiovascular
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-18
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      oxidative_stress -> inflammation
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-04-15
+           state.validated_paths            VALIDATED              2026-08-20
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      oxidative_stress -> nephropathy
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-03-20
+           state.validated_paths            VALIDATED              2026-06-12
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      pioglitazone -> T2D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      VALIDATED              2026-05-11
+           state.validated_paths            VALIDATED              2026-08-19
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              HOLLOW                 2026-08-21
+      pioglitazone -> inflammation
+        -> VALIDATED  (from state.paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-23
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-21
+           research_paths.json              HOLLOW                 2026-08-21
+      rapamycin -> inflammation
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-06-21
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           validated_research_paths.json    PARTIALLY_VALIDATED    None
+           research_paths.json              LIVE                   2026-08-21
+      rapamycin -> islet_transplant
+        -> PARTIALLY_VALIDATED  (from state.paths, 2026-08-25)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-25
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-25
+           research_paths.json              HOLLOW                 2026-08-21
+      rapamycin -> nephropathy
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      PARTIALLY_VALIDATED    2026-06-19
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-17
+           research_paths.json              HOLLOW                 2026-08-21
+      rituximab -> T1D
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      PARTIALLY_VALIDATED    2026-05-01
+           state.validated_paths            PARTIALLY_VALIDATED    2026-07-29
+           research_paths.json              HOLLOW                 2026-08-21
+      rituximab -> beta_cell
+        -> HOLLOW  (from research_paths.json, 2026-08-21)
+           state.paths                      PARTIALLY_VALIDATED    2026-05-02
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-12
+           research_paths.json              HOLLOW                 2026-08-21
+      semaglutide -> retinopathy
+        -> VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-07-06
+           state.validated_paths            VALIDATED              2026-08-28
+           validated_research_paths.json    PARTIALLY_VALIDATED    None
+           research_paths.json              LIVE                   2026-08-21
+      tacrolimus -> inflammation
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-23
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           research_paths.json              LIVE                   2026-08-21
+      teplizumab -> T1D
+        -> VALIDATED  (from state.paths, 2026-09-11)
+           state.paths                      VALIDATED              2026-09-11
+           state.validated_paths            VALIDATED              2026-06-09
+           research_paths.json              HOLLOW                 2026-08-21
+      teplizumab -> autoimmune
+        -> VALIDATED  (from state.paths, 2026-08-23)
+           state.paths                      VALIDATED              2026-08-23
+           state.validated_paths            VALIDATED              2026-08-17
+           research_paths.json              HOLLOW                 2026-08-21
+      verapamil -> T1D
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      PARTIALLY_VALIDATED    2026-08-20
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      verapamil -> beta_cell
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-08-28)
+           state.paths                      VALIDATED              2026-08-20
+           state.validated_paths            PARTIALLY_VALIDATED    2026-08-28
+           validated_research_paths.json    VALIDATED              None
+           research_paths.json              LIVE                   2026-08-21
+      vitamin_d -> autoimmune
+        -> PARTIALLY_VALIDATED  (from state.validated_paths, 2026-09-15)
+           state.paths                      PARTIALLY_VALIDATED    2026-05-12
+           state.validated_paths            PARTIALLY_VALIDATED    2026-09-15
+           research_paths.json              LIVE                   2026-08-21
+  
+    UNBACKED-STATUS GATE (union across both stores):
+      [OK] every VALIDATED / PARTIALLY_VALIDATED path has evidence in at least one store.
+  
+    validated_research_paths.json paths_validated: 45 -> 45
+  
+    Paths a work-queue generator should raise: 49
+      [  61 dp] NLRP3_inflammasome -> inflammation: stores disagree: HOLLOW vs VALIDATED
+      [  32 dp] hydroxychloroquine -> T2D: stores disagree: LIVE vs VALIDATED
+      [  26 dp] metformin -> T2D: stores disagree: LIVE vs VALIDATED
+      [  22 dp] oxidative_stress -> inflammation: stores disagree: HOLLOW vs VALIDATED
+      [   7 dp] dapagliflozin -> T2D: stores disagree: LIVE vs VALIDATED
+      [   7 dp] dapagliflozin -> inflammation: stores disagree: HOLLOW vs PARTIALLY_VALIDATED vs VALIDATED
+      [   7 dp] verapamil -> T1D: stores disagree: LIVE vs PARTIALLY_VALIDATED vs VALIDATED
+      [   6 dp] verapamil -> beta_cell: stores disagree: LIVE vs PARTIALLY_VALIDATED vs VALIDATED
+      [   5 dp] NF_kB -> inflammation: stores disagree: HOLLOW vs VALIDATED
+      [   3 dp] pioglitazone -> T2D: stores disagree: HOLLOW vs VALIDATED
+  
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\canonical_paths.json
+    [OK] path_store
+  Completed in 4.4s
+
+============================================================
+  Asserting no stored path record asserts two verdicts about itself
+============================================================
+  ============================================================
+    VERDICT-KEY AGREEMENT GATE
+  ============================================================
+    Records examined: 134
+    Verdict-key shapes: {'status+validation_status': 14, 'status': 51, 'rating+status': 32, 'rating': 37}
+    Report: Analysis\Results\verdict_key_agreement_audit.json
+  
+    [HOLD] 1 record(s) carry a SCOPED verdict (not auto-resolvable):
+  
+     paths[atorvastatin -> T2D]
+       status: CONTRADICTED
+       rating: VALIDATED_AS_RISK_FACTOR  <- outside the standard vocabulary
+       -> two propositions, not two answers. Needs a human.
+  Completed in 4.2s
+
+============================================================
+  Measuring posterior-vs-study-design discordance on the Bayesian ranking
+============================================================
+  ==========================================================================
+  POSTERIOR vs EVIDENCE-DESIGN AGREEMENT
+  ==========================================================================
+  
+    Live graded paths compared : 18
+    Suppressed as HOLLOW       : 29
+    On the page but ungraded   : 1
+        - rituximab -> nephropathy
+  
+    Comparable ordered pairs   : 77
+    DISCORDANT pairs           : 48  (62.3%)
+  
+    Each line below is a path the page scores HIGHER while its
+    evidence design is WEAKER:
+  
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  dapagliflozin -> T2D              40.0%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  dapagliflozin -> nephropathy      26.4%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  oxidative_stress -> cardiovascular  26.4%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  rapamycin -> inflammation         26.4%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  metformin -> nephropathy          14.3%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  tacrolimus -> inflammation        14.3%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  calcineurin -> islet_transplant   14.3%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  belatacept -> T1D                 14.3%  PRIMARY
+      metformin -> T2D                    55.3%  SYNTHESIS_ONLY   >  belatacept -> islet_transplant    14.3%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  dapagliflozin -> nephropathy      26.4%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  oxidative_stress -> cardiovascular  26.4%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  rapamycin -> inflammation         26.4%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  metformin -> nephropathy          14.3%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  tacrolimus -> inflammation        14.3%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  calcineurin -> islet_transplant   14.3%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  belatacept -> T1D                 14.3%  PRIMARY
+      hydroxychloroquine -> T2D           40.0%  SYNTHESIS_ONLY   >  belatacept -> islet_transplant    14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  dapagliflozin -> nephropathy      26.4%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  oxidative_stress -> cardiovascular  26.4%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  dorzagliatin -> T2D               26.4%  NARRATIVE_ONLY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  rapamycin -> inflammation         26.4%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  semaglutide -> retinopathy        14.3%  NARRATIVE_ONLY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  metformin -> nephropathy          14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  vitamin_d -> autoimmune           14.3%  NARRATIVE_ONLY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  metformin -> cardiovascular       14.3%  NARRATIVE_ONLY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  tacrolimus -> inflammation        14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  calcineurin -> islet_transplant   14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  belatacept -> T1D                 14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  belatacept -> islet_transplant    14.3%  PRIMARY
+      verapamil -> T1D                    40.0%  NO_RESULTS       >  Treg_expansion -> T1D             14.3%  NARRATIVE_ONLY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  dapagliflozin -> nephropathy      26.4%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  oxidative_stress -> cardiovascular  26.4%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  dorzagliatin -> T2D               26.4%  NARRATIVE_ONLY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  rapamycin -> inflammation         26.4%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  semaglutide -> retinopathy        14.3%  NARRATIVE_ONLY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  metformin -> nephropathy          14.3%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  vitamin_d -> autoimmune           14.3%  NARRATIVE_ONLY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  metformin -> cardiovascular       14.3%  NARRATIVE_ONLY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  tacrolimus -> inflammation        14.3%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  calcineurin -> islet_transplant   14.3%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  belatacept -> T1D                 14.3%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  belatacept -> islet_transplant    14.3%  PRIMARY
+      verapamil -> beta_cell              40.0%  NO_RESULTS       >  Treg_expansion -> T1D             14.3%  NARRATIVE_ONLY
+      dorzagliatin -> T2D                 26.4%  NARRATIVE_ONLY   >  metformin -> nephropathy          14.3%  PRIMARY
+      dorzagliatin -> T2D                 26.4%  NARRATIVE_ONLY   >  tacrolimus -> inflammation        14.3%  PRIMARY
+      dorzagliatin -> T2D                 26.4%  NARRATIVE_ONLY   >  calcineurin -> islet_transplant   14.3%  PRIMARY
+      dorzagliatin -> T2D                 26.4%  NARRATIVE_ONLY   >  belatacept -> T1D                 14.3%  PRIMARY
+      dorzagliatin -> T2D                 26.4%  NARRATIVE_ONLY   >  belatacept -> islet_transplant    14.3%  PRIMARY
+  
+    OF THOSE, 16 pair(s) rank a NO_RESULTS path above a PRIMARY path.
+    A NO_RESULTS path has no measured outcome under it in any citing paper.
+  
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\posterior_design_agreement.json
+  
+  [OK] audit_posterior_design_agreement
+  Completed in 2.6s
+
+============================================================
+  Pooling verified effect records (meta-analysis section only)
+============================================================
+  ============================================================
+    STATISTICAL ANALYSIS ENGINE
+  ============================================================
+    [OK] meta_analysis refreshed: 3 pool(s), 7 comparison(s) reported unpooled; other sections untouched
+  Completed in 4.5s
+
+============================================================
+  Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)
+============================================================
+  [build_statistical_analysis] Suppressed 29 HOLLOW path(s) from the Bayesian ranking (zero live corpus evidence after the 2026-08-21 extraction-gate fix); 19 remain.
+  Building Statistical Analysis Dashboard...
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\..\Dashboards\Statistical_Analysis.html (47 KB)
+  Done.
+  Completed in 2.6s
+
+============================================================
+  Building Islet Drug Repurposing Pipeline v2
+============================================================
+  Dashboard v2 saved to: C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Islet_Drug_Repurposing.html
+    Candidates: 50
+    Hub targets: 20
+    Combinations: 30
+    PPI interactions: 16
+    KEGG enrichment terms: 45
+  Completed in 3.1s
+
+============================================================
+  Building Prediction Ledger Dashboard (reads the ledger, never writes it)
+============================================================
+  Dashboard written: C:\Users\justi\OneDrive\Diabetes_Research\Dashboards\Prediction_Ledger.html  (21,834 bytes)
+  Completed in 2.4s
+
+============================================================
+  Rebuilding GitHub Pages site (Tufte style)
+============================================================
+  Generating Tufte-style GitHub Pages site...
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\docs\index.html (26 KB)
+  Done.
+  Completed in 4.6s
+
+============================================================
+  Post-processing dashboards (nav, PMID links, ARIA)
+============================================================
+  Post-processing dashboards (nav, PMID links, ARIA)...
+    Acronym_Database.html: nav CSS, nav bar, ARIA labels
+    CART_Access_Barriers.html: nav CSS, nav bar, PMID links, ARIA labels
+    Clinical_Trial_Dashboard.html: nav CSS, nav bar, PMID links, ARIA labels
+    Corpus_Analysis.html: nav CSS, nav bar, PMID links, ARIA labels
+    Drug_Repurposing_Islet.html: nav CSS, nav bar, PMID links, ARIA labels
+    Drug_Repurposing_Screen.html: nav CSS, nav bar, PMID links, ARIA labels
+    Equity_Map.html: nav CSS, nav bar, PMID links, ARIA labels
+    Extracted_Evidence.html: nav CSS, nav bar, ARIA labels
+    GKA_LADA.html: nav CSS, nav bar, PMID links, ARIA labels
+    GKA_Landscape.html: nav CSS, nav bar, PMID links, ARIA labels
+    GKA_Pricing.html: nav CSS, nav bar, PMID links, ARIA labels
+    Gap_Deep_Dives.html: nav CSS, nav bar, PMID links, ARIA labels
+    Gap_Evidence.html: nav CSS, nav bar, PMID links
+    Gap_Synthesis.html: nav CSS, nav bar, PMID links, ARIA labels
+    Generic_Drug_Catalog.html: nav CSS, nav bar, PMID links, ARIA labels
+    Health_Equity.html: nav CSS, nav bar, PMID links, ARIA labels
+    Immunomod_LADA.html: nav CSS, nav bar, PMID links, ARIA labels
+    Islet_Drug_Repurposing.html: nav CSS, nav bar, PMID links, ARIA labels
+    Islet_Transplant_Analysis.html: nav CSS, nav bar, PMID links, ARIA labels
+    Islet_Transplant_Equity.html: nav CSS, nav bar, PMID links, ARIA labels
+    LADA_Diagnostic_Model.html: nav CSS, nav bar, PMID links, ARIA labels
+    LADA_Natural_History.html: nav CSS, nav bar, PMID links, ARIA labels
+    LADA_Prevalence.html: nav CSS, nav bar, PMID links, ARIA labels
+    Medical_Data_Dictionary.html: nav CSS, nav bar, PMID links, ARIA labels
+    Methodology.html: nav CSS, nav bar, ARIA labels
+    Nutrition_Beta_Cells.html: nav CSS, nav bar, PMID links, ARIA labels
+    Nutrition_LADA.html: nav CSS, nav bar, PMID links, ARIA labels
+    PMID_Verification.html: nav CSS, nav bar, ARIA labels
+    Paper_Library.html: nav CSS, nav bar, ARIA labels
+    Prediction_Ledger.html: nav CSS, nav bar
+    Research_Dashboard.html: nav CSS, nav bar, PMID links, ARIA labels
+    Research_Paths.html: nav CSS, nav bar, PMID links, ARIA labels
+    Statistical_Analysis.html: nav CSS, nav bar, PMID links, ARIA labels
+    Treg_Neuropathy.html: nav CSS, nav bar, PMID links, ARIA labels
+    Trial_Equity_Mapper.html: nav CSS, nav bar, PMID links, ARIA labels
+  
+    Processed 35 dashboards, 35 modified.
+  Done.
+  Completed in 2.9s
+
+============================================================
+  Publishing rebuilt dashboards to docs/ (GitHub Pages)
+============================================================
+  Publish dashboards -> docs/
+    source   : C:\Users\justi\OneDrive\Diabetes_Research\Dashboards
+    published: C:\Users\justi\OneDrive\Diabetes_Research\docs\Dashboards
+    stale=35  missing=0  in-sync=0
+    35 file(s) had publish-relative links rewritten (see PUBLISH_REWRITES).
+  
+  [OK] Published 35 dashboard(s); 35 verified in sync.
+  Completed in 5.2s
+
+============================================================
+  Refreshing the rolling PubMed publication monitor (live E-utilities sweep)
+============================================================
+  ============================================================
+  BASELINE: PubMed Recent Publications Tracker
+  Date: 2026-09-30
+  Lookback: 30 days
+  Alert queries: 17
+  ============================================================
+  
+    [T1D Stem Cell Cure]
+      Total in last 30 days: 13
+      Fetching top 10 details...
+      Latest: A Stepwise Method to Derive Functional Pancreatic Islet-like Clusters ...
+  
+    [T1D Immunotherapy]
+      Total in last 30 days: 21
+      Fetching top 10 details...
+      Latest: Awareness drives willingness: Results of the ISPAD JENIOUS-PREME T1D p...
+  
+    [T2D GLP-1 New]
+      Total in last 30 days: 203
+      Fetching top 10 details...
+      Latest: Comparative Weight-Loss Outcomes Following Initiation of GLP-1 Recepto...
+  
+    [T2D Remission]
+      Total in last 30 days: 54
+      Fetching top 10 details...
+      Latest: FGFR1/KLB-MFG-E8 Maintains Microvascular Integrity and Adaptive Cardia...
+  
+    [Diabetes AI/ML]
+      Total in last 30 days: 207
+      Fetching top 10 details...
+      Latest: Artificial Intelligence for Clinical Decision-Making in Retinal Disord...
+  
+    [Diabetes Biomarker]
+      Total in last 30 days: 123
+      Fetching top 10 details...
+      Latest: Artemether (an artemisinin derivative) suppresses hepatic gluconeogene...
+  
+    [Diabetes Microbiome]
+      Total in last 30 days: 143
+      Fetching top 10 details...
+      Latest: Microbial aldehyde-alcohol dehydrogenase degrades metformin to limit t...
+  
+    [Diabetes Gene Therapy]
+      Total in last 30 days: 62
+      Fetching top 10 details...
+      Latest: Rbks plays a novel role in maintaining glycolipid metabolic homeostasi...
+  
+    [Closed Loop AP]
+      Total in last 30 days: 25
+      Fetching top 10 details...
+      Latest: Glycemic and psychosocial outcomes of automated insulin delivery in ol...
+  
+    [Diabetes Drug Repurpose]
+      Total in last 30 days: 3
+      Fetching top 3 details...
+      Latest: Cross-fusion of digital twins and artificial intelligence in diabetes:...
+  
+    [Diabetes Epigenetics]
+      Total in last 30 days: 7
+      Fetching top 7 details...
+      Latest: Twin study: genotype-dependent epigenetic factors associated with HbA1...
+  
+    [Diabetes Complications New]
+      Total in last 30 days: 30
+      Fetching top 10 details...
+      Latest: SRC Promotes High Glucose-Induced Retinal Endothelial Dysfunction by S...
+  
+    [Diabetes Health Equity]
+      Total in last 30 days: 75
+      Fetching top 10 details...
+      Latest: Disparities in treatment burden in Peru among people with multiple lon...
+  
+    [LADA New Research]
+      Total in last 30 days: 12
+      Fetching top 10 details...
+      Latest: Clinical characteristics and disease progression of typical adult-onse...
+  
+    [Diabetes Multi-Omics]
+      Total in last 30 days: 69
+      Fetching top 10 details...
+      Latest: Artemether (an artemisinin derivative) suppresses hepatic gluconeogene...
+  
+    [Amylin Agonists]
+      Total in last 30 days: 12
+      Fetching top 10 details...
+      Latest: Petrelintide, a human amylin analogue for the treatment of obesity (ZU...
+  
+    [GLP-1 Pharmacogenomics]
+      Total in last 30 days: 3
+      Fetching top 3 details...
+      Latest: Genetic Variants Associated with Response to GLP-1 Receptor Agonists i...
+  
+    [Key Therapy Abstract Search]
+      zimislecel: 0 papers
+      orforglipron: 12 papers (fetched 5)
+      retatrutide: 12 papers (fetched 5)
+      CagriSema: 4 papers (fetched 4)
+      cagrilintide: 5 papers (fetched 5)
+      amycretin: 3 papers (fetched 3)
+      petrelintide: 3 papers (fetched 3)
+      efsitora: 5 papers (fetched 5)
+      finerenone: 33 papers (fetched 5)
+      baricitinib: 2 papers (fetched 2)
+      teplizumab: 7 papers (fetched 5)
+      icodec: 8 papers (fetched 5)
+      dapagliflozin: 50 papers (fetched 5)
+  
+    Saved: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\Results\pubmed_recent_snapshot_2026-09-30.json
+    Saved: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Scripts\..\Results\pubmed_recent_summary.md
+  
+  ============================================================
+  COMPLETE
+  ============================================================
+    Papers matched:   1206
+    Papers retrieved: 167  (13.8% of matched)
+    Cross-domain:  28
+    Domains with HIGH activity:
+      Diabetes AI/ML: 207
+      T2D GLP-1 New: 203
+      Diabetes Microbiome: 143
+      Diabetes Biomarker: 123
+      Diabetes Health Equity: 75
+  Completed in 51.5s
+
+============================================================
+  Publishing the markdown reports the hub advertises to docs/Reports/
+============================================================
+  Publish advertised reports -> docs/Reports/
+    hub        : docs\index.html
+    advertised : 2 report(s)
+    stale=2  missing=0  in-sync=0  source-absent=0
+  
+  [OK] Published 2 report(s); all verified.
+  Completed in 2.6s
+
+============================================================
+  Asserting published reports are no older than the window they advertise
+============================================================
+  ====================================================================
+    PUBLISHED REPORT FRESHNESS AUDIT
+  ====================================================================
+    Hub advertises 2 markdown report(s); today is 2026-09-30.
+    Freshness is the age of a report's OLDEST INPUT, not of its render.
+  
+    [OK] literature_gap_report.md
+           rendered 2026-09-30 (0d ago) | data literature_gap_data.json 2026-09-30 (0d ago) | window 45d (date range)
+    [OK] pubmed_recent_summary.md
+           rendered 2026-09-30 (0d ago) | data pubmed_recent_latest.json 2026-09-30 (0d ago) | window 30d (lookback period)
+  
+    2 report(s) checked, 0 failing.
+    Written: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\report_freshness_audit.json
+    PASS.
+  Completed in 2.1s
+
+============================================================
+  Regression fixture: freshness gate sensitivity AND specificity
+============================================================
+  ====================================================================
+    REGRESSION FIXTURE: report-freshness gate
+  ====================================================================
+    A gate that has only ever seen clean input is untested.
+  
+    [OK] A self-contradicting 30-day window generated 49d ago
+          gate says: FAIL
+            -> SELF-CONTRADICTING: declares a 30-day lookback period but was generated 2026-08-12, 49 days ago.
+            -> DATA OLDER THAN DECLARED WINDOW: pubmed_recent_latest.json written 2026-08-12, 49 days ago, against a 30-day lookback period.
+    [OK] B fresh render over 50-day-old data (cleared as "fine" 2026-09-04)
+          gate says: FAIL
+            -> COVERAGE STALE: declares data through 2026-08-11, 50 days ago (ceiling 45).
+            -> STALE DATA BEHIND A FRESH STAMP: rendered 2026-09-30 from literature_gap_data.json written 2026-08-11 - a 50-day lag (tolerance 7). The report advertises a currency its input does not have.
+            -> DATA OLDER THAN DECLARED WINDOW: literature_gap_data.json written 2026-08-11, 50 days ago, against a 45-day date range.
+    [OK] C genuinely fresh report (control - must pass)
+          gate says: PASS
+    [OK] D undated report, 55d old (must not escape the ceiling)
+          gate says: FAIL
+            -> SELF-CONTRADICTING: declares a 45-day default ceiling but was generated 2026-08-06, 55 days ago.
+  
+    PASS - gate is sensitive to both real 2026-09 defects and
+    specific enough to clear a genuinely fresh report.
+  Completed in 2.3s
+
+============================================================
+  Asserting no adjudicated-artifact path is live on the published site
+============================================================
+  Suppression-gate regression test
+    canonical store  : C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\canonical_paths.json
+    suppressed edges : 3 (GAD65 -> T1D, rituximab -> nephropathy, rituximab -> nephropathy (DIABETIC))
+    files scanned    : 35
+    path entries seen: 27
+  
+  [OK] No adjudicated-artifact path appears on the published site under any key spelling.
+  Completed in 7.6s
+
+============================================================
+  Asserting every link the published site advertises resolves under docs/
+============================================================
+  ==========================================================================
+  PUBLISHED LINK AUDIT - does every advertised link resolve under docs/?
+  ==========================================================================
+  36 page(s) scanned, 1401 relative link(s) resolve, 0 finding(s).
+    -> Analysis/Results/published_links_audit.json
+  
+  [OK] every advertised relative link resolves under the publish root.
+  Completed in 3.2s
+
+============================================================
+  Asserting every published absence claim declares the search that produced it
+============================================================
+  ============================================================
+    ABSENCE-CLAIM SCOPE GATE
+  ============================================================
+    Files scanned: 78
+    Report: Analysis\Results\absence_claim_scope_audit.json
+  
+    [OK] every absence claim declares the search that produced it.
+  Completed in 3.8s
+
+============================================================
+  Asserting each gap's stored evidence mentions both axes of the gap's own question
+============================================================
+  GAP SUBJECT COVERAGE AUDIT
+  ==============================================================================
+  GAP  NAME                                   TIER     PAP      X      Y   BOTH
+  ------------------------------------------------------------------------------
+  1    Gene Therapy for LADA                  EXPLOR    47      0     17      0
+  2    Health Equity in Diabetes              GOLD      15     14     15     14
+  3    Insulin Resistance in Islet Transplant GOLD      32     29      2      2
+  4    Drug Repurposing for Islet Transplant  SILVER    25     23      1      0
+  5    Treg in Diabetic Neuropathy            SILVER    19      5     16      2
+  6    CAR-T Access Barriers                  SILVER    16     16      7      7
+  7    GKA Drug Repurposing                   SILVER    22     22      0      0
+  8    Immunomodulatory Drugs for LADA        SILVER    40     19     17      1
+  9    GKA in LADA                            EXPLOR     0      0      0      0
+  10   LADA Prevalence by Healthcare Setting  SILVER     3      3      2      2
+  11   Islet Transplant Registry Equity       SILVER     7      6      1      0
+  12   Generic Drug x Diabetes Mechanism Cata SILVER     9      3      9      3
+  13   Personalized Nutrition for Beta Cells  EXPLOR     4      1      0      0
+  14   Personalized Nutrition for LADA        EXPLOR     0      0      0      0
+  15   GKA Pricing Trajectory                 EXPLOR     0      0      0      0
+  ------------------------------------------------------------------------------
+  
+  3 FINDING(S):
+  
+    [ACKNOWLEDGED] Gap #4 (SILVER) Drug Repurposing for Islet Transplant
+        25 evidence paper(s). 23 touch "islet transplant" and 1 touch "repurposing", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.
+        RULED 2026-09-30: Drug-level evidence counts as evidence for the repurposing question, labelled as such.
+  
+    [ACKNOWLEDGED] Gap #7 (SILVER) GKA Drug Repurposing
+        22 evidence paper(s), NONE mentioning the "repurposing" axis. The stored evidence is on-topic for "glucokinase activator" only. This gap is an intersection and its evidence covers one side of it.
+        RULED 2026-09-30: Drug-level evidence counts as evidence for the repurposing question, labelled as such.
+  
+    [MEDIUM] Gap #11 (SILVER) Islet Transplant Registry Equity
+        7 evidence paper(s). 6 touch "islet transplant registry" and 1 touch "equity", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.
+        REMEDY: State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.
+  
+  [FAIL] gap_subject_coverage: 1 unacknowledged finding(s) -> C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\gap_subject_coverage_audit.json
+  ERROR (exit code 1)
+
+============================================================
+  Asserting the published SITE matches what this pipeline audits (reads origin)
+============================================================
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-30 (0 days old)
+    commits on main not on the site: 1
+    reader-facing: 0/39 files under docs/ wrong (0 x 404, 0 x stale)
+  
+    Report: Analysis\Results\publish_reachability_audit.json
+  
+    [FAIL] 2 finding(s):
+  
+     PUBLISH_BEHIND
+       1 commits unpushed; origin/main tip is 2026-09-30 (0 days old); 0 of 39 files under docs/ are wrong for a reader (0 return 404, 0 are stale)
+       -> every other publish-side assertion in this pipeline describes the working tree, not the site
+       ACTION: push from a host that holds credentials, or provision a PAT / gh credential for the scheduled task
+  
+     UNCOMMITTED_PUBLISH
+       38 file(s) under docs/ are modified or untracked: ocs/Dashboards/Acronym_Database.html, docs/Dashboards/CART_Access_Barriers.html, docs/Dashboards/Clinical_Trial_Dashboard.html, docs/Dashboards/Corpus_Analysis.html, docs/Dashboards/Drug_Repurposing_Islet.html ...
+       -> these would not reach the site even if the push succeeded
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ERROR (exit code 1)
+
+============================================================
+  Regression fixture: publish gate sensitivity AND specificity
+============================================================
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-30 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ..\publish_reachability_audit.json
+  
+    [OK] origin/main is level with main and docs/ is clean.
+         What this pipeline audits is what a reader loads.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-30 (0 days old)
+    commits on main not on the site: 1
+    reader-facing: 3/4 files under docs/ wrong (1 x 404, 2 x stale)
+  
+    Report: ..\publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     PUBLISH_BEHIND
+       1 commits unpushed; origin/main tip is 2026-09-30 (0 days old); 3 of 4 files under docs/ are wrong for a reader (1 return 404, 2 are stale)
+       -> every other publish-side assertion in this pipeline describes the working tree, not the site
+       ACTION: push from a host that holds credentials, or provision a PAT / gh credential for the scheduled task
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-30 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ..\publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     PUBLISH_DIVERGED
+       1 commits exist on origin/main that main does not have
+       -> a push would be rejected, or would need a merge no gate has reviewed
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+    origin/main tip: 2026-09-30 (0 days old)
+    commits on main not on the site: 0
+  
+    Report: ..\publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     UNCOMMITTED_PUBLISH
+       1 file(s) under docs/ are modified or untracked: ocs/page0.html
+       -> these would not reach the site even if the push succeeded
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  ============================================================
+    PUBLISH REACHABILITY GATE
+  ============================================================
+  
+    Report: ..\publish_reachability_audit.json
+  
+    [FAIL] 1 finding(s):
+  
+     FETCH_FAILED
+       could not read origin/main: fatal: 'C:\Users\justi\AppData\Local\Temp\tmpza_ch0ok\remote.git' does not appear to be a git repository
+  fatal: Could not read from remote repository.
+  
+  Please make sure you have the correct access rig
+       -> publish state is UNKNOWN; no publish-side gate in this pipeline can be trusted this run
+  
+    This gate fails on purpose. A pipeline that reports a successful
+    publish it did not perform is the defect; a red stage is the fix.
+  
+  ============================================================
+    PUBLISH REACHABILITY GATE - REGRESSION FIXTURE
+  ============================================================
+    [PASS] case1 level+clean exits 0
+    [PASS] case1 no findings
+    [PASS] case1 counts level
+    [PASS] case2 exits 1
+    [PASS] case2 flags PUBLISH_BEHIND
+    [PASS] case2 counts the unpushed commit
+    [PASS] case2 sees 1 file a reader 404s
+    [PASS] case2 sees 2 stale files
+    [PASS] case2 reports 4 local files, 3 remote
+    [PASS] case2 reports 1 of 4 correct for a reader
+    [PASS] case3 exits 1
+    [PASS] case3 flags PUBLISH_DIVERGED
+    [PASS] case3 does NOT flag PUBLISH_BEHIND
+    [PASS] case4 exits 1
+    [PASS] case4 flags UNCOMMITTED_PUBLISH
+    [PASS] case4 lists the dirty file
+    [PASS] case5 exits 1 (unknown is not clean)
+    [PASS] case5 flags FETCH_FAILED
+    [PASS] case5 records fetch_ok False
+  
+    [OK] 19/19 assertions.
+         Sensitivity: fails on behind, diverged, dirty and unreachable.
+         Specificity: PASSES when the site is level and clean - so the
+         red state in this repo is information, not a stuck alarm.
+  Completed in 48.6s
+
+============================================================
+  Auditing author-surname attributions (REPORT ONLY; prose + HTML anchors + NCBI resolution of unknowns)
+============================================================
+  ==============================================================
+    PROSE AUTHOR SURNAME AUDIT
+  ==============================================================
+    library PMIDs carrying an authors[] array : 389
+    surname+PMID attributions checked         : 176
+      matched first author                    : 175
+      MISMATCH (live publishing surface)      : 1
+      in frozen archive (reported, not fixed) : 6
+    not checkable (PMID not in library)       : 0
+    excluded as this repo's correction prose  : 32
+    html <a> citations scanned (markup reach)  : 6
+    unknown PMIDs resolved via NCBI            : 9 of 9 (0 unresolvable)
+  
+    MISMATCHES - LIVE
+    ----------------------------------------------------------
+    [NOT_AN_AUTHOR] Analysis/Scripts/build_nutrition_lada.py:896
+        asserts : Ludvigsson et al.  (PMID 1884311)
+        library : Godon et al., Can J Public Health 1991
+  
+    IN FROZEN ARCHIVE - reported for the record, NOT to be edited
+    (a dated run report is history; rewriting one to clear a gate
+     is the exact failure this repository audits for)
+    ----------------------------------------------------------
+    [NON_FIRST_AUTHOR] Analysis/Results/iterate_run_report_2026-05-09.md:10
+        asserts : Rigby et al.  (PMID 33207093)
+        library : Quattrin et al., N Engl J Med 2020
+  
+    [NON_FIRST_AUTHOR] Analysis/Results/iterate_run_report_2026-05-12.md:16
+        asserts : Herrington et al.  (PMID 36331190)
+        library : The et al., N Engl J Med 2023
+  
+    [NOT_AN_AUTHOR] ACTION_REQUIRED_2026-09-15.md:91
+        asserts : Shapiro et al.  (PMID 10919952)
+        library : Zeisel et al., Am J Clin Nutr 2000
+  
+    [NOT_AN_AUTHOR] Analysis/Results/iterate_run_report_2026-06-09.md:22
+        asserts : Griffin et al.  (PMID 28776086)
+        library : Rena et al., Diabetologia 2017
+  
+    [NOT_AN_AUTHOR] Analysis/Results/iterate_run_report_2026-06-14.md:10
+        asserts : Griffin et al.  (PMID 28776086)
+        library : Rena et al., Diabetologia 2017
+  
+    [NOT_AN_AUTHOR] Analysis/Scripts/_close_run_2026_08_28.py:25
+        asserts : Orban et al.  (PMID 20570966)
+        library : McGovern et al., Hum Mol Genet 2010
+  
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\prose_author_surname_audit.json
+    [MEASURE] reporting only; not gating
+  Completed in 7.8s
+
+============================================================
+  Auditing citations attached to locally computed values (REPORT ONLY)
+============================================================
+  ==============================================================
+    COMPUTED-VALUE CITATION AUDIT
+  ==============================================================
+    builder files scanned                     : 90
+    f-strings carrying a PMID + interpolation : 6
+      COMPUTED  (citation on a runtime value) : 2
+      BARE_NAME (review; may be transcribed)  : 4
+    excluded as this repo's correction prose  : 1
+  
+    COMPUTED -- a PMID is attached to a value this script computes
+    ----------------------------------------------------------
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:597
+        PMID(s)    : 41921761
+        expression : len(df)
+        line       : # Multi-Omic Microbiome ML Pipeline â€” Phase 2: Feature Engineering Report
+  **Generated:** {...}
+  **Phase:** 2 of 5 (Feature Engineering)
+  **Target:** AUC
+  
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:599
+        PMID(s)    : 41921761
+        expression : len(top_features)
+        line       : red multi-omic dataset of **{...} synthetic samples** across **{...} features** spanning microbiome taxonomy, metabolomics, genomics, and cross-omic i
+  
+    BARE_NAME -- review only, not flagged
+    ----------------------------------------------------------
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:589  {date}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase2_features.py:597  {n_features}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase3_models.py:482  {date}  PMID 41921761
+    Analysis/Scripts/project_microbiome_ml_phase3_models.py:497  {baseline_auc}  PMID 41921761
+  
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\computed_value_citation_audit.json
+    [MEASURE] reporting only; not gating
+  Completed in 3.8s
+
+============================================================
+  Gating on catalog rows whose cited paper never mentions the drug the row is about
+============================================================
+  ==============================================================
+    CATALOG ENTITY <-> CITATION AGREEMENT
+  ==============================================================
+    Paper library: 360 indexed PMIDs
+    Builders with parseable catalog records: 1
+    AGREE       19
+    ABSENT      0   <- defect class
+    UNCHECKABLE 11  (cited but never ingested)
+    WAIVED      0
+  
+    UNCHECKABLE -- cited by a catalog, absent from the library
+    ----------------------------------------------------------
+    build_generic_drug_catalog.py Alpha-lipoic acid: 26651260
+    build_generic_drug_catalog.py Berberine: 16873688
+    build_generic_drug_catalog.py Colchicine: 27241260
+    build_generic_drug_catalog.py Dapsone: 36125533
+    build_generic_drug_catalog.py Doxycycline: 21782948
+    build_generic_drug_catalog.py Hydroxychloroquine: 25669071
+    build_generic_drug_catalog.py Methotrexate: 28303409
+    build_generic_drug_catalog.py Nicotinamide: 8805029
+    build_generic_drug_catalog.py Pioglitazone: 19402055
+    build_generic_drug_catalog.py Verapamil: 36060506
+    build_generic_drug_catalog.py Vitamin D: 25205139
+  
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\catalog_entity_agreement_audit.json
+    [OK] no unexplained entity/citation disagreement
+  Completed in 4.3s
+
+============================================================
+  Gating on paper-index summary counts that disagree with the records they summarise
+============================================================
+  ==============================================================
+    PAPER INDEX FIELD INVARIANTS
+  ==============================================================
+    papers indexed            : 360
+    metadata.pmc_available    : 176
+    metadata.fulltext_fetched : 151
+    records with pmcid        : 172
+    records with has_fulltext : 128
+    records with has_abstract : 356
+    fulltext files on disk    : 151
+  
+    [NOTE]  I3: 151 full texts on disk, 128 records flagged; difference of 23 is full text held for papers the index does not list (ingestion gap)
+  
+    Output: C:\Users\justi\OneDrive\Diabetes_Research\Analysis\Results\index_field_invariants.json
+    [OK] index summary counts agree with its records
+  Completed in 2.2s
+
+============================================================
+  Gating on endpoint values that contradict each other or carry no citation at all
+============================================================
+  [OK] endpoint_value_agreement: 98 files | 20 values cited in-statement | 12 unsourced (baseline 12, HELD) | 0 conflicts
+  Completed in 6.5s
+
+============================================================
+  Verifying structured effect records against their quoted PubMed abstract spans
+============================================================
+  [OK] structured_effects validate: 13 records, 0 invalid
+  [OK] structured_effects verify: 13 records, 0 failed span check
+  Completed in 7.9s
+
+============================================================
+  SUMMARY
+============================================================
+  [OK] Checking that every builder parses
+  [OK] Asserting each wired gate's verdict can reach the runner
+  [OK] Regression fixture: exit-code audit sensitivity AND specificity
+  [OK] Rebuilding Clinical Trial Dashboard (Tufte style)
+  [OK] Rebuilding Research Dashboard (Tufte style)
+  [OK] Refreshing literature gap PubMed counts (resumable; bounded slice)
+  [OK] Improving Literature Gap Analysis (interpretive classifications)
+  [OK] Building Gap Synthesis Dashboard (scientific method framework)
+  [OK] Building Beta Cell Therapy Equity Analysis
+  [OK] Building Gap Deep Dives (all 15 gaps)
+  [OK] Building Acronym & Abbreviation Database
+  [OK] Building Medical Data Dictionary (117 terms, cited)
+  [OK] Building LADA Natural History Model (Gap #1 EXPLORATORY)
+  [OK] Building Islet Transplant Outcomes Analysis (Gap #3 GOLD)
+  [OK] Building Drug Repurposing for Islet Transplant (Gap #4 SILVER)
+  [OK] Building Immunomodulatory Drugs for LADA (Gap #8 SILVER)
+  [OK] Building Treg in Diabetic Neuropathy (Gap #5 SILVER)
+  [OK] Building CAR-T Access Barriers Analysis (Gap #6 GOLD)
+  [OK] Building GKA Drug Repurposing Landscape (Gap #7 SILVER)
+  [OK] Building Islet Transplant Registry Equity (Gap #11 GOLD)
+  [OK] Building Generic Drug x Diabetes Mechanism Catalog (Gap #12 SILVER)
+  [OK] Building GKA in LADA Analysis (Gap #9 EXPLORATORY)
+  [OK] Building LADA Prevalence by Healthcare Setting (Gap #10 SILVER)
+  [OK] Building Personalized Nutrition for Beta Cells (Gap #13 EXPLORATORY)
+  [OK] Building Personalized Nutrition for LADA (Gap #14 EXPLORATORY)
+  [OK] Building GKA Pricing Trajectory Model (Gap #15 EXPLORATORY)
+  [OK] Building Health Equity Dashboard (Gap #2 GOLD)
+  [OK] Building Methodology & Validation Framework
+  [OK] Verifying PMIDs against PubMed API
+  [OK] Tracking unfound PMIDs (Verify-* markers)
+  [OK] Adding source citations to Research Findings Summary
+  [OK] Ingesting paper abstracts and full text from PubMed/PMC
+  [OK] Folding un-indexed corpus papers into the audit gate
+  [OK] Validating citations and building evidence network
+  [OK] Gating on unresolved citation MISMATCHes
+  [OK] Gating on off-topic / unresolvable external citations on research paths
+  [OK] Extracting quantitative data points from the full-text corpus
+  [OK] Gating on design/baseline papers cited as outcome evidence
+  [OK] Gating on citations in every field and identifier namespace
+  [OK] Gating on retracted papers cited as evidence
+  [OK] Gating on invented journal/volume/page coordinates
+  [OK] Gating on absolute clinical claims not echoed by their cited abstract
+  [OK] Auditing extractors for unbounded-wildcard artifacts
+  [OK] Gating on PMID readers that bypass corpus_membership
+  [OK] Gating on FLAGGED papers with no membership class, and on uncitable PMIDs cited in live prose
+  [OK] Grading research-path evidence by study design (PubMed pubtype)
+  [OK] Checking PubMed pubtype against the verified title (design-blind coverage)
+  [OK] Grading the 15 research gaps by evidence design (offline, from pubtype cache)
+  [OK] Checking gap numbering + tier agreement across memory, evidence store and site
+  [OK] Scoring citation semantic support and claim density (reports worst N)
+  [OK] Auditing markdown citations against PubMed (doctrine + summaries)
+  [OK] Regression fixture: markdown gate sensitivity AND specificity
+  [OK] Auditing trial-registry identifiers against ClinicalTrials.gov
+  [OK] Credibility sweep: runtime PMID ceiling + preclinical overclaim
+  [OK] Extracting evidence from papers for 15 research gaps
+  [OK] Building Paper Library Dashboard
+  [OK] Building Generic Drug Repurposing Screen (34 drugs, pressure-tested)
+  [OK] Building LADA Diagnostic Cost-Effectiveness Model
+  [OK] Building Clinical Trial Site Equity Mapper
+  [OK] Building Corpus Analysis Dashboard (co-occurrence network; counts printed by the builder)
+  [OK] Building Extracted Evidence Dashboard (counts printed by the builder)
+  [OK] Building Research Paths Dashboard (post-artifact-filter counts printed by the builder)
+  [OK] Resolving the canonical research-path store (merge rule: recency, conservative tie-break)
+  [OK] Asserting no stored path record asserts two verdicts about itself
+  [OK] Measuring posterior-vs-study-design discordance on the Bayesian ranking
+  [OK] Pooling verified effect records (meta-analysis section only)
+  [OK] Building Statistical Analysis Dashboard (meta-analysis, Bayesian synthesis, Monte Carlo)
+  [OK] Building Islet Drug Repurposing Pipeline v2
+  [OK] Building Prediction Ledger Dashboard (reads the ledger, never writes it)
+  [OK] Rebuilding GitHub Pages site (Tufte style)
+  [OK] Post-processing dashboards (nav, PMID links, ARIA)
+  [OK] Publishing rebuilt dashboards to docs/ (GitHub Pages)
+  [OK] Refreshing the rolling PubMed publication monitor (live E-utilities sweep)
+  [OK] Publishing the markdown reports the hub advertises to docs/Reports/
+  [OK] Asserting published reports are no older than the window they advertise
+  [OK] Regression fixture: freshness gate sensitivity AND specificity
+  [OK] Asserting no adjudicated-artifact path is live on the published site
+  [OK] Asserting every link the published site advertises resolves under docs/
+  [OK] Asserting every published absence claim declares the search that produced it
+  [FAILED] Asserting each gap's stored evidence mentions both axes of the gap's own question
+  [FAILED] Asserting the published SITE matches what this pipeline audits (reads origin)
+  [OK] Regression fixture: publish gate sensitivity AND specificity
+  [OK] Auditing author-surname attributions (REPORT ONLY; prose + HTML anchors + NCBI resolution of unknowns)
+  [OK] Auditing citations attached to locally computed values (REPORT ONLY)
+  [OK] Gating on catalog rows whose cited paper never mentions the drug the row is about
+  [OK] Gating on paper-index summary counts that disagree with the records they summarise
+  [OK] Gating on endpoint values that contradict each other or carry no citation at all
+  [OK] Verifying structured effect records against their quoted PubMed abstract spans
+
+  2 script(s) failed. Check output above.
