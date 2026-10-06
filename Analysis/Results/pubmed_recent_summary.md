@@ -1,8 +1,8 @@
 # PubMed Recent Publications Report
 **Generated:** 2026-10-06
 **Lookback period:** 30 days
-**Papers matched by these queries:** 1034
-**Papers actually retrieved and listed below:** 160 (15.5% of matched)
+**Papers matched by these queries:** 1038
+**Papers actually retrieved and listed below:** 160 (15.4% of matched)
 
 > **This report is a sample, not a census.** Each domain query returns at most 10 papers and each therapy query at most 5, sorted most-recent-first. The per-domain coverage column below shows what fraction of each domain was actually read. Low coverage is not low activity - it is the opposite.
 
@@ -14,14 +14,14 @@
 
 | Domain | Matched | Read | Coverage | Trend Signal |
 |--------|--------:|-----:|---------:|--------------|
-| Diabetes AI/ML | 173 | 10 | 6% | HIGH ACTIVITY |
+| Diabetes AI/ML | 175 | 10 | 6% | HIGH ACTIVITY |
 | T2D GLP-1 New | 172 | 10 | 6% | HIGH ACTIVITY |
 | Diabetes Microbiome | 128 | 10 | 8% | HIGH ACTIVITY |
-| Diabetes Biomarker | 109 | 10 | 9% | HIGH ACTIVITY |
+| Diabetes Biomarker | 110 | 10 | 9% | HIGH ACTIVITY |
 | Diabetes Health Equity | 63 | 10 | 16% | HIGH ACTIVITY |
 | Diabetes Multi-Omics | 57 | 10 | 18% | HIGH ACTIVITY |
 | T2D Remission | 48 | 10 | 21% | ACTIVE |
-| Diabetes Gene Therapy | 39 | 10 | 26% | ACTIVE |
+| Diabetes Gene Therapy | 40 | 10 | 25% | ACTIVE |
 | Diabetes Complications New | 32 | 10 | 31% | ACTIVE |
 | T1D Immunotherapy | 22 | 10 | 45% | ACTIVE |
 | Closed Loop AP | 22 | 10 | 45% | ACTIVE |
@@ -134,7 +134,15 @@
 
 ### Diabetes AI/ML
 
-*Showing 5 of 10 retrieved; 173 matched the query.*
+*Showing 5 of 10 retrieved; 175 matched the query.*
+
+- **Elucidating the Association Between Gastric Cancer and Diabetes: Integrative Analysis of Epidemiological, Genetic, and Transcriptomic Data.**
+  Molecular carcinogenesis (2026-Oct-06) | Ma B; Zhang N; Kong L
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42836850/) | [DOI](https://doi.org/10.1002/mc.70182)
+
+- **Development and validation of a predictive model for sarcopenia in patients with type 2 diabetes based on the synergistic mechanism of insulin resistance and inflammation.**
+  Frontiers in physiology (2026) | Akeaji A; Akeaji B; Han Y
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42835120/) | [DOI](https://doi.org/10.3389/fphys.2026.1922889)
 
 - **Integrated bioinformatics analysis uncovers TNFSF10 as a key panoptosis-related gene in diabetic tubular injury.**
   Renal failure (2026-Dec) | Chen L; Zhu Y; Xie S
@@ -148,17 +156,13 @@
   European journal of internal medicine (2026-Oct-05) | Balfanz P; Marx N
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42833987/) | [DOI](https://doi.org/10.1016/j.ejim.2026.107222)
 
-- **Phenotypic determinants of atrial fibrillation in ischaemic stroke: a retrospective study.**
-  Open heart (2026-Oct-05) | van Kempen EJ; Elzinga WV; Olier I
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42833699/) | [DOI](https://doi.org/10.1136/openhrt-2026-004393)
-
-- **Mathematical modeling and intelligent methods in systems biology and medicine applied to complex diseases: An overview.**
-  Bio Systems (2026-Oct-05) | Alvarado-Mentado M; León-Pineda MO; García-Lamont F
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42833389/) | [DOI](https://doi.org/10.1016/j.biosystems.2026.105969)
-
 ### Diabetes Biomarker
 
-*Showing 5 of 10 retrieved; 109 matched the query.*
+*Showing 5 of 10 retrieved; 110 matched the query.*
+
+- **Association of novel inflammatory biomarkers with major amputation level in diabetic foot ulcer patients undergoing amputation: a retrospective comparative study.**
+  Frontiers in endocrinology (2026) | Chen H; Zhang X; Dai J
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42835179/) | [DOI](https://doi.org/10.3389/fendo.2026.1925839)
 
 - **Effects of MASH risk genotypes on resmetirom efficacy in patients with MASH and fibrosis.**
   Journal of hepatology (2026-Oct-05) | Chalasani NP; Taub R; Mogg R
@@ -175,10 +179,6 @@
 - **Renal tissue microbiota and metabolite profiling reveal dysregulated signatures in diabetic kidney disease.**
   Frontiers in microbiology (2026) | Zhao N; Leng Z; Li Q
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42824926/) | [DOI](https://doi.org/10.3389/fmicb.2026.1898177)
-
-- **Association of monocyte to high-density lipoprotein cholesterol ratio with non-calcified plaques in subclinical coronary atherosclerosis: a cross-sectional study in hypertensive patients.**
-  Frontiers in endocrinology (2026) | Su X; Wu S; Xue S
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42824181/) | [DOI](https://doi.org/10.3389/fendo.2026.1941868)
 
 ### Diabetes Microbiome
 
@@ -206,7 +206,11 @@
 
 ### Diabetes Gene Therapy
 
-*Showing 5 of 10 retrieved; 39 matched the query.*
+*Showing 5 of 10 retrieved; 40 matched the query.*
+
+- **Single-cell virtual knockout network perturbation prioritizes candidate regulators of beta-cell functional failure in type 2 diabetes.**
+  Frontiers in endocrinology (2026) | Yang S; Li Y; Yang Y
+  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42835153/) | [DOI](https://doi.org/10.3389/fendo.2026.1924512)
 
 - **Emerging nanostructured platforms for improved oral delivery of antidiabetic agents: overcoming physiological barriers and enhancing therapeutic efficacy.**
   Daru : journal of Faculty of Pharmacy, Tehran University of Medical Sciences (2026-Oct-05) | Yadav S; Singh P; Purohit M
@@ -223,10 +227,6 @@
 - **Safety and efficacy of human gingiva-derived mesenchymal stem cells in patients with type 1 diabetes: a double-blind, randomized, placebo-controlled, phase 1 trial.**
   Signal transduction and targeted therapy (2026-Sep-30) | Tang Q; Zhou L; Fan L
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42816465/) | [DOI](https://doi.org/10.1038/s41392-026-03021-8)
-
-- **Rbks plays a novel role in maintaining glycolipid metabolic homeostasis.**
-  Acta biochimica et biophysica Sinica (2026-Sep-29) | Yang Z; Li H; Wang Z
-  [PubMed](https://pubmed.ncbi.nlm.nih.gov/42809371/) | [DOI](https://doi.org/10.3724/abbs.2026126)
 
 ### Closed Loop AP
 
@@ -703,4 +703,4 @@ These papers span multiple research domains -- potentially high-value for synthe
   [PubMed](https://pubmed.ncbi.nlm.nih.gov/42503495/)
 
 ---
-*Generated by baseline_pubmed_alerts.py -- 2026-10-06. Sample of 160/1034 matched papers (15.5%); caps 10/domain, 5/therapy.*
+*Generated by baseline_pubmed_alerts.py -- 2026-10-06. Sample of 160/1038 matched papers (15.4%); caps 10/domain, 5/therapy.*

@@ -141,7 +141,7 @@ ID_RE = re.compile(r"(?:PMID[:\s]*(\d{6,9})|\b(NCT\d{8})\b)", re.I)
 VALUE_RE = re.compile(
     r"(?P<val>\d{1,3}(?:\.\d+)?\s*%|\b\d{1,3}\s*/\s*\d{1,3}\b)"
     r"(?P<mid>[^.;|\n\"']{0,60}?)"
-    r"\bat\s+(?P<num>\d{1,3}(?:\.\d+)?)\s*(?:-|\s)?\s*(?P<unit>years?|yrs?|yr|months?|mo)\b",
+    r"\bat\s+(?P<num>\d{1,3}(?:\.\d+)?)\s*(?:-|\s)?\s*(?P<unit>years?|yrs?|yr|months?|mo|weeks?|wks?|wk)\b",
     re.I,
 )
 
@@ -170,7 +170,12 @@ def normalise_value(raw):
 
 
 def normalise_endpoint(num, unit):
-    years = float(num) / 12.0 if unit.lower().startswith("mo") else float(num)
+    # Weeks added 2026-10-06: "28.7% weight loss at 68wk" sat uncited on the
+    # Research Dashboard because this gate only knew years and months.
+    u = unit.lower()
+    if u.startswith("w"):
+        return "%.0fw" % float(num)
+    years = float(num) / 12.0 if u.startswith("mo") else float(num)
     return "%.1fy" % years
 
 

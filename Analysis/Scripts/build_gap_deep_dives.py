@@ -490,7 +490,7 @@ GAPS_DATA = {
         "joint_pubs": 0,
         "trial_count": 5,
         "key_refs": ["PMID:38783768", "(PMID requires verification)", "PMID:33622669"],
-        "key_finding": "Dorzagliatin reported a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a post-trial cohort of SEED completers (n=69, China-only, not yet replicated internationally; the same paper reports 52.0% by the ADA definition); AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
+        "key_finding": "Dorzagliatin reported a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a post-trial cohort of SEED completers (PMID:37385967; n=69, China-only, not yet replicated internationally; the same paper reports 52.0% by the ADA definition); AZD1656 shows tachyphylaxis at 3-4mo in GCKR variant carriers; GKA efficacy varies by genetic background",
         "status": "In Development",
         "data_profile": {
             "gap_score": 0.80,
@@ -504,7 +504,7 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "Dorzagliatin reached a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a follow-on cohort of SEED completers (n=69), not in a phase 3 trial. AZD1656 efficacy depends on GCKR genotype (tachyphylaxis in mutant carriers at 3-4mo). Multiple GKA failures due to hypoglycemia or tachyphylaxis.",
+            "summary": "Dorzagliatin reached a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a follow-on cohort of SEED completers (PMID:37385967; n=69), not in a phase 3 trial. AZD1656 lowered HbA1c for 4 months but the effect was not sustained; a GCKR-genotype explanation comes from mouse models only. [Corrected 2026-10-06: previously stated as a human genotype finding.] Several earlier GKAs failed on hypoglycaemia or loss of effect.",
             "details": [
                 "Dorzagliatin: HbA1c -1.07% vs placebo -0.50%, phase 3 SEED monotherapy n=463 (PMID:35551294); TIR 83.7% in the SEED CGM substudy n=16 (PMID:38783768, review); 65.2% KM drug-free remission probability at 52wk, cohort follow-on n=69 (PMID:37385967)",
                 "AZD1656: loss of effect at 3-4 months (GCKR genetic variants, (PMID requires verification))",
@@ -1679,7 +1679,7 @@ def generate_html():
                     <tr>
                         <td>Dorzagliatin</td>
                         <td>Approved (China)</td>
-                        <td>HbA1c -1.07% (SEED phase 3, n=463); 65.2% drug-free remission at 52wk (post-trial cohort, n=69)</td>
+                        <td>HbA1c -1.07% (SEED phase 3, n=463); 65.2% drug-free remission at 52wk (post-trial cohort, n=69; PMID:37385967)</td>
                         <td>Safe across 800+ patients</td>
                         <td>China NRDL listed Jan 2024</td>
                     </tr>

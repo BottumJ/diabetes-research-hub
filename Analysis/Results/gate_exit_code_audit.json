@@ -1,9 +1,9 @@
 {
   "generated": "2026-10-06",
   "runner": "Analysis/Scripts/run_quality_improvements.py",
-  "stages_wired": 87,
-  "gates_classified": 41,
-  "gates_that_can_fail": 36,
+  "stages_wired": 88,
+  "gates_classified": 42,
+  "gates_that_can_fail": 37,
   "defects": [],
   "records": [
     {
@@ -157,47 +157,47 @@
       "entry_points": [
         {
           "func": "print",
-          "line": 872,
+          "line": 951,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 873,
+          "line": 952,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 874,
+          "line": 953,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 875,
+          "line": 954,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 876,
+          "line": 955,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 877,
+          "line": 956,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 878,
+          "line": 957,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 879,
+          "line": 958,
           "exit_wrapped": false
         },
         {
           "func": "print",
-          "line": 880,
+          "line": 959,
           "exit_wrapped": false
         }
       ],
@@ -315,7 +315,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 2167,
+          "line": 2220,
           "exit_wrapped": false
         }
       ],
@@ -654,7 +654,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 286,
+          "line": 300,
           "exit_wrapped": false
         }
       ],
@@ -1909,7 +1909,7 @@
       "entry_points": [
         {
           "func": "main",
-          "line": 332,
+          "line": 354,
           "exit_wrapped": false
         }
       ],
@@ -2119,6 +2119,37 @@
       "verdict": "OK"
     },
     {
+      "stage": "jsdatagate",
+      "script": "audit_js_data_literals.py",
+      "role": "gate",
+      "fail_markers": [
+        "[FAIL]"
+      ],
+      "nonzero_exits": [
+        {
+          "line": 99,
+          "in_except": false,
+          "code": "expr"
+        }
+      ],
+      "nonzero_outside_except": [
+        99
+      ],
+      "zero_exits": [],
+      "entry_points": [
+        {
+          "func": "main",
+          "line": 99,
+          "exit_wrapped": true
+        }
+      ],
+      "entry_returns_nonzero": [
+        "main"
+      ],
+      "dropped_nonzero_returns": [],
+      "verdict": "OK"
+    },
+    {
       "stage": "absencescope",
       "script": "audit_absence_claim_scope.py",
       "role": "gate",
@@ -2158,19 +2189,19 @@
       ],
       "nonzero_exits": [
         {
-          "line": 326,
+          "line": 329,
           "in_except": false,
           "code": "expr"
         }
       ],
       "nonzero_outside_except": [
-        326
+        329
       ],
       "zero_exits": [],
       "entry_points": [
         {
           "func": "main",
-          "line": 326,
+          "line": 329,
           "exit_wrapped": true
         }
       ],
@@ -2379,19 +2410,19 @@
       "fail_markers": [],
       "nonzero_exits": [
         {
-          "line": 401,
+          "line": 406,
           "in_except": false,
           "code": "expr"
         }
       ],
       "nonzero_outside_except": [
-        401
+        406
       ],
       "zero_exits": [],
       "entry_points": [
         {
           "func": "main",
-          "line": 401,
+          "line": 406,
           "exit_wrapped": true
         }
       ],

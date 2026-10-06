@@ -174,11 +174,15 @@ A urine metabolomics study reported high diagnostic accuracy for biopsy-confirme
 
 ## 7. Epidemiology & Health Equity
 
-An estimated 589 million adults worldwide had diabetes in 2021, with a projected 46% increase by 2050. [PMID:37356446, The Lancet, 2023 — NCD-RisC/IDF] **Validation: GOLD** (large-scale global surveillance)
+An estimated 529 million people worldwide had diabetes in 2021, and more than 1.31 billion are projected to have it by 2050; type 2 diabetes made up 96% of cases. [PMID:37356446, The Lancet, 2023 — GBD 2021 Diabetes Collaborators] **Validation: BRONZE** (one modelling study; the IDF Atlas is a second, partly overlapping estimate not yet cited here)
+
+> **CORRECTED 2026-10-06.** This read "589 million adults ... in 2021, with a projected 46% increase by 2050", attributed to NCD-RisC/IDF and rated GOLD. The cited paper is the Global Burden of Disease study and reports 529 million in 2021 and 1.31 billion by 2050. 589 million is a different source's figure (IDF, adults 20-79, for a later year), so the sentence mixed two estimates under one citation.
 
 In the United States, approximately 11.6% of the population has diabetes; an estimated 97.6 million adults have prediabetes. [CDC National Diabetes Statistics Report, 2024] **Validation: GOLD** (national surveillance data)
 
-Significant disparities persist: Black and Hispanic youth have 2-3× higher T2D incidence rates compared to White youth. [PMID:37016949, MMWR, 2022] **Validation: GOLD** (CDC SEARCH for Diabetes in Youth Study)
+Type 2 diabetes incidence in US youth aged 10-19 rose 5.3% a year from 2002 to 2018 (17.9 per 100,000 in 2017-18), with larger increases among non-Hispanic Black and Hispanic youth. [PMID:36868256, Lancet Diabetes Endocrinol, 2023 — SEARCH for Diabetes in Youth] **Validation: BRONZE** (one surveillance study)
+
+> **CORRECTED 2026-10-06 — wrong paper.** This read "Black and Hispanic youth have 2-3× higher T2D incidence", cited to PMID 37016949 as an MMWR SEARCH report and rated GOLD. PMID 37016949 is a systematic review of behavioural type 1 diabetes interventions in J Pediatr Psychol; it reports no incidence. The SEARCH paper is cited instead. The 2-3× ratio is not in its abstract and has been removed.
 
 **LADA** (latent autoimmune diabetes in adults) is estimated to account for 4-14% of patients clinically diagnosed with T2D. [PMID:16306343 — Stenstrom et al, Diabetes, 2005: "Latent autoimmune diabetes in adults: definition, prevalence, beta-cell function, and treatment"] **Validation: SILVER** (multiple epidemiological studies; wide prevalence range reflects diagnostic variability)
 

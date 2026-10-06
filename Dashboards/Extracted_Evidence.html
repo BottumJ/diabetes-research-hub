@@ -72,19 +72,6 @@
 .drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
 .drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
 .drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
-
-/* ── DRH Navigation Bar ── */
-.drh-nav { background:#fff; border-bottom:1px solid #e0ddd5; padding:0 2rem; display:flex; align-items:center; gap:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:13px; position:relative; z-index:1000; flex-wrap:wrap; }
-.drh-nav a.drh-home { color:#2c5f8a; text-decoration:none; font-weight:600; padding:10px 16px 10px 0; border-right:1px solid #e0ddd5; margin-right:8px; white-space:nowrap; }
-.drh-nav a.drh-home:hover { color:#1a4a6e; }
-.drh-nav .drh-group { position:relative; }
-.drh-nav .drh-group-label { color:#636363; cursor:pointer; padding:10px 12px; border:none; background:none; font-size:13px; font-family:inherit; }
-.drh-nav .drh-group-label:hover { color:#1a1a1a; background:#f5f5f0; }
-.drh-nav .drh-dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e0ddd5; box-shadow:0 4px 12px rgba(0,0,0,0.08); min-width:220px; z-index:1001; }
-.drh-nav .drh-group:hover .drh-dropdown { display:block; }
-.drh-nav .drh-dropdown a { display:block; padding:8px 16px; color:#1a1a1a; text-decoration:none; font-size:13px; white-space:nowrap; }
-.drh-nav .drh-dropdown a:hover { background:#f5f5f0; color:#2c5f8a; }
-.drh-nav .drh-dropdown a.drh-current { background:#f0f4f8; color:#2c5f8a; font-weight:600; }
 </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGMD5VRYPH"></script>
@@ -160,7 +147,6 @@
   </div>
 </nav>
 
-
     <div class="container">
         <header>
             <h1>Extracted Evidence Dashboard</h1>
@@ -168,13 +154,13 @@
                  while the paragraph below it rendered the live figure (69) from the
                  same data file - the page contradicted itself. Any count that is not
                  read at build time is a future stale claim. Fixed 2026-08-20. -->
-            <p class="subtitle">Quantitative data extraction from 62 full-text diabetes research papers</p>
-            <p class="subtitle">Generated: 2026-10-06 07:34:12</p>
+            <p class="subtitle">Quantitative data extraction from 63 full-text diabetes research papers</p>
+            <p class="subtitle">Generated: 2026-10-06 12:45:01</p>
         </header>
 
         <div class="context-block">
             <h3>What This Dashboard Answers</h3>
-            <p>This dashboard visualizes quantitative data that we actually extracted from 62 full-text papers using regex patterns and NLP-assisted identification. It answers: What quantitative data can we actually extract from our corpus? Which research gaps have the strongest corpus-backed evidence?</p>
+            <p>This dashboard visualizes quantitative data that we actually extracted from 63 full-text papers using regex patterns and NLP-assisted identification. It answers: What quantitative data can we actually extract from our corpus? Which research gaps have the strongest corpus-backed evidence?</p>
 
             <div class="context-label">How to Use This</div>
             <p>Each data point links back to its source PMID with surrounding context. Click any PMID to verify the claim in the original paper. Use this dashboard to validate claims made in other research dashboards and to identify which gaps have direct quantitative support in the published literature.</p>
@@ -198,11 +184,11 @@
             <div class="stats-box">
                 <div class="stat-card">
                     <div class="stat-label">Total Data Points Extracted</div>
-                    <div class="stat-value">280</div>
+                    <div class="stat-value">281</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Papers Yielding Data</div>
-                    <div class="stat-value">62</div>
+                    <div class="stat-value">63</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Extraction Categories</div>
@@ -246,12 +232,12 @@
                         <td>Quantitative clinical measurements and thresholds</td>
                     </tr>
                     <tr>
-                        <td>Survival Graft</td>
-                        <td>3</td>
+                        <td>Inflammatory Markers</td>
+                        <td>4</td>
                         <td>Quantitative clinical measurements and thresholds</td>
                     </tr>
                     <tr>
-                        <td>Inflammatory Markers</td>
+                        <td>Survival Graft</td>
                         <td>3</td>
                         <td>Quantitative clinical measurements and thresholds</td>
                     </tr>
@@ -409,11 +395,11 @@
                 <div class="gap-title">
                     Gap 4: Drug Repurposing for Islet Transplant
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 217 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 218 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>217</strong> data points in the corpus.</p>
+                <p>This gap has <strong>218</strong> data points in the corpus.</p>
                 <p class="coverage-caveat" style="border-left: 3px solid #b45309; padding: 0.5em 1em; background: #fef3c7; margin: 0.75em 0;">
                     <strong>Caveat:</strong> The papers cited here are about the individual drugs (for example anakinra, etanercept, sirolimus) in islet transplantation. None of them frames its work as drug repurposing; that link is this hub's inference, not a finding of the cited papers.
                 </p>
@@ -424,11 +410,11 @@
                         <td style="text-align: right;">211 items</td>
                     </tr>
                     <tr>
-                        <td>Survival Graft</td>
-                        <td style="text-align: right;">3 items</td>
+                        <td>Inflammatory Markers</td>
+                        <td style="text-align: right;">4 items</td>
                     </tr>
                     <tr>
-                        <td>Inflammatory Markers</td>
+                        <td>Survival Graft</td>
                         <td style="text-align: right;">3 items</td>
                     </tr>
                 </table>
@@ -463,16 +449,16 @@
                 <div class="gap-title">
                     Gap 5: Treg in Diabetic Neuropathy
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-weak">WEAK: 4 points</span>
+                    <span class="tier-badge evidence-weak">WEAK: 5 points</span>
                 </div>
 
                 <h4>Evidence Strength: Limited evidence found</h4>
-                <p>This gap has <strong>4</strong> data points in the corpus.</p>
+                <p>This gap has <strong>5</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
                         <td>Inflammatory Markers</td>
-                        <td style="text-align: right;">3 items</td>
+                        <td style="text-align: right;">4 items</td>
                     </tr>
                     <tr>
                         <td>C Peptide</td>
@@ -481,9 +467,9 @@
                 </table>
                 <h4>Top Extracted Values with Context</h4>
                 <div class="data-point">
-                    <strong>Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
-                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009, <em>Transplantation</em>)<br>
-                    <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
+                    <strong>Value:</strong> interleukin-2 receptor [sIL-2R/sCD25] 15,420 units/mL; triglycerides 539 mg/dL<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/42520060/" target="_blank">PMID:42520060</a> (2026, <em>Diabetes Care</em>)<br>
+                    <div class="context-snippet">criteria for secondary hemophagocytic lymphohistiocytosis (HLH), including fever, generalized lymphadenopathy, bicytopenia (hemoglobin 8.0 g/dL and platelets 89 × 109/L; ferritin 10,478 µg/L; soluble interleukin-2 receptor [sIL-2R/sCD25] 15,420 units/mL; triglycerides 539 mg/dL; and fibrinogen 141…</div>
                 </div>
                 <div class="data-point">
                     <strong>Value:</strong> IL-1β/IFNγ, its levels further increased 4.6-fold<br>
@@ -499,6 +485,11 @@
                     <strong>Value:</strong> IL-1β and IL-18 were 0.033 pg/mL<br>
                     <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32358544/" target="_blank">PMID:32358544</a> (2020, <em>Nat Commun</em>)<br>
                     <div class="context-snippet">iology Collaboration (CKD-EPI). Serum IL-1β and IL-18 were measured with ELISA using human Quantikine HS ELISA kits (R&D Systems, MN, USA). The assay sensitivities (the minimum detectable levels) for IL-1β and IL-18 were 0.033 pg/mL and 1.25 pg/mL, respectively, determined by zero standard +2…</div>
+                </div>
+                <div class="data-point">
+                    <strong>Value:</strong> stimulated C-peptide ≤0.3 ng/ml<br>
+                    <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/19584681/" target="_blank">PMID:19584681</a> (2009, <em>Transplantation</em>)<br>
+                    <div class="context-snippet">than 3 times in one-week period and/or HbA1c >6.5% in 2 consecutive measurements. Graft failure fasting C-peptide ≤0.10 ng/ml in 2 consecutive measurements (in absence of hypoglycemia) or mixed meal stimulated C-peptide ≤0.3 ng/ml. Statistical analysis Statistical analysis and graphics were done…</div>
                 </div>
             </div>
             <div class="gap-section silver">
@@ -606,11 +597,11 @@
                 <div class="gap-title">
                     Gap 8: Immunomodulatory Drugs for LADA
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 240 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 241 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>240</strong> data points in the corpus.</p>
+                <p>This gap has <strong>241</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
@@ -627,7 +618,7 @@
                     </tr>
                     <tr>
                         <td>Inflammatory Markers</td>
-                        <td style="text-align: right;">3 items</td>
+                        <td style="text-align: right;">4 items</td>
                     </tr>
                     <tr>
                         <td>Autoantibody</td>
@@ -821,11 +812,11 @@
                 <div class="gap-title">
                     Gap 12: Generic Drug x Diabetes Mechanism Catalog
                     <span class="tier-badge tier-silver">SILVER</span>
-                    <span class="tier-badge evidence-strong">STRONG: 220 points</span>
+                    <span class="tier-badge evidence-strong">STRONG: 221 points</span>
                 </div>
 
                 <h4>Evidence Strength: Strong corpus-backed evidence</h4>
-                <p>This gap has <strong>220</strong> data points in the corpus.</p>
+                <p>This gap has <strong>221</strong> data points in the corpus.</p>
                 <h4>Breakdown by Data Type</h4>
                 <table role="table" class="breakdown-table">
                     <tr>
@@ -838,7 +829,7 @@
                     </tr>
                     <tr>
                         <td>Inflammatory Markers</td>
-                        <td style="text-align: right;">3 items</td>
+                        <td style="text-align: right;">4 items</td>
                     </tr>
                 </table>
                 <h4>Top Extracted Values with Context</h4>
@@ -990,7 +981,7 @@
 
         <div id="inflammatory" class="tab-content">
             <h2>Inflammatory Marker Evidence</h2>
-            <p>All 3 inflammatory marker extractions grouped by marker type.</p>
+            <p>All 4 inflammatory marker extractions grouped by marker type.</p>
             <h3>IL-1 (2 entries)</h3>
             <div class="data-point">
                 <strong>IL-1:</strong> IL-1β/IFNγ, its levels further increased 4.6-fold<br>
@@ -1007,6 +998,12 @@
                 <strong>NLRP3:</strong> NLRP3 trigger, with 0.1 μg/mL<br>
                 <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/32358544/" target="_blank">PMID:32358544</a> (2020, Nat Commun)<br>
                 <div class="context-snippet">egarding the primary endpoint of the current study, IL-1β secretion levels were measured from baseline to end of treatment in isolated macrophages after exposure to 2 mM ATP or 0.2 mM palmitate as an NLRP3 trigger, with 0.1 μg/mL LPS priming. In response to ATP stimulation, IL-1β secretion was…</div>
+            </div>
+            <h3>Other (1 entries)</h3>
+            <div class="data-point">
+                <strong>Other:</strong> interleukin-2 receptor [sIL-2R/sCD25] 15,420 units/mL; triglycerides 539 mg/dL<br>
+                <strong>Source:</strong> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/42520060/" target="_blank">PMID:42520060</a> (2026, Diabetes Care)<br>
+                <div class="context-snippet">criteria for secondary hemophagocytic lymphohistiocytosis (HLH), including fever, generalized lymphadenopathy, bicytopenia (hemoglobin 8.0 g/dL and platelets 89 × 109/L; ferritin 10,478 µg/L; soluble interleukin-2 receptor [sIL-2R/sCD25] 15,420 units/mL; triglycerides 539 mg/dL; and fibrinogen 141…</div>
             </div>
         </div>
 

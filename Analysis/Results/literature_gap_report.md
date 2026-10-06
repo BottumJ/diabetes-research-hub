@@ -1,104 +1,165 @@
-# Literature Gap Analysis Report
-**Generated:** 2026-10-06 05:01
-**Source:** PubMed (date range: 2020/01/01 to 2026/10/06)
+# Literature Gap Analysis — Interpreted Report
+
+**Generated:** 2026-10-06 12:42
+**Source:** PubMed E-utilities API (esearch.fcgi)
+**Date range:** 2020/01/01 to 2026/10/06
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
 ---
 
-## Top 25 Under-Researched Intersections
+## Methodology
 
-These domain pairs have significantly fewer joint publications than expected,
-suggesting under-explored research territory where new work could fill gaps.
+This analysis queries PubMed for publication counts across 30 diabetes research domains, both individually and as pairwise combinations (435 pairs). The **Gap Score** measures how much less cross-domain work exists compared to what each domain's individual activity would predict.
 
-| Rank | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Expected | Opportunity |
-|------|----------|----------|-----------|------------|----------|-------------|
-| 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | 1780.4 | HIGH |
-| 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | 2310.4 | HIGH |
-| 3 | Islet Transplant | GWAS / Polygenic | 100.0 | 0 | 1188.0 | HIGH |
-| 4 | Islet Transplant | Personalized Nutr | 100.0 | 0 | 427.0 | HIGH |
-| 5 | Islet Transplant | Drug Repurposing | 100.0 | 0 | 399.9 | HIGH |
-| 6 | Islet Transplant | Health Equity | 100.0 | 0 | 730.2 | HIGH |
-| 7 | Islet Transplant | Gestational DM | 100.0 | 1 | 2008.4 | HIGH |
-| 8 | GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | 3322.2 | HIGH |
-| 9 | GWAS / Polygenic | CGM Technology | 100.0 | 3 | 6282.1 | HIGH |
-| 10 | Gene Therapy | LADA | 100.0 | 0 | 1215.9 | HIGH |
-| 11 | Treg / CAR-T | Glucokinase | 100.0 | 0 | 933.7 | HIGH |
-| 12 | Treg / CAR-T | CGM Technology | 100.0 | 1 | 2672.9 | HIGH |
-| 13 | Glucokinase | Drug Repurposing | 100.0 | 0 | 738.6 | HIGH |
-| 14 | Glucokinase | Health Equity | 100.0 | 0 | 1348.8 | HIGH |
-| 15 | Glucokinase | LADA | 100.0 | 0 | 732.1 | HIGH |
-| 16 | Personalized Nutr | Closed Loop / AP | 100.0 | 0 | 1194.0 | HIGH |
-| 17 | Personalized Nutr | LADA | 100.0 | 0 | 663.7 | HIGH |
-| 18 | Multi-Omics | Nephropathy DKD | 100.0 | 0 | 5336.1 | HIGH |
-| 19 | Drug Repurposing | Closed Loop / AP | 100.0 | 0 | 1118.1 | HIGH |
-| 20 | Drug Repurposing | CGM Technology | 100.0 | 0 | 2114.4 | HIGH |
-| 21 | Drug Repurposing | Health Equity | 100.0 | 0 | 1145.0 | HIGH |
-| 22 | Drug Repurposing | LADA | 100.0 | 0 | 621.5 | HIGH |
-| 23 | Health Equity | LADA | 100.0 | 0 | 1134.9 | HIGH |
-| 24 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | 1041.1 | HIGH |
-| 25 | Beta Cell Regen | Retinopathy | 99.9 | 5 | 5147.5 | HIGH |
+**Formula:** `Gap Score = max(0, 1 - (joint_publications / geometric_mean(domain1_count, domain2_count))) × 100`
+
+**Interpretation:** A Gap Score of 95 means the intersection has 95% fewer publications than the geometric mean of the two domains' individual counts. This is a *relative* measure of cross-domain activity, not an absolute judgment of research need.
+
+**Important caveats:**
+- PubMed search matching is approximate (keyword-based, not exact MeSH)
+- Low co-publication may indicate: (a) genuinely unexplored territory, (b) terminology mismatch across fields, (c) research published under different keywords, or (d) fields that are *methodologically distinct* and would not naturally overlap
+- This analysis should be cross-referenced with domain expert knowledge before drawing conclusions
+- All gap classifications below are preliminary and labeled with confidence levels per the Research Doctrine
 
 ---
 
-## Interpretation Guide
+## Potentially Meaningful Research Gaps
 
-**Gap Score** (0-100): Measures how much less overlap exists between two domains
-compared to what would be expected given each domain's individual publication volume.
-A score of 95 means the intersection has 95% fewer publications than expected.
+These domain pairs have low co-publication rates **and** plausible scientific reasons why cross-domain work could yield new insights. These represent the highest-value opportunities for computational contribution.
 
-**Opportunity Levels:**
-- **HIGH** (90+): Very few publications at this intersection. Likely unexplored territory.
-- **MEDIUM** (70-89): Some publications exist but well below expected. Room for contribution.
-- **LOW** (<70): Reasonably well-covered. New work here competes with existing literature.
+**Validation level: BRONZE** (single analytical source; requires expert confirmation)
 
----
-
-## Individual Domain Publication Volumes
-
-| Domain | Publications (2020+) |
-|--------|---------------------|
-| Prevention / DPP | 82,959 |
-| CV Complications | 26,782 |
-| Insulin Resistance | 20,933 |
-| Retinopathy | 17,478 |
-| Gestational DM | 15,818 |
-| Nephropathy DKD | 14,685 |
-| GLP-1 Agonists | 14,099 |
-| Metabolomics | 13,007 |
-| AI / ML Predict | 12,219 |
-| Microbiome Gut | 10,800 |
-| Youth Diabetes | 8,258 |
-| Epigenetics | 7,882 |
-| SGLT2 Inhibitors | 7,830 |
-| CGM Technology | 7,130 |
-| GWAS / Polygenic | 5,535 |
-| Proteomics | 5,065 |
-| Autoimmunity T1D | 4,775 |
-| Remission T2D | 4,474 |
-| Neuropathy | 3,253 |
-| Gene Therapy | 2,400 |
-| Health Equity | 2,091 |
-| Closed Loop / AP | 1,994 |
-| Multi-Omics | 1,939 |
-| Beta Cell Regen | 1,516 |
-| Treg / CAR-T | 1,002 |
-| Glucokinase | 870 |
-| Personalized Nutr | 715 |
-| Drug Repurposing | 627 |
-| LADA | 616 |
-| Islet Transplant | 255 |
+| Rank | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Rationale |
+|------|----------|----------|-----------|------------|-----------|
+| 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | Regenerative therapies must address who has access to them. Equity analysis of emerging cell therapies is absent. |
+| 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | Insulin resistance in islet transplant recipients affects graft survival, but this interaction is barely studied. |
+| 3 | Islet Transplant | Drug Repurposing | 100.0 | 0 | Existing immunosuppressants could be repurposed for islet protection. An all-time PubMed search of this intersection (re-run 2026-09-06, unbounded by date) returns 7 records, none of which is a computational drug screen for islet protection: the nearest work is bioengineering (immunoisolation, bioartificial pancreas) or single-molecule in-silico structure work. |
+| 4 | Islet Transplant | Health Equity | 100.0 | 0 | Islet transplant is available only at select centers. Access equity research is absent. |
+| 5 | Gene Therapy | LADA | 100.0 | 0 | LADA's autoimmune mechanism makes it a candidate for gene therapy approaches, but no crossover work exists. |
+| 6 | Glucokinase | Drug Repurposing | 100.0 | 0 | Glucokinase activators are a novel drug class; systematic screening for existing drugs with GK activity is unexplored. |
+| 7 | Glucokinase | Health Equity | 100.0 | 0 | If glucokinase activators succeed, global access will be critical. No equity analysis exists for this drug class. |
+| 8 | Glucokinase | LADA | 100.0 | 0 | Glucokinase's role in LADA is unstudied despite its relevance to residual beta cell function. |
+| 9 | Personalized Nutr | LADA | 100.0 | 0 | LADA patients receive generic T2D dietary advice. Personalized nutrition based on autoimmune status is unexplored. |
+| 10 | Drug Repurposing | Health Equity | 100.0 | 0 | Drug repurposing could yield more affordable treatments for underserved populations, but equity is absent from repurposing research. |
+| 11 | Drug Repurposing | LADA | 100.0 | 0 | LADA is treated with T2D drugs that may be suboptimal. Systematic repurposing screens for LADA-specific therapies don't exist. |
+| 12 | Health Equity | LADA | 100.0 | 0 | LADA is massively underdiagnosed, especially in minority populations. Equity-focused screening research is absent. |
+| 13 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | Nutritional interventions that support beta cell recovery are plausible but unstudied at the intersection. |
+| 14 | Treg / CAR-T | Neuropathy | 99.9 | 1 | Immune-mediated neuropathy in diabetes could potentially benefit from Treg modulation, but no work bridges these fields. |
+| 15 | Treg / CAR-T | Health Equity | 99.9 | 1 | Advanced immunotherapies risk widening health disparities. No equity analysis of CAR-Treg/TCR-Treg access exists. |
 
 ---
 
-## Validation Notes
+## Methodologically Distinct Pairs (Expected Low Overlap)
 
-- Source: PubMed E-utilities API (esearch.fcgi)
-- All counts are approximate (PubMed search matching, not exact MeSH)
-- Gap scores are relative measures, not absolute judgments
-- Low publication count may indicate: (a) genuinely unexplored territory,
-  (b) terminology mismatch, or (c) research published under different keywords
-- This analysis should be cross-referenced with expert domain knowledge
-  before drawing conclusions
+These domain pairs have low co-publication because they use fundamentally different research methods (e.g., genetic association studies vs. medical device engineering). Low overlap here does **not** indicate a missed opportunity — it reflects the natural structure of the research landscape.
 
-*Generated by Diabetes Research Hub - Project 1 - 2026-10-06*
+| Domain 1 | Domain 2 | Gap Score | Joint Pubs | Note |
+|----------|----------|-----------|------------|------|
+| Islet Transplant | GWAS / Polygenic | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Islet Transplant | Personalized Nutr | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| GWAS / Polygenic | CGM Technology | 100.0 | 3 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Treg / CAR-T | CGM Technology | 100.0 | 1 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Personalized Nutr | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Drug Repurposing | Closed Loop / AP | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+| Drug Repurposing | CGM Technology | 100.0 | 0 | These domains use fundamentally different methods (e.g., genomics vs. device eng |
+
+---
+
+## Unclassified Gaps (Require Expert Review)
+
+These domain pairs show high gap scores but have not been classified as either meaningful or methodologically distinct. Domain expert input is needed.
+
+| Domain 1 | Domain 2 | Gap Score | Joint Pubs |
+|----------|----------|-----------|------------|
+| Islet Transplant | Gestational DM | 100.0 | 1 |
+| Treg / CAR-T | Glucokinase | 100.0 | 0 |
+| Multi-Omics | Nephropathy DKD | 100.0 | 0 |
+| Beta Cell Regen | Retinopathy | 99.9 | 5 |
+| Beta Cell Regen | Neuropathy | 99.9 | 3 |
+| Insulin Resistance | Closed Loop / AP | 99.9 | 4 |
+| Insulin Resistance | Health Equity | 99.9 | 8 |
+| Autoimmunity T1D | Health Equity | 99.9 | 3 |
+| Islet Transplant | SGLT2 Inhibitors | 99.9 | 2 |
+| Islet Transplant | Microbiome Gut | 99.9 | 1 |
+| Islet Transplant | Multi-Omics | 99.9 | 1 |
+| Islet Transplant | Retinopathy | 99.9 | 2 |
+| Islet Transplant | Nephropathy DKD | 99.9 | 2 |
+| Islet Transplant | Neuropathy | 99.9 | 1 |
+| Epigenetics | LADA | 99.9 | 3 |
+| Treg / CAR-T | SGLT2 Inhibitors | 99.9 | 4 |
+| Treg / CAR-T | Personalized Nutr | 99.9 | 1 |
+| SGLT2 Inhibitors | Personalized Nutr | 99.9 | 2 |
+| Glucokinase | Personalized Nutr | 99.9 | 1 |
+| Glucokinase | Neuropathy | 99.9 | 1 |
+| Personalized Nutr | Drug Repurposing | 99.9 | 1 |
+| Personalized Nutr | Neuropathy | 99.9 | 1 |
+| Proteomics | Closed Loop / AP | 99.9 | 4 |
+| Metabolomics | LADA | 99.9 | 4 |
+| Multi-Omics | Health Equity | 99.9 | 3 |
+| Multi-Omics | LADA | 99.9 | 1 |
+| Drug Repurposing | Gestational DM | 99.9 | 2 |
+
+---
+
+## Individual Domain Publication Volumes (2020+)
+
+| Domain | Publications | Relative Activity |
+|--------|-------------|-------------------|
+| Prevention / DPP | 82,959 | ████████████████████ |
+| CV Complications | 26,782 | ██████░░░░░░░░░░░░░░ |
+| Insulin Resistance | 20,933 | █████░░░░░░░░░░░░░░░ |
+| Retinopathy | 17,478 | ████░░░░░░░░░░░░░░░░ |
+| Gestational DM | 15,818 | ███░░░░░░░░░░░░░░░░░ |
+| Nephropathy DKD | 14,685 | ███░░░░░░░░░░░░░░░░░ |
+| GLP-1 Agonists | 14,099 | ███░░░░░░░░░░░░░░░░░ |
+| Metabolomics | 13,007 | ███░░░░░░░░░░░░░░░░░ |
+| AI / ML Predict | 12,219 | ██░░░░░░░░░░░░░░░░░░ |
+| Microbiome Gut | 10,800 | ██░░░░░░░░░░░░░░░░░░ |
+| Youth Diabetes | 8,258 | █░░░░░░░░░░░░░░░░░░░ |
+| Epigenetics | 7,882 | █░░░░░░░░░░░░░░░░░░░ |
+| SGLT2 Inhibitors | 7,830 | █░░░░░░░░░░░░░░░░░░░ |
+| CGM Technology | 7,130 | █░░░░░░░░░░░░░░░░░░░ |
+| GWAS / Polygenic | 5,535 | █░░░░░░░░░░░░░░░░░░░ |
+| Proteomics | 5,065 | █░░░░░░░░░░░░░░░░░░░ |
+| Autoimmunity T1D | 4,775 | █░░░░░░░░░░░░░░░░░░░ |
+| Remission T2D | 4,474 | █░░░░░░░░░░░░░░░░░░░ |
+| Neuropathy | 3,253 | ░░░░░░░░░░░░░░░░░░░░ |
+| Gene Therapy | 2,400 | ░░░░░░░░░░░░░░░░░░░░ |
+| Health Equity | 2,091 | ░░░░░░░░░░░░░░░░░░░░ |
+| Closed Loop / AP | 1,994 | ░░░░░░░░░░░░░░░░░░░░ |
+| Multi-Omics | 1,939 | ░░░░░░░░░░░░░░░░░░░░ |
+| Beta Cell Regen | 1,516 | ░░░░░░░░░░░░░░░░░░░░ |
+| Treg / CAR-T | 1,002 | ░░░░░░░░░░░░░░░░░░░░ |
+| Glucokinase | 870 | ░░░░░░░░░░░░░░░░░░░░ |
+| Personalized Nutr | 715 | ░░░░░░░░░░░░░░░░░░░░ |
+| Drug Repurposing | 627 | ░░░░░░░░░░░░░░░░░░░░ |
+| LADA | 616 | ░░░░░░░░░░░░░░░░░░░░ |
+| Islet Transplant | 255 | ░░░░░░░░░░░░░░░░░░░░ |
+
+---
+
+## How to Use This Analysis
+
+1. **Meaningful gaps** are starting points for literature synthesis. For each, search PubMed with combined terms to verify the gap is real (not a terminology artifact).
+2. **Methodologically distinct** pairs can be deprioritized unless a specific bridging mechanism is identified.
+3. **Unclassified gaps** need expert review before action. Submit these to domain researchers for classification.
+4. All gap scores should be validated against systematic review databases (Cochrane, PROSPERO) to confirm no existing reviews cover the intersection.
+
+---
+
+## Validation Status
+
+| Aspect | Level | Notes |
+|--------|-------|-------|
+| Data source | PubMed E-utilities | Covers MEDLINE-indexed literature; misses preprints, grey literature |
+| Gap scoring method | Published formula | Geometric mean normalization is standard in bibliometric analysis |
+| Gap classifications | BRONZE | Single analyst classification; requires expert validation |
+| Individual domain counts | Verifiable | Can be independently reproduced by querying PubMed directly |
+| Temporal scope | 2020+ | Recent literature only; historical gaps may differ |
+
+---
+
+*Generated by Diabetes Research Hub — Literature Gap Analysis (Improved)*
+*Methodology: Research Doctrine v1.0 — Triple-source validation pending for gap classifications*

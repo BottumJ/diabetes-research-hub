@@ -33,7 +33,7 @@ PIPELINE_DATA = [
     {"domain":"T1D","cat":"Technology","name":"Eversense-3 CGM","org":"Senseonics","mech":"6-month implantable sensor","phase":"Approved","result":"6-month wear; FDA approved","status":"Approved","badge":"badge-green"},
     {"domain":"T1D","cat":"Technology","name":"Deep RL Controller","org":"Academic","mech":"Deep reinforcement learning","phase":"Research","result":"87.45% TIR; lower hypos","status":"Research","badge":"badge-purple"},
     {"domain":"T1D","cat":"Technology","name":"Omnipod 5 / CamAPS FX","org":"Insulet/CamDiab","mech":"Tubeless pump + CGM","phase":"Approved","result":"Tubeless automated delivery","status":"Approved","badge":"badge-green"},
-    {"domain":"T2D","cat":"GLP-1 Therapy","name":"Retatrutide","org":"Eli Lilly","mech":"GLP-1/GIP/Glucagon triple","phase":"Phase 3","result":"28.7% weight loss at 68wk","status":"Active","badge":"badge-green"},
+    {"domain":"T2D","cat":"GLP-1 Therapy","name":"Retatrutide","org":"Eli Lilly","mech":"GLP-1/GIP/Glucagon triple","phase":"Phase 3","result":"see PIPELINE_SOURCES (corrected 2026-10-06)","status":"Active","badge":"badge-green"},
     {"domain":"T2D","cat":"GLP-1 Therapy","name":"Orforglipron","org":"Eli Lilly","mech":"Oral GLP-1","phase":"Phase 3","result":"Once-daily pill; strong results","status":"FDA 2026","badge":"badge-orange"},
     {"domain":"T2D","cat":"GLP-1 Therapy","name":"CagriSema","org":"Novo Nordisk","mech":"Semaglutide + cagrilintide","phase":"Phase 3","result":"Dual-hormone combination","status":"FDA 2026","badge":"badge-orange"},
     {"domain":"T2D","cat":"GLP-1 Therapy","name":"Tirzepatide for T1D","org":"Eli Lilly","mech":"GLP-1/GIP dual agonist","phase":"Phase 3","result":"SURPASS-T1D trials enrolling","status":"Enrolling","badge":"badge-orange"},
@@ -72,6 +72,83 @@ PIPELINE_DATA = [
     {"domain":"Epidemiology","cat":"Equity","name":"Youth T2D Disparities","org":"CDC/Multiple","mech":"Epidemiology","phase":"Published","result":"2-3x higher in Black/Hispanic youth","status":"Published","badge":"badge-red"},
     {"domain":"Epidemiology","cat":"Treatment Gap","name":"Global Treatment Coverage","org":"Lancet/NCD-RisC","mech":"Access analysis","phase":"Published","result":"LMICs: treatment lags prevalence","status":"Published","badge":"badge-red"},
 ]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PIPELINE SOURCES AND CORRECTIONS (2026-10-06)
+# ═══════════════════════════════════════════════════════════════════════════
+# 29 of these 57 rows carried figures, approvals or "FDA 2026" statuses with no
+# source, and the endpoint gate could not see them (it reads Python statements,
+# not this data). Each row now has a "src" field. Rows below were checked
+# against PubMed, ClinicalTrials.gov or FDA letters on 2026-10-06 and corrected
+# where the old text was wrong; every other row is shown as "no source on file"
+# rather than dropped, so a reader can see what is unsupported.
+# Corrected, with the old text:
+#   Retatrutide "28.7% weight loss at 68wk" - in no paper; Tzield "Phase 3" -
+#   approved, its delay trial is phase II; Dorzagliatin "Phase 1b" - approved in
+#   China 2022; Orforglipron/CagriSema/Icodec "FDA 2026" - no source; Efsitora
+#   "Active" - FDA approved 2026-09-23, type 2 only; Baricitinib "preserved
+#   C-peptide" - not after stopping; GLP-1RA retina "8-15% NPDR reduction" - no
+#   source, and the trial has not read out; "589M prevalence" - the cited paper
+#   says 529 million; youth "2-3x" - not in the source found.
+PIPELINE_SOURCES = {
+    "Zimislecel (VX-880)": {"phase": "Phase 3 (recruiting)",
+        "result": "10 of 12 full-dose participants insulin-independent at day 365 (phase 1-2 portion)",
+        "src": "PMID:40544428; NCT04786262"},
+    "Tzield (Teplizumab)": {"phase": "Approved",
+        "result": "Delays Stage 3 T1D from Stage 2 (approved 2022, age 8+; 2026 extended to ages 1-8 and to newly diagnosed Stage 3, ages 8-17)",
+        "src": "FDA letters BLA 761183 (2022-11-17, S-013, S-010); PMID:31180194; PMID:37861217"},
+    "Baricitinib (BARICADE)": {"phase": "Phase 3", "status": "Recruiting",
+        "result": "Phase 2: C-peptide preserved while on treatment, not after stopping",
+        "src": "PMID:38055252; PMID:42627334; NCT07222137"},
+    "Retatrutide": {"result": "TRIUMPH-2 (obesity and T2D): bodyweight 13.8 points below placebo at 80 weeks (12 mg)",
+        "src": "PMID:42810372"},
+    "Orforglipron": {"status": "Phase 3 complete",
+        "result": "HbA1c 1.06 points below placebo at 40 weeks (12 mg, ACHIEVE-1); superior to oral semaglutide (ACHIEVE-3)",
+        "src": "PMID:40544435; PMID:41765029"},
+    "CagriSema": {"status": "Phase 3 complete",
+        "result": "HbA1c 1.7 points below placebo at 40 weeks (2.4/2.4 mg, REIMAGINE 1); 1.68 on basal insulin (REIMAGINE 3)",
+        "src": "PMID:42251860; PMID:42251856"},
+    "Tirzepatide for T1D": {"status": "Active, not recruiting",
+        "result": "SURPASS-T1D-1 and -2 under way; no result yet",
+        "src": "NCT06914895; NCT06962280"},
+    "Dorzagliatin": {"phase": "Approved (China, 2022)", "status": "Approved (China)",
+        "result": "Lowered HbA1c vs placebo as add-on to metformin (phase 3)",
+        "src": "PMID:36449148; PMID:35551292"},
+    "Insulin Icodec": {"status": "Phase 3 complete",
+        "result": "Non-inferior to once-daily degludec in insulin-naive T2D (ONWARDS 3)",
+        "src": "PMID:37354562"},
+    "Efsitora Alpha": {"phase": "Approved", "status": "Approved (T2D)",
+        "result": "FDA approved 2026-09-23 for type 2 diabetes only; non-inferior to glargine (QWINT-1)",
+        "src": "FDA approval letter BLA 761408; PMID:40548694"},
+    "SGLT2i + Calorie Restriction": {"src": "PMID:39843169"},
+    "Beta Cell Recovery": {"result": "Dedifferentiation shown as a mechanism in mice; a clinical remission route is unproven",
+        "src": "PMID:22980982 (mouse study)"},
+    "Diabetes Prevention Program": {"result": "58% lower incidence of type 2 diabetes with lifestyle intervention",
+        "src": "PMID:11832527"},
+    "UK Biobank Proteomics": {"src": "PMID:40032831"},
+    "Akkermansia Probiotic": {"result": "Proof-of-concept trial in overweight and obese volunteers",
+        "src": "PMID:31263284"},
+    "LADA Recognition": {"result": "Estimated 4-14% of clinically diagnosed type 2 diabetes", "src": "PMID:16306343"},
+    "AI Retinopathy Screen": {"result": "Pivotal trial of an autonomous AI system in primary care", "src": "PMID:31304320"},
+    "589M Prevalence": {"name": "Global prevalence", "org": "GBD 2021 (Lancet)",
+        "result": "529 million with diabetes in 2021; more than 1.31 billion projected by 2050",
+        "src": "PMID:37356446"},
+    "Youth T2D Disparities": {"org": "SEARCH for Diabetes in Youth",
+        "result": "Youth type 2 incidence rose 5.3% a year (2002-18), with larger increases in Black and Hispanic youth",
+        "src": "PMID:36868256"},
+    "GLP-1RA Retinal Protection": {"phase": "Phase 3 (no result yet)",
+        "result": "FOCUS (semaglutide, retinopathy) has not read out; an earlier '8-15% reduction' figure had no source",
+        "src": "NCT03811561"},
+    "Sernova Cell Pouch": {"result": "Company-reported insulin independence; no peer-reviewed long-term result",
+        "src": "NCT03513939 (results company-reported)"},
+    "Inreda Bihormonal AP": {"result": "Company-reported time in range; peer-reviewed result pending"},
+    "Deep RL Controller": {"result": "Simulation only; not tested in people"},
+}
+for _row in PIPELINE_DATA:
+    _fix = PIPELINE_SOURCES.get(_row["name"], {})
+    _row.update(_fix)
+    _row.setdefault("src", "")
 
 # ═══════════════════════════════════════════════════════════════════════════
 # DATA: All 35 research domains
@@ -486,6 +563,7 @@ tr:hover { background: var(--accent-light); }
             <th>Phase</th>
             <th>Key Result</th>
             <th>Status</th>
+            <th>Source</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -690,6 +768,7 @@ function filterPipelineTable() {
         <td>${d.phase}</td>
         <td>${d.result}</td>
         <td><span class="badge badge-${d.badge === 'badge-green' ? 'green' : d.badge === 'badge-blue' ? 'blue' : d.badge === 'badge-cyan' ? 'cyan' : d.badge === 'badge-orange' ? 'orange' : 'red'}">${d.status}</span></td>
+        <td style="font-size:12px;">${d.src ? d.src : '<span style="color:#8b2500;">no source on file</span>'}</td>
       </tr>
     `;
   });

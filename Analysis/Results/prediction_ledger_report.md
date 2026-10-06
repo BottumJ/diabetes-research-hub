@@ -1,6 +1,6 @@
 # Prediction Ledger - Standings
 
-_Generated 2026-10-01 00:09 by resolve_predictions.py_
+_Generated 2026-10-06 12:37 by resolve_predictions.py_
 
 - Total predictions: **4**  |  Locked (pre-registered): **4**  |  Resolved: **1**  |  Brier-scored: **1**
 - Running mean Brier score: **0.1225**  _(lower better; 0.25 = always-guess-0.5 baseline)_

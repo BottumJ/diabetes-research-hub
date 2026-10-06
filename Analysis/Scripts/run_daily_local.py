@@ -29,6 +29,11 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 # (label, filename) in required execution order
 PIPELINE = [
     ("clinical_trials", "baseline_clinical_trials.py"),
+    # Added 2026-10-06 (owner ruling on charter s7 Q4): after the trial pull,
+    # flag any locked prediction whose trial has posted results, and any
+    # provisional (press-release) resolution that can now be re-checked. It
+    # flags only; resolving stays a person's call.
+    ("predictions",     "resolve_predictions.py"),
     ("pubmed",          "baseline_pubmed_alerts.py"),
     ("gap",             "gap_analysis_daily.py"),  # resumable version (survives network drops)
     ("hub_monitor",     "hub_monitor.py"),

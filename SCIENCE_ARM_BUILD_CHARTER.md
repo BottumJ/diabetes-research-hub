@@ -161,6 +161,12 @@ The gravitational pull here is toward **breadth that feels like progress and isn
 3. **Verification source for Phase 1** — second AI-extraction pass vs. human spot-check vs. both.
 4. **Scoring cadence** — let the existing daily monitor resolve predictions, or a dedicated weekly scoring run.
 
+**Answered 2026-10-06 by the owner** (each the recommended option; the owner asked that methods calls be made by the analyst and only value calls be brought to him):
+1. First meta-analysis target: **incretin HbA1c**. Built: orforglipron and CagriSema placebo pools on the Statistical Analysis page.
+2. Store: **JSON files in `Analysis/Results/`** (`structured_effects.json`, `prediction_ledger.json`, `gap_tiers.json`). The Excel tracker is not a store.
+3. Verification: **independent second AI extraction plus an automatic verbatim-span check** against the live abstract (`structured_effects.py`).
+4. Scoring: **the daily run flags** a locked prediction when its trial posts results, and a provisional (press-release) resolution for re-checking (`resolve_predictions.py` step in `run_daily_local.py`). Resolving remains a person's call.
+
 ---
 
 ## 8. First three concrete steps (to leave this charter and start building)

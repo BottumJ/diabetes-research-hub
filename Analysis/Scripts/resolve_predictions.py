@@ -238,6 +238,14 @@ def scan_readouts(led: dict, snap: dict) -> list:
         p["_snapshot_has_results"] = posted
         p["_snapshot_status"] = s["status"] if s else "NOT_IN_SNAPSHOT"
         if posted and not already and p.get("locked_date"):
+            p["_flag_reason"] = "results posted: resolve against them"
+            flagged.append(p)
+        # Added 2026-10-06 (owner: the daily monitor flags predictions). A
+        # resolution taken from a sponsor press release is provisional; when the
+        # registry posts results, flag it so the outcome and Brier are re-checked.
+        src = (p.get("resolution_source") or "").lower()
+        if posted and already and ("press release" in src or "topline" in src):
+            p["_flag_reason"] = "provisional resolution: re-check against posted results"
             flagged.append(p)
     return flagged
 
