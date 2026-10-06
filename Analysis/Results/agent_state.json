@@ -1,8 +1,8 @@
 {
   "version": 1,
   "created": "2026-04-14T03:05:18.579342",
-  "last_updated": "2026-10-05T08:17:40.200063",
-  "last_run": "2026-10-05T08:17:40.200063",
+  "last_updated": "2026-10-06T08:17:22.718739",
+  "last_run": "2026-10-06T08:17:22.718739",
   "papers": {
     "10415738": {
       "status": "VETTED",
@@ -6898,6 +6898,54 @@
       "note": "Vetted 2026-10-05 via efetch (weekly sweep). Analytical/diagnostic validation of Euroimmun anti-IA2 ELISA (assay performance). Methods paper; relevant only to antibody-screening context for LADA.",
       "last_checked": "2026-10-05",
       "priority": "high"
+    },
+    "42360463": {
+      "status": "VETTED",
+      "pmid_verified": true,
+      "pmid_verified_via": "eutils_efetch_2026-10-06",
+      "title": "Metabolomic profile differs between LADA and type 1 diabetes identifying tryptophan metabolism as a pathway involved in the heterogeneity of autoimmune diabetes",
+      "journal": "Diabetologia",
+      "year": "2026",
+      "added": "2026-10-06T08:17:22.718739",
+      "vetted_date": "2026-10-06T08:17:22.718739",
+      "last_checked": "2026-10-06",
+      "red_flags": [],
+      "issues_found": [],
+      "evidence_tier": "observational",
+      "topic_tag": "LADA",
+      "notes": "Found while resolving queue item (parent of letters 42766777/42766770). Cross-sectional omics, n=136 (49 LADA/44 T1D/29 RA/14 controls) + ex vivo islet cytokine data; association only (Kyn/Trp vs fasting C-peptide in LADA p=0.038). Mechanistic/phenotype background; no causal or intervention claim. Same Sapienza (Buzzetti/Maddaloni) group; no gap tier change."
+    },
+    "40930318": {
+      "status": "VETTED",
+      "pmid_verified": true,
+      "pmid_verified_via": "eutils_efetch_2026-10-06",
+      "title": "Liver disease in people with LADA: cross-sectional MR elastography study",
+      "journal": "Diabetes Res Clin Pract",
+      "year": "2025",
+      "added": "2026-10-06T08:17:22.718739",
+      "vetted_date": "2026-10-06T08:17:22.718739",
+      "last_checked": "2026-10-06",
+      "red_flags": [],
+      "issues_found": [],
+      "evidence_tier": "observational",
+      "topic_tag": "LADA",
+      "notes": "Found while resolving queue item (parent of letters 42766777/42766770). Cross-sectional, 31 matched per group; steatosis 54.8% T2D vs 3.2% LADA vs 0% T1D. Phenotype background, small n. Same Sapienza (Buzzetti/Maddaloni) group; no gap tier change."
+    },
+    "39760686": {
+      "status": "VETTED",
+      "pmid_verified": true,
+      "pmid_verified_via": "eutils_efetch_2026-10-06",
+      "title": "IFN-alpha Neutralizing Antibodies Distinguish LADA From Early-onset Type 1 Diabetes",
+      "journal": "J Clin Endocrinol Metab",
+      "year": "2025",
+      "added": "2026-10-06T08:17:22.718739",
+      "vetted_date": "2026-10-06T08:17:22.718739",
+      "last_checked": "2026-10-06",
+      "red_flags": [],
+      "issues_found": [],
+      "evidence_tier": "observational",
+      "topic_tag": "LADA",
+      "notes": "Found while resolving queue item (parent of letters 42766777/42766770). Observational biomarker study (abstract only read via efetch; detail not extracted). Phenotype background for LADA axis. Same Sapienza (Buzzetti/Maddaloni) group; no gap tier change."
     }
   },
   "paths": {
@@ -10939,8 +10987,9 @@
       "priority": 2,
       "type": "search_pubmed",
       "added": "2026-10-05",
-      "status": "pending",
-      "target": "Find parent paper Amendolara et al. (Diabetes 2026): beta-cell function vs insulin resistance in LADA vs T2D; two letters (42766777, 42766770) are in the hub with no data. Candidate evidence for Gaps #1/#8/#10 phenotype axis."
+      "status": "done_2026-10-06",
+      "target": "Find parent paper Amendolara et al. (Diabetes 2026): beta-cell function vs insulin resistance in LADA vs T2D; two letters (42766777, 42766770) are in the hub with no data. Candidate evidence for Gaps #1/#8/#10 phenotype axis.",
+      "resolution": "Parent paper is PMID 42113684 (Diabetes 2026;75(7):1233-42), already VETTED in corpus since 2026-05-19. n=31 LADA vs 31 matched T2D, cross-sectional: lower C-peptide at matched insulin resistance in LADA. Association only, small n; supports phenotype axis for Gap #8/#10 as BACKGROUND, no tier change. Added 3 related papers as VETTED."
     }
   ],
   "run_history": [
@@ -13280,6 +13329,16 @@
       "paths_validated": 0,
       "gaps_audited": 0,
       "note": "Monday weekly sweep: 7 active queries, edat 2026-09-21..10-05; hits: lada 6, nlrp3_dkd 4, sglt2_colchicine 1, others 0. All 11 new PMIDs vetted from efetch abstracts (2 letters w/o abstract, 2 mouse studies, 3 observational, 3 reviews, 1 assay). No gap evidence upgrades.",
+      "changes_pushed": false
+    },
+    {
+      "date": "2026-10-06",
+      "environment": "Cowork cloud scheduled task; device bridge worked",
+      "papers_checked": 4,
+      "papers_added": 3,
+      "paths_validated": 0,
+      "gaps_audited": 0,
+      "note": "Resolved Amendolara parent-paper item (42113684 already in corpus). Added+vetted 42360463, 40930318, 39760686. Not Monday: no weekly sweep. Credibility sweep run. Pipeline: full 87-stage run exceeds 180s shell limit; ran 12 offline gate stages (credibility, absoluteclaims, membership, flaggedclass, gapnumbering, indexinvariants, mdcitegate, identifiergate, surnames, computedcite, catalogentity, endpointagreement) all [OK]. Rebuild/network stages NOT run this session - run run_quality_improvements.py locally.",
       "changes_pushed": false
     }
   ],
