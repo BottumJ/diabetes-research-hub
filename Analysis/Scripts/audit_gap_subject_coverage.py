@@ -82,8 +82,11 @@ AXES = {
          'x': ('gene therapy', [r'gene therap', r'gene transfer', r'\bAAV\b', r'lentivir',
                                 r'CRISPR', r'gene editing', r'vector']),
          'y': ('LADA', [r'\bLADA\b', r'latent autoimmune', r'slowly progressive.{0,20}diabet'])},
-    2:  {'name': 'Health Equity in Diabetes',
-         'x': ('diabetes', [r'diabet', r'insulin', r'glyc']),
+    # Restated 2026-10-06 (owner ruling): the gap is equity in BETA CELL
+    # therapies, not diabetes equity in general, which is well studied.
+    2:  {'name': 'Health Equity in Beta Cell Therapies',
+         'x': ('beta cell therapy', [r'islet', r'beta.?cell', r'stem.?cell', r'cell therap',
+                                     r'zimislecel', r'replacement therap']),
          'y': ('equity', [r'equit', r'inequit', r'dispar', r'\bracial\b', r'\brace\b', r'ethnic',
                           r'socioeconomic', r'underserved', r'\baccess\b', r'affordab',
                           r'uninsured', r'income'])},

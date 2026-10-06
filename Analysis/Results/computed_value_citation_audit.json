@@ -1,9 +1,9 @@
 {
   "audit": "computed_value_citations",
-  "run_date": "2026-10-01",
+  "run_date": "2026-10-06",
   "files_scanned": 92,
   "counts": {
-    "computed_unique": 2,
+    "computed_unique": 1,
     "computed_raw": 2,
     "bare_name": 4,
     "excluded_correction_prose": 1
@@ -11,29 +11,19 @@
   "computed": [
     {
       "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
-      "line": 597,
+      "line": 588,
       "severity": "COMPUTED",
       "pmids": [
         "41921761"
       ],
       "expression": "len(df)",
       "snippet": "# Multi-Omic Microbiome ML Pipeline \u2014 Phase 2: Feature Engineering Report\n**Generated:** {...}\n**Phase:** 2 of 5 (Feature Engineering)\n**Target:** AUC \u2265 0.88 (extending PMID 41921761's AUC > 0.83)\n\n---\n\n## Executive Summ"
-    },
-    {
-      "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
-      "line": 599,
-      "severity": "COMPUTED",
-      "pmids": [
-        "41921761"
-      ],
-      "expression": "len(top_features)",
-      "snippet": "red multi-omic dataset of **{...} synthetic samples** across **{...} features** spanning microbiome taxonomy, metabolomics, genomics, and cross-omic interactions. The synthetic cohort uses published effect sizes from PMI"
     }
   ],
   "bare_name": [
     {
       "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
-      "line": 589,
+      "line": 588,
       "severity": "BARE_NAME",
       "pmids": [
         "41921761"
@@ -43,7 +33,7 @@
     },
     {
       "file": "Analysis/Scripts/project_microbiome_ml_phase2_features.py",
-      "line": 597,
+      "line": 588,
       "severity": "BARE_NAME",
       "pmids": [
         "41921761"
@@ -53,7 +43,7 @@
     },
     {
       "file": "Analysis/Scripts/project_microbiome_ml_phase3_models.py",
-      "line": 482,
+      "line": 481,
       "severity": "BARE_NAME",
       "pmids": [
         "41921761"
@@ -63,7 +53,7 @@
     },
     {
       "file": "Analysis/Scripts/project_microbiome_ml_phase3_models.py",
-      "line": 497,
+      "line": 481,
       "severity": "BARE_NAME",
       "pmids": [
         "41921761"
@@ -75,7 +65,7 @@
   "excluded": [
     {
       "file": "Analysis/Scripts/build_drug_repurposing_screen.py",
-      "line": 1190,
+      "line": 1187,
       "severity": "EXCLUDED_CORRECTION",
       "pmids": [
         "29710129"

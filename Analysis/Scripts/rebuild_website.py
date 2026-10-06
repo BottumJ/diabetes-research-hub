@@ -424,7 +424,7 @@ h2 {{ font-family: var(--serif); font-size: 20px; font-weight: 400; margin-botto
   <div class="card">
     <div class="status live">Available</div>
     <h3>Health Equity in Diabetes Research</h3>
-    <p>Systemic disparities in clinical trial representation, geographic access, and socioeconomic barriers. Comprehensive analysis of equity gaps across the diabetes research landscape. Gap #2 (GOLD).</p>
+    <p>Systemic disparities in clinical trial representation, geographic access, and socioeconomic barriers. Comprehensive analysis of equity gaps across the diabetes research landscape. Gap #2 (BRONZE).</p>
     <a href="Dashboards/Health_Equity.html">Open dashboard &rarr;</a>
   </div>
   <div class="card">

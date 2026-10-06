@@ -946,6 +946,8 @@ VERIFICATION STATUS: ⚠ UNVERIFIED (Being updated; estimated completion: 2026-0
 
 **Scope in the wording:** a claim is only as wide as what was searched. After PubMed alone, publish "no PubMed-indexed analysis was found", not "no analysis exists".
 
+**Claim by claim (owner, 2026-10-06):** be as specific as possible. A gap is broken into its separate claims (the absence, and each fact that makes it matter), and each claim gets its own tier: absence claims by independent empty-search sources, factual claims by independent confirming sources (3+ GOLD, 2 SILVER, 1 BRONZE, 0 unverified). The gap is reported as a profile, the share of its claims at each level (for example 80% GOLD / 10% SILVER / 0% BRONZE / 10% unverified), and its badge shows the tier of the median claim. Two editions of one model, or two queries of one database, are one source. Claims, sources and profiles live in `gap_tiers.json`; the Gap Deep Dives card renders them. First application: Gap #2, 0 / 20 / 80 / 0.
+
 **One store, one command:** a gap's tier lives in `Analysis/Results/gap_tiers.json`. Apply a ruling with `python Analysis/Scripts/set_gap_tier.py GAP TIER --reason "..."`; never edit a builder's copy by hand. The build fails if any typed copy disagrees with the store.
 
 **Eligible, not excluded** (from DECISION_BRIEF_2026-09-07): before citing another study's silence, confirm the topic was eligible for that study and absent, not excluded by its design.
@@ -997,5 +999,6 @@ These eight lessons have been integrated into updated QA procedures. Here are th
 | 1.1 | March 31, 2026 | Added Part IV: Verification Gate Lessons Learned. Eight operational refinements based on testing across 33 production dashboards. Enhanced PMID verification requirements, dynamic content scanning, citation specificity standards, quarantine workflow, source-level fix principle, financial claims sourcing, and validation tier operationalization. |
 
 | 1.2 | September 30, 2026 | Added Lesson 9: research gaps are absence claims, tiered by independent null-search sources plus a sourced premise, not by the papers filed under them. Gap #11 set to BRONZE under it. |
+| 1.3 | October 6, 2026 | Lesson 9: claim-by-claim tiers and the gap profile (share of claims at each level); headline tier = median claim. Gap #2 restated as Health Equity in Beta Cell Therapies, 0/20/80/0, BRONZE. |
 
 *Last Updated: September 30, 2026*

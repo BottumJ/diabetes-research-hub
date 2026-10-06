@@ -1,6 +1,6 @@
 {
   "purpose": "THE tier of each research gap. Builders' typed copies are checked against this file by audit_gap_numbering.py and rewritten from it by set_gap_tier.py. Change a tier with set_gap_tier.py, never by hand.",
-  "as_of": "2026-10-01",
+  "as_of": "2026-10-06",
   "rule": "RESEARCH_DOCTRINE.md Lesson 9 (absence claims)",
   "gaps": {
     "1": {
@@ -8,8 +8,77 @@
       "title": "Gene Therapy for LADA"
     },
     "2": {
-      "tier": "GOLD",
-      "title": "Health Equity in Diabetes"
+      "tier": "BRONZE",
+      "title": "Health Equity in Beta Cell Therapies",
+      "history": [
+        {
+          "date": "2026-10-06",
+          "from": "GOLD",
+          "to": "BRONZE",
+          "reason": "Owner ruling 2026-10-06: Gap #2 is the specific question 'Health Equity in Beta Cell Therapies', rated claim by claim (owner: 'be as specific as possible'). Claim profile 0% GOLD / 20% SILVER / 80% BRONZE / 0% unverified; headline = the median claim's tier."
+        }
+      ],
+      "claims": [
+        {
+          "id": "2a",
+          "kind": "absence",
+          "tier": "SILVER",
+          "claim": "No published analysis or registered study examines who can get stem-cell or islet replacement therapy for type 1 diabetes, by country income, race or insurance.",
+          "sources": [
+            "PubMed, all time, searched 2026-10-06: 34 hits, none an access or equity analysis (query in gap2_null_searches.json)",
+            "ClinicalTrials.gov, searched 2026-10-06: 32 studies, none on access to cell therapy (query in gap2_null_searches.json)"
+          ],
+          "scope": "PubMed-indexed papers and registered studies only; Embase and conference abstracts not searched.",
+          "adjacent": [
+            "PMID:31127682 (bioprocess economics of stem cell therapies for T1D, 2019)",
+            "PMID:29382312 (prospective health technology assessment, 2018)"
+          ]
+        },
+        {
+          "id": "2b",
+          "kind": "fact",
+          "tier": "BRONZE",
+          "claim": "The two trials of zimislecel, the most advanced stem cell-derived islet product, list 36 sites in 10 countries, all high-income.",
+          "sources": [
+            "ClinicalTrials.gov NCT04786262 and NCT06832410, queried 2026-10-01"
+          ]
+        },
+        {
+          "id": "2c",
+          "kind": "fact",
+          "tier": "BRONZE",
+          "claim": "Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country.",
+          "sources": [
+            "ClinicalTrials.gov condition/intervention query, 2026-10-01"
+          ]
+        },
+        {
+          "id": "2d",
+          "kind": "fact",
+          "tier": "BRONZE",
+          "claim": "About a fifth of people with type 1 diabetes live in low- and lower-middle-income countries: 1.8 million of 8.4 million in 2021, 2.1 million of 9.5 million in 2025.",
+          "sources": [
+            "PMID:36113507 (T1D Index, Lancet Diabetes Endocrinol 2022)",
+            "PMID:40412624 (IDF Atlas 11th ed / T1D Index v3, 2025)"
+          ],
+          "note": "Two editions of one model, so one source."
+        },
+        {
+          "id": "2e",
+          "kind": "fact",
+          "tier": "BRONZE",
+          "claim": "Remaining life expectancy for a child diagnosed at 10 differs by country income: 13 years in low-income versus 65 in high-income countries (2021).",
+          "sources": [
+            "PMID:36113507"
+          ]
+        }
+      ],
+      "profile": {
+        "GOLD": 0,
+        "SILVER": 20,
+        "BRONZE": 80,
+        "UNVERIFIED": 0
+      }
     },
     "3": {
       "tier": "SILVER",
@@ -63,5 +132,6 @@
       "tier": "EXPLORATORY",
       "title": "GKA Pricing Trajectory"
     }
-  }
+  },
+  "claim_rule": "Owner, 2026-10-06: rate each gap claim by claim, as specifically as possible. Each claim gets its own tier (absence claims: independent null-search sources; factual claims: independent confirming sources; GOLD 3+, SILVER 2, BRONZE 1, unverified 0). The gap's profile is the share of its claims at each level, e.g. 80/10/0/10 GOLD/SILVER/BRONZE/unverified. Its headline tier (used on badges) is the median claim's tier."
 }

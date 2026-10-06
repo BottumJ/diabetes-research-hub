@@ -1,6 +1,6 @@
 # Literature Gap Analysis Report
-**Generated:** 2026-10-02 05:06
-**Source:** PubMed (date range: 2020/01/01 to 2026/10/02)
+**Generated:** 2026-10-06 05:01
+**Source:** PubMed (date range: 2020/01/01 to 2026/10/06)
 **Domains analyzed:** 30
 **Pairs analyzed:** 435
 
@@ -13,31 +13,31 @@ suggesting under-explored research territory where new work could fill gaps.
 
 | Rank | Domain 1 | Domain 2 | Gap Score | Joint Pubs | Expected | Opportunity |
 |------|----------|----------|-----------|------------|----------|-------------|
-| 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | 1778.7 | HIGH |
-| 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | 2309.6 | HIGH |
-| 3 | Islet Transplant | GWAS / Polygenic | 100.0 | 0 | 1187.7 | HIGH |
-| 4 | Islet Transplant | Personalized Nutr | 100.0 | 0 | 426.7 | HIGH |
-| 5 | Islet Transplant | Drug Repurposing | 100.0 | 0 | 399.5 | HIGH |
-| 6 | Islet Transplant | Health Equity | 100.0 | 0 | 729.5 | HIGH |
-| 7 | Islet Transplant | Gestational DM | 100.0 | 1 | 2007.6 | HIGH |
-| 8 | GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | 3319.6 | HIGH |
-| 9 | GWAS / Polygenic | CGM Technology | 100.0 | 3 | 6279.1 | HIGH |
-| 10 | Gene Therapy | LADA | 100.0 | 0 | 1214.4 | HIGH |
-| 11 | Treg / CAR-T | Glucokinase | 100.0 | 0 | 932.1 | HIGH |
-| 12 | Treg / CAR-T | CGM Technology | 100.0 | 1 | 2672.3 | HIGH |
-| 13 | Glucokinase | Drug Repurposing | 100.0 | 0 | 736.7 | HIGH |
-| 14 | Glucokinase | Health Equity | 100.0 | 0 | 1345.2 | HIGH |
-| 15 | Glucokinase | LADA | 100.0 | 0 | 730.2 | HIGH |
-| 16 | Personalized Nutr | Closed Loop / AP | 100.0 | 0 | 1192.6 | HIGH |
-| 17 | Personalized Nutr | LADA | 100.0 | 0 | 662.7 | HIGH |
-| 18 | Drug Repurposing | Closed Loop / AP | 100.0 | 0 | 1116.7 | HIGH |
-| 19 | Drug Repurposing | CGM Technology | 100.0 | 0 | 2112.2 | HIGH |
-| 20 | Drug Repurposing | Health Equity | 100.0 | 0 | 1143.0 | HIGH |
-| 21 | Drug Repurposing | LADA | 100.0 | 0 | 620.5 | HIGH |
-| 22 | Health Equity | LADA | 100.0 | 0 | 1132.9 | HIGH |
-| 23 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | 1040.4 | HIGH |
-| 24 | Beta Cell Regen | Retinopathy | 99.9 | 5 | 5145.1 | HIGH |
-| 25 | Beta Cell Regen | Neuropathy | 99.9 | 3 | 2219.7 | HIGH |
+| 1 | Beta Cell Regen | Health Equity | 100.0 | 0 | 1780.4 | HIGH |
+| 2 | Insulin Resistance | Islet Transplant | 100.0 | 1 | 2310.4 | HIGH |
+| 3 | Islet Transplant | GWAS / Polygenic | 100.0 | 0 | 1188.0 | HIGH |
+| 4 | Islet Transplant | Personalized Nutr | 100.0 | 0 | 427.0 | HIGH |
+| 5 | Islet Transplant | Drug Repurposing | 100.0 | 0 | 399.9 | HIGH |
+| 6 | Islet Transplant | Health Equity | 100.0 | 0 | 730.2 | HIGH |
+| 7 | Islet Transplant | Gestational DM | 100.0 | 1 | 2008.4 | HIGH |
+| 8 | GWAS / Polygenic | Closed Loop / AP | 100.0 | 0 | 3322.2 | HIGH |
+| 9 | GWAS / Polygenic | CGM Technology | 100.0 | 3 | 6282.1 | HIGH |
+| 10 | Gene Therapy | LADA | 100.0 | 0 | 1215.9 | HIGH |
+| 11 | Treg / CAR-T | Glucokinase | 100.0 | 0 | 933.7 | HIGH |
+| 12 | Treg / CAR-T | CGM Technology | 100.0 | 1 | 2672.9 | HIGH |
+| 13 | Glucokinase | Drug Repurposing | 100.0 | 0 | 738.6 | HIGH |
+| 14 | Glucokinase | Health Equity | 100.0 | 0 | 1348.8 | HIGH |
+| 15 | Glucokinase | LADA | 100.0 | 0 | 732.1 | HIGH |
+| 16 | Personalized Nutr | Closed Loop / AP | 100.0 | 0 | 1194.0 | HIGH |
+| 17 | Personalized Nutr | LADA | 100.0 | 0 | 663.7 | HIGH |
+| 18 | Multi-Omics | Nephropathy DKD | 100.0 | 0 | 5336.1 | HIGH |
+| 19 | Drug Repurposing | Closed Loop / AP | 100.0 | 0 | 1118.1 | HIGH |
+| 20 | Drug Repurposing | CGM Technology | 100.0 | 0 | 2114.4 | HIGH |
+| 21 | Drug Repurposing | Health Equity | 100.0 | 0 | 1145.0 | HIGH |
+| 22 | Drug Repurposing | LADA | 100.0 | 0 | 621.5 | HIGH |
+| 23 | Health Equity | LADA | 100.0 | 0 | 1134.9 | HIGH |
+| 24 | Beta Cell Regen | Personalized Nutr | 99.9 | 1 | 1041.1 | HIGH |
+| 25 | Beta Cell Regen | Retinopathy | 99.9 | 5 | 5147.5 | HIGH |
 
 ---
 
@@ -58,35 +58,35 @@ A score of 95 means the intersection has 95% fewer publications than expected.
 
 | Domain | Publications (2020+) |
 |--------|---------------------|
-| Prevention / DPP | 82,871 |
-| CV Complications | 26,755 |
-| Insulin Resistance | 20,918 |
-| Retinopathy | 17,462 |
-| Gestational DM | 15,806 |
-| Nephropathy DKD | 14,672 |
-| GLP-1 Agonists | 14,079 |
-| Metabolomics | 12,994 |
-| AI / ML Predict | 12,201 |
-| Microbiome Gut | 10,793 |
-| Youth Diabetes | 8,253 |
-| Epigenetics | 7,876 |
-| SGLT2 Inhibitors | 7,817 |
-| CGM Technology | 7,127 |
-| GWAS / Polygenic | 5,532 |
-| Proteomics | 5,061 |
-| Autoimmunity T1D | 4,774 |
-| Remission T2D | 4,469 |
-| Neuropathy | 3,250 |
-| Gene Therapy | 2,398 |
-| Health Equity | 2,087 |
-| Closed Loop / AP | 1,992 |
-| Multi-Omics | 1,934 |
+| Prevention / DPP | 82,959 |
+| CV Complications | 26,782 |
+| Insulin Resistance | 20,933 |
+| Retinopathy | 17,478 |
+| Gestational DM | 15,818 |
+| Nephropathy DKD | 14,685 |
+| GLP-1 Agonists | 14,099 |
+| Metabolomics | 13,007 |
+| AI / ML Predict | 12,219 |
+| Microbiome Gut | 10,800 |
+| Youth Diabetes | 8,258 |
+| Epigenetics | 7,882 |
+| SGLT2 Inhibitors | 7,830 |
+| CGM Technology | 7,130 |
+| GWAS / Polygenic | 5,535 |
+| Proteomics | 5,065 |
+| Autoimmunity T1D | 4,775 |
+| Remission T2D | 4,474 |
+| Neuropathy | 3,253 |
+| Gene Therapy | 2,400 |
+| Health Equity | 2,091 |
+| Closed Loop / AP | 1,994 |
+| Multi-Omics | 1,939 |
 | Beta Cell Regen | 1,516 |
 | Treg / CAR-T | 1,002 |
-| Glucokinase | 867 |
-| Personalized Nutr | 714 |
-| Drug Repurposing | 626 |
-| LADA | 615 |
+| Glucokinase | 870 |
+| Personalized Nutr | 715 |
+| Drug Repurposing | 627 |
+| LADA | 616 |
 | Islet Transplant | 255 |
 
 ---
@@ -101,4 +101,4 @@ A score of 95 means the intersection has 95% fewer publications than expected.
 - This analysis should be cross-referenced with expert domain knowledge
   before drawing conclusions
 
-*Generated by Diabetes Research Hub - Project 1 - 2026-10-02*
+*Generated by Diabetes Research Hub - Project 1 - 2026-10-06*

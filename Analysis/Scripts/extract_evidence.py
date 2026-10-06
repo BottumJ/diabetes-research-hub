@@ -60,8 +60,8 @@ GAPS = {
         'mesh_sig': ['Diabetes Mellitus, Type 1', 'Autoantibodies', 'Genetic Therapy'],
     },
     2: {
-        'name': 'Health Equity in Diabetes',
-        'tier': 'GOLD',
+        'name': 'Health Equity in Beta Cell Therapies',
+        'tier': 'BRONZE',
         'keywords': [
             'health equity', 'health disparit', 'racial disparit', 'ethnic disparit',
             'social determinant', 'access to care', 'socioeconomic',

@@ -87,7 +87,7 @@ GAPS_DATA = {
     },
     "2": {
         "title": "Health Equity in Beta Cell Therapies",
-        "tier": "GOLD",
+        "tier": "BRONZE",
         "score": 0.94,
         "cluster": "A",
         "domain_pubs": {"health_equity": 1830, "beta_cell": 1375},
@@ -108,12 +108,12 @@ GAPS_DATA = {
             ]
         },
         "evidence_synthesis": {
-            "summary": "Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country; the most common countries are the United States (31), China (11) and France (8) (ClinicalTrials.gov query, 2026-10-01). The share of type 1 burden in low- and middle-income countries is not sourced here. [Corrected 2026-10-01: previously read \"88% of beta cell trials in HICs; 81% of disease burden in LMICs\", neither sourced.]",
+            "summary": "Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country; the most common countries are the United States (31), China (11) and France (8) (ClinicalTrials.gov query, 2026-10-01). About a fifth of people with type 1 diabetes live in low- and lower-middle-income countries (2.1 million of 9.5 million in 2025; PMID:40412624). [Corrected 2026-10-01: previously read \"88% of beta cell trials in HICs; 81% of disease burden in LMICs\", neither sourced.]",
             "details": [
                 "Vertex VX-880: 83% insulin independence, 100% HbA1c <7% in initial cohort (NEJM PMID:40544428); requires ongoing immunosuppression; long-term safety profile not yet established (small N, limited follow-up)",
                 "VX-264 discontinued March 2025 due to insufficient C-peptide response",
-                "Global burden: 589M adults (2024), projected 853M by 2050",
-                "India: 89.8M cases, ZERO trial sites; Bangladesh: 13.9M, zero; Mexico: 13.6M, zero",
+                "Type 1 diabetes: 9.5 million people in 2025, 2.1 million of them in lower-income countries; projected 14.7 million by 2040 (PMID:40412624)",
+                "No active type 1 cell-therapy study lists a site in India or any African country (ClinicalTrials.gov query, 2026-10-01)",
                 "iPSC manufacturing: market expected to expand substantially, though specific cost trajectories remain uncertain"
             ]
         },
@@ -147,7 +147,7 @@ GAPS_DATA = {
             "data_needed": "Regional trial feasibility studies, manufacturing cost data, health system capacity assessment",
             "dependencies": "Regulatory pathway harmonization, technology transfer agreements, local manufacturing infrastructure"
         },
-        "validation_evidence": "GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions | CORPUS VALIDATION (March 2026): Corpus analysis identified 19 cross-gap data points including hazard ratios and odds ratios from published equity studies.",
+        "validation_evidence": "Rated claim by claim; see the claim table on this card. The 15 general diabetes-disparity papers in the evidence store are context: they show disparities in diabetes care are well studied, which is not this gap.",
         "expanded_clinical_context": "Vertex VX-880 represents breakthrough beta cell replacement therapy with 83% insulin independence at 1 year (10 of 12 full-dose participants, phase 1-2 interim analysis; PMID:40544428). Its two registered trials list 36 sites in 10 countries, all high-income: United States 15, Canada 6, United Kingdom 4, Saudi Arabia 4, France 2, and one each in Germany, Italy, the Netherlands, Norway and Switzerland (ClinicalTrials.gov, NCT04786262 and NCT06832410, queried 2026-10-01). [Corrected 2026-10-01: previously listed Sweden, Belgium, Spain and Australia, which have no site, and omitted five that do.] Manufacturing costs expected to decline as the field matures, though specific cost trajectories remain uncertain. India (89.8M), Bangladesh (13.9M), Mexico (13.6M) and Sub-Saharan Africa (33M) are total adult diabetes counts, not type 1 or LADA counts [UNSOURCED - attributed elsewhere on this page to the IDF Diabetes Atlas 2024, not checked], and no zimislecel trial site is listed in them. Regulatory pathways for cell therapy exist in India (DCG), Brazil (ANVISA) and China (NMPA) [UNSOURCED]. [Corrected 2026-10-01: these counts were labelled 'LADA/T1D burden', and a claim that iPSC-derived islets outperform allogeneic islets on rejection had no source and was removed.]",
         "mechanism_detail": "Zimislecel is an allogeneic, stem cell-derived, fully differentiated islet-cell product infused into the portal vein, given with glucocorticoid-free immunosuppression (PMID:40544428). [Corrected 2026-10-01: this previously described a GADA-selected iPSC line genetically matched to donor HLA, a day-by-day differentiation protocol and product potency figures (73% insulin-positive, 62% CD9-negative, 4.2 pC/kg/min). None had a source, and HLA matching is inconsistent with an allogeneic product that requires immunosuppression.] In the reported VX-880 cohort: a majority achieved pre-specified glucose targets at the initial readout (exact proportions vary by reporting timepoint — see sponsor and peer-reviewed disclosures). No clinically-apparent allograft rejection events were reported in the disclosed interim analyses, though the cohort is small and follow-up remains limited; immunosuppression target range was lower than historical Edmonton Protocol (tacrolimus ~3-5 ng/mL vs. ~10-15 ng/mL historically). Insulin-secretion kinetics were reported to recover over 6-12 months post-transplant. (All outcome claims require verification against peer-reviewed endpoints.)"
     },
@@ -1090,6 +1090,58 @@ GAPS_DATA = {
     }
 }
 
+
+# ---------------------------------------------------------------------------
+# CLAIM-LEVEL TIERS (owner, 2026-10-06: "be as specific as possible")
+# ---------------------------------------------------------------------------
+# A gap can carry claims with different levels of validation. Where
+# gap_tiers.json lists claims for a gap, its card shows each claim with its own
+# tier and sources, and the gap's profile: the share of its claims at each
+# level. The badge shows the headline tier (the tier of the median claim).
+def _load_claim_store():
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'Results',
+                               'gap_tiers.json'), encoding='utf-8') as fh:
+            return json.load(fh).get('gaps', {})
+    except (OSError, ValueError):
+        return {}
+
+
+_CLAIM_STORE = _load_claim_store()
+
+
+def _esc(t):
+    return str(t).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+def claims_html(gap_id):
+    g = _CLAIM_STORE.get(str(gap_id), {})
+    claims = g.get('claims')
+    if not claims:
+        return ''
+    p = g.get('profile', {})
+    rows = []
+    for c in claims:
+        src = '<br>'.join(_esc(x) for x in c.get('sources', []))
+        extra = ''
+        if c.get('scope'):
+            extra += '<br><em>Scope: ' + _esc(c['scope']) + '</em>'
+        if c.get('adjacent'):
+            extra += '<br><em>Adjacent work: ' + _esc('; '.join(c['adjacent'])) + '</em>'
+        if c.get('note'):
+            extra += '<br><em>' + _esc(c['note']) + '</em>'
+        rows.append('<tr><td>' + _esc(c['id']) + '</td><td>' + _esc(c['claim']) + '</td>'
+                    '<td><span class="tier-badge tier-' + c['tier'].lower() + '">' + c['tier'] + '</span></td>'
+                    '<td style="font-size:12px;">' + src + extra + '</td></tr>')
+    return ('<div class="subsection" style="margin:12px 0;">'
+            '<div class="section-title">Claim-by-claim validation</div>'
+            '<p style="font-size:13px;">Profile: <strong>' + str(p.get('GOLD', 0)) + '% GOLD / '
+            + str(p.get('SILVER', 0)) + '% SILVER / ' + str(p.get('BRONZE', 0)) + '% BRONZE / '
+            + str(p.get('UNVERIFIED', 0)) + '% unverified</strong> (' + str(len(claims)) + ' claims). '
+            'The badge shows the tier of the median claim.</p>'
+            '<table><thead><tr><th>#</th><th>Claim</th><th>Tier</th><th>Sources</th></tr></thead><tbody>'
+            + ''.join(rows) + '</tbody></table></div>')
+
 def generate_html():
     """Generate comprehensive Gap Deep Dives HTML dashboard"""
     print("Generating Gap Deep Dives HTML dashboard...")
@@ -1315,6 +1367,7 @@ def generate_html():
                     <span>Cluster: {gap['cluster']}</span>
                     <span>Status: {gap['status']}</span>
                 </div>
+                {claims_html(gap_id)}
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>

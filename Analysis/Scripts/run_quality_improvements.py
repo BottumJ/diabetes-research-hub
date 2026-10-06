@@ -112,7 +112,7 @@ SCRIPTS = {
     'nutribeta': ('build_nutrition_beta.py', 'Building Personalized Nutrition for Beta Cells (Gap #13 EXPLORATORY)'),
     'nutrilada': ('build_nutrition_lada.py', 'Building Personalized Nutrition for LADA (Gap #14 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
     'gkapricing': ('build_gka_pricing.py', 'Building GKA Pricing Trajectory Model (Gap #15 EXPLORATORY)'),  # Demoted from BRONZE 2026-09-27: joint_pubs=0, key_refs=[]
-    'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 GOLD)'),
+    'healthequity': ('build_health_equity.py', 'Building Health Equity Dashboard (Gap #2 BRONZE)'),
     'methodology': ('build_methodology.py', 'Building Methodology & Validation Framework'),
     'pmidverify': ('verify_pmids.py', 'Verifying PMIDs against PubMed API'),
     'pmidtracker': ('track_unfound_pmids.py', 'Tracking unfound PMIDs (Verify-* markers)'),

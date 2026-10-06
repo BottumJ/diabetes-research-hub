@@ -888,7 +888,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="gap-card">
                     <div class="gap-title">Gap #2: Health Equity in Beta Cell Therapies</div>
-                    <span class="gap-validation gold">GOLD</span>
+                    <span class="gap-validation bronze">BRONZE</span>
                     <p class="gap-description">Global access to stem cell-derived beta cell therapies; production scaling, cost reduction, and equity frameworks.</p>
                 </div>
                 <div class="gap-card">

@@ -1,11 +1,43 @@
 {
-  "generated": "2026-10-01T01:03:38.153607",
+  "generated": "2026-10-06T07:34:20.394911",
   "gate": "gap_subject_coverage",
   "method": "Regex over stored title + journal + finding snippets in gap_evidence.json. No abstracts fetched. Misses are an UPPER bound: a paper whose abstract covers the axis but whose stored snippet does not will read as a miss.",
   "gaps_checked": 15,
-  "findings_count": 3,
+  "findings_count": 4,
   "blocking_count": 0,
   "findings": [
+    {
+      "gap_id": 2,
+      "name": "Health Equity in Beta Cell Therapies",
+      "tier": "BRONZE",
+      "severity": "ACKNOWLEDGED",
+      "problem": "15 evidence paper(s). 0 touch \"beta cell therapy\" and 15 touch \"equity\", but NO SINGLE PAPER touches both. The intersection itself is unevidenced; the two axes are supported separately and joined only by inference.",
+      "remedy": "State explicitly that the intersection rests on inference across papers, or find a paper at the intersection.",
+      "finding_class": "no_paper_at_intersection",
+      "pmids": [
+        "40366501",
+        "33155826",
+        "25772230",
+        "39697180",
+        "40814306",
+        "29414425",
+        "37016949",
+        "37715820",
+        "34421203",
+        "22349456",
+        "25131812",
+        "33139407",
+        "39525461",
+        "41587834",
+        "42478360"
+      ],
+      "detected_severity": "MEDIUM",
+      "ruling": {
+        "date": "2026-10-06",
+        "decision": "Evidence for this gap lives in its claim table, not in the general disparity papers."
+      },
+      "reader_note": "The papers listed here document disparities in diabetes care generally. They are context: they show that topic is well studied. This gap is narrower, who can get stem-cell and islet replacement therapy, and its evidence is the claim-by-claim table on the Gap Deep Dives page: two dated searches that found no such analysis, registry counts of where the trials are, and published estimates of where people with type 1 diabetes live."
+    },
     {
       "gap_id": 4,
       "name": "Drug Repurposing for Islet Transplant",
@@ -131,30 +163,15 @@
     },
     {
       "gap_id": 2,
-      "name": "Health Equity in Diabetes",
-      "tier": "GOLD",
+      "name": "Health Equity in Beta Cell Therapies",
+      "tier": "BRONZE",
       "papers": 15,
-      "x_axis": "diabetes",
-      "x_covered": 14,
+      "x_axis": "beta cell therapy",
+      "x_covered": 0,
       "y_axis": "equity",
       "y_covered": 15,
-      "both_axes_covered": 14,
-      "papers_covering_both": [
-        "40366501",
-        "33155826",
-        "25772230",
-        "39697180",
-        "40814306",
-        "29414425",
-        "37016949",
-        "37715820",
-        "34421203",
-        "22349456",
-        "33139407",
-        "39525461",
-        "41587834",
-        "42478360"
-      ]
+      "both_axes_covered": 0,
+      "papers_covering_both": []
     },
     {
       "gap_id": 3,

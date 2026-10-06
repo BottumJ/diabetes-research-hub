@@ -115,9 +115,9 @@ This project uses a 4-tier evidence classification system:
 
 | Tier | Requirement | Count |
 |------|------------|-------|
-| **GOLD** | 3+ independent sources from different research groups | 1 gap |
+| **GOLD** | 3+ independent sources from different research groups | 0 gaps |
 | **SILVER** | 2 independent sources | 9 gaps |
-| **BRONZE** | Computational analysis with single-source basis | 0 gaps |
+| **BRONZE** | Computational analysis with single-source basis | 1 gap |
 | **EXPLORATORY** | No evidence yet at the gap's own intersection, or biological plausibility uncertain | 5 gaps |
 
 All claims in the Drug Repurposing Screen have been pressure-tested: WHO Essential Medicines flags verified against the 2023 EML, mechanism claims checked against cited PMIDs, negative trials explicitly labeled, preclinical-only evidence clearly distinguished from human RCT data.
@@ -131,7 +131,7 @@ See [RESEARCH_DOCTRINE.md](RESEARCH_DOCTRINE.md) for the full framework (PRISMA 
 | # | Gap | Tier |
 |---|-----|------|
 | 1 | Gene Therapy for LADA | EXPLORATORY |
-| 2 | Health Equity in Beta Cell Therapies | GOLD |
+| 2 | Health Equity in Beta Cell Therapies | BRONZE |
 | 3 | Insulin Resistance in Islet Transplant | SILVER |
 | 4 | Drug Repurposing for Islet Transplant | SILVER |
 | 5 | Treg in Diabetic Neuropathy | SILVER |

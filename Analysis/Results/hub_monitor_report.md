@@ -1,6 +1,6 @@
 # Hub Monitor Report
-**Scan time:** 2026-10-02 05:06:43
-**Previous scan:** 2026-10-01 07:30:52
+**Scan time:** 2026-10-06 05:01:15
+**Previous scan:** 2026-10-05 05:04:43
 **Hub root:** `C:\Users\justi\OneDrive\Diabetes_Research`
 
 ---
@@ -9,38 +9,55 @@
 
 | Metric | Count |
 |--------|-------|
-| Total files tracked | 1536 |
-| New files | 4 |
-| Modified files | 10 |
+| Total files tracked | 1552 |
+| New files | 7 |
+| Modified files | 24 |
 | Removed files | 0 |
-| Unchanged files | 1522 |
+| Unchanged files | 1521 |
 
 ## New Files
 
-- **Analysis\Results\clinical_trials_snapshot_2026-10-02.json** (627.2 KB)
-- **Analysis\Results\monitor_report_2026-10-01.md** (8.2 KB)
-- **Analysis\Results\monitor_report_2026-10-02.md** (3.1 KB)
-- **Analysis\Results\pubmed_recent_snapshot_2026-10-02.json** (123.8 KB)
+- **Analysis\Results\clinical_trials_snapshot_2026-10-06.json** (628.0 KB)
+- **Analysis\Results\monitor_report_2026-10-06.md** (4.6 KB)
+- **Analysis\Results\pubmed_recent_snapshot_2026-10-06.json** (126.8 KB)
+- **PM\DECISIONS.md** (4.0 KB)
+- **PM\IDEAS.md** (10.4 KB)
+- **PM\INTAKE.md** (1.0 KB)
+- **PM\ROADMAP.md** (16.0 KB)
 
 ## Modified Files
 
-- **Analysis\Results\agent_state.json** (1.4 MB, modified: 2026-10-02T03:16:46.484627)
-- **Analysis\Results\clinical_trials_latest.json** (627.2 KB, modified: 2026-10-02T05:00:12.706135)
-- **Analysis\Results\clinical_trials_summary.md** (5.2 KB, modified: 2026-10-02T05:00:12.709143)
-- **Analysis\Results\hub_monitor_report.md** (20.3 KB, modified: 2026-10-01T07:30:56.740646)
-- **Analysis\Results\hub_monitor_state.json** (377.6 KB, modified: 2026-10-01T07:30:56.700987)
-- **Analysis\Results\literature_gap_data.json** (128.8 KB, modified: 2026-10-02T05:06:41.501448)
-- **Analysis\Results\literature_gap_matrix.xlsx** (32.4 KB, modified: 2026-10-02T05:06:41.493189)
-- **Analysis\Results\literature_gap_report.md** (4.2 KB, modified: 2026-10-02T05:06:41.494450)
-- **Analysis\Results\pubmed_recent_latest.json** (123.8 KB, modified: 2026-10-02T05:01:00.611773)
-- **Analysis\Results\pubmed_recent_summary.md** (45.8 KB, modified: 2026-10-02T05:01:00.613774)
+- **Analysis\Results\.citation_identifier_cache.json** (125.4 KB, modified: 2026-10-06T03:23:24.358974)
+- **Analysis\Results\.pmid_ceiling_cache.json** (159 B, modified: 2026-10-06T03:23:09.548665)
+- **Analysis\Results\.surname_resolve_cache.json** (6.9 KB, modified: 2026-10-06T03:23:50.209858)
+- **Analysis\Results\agent_state.json** (1.5 MB, modified: 2026-10-06T03:24:03.875742)
+- **Analysis\Results\catalog_entity_agreement_audit.json** (11.4 KB, modified: 2026-10-06T03:23:54.588224)
+- **Analysis\Results\citation_identifier_audit.json** (176.4 KB, modified: 2026-10-06T03:23:24.465807)
+- **Analysis\Results\clinical_trials_latest.json** (628.0 KB, modified: 2026-10-06T05:00:13.004136)
+- **Analysis\Results\clinical_trials_summary.md** (5.2 KB, modified: 2026-10-06T05:00:13.015197)
+- **Analysis\Results\computed_value_citation_audit.json** (3.0 KB, modified: 2026-10-06T03:23:51.852993)
+- **Analysis\Results\endpoint_value_agreement_audit.json** (282 B, modified: 2026-10-06T03:23:58.072350)
+- **Analysis\Results\flagged_membership_class_audit.json** (236 B, modified: 2026-10-06T03:23:20.912917)
+- **Analysis\Results\gap_numbering_audit.json** (8.4 KB, modified: 2026-10-06T03:23:22.588203)
+- **Analysis\Results\gate_exit_code_audit.json** (51.5 KB, modified: 2026-10-06T03:23:00.332892)
+- **Analysis\Results\hub_monitor_report.md** (3.2 KB, modified: 2026-10-05T05:04:46.147693)
+- **Analysis\Results\hub_monitor_state.json** (380.8 KB, modified: 2026-10-05T05:04:46.103312)
+- **Analysis\Results\impossible_pmid_audit.json** (640 B, modified: 2026-10-06T03:23:15.095026)
+- **Analysis\Results\index_field_invariants.json** (525 B, modified: 2026-10-06T03:23:23.842999)
+- **Analysis\Results\literature_gap_data.json** (128.8 KB, modified: 2026-10-06T05:01:13.398311)
+- **Analysis\Results\literature_gap_matrix.xlsx** (32.3 KB, modified: 2026-10-06T05:01:13.384569)
+- **Analysis\Results\literature_gap_report.md** (4.2 KB, modified: 2026-10-06T05:01:13.386099)
+- **Analysis\Results\prose_author_surname_audit.json** (17.1 KB, modified: 2026-10-06T03:23:50.239818)
+- **Analysis\Results\pubmed_recent_latest.json** (126.8 KB, modified: 2026-10-06T05:00:59.874833)
+- **Analysis\Results\pubmed_recent_summary.md** (44.3 KB, modified: 2026-10-06T05:00:59.880373)
+- **Dashboards\Clinical_Trial_Dashboard.html** (497.2 KB, modified: 2026-10-06T03:20:22.050255)
 
 ## File Inventory by Type
 
 | Extension | Count |
 |-----------|-------|
-| .json | 947 |
-| .md | 326 |
+| .json | 955 |
+| .md | 334 |
 | .py | 169 |
 | .html | 75 |
 | .docx | 8 |
@@ -55,7 +72,7 @@
 | (root) | 37 |
 | .github | 1 |
 | .github\ISSUE_TEMPLATE | 4 |
-| Analysis\Results | 650 |
+| Analysis\Results | 662 |
 | Analysis\Results\paper_library | 1 |
 | Analysis\Results\paper_library\abstracts | 407 |
 | Analysis\Results\paper_library\fulltext | 154 |
@@ -63,34 +80,30 @@
 | Analysis\Scripts | 169 |
 | Dashboards | 35 |
 | Dashboards\_quarantine | 4 |
+| PM | 4 |
 | docs | 2 |
 | docs\Dashboards | 35 |
 | docs\Reports | 2 |
 
 ## Review Flags
 
-- 834 live result file(s) older than 14 days — may need refresh.
+- 883 live result file(s) older than 14 days — may need refresh.
 
 ---
-*Generated by hub_monitor.py — 2026-10-02 05:06:43*
+*Generated by hub_monitor.py — 2026-10-06 05:01:15*
 ## Snapshot Diffs (Automated)
 
-### Clinical Trials (clinical_trials_snapshot_2026-10-01.json → clinical_trials_snapshot_2026-10-02.json)
-- New trials: 0
+### Clinical Trials (clinical_trials_snapshot_2026-10-05.json → clinical_trials_snapshot_2026-10-06.json)
+- New trials: 1
 - Removed trials: 0
 - Status changes: 0
 - New results posted: 0
 
-### PubMed (pubmed_recent_snapshot_2026-10-01.json → pubmed_recent_snapshot_2026-10-02.json)
-- New papers: 46
-- Dropped papers: 58
+### PubMed (pubmed_recent_snapshot_2026-10-05.json → pubmed_recent_snapshot_2026-10-06.json)
+- New papers: 19
+- Dropped papers: 21
 
-**Cross-Domain New Papers (8):**
-- [42820064] The Immune Checkpoint Inhibitors Journey: From Early Promise to Lasting Impact. — Domains: T1D Immunotherapy, Diabetes AI/ML, Diabetes Biomarker, Diabetes Microbiome
-- [42820928] Emerging drugs for diabetic macular edema: an update. — Domains: Diabetes Gene Therapy, Diabetes Complications New
-- [42821141] Network pharmacology, single-cell transcriptomics, machine learning and experimental validation iden — Domains: Diabetes AI/ML, Diabetes Multi-Omics
-- [42822398] Diabetes remission 10 years after bariatric surgery: Extension study of a randomized controlled tria — Domains: T2D GLP-1 New, T2D Remission
-- [42822612] Icaritin ameliorates diabetes-associated cognitive dysfunction by attenuating ferroptosis through PP — Domains: Diabetes Microbiome, Diabetes Multi-Omics
-- [42822621] Recent progress in the biomarkers of peripheral artery disease. — Domains: Diabetes AI/ML, Diabetes Biomarker
-- [42822623] Performance assessment of a novel fully automated ELISA for anti-IA2 autoantibody detection in type  — Domains: Diabetes Biomarker, LADA New Research
-- [42822802] Alterations of OCTA-Derived Iris Vessel Density and Therapeutic Responsiveness in Patients with Diab — Domains: Diabetes Biomarker, Diabetes Complications New
+**Cross-Domain New Papers (3):**
+- [42833987] Innovative holistic treatment for CKM: what lies ahead? — Domains: T2D GLP-1 New, Diabetes AI/ML
+- [42834229] Oral small-molecule GLP-1RA safiglipron versus dapagliflozin in type 2 diabetes: a randomized, doubl — Domains: T2D GLP-1 New, Key Therapy: dapagliflozin
+- [42834840] Autoantibody Screening of Siblings in the Teplizumab Era: From a Single Measurement to Treatable Sta — Domains: T1D Immunotherapy, Key Therapy: teplizumab

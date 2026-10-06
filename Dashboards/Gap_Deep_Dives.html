@@ -155,7 +155,7 @@
         <header>
             <h1>Gap Deep Dives Dashboard</h1>
             <p class="subtitle">Comprehensive analysis of 15 research gaps in diabetes therapeutics</p>
-            <p class="subtitle">Generated: 2026-10-01 00:44:21</p>
+            <p class="subtitle">Generated: 2026-10-06 07:34:09</p>
         </header>
 
         <div class="context-block">
@@ -163,7 +163,7 @@
             <p>This platform tracks 15 specific research gaps in diabetes where published literature is thin, clinical trials are sparse, or equity barriers prevent progress. These gaps were identified by querying PubMed for 435 pairwise domain combinations and flagging intersections with zero or near-zero joint publications. Each gap represents a concrete question that existing research has not adequately addressed.</p>
 
             <div class="context-label">How Gaps Are Classified</div>
-            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (1 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (9 gaps): 2 independent sources. <strong>BRONZE</strong> (0 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (5 gaps): biological plausibility is uncertain, or no evidence paper has yet been found. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
+            <p>Each gap is assigned an evidence tier based on independent source validation. <strong>GOLD</strong> (0 gaps): 3+ independent research groups confirm the gap and its framing. <strong>SILVER</strong> (9 gaps): 2 independent sources. <strong>BRONZE</strong> (1 gaps): computational analysis with single-source basis. <strong>EXPLORATORY</strong> (5 gaps): biological plausibility is uncertain, or no evidence paper has yet been found. Tier determines how much confidence you should place in each gap's findings and recommendations.</p>
 
             <div class="context-label">How to Read the Priority Matrix</div>
             <p>The Priority Matrix (Tab 1) ranks gaps by a composite score combining publication density, trial activity, clinical urgency, and feasibility. Higher scores indicate gaps where new research would have disproportionate impact. Cluster Analysis (Tab 2) groups related gaps to reveal cross-cutting themes. Individual Deep Dives (Tab 3) provide the evidence, mechanisms, and open questions for each gap. The Evidence Catalog (Tab 4) maps all supporting literature.</p>
@@ -224,9 +224,9 @@
                         <td>In Development</td>
                     </tr>
 
-                    <tr data-tier="GOLD" data-score="0.94" data-title="Health Equity in Beta Cell Therapies" data-joint-pubs="0" data-trial-count="12">
+                    <tr data-tier="BRONZE" data-score="0.94" data-title="Health Equity in Beta Cell Therapies" data-joint-pubs="0" data-trial-count="12">
                         <td><strong>Health Equity in Beta Cell Therapies</strong></td>
-                        <td><span class="tier-badge tier-gold">GOLD</span></td>
+                        <td><span class="tier-badge tier-bronze">BRONZE</span></td>
                         <td>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 94.0%"></div>
@@ -447,7 +447,7 @@
                 <div class="subsection">
 
                     <div style="margin-bottom: 15px;">
-                        <div><strong>Health Equity in Beta Cell Therapies</strong> <span class="tier-badge tier-gold">GOLD</span> (Score: 0.94)</div>
+                        <div><strong>Health Equity in Beta Cell Therapies</strong> <span class="tier-badge tier-bronze">BRONZE</span> (Score: 0.94)</div>
                         <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Vertex VX-880 shows 83% insulin independence but zero trial sites in 589M burden countries (India, Bangladesh, Mexico)...</div>
                     </div>
 
@@ -561,6 +561,7 @@
                     <span>Cluster: B</span>
                     <span>Status: In Development</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -731,16 +732,17 @@
                 </div>
             </div>
 
-            <div class="gap-card gold" id="gap2">
+            <div class="gap-card bronze" id="gap2">
                 <div class="gap-header">
                     <div class="gap-title">Gap 2: Health Equity in Beta Cell Therapies</div>
-                    <span class="tier-badge tier-gold">GOLD</span>
+                    <span class="tier-badge tier-bronze">BRONZE</span>
                 </div>
                 <div class="gap-meta">
                     <span>Score: 0.94</span>
                     <span>Cluster: A</span>
                     <span>Status: Active Barrier</span>
                 </div>
+                <div class="subsection" style="margin:12px 0;"><div class="section-title">Claim-by-claim validation</div><p style="font-size:13px;">Profile: <strong>0% GOLD / 20% SILVER / 80% BRONZE / 0% unverified</strong> (5 claims). The badge shows the tier of the median claim.</p><table role="table"><thead><tr><th>#</th><th>Claim</th><th>Tier</th><th>Sources</th></tr></thead><tbody><tr><td>2a</td><td>No published analysis or registered study examines who can get stem-cell or islet replacement therapy for type 1 diabetes, by country income, race or insurance.</td><td><span class="tier-badge tier-silver">SILVER</span></td><td style="font-size:12px;">PubMed, all time, searched 2026-10-06: 34 hits, none an access or equity analysis (query in gap2_null_searches.json)<br>ClinicalTrials.gov, searched 2026-10-06: 32 studies, none on access to cell therapy (query in gap2_null_searches.json)<br><em>Scope: PubMed-indexed papers and registered studies only; Embase and conference abstracts not searched.</em><br><em>Adjacent work: <a href="https://pubmed.ncbi.nlm.nih.gov/31127682/" target="_blank" rel="noopener" title="View on PubMed">PMID:31127682</a> (bioprocess economics of stem cell therapies for T1D, 2019); <a href="https://pubmed.ncbi.nlm.nih.gov/29382312/" target="_blank" rel="noopener" title="View on PubMed">PMID:29382312</a> (prospective health technology assessment, 2018)</em></td></tr><tr><td>2b</td><td>The two trials of zimislecel, the most advanced stem cell-derived islet product, list 36 sites in 10 countries, all high-income.</td><td><span class="tier-badge tier-bronze">BRONZE</span></td><td style="font-size:12px;">ClinicalTrials.gov NCT04786262 and NCT06832410, queried 2026-10-01</td></tr><tr><td>2c</td><td>Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country.</td><td><span class="tier-badge tier-bronze">BRONZE</span></td><td style="font-size:12px;">ClinicalTrials.gov condition/intervention query, 2026-10-01</td></tr><tr><td>2d</td><td>About a fifth of people with type 1 diabetes live in low- and lower-middle-income countries: 1.8 million of 8.4 million in 2021, 2.1 million of 9.5 million in 2025.</td><td><span class="tier-badge tier-bronze">BRONZE</span></td><td style="font-size:12px;"><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank" rel="noopener" title="View on PubMed">PMID:36113507</a> (T1D Index, Lancet Diabetes Endocrinol 2022)<br><a href="https://pubmed.ncbi.nlm.nih.gov/40412624/" target="_blank" rel="noopener" title="View on PubMed">PMID:40412624</a> (IDF Atlas 11th ed / T1D Index v3, 2025)<br><em>Two editions of one model, so one source.</em></td></tr><tr><td>2e</td><td>Remaining life expectancy for a child diagnosed at 10 differs by country income: 13 years in low-income versus 65 in high-income countries (2021).</td><td><span class="tier-badge tier-bronze">BRONZE</span></td><td style="font-size:12px;"><a href="https://pubmed.ncbi.nlm.nih.gov/36113507/" target="_blank" rel="noopener" title="View on PubMed">PMID:36113507</a></td></tr></tbody></table></div>
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -775,13 +777,13 @@
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-<p><strong>Summary:</strong> Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country; the most common countries are the United States (31), China (11) and France (8) (ClinicalTrials.gov query, 2026-10-01). The share of type 1 burden in low- and middle-income countries is not sourced here. [Corrected 2026-10-01: previously read "88% of beta cell trials in HICs; 81% of disease burden in LMICs", neither sourced.]</p>
+<p><strong>Summary:</strong> Of 76 active type 1 diabetes islet, stem-cell or beta-cell studies with listed sites, none has a site in India or in any African country; the most common countries are the United States (31), China (11) and France (8) (ClinicalTrials.gov query, 2026-10-01). About a fifth of people with type 1 diabetes live in low- and lower-middle-income countries (2.1 million of 9.5 million in 2025; <a href="https://pubmed.ncbi.nlm.nih.gov/40412624/" target="_blank" rel="noopener" title="View on PubMed">PMID:40412624</a>). [Corrected 2026-10-01: previously read "88% of beta cell trials in HICs; 81% of disease burden in LMICs", neither sourced.]</p>
 <div class="section-title">Key Evidence Points</div>
 <ul>
 <li>Vertex VX-880: 83% insulin independence, 100% HbA1c <7% in initial cohort (NEJM <a href="https://pubmed.ncbi.nlm.nih.gov/40544428/" target="_blank" rel="noopener" title="View on PubMed">PMID:40544428</a>); requires ongoing immunosuppression; long-term safety profile not yet established (small N, limited follow-up)</li>
 <li>VX-264 discontinued March 2025 due to insufficient C-peptide response</li>
-<li>Global burden: 589M adults (2024), projected 853M by 2050</li>
-<li>India: 89.8M cases, ZERO trial sites; Bangladesh: 13.9M, zero; Mexico: 13.6M, zero</li>
+<li>Type 1 diabetes: 9.5 million people in 2025, 2.1 million of them in lower-income countries; projected 14.7 million by 2040 (<a href="https://pubmed.ncbi.nlm.nih.gov/40412624/" target="_blank" rel="noopener" title="View on PubMed">PMID:40412624</a>)</li>
+<li>No active type 1 cell-therapy study lists a site in India or any African country (ClinicalTrials.gov query, 2026-10-01)</li>
 <li>iPSC manufacturing: market expected to expand substantially, though specific cost trajectories remain uncertain</li>
 
                         </ul>
@@ -889,7 +891,7 @@
                 </div>
                 <div class="expandable-content">
                     <div class="subsection">
-                        <p>GOLD tier: Clinical efficacy proven (VX-880), manufacturing pathway clear, equity gap quantified with 589M patients in low-access regions | CORPUS VALIDATION (March 2026): Corpus analysis identified 19 cross-gap data points including hazard ratios and odds ratios from published equity studies.</p>
+                        <p>Rated claim by claim; see the claim table on this card. The 15 general diabetes-disparity papers in the evidence store are context: they show disparities in diabetes care are well studied, which is not this gap.</p>
                     </div>
                 </div>
 
@@ -922,6 +924,7 @@
                     <span>Cluster: C</span>
                     <span>Status: In Optimization</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -1104,6 +1107,7 @@
                     <span>Cluster: C</span>
                     <span>Status: Preclinical/IND</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -1287,6 +1291,7 @@
                     <span>Cluster: D</span>
                     <span>Status: Research Opportunity</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -1472,6 +1477,7 @@
                     <span>Cluster: A</span>
                     <span>Status: Active Barrier</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -1653,6 +1659,7 @@
                     <span>Cluster: C</span>
                     <span>Status: In Development</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -1836,6 +1843,7 @@
                     <span>Cluster: B</span>
                     <span>Status: Urgent Gap</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2021,6 +2029,7 @@
                     <span>Cluster: B</span>
                     <span>Status: Deprioritize</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2188,6 +2197,7 @@
                     <span>Cluster: B</span>
                     <span>Status: Screening Opportunity</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2365,6 +2375,7 @@
                     <span>Cluster: A</span>
                     <span>Status: Access Barrier</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2542,6 +2553,7 @@
                     <span>Cluster: C</span>
                     <span>Status: Research Compilation</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2727,6 +2739,7 @@
                     <span>Cluster: D</span>
                     <span>Status: Emerging Commercial</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -2907,6 +2920,7 @@
                     <span>Cluster: B</span>
                     <span>Status: Research Opportunity</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>
@@ -3085,6 +3099,7 @@
                     <span>Cluster: A</span>
                     <span>Status: Market Analysis</span>
                 </div>
+                
 
                 <div class="expandable" onclick="toggleExpand(this)">
                     <strong>[+] A. Data Profile</strong>

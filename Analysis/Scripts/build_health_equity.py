@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Health Equity in Diabetes Research (Gap #2 GOLD)
+Health Equity in Diabetes Research (Gap #2 BRONZE)
 Interactive Tufte-style dashboard: systemic disparities in diabetes research
 participation, clinical trial access, treatment outcomes, and funding allocation
 across racial/ethnic groups, socioeconomic strata, and geographic regions.
@@ -483,7 +483,7 @@ html_content = """<!DOCTYPE html>
     <div class="header">
         <h1>Health Equity in Diabetes Research</h1>
         <p>Addressing systemic disparities in research participation, clinical trial access, treatment outcomes, and funding allocation</p>
-        <div class="badge">GAP #2 GOLD VALIDATED</div>
+        <div class="badge">GAP #2 BRONZE VALIDATED</div>
     </div>
 
     <div class="container">
@@ -1368,7 +1368,7 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <div class="footer">
-        <p>Health Equity in Diabetes Research | Gap #2 GOLD Validated | Addressing systemic disparities in diabetes research and care</p>
+        <p>Health Equity in Diabetes Research | Gap #2 BRONZE Validated | Addressing systemic disparities in diabetes research and care</p>
     </div>
 
     <script>
