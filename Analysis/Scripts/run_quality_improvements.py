@@ -485,6 +485,12 @@ SCRIPTS = {
     # what makes a depth-relative link wrong at a different depth.
     'linkgate': ('audit_published_links.py',
                  'Asserting every link the published site advertises resolves under docs/'),
+    # Added 2026-10-06, after syncdocs because it reads rendered output. Five
+    # data tables on three published pages had not rendered since the PMID
+    # linker started writing bare quotes into JSON strings; every text-based
+    # gate passed. This parses each JSON data literal the pages hand to JS.
+    'jsdatagate': ('audit_js_data_literals.py',
+                   'Asserting every JSON data literal on published pages parses'),
     # POST-BUILD ASSERTION, added 2026-09-06. Must run after the builders and
     # after syncdocs, because it reads rendered output, not source.
     #

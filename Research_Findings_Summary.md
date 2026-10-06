@@ -1,5 +1,5 @@
 # Diabetes Research Hub — Comprehensive Findings Summary
-**Compiled: October 01, 2026** | AI-Assisted Research Synthesis across 12 Domains
+**Compiled: October 06, 2026** | AI-Assisted Research Synthesis across 12 Domains
 **Validation framework:** Research Doctrine v1.0 — CEBM evidence levels, GRADE certainty, triple-source validation
 
 **Citation key:** [PMID:nnnnn] = PubMed ID, [DOI:xxx] = Digital Object Identifier, [NCT:xxx] = ClinicalTrials.gov ID
@@ -41,7 +41,17 @@ This summary synthesizes publicly available literature, clinical trial registrie
 
 ### Prevention & Delay
 
-**Tzield (teplizumab):** FDA-approved (2022) anti-CD3 monoclonal antibody that delayed T1D onset by a median of ~2 years in Stage 2 patients. PETITE-T1D is extending it to children under 8 (single-arm, open-label, n=20, active/not recruiting). [PMID:31180194 — Herold KC et al., NEJM 2019, TN-10 trial] [NCT:NCT05757713 — PETITE-T1D, Sanofi, registry phase PHASE4] **Validation: GOLD** (Phase 3 RCT + FDA approval + multiple independent analyses)
+**Tzield (teplizumab):** An anti-CD3 monoclonal antibody. FDA approved it on 2022-11-17 "to delay the onset of Stage 3 type 1 diabetes (T1D) in adults and pediatric patients aged 8 years and older with Stage 2 T1D" [FDA approval letter, BLA 761183, 2022-11-17]. On 2026-04-20 the indication was extended to children aged 1 to 8 with Stage 2 T1D, based on Part A of the PETITE study [FDA supplement letter, BLA 761183/S-013]. On 2026-06-12 a second indication was added: to delay the decline in insulin production in children aged 8 to 17 recently diagnosed with Stage 3 T1D, based on the PROTECT trial [FDA supplement letter, BLA 761183/S-010].
+
+*Delaying onset.* In the phase II TN-10 trial of high-risk relatives (n=76), the median time to diagnosis was 48.4 months with teplizumab and 24.4 months with placebo (hazard ratio 0.41, 95% CI 0.22 to 0.78) [PMID:31180194, N Engl J Med, 2019] [NCT:NCT01030861 — TN-10, Phase 2]. The PETITE study of children under 8 is single-arm [NCT:NCT05757713 — PETITE-T1D, Sanofi, registry phase PHASE4, completed, no results posted].
+
+*After diagnosis.* In the phase 3 PROTECT trial of children and adolescents with newly diagnosed T1D (n=328), stimulated C-peptide at week 78 was higher with teplizumab than placebo (difference 0.13 pmol/mL, 95% CI 0.09 to 0.17). Insulin dose, HbA1c, time in range and clinically important hypoglycaemia did not differ between groups [PMID:37861217, N Engl J Med, 2023].
+
+*Safety.* Expected adverse events were rash and transient lymphopenia in TN-10 [PMID:31180194], and headache, gastrointestinal symptoms, rash, lymphopenia and mild cytokine release syndrome in PROTECT [PMID:37861217]. A 2026 case report describes fulminant secondary haemophagocytic lymphohistiocytosis (HLH) after Epstein-Barr virus reactivation in one 44-year-old man with trisomy 21 treated for Stage 2 T1D; he recovered with dexamethasone and rituximab [PMID:42520060, Diabetes Care, 2026]. This is a single case and gives no estimate of how often it happens.
+
+**Validation, claim by claim:** approvals verified from FDA's own letters; delay of onset **BRONZE** (one phase II RCT, n=76); preserved insulin production after diagnosis **BRONZE** (one phase 3 RCT cited here; its key secondary endpoints did not differ); safety profile **BRONZE** (two trials' adverse-event reports plus one case report).
+
+> **CORRECTED 2026-10-06 — overrated, out of date, and silent on safety.** This entry was rated GOLD on a "Phase 3 RCT". Its only cited trial, TN-10 (PMID 31180194), is phase II by PubMed's own label; the phase 3 trial (PROTECT) is in newly diagnosed patients and measures something else. It listed PETITE as active; the registry says completed. It omitted two 2026 FDA label changes and carried no safety statement. Re-rated claim by claim.
 
 > **CORRECTED 2026-09-01 — wrong trial entirely.** Previously cited NCT06176573 as PETITE. That identifier is a study of pre- versus post-operative vaginal cleansing with chlorhexidine to prevent post-cesarean infection (n=120). The real PETITE-T1D registration is NCT05757713. Note the GOLD rating never rested on PETITE — it rests on the Phase 3 teplizumab evidence and the FDA approval — so the rating is unchanged, but a GOLD-rated entry was carrying an obstetrics trial as one of its two identifiers.
 

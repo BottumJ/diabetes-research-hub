@@ -158,6 +158,22 @@ def convert_pmid_to_links(html):
     # Find all PMID patterns
     pmid_pattern = re.compile(r'PMID[:\s]*(\d{6,9})')
 
+    # Inside <script> the PMID sits in a JavaScript string (usually a JSON
+    # data literal). Fixed 2026-10-06: the link used to be inserted with bare
+    # double quotes, which closed the surrounding string and broke the data
+    # literal, so five tables on three published pages (Research_Dashboard,
+    # Generic_Drug_Catalog, Immunomod_LADA) never rendered. Escaped quotes
+    # (\") are valid in JSON and in single-, double- or back-quoted JS strings.
+    script_spans = [(m.start(), m.end()) for m in
+                    re.finditer(r'<script\b[^>]*>.*?</script>', html, re.DOTALL | re.IGNORECASE)]
+
+    def in_script(pos):
+        return any(a <= pos < b for a, b in script_spans)
+
+    def is_inside_escaped_link(pos):
+        before = html[max(0, pos - 300):pos]
+        return before.rfind('<a href=\\"') > before.rfind('</a>')
+
     result = []
     last_end = 0
 
@@ -170,7 +186,13 @@ def convert_pmid_to_links(html):
 
         pmid_num = m.group(1)
         original = m.group(0)
-        replacement = f'<a href="https://pubmed.ncbi.nlm.nih.gov/{pmid_num}/" target="_blank" rel="noopener" title="View on PubMed">{original}</a>'
+        if in_script(pos):
+            if is_inside_escaped_link(pos):
+                continue
+            replacement = (f'<a href=\\"https://pubmed.ncbi.nlm.nih.gov/{pmid_num}/\\" target=\\"_blank\\" '
+                           f'rel=\\"noopener\\" title=\\"View on PubMed\\">{original}</a>')
+        else:
+            replacement = f'<a href="https://pubmed.ncbi.nlm.nih.gov/{pmid_num}/" target="_blank" rel="noopener" title="View on PubMed">{original}</a>'
 
         result.append(html[last_end:pos])
         result.append(replacement)
