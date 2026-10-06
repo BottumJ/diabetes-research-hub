@@ -135,3 +135,18 @@ it was created to prevent (M-08). Sections A–C above are unchanged and were
 ---
 
 *Maintained by the Diabetes Research Hub monitor. Re-emit verbatim each run; append, never silently drop.*
+
+### Closed 2026-10-06
+
+| ID | Finding | Resolution |
+|----|---------|------------|
+| N-04 | "20% at 10 years" attributed to a 1,477-recipient CITR registry | It is the Edmonton single-centre cohort (255 recipients, PMID 35588757). Relabelled on the islet outcomes page 2026-09-30; the curve now plots only the five reported timepoints. |
+| N-06 | FDA approvals of finerenone (T1D CKD) and efsitora from press coverage only | Verified from FDA's own letters 2026-09-30/10-01 (`verify_fda_approval.py`): Kerendia S-011 2026-09-16; Onswik BLA 761408 2026-09-23, type 2 only. |
+| N-08 | AZD1656 listed as "Phase 3 ... Development ongoing" | Registry: 21 phase 1 and 6 phase 2 studies, all completed by Sept 2022. Corrected 2026-10-01 (GKA table) and 2026-10-06 (Gap #7 text: no phase 3; GCKR explanation mouse-only; screening instruction and the "~50M into remission" forecast removed). |
+
+### New 2026-10-06
+
+| ID | Finding | Closes when |
+|----|---------|-------------|
+| N-10 | The markdown citation gate passed a wrong-paper citation: PMID 37016949 was cited as an MMWR SEARCH report on youth T2D; it is a J Pediatr Psychol review of type 1 behavioural studies. The PM's reading: the gate checks only 6 of 81 citation sites against PubMed. | The gate checks every citation site, with a fixture built from this case. |
+| N-11 | 33 "(PMID requires verification)" placeholders remain on the Gap Deep Dives page and 36 Research Dashboard rows say "no source on file". Visible and honest, but unsourced. | Each is sourced or removed. |

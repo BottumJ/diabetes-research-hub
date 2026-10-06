@@ -499,7 +499,7 @@ GAPS_DATA = {
             "trial_counts": {"Phase 3": 3, "Phase 2": 2},
             "key_references": [
                 "PMID:38783768 - Jiang Y et al., J Diabetes 2024, REVIEW of dorzagliatin development (not a phase 3 report; the phase 3 trials are PMID:35551294 SEED and PMID:35551292 DAWN)",
-                "(PMID requires verification) - AZD1656 GCKR genetic variants and tachyphylaxis",
+                "PMID:23464532 - AZD1656 add-on to metformin: HbA1c benefit at 4 months not sustained (human trial)", "PMID:39173844 - GCKR deficiency and loss of GKA efficacy (mouse models only)",
                 "PMID:33622669 - TTP399 T1D hypoglycemia reduction"
             ]
         },
@@ -507,7 +507,7 @@ GAPS_DATA = {
             "summary": "Dorzagliatin reached a 65.2% Kaplan-Meier drug-free remission probability at 52 weeks in a follow-on cohort of SEED completers (PMID:37385967; n=69), not in a phase 3 trial. AZD1656 lowered HbA1c for 4 months but the effect was not sustained; a GCKR-genotype explanation comes from mouse models only. [Corrected 2026-10-06: previously stated as a human genotype finding.] Several earlier GKAs failed on hypoglycaemia or loss of effect.",
             "details": [
                 "Dorzagliatin: HbA1c -1.07% vs placebo -0.50%, phase 3 SEED monotherapy n=463 (PMID:35551294); TIR 83.7% in the SEED CGM substudy n=16 (PMID:38783768, review); 65.2% KM drug-free remission probability at 52wk, cohort follow-on n=69 (PMID:37385967)",
-                "AZD1656: loss of effect at 3-4 months (GCKR genetic variants, (PMID requires verification))",
+                "AZD1656: HbA1c benefit at 4 months not sustained (PMID:23464532); GCKR explanation shown in mice only (PMID:39173844)",
                 "TTP399: HbA1c -0.7%, 40% hypoglycemia reduction in T1D (PMID:33622669)",
                 "Failed GKAs: Piragliatin (hypoglycemia), MK-0941 (hypoglycemia + lipids), PF-04937319 (tachyphylaxis)",
                 "GKA mechanism: shifts glucose-insulin secretion curve left, glucose-dependent"
@@ -516,24 +516,24 @@ GAPS_DATA = {
         "mechanistic_bridge": {
             "pathways": ["Glucokinase activation", "Glucose sensing", "Insulin secretion", "GCKR feedback"],
             "protein_targets": ["GCK", "GCKR", "IRS1", "IRS2", "mTORC1"],
-            "cascade": "GKA -> increased Vmax and lower Km of GCK -> enhanced glucose sensing -> insulin secretion increase; efficacy depends on GCKR loss-of-function variants"
+            "cascade": "GKA -> increased Vmax and lower Km of GCK -> enhanced glucose sensing -> insulin secretion increase; in mouse models, chronic efficacy declines with GCKR deficiency (PMID:39173844); untested in people"
         },
         "computational_contribution": [
-            "GCKR variant prediction: identify carriers at risk for AZD1656 tachyphylaxis",
+            "Hypothesis to test (mouse data only): whether GCKR variants predict loss of GKA effect in people",
             "GKA selectivity modeling: predict off-target GCK-domain proteins",
             "Glucose-dependent mechanism validation: model insulin secretion across glucose ranges",
             "Pharmacogenomic analysis: stratify responders by GCKR genotype and metabolic phenotype"
         ],
         "key_literature": [
             "PMID:38783768 - Jiang Y et al., J Diabetes 2024, REVIEW (remission data originate in PMID:37385967, a cohort follow-on of SEED)",
-            "(PMID requires verification) - AZD1656 genetic modifiers of efficacy",
+            "PMID:39173844 - GCKR genetic modifiers of GKA efficacy (mouse models)",
             "PMID:33622669 - TTP399 T1D hypoglycemia benefit",
             "Diabetes 2025 (PMID:40272935) - GKA mechanism and GCKR feedback (dorzagliatin closed-form binding)",
             "Glucose-dependent therapy safety (PMID requires verification)"
         ],
         "clinical_pipeline": [
             "Dorzagliatin: phase 3 SEED and DAWN completed, China NRDL listed Jan 2024; 65.2% remission is a post-trial cohort figure (n=69), not a phase 3 endpoint",
-            "AZD1656: Phase 3 (tachyphylaxis barrier identified), 885 patients across 23 RCTs",
+            "AZD1656: phase 2 completed, no phase 3 registered, no active trial (ClinicalTrials.gov, checked 2026-09-30); 23 trials pooled for safety (PMID:40627284)",
             "TTP399: Phase 2 T1D, T2D programs underway",
             "MK-0941, PF-04937319: Discontinued due to safety/efficacy concerns"
         ],
@@ -543,7 +543,7 @@ GAPS_DATA = {
             "data_needed": "GCKR genotype frequencies, glucose profiles, metabolic phenotype associations",
             "dependencies": "Dorzagliatin regulatory approval in non-China markets, GCKR biomarker standardization"
         },
-        "validation_evidence": "SILVER tier: Dorzagliatin Phase 3 efficacy proven, AZD1656 mechanism well-characterized, GCKR genetic modifiers identified",
+        "validation_evidence": "Drug-level evidence (owner ruling 2026-09-30): dorzagliatin phase 3 trials (PMID:35551294, PMID:35551292); AZD1656 lost its effect in people (PMID:23464532), with a GCKR explanation shown only in mice (PMID:39173844).",
         # Corrected 2026-09-17 (trial-phase audit). The string this replaced
         # read: "Dorzagliatin Phase 3 (DAWN-1, n=360): HbA1c -1.07%, TIR
         # 83.7%, 65.2% remission (HbA1c <5.5% off metformin) (PMID:36449148)".
@@ -569,7 +569,7 @@ GAPS_DATA = {
         #   * PMID 36449148 is Syed YY, "Dorzagliatin: First Approval",
         #     Drugs 2022 - a drug-approval profile, pubtype Review. It
         #     supports the regulatory status and nothing else here.
-        "expanded_clinical_context": "Dorzagliatin phase 3 SEED (drug-naive monotherapy, n=463): HbA1c -1.07% vs -0.50% placebo at 24 weeks (PMID:35551294). Phase 3 DAWN (add-on to metformin, n=767): placebo-adjusted HbA1c -0.66% at 24 weeks (PMID:35551292). Drug-free remission is a follow-on cohort of SEED completers, not a phase 3 endpoint: Kaplan-Meier remission probability 65.2% (95% CI 52.0-75.6) at week 52, or 52.0% by the ADA definition, n=69 (PMID:37385967). Time-in-range 83.7% is from the SEED CGM substudy, n=16 over 46 weeks (PMID:38783768, a review). Approval status: China NMPA Sept 2022 (PMID:36449148). China NRDL (National Reimbursement Drug List) listing Jan 2024 expected to shift ~50M Chinese T2D patients into remission if efficacy replicated. AZD1656 tachyphylaxis mechanism: GCKR loss-of-function variants (carrier frequency 2-3% Europeans, 5-7% East Asians, 1-2% Africans) disrupt negative feedback of GCK activation -> paradoxical suppression of efficacy after 3-4mo. Genetic stratification: screen GCKR before AZD1656 initiation. TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain (GKA advantage vs GLP-1 RA). GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no GLP-1 price], SGLT2i $4.5K (PMID:38639547)).",
+        "expanded_clinical_context": "Dorzagliatin phase 3 SEED (drug-naive monotherapy, n=463): HbA1c -1.07% vs -0.50% placebo at 24 weeks (PMID:35551294). Phase 3 DAWN (add-on to metformin, n=767): placebo-adjusted HbA1c -0.66% at 24 weeks (PMID:35551292). Drug-free remission is a follow-on cohort of SEED completers, not a phase 3 endpoint: Kaplan-Meier remission probability 65.2% (95% CI 52.0-75.6) at week 52, or 52.0% by the ADA definition, n=69 (PMID:37385967). Time-in-range 83.7% is from the SEED CGM substudy, n=16 over 46 weeks (PMID:38783768, a review). Approval status: China NMPA Sept 2022 (PMID:36449148). China NRDL listing Jan 2024 [UNSOURCED]. AZD1656 lowered HbA1c for 4 months as add-on to metformin, but the effect was not sustained in the 6-month extension (PMID:23464532). That GCKR variants explain the loss of effect has been shown only in mouse models (PMID:39173844); the evidence for it is from mouse models only, so no genotype screening is recommended here. [Corrected 2026-10-06: this previously forecast that NRDL listing would put ~50M Chinese patients into remission, gave GCKR carrier frequencies by ancestry, and told readers to screen GCKR before AZD1656; none had a source, and the drug has no phase 3 and no active trial.] TTP399 data (61 T1D patients): HbA1c -0.7%, hypoglycemia episodes -40%, no weight gain [UNSOURCED]. GKA cost-effectiveness: target $1,500-2,000/year required for WHO EML addition (vs GLP-1 $10-15K [UNSOURCED - citation removed 2026-09-13: PMID:34763823 is a review of insulin pricing and reports no GLP-1 price], SGLT2i $4.5K (PMID:38639547)).",
         "mechanism_detail": "GKA mechanism: glucokinase (hexokinase IV) acts as glucose sensor in beta cells (Km 10mM, saturable kinetics). Normal response: 5mM glucose -> 2-5% Vmax activity -> low ATP -> no insulin. 15mM glucose -> 90% Vmax -> high ATP -> mTORC1 activation -> FOXO1 inactivation -> GCN5 recruitment -> GLUT2 transcription. GKA shifts curve left (lower Km) and increases Vmax by 1.5-2.5x fold. Dorzagliatin: increases Vmax 1.8x, lowers Km from 10mM to 6.5mM, glucose-dependent mechanism (no hypoglycemia at rest). AZD1656 tachyphylaxis: GCKR encodes regulatory protein that inhibits GCK (allosteric inhibitor). Loss-of-function GCKR: GCK constitutively active even without GKA -> drug adds no benefit -> adaptive feedback suppression. TTP399 advantage: longer half-life (48-72hr vs 8-12hr dorzagliatin) = once-daily dosing feasible."
     },
     "8": {
@@ -2104,7 +2104,7 @@ def generate_html():
                         <td>GCKR genotype (loss-of-function variants)</td>
                         <td>Fasting glucose, proinsulin:insulin ratio</td>
                         <td>Genetic testing</td>
-                        <td>Validated ((PMID requires verification))</td>
+                        <td>Hypothesis: mouse models only (PMID:39173844); not validated in people</td>
                     </tr>
                     <tr>
                         <td>8: SGLT2i LADA</td>
